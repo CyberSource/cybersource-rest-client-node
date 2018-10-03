@@ -1,0 +1,22 @@
+{
+  "name": "CyberSource",
+  "version": "0.0.1",
+  "description": "Simple_PAN_tokenization_service",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.5.2",
+    "AuthenticationSDK": "../AuthenticationSDK"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "expect.js": "~0.3.1"
+  }
+}
