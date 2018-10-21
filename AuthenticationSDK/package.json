@@ -1,0 +1,33 @@
+{
+  "name": "AuthenticationSDK",
+  "version": "1.0.0",
+  "description": "This is cybersource Authentication sdk project",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --reporter mocha-sonarqube-reporter test --reporter-options output=reports/TEST-results.xml",
+    "sonar-scanner": "sonar-scanner",
+    "build-test": "nyc --reporter=lcov mocha"
+  },
+  "author": "ghari@visa.com",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "collections": "^5.1.2",
+    "jwt-simple": "^0.5.1",
+    "memory-cache": "^0.2.0",
+    "node-forge": "^0.7.5",
+    "promise": "^8.0.1",
+    "winston": "^2.4.2"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "mocha-sonarqube-reporter": "^1.0.1",
+    "nyc": "^12.0.2",
+    "sonar-scanner": "^3.1.0"
+  }
+}

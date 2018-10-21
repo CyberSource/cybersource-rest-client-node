@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "superagent": "3.5.2",
-    "AuthenticationSDK": "../AuthenticationSDK"
+    "AuthenticationSDK": "./AuthenticationSDK"
   },
   "devDependencies": {
     "mocha": "~2.3.4",

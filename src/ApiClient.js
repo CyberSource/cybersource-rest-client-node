@@ -360,7 +360,7 @@
    */
   exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
 
-    var Configuration = require('../../cybersource-rest-samples-nodejs/data/Configuration');
+    var Configuration = require('../../cybersource-rest-samples-nodejs/Data/Configuration');
     var AuthenticationSDK = require('AuthenticationSDK');
     var Constants = AuthenticationSDK.Constants;
 
@@ -374,11 +374,11 @@
     var logger = AuthenticationSDK.Logger.getLogger(merchantConfig);
     var token = AuthenticationSDK.Authorization.getToken(merchantConfig, logger);
 
-    if (merchantConfig.getAuthenticationType() === "jwt") {
+    if (merchantConfig.getAuthenticationType() === Constants.JWT) {
       token = "Bearer " + token;
       headerParams['Authorization'] = token;
     }
-    else if (merchantConfig.getAuthenticationType() === "http_signature") {
+    else if (merchantConfig.getAuthenticationType() === Constants.HTTP) {
       var date = new Date(Date.now()).toUTCString();
 
       if (httpMethod === "POST") {
