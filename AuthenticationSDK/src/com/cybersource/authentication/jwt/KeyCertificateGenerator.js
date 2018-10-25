@@ -1,6 +1,4 @@
-'use strict';
 
-var fs = require('fs');
 var forge = require('node-forge');
 var Cache = require('../util/Cache');
 
@@ -43,4 +41,4 @@ var thisModule = module.exports = {
         var publicKey = forge.pki.publicKeyToPem(key);
         return publicKey;
     }
-}
+};

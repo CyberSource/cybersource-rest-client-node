@@ -1,7 +1,5 @@
-'use strict';
-
 var fs = require('fs');
-var crypto = require('crypto');
+const crypto = require('crypto');
 
 /**
  * This return return Digest value which is SHA-256 hash of payload that is BASE64 encoded
@@ -18,4 +16,4 @@ exports.generateDigest = function (merchantConfig, logger) {
     } catch (err) {
         logger.error(err.stack);
     }
-}
+};

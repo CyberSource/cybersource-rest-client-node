@@ -35,22 +35,22 @@ exports.getLogger = function (merchantConfig) {
 
 // Method for file renaming in log rotation
 var fileRename = function (fileName, fileDirectory, size) {
-  var filePath = path.resolve(fileDirectory + "\\" + fileName + ".log");
+  var filePath = path.resolve(fileDirectory + '\\' + fileName + '.log');
   if (fs.existsSync(filePath)) {
     const stats = fs.statSync(filePath);
     const fileSizeInBytes = stats.size;
     if (fileSizeInBytes >= size) {
       var date = new Date();
-      var dateformat = "";
+      var dateformat = '';
       dateformat += date.getFullYear();
       dateformat += (date.getMonth() + 1 <= 9) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
-      dateformat += "" + (date.getDate() <= 9) ? '0' + (date.getDate()) : (date.getDate());
+      dateformat += '' + (date.getDate() <= 9) ? '0' + (date.getDate()) : (date.getDate());
       dateformat += (date.getHours() <= 9) ? '0' + (date.getHours()) : (date.getHours());
       dateformat += (date.getMinutes() <= 9) ? '0' + (date.getMinutes()) : (date.getMinutes());
       dateformat += (date.getSeconds() <= 9) ? '0' + (date.getSeconds()) : (date.getSeconds());
 
-      var newFileName = "cybs_" + dateformat + ".log";
-      var newPath = fileDirectory + "\\" + newFileName;
+      var newFileName = 'cybs_' + dateformat + '.log';
+      var newPath = fileDirectory + '\\' + newFileName;
       fs.renameSync(filePath, newPath, function (err) {
         if (err) {
           throw err;

@@ -1,8 +1,8 @@
 'use strict';
 
-var Constants = require('../util/Constants');
-var KeyCertificate = require('./KeyCertificateGenerator');
 var Jwt = require('jwt-simple');
+const Constants = require('../util/Constants');
+var KeyCertificate = require('./KeyCertificateGenerator');
 var DigestGenerator = require('../payloadDigest/DigestGenerator');
 var ApiException = require('../util/ApiException');
 
@@ -14,18 +14,18 @@ var ApiException = require('../util/ApiException');
 exports.getToken = function (merchantConfig, logger) {
 
     try {
-        var claim_Set = "";
+        var claimSet = "";
         // date format is 'Mon, 09 Apr 2018 10:18:57 GMT'
         var date = new Date(Date.now()).toUTCString();
         var rsaPrivateKey = KeyCertificate.getRSAPrivateKey(merchantConfig, logger);
         var certificate = KeyCertificate.getX509CertificateInPem(merchantConfig, logger);
         var requestType = merchantConfig.getRequestType().toLowerCase();
         if (requestType === Constants.GET || requestType === Constants.DELETE) {
-            claim_Set = "{\"iat\":\"" + date + "\"}";
+            claimSet = "{\"iat\":\"" + date + "\"}";
         }
         else if (requestType === Constants.POST || requestType === Constants.PUT) {
             var digest = DigestGenerator.generateDigest(merchantConfig, logger);
-            claim_Set = "{\"digest\":\""
+            claimSet = "{\"digest\":\""
                 + digest + "\",\"digestAlgorithm\":\"SHA-256\",\"iat\":\""
                 + date + "\"}";
         }
@@ -41,7 +41,7 @@ exports.getToken = function (merchantConfig, logger) {
             }
         };
 
-        var claimSetObj = JSON.parse(claim_Set);
+        var claimSetObj = JSON.parse(claimSet);
         //Generating JWToken
         var jwtToken = Jwt.encode(claimSetObj, rsaPrivateKey, 'RS256', customHeader);
 
@@ -50,4 +50,4 @@ exports.getToken = function (merchantConfig, logger) {
     } catch (err) {
         throw err;
     }
-}
+};
