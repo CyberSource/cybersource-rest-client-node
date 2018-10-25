@@ -3,9 +3,9 @@
 var fs = require('fs');
 var forge = require('node-forge');
 var cache = require('memory-cache');
+var path = require('path');
 var Constants = require('../util/Constants');
 var ApiException = require('../util/ApiException');
-var path = require('path');
 
 /**
  * This module is doing Caching.
@@ -13,17 +13,17 @@ var path = require('path');
  */
 exports.fetchCachedCertificate = function (merchantConfig, logger) {
 
-    var cachedCertificateFromP12File = cache.get("certificateFromP12File");
-    var cachedLastModifiedTimeStamp = cache.get("certificateLastModifideTimeStamp");
+    var cachedCertificateFromP12File = cache.get('certificateFromP12File');
+    var cachedLastModifiedTimeStamp = cache.get('certificateLastModifideTimeStamp');
 
     var filePath = path.resolve(merchantConfig.getKeysDirectory() + '\\' + merchantConfig.getKeyFileName() + '.p12');
     if (fs.existsSync(filePath)) {
         const stats = fs.statSync(filePath);
         const currentFileLastModifiedTime = stats.mtime;
         //If no entry found from cache, create a cache entry and return the created object
-        if ((cachedCertificateFromP12File === null || cachedCertificateFromP12File === undefined) ||
-            (cachedLastModifiedTimeStamp === null || cachedLastModifiedTimeStamp === undefined) ||
-            (currentFileLastModifiedTime > cachedLastModifiedTimeStamp)) {
+        if ((cachedCertificateFromP12File === null || cachedCertificateFromP12File === undefined)
+            || (cachedLastModifiedTimeStamp === null || cachedLastModifiedTimeStamp === undefined)
+            || (currentFileLastModifiedTime > cachedLastModifiedTimeStamp)) {
             //Function call to read the file and put values to new cache  
             var keyPass = merchantConfig.getKeyPass();
             var certificateFromP12File = getCertificate(keyPass, filePath, currentFileLastModifiedTime, logger);
@@ -49,10 +49,10 @@ function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
         var p12Der = forge.util.binary.raw.encode(new Uint8Array(p12Buffer));
         var p12Asn1 = forge.asn1.fromDer(p12Der);
         var certificate = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, keyPass);
-        cache.put("certificateFromP12File", certificate);
-        cache.put("certificateLastModifideTimeStamp", fileLastModifiedTime);
+        cache.put('certificateFromP12File', certificate);
+        cache.put('certificateLastModifideTimeStamp', fileLastModifiedTime);
         return certificate;
     } catch (error) {
-        ApiException.AuthException(error.message + ". " + Constants.INCORRECT_KEY_PASS);
+        ApiException.AuthException(error.message + '. ' + Constants.INCORRECT_KEY_PASS);
     }
 }

@@ -1,9 +1,9 @@
 'use strict';
 
 var fs = require('fs');
-var Constants = require('./Constants');
 var Promise = require('promise');
 var path = require('path');
+var Constants = require('./Constants');
 
 /*Method for reading json config file */
 exports.getConfig = function () {
@@ -34,12 +34,12 @@ exports.getConfig = function () {
  */
 exports.proxyCheck = function (merchantConfig, requestOptions) {
 
-    if (merchantConfig.getProxyAddress() !== null && merchantConfig.getProxyAddress() !== ""
+    if (merchantConfig.getProxyAddress() !== null && merchantConfig.getProxyAddress() !== ''
         && merchantConfig.getProxyAddress() !== undefined) {
         requestOptions.proxy = merchantConfig.getProxyAddress();
     }
 
-    if (merchantConfig.getProxyPort() !== null && merchantConfig.getProxyPort() !== ""
+    if (merchantConfig.getProxyPort() !== null && merchantConfig.getProxyPort() !== ''
         && merchantConfig.getProxyPort() !== undefined) {
         requestOptions.port = merchantConfig.getProxyPort();
     }

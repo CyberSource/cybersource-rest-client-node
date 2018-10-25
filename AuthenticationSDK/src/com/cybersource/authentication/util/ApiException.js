@@ -1,6 +1,6 @@
-'use strict';
+/** This module is for exception handling */
 
-var Constants = require('./Constants');
+const Constants = require('./Constants');
 
 exports.ApiException = function (message, logger) {
     var err = new Error(message);
@@ -12,4 +12,4 @@ exports.ApiException = function (message, logger) {
 exports.AuthException = function (message) {
     var err = new Error(message);
     throw err;
-}
+};
