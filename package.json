@@ -1,8 +1,8 @@
 {
   "name": "CyberSource",
   "version": "0.0.1",
-  "description": "Simple_PAN_tokenization_service",
-  "license": "Unlicense",
+  "description": "Node.js SDK for the CyberSource REST API",
+  "license": "CyberSource",
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
@@ -11,12 +11,12 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": "3.5.2",
+    "superagent": "3.8.3",
     "AuthenticationSDK": "./AuthenticationSDK"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
-    "sinon": "1.17.3",
+    "mocha": "~5.2.0",
+    "@sinonjs/formatio": "3.0.0",
     "expect.js": "~0.3.1"
   }
 }
