@@ -1,4 +1,4 @@
-# CyberSource
+# Node.JS SDK for the CyberSource REST API
 
 CyberSource - JavaScript client for CyberSource
 Simple PAN tokenization service
