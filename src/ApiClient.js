@@ -360,7 +360,9 @@
    */
   exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
 
-    var Configuration = require('../../cybersource-rest-samples-node/Data/Configuration');
+    var path = require('path');
+    var filePath = path.resolve('Data/Configuration.js');
+    var Configuration = require(filePath);
     var AuthenticationSDK = require('AuthenticationSDK');
     var Constants = AuthenticationSDK.Constants;
 
