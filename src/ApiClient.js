@@ -363,7 +363,7 @@
     var path = require('path');
     var filePath = path.resolve('Data/Configuration.js');
     var Configuration = require(filePath);
-    var AuthenticationSDK = require('AuthenticationSDK');
+    var AuthenticationSDK = require('cybersource-rest-auth');
     var Constants = AuthenticationSDK.Constants;
 
     // reading cybs.json from Configuration module
