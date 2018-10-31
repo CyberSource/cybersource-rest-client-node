@@ -56,9 +56,9 @@ exports.getSignatureParameter = function (merchantConfig, logger) {
     }
 
     signatureString += Constants.V_C_MERCHANTID + ': ' + merchantConfig.getMerchantID();
-    var data = new Buffer(signatureString, 'utf8');
+    var data = Buffer.from(signatureString, 'utf8');
     /*        Decoding scecret key        */
-    var key = new Buffer(merchantConfig.getMerchantsecretKey(), 'base64');
+    var key = Buffer.from(merchantConfig.getMerchantsecretKey(), 'base64');
     var base64EncodedSignature = crypto.createHmac('sha256', key)
         .update(data)
         .digest('base64');
