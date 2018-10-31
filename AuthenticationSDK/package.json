@@ -1,7 +1,7 @@
 {
   "name": "AuthenticationSDK",
   "version": "0.0.1",
-  "description": "This is cybersource Authentication sdk project",
+  "description": "This is Cybersource Authentication node module",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha --reporter mocha-sonarqube-reporter test --reporter-options output=reports/TEST-results.xml",
