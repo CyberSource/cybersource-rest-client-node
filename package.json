@@ -4,7 +4,6 @@
   "description": "Node.js SDK for the CyberSource REST API",
   "license": "CyberSource",
   "main": "src/index.js",
-  "bundledDependencies": ["AuthenticationSDK"],
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
   },
@@ -13,7 +12,7 @@
   },
   "dependencies": {
     "superagent": "3.8.3",
-    "AuthenticationSDK": "file:AuthenticationSDK"
+    "cybersource-rest-auth": "0.0.1"
   },
   "devDependencies": {
     "mocha": "~5.2.0",
