@@ -123,7 +123,7 @@
    */
   exports.prototype['expirationYear'] = undefined;
   /**
-   * Value that identifies your business and indicates that the cardholderâ€™s account number is tokenized. This value is assigned by the token service provider and is unique within the token service providerâ€™s database.  `Note` This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**. 
+   * Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  `Note` This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**. 
    * @member {String} requestorId
    */
   exports.prototype['requestorId'] = undefined;

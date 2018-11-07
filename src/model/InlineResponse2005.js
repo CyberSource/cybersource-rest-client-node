@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2013Links', 'model/InlineResponse2013RefundAmountDetails', 'model/InlineResponse201ClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2005Attributes'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2013Links'), require('./InlineResponse2013RefundAmountDetails'), require('./InlineResponse201ClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2005Attributes'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2005 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013Links, root.CyberSource.InlineResponse2013RefundAmountDetails, root.CyberSource.InlineResponse201ClientReferenceInformation);
+    root.CyberSource.InlineResponse2005 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2005Attributes);
   }
-}(this, function(ApiClient, InlineResponse2013Links, InlineResponse2013RefundAmountDetails, InlineResponse201ClientReferenceInformation) {
+}(this, function(ApiClient, InlineResponse2005Attributes) {
   'use strict';
 
 
@@ -53,7 +53,6 @@
 
 
 
-
   };
 
   /**
@@ -67,91 +66,70 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse2013Links.constructFromObject(data['_links']);
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('reportDefinitionId')) {
+        obj['reportDefinitionId'] = ApiClient.convertToType(data['reportDefinitionId'], 'Number');
       }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('reportDefintionName')) {
+        obj['reportDefintionName'] = ApiClient.convertToType(data['reportDefintionName'], 'String');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('attributes')) {
+        obj['attributes'] = ApiClient.convertToType(data['attributes'], [InlineResponse2005Attributes]);
       }
-      if (data.hasOwnProperty('reconciliationId')) {
-        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
+      if (data.hasOwnProperty('supportedFormats')) {
+        obj['supportedFormats'] = ApiClient.convertToType(data['supportedFormats'], ['String']);
       }
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = InlineResponse201ClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
-      }
-      if (data.hasOwnProperty('refundAmountDetails')) {
-        obj['refundAmountDetails'] = InlineResponse2013RefundAmountDetails.constructFromObject(data['refundAmountDetails']);
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2013Links} _links
+   * @member {String} type
    */
-  exports.prototype['_links'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @member {String} id
+   * @member {Number} reportDefinitionId
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['reportDefinitionId'] = undefined;
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeUtc
+   * @member {String} reportDefintionName
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['reportDefintionName'] = undefined;
   /**
-   * The status of the submitted transaction.
-   * @member {module:model/InlineResponse2005.StatusEnum} status
+   * @member {Array.<module:model/InlineResponse2005Attributes>} attributes
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['attributes'] = undefined;
   /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @member {String} reconciliationId
+   * @member {Array.<module:model/InlineResponse2005.SupportedFormatsEnum>} supportedFormats
    */
-  exports.prototype['reconciliationId'] = undefined;
+  exports.prototype['supportedFormats'] = undefined;
   /**
-   * @member {module:model/InlineResponse201ClientReferenceInformation} clientReferenceInformation
+   * @member {String} description
    */
-  exports.prototype['clientReferenceInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2013RefundAmountDetails} refundAmountDetails
-   */
-  exports.prototype['refundAmountDetails'] = undefined;
+  exports.prototype['description'] = undefined;
 
 
   /**
-   * Allowed values for the <code>status</code> property.
+   * Allowed values for the <code>supportedFormats</code> property.
    * @enum {String}
    * @readonly
    */
-  exports.StatusEnum = {
+  exports.SupportedFormatsEnum = {
     /**
-     * value: "PENDING"
+     * value: "application/xml"
      * @const
      */
-    "PENDING": "PENDING",
+    "application/xml": "application/xml",
     /**
-     * value: "TRANSMITTED"
+     * value: "text/csv"
      * @const
      */
-    "TRANSMITTED": "TRANSMITTED",
-    /**
-     * value: "BATCH_ERROR"
-     * @const
-     */
-    "BATCH_ERROR": "BATCH_ERROR",
-    /**
-     * value: "VOIDED"
-     * @const
-     */
-    "VOIDED": "VOIDED"  };
+    "text/csv": "text/csv"  };
 
 
   return exports;

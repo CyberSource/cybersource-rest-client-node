@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2011ProcessorInformation', 'model/InlineResponse2011ReversalAmountDetails', 'model/InlineResponse201ClientReferenceInformation', 'model/InlineResponse201EmbeddedCaptureLinks'], factory);
+    define(['ApiClient', 'model/InlineResponse2003NotificationOfChanges'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2011ProcessorInformation'), require('./InlineResponse2011ReversalAmountDetails'), require('./InlineResponse201ClientReferenceInformation'), require('./InlineResponse201EmbeddedCaptureLinks'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2003NotificationOfChanges'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2011ProcessorInformation, root.CyberSource.InlineResponse2011ReversalAmountDetails, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.InlineResponse201EmbeddedCaptureLinks);
+    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2003NotificationOfChanges);
   }
-}(this, function(ApiClient, InlineResponse2011ProcessorInformation, InlineResponse2011ReversalAmountDetails, InlineResponse201ClientReferenceInformation, InlineResponse201EmbeddedCaptureLinks) {
+}(this, function(ApiClient, InlineResponse2003NotificationOfChanges) {
   'use strict';
 
 
@@ -48,13 +48,6 @@
     var _this = this;
 
 
-
-
-
-
-
-
-
   };
 
   /**
@@ -68,83 +61,19 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse201EmbeddedCaptureLinks.constructFromObject(data['_links']);
-      }
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('reconciliationId')) {
-        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
-      }
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = InlineResponse201ClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
-      }
-      if (data.hasOwnProperty('processorInformation')) {
-        obj['processorInformation'] = InlineResponse2011ProcessorInformation.constructFromObject(data['processorInformation']);
-      }
-      if (data.hasOwnProperty('reversalAmountDetails')) {
-        obj['reversalAmountDetails'] = InlineResponse2011ReversalAmountDetails.constructFromObject(data['reversalAmountDetails']);
+      if (data.hasOwnProperty('notificationOfChanges')) {
+        obj['notificationOfChanges'] = ApiClient.convertToType(data['notificationOfChanges'], [InlineResponse2003NotificationOfChanges]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse201EmbeddedCaptureLinks} _links
+   * List of Notification Of Change Info values
+   * @member {Array.<module:model/InlineResponse2003NotificationOfChanges>} notificationOfChanges
    */
-  exports.prototype['_links'] = undefined;
-  /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeUtc
-   */
-  exports.prototype['submitTimeUtc'] = undefined;
-  /**
-   * The status of the submitted transaction.
-   * @member {module:model/InlineResponse2003.StatusEnum} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @member {String} reconciliationId
-   */
-  exports.prototype['reconciliationId'] = undefined;
-  /**
-   * @member {module:model/InlineResponse201ClientReferenceInformation} clientReferenceInformation
-   */
-  exports.prototype['clientReferenceInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2011ProcessorInformation} processorInformation
-   */
-  exports.prototype['processorInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2011ReversalAmountDetails} reversalAmountDetails
-   */
-  exports.prototype['reversalAmountDetails'] = undefined;
+  exports.prototype['notificationOfChanges'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "REVERSED"
-     * @const
-     */
-    "REVERSED": "REVERSED"  };
 
 
   return exports;

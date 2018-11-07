@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InstrumentidentifiersBankAccount', 'model/InstrumentidentifiersCard', 'model/InstrumentidentifiersLinks', 'model/InstrumentidentifiersMetadata', 'model/InstrumentidentifiersProcessingInformation'], factory);
+    define(['ApiClient', 'model/Tmsv1instrumentidentifiersBankAccount', 'model/Tmsv1instrumentidentifiersCard', 'model/Tmsv1instrumentidentifiersLinks', 'model/Tmsv1instrumentidentifiersMetadata', 'model/Tmsv1instrumentidentifiersProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InstrumentidentifiersBankAccount'), require('./InstrumentidentifiersCard'), require('./InstrumentidentifiersLinks'), require('./InstrumentidentifiersMetadata'), require('./InstrumentidentifiersProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersBankAccount'), require('./Tmsv1instrumentidentifiersCard'), require('./Tmsv1instrumentidentifiersLinks'), require('./Tmsv1instrumentidentifiersMetadata'), require('./Tmsv1instrumentidentifiersProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Body = factory(root.CyberSource.ApiClient, root.CyberSource.InstrumentidentifiersBankAccount, root.CyberSource.InstrumentidentifiersCard, root.CyberSource.InstrumentidentifiersLinks, root.CyberSource.InstrumentidentifiersMetadata, root.CyberSource.InstrumentidentifiersProcessingInformation);
+    root.CyberSource.Body = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersBankAccount, root.CyberSource.Tmsv1instrumentidentifiersCard, root.CyberSource.Tmsv1instrumentidentifiersLinks, root.CyberSource.Tmsv1instrumentidentifiersMetadata, root.CyberSource.Tmsv1instrumentidentifiersProcessingInformation);
   }
-}(this, function(ApiClient, InstrumentidentifiersBankAccount, InstrumentidentifiersCard, InstrumentidentifiersLinks, InstrumentidentifiersMetadata, InstrumentidentifiersProcessingInformation) {
+}(this, function(ApiClient, Tmsv1instrumentidentifiersBankAccount, Tmsv1instrumentidentifiersCard, Tmsv1instrumentidentifiersLinks, Tmsv1instrumentidentifiersMetadata, Tmsv1instrumentidentifiersProcessingInformation) {
   'use strict';
 
 
@@ -69,7 +69,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InstrumentidentifiersLinks.constructFromObject(data['_links']);
+        obj['_links'] = Tmsv1instrumentidentifiersLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -81,23 +81,23 @@
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
       }
       if (data.hasOwnProperty('card')) {
-        obj['card'] = InstrumentidentifiersCard.constructFromObject(data['card']);
+        obj['card'] = Tmsv1instrumentidentifiersCard.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('bankAccount')) {
-        obj['bankAccount'] = InstrumentidentifiersBankAccount.constructFromObject(data['bankAccount']);
+        obj['bankAccount'] = Tmsv1instrumentidentifiersBankAccount.constructFromObject(data['bankAccount']);
       }
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = InstrumentidentifiersProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = Tmsv1instrumentidentifiersProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = InstrumentidentifiersMetadata.constructFromObject(data['metadata']);
+        obj['metadata'] = Tmsv1instrumentidentifiersMetadata.constructFromObject(data['metadata']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InstrumentidentifiersLinks} _links
+   * @member {module:model/Tmsv1instrumentidentifiersLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -116,19 +116,19 @@
    */
   exports.prototype['state'] = undefined;
   /**
-   * @member {module:model/InstrumentidentifiersCard} card
+   * @member {module:model/Tmsv1instrumentidentifiersCard} card
    */
   exports.prototype['card'] = undefined;
   /**
-   * @member {module:model/InstrumentidentifiersBankAccount} bankAccount
+   * @member {module:model/Tmsv1instrumentidentifiersBankAccount} bankAccount
    */
   exports.prototype['bankAccount'] = undefined;
   /**
-   * @member {module:model/InstrumentidentifiersProcessingInformation} processingInformation
+   * @member {module:model/Tmsv1instrumentidentifiersProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/InstrumentidentifiersMetadata} metadata
+   * @member {module:model/Tmsv1instrumentidentifiersMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
 

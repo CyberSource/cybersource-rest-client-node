@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InstrumentidentifiersBankAccount', 'model/InstrumentidentifiersCard', 'model/InstrumentidentifiersLinks', 'model/InstrumentidentifiersMetadata', 'model/InstrumentidentifiersProcessingInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2007Reports'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InstrumentidentifiersBankAccount'), require('./InstrumentidentifiersCard'), require('./InstrumentidentifiersLinks'), require('./InstrumentidentifiersMetadata'), require('./InstrumentidentifiersProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2007Reports'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2007 = factory(root.CyberSource.ApiClient, root.CyberSource.InstrumentidentifiersBankAccount, root.CyberSource.InstrumentidentifiersCard, root.CyberSource.InstrumentidentifiersLinks, root.CyberSource.InstrumentidentifiersMetadata, root.CyberSource.InstrumentidentifiersProcessingInformation);
+    root.CyberSource.InlineResponse2007 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2007Reports);
   }
-}(this, function(ApiClient, InstrumentidentifiersBankAccount, InstrumentidentifiersCard, InstrumentidentifiersLinks, InstrumentidentifiersMetadata, InstrumentidentifiersProcessingInformation) {
+}(this, function(ApiClient, InlineResponse2007Reports) {
   'use strict';
 
 
@@ -48,13 +48,6 @@
     var _this = this;
 
 
-
-
-
-
-
-
-
   };
 
   /**
@@ -68,99 +61,18 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InstrumentidentifiersLinks.constructFromObject(data['_links']);
-      }
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('object')) {
-        obj['object'] = ApiClient.convertToType(data['object'], 'String');
-      }
-      if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
-      }
-      if (data.hasOwnProperty('card')) {
-        obj['card'] = InstrumentidentifiersCard.constructFromObject(data['card']);
-      }
-      if (data.hasOwnProperty('bankAccount')) {
-        obj['bankAccount'] = InstrumentidentifiersBankAccount.constructFromObject(data['bankAccount']);
-      }
-      if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = InstrumentidentifiersProcessingInformation.constructFromObject(data['processingInformation']);
-      }
-      if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = InstrumentidentifiersMetadata.constructFromObject(data['metadata']);
+      if (data.hasOwnProperty('reports')) {
+        obj['reports'] = ApiClient.convertToType(data['reports'], [InlineResponse2007Reports]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InstrumentidentifiersLinks} _links
+   * @member {Array.<module:model/InlineResponse2007Reports>} reports
    */
-  exports.prototype['_links'] = undefined;
-  /**
-   * Unique identification number assigned by CyberSource to the submitted request.
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
-   * @member {module:model/InlineResponse2007.ObjectEnum} object
-   */
-  exports.prototype['object'] = undefined;
-  /**
-   * Current state of the token.
-   * @member {module:model/InlineResponse2007.StateEnum} state
-   */
-  exports.prototype['state'] = undefined;
-  /**
-   * @member {module:model/InstrumentidentifiersCard} card
-   */
-  exports.prototype['card'] = undefined;
-  /**
-   * @member {module:model/InstrumentidentifiersBankAccount} bankAccount
-   */
-  exports.prototype['bankAccount'] = undefined;
-  /**
-   * @member {module:model/InstrumentidentifiersProcessingInformation} processingInformation
-   */
-  exports.prototype['processingInformation'] = undefined;
-  /**
-   * @member {module:model/InstrumentidentifiersMetadata} metadata
-   */
-  exports.prototype['metadata'] = undefined;
+  exports.prototype['reports'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>object</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ObjectEnum = {
-    /**
-     * value: "instrumentIdentifier"
-     * @const
-     */
-    "instrumentIdentifier": "instrumentIdentifier"  };
-
-  /**
-   * Allowed values for the <code>state</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StateEnum = {
-    /**
-     * value: "ACTIVE"
-     * @const
-     */
-    "ACTIVE": "ACTIVE",
-    /**
-     * value: "CLOSED"
-     * @const
-     */
-    "CLOSED": "CLOSED"  };
 
 
   return exports;

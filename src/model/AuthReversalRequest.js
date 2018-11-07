@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/V2paymentsidreversalsClientReferenceInformation', 'model/V2paymentsidreversalsOrderInformation', 'model/V2paymentsidreversalsPointOfSaleInformation', 'model/V2paymentsidreversalsProcessingInformation', 'model/V2paymentsidreversalsReversalInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidreversalsClientReferenceInformation', 'model/Ptsv2paymentsidreversalsOrderInformation', 'model/Ptsv2paymentsidreversalsPointOfSaleInformation', 'model/Ptsv2paymentsidreversalsProcessingInformation', 'model/Ptsv2paymentsidreversalsReversalInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./V2paymentsidreversalsClientReferenceInformation'), require('./V2paymentsidreversalsOrderInformation'), require('./V2paymentsidreversalsPointOfSaleInformation'), require('./V2paymentsidreversalsProcessingInformation'), require('./V2paymentsidreversalsReversalInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsClientReferenceInformation'), require('./Ptsv2paymentsidreversalsOrderInformation'), require('./Ptsv2paymentsidreversalsPointOfSaleInformation'), require('./Ptsv2paymentsidreversalsProcessingInformation'), require('./Ptsv2paymentsidreversalsReversalInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AuthReversalRequest = factory(root.CyberSource.ApiClient, root.CyberSource.V2paymentsidreversalsClientReferenceInformation, root.CyberSource.V2paymentsidreversalsOrderInformation, root.CyberSource.V2paymentsidreversalsPointOfSaleInformation, root.CyberSource.V2paymentsidreversalsProcessingInformation, root.CyberSource.V2paymentsidreversalsReversalInformation);
+    root.CyberSource.AuthReversalRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation, root.CyberSource.Ptsv2paymentsidreversalsOrderInformation, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsidreversalsProcessingInformation, root.CyberSource.Ptsv2paymentsidreversalsReversalInformation);
   }
-}(this, function(ApiClient, V2paymentsidreversalsClientReferenceInformation, V2paymentsidreversalsOrderInformation, V2paymentsidreversalsPointOfSaleInformation, V2paymentsidreversalsProcessingInformation, V2paymentsidreversalsReversalInformation) {
+}(this, function(ApiClient, Ptsv2paymentsidreversalsClientReferenceInformation, Ptsv2paymentsidreversalsOrderInformation, Ptsv2paymentsidreversalsPointOfSaleInformation, Ptsv2paymentsidreversalsProcessingInformation, Ptsv2paymentsidreversalsReversalInformation) {
   'use strict';
 
 
@@ -66,42 +66,42 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = V2paymentsidreversalsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Ptsv2paymentsidreversalsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('reversalInformation')) {
-        obj['reversalInformation'] = V2paymentsidreversalsReversalInformation.constructFromObject(data['reversalInformation']);
+        obj['reversalInformation'] = Ptsv2paymentsidreversalsReversalInformation.constructFromObject(data['reversalInformation']);
       }
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = V2paymentsidreversalsProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = Ptsv2paymentsidreversalsProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = V2paymentsidreversalsOrderInformation.constructFromObject(data['orderInformation']);
+        obj['orderInformation'] = Ptsv2paymentsidreversalsOrderInformation.constructFromObject(data['orderInformation']);
       }
       if (data.hasOwnProperty('pointOfSaleInformation')) {
-        obj['pointOfSaleInformation'] = V2paymentsidreversalsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+        obj['pointOfSaleInformation'] = Ptsv2paymentsidreversalsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/V2paymentsidreversalsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Ptsv2paymentsidreversalsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsidreversalsReversalInformation} reversalInformation
+   * @member {module:model/Ptsv2paymentsidreversalsReversalInformation} reversalInformation
    */
   exports.prototype['reversalInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsidreversalsProcessingInformation} processingInformation
+   * @member {module:model/Ptsv2paymentsidreversalsProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsidreversalsOrderInformation} orderInformation
+   * @member {module:model/Ptsv2paymentsidreversalsOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsidreversalsPointOfSaleInformation} pointOfSaleInformation
+   * @member {module:model/Ptsv2paymentsidreversalsPointOfSaleInformation} pointOfSaleInformation
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
 

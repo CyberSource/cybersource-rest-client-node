@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse201ClientReferenceInformation', 'model/InlineResponse201Embedded', 'model/InlineResponse201ErrorInformation', 'model/InlineResponse201Links', 'model/InlineResponse201OrderInformation', 'model/InlineResponse201PaymentInformation', 'model/InlineResponse201PointOfSaleInformation', 'model/InlineResponse201ProcessorInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse201ClientReferenceInformation', 'model/InlineResponse201ErrorInformation', 'model/InlineResponse201Links', 'model/InlineResponse201OrderInformation', 'model/InlineResponse201PaymentInformation', 'model/InlineResponse201PointOfSaleInformation', 'model/InlineResponse201ProcessorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse201ClientReferenceInformation'), require('./InlineResponse201Embedded'), require('./InlineResponse201ErrorInformation'), require('./InlineResponse201Links'), require('./InlineResponse201OrderInformation'), require('./InlineResponse201PaymentInformation'), require('./InlineResponse201PointOfSaleInformation'), require('./InlineResponse201ProcessorInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse201ClientReferenceInformation'), require('./InlineResponse201ErrorInformation'), require('./InlineResponse201Links'), require('./InlineResponse201OrderInformation'), require('./InlineResponse201PaymentInformation'), require('./InlineResponse201PointOfSaleInformation'), require('./InlineResponse201ProcessorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse201 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.InlineResponse201Embedded, root.CyberSource.InlineResponse201ErrorInformation, root.CyberSource.InlineResponse201Links, root.CyberSource.InlineResponse201OrderInformation, root.CyberSource.InlineResponse201PaymentInformation, root.CyberSource.InlineResponse201PointOfSaleInformation, root.CyberSource.InlineResponse201ProcessorInformation);
+    root.CyberSource.InlineResponse201 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.InlineResponse201ErrorInformation, root.CyberSource.InlineResponse201Links, root.CyberSource.InlineResponse201OrderInformation, root.CyberSource.InlineResponse201PaymentInformation, root.CyberSource.InlineResponse201PointOfSaleInformation, root.CyberSource.InlineResponse201ProcessorInformation);
   }
-}(this, function(ApiClient, InlineResponse201ClientReferenceInformation, InlineResponse201Embedded, InlineResponse201ErrorInformation, InlineResponse201Links, InlineResponse201OrderInformation, InlineResponse201PaymentInformation, InlineResponse201PointOfSaleInformation, InlineResponse201ProcessorInformation) {
+}(this, function(ApiClient, InlineResponse201ClientReferenceInformation, InlineResponse201ErrorInformation, InlineResponse201Links, InlineResponse201OrderInformation, InlineResponse201PaymentInformation, InlineResponse201PointOfSaleInformation, InlineResponse201ProcessorInformation) {
   'use strict';
 
 
@@ -58,7 +58,6 @@
 
 
 
-
   };
 
   /**
@@ -74,9 +73,6 @@
 
       if (data.hasOwnProperty('_links')) {
         obj['_links'] = InlineResponse201Links.constructFromObject(data['_links']);
-      }
-      if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = InlineResponse201Embedded.constructFromObject(data['_embedded']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -116,10 +112,6 @@
    * @member {module:model/InlineResponse201Links} _links
    */
   exports.prototype['_links'] = undefined;
-  /**
-   * @member {module:model/InlineResponse201Embedded} _embedded
-   */
-  exports.prototype['_embedded'] = undefined;
   /**
    * An unique identification number assigned by CyberSource to identify the submitted request.
    * @member {String} id

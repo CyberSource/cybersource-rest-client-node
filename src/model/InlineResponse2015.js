@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2015VoidAmountDetails', 'model/InlineResponse201ClientReferenceInformation', 'model/InlineResponse201EmbeddedCaptureLinks'], factory);
+    define(['ApiClient', 'model/InlineResponse2011Links', 'model/InlineResponse2015VoidAmountDetails', 'model/InlineResponse201ClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2015VoidAmountDetails'), require('./InlineResponse201ClientReferenceInformation'), require('./InlineResponse201EmbeddedCaptureLinks'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2011Links'), require('./InlineResponse2015VoidAmountDetails'), require('./InlineResponse201ClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2015VoidAmountDetails, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.InlineResponse201EmbeddedCaptureLinks);
+    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2011Links, root.CyberSource.InlineResponse2015VoidAmountDetails, root.CyberSource.InlineResponse201ClientReferenceInformation);
   }
-}(this, function(ApiClient, InlineResponse2015VoidAmountDetails, InlineResponse201ClientReferenceInformation, InlineResponse201EmbeddedCaptureLinks) {
+}(this, function(ApiClient, InlineResponse2011Links, InlineResponse2015VoidAmountDetails, InlineResponse201ClientReferenceInformation) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse201EmbeddedCaptureLinks.constructFromObject(data['_links']);
+        obj['_links'] = InlineResponse2011Links.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -89,7 +89,7 @@
   }
 
   /**
-   * @member {module:model/InlineResponse201EmbeddedCaptureLinks} _links
+   * @member {module:model/InlineResponse2011Links} _links
    */
   exports.prototype['_links'] = undefined;
   /**

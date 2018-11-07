@@ -175,12 +175,12 @@
    */
   exports.prototype['transactionId'] = undefined;
   /**
-   * TBD
+   * Description of this field is not available.
    * @member {String} networkTransactionId
    */
   exports.prototype['networkTransactionId'] = undefined;
   /**
-   * TBD
+   * Description of this field is not available.
    * @member {String} providerTransactionId
    */
   exports.prototype['providerTransactionId'] = undefined;
@@ -200,7 +200,7 @@
    */
   exports.prototype['responseDetails'] = undefined;
   /**
-   * Processor-defined response category code. The associated detail error code is in the auth_auth_response field or the auth_reversal_auth_ response field depending on which service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latinoâ€”processor transaction ID required for troubleshooting  **Maximum length for processors**:   - Comercio Latino: 32  - All other processors: 3 
+   * Processor-defined response category code. The associated detail error code is in the auth_auth_response field or the auth_reversal_auth_ response field depending on which service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  **Maximum length for processors**:   - Comercio Latino: 32  - All other processors: 3 
    * @member {String} responseCategoryCode
    */
   exports.prototype['responseCategoryCode'] = undefined;
@@ -238,7 +238,7 @@
    */
   exports.prototype['issuer'] = undefined;
   /**
-   * This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customerâ€™s receipt. 
+   * This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customer’s receipt. 
    * @member {String} systemTraceAuditNumber
    */
   exports.prototype['systemTraceAuditNumber'] = undefined;
@@ -248,7 +248,7 @@
    */
   exports.prototype['paymentAccountReferenceNumber'] = undefined;
   /**
-   * Transaction integrity classification provided by Mastercard. This value specifies Mastercardâ€™s evaluation of the transactionâ€™s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - **A1**: EMV or token in a secure, trusted environment  - **B1**: EMV or chip equivalent  - **C1**: Magnetic stripe  - **E1**: Key entered  - **U0**: Unclassified  For card-not-present transactions, possible values:   - **A2**: Digital transactions  - **B2**: Authenticated checkout  - **C2**: Transaction validation  - **D2**: Enhanced data  - **E2**: Generic messaging  - **U0**: Unclassified  For information about these values, contact Mastercard or your acquirer. 
+   * Transaction integrity classification provided by Mastercard. This value specifies Mastercard’s evaluation of the transaction’s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - **A1**: EMV or token in a secure, trusted environment  - **B1**: EMV or chip equivalent  - **C1**: Magnetic stripe  - **E1**: Key entered  - **U0**: Unclassified  For card-not-present transactions, possible values:   - **A2**: Digital transactions  - **B2**: Authenticated checkout  - **C2**: Transaction validation  - **D2**: Enhanced data  - **E2**: Generic messaging  - **U0**: Unclassified  For information about these values, contact Mastercard or your acquirer. 
    * @member {String} transactionIntegrityCode
    */
   exports.prototype['transactionIntegrityCode'] = undefined;

@@ -43,55 +43,10 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+    var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-    /**
-     * Callback function to receive the result of the getVoid operation.
-     * @callback module:api/VoidApi~getVoidCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve A Void
-     * Include the void ID in the GET request to retrieve the void details.
-     * @param {String} id The void ID returned from a previous void request.
-     * @param {module:api/VoidApi~getVoidCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
-     */
-    this.getVoid = function(id, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getVoid");
-      }
-
-
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
-
-      return this.apiClient.callApi(
-        '/pts/v2/voids/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+    this.apiClient.setConfiguration(configObject);
 
     /**
      * Callback function to receive the result of the voidCapture operation.
@@ -134,7 +89,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2015;
 
@@ -186,7 +141,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2015;
 
@@ -238,7 +193,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2015;
 
@@ -290,7 +245,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2015;
 

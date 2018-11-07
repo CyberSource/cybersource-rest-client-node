@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InstrumentidentifiersDetails'], factory);
+    define(['ApiClient', 'model/InlineResponse201ErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InstrumentidentifiersDetails'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse201ErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4006 = factory(root.CyberSource.ApiClient, root.CyberSource.InstrumentidentifiersDetails);
+    root.CyberSource.InlineResponse4006 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse201ErrorInformationDetails);
   }
-}(this, function(ApiClient, InstrumentidentifiersDetails) {
+}(this, function(ApiClient, InlineResponse201ErrorInformationDetails) {
   'use strict';
 
 
@@ -50,6 +50,8 @@
 
 
 
+
+
   };
 
   /**
@@ -63,33 +65,87 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = InstrumentidentifiersDetails.constructFromObject(data['details']);
+        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse201ErrorInformationDetails]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} type
+   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The detailed message related to the type stated above.
+   * The status of the submitted transaction.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * The reason of the status. 
+   * @member {module:model/InlineResponse4006.ReasonEnum} reason
+   */
+  exports.prototype['reason'] = undefined;
+  /**
+   * The detail message related to the status and reason listed above. Possible value is:    - Your aggregator or acquirer is not accepting transactions from you at this time.   - Your aggregator or acquirer is not accepting this transaction.   - CyberSource declined the request because the credit card has expired. You might also receive this value if     the expiration date you provided does not match the date the issuing bank has on file.   - The bank declined the transaction.   - The merchant reference number for this authorization request matches the merchant reference number of     another authorization request that you sent within the past 15 minutes. Resend the request with a unique     merchant reference number.   - The credit card number did not pass CyberSource basic checks.   - Data provided is not consistent with the request. For example, you requested a product with negative cost.   - The request is missing a required field. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {module:model/InstrumentidentifiersDetails} details
+   * @member {Array.<module:model/InlineResponse201ErrorInformationDetails>} details
    */
   exports.prototype['details'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>reason</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.ReasonEnum = {
+    /**
+     * value: "MISSING_FIELD"
+     * @const
+     */
+    "MISSING_FIELD": "MISSING_FIELD",
+    /**
+     * value: "INVALID_DATA"
+     * @const
+     */
+    "INVALID_DATA": "INVALID_DATA",
+    /**
+     * value: "DUPLICATE_REQUEST"
+     * @const
+     */
+    "DUPLICATE_REQUEST": "DUPLICATE_REQUEST",
+    /**
+     * value: "INVALID_MERCHANT_CONFIGURATION"
+     * @const
+     */
+    "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
+    /**
+     * value: "INVALID_AMOUNT"
+     * @const
+     */
+    "INVALID_AMOUNT": "INVALID_AMOUNT",
+    /**
+     * value: "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"
+     * @const
+     */
+    "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT": "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"  };
 
 
   return exports;

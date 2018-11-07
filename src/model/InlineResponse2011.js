@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2011AuthorizationInformation', 'model/InlineResponse2011ProcessorInformation', 'model/InlineResponse2011ReversalAmountDetails', 'model/InlineResponse201ClientReferenceInformation', 'model/InlineResponse201EmbeddedCaptureLinks', 'model/V2paymentsidreversalsPointOfSaleInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2011AuthorizationInformation', 'model/InlineResponse2011Links', 'model/InlineResponse2011ProcessorInformation', 'model/InlineResponse2011ReversalAmountDetails', 'model/InlineResponse201ClientReferenceInformation', 'model/Ptsv2paymentsidreversalsPointOfSaleInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2011AuthorizationInformation'), require('./InlineResponse2011ProcessorInformation'), require('./InlineResponse2011ReversalAmountDetails'), require('./InlineResponse201ClientReferenceInformation'), require('./InlineResponse201EmbeddedCaptureLinks'), require('./V2paymentsidreversalsPointOfSaleInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2011AuthorizationInformation'), require('./InlineResponse2011Links'), require('./InlineResponse2011ProcessorInformation'), require('./InlineResponse2011ReversalAmountDetails'), require('./InlineResponse201ClientReferenceInformation'), require('./Ptsv2paymentsidreversalsPointOfSaleInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2011AuthorizationInformation, root.CyberSource.InlineResponse2011ProcessorInformation, root.CyberSource.InlineResponse2011ReversalAmountDetails, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.InlineResponse201EmbeddedCaptureLinks, root.CyberSource.V2paymentsidreversalsPointOfSaleInformation);
+    root.CyberSource.InlineResponse2011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2011AuthorizationInformation, root.CyberSource.InlineResponse2011Links, root.CyberSource.InlineResponse2011ProcessorInformation, root.CyberSource.InlineResponse2011ReversalAmountDetails, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation);
   }
-}(this, function(ApiClient, InlineResponse2011AuthorizationInformation, InlineResponse2011ProcessorInformation, InlineResponse2011ReversalAmountDetails, InlineResponse201ClientReferenceInformation, InlineResponse201EmbeddedCaptureLinks, V2paymentsidreversalsPointOfSaleInformation) {
+}(this, function(ApiClient, InlineResponse2011AuthorizationInformation, InlineResponse2011Links, InlineResponse2011ProcessorInformation, InlineResponse2011ReversalAmountDetails, InlineResponse201ClientReferenceInformation, Ptsv2paymentsidreversalsPointOfSaleInformation) {
   'use strict';
 
 
@@ -71,7 +71,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse201EmbeddedCaptureLinks.constructFromObject(data['_links']);
+        obj['_links'] = InlineResponse2011Links.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -98,14 +98,14 @@
         obj['authorizationInformation'] = InlineResponse2011AuthorizationInformation.constructFromObject(data['authorizationInformation']);
       }
       if (data.hasOwnProperty('pointOfSaleInformation')) {
-        obj['pointOfSaleInformation'] = V2paymentsidreversalsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+        obj['pointOfSaleInformation'] = Ptsv2paymentsidreversalsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse201EmbeddedCaptureLinks} _links
+   * @member {module:model/InlineResponse2011Links} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -145,7 +145,7 @@
    */
   exports.prototype['authorizationInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsidreversalsPointOfSaleInformation} pointOfSaleInformation
+   * @member {module:model/Ptsv2paymentsidreversalsPointOfSaleInformation} pointOfSaleInformation
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
 

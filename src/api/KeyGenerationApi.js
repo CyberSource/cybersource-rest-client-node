@@ -43,8 +43,10 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+    var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
+
+    this.apiClient.setConfiguration(configObject);
 
 
     /**
@@ -58,17 +60,14 @@
     /**
      * Generate Key
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
-     * @param {module:model/GeneratePublicKeyRequest} generatePublicKeyRequest 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/GeneratePublicKeyRequest} opts.generatePublicKeyRequest 
      * @param {module:api/KeyGenerationApi~generatePublicKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200}
      */
-    this.generatePublicKey = function(generatePublicKeyRequest, callback) {
-      var postBody = generatePublicKeyRequest;
-
-      // verify the required parameter 'generatePublicKeyRequest' is set
-      if (generatePublicKeyRequest === undefined || generatePublicKeyRequest === null) {
-        throw new Error("Missing the required parameter 'generatePublicKeyRequest' when calling generatePublicKey");
-      }
+    this.generatePublicKey = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['generatePublicKeyRequest'];
 
 
       var pathParams = {
@@ -81,7 +80,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/json'];
+      var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json'];
       var returnType = InlineResponse200;
 

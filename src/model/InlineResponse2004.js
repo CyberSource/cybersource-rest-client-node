@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002MerchantInformation', 'model/InlineResponse2004DeviceInformation', 'model/InlineResponse2004OrderInformation', 'model/InlineResponse2004ProcessingInformation', 'model/InlineResponse2012Links', 'model/InlineResponse2012ProcessorInformation', 'model/InlineResponse201ClientReferenceInformation', 'model/V2paymentsidcapturesBuyerInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2004ReportDefinitions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002MerchantInformation'), require('./InlineResponse2004DeviceInformation'), require('./InlineResponse2004OrderInformation'), require('./InlineResponse2004ProcessingInformation'), require('./InlineResponse2012Links'), require('./InlineResponse2012ProcessorInformation'), require('./InlineResponse201ClientReferenceInformation'), require('./V2paymentsidcapturesBuyerInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2004ReportDefinitions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2004 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002MerchantInformation, root.CyberSource.InlineResponse2004DeviceInformation, root.CyberSource.InlineResponse2004OrderInformation, root.CyberSource.InlineResponse2004ProcessingInformation, root.CyberSource.InlineResponse2012Links, root.CyberSource.InlineResponse2012ProcessorInformation, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.V2paymentsidcapturesBuyerInformation);
+    root.CyberSource.InlineResponse2004 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004ReportDefinitions);
   }
-}(this, function(ApiClient, InlineResponse2002MerchantInformation, InlineResponse2004DeviceInformation, InlineResponse2004OrderInformation, InlineResponse2004ProcessingInformation, InlineResponse2012Links, InlineResponse2012ProcessorInformation, InlineResponse201ClientReferenceInformation, V2paymentsidcapturesBuyerInformation) {
+}(this, function(ApiClient, InlineResponse2004ReportDefinitions) {
   'use strict';
 
 
@@ -48,17 +48,6 @@
     var _this = this;
 
 
-
-
-
-
-
-
-
-
-
-
-
   };
 
   /**
@@ -72,126 +61,18 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse2012Links.constructFromObject(data['_links']);
-      }
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('reconciliationId')) {
-        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
-      }
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = InlineResponse201ClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
-      }
-      if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = InlineResponse2004ProcessingInformation.constructFromObject(data['processingInformation']);
-      }
-      if (data.hasOwnProperty('processorInformation')) {
-        obj['processorInformation'] = InlineResponse2012ProcessorInformation.constructFromObject(data['processorInformation']);
-      }
-      if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = InlineResponse2004OrderInformation.constructFromObject(data['orderInformation']);
-      }
-      if (data.hasOwnProperty('buyerInformation')) {
-        obj['buyerInformation'] = V2paymentsidcapturesBuyerInformation.constructFromObject(data['buyerInformation']);
-      }
-      if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = InlineResponse2002MerchantInformation.constructFromObject(data['merchantInformation']);
-      }
-      if (data.hasOwnProperty('deviceInformation')) {
-        obj['deviceInformation'] = InlineResponse2004DeviceInformation.constructFromObject(data['deviceInformation']);
+      if (data.hasOwnProperty('reportDefinitions')) {
+        obj['reportDefinitions'] = ApiClient.convertToType(data['reportDefinitions'], [InlineResponse2004ReportDefinitions]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2012Links} _links
+   * @member {Array.<module:model/InlineResponse2004ReportDefinitions>} reportDefinitions
    */
-  exports.prototype['_links'] = undefined;
-  /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeUtc
-   */
-  exports.prototype['submitTimeUtc'] = undefined;
-  /**
-   * The status of the submitted transaction.
-   * @member {module:model/InlineResponse2004.StatusEnum} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @member {String} reconciliationId
-   */
-  exports.prototype['reconciliationId'] = undefined;
-  /**
-   * @member {module:model/InlineResponse201ClientReferenceInformation} clientReferenceInformation
-   */
-  exports.prototype['clientReferenceInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2004ProcessingInformation} processingInformation
-   */
-  exports.prototype['processingInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2012ProcessorInformation} processorInformation
-   */
-  exports.prototype['processorInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2004OrderInformation} orderInformation
-   */
-  exports.prototype['orderInformation'] = undefined;
-  /**
-   * @member {module:model/V2paymentsidcapturesBuyerInformation} buyerInformation
-   */
-  exports.prototype['buyerInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002MerchantInformation} merchantInformation
-   */
-  exports.prototype['merchantInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2004DeviceInformation} deviceInformation
-   */
-  exports.prototype['deviceInformation'] = undefined;
+  exports.prototype['reportDefinitions'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "PENDING"
-     * @const
-     */
-    "PENDING": "PENDING",
-    /**
-     * value: "TRANSMITTED"
-     * @const
-     */
-    "TRANSMITTED": "TRANSMITTED",
-    /**
-     * value: "BATCH_ERROR"
-     * @const
-     */
-    "BATCH_ERROR": "BATCH_ERROR",
-    /**
-     * value: "VOIDED"
-     * @const
-     */
-    "VOIDED": "VOIDED"  };
 
 
   return exports;

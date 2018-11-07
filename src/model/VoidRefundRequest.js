@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/V2paymentsidreversalsClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidreversalsClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./V2paymentsidreversalsClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VoidRefundRequest = factory(root.CyberSource.ApiClient, root.CyberSource.V2paymentsidreversalsClientReferenceInformation);
+    root.CyberSource.VoidRefundRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation);
   }
-}(this, function(ApiClient, V2paymentsidreversalsClientReferenceInformation) {
+}(this, function(ApiClient, Ptsv2paymentsidreversalsClientReferenceInformation) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = V2paymentsidreversalsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Ptsv2paymentsidreversalsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/V2paymentsidreversalsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Ptsv2paymentsidreversalsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
 

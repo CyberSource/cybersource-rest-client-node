@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InstrumentidentifiersLinks', 'model/InstrumentidentifiersMetadata', 'model/PaymentinstrumentsBankAccount', 'model/PaymentinstrumentsBillTo', 'model/PaymentinstrumentsBuyerInformation', 'model/PaymentinstrumentsCard', 'model/PaymentinstrumentsInstrumentIdentifier', 'model/PaymentinstrumentsMerchantInformation', 'model/PaymentinstrumentsProcessingInformation'], factory);
+    define(['ApiClient', 'model/Tmsv1instrumentidentifiersLinks', 'model/Tmsv1instrumentidentifiersMetadata', 'model/Tmsv1paymentinstrumentsBankAccount', 'model/Tmsv1paymentinstrumentsBillTo', 'model/Tmsv1paymentinstrumentsBuyerInformation', 'model/Tmsv1paymentinstrumentsCard', 'model/Tmsv1paymentinstrumentsInstrumentIdentifier', 'model/Tmsv1paymentinstrumentsMerchantInformation', 'model/Tmsv1paymentinstrumentsProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InstrumentidentifiersLinks'), require('./InstrumentidentifiersMetadata'), require('./PaymentinstrumentsBankAccount'), require('./PaymentinstrumentsBillTo'), require('./PaymentinstrumentsBuyerInformation'), require('./PaymentinstrumentsCard'), require('./PaymentinstrumentsInstrumentIdentifier'), require('./PaymentinstrumentsMerchantInformation'), require('./PaymentinstrumentsProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersLinks'), require('./Tmsv1instrumentidentifiersMetadata'), require('./Tmsv1paymentinstrumentsBankAccount'), require('./Tmsv1paymentinstrumentsBillTo'), require('./Tmsv1paymentinstrumentsBuyerInformation'), require('./Tmsv1paymentinstrumentsCard'), require('./Tmsv1paymentinstrumentsInstrumentIdentifier'), require('./Tmsv1paymentinstrumentsMerchantInformation'), require('./Tmsv1paymentinstrumentsProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2016 = factory(root.CyberSource.ApiClient, root.CyberSource.InstrumentidentifiersLinks, root.CyberSource.InstrumentidentifiersMetadata, root.CyberSource.PaymentinstrumentsBankAccount, root.CyberSource.PaymentinstrumentsBillTo, root.CyberSource.PaymentinstrumentsBuyerInformation, root.CyberSource.PaymentinstrumentsCard, root.CyberSource.PaymentinstrumentsInstrumentIdentifier, root.CyberSource.PaymentinstrumentsMerchantInformation, root.CyberSource.PaymentinstrumentsProcessingInformation);
+    root.CyberSource.InlineResponse2016 = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersLinks, root.CyberSource.Tmsv1instrumentidentifiersMetadata, root.CyberSource.Tmsv1paymentinstrumentsBankAccount, root.CyberSource.Tmsv1paymentinstrumentsBillTo, root.CyberSource.Tmsv1paymentinstrumentsBuyerInformation, root.CyberSource.Tmsv1paymentinstrumentsCard, root.CyberSource.Tmsv1paymentinstrumentsInstrumentIdentifier, root.CyberSource.Tmsv1paymentinstrumentsMerchantInformation, root.CyberSource.Tmsv1paymentinstrumentsProcessingInformation);
   }
-}(this, function(ApiClient, InstrumentidentifiersLinks, InstrumentidentifiersMetadata, PaymentinstrumentsBankAccount, PaymentinstrumentsBillTo, PaymentinstrumentsBuyerInformation, PaymentinstrumentsCard, PaymentinstrumentsInstrumentIdentifier, PaymentinstrumentsMerchantInformation, PaymentinstrumentsProcessingInformation) {
+}(this, function(ApiClient, Tmsv1instrumentidentifiersLinks, Tmsv1instrumentidentifiersMetadata, Tmsv1paymentinstrumentsBankAccount, Tmsv1paymentinstrumentsBillTo, Tmsv1paymentinstrumentsBuyerInformation, Tmsv1paymentinstrumentsCard, Tmsv1paymentinstrumentsInstrumentIdentifier, Tmsv1paymentinstrumentsMerchantInformation, Tmsv1paymentinstrumentsProcessingInformation) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InstrumentidentifiersLinks.constructFromObject(data['_links']);
+        obj['_links'] = Tmsv1instrumentidentifiersLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -85,35 +85,35 @@
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
       }
       if (data.hasOwnProperty('bankAccount')) {
-        obj['bankAccount'] = PaymentinstrumentsBankAccount.constructFromObject(data['bankAccount']);
+        obj['bankAccount'] = Tmsv1paymentinstrumentsBankAccount.constructFromObject(data['bankAccount']);
       }
       if (data.hasOwnProperty('card')) {
-        obj['card'] = PaymentinstrumentsCard.constructFromObject(data['card']);
+        obj['card'] = Tmsv1paymentinstrumentsCard.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('buyerInformation')) {
-        obj['buyerInformation'] = PaymentinstrumentsBuyerInformation.constructFromObject(data['buyerInformation']);
+        obj['buyerInformation'] = Tmsv1paymentinstrumentsBuyerInformation.constructFromObject(data['buyerInformation']);
       }
       if (data.hasOwnProperty('billTo')) {
-        obj['billTo'] = PaymentinstrumentsBillTo.constructFromObject(data['billTo']);
+        obj['billTo'] = Tmsv1paymentinstrumentsBillTo.constructFromObject(data['billTo']);
       }
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = PaymentinstrumentsProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = Tmsv1paymentinstrumentsProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = PaymentinstrumentsMerchantInformation.constructFromObject(data['merchantInformation']);
+        obj['merchantInformation'] = Tmsv1paymentinstrumentsMerchantInformation.constructFromObject(data['merchantInformation']);
       }
       if (data.hasOwnProperty('metaData')) {
-        obj['metaData'] = InstrumentidentifiersMetadata.constructFromObject(data['metaData']);
+        obj['metaData'] = Tmsv1instrumentidentifiersMetadata.constructFromObject(data['metaData']);
       }
       if (data.hasOwnProperty('instrumentIdentifier')) {
-        obj['instrumentIdentifier'] = PaymentinstrumentsInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
+        obj['instrumentIdentifier'] = Tmsv1paymentinstrumentsInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InstrumentidentifiersLinks} _links
+   * @member {module:model/Tmsv1instrumentidentifiersLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -132,35 +132,35 @@
    */
   exports.prototype['state'] = undefined;
   /**
-   * @member {module:model/PaymentinstrumentsBankAccount} bankAccount
+   * @member {module:model/Tmsv1paymentinstrumentsBankAccount} bankAccount
    */
   exports.prototype['bankAccount'] = undefined;
   /**
-   * @member {module:model/PaymentinstrumentsCard} card
+   * @member {module:model/Tmsv1paymentinstrumentsCard} card
    */
   exports.prototype['card'] = undefined;
   /**
-   * @member {module:model/PaymentinstrumentsBuyerInformation} buyerInformation
+   * @member {module:model/Tmsv1paymentinstrumentsBuyerInformation} buyerInformation
    */
   exports.prototype['buyerInformation'] = undefined;
   /**
-   * @member {module:model/PaymentinstrumentsBillTo} billTo
+   * @member {module:model/Tmsv1paymentinstrumentsBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
   /**
-   * @member {module:model/PaymentinstrumentsProcessingInformation} processingInformation
+   * @member {module:model/Tmsv1paymentinstrumentsProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/PaymentinstrumentsMerchantInformation} merchantInformation
+   * @member {module:model/Tmsv1paymentinstrumentsMerchantInformation} merchantInformation
    */
   exports.prototype['merchantInformation'] = undefined;
   /**
-   * @member {module:model/InstrumentidentifiersMetadata} metaData
+   * @member {module:model/Tmsv1instrumentidentifiersMetadata} metaData
    */
   exports.prototype['metaData'] = undefined;
   /**
-   * @member {module:model/PaymentinstrumentsInstrumentIdentifier} instrumentIdentifier
+   * @member {module:model/Tmsv1paymentinstrumentsInstrumentIdentifier} instrumentIdentifier
    */
   exports.prototype['instrumentIdentifier'] = undefined;
 

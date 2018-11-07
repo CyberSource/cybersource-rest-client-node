@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002BuyerInformation', 'model/InlineResponse2002DeviceInformation', 'model/InlineResponse2002MerchantInformation', 'model/InlineResponse2002OrderInformation', 'model/InlineResponse2002PaymentInformation', 'model/InlineResponse2002ProcessingInformation', 'model/InlineResponse2002ProcessorInformation', 'model/InlineResponse201ClientReferenceInformation', 'model/InlineResponse201Embedded', 'model/InlineResponse201ErrorInformation', 'model/InlineResponse201Links'], factory);
+    define(['ApiClient', 'model/InlineResponse2002Links', 'model/InlineResponse2002TransactionBatches'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002BuyerInformation'), require('./InlineResponse2002DeviceInformation'), require('./InlineResponse2002MerchantInformation'), require('./InlineResponse2002OrderInformation'), require('./InlineResponse2002PaymentInformation'), require('./InlineResponse2002ProcessingInformation'), require('./InlineResponse2002ProcessorInformation'), require('./InlineResponse201ClientReferenceInformation'), require('./InlineResponse201Embedded'), require('./InlineResponse201ErrorInformation'), require('./InlineResponse201Links'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002Links'), require('./InlineResponse2002TransactionBatches'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002BuyerInformation, root.CyberSource.InlineResponse2002DeviceInformation, root.CyberSource.InlineResponse2002MerchantInformation, root.CyberSource.InlineResponse2002OrderInformation, root.CyberSource.InlineResponse2002PaymentInformation, root.CyberSource.InlineResponse2002ProcessingInformation, root.CyberSource.InlineResponse2002ProcessorInformation, root.CyberSource.InlineResponse201ClientReferenceInformation, root.CyberSource.InlineResponse201Embedded, root.CyberSource.InlineResponse201ErrorInformation, root.CyberSource.InlineResponse201Links);
+    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002Links, root.CyberSource.InlineResponse2002TransactionBatches);
   }
-}(this, function(ApiClient, InlineResponse2002BuyerInformation, InlineResponse2002DeviceInformation, InlineResponse2002MerchantInformation, InlineResponse2002OrderInformation, InlineResponse2002PaymentInformation, InlineResponse2002ProcessingInformation, InlineResponse2002ProcessorInformation, InlineResponse201ClientReferenceInformation, InlineResponse201Embedded, InlineResponse201ErrorInformation, InlineResponse201Links) {
+}(this, function(ApiClient, InlineResponse2002Links, InlineResponse2002TransactionBatches) {
   'use strict';
 
 
@@ -50,18 +50,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   };
 
   /**
@@ -75,147 +63,33 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('transactionBatches')) {
+        obj['transactionBatches'] = ApiClient.convertToType(data['transactionBatches'], [InlineResponse2002TransactionBatches]);
+      }
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse201Links.constructFromObject(data['_links']);
-      }
-      if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = InlineResponse201Embedded.constructFromObject(data['_embedded']);
-      }
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+        obj['_links'] = InlineResponse2002Links.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('submitTimeUtc')) {
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('reconciliationId')) {
-        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
-      }
-      if (data.hasOwnProperty('errorInformation')) {
-        obj['errorInformation'] = InlineResponse201ErrorInformation.constructFromObject(data['errorInformation']);
-      }
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = InlineResponse201ClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
-      }
-      if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = InlineResponse2002ProcessingInformation.constructFromObject(data['processingInformation']);
-      }
-      if (data.hasOwnProperty('processorInformation')) {
-        obj['processorInformation'] = InlineResponse2002ProcessorInformation.constructFromObject(data['processorInformation']);
-      }
-      if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = InlineResponse2002PaymentInformation.constructFromObject(data['paymentInformation']);
-      }
-      if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = InlineResponse2002OrderInformation.constructFromObject(data['orderInformation']);
-      }
-      if (data.hasOwnProperty('buyerInformation')) {
-        obj['buyerInformation'] = InlineResponse2002BuyerInformation.constructFromObject(data['buyerInformation']);
-      }
-      if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = InlineResponse2002MerchantInformation.constructFromObject(data['merchantInformation']);
-      }
-      if (data.hasOwnProperty('deviceInformation')) {
-        obj['deviceInformation'] = InlineResponse2002DeviceInformation.constructFromObject(data['deviceInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse201Links} _links
+   * @member {Array.<module:model/InlineResponse2002TransactionBatches>} transactionBatches
+   */
+  exports.prototype['transactionBatches'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2002Links} _links
    */
   exports.prototype['_links'] = undefined;
-  /**
-   * @member {module:model/InlineResponse201Embedded} _embedded
-   */
-  exports.prototype['_embedded'] = undefined;
-  /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
   /**
    * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
-  /**
-   * The status of the submitted transaction.
-   * @member {module:model/InlineResponse2002.StatusEnum} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @member {String} reconciliationId
-   */
-  exports.prototype['reconciliationId'] = undefined;
-  /**
-   * @member {module:model/InlineResponse201ErrorInformation} errorInformation
-   */
-  exports.prototype['errorInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse201ClientReferenceInformation} clientReferenceInformation
-   */
-  exports.prototype['clientReferenceInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002ProcessingInformation} processingInformation
-   */
-  exports.prototype['processingInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002ProcessorInformation} processorInformation
-   */
-  exports.prototype['processorInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002PaymentInformation} paymentInformation
-   */
-  exports.prototype['paymentInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002OrderInformation} orderInformation
-   */
-  exports.prototype['orderInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002BuyerInformation} buyerInformation
-   */
-  exports.prototype['buyerInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002MerchantInformation} merchantInformation
-   */
-  exports.prototype['merchantInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002DeviceInformation} deviceInformation
-   */
-  exports.prototype['deviceInformation'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "AUTHORIZED"
-     * @const
-     */
-    "AUTHORIZED": "AUTHORIZED",
-    /**
-     * value: "PARTIAL_AUTHORIZED"
-     * @const
-     */
-    "PARTIAL_AUTHORIZED": "PARTIAL_AUTHORIZED",
-    /**
-     * value: "AUTHORIZED_PENDING_REVIEW"
-     * @const
-     */
-    "AUTHORIZED_PENDING_REVIEW": "AUTHORIZED_PENDING_REVIEW",
-    /**
-     * value: "DECLINED"
-     * @const
-     */
-    "DECLINED": "DECLINED"  };
 
 
   return exports;

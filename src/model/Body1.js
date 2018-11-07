@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InstrumentidentifiersProcessingInformation'], factory);
+    define(['ApiClient', 'model/Tmsv1instrumentidentifiersProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InstrumentidentifiersProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Body1 = factory(root.CyberSource.ApiClient, root.CyberSource.InstrumentidentifiersProcessingInformation);
+    root.CyberSource.Body1 = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersProcessingInformation);
   }
-}(this, function(ApiClient, InstrumentidentifiersProcessingInformation) {
+}(this, function(ApiClient, Tmsv1instrumentidentifiersProcessingInformation) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = InstrumentidentifiersProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = Tmsv1instrumentidentifiersProcessingInformation.constructFromObject(data['processingInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InstrumentidentifiersProcessingInformation} processingInformation
+   * @member {module:model/Tmsv1instrumentidentifiersProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
 

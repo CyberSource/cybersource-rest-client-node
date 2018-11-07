@@ -113,52 +113,52 @@
   }
 
   /**
-   * Mapped Electronic Verification response code for the customerâ€™s name. 
+   * Mapped Electronic Verification response code for the customer’s name. 
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s last name
+   * Raw Electronic Verification response code from the processor for the customer’s last name
    * @member {String} codeRaw
    */
   exports.prototype['codeRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customerâ€™s email address. 
+   * Mapped Electronic Verification response code for the customer’s email address. 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s email address.
+   * Raw Electronic Verification response code from the processor for the customer’s email address.
    * @member {String} emailRaw
    */
   exports.prototype['emailRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customerâ€™s phone number. 
+   * Mapped Electronic Verification response code for the customer’s phone number. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s phone number.
+   * Raw Electronic Verification response code from the processor for the customer’s phone number.
    * @member {String} phoneNumberRaw
    */
   exports.prototype['phoneNumberRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customerâ€™s postal code. 
+   * Mapped Electronic Verification response code for the customer’s postal code. 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s postal code.
+   * Raw Electronic Verification response code from the processor for the customer’s postal code.
    * @member {String} postalCodeRaw
    */
   exports.prototype['postalCodeRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customerâ€™s street address. 
+   * Mapped Electronic Verification response code for the customer’s street address. 
    * @member {String} street
    */
   exports.prototype['street'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s street address.
+   * Raw Electronic Verification response code from the processor for the customer’s street address.
    * @member {String} streetRaw
    */
   exports.prototype['streetRaw'] = undefined;
