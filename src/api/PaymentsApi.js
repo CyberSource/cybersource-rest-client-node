@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentRequest', 'model/InlineResponse201', 'model/InlineResponse400', 'model/InlineResponse502'], factory);
+    define(['ApiClient', 'model/CreatePaymentRequest', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/InlineResponse201'), require('../model/InlineResponse400'), require('../model/InlineResponse502'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.InlineResponse201, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse502);
+    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(ApiClient, CreatePaymentRequest, InlineResponse201, InlineResponse400, InlineResponse502) {
+}(this, function(ApiClient, CreatePaymentRequest, PtsV2PaymentsPost201Response, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createPayment operation.
      * @callback module:api/PaymentsApi~createPaymentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse201} data The data returned by the service call.
+     * @param {module:model/PtsV2PaymentsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * Authorize the payment for the transaction. 
      * @param {module:model/CreatePaymentRequest} createPaymentRequest 
      * @param {module:api/PaymentsApi~createPaymentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse201}
+     * data is of type: {@link module:model/PtsV2PaymentsPost201Response}
      */
     this.createPayment = function(createPaymentRequest, callback) {
       var postBody = createPaymentRequest;
@@ -85,10 +85,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse201;
+      var returnType = PtsV2PaymentsPost201Response;
 
       return this.apiClient.callApi(
-        '/pts/v2/payments', 'POST',
+        '/pts/v2/payments/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

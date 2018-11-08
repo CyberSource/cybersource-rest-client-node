@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2006', 'model/InlineResponse2006Subscriptions', 'model/InlineResponse4007', 'model/RequestBody'], factory);
+    define(['ApiClient', 'model/ReportingV3NotificationofChangesGet400Response', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/RequestBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2006'), require('../model/InlineResponse2006Subscriptions'), require('../model/InlineResponse4007'), require('../model/RequestBody'));
+    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3NotificationofChangesGet400Response'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/RequestBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportSubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2006Subscriptions, root.CyberSource.InlineResponse4007, root.CyberSource.RequestBody);
+    root.CyberSource.ReportSubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3NotificationofChangesGet400Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.RequestBody);
   }
-}(this, function(ApiClient, InlineResponse2006, InlineResponse2006Subscriptions, InlineResponse4007, RequestBody) {
+}(this, function(ApiClient, ReportingV3NotificationofChangesGet400Response, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, RequestBody) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -64,7 +64,7 @@
      * @param {module:model/RequestBody} requestBody Report subscription request payload
      * @param {module:api/ReportSubscriptionsApi~createSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createSubscription = function(requestBody, callback) {
+    this.createSubscription = function( requestBody, callback) {
       var postBody = requestBody;
 
       // verify the required parameter 'reportName' is set
@@ -79,7 +79,7 @@
 
 
       var pathParams = {
-   //     'reportName': reportName
+      //  'reportName': reportName
       };
       var queryParams = {
       };
@@ -149,7 +149,7 @@
      * Callback function to receive the result of the getAllSubscriptions operation.
      * @callback module:api/ReportSubscriptionsApi~getAllSubscriptionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2006} data The data returned by the service call.
+     * @param {module:model/ReportingV3ReportSubscriptionsGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -157,7 +157,7 @@
      * Retrieve all subscriptions by organization
      * 
      * @param {module:api/ReportSubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2006}
+     * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200Response}
      */
     this.getAllSubscriptions = function(callback) {
       var postBody = null;
@@ -175,7 +175,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = InlineResponse2006;
+      var returnType = ReportingV3ReportSubscriptionsGet200Response;
 
       return this.apiClient.callApi(
         '/reporting/v3/report-subscriptions', 'GET',
@@ -188,7 +188,7 @@
      * Callback function to receive the result of the getSubscription operation.
      * @callback module:api/ReportSubscriptionsApi~getSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2006Subscriptions} data The data returned by the service call.
+     * @param {module:model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -197,7 +197,7 @@
      * 
      * @param {String} reportName Name of the Report to Retrieve
      * @param {module:api/ReportSubscriptionsApi~getSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2006Subscriptions}
+     * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions}
      */
     this.getSubscription = function(reportName, callback) {
       var postBody = null;
@@ -221,7 +221,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = InlineResponse2006Subscriptions;
+      var returnType = ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 
       return this.apiClient.callApi(
         '/reporting/v3/report-subscriptions/{reportName}', 'GET',

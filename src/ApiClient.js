@@ -475,8 +475,8 @@
       request.type('application/json');
     }
 
-   
-      
+
+
     if (contentType === 'application/x-www-form-urlencoded') {
       request.send(querystring.stringify(this.normalizeParams(formParams)));
     } else if (contentType == 'multipart/form-data') {
@@ -498,6 +498,20 @@
     var accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
+      /* Code for downloading file from stream */
+      if (accept === 'application/xml') {
+        var fs = require('fs');
+        var path = require('path');
+        var fileName;
+        if (queryParams['reportName'])
+          fileName = queryParams['reportName'] + '.xml';
+        else
+          fileName = "FileIdentifier.csv";
+        var filePath = path.join(this.merchantConfig.getKeysDirectory(), fileName);
+        var stream = fs.createWriteStream(path.resolve(filePath));
+        request.send().pipe(stream);
+        request._endCalled = false;
+      }
     }
 
     if (returnType === 'Blob') {
@@ -537,7 +551,7 @@
   };
 
   /**
-   * 
+   * @ghari
    * Build request target required for the signature generation
    * @param {String} path 
    * @param {Object} pathParams 

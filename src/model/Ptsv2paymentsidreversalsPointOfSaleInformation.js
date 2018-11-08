@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse201PointOfSaleInformationEmv'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse201PointOfSaleInformationEmv'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse201PointOfSaleInformationEmv);
+    root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv);
   }
-}(this, function(ApiClient, InlineResponse201PointOfSaleInformationEmv) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('emv')) {
-        obj['emv'] = InlineResponse201PointOfSaleInformationEmv.constructFromObject(data['emv']);
+        obj['emv'] = PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv.constructFromObject(data['emv']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse201PointOfSaleInformationEmv} emv
+   * @member {module:model/PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv} emv
    */
   exports.prototype['emv'] = undefined;
 

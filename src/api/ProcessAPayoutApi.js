@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4006', 'model/InlineResponse502', 'model/OctCreatePaymentRequest'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PayoutsPost400Response', 'model/PtsV2PayoutsPostResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4006'), require('../model/InlineResponse502'), require('../model/OctCreatePaymentRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PayoutsPost400Response'), require('../model/PtsV2PayoutsPostResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ProcessAPayoutApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse502, root.CyberSource.OctCreatePaymentRequest);
+    root.CyberSource.ProcessAPayoutApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PayoutsPost400Response, root.CyberSource.PtsV2PayoutsPostResponse);
   }
-}(this, function(ApiClient, InlineResponse4006, InlineResponse502, OctCreatePaymentRequest) {
+}(this, function(ApiClient, PtsV2PaymentsPost502Response, PtsV2PayoutsPost400Response, PtsV2PayoutsPostResponse) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -60,7 +60,7 @@
     /**
      * Process a Payout
      * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
-     * @param {module:model/OctCreatePaymentRequest} octCreatePaymentRequest 
+     * @param {module:model/PtsV2PayoutsPostResponse} octCreatePaymentRequest 
      * @param {module:api/ProcessAPayoutApi~octCreatePaymentCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.octCreatePayment = function(octCreatePaymentRequest, callback) {

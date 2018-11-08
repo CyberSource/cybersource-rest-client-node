@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2001', 'model/InlineResponseDefault', 'model/TokenizeRequest'], factory);
+    define(['ApiClient', 'model/FlexV1TokensPost200Response', 'model/InlineResponseDefault', 'model/TokenizeRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponseDefault'), require('../model/TokenizeRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/FlexV1TokensPost200Response'), require('../model/InlineResponseDefault'), require('../model/TokenizeRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.FlexTokenApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponseDefault, root.CyberSource.TokenizeRequest);
+    root.CyberSource.FlexTokenApi = factory(root.CyberSource.ApiClient, root.CyberSource.FlexV1TokensPost200Response, root.CyberSource.InlineResponseDefault, root.CyberSource.TokenizeRequest);
   }
-}(this, function(ApiClient, InlineResponse2001, InlineResponseDefault, TokenizeRequest) {
+}(this, function(ApiClient, FlexV1TokensPost200Response, InlineResponseDefault, TokenizeRequest) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the tokenize operation.
      * @callback module:api/FlexTokenApi~tokenizeCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/FlexV1TokensPost200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {Object} opts Optional parameters
      * @param {module:model/TokenizeRequest} opts.tokenizeRequest 
      * @param {module:api/FlexTokenApi~tokenizeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/FlexV1TokensPost200Response}
      */
     this.tokenize = function(opts, callback) {
       opts = opts || {};
@@ -82,7 +82,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2001;
+      var returnType = FlexV1TokensPost200Response;
 
       return this.apiClient.callApi(
         '/flex/v1/tokens/', 'POST',

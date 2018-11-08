@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CapturePaymentRequest', 'model/InlineResponse2012', 'model/InlineResponse4002', 'model/InlineResponse502'], factory);
+    define(['ApiClient', 'model/CapturePaymentRequest', 'model/PtsV2PaymentsCapturesPost201Response', 'model/PtsV2PaymentsCapturesPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CapturePaymentRequest'), require('../model/InlineResponse2012'), require('../model/InlineResponse4002'), require('../model/InlineResponse502'));
+    module.exports = factory(require('../ApiClient'), require('../model/CapturePaymentRequest'), require('../model/PtsV2PaymentsCapturesPost201Response'), require('../model/PtsV2PaymentsCapturesPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CaptureApi = factory(root.CyberSource.ApiClient, root.CyberSource.CapturePaymentRequest, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse502);
+    root.CyberSource.CaptureApi = factory(root.CyberSource.ApiClient, root.CyberSource.CapturePaymentRequest, root.CyberSource.PtsV2PaymentsCapturesPost201Response, root.CyberSource.PtsV2PaymentsCapturesPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(ApiClient, CapturePaymentRequest, InlineResponse2012, InlineResponse4002, InlineResponse502) {
+}(this, function(ApiClient, CapturePaymentRequest, PtsV2PaymentsCapturesPost201Response, PtsV2PaymentsCapturesPost400Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the capturePayment operation.
      * @callback module:api/CaptureApi~capturePaymentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2012} data The data returned by the service call.
+     * @param {module:model/PtsV2PaymentsCapturesPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {module:model/CapturePaymentRequest} capturePaymentRequest 
      * @param {String} id The payment ID returned from a previous payment request. This ID links the capture to the payment. 
      * @param {module:api/CaptureApi~capturePaymentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2012}
+     * data is of type: {@link module:model/PtsV2PaymentsCapturesPost201Response}
      */
     this.capturePayment = function(capturePaymentRequest, id, callback) {
       var postBody = capturePaymentRequest;
@@ -92,7 +92,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2012;
+      var returnType = PtsV2PaymentsCapturesPost201Response;
 
       return this.apiClient.callApi(
         '/pts/v2/payments/{id}/captures', 'POST',

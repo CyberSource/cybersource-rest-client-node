@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Body', 'model/InlineResponse20010', 'model/InlineResponse4008'], factory);
+    define(['ApiClient', 'model/Body', 'model/InlineResponse400', 'model/TmsV1InstrumentidentifiersPost200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse20010'), require('../model/InlineResponse4008'));
+    module.exports = factory(require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse400'), require('../model/TmsV1InstrumentidentifiersPost200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifiersApi = factory(root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse20010, root.CyberSource.InlineResponse4008);
+    root.CyberSource.InstrumentIdentifiersApi = factory(root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse400, root.CyberSource.TmsV1InstrumentidentifiersPost200Response);
   }
-}(this, function(ApiClient, Body, InlineResponse20010, InlineResponse4008) {
+}(this, function(ApiClient, Body, InlineResponse400, TmsV1InstrumentidentifiersPost200Response) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the tmsV1InstrumentidentifiersPost operation.
      * @callback module:api/InstrumentIdentifiersApi~tmsV1InstrumentidentifiersPostCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20010} data The data returned by the service call.
+     * @param {module:model/TmsV1InstrumentidentifiersPost200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
      * @param {module:model/Body} body Please specify either a Card or Bank Account.
      * @param {module:api/InstrumentIdentifiersApi~tmsV1InstrumentidentifiersPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20010}
+     * data is of type: {@link module:model/TmsV1InstrumentidentifiersPost200Response}
      */
     this.tmsV1InstrumentidentifiersPost = function(profileId, body, callback) {
       var postBody = body;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20010;
+      var returnType = TmsV1InstrumentidentifiersPost200Response;
 
       return this.apiClient.callApi(
         '/tms/v1/instrumentidentifiers', 'POST',

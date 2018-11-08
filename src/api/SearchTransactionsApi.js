@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateSearchRequest', 'model/InlineResponse2017', 'model/InlineResponse4009', 'model/InlineResponse502'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response', 'model/TssV2TransactionsPost400Response', 'model/TssV2TransactionsPostResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateSearchRequest'), require('../model/InlineResponse2017'), require('../model/InlineResponse4009'), require('../model/InlineResponse502'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'), require('../model/TssV2TransactionsPost400Response'), require('../model/TssV2TransactionsPostResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSearchRequest, root.CyberSource.InlineResponse2017, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse502);
+    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response, root.CyberSource.TssV2TransactionsPost400Response, root.CyberSource.TssV2TransactionsPostResponse);
   }
-}(this, function(ApiClient, CreateSearchRequest, InlineResponse2017, InlineResponse4009, InlineResponse502) {
+}(this, function(ApiClient, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response, TssV2TransactionsPost400Response, TssV2TransactionsPostResponse) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,16 +53,16 @@
      * Callback function to receive the result of the createSearch operation.
      * @callback module:api/SearchTransactionsApi~createSearchCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2017} data The data returned by the service call.
+     * @param {module:model/TssV2TransactionsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Create a search request
      * Create a search request. 
-     * @param {module:model/CreateSearchRequest} createSearchRequest 
+     * @param {module:model/TssV2TransactionsPostResponse} createSearchRequest 
      * @param {module:api/SearchTransactionsApi~createSearchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2017}
+     * data is of type: {@link module:model/TssV2TransactionsPost201Response}
      */
     this.createSearch = function(createSearchRequest, callback) {
       var postBody = createSearchRequest;
@@ -85,7 +85,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2017;
+      var returnType = TssV2TransactionsPost201Response;
 
       return this.apiClient.callApi(
         '/tss/v2/searches', 'POST',
@@ -98,7 +98,7 @@
      * Callback function to receive the result of the getSearch operation.
      * @callback module:api/SearchTransactionsApi~getSearchCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2017} data The data returned by the service call.
+     * @param {module:model/TssV2TransactionsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -107,7 +107,7 @@
      * Include the Search ID in the GET request to retrieve the search results.
      * @param {String} id Search ID.
      * @param {module:api/SearchTransactionsApi~getSearchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2017}
+     * data is of type: {@link module:model/TssV2TransactionsPost201Response}
      */
     this.getSearch = function(id, callback) {
       var postBody = null;
@@ -129,9 +129,9 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/json'];
+      var contentTypes =  ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2017;
+      var returnType = TssV2TransactionsPost201Response;
 
       return this.apiClient.callApi(
         '/tss/v2/searches/{id}', 'GET',

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002', 'model/InlineResponse4005', 'model/InlineResponse500'], factory);
+    define(['ApiClient', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse4005'), require('../model/InlineResponse500'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet200Response'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionBatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse500);
+    root.CyberSource.TransactionBatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet200Response, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response);
   }
-}(this, function(ApiClient, InlineResponse2002, InlineResponse4005, InlineResponse500) {
+}(this, function(ApiClient, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the ptsV1TransactionBatchesGet operation.
      * @callback module:api/TransactionBatchesApi~ptsV1TransactionBatchesGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/PtsV1TransactionBatchesGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ 
      * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ 
      * @param {module:api/TransactionBatchesApi~ptsV1TransactionBatchesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/PtsV1TransactionBatchesGet200Response}
      */
     this.ptsV1TransactionBatchesGet = function(startTime, endTime, callback) {
       var postBody = null;
@@ -93,7 +93,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = InlineResponse2002;
+      var returnType = PtsV1TransactionBatchesGet200Response;
 
       return this.apiClient.callApi(
         '/pts/v1/transaction-batches', 'GET',

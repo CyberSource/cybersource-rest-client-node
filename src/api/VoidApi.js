@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2015', 'model/InlineResponse4004', 'model/InlineResponse502', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsVoidsPost201Response', 'model/PtsV2PaymentsVoidsPost400Response', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2015'), require('../model/InlineResponse4004'), require('../model/InlineResponse502'), require('../model/VoidCaptureRequest'), require('../model/VoidCreditRequest'), require('../model/VoidPaymentRequest'), require('../model/VoidRefundRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsVoidsPost201Response'), require('../model/PtsV2PaymentsVoidsPost400Response'), require('../model/VoidCaptureRequest'), require('../model/VoidCreditRequest'), require('../model/VoidPaymentRequest'), require('../model/VoidRefundRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VoidApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2015, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse502, root.CyberSource.VoidCaptureRequest, root.CyberSource.VoidCreditRequest, root.CyberSource.VoidPaymentRequest, root.CyberSource.VoidRefundRequest);
+    root.CyberSource.VoidApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsVoidsPost201Response, root.CyberSource.PtsV2PaymentsVoidsPost400Response, root.CyberSource.VoidCaptureRequest, root.CyberSource.VoidCreditRequest, root.CyberSource.VoidPaymentRequest, root.CyberSource.VoidRefundRequest);
   }
-}(this, function(ApiClient, InlineResponse2015, InlineResponse4004, InlineResponse502, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest) {
+}(this, function(ApiClient, PtsV2PaymentsPost502Response, PtsV2PaymentsVoidsPost201Response, PtsV2PaymentsVoidsPost400Response, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest) {
   'use strict';
 
   /**
@@ -43,16 +43,17 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
+
 
     /**
      * Callback function to receive the result of the voidCapture operation.
      * @callback module:api/VoidApi~voidCaptureCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/PtsV2PaymentsVoidsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +63,7 @@
      * @param {module:model/VoidCaptureRequest} voidCaptureRequest 
      * @param {String} id The capture ID returned from a previous capture request.
      * @param {module:api/VoidApi~voidCaptureCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
+     * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
      */
     this.voidCapture = function(voidCaptureRequest, id, callback) {
       var postBody = voidCaptureRequest;
@@ -91,7 +92,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = PtsV2PaymentsVoidsPost201Response;
 
       return this.apiClient.callApi(
         '/pts/v2/captures/{id}/voids', 'POST',
@@ -104,7 +105,7 @@
      * Callback function to receive the result of the voidCredit operation.
      * @callback module:api/VoidApi~voidCreditCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/PtsV2PaymentsVoidsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -114,7 +115,7 @@
      * @param {module:model/VoidCreditRequest} voidCreditRequest 
      * @param {String} id The credit ID returned from a previous credit request.
      * @param {module:api/VoidApi~voidCreditCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
+     * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
      */
     this.voidCredit = function(voidCreditRequest, id, callback) {
       var postBody = voidCreditRequest;
@@ -143,7 +144,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = PtsV2PaymentsVoidsPost201Response;
 
       return this.apiClient.callApi(
         '/pts/v2/credits/{id}/voids', 'POST',
@@ -156,7 +157,7 @@
      * Callback function to receive the result of the voidPayment operation.
      * @callback module:api/VoidApi~voidPaymentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/PtsV2PaymentsVoidsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -166,7 +167,7 @@
      * @param {module:model/VoidPaymentRequest} voidPaymentRequest 
      * @param {String} id The payment ID returned from a previous payment request.
      * @param {module:api/VoidApi~voidPaymentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
+     * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
      */
     this.voidPayment = function(voidPaymentRequest, id, callback) {
       var postBody = voidPaymentRequest;
@@ -195,7 +196,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = PtsV2PaymentsVoidsPost201Response;
 
       return this.apiClient.callApi(
         '/pts/v2/payments/{id}/voids', 'POST',
@@ -208,7 +209,7 @@
      * Callback function to receive the result of the voidRefund operation.
      * @callback module:api/VoidApi~voidRefundCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/PtsV2PaymentsVoidsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -218,7 +219,7 @@
      * @param {module:model/VoidRefundRequest} voidRefundRequest 
      * @param {String} id The refund ID returned from a previous refund request.
      * @param {module:api/VoidApi~voidRefundCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
+     * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
      */
     this.voidRefund = function(voidRefundRequest, id, callback) {
       var postBody = voidRefundRequest;
@@ -247,7 +248,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = PtsV2PaymentsVoidsPost201Response;
 
       return this.apiClient.callApi(
         '/pts/v2/refunds/{id}/voids', 'POST',

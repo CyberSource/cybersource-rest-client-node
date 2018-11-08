@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2006ReportPreferences'], factory);
+    define(['ApiClient', 'model/ReportingV3ReportSubscriptionsGet200ResponseReportPreferences'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2006ReportPreferences'));
+    module.exports = factory(require('../ApiClient'), require('./ReportingV3ReportSubscriptionsGet200ResponseReportPreferences'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RequestBody = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2006ReportPreferences);
+    root.CyberSource.RequestBody = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseReportPreferences);
   }
-}(this, function(ApiClient, InlineResponse2006ReportPreferences) {
+}(this, function(ApiClient, ReportingV3ReportSubscriptionsGet200ResponseReportPreferences) {
   'use strict';
 
 
@@ -106,7 +106,7 @@
         obj['reportFilters'] = ApiClient.convertToType(data['reportFilters'], {'String': ['String']});
       }
       if (data.hasOwnProperty('reportPreferences')) {
-        obj['reportPreferences'] = InlineResponse2006ReportPreferences.constructFromObject(data['reportPreferences']);
+        obj['reportPreferences'] = ReportingV3ReportSubscriptionsGet200ResponseReportPreferences.constructFromObject(data['reportPreferences']);
       }
       if (data.hasOwnProperty('selectedMerchantGroupName')) {
         obj['selectedMerchantGroupName'] = ApiClient.convertToType(data['selectedMerchantGroupName'], 'String');
@@ -156,7 +156,7 @@
    */
   exports.prototype['reportFilters'] = undefined;
   /**
-   * @member {module:model/InlineResponse2006ReportPreferences} reportPreferences
+   * @member {module:model/ReportingV3ReportSubscriptionsGet200ResponseReportPreferences} reportPreferences
    */
   exports.prototype['reportPreferences'] = undefined;
   /**

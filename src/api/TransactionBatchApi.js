@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4005', 'model/InlineResponse500'], factory);
+    define(['ApiClient', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4005'), require('../model/InlineResponse500'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionBatchApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse500);
+    root.CyberSource.TransactionBatchApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response);
   }
-}(this, function(ApiClient, InlineResponse4005, InlineResponse500) {
+}(this, function(ApiClient, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);

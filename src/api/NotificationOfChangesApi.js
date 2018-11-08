@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2003', 'model/InlineResponse4007'], factory);
+    define(['ApiClient', 'model/ReportingV3NotificationofChangesGet200Response', 'model/ReportingV3NotificationofChangesGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2003'), require('../model/InlineResponse4007'));
+    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3NotificationofChangesGet200Response'), require('../model/ReportingV3NotificationofChangesGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.NotificationOfChangesApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse4007);
+    root.CyberSource.NotificationOfChangesApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3NotificationofChangesGet200Response, root.CyberSource.ReportingV3NotificationofChangesGet400Response);
   }
-}(this, function(ApiClient, InlineResponse2003, InlineResponse4007) {
+}(this, function(ApiClient, ReportingV3NotificationofChangesGet200Response, ReportingV3NotificationofChangesGet400Response) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getNotificationOfChangeReport operation.
      * @callback module:api/NotificationOfChangesApi~getNotificationOfChangeReportCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
+     * @param {module:model/ReportingV3NotificationofChangesGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX 
      * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX 
      * @param {module:api/NotificationOfChangesApi~getNotificationOfChangeReportCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * data is of type: {@link module:model/ReportingV3NotificationofChangesGet200Response}
      */
     this.getNotificationOfChangeReport = function(startTime, endTime, callback) {
       var postBody = null;
@@ -93,7 +93,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = InlineResponse2003;
+      var returnType = ReportingV3NotificationofChangesGet200Response;
 
       return this.apiClient.callApi(
         '/reporting/v3/notification-of-changes', 'GET',

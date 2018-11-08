@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200Der', 'model/InlineResponse200Jwk'], factory);
+    define(['ApiClient', 'model/FlexV1KeysPost200ResponseDer', 'model/FlexV1KeysPost200ResponseJwk'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse200Der'), require('./InlineResponse200Jwk'));
+    module.exports = factory(require('../ApiClient'), require('./FlexV1KeysPost200ResponseDer'), require('./FlexV1KeysPost200ResponseJwk'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.KeyResult = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200Der, root.CyberSource.InlineResponse200Jwk);
+    root.CyberSource.KeyResult = factory(root.CyberSource.ApiClient, root.CyberSource.FlexV1KeysPost200ResponseDer, root.CyberSource.FlexV1KeysPost200ResponseJwk);
   }
-}(this, function(ApiClient, InlineResponse200Der, InlineResponse200Jwk) {
+}(this, function(ApiClient, FlexV1KeysPost200ResponseDer, FlexV1KeysPost200ResponseJwk) {
   'use strict';
 
 
@@ -67,10 +67,10 @@
         obj['keyId'] = ApiClient.convertToType(data['keyId'], 'String');
       }
       if (data.hasOwnProperty('der')) {
-        obj['der'] = InlineResponse200Der.constructFromObject(data['der']);
+        obj['der'] = FlexV1KeysPost200ResponseDer.constructFromObject(data['der']);
       }
       if (data.hasOwnProperty('jwk')) {
-        obj['jwk'] = InlineResponse200Jwk.constructFromObject(data['jwk']);
+        obj['jwk'] = FlexV1KeysPost200ResponseJwk.constructFromObject(data['jwk']);
       }
     }
     return obj;
@@ -82,11 +82,11 @@
    */
   exports.prototype['keyId'] = undefined;
   /**
-   * @member {module:model/InlineResponse200Der} der
+   * @member {module:model/FlexV1KeysPost200ResponseDer} der
    */
   exports.prototype['der'] = undefined;
   /**
-   * @member {module:model/InlineResponse200Jwk} jwk
+   * @member {module:model/FlexV1KeysPost200ResponseJwk} jwk
    */
   exports.prototype['jwk'] = undefined;
 

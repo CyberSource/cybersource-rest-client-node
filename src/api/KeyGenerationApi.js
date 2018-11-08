@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GeneratePublicKeyRequest', 'model/InlineResponse200', 'model/InlineResponseDefault'], factory);
+    define(['ApiClient', 'model/FlexV1KeysPost200Response', 'model/GeneratePublicKeyRequest', 'model/InlineResponseDefault'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/GeneratePublicKeyRequest'), require('../model/InlineResponse200'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../ApiClient'), require('../model/FlexV1KeysPost200Response'), require('../model/GeneratePublicKeyRequest'), require('../model/InlineResponseDefault'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.KeyGenerationApi = factory(root.CyberSource.ApiClient, root.CyberSource.GeneratePublicKeyRequest, root.CyberSource.InlineResponse200, root.CyberSource.InlineResponseDefault);
+    root.CyberSource.KeyGenerationApi = factory(root.CyberSource.ApiClient, root.CyberSource.FlexV1KeysPost200Response, root.CyberSource.GeneratePublicKeyRequest, root.CyberSource.InlineResponseDefault);
   }
-}(this, function(ApiClient, GeneratePublicKeyRequest, InlineResponse200, InlineResponseDefault) {
+}(this, function(ApiClient, FlexV1KeysPost200Response, GeneratePublicKeyRequest, InlineResponseDefault) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the generatePublicKey operation.
      * @callback module:api/KeyGenerationApi~generatePublicKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {module:model/FlexV1KeysPost200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {Object} opts Optional parameters
      * @param {module:model/GeneratePublicKeyRequest} opts.generatePublicKeyRequest 
      * @param {module:api/KeyGenerationApi~generatePublicKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * data is of type: {@link module:model/FlexV1KeysPost200Response}
      */
     this.generatePublicKey = function(opts, callback) {
       opts = opts || {};
@@ -82,7 +82,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
+      var returnType = FlexV1KeysPost200Response;
 
       return this.apiClient.callApi(
         '/flex/v1/keys/', 'POST',

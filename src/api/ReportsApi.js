@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse4007', 'model/RequestBody1'], factory);
+    define(['ApiClient', 'model/ReportingV3NotificationofChangesGet400Response', 'model/ReportingV3ReportsGet200Response', 'model/ReportingV3ReportsIdGet200Response', 'model/RequestBody1'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse4007'), require('../model/RequestBody1'));
+    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3NotificationofChangesGet400Response'), require('../model/ReportingV3ReportsGet200Response'), require('../model/ReportingV3ReportsIdGet200Response'), require('../model/RequestBody1'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportsApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse2008, root.CyberSource.InlineResponse4007, root.CyberSource.RequestBody1);
+    root.CyberSource.ReportsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3NotificationofChangesGet400Response, root.CyberSource.ReportingV3ReportsGet200Response, root.CyberSource.ReportingV3ReportsIdGet200Response, root.CyberSource.RequestBody1);
   }
-}(this, function(ApiClient, InlineResponse2007, InlineResponse2008, InlineResponse4007, RequestBody1) {
+}(this, function(ApiClient, ReportingV3NotificationofChangesGet400Response, ReportingV3ReportsGet200Response, ReportingV3ReportsIdGet200Response, RequestBody1) {
   'use strict';
 
   /**
@@ -43,10 +43,11 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
+
 
     /**
      * Callback function to receive the result of the createReport operation.
@@ -62,7 +63,7 @@
      * @param {module:model/RequestBody1} requestBody Report subscription request payload
      * @param {module:api/ReportsApi~createReportCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createReport = function(requestBody, opts, callback) {
+    this.createReport = function(requestBody,opts, callback) {
       var postBody = requestBody;
 
       // verify the required parameter 'requestBody' is set
@@ -97,7 +98,7 @@
      * Callback function to receive the result of the getReportByReportId operation.
      * @callback module:api/ReportsApi~getReportByReportIdCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2008} data The data returned by the service call.
+     * @param {module:model/ReportingV3ReportsIdGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -108,7 +109,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/ReportsApi~getReportByReportIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2008}
+     * data is of type: {@link module:model/ReportingV3ReportsIdGet200Response}
      */
     this.getReportByReportId = function(reportId, opts, callback) {
       opts = opts || {};
@@ -134,7 +135,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json', 'application/xml'];
-      var returnType = InlineResponse2008;
+      var returnType = ReportingV3ReportsIdGet200Response;
 
       return this.apiClient.callApi(
         '/reporting/v3/reports/{reportId}', 'GET',
@@ -147,7 +148,7 @@
      * Callback function to receive the result of the searchReports operation.
      * @callback module:api/ReportsApi~searchReportsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
+     * @param {module:model/ReportingV3ReportsGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -165,7 +166,7 @@
      * @param {Number} opts.reportDefinitionId Valid Report Definition Id
      * @param {module:model/String} opts.reportStatus Valid Report Status
      * @param {module:api/ReportsApi~searchReportsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * data is of type: {@link module:model/ReportingV3ReportsGet200Response}
      */
     this.searchReports = function(startTime, endTime, timeQueryType, opts, callback) {
       opts = opts || {};
@@ -208,7 +209,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = InlineResponse2007;
+      var returnType = ReportingV3ReportsGet200Response;
 
       return this.apiClient.callApi(
         '/reporting/v3/reports', 'GET',

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2009', 'model/InlineResponse4007'], factory);
+    define(['ApiClient', 'model/ReportingV3NotificationofChangesGet400Response', 'model/V1FileDetailsGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2009'), require('../model/InlineResponse4007'));
+    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3NotificationofChangesGet400Response'), require('../model/V1FileDetailsGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SecureFileShareApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2009, root.CyberSource.InlineResponse4007);
+    root.CyberSource.SecureFileShareApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3NotificationofChangesGet400Response, root.CyberSource.V1FileDetailsGet200Response);
   }
-}(this, function(ApiClient, InlineResponse2009, InlineResponse4007) {
+}(this, function(ApiClient, ReportingV3NotificationofChangesGet400Response, V1FileDetailsGet200Response) {
   'use strict';
 
   /**
@@ -43,7 +43,7 @@
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    var exports = function(configObject, apiClient = undefined) {
+  var exports = function(configObject, apiClient = undefined) {
     this.apiClient = apiClient || ApiClient.instance;
 
     this.apiClient.setConfiguration(configObject);
@@ -87,12 +87,12 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/hal+json'];
+      var contentTypes = ['application/hal+json;charset=utf-8'];
       var accepts = ['application/xml', 'text/csv', 'application/pdf'];
       var returnType = null;
 
       return this.apiClient.callApi(
-        'sfs/v1/files/{fileId}', 'GET',
+        '/sfs/v1/files/{fileId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -102,7 +102,7 @@
      * Callback function to receive the result of the getFileDetails operation.
      * @callback module:api/SecureFileShareApi~getFileDetailsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2009} data The data returned by the service call.
+     * @param {module:model/V1FileDetailsGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -114,7 +114,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/SecureFileShareApi~getFileDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2009}
+     * data is of type: {@link module:model/V1FileDetailsGet200Response}
      */
     this.getFileDetails = function(startDate, endDate, opts, callback) {
       opts = opts || {};
@@ -146,7 +146,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = InlineResponse2009;
+      var returnType = V1FileDetailsGet200Response;
 
       return this.apiClient.callApi(
         '/sfs/v1/file-details', 'GET',
