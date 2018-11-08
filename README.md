@@ -50,7 +50,7 @@ To get started using this SDK, it's highly recommended to download our sample co
 In that respository, we have comprehensive sample code for all common uses of our API:
 
 Additionally, you can find details and examples of how our API is structured in our API Reference Guide:
-* [Developer Center API Reference](https://developer.cybersource.com/hello-world/testing-guide.html )
+* [Developer Center API Reference](https://developer.cybersource.com/api/reference/api-reference.html)
 
 The API Reference Guide provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request using this SDK.
 
@@ -64,7 +64,7 @@ The API Reference Guide provides examples of what information is needed for a pa
 `mocha test/<testfile>`
 
 ### Testing Guide
-For additional help in testing your own code, Authorize.Net maintains a [comprehensive testing guide](http://developer.authorize.net/hello_world/testing_guide/) that includes test credit card numbers to use and special triggers to generate certain responses from the sandbox environment.
+For additional help in testing your own code, Authorize.Net maintains a [comprehensive testing guide](https://developer.cybersource.com/hello-world/testing-guide.html) that includes test credit card numbers to use and special triggers to generate certain responses from the sandbox environment.
 
 
 ## License
