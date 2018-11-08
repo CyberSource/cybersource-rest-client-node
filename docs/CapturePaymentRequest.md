@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**V2paymentsClientReferenceInformation**](V2paymentsClientReferenceInformation.md) |  | [optional] 
-**processingInformation** | [**V2paymentsidcapturesProcessingInformation**](V2paymentsidcapturesProcessingInformation.md) |  | [optional] 
-**paymentInformation** | [**V2paymentsidcapturesPaymentInformation**](V2paymentsidcapturesPaymentInformation.md) |  | [optional] 
-**orderInformation** | [**V2paymentsidcapturesOrderInformation**](V2paymentsidcapturesOrderInformation.md) |  | [optional] 
-**buyerInformation** | [**V2paymentsidcapturesBuyerInformation**](V2paymentsidcapturesBuyerInformation.md) |  | [optional] 
-**deviceInformation** | [**V2paymentsDeviceInformation**](V2paymentsDeviceInformation.md) |  | [optional] 
-**merchantInformation** | [**V2paymentsidcapturesMerchantInformation**](V2paymentsidcapturesMerchantInformation.md) |  | [optional] 
-**aggregatorInformation** | [**V2paymentsidcapturesAggregatorInformation**](V2paymentsidcapturesAggregatorInformation.md) |  | [optional] 
-**pointOfSaleInformation** | [**V2paymentsidcapturesPointOfSaleInformation**](V2paymentsidcapturesPointOfSaleInformation.md) |  | [optional] 
-**merchantDefinedInformation** | [**[V2paymentsMerchantDefinedInformation]**](V2paymentsMerchantDefinedInformation.md) | TBD | [optional] 
+**clientReferenceInformation** | [**Ptsv2paymentsClientReferenceInformation**](Ptsv2paymentsClientReferenceInformation.md) |  | [optional] 
+**processingInformation** | [**Ptsv2paymentsidcapturesProcessingInformation**](Ptsv2paymentsidcapturesProcessingInformation.md) |  | [optional] 
+**paymentInformation** | [**Ptsv2paymentsidcapturesPaymentInformation**](Ptsv2paymentsidcapturesPaymentInformation.md) |  | [optional] 
+**orderInformation** | [**Ptsv2paymentsidcapturesOrderInformation**](Ptsv2paymentsidcapturesOrderInformation.md) |  | [optional] 
+**buyerInformation** | [**Ptsv2paymentsidcapturesBuyerInformation**](Ptsv2paymentsidcapturesBuyerInformation.md) |  | [optional] 
+**deviceInformation** | [**Ptsv2paymentsDeviceInformation**](Ptsv2paymentsDeviceInformation.md) |  | [optional] 
+**merchantInformation** | [**Ptsv2paymentsidcapturesMerchantInformation**](Ptsv2paymentsidcapturesMerchantInformation.md) |  | [optional] 
+**aggregatorInformation** | [**Ptsv2paymentsidcapturesAggregatorInformation**](Ptsv2paymentsidcapturesAggregatorInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**Ptsv2paymentsidcapturesPointOfSaleInformation**](Ptsv2paymentsidcapturesPointOfSaleInformation.md) |  | [optional] 
+**merchantDefinedInformation** | [**[Ptsv2paymentsMerchantDefinedInformation]**](Ptsv2paymentsMerchantDefinedInformation.md) | Description of this field is not available. | [optional] 
 
 

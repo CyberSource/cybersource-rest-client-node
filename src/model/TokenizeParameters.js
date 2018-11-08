@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Paymentsflexv1tokensCardInfo'], factory);
+    define(['ApiClient', 'model/Flexv1tokensCardInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Paymentsflexv1tokensCardInfo'));
+    module.exports = factory(require('../ApiClient'), require('./Flexv1tokensCardInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenizeParameters = factory(root.CyberSource.ApiClient, root.CyberSource.Paymentsflexv1tokensCardInfo);
+    root.CyberSource.TokenizeParameters = factory(root.CyberSource.ApiClient, root.CyberSource.Flexv1tokensCardInfo);
   }
-}(this, function(ApiClient, Paymentsflexv1tokensCardInfo) {
+}(this, function(ApiClient, Flexv1tokensCardInfo) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['keyId'] = ApiClient.convertToType(data['keyId'], 'String');
       }
       if (data.hasOwnProperty('cardInfo')) {
-        obj['cardInfo'] = Paymentsflexv1tokensCardInfo.constructFromObject(data['cardInfo']);
+        obj['cardInfo'] = Flexv1tokensCardInfo.constructFromObject(data['cardInfo']);
       }
     }
     return obj;
@@ -78,7 +78,7 @@
    */
   exports.prototype['keyId'] = undefined;
   /**
-   * @member {module:model/Paymentsflexv1tokensCardInfo} cardInfo
+   * @member {module:model/Flexv1tokensCardInfo} cardInfo
    */
   exports.prototype['cardInfo'] = undefined;
 

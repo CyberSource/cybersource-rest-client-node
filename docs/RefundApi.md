@@ -1,63 +1,16 @@
 # CyberSource.RefundApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRefund**](RefundApi.md#getRefund) | **GET** /v2/refunds/{id} | Retrieve a Refund
-[**refundCapture**](RefundApi.md#refundCapture) | **POST** /v2/captures/{id}/refunds | Refund a Capture
-[**refundPayment**](RefundApi.md#refundPayment) | **POST** /v2/payments/{id}/refunds | Refund a Payment
+[**refundCapture**](RefundApi.md#refundCapture) | **POST** /pts/v2/captures/{id}/refunds | Refund a Capture
+[**refundPayment**](RefundApi.md#refundPayment) | **POST** /pts/v2/payments/{id}/refunds | Refund a Payment
 
-
-<a name="getRefund"></a>
-# **getRefund**
-> InlineResponse2005 getRefund(id)
-
-Retrieve a Refund
-
-Include the refund ID in the GET request to to retrieve the refund details.
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.RefundApi();
-
-var id = "id_example"; // String | The refund ID. This ID is returned from a previous refund request.
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRefund(id, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The refund ID. This ID is returned from a previous refund request. | 
-
-### Return type
-
-[**InlineResponse2005**](InlineResponse2005.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
 
 <a name="refundCapture"></a>
 # **refundCapture**
-> InlineResponse2013 refundCapture(refundCaptureRequest, id)
+> PtsV2PaymentsRefundPost201Response refundCapture(refundCaptureRequest, id)
 
 Refund a Capture
 
@@ -93,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**PtsV2PaymentsRefundPost201Response**](PtsV2PaymentsRefundPost201Response.md)
 
 ### Authorization
 
@@ -101,12 +54,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="refundPayment"></a>
 # **refundPayment**
-> InlineResponse2013 refundPayment(refundPaymentRequest, id)
+> PtsV2PaymentsRefundPost201Response refundPayment(refundPaymentRequest, id)
 
 Refund a Payment
 
@@ -142,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**PtsV2PaymentsRefundPost201Response**](PtsV2PaymentsRefundPost201Response.md)
 
 ### Authorization
 
@@ -150,6 +103,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

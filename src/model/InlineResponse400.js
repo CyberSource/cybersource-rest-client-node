@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse201ErrorInformationDetails'], factory);
+    define(['ApiClient', 'model/Tmsv1instrumentidentifiersDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse201ErrorInformationDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse400 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse201ErrorInformationDetails);
+    root.CyberSource.InlineResponse400 = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersDetails);
   }
-}(this, function(ApiClient, InlineResponse201ErrorInformationDetails) {
+}(this, function(ApiClient, Tmsv1instrumentidentifiersDetails) {
   'use strict';
 
 
@@ -50,8 +50,6 @@
 
 
 
-
-
   };
 
   /**
@@ -65,119 +63,33 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse201ErrorInformationDetails]);
+        obj['details'] = Tmsv1instrumentidentifiersDetails.constructFromObject(data['details']);
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeUtc
+   * @member {String} type
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * The status of the submitted transaction.
-   * @member {module:model/InlineResponse400.StatusEnum} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * The reason of the status. 
-   * @member {module:model/InlineResponse400.ReasonEnum} reason
-   */
-  exports.prototype['reason'] = undefined;
-  /**
-   * The detail message related to the status and reason listed above.
+   * The detailed message related to the type stated above.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse201ErrorInformationDetails>} details
+   * @member {module:model/Tmsv1instrumentidentifiersDetails} details
    */
   exports.prototype['details'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "INVALID_REQUEST"
-     * @const
-     */
-    "REQUEST": "INVALID_REQUEST"  };
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "MISSING_FIELD"
-     * @const
-     */
-    "MISSING_FIELD": "MISSING_FIELD",
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA",
-    /**
-     * value: "DUPLICATE_REQUEST"
-     * @const
-     */
-    "DUPLICATE_REQUEST": "DUPLICATE_REQUEST",
-    /**
-     * value: "INVALID_CARD"
-     * @const
-     */
-    "INVALID_CARD": "INVALID_CARD",
-    /**
-     * value: "CARD_TYPE_NOT_ACCEPTED"
-     * @const
-     */
-    "CARD_TYPE_NOT_ACCEPTED": "CARD_TYPE_NOT_ACCEPTED",
-    /**
-     * value: "INVALID_MERCHANT_CONFIGURATION"
-     * @const
-     */
-    "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
-    /**
-     * value: "PROCESSOR_UNAVAILABLE"
-     * @const
-     */
-    "PROCESSOR_UNAVAILABLE": "PROCESSOR_UNAVAILABLE",
-    /**
-     * value: "INVALID_AMOUNT"
-     * @const
-     */
-    "INVALID_AMOUNT": "INVALID_AMOUNT",
-    /**
-     * value: "INVALID_CARD_TYPE"
-     * @const
-     */
-    "INVALID_CARD_TYPE": "INVALID_CARD_TYPE",
-    /**
-     * value: "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"
-     * @const
-     */
-    "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT": "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"  };
 
 
   return exports;

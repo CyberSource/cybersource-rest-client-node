@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthReversalRequest', 'model/Body', 'model/Body1', 'model/Body2', 'model/Body3', 'model/CapturePaymentRequest', 'model/CardInfo', 'model/CreateCreditRequest', 'model/CreatePaymentRequest', 'model/DerPublicKey', 'model/Error', 'model/ErrorLinks', 'model/ErrorResponse', 'model/GeneratePublicKeyRequest', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2002BuyerInformation', 'model/InlineResponse2002DeviceInformation', 'model/InlineResponse2002MerchantInformation', 'model/InlineResponse2002OrderInformation', 'model/InlineResponse2002OrderInformationAmountDetails', 'model/InlineResponse2002OrderInformationBillTo', 'model/InlineResponse2002OrderInformationInvoiceDetails', 'model/InlineResponse2002OrderInformationLineItems', 'model/InlineResponse2002OrderInformationShipTo', 'model/InlineResponse2002PaymentInformation', 'model/InlineResponse2002PaymentInformationCard', 'model/InlineResponse2002PaymentInformationTokenizedCard', 'model/InlineResponse2002ProcessingInformation', 'model/InlineResponse2002ProcessorInformation', 'model/InlineResponse2002ProcessorInformationAvs', 'model/InlineResponse2002ProcessorInformationCardVerification', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2004DeviceInformation', 'model/InlineResponse2004OrderInformation', 'model/InlineResponse2004OrderInformationAmountDetails', 'model/InlineResponse2004OrderInformationInvoiceDetails', 'model/InlineResponse2004OrderInformationShipTo', 'model/InlineResponse2004ProcessingInformation', 'model/InlineResponse2004ProcessingInformationAuthorizationOptions', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2008Links', 'model/InlineResponse2008LinksFirst', 'model/InlineResponse2008LinksLast', 'model/InlineResponse2008LinksNext', 'model/InlineResponse2008LinksPrev', 'model/InlineResponse2008LinksSelf', 'model/InlineResponse200Der', 'model/InlineResponse200Jwk', 'model/InlineResponse201', 'model/InlineResponse2011', 'model/InlineResponse2011AuthorizationInformation', 'model/InlineResponse2011ProcessorInformation', 'model/InlineResponse2011ReversalAmountDetails', 'model/InlineResponse2012', 'model/InlineResponse2012Links', 'model/InlineResponse2012OrderInformation', 'model/InlineResponse2012OrderInformationAmountDetails', 'model/InlineResponse2012ProcessorInformation', 'model/InlineResponse2013', 'model/InlineResponse2013Links', 'model/InlineResponse2013OrderInformation', 'model/InlineResponse2013ProcessorInformation', 'model/InlineResponse2013RefundAmountDetails', 'model/InlineResponse2014', 'model/InlineResponse2014CreditAmountDetails', 'model/InlineResponse2015', 'model/InlineResponse2015VoidAmountDetails', 'model/InlineResponse2016', 'model/InlineResponse201ClientReferenceInformation', 'model/InlineResponse201Embedded', 'model/InlineResponse201EmbeddedCapture', 'model/InlineResponse201EmbeddedCaptureLinks', 'model/InlineResponse201ErrorInformation', 'model/InlineResponse201ErrorInformationDetails', 'model/InlineResponse201Links', 'model/InlineResponse201LinksSelf', 'model/InlineResponse201OrderInformation', 'model/InlineResponse201OrderInformationAmountDetails', 'model/InlineResponse201OrderInformationInvoiceDetails', 'model/InlineResponse201PaymentInformation', 'model/InlineResponse201PaymentInformationAccountFeatures', 'model/InlineResponse201PaymentInformationCard', 'model/InlineResponse201PaymentInformationTokenizedCard', 'model/InlineResponse201PointOfSaleInformation', 'model/InlineResponse201PointOfSaleInformationEmv', 'model/InlineResponse201ProcessorInformation', 'model/InlineResponse201ProcessorInformationAvs', 'model/InlineResponse201ProcessorInformationCardVerification', 'model/InlineResponse201ProcessorInformationConsumerAuthenticationResponse', 'model/InlineResponse201ProcessorInformationCustomer', 'model/InlineResponse201ProcessorInformationElectronicVerificationResults', 'model/InlineResponse201ProcessorInformationIssuer', 'model/InlineResponse201ProcessorInformationMerchantAdvice', 'model/InlineResponse400', 'model/InlineResponse4001', 'model/InlineResponse4002', 'model/InlineResponse4003', 'model/InlineResponse4004', 'model/InlineResponse4005', 'model/InlineResponse4006', 'model/InlineResponse409', 'model/InlineResponse409Links', 'model/InlineResponse409LinksPaymentInstruments', 'model/InlineResponse502', 'model/InlineResponseDefault', 'model/InlineResponseDefaultLinks', 'model/InlineResponseDefaultLinksNext', 'model/InlineResponseDefaultResponseStatus', 'model/InlineResponseDefaultResponseStatusDetails', 'model/InstrumentidentifiersBankAccount', 'model/InstrumentidentifiersCard', 'model/InstrumentidentifiersDetails', 'model/InstrumentidentifiersLinks', 'model/InstrumentidentifiersLinksSelf', 'model/InstrumentidentifiersMetadata', 'model/InstrumentidentifiersProcessingInformation', 'model/InstrumentidentifiersProcessingInformationAuthorizationOptions', 'model/InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiator', 'model/InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'model/JsonWebKey', 'model/KeyParameters', 'model/KeyResult', 'model/Link', 'model/Links', 'model/OctCreatePaymentRequest', 'model/PaymentinstrumentsBankAccount', 'model/PaymentinstrumentsBillTo', 'model/PaymentinstrumentsBuyerInformation', 'model/PaymentinstrumentsBuyerInformationIssuedBy', 'model/PaymentinstrumentsBuyerInformationPersonalIdentification', 'model/PaymentinstrumentsCard', 'model/PaymentinstrumentsInstrumentIdentifier', 'model/PaymentinstrumentsMerchantInformation', 'model/PaymentinstrumentsMerchantInformationMerchantDescriptor', 'model/PaymentinstrumentsProcessingInformation', 'model/PaymentinstrumentsProcessingInformationBankTransferOptions', 'model/Paymentsflexv1tokensCardInfo', 'model/RefundCaptureRequest', 'model/RefundPaymentRequest', 'model/ResponseStatus', 'model/ResponseStatusDetails', 'model/TokenizeParameters', 'model/TokenizeRequest', 'model/TokenizeResult', 'model/V2creditsPointOfSaleInformation', 'model/V2creditsPointOfSaleInformationEmv', 'model/V2creditsProcessingInformation', 'model/V2paymentsAggregatorInformation', 'model/V2paymentsAggregatorInformationSubMerchant', 'model/V2paymentsBuyerInformation', 'model/V2paymentsBuyerInformationPersonalIdentification', 'model/V2paymentsClientReferenceInformation', 'model/V2paymentsConsumerAuthenticationInformation', 'model/V2paymentsDeviceInformation', 'model/V2paymentsMerchantDefinedInformation', 'model/V2paymentsMerchantInformation', 'model/V2paymentsMerchantInformationMerchantDescriptor', 'model/V2paymentsOrderInformation', 'model/V2paymentsOrderInformationAmountDetails', 'model/V2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts', 'model/V2paymentsOrderInformationAmountDetailsSurcharge', 'model/V2paymentsOrderInformationAmountDetailsTaxDetails', 'model/V2paymentsOrderInformationBillTo', 'model/V2paymentsOrderInformationInvoiceDetails', 'model/V2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum', 'model/V2paymentsOrderInformationLineItems', 'model/V2paymentsOrderInformationShipTo', 'model/V2paymentsOrderInformationShippingDetails', 'model/V2paymentsPaymentInformation', 'model/V2paymentsPaymentInformationCard', 'model/V2paymentsPaymentInformationCustomer', 'model/V2paymentsPaymentInformationFluidData', 'model/V2paymentsPaymentInformationTokenizedCard', 'model/V2paymentsPointOfSaleInformation', 'model/V2paymentsPointOfSaleInformationEmv', 'model/V2paymentsProcessingInformation', 'model/V2paymentsProcessingInformationAuthorizationOptions', 'model/V2paymentsProcessingInformationAuthorizationOptionsInitiator', 'model/V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'model/V2paymentsProcessingInformationCaptureOptions', 'model/V2paymentsProcessingInformationIssuer', 'model/V2paymentsProcessingInformationRecurringOptions', 'model/V2paymentsRecipientInformation', 'model/V2paymentsidcapturesAggregatorInformation', 'model/V2paymentsidcapturesAggregatorInformationSubMerchant', 'model/V2paymentsidcapturesBuyerInformation', 'model/V2paymentsidcapturesMerchantInformation', 'model/V2paymentsidcapturesOrderInformation', 'model/V2paymentsidcapturesOrderInformationAmountDetails', 'model/V2paymentsidcapturesOrderInformationBillTo', 'model/V2paymentsidcapturesOrderInformationInvoiceDetails', 'model/V2paymentsidcapturesOrderInformationShipTo', 'model/V2paymentsidcapturesOrderInformationShippingDetails', 'model/V2paymentsidcapturesPaymentInformation', 'model/V2paymentsidcapturesPointOfSaleInformation', 'model/V2paymentsidcapturesPointOfSaleInformationEmv', 'model/V2paymentsidcapturesProcessingInformation', 'model/V2paymentsidcapturesProcessingInformationAuthorizationOptions', 'model/V2paymentsidcapturesProcessingInformationCaptureOptions', 'model/V2paymentsidrefundsMerchantInformation', 'model/V2paymentsidrefundsOrderInformation', 'model/V2paymentsidrefundsOrderInformationLineItems', 'model/V2paymentsidrefundsPaymentInformation', 'model/V2paymentsidrefundsPaymentInformationCard', 'model/V2paymentsidrefundsPointOfSaleInformation', 'model/V2paymentsidrefundsProcessingInformation', 'model/V2paymentsidrefundsProcessingInformationRecurringOptions', 'model/V2paymentsidreversalsClientReferenceInformation', 'model/V2paymentsidreversalsOrderInformation', 'model/V2paymentsidreversalsOrderInformationLineItems', 'model/V2paymentsidreversalsPointOfSaleInformation', 'model/V2paymentsidreversalsProcessingInformation', 'model/V2paymentsidreversalsReversalInformation', 'model/V2paymentsidreversalsReversalInformationAmountDetails', 'model/V2payoutsMerchantInformation', 'model/V2payoutsMerchantInformationMerchantDescriptor', 'model/V2payoutsOrderInformation', 'model/V2payoutsOrderInformationAmountDetails', 'model/V2payoutsOrderInformationBillTo', 'model/V2payoutsPaymentInformation', 'model/V2payoutsPaymentInformationCard', 'model/V2payoutsProcessingInformation', 'model/V2payoutsProcessingInformationPayoutsOptions', 'model/V2payoutsRecipientInformation', 'model/V2payoutsSenderInformation', 'model/V2payoutsSenderInformationAccount', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest', 'api/CaptureApi', 'api/CreditApi', 'api/DefaultApi', 'api/InstrumentIdentifierApi', 'api/KeyGenerationApi', 'api/PaymentApi', 'api/PaymentInstrumentApi', 'api/RefundApi', 'api/ReversalApi', 'api/TokenizationApi', 'api/VoidApi'], factory);
+    define(['ApiClient', 'model/AuthReversalRequest', 'model/Body', 'model/Body1', 'model/Body2', 'model/Body3', 'model/CapturePaymentRequest', 'model/CardInfo', 'model/CreateCreditRequest', 'model/CreatePaymentRequest', 'model/DerPublicKey', 'model/Error', 'model/ErrorLinks', 'model/ErrorResponse', 'model/FlexV1KeysPost200Response', 'model/FlexV1KeysPost200ResponseDer', 'model/FlexV1KeysPost200ResponseJwk', 'model/FlexV1TokensPost200Response', 'model/Flexv1tokensCardInfo', 'model/GeneratePublicKeyRequest', 'model/InlineResponse400', 'model/InlineResponseDefault', 'model/InlineResponseDefaultLinks', 'model/InlineResponseDefaultLinksNext', 'model/InlineResponseDefaultResponseStatus', 'model/InlineResponseDefaultResponseStatusDetails', 'model/JsonWebKey', 'model/KeyParameters', 'model/KeyResult', 'model/Link', 'model/Links', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet200ResponseLinks', 'model/PtsV1TransactionBatchesGet200ResponseLinksSelf', 'model/PtsV1TransactionBatchesGet200ResponseTransactionBatches', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet400ResponseErrorInformation', 'model/PtsV1TransactionBatchesGet400ResponseErrorInformationDetails', 'model/PtsV1TransactionBatchesGet500Response', 'model/PtsV1TransactionBatchesGet500ResponseErrorInformation', 'model/PtsV2CreditsPost201Response', 'model/PtsV2CreditsPost201ResponseCreditAmountDetails', 'model/PtsV2PaymentsCapturesPost201Response', 'model/PtsV2PaymentsCapturesPost201ResponseLinks', 'model/PtsV2PaymentsCapturesPost201ResponseOrderInformation', 'model/PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails', 'model/PtsV2PaymentsCapturesPost201ResponseProcessorInformation', 'model/PtsV2PaymentsCapturesPost400Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseLinksSelf', 'model/PtsV2PaymentsPost201ResponseOrderInformation', 'model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails', 'model/PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails', 'model/PtsV2PaymentsPost201ResponsePaymentInformation', 'model/PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures', 'model/PtsV2PaymentsPost201ResponsePaymentInformationCard', 'model/PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard', 'model/PtsV2PaymentsPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv', 'model/PtsV2PaymentsPost201ResponseProcessorInformation', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults', 'model/PtsV2PaymentsPost201ResponseProcessorInformationIssuer', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsRefundPost201Response', 'model/PtsV2PaymentsRefundPost201ResponseLinks', 'model/PtsV2PaymentsRefundPost201ResponseOrderInformation', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformation', 'model/PtsV2PaymentsRefundPost201ResponseRefundAmountDetails', 'model/PtsV2PaymentsRefundPost400Response', 'model/PtsV2PaymentsReversalsPost201Response', 'model/PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation', 'model/PtsV2PaymentsReversalsPost201ResponseLinks', 'model/PtsV2PaymentsReversalsPost201ResponseProcessorInformation', 'model/PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails', 'model/PtsV2PaymentsReversalsPost400Response', 'model/PtsV2PaymentsVoidsPost201Response', 'model/PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails', 'model/PtsV2PaymentsVoidsPost400Response', 'model/PtsV2PayoutsPost400Response', 'model/PtsV2PayoutsPostResponse', 'model/Ptsv2creditsPointOfSaleInformation', 'model/Ptsv2creditsPointOfSaleInformationEmv', 'model/Ptsv2creditsProcessingInformation', 'model/Ptsv2paymentsAggregatorInformation', 'model/Ptsv2paymentsAggregatorInformationSubMerchant', 'model/Ptsv2paymentsBuyerInformation', 'model/Ptsv2paymentsBuyerInformationPersonalIdentification', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsConsumerAuthenticationInformation', 'model/Ptsv2paymentsDeviceInformation', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2paymentsMerchantInformation', 'model/Ptsv2paymentsMerchantInformationMerchantDescriptor', 'model/Ptsv2paymentsOrderInformation', 'model/Ptsv2paymentsOrderInformationAmountDetails', 'model/Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts', 'model/Ptsv2paymentsOrderInformationAmountDetailsSurcharge', 'model/Ptsv2paymentsOrderInformationAmountDetailsTaxDetails', 'model/Ptsv2paymentsOrderInformationBillTo', 'model/Ptsv2paymentsOrderInformationInvoiceDetails', 'model/Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum', 'model/Ptsv2paymentsOrderInformationLineItems', 'model/Ptsv2paymentsOrderInformationShipTo', 'model/Ptsv2paymentsOrderInformationShippingDetails', 'model/Ptsv2paymentsPaymentInformation', 'model/Ptsv2paymentsPaymentInformationCard', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsPointOfSaleInformation', 'model/Ptsv2paymentsPointOfSaleInformationEmv', 'model/Ptsv2paymentsProcessingInformation', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'model/Ptsv2paymentsProcessingInformationCaptureOptions', 'model/Ptsv2paymentsProcessingInformationIssuer', 'model/Ptsv2paymentsProcessingInformationRecurringOptions', 'model/Ptsv2paymentsRecipientInformation', 'model/Ptsv2paymentsidcapturesAggregatorInformation', 'model/Ptsv2paymentsidcapturesAggregatorInformationSubMerchant', 'model/Ptsv2paymentsidcapturesBuyerInformation', 'model/Ptsv2paymentsidcapturesMerchantInformation', 'model/Ptsv2paymentsidcapturesOrderInformation', 'model/Ptsv2paymentsidcapturesOrderInformationAmountDetails', 'model/Ptsv2paymentsidcapturesOrderInformationBillTo', 'model/Ptsv2paymentsidcapturesOrderInformationInvoiceDetails', 'model/Ptsv2paymentsidcapturesOrderInformationShipTo', 'model/Ptsv2paymentsidcapturesOrderInformationShippingDetails', 'model/Ptsv2paymentsidcapturesPaymentInformation', 'model/Ptsv2paymentsidcapturesPointOfSaleInformation', 'model/Ptsv2paymentsidcapturesPointOfSaleInformationEmv', 'model/Ptsv2paymentsidcapturesProcessingInformation', 'model/Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions', 'model/Ptsv2paymentsidrefundsMerchantInformation', 'model/Ptsv2paymentsidrefundsOrderInformation', 'model/Ptsv2paymentsidrefundsOrderInformationLineItems', 'model/Ptsv2paymentsidrefundsPaymentInformation', 'model/Ptsv2paymentsidrefundsPaymentInformationCard', 'model/Ptsv2paymentsidrefundsPointOfSaleInformation', 'model/Ptsv2paymentsidrefundsProcessingInformation', 'model/Ptsv2paymentsidrefundsProcessingInformationRecurringOptions', 'model/Ptsv2paymentsidreversalsClientReferenceInformation', 'model/Ptsv2paymentsidreversalsOrderInformation', 'model/Ptsv2paymentsidreversalsOrderInformationLineItems', 'model/Ptsv2paymentsidreversalsPointOfSaleInformation', 'model/Ptsv2paymentsidreversalsProcessingInformation', 'model/Ptsv2paymentsidreversalsReversalInformation', 'model/Ptsv2paymentsidreversalsReversalInformationAmountDetails', 'model/Ptsv2payoutsMerchantInformation', 'model/Ptsv2payoutsMerchantInformationMerchantDescriptor', 'model/Ptsv2payoutsOrderInformation', 'model/Ptsv2payoutsOrderInformationAmountDetails', 'model/Ptsv2payoutsOrderInformationAmountDetailsSurcharge', 'model/Ptsv2payoutsOrderInformationBillTo', 'model/Ptsv2payoutsPaymentInformation', 'model/Ptsv2payoutsPaymentInformationCard', 'model/Ptsv2payoutsProcessingInformation', 'model/Ptsv2payoutsProcessingInformationPayoutsOptions', 'model/Ptsv2payoutsRecipientInformation', 'model/Ptsv2payoutsSenderInformation', 'model/Ptsv2payoutsSenderInformationAccount', 'model/RefundCaptureRequest', 'model/RefundPaymentRequest', 'model/ReportingV3NotificationofChangesGet200Response', 'model/ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges', 'model/ReportingV3NotificationofChangesGet400Response', 'model/ReportingV3NotificationofChangesGet400ResponseFields', 'model/ReportingV3ReportDefinitionsGet200Response', 'model/ReportingV3ReportDefinitionsGet200ResponseReportDefinitions', 'model/ReportingV3ReportDefinitionsNameGet200Response', 'model/ReportingV3ReportDefinitionsNameGet200ResponseAttributes', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseReportPreferences', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/ReportingV3ReportsGet200Response', 'model/ReportingV3ReportsGet200ResponseReports', 'model/ReportingV3ReportsIdGet200Response', 'model/RequestBody', 'model/RequestBody1', 'model/ResponseStatus', 'model/ResponseStatusDetails', 'model/TmsV1InstrumentidentifiersDelete409Response', 'model/TmsV1InstrumentidentifiersDelete409ResponseLinks', 'model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf', 'model/TmsV1InstrumentidentifiersPost200Response', 'model/TmsV1PaymentinstrumentsPost201Response', 'model/Tmsv1instrumentidentifiersBankAccount', 'model/Tmsv1instrumentidentifiersCard', 'model/Tmsv1instrumentidentifiersDetails', 'model/Tmsv1instrumentidentifiersLinks', 'model/Tmsv1instrumentidentifiersLinksSelf', 'model/Tmsv1instrumentidentifiersMetadata', 'model/Tmsv1instrumentidentifiersProcessingInformation', 'model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions', 'model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator', 'model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'model/Tmsv1paymentinstrumentsBankAccount', 'model/Tmsv1paymentinstrumentsBillTo', 'model/Tmsv1paymentinstrumentsBuyerInformation', 'model/Tmsv1paymentinstrumentsBuyerInformationIssuedBy', 'model/Tmsv1paymentinstrumentsBuyerInformationPersonalIdentification', 'model/Tmsv1paymentinstrumentsCard', 'model/Tmsv1paymentinstrumentsInstrumentIdentifier', 'model/Tmsv1paymentinstrumentsMerchantInformation', 'model/Tmsv1paymentinstrumentsMerchantInformationMerchantDescriptor', 'model/Tmsv1paymentinstrumentsProcessingInformation', 'model/Tmsv1paymentinstrumentsProcessingInformationBankTransferOptions', 'model/TokenizeParameters', 'model/TokenizeRequest', 'model/TokenizeResult', 'model/TssV2TransactionsGet200Response', 'model/TssV2TransactionsGet200ResponseApplicationInformation', 'model/TssV2TransactionsGet200ResponseApplicationInformationApplications', 'model/TssV2TransactionsGet200ResponseBuyerInformation', 'model/TssV2TransactionsGet200ResponseClientReferenceInformation', 'model/TssV2TransactionsGet200ResponseConsumerAuthenticationInformation', 'model/TssV2TransactionsGet200ResponseDeviceInformation', 'model/TssV2TransactionsGet200ResponseErrorInformation', 'model/TssV2TransactionsGet200ResponseFraudMarkingInformation', 'model/TssV2TransactionsGet200ResponseInstallmentInformation', 'model/TssV2TransactionsGet200ResponseMerchantDefinedInformation', 'model/TssV2TransactionsGet200ResponseMerchantInformation', 'model/TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor', 'model/TssV2TransactionsGet200ResponseOrderInformation', 'model/TssV2TransactionsGet200ResponseOrderInformationAmountDetails', 'model/TssV2TransactionsGet200ResponseOrderInformationBillTo', 'model/TssV2TransactionsGet200ResponseOrderInformationLineItems', 'model/TssV2TransactionsGet200ResponseOrderInformationShipTo', 'model/TssV2TransactionsGet200ResponseOrderInformationShippingDetails', 'model/TssV2TransactionsGet200ResponsePaymentInformation', 'model/TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures', 'model/TssV2TransactionsGet200ResponsePaymentInformationBank', 'model/TssV2TransactionsGet200ResponsePaymentInformationBankAccount', 'model/TssV2TransactionsGet200ResponsePaymentInformationBankMandate', 'model/TssV2TransactionsGet200ResponsePaymentInformationCard', 'model/TssV2TransactionsGet200ResponsePaymentInformationInvoice', 'model/TssV2TransactionsGet200ResponsePaymentInformationPaymentType', 'model/TssV2TransactionsGet200ResponsePointOfSaleInformation', 'model/TssV2TransactionsGet200ResponseProcessingInformation', 'model/TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions', 'model/TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions', 'model/TssV2TransactionsGet200ResponseProcessorInformation', 'model/TssV2TransactionsGet200ResponseProcessorInformationAchVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationCardVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults', 'model/TssV2TransactionsGet200ResponseProcessorInformationProcessor', 'model/TssV2TransactionsGet200ResponseRiskInformation', 'model/TssV2TransactionsGet200ResponseRiskInformationProfile', 'model/TssV2TransactionsGet200ResponseRiskInformationScore', 'model/TssV2TransactionsGet200ResponseSenderInformation', 'model/TssV2TransactionsPost201Response', 'model/TssV2TransactionsPost201ResponseEmbedded', 'model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedLinks', 'model/TssV2TransactionsPost201ResponseEmbeddedMerchantInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessorInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedRiskInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders', 'model/TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint', 'model/TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries', 'model/TssV2TransactionsPost400Response', 'model/TssV2TransactionsPostResponse', 'model/UmsV1UsersGet200Response', 'model/UmsV1UsersGet200ResponseAccountInformation', 'model/UmsV1UsersGet200ResponseContactInformation', 'model/UmsV1UsersGet200ResponseOrganizationInformation', 'model/UmsV1UsersGet200ResponseUsers', 'model/V1FileDetailsGet200Response', 'model/V1FileDetailsGet200ResponseFileDetails', 'model/V1FileDetailsGet200ResponseLinks', 'model/V1FileDetailsGet200ResponseLinksFiles', 'model/V1FileDetailsGet200ResponseLinksSelf', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest', 'api/CaptureApi', 'api/CreditApi', 'api/FlexTokenApi', 'api/InstrumentIdentifierApi', 'api/InstrumentIdentifiersApi', 'api/KeyGenerationApi', 'api/NotificationOfChangesApi', 'api/PaymentInstrumentsApi', 'api/PaymentsApi', 'api/ProcessAPayoutApi', 'api/PurchaseAndRefundDetailsApi', 'api/RefundApi', 'api/ReportDefinitionsApi', 'api/ReportDownloadsApi', 'api/ReportSubscriptionsApi', 'api/ReportsApi', 'api/ReversalApi', 'api/SearchTransactionsApi', 'api/SecureFileShareApi', 'api/TransactionBatchApi', 'api/TransactionBatchesApi', 'api/TransactionDetailsApi', 'api/UserManagementApi', 'api/VoidApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AuthReversalRequest'), require('./model/Body'), require('./model/Body1'), require('./model/Body2'), require('./model/Body3'), require('./model/CapturePaymentRequest'), require('./model/CardInfo'), require('./model/CreateCreditRequest'), require('./model/CreatePaymentRequest'), require('./model/DerPublicKey'), require('./model/Error'), require('./model/ErrorLinks'), require('./model/ErrorResponse'), require('./model/GeneratePublicKeyRequest'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse2002'), require('./model/InlineResponse2002BuyerInformation'), require('./model/InlineResponse2002DeviceInformation'), require('./model/InlineResponse2002MerchantInformation'), require('./model/InlineResponse2002OrderInformation'), require('./model/InlineResponse2002OrderInformationAmountDetails'), require('./model/InlineResponse2002OrderInformationBillTo'), require('./model/InlineResponse2002OrderInformationInvoiceDetails'), require('./model/InlineResponse2002OrderInformationLineItems'), require('./model/InlineResponse2002OrderInformationShipTo'), require('./model/InlineResponse2002PaymentInformation'), require('./model/InlineResponse2002PaymentInformationCard'), require('./model/InlineResponse2002PaymentInformationTokenizedCard'), require('./model/InlineResponse2002ProcessingInformation'), require('./model/InlineResponse2002ProcessorInformation'), require('./model/InlineResponse2002ProcessorInformationAvs'), require('./model/InlineResponse2002ProcessorInformationCardVerification'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/InlineResponse2004DeviceInformation'), require('./model/InlineResponse2004OrderInformation'), require('./model/InlineResponse2004OrderInformationAmountDetails'), require('./model/InlineResponse2004OrderInformationInvoiceDetails'), require('./model/InlineResponse2004OrderInformationShipTo'), require('./model/InlineResponse2004ProcessingInformation'), require('./model/InlineResponse2004ProcessingInformationAuthorizationOptions'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2007'), require('./model/InlineResponse2008'), require('./model/InlineResponse2008Links'), require('./model/InlineResponse2008LinksFirst'), require('./model/InlineResponse2008LinksLast'), require('./model/InlineResponse2008LinksNext'), require('./model/InlineResponse2008LinksPrev'), require('./model/InlineResponse2008LinksSelf'), require('./model/InlineResponse200Der'), require('./model/InlineResponse200Jwk'), require('./model/InlineResponse201'), require('./model/InlineResponse2011'), require('./model/InlineResponse2011AuthorizationInformation'), require('./model/InlineResponse2011ProcessorInformation'), require('./model/InlineResponse2011ReversalAmountDetails'), require('./model/InlineResponse2012'), require('./model/InlineResponse2012Links'), require('./model/InlineResponse2012OrderInformation'), require('./model/InlineResponse2012OrderInformationAmountDetails'), require('./model/InlineResponse2012ProcessorInformation'), require('./model/InlineResponse2013'), require('./model/InlineResponse2013Links'), require('./model/InlineResponse2013OrderInformation'), require('./model/InlineResponse2013ProcessorInformation'), require('./model/InlineResponse2013RefundAmountDetails'), require('./model/InlineResponse2014'), require('./model/InlineResponse2014CreditAmountDetails'), require('./model/InlineResponse2015'), require('./model/InlineResponse2015VoidAmountDetails'), require('./model/InlineResponse2016'), require('./model/InlineResponse201ClientReferenceInformation'), require('./model/InlineResponse201Embedded'), require('./model/InlineResponse201EmbeddedCapture'), require('./model/InlineResponse201EmbeddedCaptureLinks'), require('./model/InlineResponse201ErrorInformation'), require('./model/InlineResponse201ErrorInformationDetails'), require('./model/InlineResponse201Links'), require('./model/InlineResponse201LinksSelf'), require('./model/InlineResponse201OrderInformation'), require('./model/InlineResponse201OrderInformationAmountDetails'), require('./model/InlineResponse201OrderInformationInvoiceDetails'), require('./model/InlineResponse201PaymentInformation'), require('./model/InlineResponse201PaymentInformationAccountFeatures'), require('./model/InlineResponse201PaymentInformationCard'), require('./model/InlineResponse201PaymentInformationTokenizedCard'), require('./model/InlineResponse201PointOfSaleInformation'), require('./model/InlineResponse201PointOfSaleInformationEmv'), require('./model/InlineResponse201ProcessorInformation'), require('./model/InlineResponse201ProcessorInformationAvs'), require('./model/InlineResponse201ProcessorInformationCardVerification'), require('./model/InlineResponse201ProcessorInformationConsumerAuthenticationResponse'), require('./model/InlineResponse201ProcessorInformationCustomer'), require('./model/InlineResponse201ProcessorInformationElectronicVerificationResults'), require('./model/InlineResponse201ProcessorInformationIssuer'), require('./model/InlineResponse201ProcessorInformationMerchantAdvice'), require('./model/InlineResponse400'), require('./model/InlineResponse4001'), require('./model/InlineResponse4002'), require('./model/InlineResponse4003'), require('./model/InlineResponse4004'), require('./model/InlineResponse4005'), require('./model/InlineResponse4006'), require('./model/InlineResponse409'), require('./model/InlineResponse409Links'), require('./model/InlineResponse409LinksPaymentInstruments'), require('./model/InlineResponse502'), require('./model/InlineResponseDefault'), require('./model/InlineResponseDefaultLinks'), require('./model/InlineResponseDefaultLinksNext'), require('./model/InlineResponseDefaultResponseStatus'), require('./model/InlineResponseDefaultResponseStatusDetails'), require('./model/InstrumentidentifiersBankAccount'), require('./model/InstrumentidentifiersCard'), require('./model/InstrumentidentifiersDetails'), require('./model/InstrumentidentifiersLinks'), require('./model/InstrumentidentifiersLinksSelf'), require('./model/InstrumentidentifiersMetadata'), require('./model/InstrumentidentifiersProcessingInformation'), require('./model/InstrumentidentifiersProcessingInformationAuthorizationOptions'), require('./model/InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiator'), require('./model/InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'), require('./model/JsonWebKey'), require('./model/KeyParameters'), require('./model/KeyResult'), require('./model/Link'), require('./model/Links'), require('./model/OctCreatePaymentRequest'), require('./model/PaymentinstrumentsBankAccount'), require('./model/PaymentinstrumentsBillTo'), require('./model/PaymentinstrumentsBuyerInformation'), require('./model/PaymentinstrumentsBuyerInformationIssuedBy'), require('./model/PaymentinstrumentsBuyerInformationPersonalIdentification'), require('./model/PaymentinstrumentsCard'), require('./model/PaymentinstrumentsInstrumentIdentifier'), require('./model/PaymentinstrumentsMerchantInformation'), require('./model/PaymentinstrumentsMerchantInformationMerchantDescriptor'), require('./model/PaymentinstrumentsProcessingInformation'), require('./model/PaymentinstrumentsProcessingInformationBankTransferOptions'), require('./model/Paymentsflexv1tokensCardInfo'), require('./model/RefundCaptureRequest'), require('./model/RefundPaymentRequest'), require('./model/ResponseStatus'), require('./model/ResponseStatusDetails'), require('./model/TokenizeParameters'), require('./model/TokenizeRequest'), require('./model/TokenizeResult'), require('./model/V2creditsPointOfSaleInformation'), require('./model/V2creditsPointOfSaleInformationEmv'), require('./model/V2creditsProcessingInformation'), require('./model/V2paymentsAggregatorInformation'), require('./model/V2paymentsAggregatorInformationSubMerchant'), require('./model/V2paymentsBuyerInformation'), require('./model/V2paymentsBuyerInformationPersonalIdentification'), require('./model/V2paymentsClientReferenceInformation'), require('./model/V2paymentsConsumerAuthenticationInformation'), require('./model/V2paymentsDeviceInformation'), require('./model/V2paymentsMerchantDefinedInformation'), require('./model/V2paymentsMerchantInformation'), require('./model/V2paymentsMerchantInformationMerchantDescriptor'), require('./model/V2paymentsOrderInformation'), require('./model/V2paymentsOrderInformationAmountDetails'), require('./model/V2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts'), require('./model/V2paymentsOrderInformationAmountDetailsSurcharge'), require('./model/V2paymentsOrderInformationAmountDetailsTaxDetails'), require('./model/V2paymentsOrderInformationBillTo'), require('./model/V2paymentsOrderInformationInvoiceDetails'), require('./model/V2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum'), require('./model/V2paymentsOrderInformationLineItems'), require('./model/V2paymentsOrderInformationShipTo'), require('./model/V2paymentsOrderInformationShippingDetails'), require('./model/V2paymentsPaymentInformation'), require('./model/V2paymentsPaymentInformationCard'), require('./model/V2paymentsPaymentInformationCustomer'), require('./model/V2paymentsPaymentInformationFluidData'), require('./model/V2paymentsPaymentInformationTokenizedCard'), require('./model/V2paymentsPointOfSaleInformation'), require('./model/V2paymentsPointOfSaleInformationEmv'), require('./model/V2paymentsProcessingInformation'), require('./model/V2paymentsProcessingInformationAuthorizationOptions'), require('./model/V2paymentsProcessingInformationAuthorizationOptionsInitiator'), require('./model/V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'), require('./model/V2paymentsProcessingInformationCaptureOptions'), require('./model/V2paymentsProcessingInformationIssuer'), require('./model/V2paymentsProcessingInformationRecurringOptions'), require('./model/V2paymentsRecipientInformation'), require('./model/V2paymentsidcapturesAggregatorInformation'), require('./model/V2paymentsidcapturesAggregatorInformationSubMerchant'), require('./model/V2paymentsidcapturesBuyerInformation'), require('./model/V2paymentsidcapturesMerchantInformation'), require('./model/V2paymentsidcapturesOrderInformation'), require('./model/V2paymentsidcapturesOrderInformationAmountDetails'), require('./model/V2paymentsidcapturesOrderInformationBillTo'), require('./model/V2paymentsidcapturesOrderInformationInvoiceDetails'), require('./model/V2paymentsidcapturesOrderInformationShipTo'), require('./model/V2paymentsidcapturesOrderInformationShippingDetails'), require('./model/V2paymentsidcapturesPaymentInformation'), require('./model/V2paymentsidcapturesPointOfSaleInformation'), require('./model/V2paymentsidcapturesPointOfSaleInformationEmv'), require('./model/V2paymentsidcapturesProcessingInformation'), require('./model/V2paymentsidcapturesProcessingInformationAuthorizationOptions'), require('./model/V2paymentsidcapturesProcessingInformationCaptureOptions'), require('./model/V2paymentsidrefundsMerchantInformation'), require('./model/V2paymentsidrefundsOrderInformation'), require('./model/V2paymentsidrefundsOrderInformationLineItems'), require('./model/V2paymentsidrefundsPaymentInformation'), require('./model/V2paymentsidrefundsPaymentInformationCard'), require('./model/V2paymentsidrefundsPointOfSaleInformation'), require('./model/V2paymentsidrefundsProcessingInformation'), require('./model/V2paymentsidrefundsProcessingInformationRecurringOptions'), require('./model/V2paymentsidreversalsClientReferenceInformation'), require('./model/V2paymentsidreversalsOrderInformation'), require('./model/V2paymentsidreversalsOrderInformationLineItems'), require('./model/V2paymentsidreversalsPointOfSaleInformation'), require('./model/V2paymentsidreversalsProcessingInformation'), require('./model/V2paymentsidreversalsReversalInformation'), require('./model/V2paymentsidreversalsReversalInformationAmountDetails'), require('./model/V2payoutsMerchantInformation'), require('./model/V2payoutsMerchantInformationMerchantDescriptor'), require('./model/V2payoutsOrderInformation'), require('./model/V2payoutsOrderInformationAmountDetails'), require('./model/V2payoutsOrderInformationBillTo'), require('./model/V2payoutsPaymentInformation'), require('./model/V2payoutsPaymentInformationCard'), require('./model/V2payoutsProcessingInformation'), require('./model/V2payoutsProcessingInformationPayoutsOptions'), require('./model/V2payoutsRecipientInformation'), require('./model/V2payoutsSenderInformation'), require('./model/V2payoutsSenderInformationAccount'), require('./model/VoidCaptureRequest'), require('./model/VoidCreditRequest'), require('./model/VoidPaymentRequest'), require('./model/VoidRefundRequest'), require('./api/CaptureApi'), require('./api/CreditApi'), require('./api/DefaultApi'), require('./api/InstrumentIdentifierApi'), require('./api/KeyGenerationApi'), require('./api/PaymentApi'), require('./api/PaymentInstrumentApi'), require('./api/RefundApi'), require('./api/ReversalApi'), require('./api/TokenizationApi'), require('./api/VoidApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AuthReversalRequest'), require('./model/Body'), require('./model/Body1'), require('./model/Body2'), require('./model/Body3'), require('./model/CapturePaymentRequest'), require('./model/CardInfo'), require('./model/CreateCreditRequest'), require('./model/CreatePaymentRequest'), require('./model/DerPublicKey'), require('./model/Error'), require('./model/ErrorLinks'), require('./model/ErrorResponse'), require('./model/FlexV1KeysPost200Response'), require('./model/FlexV1KeysPost200ResponseDer'), require('./model/FlexV1KeysPost200ResponseJwk'), require('./model/FlexV1TokensPost200Response'), require('./model/Flexv1tokensCardInfo'), require('./model/GeneratePublicKeyRequest'), require('./model/InlineResponse400'), require('./model/InlineResponseDefault'), require('./model/InlineResponseDefaultLinks'), require('./model/InlineResponseDefaultLinksNext'), require('./model/InlineResponseDefaultResponseStatus'), require('./model/InlineResponseDefaultResponseStatusDetails'), require('./model/JsonWebKey'), require('./model/KeyParameters'), require('./model/KeyResult'), require('./model/Link'), require('./model/Links'), require('./model/PtsV1TransactionBatchesGet200Response'), require('./model/PtsV1TransactionBatchesGet200ResponseLinks'), require('./model/PtsV1TransactionBatchesGet200ResponseLinksSelf'), require('./model/PtsV1TransactionBatchesGet200ResponseTransactionBatches'), require('./model/PtsV1TransactionBatchesGet400Response'), require('./model/PtsV1TransactionBatchesGet400ResponseErrorInformation'), require('./model/PtsV1TransactionBatchesGet400ResponseErrorInformationDetails'), require('./model/PtsV1TransactionBatchesGet500Response'), require('./model/PtsV1TransactionBatchesGet500ResponseErrorInformation'), require('./model/PtsV2CreditsPost201Response'), require('./model/PtsV2CreditsPost201ResponseCreditAmountDetails'), require('./model/PtsV2PaymentsCapturesPost201Response'), require('./model/PtsV2PaymentsCapturesPost201ResponseLinks'), require('./model/PtsV2PaymentsCapturesPost201ResponseOrderInformation'), require('./model/PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails'), require('./model/PtsV2PaymentsCapturesPost201ResponseProcessorInformation'), require('./model/PtsV2PaymentsCapturesPost400Response'), require('./model/PtsV2PaymentsPost201Response'), require('./model/PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./model/PtsV2PaymentsPost201ResponseErrorInformation'), require('./model/PtsV2PaymentsPost201ResponseErrorInformationDetails'), require('./model/PtsV2PaymentsPost201ResponseLinks'), require('./model/PtsV2PaymentsPost201ResponseLinksSelf'), require('./model/PtsV2PaymentsPost201ResponseOrderInformation'), require('./model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'), require('./model/PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails'), require('./model/PtsV2PaymentsPost201ResponsePaymentInformation'), require('./model/PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures'), require('./model/PtsV2PaymentsPost201ResponsePaymentInformationCard'), require('./model/PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard'), require('./model/PtsV2PaymentsPost201ResponsePointOfSaleInformation'), require('./model/PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformation'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformationCustomer'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformationIssuer'), require('./model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./model/PtsV2PaymentsPost400Response'), require('./model/PtsV2PaymentsPost502Response'), require('./model/PtsV2PaymentsRefundPost201Response'), require('./model/PtsV2PaymentsRefundPost201ResponseLinks'), require('./model/PtsV2PaymentsRefundPost201ResponseOrderInformation'), require('./model/PtsV2PaymentsRefundPost201ResponseProcessorInformation'), require('./model/PtsV2PaymentsRefundPost201ResponseRefundAmountDetails'), require('./model/PtsV2PaymentsRefundPost400Response'), require('./model/PtsV2PaymentsReversalsPost201Response'), require('./model/PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation'), require('./model/PtsV2PaymentsReversalsPost201ResponseLinks'), require('./model/PtsV2PaymentsReversalsPost201ResponseProcessorInformation'), require('./model/PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails'), require('./model/PtsV2PaymentsReversalsPost400Response'), require('./model/PtsV2PaymentsVoidsPost201Response'), require('./model/PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails'), require('./model/PtsV2PaymentsVoidsPost400Response'), require('./model/PtsV2PayoutsPost400Response'), require('./model/PtsV2PayoutsPostResponse'), require('./model/Ptsv2creditsPointOfSaleInformation'), require('./model/Ptsv2creditsPointOfSaleInformationEmv'), require('./model/Ptsv2creditsProcessingInformation'), require('./model/Ptsv2paymentsAggregatorInformation'), require('./model/Ptsv2paymentsAggregatorInformationSubMerchant'), require('./model/Ptsv2paymentsBuyerInformation'), require('./model/Ptsv2paymentsBuyerInformationPersonalIdentification'), require('./model/Ptsv2paymentsClientReferenceInformation'), require('./model/Ptsv2paymentsConsumerAuthenticationInformation'), require('./model/Ptsv2paymentsDeviceInformation'), require('./model/Ptsv2paymentsMerchantDefinedInformation'), require('./model/Ptsv2paymentsMerchantInformation'), require('./model/Ptsv2paymentsMerchantInformationMerchantDescriptor'), require('./model/Ptsv2paymentsOrderInformation'), require('./model/Ptsv2paymentsOrderInformationAmountDetails'), require('./model/Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts'), require('./model/Ptsv2paymentsOrderInformationAmountDetailsSurcharge'), require('./model/Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'), require('./model/Ptsv2paymentsOrderInformationBillTo'), require('./model/Ptsv2paymentsOrderInformationInvoiceDetails'), require('./model/Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum'), require('./model/Ptsv2paymentsOrderInformationLineItems'), require('./model/Ptsv2paymentsOrderInformationShipTo'), require('./model/Ptsv2paymentsOrderInformationShippingDetails'), require('./model/Ptsv2paymentsPaymentInformation'), require('./model/Ptsv2paymentsPaymentInformationCard'), require('./model/Ptsv2paymentsPaymentInformationCustomer'), require('./model/Ptsv2paymentsPaymentInformationFluidData'), require('./model/Ptsv2paymentsPaymentInformationTokenizedCard'), require('./model/Ptsv2paymentsPointOfSaleInformation'), require('./model/Ptsv2paymentsPointOfSaleInformationEmv'), require('./model/Ptsv2paymentsProcessingInformation'), require('./model/Ptsv2paymentsProcessingInformationAuthorizationOptions'), require('./model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator'), require('./model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'), require('./model/Ptsv2paymentsProcessingInformationCaptureOptions'), require('./model/Ptsv2paymentsProcessingInformationIssuer'), require('./model/Ptsv2paymentsProcessingInformationRecurringOptions'), require('./model/Ptsv2paymentsRecipientInformation'), require('./model/Ptsv2paymentsidcapturesAggregatorInformation'), require('./model/Ptsv2paymentsidcapturesAggregatorInformationSubMerchant'), require('./model/Ptsv2paymentsidcapturesBuyerInformation'), require('./model/Ptsv2paymentsidcapturesMerchantInformation'), require('./model/Ptsv2paymentsidcapturesOrderInformation'), require('./model/Ptsv2paymentsidcapturesOrderInformationAmountDetails'), require('./model/Ptsv2paymentsidcapturesOrderInformationBillTo'), require('./model/Ptsv2paymentsidcapturesOrderInformationInvoiceDetails'), require('./model/Ptsv2paymentsidcapturesOrderInformationShipTo'), require('./model/Ptsv2paymentsidcapturesOrderInformationShippingDetails'), require('./model/Ptsv2paymentsidcapturesPaymentInformation'), require('./model/Ptsv2paymentsidcapturesPointOfSaleInformation'), require('./model/Ptsv2paymentsidcapturesPointOfSaleInformationEmv'), require('./model/Ptsv2paymentsidcapturesProcessingInformation'), require('./model/Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions'), require('./model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'), require('./model/Ptsv2paymentsidrefundsMerchantInformation'), require('./model/Ptsv2paymentsidrefundsOrderInformation'), require('./model/Ptsv2paymentsidrefundsOrderInformationLineItems'), require('./model/Ptsv2paymentsidrefundsPaymentInformation'), require('./model/Ptsv2paymentsidrefundsPaymentInformationCard'), require('./model/Ptsv2paymentsidrefundsPointOfSaleInformation'), require('./model/Ptsv2paymentsidrefundsProcessingInformation'), require('./model/Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'), require('./model/Ptsv2paymentsidreversalsClientReferenceInformation'), require('./model/Ptsv2paymentsidreversalsOrderInformation'), require('./model/Ptsv2paymentsidreversalsOrderInformationLineItems'), require('./model/Ptsv2paymentsidreversalsPointOfSaleInformation'), require('./model/Ptsv2paymentsidreversalsProcessingInformation'), require('./model/Ptsv2paymentsidreversalsReversalInformation'), require('./model/Ptsv2paymentsidreversalsReversalInformationAmountDetails'), require('./model/Ptsv2payoutsMerchantInformation'), require('./model/Ptsv2payoutsMerchantInformationMerchantDescriptor'), require('./model/Ptsv2payoutsOrderInformation'), require('./model/Ptsv2payoutsOrderInformationAmountDetails'), require('./model/Ptsv2payoutsOrderInformationAmountDetailsSurcharge'), require('./model/Ptsv2payoutsOrderInformationBillTo'), require('./model/Ptsv2payoutsPaymentInformation'), require('./model/Ptsv2payoutsPaymentInformationCard'), require('./model/Ptsv2payoutsProcessingInformation'), require('./model/Ptsv2payoutsProcessingInformationPayoutsOptions'), require('./model/Ptsv2payoutsRecipientInformation'), require('./model/Ptsv2payoutsSenderInformation'), require('./model/Ptsv2payoutsSenderInformationAccount'), require('./model/RefundCaptureRequest'), require('./model/RefundPaymentRequest'), require('./model/ReportingV3NotificationofChangesGet200Response'), require('./model/ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges'), require('./model/ReportingV3NotificationofChangesGet400Response'), require('./model/ReportingV3NotificationofChangesGet400ResponseFields'), require('./model/ReportingV3ReportDefinitionsGet200Response'), require('./model/ReportingV3ReportDefinitionsGet200ResponseReportDefinitions'), require('./model/ReportingV3ReportDefinitionsNameGet200Response'), require('./model/ReportingV3ReportDefinitionsNameGet200ResponseAttributes'), require('./model/ReportingV3ReportSubscriptionsGet200Response'), require('./model/ReportingV3ReportSubscriptionsGet200ResponseReportPreferences'), require('./model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('./model/ReportingV3ReportsGet200Response'), require('./model/ReportingV3ReportsGet200ResponseReports'), require('./model/ReportingV3ReportsIdGet200Response'), require('./model/RequestBody'), require('./model/RequestBody1'), require('./model/ResponseStatus'), require('./model/ResponseStatusDetails'), require('./model/TmsV1InstrumentidentifiersDelete409Response'), require('./model/TmsV1InstrumentidentifiersDelete409ResponseLinks'), require('./model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments'), require('./model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response'), require('./model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks'), require('./model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst'), require('./model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast'), require('./model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext'), require('./model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev'), require('./model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf'), require('./model/TmsV1InstrumentidentifiersPost200Response'), require('./model/TmsV1PaymentinstrumentsPost201Response'), require('./model/Tmsv1instrumentidentifiersBankAccount'), require('./model/Tmsv1instrumentidentifiersCard'), require('./model/Tmsv1instrumentidentifiersDetails'), require('./model/Tmsv1instrumentidentifiersLinks'), require('./model/Tmsv1instrumentidentifiersLinksSelf'), require('./model/Tmsv1instrumentidentifiersMetadata'), require('./model/Tmsv1instrumentidentifiersProcessingInformation'), require('./model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions'), require('./model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator'), require('./model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'), require('./model/Tmsv1paymentinstrumentsBankAccount'), require('./model/Tmsv1paymentinstrumentsBillTo'), require('./model/Tmsv1paymentinstrumentsBuyerInformation'), require('./model/Tmsv1paymentinstrumentsBuyerInformationIssuedBy'), require('./model/Tmsv1paymentinstrumentsBuyerInformationPersonalIdentification'), require('./model/Tmsv1paymentinstrumentsCard'), require('./model/Tmsv1paymentinstrumentsInstrumentIdentifier'), require('./model/Tmsv1paymentinstrumentsMerchantInformation'), require('./model/Tmsv1paymentinstrumentsMerchantInformationMerchantDescriptor'), require('./model/Tmsv1paymentinstrumentsProcessingInformation'), require('./model/Tmsv1paymentinstrumentsProcessingInformationBankTransferOptions'), require('./model/TokenizeParameters'), require('./model/TokenizeRequest'), require('./model/TokenizeResult'), require('./model/TssV2TransactionsGet200Response'), require('./model/TssV2TransactionsGet200ResponseApplicationInformation'), require('./model/TssV2TransactionsGet200ResponseApplicationInformationApplications'), require('./model/TssV2TransactionsGet200ResponseBuyerInformation'), require('./model/TssV2TransactionsGet200ResponseClientReferenceInformation'), require('./model/TssV2TransactionsGet200ResponseConsumerAuthenticationInformation'), require('./model/TssV2TransactionsGet200ResponseDeviceInformation'), require('./model/TssV2TransactionsGet200ResponseErrorInformation'), require('./model/TssV2TransactionsGet200ResponseFraudMarkingInformation'), require('./model/TssV2TransactionsGet200ResponseInstallmentInformation'), require('./model/TssV2TransactionsGet200ResponseMerchantDefinedInformation'), require('./model/TssV2TransactionsGet200ResponseMerchantInformation'), require('./model/TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor'), require('./model/TssV2TransactionsGet200ResponseOrderInformation'), require('./model/TssV2TransactionsGet200ResponseOrderInformationAmountDetails'), require('./model/TssV2TransactionsGet200ResponseOrderInformationBillTo'), require('./model/TssV2TransactionsGet200ResponseOrderInformationLineItems'), require('./model/TssV2TransactionsGet200ResponseOrderInformationShipTo'), require('./model/TssV2TransactionsGet200ResponseOrderInformationShippingDetails'), require('./model/TssV2TransactionsGet200ResponsePaymentInformation'), require('./model/TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures'), require('./model/TssV2TransactionsGet200ResponsePaymentInformationBank'), require('./model/TssV2TransactionsGet200ResponsePaymentInformationBankAccount'), require('./model/TssV2TransactionsGet200ResponsePaymentInformationBankMandate'), require('./model/TssV2TransactionsGet200ResponsePaymentInformationCard'), require('./model/TssV2TransactionsGet200ResponsePaymentInformationInvoice'), require('./model/TssV2TransactionsGet200ResponsePaymentInformationPaymentType'), require('./model/TssV2TransactionsGet200ResponsePointOfSaleInformation'), require('./model/TssV2TransactionsGet200ResponseProcessingInformation'), require('./model/TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions'), require('./model/TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions'), require('./model/TssV2TransactionsGet200ResponseProcessorInformation'), require('./model/TssV2TransactionsGet200ResponseProcessorInformationAchVerification'), require('./model/TssV2TransactionsGet200ResponseProcessorInformationCardVerification'), require('./model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'), require('./model/TssV2TransactionsGet200ResponseProcessorInformationProcessor'), require('./model/TssV2TransactionsGet200ResponseRiskInformation'), require('./model/TssV2TransactionsGet200ResponseRiskInformationProfile'), require('./model/TssV2TransactionsGet200ResponseRiskInformationScore'), require('./model/TssV2TransactionsGet200ResponseSenderInformation'), require('./model/TssV2TransactionsPost201Response'), require('./model/TssV2TransactionsPost201ResponseEmbedded'), require('./model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedLinks'), require('./model/TssV2TransactionsPost201ResponseEmbeddedMerchantInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedOrderInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo'), require('./model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo'), require('./model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard'), require('./model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod'), require('./model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'), require('./model/TssV2TransactionsPost201ResponseEmbeddedProcessingInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedProcessorInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedRiskInformation'), require('./model/TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders'), require('./model/TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint'), require('./model/TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries'), require('./model/TssV2TransactionsPost400Response'), require('./model/TssV2TransactionsPostResponse'), require('./model/UmsV1UsersGet200Response'), require('./model/UmsV1UsersGet200ResponseAccountInformation'), require('./model/UmsV1UsersGet200ResponseContactInformation'), require('./model/UmsV1UsersGet200ResponseOrganizationInformation'), require('./model/UmsV1UsersGet200ResponseUsers'), require('./model/V1FileDetailsGet200Response'), require('./model/V1FileDetailsGet200ResponseFileDetails'), require('./model/V1FileDetailsGet200ResponseLinks'), require('./model/V1FileDetailsGet200ResponseLinksFiles'), require('./model/V1FileDetailsGet200ResponseLinksSelf'), require('./model/VoidCaptureRequest'), require('./model/VoidCreditRequest'), require('./model/VoidPaymentRequest'), require('./model/VoidRefundRequest'), require('./api/CaptureApi'), require('./api/CreditApi'), require('./api/FlexTokenApi'), require('./api/InstrumentIdentifierApi'), require('./api/InstrumentIdentifiersApi'), require('./api/KeyGenerationApi'), require('./api/NotificationOfChangesApi'), require('./api/PaymentInstrumentsApi'), require('./api/PaymentsApi'), require('./api/ProcessAPayoutApi'), require('./api/PurchaseAndRefundDetailsApi'), require('./api/RefundApi'), require('./api/ReportDefinitionsApi'), require('./api/ReportDownloadsApi'), require('./api/ReportSubscriptionsApi'), require('./api/ReportsApi'), require('./api/ReversalApi'), require('./api/SearchTransactionsApi'), require('./api/SecureFileShareApi'), require('./api/TransactionBatchApi'), require('./api/TransactionBatchesApi'), require('./api/TransactionDetailsApi'), require('./api/UserManagementApi'), require('./api/VoidApi'));
   }
-}(function(ApiClient, AuthReversalRequest, Body, Body1, Body2, Body3, CapturePaymentRequest, CardInfo, CreateCreditRequest, CreatePaymentRequest, DerPublicKey, Error, ErrorLinks, ErrorResponse, GeneratePublicKeyRequest, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2002BuyerInformation, InlineResponse2002DeviceInformation, InlineResponse2002MerchantInformation, InlineResponse2002OrderInformation, InlineResponse2002OrderInformationAmountDetails, InlineResponse2002OrderInformationBillTo, InlineResponse2002OrderInformationInvoiceDetails, InlineResponse2002OrderInformationLineItems, InlineResponse2002OrderInformationShipTo, InlineResponse2002PaymentInformation, InlineResponse2002PaymentInformationCard, InlineResponse2002PaymentInformationTokenizedCard, InlineResponse2002ProcessingInformation, InlineResponse2002ProcessorInformation, InlineResponse2002ProcessorInformationAvs, InlineResponse2002ProcessorInformationCardVerification, InlineResponse2003, InlineResponse2004, InlineResponse2004DeviceInformation, InlineResponse2004OrderInformation, InlineResponse2004OrderInformationAmountDetails, InlineResponse2004OrderInformationInvoiceDetails, InlineResponse2004OrderInformationShipTo, InlineResponse2004ProcessingInformation, InlineResponse2004ProcessingInformationAuthorizationOptions, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2008Links, InlineResponse2008LinksFirst, InlineResponse2008LinksLast, InlineResponse2008LinksNext, InlineResponse2008LinksPrev, InlineResponse2008LinksSelf, InlineResponse200Der, InlineResponse200Jwk, InlineResponse201, InlineResponse2011, InlineResponse2011AuthorizationInformation, InlineResponse2011ProcessorInformation, InlineResponse2011ReversalAmountDetails, InlineResponse2012, InlineResponse2012Links, InlineResponse2012OrderInformation, InlineResponse2012OrderInformationAmountDetails, InlineResponse2012ProcessorInformation, InlineResponse2013, InlineResponse2013Links, InlineResponse2013OrderInformation, InlineResponse2013ProcessorInformation, InlineResponse2013RefundAmountDetails, InlineResponse2014, InlineResponse2014CreditAmountDetails, InlineResponse2015, InlineResponse2015VoidAmountDetails, InlineResponse2016, InlineResponse201ClientReferenceInformation, InlineResponse201Embedded, InlineResponse201EmbeddedCapture, InlineResponse201EmbeddedCaptureLinks, InlineResponse201ErrorInformation, InlineResponse201ErrorInformationDetails, InlineResponse201Links, InlineResponse201LinksSelf, InlineResponse201OrderInformation, InlineResponse201OrderInformationAmountDetails, InlineResponse201OrderInformationInvoiceDetails, InlineResponse201PaymentInformation, InlineResponse201PaymentInformationAccountFeatures, InlineResponse201PaymentInformationCard, InlineResponse201PaymentInformationTokenizedCard, InlineResponse201PointOfSaleInformation, InlineResponse201PointOfSaleInformationEmv, InlineResponse201ProcessorInformation, InlineResponse201ProcessorInformationAvs, InlineResponse201ProcessorInformationCardVerification, InlineResponse201ProcessorInformationConsumerAuthenticationResponse, InlineResponse201ProcessorInformationCustomer, InlineResponse201ProcessorInformationElectronicVerificationResults, InlineResponse201ProcessorInformationIssuer, InlineResponse201ProcessorInformationMerchantAdvice, InlineResponse400, InlineResponse4001, InlineResponse4002, InlineResponse4003, InlineResponse4004, InlineResponse4005, InlineResponse4006, InlineResponse409, InlineResponse409Links, InlineResponse409LinksPaymentInstruments, InlineResponse502, InlineResponseDefault, InlineResponseDefaultLinks, InlineResponseDefaultLinksNext, InlineResponseDefaultResponseStatus, InlineResponseDefaultResponseStatusDetails, InstrumentidentifiersBankAccount, InstrumentidentifiersCard, InstrumentidentifiersDetails, InstrumentidentifiersLinks, InstrumentidentifiersLinksSelf, InstrumentidentifiersMetadata, InstrumentidentifiersProcessingInformation, InstrumentidentifiersProcessingInformationAuthorizationOptions, InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiator, InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction, JsonWebKey, KeyParameters, KeyResult, Link, Links, OctCreatePaymentRequest, PaymentinstrumentsBankAccount, PaymentinstrumentsBillTo, PaymentinstrumentsBuyerInformation, PaymentinstrumentsBuyerInformationIssuedBy, PaymentinstrumentsBuyerInformationPersonalIdentification, PaymentinstrumentsCard, PaymentinstrumentsInstrumentIdentifier, PaymentinstrumentsMerchantInformation, PaymentinstrumentsMerchantInformationMerchantDescriptor, PaymentinstrumentsProcessingInformation, PaymentinstrumentsProcessingInformationBankTransferOptions, Paymentsflexv1tokensCardInfo, RefundCaptureRequest, RefundPaymentRequest, ResponseStatus, ResponseStatusDetails, TokenizeParameters, TokenizeRequest, TokenizeResult, V2creditsPointOfSaleInformation, V2creditsPointOfSaleInformationEmv, V2creditsProcessingInformation, V2paymentsAggregatorInformation, V2paymentsAggregatorInformationSubMerchant, V2paymentsBuyerInformation, V2paymentsBuyerInformationPersonalIdentification, V2paymentsClientReferenceInformation, V2paymentsConsumerAuthenticationInformation, V2paymentsDeviceInformation, V2paymentsMerchantDefinedInformation, V2paymentsMerchantInformation, V2paymentsMerchantInformationMerchantDescriptor, V2paymentsOrderInformation, V2paymentsOrderInformationAmountDetails, V2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts, V2paymentsOrderInformationAmountDetailsSurcharge, V2paymentsOrderInformationAmountDetailsTaxDetails, V2paymentsOrderInformationBillTo, V2paymentsOrderInformationInvoiceDetails, V2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum, V2paymentsOrderInformationLineItems, V2paymentsOrderInformationShipTo, V2paymentsOrderInformationShippingDetails, V2paymentsPaymentInformation, V2paymentsPaymentInformationCard, V2paymentsPaymentInformationCustomer, V2paymentsPaymentInformationFluidData, V2paymentsPaymentInformationTokenizedCard, V2paymentsPointOfSaleInformation, V2paymentsPointOfSaleInformationEmv, V2paymentsProcessingInformation, V2paymentsProcessingInformationAuthorizationOptions, V2paymentsProcessingInformationAuthorizationOptionsInitiator, V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction, V2paymentsProcessingInformationCaptureOptions, V2paymentsProcessingInformationIssuer, V2paymentsProcessingInformationRecurringOptions, V2paymentsRecipientInformation, V2paymentsidcapturesAggregatorInformation, V2paymentsidcapturesAggregatorInformationSubMerchant, V2paymentsidcapturesBuyerInformation, V2paymentsidcapturesMerchantInformation, V2paymentsidcapturesOrderInformation, V2paymentsidcapturesOrderInformationAmountDetails, V2paymentsidcapturesOrderInformationBillTo, V2paymentsidcapturesOrderInformationInvoiceDetails, V2paymentsidcapturesOrderInformationShipTo, V2paymentsidcapturesOrderInformationShippingDetails, V2paymentsidcapturesPaymentInformation, V2paymentsidcapturesPointOfSaleInformation, V2paymentsidcapturesPointOfSaleInformationEmv, V2paymentsidcapturesProcessingInformation, V2paymentsidcapturesProcessingInformationAuthorizationOptions, V2paymentsidcapturesProcessingInformationCaptureOptions, V2paymentsidrefundsMerchantInformation, V2paymentsidrefundsOrderInformation, V2paymentsidrefundsOrderInformationLineItems, V2paymentsidrefundsPaymentInformation, V2paymentsidrefundsPaymentInformationCard, V2paymentsidrefundsPointOfSaleInformation, V2paymentsidrefundsProcessingInformation, V2paymentsidrefundsProcessingInformationRecurringOptions, V2paymentsidreversalsClientReferenceInformation, V2paymentsidreversalsOrderInformation, V2paymentsidreversalsOrderInformationLineItems, V2paymentsidreversalsPointOfSaleInformation, V2paymentsidreversalsProcessingInformation, V2paymentsidreversalsReversalInformation, V2paymentsidreversalsReversalInformationAmountDetails, V2payoutsMerchantInformation, V2payoutsMerchantInformationMerchantDescriptor, V2payoutsOrderInformation, V2payoutsOrderInformationAmountDetails, V2payoutsOrderInformationBillTo, V2payoutsPaymentInformation, V2payoutsPaymentInformationCard, V2payoutsProcessingInformation, V2payoutsProcessingInformationPayoutsOptions, V2payoutsRecipientInformation, V2payoutsSenderInformation, V2payoutsSenderInformationAccount, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest, CaptureApi, CreditApi, DefaultApi, InstrumentIdentifierApi, KeyGenerationApi, PaymentApi, PaymentInstrumentApi, RefundApi, ReversalApi, TokenizationApi, VoidApi) {
+}(function(ApiClient, AuthReversalRequest, Body, Body1, Body2, Body3, CapturePaymentRequest, CardInfo, CreateCreditRequest, CreatePaymentRequest, DerPublicKey, Error, ErrorLinks, ErrorResponse, FlexV1KeysPost200Response, FlexV1KeysPost200ResponseDer, FlexV1KeysPost200ResponseJwk, FlexV1TokensPost200Response, Flexv1tokensCardInfo, GeneratePublicKeyRequest, InlineResponse400, InlineResponseDefault, InlineResponseDefaultLinks, InlineResponseDefaultLinksNext, InlineResponseDefaultResponseStatus, InlineResponseDefaultResponseStatusDetails, JsonWebKey, KeyParameters, KeyResult, Link, Links, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet200ResponseLinks, PtsV1TransactionBatchesGet200ResponseLinksSelf, PtsV1TransactionBatchesGet200ResponseTransactionBatches, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet400ResponseErrorInformation, PtsV1TransactionBatchesGet400ResponseErrorInformationDetails, PtsV1TransactionBatchesGet500Response, PtsV1TransactionBatchesGet500ResponseErrorInformation, PtsV2CreditsPost201Response, PtsV2CreditsPost201ResponseCreditAmountDetails, PtsV2PaymentsCapturesPost201Response, PtsV2PaymentsCapturesPost201ResponseLinks, PtsV2PaymentsCapturesPost201ResponseOrderInformation, PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails, PtsV2PaymentsCapturesPost201ResponseProcessorInformation, PtsV2PaymentsCapturesPost400Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsPost201ResponseErrorInformation, PtsV2PaymentsPost201ResponseErrorInformationDetails, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseLinksSelf, PtsV2PaymentsPost201ResponseOrderInformation, PtsV2PaymentsPost201ResponseOrderInformationAmountDetails, PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails, PtsV2PaymentsPost201ResponsePaymentInformation, PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures, PtsV2PaymentsPost201ResponsePaymentInformationCard, PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard, PtsV2PaymentsPost201ResponsePointOfSaleInformation, PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv, PtsV2PaymentsPost201ResponseProcessorInformation, PtsV2PaymentsPost201ResponseProcessorInformationAvs, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, PtsV2PaymentsPost201ResponseProcessorInformationCustomer, PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, PtsV2PaymentsPost201ResponseProcessorInformationIssuer, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, PtsV2PaymentsRefundPost201Response, PtsV2PaymentsRefundPost201ResponseLinks, PtsV2PaymentsRefundPost201ResponseOrderInformation, PtsV2PaymentsRefundPost201ResponseProcessorInformation, PtsV2PaymentsRefundPost201ResponseRefundAmountDetails, PtsV2PaymentsRefundPost400Response, PtsV2PaymentsReversalsPost201Response, PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation, PtsV2PaymentsReversalsPost201ResponseLinks, PtsV2PaymentsReversalsPost201ResponseProcessorInformation, PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails, PtsV2PaymentsReversalsPost400Response, PtsV2PaymentsVoidsPost201Response, PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails, PtsV2PaymentsVoidsPost400Response, PtsV2PayoutsPost400Response, PtsV2PayoutsPostResponse, Ptsv2creditsPointOfSaleInformation, Ptsv2creditsPointOfSaleInformationEmv, Ptsv2creditsProcessingInformation, Ptsv2paymentsAggregatorInformation, Ptsv2paymentsAggregatorInformationSubMerchant, Ptsv2paymentsBuyerInformation, Ptsv2paymentsBuyerInformationPersonalIdentification, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsConsumerAuthenticationInformation, Ptsv2paymentsDeviceInformation, Ptsv2paymentsMerchantDefinedInformation, Ptsv2paymentsMerchantInformation, Ptsv2paymentsMerchantInformationMerchantDescriptor, Ptsv2paymentsOrderInformation, Ptsv2paymentsOrderInformationAmountDetails, Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts, Ptsv2paymentsOrderInformationAmountDetailsSurcharge, Ptsv2paymentsOrderInformationAmountDetailsTaxDetails, Ptsv2paymentsOrderInformationBillTo, Ptsv2paymentsOrderInformationInvoiceDetails, Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum, Ptsv2paymentsOrderInformationLineItems, Ptsv2paymentsOrderInformationShipTo, Ptsv2paymentsOrderInformationShippingDetails, Ptsv2paymentsPaymentInformation, Ptsv2paymentsPaymentInformationCard, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsPointOfSaleInformation, Ptsv2paymentsPointOfSaleInformationEmv, Ptsv2paymentsProcessingInformation, Ptsv2paymentsProcessingInformationAuthorizationOptions, Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator, Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction, Ptsv2paymentsProcessingInformationCaptureOptions, Ptsv2paymentsProcessingInformationIssuer, Ptsv2paymentsProcessingInformationRecurringOptions, Ptsv2paymentsRecipientInformation, Ptsv2paymentsidcapturesAggregatorInformation, Ptsv2paymentsidcapturesAggregatorInformationSubMerchant, Ptsv2paymentsidcapturesBuyerInformation, Ptsv2paymentsidcapturesMerchantInformation, Ptsv2paymentsidcapturesOrderInformation, Ptsv2paymentsidcapturesOrderInformationAmountDetails, Ptsv2paymentsidcapturesOrderInformationBillTo, Ptsv2paymentsidcapturesOrderInformationInvoiceDetails, Ptsv2paymentsidcapturesOrderInformationShipTo, Ptsv2paymentsidcapturesOrderInformationShippingDetails, Ptsv2paymentsidcapturesPaymentInformation, Ptsv2paymentsidcapturesPointOfSaleInformation, Ptsv2paymentsidcapturesPointOfSaleInformationEmv, Ptsv2paymentsidcapturesProcessingInformation, Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, Ptsv2paymentsidcapturesProcessingInformationCaptureOptions, Ptsv2paymentsidrefundsMerchantInformation, Ptsv2paymentsidrefundsOrderInformation, Ptsv2paymentsidrefundsOrderInformationLineItems, Ptsv2paymentsidrefundsPaymentInformation, Ptsv2paymentsidrefundsPaymentInformationCard, Ptsv2paymentsidrefundsPointOfSaleInformation, Ptsv2paymentsidrefundsProcessingInformation, Ptsv2paymentsidrefundsProcessingInformationRecurringOptions, Ptsv2paymentsidreversalsClientReferenceInformation, Ptsv2paymentsidreversalsOrderInformation, Ptsv2paymentsidreversalsOrderInformationLineItems, Ptsv2paymentsidreversalsPointOfSaleInformation, Ptsv2paymentsidreversalsProcessingInformation, Ptsv2paymentsidreversalsReversalInformation, Ptsv2paymentsidreversalsReversalInformationAmountDetails, Ptsv2payoutsMerchantInformation, Ptsv2payoutsMerchantInformationMerchantDescriptor, Ptsv2payoutsOrderInformation, Ptsv2payoutsOrderInformationAmountDetails, Ptsv2payoutsOrderInformationAmountDetailsSurcharge, Ptsv2payoutsOrderInformationBillTo, Ptsv2payoutsPaymentInformation, Ptsv2payoutsPaymentInformationCard, Ptsv2payoutsProcessingInformation, Ptsv2payoutsProcessingInformationPayoutsOptions, Ptsv2payoutsRecipientInformation, Ptsv2payoutsSenderInformation, Ptsv2payoutsSenderInformationAccount, RefundCaptureRequest, RefundPaymentRequest, ReportingV3NotificationofChangesGet200Response, ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges, ReportingV3NotificationofChangesGet400Response, ReportingV3NotificationofChangesGet400ResponseFields, ReportingV3ReportDefinitionsGet200Response, ReportingV3ReportDefinitionsGet200ResponseReportDefinitions, ReportingV3ReportDefinitionsNameGet200Response, ReportingV3ReportDefinitionsNameGet200ResponseAttributes, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseReportPreferences, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, ReportingV3ReportsGet200Response, ReportingV3ReportsGet200ResponseReports, ReportingV3ReportsIdGet200Response, RequestBody, RequestBody1, ResponseStatus, ResponseStatusDetails, TmsV1InstrumentidentifiersDelete409Response, TmsV1InstrumentidentifiersDelete409ResponseLinks, TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments, TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response, TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks, TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst, TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast, TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext, TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev, TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf, TmsV1InstrumentidentifiersPost200Response, TmsV1PaymentinstrumentsPost201Response, Tmsv1instrumentidentifiersBankAccount, Tmsv1instrumentidentifiersCard, Tmsv1instrumentidentifiersDetails, Tmsv1instrumentidentifiersLinks, Tmsv1instrumentidentifiersLinksSelf, Tmsv1instrumentidentifiersMetadata, Tmsv1instrumentidentifiersProcessingInformation, Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions, Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator, Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction, Tmsv1paymentinstrumentsBankAccount, Tmsv1paymentinstrumentsBillTo, Tmsv1paymentinstrumentsBuyerInformation, Tmsv1paymentinstrumentsBuyerInformationIssuedBy, Tmsv1paymentinstrumentsBuyerInformationPersonalIdentification, Tmsv1paymentinstrumentsCard, Tmsv1paymentinstrumentsInstrumentIdentifier, Tmsv1paymentinstrumentsMerchantInformation, Tmsv1paymentinstrumentsMerchantInformationMerchantDescriptor, Tmsv1paymentinstrumentsProcessingInformation, Tmsv1paymentinstrumentsProcessingInformationBankTransferOptions, TokenizeParameters, TokenizeRequest, TokenizeResult, TssV2TransactionsGet200Response, TssV2TransactionsGet200ResponseApplicationInformation, TssV2TransactionsGet200ResponseApplicationInformationApplications, TssV2TransactionsGet200ResponseBuyerInformation, TssV2TransactionsGet200ResponseClientReferenceInformation, TssV2TransactionsGet200ResponseConsumerAuthenticationInformation, TssV2TransactionsGet200ResponseDeviceInformation, TssV2TransactionsGet200ResponseErrorInformation, TssV2TransactionsGet200ResponseFraudMarkingInformation, TssV2TransactionsGet200ResponseInstallmentInformation, TssV2TransactionsGet200ResponseMerchantDefinedInformation, TssV2TransactionsGet200ResponseMerchantInformation, TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor, TssV2TransactionsGet200ResponseOrderInformation, TssV2TransactionsGet200ResponseOrderInformationAmountDetails, TssV2TransactionsGet200ResponseOrderInformationBillTo, TssV2TransactionsGet200ResponseOrderInformationLineItems, TssV2TransactionsGet200ResponseOrderInformationShipTo, TssV2TransactionsGet200ResponseOrderInformationShippingDetails, TssV2TransactionsGet200ResponsePaymentInformation, TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures, TssV2TransactionsGet200ResponsePaymentInformationBank, TssV2TransactionsGet200ResponsePaymentInformationBankAccount, TssV2TransactionsGet200ResponsePaymentInformationBankMandate, TssV2TransactionsGet200ResponsePaymentInformationCard, TssV2TransactionsGet200ResponsePaymentInformationInvoice, TssV2TransactionsGet200ResponsePaymentInformationPaymentType, TssV2TransactionsGet200ResponsePointOfSaleInformation, TssV2TransactionsGet200ResponseProcessingInformation, TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions, TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions, TssV2TransactionsGet200ResponseProcessorInformation, TssV2TransactionsGet200ResponseProcessorInformationAchVerification, TssV2TransactionsGet200ResponseProcessorInformationCardVerification, TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, TssV2TransactionsGet200ResponseProcessorInformationProcessor, TssV2TransactionsGet200ResponseRiskInformation, TssV2TransactionsGet200ResponseRiskInformationProfile, TssV2TransactionsGet200ResponseRiskInformationScore, TssV2TransactionsGet200ResponseSenderInformation, TssV2TransactionsPost201Response, TssV2TransactionsPost201ResponseEmbedded, TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, TssV2TransactionsPost201ResponseEmbeddedDeviceInformation, TssV2TransactionsPost201ResponseEmbeddedLinks, TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, TssV2TransactionsPost201ResponseEmbeddedOrderInformation, TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo, TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo, TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner, TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, TssV2TransactionsPost201ResponseEmbeddedRiskInformation, TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders, TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint, TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries, TssV2TransactionsPost400Response, TssV2TransactionsPostResponse, UmsV1UsersGet200Response, UmsV1UsersGet200ResponseAccountInformation, UmsV1UsersGet200ResponseContactInformation, UmsV1UsersGet200ResponseOrganizationInformation, UmsV1UsersGet200ResponseUsers, V1FileDetailsGet200Response, V1FileDetailsGet200ResponseFileDetails, V1FileDetailsGet200ResponseLinks, V1FileDetailsGet200ResponseLinksFiles, V1FileDetailsGet200ResponseLinksSelf, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest, CaptureApi, CreditApi, FlexTokenApi, InstrumentIdentifierApi, InstrumentIdentifiersApi, KeyGenerationApi, NotificationOfChangesApi, PaymentInstrumentsApi, PaymentsApi, ProcessAPayoutApi, PurchaseAndRefundDetailsApi, RefundApi, ReportDefinitionsApi, ReportDownloadsApi, ReportSubscriptionsApi, ReportsApi, ReversalApi, SearchTransactionsApi, SecureFileShareApi, TransactionBatchApi, TransactionBatchesApi, TransactionDetailsApi, UserManagementApi, VoidApi) {
   'use strict';
 
   /**
@@ -127,490 +127,40 @@
      */
     ErrorResponse: ErrorResponse,
     /**
+     * The FlexV1KeysPost200Response model constructor.
+     * @property {module:model/FlexV1KeysPost200Response}
+     */
+    FlexV1KeysPost200Response: FlexV1KeysPost200Response,
+    /**
+     * The FlexV1KeysPost200ResponseDer model constructor.
+     * @property {module:model/FlexV1KeysPost200ResponseDer}
+     */
+    FlexV1KeysPost200ResponseDer: FlexV1KeysPost200ResponseDer,
+    /**
+     * The FlexV1KeysPost200ResponseJwk model constructor.
+     * @property {module:model/FlexV1KeysPost200ResponseJwk}
+     */
+    FlexV1KeysPost200ResponseJwk: FlexV1KeysPost200ResponseJwk,
+    /**
+     * The FlexV1TokensPost200Response model constructor.
+     * @property {module:model/FlexV1TokensPost200Response}
+     */
+    FlexV1TokensPost200Response: FlexV1TokensPost200Response,
+    /**
+     * The Flexv1tokensCardInfo model constructor.
+     * @property {module:model/Flexv1tokensCardInfo}
+     */
+    Flexv1tokensCardInfo: Flexv1tokensCardInfo,
+    /**
      * The GeneratePublicKeyRequest model constructor.
      * @property {module:model/GeneratePublicKeyRequest}
      */
     GeneratePublicKeyRequest: GeneratePublicKeyRequest,
     /**
-     * The InlineResponse200 model constructor.
-     * @property {module:model/InlineResponse200}
-     */
-    InlineResponse200: InlineResponse200,
-    /**
-     * The InlineResponse2001 model constructor.
-     * @property {module:model/InlineResponse2001}
-     */
-    InlineResponse2001: InlineResponse2001,
-    /**
-     * The InlineResponse2002 model constructor.
-     * @property {module:model/InlineResponse2002}
-     */
-    InlineResponse2002: InlineResponse2002,
-    /**
-     * The InlineResponse2002BuyerInformation model constructor.
-     * @property {module:model/InlineResponse2002BuyerInformation}
-     */
-    InlineResponse2002BuyerInformation: InlineResponse2002BuyerInformation,
-    /**
-     * The InlineResponse2002DeviceInformation model constructor.
-     * @property {module:model/InlineResponse2002DeviceInformation}
-     */
-    InlineResponse2002DeviceInformation: InlineResponse2002DeviceInformation,
-    /**
-     * The InlineResponse2002MerchantInformation model constructor.
-     * @property {module:model/InlineResponse2002MerchantInformation}
-     */
-    InlineResponse2002MerchantInformation: InlineResponse2002MerchantInformation,
-    /**
-     * The InlineResponse2002OrderInformation model constructor.
-     * @property {module:model/InlineResponse2002OrderInformation}
-     */
-    InlineResponse2002OrderInformation: InlineResponse2002OrderInformation,
-    /**
-     * The InlineResponse2002OrderInformationAmountDetails model constructor.
-     * @property {module:model/InlineResponse2002OrderInformationAmountDetails}
-     */
-    InlineResponse2002OrderInformationAmountDetails: InlineResponse2002OrderInformationAmountDetails,
-    /**
-     * The InlineResponse2002OrderInformationBillTo model constructor.
-     * @property {module:model/InlineResponse2002OrderInformationBillTo}
-     */
-    InlineResponse2002OrderInformationBillTo: InlineResponse2002OrderInformationBillTo,
-    /**
-     * The InlineResponse2002OrderInformationInvoiceDetails model constructor.
-     * @property {module:model/InlineResponse2002OrderInformationInvoiceDetails}
-     */
-    InlineResponse2002OrderInformationInvoiceDetails: InlineResponse2002OrderInformationInvoiceDetails,
-    /**
-     * The InlineResponse2002OrderInformationLineItems model constructor.
-     * @property {module:model/InlineResponse2002OrderInformationLineItems}
-     */
-    InlineResponse2002OrderInformationLineItems: InlineResponse2002OrderInformationLineItems,
-    /**
-     * The InlineResponse2002OrderInformationShipTo model constructor.
-     * @property {module:model/InlineResponse2002OrderInformationShipTo}
-     */
-    InlineResponse2002OrderInformationShipTo: InlineResponse2002OrderInformationShipTo,
-    /**
-     * The InlineResponse2002PaymentInformation model constructor.
-     * @property {module:model/InlineResponse2002PaymentInformation}
-     */
-    InlineResponse2002PaymentInformation: InlineResponse2002PaymentInformation,
-    /**
-     * The InlineResponse2002PaymentInformationCard model constructor.
-     * @property {module:model/InlineResponse2002PaymentInformationCard}
-     */
-    InlineResponse2002PaymentInformationCard: InlineResponse2002PaymentInformationCard,
-    /**
-     * The InlineResponse2002PaymentInformationTokenizedCard model constructor.
-     * @property {module:model/InlineResponse2002PaymentInformationTokenizedCard}
-     */
-    InlineResponse2002PaymentInformationTokenizedCard: InlineResponse2002PaymentInformationTokenizedCard,
-    /**
-     * The InlineResponse2002ProcessingInformation model constructor.
-     * @property {module:model/InlineResponse2002ProcessingInformation}
-     */
-    InlineResponse2002ProcessingInformation: InlineResponse2002ProcessingInformation,
-    /**
-     * The InlineResponse2002ProcessorInformation model constructor.
-     * @property {module:model/InlineResponse2002ProcessorInformation}
-     */
-    InlineResponse2002ProcessorInformation: InlineResponse2002ProcessorInformation,
-    /**
-     * The InlineResponse2002ProcessorInformationAvs model constructor.
-     * @property {module:model/InlineResponse2002ProcessorInformationAvs}
-     */
-    InlineResponse2002ProcessorInformationAvs: InlineResponse2002ProcessorInformationAvs,
-    /**
-     * The InlineResponse2002ProcessorInformationCardVerification model constructor.
-     * @property {module:model/InlineResponse2002ProcessorInformationCardVerification}
-     */
-    InlineResponse2002ProcessorInformationCardVerification: InlineResponse2002ProcessorInformationCardVerification,
-    /**
-     * The InlineResponse2003 model constructor.
-     * @property {module:model/InlineResponse2003}
-     */
-    InlineResponse2003: InlineResponse2003,
-    /**
-     * The InlineResponse2004 model constructor.
-     * @property {module:model/InlineResponse2004}
-     */
-    InlineResponse2004: InlineResponse2004,
-    /**
-     * The InlineResponse2004DeviceInformation model constructor.
-     * @property {module:model/InlineResponse2004DeviceInformation}
-     */
-    InlineResponse2004DeviceInformation: InlineResponse2004DeviceInformation,
-    /**
-     * The InlineResponse2004OrderInformation model constructor.
-     * @property {module:model/InlineResponse2004OrderInformation}
-     */
-    InlineResponse2004OrderInformation: InlineResponse2004OrderInformation,
-    /**
-     * The InlineResponse2004OrderInformationAmountDetails model constructor.
-     * @property {module:model/InlineResponse2004OrderInformationAmountDetails}
-     */
-    InlineResponse2004OrderInformationAmountDetails: InlineResponse2004OrderInformationAmountDetails,
-    /**
-     * The InlineResponse2004OrderInformationInvoiceDetails model constructor.
-     * @property {module:model/InlineResponse2004OrderInformationInvoiceDetails}
-     */
-    InlineResponse2004OrderInformationInvoiceDetails: InlineResponse2004OrderInformationInvoiceDetails,
-    /**
-     * The InlineResponse2004OrderInformationShipTo model constructor.
-     * @property {module:model/InlineResponse2004OrderInformationShipTo}
-     */
-    InlineResponse2004OrderInformationShipTo: InlineResponse2004OrderInformationShipTo,
-    /**
-     * The InlineResponse2004ProcessingInformation model constructor.
-     * @property {module:model/InlineResponse2004ProcessingInformation}
-     */
-    InlineResponse2004ProcessingInformation: InlineResponse2004ProcessingInformation,
-    /**
-     * The InlineResponse2004ProcessingInformationAuthorizationOptions model constructor.
-     * @property {module:model/InlineResponse2004ProcessingInformationAuthorizationOptions}
-     */
-    InlineResponse2004ProcessingInformationAuthorizationOptions: InlineResponse2004ProcessingInformationAuthorizationOptions,
-    /**
-     * The InlineResponse2005 model constructor.
-     * @property {module:model/InlineResponse2005}
-     */
-    InlineResponse2005: InlineResponse2005,
-    /**
-     * The InlineResponse2006 model constructor.
-     * @property {module:model/InlineResponse2006}
-     */
-    InlineResponse2006: InlineResponse2006,
-    /**
-     * The InlineResponse2007 model constructor.
-     * @property {module:model/InlineResponse2007}
-     */
-    InlineResponse2007: InlineResponse2007,
-    /**
-     * The InlineResponse2008 model constructor.
-     * @property {module:model/InlineResponse2008}
-     */
-    InlineResponse2008: InlineResponse2008,
-    /**
-     * The InlineResponse2008Links model constructor.
-     * @property {module:model/InlineResponse2008Links}
-     */
-    InlineResponse2008Links: InlineResponse2008Links,
-    /**
-     * The InlineResponse2008LinksFirst model constructor.
-     * @property {module:model/InlineResponse2008LinksFirst}
-     */
-    InlineResponse2008LinksFirst: InlineResponse2008LinksFirst,
-    /**
-     * The InlineResponse2008LinksLast model constructor.
-     * @property {module:model/InlineResponse2008LinksLast}
-     */
-    InlineResponse2008LinksLast: InlineResponse2008LinksLast,
-    /**
-     * The InlineResponse2008LinksNext model constructor.
-     * @property {module:model/InlineResponse2008LinksNext}
-     */
-    InlineResponse2008LinksNext: InlineResponse2008LinksNext,
-    /**
-     * The InlineResponse2008LinksPrev model constructor.
-     * @property {module:model/InlineResponse2008LinksPrev}
-     */
-    InlineResponse2008LinksPrev: InlineResponse2008LinksPrev,
-    /**
-     * The InlineResponse2008LinksSelf model constructor.
-     * @property {module:model/InlineResponse2008LinksSelf}
-     */
-    InlineResponse2008LinksSelf: InlineResponse2008LinksSelf,
-    /**
-     * The InlineResponse200Der model constructor.
-     * @property {module:model/InlineResponse200Der}
-     */
-    InlineResponse200Der: InlineResponse200Der,
-    /**
-     * The InlineResponse200Jwk model constructor.
-     * @property {module:model/InlineResponse200Jwk}
-     */
-    InlineResponse200Jwk: InlineResponse200Jwk,
-    /**
-     * The InlineResponse201 model constructor.
-     * @property {module:model/InlineResponse201}
-     */
-    InlineResponse201: InlineResponse201,
-    /**
-     * The InlineResponse2011 model constructor.
-     * @property {module:model/InlineResponse2011}
-     */
-    InlineResponse2011: InlineResponse2011,
-    /**
-     * The InlineResponse2011AuthorizationInformation model constructor.
-     * @property {module:model/InlineResponse2011AuthorizationInformation}
-     */
-    InlineResponse2011AuthorizationInformation: InlineResponse2011AuthorizationInformation,
-    /**
-     * The InlineResponse2011ProcessorInformation model constructor.
-     * @property {module:model/InlineResponse2011ProcessorInformation}
-     */
-    InlineResponse2011ProcessorInformation: InlineResponse2011ProcessorInformation,
-    /**
-     * The InlineResponse2011ReversalAmountDetails model constructor.
-     * @property {module:model/InlineResponse2011ReversalAmountDetails}
-     */
-    InlineResponse2011ReversalAmountDetails: InlineResponse2011ReversalAmountDetails,
-    /**
-     * The InlineResponse2012 model constructor.
-     * @property {module:model/InlineResponse2012}
-     */
-    InlineResponse2012: InlineResponse2012,
-    /**
-     * The InlineResponse2012Links model constructor.
-     * @property {module:model/InlineResponse2012Links}
-     */
-    InlineResponse2012Links: InlineResponse2012Links,
-    /**
-     * The InlineResponse2012OrderInformation model constructor.
-     * @property {module:model/InlineResponse2012OrderInformation}
-     */
-    InlineResponse2012OrderInformation: InlineResponse2012OrderInformation,
-    /**
-     * The InlineResponse2012OrderInformationAmountDetails model constructor.
-     * @property {module:model/InlineResponse2012OrderInformationAmountDetails}
-     */
-    InlineResponse2012OrderInformationAmountDetails: InlineResponse2012OrderInformationAmountDetails,
-    /**
-     * The InlineResponse2012ProcessorInformation model constructor.
-     * @property {module:model/InlineResponse2012ProcessorInformation}
-     */
-    InlineResponse2012ProcessorInformation: InlineResponse2012ProcessorInformation,
-    /**
-     * The InlineResponse2013 model constructor.
-     * @property {module:model/InlineResponse2013}
-     */
-    InlineResponse2013: InlineResponse2013,
-    /**
-     * The InlineResponse2013Links model constructor.
-     * @property {module:model/InlineResponse2013Links}
-     */
-    InlineResponse2013Links: InlineResponse2013Links,
-    /**
-     * The InlineResponse2013OrderInformation model constructor.
-     * @property {module:model/InlineResponse2013OrderInformation}
-     */
-    InlineResponse2013OrderInformation: InlineResponse2013OrderInformation,
-    /**
-     * The InlineResponse2013ProcessorInformation model constructor.
-     * @property {module:model/InlineResponse2013ProcessorInformation}
-     */
-    InlineResponse2013ProcessorInformation: InlineResponse2013ProcessorInformation,
-    /**
-     * The InlineResponse2013RefundAmountDetails model constructor.
-     * @property {module:model/InlineResponse2013RefundAmountDetails}
-     */
-    InlineResponse2013RefundAmountDetails: InlineResponse2013RefundAmountDetails,
-    /**
-     * The InlineResponse2014 model constructor.
-     * @property {module:model/InlineResponse2014}
-     */
-    InlineResponse2014: InlineResponse2014,
-    /**
-     * The InlineResponse2014CreditAmountDetails model constructor.
-     * @property {module:model/InlineResponse2014CreditAmountDetails}
-     */
-    InlineResponse2014CreditAmountDetails: InlineResponse2014CreditAmountDetails,
-    /**
-     * The InlineResponse2015 model constructor.
-     * @property {module:model/InlineResponse2015}
-     */
-    InlineResponse2015: InlineResponse2015,
-    /**
-     * The InlineResponse2015VoidAmountDetails model constructor.
-     * @property {module:model/InlineResponse2015VoidAmountDetails}
-     */
-    InlineResponse2015VoidAmountDetails: InlineResponse2015VoidAmountDetails,
-    /**
-     * The InlineResponse2016 model constructor.
-     * @property {module:model/InlineResponse2016}
-     */
-    InlineResponse2016: InlineResponse2016,
-    /**
-     * The InlineResponse201ClientReferenceInformation model constructor.
-     * @property {module:model/InlineResponse201ClientReferenceInformation}
-     */
-    InlineResponse201ClientReferenceInformation: InlineResponse201ClientReferenceInformation,
-    /**
-     * The InlineResponse201Embedded model constructor.
-     * @property {module:model/InlineResponse201Embedded}
-     */
-    InlineResponse201Embedded: InlineResponse201Embedded,
-    /**
-     * The InlineResponse201EmbeddedCapture model constructor.
-     * @property {module:model/InlineResponse201EmbeddedCapture}
-     */
-    InlineResponse201EmbeddedCapture: InlineResponse201EmbeddedCapture,
-    /**
-     * The InlineResponse201EmbeddedCaptureLinks model constructor.
-     * @property {module:model/InlineResponse201EmbeddedCaptureLinks}
-     */
-    InlineResponse201EmbeddedCaptureLinks: InlineResponse201EmbeddedCaptureLinks,
-    /**
-     * The InlineResponse201ErrorInformation model constructor.
-     * @property {module:model/InlineResponse201ErrorInformation}
-     */
-    InlineResponse201ErrorInformation: InlineResponse201ErrorInformation,
-    /**
-     * The InlineResponse201ErrorInformationDetails model constructor.
-     * @property {module:model/InlineResponse201ErrorInformationDetails}
-     */
-    InlineResponse201ErrorInformationDetails: InlineResponse201ErrorInformationDetails,
-    /**
-     * The InlineResponse201Links model constructor.
-     * @property {module:model/InlineResponse201Links}
-     */
-    InlineResponse201Links: InlineResponse201Links,
-    /**
-     * The InlineResponse201LinksSelf model constructor.
-     * @property {module:model/InlineResponse201LinksSelf}
-     */
-    InlineResponse201LinksSelf: InlineResponse201LinksSelf,
-    /**
-     * The InlineResponse201OrderInformation model constructor.
-     * @property {module:model/InlineResponse201OrderInformation}
-     */
-    InlineResponse201OrderInformation: InlineResponse201OrderInformation,
-    /**
-     * The InlineResponse201OrderInformationAmountDetails model constructor.
-     * @property {module:model/InlineResponse201OrderInformationAmountDetails}
-     */
-    InlineResponse201OrderInformationAmountDetails: InlineResponse201OrderInformationAmountDetails,
-    /**
-     * The InlineResponse201OrderInformationInvoiceDetails model constructor.
-     * @property {module:model/InlineResponse201OrderInformationInvoiceDetails}
-     */
-    InlineResponse201OrderInformationInvoiceDetails: InlineResponse201OrderInformationInvoiceDetails,
-    /**
-     * The InlineResponse201PaymentInformation model constructor.
-     * @property {module:model/InlineResponse201PaymentInformation}
-     */
-    InlineResponse201PaymentInformation: InlineResponse201PaymentInformation,
-    /**
-     * The InlineResponse201PaymentInformationAccountFeatures model constructor.
-     * @property {module:model/InlineResponse201PaymentInformationAccountFeatures}
-     */
-    InlineResponse201PaymentInformationAccountFeatures: InlineResponse201PaymentInformationAccountFeatures,
-    /**
-     * The InlineResponse201PaymentInformationCard model constructor.
-     * @property {module:model/InlineResponse201PaymentInformationCard}
-     */
-    InlineResponse201PaymentInformationCard: InlineResponse201PaymentInformationCard,
-    /**
-     * The InlineResponse201PaymentInformationTokenizedCard model constructor.
-     * @property {module:model/InlineResponse201PaymentInformationTokenizedCard}
-     */
-    InlineResponse201PaymentInformationTokenizedCard: InlineResponse201PaymentInformationTokenizedCard,
-    /**
-     * The InlineResponse201PointOfSaleInformation model constructor.
-     * @property {module:model/InlineResponse201PointOfSaleInformation}
-     */
-    InlineResponse201PointOfSaleInformation: InlineResponse201PointOfSaleInformation,
-    /**
-     * The InlineResponse201PointOfSaleInformationEmv model constructor.
-     * @property {module:model/InlineResponse201PointOfSaleInformationEmv}
-     */
-    InlineResponse201PointOfSaleInformationEmv: InlineResponse201PointOfSaleInformationEmv,
-    /**
-     * The InlineResponse201ProcessorInformation model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformation}
-     */
-    InlineResponse201ProcessorInformation: InlineResponse201ProcessorInformation,
-    /**
-     * The InlineResponse201ProcessorInformationAvs model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformationAvs}
-     */
-    InlineResponse201ProcessorInformationAvs: InlineResponse201ProcessorInformationAvs,
-    /**
-     * The InlineResponse201ProcessorInformationCardVerification model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformationCardVerification}
-     */
-    InlineResponse201ProcessorInformationCardVerification: InlineResponse201ProcessorInformationCardVerification,
-    /**
-     * The InlineResponse201ProcessorInformationConsumerAuthenticationResponse model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformationConsumerAuthenticationResponse}
-     */
-    InlineResponse201ProcessorInformationConsumerAuthenticationResponse: InlineResponse201ProcessorInformationConsumerAuthenticationResponse,
-    /**
-     * The InlineResponse201ProcessorInformationCustomer model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformationCustomer}
-     */
-    InlineResponse201ProcessorInformationCustomer: InlineResponse201ProcessorInformationCustomer,
-    /**
-     * The InlineResponse201ProcessorInformationElectronicVerificationResults model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformationElectronicVerificationResults}
-     */
-    InlineResponse201ProcessorInformationElectronicVerificationResults: InlineResponse201ProcessorInformationElectronicVerificationResults,
-    /**
-     * The InlineResponse201ProcessorInformationIssuer model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformationIssuer}
-     */
-    InlineResponse201ProcessorInformationIssuer: InlineResponse201ProcessorInformationIssuer,
-    /**
-     * The InlineResponse201ProcessorInformationMerchantAdvice model constructor.
-     * @property {module:model/InlineResponse201ProcessorInformationMerchantAdvice}
-     */
-    InlineResponse201ProcessorInformationMerchantAdvice: InlineResponse201ProcessorInformationMerchantAdvice,
-    /**
      * The InlineResponse400 model constructor.
      * @property {module:model/InlineResponse400}
      */
     InlineResponse400: InlineResponse400,
-    /**
-     * The InlineResponse4001 model constructor.
-     * @property {module:model/InlineResponse4001}
-     */
-    InlineResponse4001: InlineResponse4001,
-    /**
-     * The InlineResponse4002 model constructor.
-     * @property {module:model/InlineResponse4002}
-     */
-    InlineResponse4002: InlineResponse4002,
-    /**
-     * The InlineResponse4003 model constructor.
-     * @property {module:model/InlineResponse4003}
-     */
-    InlineResponse4003: InlineResponse4003,
-    /**
-     * The InlineResponse4004 model constructor.
-     * @property {module:model/InlineResponse4004}
-     */
-    InlineResponse4004: InlineResponse4004,
-    /**
-     * The InlineResponse4005 model constructor.
-     * @property {module:model/InlineResponse4005}
-     */
-    InlineResponse4005: InlineResponse4005,
-    /**
-     * The InlineResponse4006 model constructor.
-     * @property {module:model/InlineResponse4006}
-     */
-    InlineResponse4006: InlineResponse4006,
-    /**
-     * The InlineResponse409 model constructor.
-     * @property {module:model/InlineResponse409}
-     */
-    InlineResponse409: InlineResponse409,
-    /**
-     * The InlineResponse409Links model constructor.
-     * @property {module:model/InlineResponse409Links}
-     */
-    InlineResponse409Links: InlineResponse409Links,
-    /**
-     * The InlineResponse409LinksPaymentInstruments model constructor.
-     * @property {module:model/InlineResponse409LinksPaymentInstruments}
-     */
-    InlineResponse409LinksPaymentInstruments: InlineResponse409LinksPaymentInstruments,
-    /**
-     * The InlineResponse502 model constructor.
-     * @property {module:model/InlineResponse502}
-     */
-    InlineResponse502: InlineResponse502,
     /**
      * The InlineResponseDefault model constructor.
      * @property {module:model/InlineResponseDefault}
@@ -637,56 +187,6 @@
      */
     InlineResponseDefaultResponseStatusDetails: InlineResponseDefaultResponseStatusDetails,
     /**
-     * The InstrumentidentifiersBankAccount model constructor.
-     * @property {module:model/InstrumentidentifiersBankAccount}
-     */
-    InstrumentidentifiersBankAccount: InstrumentidentifiersBankAccount,
-    /**
-     * The InstrumentidentifiersCard model constructor.
-     * @property {module:model/InstrumentidentifiersCard}
-     */
-    InstrumentidentifiersCard: InstrumentidentifiersCard,
-    /**
-     * The InstrumentidentifiersDetails model constructor.
-     * @property {module:model/InstrumentidentifiersDetails}
-     */
-    InstrumentidentifiersDetails: InstrumentidentifiersDetails,
-    /**
-     * The InstrumentidentifiersLinks model constructor.
-     * @property {module:model/InstrumentidentifiersLinks}
-     */
-    InstrumentidentifiersLinks: InstrumentidentifiersLinks,
-    /**
-     * The InstrumentidentifiersLinksSelf model constructor.
-     * @property {module:model/InstrumentidentifiersLinksSelf}
-     */
-    InstrumentidentifiersLinksSelf: InstrumentidentifiersLinksSelf,
-    /**
-     * The InstrumentidentifiersMetadata model constructor.
-     * @property {module:model/InstrumentidentifiersMetadata}
-     */
-    InstrumentidentifiersMetadata: InstrumentidentifiersMetadata,
-    /**
-     * The InstrumentidentifiersProcessingInformation model constructor.
-     * @property {module:model/InstrumentidentifiersProcessingInformation}
-     */
-    InstrumentidentifiersProcessingInformation: InstrumentidentifiersProcessingInformation,
-    /**
-     * The InstrumentidentifiersProcessingInformationAuthorizationOptions model constructor.
-     * @property {module:model/InstrumentidentifiersProcessingInformationAuthorizationOptions}
-     */
-    InstrumentidentifiersProcessingInformationAuthorizationOptions: InstrumentidentifiersProcessingInformationAuthorizationOptions,
-    /**
-     * The InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiator model constructor.
-     * @property {module:model/InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiator}
-     */
-    InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiator: InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiator,
-    /**
-     * The InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction model constructor.
-     * @property {module:model/InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction}
-     */
-    InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction: InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction,
-    /**
      * The JsonWebKey model constructor.
      * @property {module:model/JsonWebKey}
      */
@@ -712,70 +212,715 @@
      */
     Links: Links,
     /**
-     * The OctCreatePaymentRequest model constructor.
-     * @property {module:model/OctCreatePaymentRequest}
+     * The PtsV1TransactionBatchesGet200Response model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet200Response}
      */
-    OctCreatePaymentRequest: OctCreatePaymentRequest,
+    PtsV1TransactionBatchesGet200Response: PtsV1TransactionBatchesGet200Response,
     /**
-     * The PaymentinstrumentsBankAccount model constructor.
-     * @property {module:model/PaymentinstrumentsBankAccount}
+     * The PtsV1TransactionBatchesGet200ResponseLinks model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet200ResponseLinks}
      */
-    PaymentinstrumentsBankAccount: PaymentinstrumentsBankAccount,
+    PtsV1TransactionBatchesGet200ResponseLinks: PtsV1TransactionBatchesGet200ResponseLinks,
     /**
-     * The PaymentinstrumentsBillTo model constructor.
-     * @property {module:model/PaymentinstrumentsBillTo}
+     * The PtsV1TransactionBatchesGet200ResponseLinksSelf model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet200ResponseLinksSelf}
      */
-    PaymentinstrumentsBillTo: PaymentinstrumentsBillTo,
+    PtsV1TransactionBatchesGet200ResponseLinksSelf: PtsV1TransactionBatchesGet200ResponseLinksSelf,
     /**
-     * The PaymentinstrumentsBuyerInformation model constructor.
-     * @property {module:model/PaymentinstrumentsBuyerInformation}
+     * The PtsV1TransactionBatchesGet200ResponseTransactionBatches model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet200ResponseTransactionBatches}
      */
-    PaymentinstrumentsBuyerInformation: PaymentinstrumentsBuyerInformation,
+    PtsV1TransactionBatchesGet200ResponseTransactionBatches: PtsV1TransactionBatchesGet200ResponseTransactionBatches,
     /**
-     * The PaymentinstrumentsBuyerInformationIssuedBy model constructor.
-     * @property {module:model/PaymentinstrumentsBuyerInformationIssuedBy}
+     * The PtsV1TransactionBatchesGet400Response model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet400Response}
      */
-    PaymentinstrumentsBuyerInformationIssuedBy: PaymentinstrumentsBuyerInformationIssuedBy,
+    PtsV1TransactionBatchesGet400Response: PtsV1TransactionBatchesGet400Response,
     /**
-     * The PaymentinstrumentsBuyerInformationPersonalIdentification model constructor.
-     * @property {module:model/PaymentinstrumentsBuyerInformationPersonalIdentification}
+     * The PtsV1TransactionBatchesGet400ResponseErrorInformation model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet400ResponseErrorInformation}
      */
-    PaymentinstrumentsBuyerInformationPersonalIdentification: PaymentinstrumentsBuyerInformationPersonalIdentification,
+    PtsV1TransactionBatchesGet400ResponseErrorInformation: PtsV1TransactionBatchesGet400ResponseErrorInformation,
     /**
-     * The PaymentinstrumentsCard model constructor.
-     * @property {module:model/PaymentinstrumentsCard}
+     * The PtsV1TransactionBatchesGet400ResponseErrorInformationDetails model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet400ResponseErrorInformationDetails}
      */
-    PaymentinstrumentsCard: PaymentinstrumentsCard,
+    PtsV1TransactionBatchesGet400ResponseErrorInformationDetails: PtsV1TransactionBatchesGet400ResponseErrorInformationDetails,
     /**
-     * The PaymentinstrumentsInstrumentIdentifier model constructor.
-     * @property {module:model/PaymentinstrumentsInstrumentIdentifier}
+     * The PtsV1TransactionBatchesGet500Response model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet500Response}
      */
-    PaymentinstrumentsInstrumentIdentifier: PaymentinstrumentsInstrumentIdentifier,
+    PtsV1TransactionBatchesGet500Response: PtsV1TransactionBatchesGet500Response,
     /**
-     * The PaymentinstrumentsMerchantInformation model constructor.
-     * @property {module:model/PaymentinstrumentsMerchantInformation}
+     * The PtsV1TransactionBatchesGet500ResponseErrorInformation model constructor.
+     * @property {module:model/PtsV1TransactionBatchesGet500ResponseErrorInformation}
      */
-    PaymentinstrumentsMerchantInformation: PaymentinstrumentsMerchantInformation,
+    PtsV1TransactionBatchesGet500ResponseErrorInformation: PtsV1TransactionBatchesGet500ResponseErrorInformation,
     /**
-     * The PaymentinstrumentsMerchantInformationMerchantDescriptor model constructor.
-     * @property {module:model/PaymentinstrumentsMerchantInformationMerchantDescriptor}
+     * The PtsV2CreditsPost201Response model constructor.
+     * @property {module:model/PtsV2CreditsPost201Response}
      */
-    PaymentinstrumentsMerchantInformationMerchantDescriptor: PaymentinstrumentsMerchantInformationMerchantDescriptor,
+    PtsV2CreditsPost201Response: PtsV2CreditsPost201Response,
     /**
-     * The PaymentinstrumentsProcessingInformation model constructor.
-     * @property {module:model/PaymentinstrumentsProcessingInformation}
+     * The PtsV2CreditsPost201ResponseCreditAmountDetails model constructor.
+     * @property {module:model/PtsV2CreditsPost201ResponseCreditAmountDetails}
      */
-    PaymentinstrumentsProcessingInformation: PaymentinstrumentsProcessingInformation,
+    PtsV2CreditsPost201ResponseCreditAmountDetails: PtsV2CreditsPost201ResponseCreditAmountDetails,
     /**
-     * The PaymentinstrumentsProcessingInformationBankTransferOptions model constructor.
-     * @property {module:model/PaymentinstrumentsProcessingInformationBankTransferOptions}
+     * The PtsV2PaymentsCapturesPost201Response model constructor.
+     * @property {module:model/PtsV2PaymentsCapturesPost201Response}
      */
-    PaymentinstrumentsProcessingInformationBankTransferOptions: PaymentinstrumentsProcessingInformationBankTransferOptions,
+    PtsV2PaymentsCapturesPost201Response: PtsV2PaymentsCapturesPost201Response,
     /**
-     * The Paymentsflexv1tokensCardInfo model constructor.
-     * @property {module:model/Paymentsflexv1tokensCardInfo}
+     * The PtsV2PaymentsCapturesPost201ResponseLinks model constructor.
+     * @property {module:model/PtsV2PaymentsCapturesPost201ResponseLinks}
      */
-    Paymentsflexv1tokensCardInfo: Paymentsflexv1tokensCardInfo,
+    PtsV2PaymentsCapturesPost201ResponseLinks: PtsV2PaymentsCapturesPost201ResponseLinks,
+    /**
+     * The PtsV2PaymentsCapturesPost201ResponseOrderInformation model constructor.
+     * @property {module:model/PtsV2PaymentsCapturesPost201ResponseOrderInformation}
+     */
+    PtsV2PaymentsCapturesPost201ResponseOrderInformation: PtsV2PaymentsCapturesPost201ResponseOrderInformation,
+    /**
+     * The PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails model constructor.
+     * @property {module:model/PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails}
+     */
+    PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails: PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails,
+    /**
+     * The PtsV2PaymentsCapturesPost201ResponseProcessorInformation model constructor.
+     * @property {module:model/PtsV2PaymentsCapturesPost201ResponseProcessorInformation}
+     */
+    PtsV2PaymentsCapturesPost201ResponseProcessorInformation: PtsV2PaymentsCapturesPost201ResponseProcessorInformation,
+    /**
+     * The PtsV2PaymentsCapturesPost400Response model constructor.
+     * @property {module:model/PtsV2PaymentsCapturesPost400Response}
+     */
+    PtsV2PaymentsCapturesPost400Response: PtsV2PaymentsCapturesPost400Response,
+    /**
+     * The PtsV2PaymentsPost201Response model constructor.
+     * @property {module:model/PtsV2PaymentsPost201Response}
+     */
+    PtsV2PaymentsPost201Response: PtsV2PaymentsPost201Response,
+    /**
+     * The PtsV2PaymentsPost201ResponseClientReferenceInformation model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseClientReferenceInformation}
+     */
+    PtsV2PaymentsPost201ResponseClientReferenceInformation: PtsV2PaymentsPost201ResponseClientReferenceInformation,
+    /**
+     * The PtsV2PaymentsPost201ResponseErrorInformation model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseErrorInformation}
+     */
+    PtsV2PaymentsPost201ResponseErrorInformation: PtsV2PaymentsPost201ResponseErrorInformation,
+    /**
+     * The PtsV2PaymentsPost201ResponseErrorInformationDetails model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails}
+     */
+    PtsV2PaymentsPost201ResponseErrorInformationDetails: PtsV2PaymentsPost201ResponseErrorInformationDetails,
+    /**
+     * The PtsV2PaymentsPost201ResponseLinks model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseLinks}
+     */
+    PtsV2PaymentsPost201ResponseLinks: PtsV2PaymentsPost201ResponseLinks,
+    /**
+     * The PtsV2PaymentsPost201ResponseLinksSelf model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseLinksSelf}
+     */
+    PtsV2PaymentsPost201ResponseLinksSelf: PtsV2PaymentsPost201ResponseLinksSelf,
+    /**
+     * The PtsV2PaymentsPost201ResponseOrderInformation model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseOrderInformation}
+     */
+    PtsV2PaymentsPost201ResponseOrderInformation: PtsV2PaymentsPost201ResponseOrderInformation,
+    /**
+     * The PtsV2PaymentsPost201ResponseOrderInformationAmountDetails model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails}
+     */
+    PtsV2PaymentsPost201ResponseOrderInformationAmountDetails: PtsV2PaymentsPost201ResponseOrderInformationAmountDetails,
+    /**
+     * The PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails}
+     */
+    PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails: PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails,
+    /**
+     * The PtsV2PaymentsPost201ResponsePaymentInformation model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponsePaymentInformation}
+     */
+    PtsV2PaymentsPost201ResponsePaymentInformation: PtsV2PaymentsPost201ResponsePaymentInformation,
+    /**
+     * The PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures}
+     */
+    PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures: PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures,
+    /**
+     * The PtsV2PaymentsPost201ResponsePaymentInformationCard model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponsePaymentInformationCard}
+     */
+    PtsV2PaymentsPost201ResponsePaymentInformationCard: PtsV2PaymentsPost201ResponsePaymentInformationCard,
+    /**
+     * The PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard}
+     */
+    PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard: PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard,
+    /**
+     * The PtsV2PaymentsPost201ResponsePointOfSaleInformation model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponsePointOfSaleInformation}
+     */
+    PtsV2PaymentsPost201ResponsePointOfSaleInformation: PtsV2PaymentsPost201ResponsePointOfSaleInformation,
+    /**
+     * The PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv}
+     */
+    PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv: PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformation model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformation}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformation: PtsV2PaymentsPost201ResponseProcessorInformation,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformationAvs model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformationAvs}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformationAvs: PtsV2PaymentsPost201ResponseProcessorInformationAvs,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformationCardVerification model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformationCardVerification: PtsV2PaymentsPost201ResponseProcessorInformationCardVerification,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse: PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformationCustomer model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformationCustomer}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformationCustomer: PtsV2PaymentsPost201ResponseProcessorInformationCustomer,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults: PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformationIssuer model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformationIssuer}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformationIssuer: PtsV2PaymentsPost201ResponseProcessorInformationIssuer,
+    /**
+     * The PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice model constructor.
+     * @property {module:model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice}
+     */
+    PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice: PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice,
+    /**
+     * The PtsV2PaymentsPost400Response model constructor.
+     * @property {module:model/PtsV2PaymentsPost400Response}
+     */
+    PtsV2PaymentsPost400Response: PtsV2PaymentsPost400Response,
+    /**
+     * The PtsV2PaymentsPost502Response model constructor.
+     * @property {module:model/PtsV2PaymentsPost502Response}
+     */
+    PtsV2PaymentsPost502Response: PtsV2PaymentsPost502Response,
+    /**
+     * The PtsV2PaymentsRefundPost201Response model constructor.
+     * @property {module:model/PtsV2PaymentsRefundPost201Response}
+     */
+    PtsV2PaymentsRefundPost201Response: PtsV2PaymentsRefundPost201Response,
+    /**
+     * The PtsV2PaymentsRefundPost201ResponseLinks model constructor.
+     * @property {module:model/PtsV2PaymentsRefundPost201ResponseLinks}
+     */
+    PtsV2PaymentsRefundPost201ResponseLinks: PtsV2PaymentsRefundPost201ResponseLinks,
+    /**
+     * The PtsV2PaymentsRefundPost201ResponseOrderInformation model constructor.
+     * @property {module:model/PtsV2PaymentsRefundPost201ResponseOrderInformation}
+     */
+    PtsV2PaymentsRefundPost201ResponseOrderInformation: PtsV2PaymentsRefundPost201ResponseOrderInformation,
+    /**
+     * The PtsV2PaymentsRefundPost201ResponseProcessorInformation model constructor.
+     * @property {module:model/PtsV2PaymentsRefundPost201ResponseProcessorInformation}
+     */
+    PtsV2PaymentsRefundPost201ResponseProcessorInformation: PtsV2PaymentsRefundPost201ResponseProcessorInformation,
+    /**
+     * The PtsV2PaymentsRefundPost201ResponseRefundAmountDetails model constructor.
+     * @property {module:model/PtsV2PaymentsRefundPost201ResponseRefundAmountDetails}
+     */
+    PtsV2PaymentsRefundPost201ResponseRefundAmountDetails: PtsV2PaymentsRefundPost201ResponseRefundAmountDetails,
+    /**
+     * The PtsV2PaymentsRefundPost400Response model constructor.
+     * @property {module:model/PtsV2PaymentsRefundPost400Response}
+     */
+    PtsV2PaymentsRefundPost400Response: PtsV2PaymentsRefundPost400Response,
+    /**
+     * The PtsV2PaymentsReversalsPost201Response model constructor.
+     * @property {module:model/PtsV2PaymentsReversalsPost201Response}
+     */
+    PtsV2PaymentsReversalsPost201Response: PtsV2PaymentsReversalsPost201Response,
+    /**
+     * The PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation model constructor.
+     * @property {module:model/PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation}
+     */
+    PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation: PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation,
+    /**
+     * The PtsV2PaymentsReversalsPost201ResponseLinks model constructor.
+     * @property {module:model/PtsV2PaymentsReversalsPost201ResponseLinks}
+     */
+    PtsV2PaymentsReversalsPost201ResponseLinks: PtsV2PaymentsReversalsPost201ResponseLinks,
+    /**
+     * The PtsV2PaymentsReversalsPost201ResponseProcessorInformation model constructor.
+     * @property {module:model/PtsV2PaymentsReversalsPost201ResponseProcessorInformation}
+     */
+    PtsV2PaymentsReversalsPost201ResponseProcessorInformation: PtsV2PaymentsReversalsPost201ResponseProcessorInformation,
+    /**
+     * The PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails model constructor.
+     * @property {module:model/PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails}
+     */
+    PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails: PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails,
+    /**
+     * The PtsV2PaymentsReversalsPost400Response model constructor.
+     * @property {module:model/PtsV2PaymentsReversalsPost400Response}
+     */
+    PtsV2PaymentsReversalsPost400Response: PtsV2PaymentsReversalsPost400Response,
+    /**
+     * The PtsV2PaymentsVoidsPost201Response model constructor.
+     * @property {module:model/PtsV2PaymentsVoidsPost201Response}
+     */
+    PtsV2PaymentsVoidsPost201Response: PtsV2PaymentsVoidsPost201Response,
+    /**
+     * The PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails model constructor.
+     * @property {module:model/PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails}
+     */
+    PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails: PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails,
+    /**
+     * The PtsV2PaymentsVoidsPost400Response model constructor.
+     * @property {module:model/PtsV2PaymentsVoidsPost400Response}
+     */
+    PtsV2PaymentsVoidsPost400Response: PtsV2PaymentsVoidsPost400Response,
+    /**
+     * The PtsV2PayoutsPost400Response model constructor.
+     * @property {module:model/PtsV2PayoutsPost400Response}
+     */
+    PtsV2PayoutsPost400Response: PtsV2PayoutsPost400Response,
+    /**
+     * The PtsV2PayoutsPostResponse model constructor.
+     * @property {module:model/PtsV2PayoutsPostResponse}
+     */
+    PtsV2PayoutsPostResponse: PtsV2PayoutsPostResponse,
+    /**
+     * The Ptsv2creditsPointOfSaleInformation model constructor.
+     * @property {module:model/Ptsv2creditsPointOfSaleInformation}
+     */
+    Ptsv2creditsPointOfSaleInformation: Ptsv2creditsPointOfSaleInformation,
+    /**
+     * The Ptsv2creditsPointOfSaleInformationEmv model constructor.
+     * @property {module:model/Ptsv2creditsPointOfSaleInformationEmv}
+     */
+    Ptsv2creditsPointOfSaleInformationEmv: Ptsv2creditsPointOfSaleInformationEmv,
+    /**
+     * The Ptsv2creditsProcessingInformation model constructor.
+     * @property {module:model/Ptsv2creditsProcessingInformation}
+     */
+    Ptsv2creditsProcessingInformation: Ptsv2creditsProcessingInformation,
+    /**
+     * The Ptsv2paymentsAggregatorInformation model constructor.
+     * @property {module:model/Ptsv2paymentsAggregatorInformation}
+     */
+    Ptsv2paymentsAggregatorInformation: Ptsv2paymentsAggregatorInformation,
+    /**
+     * The Ptsv2paymentsAggregatorInformationSubMerchant model constructor.
+     * @property {module:model/Ptsv2paymentsAggregatorInformationSubMerchant}
+     */
+    Ptsv2paymentsAggregatorInformationSubMerchant: Ptsv2paymentsAggregatorInformationSubMerchant,
+    /**
+     * The Ptsv2paymentsBuyerInformation model constructor.
+     * @property {module:model/Ptsv2paymentsBuyerInformation}
+     */
+    Ptsv2paymentsBuyerInformation: Ptsv2paymentsBuyerInformation,
+    /**
+     * The Ptsv2paymentsBuyerInformationPersonalIdentification model constructor.
+     * @property {module:model/Ptsv2paymentsBuyerInformationPersonalIdentification}
+     */
+    Ptsv2paymentsBuyerInformationPersonalIdentification: Ptsv2paymentsBuyerInformationPersonalIdentification,
+    /**
+     * The Ptsv2paymentsClientReferenceInformation model constructor.
+     * @property {module:model/Ptsv2paymentsClientReferenceInformation}
+     */
+    Ptsv2paymentsClientReferenceInformation: Ptsv2paymentsClientReferenceInformation,
+    /**
+     * The Ptsv2paymentsConsumerAuthenticationInformation model constructor.
+     * @property {module:model/Ptsv2paymentsConsumerAuthenticationInformation}
+     */
+    Ptsv2paymentsConsumerAuthenticationInformation: Ptsv2paymentsConsumerAuthenticationInformation,
+    /**
+     * The Ptsv2paymentsDeviceInformation model constructor.
+     * @property {module:model/Ptsv2paymentsDeviceInformation}
+     */
+    Ptsv2paymentsDeviceInformation: Ptsv2paymentsDeviceInformation,
+    /**
+     * The Ptsv2paymentsMerchantDefinedInformation model constructor.
+     * @property {module:model/Ptsv2paymentsMerchantDefinedInformation}
+     */
+    Ptsv2paymentsMerchantDefinedInformation: Ptsv2paymentsMerchantDefinedInformation,
+    /**
+     * The Ptsv2paymentsMerchantInformation model constructor.
+     * @property {module:model/Ptsv2paymentsMerchantInformation}
+     */
+    Ptsv2paymentsMerchantInformation: Ptsv2paymentsMerchantInformation,
+    /**
+     * The Ptsv2paymentsMerchantInformationMerchantDescriptor model constructor.
+     * @property {module:model/Ptsv2paymentsMerchantInformationMerchantDescriptor}
+     */
+    Ptsv2paymentsMerchantInformationMerchantDescriptor: Ptsv2paymentsMerchantInformationMerchantDescriptor,
+    /**
+     * The Ptsv2paymentsOrderInformation model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformation}
+     */
+    Ptsv2paymentsOrderInformation: Ptsv2paymentsOrderInformation,
+    /**
+     * The Ptsv2paymentsOrderInformationAmountDetails model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationAmountDetails}
+     */
+    Ptsv2paymentsOrderInformationAmountDetails: Ptsv2paymentsOrderInformationAmountDetails,
+    /**
+     * The Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts}
+     */
+    Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts: Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts,
+    /**
+     * The Ptsv2paymentsOrderInformationAmountDetailsSurcharge model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationAmountDetailsSurcharge}
+     */
+    Ptsv2paymentsOrderInformationAmountDetailsSurcharge: Ptsv2paymentsOrderInformationAmountDetailsSurcharge,
+    /**
+     * The Ptsv2paymentsOrderInformationAmountDetailsTaxDetails model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationAmountDetailsTaxDetails}
+     */
+    Ptsv2paymentsOrderInformationAmountDetailsTaxDetails: Ptsv2paymentsOrderInformationAmountDetailsTaxDetails,
+    /**
+     * The Ptsv2paymentsOrderInformationBillTo model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationBillTo}
+     */
+    Ptsv2paymentsOrderInformationBillTo: Ptsv2paymentsOrderInformationBillTo,
+    /**
+     * The Ptsv2paymentsOrderInformationInvoiceDetails model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationInvoiceDetails}
+     */
+    Ptsv2paymentsOrderInformationInvoiceDetails: Ptsv2paymentsOrderInformationInvoiceDetails,
+    /**
+     * The Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum}
+     */
+    Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum: Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum,
+    /**
+     * The Ptsv2paymentsOrderInformationLineItems model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationLineItems}
+     */
+    Ptsv2paymentsOrderInformationLineItems: Ptsv2paymentsOrderInformationLineItems,
+    /**
+     * The Ptsv2paymentsOrderInformationShipTo model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationShipTo}
+     */
+    Ptsv2paymentsOrderInformationShipTo: Ptsv2paymentsOrderInformationShipTo,
+    /**
+     * The Ptsv2paymentsOrderInformationShippingDetails model constructor.
+     * @property {module:model/Ptsv2paymentsOrderInformationShippingDetails}
+     */
+    Ptsv2paymentsOrderInformationShippingDetails: Ptsv2paymentsOrderInformationShippingDetails,
+    /**
+     * The Ptsv2paymentsPaymentInformation model constructor.
+     * @property {module:model/Ptsv2paymentsPaymentInformation}
+     */
+    Ptsv2paymentsPaymentInformation: Ptsv2paymentsPaymentInformation,
+    /**
+     * The Ptsv2paymentsPaymentInformationCard model constructor.
+     * @property {module:model/Ptsv2paymentsPaymentInformationCard}
+     */
+    Ptsv2paymentsPaymentInformationCard: Ptsv2paymentsPaymentInformationCard,
+    /**
+     * The Ptsv2paymentsPaymentInformationCustomer model constructor.
+     * @property {module:model/Ptsv2paymentsPaymentInformationCustomer}
+     */
+    Ptsv2paymentsPaymentInformationCustomer: Ptsv2paymentsPaymentInformationCustomer,
+    /**
+     * The Ptsv2paymentsPaymentInformationFluidData model constructor.
+     * @property {module:model/Ptsv2paymentsPaymentInformationFluidData}
+     */
+    Ptsv2paymentsPaymentInformationFluidData: Ptsv2paymentsPaymentInformationFluidData,
+    /**
+     * The Ptsv2paymentsPaymentInformationTokenizedCard model constructor.
+     * @property {module:model/Ptsv2paymentsPaymentInformationTokenizedCard}
+     */
+    Ptsv2paymentsPaymentInformationTokenizedCard: Ptsv2paymentsPaymentInformationTokenizedCard,
+    /**
+     * The Ptsv2paymentsPointOfSaleInformation model constructor.
+     * @property {module:model/Ptsv2paymentsPointOfSaleInformation}
+     */
+    Ptsv2paymentsPointOfSaleInformation: Ptsv2paymentsPointOfSaleInformation,
+    /**
+     * The Ptsv2paymentsPointOfSaleInformationEmv model constructor.
+     * @property {module:model/Ptsv2paymentsPointOfSaleInformationEmv}
+     */
+    Ptsv2paymentsPointOfSaleInformationEmv: Ptsv2paymentsPointOfSaleInformationEmv,
+    /**
+     * The Ptsv2paymentsProcessingInformation model constructor.
+     * @property {module:model/Ptsv2paymentsProcessingInformation}
+     */
+    Ptsv2paymentsProcessingInformation: Ptsv2paymentsProcessingInformation,
+    /**
+     * The Ptsv2paymentsProcessingInformationAuthorizationOptions model constructor.
+     * @property {module:model/Ptsv2paymentsProcessingInformationAuthorizationOptions}
+     */
+    Ptsv2paymentsProcessingInformationAuthorizationOptions: Ptsv2paymentsProcessingInformationAuthorizationOptions,
+    /**
+     * The Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator model constructor.
+     * @property {module:model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator}
+     */
+    Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator: Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator,
+    /**
+     * The Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction model constructor.
+     * @property {module:model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction}
+     */
+    Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction: Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction,
+    /**
+     * The Ptsv2paymentsProcessingInformationCaptureOptions model constructor.
+     * @property {module:model/Ptsv2paymentsProcessingInformationCaptureOptions}
+     */
+    Ptsv2paymentsProcessingInformationCaptureOptions: Ptsv2paymentsProcessingInformationCaptureOptions,
+    /**
+     * The Ptsv2paymentsProcessingInformationIssuer model constructor.
+     * @property {module:model/Ptsv2paymentsProcessingInformationIssuer}
+     */
+    Ptsv2paymentsProcessingInformationIssuer: Ptsv2paymentsProcessingInformationIssuer,
+    /**
+     * The Ptsv2paymentsProcessingInformationRecurringOptions model constructor.
+     * @property {module:model/Ptsv2paymentsProcessingInformationRecurringOptions}
+     */
+    Ptsv2paymentsProcessingInformationRecurringOptions: Ptsv2paymentsProcessingInformationRecurringOptions,
+    /**
+     * The Ptsv2paymentsRecipientInformation model constructor.
+     * @property {module:model/Ptsv2paymentsRecipientInformation}
+     */
+    Ptsv2paymentsRecipientInformation: Ptsv2paymentsRecipientInformation,
+    /**
+     * The Ptsv2paymentsidcapturesAggregatorInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesAggregatorInformation}
+     */
+    Ptsv2paymentsidcapturesAggregatorInformation: Ptsv2paymentsidcapturesAggregatorInformation,
+    /**
+     * The Ptsv2paymentsidcapturesAggregatorInformationSubMerchant model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesAggregatorInformationSubMerchant}
+     */
+    Ptsv2paymentsidcapturesAggregatorInformationSubMerchant: Ptsv2paymentsidcapturesAggregatorInformationSubMerchant,
+    /**
+     * The Ptsv2paymentsidcapturesBuyerInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesBuyerInformation}
+     */
+    Ptsv2paymentsidcapturesBuyerInformation: Ptsv2paymentsidcapturesBuyerInformation,
+    /**
+     * The Ptsv2paymentsidcapturesMerchantInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesMerchantInformation}
+     */
+    Ptsv2paymentsidcapturesMerchantInformation: Ptsv2paymentsidcapturesMerchantInformation,
+    /**
+     * The Ptsv2paymentsidcapturesOrderInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesOrderInformation}
+     */
+    Ptsv2paymentsidcapturesOrderInformation: Ptsv2paymentsidcapturesOrderInformation,
+    /**
+     * The Ptsv2paymentsidcapturesOrderInformationAmountDetails model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesOrderInformationAmountDetails}
+     */
+    Ptsv2paymentsidcapturesOrderInformationAmountDetails: Ptsv2paymentsidcapturesOrderInformationAmountDetails,
+    /**
+     * The Ptsv2paymentsidcapturesOrderInformationBillTo model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesOrderInformationBillTo}
+     */
+    Ptsv2paymentsidcapturesOrderInformationBillTo: Ptsv2paymentsidcapturesOrderInformationBillTo,
+    /**
+     * The Ptsv2paymentsidcapturesOrderInformationInvoiceDetails model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesOrderInformationInvoiceDetails}
+     */
+    Ptsv2paymentsidcapturesOrderInformationInvoiceDetails: Ptsv2paymentsidcapturesOrderInformationInvoiceDetails,
+    /**
+     * The Ptsv2paymentsidcapturesOrderInformationShipTo model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesOrderInformationShipTo}
+     */
+    Ptsv2paymentsidcapturesOrderInformationShipTo: Ptsv2paymentsidcapturesOrderInformationShipTo,
+    /**
+     * The Ptsv2paymentsidcapturesOrderInformationShippingDetails model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesOrderInformationShippingDetails}
+     */
+    Ptsv2paymentsidcapturesOrderInformationShippingDetails: Ptsv2paymentsidcapturesOrderInformationShippingDetails,
+    /**
+     * The Ptsv2paymentsidcapturesPaymentInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesPaymentInformation}
+     */
+    Ptsv2paymentsidcapturesPaymentInformation: Ptsv2paymentsidcapturesPaymentInformation,
+    /**
+     * The Ptsv2paymentsidcapturesPointOfSaleInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesPointOfSaleInformation}
+     */
+    Ptsv2paymentsidcapturesPointOfSaleInformation: Ptsv2paymentsidcapturesPointOfSaleInformation,
+    /**
+     * The Ptsv2paymentsidcapturesPointOfSaleInformationEmv model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesPointOfSaleInformationEmv}
+     */
+    Ptsv2paymentsidcapturesPointOfSaleInformationEmv: Ptsv2paymentsidcapturesPointOfSaleInformationEmv,
+    /**
+     * The Ptsv2paymentsidcapturesProcessingInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesProcessingInformation}
+     */
+    Ptsv2paymentsidcapturesProcessingInformation: Ptsv2paymentsidcapturesProcessingInformation,
+    /**
+     * The Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions}
+     */
+    Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions: Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions,
+    /**
+     * The Ptsv2paymentsidcapturesProcessingInformationCaptureOptions model constructor.
+     * @property {module:model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions}
+     */
+    Ptsv2paymentsidcapturesProcessingInformationCaptureOptions: Ptsv2paymentsidcapturesProcessingInformationCaptureOptions,
+    /**
+     * The Ptsv2paymentsidrefundsMerchantInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsMerchantInformation}
+     */
+    Ptsv2paymentsidrefundsMerchantInformation: Ptsv2paymentsidrefundsMerchantInformation,
+    /**
+     * The Ptsv2paymentsidrefundsOrderInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsOrderInformation}
+     */
+    Ptsv2paymentsidrefundsOrderInformation: Ptsv2paymentsidrefundsOrderInformation,
+    /**
+     * The Ptsv2paymentsidrefundsOrderInformationLineItems model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsOrderInformationLineItems}
+     */
+    Ptsv2paymentsidrefundsOrderInformationLineItems: Ptsv2paymentsidrefundsOrderInformationLineItems,
+    /**
+     * The Ptsv2paymentsidrefundsPaymentInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsPaymentInformation}
+     */
+    Ptsv2paymentsidrefundsPaymentInformation: Ptsv2paymentsidrefundsPaymentInformation,
+    /**
+     * The Ptsv2paymentsidrefundsPaymentInformationCard model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsPaymentInformationCard}
+     */
+    Ptsv2paymentsidrefundsPaymentInformationCard: Ptsv2paymentsidrefundsPaymentInformationCard,
+    /**
+     * The Ptsv2paymentsidrefundsPointOfSaleInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsPointOfSaleInformation}
+     */
+    Ptsv2paymentsidrefundsPointOfSaleInformation: Ptsv2paymentsidrefundsPointOfSaleInformation,
+    /**
+     * The Ptsv2paymentsidrefundsProcessingInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsProcessingInformation}
+     */
+    Ptsv2paymentsidrefundsProcessingInformation: Ptsv2paymentsidrefundsProcessingInformation,
+    /**
+     * The Ptsv2paymentsidrefundsProcessingInformationRecurringOptions model constructor.
+     * @property {module:model/Ptsv2paymentsidrefundsProcessingInformationRecurringOptions}
+     */
+    Ptsv2paymentsidrefundsProcessingInformationRecurringOptions: Ptsv2paymentsidrefundsProcessingInformationRecurringOptions,
+    /**
+     * The Ptsv2paymentsidreversalsClientReferenceInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidreversalsClientReferenceInformation}
+     */
+    Ptsv2paymentsidreversalsClientReferenceInformation: Ptsv2paymentsidreversalsClientReferenceInformation,
+    /**
+     * The Ptsv2paymentsidreversalsOrderInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidreversalsOrderInformation}
+     */
+    Ptsv2paymentsidreversalsOrderInformation: Ptsv2paymentsidreversalsOrderInformation,
+    /**
+     * The Ptsv2paymentsidreversalsOrderInformationLineItems model constructor.
+     * @property {module:model/Ptsv2paymentsidreversalsOrderInformationLineItems}
+     */
+    Ptsv2paymentsidreversalsOrderInformationLineItems: Ptsv2paymentsidreversalsOrderInformationLineItems,
+    /**
+     * The Ptsv2paymentsidreversalsPointOfSaleInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidreversalsPointOfSaleInformation}
+     */
+    Ptsv2paymentsidreversalsPointOfSaleInformation: Ptsv2paymentsidreversalsPointOfSaleInformation,
+    /**
+     * The Ptsv2paymentsidreversalsProcessingInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidreversalsProcessingInformation}
+     */
+    Ptsv2paymentsidreversalsProcessingInformation: Ptsv2paymentsidreversalsProcessingInformation,
+    /**
+     * The Ptsv2paymentsidreversalsReversalInformation model constructor.
+     * @property {module:model/Ptsv2paymentsidreversalsReversalInformation}
+     */
+    Ptsv2paymentsidreversalsReversalInformation: Ptsv2paymentsidreversalsReversalInformation,
+    /**
+     * The Ptsv2paymentsidreversalsReversalInformationAmountDetails model constructor.
+     * @property {module:model/Ptsv2paymentsidreversalsReversalInformationAmountDetails}
+     */
+    Ptsv2paymentsidreversalsReversalInformationAmountDetails: Ptsv2paymentsidreversalsReversalInformationAmountDetails,
+    /**
+     * The Ptsv2payoutsMerchantInformation model constructor.
+     * @property {module:model/Ptsv2payoutsMerchantInformation}
+     */
+    Ptsv2payoutsMerchantInformation: Ptsv2payoutsMerchantInformation,
+    /**
+     * The Ptsv2payoutsMerchantInformationMerchantDescriptor model constructor.
+     * @property {module:model/Ptsv2payoutsMerchantInformationMerchantDescriptor}
+     */
+    Ptsv2payoutsMerchantInformationMerchantDescriptor: Ptsv2payoutsMerchantInformationMerchantDescriptor,
+    /**
+     * The Ptsv2payoutsOrderInformation model constructor.
+     * @property {module:model/Ptsv2payoutsOrderInformation}
+     */
+    Ptsv2payoutsOrderInformation: Ptsv2payoutsOrderInformation,
+    /**
+     * The Ptsv2payoutsOrderInformationAmountDetails model constructor.
+     * @property {module:model/Ptsv2payoutsOrderInformationAmountDetails}
+     */
+    Ptsv2payoutsOrderInformationAmountDetails: Ptsv2payoutsOrderInformationAmountDetails,
+    /**
+     * The Ptsv2payoutsOrderInformationAmountDetailsSurcharge model constructor.
+     * @property {module:model/Ptsv2payoutsOrderInformationAmountDetailsSurcharge}
+     */
+    Ptsv2payoutsOrderInformationAmountDetailsSurcharge: Ptsv2payoutsOrderInformationAmountDetailsSurcharge,
+    /**
+     * The Ptsv2payoutsOrderInformationBillTo model constructor.
+     * @property {module:model/Ptsv2payoutsOrderInformationBillTo}
+     */
+    Ptsv2payoutsOrderInformationBillTo: Ptsv2payoutsOrderInformationBillTo,
+    /**
+     * The Ptsv2payoutsPaymentInformation model constructor.
+     * @property {module:model/Ptsv2payoutsPaymentInformation}
+     */
+    Ptsv2payoutsPaymentInformation: Ptsv2payoutsPaymentInformation,
+    /**
+     * The Ptsv2payoutsPaymentInformationCard model constructor.
+     * @property {module:model/Ptsv2payoutsPaymentInformationCard}
+     */
+    Ptsv2payoutsPaymentInformationCard: Ptsv2payoutsPaymentInformationCard,
+    /**
+     * The Ptsv2payoutsProcessingInformation model constructor.
+     * @property {module:model/Ptsv2payoutsProcessingInformation}
+     */
+    Ptsv2payoutsProcessingInformation: Ptsv2payoutsProcessingInformation,
+    /**
+     * The Ptsv2payoutsProcessingInformationPayoutsOptions model constructor.
+     * @property {module:model/Ptsv2payoutsProcessingInformationPayoutsOptions}
+     */
+    Ptsv2payoutsProcessingInformationPayoutsOptions: Ptsv2payoutsProcessingInformationPayoutsOptions,
+    /**
+     * The Ptsv2payoutsRecipientInformation model constructor.
+     * @property {module:model/Ptsv2payoutsRecipientInformation}
+     */
+    Ptsv2payoutsRecipientInformation: Ptsv2payoutsRecipientInformation,
+    /**
+     * The Ptsv2payoutsSenderInformation model constructor.
+     * @property {module:model/Ptsv2payoutsSenderInformation}
+     */
+    Ptsv2payoutsSenderInformation: Ptsv2payoutsSenderInformation,
+    /**
+     * The Ptsv2payoutsSenderInformationAccount model constructor.
+     * @property {module:model/Ptsv2payoutsSenderInformationAccount}
+     */
+    Ptsv2payoutsSenderInformationAccount: Ptsv2payoutsSenderInformationAccount,
     /**
      * The RefundCaptureRequest model constructor.
      * @property {module:model/RefundCaptureRequest}
@@ -787,6 +932,86 @@
      */
     RefundPaymentRequest: RefundPaymentRequest,
     /**
+     * The ReportingV3NotificationofChangesGet200Response model constructor.
+     * @property {module:model/ReportingV3NotificationofChangesGet200Response}
+     */
+    ReportingV3NotificationofChangesGet200Response: ReportingV3NotificationofChangesGet200Response,
+    /**
+     * The ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges model constructor.
+     * @property {module:model/ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges}
+     */
+    ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges: ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges,
+    /**
+     * The ReportingV3NotificationofChangesGet400Response model constructor.
+     * @property {module:model/ReportingV3NotificationofChangesGet400Response}
+     */
+    ReportingV3NotificationofChangesGet400Response: ReportingV3NotificationofChangesGet400Response,
+    /**
+     * The ReportingV3NotificationofChangesGet400ResponseFields model constructor.
+     * @property {module:model/ReportingV3NotificationofChangesGet400ResponseFields}
+     */
+    ReportingV3NotificationofChangesGet400ResponseFields: ReportingV3NotificationofChangesGet400ResponseFields,
+    /**
+     * The ReportingV3ReportDefinitionsGet200Response model constructor.
+     * @property {module:model/ReportingV3ReportDefinitionsGet200Response}
+     */
+    ReportingV3ReportDefinitionsGet200Response: ReportingV3ReportDefinitionsGet200Response,
+    /**
+     * The ReportingV3ReportDefinitionsGet200ResponseReportDefinitions model constructor.
+     * @property {module:model/ReportingV3ReportDefinitionsGet200ResponseReportDefinitions}
+     */
+    ReportingV3ReportDefinitionsGet200ResponseReportDefinitions: ReportingV3ReportDefinitionsGet200ResponseReportDefinitions,
+    /**
+     * The ReportingV3ReportDefinitionsNameGet200Response model constructor.
+     * @property {module:model/ReportingV3ReportDefinitionsNameGet200Response}
+     */
+    ReportingV3ReportDefinitionsNameGet200Response: ReportingV3ReportDefinitionsNameGet200Response,
+    /**
+     * The ReportingV3ReportDefinitionsNameGet200ResponseAttributes model constructor.
+     * @property {module:model/ReportingV3ReportDefinitionsNameGet200ResponseAttributes}
+     */
+    ReportingV3ReportDefinitionsNameGet200ResponseAttributes: ReportingV3ReportDefinitionsNameGet200ResponseAttributes,
+    /**
+     * The ReportingV3ReportSubscriptionsGet200Response model constructor.
+     * @property {module:model/ReportingV3ReportSubscriptionsGet200Response}
+     */
+    ReportingV3ReportSubscriptionsGet200Response: ReportingV3ReportSubscriptionsGet200Response,
+    /**
+     * The ReportingV3ReportSubscriptionsGet200ResponseReportPreferences model constructor.
+     * @property {module:model/ReportingV3ReportSubscriptionsGet200ResponseReportPreferences}
+     */
+    ReportingV3ReportSubscriptionsGet200ResponseReportPreferences: ReportingV3ReportSubscriptionsGet200ResponseReportPreferences,
+    /**
+     * The ReportingV3ReportSubscriptionsGet200ResponseSubscriptions model constructor.
+     * @property {module:model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions}
+     */
+    ReportingV3ReportSubscriptionsGet200ResponseSubscriptions: ReportingV3ReportSubscriptionsGet200ResponseSubscriptions,
+    /**
+     * The ReportingV3ReportsGet200Response model constructor.
+     * @property {module:model/ReportingV3ReportsGet200Response}
+     */
+    ReportingV3ReportsGet200Response: ReportingV3ReportsGet200Response,
+    /**
+     * The ReportingV3ReportsGet200ResponseReports model constructor.
+     * @property {module:model/ReportingV3ReportsGet200ResponseReports}
+     */
+    ReportingV3ReportsGet200ResponseReports: ReportingV3ReportsGet200ResponseReports,
+    /**
+     * The ReportingV3ReportsIdGet200Response model constructor.
+     * @property {module:model/ReportingV3ReportsIdGet200Response}
+     */
+    ReportingV3ReportsIdGet200Response: ReportingV3ReportsIdGet200Response,
+    /**
+     * The RequestBody model constructor.
+     * @property {module:model/RequestBody}
+     */
+    RequestBody: RequestBody,
+    /**
+     * The RequestBody1 model constructor.
+     * @property {module:model/RequestBody1}
+     */
+    RequestBody1: RequestBody1,
+    /**
      * The ResponseStatus model constructor.
      * @property {module:model/ResponseStatus}
      */
@@ -796,6 +1021,171 @@
      * @property {module:model/ResponseStatusDetails}
      */
     ResponseStatusDetails: ResponseStatusDetails,
+    /**
+     * The TmsV1InstrumentidentifiersDelete409Response model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersDelete409Response}
+     */
+    TmsV1InstrumentidentifiersDelete409Response: TmsV1InstrumentidentifiersDelete409Response,
+    /**
+     * The TmsV1InstrumentidentifiersDelete409ResponseLinks model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinks}
+     */
+    TmsV1InstrumentidentifiersDelete409ResponseLinks: TmsV1InstrumentidentifiersDelete409ResponseLinks,
+    /**
+     * The TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments}
+     */
+    TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments: TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments,
+    /**
+     * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response}
+     */
+    TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response: TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response,
+    /**
+     * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks}
+     */
+    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks: TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks,
+    /**
+     * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst}
+     */
+    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst: TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst,
+    /**
+     * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast}
+     */
+    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast: TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast,
+    /**
+     * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext}
+     */
+    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext: TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext,
+    /**
+     * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev}
+     */
+    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev: TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev,
+    /**
+     * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf}
+     */
+    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf: TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf,
+    /**
+     * The TmsV1InstrumentidentifiersPost200Response model constructor.
+     * @property {module:model/TmsV1InstrumentidentifiersPost200Response}
+     */
+    TmsV1InstrumentidentifiersPost200Response: TmsV1InstrumentidentifiersPost200Response,
+    /**
+     * The TmsV1PaymentinstrumentsPost201Response model constructor.
+     * @property {module:model/TmsV1PaymentinstrumentsPost201Response}
+     */
+    TmsV1PaymentinstrumentsPost201Response: TmsV1PaymentinstrumentsPost201Response,
+    /**
+     * The Tmsv1instrumentidentifiersBankAccount model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersBankAccount}
+     */
+    Tmsv1instrumentidentifiersBankAccount: Tmsv1instrumentidentifiersBankAccount,
+    /**
+     * The Tmsv1instrumentidentifiersCard model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersCard}
+     */
+    Tmsv1instrumentidentifiersCard: Tmsv1instrumentidentifiersCard,
+    /**
+     * The Tmsv1instrumentidentifiersDetails model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersDetails}
+     */
+    Tmsv1instrumentidentifiersDetails: Tmsv1instrumentidentifiersDetails,
+    /**
+     * The Tmsv1instrumentidentifiersLinks model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersLinks}
+     */
+    Tmsv1instrumentidentifiersLinks: Tmsv1instrumentidentifiersLinks,
+    /**
+     * The Tmsv1instrumentidentifiersLinksSelf model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersLinksSelf}
+     */
+    Tmsv1instrumentidentifiersLinksSelf: Tmsv1instrumentidentifiersLinksSelf,
+    /**
+     * The Tmsv1instrumentidentifiersMetadata model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersMetadata}
+     */
+    Tmsv1instrumentidentifiersMetadata: Tmsv1instrumentidentifiersMetadata,
+    /**
+     * The Tmsv1instrumentidentifiersProcessingInformation model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersProcessingInformation}
+     */
+    Tmsv1instrumentidentifiersProcessingInformation: Tmsv1instrumentidentifiersProcessingInformation,
+    /**
+     * The Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions}
+     */
+    Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions: Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions,
+    /**
+     * The Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator}
+     */
+    Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator: Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator,
+    /**
+     * The Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction model constructor.
+     * @property {module:model/Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction}
+     */
+    Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction: Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction,
+    /**
+     * The Tmsv1paymentinstrumentsBankAccount model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsBankAccount}
+     */
+    Tmsv1paymentinstrumentsBankAccount: Tmsv1paymentinstrumentsBankAccount,
+    /**
+     * The Tmsv1paymentinstrumentsBillTo model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsBillTo}
+     */
+    Tmsv1paymentinstrumentsBillTo: Tmsv1paymentinstrumentsBillTo,
+    /**
+     * The Tmsv1paymentinstrumentsBuyerInformation model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsBuyerInformation}
+     */
+    Tmsv1paymentinstrumentsBuyerInformation: Tmsv1paymentinstrumentsBuyerInformation,
+    /**
+     * The Tmsv1paymentinstrumentsBuyerInformationIssuedBy model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsBuyerInformationIssuedBy}
+     */
+    Tmsv1paymentinstrumentsBuyerInformationIssuedBy: Tmsv1paymentinstrumentsBuyerInformationIssuedBy,
+    /**
+     * The Tmsv1paymentinstrumentsBuyerInformationPersonalIdentification model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsBuyerInformationPersonalIdentification}
+     */
+    Tmsv1paymentinstrumentsBuyerInformationPersonalIdentification: Tmsv1paymentinstrumentsBuyerInformationPersonalIdentification,
+    /**
+     * The Tmsv1paymentinstrumentsCard model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsCard}
+     */
+    Tmsv1paymentinstrumentsCard: Tmsv1paymentinstrumentsCard,
+    /**
+     * The Tmsv1paymentinstrumentsInstrumentIdentifier model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsInstrumentIdentifier}
+     */
+    Tmsv1paymentinstrumentsInstrumentIdentifier: Tmsv1paymentinstrumentsInstrumentIdentifier,
+    /**
+     * The Tmsv1paymentinstrumentsMerchantInformation model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsMerchantInformation}
+     */
+    Tmsv1paymentinstrumentsMerchantInformation: Tmsv1paymentinstrumentsMerchantInformation,
+    /**
+     * The Tmsv1paymentinstrumentsMerchantInformationMerchantDescriptor model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsMerchantInformationMerchantDescriptor}
+     */
+    Tmsv1paymentinstrumentsMerchantInformationMerchantDescriptor: Tmsv1paymentinstrumentsMerchantInformationMerchantDescriptor,
+    /**
+     * The Tmsv1paymentinstrumentsProcessingInformation model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsProcessingInformation}
+     */
+    Tmsv1paymentinstrumentsProcessingInformation: Tmsv1paymentinstrumentsProcessingInformation,
+    /**
+     * The Tmsv1paymentinstrumentsProcessingInformationBankTransferOptions model constructor.
+     * @property {module:model/Tmsv1paymentinstrumentsProcessingInformationBankTransferOptions}
+     */
+    Tmsv1paymentinstrumentsProcessingInformationBankTransferOptions: Tmsv1paymentinstrumentsProcessingInformationBankTransferOptions,
     /**
      * The TokenizeParameters model constructor.
      * @property {module:model/TokenizeParameters}
@@ -812,415 +1202,375 @@
      */
     TokenizeResult: TokenizeResult,
     /**
-     * The V2creditsPointOfSaleInformation model constructor.
-     * @property {module:model/V2creditsPointOfSaleInformation}
+     * The TssV2TransactionsGet200Response model constructor.
+     * @property {module:model/TssV2TransactionsGet200Response}
      */
-    V2creditsPointOfSaleInformation: V2creditsPointOfSaleInformation,
+    TssV2TransactionsGet200Response: TssV2TransactionsGet200Response,
     /**
-     * The V2creditsPointOfSaleInformationEmv model constructor.
-     * @property {module:model/V2creditsPointOfSaleInformationEmv}
+     * The TssV2TransactionsGet200ResponseApplicationInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseApplicationInformation}
      */
-    V2creditsPointOfSaleInformationEmv: V2creditsPointOfSaleInformationEmv,
+    TssV2TransactionsGet200ResponseApplicationInformation: TssV2TransactionsGet200ResponseApplicationInformation,
     /**
-     * The V2creditsProcessingInformation model constructor.
-     * @property {module:model/V2creditsProcessingInformation}
+     * The TssV2TransactionsGet200ResponseApplicationInformationApplications model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseApplicationInformationApplications}
      */
-    V2creditsProcessingInformation: V2creditsProcessingInformation,
+    TssV2TransactionsGet200ResponseApplicationInformationApplications: TssV2TransactionsGet200ResponseApplicationInformationApplications,
     /**
-     * The V2paymentsAggregatorInformation model constructor.
-     * @property {module:model/V2paymentsAggregatorInformation}
+     * The TssV2TransactionsGet200ResponseBuyerInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseBuyerInformation}
      */
-    V2paymentsAggregatorInformation: V2paymentsAggregatorInformation,
+    TssV2TransactionsGet200ResponseBuyerInformation: TssV2TransactionsGet200ResponseBuyerInformation,
     /**
-     * The V2paymentsAggregatorInformationSubMerchant model constructor.
-     * @property {module:model/V2paymentsAggregatorInformationSubMerchant}
+     * The TssV2TransactionsGet200ResponseClientReferenceInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseClientReferenceInformation}
      */
-    V2paymentsAggregatorInformationSubMerchant: V2paymentsAggregatorInformationSubMerchant,
+    TssV2TransactionsGet200ResponseClientReferenceInformation: TssV2TransactionsGet200ResponseClientReferenceInformation,
     /**
-     * The V2paymentsBuyerInformation model constructor.
-     * @property {module:model/V2paymentsBuyerInformation}
+     * The TssV2TransactionsGet200ResponseConsumerAuthenticationInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseConsumerAuthenticationInformation}
      */
-    V2paymentsBuyerInformation: V2paymentsBuyerInformation,
+    TssV2TransactionsGet200ResponseConsumerAuthenticationInformation: TssV2TransactionsGet200ResponseConsumerAuthenticationInformation,
     /**
-     * The V2paymentsBuyerInformationPersonalIdentification model constructor.
-     * @property {module:model/V2paymentsBuyerInformationPersonalIdentification}
+     * The TssV2TransactionsGet200ResponseDeviceInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseDeviceInformation}
      */
-    V2paymentsBuyerInformationPersonalIdentification: V2paymentsBuyerInformationPersonalIdentification,
+    TssV2TransactionsGet200ResponseDeviceInformation: TssV2TransactionsGet200ResponseDeviceInformation,
     /**
-     * The V2paymentsClientReferenceInformation model constructor.
-     * @property {module:model/V2paymentsClientReferenceInformation}
+     * The TssV2TransactionsGet200ResponseErrorInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseErrorInformation}
      */
-    V2paymentsClientReferenceInformation: V2paymentsClientReferenceInformation,
+    TssV2TransactionsGet200ResponseErrorInformation: TssV2TransactionsGet200ResponseErrorInformation,
     /**
-     * The V2paymentsConsumerAuthenticationInformation model constructor.
-     * @property {module:model/V2paymentsConsumerAuthenticationInformation}
+     * The TssV2TransactionsGet200ResponseFraudMarkingInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseFraudMarkingInformation}
      */
-    V2paymentsConsumerAuthenticationInformation: V2paymentsConsumerAuthenticationInformation,
+    TssV2TransactionsGet200ResponseFraudMarkingInformation: TssV2TransactionsGet200ResponseFraudMarkingInformation,
     /**
-     * The V2paymentsDeviceInformation model constructor.
-     * @property {module:model/V2paymentsDeviceInformation}
+     * The TssV2TransactionsGet200ResponseInstallmentInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseInstallmentInformation}
      */
-    V2paymentsDeviceInformation: V2paymentsDeviceInformation,
+    TssV2TransactionsGet200ResponseInstallmentInformation: TssV2TransactionsGet200ResponseInstallmentInformation,
     /**
-     * The V2paymentsMerchantDefinedInformation model constructor.
-     * @property {module:model/V2paymentsMerchantDefinedInformation}
+     * The TssV2TransactionsGet200ResponseMerchantDefinedInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseMerchantDefinedInformation}
      */
-    V2paymentsMerchantDefinedInformation: V2paymentsMerchantDefinedInformation,
+    TssV2TransactionsGet200ResponseMerchantDefinedInformation: TssV2TransactionsGet200ResponseMerchantDefinedInformation,
     /**
-     * The V2paymentsMerchantInformation model constructor.
-     * @property {module:model/V2paymentsMerchantInformation}
+     * The TssV2TransactionsGet200ResponseMerchantInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseMerchantInformation}
      */
-    V2paymentsMerchantInformation: V2paymentsMerchantInformation,
+    TssV2TransactionsGet200ResponseMerchantInformation: TssV2TransactionsGet200ResponseMerchantInformation,
     /**
-     * The V2paymentsMerchantInformationMerchantDescriptor model constructor.
-     * @property {module:model/V2paymentsMerchantInformationMerchantDescriptor}
+     * The TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor}
      */
-    V2paymentsMerchantInformationMerchantDescriptor: V2paymentsMerchantInformationMerchantDescriptor,
+    TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor: TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor,
     /**
-     * The V2paymentsOrderInformation model constructor.
-     * @property {module:model/V2paymentsOrderInformation}
+     * The TssV2TransactionsGet200ResponseOrderInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseOrderInformation}
      */
-    V2paymentsOrderInformation: V2paymentsOrderInformation,
+    TssV2TransactionsGet200ResponseOrderInformation: TssV2TransactionsGet200ResponseOrderInformation,
     /**
-     * The V2paymentsOrderInformationAmountDetails model constructor.
-     * @property {module:model/V2paymentsOrderInformationAmountDetails}
+     * The TssV2TransactionsGet200ResponseOrderInformationAmountDetails model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseOrderInformationAmountDetails}
      */
-    V2paymentsOrderInformationAmountDetails: V2paymentsOrderInformationAmountDetails,
+    TssV2TransactionsGet200ResponseOrderInformationAmountDetails: TssV2TransactionsGet200ResponseOrderInformationAmountDetails,
     /**
-     * The V2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts model constructor.
-     * @property {module:model/V2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts}
+     * The TssV2TransactionsGet200ResponseOrderInformationBillTo model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseOrderInformationBillTo}
      */
-    V2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts: V2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts,
+    TssV2TransactionsGet200ResponseOrderInformationBillTo: TssV2TransactionsGet200ResponseOrderInformationBillTo,
     /**
-     * The V2paymentsOrderInformationAmountDetailsSurcharge model constructor.
-     * @property {module:model/V2paymentsOrderInformationAmountDetailsSurcharge}
+     * The TssV2TransactionsGet200ResponseOrderInformationLineItems model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseOrderInformationLineItems}
      */
-    V2paymentsOrderInformationAmountDetailsSurcharge: V2paymentsOrderInformationAmountDetailsSurcharge,
+    TssV2TransactionsGet200ResponseOrderInformationLineItems: TssV2TransactionsGet200ResponseOrderInformationLineItems,
     /**
-     * The V2paymentsOrderInformationAmountDetailsTaxDetails model constructor.
-     * @property {module:model/V2paymentsOrderInformationAmountDetailsTaxDetails}
+     * The TssV2TransactionsGet200ResponseOrderInformationShipTo model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseOrderInformationShipTo}
      */
-    V2paymentsOrderInformationAmountDetailsTaxDetails: V2paymentsOrderInformationAmountDetailsTaxDetails,
+    TssV2TransactionsGet200ResponseOrderInformationShipTo: TssV2TransactionsGet200ResponseOrderInformationShipTo,
     /**
-     * The V2paymentsOrderInformationBillTo model constructor.
-     * @property {module:model/V2paymentsOrderInformationBillTo}
+     * The TssV2TransactionsGet200ResponseOrderInformationShippingDetails model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseOrderInformationShippingDetails}
      */
-    V2paymentsOrderInformationBillTo: V2paymentsOrderInformationBillTo,
+    TssV2TransactionsGet200ResponseOrderInformationShippingDetails: TssV2TransactionsGet200ResponseOrderInformationShippingDetails,
     /**
-     * The V2paymentsOrderInformationInvoiceDetails model constructor.
-     * @property {module:model/V2paymentsOrderInformationInvoiceDetails}
+     * The TssV2TransactionsGet200ResponsePaymentInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformation}
      */
-    V2paymentsOrderInformationInvoiceDetails: V2paymentsOrderInformationInvoiceDetails,
+    TssV2TransactionsGet200ResponsePaymentInformation: TssV2TransactionsGet200ResponsePaymentInformation,
     /**
-     * The V2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum model constructor.
-     * @property {module:model/V2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum}
+     * The TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures}
      */
-    V2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum: V2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum,
+    TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures: TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures,
     /**
-     * The V2paymentsOrderInformationLineItems model constructor.
-     * @property {module:model/V2paymentsOrderInformationLineItems}
+     * The TssV2TransactionsGet200ResponsePaymentInformationBank model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformationBank}
      */
-    V2paymentsOrderInformationLineItems: V2paymentsOrderInformationLineItems,
+    TssV2TransactionsGet200ResponsePaymentInformationBank: TssV2TransactionsGet200ResponsePaymentInformationBank,
     /**
-     * The V2paymentsOrderInformationShipTo model constructor.
-     * @property {module:model/V2paymentsOrderInformationShipTo}
+     * The TssV2TransactionsGet200ResponsePaymentInformationBankAccount model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformationBankAccount}
      */
-    V2paymentsOrderInformationShipTo: V2paymentsOrderInformationShipTo,
+    TssV2TransactionsGet200ResponsePaymentInformationBankAccount: TssV2TransactionsGet200ResponsePaymentInformationBankAccount,
     /**
-     * The V2paymentsOrderInformationShippingDetails model constructor.
-     * @property {module:model/V2paymentsOrderInformationShippingDetails}
+     * The TssV2TransactionsGet200ResponsePaymentInformationBankMandate model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformationBankMandate}
      */
-    V2paymentsOrderInformationShippingDetails: V2paymentsOrderInformationShippingDetails,
+    TssV2TransactionsGet200ResponsePaymentInformationBankMandate: TssV2TransactionsGet200ResponsePaymentInformationBankMandate,
     /**
-     * The V2paymentsPaymentInformation model constructor.
-     * @property {module:model/V2paymentsPaymentInformation}
+     * The TssV2TransactionsGet200ResponsePaymentInformationCard model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformationCard}
      */
-    V2paymentsPaymentInformation: V2paymentsPaymentInformation,
+    TssV2TransactionsGet200ResponsePaymentInformationCard: TssV2TransactionsGet200ResponsePaymentInformationCard,
     /**
-     * The V2paymentsPaymentInformationCard model constructor.
-     * @property {module:model/V2paymentsPaymentInformationCard}
+     * The TssV2TransactionsGet200ResponsePaymentInformationInvoice model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformationInvoice}
      */
-    V2paymentsPaymentInformationCard: V2paymentsPaymentInformationCard,
+    TssV2TransactionsGet200ResponsePaymentInformationInvoice: TssV2TransactionsGet200ResponsePaymentInformationInvoice,
     /**
-     * The V2paymentsPaymentInformationCustomer model constructor.
-     * @property {module:model/V2paymentsPaymentInformationCustomer}
+     * The TssV2TransactionsGet200ResponsePaymentInformationPaymentType model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePaymentInformationPaymentType}
      */
-    V2paymentsPaymentInformationCustomer: V2paymentsPaymentInformationCustomer,
+    TssV2TransactionsGet200ResponsePaymentInformationPaymentType: TssV2TransactionsGet200ResponsePaymentInformationPaymentType,
     /**
-     * The V2paymentsPaymentInformationFluidData model constructor.
-     * @property {module:model/V2paymentsPaymentInformationFluidData}
+     * The TssV2TransactionsGet200ResponsePointOfSaleInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponsePointOfSaleInformation}
      */
-    V2paymentsPaymentInformationFluidData: V2paymentsPaymentInformationFluidData,
+    TssV2TransactionsGet200ResponsePointOfSaleInformation: TssV2TransactionsGet200ResponsePointOfSaleInformation,
     /**
-     * The V2paymentsPaymentInformationTokenizedCard model constructor.
-     * @property {module:model/V2paymentsPaymentInformationTokenizedCard}
+     * The TssV2TransactionsGet200ResponseProcessingInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessingInformation}
      */
-    V2paymentsPaymentInformationTokenizedCard: V2paymentsPaymentInformationTokenizedCard,
+    TssV2TransactionsGet200ResponseProcessingInformation: TssV2TransactionsGet200ResponseProcessingInformation,
     /**
-     * The V2paymentsPointOfSaleInformation model constructor.
-     * @property {module:model/V2paymentsPointOfSaleInformation}
+     * The TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions}
      */
-    V2paymentsPointOfSaleInformation: V2paymentsPointOfSaleInformation,
+    TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions: TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions,
     /**
-     * The V2paymentsPointOfSaleInformationEmv model constructor.
-     * @property {module:model/V2paymentsPointOfSaleInformationEmv}
+     * The TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions}
      */
-    V2paymentsPointOfSaleInformationEmv: V2paymentsPointOfSaleInformationEmv,
+    TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions: TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions,
     /**
-     * The V2paymentsProcessingInformation model constructor.
-     * @property {module:model/V2paymentsProcessingInformation}
+     * The TssV2TransactionsGet200ResponseProcessorInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessorInformation}
      */
-    V2paymentsProcessingInformation: V2paymentsProcessingInformation,
+    TssV2TransactionsGet200ResponseProcessorInformation: TssV2TransactionsGet200ResponseProcessorInformation,
     /**
-     * The V2paymentsProcessingInformationAuthorizationOptions model constructor.
-     * @property {module:model/V2paymentsProcessingInformationAuthorizationOptions}
+     * The TssV2TransactionsGet200ResponseProcessorInformationAchVerification model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessorInformationAchVerification}
      */
-    V2paymentsProcessingInformationAuthorizationOptions: V2paymentsProcessingInformationAuthorizationOptions,
+    TssV2TransactionsGet200ResponseProcessorInformationAchVerification: TssV2TransactionsGet200ResponseProcessorInformationAchVerification,
     /**
-     * The V2paymentsProcessingInformationAuthorizationOptionsInitiator model constructor.
-     * @property {module:model/V2paymentsProcessingInformationAuthorizationOptionsInitiator}
+     * The TssV2TransactionsGet200ResponseProcessorInformationCardVerification model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessorInformationCardVerification}
      */
-    V2paymentsProcessingInformationAuthorizationOptionsInitiator: V2paymentsProcessingInformationAuthorizationOptionsInitiator,
+    TssV2TransactionsGet200ResponseProcessorInformationCardVerification: TssV2TransactionsGet200ResponseProcessorInformationCardVerification,
     /**
-     * The V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction model constructor.
-     * @property {module:model/V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction}
+     * The TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults}
      */
-    V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction: V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction,
+    TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults: TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults,
     /**
-     * The V2paymentsProcessingInformationCaptureOptions model constructor.
-     * @property {module:model/V2paymentsProcessingInformationCaptureOptions}
+     * The TssV2TransactionsGet200ResponseProcessorInformationProcessor model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseProcessorInformationProcessor}
      */
-    V2paymentsProcessingInformationCaptureOptions: V2paymentsProcessingInformationCaptureOptions,
+    TssV2TransactionsGet200ResponseProcessorInformationProcessor: TssV2TransactionsGet200ResponseProcessorInformationProcessor,
     /**
-     * The V2paymentsProcessingInformationIssuer model constructor.
-     * @property {module:model/V2paymentsProcessingInformationIssuer}
+     * The TssV2TransactionsGet200ResponseRiskInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseRiskInformation}
      */
-    V2paymentsProcessingInformationIssuer: V2paymentsProcessingInformationIssuer,
+    TssV2TransactionsGet200ResponseRiskInformation: TssV2TransactionsGet200ResponseRiskInformation,
     /**
-     * The V2paymentsProcessingInformationRecurringOptions model constructor.
-     * @property {module:model/V2paymentsProcessingInformationRecurringOptions}
+     * The TssV2TransactionsGet200ResponseRiskInformationProfile model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseRiskInformationProfile}
      */
-    V2paymentsProcessingInformationRecurringOptions: V2paymentsProcessingInformationRecurringOptions,
+    TssV2TransactionsGet200ResponseRiskInformationProfile: TssV2TransactionsGet200ResponseRiskInformationProfile,
     /**
-     * The V2paymentsRecipientInformation model constructor.
-     * @property {module:model/V2paymentsRecipientInformation}
+     * The TssV2TransactionsGet200ResponseRiskInformationScore model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseRiskInformationScore}
      */
-    V2paymentsRecipientInformation: V2paymentsRecipientInformation,
+    TssV2TransactionsGet200ResponseRiskInformationScore: TssV2TransactionsGet200ResponseRiskInformationScore,
     /**
-     * The V2paymentsidcapturesAggregatorInformation model constructor.
-     * @property {module:model/V2paymentsidcapturesAggregatorInformation}
+     * The TssV2TransactionsGet200ResponseSenderInformation model constructor.
+     * @property {module:model/TssV2TransactionsGet200ResponseSenderInformation}
      */
-    V2paymentsidcapturesAggregatorInformation: V2paymentsidcapturesAggregatorInformation,
+    TssV2TransactionsGet200ResponseSenderInformation: TssV2TransactionsGet200ResponseSenderInformation,
     /**
-     * The V2paymentsidcapturesAggregatorInformationSubMerchant model constructor.
-     * @property {module:model/V2paymentsidcapturesAggregatorInformationSubMerchant}
+     * The TssV2TransactionsPost201Response model constructor.
+     * @property {module:model/TssV2TransactionsPost201Response}
      */
-    V2paymentsidcapturesAggregatorInformationSubMerchant: V2paymentsidcapturesAggregatorInformationSubMerchant,
+    TssV2TransactionsPost201Response: TssV2TransactionsPost201Response,
     /**
-     * The V2paymentsidcapturesBuyerInformation model constructor.
-     * @property {module:model/V2paymentsidcapturesBuyerInformation}
+     * The TssV2TransactionsPost201ResponseEmbedded model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbedded}
      */
-    V2paymentsidcapturesBuyerInformation: V2paymentsidcapturesBuyerInformation,
+    TssV2TransactionsPost201ResponseEmbedded: TssV2TransactionsPost201ResponseEmbedded,
     /**
-     * The V2paymentsidcapturesMerchantInformation model constructor.
-     * @property {module:model/V2paymentsidcapturesMerchantInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedBuyerInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation}
      */
-    V2paymentsidcapturesMerchantInformation: V2paymentsidcapturesMerchantInformation,
+    TssV2TransactionsPost201ResponseEmbeddedBuyerInformation: TssV2TransactionsPost201ResponseEmbeddedBuyerInformation,
     /**
-     * The V2paymentsidcapturesOrderInformation model constructor.
-     * @property {module:model/V2paymentsidcapturesOrderInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation}
      */
-    V2paymentsidcapturesOrderInformation: V2paymentsidcapturesOrderInformation,
+    TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation: TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation,
     /**
-     * The V2paymentsidcapturesOrderInformationAmountDetails model constructor.
-     * @property {module:model/V2paymentsidcapturesOrderInformationAmountDetails}
+     * The TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation}
      */
-    V2paymentsidcapturesOrderInformationAmountDetails: V2paymentsidcapturesOrderInformationAmountDetails,
+    TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation: TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation,
     /**
-     * The V2paymentsidcapturesOrderInformationBillTo model constructor.
-     * @property {module:model/V2paymentsidcapturesOrderInformationBillTo}
+     * The TssV2TransactionsPost201ResponseEmbeddedDeviceInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation}
      */
-    V2paymentsidcapturesOrderInformationBillTo: V2paymentsidcapturesOrderInformationBillTo,
+    TssV2TransactionsPost201ResponseEmbeddedDeviceInformation: TssV2TransactionsPost201ResponseEmbeddedDeviceInformation,
     /**
-     * The V2paymentsidcapturesOrderInformationInvoiceDetails model constructor.
-     * @property {module:model/V2paymentsidcapturesOrderInformationInvoiceDetails}
+     * The TssV2TransactionsPost201ResponseEmbeddedLinks model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedLinks}
      */
-    V2paymentsidcapturesOrderInformationInvoiceDetails: V2paymentsidcapturesOrderInformationInvoiceDetails,
+    TssV2TransactionsPost201ResponseEmbeddedLinks: TssV2TransactionsPost201ResponseEmbeddedLinks,
     /**
-     * The V2paymentsidcapturesOrderInformationShipTo model constructor.
-     * @property {module:model/V2paymentsidcapturesOrderInformationShipTo}
+     * The TssV2TransactionsPost201ResponseEmbeddedMerchantInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedMerchantInformation}
      */
-    V2paymentsidcapturesOrderInformationShipTo: V2paymentsidcapturesOrderInformationShipTo,
+    TssV2TransactionsPost201ResponseEmbeddedMerchantInformation: TssV2TransactionsPost201ResponseEmbeddedMerchantInformation,
     /**
-     * The V2paymentsidcapturesOrderInformationShippingDetails model constructor.
-     * @property {module:model/V2paymentsidcapturesOrderInformationShippingDetails}
+     * The TssV2TransactionsPost201ResponseEmbeddedOrderInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedOrderInformation}
      */
-    V2paymentsidcapturesOrderInformationShippingDetails: V2paymentsidcapturesOrderInformationShippingDetails,
+    TssV2TransactionsPost201ResponseEmbeddedOrderInformation: TssV2TransactionsPost201ResponseEmbeddedOrderInformation,
     /**
-     * The V2paymentsidcapturesPaymentInformation model constructor.
-     * @property {module:model/V2paymentsidcapturesPaymentInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo}
      */
-    V2paymentsidcapturesPaymentInformation: V2paymentsidcapturesPaymentInformation,
+    TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo: TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo,
     /**
-     * The V2paymentsidcapturesPointOfSaleInformation model constructor.
-     * @property {module:model/V2paymentsidcapturesPointOfSaleInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo}
      */
-    V2paymentsidcapturesPointOfSaleInformation: V2paymentsidcapturesPointOfSaleInformation,
+    TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo: TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo,
     /**
-     * The V2paymentsidcapturesPointOfSaleInformationEmv model constructor.
-     * @property {module:model/V2paymentsidcapturesPointOfSaleInformationEmv}
+     * The TssV2TransactionsPost201ResponseEmbeddedPaymentInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformation}
      */
-    V2paymentsidcapturesPointOfSaleInformationEmv: V2paymentsidcapturesPointOfSaleInformationEmv,
+    TssV2TransactionsPost201ResponseEmbeddedPaymentInformation: TssV2TransactionsPost201ResponseEmbeddedPaymentInformation,
     /**
-     * The V2paymentsidcapturesProcessingInformation model constructor.
-     * @property {module:model/V2paymentsidcapturesProcessingInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard}
      */
-    V2paymentsidcapturesProcessingInformation: V2paymentsidcapturesProcessingInformation,
+    TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard: TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard,
     /**
-     * The V2paymentsidcapturesProcessingInformationAuthorizationOptions model constructor.
-     * @property {module:model/V2paymentsidcapturesProcessingInformationAuthorizationOptions}
+     * The TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod}
      */
-    V2paymentsidcapturesProcessingInformationAuthorizationOptions: V2paymentsidcapturesProcessingInformationAuthorizationOptions,
+    TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod: TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod,
     /**
-     * The V2paymentsidcapturesProcessingInformationCaptureOptions model constructor.
-     * @property {module:model/V2paymentsidcapturesProcessingInformationCaptureOptions}
+     * The TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation}
      */
-    V2paymentsidcapturesProcessingInformationCaptureOptions: V2paymentsidcapturesProcessingInformationCaptureOptions,
+    TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation: TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation,
     /**
-     * The V2paymentsidrefundsMerchantInformation model constructor.
-     * @property {module:model/V2paymentsidrefundsMerchantInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner}
      */
-    V2paymentsidrefundsMerchantInformation: V2paymentsidrefundsMerchantInformation,
+    TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner: TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner,
     /**
-     * The V2paymentsidrefundsOrderInformation model constructor.
-     * @property {module:model/V2paymentsidrefundsOrderInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedProcessingInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedProcessingInformation}
      */
-    V2paymentsidrefundsOrderInformation: V2paymentsidrefundsOrderInformation,
+    TssV2TransactionsPost201ResponseEmbeddedProcessingInformation: TssV2TransactionsPost201ResponseEmbeddedProcessingInformation,
     /**
-     * The V2paymentsidrefundsOrderInformationLineItems model constructor.
-     * @property {module:model/V2paymentsidrefundsOrderInformationLineItems}
+     * The TssV2TransactionsPost201ResponseEmbeddedProcessorInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedProcessorInformation}
      */
-    V2paymentsidrefundsOrderInformationLineItems: V2paymentsidrefundsOrderInformationLineItems,
+    TssV2TransactionsPost201ResponseEmbeddedProcessorInformation: TssV2TransactionsPost201ResponseEmbeddedProcessorInformation,
     /**
-     * The V2paymentsidrefundsPaymentInformation model constructor.
-     * @property {module:model/V2paymentsidrefundsPaymentInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedRiskInformation model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedRiskInformation}
      */
-    V2paymentsidrefundsPaymentInformation: V2paymentsidrefundsPaymentInformation,
+    TssV2TransactionsPost201ResponseEmbeddedRiskInformation: TssV2TransactionsPost201ResponseEmbeddedRiskInformation,
     /**
-     * The V2paymentsidrefundsPaymentInformationCard model constructor.
-     * @property {module:model/V2paymentsidrefundsPaymentInformationCard}
+     * The TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders}
      */
-    V2paymentsidrefundsPaymentInformationCard: V2paymentsidrefundsPaymentInformationCard,
+    TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders: TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders,
     /**
-     * The V2paymentsidrefundsPointOfSaleInformation model constructor.
-     * @property {module:model/V2paymentsidrefundsPointOfSaleInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint}
      */
-    V2paymentsidrefundsPointOfSaleInformation: V2paymentsidrefundsPointOfSaleInformation,
+    TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint: TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint,
     /**
-     * The V2paymentsidrefundsProcessingInformation model constructor.
-     * @property {module:model/V2paymentsidrefundsProcessingInformation}
+     * The TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries model constructor.
+     * @property {module:model/TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries}
      */
-    V2paymentsidrefundsProcessingInformation: V2paymentsidrefundsProcessingInformation,
+    TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries: TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries,
     /**
-     * The V2paymentsidrefundsProcessingInformationRecurringOptions model constructor.
-     * @property {module:model/V2paymentsidrefundsProcessingInformationRecurringOptions}
+     * The TssV2TransactionsPost400Response model constructor.
+     * @property {module:model/TssV2TransactionsPost400Response}
      */
-    V2paymentsidrefundsProcessingInformationRecurringOptions: V2paymentsidrefundsProcessingInformationRecurringOptions,
+    TssV2TransactionsPost400Response: TssV2TransactionsPost400Response,
     /**
-     * The V2paymentsidreversalsClientReferenceInformation model constructor.
-     * @property {module:model/V2paymentsidreversalsClientReferenceInformation}
+     * The TssV2TransactionsPostResponse model constructor.
+     * @property {module:model/TssV2TransactionsPostResponse}
      */
-    V2paymentsidreversalsClientReferenceInformation: V2paymentsidreversalsClientReferenceInformation,
+    TssV2TransactionsPostResponse: TssV2TransactionsPostResponse,
     /**
-     * The V2paymentsidreversalsOrderInformation model constructor.
-     * @property {module:model/V2paymentsidreversalsOrderInformation}
+     * The UmsV1UsersGet200Response model constructor.
+     * @property {module:model/UmsV1UsersGet200Response}
      */
-    V2paymentsidreversalsOrderInformation: V2paymentsidreversalsOrderInformation,
+    UmsV1UsersGet200Response: UmsV1UsersGet200Response,
     /**
-     * The V2paymentsidreversalsOrderInformationLineItems model constructor.
-     * @property {module:model/V2paymentsidreversalsOrderInformationLineItems}
+     * The UmsV1UsersGet200ResponseAccountInformation model constructor.
+     * @property {module:model/UmsV1UsersGet200ResponseAccountInformation}
      */
-    V2paymentsidreversalsOrderInformationLineItems: V2paymentsidreversalsOrderInformationLineItems,
+    UmsV1UsersGet200ResponseAccountInformation: UmsV1UsersGet200ResponseAccountInformation,
     /**
-     * The V2paymentsidreversalsPointOfSaleInformation model constructor.
-     * @property {module:model/V2paymentsidreversalsPointOfSaleInformation}
+     * The UmsV1UsersGet200ResponseContactInformation model constructor.
+     * @property {module:model/UmsV1UsersGet200ResponseContactInformation}
      */
-    V2paymentsidreversalsPointOfSaleInformation: V2paymentsidreversalsPointOfSaleInformation,
+    UmsV1UsersGet200ResponseContactInformation: UmsV1UsersGet200ResponseContactInformation,
     /**
-     * The V2paymentsidreversalsProcessingInformation model constructor.
-     * @property {module:model/V2paymentsidreversalsProcessingInformation}
+     * The UmsV1UsersGet200ResponseOrganizationInformation model constructor.
+     * @property {module:model/UmsV1UsersGet200ResponseOrganizationInformation}
      */
-    V2paymentsidreversalsProcessingInformation: V2paymentsidreversalsProcessingInformation,
+    UmsV1UsersGet200ResponseOrganizationInformation: UmsV1UsersGet200ResponseOrganizationInformation,
     /**
-     * The V2paymentsidreversalsReversalInformation model constructor.
-     * @property {module:model/V2paymentsidreversalsReversalInformation}
+     * The UmsV1UsersGet200ResponseUsers model constructor.
+     * @property {module:model/UmsV1UsersGet200ResponseUsers}
      */
-    V2paymentsidreversalsReversalInformation: V2paymentsidreversalsReversalInformation,
+    UmsV1UsersGet200ResponseUsers: UmsV1UsersGet200ResponseUsers,
     /**
-     * The V2paymentsidreversalsReversalInformationAmountDetails model constructor.
-     * @property {module:model/V2paymentsidreversalsReversalInformationAmountDetails}
+     * The V1FileDetailsGet200Response model constructor.
+     * @property {module:model/V1FileDetailsGet200Response}
      */
-    V2paymentsidreversalsReversalInformationAmountDetails: V2paymentsidreversalsReversalInformationAmountDetails,
+    V1FileDetailsGet200Response: V1FileDetailsGet200Response,
     /**
-     * The V2payoutsMerchantInformation model constructor.
-     * @property {module:model/V2payoutsMerchantInformation}
+     * The V1FileDetailsGet200ResponseFileDetails model constructor.
+     * @property {module:model/V1FileDetailsGet200ResponseFileDetails}
      */
-    V2payoutsMerchantInformation: V2payoutsMerchantInformation,
+    V1FileDetailsGet200ResponseFileDetails: V1FileDetailsGet200ResponseFileDetails,
     /**
-     * The V2payoutsMerchantInformationMerchantDescriptor model constructor.
-     * @property {module:model/V2payoutsMerchantInformationMerchantDescriptor}
+     * The V1FileDetailsGet200ResponseLinks model constructor.
+     * @property {module:model/V1FileDetailsGet200ResponseLinks}
      */
-    V2payoutsMerchantInformationMerchantDescriptor: V2payoutsMerchantInformationMerchantDescriptor,
+    V1FileDetailsGet200ResponseLinks: V1FileDetailsGet200ResponseLinks,
     /**
-     * The V2payoutsOrderInformation model constructor.
-     * @property {module:model/V2payoutsOrderInformation}
+     * The V1FileDetailsGet200ResponseLinksFiles model constructor.
+     * @property {module:model/V1FileDetailsGet200ResponseLinksFiles}
      */
-    V2payoutsOrderInformation: V2payoutsOrderInformation,
+    V1FileDetailsGet200ResponseLinksFiles: V1FileDetailsGet200ResponseLinksFiles,
     /**
-     * The V2payoutsOrderInformationAmountDetails model constructor.
-     * @property {module:model/V2payoutsOrderInformationAmountDetails}
+     * The V1FileDetailsGet200ResponseLinksSelf model constructor.
+     * @property {module:model/V1FileDetailsGet200ResponseLinksSelf}
      */
-    V2payoutsOrderInformationAmountDetails: V2payoutsOrderInformationAmountDetails,
-    /**
-     * The V2payoutsOrderInformationBillTo model constructor.
-     * @property {module:model/V2payoutsOrderInformationBillTo}
-     */
-    V2payoutsOrderInformationBillTo: V2payoutsOrderInformationBillTo,
-    /**
-     * The V2payoutsPaymentInformation model constructor.
-     * @property {module:model/V2payoutsPaymentInformation}
-     */
-    V2payoutsPaymentInformation: V2payoutsPaymentInformation,
-    /**
-     * The V2payoutsPaymentInformationCard model constructor.
-     * @property {module:model/V2payoutsPaymentInformationCard}
-     */
-    V2payoutsPaymentInformationCard: V2payoutsPaymentInformationCard,
-    /**
-     * The V2payoutsProcessingInformation model constructor.
-     * @property {module:model/V2payoutsProcessingInformation}
-     */
-    V2payoutsProcessingInformation: V2payoutsProcessingInformation,
-    /**
-     * The V2payoutsProcessingInformationPayoutsOptions model constructor.
-     * @property {module:model/V2payoutsProcessingInformationPayoutsOptions}
-     */
-    V2payoutsProcessingInformationPayoutsOptions: V2payoutsProcessingInformationPayoutsOptions,
-    /**
-     * The V2payoutsRecipientInformation model constructor.
-     * @property {module:model/V2payoutsRecipientInformation}
-     */
-    V2payoutsRecipientInformation: V2payoutsRecipientInformation,
-    /**
-     * The V2payoutsSenderInformation model constructor.
-     * @property {module:model/V2payoutsSenderInformation}
-     */
-    V2payoutsSenderInformation: V2payoutsSenderInformation,
-    /**
-     * The V2payoutsSenderInformationAccount model constructor.
-     * @property {module:model/V2payoutsSenderInformationAccount}
-     */
-    V2payoutsSenderInformationAccount: V2payoutsSenderInformationAccount,
+    V1FileDetailsGet200ResponseLinksSelf: V1FileDetailsGet200ResponseLinksSelf,
     /**
      * The VoidCaptureRequest model constructor.
      * @property {module:model/VoidCaptureRequest}
@@ -1252,45 +1602,110 @@
      */
     CreditApi: CreditApi,
     /**
-     * The DefaultApi service constructor.
-     * @property {module:api/DefaultApi}
+     * The FlexTokenApi service constructor.
+     * @property {module:api/FlexTokenApi}
      */
-    DefaultApi: DefaultApi,
+    FlexTokenApi: FlexTokenApi,
     /**
      * The InstrumentIdentifierApi service constructor.
      * @property {module:api/InstrumentIdentifierApi}
      */
     InstrumentIdentifierApi: InstrumentIdentifierApi,
     /**
+     * The InstrumentIdentifiersApi service constructor.
+     * @property {module:api/InstrumentIdentifiersApi}
+     */
+    InstrumentIdentifiersApi: InstrumentIdentifiersApi,
+    /**
      * The KeyGenerationApi service constructor.
      * @property {module:api/KeyGenerationApi}
      */
     KeyGenerationApi: KeyGenerationApi,
     /**
-     * The PaymentApi service constructor.
-     * @property {module:api/PaymentApi}
+     * The NotificationOfChangesApi service constructor.
+     * @property {module:api/NotificationOfChangesApi}
      */
-    PaymentApi: PaymentApi,
+    NotificationOfChangesApi: NotificationOfChangesApi,
     /**
-     * The PaymentInstrumentApi service constructor.
-     * @property {module:api/PaymentInstrumentApi}
+     * The PaymentInstrumentsApi service constructor.
+     * @property {module:api/PaymentInstrumentsApi}
      */
-    PaymentInstrumentApi: PaymentInstrumentApi,
+    PaymentInstrumentsApi: PaymentInstrumentsApi,
+    /**
+     * The PaymentsApi service constructor.
+     * @property {module:api/PaymentsApi}
+     */
+    PaymentsApi: PaymentsApi,
+    /**
+     * The ProcessAPayoutApi service constructor.
+     * @property {module:api/ProcessAPayoutApi}
+     */
+    ProcessAPayoutApi: ProcessAPayoutApi,
+    /**
+     * The PurchaseAndRefundDetailsApi service constructor.
+     * @property {module:api/PurchaseAndRefundDetailsApi}
+     */
+    PurchaseAndRefundDetailsApi: PurchaseAndRefundDetailsApi,
     /**
      * The RefundApi service constructor.
      * @property {module:api/RefundApi}
      */
     RefundApi: RefundApi,
     /**
+     * The ReportDefinitionsApi service constructor.
+     * @property {module:api/ReportDefinitionsApi}
+     */
+    ReportDefinitionsApi: ReportDefinitionsApi,
+    /**
+     * The ReportDownloadsApi service constructor.
+     * @property {module:api/ReportDownloadsApi}
+     */
+    ReportDownloadsApi: ReportDownloadsApi,
+    /**
+     * The ReportSubscriptionsApi service constructor.
+     * @property {module:api/ReportSubscriptionsApi}
+     */
+    ReportSubscriptionsApi: ReportSubscriptionsApi,
+    /**
+     * The ReportsApi service constructor.
+     * @property {module:api/ReportsApi}
+     */
+    ReportsApi: ReportsApi,
+    /**
      * The ReversalApi service constructor.
      * @property {module:api/ReversalApi}
      */
     ReversalApi: ReversalApi,
     /**
-     * The TokenizationApi service constructor.
-     * @property {module:api/TokenizationApi}
+     * The SearchTransactionsApi service constructor.
+     * @property {module:api/SearchTransactionsApi}
      */
-    TokenizationApi: TokenizationApi,
+    SearchTransactionsApi: SearchTransactionsApi,
+    /**
+     * The SecureFileShareApi service constructor.
+     * @property {module:api/SecureFileShareApi}
+     */
+    SecureFileShareApi: SecureFileShareApi,
+    /**
+     * The TransactionBatchApi service constructor.
+     * @property {module:api/TransactionBatchApi}
+     */
+    TransactionBatchApi: TransactionBatchApi,
+    /**
+     * The TransactionBatchesApi service constructor.
+     * @property {module:api/TransactionBatchesApi}
+     */
+    TransactionBatchesApi: TransactionBatchesApi,
+    /**
+     * The TransactionDetailsApi service constructor.
+     * @property {module:api/TransactionDetailsApi}
+     */
+    TransactionDetailsApi: TransactionDetailsApi,
+    /**
+     * The UserManagementApi service constructor.
+     * @property {module:api/UserManagementApi}
+     */
+    UserManagementApi: UserManagementApi,
     /**
      * The VoidApi service constructor.
      * @property {module:api/VoidApi}

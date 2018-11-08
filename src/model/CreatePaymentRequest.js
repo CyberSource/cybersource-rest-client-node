@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/V2paymentsAggregatorInformation', 'model/V2paymentsBuyerInformation', 'model/V2paymentsClientReferenceInformation', 'model/V2paymentsConsumerAuthenticationInformation', 'model/V2paymentsDeviceInformation', 'model/V2paymentsMerchantDefinedInformation', 'model/V2paymentsMerchantInformation', 'model/V2paymentsOrderInformation', 'model/V2paymentsPaymentInformation', 'model/V2paymentsPointOfSaleInformation', 'model/V2paymentsProcessingInformation', 'model/V2paymentsRecipientInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsAggregatorInformation', 'model/Ptsv2paymentsBuyerInformation', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsConsumerAuthenticationInformation', 'model/Ptsv2paymentsDeviceInformation', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2paymentsMerchantInformation', 'model/Ptsv2paymentsOrderInformation', 'model/Ptsv2paymentsPaymentInformation', 'model/Ptsv2paymentsPointOfSaleInformation', 'model/Ptsv2paymentsProcessingInformation', 'model/Ptsv2paymentsRecipientInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./V2paymentsAggregatorInformation'), require('./V2paymentsBuyerInformation'), require('./V2paymentsClientReferenceInformation'), require('./V2paymentsConsumerAuthenticationInformation'), require('./V2paymentsDeviceInformation'), require('./V2paymentsMerchantDefinedInformation'), require('./V2paymentsMerchantInformation'), require('./V2paymentsOrderInformation'), require('./V2paymentsPaymentInformation'), require('./V2paymentsPointOfSaleInformation'), require('./V2paymentsProcessingInformation'), require('./V2paymentsRecipientInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsAggregatorInformation'), require('./Ptsv2paymentsBuyerInformation'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsConsumerAuthenticationInformation'), require('./Ptsv2paymentsDeviceInformation'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Ptsv2paymentsMerchantInformation'), require('./Ptsv2paymentsOrderInformation'), require('./Ptsv2paymentsPaymentInformation'), require('./Ptsv2paymentsPointOfSaleInformation'), require('./Ptsv2paymentsProcessingInformation'), require('./Ptsv2paymentsRecipientInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreatePaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.V2paymentsAggregatorInformation, root.CyberSource.V2paymentsBuyerInformation, root.CyberSource.V2paymentsClientReferenceInformation, root.CyberSource.V2paymentsConsumerAuthenticationInformation, root.CyberSource.V2paymentsDeviceInformation, root.CyberSource.V2paymentsMerchantDefinedInformation, root.CyberSource.V2paymentsMerchantInformation, root.CyberSource.V2paymentsOrderInformation, root.CyberSource.V2paymentsPaymentInformation, root.CyberSource.V2paymentsPointOfSaleInformation, root.CyberSource.V2paymentsProcessingInformation, root.CyberSource.V2paymentsRecipientInformation);
+    root.CyberSource.CreatePaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsAggregatorInformation, root.CyberSource.Ptsv2paymentsBuyerInformation, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformation, root.CyberSource.Ptsv2paymentsDeviceInformation, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Ptsv2paymentsMerchantInformation, root.CyberSource.Ptsv2paymentsOrderInformation, root.CyberSource.Ptsv2paymentsPaymentInformation, root.CyberSource.Ptsv2paymentsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsProcessingInformation, root.CyberSource.Ptsv2paymentsRecipientInformation);
   }
-}(this, function(ApiClient, V2paymentsAggregatorInformation, V2paymentsBuyerInformation, V2paymentsClientReferenceInformation, V2paymentsConsumerAuthenticationInformation, V2paymentsDeviceInformation, V2paymentsMerchantDefinedInformation, V2paymentsMerchantInformation, V2paymentsOrderInformation, V2paymentsPaymentInformation, V2paymentsPointOfSaleInformation, V2paymentsProcessingInformation, V2paymentsRecipientInformation) {
+}(this, function(ApiClient, Ptsv2paymentsAggregatorInformation, Ptsv2paymentsBuyerInformation, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsConsumerAuthenticationInformation, Ptsv2paymentsDeviceInformation, Ptsv2paymentsMerchantDefinedInformation, Ptsv2paymentsMerchantInformation, Ptsv2paymentsOrderInformation, Ptsv2paymentsPaymentInformation, Ptsv2paymentsPointOfSaleInformation, Ptsv2paymentsProcessingInformation, Ptsv2paymentsRecipientInformation) {
   'use strict';
 
 
@@ -73,92 +73,92 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = V2paymentsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Ptsv2paymentsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = V2paymentsProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = Ptsv2paymentsProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = V2paymentsPaymentInformation.constructFromObject(data['paymentInformation']);
+        obj['paymentInformation'] = Ptsv2paymentsPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = V2paymentsOrderInformation.constructFromObject(data['orderInformation']);
+        obj['orderInformation'] = Ptsv2paymentsOrderInformation.constructFromObject(data['orderInformation']);
       }
       if (data.hasOwnProperty('buyerInformation')) {
-        obj['buyerInformation'] = V2paymentsBuyerInformation.constructFromObject(data['buyerInformation']);
+        obj['buyerInformation'] = Ptsv2paymentsBuyerInformation.constructFromObject(data['buyerInformation']);
       }
       if (data.hasOwnProperty('recipientInformation')) {
-        obj['recipientInformation'] = V2paymentsRecipientInformation.constructFromObject(data['recipientInformation']);
+        obj['recipientInformation'] = Ptsv2paymentsRecipientInformation.constructFromObject(data['recipientInformation']);
       }
       if (data.hasOwnProperty('deviceInformation')) {
-        obj['deviceInformation'] = V2paymentsDeviceInformation.constructFromObject(data['deviceInformation']);
+        obj['deviceInformation'] = Ptsv2paymentsDeviceInformation.constructFromObject(data['deviceInformation']);
       }
       if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = V2paymentsMerchantInformation.constructFromObject(data['merchantInformation']);
+        obj['merchantInformation'] = Ptsv2paymentsMerchantInformation.constructFromObject(data['merchantInformation']);
       }
       if (data.hasOwnProperty('aggregatorInformation')) {
-        obj['aggregatorInformation'] = V2paymentsAggregatorInformation.constructFromObject(data['aggregatorInformation']);
+        obj['aggregatorInformation'] = Ptsv2paymentsAggregatorInformation.constructFromObject(data['aggregatorInformation']);
       }
       if (data.hasOwnProperty('consumerAuthenticationInformation')) {
-        obj['consumerAuthenticationInformation'] = V2paymentsConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
+        obj['consumerAuthenticationInformation'] = Ptsv2paymentsConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
       }
       if (data.hasOwnProperty('pointOfSaleInformation')) {
-        obj['pointOfSaleInformation'] = V2paymentsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+        obj['pointOfSaleInformation'] = Ptsv2paymentsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
       }
       if (data.hasOwnProperty('merchantDefinedInformation')) {
-        obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [V2paymentsMerchantDefinedInformation]);
+        obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [Ptsv2paymentsMerchantDefinedInformation]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/V2paymentsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Ptsv2paymentsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsProcessingInformation} processingInformation
+   * @member {module:model/Ptsv2paymentsProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsPaymentInformation} paymentInformation
+   * @member {module:model/Ptsv2paymentsPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsOrderInformation} orderInformation
+   * @member {module:model/Ptsv2paymentsOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsBuyerInformation} buyerInformation
+   * @member {module:model/Ptsv2paymentsBuyerInformation} buyerInformation
    */
   exports.prototype['buyerInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsRecipientInformation} recipientInformation
+   * @member {module:model/Ptsv2paymentsRecipientInformation} recipientInformation
    */
   exports.prototype['recipientInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsDeviceInformation} deviceInformation
+   * @member {module:model/Ptsv2paymentsDeviceInformation} deviceInformation
    */
   exports.prototype['deviceInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsMerchantInformation} merchantInformation
+   * @member {module:model/Ptsv2paymentsMerchantInformation} merchantInformation
    */
   exports.prototype['merchantInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsAggregatorInformation} aggregatorInformation
+   * @member {module:model/Ptsv2paymentsAggregatorInformation} aggregatorInformation
    */
   exports.prototype['aggregatorInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsConsumerAuthenticationInformation} consumerAuthenticationInformation
+   * @member {module:model/Ptsv2paymentsConsumerAuthenticationInformation} consumerAuthenticationInformation
    */
   exports.prototype['consumerAuthenticationInformation'] = undefined;
   /**
-   * @member {module:model/V2paymentsPointOfSaleInformation} pointOfSaleInformation
+   * @member {module:model/Ptsv2paymentsPointOfSaleInformation} pointOfSaleInformation
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
   /**
-   * TBD
-   * @member {Array.<module:model/V2paymentsMerchantDefinedInformation>} merchantDefinedInformation
+   * Description of this field is not available.
+   * @member {Array.<module:model/Ptsv2paymentsMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;
 

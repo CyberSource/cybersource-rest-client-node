@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**V2paymentsidreversalsClientReferenceInformation**](V2paymentsidreversalsClientReferenceInformation.md) |  | [optional] 
-**reversalInformation** | [**V2paymentsidreversalsReversalInformation**](V2paymentsidreversalsReversalInformation.md) |  | [optional] 
-**processingInformation** | [**V2paymentsidreversalsProcessingInformation**](V2paymentsidreversalsProcessingInformation.md) |  | [optional] 
-**orderInformation** | [**V2paymentsidreversalsOrderInformation**](V2paymentsidreversalsOrderInformation.md) |  | [optional] 
-**pointOfSaleInformation** | [**V2paymentsidreversalsPointOfSaleInformation**](V2paymentsidreversalsPointOfSaleInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**Ptsv2paymentsidreversalsClientReferenceInformation**](Ptsv2paymentsidreversalsClientReferenceInformation.md) |  | [optional] 
+**reversalInformation** | [**Ptsv2paymentsidreversalsReversalInformation**](Ptsv2paymentsidreversalsReversalInformation.md) |  | [optional] 
+**processingInformation** | [**Ptsv2paymentsidreversalsProcessingInformation**](Ptsv2paymentsidreversalsProcessingInformation.md) |  | [optional] 
+**orderInformation** | [**Ptsv2paymentsidreversalsOrderInformation**](Ptsv2paymentsidreversalsOrderInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**Ptsv2paymentsidreversalsPointOfSaleInformation**](Ptsv2paymentsidreversalsPointOfSaleInformation.md) |  | [optional] 
 
 

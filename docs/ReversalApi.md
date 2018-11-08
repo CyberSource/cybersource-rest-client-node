@@ -1,16 +1,15 @@
 # CyberSource.ReversalApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authReversal**](ReversalApi.md#authReversal) | **POST** /v2/payments/{id}/reversals | Process an Authorization Reversal
-[**getAuthReversal**](ReversalApi.md#getAuthReversal) | **GET** /v2/reversals/{id} | Retrieve an Authorization Reversal
+[**authReversal**](ReversalApi.md#authReversal) | **POST** /pts/v2/payments/{id}/reversals | Process an Authorization Reversal
 
 
 <a name="authReversal"></a>
 # **authReversal**
-> InlineResponse2011 authReversal(id, authReversalRequest)
+> PtsV2PaymentsReversalsPost201Response authReversal(id, authReversalRequest)
 
 Process an Authorization Reversal
 
@@ -46,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**PtsV2PaymentsReversalsPost201Response**](PtsV2PaymentsReversalsPost201Response.md)
 
 ### Authorization
 
@@ -54,52 +53,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getAuthReversal"></a>
-# **getAuthReversal**
-> InlineResponse2003 getAuthReversal(id)
-
-Retrieve an Authorization Reversal
-
-Include the authorization reversal ID in the GET request to retrieve the authorization reversal details. 
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.ReversalApi();
-
-var id = "id_example"; // String | The authorization reversal ID returned from a previous authorization reversal request.
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAuthReversal(id, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The authorization reversal ID returned from a previous authorization reversal request. | 
-
-### Return type
-
-[**InlineResponse2003**](InlineResponse2003.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

@@ -13,7 +13,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['superagent', 'querystring'], factory);
@@ -27,7 +27,7 @@
     }
     root.CyberSource.ApiClient = factory(root.superagent, root.querystring);
   }
-}(this, function(superagent, querystring) {
+}(this, function (superagent, querystring) {
   'use strict';
 
   /**
@@ -42,7 +42,7 @@
    * @alias module:ApiClient
    * @class
    */
-  var exports = function() {
+  var exports = function () {
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
@@ -100,7 +100,7 @@
    * @param param The actual parameter.
    * @returns {String} The string representation of <code>param</code>.
    */
-  exports.prototype.paramToString = function(param) {
+  exports.prototype.paramToString = function (param) {
     if (param == undefined || param == null) {
       return '';
     }
@@ -117,13 +117,13 @@
    * @param {Object} pathParams The parameter values to append.
    * @returns {String} The encoded path with parameter values substituted.
    */
-  exports.prototype.buildUrl = function(path, pathParams) {
+  exports.prototype.buildUrl = function (path, pathParams) {
     if (!path.match(/^\//)) {
       path = '/' + path;
     }
     var url = this.basePath + path;
     var _this = this;
-    url = url.replace(/\{([\w-]+)\}/g, function(fullMatch, key) {
+    url = url.replace(/\{([\w-]+)\}/g, function (fullMatch, key) {
       var value;
       if (pathParams.hasOwnProperty(key)) {
         value = _this.paramToString(pathParams[key]);
@@ -146,7 +146,7 @@
    * @param {String} contentType The MIME content type to check.
    * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
    */
-  exports.prototype.isJsonMime = function(contentType) {
+  exports.prototype.isJsonMime = function (contentType) {
     return Boolean(contentType != null && contentType.match(/^application\/json(;.*)?$/i));
   };
 
@@ -155,7 +155,7 @@
    * @param {Array.<String>} contentTypes
    * @returns {String} The chosen content type, preferring JSON.
    */
-  exports.prototype.jsonPreferredMime = function(contentTypes) {
+  exports.prototype.jsonPreferredMime = function (contentTypes) {
     for (var i = 0; i < contentTypes.length; i++) {
       if (this.isJsonMime(contentTypes[i])) {
         return contentTypes[i];
@@ -169,13 +169,13 @@
    * @param param The parameter to check.
    * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
    */
-  exports.prototype.isFileParam = function(param) {
+  exports.prototype.isFileParam = function (param) {
     // fs.ReadStream in Node.js and Electron (but not in runtime like browserify)
     if (typeof require === 'function') {
       var fs;
       try {
         fs = require('fs');
-      } catch (err) {}
+      } catch (err) { }
       if (fs && fs.ReadStream && param instanceof fs.ReadStream) {
         return true;
       }
@@ -205,7 +205,7 @@
    * @param {Object.<String, Object>} params The parameters as object properties.
    * @returns {Object.<String, Object>} normalized parameters.
    */
-  exports.prototype.normalizeParams = function(params) {
+  exports.prototype.normalizeParams = function (params) {
     var newParams = {};
     for (var key in params) {
       if (params.hasOwnProperty(key) && params[key] != undefined && params[key] != null) {
@@ -286,9 +286,9 @@
    * @param {Object} request The request object created by a <code>superagent()</code> call.
    * @param {Array.<String>} authNames An array of authentication method names.
    */
-  exports.prototype.applyAuthToRequest = function(request, authNames) {
+  exports.prototype.applyAuthToRequest = function (request, authNames) {
     var _this = this;
-    authNames.forEach(function(authName) {
+    authNames.forEach(function (authName) {
       var auth = _this.authentications[authName];
       switch (auth.type) {
         case 'basic':
@@ -313,7 +313,7 @@
           break;
         case 'oauth2':
           if (auth.accessToken) {
-            request.set({'Authorization': 'Bearer ' + auth.accessToken});
+            request.set({ 'Authorization': 'Bearer ' + auth.accessToken });
           }
           break;
         default:
@@ -345,12 +345,19 @@
     return exports.convertToType(data, returnType);
   };
 
+  // Code added by Infosys dev team
+
+  var AuthenticationSDK = require('cybersource-rest-auth');
   /**
-   * @ghari
+   * This method will set the merchantConfig object global
+   * 
+   * @param {Configuration} configObject merchantConfiguration properties.
    */
-  
-  
-  
+  exports.prototype.setConfiguration = function (configObject) {
+
+    this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
+  }
+
   /**
    * This method is to generate headers for http and jwt authentication.
    * 
@@ -360,45 +367,38 @@
    */
   exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
 
-    var path = require('path');
-    var filePath = path.resolve('Data/Configuration.js');
-    var Configuration = require(filePath);
-    var AuthenticationSDK = require('cybersource-rest-auth');
     var Constants = AuthenticationSDK.Constants;
 
-    // reading cybs.json from Configuration module
-    var configObject = new Configuration();
-    var merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
+    this.merchantConfig.setRequestTarget(requestTarget);
+    this.merchantConfig.setRequestType(httpMethod)
+    this.merchantConfig.setRequestJsonData(requestBody);
+    var logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
+    var token = AuthenticationSDK.Authorization.getToken(this.merchantConfig, logger);
 
-    merchantConfig.setRequestTarget(requestTarget);
-    merchantConfig.setRequestType(httpMethod)
-    merchantConfig.setRequestJsonData(requestBody);
-    var logger = AuthenticationSDK.Logger.getLogger(merchantConfig);
-    var token = AuthenticationSDK.Authorization.getToken(merchantConfig, logger);
-
-    if (merchantConfig.getAuthenticationType() === Constants.JWT) {
+    if (this.merchantConfig.getAuthenticationType() === Constants.JWT) {
       token = "Bearer " + token;
       headerParams['Authorization'] = token;
     }
-    else if (merchantConfig.getAuthenticationType() === Constants.HTTP) {
+    else if (this.merchantConfig.getAuthenticationType() === Constants.HTTP) {
       var date = new Date(Date.now()).toUTCString();
 
-      if (httpMethod === "POST") {
-        var digest = AuthenticationSDK.PayloadDigest.generateDigest(merchantConfig, logger);
+      if (httpMethod === "POST" || httpMethod === "PATCH" || httpMethod === "PUT") {
+        var digest = AuthenticationSDK.PayloadDigest.generateDigest(this.merchantConfig, logger);
         digest = Constants.SIGNATURE_ALGORITHAM + digest;
         logger.info(Constants.DIGEST + " : " + digest);
         headerParams['digest'] = digest;
+        logger.info('digest : ' + headerParams['digest']);
       }
 
-      headerParams['v-c-merchant-id'] = merchantConfig.getMerchantID();
+      headerParams['v-c-merchant-id'] = this.merchantConfig.getMerchantID();
       headerParams['date'] = date;
-      headerParams['host'] = merchantConfig.getRequestHost();
+      headerParams['host'] = this.merchantConfig.getRequestHost();
       headerParams['signature'] = token;
       headerParams['User-Agent'] = "Mozilla/5.0";
 
-      logger.info("v-c-merchant-id : " + merchantConfig.getMerchantID());
+      logger.info("v-c-merchant-id : " + this.merchantConfig.getMerchantID());
       logger.info("date : " + date);
-      logger.info("host : " + merchantConfig.getRequestHost());
+      logger.info("host : " + this.merchantConfig.getRequestHost());
       logger.info("signature : " + token);
       logger.info("User-Agent : " + headerParams['User-Agent']);
       logger.info("End > ==============================")
@@ -433,8 +433,8 @@
    * @returns {Object} The SuperAgent request object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-      returnType, callback) {
+    queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+    returnType, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
@@ -445,16 +445,16 @@
 
     // set query parameters
     if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-        queryParams['_'] = new Date().getTime();
+      queryParams['_'] = new Date().getTime();
     }
     request.query(this.normalizeParams(queryParams));
 
     /**
-     * @ghari
+     *added by infosys team, to generate requestTarget with pathParam
      */
-    var requestTarget = this.buildRequestTarget(path, pathParams);
+    var requestTarget = this.buildRequestTarget(path, pathParams, queryParams);
 
-    if (httpMethod.toUpperCase() === 'POST') {
+    if (httpMethod.toUpperCase() === 'POST' || httpMethod === 'PATCH' || httpMethod === 'PUT') {
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
     headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
@@ -468,12 +468,14 @@
     var contentType = this.jsonPreferredMime(contentTypes);
     if (contentType) {
       // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
-      if(contentType != 'multipart/form-data') {
+      if (contentType != 'multipart/form-data') {
         request.type(contentType);
       }
     } else if (!request.header['Content-Type']) {
       request.type('application/json');
     }
+
+
 
     if (contentType === 'application/x-www-form-urlencoded') {
       request.send(querystring.stringify(this.normalizeParams(formParams)));
@@ -496,6 +498,20 @@
     var accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
+      /* Code for downloading file from stream */
+      if (accept === 'application/xml') {
+        var fs = require('fs');
+        var path = require('path');
+        var fileName;
+        if (queryParams['reportName'])
+          fileName = queryParams['reportName'] + '.xml';
+        else
+          fileName = "FileIdentifier.csv";
+        var filePath = path.join(this.merchantConfig.getKeysDirectory(), fileName);
+        var stream = fs.createWriteStream(path.resolve(filePath));
+        request.send().pipe(stream);
+        request._endCalled = false;
+      }
     }
 
     if (returnType === 'Blob') {
@@ -505,7 +521,7 @@
     }
 
     // Attach previously saved cookies, if enabled
-    if (this.enableCookies){
+    if (this.enableCookies) {
       if (typeof window === 'undefined') {
         this.agent.attachCookies(request);
       }
@@ -514,14 +530,13 @@
       }
     }
 
-
-    request.end(function(error, response) {
+    request.end(function (error, response) {
       if (callback) {
         var data = null;
         if (!error) {
           try {
             data = _this.deserialize(response, returnType);
-            if (_this.enableCookies && typeof window === 'undefined'){
+            if (_this.enableCookies && typeof window === 'undefined') {
               _this.agent.saveCookies(response);
             }
           } catch (err) {
@@ -541,7 +556,7 @@
    * @param {String} path 
    * @param {Object} pathParams 
    */
-  exports.prototype.buildRequestTarget = function (path, pathParams) {
+  exports.prototype.buildRequestTarget = function (path, pathParams, queryParams) {
     if (!path.match(/^\//)) {
       path = '/' + path;
     }
@@ -556,6 +571,22 @@
       }
       return encodeURIComponent(value);
     });
+
+    // added by infosys team, to generate requestTarget with queryParams
+    if (Object.keys(queryParams).length !== 0) {
+      var queryFlag = false;
+      var queryArray = [];
+      Object.keys(queryParams).forEach(function (prop) {
+        var val = queryParams[prop];
+
+        if (val !== undefined) {
+          queryArray[prop] = val;
+          queryFlag = true;
+        }
+      });
+      if (queryFlag)
+        requestTarget = requestTarget + '?' + querystring.stringify(queryArray);
+    }
     return requestTarget;
   };
 
@@ -564,7 +595,7 @@
    * @param {String} str The date value as a string.
    * @returns {Date} The parsed date object.
    */
-  exports.parseDate = function(str) {
+  exports.parseDate = function (str) {
     return new Date(str.replace(/T/i, ' '));
   };
 
@@ -577,7 +608,7 @@
    * all properties on <code>data<code> will be converted to this type.
    * @returns An instance of the specified type or null or undefined if data is null or undefined.
    */
-  exports.convertToType = function(data, type) {
+  exports.convertToType = function (data, type) {
     if (data === null || data === undefined)
       return data
 
@@ -593,7 +624,7 @@
       case 'Date':
         return this.parseDate(String(data));
       case 'Blob':
-      	return data;
+        return data;
       default:
         if (type === Object) {
           // generic object, return directly
@@ -604,7 +635,7 @@
         } else if (Array.isArray(type)) {
           // for array type like: ['String']
           var itemType = type[0];
-          return data.map(function(item) {
+          return data.map(function (item) {
             return exports.convertToType(item, itemType);
           });
         } else if (typeof type === 'object') {
@@ -638,7 +669,7 @@
    * @param data {Object|Array} The REST data.
    * @param obj {Object|Array} The target object or array.
    */
-  exports.constructFromObject = function(data, obj, itemType) {
+  exports.constructFromObject = function (data, obj, itemType) {
     if (Array.isArray(data)) {
       for (var i = 0; i < data.length; i++) {
         if (data.hasOwnProperty(i))

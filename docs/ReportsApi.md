@@ -1,0 +1,173 @@
+# CyberSource.ReportsApi
+
+All URIs are relative to *https://apitest.cybersource.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createReport**](ReportsApi.md#createReport) | **POST** /reporting/v3/reports | Create Adhoc Report
+[**getReportByReportId**](ReportsApi.md#getReportByReportId) | **GET** /reporting/v3/reports/{reportId} | Get Report based on reportId
+[**searchReports**](ReportsApi.md#searchReports) | **GET** /reporting/v3/reports | Retrieve available reports
+
+
+<a name="createReport"></a>
+# **createReport**
+> createReport(requestBody)
+
+Create Adhoc Report
+
+Create one time report
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.ReportsApi();
+
+var requestBody = new CyberSource.RequestBody1(); // RequestBody1 | Report subscription request payload
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.createReport(requestBody, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **requestBody** | [**RequestBody1**](RequestBody1.md)| Report subscription request payload | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/hal+json
+
+<a name="getReportByReportId"></a>
+# **getReportByReportId**
+> ReportingV3ReportsIdGet200Response getReportByReportId(reportId, opts)
+
+Get Report based on reportId
+
+ReportId is mandatory input
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.ReportsApi();
+
+var reportId = "reportId_example"; // String | Valid Report Id
+
+var opts = { 
+  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getReportByReportId(reportId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reportId** | **String**| Valid Report Id | 
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+
+### Return type
+
+[**ReportingV3ReportsIdGet200Response**](ReportingV3ReportsIdGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json, application/xml
+
+<a name="searchReports"></a>
+# **searchReports**
+> ReportingV3ReportsGet200Response searchReports(startTime, endTime, timeQueryType, opts)
+
+Retrieve available reports
+
+Retrieve list of available reports
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.ReportsApi();
+
+var startTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ssXXX 
+
+var endTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ssXXX 
+
+var timeQueryType = "timeQueryType_example"; // String | Specify time you woud like to search
+
+var opts = { 
+  'organizationId': "organizationId_example", // String | Valid Cybersource Organization Id
+  'reportMimeType': "reportMimeType_example", // String | Valid Report Format
+  'reportFrequency': "reportFrequency_example", // String | Valid Report Frequency
+  'reportName': "reportName_example", // String | Valid Report Name
+  'reportDefinitionId': 56, // Number | Valid Report Definition Id
+  'reportStatus': "reportStatus_example" // String | Valid Report Status
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.searchReports(startTime, endTime, timeQueryType, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startTime** | **Date**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  | 
+ **endTime** | **Date**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  | 
+ **timeQueryType** | **String**| Specify time you woud like to search | 
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **reportMimeType** | **String**| Valid Report Format | [optional] 
+ **reportFrequency** | **String**| Valid Report Frequency | [optional] 
+ **reportName** | **String**| Valid Report Name | [optional] 
+ **reportDefinitionId** | **Number**| Valid Report Definition Id | [optional] 
+ **reportStatus** | **String**| Valid Report Status | [optional] 
+
+### Return type
+
+[**ReportingV3ReportsGet200Response**](ReportingV3ReportsGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json
+
