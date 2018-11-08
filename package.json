@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "superagent": "3.8.3",
-    "cybersource-rest-auth": "0.0.2"
+    "cybersource-rest-auth": "0.0.3"
   },
   "devDependencies": {
     "mocha": "~5.2.0",
