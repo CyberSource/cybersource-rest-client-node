@@ -34,7 +34,7 @@ An authentication test sample is provided and can be run with the following comm
 You should never include your Login ID and Transaction Key directly in a file that's in a publically accessible portion of your website. A better practice would be to define these in a constants file, and then reference those constants in the appropriate place in your code.
 
 ### Switching between the sandbox environment and the production environment
-Authorize.Net maintains a complete sandbox environment for testing and development purposes. This sandbox environment is an exact duplicate of our production environment with the transaction authorization and settlement process simulated. By default, this SDK is configured to communicate with the sandbox environment. To switch to the production environment, call `setEnvironment` on the controller variable before execute. For example:
+Cybersource maintains a complete sandbox environment for testing and development purposes. This sandbox environment is an exact duplicate of our production environment with the transaction authorization and settlement process simulated. By default, this SDK is configured to communicate with the sandbox environment. To switch to the production environment, call `setEnvironment` on the controller variable before execute. For example:
 ```javascript
 // For PRODUCTION use
 ctrl.setEnvironment(SDKConstants.endpoint.production);
@@ -45,12 +45,12 @@ API credentials are different for each environment, so be sure to switch to the 
 
 ## SDK Usage Examples and Sample Code
 To get started using this SDK, it's highly recommended to download our sample code repository:
-* [Authorize.Net Node.js Sample Code Repository (on GitHub)](https://github.com/AuthorizeNet/sample-code-node)
+* [Cybersource Node.js Sample Code Repository (on GitHub)](https://github.com/CyberSource/cybersource-rest-samples-node)
 
 In that respository, we have comprehensive sample code for all common uses of our API:
 
 Additionally, you can find details and examples of how our API is structured in our API Reference Guide:
-* [Developer Center API Reference](http://developer.authorize.net/api/reference/index.html)
+* [Developer Center API Reference](https://developer.cybersource.com/hello-world/testing-guide.html )
 
 The API Reference Guide provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request using this SDK.
 
