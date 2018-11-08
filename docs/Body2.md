@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**InstrumentidentifiersLinks**](InstrumentidentifiersLinks.md) |  | [optional] 
+**links** | [**Tmsv1instrumentidentifiersLinks**](Tmsv1instrumentidentifiersLinks.md) |  | [optional] 
 **id** | **String** | Unique identification number assigned by CyberSource to the submitted request. | [optional] 
 **_object** | **String** | Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier. | [optional] 
 **state** | **String** | Current state of the token. | [optional] 
-**bankAccount** | [**PaymentinstrumentsBankAccount**](PaymentinstrumentsBankAccount.md) |  | [optional] 
-**card** | [**PaymentinstrumentsCard**](PaymentinstrumentsCard.md) |  | [optional] 
-**buyerInformation** | [**PaymentinstrumentsBuyerInformation**](PaymentinstrumentsBuyerInformation.md) |  | [optional] 
-**billTo** | [**PaymentinstrumentsBillTo**](PaymentinstrumentsBillTo.md) |  | [optional] 
-**processingInformation** | [**PaymentinstrumentsProcessingInformation**](PaymentinstrumentsProcessingInformation.md) |  | [optional] 
-**merchantInformation** | [**PaymentinstrumentsMerchantInformation**](PaymentinstrumentsMerchantInformation.md) |  | [optional] 
-**metaData** | [**InstrumentidentifiersMetadata**](InstrumentidentifiersMetadata.md) |  | [optional] 
-**instrumentIdentifier** | [**PaymentinstrumentsInstrumentIdentifier**](PaymentinstrumentsInstrumentIdentifier.md) |  | [optional] 
+**bankAccount** | [**Tmsv1paymentinstrumentsBankAccount**](Tmsv1paymentinstrumentsBankAccount.md) |  | [optional] 
+**card** | [**Tmsv1paymentinstrumentsCard**](Tmsv1paymentinstrumentsCard.md) |  | [optional] 
+**buyerInformation** | [**Tmsv1paymentinstrumentsBuyerInformation**](Tmsv1paymentinstrumentsBuyerInformation.md) |  | [optional] 
+**billTo** | [**Tmsv1paymentinstrumentsBillTo**](Tmsv1paymentinstrumentsBillTo.md) |  | [optional] 
+**processingInformation** | [**Tmsv1paymentinstrumentsProcessingInformation**](Tmsv1paymentinstrumentsProcessingInformation.md) |  | [optional] 
+**merchantInformation** | [**Tmsv1paymentinstrumentsMerchantInformation**](Tmsv1paymentinstrumentsMerchantInformation.md) |  | [optional] 
+**metaData** | [**Tmsv1instrumentidentifiersMetadata**](Tmsv1instrumentidentifiersMetadata.md) |  | [optional] 
+**instrumentIdentifier** | [**Tmsv1paymentinstrumentsInstrumentIdentifier**](Tmsv1paymentinstrumentsInstrumentIdentifier.md) |  | [optional] 
 
 
 <a name="ObjectEnum"></a>

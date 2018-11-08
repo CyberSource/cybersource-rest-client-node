@@ -1,15 +1,15 @@
 # CyberSource.KeyGenerationApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /payments/flex/v1/keys/ | Generate Key
+[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /flex/v1/keys/ | Generate Key
 
 
 <a name="generatePublicKey"></a>
 # **generatePublicKey**
-> InlineResponse200 generatePublicKey(generatePublicKeyRequest)
+> FlexV1KeysPost200Response generatePublicKey(opts)
 
 Generate Key
 
@@ -21,8 +21,9 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.KeyGenerationApi();
 
-var generatePublicKeyRequest = new CyberSource.GeneratePublicKeyRequest(); // GeneratePublicKeyRequest | 
-
+var opts = { 
+  'generatePublicKeyRequest': new CyberSource.GeneratePublicKeyRequest() // GeneratePublicKeyRequest | 
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -31,18 +32,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.generatePublicKey(generatePublicKeyRequest, callback);
+apiInstance.generatePublicKey(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  | 
+ **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  | [optional] 
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**FlexV1KeysPost200Response**](FlexV1KeysPost200Response.md)
 
 ### Authorization
 
@@ -50,6 +51,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json
 

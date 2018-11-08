@@ -1,67 +1,17 @@
 # CyberSource.InstrumentIdentifierApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**instrumentidentifiersPost**](InstrumentIdentifierApi.md#instrumentidentifiersPost) | **POST** /instrumentidentifiers | Create an Instrument Identifier
-[**instrumentidentifiersTokenIdDelete**](InstrumentIdentifierApi.md#instrumentidentifiersTokenIdDelete) | **DELETE** /instrumentidentifiers/{tokenId} | Delete an Instrument Identifier
-[**instrumentidentifiersTokenIdGet**](InstrumentIdentifierApi.md#instrumentidentifiersTokenIdGet) | **GET** /instrumentidentifiers/{tokenId} | Retrieve an Instrument Identifier
-[**instrumentidentifiersTokenIdPatch**](InstrumentIdentifierApi.md#instrumentidentifiersTokenIdPatch) | **PATCH** /instrumentidentifiers/{tokenId} | Update a Instrument Identifier
-[**instrumentidentifiersTokenIdPaymentinstrumentsGet**](InstrumentIdentifierApi.md#instrumentidentifiersTokenIdPaymentinstrumentsGet) | **GET** /instrumentidentifiers/{tokenId}/paymentinstruments | Retrieve all Payment Instruments associated with an Instrument Identifier
+[**tmsV1InstrumentidentifiersTokenIdDelete**](InstrumentIdentifierApi.md#tmsV1InstrumentidentifiersTokenIdDelete) | **DELETE** /tms/v1/instrumentidentifiers/{tokenId} | Delete an Instrument Identifier
+[**tmsV1InstrumentidentifiersTokenIdGet**](InstrumentIdentifierApi.md#tmsV1InstrumentidentifiersTokenIdGet) | **GET** /tms/v1/instrumentidentifiers/{tokenId} | Retrieve an Instrument Identifier
+[**tmsV1InstrumentidentifiersTokenIdPatch**](InstrumentIdentifierApi.md#tmsV1InstrumentidentifiersTokenIdPatch) | **PATCH** /tms/v1/instrumentidentifiers/{tokenId} | Update a Instrument Identifier
 
 
-<a name="instrumentidentifiersPost"></a>
-# **instrumentidentifiersPost**
-> InlineResponse2007 instrumentidentifiersPost(profileId, opts)
-
-Create an Instrument Identifier
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.InstrumentIdentifierApi();
-
-var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-
-var opts = { 
-  'body': new CyberSource.Body() // Body | Please specify either a Card or Bank Account.
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.instrumentidentifiersPost(profileId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **body** | [**Body**](Body.md)| Please specify either a Card or Bank Account. | [optional] 
-
-### Return type
-
-[**InlineResponse2007**](InlineResponse2007.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="instrumentidentifiersTokenIdDelete"></a>
-# **instrumentidentifiersTokenIdDelete**
-> instrumentidentifiersTokenIdDelete(profileId, tokenId)
+<a name="tmsV1InstrumentidentifiersTokenIdDelete"></a>
+# **tmsV1InstrumentidentifiersTokenIdDelete**
+> tmsV1InstrumentidentifiersTokenIdDelete(profileId, tokenId)
 
 Delete an Instrument Identifier
 
@@ -83,7 +33,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.instrumentidentifiersTokenIdDelete(profileId, tokenId, callback);
+apiInstance.tmsV1InstrumentidentifiersTokenIdDelete(profileId, tokenId, callback);
 ```
 
 ### Parameters
@@ -103,12 +53,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
-<a name="instrumentidentifiersTokenIdGet"></a>
-# **instrumentidentifiersTokenIdGet**
-> InlineResponse2007 instrumentidentifiersTokenIdGet(profileId, tokenId)
+<a name="tmsV1InstrumentidentifiersTokenIdGet"></a>
+# **tmsV1InstrumentidentifiersTokenIdGet**
+> TmsV1InstrumentidentifiersPost200Response tmsV1InstrumentidentifiersTokenIdGet(profileId, tokenId)
 
 Retrieve an Instrument Identifier
 
@@ -130,7 +80,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.instrumentidentifiersTokenIdGet(profileId, tokenId, callback);
+apiInstance.tmsV1InstrumentidentifiersTokenIdGet(profileId, tokenId, callback);
 ```
 
 ### Parameters
@@ -142,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**TmsV1InstrumentidentifiersPost200Response**](TmsV1InstrumentidentifiersPost200Response.md)
 
 ### Authorization
 
@@ -150,12 +100,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
-<a name="instrumentidentifiersTokenIdPatch"></a>
-# **instrumentidentifiersTokenIdPatch**
-> InlineResponse2007 instrumentidentifiersTokenIdPatch(profileId, tokenId, body)
+<a name="tmsV1InstrumentidentifiersTokenIdPatch"></a>
+# **tmsV1InstrumentidentifiersTokenIdPatch**
+> TmsV1InstrumentidentifiersPost200Response tmsV1InstrumentidentifiersTokenIdPatch(profileId, tokenId, body)
 
 Update a Instrument Identifier
 
@@ -167,7 +117,7 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier
+var tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
 
 var body = new CyberSource.Body1(); // Body1 | Please specify the previous transaction Id to update.
 
@@ -179,59 +129,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.instrumentidentifiersTokenIdPatch(profileId, tokenId, body, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **tokenId** | **String**| The TokenId of an Instrument Identifier | 
- **body** | [**Body1**](Body1.md)| Please specify the previous transaction Id to update. | 
-
-### Return type
-
-[**InlineResponse2007**](InlineResponse2007.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="instrumentidentifiersTokenIdPaymentinstrumentsGet"></a>
-# **instrumentidentifiersTokenIdPaymentinstrumentsGet**
-> InlineResponse2008 instrumentidentifiersTokenIdPaymentinstrumentsGet(profileId, tokenId, opts)
-
-Retrieve all Payment Instruments associated with an Instrument Identifier
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.InstrumentIdentifierApi();
-
-var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-
-var tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
-
-var opts = { 
-  'offset': "offset_example", // String | Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0.
-  'limit': "20" // String | The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.instrumentidentifiersTokenIdPaymentinstrumentsGet(profileId, tokenId, opts, callback);
+apiInstance.tmsV1InstrumentidentifiersTokenIdPatch(profileId, tokenId, body, callback);
 ```
 
 ### Parameters
@@ -240,12 +138,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
  **tokenId** | **String**| The TokenId of an Instrument Identifier. | 
- **offset** | **String**| Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] 
- **limit** | **String**| The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
+ **body** | [**Body1**](Body1.md)| Please specify the previous transaction Id to update. | 
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**TmsV1InstrumentidentifiersPost200Response**](TmsV1InstrumentidentifiersPost200Response.md)
 
 ### Authorization
 
@@ -253,6 +150,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

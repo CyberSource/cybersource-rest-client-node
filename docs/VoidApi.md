@@ -1,65 +1,18 @@
 # CyberSource.VoidApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVoid**](VoidApi.md#getVoid) | **GET** /v2/voids/{id} | Retrieve A Void
-[**voidCapture**](VoidApi.md#voidCapture) | **POST** /v2/captures/{id}/voids | Void a Capture
-[**voidCredit**](VoidApi.md#voidCredit) | **POST** /v2/credits/{id}/voids | Void a Credit
-[**voidPayment**](VoidApi.md#voidPayment) | **POST** /v2/payments/{id}/voids | Void a Payment
-[**voidRefund**](VoidApi.md#voidRefund) | **POST** /v2/refunds/{id}/voids | Void a Refund
+[**voidCapture**](VoidApi.md#voidCapture) | **POST** /pts/v2/captures/{id}/voids | Void a Capture
+[**voidCredit**](VoidApi.md#voidCredit) | **POST** /pts/v2/credits/{id}/voids | Void a Credit
+[**voidPayment**](VoidApi.md#voidPayment) | **POST** /pts/v2/payments/{id}/voids | Void a Payment
+[**voidRefund**](VoidApi.md#voidRefund) | **POST** /pts/v2/refunds/{id}/voids | Void a Refund
 
-
-<a name="getVoid"></a>
-# **getVoid**
-> InlineResponse2015 getVoid(id)
-
-Retrieve A Void
-
-Include the void ID in the GET request to retrieve the void details.
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.VoidApi();
-
-var id = "id_example"; // String | The void ID returned from a previous void request.
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getVoid(id, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The void ID returned from a previous void request. | 
-
-### Return type
-
-[**InlineResponse2015**](InlineResponse2015.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
 
 <a name="voidCapture"></a>
 # **voidCapture**
-> InlineResponse2015 voidCapture(voidCaptureRequest, id)
+> PtsV2PaymentsVoidsPost201Response voidCapture(voidCaptureRequest, id)
 
 Void a Capture
 
@@ -95,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**PtsV2PaymentsVoidsPost201Response**](PtsV2PaymentsVoidsPost201Response.md)
 
 ### Authorization
 
@@ -103,12 +56,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="voidCredit"></a>
 # **voidCredit**
-> InlineResponse2015 voidCredit(voidCreditRequest, id)
+> PtsV2PaymentsVoidsPost201Response voidCredit(voidCreditRequest, id)
 
 Void a Credit
 
@@ -144,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**PtsV2PaymentsVoidsPost201Response**](PtsV2PaymentsVoidsPost201Response.md)
 
 ### Authorization
 
@@ -152,12 +105,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="voidPayment"></a>
 # **voidPayment**
-> InlineResponse2015 voidPayment(voidPaymentRequest, id)
+> PtsV2PaymentsVoidsPost201Response voidPayment(voidPaymentRequest, id)
 
 Void a Payment
 
@@ -193,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**PtsV2PaymentsVoidsPost201Response**](PtsV2PaymentsVoidsPost201Response.md)
 
 ### Authorization
 
@@ -201,12 +154,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="voidRefund"></a>
 # **voidRefund**
-> InlineResponse2015 voidRefund(voidRefundRequest, id)
+> PtsV2PaymentsVoidsPost201Response voidRefund(voidRefundRequest, id)
 
 Void a Refund
 
@@ -242,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**PtsV2PaymentsVoidsPost201Response**](PtsV2PaymentsVoidsPost201Response.md)
 
 ### Authorization
 
@@ -250,6 +203,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
