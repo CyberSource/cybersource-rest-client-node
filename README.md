@@ -49,17 +49,5 @@ API credentials are different for each environment, so be sure to switch to the 
 
 
 
-## Building & Testing the SDK
-
-### Running the SDK Tests
-`mocha`
-
-### Run Particular Tests  
-`mocha test/<testfile>`
-
-### Testing Guide
-For additional help in testing your own code, Authorize.Net maintains a [comprehensive testing guide](https://developer.cybersource.com/hello-world/testing-guide.html) that includes test credit card numbers to use and special triggers to generate certain responses from the sandbox environment.
-
-
 ## License
 This repository is distributed under a proprietary license. See the provided [`LICENSE.txt`](/LICENSE.txt) file.
