@@ -18,8 +18,6 @@ npm install cybersource-rest-client
 ## Registration & Configuration
 Use of this SDK and the CyberSource APIs requires having an account on our system. You can find details of getting a test account and creating your keys [here](https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration.html)
 
-Once you have your keys, simply load them into the appropriate variables in your code, as per the below sample code dealing with the authentication part of the API request. 
-
 Remember this SDK is for use in server-side Node applications that access the CyberSource REST API and credentials should always be securely stored and accessed appropriately. 
 
 
