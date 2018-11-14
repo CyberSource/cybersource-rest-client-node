@@ -93,6 +93,10 @@
       this.agent = new superagent.agent();
     }
 
+    /**
+     * The filepath where reports are downloaded
+     */
+    this.downloadFilePath = '';
   };
 
   /**
@@ -356,6 +360,8 @@
   exports.prototype.setConfiguration = function (configObject) {
 
     this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
+    this.constants = AuthenticationSDK.Constants;
+    this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
   }
 
   /**
@@ -367,41 +373,44 @@
    */
   exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
 
-    var Constants = AuthenticationSDK.Constants;
-
     this.merchantConfig.setRequestTarget(requestTarget);
     this.merchantConfig.setRequestType(httpMethod)
     this.merchantConfig.setRequestJsonData(requestBody);
-    var logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
-    var token = AuthenticationSDK.Authorization.getToken(this.merchantConfig, logger);
+    
+    this.logger.info("Authentication Type : " + this.merchantConfig.getAuthenticationType());
+    this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
-    if (this.merchantConfig.getAuthenticationType() === Constants.JWT) {
+    var token = AuthenticationSDK.Authorization.getToken(this.merchantConfig, this.logger);
+
+    if (this.merchantConfig.getAuthenticationType() === this.constants.JWT) {
       token = "Bearer " + token;
       headerParams['Authorization'] = token;
+      this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
     }
-    else if (this.merchantConfig.getAuthenticationType() === Constants.HTTP) {
+    else if (this.merchantConfig.getAuthenticationType() === this.constants.HTTP) {
       var date = new Date(Date.now()).toUTCString();
 
-      if (httpMethod === "POST" || httpMethod === "PATCH" || httpMethod === "PUT") {
-        var digest = AuthenticationSDK.PayloadDigest.generateDigest(this.merchantConfig, logger);
-        digest = Constants.SIGNATURE_ALGORITHAM + digest;
-        logger.info(Constants.DIGEST + " : " + digest);
+      if (httpMethod.toLowerCase() === this.constants.POST
+        || httpMethod.toLowerCase() === this.constants.PATCH
+        || httpMethod.toLowerCase() === this.constants.PUT) {
+        var digest = AuthenticationSDK.PayloadDigest.generateDigest(this.merchantConfig, this.logger);
+        digest = this.constants.SIGNATURE_ALGORITHAM + digest;
+        this.logger.info(this.constants.DIGEST + " : " + digest);
         headerParams['digest'] = digest;
-        logger.info('digest : ' + headerParams['digest']);
       }
 
       headerParams['v-c-merchant-id'] = this.merchantConfig.getMerchantID();
       headerParams['date'] = date;
       headerParams['host'] = this.merchantConfig.getRequestHost();
       headerParams['signature'] = token;
-      headerParams['User-Agent'] = "Mozilla/5.0";
+      headerParams['User-Agent'] = this.constants.USER_AGENT_VALUE;
 
-      logger.info("v-c-merchant-id : " + this.merchantConfig.getMerchantID());
-      logger.info("date : " + date);
-      logger.info("host : " + this.merchantConfig.getRequestHost());
-      logger.info("signature : " + token);
-      logger.info("User-Agent : " + headerParams['User-Agent']);
-      logger.info("End > ==============================")
+      this.logger.info("v-c-merchant-id : " + this.merchantConfig.getMerchantID());
+      this.logger.info("date : " + date);
+      this.logger.info("host : " + this.merchantConfig.getRequestHost());
+      this.logger.info("signature : " + token);
+      this.logger.info("User-Agent : " + headerParams['User-Agent']);
+      this.logger.info(this.constants.END_TRANSACTION);
     }
 
     return headerParams;
@@ -444,7 +453,7 @@
     this.applyAuthToRequest(request, authNames);
 
     // set query parameters
-    if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
+    if (httpMethod.toLowerCase() === this.constants.GET && this.cache === false) {
       queryParams['_'] = new Date().getTime();
     }
     request.query(this.normalizeParams(queryParams));
@@ -454,7 +463,9 @@
      */
     var requestTarget = this.buildRequestTarget(path, pathParams, queryParams);
 
-    if (httpMethod.toUpperCase() === 'POST' || httpMethod === 'PATCH' || httpMethod === 'PUT') {
+    if (httpMethod.toLowerCase() === this.constants.POST
+      || httpMethod.toLowerCase() === this.constants.PATCH
+      || httpMethod.toLowerCase() === this.constants.PUT) {
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
     headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
@@ -474,8 +485,6 @@
     } else if (!request.header['Content-Type']) {
       request.type('application/json');
     }
-
-
 
     if (contentType === 'application/x-www-form-urlencoded') {
       request.send(querystring.stringify(this.normalizeParams(formParams)));
@@ -501,14 +510,7 @@
       /* Code for downloading file from stream */
       if (accept === 'application/xml') {
         var fs = require('fs');
-        var path = require('path');
-        var fileName;
-        if (queryParams['reportName'])
-          fileName = queryParams['reportName'] + '.xml';
-        else
-          fileName = "FileIdentifier.csv";
-        var filePath = path.join(this.merchantConfig.getKeysDirectory(), fileName);
-        var stream = fs.createWriteStream(path.resolve(filePath));
+        var stream = fs.createWriteStream(this.downloadFilePath);
         request.send().pipe(stream);
         request._endCalled = false;
       }
@@ -551,7 +553,6 @@
   };
 
   /**
-   * @ghari
    * Build request target required for the signature generation
    * @param {String} path 
    * @param {Object} pathParams 
