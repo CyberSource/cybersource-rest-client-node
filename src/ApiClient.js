@@ -361,6 +361,7 @@
 
     this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
     this.constants = AuthenticationSDK.Constants;
+    this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
     this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
   }
 
@@ -377,17 +378,17 @@
     this.merchantConfig.setRequestType(httpMethod)
     this.merchantConfig.setRequestJsonData(requestBody);
     
-    this.logger.info("Authentication Type : " + this.merchantConfig.getAuthenticationType());
+    this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
     var token = AuthenticationSDK.Authorization.getToken(this.merchantConfig, this.logger);
 
-    if (this.merchantConfig.getAuthenticationType() === this.constants.JWT) {
-      token = "Bearer " + token;
+    if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.JWT) {
+      token = 'Bearer ' + token;
       headerParams['Authorization'] = token;
       this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
     }
-    else if (this.merchantConfig.getAuthenticationType() === this.constants.HTTP) {
+    else if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.HTTP) {
       var date = new Date(Date.now()).toUTCString();
 
       if (httpMethod.toLowerCase() === this.constants.POST
@@ -405,11 +406,11 @@
       headerParams['signature'] = token;
       headerParams['User-Agent'] = this.constants.USER_AGENT_VALUE;
 
-      this.logger.info("v-c-merchant-id : " + this.merchantConfig.getMerchantID());
-      this.logger.info("date : " + date);
-      this.logger.info("host : " + this.merchantConfig.getRequestHost());
-      this.logger.info("signature : " + token);
-      this.logger.info("User-Agent : " + headerParams['User-Agent']);
+      this.logger.info('v-c-merchant-id : ' + this.merchantConfig.getMerchantID());
+      this.logger.info('date : ' + date);
+      this.logger.info('host : ' + this.merchantConfig.getRequestHost());
+      this.logger.info('signature : ' + token);
+      this.logger.info('User-Agent : ' + headerParams['User-Agent']);
       this.logger.info(this.constants.END_TRANSACTION);
     }
 
