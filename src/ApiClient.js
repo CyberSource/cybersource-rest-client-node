@@ -93,10 +93,6 @@
       this.agent = new superagent.agent();
     }
 
-    /**
-     * The filepath where reports are downloaded
-     */
-    this.downloadFilePath = '';
   };
 
   /**
@@ -508,13 +504,6 @@
     var accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
-      /* Code for downloading file from stream */
-      if (accept === 'application/xml') {
-        var fs = require('fs');
-        var stream = fs.createWriteStream(this.downloadFilePath);
-        request.send().pipe(stream);
-        request._endCalled = false;
-      }
     }
 
     if (returnType === 'Blob') {
