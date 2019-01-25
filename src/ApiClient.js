@@ -374,7 +374,6 @@
     this.merchantConfig.setRequestType(httpMethod)
     this.merchantConfig.setRequestJsonData(requestBody);
     this.logger.info(this.constants.BEGIN_TRANSACTION);
-   // this.logger.info("[BEGIN] REQUEST & RESPONSE");
     //log all merchant config properties
     this.logger.info("MERCHCFG > " + JSON.stringify(this.merchantConfig.getAllProperties(this.merchantConfig)));
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
