@@ -93,10 +93,6 @@
       this.agent = new superagent.agent();
     }
 
-    /**
-     * The filepath where reports are downloaded
-     */
-    this.downloadFilePath = '';
   };
 
   /**
@@ -377,7 +373,10 @@
     this.merchantConfig.setRequestTarget(requestTarget);
     this.merchantConfig.setRequestType(httpMethod)
     this.merchantConfig.setRequestJsonData(requestBody);
-    
+    this.logger.info(this.constants.BEGIN_TRANSACTION);
+   // this.logger.info("[BEGIN] REQUEST & RESPONSE");
+    //log all merchant config properties
+    this.logger.info("MERCHCFG > " + JSON.stringify(this.merchantConfig.getAllProperties(this.merchantConfig)));
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
@@ -411,7 +410,7 @@
       this.logger.info('host : ' + this.merchantConfig.getRequestHost());
       this.logger.info('signature : ' + token);
       this.logger.info('User-Agent : ' + headerParams['User-Agent']);
-      this.logger.info(this.constants.END_TRANSACTION);
+      
     }
 
     return headerParams;
@@ -444,7 +443,7 @@
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
     queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-    returnType, callback) {
+    returnType, callback) { 
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
@@ -508,13 +507,6 @@
     var accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
-      /* Code for downloading file from stream */
-      if (accept === 'application/xml') {
-        var fs = require('fs');
-        var stream = fs.createWriteStream(this.downloadFilePath);
-        request.send().pipe(stream);
-        request._endCalled = false;
-      }
     }
 
     if (returnType === 'Blob') {
@@ -533,12 +525,46 @@
       }
     }
 
+    // Adding Masking logic here
+    function logClientRequestAndResponse(response){
+      try{
+      if(request.method === 'POST' || request.method === 'PUT' || request.method === 'PATCH'){
+        response.request._data = maskSensitiveFields(response.request._data);      
+      }
+      response.text = maskSensitiveFields(response.text);       
+      return response;
+    }
+    catch(error){
+      return response;
+    }
+    } 
+
+    const filters = ['country', 'email', 'cardNumber', 'expirationDate', 'cardCode'];
+    
+    function maskSensitiveFields(message){
+      for (var i = 0; i < filters.length; i++) {
+          var reg = new RegExp('\\\\\"' + filters[i] + '\\\\\":\\\\"[\\w|\\d|.@-]+\\\\\"');
+          message = JSON.parse(JSON.stringify(message).split(reg).join('\\"' + filters[i] + '\\":\\"-XXXXX-\\"'));
+      }
+      return message;
+    }
+
     request.end(function (error, response) {
       if (callback) {
         var data = null;
+        if(response){
+          response = logClientRequestAndResponse(response);
+          if(response.request._data)
+            _this.logger.info(_this.constants.REQUEST_BODY + ' : ' + response.request._data);
+          _this.logger.info('URL : ' + response.request.url);
+          _this.logger.info(_this.constants.RESPONSE_MESSAGE +' : ' + response.text);
+          _this.logger.info(_this.constants.RESPONSE_CODE + ' : ' + response.statusCode);
+          _this.logger.info('Response Headers : ' + JSON.stringify(response.header)); 
+        }
         if (!error) {
           try {
             data = _this.deserialize(response, returnType);
+            data = JSON.parse(maskSensitiveFields(JSON.stringify(data)));
             if (_this.enableCookies && typeof window === 'undefined') {
               _this.agent.saveCookies(response);
             }
@@ -546,6 +572,7 @@
             error = err;
           }
         }
+        _this.logger.info(_this.constants.END_TRANSACTION);
         callback(error, data, response);
       }
     });
