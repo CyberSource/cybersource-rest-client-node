@@ -63,7 +63,7 @@
      * @param {module:model/RequestBody1} requestBody Report subscription request payload
      * @param {module:api/ReportsApi~createReportCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createReport = function(requestBody,opts, callback) {
+    this.createReport = function(requestBody, callback) {
       var postBody = requestBody;
 
       // verify the required parameter 'requestBody' is set
@@ -75,7 +75,6 @@
       var pathParams = {
       };
       var queryParams = {
-        'organizationId': opts['organizationId']
       };
       var headerParams = {
       };
