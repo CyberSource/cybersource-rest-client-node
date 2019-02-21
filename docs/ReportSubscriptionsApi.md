@@ -4,7 +4,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSubscription**](ReportSubscriptionsApi.md#createSubscription) | **PUT** /reporting/v3/report-subscriptions/{reportName} | Create Report Subscription for a report name by organization
+[**createSubscription**](ReportSubscriptionsApi.md#createSubscription) | **PUT** /reporting/v3/report-subscriptions | Create Report Subscription for a report name by organization
 [**deleteSubscription**](ReportSubscriptionsApi.md#deleteSubscription) | **DELETE** /reporting/v3/report-subscriptions/{reportName} | Delete subscription of a report name by organization
 [**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Retrieve all subscriptions by organization
 [**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Retrieve subscription for a report name by organization
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> createSubscription(reportName, requestBody)
+> createSubscription(requestBody)
 
 Create Report Subscription for a report name by organization
 
@@ -24,8 +24,6 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportSubscriptionsApi();
 
-var reportName = "reportName_example"; // String | Name of the Report to Create
-
 var requestBody = new CyberSource.RequestBody(); // RequestBody | Report subscription request payload
 
 
@@ -36,14 +34,13 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createSubscription(reportName, requestBody, callback);
+apiInstance.createSubscription(requestBody, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportName** | **String**| Name of the Report to Create | 
  **requestBody** | [**RequestBody**](RequestBody.md)| Report subscription request payload | 
 
 ### Return type

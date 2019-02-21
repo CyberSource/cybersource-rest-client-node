@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**Ptsv2paymentsClientReferenceInformation**](Ptsv2paymentsClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**Ptsv2paymentsidcapturesClientReferenceInformation**](Ptsv2paymentsidcapturesClientReferenceInformation.md) |  | [optional] 
 **processingInformation** | [**Ptsv2paymentsidrefundsProcessingInformation**](Ptsv2paymentsidrefundsProcessingInformation.md) |  | [optional] 
 **paymentInformation** | [**Ptsv2paymentsidrefundsPaymentInformation**](Ptsv2paymentsidrefundsPaymentInformation.md) |  | [optional] 
 **orderInformation** | [**Ptsv2paymentsidrefundsOrderInformation**](Ptsv2paymentsidrefundsOrderInformation.md) |  | [optional] 
