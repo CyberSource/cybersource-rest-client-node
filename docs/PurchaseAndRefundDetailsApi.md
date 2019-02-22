@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getPurchaseAndRefundDetails"></a>
 # **getPurchaseAndRefundDetails**
-> ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(startTime, endTime, opts)
+> getPurchaseAndRefundDetails(startTime, endTime, opts)
 
 Get Purchase and Refund details
 
@@ -38,7 +38,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 apiInstance.getPurchaseAndRefundDetails(startTime, endTime, opts, callback);
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReportingV3PurchaseRefundDetailsGet200Response**](ReportingV3PurchaseRefundDetailsGet200Response.md)
+null (empty response body)
 
 ### Authorization
 

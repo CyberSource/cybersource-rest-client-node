@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **providerTransactionId** | **String** | The description for this field is not available. | [optional] 
 **approvalCode** | **String** | Authorization code. Returned only when the processor returns this value.  | [optional] 
 **responseCode** | **String** | For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  Important Do not use this field to evaluate the result of the authorization.  | [optional] 
-**avs** | [**TssV2TransactionsGet200ResponseProcessorInformationAvs**](TssV2TransactionsGet200ResponseProcessorInformationAvs.md) |  | [optional] 
+**avs** | [**PtsV2PaymentsPost201ResponseProcessorInformationAvs**](PtsV2PaymentsPost201ResponseProcessorInformationAvs.md) |  | [optional] 
 **cardVerification** | [**TssV2TransactionsGet200ResponseProcessorInformationCardVerification**](TssV2TransactionsGet200ResponseProcessorInformationCardVerification.md) |  | [optional] 
 **achVerification** | [**TssV2TransactionsGet200ResponseProcessorInformationAchVerification**](TssV2TransactionsGet200ResponseProcessorInformationAchVerification.md) |  | [optional] 
 **electronicVerificationResults** | [**TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults**](TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults.md) |  | [optional] 
