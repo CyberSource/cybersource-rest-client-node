@@ -31,5 +31,8 @@ REM Batch file to change the content type
 
 powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Object { $_ -replace 'contentTypes = \[''application/json;charset=utf-8', 'contentTypes = [''*/*' } | Set-Content ..\src\Api\SecureFileShareApi.js"
 
+git checkout ..\README.md
+
+git checkout ..\package.json
 
 pause
