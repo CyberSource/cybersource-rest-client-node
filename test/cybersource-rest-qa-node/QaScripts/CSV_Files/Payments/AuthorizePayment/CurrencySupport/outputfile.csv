@@ -1,0 +1,4 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CAECNU_01,CreateAuthOnly2ExponentCurrenciesNU,Fails,CreateAuthOnly2ExponentCurrenciesNU paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T19:22:31+05:30
+CAECNU_02,CreateAuthOnly2ExponentCurrenciesNU,Fails,CreateAuthOnly2ExponentCurrenciesNU paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T19:22:31+05:30
+CAECNU_03,CreateAuthOnly2ExponentCurrenciesNU,Fails,CreateAuthOnly2ExponentCurrenciesNU paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T19:22:31+05:30

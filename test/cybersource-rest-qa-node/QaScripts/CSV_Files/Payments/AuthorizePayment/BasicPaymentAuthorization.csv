@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CBPA_01,72210.00,Success
+CBPA_02,6700,Fails
+CBPA_03,AQWA9,Fails due to invalid amount

@@ -1,0 +1,3 @@
+testCaseId,creditId,status,message
+VAC_01,5445916993216135503005,VOIDED,Success
+VAC_02,8964213433846812344644,VOIDED,Fails due to invalid creditId

@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+RPSS_01,115.00,Success
+RPSS_02,200.0,Fails
+RPSS_03,GFTY1,Fails due to invalid amount

@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CVAR_01,102.21,Success
+CVAR_02,100,Fails
+CVAR_03,GVC5,Fails due to invalid amount

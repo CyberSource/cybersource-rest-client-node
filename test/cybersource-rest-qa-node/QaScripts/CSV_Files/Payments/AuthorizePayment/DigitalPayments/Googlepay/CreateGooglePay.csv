@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CGP_01,100.00,Success
+CGP_02,200,Fails
+CGP_03,GHP34,Fails due to invalid amount

@@ -1,0 +1,10 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CAAnCD_01,CreateAuthAPCybsDecrp,Fails,CreateAuthAPCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T19:41:42+05:30
+CAAnCD_02,CreateAuthAPCybsDecrp,Fails,CreateAuthAPCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T19:41:42+05:30
+CAAnCD_03,CreateAuthAPCybsDecrp,Fails,CreateAuthAPCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T19:41:43+05:30
+CAAnMD_01,CreateAuthAPMerctDecrp,Pass,Assertion Passed-Status Code:201 created,2018-09-17T19:41:43+05:30
+CAAnMD_02,CreateAuthAPMerctDecrp,Fails,Assertion Failed-Status Code:201,2018-09-17T19:41:43+05:30
+CAAnMD_03,CreateAuthAPMerctDecrp,Fails,CreateAuthAPMerctDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T19:41:43+05:30
+CAnP_01,CreateAuthAPCybsDecrp,Fails,CreateAuthAPCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T19:41:44+05:30
+CAnP_02,CreateAuthAPCybsDecrp,Fails,CreateAuthAPCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T19:41:44+05:30
+CAnP_03,CreateAuthAPCybsDecrp,Fails,CreateAuthAPCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T19:41:44+05:30

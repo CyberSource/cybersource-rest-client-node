@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAE_01,100.00,Success
+CAE_02,200.0,Fails
+CAE_03,KLTR7,Fails due to invalid amount

@@ -1,0 +1,10 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CAGCD_01,CreateAuthorizeGPayCybsDecrp,Fails,CreateAuthorizeGPayCybsDecrp paymentid is not created due to Reason: Declined - The request is missing one or more fields,2018-09-17T13:05:24+05:30
+CAGCD_02,CreateAuthorizeGPayCybsDecrp,Fails,CreateAuthorizeGPayCybsDecrp paymentid is not created due to Reason: Declined - The request is missing one or more fields,2018-09-17T13:05:24+05:30
+CAGCD_03,CreateAuthorizeGPayCybsDecrp,Fails,CreateAuthorizeGPayCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:05:24+05:30
+CAGMD_01,CreateAuthorizeGPayMerctDecrp,Pass,Assertion Passed-Status Code:201 created,2018-09-17T13:05:24+05:30
+CAGMD_02,CreateAuthorizeGPayMerctDecrp,Fails,Assertion Failed-Status Code:201,2018-09-17T13:05:25+05:30
+CAGMD_03,CreateAuthorizeGPayMerctDecrp,Fails,CreateAuthorizeGPayMerctDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:05:25+05:30
+CGP_01,CreateGooglePay,Fails,CreateGooglePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:05:25+05:30
+CGP_02,CreateGooglePay,Fails,CreateGooglePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:05:26+05:30
+CGP_03,CreateGooglePay,Fails,CreateGooglePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:05:26+05:30

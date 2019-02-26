@@ -1,0 +1,4 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CCP_01,CreateChasePay,Fails,CreateChasePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:25:06+05:30
+CCP_02,CreateChasePay,Fails,CreateChasePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:25:06+05:30
+CCP_03,CreateChasePay,Fails,CreateChasePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T13:25:07+05:30

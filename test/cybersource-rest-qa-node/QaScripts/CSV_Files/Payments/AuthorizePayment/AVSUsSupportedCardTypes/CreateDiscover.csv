@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CD_01,2016.05,Success
+CD_02,200.0,Fails
+CD_03,GHTR3,Fails due to invalid amount

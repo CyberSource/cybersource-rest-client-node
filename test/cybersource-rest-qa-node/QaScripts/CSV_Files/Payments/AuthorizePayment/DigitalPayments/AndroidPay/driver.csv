@@ -1,0 +1,4 @@
+dirName,fileName,Flag
+AndroidPay,AuthorizeAndroidPayCybersourceDecryption,1
+AndroidPay,AuthorizeAndroidPayMerchantDecryption,1
+AndroidPay,AndroidPay,1

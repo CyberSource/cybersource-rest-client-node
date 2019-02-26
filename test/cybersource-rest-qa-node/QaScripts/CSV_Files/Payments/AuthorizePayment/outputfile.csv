@@ -1,0 +1,4 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CVAR_01,VoiceAuthReferral,Pass,Assertion Passed-Status Code:201 created,2018-09-16T22:43:56+05:30
+CVAR_02,VoiceAuthReferral,Fails,Assertion Failed-Status Code:201,2018-09-16T22:43:57+05:30
+CVAR_03,VoiceAuthReferral,Fails,VoiceAuthReferral paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-16T22:43:57+05:30

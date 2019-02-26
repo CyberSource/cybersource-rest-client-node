@@ -1,0 +1,3 @@
+testCaseId,organizationId,permissionId,message
+UMPI_01,wfpgcustj,CustomerProfileViewPermission,Success
+UMPI_02,bpwesdgsd,CustomerProfileViewPermission,Fails due to invalid organizationId

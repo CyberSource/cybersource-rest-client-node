@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CRI_01,102.21,Success
+CRI_02,200,Fails
+CRI_03,TGF5,Fails due to invalid amount

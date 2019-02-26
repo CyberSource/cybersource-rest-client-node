@@ -1,0 +1,13 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CMSC_01,CreateMaestroSecureCode,Pass,Assertion Passed-Status Code:201 created,2018-09-18T12:43:08+05:30
+CMSC_02,CreateMaestroSecureCode,Fails,Assertion Failed-Status Code:201,2018-09-18T12:43:08+05:30
+CMSC_03,CreateMaestroSecureCode,Fails,CreateMaestroSecureCode paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T12:43:08+05:30
+CMC_01,CreateMasterCard,Pass,Assertion Passed-Status Code:201 created,2018-09-18T12:43:09+05:30
+CMC_02,CreateMasterCard,Fails,Assertion Failed-Status Code:201,2018-09-18T12:43:09+05:30
+CMC_03,CreateMasterCard,Fails,CreateMasterCard paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T12:43:10+05:30
+CSU_01,CreateSoloUK,Pass,Assertion Passed-Status Code:201 created,2018-09-18T12:43:11+05:30
+CSU_02,CreateSoloUK,Fails,Assertion Failed-Status Code:201,2018-09-18T12:43:11+05:30
+CSU_03,CreateSoloUK,Fails,CreateSoloUK paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T12:43:12+05:30
+CV_01,CreateVisa,Pass,Assertion Passed-Status Code:201 created,2018-09-18T12:43:12+05:30
+CV_02,CreateVisa,Fails,Assertion Failed-Status Code:201,2018-09-18T12:43:12+05:30
+CV_03,CreateVisa,Fails,CreateVisa paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T12:43:13+05:30

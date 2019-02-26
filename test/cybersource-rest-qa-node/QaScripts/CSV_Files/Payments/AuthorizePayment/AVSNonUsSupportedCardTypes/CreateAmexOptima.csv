@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAO_01,2854.00,Success
+CAO_02,200.0,Fails
+CAO_03,ADHJ5,Fails due to invalid amount

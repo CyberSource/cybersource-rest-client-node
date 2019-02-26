@@ -1,0 +1,12 @@
+dirName,fileName,Flag
+SimpleAuth,AuthorizationOnlycommerceIndicatormoto,1
+SimpleAuth,AuthorizationOnlyInternet,1
+SimpleAuth,AuthorizationOnlyNonRetail,1
+SimpleAuth,AuthorizationOnlyRetail,1
+SimpleAuth,RecurringIndicator,1
+SimpleAuth,RetailEMVContact,1
+SimpleAuth,RetailEMVContactless,1
+SimpleAuth,RetailEMVContactlessCopy,1
+SimpleAuth,RetailPOSstandardkey,1
+SimpleAuth,RetailPOSstandardSwipe,1
+SimpleAuth,VisaInstallmentcommerceIndicatorinstall,1

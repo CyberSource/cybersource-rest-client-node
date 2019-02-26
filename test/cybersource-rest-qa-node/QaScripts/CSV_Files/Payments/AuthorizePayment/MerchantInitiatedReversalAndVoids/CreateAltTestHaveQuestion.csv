@@ -1,0 +1,4 @@
+TestCaseId,totalamount,paymentinformation,Message
+CATQ_01,3000.00,V2paymentsPaymentInformationCard,Success
+CATQ_02,200.0,V2paymentsPaymentInformationCard,Success
+CATQ_03,300.0,V2paymentsPaymentInformationCard,Success

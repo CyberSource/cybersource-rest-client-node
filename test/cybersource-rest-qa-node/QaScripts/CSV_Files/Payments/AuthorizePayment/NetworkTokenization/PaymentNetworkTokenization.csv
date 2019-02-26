@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CPNT_01,100.00,Success
+CPNT_02,200.0,Fails
+CPNT_03,HKLPO9,Fails due to invalid amount

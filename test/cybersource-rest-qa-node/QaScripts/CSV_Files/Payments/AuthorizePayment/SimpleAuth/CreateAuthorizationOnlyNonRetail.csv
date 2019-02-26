@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAuthOnlyNR_01,102.00,Success
+CAuthOnlyNR_02,200.0,Fails
+CAuthOnlyNR_03,BGF4,Fails due to invalid amount

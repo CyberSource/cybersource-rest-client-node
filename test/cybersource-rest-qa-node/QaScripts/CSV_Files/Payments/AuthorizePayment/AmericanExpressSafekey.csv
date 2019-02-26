@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAES_01,100.00,Success
+CAES_02,200,Fails
+CAES_03,GHP12,Fails due to invalid amount

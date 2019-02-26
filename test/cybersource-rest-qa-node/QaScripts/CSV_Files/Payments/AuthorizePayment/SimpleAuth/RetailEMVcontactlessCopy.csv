@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+REClC_01,115.00,Success
+REClC_02,200.0,Fails
+REClC_03,KML2,Fails due to invalid amount

@@ -1,0 +1,7 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CNR_01,CreateNonRetail,Pass,Assertion Passed-Status Code:201 created,2018-09-19T15:17:13+05:30
+CNR_02,CreateNonRetail,Pass,Assertion Passed-Status Code:201 created,2018-09-19T15:17:13+05:30
+CNR_03,CreateNonRetail,Fails,CreateNonRetail paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:17:14+05:30
+CR_01,CreateRetail,Fails,CreateRetail paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:17:14+05:30
+CR_02,CreateRetail,Fails,CreateRetail paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:17:14+05:30
+CR_03,CreateRetail,Fails,CreateRetail paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:17:14+05:30

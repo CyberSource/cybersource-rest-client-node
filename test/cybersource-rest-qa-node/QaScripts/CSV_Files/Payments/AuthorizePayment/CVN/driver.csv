@@ -1,0 +1,7 @@
+dirName,fileName,Flag
+CVN,AmexCID,1
+CVN,DiscoverCID,1
+CVN,MaestroInternationalCopy,1
+CVN,MaestroUKDomestic,1
+CVN,MasterCardCVC2,1
+CVN,VisaCVV2,1

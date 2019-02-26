@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAP_01,100.00,Success
+CAP_02,200.0,Fails
+CAP_03,GHJ34,Fails due to invalid amount

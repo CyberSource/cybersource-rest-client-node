@@ -1,0 +1,4 @@
+testCaseId,orgId,repId,message
+GRBRI_01,testrest,79642c43-2368-0cd5-e053-a2588e0a7b3c,Success
+GRBRI_02,testrest,79642c43-2368-0cd5-e053-a2588e0a,Fails due to invalid reportId
+GRBRI_03,bkalama,79642c43-2368-0cd5-e053-a2588e0a7b3c,Fails due to invalid organizationId

@@ -1,0 +1,4 @@
+TestCaseId,totalamount,Message
+CMC_01,106.00,Success
+CMC_02,200.0,Fails
+CMC_03,ASDU4,Fails due to invalid amount

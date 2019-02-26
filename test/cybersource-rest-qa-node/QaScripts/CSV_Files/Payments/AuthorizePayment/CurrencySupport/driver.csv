@@ -1,0 +1,3 @@
+dirName,fileName,Flag
+CurrencySupport,AuthorizationOnly2ExponentCurrenciesNonUSD,1
+CurrencySupport,AuthorizationOnly0ExponentCurrencies,1

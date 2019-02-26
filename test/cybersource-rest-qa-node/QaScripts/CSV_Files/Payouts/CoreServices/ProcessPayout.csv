@@ -1,0 +1,4 @@
+testCaseId,cleintRefInfoCode,businessAppId,amount,message
+CPay_01,33557799,FD,100.00,Success
+CPay_02,12345,GD,200,Fails due to mismatch amount
+CPay_03,6789,MD,DSWAZ1,Fails due to invalid amount

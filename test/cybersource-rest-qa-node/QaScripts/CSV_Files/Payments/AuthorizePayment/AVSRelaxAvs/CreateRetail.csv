@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CR_01,100.00,Success
+CR_02,200.0,Fails
+CR_03,DSWAZ1,Fails due to invalid amount

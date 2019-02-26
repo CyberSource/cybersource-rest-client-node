@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CB_01,100.00,Success
+CB_02,200,Fails
+CB_03,FDR,Fails due to invalid amount

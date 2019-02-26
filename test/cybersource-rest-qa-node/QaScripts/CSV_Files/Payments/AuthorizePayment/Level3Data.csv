@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CL3D_01,114.00,Success
+CL3D_02,150,Fails
+CL3D_03,RET2,Fails due to invalid amount

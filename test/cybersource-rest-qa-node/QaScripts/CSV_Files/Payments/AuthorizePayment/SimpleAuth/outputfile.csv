@@ -1,0 +1,34 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CAuthOnlyCM_01,CreateAuthOnlyCImoto,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:04+05:30
+CAuthOnlyCM_02,CreateAuthOnlyCImoto,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:04+05:30
+CAuthOnlyCM_03,CreateAuthOnlyCImoto,Fails,CreateAuthOnlyCImoto paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:04+05:30
+CAuthOnlyI_01,CreateAuthOnlyInternet,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:05+05:30
+CAuthOnlyI_02,CreateAuthOnlyInternet,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:05+05:30
+CAuthOnlyI_03,CreateAuthOnlyInternet,Fails,CreateAuthOnlyInternet paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:05+05:30
+CAuthOnlyNR_01,CreateAuthOnlyNonRetail,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:05+05:30
+CAuthOnlyNR_02,CreateAuthOnlyNonRetail,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:06+05:30
+CAuthOnlyNR_03,CreateAuthOnlyNonRetail,Fails,CreateAuthOnlyNonRetail paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:06+05:30
+CAuthOnlyR_01,CreateAuthOnlyRetail,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:06+05:30
+CAuthOnlyR_02,CreateAuthOnlyRetail,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:06+05:30
+CAuthOnlyR_03,CreateAuthOnlyRetail,Fails,CreateAuthOnlyRetail paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:07+05:30
+CRI_01,CreateRecurringIndicator,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:07+05:30
+CRI_02,CreateRecurringIndicator,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:07+05:30
+CRI_03,CreateRecurringIndicator,Fails,CreateRecurringIndicator paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:07+05:30
+REC_01,CreateRetailEMVcontact,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:08+05:30
+REC_02,CreateRetailEMVcontact,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:08+05:30
+REC_03,CreateRetailEMVcontact,Fails,CreateRetailEMVcontact paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:09+05:30
+RECl_01,CreateRetailContacless,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:09+05:30
+RECl_02,CreateRetailContacless,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:10+05:30
+RECl_03,CreateRetailContacless,Fails,CreateRetailContacless paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:10+05:30
+REClC_01,CreateRetailEMVContaclessCopy,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:11+05:30
+REClC_02,CreateRetailEMVContaclessCopy,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:11+05:30
+REClC_03,CreateRetailEMVContaclessCopy,Fails,CreateRetailEMVContaclessCopy paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:11+05:30
+RPSK_01,CreateRetailPOSstandardkey,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:12+05:30
+RPSK_02,CreateRetailPOSstandardkey,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:12+05:30
+RPSK_03,CreateRetailPOSstandardkey,Fails,CreateRetailPOSstandardkey paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:13+05:30
+RPSS_01,CreateRetailPOSstandardSwipe,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:13+05:30
+RPSS_02,CreateRetailPOSstandardSwipe,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:14+05:30
+RPSS_03,CreateRetailPOSstandardSwipe,Fails,CreateRetailPOSstandardSwipe paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:14+05:30
+CVCI_01,CreateVisaInstalCommercIndiInstal,Pass,Assertion Passed-Status Code:201 created,2018-09-20T10:00:14+05:30
+CVCI_02,CreateVisaInstalCommercIndiInstal,Fails,Assertion Failed-Status Code:201,2018-09-20T10:00:15+05:30
+CVCI,CreateVisaInstalCommercIndiInstal,Fails,CreateVisaInstalCommercIndiInstal paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-20T10:00:15+05:30

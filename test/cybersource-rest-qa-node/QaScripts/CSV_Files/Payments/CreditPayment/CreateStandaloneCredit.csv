@@ -1,0 +1,4 @@
+TestCaseId,totalamount,paymentinformation,Message
+CSC_01,100,V2paymentsPaymentInformationCard,Success
+CSC_02,200.00,V2paymentsPaymentInformationCard,Success
+CSC_03,GHRT45,V2paymentsPaymentInformationCard,Fails

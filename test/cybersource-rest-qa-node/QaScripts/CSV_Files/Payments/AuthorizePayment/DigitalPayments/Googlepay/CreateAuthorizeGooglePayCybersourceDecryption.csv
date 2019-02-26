@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAGCD_01,115.00,Success
+CAGCD_02,200.0,Success
+CAGCD_03,QHJ34,Fails due to invalid amount

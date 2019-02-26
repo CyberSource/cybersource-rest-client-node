@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CMDA_01,72210.00,Success
+CMDA_02,5000,Fails
+CMDA_03,VBN4,Fails due to invalid amount

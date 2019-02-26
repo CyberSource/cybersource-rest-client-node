@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAuth_01,0.00,Success
+CAuth_02,0,Fails
+CAuth_03,GHL6,Fails due to invalid amount

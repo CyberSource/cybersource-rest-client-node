@@ -1,0 +1,5 @@
+dirName,fileName,Flag
+AVSusSupportedCardTypes,AmericanExpress,1
+AVSusSupportedCardTypes,Discover,1
+AVSusSupportedCardTypes,MasterCard,1
+AVSusSupportedCardTypes,Visa,1

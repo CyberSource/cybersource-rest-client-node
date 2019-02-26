@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAGMD_01,2012.00,Success
+CAGMD_02,2012,Fails
+CAGMD_03,GHKF39,Fails due to invalid amount

@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CACre_01,200.00,Success
+CACre_02,100,Fails due to mismatch amount
+CACre_03,GHTR25.00,Fails due to invalid amount

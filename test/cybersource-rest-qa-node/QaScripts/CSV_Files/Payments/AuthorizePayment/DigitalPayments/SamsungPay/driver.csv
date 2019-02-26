@@ -1,0 +1,6 @@
+dirName,fileName,Flag
+SamsungPay,AuthorizeSamsungPayCybersourceDecryption,1
+SamsungPay,AuthorizeSamsungPayMerchantDecryption,1
+SamsungPay,SamsungPayRetailEmvContact,1
+SamsungPay,SamsungPayRetailEmvMsd,1
+SamsungPay,SamsungPayReatilEmvContactless,1

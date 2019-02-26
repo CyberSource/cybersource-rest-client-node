@@ -1,0 +1,24 @@
+{
+  "name": "cybersource-rest-qa-node",
+  "version": "0.0.1",
+  "description": "QaScripts for CyberSource SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Nodejs",
+    "paymentsAPI",
+    "cybersource",
+    "qa"
+  ],
+  "author": "qa@cybersource.com",
+  "license": "MIT",
+  "dependencies": {
+    "deasync": "^0.1.13",
+    "fast-csv": "^2.4.1",
+    "json2csv": "^4.2.1",
+    "cybersource-rest-client": "0.0.5",
+    "jwk-to-pem": "^2.0.0"
+  }
+}

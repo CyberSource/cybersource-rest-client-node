@@ -1,0 +1,4 @@
+dirName,fileName,Flag
+Googlepay,AuthorizeGooglePayCybersourceDecryption,1
+Googlepay,AuthorizeGooglePayMerchantDecryption,1
+Googlepay,GooglePay,1

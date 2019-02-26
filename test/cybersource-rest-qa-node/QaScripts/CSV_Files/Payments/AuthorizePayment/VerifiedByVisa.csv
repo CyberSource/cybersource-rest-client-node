@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CVBV_01,100.00,Success
+CVBV_02,300,Fails
+CVBV_03,NBM7,Fails due to invalid amount

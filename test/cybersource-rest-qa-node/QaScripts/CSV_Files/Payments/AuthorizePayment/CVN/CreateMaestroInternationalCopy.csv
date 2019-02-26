@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CMIC_01,2016.05,Success
+CMIC_02,200.0,Fails
+CMIC_03,BVFC27,Fails due to invalid amount

@@ -1,0 +1,3 @@
+testCaseId,name,query,message
+CSR_01,TSS search,clientReferenceInformation.code:12345,Success
+CSR_02,TSS search,clientRefeInfo.code:52465,Fails due to invalid query.

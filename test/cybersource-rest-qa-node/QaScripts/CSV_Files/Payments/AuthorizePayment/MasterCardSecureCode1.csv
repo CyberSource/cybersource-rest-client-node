@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CMSC1_01,105.00,Success
+CMSC1_02,200,Fails
+CMSC1_03,RWT2,Fails due to invalid amount

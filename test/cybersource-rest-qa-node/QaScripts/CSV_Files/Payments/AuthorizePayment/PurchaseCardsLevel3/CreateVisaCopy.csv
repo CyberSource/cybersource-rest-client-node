@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CVC_01,114.00,Success
+CVC_02,200.0,Fails
+CVC_03,DSUM87,Fails due to invalid amount

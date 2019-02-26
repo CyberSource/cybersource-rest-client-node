@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CVC_01,2531,Success
+CVC_02,200.0,Fails
+CVC_03,DFRE2,Fails due to invalid amount

@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CMI_01,2016.05,Success
+CMI_02,200.0,Fails
+CMI_03,ZNK9,Fails due to invalid amount

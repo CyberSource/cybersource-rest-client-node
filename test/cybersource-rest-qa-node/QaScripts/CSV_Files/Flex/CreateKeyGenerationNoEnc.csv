@@ -1,0 +1,3 @@
+testCaseId,encryptionType,message
+CKeyGenNE_01,None,Success
+CKeyGenNE_02,SDMP,Fails due to invalid encryptionType

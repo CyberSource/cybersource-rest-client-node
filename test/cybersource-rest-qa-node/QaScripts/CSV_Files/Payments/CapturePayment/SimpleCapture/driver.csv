@@ -1,0 +1,4 @@
+dirName,fileName,Flag
+PaymentsW,GetPayment,1
+PaymentsW,GetRefund,1
+PaymentsW,CreatePayment,1

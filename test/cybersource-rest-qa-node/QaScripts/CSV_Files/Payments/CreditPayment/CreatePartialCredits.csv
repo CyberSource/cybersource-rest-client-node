@@ -1,0 +1,4 @@
+TestCaseId,totalamount,paymentinformation,Message
+CPC_01,10,V2paymentsPaymentInformationCard,Success
+CPC_02,20.00,V2paymentsPaymentInformationCard,Success
+CPC_03,GORT49,V2paymentsPaymentInformationCard,Fails

@@ -1,0 +1,4 @@
+TestCaseId,totalamount,paymentinformation,Message
+CORA_01,3000.00,V2paymentsPaymentInformationCard,Success
+CORA_02,200.0,V2paymentsPaymentInformationCard,Success
+CORA_03,300.0,V2paymentsPaymentInformationCard,Success
