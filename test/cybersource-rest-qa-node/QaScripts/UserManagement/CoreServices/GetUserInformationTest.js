@@ -3,9 +3,8 @@
 var TestRun = require('../../TestRun');
 const assert = require('assert');
 var path = require('path');
-var cybersourceRestApi = require(path.resolve('../cybersource-rest-client-node'));
-
- var filePath = path.resolve(path.join('Data','Configuration.js'));;
+var cybersourceRestApi = require('cybersource-rest-client');
+var filePath = path.resolve(path.join('Data','Configuration.js'));;
 var configuration = require(filePath);
 var constUtility = require(path.resolve((path.join('Utility','ConstantUtility.js'))));
 
