@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **reportStartTime** | **Date** | Report Start Time Value | [optional] 
 **reportEndTime** | **Date** | Report End Time Value | [optional] 
 **timezone** | **String** | Time Zone Value | [optional] 
-**reportFilters** | **{String: [String]}** | Report Filters | [optional] 
-**reportPreferences** | [**ReportingV3ReportSubscriptionsGet200ResponseReportPreferences**](ReportingV3ReportSubscriptionsGet200ResponseReportPreferences.md) |  | [optional] 
-**selectedMerchantGroupName** | **String** | Selected Merchant Group name | [optional] 
+**reportFilters** | **{String: [String]}** | List of filters to apply | [optional] 
+**reportPreferences** | [**ReportingV3ReportsIdGet200ResponseReportPreferences**](ReportingV3ReportsIdGet200ResponseReportPreferences.md) |  | [optional] 
+**groupId** | **String** | Id for selected group. | [optional] 
 
 
 <a name="ReportMimeTypeEnum"></a>
@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 * `WEEKLY` (value: `"WEEKLY"`)
 
 * `MONTHLY` (value: `"MONTHLY"`)
+
+* `ADHOC` (value: `"ADHOC"`)
 
 
 

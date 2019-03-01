@@ -9,11 +9,11 @@ Method | HTTP request | Description
 
 <a name="getPurchaseAndRefundDetails"></a>
 # **getPurchaseAndRefundDetails**
-> getPurchaseAndRefundDetails(startTime, endTime, opts)
+> ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(startTime, endTime, opts)
 
 Get Purchase and Refund details
 
-Purchase And Refund Details Description
+Download the Purchase and Refund Details report. This report report includes all purchases and refund transactions, as well as all activities related to transactions resulting in an adjustment to the net proceeds. 
 
 ### Example
 ```javascript
@@ -38,7 +38,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.getPurchaseAndRefundDetails(startTime, endTime, opts, callback);
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**ReportingV3PurchaseRefundDetailsGet200Response**](ReportingV3PurchaseRefundDetailsGet200Response.md)
 
 ### Authorization
 

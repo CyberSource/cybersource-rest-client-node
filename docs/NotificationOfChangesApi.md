@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get Notification Of Changes
 
-Notification of Change Report
+Download the Notification of Change report. This report shows eCheck-related fields updated as a result of a response to an eCheck settlement transaction. 
 
 ### Example
 ```javascript

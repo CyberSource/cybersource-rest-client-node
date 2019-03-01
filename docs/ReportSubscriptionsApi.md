@@ -4,19 +4,19 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSubscription**](ReportSubscriptionsApi.md#createSubscription) | **PUT** /reporting/v3/report-subscriptions/{reportName} | Create Report Subscription for a report name by organization
+[**createSubscription**](ReportSubscriptionsApi.md#createSubscription) | **PUT** /reporting/v3/report-subscriptions | Create Report Subscription for a report name by organization
 [**deleteSubscription**](ReportSubscriptionsApi.md#deleteSubscription) | **DELETE** /reporting/v3/report-subscriptions/{reportName} | Delete subscription of a report name by organization
-[**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Retrieve all subscriptions by organization
-[**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Retrieve subscription for a report name by organization
+[**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Get all subscriptions
+[**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Get subscription for report name
 
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> createSubscription(reportName, requestBody)
+> createSubscription(requestBody, opts)
 
 Create Report Subscription for a report name by organization
 
-
+Create a report subscription for your organization. The report name must be unique. 
 
 ### Example
 ```javascript
@@ -24,10 +24,11 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportSubscriptionsApi();
 
-var reportName = "reportName_example"; // String | Name of the Report to Create
+var requestBody = new CyberSource.RequestBody1(); // RequestBody1 | Report subscription request payload
 
-var requestBody = new CyberSource.RequestBody(); // RequestBody | Report subscription request payload
-
+var opts = { 
+  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -36,15 +37,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createSubscription(reportName, requestBody, callback);
+apiInstance.createSubscription(requestBody, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportName** | **String**| Name of the Report to Create | 
- **requestBody** | [**RequestBody**](RequestBody.md)| Report subscription request payload | 
+ **requestBody** | [**RequestBody1**](RequestBody1.md)| Report subscription request payload | 
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type
 
@@ -65,7 +66,7 @@ No authorization required
 
 Delete subscription of a report name by organization
 
-
+Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
 
 ### Example
 ```javascript
@@ -109,9 +110,9 @@ No authorization required
 # **getAllSubscriptions**
 > ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions()
 
-Retrieve all subscriptions by organization
+Get all subscriptions
 
-
+View a summary of all report subscriptions. 
 
 ### Example
 ```javascript
@@ -149,9 +150,9 @@ No authorization required
 # **getSubscription**
 > ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(reportName)
 
-Retrieve subscription for a report name by organization
+Get subscription for report name
 
-
+View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
 
 ### Example
 ```javascript

@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **queuedTime** | **Date** | Specifies the time of the report in queued  in ISO 8601 format | [optional] 
 **reportGeneratingTime** | **Date** | Specifies the time of the report started to generate  in ISO 8601 format | [optional] 
 **reportCompletedTime** | **Date** | Specifies the time of the report completed the generation  in ISO 8601 format | [optional] 
-**selectedMerchantGroupName** | **String** | Selected name of the group | [optional] 
+**subscriptionType** | **String** | Specifies whether the subscription created is either Custom, Standard or Classic  | [optional] 
+**groupId** | **String** | Id for selected group. | [optional] 
 
 
 <a name="ReportMimeTypeEnum"></a>

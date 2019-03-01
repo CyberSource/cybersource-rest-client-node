@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organizationId** | **String** | Organization Id | [optional] 
+**organizationId** | **String** | Selected Organization Id | [optional] 
 **reportDefinitionId** | **String** | Report Definition Id | [optional] 
-**reportDefinitionName** | **String** | Report Definition | [optional] 
+**reportDefinitionName** | **String** | Report Definition Class | [optional] 
 **reportMimeType** | **String** | Report Format | [optional] 
 **reportFrequency** | **String** | Report Frequency | [optional] 
 **reportName** | **String** | Report Name | [optional] 
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **startTime** | **Date** | Start Time | [optional] 
 **startDay** | **Number** | Start Day | [optional] 
 **reportFields** | **[String]** | List of all fields String values | [optional] 
-**reportFilters** | **[String]** | List of filters to apply | [optional] 
-**reportPreferences** | [**ReportingV3ReportSubscriptionsGet200ResponseReportPreferences**](ReportingV3ReportSubscriptionsGet200ResponseReportPreferences.md) |  | [optional] 
-**selectedMerchantGroupName** | **String** | Selected name of the group. | [optional] 
+**reportFilters** | **{String: [String]}** | List of filters to apply | [optional] 
+**reportPreferences** | [**ReportingV3ReportsIdGet200ResponseReportPreferences**](ReportingV3ReportsIdGet200ResponseReportPreferences.md) |  | [optional] 
+**groupId** | **String** | Id for the selected group. | [optional] 
 
 
 <a name="ReportMimeTypeEnum"></a>
