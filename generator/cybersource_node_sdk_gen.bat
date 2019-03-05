@@ -1,4 +1,4 @@
-
+@echo off
 cd %~dp0
 
 REM Command to generate SDK

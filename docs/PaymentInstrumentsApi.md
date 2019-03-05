@@ -160,7 +160,7 @@ No authorization required
 
 <a name="tmsV1PaymentinstrumentsTokenIdGet"></a>
 # **tmsV1PaymentinstrumentsTokenIdGet**
-> TmsV1PaymentinstrumentsPost201Response tmsV1PaymentinstrumentsTokenIdGet(profileId, tokenId)
+> TmsV1PaymentinstrumentsGet200Response tmsV1PaymentinstrumentsTokenIdGet(profileId, tokenId)
 
 Retrieve a Payment Instrument
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV1PaymentinstrumentsPost201Response**](TmsV1PaymentinstrumentsPost201Response.md)
+[**TmsV1PaymentinstrumentsGet200Response**](TmsV1PaymentinstrumentsGet200Response.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ No authorization required
 
 <a name="tmsV1PaymentinstrumentsTokenIdPatch"></a>
 # **tmsV1PaymentinstrumentsTokenIdPatch**
-> TmsV1PaymentinstrumentsPost201Response tmsV1PaymentinstrumentsTokenIdPatch(profileId, tokenId, body)
+> TmsV1PaymentinstrumentsGet200Response tmsV1PaymentinstrumentsTokenIdPatch(profileId, tokenId, body)
 
 Update a Payment Instrument
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV1PaymentinstrumentsPost201Response**](TmsV1PaymentinstrumentsPost201Response.md)
+[**TmsV1PaymentinstrumentsGet200Response**](TmsV1PaymentinstrumentsGet200Response.md)
 
 ### Authorization
 

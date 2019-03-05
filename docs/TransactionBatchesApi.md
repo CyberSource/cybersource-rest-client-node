@@ -4,14 +4,61 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ptsV1TransactionBatchesGet**](TransactionBatchesApi.md#ptsV1TransactionBatchesGet) | **GET** /pts/v1/transaction-batches | Get a list of batch files processed through the Offline Transaction Submission Services
+[**getTransactionBatchId**](TransactionBatchesApi.md#getTransactionBatchId) | **GET** /pts/v1/transaction-batches/{id} | Get individual batch file
+[**getTransactionBatches**](TransactionBatchesApi.md#getTransactionBatches) | **GET** /pts/v1/transaction-batches | Get a list of batch files
 
 
-<a name="ptsV1TransactionBatchesGet"></a>
-# **ptsV1TransactionBatchesGet**
-> PtsV1TransactionBatchesGet200Response ptsV1TransactionBatchesGet(startTime, endTime)
+<a name="getTransactionBatchId"></a>
+# **getTransactionBatchId**
+> PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(id)
 
-Get a list of batch files processed through the Offline Transaction Submission Services
+Get individual batch file
+
+Provide the search range
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.TransactionBatchesApi();
+
+var id = "id_example"; // String | The batch id assigned for the template.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTransactionBatchId(id, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The batch id assigned for the template. | 
+
+### Return type
+
+[**PtsV1TransactionBatchesIdGet200Response**](PtsV1TransactionBatchesIdGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json
+
+<a name="getTransactionBatches"></a>
+# **getTransactionBatches**
+> PtsV1TransactionBatchesGet200Response getTransactionBatches(startTime, endTime)
+
+Get a list of batch files
 
 Provide the search range
 
@@ -33,7 +80,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.ptsV1TransactionBatchesGet(startTime, endTime, callback);
+apiInstance.getTransactionBatches(startTime, endTime, callback);
 ```
 
 ### Parameters

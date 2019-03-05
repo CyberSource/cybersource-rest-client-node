@@ -11,11 +11,11 @@ Method | HTTP request | Description
 
 <a name="createReport"></a>
 # **createReport**
-> createReport(requestBody)
+> createReport(requestBody, opts)
 
 Create Adhoc Report
 
-Create one time report
+Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
 
 ### Example
 ```javascript
@@ -23,8 +23,11 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportsApi();
 
-var requestBody = new CyberSource.RequestBody1(); // RequestBody1 | Report subscription request payload
+var requestBody = new CyberSource.RequestBody(); // RequestBody | Report subscription request payload
 
+var opts = { 
+  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -33,14 +36,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createReport(requestBody, callback);
+apiInstance.createReport(requestBody, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**RequestBody1**](RequestBody1.md)| Report subscription request payload | 
+ **requestBody** | [**RequestBody**](RequestBody.md)| Report subscription request payload | 
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type
 
@@ -61,7 +65,7 @@ No authorization required
 
 Get Report based on reportId
 
-ReportId is mandatory input
+Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
 
 ### Example
 ```javascript
@@ -111,7 +115,7 @@ No authorization required
 
 Retrieve available reports
 
-Retrieve list of available reports
+Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report. 
 
 ### Example
 ```javascript
@@ -123,7 +127,7 @@ var startTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report St
 
 var endTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ssXXX 
 
-var timeQueryType = "timeQueryType_example"; // String | Specify time you woud like to search
+var timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search
 
 var opts = { 
   'organizationId': "organizationId_example", // String | Valid Cybersource Organization Id
@@ -150,7 +154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startTime** | **Date**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  | 
  **endTime** | **Date**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  | 
- **timeQueryType** | **String**| Specify time you woud like to search | 
+ **timeQueryType** | **String**| Specify time you would like to search | 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
  **reportMimeType** | **String**| Valid Report Format | [optional] 
  **reportFrequency** | **String**| Valid Report Frequency | [optional] 
