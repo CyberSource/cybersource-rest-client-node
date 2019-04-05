@@ -3,7 +3,7 @@
 The CyberSource Node client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your Node application.
 
 ## Requirements  
-* Node.js version 4.8.4 or higher
+* Node.js version 6.17.1 or higher
 * A CyberSource account (see _Registration & Configuration_ section below)
 
 
