@@ -4,12 +4,12 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /flex/v1/keys/ | Generate Key
+[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /flex/v1/keys | Generate Key
 
 
 <a name="generatePublicKey"></a>
 # **generatePublicKey**
-> FlexV1KeysPost200Response generatePublicKey(opts)
+> FlexV1KeysPost200Response generatePublicKey(generatePublicKeyRequest)
 
 Generate Key
 
@@ -21,9 +21,8 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.KeyGenerationApi();
 
-var opts = { 
-  'generatePublicKeyRequest': new CyberSource.GeneratePublicKeyRequest() // GeneratePublicKeyRequest | 
-};
+var generatePublicKeyRequest = new CyberSource.GeneratePublicKeyRequest(); // GeneratePublicKeyRequest | 
+
 
 var callback = function(error, data, response) {
   if (error) {
@@ -32,14 +31,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.generatePublicKey(opts, callback);
+apiInstance.generatePublicKey(generatePublicKeyRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  | [optional] 
+ **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  | 
 
 ### Return type
 

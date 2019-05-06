@@ -1,4 +1,4 @@
-# CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf
+# CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf
 
 ## Properties
 Name | Type | Description | Notes

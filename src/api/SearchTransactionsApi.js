@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PayoutsPost502Response', 'model/TssV2TransactionsPost201Response', 'model/TssV2TransactionsPost400Response', 'model/TssV2TransactionsPostResponse'], factory);
+    define(['ApiClient', 'model/CreateSearchRequest', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response', 'model/TssV2TransactionsPost400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PayoutsPost502Response'), require('../model/TssV2TransactionsPost201Response'), require('../model/TssV2TransactionsPost400Response'), require('../model/TssV2TransactionsPostResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateSearchRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'), require('../model/TssV2TransactionsPost400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PayoutsPost502Response, root.CyberSource.TssV2TransactionsPost201Response, root.CyberSource.TssV2TransactionsPost400Response, root.CyberSource.TssV2TransactionsPostResponse);
+    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSearchRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response, root.CyberSource.TssV2TransactionsPost400Response);
   }
-}(this, function(ApiClient, PtsV2PayoutsPost502Response, TssV2TransactionsPost201Response, TssV2TransactionsPost400Response, TssV2TransactionsPostResponse) {
+}(this, function(ApiClient, CreateSearchRequest, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response, TssV2TransactionsPost400Response) {
   'use strict';
 
   /**
@@ -60,7 +60,7 @@
     /**
      * Create a search request
      * Create a search request. 
-     * @param {module:model/TssV2TransactionsPostResponse} createSearchRequest 
+     * @param {module:model/CreateSearchRequest} createSearchRequest 
      * @param {module:api/SearchTransactionsApi~createSearchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2TransactionsPost201Response}
      */
@@ -104,22 +104,22 @@
 
     /**
      * Get Search results
-     * Include the Search ID in the GET request to retrieve the search results.
-     * @param {String} id Search ID.
+     * Include the Search ID in the GET request to retrieve the search results. 
+     * @param {String} searchId Search ID.
      * @param {module:api/SearchTransactionsApi~getSearchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2TransactionsPost201Response}
      */
-    this.getSearch = function(id, callback) {
+    this.getSearch = function(searchId, callback) {
       var postBody = null;
 
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getSearch");
+      // verify the required parameter 'searchId' is set
+      if (searchId === undefined || searchId === null) {
+        throw new Error("Missing the required parameter 'searchId' when calling getSearch");
       }
 
 
       var pathParams = {
-        'id': id
+        'searchId': searchId
       };
       var queryParams = {
       };
@@ -134,7 +134,7 @@
       var returnType = TssV2TransactionsPost201Response;
 
       return this.apiClient.callApi(
-        '/tss/v2/searches/{id}', 'GET',
+        '/tss/v2/searches/{searchId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

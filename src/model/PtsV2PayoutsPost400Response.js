@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PayoutsPost201ResponseErrorInformationDetails'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PayoutsPost201ResponseErrorInformationDetails'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PayoutsPost400Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PayoutsPost201ResponseErrorInformationDetails);
+    root.CyberSource.PtsV2PayoutsPost400Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
-}(this, function(ApiClient, PtsV2PayoutsPost201ResponseErrorInformationDetails) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
 
 
@@ -78,7 +78,7 @@
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PayoutsPost201ResponseErrorInformationDetails]);
+        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
       }
     }
     return obj;
@@ -95,17 +95,17 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status. 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - DEBIT_CARD_USEAGE_EXCEEDD_LIMIT 
    * @member {module:model/PtsV2PayoutsPost400Response.ReasonEnum} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The detail message related to the status and reason listed above. Possible value is:    - Your aggregator or acquirer is not accepting transactions from you at this time.   - Your aggregator or acquirer is not accepting this transaction.   - CyberSource declined the request because the credit card has expired. You might also receive this value if     the expiration date you provided does not match the date the issuing bank has on file.   - The bank declined the transaction.   - The merchant reference number for this authorization request matches the merchant reference number of     another authorization request that you sent within the past 15 minutes. Resend the request with a unique     merchant reference number.   - The credit card number did not pass CyberSource basic checks.   - Data provided is not consistent with the request. For example, you requested a product with negative cost.   - The request is missing a required field. 
+   * The detail message related to the status and reason listed above.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/PtsV2PayoutsPost201ResponseErrorInformationDetails>} details
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
    */
   exports.prototype['details'] = undefined;
 
@@ -131,6 +131,11 @@
      * @const
      */
     "DUPLICATE_REQUEST": "DUPLICATE_REQUEST",
+    /**
+     * value: "INVALID_CARD"
+     * @const
+     */
+    "INVALID_CARD": "INVALID_CARD",
     /**
      * value: "INVALID_MERCHANT_CONFIGURATION"
      * @const

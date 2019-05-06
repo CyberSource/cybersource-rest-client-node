@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseRiskInformationProfile', 'model/TssV2TransactionsGet200ResponseRiskInformationScore'], factory);
+    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseRiskInformationProfile', 'model/TssV2TransactionsGet200ResponseRiskInformationRules', 'model/TssV2TransactionsGet200ResponseRiskInformationScore'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseRiskInformationProfile'), require('./TssV2TransactionsGet200ResponseRiskInformationScore'));
+    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseRiskInformationProfile'), require('./TssV2TransactionsGet200ResponseRiskInformationRules'), require('./TssV2TransactionsGet200ResponseRiskInformationScore'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseRiskInformationProfile, root.CyberSource.TssV2TransactionsGet200ResponseRiskInformationScore);
+    root.CyberSource.TssV2TransactionsGet200ResponseRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseRiskInformationProfile, root.CyberSource.TssV2TransactionsGet200ResponseRiskInformationRules, root.CyberSource.TssV2TransactionsGet200ResponseRiskInformationScore);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200ResponseRiskInformationProfile, TssV2TransactionsGet200ResponseRiskInformationScore) {
+}(this, function(ApiClient, TssV2TransactionsGet200ResponseRiskInformationProfile, TssV2TransactionsGet200ResponseRiskInformationRules, TssV2TransactionsGet200ResponseRiskInformationScore) {
   'use strict';
 
 
@@ -70,13 +70,13 @@
         obj['profile'] = TssV2TransactionsGet200ResponseRiskInformationProfile.constructFromObject(data['profile']);
       }
       if (data.hasOwnProperty('rules')) {
-        obj['rules'] = ApiClient.convertToType(data['rules'], [TssV2TransactionsGet200ResponseRiskInformationProfile]);
+        obj['rules'] = ApiClient.convertToType(data['rules'], [TssV2TransactionsGet200ResponseRiskInformationRules]);
       }
       if (data.hasOwnProperty('passiveProfile')) {
         obj['passiveProfile'] = TssV2TransactionsGet200ResponseRiskInformationProfile.constructFromObject(data['passiveProfile']);
       }
       if (data.hasOwnProperty('passiveRules')) {
-        obj['passiveRules'] = ApiClient.convertToType(data['passiveRules'], [TssV2TransactionsGet200ResponseRiskInformationProfile]);
+        obj['passiveRules'] = ApiClient.convertToType(data['passiveRules'], [TssV2TransactionsGet200ResponseRiskInformationRules]);
       }
       if (data.hasOwnProperty('score')) {
         obj['score'] = TssV2TransactionsGet200ResponseRiskInformationScore.constructFromObject(data['score']);
@@ -93,7 +93,7 @@
    */
   exports.prototype['profile'] = undefined;
   /**
-   * @member {Array.<module:model/TssV2TransactionsGet200ResponseRiskInformationProfile>} rules
+   * @member {Array.<module:model/TssV2TransactionsGet200ResponseRiskInformationRules>} rules
    */
   exports.prototype['rules'] = undefined;
   /**
@@ -101,7 +101,7 @@
    */
   exports.prototype['passiveProfile'] = undefined;
   /**
-   * @member {Array.<module:model/TssV2TransactionsGet200ResponseRiskInformationProfile>} passiveRules
+   * @member {Array.<module:model/TssV2TransactionsGet200ResponseRiskInformationRules>} passiveRules
    */
   exports.prototype['passiveRules'] = undefined;
   /**
@@ -109,7 +109,7 @@
    */
   exports.prototype['score'] = undefined;
   /**
-   * Time that the transaction was submitted in local time..
+   * Time that the transaction was submitted in local time.
    * @member {String} localTime
    */
   exports.prototype['localTime'] = undefined;

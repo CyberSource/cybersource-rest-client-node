@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **startDay** | **Number** | Start Day | [optional] 
 **reportFields** | **[String]** | List of all fields String values | [optional] 
 **reportFilters** | **{String: [String]}** | List of filters to apply | [optional] 
-**reportPreferences** | [**ReportingV3ReportsIdGet200ResponseReportPreferences**](ReportingV3ReportsIdGet200ResponseReportPreferences.md) |  | [optional] 
+**reportPreferences** | [**Reportingv3reportsReportPreferences**](Reportingv3reportsReportPreferences.md) |  | [optional] 
 **groupId** | **String** | Id for the selected group. | [optional] 
 
 
@@ -38,6 +38,8 @@ Name | Type | Description | Notes
 * `WEEKLY` (value: `"WEEKLY"`)
 
 * `MONTHLY` (value: `"MONTHLY"`)
+
+* `ADHOC` (value: `"ADHOC"`)
 
 
 

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response', 'model/PtsV1TransactionBatchesIdGet200Response'], factory);
+    define(['ApiClient', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet200Response'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'), require('../model/PtsV1TransactionBatchesIdGet200Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet200Response'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionBatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet200Response, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response, root.CyberSource.PtsV1TransactionBatchesIdGet200Response);
+    root.CyberSource.TransactionBatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet200Response, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response);
   }
-}(this, function(ApiClient, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response, PtsV1TransactionBatchesIdGet200Response) {
+}(this, function(ApiClient, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response) {
   'use strict';
 
   /**
@@ -50,10 +50,61 @@
 	
 
     /**
+     * Callback function to receive the result of the getTransactionBatchDetails operation.
+     * @callback module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Filters batch response. 
+     * Filters batch response. 
+     * @param {String} transactionBatchId Transaction Batch Id, this is unique.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format.
+     * @param {module:model/String} opts.status Allows you to filter by rejected response. 
+     * @param {module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getTransactionBatchDetails = function(transactionBatchId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'transactionBatchId' is set
+      if (transactionBatchId === undefined || transactionBatchId === null) {
+        throw new Error("Missing the required parameter 'transactionBatchId' when calling getTransactionBatchDetails");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'transactionBatchId': transactionBatchId,
+        'uploadDate': opts['uploadDate'],
+        'status': opts['status']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['text/vnd.cybersource.map-csv'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/pts/v1/transaction-batch-details', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getTransactionBatchId operation.
      * @callback module:api/TransactionBatchesApi~getTransactionBatchIdCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PtsV1TransactionBatchesIdGet200Response} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +113,6 @@
      * Provide the search range
      * @param {String} id The batch id assigned for the template.
      * @param {module:api/TransactionBatchesApi~getTransactionBatchIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PtsV1TransactionBatchesIdGet200Response}
      */
     this.getTransactionBatchId = function(id, callback) {
       var postBody = null;
@@ -86,7 +136,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = PtsV1TransactionBatchesIdGet200Response;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/pts/v1/transaction-batches/{id}', 'GET',

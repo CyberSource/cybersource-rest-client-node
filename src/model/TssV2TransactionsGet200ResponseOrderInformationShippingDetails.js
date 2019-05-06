@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('giftWrap')) {
-        obj['giftWrap'] = ApiClient.convertToType(data['giftWrap'], 'Boolean');
+        obj['giftWrap'] = ApiClient.convertToType(data['giftWrap'], 'String');
       }
       if (data.hasOwnProperty('shippingMethod')) {
         obj['shippingMethod'] = ApiClient.convertToType(data['shippingMethod'], 'String');
@@ -73,12 +73,12 @@
   }
 
   /**
-   * The description for this field is not available.
-   * @member {Boolean} giftWrap
+   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping. 
+   * @member {String} giftWrap
    */
   exports.prototype['giftWrap'] = undefined;
   /**
-   * Shipping method for the product. Possible values:   - lowcost: Lowest-cost service  - sameday: Courier or same-day service  - oneday: Next-day or overnight service  - twoday: Two-day service  - threeday: Three-day service  - pickup: Store pick-up  - other: Other shipping method  - none: No shipping method because product is a service or subscription 
+   * Shipping method for the product. Possible values:   - `lowcost`: Lowest-cost service  - `sameday`: Courier or same-day service  - `oneday`: Next-day or overnight service  - `twoday`: Two-day service  - `threeday`: Three-day service  - `pickup`: Store pick-up  - `other`: Other shipping method  - `none`: No shipping method because product is a service or subscription 
    * @member {String} shippingMethod
    */
   exports.prototype['shippingMethod'] = undefined;

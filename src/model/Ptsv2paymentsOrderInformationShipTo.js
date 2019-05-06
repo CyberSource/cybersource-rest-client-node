@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -148,7 +148,7 @@
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * Country of the shipping address. Use the two character ISO Standard Country Codes.
+   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
@@ -163,7 +163,7 @@
    */
   exports.prototype['buildingNumber'] = undefined;
   /**
-   * Phone number for the shipping address.
+   * Phone number associated with the shipping address.
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;

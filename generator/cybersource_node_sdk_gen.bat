@@ -13,7 +13,7 @@ powershell -Command "(Get-Content ..\src\Api\CreditApi.js) | ForEach-Object { $_
 
 powershell -Command "(Get-Content ..\src\Api\PaymentsApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\PaymentsApi.js"
 
-powershell -Command "(Get-Content ..\src\Api\ProcessAPayoutApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\ProcessAPayoutApi.js"
+powershell -Command "(Get-Content ..\src\Api\PayoutsApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\PayoutsApi.js"
 
 powershell -Command "(Get-Content ..\src\Api\RefundApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\RefundApi.js"
 

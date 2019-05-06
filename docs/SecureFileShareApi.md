@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getFile**](SecureFileShareApi.md#getFile) | **GET** /sfs/v1/files/{fileId} | Download a file with file identifier
-[**getFileDetails**](SecureFileShareApi.md#getFileDetails) | **GET** /sfs/v1/file-details | Get list of files
+[**getFileDetail**](SecureFileShareApi.md#getFileDetail) | **GET** /sfs/v1/file-details | Get list of files
 
 
 <a name="getFile"></a>
@@ -58,9 +58,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/xml, text/csv, application/pdf
 
-<a name="getFileDetails"></a>
-# **getFileDetails**
-> V1FileDetailsGet200Response getFileDetails(startDate, endDate, opts)
+<a name="getFileDetail"></a>
+# **getFileDetail**
+> V1FileDetailsGet200Response getFileDetail(startDate, endDate, opts)
 
 Get list of files
 
@@ -87,7 +87,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFileDetails(startDate, endDate, opts, callback);
+apiInstance.getFileDetail(startDate, endDate, opts, callback);
 ```
 
 ### Parameters

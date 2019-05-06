@@ -1,4 +1,4 @@
-# CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments
+# CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
 
 ## Properties
 Name | Type | Description | Notes

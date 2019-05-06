@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3PurchaseRefundDetailsGet200Response', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
+    define(['ApiClient', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3PurchaseRefundDetailsGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PurchaseAndRefundDetailsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3PurchaseRefundDetailsGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
+    root.CyberSource.PurchaseAndRefundDetailsApi = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(ApiClient, ReportingV3PurchaseRefundDetailsGet200Response, Reportingv3ReportDownloadsGet400Response) {
+}(this, function(ApiClient, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**
@@ -53,15 +53,15 @@
      * Callback function to receive the result of the getPurchaseAndRefundDetails operation.
      * @callback module:api/PurchaseAndRefundDetailsApi~getPurchaseAndRefundDetailsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ReportingV3PurchaseRefundDetailsGet200Response} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Get Purchase and Refund details
      * Download the Purchase and Refund Details report. This report report includes all purchases and refund transactions, as well as all activities related to transactions resulting in an adjustment to the net proceeds. 
-     * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX 
-     * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX 
+     * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+     * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:model/String} opts.paymentSubtype Payment Subtypes.   - **ALL**:  All Payment Subtypes   - **VI** :  Visa   - **MC** :  Master Card   - **AX** :  American Express   - **DI** :  Discover   - **DP** :  Pinless Debit  (default to ALL)
@@ -70,7 +70,6 @@
      * @param {Number} opts.offset Offset of the Purchase and Refund Results.
      * @param {Number} opts.limit Results count per page. Range(1-2000) (default to 2000)
      * @param {module:api/PurchaseAndRefundDetailsApi~getPurchaseAndRefundDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ReportingV3PurchaseRefundDetailsGet200Response}
      */
     this.getPurchaseAndRefundDetails = function(startTime, endTime, opts, callback) {
       opts = opts || {};
@@ -107,7 +106,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = ReportingV3PurchaseRefundDetailsGet200Response;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/reporting/v3/purchase-refund-details', 'GET',

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PayoutsPost201ResponseErrorInformationDetails'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PayoutsPost201ResponseErrorInformationDetails'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost400Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PayoutsPost201ResponseErrorInformationDetails);
+    root.CyberSource.TssV2TransactionsPost400Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
-}(this, function(ApiClient, PtsV2PayoutsPost201ResponseErrorInformationDetails) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
 
 
@@ -74,19 +74,19 @@
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PayoutsPost201ResponseErrorInformationDetails]);
+        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
    * @member {module:model/TssV2TransactionsPost400Response.StatusEnum} status
    */
   exports.prototype['status'] = undefined;
@@ -96,7 +96,7 @@
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/PtsV2PayoutsPost201ResponseErrorInformationDetails>} details
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
    */
   exports.prototype['details'] = undefined;
 

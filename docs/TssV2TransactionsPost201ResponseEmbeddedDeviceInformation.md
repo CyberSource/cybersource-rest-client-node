@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ipAddress** | **String** | IP address of the customer. | [optional] 
+**ipAddress** | **String** | Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information.  | [optional] 
 
 
