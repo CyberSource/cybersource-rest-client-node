@@ -2389,7 +2389,7 @@
                                     "properties": {
                                         "reason": {
                                             "type": "string",
-                                            "description": "The reason of the status.\n\nPossible values:\n - AVS_FAILED\n - CONTACT_PROCESSOR\n - EXPIRED_CARD\n - PROCESSOR_DECLINED\n - INSUFFICIENT_FUND\n - STOLEN_LOST_CARD\n - ISSUER_UNAVAILABLE\n - UNAUTHORIZED_CARD\n - CVN_NOT_MATCH\n - EXCEEDS_CREDIT_LIMIT\n - INVALID_CVN\n - DECLINED_CHECK\n - BLACKLISTED_CUSTOMER\n - SUSPENDED_ACCOUNT\n - PAYMENT_REFUSED\n - CV_FAILED\n - INVALID_ACCOUNT\n - GENERAL_DECLINE\n - INVALID_MERCHANT_CONFIGURATION\n",
+                                            "description": "The reason of the status.\n\nPossible values:\n - AVS_FAILED\n - CONTACT_PROCESSOR\n - EXPIRED_CARD\n - PROCESSOR_DECLINED\n - INSUFFICIENT_FUND\n - STOLEN_LOST_CARD\n - ISSUER_UNAVAILABLE\n - UNAUTHORIZED_CARD\n - CVN_NOT_MATCH\n - EXCEEDS_CREDIT_LIMIT\n - INVALID_CVN\n - DECLINED_CHECK\n - BLACKLISTED_CUSTOMER\n - SUSPENDED_ACCOUNT\n - PAYMENT_REFUSED\n - CV_FAILED\n - INVALID_ACCOUNT\n - GENERAL_DECLINE\n - INVALID_MERCHANT_CONFIGURATION\n - DECISION_PROFILE_REJECT\n - SCORE_EXCEEDS_THRESHOLD\n",
                                             "enum": [
                                                 "AVS_FAILED",
                                                 "CONTACT_PROCESSOR",
@@ -2405,7 +2405,9 @@
                                                 "INVALID_CVN",
                                                 "PAYMENT_REFUSED",
                                                 "INVALID_ACCOUNT",
-                                                "GENERAL_DECLINE"
+                                                "GENERAL_DECLINE",
+												"DECISION_PROFILE_REJECT",
+												"SCORE_EXCEEDS_THRESHOLD"
                                             ]
                                         },
                                         "message": {
@@ -17954,6 +17956,12 @@
                 "x-devcenter-metaData": {
                     "categoryTag": "Decision_Manager"
                 },
+                "consumes": [
+                    "application/hal+json;charset=utf-8"
+                ],
+                "produces": [
+                    "application/hal+json;charset=utf-8"
+                ],
                 "parameters": [
                     {
                         "name": "createDecisionManagerCaseRequest",
@@ -18805,7 +18813,7 @@
                                     "properties": {
                                         "reason": {
                                             "type": "string",
-                                            "description": "The reason of the status.\n\nPossible values:\n - AVS_FAILED\n - CONTACT_PROCESSOR\n - EXPIRED_CARD\n - PROCESSOR_DECLINED\n - INSUFFICIENT_FUND\n - STOLEN_LOST_CARD\n - ISSUER_UNAVAILABLE\n - UNAUTHORIZED_CARD\n - CVN_NOT_MATCH\n - EXCEEDS_CREDIT_LIMIT\n - INVALID_CVN\n - DECLINED_CHECK\n - BLACKLISTED_CUSTOMER\n - SUSPENDED_ACCOUNT\n - PAYMENT_REFUSED\n - CV_FAILED\n - INVALID_ACCOUNT\n - GENERAL_DECLINE\n - INVALID_MERCHANT_CONFIGURATION\n",
+                                            "description": "The reason of the status.\n\nPossible values:\n - AVS_FAILED\n - CONTACT_PROCESSOR\n - EXPIRED_CARD\n - PROCESSOR_DECLINED\n - INSUFFICIENT_FUND\n - STOLEN_LOST_CARD\n - ISSUER_UNAVAILABLE\n - UNAUTHORIZED_CARD\n - CVN_NOT_MATCH\n - EXCEEDS_CREDIT_LIMIT\n - INVALID_CVN\n - DECLINED_CHECK\n - BLACKLISTED_CUSTOMER\n - SUSPENDED_ACCOUNT\n - PAYMENT_REFUSED\n - CV_FAILED\n - INVALID_ACCOUNT\n - GENERAL_DECLINE\n - INVALID_MERCHANT_CONFIGURATION\n - DECISION_PROFILE_REJECT\n - SCORE_EXCEEDS_THRESHOLD\n",
                                             "enum": [
                                                 "AVS_FAILED",
                                                 "CONTACT_PROCESSOR",
@@ -18821,7 +18829,9 @@
                                                 "INVALID_CVN",
                                                 "PAYMENT_REFUSED",
                                                 "INVALID_ACCOUNT",
-                                                "GENERAL_DECLINE"
+                                                "GENERAL_DECLINE",
+												"DECISION_PROFILE_REJECT",
+												"SCORE_EXCEEDS_THRESHOLD"
                                             ]
                                         },
                                         "message": {
@@ -19331,18 +19341,18 @@
                                 "amountDetails": {
                                     "currency": "USD",
                                     "totalAmount": "144.14"
-                                }
-                            },
-                            "shipTo": {
-                                "address1": "96, powers street",
-                                "address2": "",
-                                "locality": "Clearwater milford",
-                                "country": "INDIA",
-                                "firstName": "James",
-                                "lastName": "Smith",
-                                "phoneNumber": "7606160717",
-                                "administrativeArea": "KA",
-                                "postalCode": "560056"
+                                },
+								"shipTo": {
+									"address1": "96, powers street",
+									"address2": "",
+									"locality": "Clearwater milford",
+									"country": "INDIA",
+									"firstName": "James",
+									"lastName": "Smith",
+									"phoneNumber": "7606160717",
+									"administrativeArea": "KA",
+									"postalCode": "560056"
+								}
                             }
                         },
                         "responseValue": {
@@ -19417,18 +19427,18 @@
                                 "amountDetails": {
                                     "currency": "USD",
                                     "totalAmount": "144.14"
-                                }
-                            },
-                            "shipTo": {
-                                "address1": "96, powers street",
-                                "address2": "",
-                                "locality": "Clearwater milford",
-                                "country": "INDIA",
-                                "firstName": "James",
-                                "lastName": "Smith",
-                                "phoneNumber": "7606160717",
-                                "administrativeArea": "KA",
-                                "postalCode": "560056"
+                                },
+								"shipTo": {
+									"address1": "96, powers street",
+									"address2": "",
+									"locality": "Clearwater milford",
+									"country": "INDIA",
+									"firstName": "James",
+									"lastName": "Smith",
+									"phoneNumber": "7606160717",
+									"administrativeArea": "KA",
+									"postalCode": "560056"
+								}
                             }
                         },
                         "responseValue": {
@@ -27915,7 +27925,7 @@
                                     "type": "string",
                                     "description": "The status of the submitted transaction."
                                 },
-                                "submitTimeUTC": {
+                                "submitTimeUtc": {
                                     "type": "string",
                                     "description": "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ`\nExample `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the\ntime. The `Z` indicates UTC.\n"
                                 },

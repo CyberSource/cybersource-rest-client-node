@@ -83,8 +83,8 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var contentTypes = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = RiskV1DecisionsPost201Response;
 
       return this.apiClient.callApi(
