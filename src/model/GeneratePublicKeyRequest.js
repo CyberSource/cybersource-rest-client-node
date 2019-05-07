@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -49,12 +49,6 @@
     var _this = this;
 
     _this['encryptionType'] = encryptionType;
-
-
-
-
-
-
   };
 
   /**
@@ -71,24 +65,6 @@
       if (data.hasOwnProperty('encryptionType')) {
         obj['encryptionType'] = ApiClient.convertToType(data['encryptionType'], 'String');
       }
-      if (data.hasOwnProperty('targetOrigin')) {
-        obj['targetOrigin'] = ApiClient.convertToType(data['targetOrigin'], 'String');
-      }
-      if (data.hasOwnProperty('unmaskedLeft')) {
-        obj['unmaskedLeft'] = ApiClient.convertToType(data['unmaskedLeft'], 'Number');
-      }
-      if (data.hasOwnProperty('unmaskedRight')) {
-        obj['unmaskedRight'] = ApiClient.convertToType(data['unmaskedRight'], 'Number');
-      }
-      if (data.hasOwnProperty('enableBillingAddress')) {
-        obj['enableBillingAddress'] = ApiClient.convertToType(data['enableBillingAddress'], 'Boolean');
-      }
-      if (data.hasOwnProperty('currency')) {
-        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
-      }
-      if (data.hasOwnProperty('enableAutoAuth')) {
-        obj['enableAutoAuth'] = ApiClient.convertToType(data['enableAutoAuth'], 'Boolean');
-      }
     }
     return obj;
   }
@@ -98,36 +74,6 @@
    * @member {String} encryptionType
    */
   exports.prototype['encryptionType'] = undefined;
-  /**
-   * This should only be used if using the Microform implementation. This is the protocol, URL, and if used, port number of the page that will host the Microform. Unless using http://localhost, the protocol must be https://. For example, if serving Microform on example.com, the targetOrigin is https://example.com The value is used to restrict the frame ancestor of the Microform. If there is a mismatch between this value and the frame ancestor, the Microfrom will not load.
-   * @member {String} targetOrigin
-   */
-  exports.prototype['targetOrigin'] = undefined;
-  /**
-   * Specifies the number of card number digits to be returned un-masked from the left. For example, setting this value to 6 will return: 411111XXXXXXXXXX Default value: 6 Maximum value: 6
-   * @member {Number} unmaskedLeft
-   */
-  exports.prototype['unmaskedLeft'] = undefined;
-  /**
-   * Specifies the number of card number digits to be returned un-masked from the right. For example, setting this value to 4 will return: 411111XXXXXX1111 Default value: 4 Maximum value: 4
-   * @member {Number} unmaskedRight
-   */
-  exports.prototype['unmaskedRight'] = undefined;
-  /**
-   * Specifies whether or not 'dummy' address data should be specified in the create token request. If you have 'Relaxed AVS' enabled for your MID, this value can be set to False.Default value: true
-   * @member {Boolean} enableBillingAddress
-   */
-  exports.prototype['enableBillingAddress'] = undefined;
-  /**
-   * Three character ISO currency code to be associated with the token. Required for legacy integrations. Default value: USD.
-   * @member {String} currency
-   */
-  exports.prototype['currency'] = undefined;
-  /**
-   * Specifies whether or not an account verification authorization ($0 Authorization) is carried out on token creation. Default is false, as it is assumed a full or zero amount authorization will be carried out in a separate call from your server.
-   * @member {Boolean} enableAutoAuth
-   */
-  exports.prototype['enableAutoAuth'] = undefined;
 
 
 

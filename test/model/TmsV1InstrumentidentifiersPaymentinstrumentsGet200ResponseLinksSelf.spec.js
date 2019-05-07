@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf();
+    instance = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,16 +49,16 @@
       object[property] = value;
   }
 
-  describe('TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf', function() {
-    it('should create an instance of TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf', function() {
-      // uncomment below and update the code to test TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf();
-      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf);
+  describe('TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf', function() {
+    it('should create an instance of TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf', function() {
+      // uncomment below and update the code to test TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf();
+      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf);
     });
 
     it('should have the property href (base name: "href")', function() {
       // uncomment below and update the code to test the property href
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,32 +16,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentidentifiersDelete409ResponseLinks'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersDelete409ResponseLinks'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentidentifiersDelete409ResponseLinks'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersDelete409ResponseLinks'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentidentifiersDelete409Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinks);
+    root.CyberSource.TmsV1InstrumentIdentifiersDelete409Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks);
   }
-}(this, function(ApiClient, TmsV1InstrumentidentifiersDelete409ResponseLinks) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersDelete409ResponseLinks) {
   'use strict';
 
 
 
 
   /**
-   * The TmsV1InstrumentidentifiersDelete409Response model module.
-   * @module model/TmsV1InstrumentidentifiersDelete409Response
+   * The TmsV1InstrumentIdentifiersDelete409Response model module.
+   * @module model/TmsV1InstrumentIdentifiersDelete409Response
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsV1InstrumentidentifiersDelete409Response</code>.
-   * @alias module:model/TmsV1InstrumentidentifiersDelete409Response
+   * Constructs a new <code>TmsV1InstrumentIdentifiersDelete409Response</code>.
+   * @alias module:model/TmsV1InstrumentIdentifiersDelete409Response
    * @class
    */
   var exports = function() {
@@ -51,25 +51,25 @@
   };
 
   /**
-   * Constructs a <code>TmsV1InstrumentidentifiersDelete409Response</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TmsV1InstrumentIdentifiersDelete409Response</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsV1InstrumentidentifiersDelete409Response} obj Optional instance to populate.
-   * @return {module:model/TmsV1InstrumentidentifiersDelete409Response} The populated <code>TmsV1InstrumentidentifiersDelete409Response</code> instance.
+   * @param {module:model/TmsV1InstrumentIdentifiersDelete409Response} obj Optional instance to populate.
+   * @return {module:model/TmsV1InstrumentIdentifiersDelete409Response} The populated <code>TmsV1InstrumentIdentifiersDelete409Response</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = TmsV1InstrumentidentifiersDelete409ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = TmsV1InstrumentIdentifiersDelete409ResponseLinks.constructFromObject(data['_links']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinks} _links
+   * @member {module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
 

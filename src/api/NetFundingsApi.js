@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -50,8 +50,8 @@
 	
 
     /**
-     * Callback function to receive the result of the getNetFundingInfo operation.
-     * @callback module:api/NetFundingsApi~getNetFundingInfoCallback
+     * Callback function to receive the result of the getNetFundingDetails operation.
+     * @callback module:api/NetFundingsApi~getNetFundingDetailsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ReportingV3NetFundingsGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -60,26 +60,26 @@
     /**
      * Get Netfunding information for an account or a merchant
      * Get Netfunding information for an account or a merchant.
-     * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX 
-     * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX 
+     * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+     * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {String} opts.groupName Valid CyberSource Group Name.
-     * @param {module:api/NetFundingsApi~getNetFundingInfoCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/NetFundingsApi~getNetFundingDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3NetFundingsGet200Response}
      */
-    this.getNetFundingInfo = function(startTime, endTime, opts, callback) {
+    this.getNetFundingDetails = function(startTime, endTime, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'startTime' is set
       if (startTime === undefined || startTime === null) {
-        throw new Error("Missing the required parameter 'startTime' when calling getNetFundingInfo");
+        throw new Error("Missing the required parameter 'startTime' when calling getNetFundingDetails");
       }
 
       // verify the required parameter 'endTime' is set
       if (endTime === undefined || endTime === null) {
-        throw new Error("Missing the required parameter 'endTime' when calling getNetFundingInfo");
+        throw new Error("Missing the required parameter 'endTime' when calling getNetFundingDetails");
       }
 
 

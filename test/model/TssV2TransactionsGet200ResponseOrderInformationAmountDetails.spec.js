@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -76,6 +76,18 @@
 
     it('should have the property authorizedAmount (base name: "authorizedAmount")', function() {
       // uncomment below and update the code to test the property authorizedAmount
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property settlementAmount (base name: "settlementAmount")', function() {
+      // uncomment below and update the code to test the property settlementAmount
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property settlementCurrency (base name: "settlementCurrency")', function() {
+      // uncomment below and update the code to test the property settlementCurrency
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseOrderInformationAmountDetails();
       //expect(instance).to.be();
     });

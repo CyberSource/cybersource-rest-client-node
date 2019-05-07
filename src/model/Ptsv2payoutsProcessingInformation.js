@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -95,7 +95,7 @@
    */
   exports.prototype['networkRoutingOrder'] = undefined;
   /**
-   * Type of transaction. Possible value for Fast Payments transactions:   - internet 
+   * Type of transaction.  Some payment card companies use this information when determining discount rates. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed here.  Possible value for Fast Payments transactions:  - internet  **Ingenico ePayments**\\ Ingenico ePayments was previously called _Global Collect_.  **Payer Authentication Transactions**\\ For the possible values and requirements, see \"Payer Authentication,\" page 180.  **Other Types of Transactions**\\ See Appendix G, \"Commerce Indicators,\" on page 353. 
    * @member {String} commerceIndicator
    */
   exports.prototype['commerceIndicator'] = undefined;

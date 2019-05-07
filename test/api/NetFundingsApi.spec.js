@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -50,10 +50,10 @@
   }
 
   describe('NetFundingsApi', function() {
-    describe('getNetFundingInfo', function() {
-      it('should call getNetFundingInfo successfully', function(done) {
-        //uncomment below and update the code to test getNetFundingInfo
-        //instance.getNetFundingInfo(function(error) {
+    describe('getNetFundingDetails', function() {
+      it('should call getNetFundingDetails successfully', function(done) {
+        //uncomment below and update the code to test getNetFundingDetails
+        //instance.getNetFundingDetails(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

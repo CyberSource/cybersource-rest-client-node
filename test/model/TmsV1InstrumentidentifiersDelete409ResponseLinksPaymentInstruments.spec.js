@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments();
+    instance = new CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,16 +49,16 @@
       object[property] = value;
   }
 
-  describe('TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments', function() {
-    it('should create an instance of TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments', function() {
-      // uncomment below and update the code to test TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments();
-      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments);
+  describe('TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments', function() {
+    it('should create an instance of TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments', function() {
+      // uncomment below and update the code to test TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments();
+      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments);
     });
 
     it('should have the property href (base name: "href")', function() {
       // uncomment below and update the code to test the property href
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments();
       //expect(instance).to.be();
     });
 

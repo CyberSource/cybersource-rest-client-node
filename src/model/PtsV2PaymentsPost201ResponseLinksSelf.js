@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -73,12 +73,12 @@
   }
 
   /**
-   * URL
+   * This is the endpoint of the resource that was created by the successful request.
    * @member {String} href
    */
   exports.prototype['href'] = undefined;
   /**
-   * HTTP method applied to above URL
+   * `method` refers to the HTTP method that you can send to the `self` endpoint to retrieve details of the resource.
    * @member {String} method
    */
   exports.prototype['method'] = undefined;

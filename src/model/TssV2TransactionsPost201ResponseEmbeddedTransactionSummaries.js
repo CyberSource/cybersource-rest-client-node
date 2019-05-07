@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseApplicationInformation', 'model/TssV2TransactionsGet200ResponseFraudMarkingInformation', 'model/TssV2TransactionsGet200ResponseMerchantDefinedInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedLinks', 'model/TssV2TransactionsPost201ResponseEmbeddedMerchantInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessorInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedRiskInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/TssV2TransactionsGet200ResponseApplicationInformation', 'model/TssV2TransactionsGet200ResponseFraudMarkingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedLinks', 'model/TssV2TransactionsPost201ResponseEmbeddedMerchantInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessorInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedRiskInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseApplicationInformation'), require('./TssV2TransactionsGet200ResponseFraudMarkingInformation'), require('./TssV2TransactionsGet200ResponseMerchantDefinedInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedBuyerInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedDeviceInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedLinks'), require('./TssV2TransactionsPost201ResponseEmbeddedMerchantInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessingInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessorInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedRiskInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./TssV2TransactionsGet200ResponseApplicationInformation'), require('./TssV2TransactionsGet200ResponseFraudMarkingInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedBuyerInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedDeviceInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedLinks'), require('./TssV2TransactionsPost201ResponseEmbeddedMerchantInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessingInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessorInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedRiskInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseApplicationInformation, root.CyberSource.TssV2TransactionsGet200ResponseFraudMarkingInformation, root.CyberSource.TssV2TransactionsGet200ResponseMerchantDefinedInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedLinks, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedRiskInformation);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.TssV2TransactionsGet200ResponseApplicationInformation, root.CyberSource.TssV2TransactionsGet200ResponseFraudMarkingInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedLinks, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedRiskInformation);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200ResponseApplicationInformation, TssV2TransactionsGet200ResponseFraudMarkingInformation, TssV2TransactionsGet200ResponseMerchantDefinedInformation, TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, TssV2TransactionsPost201ResponseEmbeddedDeviceInformation, TssV2TransactionsPost201ResponseEmbeddedLinks, TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, TssV2TransactionsPost201ResponseEmbeddedOrderInformation, TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, TssV2TransactionsPost201ResponseEmbeddedRiskInformation) {
+}(this, function(ApiClient, Ptsv2paymentsMerchantDefinedInformation, TssV2TransactionsGet200ResponseApplicationInformation, TssV2TransactionsGet200ResponseFraudMarkingInformation, TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, TssV2TransactionsPost201ResponseEmbeddedDeviceInformation, TssV2TransactionsPost201ResponseEmbeddedLinks, TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, TssV2TransactionsPost201ResponseEmbeddedOrderInformation, TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, TssV2TransactionsPost201ResponseEmbeddedRiskInformation) {
   'use strict';
 
 
@@ -106,7 +106,7 @@
         obj['fraudMarkingInformation'] = TssV2TransactionsGet200ResponseFraudMarkingInformation.constructFromObject(data['fraudMarkingInformation']);
       }
       if (data.hasOwnProperty('merchantDefinedInformation')) {
-        obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [TssV2TransactionsGet200ResponseMerchantDefinedInformation]);
+        obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [Ptsv2paymentsMerchantDefinedInformation]);
       }
       if (data.hasOwnProperty('merchantInformation')) {
         obj['merchantInformation'] = TssV2TransactionsPost201ResponseEmbeddedMerchantInformation.constructFromObject(data['merchantInformation']);
@@ -137,12 +137,12 @@
   }
 
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
@@ -177,7 +177,7 @@
   exports.prototype['fraudMarkingInformation'] = undefined;
   /**
    * The description for this field is not available.
-   * @member {Array.<module:model/TssV2TransactionsGet200ResponseMerchantDefinedInformation>} merchantDefinedInformation
+   * @member {Array.<module:model/Ptsv2paymentsMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;
   /**

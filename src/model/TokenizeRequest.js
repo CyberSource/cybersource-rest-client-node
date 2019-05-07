@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -43,11 +43,12 @@
    * Constructs a new <code>TokenizeRequest</code>.
    * @alias module:model/TokenizeRequest
    * @class
+   * @param keyId {String} Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples] (http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.
    */
-  var exports = function() {
+  var exports = function(keyId) {
     var _this = this;
 
-
+    _this['keyId'] = keyId;
 
   };
 

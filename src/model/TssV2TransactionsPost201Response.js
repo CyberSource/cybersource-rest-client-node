@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -73,8 +73,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('searchId')) {
+        obj['searchId'] = ApiClient.convertToType(data['searchId'], 'String');
       }
       if (data.hasOwnProperty('save')) {
         obj['save'] = ApiClient.convertToType(data['save'], 'Boolean');
@@ -117,10 +117,10 @@
   }
 
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @member {String} id
+   * An unique identification number assigned by CyberSource to identify each Search request.
+   * @member {String} searchId
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['searchId'] = undefined;
   /**
    * save or not save.
    * @member {Boolean} save
@@ -167,7 +167,7 @@
    */
   exports.prototype['totalCount'] = undefined;
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -50,30 +50,50 @@
   }
 
   describe('InstrumentIdentifierApi', function() {
-    describe('tmsV1InstrumentidentifiersTokenIdDelete', function() {
-      it('should call tmsV1InstrumentidentifiersTokenIdDelete successfully', function(done) {
-        //uncomment below and update the code to test tmsV1InstrumentidentifiersTokenIdDelete
-        //instance.tmsV1InstrumentidentifiersTokenIdDelete(function(error) {
+    describe('createInstrumentIdentifier', function() {
+      it('should call createInstrumentIdentifier successfully', function(done) {
+        //uncomment below and update the code to test createInstrumentIdentifier
+        //instance.createInstrumentIdentifier(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('tmsV1InstrumentidentifiersTokenIdGet', function() {
-      it('should call tmsV1InstrumentidentifiersTokenIdGet successfully', function(done) {
-        //uncomment below and update the code to test tmsV1InstrumentidentifiersTokenIdGet
-        //instance.tmsV1InstrumentidentifiersTokenIdGet(function(error) {
+    describe('deleteInstrumentIdentifier', function() {
+      it('should call deleteInstrumentIdentifier successfully', function(done) {
+        //uncomment below and update the code to test deleteInstrumentIdentifier
+        //instance.deleteInstrumentIdentifier(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('tmsV1InstrumentidentifiersTokenIdPatch', function() {
-      it('should call tmsV1InstrumentidentifiersTokenIdPatch successfully', function(done) {
-        //uncomment below and update the code to test tmsV1InstrumentidentifiersTokenIdPatch
-        //instance.tmsV1InstrumentidentifiersTokenIdPatch(function(error) {
+    describe('getAllPaymentInstruments', function() {
+      it('should call getAllPaymentInstruments successfully', function(done) {
+        //uncomment below and update the code to test getAllPaymentInstruments
+        //instance.getAllPaymentInstruments(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getInstrumentIdentifier', function() {
+      it('should call getInstrumentIdentifier successfully', function(done) {
+        //uncomment below and update the code to test getInstrumentIdentifier
+        //instance.getInstrumentIdentifier(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateInstrumentIdentifier', function() {
+      it('should call updateInstrumentIdentifier successfully', function(done) {
+        //uncomment below and update the code to test updateInstrumentIdentifier
+        //instance.updateInstrumentIdentifier(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

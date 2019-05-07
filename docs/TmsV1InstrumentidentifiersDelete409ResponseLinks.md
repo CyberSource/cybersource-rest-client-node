@@ -1,8 +1,8 @@
-# CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinks
+# CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paymentInstruments** | [**TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments**](TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments.md) |  | [optional] 
+**paymentInstruments** | [**TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments**](TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments.md) |  | [optional] 
 
 

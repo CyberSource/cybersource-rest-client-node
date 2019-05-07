@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev = factory(root.CyberSource.ApiClient);
+    root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev model module.
-   * @module model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev
+   * The TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev model module.
+   * @module model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev</code>.
+   * Constructs a new <code>TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev</code>.
    * A link to the previous collection starting at the supplied offset minus the supplied limit.
-   * @alias module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev
+   * @alias module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev
    * @class
    */
   var exports = function() {
@@ -52,11 +52,11 @@
   };
 
   /**
-   * Constructs a <code>TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev} obj Optional instance to populate.
-   * @return {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev} The populated <code>TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev</code> instance.
+   * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev} obj Optional instance to populate.
+   * @return {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev} The populated <code>TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

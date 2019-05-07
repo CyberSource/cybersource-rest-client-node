@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -81,7 +81,7 @@
   }
 
   /**
-   * Raw electronic commerce indicator (ECI).
+   * Raw electronic commerce indicator (ECI). For the description and requirements, see \"Payer Authentication,\" page 180.
    * @member {String} eciRaw
    */
   exports.prototype['eciRaw'] = undefined;
@@ -91,7 +91,7 @@
    */
   exports.prototype['cavv'] = undefined;
   /**
-   * Transaction identifier.
+   * Transaction identifier. For the description and requirements, see \"Payer Authentication,\" page 180.
    * @member {String} xid
    */
   exports.prototype['xid'] = undefined;

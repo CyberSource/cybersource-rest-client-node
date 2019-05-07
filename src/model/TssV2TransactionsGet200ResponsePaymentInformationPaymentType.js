@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -53,7 +53,6 @@
 
 
 
-
   };
 
   /**
@@ -73,9 +72,6 @@
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
-      if (data.hasOwnProperty('subType')) {
-        obj['subType'] = ApiClient.convertToType(data['subType'], 'String');
-      }
       if (data.hasOwnProperty('method')) {
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
       }
@@ -93,22 +89,17 @@
   }
 
   /**
-   * The description for this field is not available.
+   * The name of a payment method. This is required for non-credit card payment.  Examples: `SEARS`, `JCREW`, `PAYPAL`, `IDEAL`, `EPS` ...etc.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * The description for this field is not available.
+   * The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
-   * The description for this field is not available.
-   * @member {String} subType
-   */
-  exports.prototype['subType'] = undefined;
-  /**
-   * The description for this field is not available.
+   * This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
    * @member {String} method
    */
   exports.prototype['method'] = undefined;

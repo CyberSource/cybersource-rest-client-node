@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsV1InstrumentidentifiersDelete409Response();
+    instance = new CyberSource.TmsV1InstrumentIdentifiersDelete409Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,16 +49,16 @@
       object[property] = value;
   }
 
-  describe('TmsV1InstrumentidentifiersDelete409Response', function() {
-    it('should create an instance of TmsV1InstrumentidentifiersDelete409Response', function() {
-      // uncomment below and update the code to test TmsV1InstrumentidentifiersDelete409Response
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersDelete409Response();
-      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentidentifiersDelete409Response);
+  describe('TmsV1InstrumentIdentifiersDelete409Response', function() {
+    it('should create an instance of TmsV1InstrumentIdentifiersDelete409Response', function() {
+      // uncomment below and update the code to test TmsV1InstrumentIdentifiersDelete409Response
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersDelete409Response();
+      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentIdentifiersDelete409Response);
     });
 
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersDelete409Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersDelete409Response();
       //expect(instance).to.be();
     });
 

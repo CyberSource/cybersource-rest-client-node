@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -50,6 +50,16 @@
   }
 
   describe('VoidApi', function() {
+    describe('mitVoid', function() {
+      it('should call mitVoid successfully', function(done) {
+        //uncomment below and update the code to test mitVoid
+        //instance.mitVoid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('voidCapture', function() {
       it('should call voidCapture successfully', function(done) {
         //uncomment below and update the code to test voidCapture

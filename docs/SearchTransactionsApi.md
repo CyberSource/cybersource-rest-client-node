@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createSearch**](SearchTransactionsApi.md#createSearch) | **POST** /tss/v2/searches | Create a search request
-[**getSearch**](SearchTransactionsApi.md#getSearch) | **GET** /tss/v2/searches/{id} | Get Search results
+[**getSearch**](SearchTransactionsApi.md#getSearch) | **GET** /tss/v2/searches/{searchId} | Get Search results
 
 
 <a name="createSearch"></a>
@@ -22,7 +22,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.SearchTransactionsApi();
 
-var createSearchRequest = new CyberSource.TssV2TransactionsPostResponse(); // TssV2TransactionsPostResponse | 
+var createSearchRequest = new CyberSource.CreateSearchRequest(); // CreateSearchRequest | 
 
 
 var callback = function(error, data, response) {
@@ -39,7 +39,7 @@ apiInstance.createSearch(createSearchRequest, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createSearchRequest** | [**TssV2TransactionsPostResponse**](TssV2TransactionsPostResponse.md)|  | 
+ **createSearchRequest** | [**CreateSearchRequest**](CreateSearchRequest.md)|  | 
 
 ### Return type
 
@@ -56,11 +56,11 @@ No authorization required
 
 <a name="getSearch"></a>
 # **getSearch**
-> TssV2TransactionsPost201Response getSearch(id)
+> TssV2TransactionsPost201Response getSearch(searchId)
 
 Get Search results
 
-Include the Search ID in the GET request to retrieve the search results.
+Include the Search ID in the GET request to retrieve the search results. 
 
 ### Example
 ```javascript
@@ -68,7 +68,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.SearchTransactionsApi();
 
-var id = "id_example"; // String | Search ID.
+var searchId = "searchId_example"; // String | Search ID.
 
 
 var callback = function(error, data, response) {
@@ -78,14 +78,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSearch(id, callback);
+apiInstance.getSearch(searchId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Search ID. | 
+ **searchId** | **String**| Search ID. | 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -58,6 +58,24 @@
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
+      //var instane = new CyberSource.Tmsv1instrumentidentifiersCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationMonth (base name: "expirationMonth")', function() {
+      // uncomment below and update the code to test the property expirationMonth
+      //var instane = new CyberSource.Tmsv1instrumentidentifiersCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationYear (base name: "expirationYear")', function() {
+      // uncomment below and update the code to test the property expirationYear
+      //var instane = new CyberSource.Tmsv1instrumentidentifiersCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property securityCode (base name: "securityCode")', function() {
+      // uncomment below and update the code to test the property securityCode
       //var instane = new CyberSource.Tmsv1instrumentidentifiersCard();
       //expect(instance).to.be();
     });

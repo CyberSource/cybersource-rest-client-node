@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks();
+    instance = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,40 +49,40 @@
       object[property] = value;
   }
 
-  describe('TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks', function() {
-    it('should create an instance of TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks', function() {
-      // uncomment below and update the code to test TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks();
-      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks);
+  describe('TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks', function() {
+    it('should create an instance of TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks', function() {
+      // uncomment below and update the code to test TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks();
+      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks);
     });
 
     it('should have the property self (base name: "self")', function() {
       // uncomment below and update the code to test the property self
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property first (base name: "first")', function() {
       // uncomment below and update the code to test the property first
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property prev (base name: "prev")', function() {
       // uncomment below and update the code to test the property prev
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property next (base name: "next")', function() {
       // uncomment below and update the code to test the property next
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property last (base name: "last")', function() {
       // uncomment below and update the code to test the property last
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks();
       //expect(instance).to.be();
     });
 

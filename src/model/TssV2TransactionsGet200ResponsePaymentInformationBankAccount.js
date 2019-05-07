@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -103,12 +103,12 @@
    */
   exports.prototype['prefix'] = undefined;
   /**
-   * The description for this field is not available.
+   * Check number.  Chase Paymentech Solutions - Optional. CyberSource ACH Service - Not used. RBS WorldPay Atlanta - Optional on debits. Required on credits. TeleCheck - Strongly recommended on debit requests. Optional on credits. 
    * @member {String} checkNumber
    */
   exports.prototype['checkNumber'] = undefined;
   /**
-   * The description for this field is not available.
+   * Account type.  Possible values:  - **C**: Checking.  - **G**: General ledger. This value is supported only on Wells Fargo ACH.  - **S**: Savings (U.S. dollars only).  - **X**: Corporate checking (U.S. dollars only). 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
@@ -123,7 +123,7 @@
    */
   exports.prototype['checkDigit'] = undefined;
   /**
-   * The description for this field is not available.
+   * Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \"Encoded Account Numbers,\" page 39. 
    * @member {String} encoderId
    */
   exports.prototype['encoderId'] = undefined;

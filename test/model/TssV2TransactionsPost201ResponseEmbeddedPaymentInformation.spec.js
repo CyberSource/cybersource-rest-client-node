@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation);
     });
 
-    it('should have the property paymentMethod (base name: "paymentMethod")', function() {
-      // uncomment below and update the code to test the property paymentMethod
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation();
       //expect(instance).to.be();
     });

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -44,7 +44,7 @@
    * HTTP status code for client application
    * @alias module:model/Reportingv3ReportDownloadsGet400Response
    * @class
-   * @param submitTimeUtc {String} Time of request in UTC 
+   * @param submitTimeUtc {Date} Time of request in UTC.  
    * @param reason {String} Documented reason code 
    * @param message {String} Short descriptive message to the user. 
    * @param details {Array.<module:model/Reportingv3ReportDownloadsGet400ResponseDetails>} Error field list 
@@ -70,7 +70,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
       }
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
@@ -86,8 +86,8 @@
   }
 
   /**
-   * Time of request in UTC 
-   * @member {String} submitTimeUtc
+   * Time of request in UTC.  
+   * @member {Date} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**

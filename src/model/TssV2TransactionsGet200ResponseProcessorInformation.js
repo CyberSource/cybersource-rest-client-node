@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/TssV2TransactionsGet200ResponseProcessorInformationAchVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationCardVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults', 'model/TssV2TransactionsGet200ResponseProcessorInformationProcessor'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/Riskv1decisionsCardVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults', 'model/TssV2TransactionsGet200ResponseProcessorInformationProcessor'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./TssV2TransactionsGet200ResponseProcessorInformationAchVerification'), require('./TssV2TransactionsGet200ResponseProcessorInformationCardVerification'), require('./TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'), require('./TssV2TransactionsGet200ResponseProcessorInformationProcessor'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./Riskv1decisionsCardVerification'), require('./TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'), require('./TssV2TransactionsGet200ResponseProcessorInformationProcessor'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationAchVerification, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationCardVerification, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationProcessor);
+    root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.Riskv1decisionsCardVerification, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationProcessor);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAvs, TssV2TransactionsGet200ResponseProcessorInformationAchVerification, TssV2TransactionsGet200ResponseProcessorInformationCardVerification, TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, TssV2TransactionsGet200ResponseProcessorInformationProcessor) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, Riskv1decisionsCardVerification, TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, TssV2TransactionsGet200ResponseProcessorInformationProcessor) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -96,13 +98,19 @@
         obj['avs'] = PtsV2PaymentsPost201ResponseProcessorInformationAvs.constructFromObject(data['avs']);
       }
       if (data.hasOwnProperty('cardVerification')) {
-        obj['cardVerification'] = TssV2TransactionsGet200ResponseProcessorInformationCardVerification.constructFromObject(data['cardVerification']);
+        obj['cardVerification'] = Riskv1decisionsCardVerification.constructFromObject(data['cardVerification']);
       }
       if (data.hasOwnProperty('achVerification')) {
-        obj['achVerification'] = TssV2TransactionsGet200ResponseProcessorInformationAchVerification.constructFromObject(data['achVerification']);
+        obj['achVerification'] = PtsV2PaymentsPost201ResponseProcessorInformationAchVerification.constructFromObject(data['achVerification']);
       }
       if (data.hasOwnProperty('electronicVerificationResults')) {
         obj['electronicVerificationResults'] = TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults.constructFromObject(data['electronicVerificationResults']);
+      }
+      if (data.hasOwnProperty('systemTraceAuditNumber')) {
+        obj['systemTraceAuditNumber'] = ApiClient.convertToType(data['systemTraceAuditNumber'], 'String');
+      }
+      if (data.hasOwnProperty('responseCodeSource')) {
+        obj['responseCodeSource'] = ApiClient.convertToType(data['responseCodeSource'], 'String');
       }
     }
     return obj;
@@ -113,7 +121,7 @@
    */
   exports.prototype['processor'] = undefined;
   /**
-   * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value. 
+   * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value. 
    * @member {String} transactionId
    */
   exports.prototype['transactionId'] = undefined;
@@ -147,17 +155,27 @@
    */
   exports.prototype['avs'] = undefined;
   /**
-   * @member {module:model/TssV2TransactionsGet200ResponseProcessorInformationCardVerification} cardVerification
+   * @member {module:model/Riskv1decisionsCardVerification} cardVerification
    */
   exports.prototype['cardVerification'] = undefined;
   /**
-   * @member {module:model/TssV2TransactionsGet200ResponseProcessorInformationAchVerification} achVerification
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification} achVerification
    */
   exports.prototype['achVerification'] = undefined;
   /**
    * @member {module:model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults} electronicVerificationResults
    */
   exports.prototype['electronicVerificationResults'] = undefined;
+  /**
+   * This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customer’s receipt. 
+   * @member {String} systemTraceAuditNumber
+   */
+  exports.prototype['systemTraceAuditNumber'] = undefined;
+  /**
+   * Used by Visa only and contains the response source/reason code that identifies the source of the response decision. 
+   * @member {String} responseCodeSource
+   */
+  exports.prototype['responseCodeSource'] = undefined;
 
 
 

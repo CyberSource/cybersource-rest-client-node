@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -58,42 +58,6 @@
 
     it('should have the property encryptionType (base name: "encryptionType")', function() {
       // uncomment below and update the code to test the property encryptionType
-      //var instane = new CyberSource.GeneratePublicKeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property targetOrigin (base name: "targetOrigin")', function() {
-      // uncomment below and update the code to test the property targetOrigin
-      //var instane = new CyberSource.GeneratePublicKeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property unmaskedLeft (base name: "unmaskedLeft")', function() {
-      // uncomment below and update the code to test the property unmaskedLeft
-      //var instane = new CyberSource.GeneratePublicKeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property unmaskedRight (base name: "unmaskedRight")', function() {
-      // uncomment below and update the code to test the property unmaskedRight
-      //var instane = new CyberSource.GeneratePublicKeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property enableBillingAddress (base name: "enableBillingAddress")', function() {
-      // uncomment below and update the code to test the property enableBillingAddress
-      //var instane = new CyberSource.GeneratePublicKeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property currency (base name: "currency")', function() {
-      // uncomment below and update the code to test the property currency
-      //var instane = new CyberSource.GeneratePublicKeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property enableAutoAuth (base name: "enableAutoAuth")', function() {
-      // uncomment below and update the code to test the property enableAutoAuth
       //var instane = new CyberSource.GeneratePublicKeyRequest();
       //expect(instance).to.be();
     });

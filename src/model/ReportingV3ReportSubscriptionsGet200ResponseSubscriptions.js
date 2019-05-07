@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3ReportsIdGet200ResponseReportPreferences'], factory);
+    define(['ApiClient', 'model/Reportingv3reportsReportPreferences'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ReportingV3ReportsIdGet200ResponseReportPreferences'));
+    module.exports = factory(require('../ApiClient'), require('./Reportingv3reportsReportPreferences'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportsIdGet200ResponseReportPreferences);
+    root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3reportsReportPreferences);
   }
-}(this, function(ApiClient, ReportingV3ReportsIdGet200ResponseReportPreferences) {
+}(this, function(ApiClient, Reportingv3reportsReportPreferences) {
   'use strict';
 
 
@@ -108,7 +108,7 @@
         obj['reportFilters'] = ApiClient.convertToType(data['reportFilters'], {'String': ['String']});
       }
       if (data.hasOwnProperty('reportPreferences')) {
-        obj['reportPreferences'] = ReportingV3ReportsIdGet200ResponseReportPreferences.constructFromObject(data['reportPreferences']);
+        obj['reportPreferences'] = Reportingv3reportsReportPreferences.constructFromObject(data['reportPreferences']);
       }
       if (data.hasOwnProperty('groupId')) {
         obj['groupId'] = ApiClient.convertToType(data['groupId'], 'String');
@@ -173,7 +173,7 @@
    */
   exports.prototype['reportFilters'] = undefined;
   /**
-   * @member {module:model/ReportingV3ReportsIdGet200ResponseReportPreferences} reportPreferences
+   * @member {module:model/Reportingv3reportsReportPreferences} reportPreferences
    */
   exports.prototype['reportPreferences'] = undefined;
   /**
@@ -220,7 +220,12 @@
      * value: "MONTHLY"
      * @const
      */
-    "MONTHLY": "MONTHLY"  };
+    "MONTHLY": "MONTHLY",
+    /**
+     * value: "ADHOC"
+     * @const
+     */
+    "ADHOC": "ADHOC"  };
 
 
   return exports;

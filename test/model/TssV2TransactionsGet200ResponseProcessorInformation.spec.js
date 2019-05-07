@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -118,6 +118,18 @@
 
     it('should have the property electronicVerificationResults (base name: "electronicVerificationResults")', function() {
       // uncomment below and update the code to test the property electronicVerificationResults
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property systemTraceAuditNumber (base name: "systemTraceAuditNumber")', function() {
+      // uncomment below and update the code to test the property systemTraceAuditNumber
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property responseCodeSource (base name: "responseCodeSource")', function() {
+      // uncomment below and update the code to test the property responseCodeSource
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
       //expect(instance).to.be();
     });

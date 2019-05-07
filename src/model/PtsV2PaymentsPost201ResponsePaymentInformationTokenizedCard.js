@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -103,7 +103,7 @@
    */
   exports.prototype['suffix'] = undefined;
   /**
-   * Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover 
+   * Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover - 005: Diners Club - 007: JCB - 024: Maestro (UK Domestic) - 039 Encoded account number - 042: Maestro (International) 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

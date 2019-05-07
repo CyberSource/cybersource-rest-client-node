@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -48,6 +48,9 @@
     var _this = this;
 
 
+
+
+
   };
 
   /**
@@ -64,6 +67,15 @@
       if (data.hasOwnProperty('number')) {
         obj['number'] = ApiClient.convertToType(data['number'], 'String');
       }
+      if (data.hasOwnProperty('expirationMonth')) {
+        obj['expirationMonth'] = ApiClient.convertToType(data['expirationMonth'], 'String');
+      }
+      if (data.hasOwnProperty('expirationYear')) {
+        obj['expirationYear'] = ApiClient.convertToType(data['expirationYear'], 'String');
+      }
+      if (data.hasOwnProperty('securityCode')) {
+        obj['securityCode'] = ApiClient.convertToType(data['securityCode'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +85,21 @@
    * @member {String} number
    */
   exports.prototype['number'] = undefined;
+  /**
+   * Card expiration month.  Format: `MM`. Possible values: `01` through `12`. 
+   * @member {String} expirationMonth
+   */
+  exports.prototype['expirationMonth'] = undefined;
+  /**
+   * Card expiration year.  Format: `YYYY`. Possible values: `1900` through `2099`. 
+   * @member {String} expirationYear
+   */
+  exports.prototype['expirationYear'] = undefined;
+  /**
+   * Card security code.
+   * @member {String} securityCode
+   */
+  exports.prototype['securityCode'] = undefined;
 
 
 
