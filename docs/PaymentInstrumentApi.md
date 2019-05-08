@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createPaymentInstrument"></a>
 # **createPaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, opts)
+> TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument(profileId, createPaymentInstrumentRequest)
 
 Create a Payment Instrument
 
@@ -24,15 +24,8 @@ var apiInstance = new CyberSource.PaymentInstrumentApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var createPaymentInstrumentRequest = new CyberSource.CreatePaymentInstrumentRequest(); // CreatePaymentInstrumentRequest | Specify the customer's payment details for card or bank account.
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -41,7 +34,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, opts, callback);
+apiInstance.createPaymentInstrument(profileId, createPaymentInstrumentRequest, callback);
 ```
 
 ### Parameters
@@ -49,10 +42,7 @@ apiInstance.createPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, cr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **createPaymentInstrumentRequest** | [**CreatePaymentInstrumentRequest**](CreatePaymentInstrumentRequest.md)| Specify the customer&#39;s payment details for card or bank account. | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 
@@ -69,7 +59,7 @@ No authorization required
 
 <a name="deletePaymentInstrument"></a>
 # **deletePaymentInstrument**
-> deletePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, opts)
+> deletePaymentInstrument(profileId, tokenId)
 
 Delete a Payment Instrument
 
@@ -81,15 +71,8 @@ var apiInstance = new CyberSource.PaymentInstrumentApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -98,7 +81,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deletePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback);
+apiInstance.deletePaymentInstrument(profileId, tokenId, callback);
 ```
 
 ### Parameters
@@ -106,10 +89,7 @@ apiInstance.deletePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, to
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **tokenId** | **String**| The TokenId of a Payment Instrument. | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 
@@ -126,7 +106,7 @@ No authorization required
 
 <a name="getPaymentInstrument"></a>
 # **getPaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, opts)
+> TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument(profileId, tokenId)
 
 Retrieve a Payment Instrument
 
@@ -138,15 +118,8 @@ var apiInstance = new CyberSource.PaymentInstrumentApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -155,7 +128,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback);
+apiInstance.getPaymentInstrument(profileId, tokenId, callback);
 ```
 
 ### Parameters
@@ -163,10 +136,7 @@ apiInstance.getPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, token
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **tokenId** | **String**| The TokenId of a Payment Instrument. | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 
@@ -183,7 +153,7 @@ No authorization required
 
 <a name="updatePaymentInstrument"></a>
 # **updatePaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, opts)
+> TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest)
 
 Update a Payment Instrument
 
@@ -195,17 +165,10 @@ var apiInstance = new CyberSource.PaymentInstrumentApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
 
 var updatePaymentInstrumentRequest = new CyberSource.UpdatePaymentInstrumentRequest(); // UpdatePaymentInstrumentRequest | Specify the customer's payment details.
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -214,7 +177,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updatePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, opts, callback);
+apiInstance.updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest, callback);
 ```
 
 ### Parameters
@@ -222,11 +185,8 @@ apiInstance.updatePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, to
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **tokenId** | **String**| The TokenId of a Payment Instrument. | 
  **updatePaymentInstrumentRequest** | [**UpdatePaymentInstrumentRequest**](UpdatePaymentInstrumentRequest.md)| Specify the customer&#39;s payment details. | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 

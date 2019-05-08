@@ -60,31 +60,16 @@
     /**
      * Create a Payment Instrument
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {module:model/CreatePaymentInstrumentRequest} createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/PaymentInstrumentApi~createPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV1PaymentinstrumentsPatch200Response}
      */
-    this.createPaymentInstrument = function(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, opts, callback) {
-      opts = opts || {};
+    this.createPaymentInstrument = function(profileId, createPaymentInstrumentRequest, callback) {
       var postBody = createPaymentInstrumentRequest;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling createPaymentInstrument");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling createPaymentInstrument");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling createPaymentInstrument");
       }
 
       // verify the required parameter 'createPaymentInstrumentRequest' is set
@@ -98,10 +83,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };
@@ -129,30 +111,15 @@
     /**
      * Delete a Payment Instrument
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {String} tokenId The TokenId of a Payment Instrument.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/PaymentInstrumentApi~deletePaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deletePaymentInstrument = function(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback) {
-      opts = opts || {};
+    this.deletePaymentInstrument = function(profileId, tokenId, callback) {
       var postBody = null;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling deletePaymentInstrument");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling deletePaymentInstrument");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling deletePaymentInstrument");
       }
 
       // verify the required parameter 'tokenId' is set
@@ -167,10 +134,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };
@@ -198,31 +162,16 @@
     /**
      * Retrieve a Payment Instrument
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {String} tokenId The TokenId of a Payment Instrument.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/PaymentInstrumentApi~getPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV1PaymentinstrumentsPatch200Response}
      */
-    this.getPaymentInstrument = function(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback) {
-      opts = opts || {};
+    this.getPaymentInstrument = function(profileId, tokenId, callback) {
       var postBody = null;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling getPaymentInstrument");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling getPaymentInstrument");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling getPaymentInstrument");
       }
 
       // verify the required parameter 'tokenId' is set
@@ -237,10 +186,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };
@@ -268,32 +214,17 @@
     /**
      * Update a Payment Instrument
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {String} tokenId The TokenId of a Payment Instrument.
      * @param {module:model/UpdatePaymentInstrumentRequest} updatePaymentInstrumentRequest Specify the customer&#39;s payment details.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/PaymentInstrumentApi~updatePaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV1PaymentinstrumentsPatch200Response}
      */
-    this.updatePaymentInstrument = function(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, opts, callback) {
-      opts = opts || {};
+    this.updatePaymentInstrument = function(profileId, tokenId, updatePaymentInstrumentRequest, callback) {
       var postBody = updatePaymentInstrumentRequest;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling updatePaymentInstrument");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling updatePaymentInstrument");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling updatePaymentInstrument");
       }
 
       // verify the required parameter 'tokenId' is set
@@ -313,10 +244,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };

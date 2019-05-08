@@ -207,7 +207,17 @@
      * value: "DECLINED"
      * @const
      */
-    "DECLINED": "DECLINED"  };
+    "DECLINED": "DECLINED",
+    /**
+     * value: "INVALID_REQUEST"
+     * @const
+     */
+    "INVALID_REQUEST": "INVALID_REQUEST",
+    /**
+     * value: "PENDING"
+     * @const
+     */
+    "PENDING": "PENDING"  };
 
 
   return exports;

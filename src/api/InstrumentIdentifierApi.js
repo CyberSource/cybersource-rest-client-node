@@ -60,31 +60,16 @@
     /**
      * Create an Instrument Identifier
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {module:model/CreateInstrumentIdentifierRequest} createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/InstrumentIdentifierApi~createInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPost200Response}
      */
-    this.createInstrumentIdentifier = function(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, opts, callback) {
-      opts = opts || {};
+    this.createInstrumentIdentifier = function(profileId, createInstrumentIdentifierRequest, callback) {
       var postBody = createInstrumentIdentifierRequest;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling createInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling createInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling createInstrumentIdentifier");
       }
 
       // verify the required parameter 'createInstrumentIdentifierRequest' is set
@@ -98,10 +83,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };
@@ -129,30 +111,15 @@
     /**
      * Delete an Instrument Identifier
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {String} tokenId The TokenId of an Instrument Identifier.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/InstrumentIdentifierApi~deleteInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteInstrumentIdentifier = function(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback) {
-      opts = opts || {};
+    this.deleteInstrumentIdentifier = function(profileId, tokenId, callback) {
       var postBody = null;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling deleteInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling deleteInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling deleteInstrumentIdentifier");
       }
 
       // verify the required parameter 'tokenId' is set
@@ -167,10 +134,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };
@@ -198,33 +162,20 @@
     /**
      * Retrieve all Payment Instruments associated with an Instrument Identifier
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {String} tokenId The TokenId of an Instrument Identifier.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {Number} opts.offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
      * @param {Number} opts.limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/InstrumentIdentifierApi~getAllPaymentInstrumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response}
      */
-    this.getAllPaymentInstruments = function(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback) {
+    this.getAllPaymentInstruments = function(profileId, tokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling getAllPaymentInstruments");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling getAllPaymentInstruments");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling getAllPaymentInstruments");
       }
 
       // verify the required parameter 'tokenId' is set
@@ -241,10 +192,7 @@
         'limit': opts['limit']
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };
@@ -272,31 +220,16 @@
     /**
      * Retrieve an Instrument Identifier
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {String} tokenId The TokenId of an Instrument Identifier.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPost200Response}
      */
-    this.getInstrumentIdentifier = function(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback) {
-      opts = opts || {};
+    this.getInstrumentIdentifier = function(profileId, tokenId, callback) {
       var postBody = null;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling getInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling getInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling getInstrumentIdentifier");
       }
 
       // verify the required parameter 'tokenId' is set
@@ -311,10 +244,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };
@@ -342,32 +272,17 @@
     /**
      * Update a Instrument Identifier
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} vCMerchantId CyberSource merchant id.
-     * @param {String} vCCorrelationId The mandatory correlation id passed by upstream (calling) system.
      * @param {String} tokenId The TokenId of an Instrument Identifier.
      * @param {module:model/UpdateInstrumentIdentifierRequest} updateInstrumentIdentifierRequest Specify the previous transaction ID to update.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.clientApplication Client application name
      * @param {module:api/InstrumentIdentifierApi~updateInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPost200Response}
      */
-    this.updateInstrumentIdentifier = function(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, opts, callback) {
-      opts = opts || {};
+    this.updateInstrumentIdentifier = function(profileId, tokenId, updateInstrumentIdentifierRequest, callback) {
       var postBody = updateInstrumentIdentifierRequest;
 
       // verify the required parameter 'profileId' is set
       if (profileId === undefined || profileId === null) {
         throw new Error("Missing the required parameter 'profileId' when calling updateInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling updateInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling updateInstrumentIdentifier");
       }
 
       // verify the required parameter 'tokenId' is set
@@ -387,10 +302,7 @@
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'Client-Application': opts['clientApplication']
+        'profile-id': profileId
       };
       var formParams = {
       };

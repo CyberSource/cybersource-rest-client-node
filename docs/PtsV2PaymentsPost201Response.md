@@ -31,6 +31,10 @@ Name | Type | Description | Notes
 
 * `DECLINED` (value: `"DECLINED"`)
 
+* `INVALID_REQUEST` (value: `"INVALID_REQUEST"`)
+
+* `PENDING` (value: `"PENDING"`)
+
 
 
 

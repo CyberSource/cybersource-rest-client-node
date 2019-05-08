@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createInstrumentIdentifier"></a>
 # **createInstrumentIdentifier**
-> TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, opts)
+> TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier(profileId, createInstrumentIdentifierRequest)
 
 Create an Instrument Identifier
 
@@ -25,15 +25,8 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var createInstrumentIdentifierRequest = new CyberSource.CreateInstrumentIdentifierRequest(); // CreateInstrumentIdentifierRequest | Please specify either a Card, Bank Account or Enrollable Card
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -42,7 +35,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, opts, callback);
+apiInstance.createInstrumentIdentifier(profileId, createInstrumentIdentifierRequest, callback);
 ```
 
 ### Parameters
@@ -50,10 +43,7 @@ apiInstance.createInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **createInstrumentIdentifierRequest** | [**CreateInstrumentIdentifierRequest**](CreateInstrumentIdentifierRequest.md)| Please specify either a Card, Bank Account or Enrollable Card | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 
@@ -70,7 +60,7 @@ No authorization required
 
 <a name="deleteInstrumentIdentifier"></a>
 # **deleteInstrumentIdentifier**
-> deleteInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, opts)
+> deleteInstrumentIdentifier(profileId, tokenId)
 
 Delete an Instrument Identifier
 
@@ -82,15 +72,8 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -99,7 +82,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback);
+apiInstance.deleteInstrumentIdentifier(profileId, tokenId, callback);
 ```
 
 ### Parameters
@@ -107,10 +90,7 @@ apiInstance.deleteInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **tokenId** | **String**| The TokenId of an Instrument Identifier. | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 
@@ -127,7 +107,7 @@ No authorization required
 
 <a name="getAllPaymentInstruments"></a>
 # **getAllPaymentInstruments**
-> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments(profileId, vCMerchantId, vCCorrelationId, tokenId, opts)
+> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments(profileId, tokenId, opts)
 
 Retrieve all Payment Instruments associated with an Instrument Identifier
 
@@ -139,14 +119,9 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
 
 var opts = { 
-  'clientApplication': "clientApplication_example", // String | Client application name
   'offset': 0, // Number | Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0.
   'limit': 20 // Number | The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 };
@@ -158,7 +133,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllPaymentInstruments(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback);
+apiInstance.getAllPaymentInstruments(profileId, tokenId, opts, callback);
 ```
 
 ### Parameters
@@ -166,10 +141,7 @@ apiInstance.getAllPaymentInstruments(profileId, vCMerchantId, vCCorrelationId, t
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **tokenId** | **String**| The TokenId of an Instrument Identifier. | 
- **clientApplication** | **String**| Client application name | [optional] 
  **offset** | **Number**| Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] [default to 0]
  **limit** | **Number**| The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
 
@@ -188,7 +160,7 @@ No authorization required
 
 <a name="getInstrumentIdentifier"></a>
 # **getInstrumentIdentifier**
-> TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, opts)
+> TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier(profileId, tokenId)
 
 Retrieve an Instrument Identifier
 
@@ -200,15 +172,8 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -217,7 +182,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, opts, callback);
+apiInstance.getInstrumentIdentifier(profileId, tokenId, callback);
 ```
 
 ### Parameters
@@ -225,10 +190,7 @@ apiInstance.getInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, to
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **tokenId** | **String**| The TokenId of an Instrument Identifier. | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 
@@ -245,7 +207,7 @@ No authorization required
 
 <a name="updateInstrumentIdentifier"></a>
 # **updateInstrumentIdentifier**
-> TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, opts)
+> TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier(profileId, tokenId, updateInstrumentIdentifierRequest)
 
 Update a Instrument Identifier
 
@@ -257,17 +219,10 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 
 var profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 
-var vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
-
 var tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
 
 var updateInstrumentIdentifierRequest = new CyberSource.UpdateInstrumentIdentifierRequest(); // UpdateInstrumentIdentifierRequest | Specify the previous transaction ID to update.
 
-var opts = { 
-  'clientApplication': "clientApplication_example" // String | Client application name
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -276,7 +231,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, opts, callback);
+apiInstance.updateInstrumentIdentifier(profileId, tokenId, updateInstrumentIdentifierRequest, callback);
 ```
 
 ### Parameters
@@ -284,11 +239,8 @@ apiInstance.updateInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | 
- **vCMerchantId** | **String**| CyberSource merchant id. | 
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. | 
  **tokenId** | **String**| The TokenId of an Instrument Identifier. | 
  **updateInstrumentIdentifierRequest** | [**UpdateInstrumentIdentifierRequest**](UpdateInstrumentIdentifierRequest.md)| Specify the previous transaction ID to update. | 
- **clientApplication** | **String**| Client application name | [optional] 
 
 ### Return type
 
