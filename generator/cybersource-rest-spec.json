@@ -11691,77 +11691,68 @@
                         "description": "OK",
                         "schema": {
                             "title": "ptsV1TransactionBatchesIdGet200Response",
-                            "allOf": [
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "id": {
-                                            "type": "string",
-                                            "description": "Unique identifier assigned to the batch file.",
-                                            "example": "psy8s1d",
-                                            "pattern": "^[a-zA-Z0-9_+-]*$",
-                                            "minLength": 1,
-                                            "maxLength": 8
-                                        },
-                                        "uploadDate": {
-                                            "type": "string",
-                                            "description": "Date when the batch template was update.",
-                                            "example": "2018-01-01"
-                                        },
-                                        "completionDate": {
-                                            "type": "string",
-                                            "description": "The date when the batch template processing completed.",
-                                            "example": "2018-01-01"
-                                        },
-                                        "transactionCount": {
-                                            "type": "integer",
-                                            "description": "Number of transactions in the transaction.",
-                                            "example": 7534
-                                        },
-                                        "acceptedTransactionCount": {
-                                            "type": "integer",
-                                            "description": "Number of transactions accepted.",
-                                            "example": 50013
-                                        },
-                                        "rejectedTransactionCount": {
-                                            "type": "string",
-                                            "description": "Number of transactions rejected.",
-                                            "example": 2508
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "The status of you batch template processing.",
-                                            "example": "Completed"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "_links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "transactions": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "href": {
-                                                                "type": "string",
-                                                                "description": "Self link for this request",
-                                                                "example": "/tss/v2/transactions/5289798134206292501013"
-                                                            },
-                                                            "method": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"description": "Unique identifier assigned to the batch file.",
+									"example": "psy8s1d",
+									"pattern": "^[a-zA-Z0-9_+-]*$",
+									"minLength": 1,
+									"maxLength": 8
+								},
+								"uploadDate": {
+									"type": "string",
+									"description": "Date when the batch template was update.",
+									"example": "2018-01-01"
+								},
+								"completionDate": {
+									"type": "string",
+									"description": "The date when the batch template processing completed.",
+									"example": "2018-01-01"
+								},
+								"transactionCount": {
+									"type": "integer",
+									"description": "Number of transactions in the transaction.",
+									"example": 7534
+								},
+								"acceptedTransactionCount": {
+									"type": "integer",
+									"description": "Number of transactions accepted.",
+									"example": 50013
+								},
+								"rejectedTransactionCount": {
+									"type": "string",
+									"description": "Number of transactions rejected.",
+									"example": 2508
+								},
+								"status": {
+									"type": "string",
+									"description": "The status of you batch template processing.",
+									"example": "Completed"
+								},
+								"_links": {
+									"type": "object",
+									"properties": {
+										"transactions": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"href": {
+														"type": "string",
+														"description": "Self link for this request",
+														"example": "/tss/v2/transactions/5289798134206292501013"
+													},
+													"method": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
                         }
                     },
                     "400": {
@@ -12664,229 +12655,220 @@
                         "description": "Successful response.",
                         "schema": {
                             "title": "ptsV2PayoutsPost201Response",
-                            "allOf": [
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "_links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "self": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "href": {
-                                                            "type": "string",
-                                                            "description": "This is the endpoint of the resource that was created by the successful request."
-                                                        },
-                                                        "method": {
-                                                            "type": "string",
-                                                            "description": "`method` refers to the HTTP method that you can send to the `self` endpoint to retrieve details of the resource."
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "id": {
-                                            "type": "string",
-                                            "maxLength": 26,
-                                            "description": "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource."
-                                        },
-                                        "submitTimeUtc": {
-                                            "type": "string",
-                                            "maxLength": 6,
-                                            "minLength": 6,
-                                            "description": "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`\n\nExample 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the\ntime. The Z indicates UTC.\n"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "The status of the submitted transaction.\n\nPossible values:\n - ACCEPTED\n - DECLINED\n - INVALID_REQUEST\n",
-                                            "enum": [
-                                                "ACCEPTED",
-                                                "DECLINED",
-                                                "INVALID_REQUEST"
-                                            ]
-                                        },
-                                        "reconciliationId": {
-                                            "type": "string",
-                                            "maxLength": 25,
-                                            "description": "Cybersource or merchant generated transaction reference number. This is sent to the processor and is echoed back in the response to the merchant. This is\nThis value is used for reconciliation purposes.\n"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "errorInformation": {
-                                            "type": "object",
-                                            "properties": {
-                                                "reason": {
-                                                    "type": "string",
-                                                    "description": "The reason of the status.\n\nPossible values:\n - EXPIRED_CARD\n - PROCESSOR_DECLINED\n - STOLEN_LOST_CARD\n - UNAUTHORIZED_CARD\n - CVN_NOT_MATCH\n - INVALID_CVN\n - BLACKLISTED_CUSTOMER\n - INVALID_ACCOUNT\n - GENERAL_DECLINE\n - RISK_CONTROL_DECLINE\n - PROCESSOR_RISK_CONTROL_DECLINE\n",
-                                                    "enum": [
-                                                        "EXPIRED_CARD",
-                                                        "PROCESSOR_DECLINED",
-                                                        "STOLEN_LOST_CARD",
-                                                        "UNAUTHORIZED_CARD",
-                                                        "CVN_NOT_MATCH",
-                                                        "INVALID_CVN",
-                                                        "BLACKLISTED_CUSTOMER",
-                                                        "INVALID_ACCOUNT",
-                                                        "GENERAL_DECLINE",
-                                                        "RISK_CONTROL_DECLINE",
-                                                        "PROCESSOR_RISK_CONTROL_DECLINE"
-                                                    ]
-                                                },
-                                                "message": {
-                                                    "type": "string",
-                                                    "description": "The detail message related to the status and reason listed above."
-                                                },
-                                                "details": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "field": {
-                                                                "type": "string",
-                                                                "description": "This is the flattened JSON object field name/path that is either missing or invalid."
-                                                            },
-                                                            "reason": {
-                                                                "type": "string",
-                                                                "description": "Possible reasons for the error.\n\nPossible values:\n - MISSING_FIELD\n - INVALID_DATA\n",
-                                                                "enum": [
-                                                                    "MISSING_FIELD",
-                                                                    "INVALID_DATA"
-                                                                ]
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "clientReferenceInformation": {
-                                            "type": "object",
-                                            "properties": {
-                                                "code": {
-                                                    "type": "string",
-                                                    "maxLength": 50,
-                                                    "description": "Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each\ntransaction so that you can perform meaningful searches for the transaction.\n\nFor information about tracking orders, see [Getting Started with CyberSource Advanced for the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/Getting_Started_SCMP/html/wwhelp/wwhimpl/js/html/wwhelp.htm).\n\n**FDC Nashville Global**\\\nCertain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.\n"
-                                                },
-                                                "submitLocalDateTime": {
-                                                    "type": "string",
-                                                    "maxLength": 14,
-                                                    "description": "Date and time at your physical location.\n\nFormat: `YYYYMMDDhhmmss`, where YYYY = year, MM = month, DD = day, hh = hour, mm = minutes ss = seconds\n"
-                                                },
-                                                "ownerMerchantId": {
-                                                    "type": "string",
-                                                    "description": "Merchant ID that was used to create the subscription or customer profile for which the service was requested.\n\nIf your CyberSource account is enabled for Recurring Billing, this field is returned only if you are using\nsubscription sharing and if your merchant ID is in the same merchant ID pool as the owner merchant ID.\n\nSee the subscription sharing information in Recurring Billing Using the Simple Order API.\n\nIf your CyberSource account is enabled for Payment Tokenization, this field is returned only if you are using\nprofile sharing and if your merchant ID is in the same merchant ID pool as the owner merchant ID.\n\nSee the profile sharing information in Payment Tokenization Using the Simple Order API.\n"
-                                                }
-                                            }
-                                        },
-                                        "merchantInformation": {
-                                            "type": "object",
-                                            "properties": {
-                                                "merchantDescriptor": {
-                                                    "properties": {
-                                                        "name": {
-                                                            "type": "string",
-                                                            "description": "For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors\nin [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)\n\nFor Payouts:\n* Paymentech (22)\n"
-                                                        },
-                                                        "locality": {
-                                                            "type": "string",
-                                                            "maxLength": 13,
-                                                            "description": "Merchant City. For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors\nin [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)\n"
-                                                        },
-                                                        "country": {
-                                                            "type": "string",
-                                                            "maxLength": 2,
-                                                            "description": "For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors\nin [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)\n"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "orderInformation": {
-                                            "type": "object",
-                                            "properties": {
-                                                "amountDetails": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "totalAmount": {
-                                                            "type": "string",
-                                                            "maxLength": 19,
-                                                            "description": "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special\ncharacters. CyberSource truncates the amount to the correct number of decimal places.\n\n**Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.\n\n**Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in:\n\uf06e Table 15, \"Authorization Information for Specific Processors,\" on page 43\n\uf06e Table 19, \"Capture Information for Specific Processors,\" on page 58\n\uf06e Table 23, \"Credit Information for Specific Processors,\" on page 75\nIf your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations,\" page 247.\n\n**DCC with a Third-Party Provider**\\\nSet this field to the converted amount that was returned by the DCC provider. You must include either this field or offer0 and the offerlevel field amount in your request. For details, see \"Dynamic Currency Conversion with a Third Party Provider,\" page 125.\n\n**FDMS South**\\\nIf you accept IDR or CLP currencies, see the entry for FDMS South in Table 15, \"Authorization Information for Specific Processors,\" on page 43.\n\n**DCC for First Data**\\\nNot used.\n"
-                                                        },
-                                                        "currency": {
-                                                            "type": "string",
-                                                            "maxLength": 3,
-                                                            "description": "Currency used for the order. Use the three-character ISO Standard Currency Codes.\n\nFor an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your request for Payment API.\n\n**DCC for First Data**\\\nYour local currency. For details, see \"Dynamic Currency Conversion for First Data,\" page 113.\n"
-                                                        },
-                                                        "settlementAmount": {
-                                                            "type": "string",
-                                                            "maxLength": 12,
-                                                            "description": "This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder\u2019s account.\n"
-                                                        },
-                                                        "settlementCurrency": {
-                                                            "type": "string",
-                                                            "maxLength": 3,
-                                                            "description": "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account.\n"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "processorInformation": {
-                                            "type": "object",
-                                            "properties": {
-                                                "approvalCode": {
-                                                    "type": "string",
-                                                    "maxLength": 6,
-                                                    "description": "Issuer-generated approval code for the transaction."
-                                                },
-                                                "responseCode": {
-                                                    "type": "string",
-                                                    "maxLength": 10,
-                                                    "description": "Transaction status from the processor."
-                                                },
-                                                "transactionId": {
-                                                    "type": "string",
-                                                    "maxLength": 15,
-                                                    "description": "Network transaction identifier (TID). This value can be used to identify a specific transaction when\nyou are discussing the transaction with your processor.\n"
-                                                },
-                                                "systemTraceAuditNumber": {
-                                                    "type": "string",
-                                                    "maxLength": 6,
-                                                    "description": "This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.\n\n**American Express Direct**\n\nSystem trace audit number (STAN). This value identifies the transaction and is useful when investigating a\nchargeback dispute.\n\n**CyberSource through VisaNet**\n\nSystem trace number that must be printed on the customer\u2019s receipt.\n"
-                                                },
-                                                "responseCodeSource": {
-                                                    "type": "string",
-                                                    "maxLength": 1,
-                                                    "description": "Used by Visa only and contains the response source/reason code that identifies the source of the response decision.\n"
-                                                }
-                                            }
-                                        },
-                                        "recipientInformation": {
-                                            "type": "object",
-                                            "properties": {
-                                                "card": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "balance": {
-                                                            "type": "string",
-                                                            "maxLength": 12,
-                                                            "description": "This field shows the available balance in the prepaid account. \nAcquirers always receive the available balance in the transaction currency.\n"
-                                                        },
-                                                        "currency": {
-                                                            "type": "string",
-                                                            "maxLength": 3,
-                                                            "description": "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer.\n"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ],
+							"type": "object",
+							"properties": {
+								"_links": {
+									"type": "object",
+									"properties": {
+										"self": {
+											"type": "object",
+											"properties": {
+												"href": {
+													"type": "string",
+													"description": "This is the endpoint of the resource that was created by the successful request."
+												},
+												"method": {
+													"type": "string",
+													"description": "`method` refers to the HTTP method that you can send to the `self` endpoint to retrieve details of the resource."
+												}
+											}
+										}
+									}
+								},
+								"id": {
+									"type": "string",
+									"maxLength": 26,
+									"description": "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource."
+								},
+								"submitTimeUtc": {
+									"type": "string",
+									"maxLength": 6,
+									"minLength": 6,
+									"description": "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`\n\nExample 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the\ntime. The Z indicates UTC.\n"
+								},
+								"status": {
+									"type": "string",
+									"description": "The status of the submitted transaction.\n\nPossible values:\n - ACCEPTED\n - DECLINED\n - INVALID_REQUEST\n",
+									"enum": [
+										"ACCEPTED",
+										"DECLINED",
+										"INVALID_REQUEST"
+									]
+								},
+								"reconciliationId": {
+									"type": "string",
+									"maxLength": 25,
+									"description": "Cybersource or merchant generated transaction reference number. This is sent to the processor and is echoed back in the response to the merchant. This is\nThis value is used for reconciliation purposes.\n"
+								},
+								"errorInformation": {
+									"type": "object",
+									"properties": {
+										"reason": {
+											"type": "string",
+											"description": "The reason of the status.\n\nPossible values:\n - EXPIRED_CARD\n - PROCESSOR_DECLINED\n - STOLEN_LOST_CARD\n - UNAUTHORIZED_CARD\n - CVN_NOT_MATCH\n - INVALID_CVN\n - BLACKLISTED_CUSTOMER\n - INVALID_ACCOUNT\n - GENERAL_DECLINE\n - RISK_CONTROL_DECLINE\n - PROCESSOR_RISK_CONTROL_DECLINE\n",
+											"enum": [
+												"EXPIRED_CARD",
+												"PROCESSOR_DECLINED",
+												"STOLEN_LOST_CARD",
+												"UNAUTHORIZED_CARD",
+												"CVN_NOT_MATCH",
+												"INVALID_CVN",
+												"BLACKLISTED_CUSTOMER",
+												"INVALID_ACCOUNT",
+												"GENERAL_DECLINE",
+												"RISK_CONTROL_DECLINE",
+												"PROCESSOR_RISK_CONTROL_DECLINE"
+											]
+										},
+										"message": {
+											"type": "string",
+											"description": "The detail message related to the status and reason listed above."
+										},
+										"details": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"field": {
+														"type": "string",
+														"description": "This is the flattened JSON object field name/path that is either missing or invalid."
+													},
+													"reason": {
+														"type": "string",
+														"description": "Possible reasons for the error.\n\nPossible values:\n - MISSING_FIELD\n - INVALID_DATA\n",
+														"enum": [
+															"MISSING_FIELD",
+															"INVALID_DATA"
+														]
+													}
+												}
+											}
+										}
+									}
+								},
+								"clientReferenceInformation": {
+									"type": "object",
+									"properties": {
+										"code": {
+											"type": "string",
+											"maxLength": 50,
+											"description": "Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each\ntransaction so that you can perform meaningful searches for the transaction.\n\nFor information about tracking orders, see [Getting Started with CyberSource Advanced for the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/Getting_Started_SCMP/html/wwhelp/wwhimpl/js/html/wwhelp.htm).\n\n**FDC Nashville Global**\\\nCertain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.\n"
+										},
+										"submitLocalDateTime": {
+											"type": "string",
+											"maxLength": 14,
+											"description": "Date and time at your physical location.\n\nFormat: `YYYYMMDDhhmmss`, where YYYY = year, MM = month, DD = day, hh = hour, mm = minutes ss = seconds\n"
+										},
+										"ownerMerchantId": {
+											"type": "string",
+											"description": "Merchant ID that was used to create the subscription or customer profile for which the service was requested.\n\nIf your CyberSource account is enabled for Recurring Billing, this field is returned only if you are using\nsubscription sharing and if your merchant ID is in the same merchant ID pool as the owner merchant ID.\n\nSee the subscription sharing information in Recurring Billing Using the Simple Order API.\n\nIf your CyberSource account is enabled for Payment Tokenization, this field is returned only if you are using\nprofile sharing and if your merchant ID is in the same merchant ID pool as the owner merchant ID.\n\nSee the profile sharing information in Payment Tokenization Using the Simple Order API.\n"
+										}
+									}
+								},
+								"merchantInformation": {
+									"type": "object",
+									"properties": {
+										"merchantDescriptor": {
+											"properties": {
+												"name": {
+													"type": "string",
+													"description": "For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors\nin [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)\n\nFor Payouts:\n* Paymentech (22)\n"
+												},
+												"locality": {
+													"type": "string",
+													"maxLength": 13,
+													"description": "Merchant City. For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors\nin [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)\n"
+												},
+												"country": {
+													"type": "string",
+													"maxLength": 2,
+													"description": "For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors\nin [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)\n"
+												}
+											}
+										}
+									}
+								},
+								"orderInformation": {
+									"type": "object",
+									"properties": {
+										"amountDetails": {
+											"type": "object",
+											"properties": {
+												"totalAmount": {
+													"type": "string",
+													"maxLength": 19,
+													"description": "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special\ncharacters. CyberSource truncates the amount to the correct number of decimal places.\n\n**Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.\n\n**Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in:\n\uf06e Table 15, \"Authorization Information for Specific Processors,\" on page 43\n\uf06e Table 19, \"Capture Information for Specific Processors,\" on page 58\n\uf06e Table 23, \"Credit Information for Specific Processors,\" on page 75\nIf your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations,\" page 247.\n\n**DCC with a Third-Party Provider**\\\nSet this field to the converted amount that was returned by the DCC provider. You must include either this field or offer0 and the offerlevel field amount in your request. For details, see \"Dynamic Currency Conversion with a Third Party Provider,\" page 125.\n\n**FDMS South**\\\nIf you accept IDR or CLP currencies, see the entry for FDMS South in Table 15, \"Authorization Information for Specific Processors,\" on page 43.\n\n**DCC for First Data**\\\nNot used.\n"
+												},
+												"currency": {
+													"type": "string",
+													"maxLength": 3,
+													"description": "Currency used for the order. Use the three-character ISO Standard Currency Codes.\n\nFor an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your request for Payment API.\n\n**DCC for First Data**\\\nYour local currency. For details, see \"Dynamic Currency Conversion for First Data,\" page 113.\n"
+												},
+												"settlementAmount": {
+													"type": "string",
+													"maxLength": 12,
+													"description": "This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder\u2019s account.\n"
+												},
+												"settlementCurrency": {
+													"type": "string",
+													"maxLength": 3,
+													"description": "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account.\n"
+												}
+											}
+										}
+									}
+								},
+								"processorInformation": {
+									"type": "object",
+									"properties": {
+										"approvalCode": {
+											"type": "string",
+											"maxLength": 6,
+											"description": "Issuer-generated approval code for the transaction."
+										},
+										"responseCode": {
+											"type": "string",
+											"maxLength": 10,
+											"description": "Transaction status from the processor."
+										},
+										"transactionId": {
+											"type": "string",
+											"maxLength": 15,
+											"description": "Network transaction identifier (TID). This value can be used to identify a specific transaction when\nyou are discussing the transaction with your processor.\n"
+										},
+										"systemTraceAuditNumber": {
+											"type": "string",
+											"maxLength": 6,
+											"description": "This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.\n\n**American Express Direct**\n\nSystem trace audit number (STAN). This value identifies the transaction and is useful when investigating a\nchargeback dispute.\n\n**CyberSource through VisaNet**\n\nSystem trace number that must be printed on the customer\u2019s receipt.\n"
+										},
+										"responseCodeSource": {
+											"type": "string",
+											"maxLength": 1,
+											"description": "Used by Visa only and contains the response source/reason code that identifies the source of the response decision.\n"
+										}
+									}
+								},
+								"recipientInformation": {
+									"type": "object",
+									"properties": {
+										"card": {
+											"type": "object",
+											"properties": {
+												"balance": {
+													"type": "string",
+													"maxLength": 12,
+													"description": "This field shows the available balance in the prepaid account. \nAcquirers always receive the available balance in the transaction currency.\n"
+												},
+												"currency": {
+													"type": "string",
+													"maxLength": 3,
+													"description": "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer.\n"
+												}
+											}
+										}
+									}
+								}
+							},
                             "example": {
                                 "_links": {
                                     "self": {
@@ -16482,339 +16464,329 @@
                         "description": "Ok",
                         "schema": {
                             "title": "reportingV3PurchaseRefundDetailsGet200Response",
-                            "allOf": [
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "offset": {
-                                            "type": "integer"
-                                        },
-                                        "limit": {
-                                            "type": "integer"
-                                        },
-                                        "pageResults": {
-                                            "type": "integer"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "object",
-                                    "description": "PurchaseAndRefundDetails",
-                                    "properties": {
-                                        "requestDetails": {
-                                            "type": "array",
-                                            "description": "List of Request Info values",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "requestId": {
-                                                        "type": "string",
-                                                        "example": "12345678901234567890123456",
-                                                        "description": "An unique identification number assigned by CyberSource to identify the submitted request."
-                                                    },
-                                                    "cybersourceMerchantId": {
-                                                        "type": "string",
-                                                        "example": "Cybersource Merchant Id",
-                                                        "description": "Cybersource Merchant Id"
-                                                    },
-                                                    "processorMerchantId": {
-                                                        "type": "string",
-                                                        "example": "Processor Merchant Id",
-                                                        "description": "Cybersource Processor Merchant Id"
-                                                    },
-                                                    "groupName": {
-                                                        "type": "string",
-                                                        "example": "996411990498708810001",
-                                                        "description": "Group Name"
-                                                    },
-                                                    "transactionReferenceNumber": {
-                                                        "type": "string",
-                                                        "example": "RZ3J9WCS9J33",
-                                                        "description": "Transaction Reference Number"
-                                                    },
-                                                    "merchantReferenceNumber": {
-                                                        "type": "string",
-                                                        "example": "47882339",
-                                                        "description": "Merchant Reference Number"
-                                                    }
-                                                },
-                                                "description": "Request Info Section"
-                                            }
-                                        },
-                                        "settlements": {
-                                            "type": "array",
-                                            "description": "List of Settlement Info values",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "requestId": {
-                                                        "type": "string",
-                                                        "example": "12345678901234567890123456",
-                                                        "description": "An unique identification number assigned by CyberSource to identify the submitted request."
-                                                    },
-                                                    "transactionType": {
-                                                        "type": "string",
-                                                        "example": "Purchases",
-                                                        "description": "Transaction Type"
-                                                    },
-                                                    "submissionTime": {
-                                                        "type": "string",
-                                                        "example": "2017-10-01T10:10:10+05:00",
-                                                        "description": "Submission Date",
-                                                        "format": "date-time"
-                                                    },
-                                                    "amount": {
-                                                        "type": "string",
-                                                        "example": "23.00",
-                                                        "description": "Amount"
-                                                    },
-                                                    "currencyCode": {
-                                                        "type": "string",
-                                                        "example": "USD",
-                                                        "description": "Valid ISO 4217 ALPHA-3 currency code"
-                                                    },
-                                                    "paymentMethod": {
-                                                        "type": "string",
-                                                        "example": "VISA",
-                                                        "description": "payment method"
-                                                    },
-                                                    "walletType": {
-                                                        "type": "string",
-                                                        "example": "V.me",
-                                                        "description": "Solution Type (Wallet)"
-                                                    },
-                                                    "paymentType": {
-                                                        "type": "string",
-                                                        "example": "credit card",
-                                                        "description": "Payment Type"
-                                                    },
-                                                    "accountSuffix": {
-                                                        "type": "string",
-                                                        "example": "0004",
-                                                        "description": "Account Suffix"
-                                                    },
-                                                    "cybersourceBatchTime": {
-                                                        "type": "string",
-                                                        "example": "2017-10-01T10:10:10+05:00",
-                                                        "description": "Cybersource Batch Time",
-                                                        "format": "date-time"
-                                                    },
-                                                    "cybersourceBatchId": {
-                                                        "type": "string",
-                                                        "example": "123123123123123",
-                                                        "description": "Cybersource Batch Id"
-                                                    },
-                                                    "cardType": {
-                                                        "type": "string",
-                                                        "example": "null",
-                                                        "description": "Card Type"
-                                                    },
-                                                    "debitNetwork": {
-                                                        "type": "string",
-                                                        "example": "",
-                                                        "description": "Debit Network"
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "authorizations": {
-                                            "type": "array",
-                                            "description": "List of Authorization Info values",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "requestId": {
-                                                        "type": "string",
-                                                        "example": "12345678901234567890123456",
-                                                        "description": "An unique identification number assigned by CyberSource to identify the submitted request."
-                                                    },
-                                                    "transactionReferenceNumber": {
-                                                        "type": "string",
-                                                        "example": "RZ3J9WCS9J27",
-                                                        "description": "Authorization Transaction Reference Number"
-                                                    },
-                                                    "time": {
-                                                        "type": "string",
-                                                        "example": "2017-10-01T10:10:10+05:00",
-                                                        "description": "Authorization Date",
-                                                        "format": "date-time"
-                                                    },
-                                                    "authorizationRequestId": {
-                                                        "type": "string",
-                                                        "example": "12345678901234567890123459",
-                                                        "description": "Authorization Request Id"
-                                                    },
-                                                    "amount": {
-                                                        "type": "string",
-                                                        "example": "2.50",
-                                                        "description": "Authorization Amount"
-                                                    },
-                                                    "currencyCode": {
-                                                        "type": "string",
-                                                        "example": "USD",
-                                                        "description": "Valid ISO 4217 ALPHA-3 currency code"
-                                                    },
-                                                    "code": {
-                                                        "type": "string",
-                                                        "example": "160780",
-                                                        "description": "Authorization Code"
-                                                    },
-                                                    "rcode": {
-                                                        "type": "string",
-                                                        "example": "1",
-                                                        "description": "Authorization RCode"
-                                                    }
-                                                },
-                                                "description": "Authorization Info Values"
-                                            }
-                                        },
-                                        "feeAndFundingDetails": {
-                                            "type": "array",
-                                            "description": "List of Fee Funding Info values",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "requestId": {
-                                                        "type": "string",
-                                                        "maxLength": 26,
-                                                        "example": "12345678901234567890123456",
-                                                        "description": "An unique identification number assigned by CyberSource to identify the submitted request."
-                                                    },
-                                                    "interchangePerItemFee": {
-                                                        "type": "string",
-                                                        "example": "2.7",
-                                                        "description": "interchange Per Item Fee"
-                                                    },
-                                                    "discountPercentage": {
-                                                        "type": "string",
-                                                        "example": "2.39",
-                                                        "description": "Discount Percentage"
-                                                    },
-                                                    "discountAmount": {
-                                                        "type": "string",
-                                                        "example": "0.429",
-                                                        "description": "Discount Amount"
-                                                    },
-                                                    "discountPerItemFee": {
-                                                        "type": "string",
-                                                        "example": "0.002",
-                                                        "description": "Discount Per Item Fee"
-                                                    },
-                                                    "totalFee": {
-                                                        "type": "string",
-                                                        "example": "0.429",
-                                                        "description": "Total Fee"
-                                                    },
-                                                    "feeCurrency": {
-                                                        "type": "string",
-                                                        "example": "1",
-                                                        "description": "Fee Currency"
-                                                    },
-                                                    "duesAssessments": {
-                                                        "type": "string",
-                                                        "example": "0",
-                                                        "description": "Dues Assessments"
-                                                    },
-                                                    "fundingAmount": {
-                                                        "type": "string",
-                                                        "example": "2.50",
-                                                        "description": "Funding Amount"
-                                                    },
-                                                    "fundingCurrency": {
-                                                        "type": "string",
-                                                        "example": "USD",
-                                                        "description": "Funding Currency (ISO 4217)"
-                                                    }
-                                                },
-                                                "description": "Fee Funding Section"
-                                            }
-                                        },
-                                        "others": {
-                                            "type": "array",
-                                            "description": "List of Other Info values",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "requestId": {
-                                                        "type": "string",
-                                                        "maxLength": 26,
-                                                        "example": "12345678901234567890123456",
-                                                        "description": "An unique identification number assigned by CyberSource to identify the submitted request."
-                                                    },
-                                                    "merchantData1": {
-                                                        "type": "string",
-                                                        "example": "Merchant Defined Data",
-                                                        "description": "Merchant Defined Data"
-                                                    },
-                                                    "merchantData2": {
-                                                        "type": "string",
-                                                        "example": "Merchant Defined Data",
-                                                        "description": "Merchant Defined Data"
-                                                    },
-                                                    "merchantData3": {
-                                                        "type": "string",
-                                                        "example": "Merchant Defined Data",
-                                                        "description": "Merchant Defined Data"
-                                                    },
-                                                    "merchantData4": {
-                                                        "type": "string",
-                                                        "example": "Merchant Defined Data",
-                                                        "description": "Merchant Defined Data"
-                                                    },
-                                                    "firstName": {
-                                                        "type": "string",
-                                                        "example": "First Name",
-                                                        "description": "First Name"
-                                                    },
-                                                    "lastName": {
-                                                        "type": "string",
-                                                        "example": "Last Name",
-                                                        "description": "Last Name"
-                                                    }
-                                                },
-                                                "description": "Other Merchant Details Values."
-                                            }
-                                        },
-                                        "settlementStatuses": {
-                                            "type": "array",
-                                            "description": "List of Settlement Status Info values",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "requestId": {
-                                                        "type": "string",
-                                                        "maxLength": 26,
-                                                        "example": "12345678901234567890123456",
-                                                        "description": "An unique identification number assigned by CyberSource to identify the submitted request."
-                                                    },
-                                                    "status": {
-                                                        "type": "string",
-                                                        "example": "Settlement Status",
-                                                        "description": "Settlement Status"
-                                                    },
-                                                    "settlementTime": {
-                                                        "type": "string",
-                                                        "example": "2017-10-01T10:10:10+05:00",
-                                                        "format": "date-time",
-                                                        "description": "Settlement Date"
-                                                    },
-                                                    "reasonCode": {
-                                                        "example": "reasonCode",
-                                                        "type": "string",
-                                                        "description": "ReasonCode"
-                                                    },
-                                                    "errorText": {
-                                                        "example": "errorText",
-                                                        "type": "string",
-                                                        "description": "errorText"
-                                                    }
-                                                },
-                                                "description": "Settlement Status Section Values."
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
+							"type": "object",
+							"properties": {
+								"offset": {
+									"type": "integer"
+								},
+								"limit": {
+									"type": "integer"
+								},
+								"pageResults": {
+									"type": "integer"
+								},
+								"requestDetails": {
+									"type": "array",
+									"description": "List of Request Info values",
+									"items": {
+										"type": "object",
+										"properties": {
+											"requestId": {
+												"type": "string",
+												"example": "12345678901234567890123456",
+												"description": "An unique identification number assigned by CyberSource to identify the submitted request."
+											},
+											"cybersourceMerchantId": {
+												"type": "string",
+												"example": "Cybersource Merchant Id",
+												"description": "Cybersource Merchant Id"
+											},
+											"processorMerchantId": {
+												"type": "string",
+												"example": "Processor Merchant Id",
+												"description": "Cybersource Processor Merchant Id"
+											},
+											"groupName": {
+												"type": "string",
+												"example": "996411990498708810001",
+												"description": "Group Name"
+											},
+											"transactionReferenceNumber": {
+												"type": "string",
+												"example": "RZ3J9WCS9J33",
+												"description": "Transaction Reference Number"
+											},
+											"merchantReferenceNumber": {
+												"type": "string",
+												"example": "47882339",
+												"description": "Merchant Reference Number"
+											}
+										},
+										"description": "Request Info Section"
+									}
+								},
+								"settlements": {
+									"type": "array",
+									"description": "List of Settlement Info values",
+									"items": {
+										"type": "object",
+										"properties": {
+											"requestId": {
+												"type": "string",
+												"example": "12345678901234567890123456",
+												"description": "An unique identification number assigned by CyberSource to identify the submitted request."
+											},
+											"transactionType": {
+												"type": "string",
+												"example": "Purchases",
+												"description": "Transaction Type"
+											},
+											"submissionTime": {
+												"type": "string",
+												"example": "2017-10-01T10:10:10+05:00",
+												"description": "Submission Date",
+												"format": "date-time"
+											},
+											"amount": {
+												"type": "string",
+												"example": "23.00",
+												"description": "Amount"
+											},
+											"currencyCode": {
+												"type": "string",
+												"example": "USD",
+												"description": "Valid ISO 4217 ALPHA-3 currency code"
+											},
+											"paymentMethod": {
+												"type": "string",
+												"example": "VISA",
+												"description": "payment method"
+											},
+											"walletType": {
+												"type": "string",
+												"example": "V.me",
+												"description": "Solution Type (Wallet)"
+											},
+											"paymentType": {
+												"type": "string",
+												"example": "credit card",
+												"description": "Payment Type"
+											},
+											"accountSuffix": {
+												"type": "string",
+												"example": "0004",
+												"description": "Account Suffix"
+											},
+											"cybersourceBatchTime": {
+												"type": "string",
+												"example": "2017-10-01T10:10:10+05:00",
+												"description": "Cybersource Batch Time",
+												"format": "date-time"
+											},
+											"cybersourceBatchId": {
+												"type": "string",
+												"example": "123123123123123",
+												"description": "Cybersource Batch Id"
+											},
+											"cardType": {
+												"type": "string",
+												"example": "null",
+												"description": "Card Type"
+											},
+											"debitNetwork": {
+												"type": "string",
+												"example": "",
+												"description": "Debit Network"
+											}
+										}
+									}
+								},
+								"authorizations": {
+									"type": "array",
+									"description": "List of Authorization Info values",
+									"items": {
+										"type": "object",
+										"properties": {
+											"requestId": {
+												"type": "string",
+												"example": "12345678901234567890123456",
+												"description": "An unique identification number assigned by CyberSource to identify the submitted request."
+											},
+											"transactionReferenceNumber": {
+												"type": "string",
+												"example": "RZ3J9WCS9J27",
+												"description": "Authorization Transaction Reference Number"
+											},
+											"time": {
+												"type": "string",
+												"example": "2017-10-01T10:10:10+05:00",
+												"description": "Authorization Date",
+												"format": "date-time"
+											},
+											"authorizationRequestId": {
+												"type": "string",
+												"example": "12345678901234567890123459",
+												"description": "Authorization Request Id"
+											},
+											"amount": {
+												"type": "string",
+												"example": "2.50",
+												"description": "Authorization Amount"
+											},
+											"currencyCode": {
+												"type": "string",
+												"example": "USD",
+												"description": "Valid ISO 4217 ALPHA-3 currency code"
+											},
+											"code": {
+												"type": "string",
+												"example": "160780",
+												"description": "Authorization Code"
+											},
+											"rcode": {
+												"type": "string",
+												"example": "1",
+												"description": "Authorization RCode"
+											}
+										},
+										"description": "Authorization Info Values"
+									}
+								},
+								"feeAndFundingDetails": {
+									"type": "array",
+									"description": "List of Fee Funding Info values",
+									"items": {
+										"type": "object",
+										"properties": {
+											"requestId": {
+												"type": "string",
+												"maxLength": 26,
+												"example": "12345678901234567890123456",
+												"description": "An unique identification number assigned by CyberSource to identify the submitted request."
+											},
+											"interchangePerItemFee": {
+												"type": "string",
+												"example": "2.7",
+												"description": "interchange Per Item Fee"
+											},
+											"discountPercentage": {
+												"type": "string",
+												"example": "2.39",
+												"description": "Discount Percentage"
+											},
+											"discountAmount": {
+												"type": "string",
+												"example": "0.429",
+												"description": "Discount Amount"
+											},
+											"discountPerItemFee": {
+												"type": "string",
+												"example": "0.002",
+												"description": "Discount Per Item Fee"
+											},
+											"totalFee": {
+												"type": "string",
+												"example": "0.429",
+												"description": "Total Fee"
+											},
+											"feeCurrency": {
+												"type": "string",
+												"example": "1",
+												"description": "Fee Currency"
+											},
+											"duesAssessments": {
+												"type": "string",
+												"example": "0",
+												"description": "Dues Assessments"
+											},
+											"fundingAmount": {
+												"type": "string",
+												"example": "2.50",
+												"description": "Funding Amount"
+											},
+											"fundingCurrency": {
+												"type": "string",
+												"example": "USD",
+												"description": "Funding Currency (ISO 4217)"
+											}
+										},
+										"description": "Fee Funding Section"
+									}
+								},
+								"others": {
+									"type": "array",
+									"description": "List of Other Info values",
+									"items": {
+										"type": "object",
+										"properties": {
+											"requestId": {
+												"type": "string",
+												"maxLength": 26,
+												"example": "12345678901234567890123456",
+												"description": "An unique identification number assigned by CyberSource to identify the submitted request."
+											},
+											"merchantData1": {
+												"type": "string",
+												"example": "Merchant Defined Data",
+												"description": "Merchant Defined Data"
+											},
+											"merchantData2": {
+												"type": "string",
+												"example": "Merchant Defined Data",
+												"description": "Merchant Defined Data"
+											},
+											"merchantData3": {
+												"type": "string",
+												"example": "Merchant Defined Data",
+												"description": "Merchant Defined Data"
+											},
+											"merchantData4": {
+												"type": "string",
+												"example": "Merchant Defined Data",
+												"description": "Merchant Defined Data"
+											},
+											"firstName": {
+												"type": "string",
+												"example": "First Name",
+												"description": "First Name"
+											},
+											"lastName": {
+												"type": "string",
+												"example": "Last Name",
+												"description": "Last Name"
+											}
+										},
+										"description": "Other Merchant Details Values."
+									}
+								},
+								"settlementStatuses": {
+									"type": "array",
+									"description": "List of Settlement Status Info values",
+									"items": {
+										"type": "object",
+										"properties": {
+											"requestId": {
+												"type": "string",
+												"maxLength": 26,
+												"example": "12345678901234567890123456",
+												"description": "An unique identification number assigned by CyberSource to identify the submitted request."
+											},
+											"status": {
+												"type": "string",
+												"example": "Settlement Status",
+												"description": "Settlement Status"
+											},
+											"settlementTime": {
+												"type": "string",
+												"example": "2017-10-01T10:10:10+05:00",
+												"format": "date-time",
+												"description": "Settlement Date"
+											},
+											"reasonCode": {
+												"example": "reasonCode",
+												"type": "string",
+												"description": "ReasonCode"
+											},
+											"errorText": {
+												"example": "errorText",
+												"type": "string",
+												"description": "errorText"
+											}
+										},
+										"description": "Settlement Status Section Values."
+									}
+								}
+							}
                         }
                     },
                     "400": {
@@ -17956,7 +17928,7 @@
                     "decision manager"
                 ],
                 "consumes": [
-                    "application/hal+json;charset=utf-8"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
                     "application/hal+json;charset=utf-8"
@@ -20111,7 +20083,7 @@
             "post": {
                 "summary": "Create an Instrument Identifier",
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -20215,10 +20187,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "application/hal+json;charset=utf-8"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "application/hal+json;charset=utf-8"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "200": {
@@ -20809,7 +20781,7 @@
             "get": {
                 "summary": "Retrieve an Instrument Identifier",
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -20836,10 +20808,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "200": {
@@ -21306,7 +21278,7 @@
             "patch": {
                 "summary": "Update a Instrument Identifier",
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -21370,10 +21342,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "200": {
@@ -21886,13 +21858,13 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -22238,7 +22210,7 @@
             "get": {
                 "summary": "Retrieve all Payment Instruments associated with an Instrument Identifier",
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -22286,10 +22258,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "200": {
@@ -22398,385 +22370,12 @@
                                     "description": "The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset."
                                 },
                                 "_embedded": {
-                                    "description": "Array of Payment Instruments returned for the supplied Instrument Identifier.",
-                                    "type": "array",
-                                    "items": {
-                                        "title": "tmsV1PaymentinstrumentsPatch200Response",
-                                        "type": "object",
-                                        "properties": {
-                                            "_links": {
-                                                "type": "object",
-                                                "readOnly": true,
-                                                "properties": {
-                                                    "self": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "href": {
-                                                                "type": "string",
-                                                                "example": "https://api.cybersource.com/tms/v1/instrumentidentifiers/1234567890123456789"
-                                                            }
-                                                        }
-                                                    },
-                                                    "ancestor": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "href": {
-                                                                "type": "string",
-                                                                "example": "https://api.cybersource.com/tms/v1/instrumentidentifiers/1234567890123456789"
-                                                            }
-                                                        }
-                                                    },
-                                                    "successor": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "href": {
-                                                                "type": "string",
-                                                                "example": "https://api.cybersource.com/tms/v1/instrumentidentifiers/1234567890123456789"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "id": {
-                                                "type": "string",
-                                                "readOnly": true,
-                                                "example": "1234567890123456800",
-                                                "description": "Unique identification number assigned by CyberSource to the submitted request."
-                                            },
-                                            "object": {
-                                                "type": "string",
-                                                "readOnly": true,
-                                                "example": "instrumentIdentifier",
-                                                "description": "Describes type of token.",
-                                                "enum": [
-                                                    "paymentInstrument"
-                                                ]
-                                            },
-                                            "state": {
-                                                "type": "string",
-                                                "readOnly": true,
-                                                "example": "ACTIVE",
-                                                "description": "Current state of the token.",
-                                                "enum": [
-                                                    "ACTIVE",
-                                                    "CLOSED"
-                                                ]
-                                            },
-                                            "bankAccount": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "type": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "checking",
-                                                            "savings",
-                                                            "corporate checking",
-                                                            "general ledger"
-                                                        ],
-                                                        "example": "savings",
-                                                        "description": "Checking account type. Possible values:\n  * C: checking\n  * S: savings (USD only)\n  * X: corporate checking (USD only)\n  * G: general ledger\n"
-                                                    }
-                                                }
-                                            },
-                                            "card": {
-                                                "type": "object",
-                                                "required": [
-                                                    "type"
-                                                ],
-                                                "properties": {
-                                                    "expirationMonth": {
-                                                        "type": "string",
-                                                        "format": "MM",
-                                                        "example": "12",
-                                                        "minLength": 2,
-                                                        "maxLength": 2,
-                                                        "description": "Two-digit month in which the credit card expires.\nFormat: `MM`\nPossible values: `01` through `12`\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For more information about relaxed requirements, see the TMS REST API Developer Guide.\n\nImportant:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "expirationYear": {
-                                                        "type": "string",
-                                                        "format": "YYYY",
-                                                        "example": "2022",
-                                                        "minLength": 4,
-                                                        "maxLength": 4,
-                                                        "description": "Four-digit year in which the credit card expires.\nFormat: `YYYY`.\nPossible values: `1900` through `2099`.\n\n**FDC Nashville Global and FDMS South**\nYou can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See Relaxed Requirements for Address Data and Expiration Date page.\n\nImportant:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.'\n"
-                                                    },
-                                                    "type": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "visa",
-                                                            "mastercard",
-                                                            "american express",
-                                                            "discover",
-                                                            "diners club",
-                                                            "carte blanche",
-                                                            "jcb",
-                                                            "optima",
-                                                            "twinpay credit",
-                                                            "twinpay debit",
-                                                            "walmart",
-                                                            "enroute",
-                                                            "lowes consumer",
-                                                            "home depot consumer",
-                                                            "mbna",
-                                                            "dicks sportswear",
-                                                            "casual corner",
-                                                            "sears",
-                                                            "jal",
-                                                            "disney",
-                                                            "maestro uk domestic",
-                                                            "sams club consumer",
-                                                            "sams club business",
-                                                            "nicos",
-                                                            "bill me later",
-                                                            "bebe",
-                                                            "restoration hardware",
-                                                            "delta online",
-                                                            "solo",
-                                                            "visa electron",
-                                                            "dankort",
-                                                            "laser",
-                                                            "carte bleue",
-                                                            "carta si",
-                                                            "pinless debit",
-                                                            "encoded account",
-                                                            "uatp",
-                                                            "household",
-                                                            "maestro international",
-                                                            "ge money uk",
-                                                            "korean cards",
-                                                            "style",
-                                                            "jcrew",
-                                                            "payease china processing ewallet",
-                                                            "payease china processing bank transfer",
-                                                            "meijer private label",
-                                                            "hipercard",
-                                                            "aura",
-                                                            "redecard",
-                                                            "orico",
-                                                            "elo",
-                                                            "capital one private label",
-                                                            "synchrony private label",
-                                                            "china union pay",
-                                                            "costco private label",
-                                                            "mada",
-                                                            "falabella private label"
-                                                        ],
-                                                        "description": "Type of credit card. Possible values:\n  * Visa (001)\n  * Mastercard (002) - Eurocard\u2014European regional brand of Mastercard\n  * American Express (003)\n  * Discover (004)\n  * Diners Club (005)\n  * Carte Blanche (006)\n  * JCB (007)\n  * Optima (008)\n  * Twinpay Credit (011)\n  * Twinpay Debit (012)\n  * Walmart (013)\n  * EnRoute (014)\n  * Lowes consumer (015)\n  * Home Depot consumer (016)\n  * MBNA (017)\n  * Dicks Sportswear (018)\n  * Casual Corner (019)\n  * Sears (020)\n  * JAL (021)\n  * Disney (023)\n  * Maestro (024) - UK Domestic\n  * Sams Club consumer (025)\n  * Sams Club business (026)\n  * Nicos (027)\n  * Bill me later (028)\n  * Bebe (029)\n  * Restoration Hardware (030)\n  * Delta (031) \u2014 use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.\n  * Solo (032)\n  * Visa Electron (033)\n  * Dankort (034)\n  * Laser (035)\n  * Carte Bleue (036) \u2014 formerly Cartes Bancaires\n  * Cartes Bancaires (036)\n  * Carta Si (037)\n  * pinless debit (038)\n  * encoded account (039)\n  * UATP (040)\n  * Household (041)\n  * Maestro (042) - International\n  * GE Money UK (043)\n  * Korean cards (044)\n  * Style (045)\n  * JCrew (046)\n  * PayEase China processing eWallet (047)\n  * PayEase China processing bank transfer (048)\n  * Meijer Private Label (049)\n  * Hipercard (050) \u2014 supported only by the Comercio Latino processor.\n  * Aura (051) \u2014 supported only by the Comercio Latino processor.\n  * Redecard (052)\n  * ORICO (053)\n  * Elo (054) \u2014 supported only by the Comercio Latino processor.\n  * Capital One Private Label (055)\n  * Synchrony Private Label (056)\n  * Costco Private Label (057)\n  * mada (060)\n  * China Union Pay (062)\n  * Falabella private label (063)\n"
-                                                    },
-                                                    "issueNumber": {
-                                                        "type": "string",
-                                                        "example": "01",
-                                                        "minLength": 1,
-                                                        "maxLength": 2,
-                                                        "description": "Number of times a Maestro (UK Domestic) card has been issued to the account holder."
-                                                    },
-                                                    "startMonth": {
-                                                        "type": "string",
-                                                        "format": "MM",
-                                                        "example": "12",
-                                                        "minLength": 2,
-                                                        "maxLength": 2,
-                                                        "description": "Month of the start of the Maestro (UK Domestic) card validity period.\n\nFormat: `MM`.\nPossible values: `01` through `12`.\n"
-                                                    },
-                                                    "startYear": {
-                                                        "type": "string",
-                                                        "format": "YYYY",
-                                                        "example": "2022",
-                                                        "minLength": 4,
-                                                        "maxLength": 4,
-                                                        "description": "Year of the start of the Maestro (UK Domestic) card validity period.\n\nFormat: `YYYY`.\nPossible values: `1900` through `2099`.\n"
-                                                    },
-                                                    "useAs": {
-                                                        "type": "string",
-                                                        "example": "pinless debit",
-                                                        "description": "Card Use As Field. Supported value of `pinless debit` only. Only for use with Pinless Debit tokens."
-                                                    }
-                                                }
-                                            },
-                                            "buyerInformation": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "companyTaxID": {
-                                                        "type": "string",
-                                                        "example": "1234567890123456800",
-                                                        "maxLength": 9,
-                                                        "description": "Tax identifier for the customer\u2019s company.\n\n**Important**:\nContact your TeleCheck representative to find out whether this field is required or optional.\n"
-                                                    },
-                                                    "currency": {
-                                                        "type": "string",
-                                                        "example": "USD",
-                                                        "minLength": 3,
-                                                        "maxLength": 3,
-                                                        "description": "Currency used by the customer. Accepts input in the ISO 4217 standard, stores as ISO 4217 Alpha."
-                                                    },
-                                                    "dateOBirth": {
-                                                        "type": "string",
-                                                        "format": "YYYY-MM-DD|YYYYMMDD",
-                                                        "example": "1960-12-30",
-                                                        "minLength": 8,
-                                                        "maxLength": 10,
-                                                        "description": "Date of birth of the customer.\n\nFormat: `YYYY-MM-DD` or `YYYYMMDD`\n"
-                                                    },
-                                                    "personalIdentification": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "id": {
-                                                                    "type": "string",
-                                                                    "example": "1234567890",
-                                                                    "description": "Customer's identification number.\n\n**Important**:\nContact your TeleCheck representative to learn whether this field is required or optional.\n"
-                                                                },
-                                                                "type": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                        "driver license"
-                                                                    ],
-                                                                    "example": "driver license",
-                                                                    "description": "Type of personal identification.\n\n**Important**:\nContact your TeleCheck representative to learn whether this field is required or optional.\n"
-                                                                },
-                                                                "issuedBy": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "administrativeArea": {
-                                                                            "type": "string",
-                                                                            "example": "CA",
-                                                                            "description": "State or province in which the customer\u2019s driver\u2019s license was issued. Use the State, Province, and Territory Codes for the United States and Canada.\n\n**Important**:\nContact your TeleCheck representative to learn whether this field is required or optional.\n"
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "billTo": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "firstName": {
-                                                        "type": "string",
-                                                        "example": "John",
-                                                        "maxLength": 60,
-                                                        "description": "Customer\u2019s first name. For a credit card transaction, this name must match the name on the card.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "lastName": {
-                                                        "type": "string",
-                                                        "example": "Smith",
-                                                        "maxLength": 60,
-                                                        "description": "Customer\u2019s last name. For a credit card transaction, this name must match the name on the card.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "company": {
-                                                        "type": "string",
-                                                        "example": "CyberSource",
-                                                        "maxLength": 60,
-                                                        "description": "Name of the customer\u2019s company.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "address1": {
-                                                        "type": "string",
-                                                        "example": "12 Main Street",
-                                                        "maxLength": 60,
-                                                        "description": "First line of the billing street address.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "address2": {
-                                                        "type": "string",
-                                                        "example": "20 My Street",
-                                                        "maxLength": 60,
-                                                        "description": "Additional address information."
-                                                    },
-                                                    "locality": {
-                                                        "type": "string",
-                                                        "example": "Foster City",
-                                                        "maxLength": 50,
-                                                        "description": "City of the billing address.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "administrativeArea": {
-                                                        "type": "string",
-                                                        "example": "CA",
-                                                        "maxLength": 20,
-                                                        "description": "State or province of the billing address. For an address in the U.S. or Canada, use the State, Province, and Territory Codes for the United States and Canada.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "postalCode": {
-                                                        "type": "string",
-                                                        "example": "90200",
-                                                        "maxLength": 10,
-                                                        "description": "Postal code for the billing address. The postal code must consist of 5 to 9 digits.\n\nWhen the billing country is the U.S., the 9-digit postal code must follow this format:\n[5 digits][dash][4 digits]\n**Example** 12345-6789\n\nWhen the billing country is Canada, the 6-digit postal code must follow this format:\n[alpha][numeric][alpha][space]\n[numeric][alpha][numeric]\nExample A1B 2C3\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "country": {
-                                                        "type": "string",
-                                                        "example": "US",
-                                                        "minLength": 2,
-                                                        "maxLength": 3,
-                                                        "description": "Country of the billing address. Accepts input in the ISO 3166-1 standard, stores as ISO 3166-1-Alpha-2.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "email": {
-                                                        "type": "string",
-                                                        "example": "john.smith@example.com",
-                                                        "maxLength": 320,
-                                                        "description": "Customer\u2019s email address.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
-                                                    },
-                                                    "phoneNumber": {
-                                                        "type": "string",
-                                                        "example": "555123456",
-                                                        "minLength": 6,
-                                                        "maxLength": 32,
-                                                        "description": "Customer phone number. When you create a customer profile, the requirements depend on the payment method:\n  * Credit cards \u2014 optional.\n  * Electronic checks \u2014 contact your payment processor representative to find out if this field is required or optional.\n  * PINless debits \u2014 optional.\n"
-                                                    }
-                                                }
-                                            },
-                                            "processingInformation": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "billPaymentProgramEnabled": {
-                                                        "type": "boolean",
-                                                        "example": true,
-                                                        "default": false,
-                                                        "description": "Indicates that the payments for this customer profile are for the Bill Payment program. Possible values:\n  * false: Not a Visa Bill Payment.\n  * true: Visa Bill Payment.\n"
-                                                    },
-                                                    "bankTransferOptions": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "SECCode": {
-                                                                "type": "string",
-                                                                "enum": [
-                                                                    "CCD",
-                                                                    "PPD",
-                                                                    "TEL",
-                                                                    "WEB"
-                                                                ],
-                                                                "example": "WEB",
-                                                                "description": "**Important** This field is required if your processor is TeleCheck.\n\nCode that specifies the authorization method for the transaction. Possible values:\n\n- **CCD**: corporate cash disbursement. Charge or credit against a business checking account. You can use one-time or recurring CCD transactions to transfer funds to or from a corporate entity. A standing authorization is required for recurring transactions.\n- **PPD**: prearranged payment and deposit entry. Charge or credit against a personal checking or savings account. You can originate a PPD entry only when the payment and deposit terms between you and the customer are prearranged. A written authorization from the customer is required for one-time transactions and a written standing authorization is required for recurring transactions.\n- **TEL**: telephone-initiated entry. One-time charge against a personal checking or savings account. You can originate a TEL entry only when there is a business relationship between you and the customer or when the customer initiates a telephone call to you. For a TEL entry, you must obtain a payment authorization from the customer over the telephone. There is no recurring billing option for TEL.\n- **WEB**: internet-initiated entry\u2014charge against a personal checking or savings account. You can originate a one-time or recurring WEB entry when the customer initiates the transaction over the Internet. For a WEB entry, you must obtain payment authorization from the customer over the Internet.\n"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "merchantInformation": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "merchantDescriptor": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "alternateName": {
-                                                                "type": "string",
-                                                                "example": "Branch Name",
-                                                                "description": "Alternate information for your business. This API field overrides the company entry description value in your CyberSource account."
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "metaData": {
-                                                "type": "object",
-                                                "readOnly": true,
-                                                "properties": {
-                                                    "creator": {
-                                                        "type": "string",
-                                                        "example": "merchantName",
-                                                        "description": "The creator of the token."
-                                                    }
-                                                }
-                                            },
-                                            "instrumentIdentifier": {
+                                    "type": "object",
+                                    "properties": {
+                                        "paymentInstruments": {
+                                            "description": "Array of Payment Instruments returned for the supplied Instrument Identifier.",
+                                            "type": "array",
+                                            "items": {
                                                 "type": "object",
                                                 "properties": {
                                                     "_links": {
@@ -22812,13 +22411,19 @@
                                                             }
                                                         }
                                                     },
+                                                    "id": {
+                                                        "type": "string",
+                                                        "readOnly": true,
+                                                        "example": "1234567890123456800",
+                                                        "description": "Unique identification number assigned by CyberSource to the submitted request."
+                                                    },
                                                     "object": {
                                                         "type": "string",
                                                         "readOnly": true,
                                                         "example": "instrumentIdentifier",
                                                         "description": "Describes type of token.",
                                                         "enum": [
-                                                            "instrumentIdentifier"
+                                                            "paymentInstrument"
                                                         ]
                                                     },
                                                     "state": {
@@ -22831,62 +22436,186 @@
                                                             "CLOSED"
                                                         ]
                                                     },
-                                                    "id": {
-                                                        "type": "string",
-                                                        "example": "1234567890123456789",
-                                                        "minLength": 16,
-                                                        "maxLength": 32,
-                                                        "description": "The ID of the existing instrument identifier to be linked to the newly created payment instrument."
-                                                    },
-                                                    "card": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "number": {
-                                                                "type": "string",
-                                                                "example": "1234567890987654",
-                                                                "minLength": 12,
-                                                                "maxLength": 19,
-                                                                "description": "Customer\u2019s credit card number."
-                                                            }
-                                                        }
-                                                    },
                                                     "bankAccount": {
                                                         "type": "object",
                                                         "properties": {
-                                                            "number": {
+                                                            "type": {
                                                                 "type": "string",
-                                                                "example": "1234567890123456800",
-                                                                "minLength": 1,
-                                                                "maxLength": 19,
-                                                                "description": "Checking account number."
-                                                            },
-                                                            "routingNumber": {
-                                                                "type": "string",
-                                                                "example": "123456789",
-                                                                "minLength": 1,
-                                                                "maxLength": 9,
-                                                                "description": "Routing number."
+                                                                "enum": [
+                                                                    "checking",
+                                                                    "savings",
+                                                                    "corporate checking",
+                                                                    "general ledger"
+                                                                ],
+                                                                "example": "savings",
+                                                                "description": "Checking account type. Possible values:\n  * C: checking\n  * S: savings (USD only)\n  * X: corporate checking (USD only)\n  * G: general ledger\n"
                                                             }
                                                         }
                                                     },
-                                                    "processingInformation": {
+                                                    "card": {
+                                                        "type": "object",
+                                                        "required": [
+                                                            "type"
+                                                        ],
+                                                        "properties": {
+                                                            "expirationMonth": {
+                                                                "type": "string",
+                                                                "format": "MM",
+                                                                "example": "12",
+                                                                "minLength": 2,
+                                                                "maxLength": 2,
+                                                                "description": "Two-digit month in which the credit card expires.\nFormat: `MM`\nPossible values: `01` through `12`\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For more information about relaxed requirements, see the TMS REST API Developer Guide.\n\nImportant:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "expirationYear": {
+                                                                "type": "string",
+                                                                "format": "YYYY",
+                                                                "example": "2022",
+                                                                "minLength": 4,
+                                                                "maxLength": 4,
+                                                                "description": "Four-digit year in which the credit card expires.\nFormat: `YYYY`.\nPossible values: `1900` through `2099`.\n\n**FDC Nashville Global and FDMS South**\nYou can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See Relaxed Requirements for Address Data and Expiration Date page.\n\nImportant:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.'\n"
+                                                            },
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "visa",
+                                                                    "mastercard",
+                                                                    "american express",
+                                                                    "discover",
+                                                                    "diners club",
+                                                                    "carte blanche",
+                                                                    "jcb",
+                                                                    "optima",
+                                                                    "twinpay credit",
+                                                                    "twinpay debit",
+                                                                    "walmart",
+                                                                    "enroute",
+                                                                    "lowes consumer",
+                                                                    "home depot consumer",
+                                                                    "mbna",
+                                                                    "dicks sportswear",
+                                                                    "casual corner",
+                                                                    "sears",
+                                                                    "jal",
+                                                                    "disney",
+                                                                    "maestro uk domestic",
+                                                                    "sams club consumer",
+                                                                    "sams club business",
+                                                                    "nicos",
+                                                                    "bill me later",
+                                                                    "bebe",
+                                                                    "restoration hardware",
+                                                                    "delta online",
+                                                                    "solo",
+                                                                    "visa electron",
+                                                                    "dankort",
+                                                                    "laser",
+                                                                    "carte bleue",
+                                                                    "carta si",
+                                                                    "pinless debit",
+                                                                    "encoded account",
+                                                                    "uatp",
+                                                                    "household",
+                                                                    "maestro international",
+                                                                    "ge money uk",
+                                                                    "korean cards",
+                                                                    "style",
+                                                                    "jcrew",
+                                                                    "payease china processing ewallet",
+                                                                    "payease china processing bank transfer",
+                                                                    "meijer private label",
+                                                                    "hipercard",
+                                                                    "aura",
+                                                                    "redecard",
+                                                                    "orico",
+                                                                    "elo",
+                                                                    "capital one private label",
+                                                                    "synchrony private label",
+                                                                    "china union pay",
+                                                                    "costco private label",
+                                                                    "mada",
+                                                                    "falabella private label"
+                                                                ],
+                                                                "description": "Type of credit card. Possible values:\n  * Visa (001)\n  * Mastercard (002) - Eurocard\u2014European regional brand of Mastercard\n  * American Express (003)\n  * Discover (004)\n  * Diners Club (005)\n  * Carte Blanche (006)\n  * JCB (007)\n  * Optima (008)\n  * Twinpay Credit (011)\n  * Twinpay Debit (012)\n  * Walmart (013)\n  * EnRoute (014)\n  * Lowes consumer (015)\n  * Home Depot consumer (016)\n  * MBNA (017)\n  * Dicks Sportswear (018)\n  * Casual Corner (019)\n  * Sears (020)\n  * JAL (021)\n  * Disney (023)\n  * Maestro (024) - UK Domestic\n  * Sams Club consumer (025)\n  * Sams Club business (026)\n  * Nicos (027)\n  * Bill me later (028)\n  * Bebe (029)\n  * Restoration Hardware (030)\n  * Delta (031) \u2014 use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.\n  * Solo (032)\n  * Visa Electron (033)\n  * Dankort (034)\n  * Laser (035)\n  * Carte Bleue (036) \u2014 formerly Cartes Bancaires\n  * Cartes Bancaires (036)\n  * Carta Si (037)\n  * pinless debit (038)\n  * encoded account (039)\n  * UATP (040)\n  * Household (041)\n  * Maestro (042) - International\n  * GE Money UK (043)\n  * Korean cards (044)\n  * Style (045)\n  * JCrew (046)\n  * PayEase China processing eWallet (047)\n  * PayEase China processing bank transfer (048)\n  * Meijer Private Label (049)\n  * Hipercard (050) \u2014 supported only by the Comercio Latino processor.\n  * Aura (051) \u2014 supported only by the Comercio Latino processor.\n  * Redecard (052)\n  * ORICO (053)\n  * Elo (054) \u2014 supported only by the Comercio Latino processor.\n  * Capital One Private Label (055)\n  * Synchrony Private Label (056)\n  * Costco Private Label (057)\n  * mada (060)\n  * China Union Pay (062)\n  * Falabella private label (063)\n"
+                                                            },
+                                                            "issueNumber": {
+                                                                "type": "string",
+                                                                "example": "01",
+                                                                "minLength": 1,
+                                                                "maxLength": 2,
+                                                                "description": "Number of times a Maestro (UK Domestic) card has been issued to the account holder."
+                                                            },
+                                                            "startMonth": {
+                                                                "type": "string",
+                                                                "format": "MM",
+                                                                "example": "12",
+                                                                "minLength": 2,
+                                                                "maxLength": 2,
+                                                                "description": "Month of the start of the Maestro (UK Domestic) card validity period.\n\nFormat: `MM`.\nPossible values: `01` through `12`.\n"
+                                                            },
+                                                            "startYear": {
+                                                                "type": "string",
+                                                                "format": "YYYY",
+                                                                "example": "2022",
+                                                                "minLength": 4,
+                                                                "maxLength": 4,
+                                                                "description": "Year of the start of the Maestro (UK Domestic) card validity period.\n\nFormat: `YYYY`.\nPossible values: `1900` through `2099`.\n"
+                                                            },
+                                                            "useAs": {
+                                                                "type": "string",
+                                                                "example": "pinless debit",
+                                                                "description": "Card Use As Field. Supported value of `pinless debit` only. Only for use with Pinless Debit tokens."
+                                                            }
+                                                        }
+                                                    },
+                                                    "buyerInformation": {
                                                         "type": "object",
                                                         "properties": {
-                                                            "authorizationOptions": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                    "initiator": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                            "merchantInitiatedTransaction": {
-                                                                                "type": "object",
-                                                                                "properties": {
-                                                                                    "previousTransactionId": {
-                                                                                        "type": "string",
-                                                                                        "example": "123456789012345",
-                                                                                        "maxLength": 15,
-                                                                                        "description": "Previous Consumer Initiated Transaction Id."
-                                                                                    }
+                                                            "companyTaxID": {
+                                                                "type": "string",
+                                                                "example": "1234567890123456800",
+                                                                "maxLength": 9,
+                                                                "description": "Tax identifier for the customer\u2019s company.\n\n**Important**:\nContact your TeleCheck representative to find out whether this field is required or optional.\n"
+                                                            },
+                                                            "currency": {
+                                                                "type": "string",
+                                                                "example": "USD",
+                                                                "minLength": 3,
+                                                                "maxLength": 3,
+                                                                "description": "Currency used by the customer. Accepts input in the ISO 4217 standard, stores as ISO 4217 Alpha."
+                                                            },
+                                                            "dateOBirth": {
+                                                                "type": "string",
+                                                                "format": "YYYY-MM-DD|YYYYMMDD",
+                                                                "example": "1960-12-30",
+                                                                "minLength": 8,
+                                                                "maxLength": 10,
+                                                                "description": "Date of birth of the customer.\n\nFormat: `YYYY-MM-DD` or `YYYYMMDD`\n"
+                                                            },
+                                                            "personalIdentification": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "example": "1234567890",
+                                                                            "description": "Customer's identification number.\n\n**Important**:\nContact your TeleCheck representative to learn whether this field is required or optional.\n"
+                                                                        },
+                                                                        "type": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "driver license"
+                                                                            ],
+                                                                            "example": "driver license",
+                                                                            "description": "Type of personal identification.\n\n**Important**:\nContact your TeleCheck representative to learn whether this field is required or optional.\n"
+                                                                        },
+                                                                        "issuedBy": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                                "administrativeArea": {
+                                                                                    "type": "string",
+                                                                                    "example": "CA",
+                                                                                    "description": "State or province in which the customer\u2019s driver\u2019s license was issued. Use the State, Province, and Territory Codes for the United States and Canada.\n\n**Important**:\nContact your TeleCheck representative to learn whether this field is required or optional.\n"
                                                                                 }
                                                                             }
                                                                         }
@@ -22895,7 +22624,122 @@
                                                             }
                                                         }
                                                     },
-                                                    "metadata": {
+                                                    "billTo": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "firstName": {
+                                                                "type": "string",
+                                                                "example": "John",
+                                                                "maxLength": 60,
+                                                                "description": "Customer\u2019s first name. For a credit card transaction, this name must match the name on the card.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "lastName": {
+                                                                "type": "string",
+                                                                "example": "Smith",
+                                                                "maxLength": 60,
+                                                                "description": "Customer\u2019s last name. For a credit card transaction, this name must match the name on the card.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "company": {
+                                                                "type": "string",
+                                                                "example": "CyberSource",
+                                                                "maxLength": 60,
+                                                                "description": "Name of the customer\u2019s company.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "address1": {
+                                                                "type": "string",
+                                                                "example": "12 Main Street",
+                                                                "maxLength": 60,
+                                                                "description": "First line of the billing street address.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "address2": {
+                                                                "type": "string",
+                                                                "example": "20 My Street",
+                                                                "maxLength": 60,
+                                                                "description": "Additional address information."
+                                                            },
+                                                            "locality": {
+                                                                "type": "string",
+                                                                "example": "Foster City",
+                                                                "maxLength": 50,
+                                                                "description": "City of the billing address.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "administrativeArea": {
+                                                                "type": "string",
+                                                                "example": "CA",
+                                                                "maxLength": 20,
+                                                                "description": "State or province of the billing address. For an address in the U.S. or Canada, use the State, Province, and Territory Codes for the United States and Canada.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "postalCode": {
+                                                                "type": "string",
+                                                                "example": "90200",
+                                                                "maxLength": 10,
+                                                                "description": "Postal code for the billing address. The postal code must consist of 5 to 9 digits.\n\nWhen the billing country is the U.S., the 9-digit postal code must follow this format:\n[5 digits][dash][4 digits]\n**Example** 12345-6789\n\nWhen the billing country is Canada, the 6-digit postal code must follow this format:\n[alpha][numeric][alpha][space]\n[numeric][alpha][numeric]\nExample A1B 2C3\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important**:\nIt is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "country": {
+                                                                "type": "string",
+                                                                "example": "US",
+                                                                "minLength": 2,
+                                                                "maxLength": 3,
+                                                                "description": "Country of the billing address. Accepts input in the ISO 3166-1 standard, stores as ISO 3166-1-Alpha-2.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "email": {
+                                                                "type": "string",
+                                                                "example": "john.smith@example.com",
+                                                                "maxLength": 320,
+                                                                "description": "Customer\u2019s email address.\n\nThis field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See the TMS REST Developer Guide for more information about relaxed address requirements.\n\n**Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.\n"
+                                                            },
+                                                            "phoneNumber": {
+                                                                "type": "string",
+                                                                "example": "555123456",
+                                                                "minLength": 6,
+                                                                "maxLength": 32,
+                                                                "description": "Customer phone number. When you create a customer profile, the requirements depend on the payment method:\n  * Credit cards \u2014 optional.\n  * Electronic checks \u2014 contact your payment processor representative to find out if this field is required or optional.\n  * PINless debits \u2014 optional.\n"
+                                                            }
+                                                        }
+                                                    },
+                                                    "processingInformation": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "billPaymentProgramEnabled": {
+                                                                "type": "boolean",
+                                                                "example": true,
+                                                                "default": false,
+                                                                "description": "Indicates that the payments for this customer profile are for the Bill Payment program. Possible values:\n  * false: Not a Visa Bill Payment.\n  * true: Visa Bill Payment.\n"
+                                                            },
+                                                            "bankTransferOptions": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "SECCode": {
+                                                                        "type": "string",
+                                                                        "enum": [
+                                                                            "CCD",
+                                                                            "PPD",
+                                                                            "TEL",
+                                                                            "WEB"
+                                                                        ],
+                                                                        "example": "WEB",
+                                                                        "description": "**Important** This field is required if your processor is TeleCheck.\n\nCode that specifies the authorization method for the transaction. Possible values:\n\n- **CCD**: corporate cash disbursement. Charge or credit against a business checking account. You can use one-time or recurring CCD transactions to transfer funds to or from a corporate entity. A standing authorization is required for recurring transactions.\n- **PPD**: prearranged payment and deposit entry. Charge or credit against a personal checking or savings account. You can originate a PPD entry only when the payment and deposit terms between you and the customer are prearranged. A written authorization from the customer is required for one-time transactions and a written standing authorization is required for recurring transactions.\n- **TEL**: telephone-initiated entry. One-time charge against a personal checking or savings account. You can originate a TEL entry only when there is a business relationship between you and the customer or when the customer initiates a telephone call to you. For a TEL entry, you must obtain a payment authorization from the customer over the telephone. There is no recurring billing option for TEL.\n- **WEB**: internet-initiated entry\u2014charge against a personal checking or savings account. You can originate a one-time or recurring WEB entry when the customer initiates the transaction over the Internet. For a WEB entry, you must obtain payment authorization from the customer over the Internet.\n"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "merchantInformation": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "merchantDescriptor": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "alternateName": {
+                                                                        "type": "string",
+                                                                        "example": "Branch Name",
+                                                                        "description": "Alternate information for your business. This API field overrides the company entry description value in your CyberSource account."
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "metaData": {
                                                         "type": "object",
                                                         "readOnly": true,
                                                         "properties": {
@@ -22903,6 +22747,138 @@
                                                                 "type": "string",
                                                                 "example": "merchantName",
                                                                 "description": "The creator of the token."
+                                                            }
+                                                        }
+                                                    },
+                                                    "instrumentIdentifier": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "_links": {
+                                                                "type": "object",
+                                                                "readOnly": true,
+                                                                "properties": {
+                                                                    "self": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "href": {
+                                                                                "type": "string",
+                                                                                "example": "https://api.cybersource.com/tms/v1/instrumentidentifiers/1234567890123456789"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "ancestor": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "href": {
+                                                                                "type": "string",
+                                                                                "example": "https://api.cybersource.com/tms/v1/instrumentidentifiers/1234567890123456789"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "successor": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "href": {
+                                                                                "type": "string",
+                                                                                "example": "https://api.cybersource.com/tms/v1/instrumentidentifiers/1234567890123456789"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "object": {
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "example": "instrumentIdentifier",
+                                                                "description": "Describes type of token.",
+                                                                "enum": [
+                                                                    "instrumentIdentifier"
+                                                                ]
+                                                            },
+                                                            "state": {
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "example": "ACTIVE",
+                                                                "description": "Current state of the token.",
+                                                                "enum": [
+                                                                    "ACTIVE",
+                                                                    "CLOSED"
+                                                                ]
+                                                            },
+                                                            "id": {
+                                                                "type": "string",
+                                                                "example": "1234567890123456789",
+                                                                "minLength": 16,
+                                                                "maxLength": 32,
+                                                                "description": "The ID of the existing instrument identifier to be linked to the newly created payment instrument."
+                                                            },
+                                                            "card": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "number": {
+                                                                        "type": "string",
+                                                                        "example": "1234567890987654",
+                                                                        "minLength": 12,
+                                                                        "maxLength": 19,
+                                                                        "description": "Customer\u2019s credit card number."
+                                                                    }
+                                                                }
+                                                            },
+                                                            "bankAccount": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "number": {
+                                                                        "type": "string",
+                                                                        "example": "1234567890123456800",
+                                                                        "minLength": 1,
+                                                                        "maxLength": 19,
+                                                                        "description": "Checking account number."
+                                                                    },
+                                                                    "routingNumber": {
+                                                                        "type": "string",
+                                                                        "example": "123456789",
+                                                                        "minLength": 1,
+                                                                        "maxLength": 9,
+                                                                        "description": "Routing number."
+                                                                    }
+                                                                }
+                                                            },
+                                                            "processingInformation": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "authorizationOptions": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "initiator": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "merchantInitiatedTransaction": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                            "previousTransactionId": {
+                                                                                                "type": "string",
+                                                                                                "example": "123456789012345",
+                                                                                                "maxLength": 15,
+                                                                                                "description": "Previous Consumer Initiated Transaction Id."
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "metadata": {
+                                                                "type": "object",
+                                                                "readOnly": true,
+                                                                "properties": {
+                                                                    "creator": {
+                                                                        "type": "string",
+                                                                        "example": "merchantName",
+                                                                        "description": "The creator of the token."
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -23307,7 +23283,7 @@
             "post": {
                 "summary": "Create a Payment Instrument",
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -23840,10 +23816,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "201": {
@@ -24944,7 +24920,7 @@
             "patch": {
                 "summary": "Update a Payment Instrument",
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -25486,10 +25462,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "200": {
@@ -26425,7 +26401,7 @@
             "get": {
                 "summary": "Retrieve a Payment Instrument",
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -26452,10 +26428,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "200": {
@@ -27343,7 +27319,7 @@
                     "Payment Instrument"
                 ],
                 "parameters": [
-					{
+                    {
                         "name": "profile-id",
                         "in": "header",
                         "description": "The id of a profile containing user specific TMS configuration.",
@@ -27367,10 +27343,10 @@
                     "categoryTag": "Token_Management"
                 },
                 "consumes": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "produces": [
-                    "*/*"
+                    "application/json;charset=utf-8"
                 ],
                 "responses": {
                     "204": {

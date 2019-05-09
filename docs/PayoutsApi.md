@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="octCreatePayment"></a>
 # **octCreatePayment**
-> octCreatePayment(octCreatePaymentRequest)
+> PtsV2PayoutsPost201Response octCreatePayment(octCreatePaymentRequest)
 
 Process a Payout
 
@@ -28,7 +28,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.octCreatePayment(octCreatePaymentRequest, callback);
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**PtsV2PayoutsPost201Response**](PtsV2PayoutsPost201Response.md)
 
 ### Authorization
 

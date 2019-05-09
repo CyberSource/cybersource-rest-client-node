@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentInstrumentRequest', 'model/InlineResponse4001', 'model/TmsV1PaymentinstrumentsPatch200Response', 'model/UpdatePaymentInstrumentRequest'], factory);
+    define(['ApiClient', 'model/CreatePaymentInstrumentRequest', 'model/InlineResponse4001', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', 'model/UpdatePaymentInstrumentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentInstrumentRequest'), require('../model/InlineResponse4001'), require('../model/TmsV1PaymentinstrumentsPatch200Response'), require('../model/UpdatePaymentInstrumentRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentInstrumentRequest'), require('../model/InlineResponse4001'), require('../model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments'), require('../model/UpdatePaymentInstrumentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentInstrumentRequest, root.CyberSource.InlineResponse4001, root.CyberSource.TmsV1PaymentinstrumentsPatch200Response, root.CyberSource.UpdatePaymentInstrumentRequest);
+    root.CyberSource.PaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentInstrumentRequest, root.CyberSource.InlineResponse4001, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, root.CyberSource.UpdatePaymentInstrumentRequest);
   }
-}(this, function(ApiClient, CreatePaymentInstrumentRequest, InlineResponse4001, TmsV1PaymentinstrumentsPatch200Response, UpdatePaymentInstrumentRequest) {
+}(this, function(ApiClient, CreatePaymentInstrumentRequest, InlineResponse4001, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, UpdatePaymentInstrumentRequest) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createPaymentInstrument operation.
      * @callback module:api/PaymentInstrumentApi~createPaymentInstrumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1PaymentinstrumentsPatch200Response} data The data returned by the service call.
+     * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
      * @param {module:model/CreatePaymentInstrumentRequest} createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account.
      * @param {module:api/PaymentInstrumentApi~createPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1PaymentinstrumentsPatch200Response}
+     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments}
      */
     this.createPaymentInstrument = function(profileId, createPaymentInstrumentRequest, callback) {
       var postBody = createPaymentInstrumentRequest;
@@ -89,9 +89,9 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
-      var returnType = TmsV1PaymentinstrumentsPatch200Response;
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
 
       return this.apiClient.callApi(
         '/tms/v1/paymentinstruments', 'POST',
@@ -140,8 +140,8 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
       return this.apiClient.callApi(
@@ -155,7 +155,7 @@
      * Callback function to receive the result of the getPaymentInstrument operation.
      * @callback module:api/PaymentInstrumentApi~getPaymentInstrumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1PaymentinstrumentsPatch200Response} data The data returned by the service call.
+     * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -164,7 +164,7 @@
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
      * @param {String} tokenId The TokenId of a Payment Instrument.
      * @param {module:api/PaymentInstrumentApi~getPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1PaymentinstrumentsPatch200Response}
+     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments}
      */
     this.getPaymentInstrument = function(profileId, tokenId, callback) {
       var postBody = null;
@@ -192,9 +192,9 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
-      var returnType = TmsV1PaymentinstrumentsPatch200Response;
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
 
       return this.apiClient.callApi(
         '/tms/v1/paymentinstruments/{tokenId}', 'GET',
@@ -207,7 +207,7 @@
      * Callback function to receive the result of the updatePaymentInstrument operation.
      * @callback module:api/PaymentInstrumentApi~updatePaymentInstrumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1PaymentinstrumentsPatch200Response} data The data returned by the service call.
+     * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -217,7 +217,7 @@
      * @param {String} tokenId The TokenId of a Payment Instrument.
      * @param {module:model/UpdatePaymentInstrumentRequest} updatePaymentInstrumentRequest Specify the customer&#39;s payment details.
      * @param {module:api/PaymentInstrumentApi~updatePaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1PaymentinstrumentsPatch200Response}
+     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments}
      */
     this.updatePaymentInstrument = function(profileId, tokenId, updatePaymentInstrumentRequest, callback) {
       var postBody = updatePaymentInstrumentRequest;
@@ -250,9 +250,9 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
-      var returnType = TmsV1PaymentinstrumentsPatch200Response;
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
 
       return this.apiClient.callApi(
         '/tms/v1/paymentinstruments/{tokenId}', 'PATCH',

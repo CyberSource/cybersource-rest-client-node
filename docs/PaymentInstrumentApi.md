@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createPaymentInstrument"></a>
 # **createPaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument(profileId, createPaymentInstrumentRequest)
+> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments createPaymentInstrument(profileId, createPaymentInstrumentRequest)
 
 Create a Payment Instrument
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV1PaymentinstrumentsPatch200Response**](TmsV1PaymentinstrumentsPatch200Response.md)
+[**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
 
 ### Authorization
 
@@ -54,8 +54,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="deletePaymentInstrument"></a>
 # **deletePaymentInstrument**
@@ -101,12 +101,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getPaymentInstrument"></a>
 # **getPaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument(profileId, tokenId)
+> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments getPaymentInstrument(profileId, tokenId)
 
 Retrieve a Payment Instrument
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV1PaymentinstrumentsPatch200Response**](TmsV1PaymentinstrumentsPatch200Response.md)
+[**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
 
 ### Authorization
 
@@ -148,12 +148,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="updatePaymentInstrument"></a>
 # **updatePaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest)
+> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest)
 
 Update a Payment Instrument
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV1PaymentinstrumentsPatch200Response**](TmsV1PaymentinstrumentsPatch200Response.md)
+[**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
 
 ### Authorization
 
@@ -198,6 +198,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks', 'model/TmsV1PaymentinstrumentsPatch200Response'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks'), require('./TmsV1PaymentinstrumentsPatch200Response'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks, root.CyberSource.TmsV1PaymentinstrumentsPatch200Response);
+    root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks);
   }
-}(this, function(ApiClient, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks, TmsV1PaymentinstrumentsPatch200Response) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks) {
   'use strict';
 
 
@@ -86,7 +86,7 @@
         obj['total'] = ApiClient.convertToType(data['total'], 'String');
       }
       if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = ApiClient.convertToType(data['_embedded'], [TmsV1PaymentinstrumentsPatch200Response]);
+        obj['_embedded'] = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
@@ -122,8 +122,7 @@
    */
   exports.prototype['total'] = undefined;
   /**
-   * Array of Payment Instruments returned for the supplied Instrument Identifier.
-   * @member {Array.<module:model/TmsV1PaymentinstrumentsPatch200Response>} _embedded
+   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded} _embedded
    */
   exports.prototype['_embedded'] = undefined;
 

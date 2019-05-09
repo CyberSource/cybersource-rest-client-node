@@ -63,7 +63,7 @@ No authorization required
 
 <a name="getTransactionBatchId"></a>
 # **getTransactionBatchId**
-> getTransactionBatchId(id)
+> PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(id)
 
 Get individual batch file
 
@@ -82,7 +82,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.getTransactionBatchId(id, callback);
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**PtsV1TransactionBatchesIdGet200Response**](PtsV1TransactionBatchesIdGet200Response.md)
 
 ### Authorization
 

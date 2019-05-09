@@ -89,8 +89,8 @@
       };
 
       var authNames = [];
-      var contentTypes = ['application/hal+json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = TmsV1InstrumentIdentifiersPost200Response;
 
       return this.apiClient.callApi(
@@ -140,8 +140,8 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
       return this.apiClient.callApi(
@@ -198,8 +198,8 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response;
 
       return this.apiClient.callApi(
@@ -250,8 +250,8 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = TmsV1InstrumentIdentifiersPost200Response;
 
       return this.apiClient.callApi(
@@ -308,8 +308,8 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*'];
-      var accepts = ['*/*'];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = TmsV1InstrumentIdentifiersPost200Response;
 
       return this.apiClient.callApi(

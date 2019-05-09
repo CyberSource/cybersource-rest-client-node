@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
+    define(['ApiClient', 'model/ReportingV3PurchaseRefundDetailsGet200Response', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Reportingv3ReportDownloadsGet400Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3PurchaseRefundDetailsGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PurchaseAndRefundDetailsApi = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
+    root.CyberSource.PurchaseAndRefundDetailsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3PurchaseRefundDetailsGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(ApiClient, Reportingv3ReportDownloadsGet400Response) {
+}(this, function(ApiClient, ReportingV3PurchaseRefundDetailsGet200Response, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getPurchaseAndRefundDetails operation.
      * @callback module:api/PurchaseAndRefundDetailsApi~getPurchaseAndRefundDetailsCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/ReportingV3PurchaseRefundDetailsGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -70,6 +70,7 @@
      * @param {Number} opts.offset Offset of the Purchase and Refund Results.
      * @param {Number} opts.limit Results count per page. Range(1-2000) (default to 2000)
      * @param {module:api/PurchaseAndRefundDetailsApi~getPurchaseAndRefundDetailsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ReportingV3PurchaseRefundDetailsGet200Response}
      */
     this.getPurchaseAndRefundDetails = function(startTime, endTime, opts, callback) {
       opts = opts || {};
@@ -106,7 +107,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = null;
+      var returnType = ReportingV3PurchaseRefundDetailsGet200Response;
 
       return this.apiClient.callApi(
         '/reporting/v3/purchase-refund-details', 'GET',

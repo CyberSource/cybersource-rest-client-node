@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response'], factory);
+    define(['ApiClient', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response', 'model/PtsV1TransactionBatchesIdGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet200Response'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet200Response'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'), require('../model/PtsV1TransactionBatchesIdGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionBatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet200Response, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response);
+    root.CyberSource.TransactionBatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet200Response, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response, root.CyberSource.PtsV1TransactionBatchesIdGet200Response);
   }
-}(this, function(ApiClient, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response) {
+}(this, function(ApiClient, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response, PtsV1TransactionBatchesIdGet200Response) {
   'use strict';
 
   /**
@@ -104,7 +104,7 @@
      * Callback function to receive the result of the getTransactionBatchId operation.
      * @callback module:api/TransactionBatchesApi~getTransactionBatchIdCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/PtsV1TransactionBatchesIdGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -113,6 +113,7 @@
      * Provide the search range
      * @param {String} id The batch id assigned for the template.
      * @param {module:api/TransactionBatchesApi~getTransactionBatchIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PtsV1TransactionBatchesIdGet200Response}
      */
     this.getTransactionBatchId = function(id, callback) {
       var postBody = null;
@@ -136,7 +137,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = null;
+      var returnType = PtsV1TransactionBatchesIdGet200Response;
 
       return this.apiClient.callApi(
         '/pts/v1/transaction-batches/{id}', 'GET',
