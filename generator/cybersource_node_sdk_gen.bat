@@ -31,6 +31,14 @@ REM Batch file to change the content type
 
 powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Object { $_ -replace 'contentTypes = \[''application/json;charset=utf-8', 'contentTypes = [''*/*' } | Set-Content ..\src\Api\SecureFileShareApi.js"
 
+powershell -Command "$fileContents = (Get-Content ..\src\index.js) ; for ($i = 1993; $i -lt 2003; $i++) { $fileContents[$i] = ''; } ; $fileContents | Set-Content ..\src\index.js"
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"require\('./api/Download([DTXS]{3})Api'\), \", \"\" } | Set-Content ..\src\index.js"
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"'api/Download([DTXS]{3})Api', \", \"\" } | Set-Content ..\src\index.js"
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"Download([DTXS]{3})Api, \", \"\" } | Set-Content ..\src\index.js"
+
 git checkout ..\README.md
 
 git checkout ..\package.json
