@@ -39,6 +39,13 @@ powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replac
 
 powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"Download([DTXS]{3})Api, \", \"\" } | Set-Content ..\src\index.js"
 
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace 'TmsV1InstrumentIdentifiersDelete409Response', 'TmsV1InstrumentidentifiersDelete409Response' } | Set-Content ..\src\index.js
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response'\", \"TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response'\" } | Set-Content ..\src\index.js
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks'\", \"'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks'\" } Set-Content ..\src\index.js
+
+
 git checkout ..\README.md
 
 git checkout ..\package.json
