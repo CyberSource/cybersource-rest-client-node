@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200ResponsePaymentInformationCustomer', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponsePaymentInformationCustomer'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCustomer, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200ResponsePaymentInformationCustomer, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType) {
   'use strict';
 
 
@@ -63,11 +63,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('paymentMethod')) {
-        obj['paymentMethod'] = TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod.constructFromObject(data['paymentMethod']);
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.constructFromObject(data['paymentType']);
       }
       if (data.hasOwnProperty('customer')) {
-        obj['customer'] = TssV2TransactionsGet200ResponsePaymentInformationCustomer.constructFromObject(data['customer']);
+        obj['customer'] = Ptsv2paymentsPaymentInformationCustomer.constructFromObject(data['customer']);
       }
       if (data.hasOwnProperty('card')) {
         obj['card'] = TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard.constructFromObject(data['card']);
@@ -77,11 +77,11 @@
   }
 
   /**
-   * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod} paymentMethod
+   * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType} paymentType
    */
-  exports.prototype['paymentMethod'] = undefined;
+  exports.prototype['paymentType'] = undefined;
   /**
-   * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationCustomer} customer
+   * @member {module:model/Ptsv2paymentsPaymentInformationCustomer} customer
    */
   exports.prototype['customer'] = undefined;
   /**

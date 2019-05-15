@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -54,6 +54,16 @@
       it('should call authReversal successfully', function(done) {
         //uncomment below and update the code to test authReversal
         //instance.authReversal(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('mitReversal', function() {
+      it('should call mitReversal successfully', function(done) {
+        //uncomment below and update the code to test mitReversal
+        //instance.mitReversal(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

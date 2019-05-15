@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsVoidsPost201Response', 'model/PtsV2PaymentsVoidsPost400Response', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest'], factory);
+    define(['ApiClient', 'model/MitVoidRequest', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsVoidsPost201Response', 'model/PtsV2PaymentsVoidsPost400Response', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsVoidsPost201Response'), require('../model/PtsV2PaymentsVoidsPost400Response'), require('../model/VoidCaptureRequest'), require('../model/VoidCreditRequest'), require('../model/VoidPaymentRequest'), require('../model/VoidRefundRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/MitVoidRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsVoidsPost201Response'), require('../model/PtsV2PaymentsVoidsPost400Response'), require('../model/VoidCaptureRequest'), require('../model/VoidCreditRequest'), require('../model/VoidPaymentRequest'), require('../model/VoidRefundRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VoidApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsVoidsPost201Response, root.CyberSource.PtsV2PaymentsVoidsPost400Response, root.CyberSource.VoidCaptureRequest, root.CyberSource.VoidCreditRequest, root.CyberSource.VoidPaymentRequest, root.CyberSource.VoidRefundRequest);
+    root.CyberSource.VoidApi = factory(root.CyberSource.ApiClient, root.CyberSource.MitVoidRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsVoidsPost201Response, root.CyberSource.PtsV2PaymentsVoidsPost400Response, root.CyberSource.VoidCaptureRequest, root.CyberSource.VoidCreditRequest, root.CyberSource.VoidPaymentRequest, root.CyberSource.VoidRefundRequest);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost502Response, PtsV2PaymentsVoidsPost201Response, PtsV2PaymentsVoidsPost400Response, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest) {
+}(this, function(ApiClient, MitVoidRequest, PtsV2PaymentsPost502Response, PtsV2PaymentsVoidsPost201Response, PtsV2PaymentsVoidsPost400Response, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest) {
   'use strict';
 
   /**
@@ -48,6 +48,51 @@
 
 	this.apiClient.setConfiguration(configObject);
 	
+
+    /**
+     * Callback function to receive the result of the mitVoid operation.
+     * @callback module:api/VoidApi~mitVoidCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PtsV2PaymentsVoidsPost201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Merchant Initiated Void
+     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
+     * @param {module:model/MitVoidRequest} mitVoidRequest 
+     * @param {module:api/VoidApi~mitVoidCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
+     */
+    this.mitVoid = function(mitVoidRequest, callback) {
+      var postBody = mitVoidRequest;
+
+      // verify the required parameter 'mitVoidRequest' is set
+      if (mitVoidRequest === undefined || mitVoidRequest === null) {
+        throw new Error("Missing the required parameter 'mitVoidRequest' when calling mitVoid");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = PtsV2PaymentsVoidsPost201Response;
+
+      return this.apiClient.callApi(
+        '/pts/v2/voids/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the voidCapture operation.

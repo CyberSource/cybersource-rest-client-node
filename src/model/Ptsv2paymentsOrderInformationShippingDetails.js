@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>Ptsv2paymentsOrderInformationShippingDetails</code>.
+   * Contains shipping information not related to address.
    * @alias module:model/Ptsv2paymentsOrderInformationShippingDetails
    * @class
    */
@@ -64,7 +65,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('giftWrap')) {
-        obj['giftWrap'] = ApiClient.convertToType(data['giftWrap'], 'Boolean');
+        obj['giftWrap'] = ApiClient.convertToType(data['giftWrap'], 'String');
       }
       if (data.hasOwnProperty('shippingMethod')) {
         obj['shippingMethod'] = ApiClient.convertToType(data['shippingMethod'], 'String');
@@ -77,8 +78,8 @@
   }
 
   /**
-   * The description for this field is not available.
-   * @member {Boolean} giftWrap
+   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping. 
+   * @member {String} giftWrap
    */
   exports.prototype['giftWrap'] = undefined;
   /**

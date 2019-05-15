@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+    instance = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,52 +49,52 @@
       object[property] = value;
   }
 
-  describe('TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response', function() {
-    it('should create an instance of TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response', function() {
-      // uncomment below and update the code to test TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
-      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response);
+  describe('TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response', function() {
+    it('should create an instance of TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response', function() {
+      // uncomment below and update the code to test TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
+      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response);
     });
 
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property _object (base name: "object")', function() {
       // uncomment below and update the code to test the property _object
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property offset (base name: "offset")', function() {
       // uncomment below and update the code to test the property offset
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property limit (base name: "limit")', function() {
       // uncomment below and update the code to test the property limit
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property count (base name: "count")', function() {
       // uncomment below and update the code to test the property count
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property total (base name: "total")', function() {
       // uncomment below and update the code to test the property total
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property embedded (base name: "_embedded")', function() {
       // uncomment below and update the code to test the property embedded
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response();
       //expect(instance).to.be();
     });
 

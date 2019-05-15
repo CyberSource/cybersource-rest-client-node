@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments = factory(root.CyberSource.ApiClient);
+    root.CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments model module.
-   * @module model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments
+   * The TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments model module.
+   * @module model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments</code>.
-   * @alias module:model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments
+   * Constructs a new <code>TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments</code>.
+   * @alias module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
    * @class
    */
   var exports = function() {
@@ -51,11 +51,11 @@
   };
 
   /**
-   * Constructs a <code>TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments} obj Optional instance to populate.
-   * @return {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments} The populated <code>TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments</code> instance.
+   * @param {module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments} obj Optional instance to populate.
+   * @return {module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments} The populated <code>TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinks();
+    instance = new CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,16 +49,16 @@
       object[property] = value;
   }
 
-  describe('TmsV1InstrumentidentifiersDelete409ResponseLinks', function() {
-    it('should create an instance of TmsV1InstrumentidentifiersDelete409ResponseLinks', function() {
-      // uncomment below and update the code to test TmsV1InstrumentidentifiersDelete409ResponseLinks
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinks();
-      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinks);
+  describe('TmsV1InstrumentIdentifiersDelete409ResponseLinks', function() {
+    it('should create an instance of TmsV1InstrumentIdentifiersDelete409ResponseLinks', function() {
+      // uncomment below and update the code to test TmsV1InstrumentIdentifiersDelete409ResponseLinks
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks();
+      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks);
     });
 
     it('should have the property paymentInstruments (base name: "paymentInstruments")', function() {
       // uncomment below and update the code to test the property paymentInstruments
-      //var instane = new CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinks();
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks();
       //expect(instance).to.be();
     });
 

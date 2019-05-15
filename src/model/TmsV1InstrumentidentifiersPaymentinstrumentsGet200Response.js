@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,32 +16,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks);
+    root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks);
   }
-}(this, function(ApiClient, TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks) {
   'use strict';
 
 
 
 
   /**
-   * The TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response model module.
-   * @module model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response
+   * The TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response model module.
+   * @module model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response</code>.
-   * @alias module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response
+   * Constructs a new <code>TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response</code>.
+   * @alias module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
    * @class
    */
   var exports = function() {
@@ -57,18 +57,18 @@
   };
 
   /**
-   * Constructs a <code>TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response} obj Optional instance to populate.
-   * @return {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response} The populated <code>TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response</code> instance.
+   * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response} obj Optional instance to populate.
+   * @return {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response} The populated <code>TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('object')) {
         obj['object'] = ApiClient.convertToType(data['object'], 'String');
@@ -86,19 +86,19 @@
         obj['total'] = ApiClient.convertToType(data['total'], 'String');
       }
       if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = ApiClient.convertToType(data['_embedded'], Object);
+        obj['_embedded'] = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks} _links
+   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
    * Shows the response is a collection of objects.
-   * @member {module:model/TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.ObjectEnum} object
+   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.ObjectEnum} object
    */
   exports.prototype['object'] = undefined;
   /**
@@ -122,8 +122,7 @@
    */
   exports.prototype['total'] = undefined;
   /**
-   * Array of Payment Instruments returned for the supplied Instrument Identifier.
-   * @member {Object} _embedded
+   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded} _embedded
    */
   exports.prototype['_embedded'] = undefined;
 

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -99,8 +99,8 @@
     }
 
     /**
-     * Callback function to receive the result of the getFileDetails operation.
-     * @callback module:api/SecureFileShareApi~getFileDetailsCallback
+     * Callback function to receive the result of the getFileDetail operation.
+     * @callback module:api/SecureFileShareApi~getFileDetailCallback
      * @param {String} error Error message, if any.
      * @param {module:model/V1FileDetailsGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -113,21 +113,21 @@
      * @param {Date} endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd 
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
-     * @param {module:api/SecureFileShareApi~getFileDetailsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/SecureFileShareApi~getFileDetailCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/V1FileDetailsGet200Response}
      */
-    this.getFileDetails = function(startDate, endDate, opts, callback) {
+    this.getFileDetail = function(startDate, endDate, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'startDate' is set
       if (startDate === undefined || startDate === null) {
-        throw new Error("Missing the required parameter 'startDate' when calling getFileDetails");
+        throw new Error("Missing the required parameter 'startDate' when calling getFileDetail");
       }
 
       // verify the required parameter 'endDate' is set
       if (endDate === undefined || endDate === null) {
-        throw new Error("Missing the required parameter 'endDate' when calling getFileDetails");
+        throw new Error("Missing the required parameter 'endDate' when calling getFileDetail");
       }
 
 

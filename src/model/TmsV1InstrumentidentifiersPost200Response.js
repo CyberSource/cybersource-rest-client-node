@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,32 +16,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv1instrumentidentifiersBankAccount', 'model/Tmsv1instrumentidentifiersCard', 'model/Tmsv1instrumentidentifiersLinks', 'model/Tmsv1instrumentidentifiersMetadata', 'model/Tmsv1instrumentidentifiersProcessingInformation'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount', 'model/TmsV1InstrumentIdentifiersPost200ResponseCard', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinks', 'model/TmsV1InstrumentIdentifiersPost200ResponseMetadata', 'model/TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersBankAccount'), require('./Tmsv1instrumentidentifiersCard'), require('./Tmsv1instrumentidentifiersLinks'), require('./Tmsv1instrumentidentifiersMetadata'), require('./Tmsv1instrumentidentifiersProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseBankAccount'), require('./TmsV1InstrumentIdentifiersPost200ResponseCard'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinks'), require('./TmsV1InstrumentIdentifiersPost200ResponseMetadata'), require('./TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentidentifiersPost200Response = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersBankAccount, root.CyberSource.Tmsv1instrumentidentifiersCard, root.CyberSource.Tmsv1instrumentidentifiersLinks, root.CyberSource.Tmsv1instrumentidentifiersMetadata, root.CyberSource.Tmsv1instrumentidentifiersProcessingInformation);
+    root.CyberSource.TmsV1InstrumentIdentifiersPost200Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseCard, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseMetadata, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation);
   }
-}(this, function(ApiClient, Tmsv1instrumentidentifiersBankAccount, Tmsv1instrumentidentifiersCard, Tmsv1instrumentidentifiersLinks, Tmsv1instrumentidentifiersMetadata, Tmsv1instrumentidentifiersProcessingInformation) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseBankAccount, TmsV1InstrumentIdentifiersPost200ResponseCard, TmsV1InstrumentIdentifiersPost200ResponseLinks, TmsV1InstrumentIdentifiersPost200ResponseMetadata, TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation) {
   'use strict';
 
 
 
 
   /**
-   * The TmsV1InstrumentidentifiersPost200Response model module.
-   * @module model/TmsV1InstrumentidentifiersPost200Response
+   * The TmsV1InstrumentIdentifiersPost200Response model module.
+   * @module model/TmsV1InstrumentIdentifiersPost200Response
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsV1InstrumentidentifiersPost200Response</code>.
-   * @alias module:model/TmsV1InstrumentidentifiersPost200Response
+   * Constructs a new <code>TmsV1InstrumentIdentifiersPost200Response</code>.
+   * @alias module:model/TmsV1InstrumentIdentifiersPost200Response
    * @class
    */
   var exports = function() {
@@ -58,18 +58,18 @@
   };
 
   /**
-   * Constructs a <code>TmsV1InstrumentidentifiersPost200Response</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TmsV1InstrumentIdentifiersPost200Response</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsV1InstrumentidentifiersPost200Response} obj Optional instance to populate.
-   * @return {module:model/TmsV1InstrumentidentifiersPost200Response} The populated <code>TmsV1InstrumentidentifiersPost200Response</code> instance.
+   * @param {module:model/TmsV1InstrumentIdentifiersPost200Response} obj Optional instance to populate.
+   * @return {module:model/TmsV1InstrumentIdentifiersPost200Response} The populated <code>TmsV1InstrumentIdentifiersPost200Response</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = Tmsv1instrumentidentifiersLinks.constructFromObject(data['_links']);
+        obj['_links'] = TmsV1InstrumentIdentifiersPost200ResponseLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -81,23 +81,23 @@
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
       }
       if (data.hasOwnProperty('card')) {
-        obj['card'] = Tmsv1instrumentidentifiersCard.constructFromObject(data['card']);
+        obj['card'] = TmsV1InstrumentIdentifiersPost200ResponseCard.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('bankAccount')) {
-        obj['bankAccount'] = Tmsv1instrumentidentifiersBankAccount.constructFromObject(data['bankAccount']);
+        obj['bankAccount'] = TmsV1InstrumentIdentifiersPost200ResponseBankAccount.constructFromObject(data['bankAccount']);
       }
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = Tmsv1instrumentidentifiersProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = Tmsv1instrumentidentifiersMetadata.constructFromObject(data['metadata']);
+        obj['metadata'] = TmsV1InstrumentIdentifiersPost200ResponseMetadata.constructFromObject(data['metadata']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Tmsv1instrumentidentifiersLinks} _links
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -106,29 +106,29 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
-   * @member {module:model/TmsV1InstrumentidentifiersPost200Response.ObjectEnum} object
+   * Describes type of token.
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200Response.ObjectEnum} object
    */
   exports.prototype['object'] = undefined;
   /**
    * Current state of the token.
-   * @member {module:model/TmsV1InstrumentidentifiersPost200Response.StateEnum} state
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200Response.StateEnum} state
    */
   exports.prototype['state'] = undefined;
   /**
-   * @member {module:model/Tmsv1instrumentidentifiersCard} card
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseCard} card
    */
   exports.prototype['card'] = undefined;
   /**
-   * @member {module:model/Tmsv1instrumentidentifiersBankAccount} bankAccount
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount} bankAccount
    */
   exports.prototype['bankAccount'] = undefined;
   /**
-   * @member {module:model/Tmsv1instrumentidentifiersProcessingInformation} processingInformation
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv1instrumentidentifiersMetadata} metadata
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
 

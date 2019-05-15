@@ -13,7 +13,7 @@ powershell -Command "(Get-Content ..\src\Api\CreditApi.js) | ForEach-Object { $_
 
 powershell -Command "(Get-Content ..\src\Api\PaymentsApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\PaymentsApi.js"
 
-powershell -Command "(Get-Content ..\src\Api\ProcessAPayoutApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\ProcessAPayoutApi.js"
+powershell -Command "(Get-Content ..\src\Api\PayoutsApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\PayoutsApi.js"
 
 powershell -Command "(Get-Content ..\src\Api\RefundApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json', 'accepts = [''application/hal+json' } | Set-Content ..\src\Api\RefundApi.js"
 
@@ -30,6 +30,14 @@ powershell -Command "(Get-Content ..\src\Api\SearchTransactionsApi.js) | ForEach
 REM Batch file to change the content type 
 
 powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Object { $_ -replace 'contentTypes = \[''application/json;charset=utf-8', 'contentTypes = [''*/*' } | Set-Content ..\src\Api\SecureFileShareApi.js"
+
+powershell -Command "$fileContents = (Get-Content ..\src\index.js) ; for ($i = 1993; $i -lt 2003; $i++) { $fileContents[$i] = ''; } ; $fileContents | Set-Content ..\src\index.js"
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"require\('./api/Download([DTXS]{3})Api'\), \", \"\" } | Set-Content ..\src\index.js"
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"'api/Download([DTXS]{3})Api', \", \"\" } | Set-Content ..\src\index.js"
+
+powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"Download([DTXS]{3})Api, \", \"\" } | Set-Content ..\src\index.js"
 
 git checkout ..\README.md
 

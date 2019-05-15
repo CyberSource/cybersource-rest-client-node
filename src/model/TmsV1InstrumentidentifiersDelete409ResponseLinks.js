@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,32 +16,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments);
+    root.CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments);
   }
-}(this, function(ApiClient, TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments) {
   'use strict';
 
 
 
 
   /**
-   * The TmsV1InstrumentidentifiersDelete409ResponseLinks model module.
-   * @module model/TmsV1InstrumentidentifiersDelete409ResponseLinks
+   * The TmsV1InstrumentIdentifiersDelete409ResponseLinks model module.
+   * @module model/TmsV1InstrumentIdentifiersDelete409ResponseLinks
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsV1InstrumentidentifiersDelete409ResponseLinks</code>.
-   * @alias module:model/TmsV1InstrumentidentifiersDelete409ResponseLinks
+   * Constructs a new <code>TmsV1InstrumentIdentifiersDelete409ResponseLinks</code>.
+   * @alias module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinks
    * @class
    */
   var exports = function() {
@@ -51,25 +51,25 @@
   };
 
   /**
-   * Constructs a <code>TmsV1InstrumentidentifiersDelete409ResponseLinks</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TmsV1InstrumentIdentifiersDelete409ResponseLinks</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinks} obj Optional instance to populate.
-   * @return {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinks} The populated <code>TmsV1InstrumentidentifiersDelete409ResponseLinks</code> instance.
+   * @param {module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinks} obj Optional instance to populate.
+   * @return {module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinks} The populated <code>TmsV1InstrumentIdentifiersDelete409ResponseLinks</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentInstruments')) {
-        obj['paymentInstruments'] = TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments.constructFromObject(data['paymentInstruments']);
+        obj['paymentInstruments'] = TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments.constructFromObject(data['paymentInstruments']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments} paymentInstruments
+   * @member {module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments} paymentInstruments
    */
   exports.prototype['paymentInstruments'] = undefined;
 

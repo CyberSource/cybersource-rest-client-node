@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -69,7 +69,7 @@
   }
 
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
    * @member {String} resellerId
    */
   exports.prototype['resellerId'] = undefined;

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -77,12 +77,12 @@
   }
 
   /**
-   * DNS resolved hostname from above _ipAddress_.
+   * Host name reported by the customer’s browser to your Web server identified via the HTTP header.
    * @member {String} hostName
    */
   exports.prototype['hostName'] = undefined;
   /**
-   * IP address of the customer.
+   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
    * @member {String} ipAddress
    */
   exports.prototype['ipAddress'] = undefined;

@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -77,7 +77,7 @@
   }
 
   /**
-   * The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION 
+   * The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION  - DECISION_PROFILE_REJECT  - SCORE_EXCEEDS_THRESHOLD 
    * @member {module:model/PtsV2PaymentsPost201ResponseErrorInformation.ReasonEnum} reason
    */
   exports.prototype['reason'] = undefined;
@@ -172,7 +172,17 @@
      * value: "GENERAL_DECLINE"
      * @const
      */
-    "GENERAL_DECLINE": "GENERAL_DECLINE"  };
+    "GENERAL_DECLINE": "GENERAL_DECLINE",
+    /**
+     * value: "DECISION_PROFILE_REJECT"
+     * @const
+     */
+    "DECISION_PROFILE_REJECT": "DECISION_PROFILE_REJECT",
+    /**
+     * value: "SCORE_EXCEEDS_THRESHOLD"
+     * @const
+     */
+    "SCORE_EXCEEDS_THRESHOLD": "SCORE_EXCEEDS_THRESHOLD"  };
 
 
   return exports;

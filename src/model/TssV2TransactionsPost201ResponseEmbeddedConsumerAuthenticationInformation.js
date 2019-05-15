@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -73,7 +73,7 @@
   }
 
   /**
-   * Transaction identifier.
+   * Transaction identifier. For the description and requirements, see \"Payer Authentication,\" page 180.
    * @member {String} xid
    */
   exports.prototype['xid'] = undefined;

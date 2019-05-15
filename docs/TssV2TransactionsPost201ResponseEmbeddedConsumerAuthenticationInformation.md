@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**xid** | **String** | Transaction identifier. | [optional] 
+**xid** | **String** | Transaction identifier. For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180. | [optional] 
 **transactionId** | **String** | Payer auth Transaction identifier. | [optional] 
 
 

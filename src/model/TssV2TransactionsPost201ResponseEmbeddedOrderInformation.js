@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidreversalsReversalInformationAmountDetails', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsReversalInformationAmountDetails'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsReversalInformationAmountDetails, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo);
   }
-}(this, function(ApiClient, TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails, TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo, TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo) {
+}(this, function(ApiClient, Ptsv2paymentsidreversalsReversalInformationAmountDetails, TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo, TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo) {
   'use strict';
 
 
@@ -70,7 +70,7 @@
         obj['shipTo'] = TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('amountDetails')) {
-        obj['amountDetails'] = TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
+        obj['amountDetails'] = Ptsv2paymentsidreversalsReversalInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
     }
     return obj;
@@ -85,7 +85,7 @@
    */
   exports.prototype['shipTo'] = undefined;
   /**
-   * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails} amountDetails
+   * @member {module:model/Ptsv2paymentsidreversalsReversalInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
 

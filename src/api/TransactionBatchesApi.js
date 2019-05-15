@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -48,6 +48,57 @@
 
 	this.apiClient.setConfiguration(configObject);
 	
+
+    /**
+     * Callback function to receive the result of the getTransactionBatchDetails operation.
+     * @callback module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Filters batch response. 
+     * Filters batch response. 
+     * @param {String} transactionBatchId Transaction Batch Id, this is unique.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format.
+     * @param {module:model/String} opts.status Allows you to filter by rejected response. 
+     * @param {module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getTransactionBatchDetails = function(transactionBatchId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'transactionBatchId' is set
+      if (transactionBatchId === undefined || transactionBatchId === null) {
+        throw new Error("Missing the required parameter 'transactionBatchId' when calling getTransactionBatchDetails");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'transactionBatchId': transactionBatchId,
+        'uploadDate': opts['uploadDate'],
+        'status': opts['status']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['text/vnd.cybersource.map-csv'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/pts/v1/transaction-batch-details', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the getTransactionBatchId operation.

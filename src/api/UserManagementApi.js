@@ -1,6 +1,6 @@
 /**
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/UmsV1UsersGet200Response', 'model/UmsV1UsersGet400Response'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsRefundPost400Response', 'model/UmsV1UsersGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/UmsV1UsersGet200Response'), require('../model/UmsV1UsersGet400Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsRefundPost400Response'), require('../model/UmsV1UsersGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UserManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.UmsV1UsersGet200Response, root.CyberSource.UmsV1UsersGet400Response);
+    root.CyberSource.UserManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsRefundPost400Response, root.CyberSource.UmsV1UsersGet200Response);
   }
-}(this, function(ApiClient, UmsV1UsersGet200Response, UmsV1UsersGet400Response) {
+}(this, function(ApiClient, PtsV2PaymentsRefundPost400Response, UmsV1UsersGet200Response) {
   'use strict';
 
   /**
