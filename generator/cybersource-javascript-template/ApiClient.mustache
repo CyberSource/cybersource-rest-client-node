@@ -512,6 +512,11 @@
         var stream = fs.createWriteStream(this.downloadFilePath);
         request.send().pipe(stream);
         request._endCalled = false;
+        // to create event for callback after write stream finishes
+        stream.on('finish',function(error)
+        {
+          callback(error);
+        }); 
       }
     }
 
