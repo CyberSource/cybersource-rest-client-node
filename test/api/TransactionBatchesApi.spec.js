@@ -50,16 +50,6 @@
   }
 
   describe('TransactionBatchesApi', function() {
-    describe('getTransactionBatchDetails', function() {
-      it('should call getTransactionBatchDetails successfully', function(done) {
-        //uncomment below and update the code to test getTransactionBatchDetails
-        //instance.getTransactionBatchDetails(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getTransactionBatchId', function() {
       it('should call getTransactionBatchId successfully', function(done) {
         //uncomment below and update the code to test getTransactionBatchId

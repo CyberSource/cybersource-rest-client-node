@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address3 (base name: "address3")', function() {
+      // uncomment below and update the code to test the property address3
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property address4 (base name: "address4")', function() {
+      // uncomment below and update the code to test the property address4
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property locality (base name: "locality")', function() {
       // uncomment below and update the code to test the property locality
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();

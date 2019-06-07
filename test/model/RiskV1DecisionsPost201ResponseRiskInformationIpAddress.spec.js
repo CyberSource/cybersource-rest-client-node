@@ -62,8 +62,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property city (base name: "city")', function() {
-      // uncomment below and update the code to test the property city
+    it('should have the property locality (base name: "locality")', function() {
+      // uncomment below and update the code to test the property locality
       //var instane = new CyberSource.RiskV1DecisionsPost201ResponseRiskInformationIpAddress();
       //expect(instance).to.be();
     });
@@ -74,8 +74,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
+    it('should have the property administrativeArea (base name: "administrativeArea")', function() {
+      // uncomment below and update the code to test the property administrativeArea
       //var instane = new CyberSource.RiskV1DecisionsPost201ResponseRiskInformationIpAddress();
       //expect(instance).to.be();
     });

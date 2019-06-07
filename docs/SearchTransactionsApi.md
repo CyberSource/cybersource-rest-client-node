@@ -60,7 +60,7 @@ No authorization required
 
 Get Search results
 
-Include the Search ID in the GET request to retrieve the search results. 
+Include the Search ID in the GET request to retrieve the search results.
 
 ### Example
 ```javascript

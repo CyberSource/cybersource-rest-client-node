@@ -73,6 +73,7 @@
   }
 
   /**
+   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  For all possible values, see the `decision_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<module:model/RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing>} morphing
    */
   exports.prototype['morphing'] = undefined;

@@ -1,6 +1,12 @@
 @echo off
 cd %~dp0
 
+REM Delete the previously generated SDK code
+
+rm -r -f ..\docs
+rm -r -f ..\src
+rm -r -f ..\test
+
 REM Command to generate SDK
 
 java -jar swagger-codegen-cli-2.3.0.jar generate -t cybersource-javascript-template -i cybersource-rest-spec.json -l javascript -o ../  -c cybersource-node-config.json
@@ -32,8 +38,6 @@ powershell -Command "(Get-Content ..\src\Api\PayerAuthenticationApi.js) | ForEac
 REM Batch file to change the content type 
 
 powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Object { $_ -replace 'contentTypes = \[''application/json;charset=utf-8', 'contentTypes = [''*/*' } | Set-Content ..\src\Api\SecureFileShareApi.js"
-
-REM powershell -Command "$fileContents = (Get-Content ..\src\index.js) ; for ($i = 1993; $i -lt 2003; $i++) { $fileContents[$i] = ''; } ; $fileContents | Set-Content ..\src\index.js"
 
 powershell -Command "(Get-Content ..\src\index.js) | ForEach-Object { $_ -replace \"require\('./api/Download([DTXS]{3})Api'\), \", \"\" } | Set-Content ..\src\index.js"
 

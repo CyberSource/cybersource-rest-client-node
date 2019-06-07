@@ -102,7 +102,7 @@
    */
   exports.prototype['cavv'] = undefined;
   /**
-   * Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard Identity Check. 
+   * Algorithm used to generate the CAVV for Visa Secure or the UCAF authentication data for Mastercard Identity Check. 
    * @member {String} cavvAlgorithm
    */
   exports.prototype['cavvAlgorithm'] = undefined;

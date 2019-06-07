@@ -77,7 +77,7 @@
   }
 
   /**
-   * The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION  - DECISION_PROFILE_REJECT  - SCORE_EXCEEDS_THRESHOLD 
+   * The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION  - DECISION_PROFILE_REJECT  - SCORE_EXCEEDS_THRESHOLD  - PENDING_AUTHENTICATION 
    * @member {module:model/PtsV2PaymentsPost201ResponseErrorInformation.ReasonEnum} reason
    */
   exports.prototype['reason'] = undefined;
@@ -108,11 +108,6 @@
      * @const
      */
     "CONTACT_PROCESSOR": "CONTACT_PROCESSOR",
-    /**
-     * value: "CV_FAILED"
-     * @const
-     */
-    "CV_FAILED": "CV_FAILED",
     /**
      * value: "EXPIRED_CARD"
      * @const
@@ -159,10 +154,30 @@
      */
     "INVALID_CVN": "INVALID_CVN",
     /**
+     * value: "DECLINED_CHECK"
+     * @const
+     */
+    "DECLINED_CHECK": "DECLINED_CHECK",
+    /**
+     * value: "BLACKLISTED_CUSTOMER"
+     * @const
+     */
+    "BLACKLISTED_CUSTOMER": "BLACKLISTED_CUSTOMER",
+    /**
+     * value: "SUSPENDED_ACCOUNT"
+     * @const
+     */
+    "SUSPENDED_ACCOUNT": "SUSPENDED_ACCOUNT",
+    /**
      * value: "PAYMENT_REFUSED"
      * @const
      */
     "PAYMENT_REFUSED": "PAYMENT_REFUSED",
+    /**
+     * value: "CV_FAILED"
+     * @const
+     */
+    "CV_FAILED": "CV_FAILED",
     /**
      * value: "INVALID_ACCOUNT"
      * @const
@@ -174,6 +189,11 @@
      */
     "GENERAL_DECLINE": "GENERAL_DECLINE",
     /**
+     * value: "INVALID_MERCHANT_CONFIGURATION"
+     * @const
+     */
+    "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
+    /**
      * value: "DECISION_PROFILE_REJECT"
      * @const
      */
@@ -182,7 +202,12 @@
      * value: "SCORE_EXCEEDS_THRESHOLD"
      * @const
      */
-    "SCORE_EXCEEDS_THRESHOLD": "SCORE_EXCEEDS_THRESHOLD"  };
+    "SCORE_EXCEEDS_THRESHOLD": "SCORE_EXCEEDS_THRESHOLD",
+    /**
+     * value: "PENDING_AUTHENTICATION"
+     * @const
+     */
+    "PENDING_AUTHENTICATION": "PENDING_AUTHENTICATION"  };
 
 
   return exports;

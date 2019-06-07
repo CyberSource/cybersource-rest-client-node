@@ -154,6 +154,11 @@
      */
     "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
     /**
+     * value: "INVALID_AMOUNT"
+     * @const
+     */
+    "INVALID_AMOUNT": "INVALID_AMOUNT",
+    /**
      * value: "CAPTURE_ALREADY_VOIDED"
      * @const
      */

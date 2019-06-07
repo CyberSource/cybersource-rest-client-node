@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>RiskV1DecisionsPost201ResponseRiskInformationProvidersProviderName</code>.
-   * Name of the 3rd party provider, for example, Emailage.
+   * Name of the 3rd party provider, for example, Emailage.  For all possible values, see the &#x60;decision_provider_#_name&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @alias module:model/RiskV1DecisionsPost201ResponseRiskInformationProvidersProviderName
    * @class
    */

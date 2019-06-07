@@ -69,7 +69,7 @@
   }
 
   /**
-   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
+   * IP address of the customer. 
    * @member {String} ipAddress
    */
   exports.prototype['ipAddress'] = undefined;

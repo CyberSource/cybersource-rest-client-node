@@ -43,7 +43,7 @@
    * Constructs a new <code>TokenizeRequest</code>.
    * @alias module:model/TokenizeRequest
    * @class
-   * @param keyId {String} Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples] (http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.
+   * @param keyId {String} Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples](http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.
    */
   var exports = function(keyId) {
     var _this = this;
@@ -74,7 +74,7 @@
   }
 
   /**
-   * Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples] (http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.
+   * Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples](http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.
    * @member {String} keyId
    */
   exports.prototype['keyId'] = undefined;
