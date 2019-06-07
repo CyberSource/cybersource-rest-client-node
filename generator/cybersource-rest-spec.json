@@ -23100,7 +23100,7 @@
         },
         "/tms/v1/instrumentidentifiers/{tokenId}/paymentinstruments": {
             "get": {
-                "summary": "Retrieve all Payment Instruments associated with an Instrument Identifier",
+                "summary": "Retrieve all Payment Instruments",
                 "parameters": [
                     {
                         "name": "profile-id",

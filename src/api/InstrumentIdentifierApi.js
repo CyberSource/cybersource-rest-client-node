@@ -160,7 +160,7 @@
      */
 
     /**
-     * Retrieve all Payment Instruments associated with an Instrument Identifier
+     * Retrieve all Payment Instruments
      * @param {String} profileId The id of a profile containing user specific TMS configuration.
      * @param {String} tokenId The TokenId of an Instrument Identifier.
      * @param {Object} opts Optional parameters
