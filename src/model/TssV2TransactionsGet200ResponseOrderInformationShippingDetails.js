@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('giftWrap')) {
-        obj['giftWrap'] = ApiClient.convertToType(data['giftWrap'], 'String');
+        obj['giftWrap'] = ApiClient.convertToType(data['giftWrap'], 'Boolean');
       }
       if (data.hasOwnProperty('shippingMethod')) {
         obj['shippingMethod'] = ApiClient.convertToType(data['shippingMethod'], 'String');
@@ -73,8 +73,8 @@
   }
 
   /**
-   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping. 
-   * @member {String} giftWrap
+   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values: - true: The customer requested gift wrapping. - false: The customer did not request gift wrapping. 
+   * @member {Boolean} giftWrap
    */
   exports.prototype['giftWrap'] = undefined;
   /**

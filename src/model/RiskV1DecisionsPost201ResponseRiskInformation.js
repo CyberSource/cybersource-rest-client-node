@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RiskV1DecisionsPost201ResponseRiskInformationInfoCodes', 'model/RiskV1DecisionsPost201ResponseRiskInformationIpAddress', 'model/RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation', 'model/RiskV1DecisionsPost201ResponseRiskInformationProfile', 'model/RiskV1DecisionsPost201ResponseRiskInformationProviders', 'model/RiskV1DecisionsPost201ResponseRiskInformationRules', 'model/RiskV1DecisionsPost201ResponseRiskInformationScore', 'model/RiskV1DecisionsPost201ResponseRiskInformationVelocity'], factory);
+    define(['ApiClient', 'model/RiskV1DecisionsPost201ResponseRiskInformationInfoCodes', 'model/RiskV1DecisionsPost201ResponseRiskInformationIpAddress', 'model/RiskV1DecisionsPost201ResponseRiskInformationProfile', 'model/RiskV1DecisionsPost201ResponseRiskInformationProviders', 'model/RiskV1DecisionsPost201ResponseRiskInformationRules', 'model/RiskV1DecisionsPost201ResponseRiskInformationScore', 'model/RiskV1DecisionsPost201ResponseRiskInformationTravel', 'model/RiskV1DecisionsPost201ResponseRiskInformationVelocity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RiskV1DecisionsPost201ResponseRiskInformationInfoCodes'), require('./RiskV1DecisionsPost201ResponseRiskInformationIpAddress'), require('./RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation'), require('./RiskV1DecisionsPost201ResponseRiskInformationProfile'), require('./RiskV1DecisionsPost201ResponseRiskInformationProviders'), require('./RiskV1DecisionsPost201ResponseRiskInformationRules'), require('./RiskV1DecisionsPost201ResponseRiskInformationScore'), require('./RiskV1DecisionsPost201ResponseRiskInformationVelocity'));
+    module.exports = factory(require('../ApiClient'), require('./RiskV1DecisionsPost201ResponseRiskInformationInfoCodes'), require('./RiskV1DecisionsPost201ResponseRiskInformationIpAddress'), require('./RiskV1DecisionsPost201ResponseRiskInformationProfile'), require('./RiskV1DecisionsPost201ResponseRiskInformationProviders'), require('./RiskV1DecisionsPost201ResponseRiskInformationRules'), require('./RiskV1DecisionsPost201ResponseRiskInformationScore'), require('./RiskV1DecisionsPost201ResponseRiskInformationTravel'), require('./RiskV1DecisionsPost201ResponseRiskInformationVelocity'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationInfoCodes, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationIpAddress, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationProfile, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationProviders, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationRules, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationScore, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationVelocity);
+    root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationInfoCodes, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationIpAddress, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationProfile, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationProviders, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationRules, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationScore, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationTravel, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformationVelocity);
   }
-}(this, function(ApiClient, RiskV1DecisionsPost201ResponseRiskInformationInfoCodes, RiskV1DecisionsPost201ResponseRiskInformationIpAddress, RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation, RiskV1DecisionsPost201ResponseRiskInformationProfile, RiskV1DecisionsPost201ResponseRiskInformationProviders, RiskV1DecisionsPost201ResponseRiskInformationRules, RiskV1DecisionsPost201ResponseRiskInformationScore, RiskV1DecisionsPost201ResponseRiskInformationVelocity) {
+}(this, function(ApiClient, RiskV1DecisionsPost201ResponseRiskInformationInfoCodes, RiskV1DecisionsPost201ResponseRiskInformationIpAddress, RiskV1DecisionsPost201ResponseRiskInformationProfile, RiskV1DecisionsPost201ResponseRiskInformationProviders, RiskV1DecisionsPost201ResponseRiskInformationRules, RiskV1DecisionsPost201ResponseRiskInformationScore, RiskV1DecisionsPost201ResponseRiskInformationTravel, RiskV1DecisionsPost201ResponseRiskInformationVelocity) {
   'use strict';
 
 
@@ -89,9 +89,6 @@
       if (data.hasOwnProperty('localTime')) {
         obj['localTime'] = ApiClient.convertToType(data['localTime'], 'String');
       }
-      if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation.constructFromObject(data['paymentInformation']);
-      }
       if (data.hasOwnProperty('score')) {
         obj['score'] = RiskV1DecisionsPost201ResponseRiskInformationScore.constructFromObject(data['score']);
       }
@@ -100,6 +97,9 @@
       }
       if (data.hasOwnProperty('providers')) {
         obj['providers'] = RiskV1DecisionsPost201ResponseRiskInformationProviders.constructFromObject(data['providers']);
+      }
+      if (data.hasOwnProperty('travel')) {
+        obj['travel'] = RiskV1DecisionsPost201ResponseRiskInformationTravel.constructFromObject(data['travel']);
       }
     }
     return obj;
@@ -122,19 +122,15 @@
    */
   exports.prototype['velocity'] = undefined;
   /**
-   * You receive this field only if you subscribe to the Enhanced Case Management service. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/) - Look for 'Reply Fields': \"decisionReply_casePriority\". 
+   * You receive this field only if you subscribe to the Enhanced Case Management service. The priority level ranges from 1 (highest) to 5 (lowest); the default value is 3. If you do not assign a priority to your rules or to your profiles, the default value is given to the order.  For all possible values, see the `decision_case_priority` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Number} casePriority
    */
   exports.prototype['casePriority'] = undefined;
   /**
-   * The customer's local time (hh:mm:ss), which is calculated from the transaction request time and the customer's billing address. 
+   * The customer's local time (`hh:mm:ss`), which is calculated from the transaction request time and the customer's billing address.  For details, see the `score_time_local` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) 
    * @member {String} localTime
    */
   exports.prototype['localTime'] = undefined;
-  /**
-   * @member {module:model/RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation} paymentInformation
-   */
-  exports.prototype['paymentInformation'] = undefined;
   /**
    * @member {module:model/RiskV1DecisionsPost201ResponseRiskInformationScore} score
    */
@@ -147,6 +143,10 @@
    * @member {module:model/RiskV1DecisionsPost201ResponseRiskInformationProviders} providers
    */
   exports.prototype['providers'] = undefined;
+  /**
+   * @member {module:model/RiskV1DecisionsPost201ResponseRiskInformationTravel} travel
+   */
+  exports.prototype['travel'] = undefined;
 
 
 

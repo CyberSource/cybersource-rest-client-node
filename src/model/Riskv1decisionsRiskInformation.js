@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('profile')) {
         obj['profile'] = Riskv1decisionsRiskInformationProfile.constructFromObject(data['profile']);
       }
+      if (data.hasOwnProperty('eventType')) {
+        obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
+      }
     }
     return obj;
   }
@@ -72,6 +76,11 @@
    * @member {module:model/Riskv1decisionsRiskInformationProfile} profile
    */
   exports.prototype['profile'] = undefined;
+  /**
+   * Specifies one of the following types of events: - login - account_creation - account_update For regular payment transactions, do not send this field. 
+   * @member {String} eventType
+   */
+  exports.prototype['eventType'] = undefined;
 
 
 

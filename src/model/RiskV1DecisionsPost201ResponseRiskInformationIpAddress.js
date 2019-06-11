@@ -69,14 +69,14 @@
       if (data.hasOwnProperty('anonymizerStatus')) {
         obj['anonymizerStatus'] = ApiClient.convertToType(data['anonymizerStatus'], 'String');
       }
-      if (data.hasOwnProperty('city')) {
-        obj['city'] = ApiClient.convertToType(data['city'], 'String');
+      if (data.hasOwnProperty('locality')) {
+        obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
       }
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
       }
-      if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      if (data.hasOwnProperty('administrativeArea')) {
+        obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
       }
       if (data.hasOwnProperty('routingMethod')) {
         obj['routingMethod'] = ApiClient.convertToType(data['routingMethod'], 'String');
@@ -86,27 +86,27 @@
   }
 
   /**
-   * Indicates whether the transaction IP address is associated with a known anonymous proxy. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for 'Reply Fields': \"afsReply_ipAnonymizerStatus\". 
+   * Indicates whether the transaction IP address is associated with a known anonymous proxy.  For all possible values, see the `score_ip_anonymizer_status` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {String} anonymizerStatus
    */
   exports.prototype['anonymizerStatus'] = undefined;
   /**
-   * Name of the city decoded from the IP address used directly or indirectly by the customer to send the order. 
-   * @member {String} city
+   * Name of the city decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_city` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @member {String} locality
    */
-  exports.prototype['city'] = undefined;
+  exports.prototype['locality'] = undefined;
   /**
-   * Name of the country decoded from the IP address used directly or indirectly by the customer to send the order. 
+   * Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
   /**
-   * Name of the state decoded from the IP address used directly or indirectly by the customer to send the order. 
-   * @member {String} state
+   * Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @member {String} administrativeArea
    */
-  exports.prototype['state'] = undefined;
+  exports.prototype['administrativeArea'] = undefined;
   /**
-   * Routing method decoded from the IP address used directly or indirectly by the customer to send the order. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for 'Reply Fields': \"afsService_ipRoutingMethod \". 
+   * Routing method decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_routing_method` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {String} routingMethod
    */
   exports.prototype['routingMethod'] = undefined;

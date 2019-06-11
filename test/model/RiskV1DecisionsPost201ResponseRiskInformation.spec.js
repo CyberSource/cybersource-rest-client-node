@@ -92,12 +92,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property paymentInformation (base name: "paymentInformation")', function() {
-      // uncomment below and update the code to test the property paymentInformation
-      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseRiskInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property score (base name: "score")', function() {
       // uncomment below and update the code to test the property score
       //var instane = new CyberSource.RiskV1DecisionsPost201ResponseRiskInformation();
@@ -112,6 +106,12 @@
 
     it('should have the property providers (base name: "providers")', function() {
       // uncomment below and update the code to test the property providers
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseRiskInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property travel (base name: "travel")', function() {
+      // uncomment below and update the code to test the property travel
       //var instane = new CyberSource.RiskV1DecisionsPost201ResponseRiskInformation();
       //expect(instance).to.be();
     });

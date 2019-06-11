@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('username')) {
+        obj['username'] = ApiClient.convertToType(data['username'], 'String');
+      }
       if (data.hasOwnProperty('hashedPassword')) {
         obj['hashedPassword'] = ApiClient.convertToType(data['hashedPassword'], 'String');
       }
@@ -78,12 +82,17 @@
   }
 
   /**
-   * The description for this field is not available. 
+   * Specifies the customer account user name.
+   * @member {String} username
+   */
+  exports.prototype['username'] = undefined;
+  /**
+   * The merchant's password that CyberSource hashes and stores as a hashed password.  For details about this field, see the `customer_password` field description in [Decision Manager Developer Guide Using the SCMP API.](https://www.cybersource.com/developers/documentation/fraud_management/) 
    * @member {String} hashedPassword
    */
   exports.prototype['hashedPassword'] = undefined;
   /**
-   * Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see \"Recipients,\" page 224. 
+   * Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see `recipient_date_of_birth` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @member {String} dateOfBirth
    */
   exports.prototype['dateOfBirth'] = undefined;

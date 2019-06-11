@@ -77,7 +77,7 @@
         obj['shipTo'] = Riskv1decisionsOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('returnsAccepted')) {
-        obj['returnsAccepted'] = ApiClient.convertToType(data['returnsAccepted'], 'String');
+        obj['returnsAccepted'] = ApiClient.convertToType(data['returnsAccepted'], 'Boolean');
       }
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Riskv1decisionsOrderInformationLineItems]);
@@ -102,8 +102,8 @@
    */
   exports.prototype['shipTo'] = undefined;
   /**
-   * Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - `yes`: Returns are accepted for this order. - `no`: Returns are not accepted for this order. 
-   * @member {String} returnsAccepted
+   * Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. 
+   * @member {Boolean} returnsAccepted
    */
   exports.prototype['returnsAccepted'] = undefined;
   /**

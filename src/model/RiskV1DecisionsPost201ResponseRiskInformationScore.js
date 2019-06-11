@@ -81,12 +81,12 @@
    */
   exports.prototype['factorCodes'] = undefined;
   /**
-   * Name of the score model used for the transaction. If you did not include a custom model in your request, this field contains the name of CyberSource’s default model. 
+   * Name of the score model used for the transaction. If you did not include a custom model in your request, this field contains the name of CyberSource’s default model.  For all possible values, see the `score_model_used` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {String} modelUsed
    */
   exports.prototype['modelUsed'] = undefined;
   /**
-   * Total score calculated for this order. The value cannot be negative. 
+   * Total score calculated for this order. The value cannot be negative.  For all possible values, see the `score_score_result` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {String} result
    */
   exports.prototype['result'] = undefined;

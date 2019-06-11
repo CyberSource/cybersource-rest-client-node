@@ -97,42 +97,42 @@
   }
 
   /**
-   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules. 
+   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  For all possible values, see the `decision_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} velocity
    */
   exports.prototype['velocity'] = undefined;
   /**
-   * Indicates a mismatch between the customer’s billing and shipping addresses.
+   * Indicates a mismatch between the customer’s billing and shipping addresses.  For all possible values, see the `score_address_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} address
    */
   exports.prototype['address'] = undefined;
   /**
-   * Indicates that customer information is associated with transactions that are either on the negative or the positive list. 
+   * Indicates that customer information is associated with transactions that are either on the negative or the positive list.  For all possible values, see the `score_hotlist_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} customerList
    */
   exports.prototype['customerList'] = undefined;
   /**
-   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^). 
+   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  For all possible values, see the `score_identity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} identityChange
    */
   exports.prototype['identityChange'] = undefined;
   /**
-   * Indicates a problem with the customer’s email address, IP address, or billing address.
+   * Indicates a problem with the customer’s email address, IP address, or billing address.  For all possible values, see the `score_internet_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} internet
    */
   exports.prototype['internet'] = undefined;
   /**
-   * Indicates a problem with the customer’s phone number.
+   * Indicates a problem with the customer’s phone number.  For all possible values, see the `score_phone_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} phone
    */
   exports.prototype['phone'] = undefined;
   /**
-   * Indicates that the customer provided potentially suspicious information.
+   * Indicates that the customer provided potentially suspicious information.  For all possible values, see the `score_suspicious_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} suspicious
    */
   exports.prototype['suspicious'] = undefined;
   /**
-   * Indicates that the customer has a high purchase frequency.
+   * Indicates that the customer has a high purchase frequency.  For all possible values, see the `score_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {Array.<String>} globalVelocity
    */
   exports.prototype['globalVelocity'] = undefined;

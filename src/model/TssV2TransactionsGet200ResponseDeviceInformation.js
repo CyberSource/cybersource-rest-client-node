@@ -77,17 +77,17 @@
   }
 
   /**
-   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
+   * IP address of the customer. 
    * @member {String} ipAddress
    */
   exports.prototype['ipAddress'] = undefined;
   /**
-   * Host name reported by the customer’s browser to your Web server identified via the HTTP header.
+   * DNS resolved hostname from `ipAddress`.
    * @member {String} hostName
    */
   exports.prototype['hostName'] = undefined;
   /**
-   * Boolean that indicates whether the customer’s browser accepts cookies. This field can contain one of the following values:   - `yes`: The customer’s browser accepts cookies.   - `no`: The customer’s browser does not accept cookies. 
+   * Whether the customer’s browser accepts cookies. This field can contain one of the following values: - `yes`: The customer’s browser accepts cookies. - `no`: The customer’s browser does not accept cookies. 
    * @member {String} cookiesAccepted
    */
   exports.prototype['cookiesAccepted'] = undefined;

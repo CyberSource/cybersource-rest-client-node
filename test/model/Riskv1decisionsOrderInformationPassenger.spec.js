@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property nationality (base name: "nationality")', function() {
+      // uncomment below and update the code to test the property nationality
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationPassenger();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
