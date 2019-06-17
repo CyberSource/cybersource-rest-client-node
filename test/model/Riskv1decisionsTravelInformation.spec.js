@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Riskv1decisionsTravelInformation);
     });
 
+    it('should have the property actualFinalDestination (base name: "actualFinalDestination")', function() {
+      // uncomment below and update the code to test the property actualFinalDestination
+      //var instane = new CyberSource.Riskv1decisionsTravelInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property completeRoute (base name: "completeRoute")', function() {
       // uncomment below and update the code to test the property completeRoute
       //var instane = new CyberSource.Riskv1decisionsTravelInformation();

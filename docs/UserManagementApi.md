@@ -4,14 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUsers**](UserManagementApi.md#getUsers) | **GET** /ums/v1/users | Get user based on organization Id, username, permission and role
+[**getUsers**](UserManagementApi.md#getUsers) | **GET** /ums/v1/users | Get user information
 
 
 <a name="getUsers"></a>
 # **getUsers**
 > UmsV1UsersGet200Response getUsers(opts)
 
-Get user based on organization Id, username, permission and role
+Get user information
 
 This endpoint is to get all the user information depending on the filter criteria passed in the query.
 

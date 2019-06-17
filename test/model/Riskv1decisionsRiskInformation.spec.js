@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eventType (base name: "eventType")', function() {
+      // uncomment below and update the code to test the property eventType
+      //var instane = new CyberSource.Riskv1decisionsRiskInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

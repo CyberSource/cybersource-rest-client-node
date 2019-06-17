@@ -97,7 +97,7 @@
   }
 
   /**
-   * The description for this field is not available.
+   * The CyberSource payment application processed for the transaction. 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
@@ -107,27 +107,27 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The description for this field is not available.
+   * 3-digit reason code that indicates why the customer profile payment succeeded or failed.
    * @member {String} reasonCode
    */
   exports.prototype['reasonCode'] = undefined;
   /**
-   * The description for this field is not available.
+   * Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful. 
    * @member {String} rCode
    */
   exports.prototype['rCode'] = undefined;
   /**
-   * The description for this field is not available.
+   * One-word description of the result of the application. 
    * @member {String} rFlag
    */
   exports.prototype['rFlag'] = undefined;
   /**
-   * The description for this field is not available.
+   * Reference number that you use to reconcile your CyberSource reports with your processor reports. 
    * @member {String} reconciliationId
    */
   exports.prototype['reconciliationId'] = undefined;
   /**
-   * The description for this field is not available.
+   * Message that explains the reply flag for the application. 
    * @member {String} rMessage
    */
   exports.prototype['rMessage'] = undefined;

@@ -4,62 +4,9 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTransactionBatchDetails**](TransactionBatchesApi.md#getTransactionBatchDetails) | **GET** /pts/v1/transaction-batch-details | Filters batch response. 
 [**getTransactionBatchId**](TransactionBatchesApi.md#getTransactionBatchId) | **GET** /pts/v1/transaction-batches/{id} | Get individual batch file
-[**getTransactionBatches**](TransactionBatchesApi.md#getTransactionBatches) | **GET** /pts/v1/transaction-batches | Get a list of batch files
+[**getTransactionBatches**](TransactionBatchesApi.md#getTransactionBatches) | **GET** /pts/v1/transaction-batches | Gets a list of batch files
 
-
-<a name="getTransactionBatchDetails"></a>
-# **getTransactionBatchDetails**
-> getTransactionBatchDetails(transactionBatchId, opts)
-
-Filters batch response. 
-
-Filters batch response. 
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.TransactionBatchesApi();
-
-var transactionBatchId = "transactionBatchId_example"; // String | Transaction Batch Id, this is unique.
-
-var opts = { 
-  'uploadDate': new Date("2013-10-20"), // Date | Date in which the original batch file was uploaded. Date must be in ISO-8601 format.
-  'status': "status_example" // String | Allows you to filter by rejected response. 
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.getTransactionBatchDetails(transactionBatchId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transactionBatchId** | **String**| Transaction Batch Id, this is unique. | 
- **uploadDate** | **Date**| Date in which the original batch file was uploaded. Date must be in ISO-8601 format. | [optional] 
- **status** | **String**| Allows you to filter by rejected response.  | [optional] 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: text/vnd.cybersource.map-csv
 
 <a name="getTransactionBatchId"></a>
 # **getTransactionBatchId**
@@ -111,7 +58,7 @@ No authorization required
 # **getTransactionBatches**
 > PtsV1TransactionBatchesGet200Response getTransactionBatches(startTime, endTime)
 
-Get a list of batch files
+Gets a list of batch files
 
 Provide the search range
 

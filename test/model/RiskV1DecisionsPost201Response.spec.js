@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInformation (base name: "paymentInformation")', function() {
+      // uncomment below and update the code to test the property paymentInformation
+      //var instane = new CyberSource.RiskV1DecisionsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property errorInformation (base name: "errorInformation")', function() {
       // uncomment below and update the code to test the property errorInformation
       //var instane = new CyberSource.RiskV1DecisionsPost201Response();

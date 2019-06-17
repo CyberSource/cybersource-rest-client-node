@@ -149,10 +149,25 @@
      */
     "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
     /**
+     * value: "PROCESSOR_UNAVAILABLE"
+     * @const
+     */
+    "PROCESSOR_UNAVAILABLE": "PROCESSOR_UNAVAILABLE",
+    /**
      * value: "AUTH_ALREADY_REVERSED"
      * @const
      */
     "AUTH_ALREADY_REVERSED": "AUTH_ALREADY_REVERSED",
+    /**
+     * value: "TRANSACTION_ALREADY_SETTLED"
+     * @const
+     */
+    "TRANSACTION_ALREADY_SETTLED": "TRANSACTION_ALREADY_SETTLED",
+    /**
+     * value: "INVALID_AMOUNT"
+     * @const
+     */
+    "INVALID_AMOUNT": "INVALID_AMOUNT",
     /**
      * value: "MISSING_AUTH"
      * @const

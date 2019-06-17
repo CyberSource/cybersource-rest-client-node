@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -89,6 +90,9 @@
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
+      if (data.hasOwnProperty('nationality')) {
+        obj['nationality'] = ApiClient.convertToType(data['nationality'], 'String');
+      }
     }
     return obj;
   }
@@ -104,7 +108,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the country code. 
+   * Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf) 
    * @member {String} phone
    */
   exports.prototype['phone'] = undefined;
@@ -128,6 +132,11 @@
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
+  /**
+   * Passenger's nationality country. Use the two character ISO Standard Country Codes.
+   * @member {String} nationality
+   */
+  exports.prototype['nationality'] = undefined;
 
 
 

@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('actualFinalDestination')) {
+        obj['actualFinalDestination'] = ApiClient.convertToType(data['actualFinalDestination'], 'String');
+      }
       if (data.hasOwnProperty('completeRoute')) {
         obj['completeRoute'] = ApiClient.convertToType(data['completeRoute'], 'String');
       }
@@ -80,6 +84,11 @@
     return obj;
   }
 
+  /**
+   * IATA Code for the actual final destination that the customer intends to travel to. It should be a destination on the completeRoute. 
+   * @member {String} actualFinalDestination
+   */
+  exports.prototype['actualFinalDestination'] = undefined;
   /**
    * Concatenation of individual travel legs in the format ORIG1-DEST1[:ORIG2-DEST2...:ORIGn-DESTn], for example, SFO-JFK:JFK-LHR:LHR-CDG. For airport codes, see the IATA Airline and Airport Code Search. Note In your request, send either the complete route or the individual legs (_leg#_orig and _leg#_dest). If you send all the fields, the value of _complete_route takes precedence over that of the _leg# fields. 
    * @member {String} completeRoute

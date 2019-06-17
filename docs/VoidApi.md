@@ -4,58 +4,11 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**mitVoid**](VoidApi.md#mitVoid) | **POST** /pts/v2/voids/ | Merchant Initiated Void
 [**voidCapture**](VoidApi.md#voidCapture) | **POST** /pts/v2/captures/{id}/voids | Void a Capture
 [**voidCredit**](VoidApi.md#voidCredit) | **POST** /pts/v2/credits/{id}/voids | Void a Credit
 [**voidPayment**](VoidApi.md#voidPayment) | **POST** /pts/v2/payments/{id}/voids | Void a Payment
 [**voidRefund**](VoidApi.md#voidRefund) | **POST** /pts/v2/refunds/{id}/voids | Void a Refund
 
-
-<a name="mitVoid"></a>
-# **mitVoid**
-> PtsV2PaymentsVoidsPost201Response mitVoid(mitVoidRequest)
-
-Merchant Initiated Void
-
-This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.VoidApi();
-
-var mitVoidRequest = new CyberSource.MitVoidRequest(); // MitVoidRequest | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.mitVoid(mitVoidRequest, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mitVoidRequest** | [**MitVoidRequest**](MitVoidRequest.md)|  | 
-
-### Return type
-
-[**PtsV2PaymentsVoidsPost201Response**](PtsV2PaymentsVoidsPost201Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
 
 <a name="voidCapture"></a>
 # **voidCapture**
