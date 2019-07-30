@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reports** | [**[ReportingV3ReportsGet200ResponseReports]**](ReportingV3ReportsGet200ResponseReports.md) |  | [optional] 
+**reportSearchResults** | [**[ReportingV3ReportsGet200ResponseReportSearchResults]**](ReportingV3ReportsGet200ResponseReportSearchResults.md) |  | [optional] 
 
 

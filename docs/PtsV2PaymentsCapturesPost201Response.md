@@ -13,12 +13,3 @@ Name | Type | Description | Notes
 **orderInformation** | [**PtsV2PaymentsCapturesPost201ResponseOrderInformation**](PtsV2PaymentsCapturesPost201ResponseOrderInformation.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `PENDING` (value: `"PENDING"`)
-
-
-
-

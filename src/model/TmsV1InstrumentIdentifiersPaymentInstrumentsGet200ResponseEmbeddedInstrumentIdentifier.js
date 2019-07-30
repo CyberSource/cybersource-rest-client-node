@@ -101,13 +101,13 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * Describes type of token.
-   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier.ObjectEnum} object
+   * 'Describes type of token.'  Valid values: - instrumentIdentifier 
+   * @member {String} object
    */
   exports.prototype['object'] = undefined;
   /**
-   * Current state of the token.
-   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier.StateEnum} state
+   * 'Current state of the token.'              Valid values: - ACTIVE - CLOSED 
+   * @member {String} state
    */
   exports.prototype['state'] = undefined;
   /**
@@ -132,35 +132,6 @@
    */
   exports.prototype['metadata'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>object</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ObjectEnum = {
-    /**
-     * value: "instrumentIdentifier"
-     * @const
-     */
-    "instrumentIdentifier": "instrumentIdentifier"  };
-
-  /**
-   * Allowed values for the <code>state</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StateEnum = {
-    /**
-     * value: "ACTIVE"
-     * @const
-     */
-    "ACTIVE": "ACTIVE",
-    /**
-     * value: "CLOSED"
-     * @const
-     */
-    "CLOSED": "CLOSED"  };
 
 
   return exports;

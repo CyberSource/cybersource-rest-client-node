@@ -56,7 +56,7 @@ No authorization required
 
 <a name="getSearch"></a>
 # **getSearch**
-> TssV2TransactionsPost201Response getSearch(searchId)
+> TssV2TransactionsPost201Response1 getSearch(searchId)
 
 Get Search results
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TssV2TransactionsPost201Response**](TssV2TransactionsPost201Response.md)
+[**TssV2TransactionsPost201Response1**](TssV2TransactionsPost201Response1.md)
 
 ### Authorization
 

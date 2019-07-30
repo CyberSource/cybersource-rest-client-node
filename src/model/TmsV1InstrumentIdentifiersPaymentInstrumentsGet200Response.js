@@ -97,8 +97,8 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * Shows the response is a collection of objects.
-   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.ObjectEnum} object
+   * 'Shows the response is a collection of objects.'  Valid values: - collection 
+   * @member {String} object
    */
   exports.prototype['object'] = undefined;
   /**
@@ -126,18 +126,6 @@
    */
   exports.prototype['_embedded'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>object</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ObjectEnum = {
-    /**
-     * value: "collection"
-     * @const
-     */
-    "collection": "collection"  };
 
 
   return exports;

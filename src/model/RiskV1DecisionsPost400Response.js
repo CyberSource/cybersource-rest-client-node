@@ -91,7 +91,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
-   * @member {module:model/RiskV1DecisionsPost400Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -109,18 +109,6 @@
    */
   exports.prototype['details'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "INVALID_REQUEST"
-     * @const
-     */
-    "REQUEST": "INVALID_REQUEST"  };
 
 
   return exports;

@@ -3,9 +3,9 @@ cd %~dp0
 
 REM Delete the previously generated SDK code
 
-rm -r -f ..\docs
-rm -r -f ..\src
-rm -r -f ..\test
+rd /s /q ..\docs
+rd /s /q ..\src
+rd /s /q ..\test
 
 REM Command to generate SDK
 
@@ -33,7 +33,7 @@ powershell -Command "(Get-Content ..\src\Api\VoidApi.js) | ForEach-Object { $_ -
 
 powershell -Command "(Get-Content ..\src\Api\SearchTransactionsApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json;charset=utf-8', 'accepts = [''*/*'} | Set-Content ..\src\Api\SearchTransactionsApi.js"
 
-powershell -Command "(Get-Content ..\src\Api\PayerAuthenticationApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json;charset=utf-8', 'accepts = [''application/hal+json;charset=utf-8'} | Set-Content ..\src\Api\PayerAuthenticationApi.js"
+REM powershell -Command "(Get-Content ..\src\Api\PayerAuthenticationApi.js) | ForEach-Object { $_ -replace 'accepts = \[''application/json;charset=utf-8', 'accepts = [''application/hal+json;charset=utf-8'} | Set-Content ..\src\Api\PayerAuthenticationApi.js"
 
 REM Batch file to change the content type 
 

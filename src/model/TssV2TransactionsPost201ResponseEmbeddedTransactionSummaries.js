@@ -147,7 +147,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The description for this field is not available.
+   * Your CyberSource merchant ID.
    * @member {String} merchantId
    */
   exports.prototype['merchantId'] = undefined;
@@ -176,7 +176,7 @@
    */
   exports.prototype['fraudMarkingInformation'] = undefined;
   /**
-   * The description for this field is not available.
+   * The object containing the custom data that the merchant defines. 
    * @member {Array.<module:model/Ptsv2paymentsMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;

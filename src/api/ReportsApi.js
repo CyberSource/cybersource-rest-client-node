@@ -158,16 +158,16 @@
     /**
      * Retrieve available reports
      * Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report. 
-     * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
-     * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
-     * @param {module:model/String} timeQueryType Specify time you would like to search
+     * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+     * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+     * @param {String} timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime 
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
-     * @param {module:model/String} opts.reportMimeType Valid Report Format
-     * @param {module:model/String} opts.reportFrequency Valid Report Frequency
+     * @param {String} opts.reportMimeType Valid Report Format  Valid values: - application/xml - text/csv 
+     * @param {String} opts.reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
      * @param {String} opts.reportName Valid Report Name
      * @param {Number} opts.reportDefinitionId Valid Report Definition Id
-     * @param {module:model/String} opts.reportStatus Valid Report Status
+     * @param {String} opts.reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
      * @param {module:api/ReportsApi~searchReportsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportsGet200Response}
      */

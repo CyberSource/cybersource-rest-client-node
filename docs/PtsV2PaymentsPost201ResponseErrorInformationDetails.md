@@ -7,14 +7,3 @@ Name | Type | Description | Notes
 **reason** | **String** | Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA  | [optional] 
 
 
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `MISSING_FIELD` (value: `"MISSING_FIELD"`)
-
-* `INVALID_DATA` (value: `"INVALID_DATA"`)
-
-
-
-

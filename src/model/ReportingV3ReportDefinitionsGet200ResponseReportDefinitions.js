@@ -98,7 +98,7 @@
    */
   exports.prototype['reportDefintionName'] = undefined;
   /**
-   * @member {Array.<module:model/ReportingV3ReportDefinitionsGet200ResponseReportDefinitions.SupportedFormatsEnum>} supportedFormats
+   * @member {Array.<String>} supportedFormats
    */
   exports.prototype['supportedFormats'] = undefined;
   /**
@@ -106,23 +106,6 @@
    */
   exports.prototype['description'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>supportedFormats</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.SupportedFormatsEnum = {
-    /**
-     * value: "application/xml"
-     * @const
-     */
-    "application/xml": "application/xml",
-    /**
-     * value: "text/csv"
-     * @const
-     */
-    "text/csv": "text/csv"  };
 
 
   return exports;

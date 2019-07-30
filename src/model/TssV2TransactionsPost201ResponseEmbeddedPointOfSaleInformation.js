@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsClientReferenceInformationPartner'], factory);
+    define(['ApiClient', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsClientReferenceInformationPartner'));
+    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsClientReferenceInformationPartner);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner);
   }
-}(this, function(ApiClient, Ptsv2paymentsClientReferenceInformationPartner) {
+}(this, function(ApiClient, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner) {
   'use strict';
 
 
@@ -74,7 +74,7 @@
         obj['deviceId'] = ApiClient.convertToType(data['deviceId'], 'String');
       }
       if (data.hasOwnProperty('partner')) {
-        obj['partner'] = Ptsv2paymentsClientReferenceInformationPartner.constructFromObject(data['partner']);
+        obj['partner'] = TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner.constructFromObject(data['partner']);
       }
     }
     return obj;
@@ -91,12 +91,12 @@
    */
   exports.prototype['terminalSerialNumber'] = undefined;
   /**
-   * The description for this field is not available.
+   * Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for specific CyberSource integrations. For details, see the `pos_device_id` field description in the [Card-Present Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @member {String} deviceId
    */
   exports.prototype['deviceId'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsClientReferenceInformationPartner} partner
+   * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner} partner
    */
   exports.prototype['partner'] = undefined;
 

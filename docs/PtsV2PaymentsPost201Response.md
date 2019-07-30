@@ -19,22 +19,3 @@ Name | Type | Description | Notes
 **installmentInformation** | [**PtsV2PaymentsPost201ResponseInstallmentInformation**](PtsV2PaymentsPost201ResponseInstallmentInformation.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `AUTHORIZED` (value: `"AUTHORIZED"`)
-
-* `PARTIAL_AUTHORIZED` (value: `"PARTIAL_AUTHORIZED"`)
-
-* `AUTHORIZED_PENDING_REVIEW` (value: `"AUTHORIZED_PENDING_REVIEW"`)
-
-* `DECLINED` (value: `"DECLINED"`)
-
-* `INVALID_REQUEST` (value: `"INVALID_REQUEST"`)
-
-* `PENDING` (value: `"PENDING"`)
-
-
-
-

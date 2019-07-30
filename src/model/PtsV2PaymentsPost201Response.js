@@ -136,7 +136,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - AUTHORIZED  - PARTIAL_AUTHORIZED  - AUTHORIZED_PENDING_REVIEW  - DECLINED  - INVALID_REQUEST 
-   * @member {module:model/PtsV2PaymentsPost201Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -181,43 +181,6 @@
    */
   exports.prototype['installmentInformation'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "AUTHORIZED"
-     * @const
-     */
-    "AUTHORIZED": "AUTHORIZED",
-    /**
-     * value: "PARTIAL_AUTHORIZED"
-     * @const
-     */
-    "PARTIAL_AUTHORIZED": "PARTIAL_AUTHORIZED",
-    /**
-     * value: "AUTHORIZED_PENDING_REVIEW"
-     * @const
-     */
-    "AUTHORIZED_PENDING_REVIEW": "AUTHORIZED_PENDING_REVIEW",
-    /**
-     * value: "DECLINED"
-     * @const
-     */
-    "DECLINED": "DECLINED",
-    /**
-     * value: "INVALID_REQUEST"
-     * @const
-     */
-    "INVALID_REQUEST": "INVALID_REQUEST",
-    /**
-     * value: "PENDING"
-     * @const
-     */
-    "PENDING": "PENDING"  };
 
 
   return exports;

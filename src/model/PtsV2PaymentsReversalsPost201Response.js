@@ -124,7 +124,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - REVERSED 
-   * @member {module:model/PtsV2PaymentsReversalsPost201Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -157,18 +157,6 @@
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "REVERSED"
-     * @const
-     */
-    "REVERSED": "REVERSED"  };
 
 
   return exports;

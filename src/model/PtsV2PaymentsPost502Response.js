@@ -87,12 +87,12 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - SERVER_ERROR 
-   * @member {module:model/PtsV2PaymentsPost502Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG  - PROCESSOR_TIMEOUT 
-   * @member {module:model/PtsV2PaymentsPost502Response.ReasonEnum} reason
+   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG 
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -101,50 +101,6 @@
    */
   exports.prototype['message'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "SERVER_ERROR"
-     * @const
-     */
-    "ERROR": "SERVER_ERROR"  };
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "SYSTEM_ERROR"
-     * @const
-     */
-    "SYSTEM_ERROR": "SYSTEM_ERROR",
-    /**
-     * value: "SERVER_TIMEOUT"
-     * @const
-     */
-    "SERVER_TIMEOUT": "SERVER_TIMEOUT",
-    /**
-     * value: "SERVICE_TIMEOUT"
-     * @const
-     */
-    "SERVICE_TIMEOUT": "SERVICE_TIMEOUT",
-    /**
-     * value: "INVALID_OR_MISSING_CONFIG"
-     * @const
-     */
-    "INVALID_OR_MISSING_CONFIG": "INVALID_OR_MISSING_CONFIG",
-    /**
-     * value: "PROCESSOR_TIMEOUT"
-     * @const
-     */
-    "PROCESSOR_TIMEOUT": "PROCESSOR_TIMEOUT"  };
 
 
   return exports;

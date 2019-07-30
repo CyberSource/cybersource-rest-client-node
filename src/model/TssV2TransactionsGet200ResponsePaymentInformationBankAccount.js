@@ -93,12 +93,12 @@
   }
 
   /**
-   * The description for this field is not available.
+   * Last four digits of the customer’s payment account number. 
    * @member {String} suffix
    */
   exports.prototype['suffix'] = undefined;
   /**
-   * The description for this field is not available.
+   * Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number. 
    * @member {String} prefix
    */
   exports.prototype['prefix'] = undefined;
@@ -113,17 +113,17 @@
    */
   exports.prototype['type'] = undefined;
   /**
-   * The description for this field is not available.
+   * Name used on the bank account. You can use this field only when scoring a direct debit transaction 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * The description for this field is not available.
+   * Code used to validate the customer’s account number. Required for some countries if you do not or are not allowed to provide the IBAN instead. You may use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_check_digit` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @member {String} checkDigit
    */
   exports.prototype['checkDigit'] = undefined;
   /**
-   * Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \"Encoded Account Numbers,\" page 39. 
+   * Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor.  For details, see `account_encoder_id` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @member {String} encoderId
    */
   exports.prototype['encoderId'] = undefined;

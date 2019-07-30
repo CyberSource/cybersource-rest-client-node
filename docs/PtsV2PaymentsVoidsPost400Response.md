@@ -10,29 +10,3 @@ Name | Type | Description | Notes
 **details** | [**[PtsV2PaymentsPost201ResponseErrorInformationDetails]**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `REQUEST` (value: `"INVALID_REQUEST"`)
-
-
-
-
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `MISSING_FIELD` (value: `"MISSING_FIELD"`)
-
-* `INVALID_DATA` (value: `"INVALID_DATA"`)
-
-* `DUPLICATE_REQUEST` (value: `"DUPLICATE_REQUEST"`)
-
-* `INVALID_MERCHANT_CONFIGURATION` (value: `"INVALID_MERCHANT_CONFIGURATION"`)
-
-* `NOT_VOIDABLE` (value: `"NOT_VOIDABLE"`)
-
-
-
-

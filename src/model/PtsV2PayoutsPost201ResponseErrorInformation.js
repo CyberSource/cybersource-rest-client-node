@@ -78,7 +78,7 @@
 
   /**
    * The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE 
-   * @member {module:model/PtsV2PayoutsPost201ResponseErrorInformation.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -91,68 +91,6 @@
    */
   exports.prototype['details'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "EXPIRED_CARD"
-     * @const
-     */
-    "EXPIRED_CARD": "EXPIRED_CARD",
-    /**
-     * value: "PROCESSOR_DECLINED"
-     * @const
-     */
-    "PROCESSOR_DECLINED": "PROCESSOR_DECLINED",
-    /**
-     * value: "STOLEN_LOST_CARD"
-     * @const
-     */
-    "STOLEN_LOST_CARD": "STOLEN_LOST_CARD",
-    /**
-     * value: "UNAUTHORIZED_CARD"
-     * @const
-     */
-    "UNAUTHORIZED_CARD": "UNAUTHORIZED_CARD",
-    /**
-     * value: "CVN_NOT_MATCH"
-     * @const
-     */
-    "CVN_NOT_MATCH": "CVN_NOT_MATCH",
-    /**
-     * value: "INVALID_CVN"
-     * @const
-     */
-    "INVALID_CVN": "INVALID_CVN",
-    /**
-     * value: "BLACKLISTED_CUSTOMER"
-     * @const
-     */
-    "BLACKLISTED_CUSTOMER": "BLACKLISTED_CUSTOMER",
-    /**
-     * value: "INVALID_ACCOUNT"
-     * @const
-     */
-    "INVALID_ACCOUNT": "INVALID_ACCOUNT",
-    /**
-     * value: "GENERAL_DECLINE"
-     * @const
-     */
-    "GENERAL_DECLINE": "GENERAL_DECLINE",
-    /**
-     * value: "RISK_CONTROL_DECLINE"
-     * @const
-     */
-    "RISK_CONTROL_DECLINE": "RISK_CONTROL_DECLINE",
-    /**
-     * value: "PROCESSOR_RISK_CONTROL_DECLINE"
-     * @const
-     */
-    "PROCESSOR_RISK_CONTROL_DECLINE": "PROCESSOR_RISK_CONTROL_DECLINE"  };
 
 
   return exports;

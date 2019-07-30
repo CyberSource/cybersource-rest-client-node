@@ -90,7 +90,7 @@
    */
   exports.prototype['transactionId'] = undefined;
   /**
-   * Name of the Japanese acquirer that processed the transaction. Returned only for CCS (CAFIS) and JCN Gateway. Please contact the CyberSource Japan Support Group for more information. 
+   * Name of the Japanese acquirer that processed the transaction. Returned only for JCN Gateway. Please contact the CyberSource Japan Support Group for more information. 
    * @member {String} forwardedAcquirerCode
    */
   exports.prototype['forwardedAcquirerCode'] = undefined;

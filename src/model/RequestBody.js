@@ -123,8 +123,8 @@
    */
   exports.prototype['reportFields'] = undefined;
   /**
-   *  Format of the report
-   * @member {module:model/RequestBody.ReportMimeTypeEnum} reportMimeType
+   * 'Format of the report'                  Valid values: - application/xml - text/csv 
+   * @member {String} reportMimeType
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
@@ -162,23 +162,6 @@
    */
   exports.prototype['groupName'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>reportMimeType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReportMimeTypeEnum = {
-    /**
-     * value: "application/xml"
-     * @const
-     */
-    "application/xml": "application/xml",
-    /**
-     * value: "text/csv"
-     * @const
-     */
-    "text/csv": "text/csv"  };
 
 
   return exports;

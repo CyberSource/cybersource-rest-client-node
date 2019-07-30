@@ -79,28 +79,11 @@
    */
   exports.prototype['signedAmounts'] = undefined;
   /**
-   * Specify the field naming convention to be followed in reports (applicable to only csv report formats
-   * @member {module:model/Reportingv3reportsReportPreferences.FieldNameConventionEnum} fieldNameConvention
+   * Specify the field naming convention to be followed in reports (applicable to only csv report formats)  Valid values: - SOAPI - SCMP 
+   * @member {String} fieldNameConvention
    */
   exports.prototype['fieldNameConvention'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>fieldNameConvention</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.FieldNameConventionEnum = {
-    /**
-     * value: "SOAPI"
-     * @const
-     */
-    "SOAPI": "SOAPI",
-    /**
-     * value: "SCMP"
-     * @const
-     */
-    "SCMP": "SCMP"  };
 
 
   return exports;

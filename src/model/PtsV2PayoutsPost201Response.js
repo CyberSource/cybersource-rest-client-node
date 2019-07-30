@@ -124,7 +124,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - ACCEPTED  - DECLINED  - INVALID_REQUEST 
-   * @member {module:model/PtsV2PayoutsPost201Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -157,28 +157,6 @@
    */
   exports.prototype['recipientInformation'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "ACCEPTED"
-     * @const
-     */
-    "ACCEPTED": "ACCEPTED",
-    /**
-     * value: "DECLINED"
-     * @const
-     */
-    "DECLINED": "DECLINED",
-    /**
-     * value: "INVALID_REQUEST"
-     * @const
-     */
-    "INVALID_REQUEST": "INVALID_REQUEST"  };
 
 
   return exports;

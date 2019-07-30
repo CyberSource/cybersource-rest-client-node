@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateSearchRequest', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response', 'model/TssV2TransactionsPost400Response'], factory);
+    define(['ApiClient', 'model/CreateSearchRequest', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response', 'model/TssV2TransactionsPost201Response1', 'model/TssV2TransactionsPost400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateSearchRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'), require('../model/TssV2TransactionsPost400Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateSearchRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'), require('../model/TssV2TransactionsPost201Response1'), require('../model/TssV2TransactionsPost400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSearchRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response, root.CyberSource.TssV2TransactionsPost400Response);
+    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSearchRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response, root.CyberSource.TssV2TransactionsPost201Response1, root.CyberSource.TssV2TransactionsPost400Response);
   }
-}(this, function(ApiClient, CreateSearchRequest, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response, TssV2TransactionsPost400Response) {
+}(this, function(ApiClient, CreateSearchRequest, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response, TssV2TransactionsPost201Response1, TssV2TransactionsPost400Response) {
   'use strict';
 
   /**
@@ -98,7 +98,7 @@
      * Callback function to receive the result of the getSearch operation.
      * @callback module:api/SearchTransactionsApi~getSearchCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TssV2TransactionsPost201Response} data The data returned by the service call.
+     * @param {module:model/TssV2TransactionsPost201Response1} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -107,7 +107,7 @@
      * Include the Search ID in the GET request to retrieve the search results.
      * @param {String} searchId Search ID.
      * @param {module:api/SearchTransactionsApi~getSearchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TssV2TransactionsPost201Response}
+     * data is of type: {@link module:model/TssV2TransactionsPost201Response1}
      */
     this.getSearch = function(searchId, callback) {
       var postBody = null;
@@ -131,7 +131,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['*/*'];
-      var returnType = TssV2TransactionsPost201Response;
+      var returnType = TssV2TransactionsPost201Response1;
 
       return this.apiClient.callApi(
         '/tss/v2/searches/{searchId}', 'GET',

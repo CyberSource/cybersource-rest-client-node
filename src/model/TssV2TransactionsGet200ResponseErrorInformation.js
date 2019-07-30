@@ -77,12 +77,12 @@
   }
 
   /**
-   * The description for this field is not available.
+   * 1-word description of why a request succeeded or failed. 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The description for this field is not available.
+   * The user-facing description for why a request succeeded or failed. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;

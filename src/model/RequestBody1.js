@@ -45,8 +45,8 @@
    * @class
    * @param reportDefinitionName {String} Valid Report Definition Name
    * @param reportFields {Array.<String>} 
-   * @param reportMimeType {module:model/RequestBody1.ReportMimeTypeEnum} 
-   * @param reportFrequency {module:model/RequestBody1.ReportFrequencyEnum} The frequency for which subscription is created.
+   * @param reportMimeType {String} Valid values: - application/xml - text/csv 
+   * @param reportFrequency {String} 'The frequency for which subscription is created.'  Valid values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'ADHOC' 
    * @param reportName {String} 
    * @param timezone {String} 
    * @param startTime {String} The hour at which the report generation should start. It should be in hhmm format.
@@ -134,12 +134,13 @@
    */
   exports.prototype['reportFields'] = undefined;
   /**
-   * @member {module:model/RequestBody1.ReportMimeTypeEnum} reportMimeType
+   * Valid values: - application/xml - text/csv 
+   * @member {String} reportMimeType
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
-   * The frequency for which subscription is created.
-   * @member {module:model/RequestBody1.ReportFrequencyEnum} reportFrequency
+   * 'The frequency for which subscription is created.'  Valid values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'ADHOC' 
+   * @member {String} reportFrequency
    */
   exports.prototype['reportFrequency'] = undefined;
   /**
@@ -175,50 +176,6 @@
    */
   exports.prototype['groupName'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>reportMimeType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReportMimeTypeEnum = {
-    /**
-     * value: "application/xml"
-     * @const
-     */
-    "application/xml": "application/xml",
-    /**
-     * value: "text/csv"
-     * @const
-     */
-    "text/csv": "text/csv"  };
-
-  /**
-   * Allowed values for the <code>reportFrequency</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReportFrequencyEnum = {
-    /**
-     * value: "DAILY"
-     * @const
-     */
-    "DAILY": "DAILY",
-    /**
-     * value: "WEEKLY"
-     * @const
-     */
-    "WEEKLY": "WEEKLY",
-    /**
-     * value: "MONTHLY"
-     * @const
-     */
-    "MONTHLY": "MONTHLY",
-    /**
-     * value: "ADHOC"
-     * @const
-     */
-    "ADHOC": "ADHOC"  };
 
 
   return exports;

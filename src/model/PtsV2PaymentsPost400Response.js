@@ -91,12 +91,12 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
-   * @member {module:model/PtsV2PaymentsPost400Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
    * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - CARD_TYPE_NOT_ACCEPTED  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_AMOUNT  - INVALID_CARD_TYPE  - INVALID_PAYMENT_ID  - DEBIT_CARD_USEAGE_EXCEEDD_LIMIT 
-   * @member {module:model/PtsV2PaymentsPost400Response.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -109,75 +109,6 @@
    */
   exports.prototype['details'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "INVALID_REQUEST"
-     * @const
-     */
-    "REQUEST": "INVALID_REQUEST"  };
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "MISSING_FIELD"
-     * @const
-     */
-    "MISSING_FIELD": "MISSING_FIELD",
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA",
-    /**
-     * value: "DUPLICATE_REQUEST"
-     * @const
-     */
-    "DUPLICATE_REQUEST": "DUPLICATE_REQUEST",
-    /**
-     * value: "INVALID_CARD"
-     * @const
-     */
-    "INVALID_CARD": "INVALID_CARD",
-    /**
-     * value: "CARD_TYPE_NOT_ACCEPTED"
-     * @const
-     */
-    "CARD_TYPE_NOT_ACCEPTED": "CARD_TYPE_NOT_ACCEPTED",
-    /**
-     * value: "INVALID_MERCHANT_CONFIGURATION"
-     * @const
-     */
-    "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
-    /**
-     * value: "PROCESSOR_UNAVAILABLE"
-     * @const
-     */
-    "PROCESSOR_UNAVAILABLE": "PROCESSOR_UNAVAILABLE",
-    /**
-     * value: "INVALID_AMOUNT"
-     * @const
-     */
-    "INVALID_AMOUNT": "INVALID_AMOUNT",
-    /**
-     * value: "INVALID_CARD_TYPE"
-     * @const
-     */
-    "INVALID_CARD_TYPE": "INVALID_CARD_TYPE",
-    /**
-     * value: "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"
-     * @const
-     */
-    "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT": "DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"  };
 
 
   return exports;

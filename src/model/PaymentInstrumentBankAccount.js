@@ -70,37 +70,10 @@
 
   /**
    * Checking account type. Possible values:   * C: checking   * S: savings (USD only)   * X: corporate checking (USD only)   * G: general ledger 
-   * @member {module:model/PaymentInstrumentBankAccount.TypeEnum} type
+   * @member {String} type
    */
   exports.prototype['type'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TypeEnum = {
-    /**
-     * value: "checking"
-     * @const
-     */
-    "checking": "checking",
-    /**
-     * value: "savings"
-     * @const
-     */
-    "savings": "savings",
-    /**
-     * value: "corporate checking"
-     * @const
-     */
-    "corporate checking": "corporate checking",
-    /**
-     * value: "general ledger"
-     * @const
-     */
-    "general ledger": "general ledger"  };
 
 
   return exports;
