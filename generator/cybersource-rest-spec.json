@@ -27571,25 +27571,8 @@
                                                                         "description": "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit.\n"
                                                                     },
                                                                     "method": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                            "name": {
-                                                                                "type": "string",
-                                                                                "description": "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal\n"
-                                                                            },
-                                                                            "operator": {
-                                                                                "type": "string",
-                                                                                "description": "An operator of the Payment Type Method. Examples: Visa, PayPal, Google, Apple\n"
-                                                                            },
-                                                                            "schemeName": {
-                                                                                "type": "string",
-                                                                                "description": "A Payment Scheme is a formal, commercial relationship amongst payment ecosystem players (banks and merchants, typically, extended to include merchants payment service providers, banks processors, etc.), whereby the participants agree to an organizational, legal, and operational framework necessary for the functioning of the services these entities provide. Examples: Visa, Master Card, ApplePay, iDeal\n"
-                                                                            },
-                                                                            "schemeOperator": {
-                                                                                "type": "string",
-                                                                                "description": "Operator of the Scheme. Examples European Payment Council, Visa, Currence Ideal B.V\n"
-                                                                            }
-                                                                        }
+                                                                        "type": "string",
+                                                                        "description": "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal"
                                                                     }
                                                                 }
                                                             },
