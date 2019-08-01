@@ -103,7 +103,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * Time Zone.
+   * Time Zone in ISO format.
    * @member {String} timezone
    */
   exports.prototype['timezone'] = undefined;
@@ -118,7 +118,7 @@
    */
   exports.prototype['offset'] = undefined;
   /**
-   * limit on number of results.
+   * Limit on number of results.
    * @member {Number} limit
    */
   exports.prototype['limit'] = undefined;

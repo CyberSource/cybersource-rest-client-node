@@ -91,12 +91,12 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
-   * @member {module:model/PtsV2PaymentsReversalsPost400Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
    * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - AUTH_ALREADY_REVERSED  - TRANSACTION_ALREADY_SETTLED  - INVALID_AMOUNT  - MISSING_AUTH  - TRANSACTION_ALREADY_REVERSED_OR_SETTLED 
-   * @member {module:model/PtsV2PaymentsReversalsPost400Response.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -109,75 +109,6 @@
    */
   exports.prototype['details'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "INVALID_REQUEST"
-     * @const
-     */
-    "REQUEST": "INVALID_REQUEST"  };
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "MISSING_FIELD"
-     * @const
-     */
-    "MISSING_FIELD": "MISSING_FIELD",
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA",
-    /**
-     * value: "DUPLICATE_REQUEST"
-     * @const
-     */
-    "DUPLICATE_REQUEST": "DUPLICATE_REQUEST",
-    /**
-     * value: "INVALID_MERCHANT_CONFIGURATION"
-     * @const
-     */
-    "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
-    /**
-     * value: "PROCESSOR_UNAVAILABLE"
-     * @const
-     */
-    "PROCESSOR_UNAVAILABLE": "PROCESSOR_UNAVAILABLE",
-    /**
-     * value: "AUTH_ALREADY_REVERSED"
-     * @const
-     */
-    "AUTH_ALREADY_REVERSED": "AUTH_ALREADY_REVERSED",
-    /**
-     * value: "TRANSACTION_ALREADY_SETTLED"
-     * @const
-     */
-    "TRANSACTION_ALREADY_SETTLED": "TRANSACTION_ALREADY_SETTLED",
-    /**
-     * value: "INVALID_AMOUNT"
-     * @const
-     */
-    "INVALID_AMOUNT": "INVALID_AMOUNT",
-    /**
-     * value: "MISSING_AUTH"
-     * @const
-     */
-    "MISSING_AUTH": "MISSING_AUTH",
-    /**
-     * value: "TRANSACTION_ALREADY_REVERSED_OR_SETTLED"
-     * @const
-     */
-    "TRANSACTION_ALREADY_REVERSED_OR_SETTLED": "TRANSACTION_ALREADY_REVERSED_OR_SETTLED"  };
 
 
   return exports;

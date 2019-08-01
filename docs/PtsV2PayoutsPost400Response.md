@@ -10,24 +10,3 @@ Name | Type | Description | Notes
 **details** | [**[PtsV2PaymentsPost201ResponseErrorInformationDetails]**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  | [optional] 
 
 
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `MISSING_FIELD` (value: `"MISSING_FIELD"`)
-
-* `INVALID_DATA` (value: `"INVALID_DATA"`)
-
-* `DUPLICATE_REQUEST` (value: `"DUPLICATE_REQUEST"`)
-
-* `INVALID_CARD` (value: `"INVALID_CARD"`)
-
-* `INVALID_MERCHANT_CONFIGURATION` (value: `"INVALID_MERCHANT_CONFIGURATION"`)
-
-* `INVALID_AMOUNT` (value: `"INVALID_AMOUNT"`)
-
-* `DEBIT_CARD_USEAGE_EXCEEDD_LIMIT` (value: `"DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"`)
-
-
-
-

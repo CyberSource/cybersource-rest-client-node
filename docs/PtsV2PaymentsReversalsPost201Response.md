@@ -16,12 +16,3 @@ Name | Type | Description | Notes
 **pointOfSaleInformation** | [**Ptsv2paymentsidreversalsPointOfSaleInformation**](Ptsv2paymentsidreversalsPointOfSaleInformation.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `REVERSED` (value: `"REVERSED"`)
-
-
-
-

@@ -10,12 +10,3 @@ Name | Type | Description | Notes
 **details** | [**[PtsV2PaymentsPost201ResponseErrorInformationDetails]**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `REQUEST` (value: `"INVALID_REQUEST"`)
-
-
-
-

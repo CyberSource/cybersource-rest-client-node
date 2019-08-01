@@ -58,7 +58,7 @@
      */
 
     /**
-     * Create Decision Manager case
+     * Create Decision Manager Case
      * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
      * @param {module:model/CreateDecisionManagerCaseRequest} createDecisionManagerCaseRequest 
      * @param {module:api/DecisionManagerApi~createDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response

@@ -11,14 +11,3 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 
 
-<a name="[SupportedFormatsEnum]"></a>
-## Enum: [SupportedFormatsEnum]
-
-
-* `application/xml` (value: `"application/xml"`)
-
-* `text/csv` (value: `"text/csv"`)
-
-
-
-

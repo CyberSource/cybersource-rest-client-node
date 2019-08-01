@@ -82,8 +82,8 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional. 
-   * @member {module:model/PersonalIdentification.TypeEnum} type
+   * Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license 
+   * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
@@ -91,18 +91,6 @@
    */
   exports.prototype['issuedBy'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TypeEnum = {
-    /**
-     * value: "driver license"
-     * @const
-     */
-    "license": "driver license"  };
 
 
   return exports;

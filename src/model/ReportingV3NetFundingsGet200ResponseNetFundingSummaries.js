@@ -97,7 +97,8 @@
   }
 
   /**
-   * @member {module:model/ReportingV3NetFundingsGet200ResponseNetFundingSummaries.TypeEnum} type
+   * Valid values: - PURCHASES - REFUNDS - FEES - CHARGEBACKS 
+   * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
@@ -130,33 +131,6 @@
    */
   exports.prototype['currencyCode'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TypeEnum = {
-    /**
-     * value: "PURCHASES"
-     * @const
-     */
-    "PURCHASES": "PURCHASES",
-    /**
-     * value: "REFUNDS"
-     * @const
-     */
-    "REFUNDS": "REFUNDS",
-    /**
-     * value: "FEES"
-     * @const
-     */
-    "FEES": "FEES",
-    /**
-     * value: "CHARGEBACKS"
-     * @const
-     */
-    "CHARGEBACKS": "CHARGEBACKS"  };
 
 
   return exports;

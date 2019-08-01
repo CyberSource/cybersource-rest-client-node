@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType);
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType();
       //expect(instance).to.be();
     });

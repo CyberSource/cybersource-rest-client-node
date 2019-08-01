@@ -79,27 +79,10 @@
   exports.prototype['field'] = undefined;
   /**
    * Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
-   * @member {module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "MISSING_FIELD"
-     * @const
-     */
-    "MISSING_FIELD": "MISSING_FIELD",
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA"  };
 
 
   return exports;

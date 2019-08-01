@@ -142,13 +142,13 @@
    */
   exports.prototype['reportName'] = undefined;
   /**
-   * Report Format
-   * @member {module:model/ReportingV3ReportsIdGet200Response.ReportMimeTypeEnum} reportMimeType
+   * Report Format  Valid values: - application/xml - text/csv 
+   * @member {String} reportMimeType
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
-   * Report Frequency Value
-   * @member {module:model/ReportingV3ReportsIdGet200Response.ReportFrequencyEnum} reportFrequency
+   * Report Frequency Value  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
+   * @member {String} reportFrequency
    */
   exports.prototype['reportFrequency'] = undefined;
   /**
@@ -157,8 +157,8 @@
    */
   exports.prototype['reportFields'] = undefined;
   /**
-   * Report Status Value
-   * @member {module:model/ReportingV3ReportsIdGet200Response.ReportStatusEnum} reportStatus
+   * Report Status Value  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA - RERUN 
+   * @member {String} reportStatus
    */
   exports.prototype['reportStatus'] = undefined;
   /**
@@ -191,92 +191,6 @@
    */
   exports.prototype['groupId'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>reportMimeType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReportMimeTypeEnum = {
-    /**
-     * value: "application/xml"
-     * @const
-     */
-    "application/xml": "application/xml",
-    /**
-     * value: "text/csv"
-     * @const
-     */
-    "text/csv": "text/csv"  };
-
-  /**
-   * Allowed values for the <code>reportFrequency</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReportFrequencyEnum = {
-    /**
-     * value: "DAILY"
-     * @const
-     */
-    "DAILY": "DAILY",
-    /**
-     * value: "WEEKLY"
-     * @const
-     */
-    "WEEKLY": "WEEKLY",
-    /**
-     * value: "MONTHLY"
-     * @const
-     */
-    "MONTHLY": "MONTHLY",
-    /**
-     * value: "ADHOC"
-     * @const
-     */
-    "ADHOC": "ADHOC"  };
-
-  /**
-   * Allowed values for the <code>reportStatus</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReportStatusEnum = {
-    /**
-     * value: "COMPLETED"
-     * @const
-     */
-    "COMPLETED": "COMPLETED",
-    /**
-     * value: "PENDING"
-     * @const
-     */
-    "PENDING": "PENDING",
-    /**
-     * value: "QUEUED"
-     * @const
-     */
-    "QUEUED": "QUEUED",
-    /**
-     * value: "RUNNING"
-     * @const
-     */
-    "RUNNING": "RUNNING",
-    /**
-     * value: "ERROR"
-     * @const
-     */
-    "ERROR": "ERROR",
-    /**
-     * value: "NO_DATA"
-     * @const
-     */
-    "NO_DATA": "NO_DATA",
-    /**
-     * value: "RERUN"
-     * @const
-     */
-    "RERUN": "RERUN"  };
 
 
   return exports;

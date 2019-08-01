@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -103,6 +104,9 @@
       if (data.hasOwnProperty('totalCount')) {
         obj['totalCount'] = ApiClient.convertToType(data['totalCount'], 'Number');
       }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
       if (data.hasOwnProperty('submitTimeUtc')) {
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
@@ -132,7 +136,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * Time Zone.
+   * Time Zone in ISO format.
    * @member {String} timezone
    */
   exports.prototype['timezone'] = undefined;
@@ -147,7 +151,7 @@
    */
   exports.prototype['offset'] = undefined;
   /**
-   * limit on number of results.
+   * Limit on number of results.
    * @member {Number} limit
    */
   exports.prototype['limit'] = undefined;
@@ -162,10 +166,15 @@
    */
   exports.prototype['count'] = undefined;
   /**
-   * total number of results.
+   * Total number of results.
    * @member {Number} totalCount
    */
   exports.prototype['totalCount'] = undefined;
+  /**
+   * The status of the submitted transaction.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
   /**
    * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
    * @member {String} submitTimeUtc

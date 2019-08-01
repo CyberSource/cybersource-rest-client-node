@@ -104,7 +104,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - VOIDED 
-   * @member {module:model/PtsV2PaymentsVoidsPost201Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -116,18 +116,6 @@
    */
   exports.prototype['voidAmountDetails'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "VOIDED"
-     * @const
-     */
-    "VOIDED": "VOIDED"  };
 
 
   return exports;

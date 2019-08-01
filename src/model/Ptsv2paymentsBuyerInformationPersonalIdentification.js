@@ -78,7 +78,7 @@
 
   /**
    * The type of the identification.  Possible values:   - `NATIONAL`   - `CPF`   - `CPNJ`   - `CURP`   - `SSN`   - `DRIVER_LICENSE`  This field is supported only on the following processors.  #### ComercioLatino Set this field to the Cadastro de Pessoas Fisicas (CPF).  #### CyberSource Latin American Processing Supported for Redecard in Brazil. Set this field to the Cadastro de Pessoas Fisicas (CPF), which is required for AVS for Redecard in Brazil. **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports. 
-   * @member {module:model/Ptsv2paymentsBuyerInformationPersonalIdentification.TypeEnum} type
+   * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
@@ -92,43 +92,6 @@
    */
   exports.prototype['issuedBy'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TypeEnum = {
-    /**
-     * value: "NATIONAL"
-     * @const
-     */
-    "NATIONAL": "NATIONAL",
-    /**
-     * value: "CPF"
-     * @const
-     */
-    "CPF": "CPF",
-    /**
-     * value: "CPNJ"
-     * @const
-     */
-    "CPNJ": "CPNJ",
-    /**
-     * value: "CURP"
-     * @const
-     */
-    "CURP": "CURP",
-    /**
-     * value: "SSN"
-     * @const
-     */
-    "SSN": "SSN",
-    /**
-     * value: "DRIVER_LICENSE"
-     * @const
-     */
-    "DRIVER_LICENSE": "DRIVER_LICENSE"  };
 
 
   return exports;

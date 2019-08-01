@@ -11,12 +11,3 @@ Name | Type | Description | Notes
 **voidAmountDetails** | [**PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails**](PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `VOIDED` (value: `"VOIDED"`)
-
-
-
-

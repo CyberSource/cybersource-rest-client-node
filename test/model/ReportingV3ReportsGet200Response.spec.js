@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.ReportingV3ReportsGet200Response);
     });
 
-    it('should have the property reports (base name: "reports")', function() {
-      // uncomment below and update the code to test the property reports
+    it('should have the property reportSearchResults (base name: "reportSearchResults")', function() {
+      // uncomment below and update the code to test the property reportSearchResults
       //var instane = new CyberSource.ReportingV3ReportsGet200Response();
       //expect(instance).to.be();
     });

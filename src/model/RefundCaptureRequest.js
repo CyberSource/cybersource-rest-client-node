@@ -141,7 +141,7 @@
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
   /**
-   * The description for this field is not available.
+   * The object containing the custom data that the merchant defines. 
    * @member {Array.<module:model/Ptsv2paymentsMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;

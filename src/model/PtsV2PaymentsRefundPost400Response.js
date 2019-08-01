@@ -91,12 +91,12 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
-   * @member {module:model/PtsV2PaymentsRefundPost400Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
    * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - CAPTURE_ALREADY_VOIDED  - ACCOUNT_NOT_ALLOWED_CREDIT 
-   * @member {module:model/PtsV2PaymentsRefundPost400Response.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -109,65 +109,6 @@
    */
   exports.prototype['details'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "INVALID_REQUEST"
-     * @const
-     */
-    "REQUEST": "INVALID_REQUEST"  };
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "MISSING_FIELD"
-     * @const
-     */
-    "MISSING_FIELD": "MISSING_FIELD",
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA",
-    /**
-     * value: "DUPLICATE_REQUEST"
-     * @const
-     */
-    "DUPLICATE_REQUEST": "DUPLICATE_REQUEST",
-    /**
-     * value: "INVALID_CARD"
-     * @const
-     */
-    "INVALID_CARD": "INVALID_CARD",
-    /**
-     * value: "INVALID_MERCHANT_CONFIGURATION"
-     * @const
-     */
-    "INVALID_MERCHANT_CONFIGURATION": "INVALID_MERCHANT_CONFIGURATION",
-    /**
-     * value: "INVALID_AMOUNT"
-     * @const
-     */
-    "INVALID_AMOUNT": "INVALID_AMOUNT",
-    /**
-     * value: "CAPTURE_ALREADY_VOIDED"
-     * @const
-     */
-    "CAPTURE_ALREADY_VOIDED": "CAPTURE_ALREADY_VOIDED",
-    /**
-     * value: "ACCOUNT_NOT_ALLOWED_CREDIT"
-     * @const
-     */
-    "ACCOUNT_NOT_ALLOWED_CREDIT": "ACCOUNT_NOT_ALLOWED_CREDIT"  };
 
 
   return exports;

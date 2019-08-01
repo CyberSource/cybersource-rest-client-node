@@ -118,8 +118,8 @@
    */
   exports.prototype['date'] = undefined;
   /**
-   * File extension
-   * @member {module:model/FileDetail.MimeTypeEnum} mimeType
+   * 'File extension'  Valid values: - 'application/xml' - 'text/csv' - 'application/pdf' - 'application/octet-stream' 
+   * @member {String} mimeType
    */
   exports.prototype['mimeType'] = undefined;
   /**
@@ -128,33 +128,6 @@
    */
   exports.prototype['size'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>mimeType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.MimeTypeEnum = {
-    /**
-     * value: "application/xml"
-     * @const
-     */
-    "application/xml": "application/xml",
-    /**
-     * value: "text/csv"
-     * @const
-     */
-    "text/csv": "text/csv",
-    /**
-     * value: "application/pdf"
-     * @const
-     */
-    "application/pdf": "application/pdf",
-    /**
-     * value: "application/octet-stream"
-     * @const
-     */
-    "application/octet-stream": "application/octet-stream"  };
 
 
   return exports;

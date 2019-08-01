@@ -124,7 +124,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - PENDING 
-   * @member {module:model/PtsV2CreditsPost201Response.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -157,18 +157,6 @@
    */
   exports.prototype['orderInformation'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "PENDING"
-     * @const
-     */
-    "PENDING": "PENDING"  };
 
 
   return exports;

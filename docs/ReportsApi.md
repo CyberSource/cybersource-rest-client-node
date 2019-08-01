@@ -123,19 +123,19 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportsApi();
 
-var startTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+var startTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
 
-var endTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+var endTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
 
-var timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search
+var timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search  Valid values: - reportTimeFrame - executedTime 
 
 var opts = { 
   'organizationId': "organizationId_example", // String | Valid Cybersource Organization Id
-  'reportMimeType': "reportMimeType_example", // String | Valid Report Format
-  'reportFrequency': "reportFrequency_example", // String | Valid Report Frequency
+  'reportMimeType': "reportMimeType_example", // String | Valid Report Format  Valid values: - application/xml - text/csv 
+  'reportFrequency': "reportFrequency_example", // String | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
   'reportName': "reportName_example", // String | Valid Report Name
   'reportDefinitionId': 56, // Number | Valid Report Definition Id
-  'reportStatus': "reportStatus_example" // String | Valid Report Status
+  'reportStatus': "reportStatus_example" // String | Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
 };
 
 var callback = function(error, data, response) {
@@ -152,15 +152,15 @@ apiInstance.searchReports(startTime, endTime, timeQueryType, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startTime** | **Date**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  | 
- **endTime** | **Date**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  | 
- **timeQueryType** | **String**| Specify time you would like to search | 
+ **startTime** | **Date**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  | 
+ **endTime** | **Date**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  | 
+ **timeQueryType** | **String**| Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  | 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
- **reportMimeType** | **String**| Valid Report Format | [optional] 
- **reportFrequency** | **String**| Valid Report Frequency | [optional] 
+ **reportMimeType** | **String**| Valid Report Format  Valid values: - application/xml - text/csv  | [optional] 
+ **reportFrequency** | **String**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  | [optional] 
  **reportName** | **String**| Valid Report Name | [optional] 
  **reportDefinitionId** | **Number**| Valid Report Definition Id | [optional] 
- **reportStatus** | **String**| Valid Report Status | [optional] 
+ **reportStatus** | **String**| Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  | [optional] 
 
 ### Return type
 

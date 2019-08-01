@@ -73,7 +73,7 @@
   }
 
   /**
-   * The name you assign for your merchant-defined data field.  #### CyberSource through VisaNet For installment payments with Mastercard in Brazil, use `merchantDefinedInformation[0].key` and `merchantDefinedInformation[1].key` for data that you want to provide to the issuer to identify the transaction.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * The number you assign for as the key for your merchant-defined data field. Valid values are 0 to 100.  For example, to set or access the key for the 2nd merchant-defined data field in the array, you would reference `merchantDefinedInformation[1].key`.  #### Visa Platform Connect For installment payments with Mastercard in Brazil, use `merchantDefinedInformation[0].key` and `merchantDefinedInformation[1].key` for data that you want to provide to the issuer to identify the transaction.  For details, see \"Installment Payments on Visa Platform Connect\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @member {String} key
    */
   exports.prototype['key'] = undefined;

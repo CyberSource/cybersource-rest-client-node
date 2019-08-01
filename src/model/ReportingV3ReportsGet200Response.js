@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3ReportsGet200ResponseReports'], factory);
+    define(['ApiClient', 'model/ReportingV3ReportsGet200ResponseReportSearchResults'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ReportingV3ReportsGet200ResponseReports'));
+    module.exports = factory(require('../ApiClient'), require('./ReportingV3ReportsGet200ResponseReportSearchResults'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportingV3ReportsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportsGet200ResponseReports);
+    root.CyberSource.ReportingV3ReportsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportsGet200ResponseReportSearchResults);
   }
-}(this, function(ApiClient, ReportingV3ReportsGet200ResponseReports) {
+}(this, function(ApiClient, ReportingV3ReportsGet200ResponseReportSearchResults) {
   'use strict';
 
 
@@ -61,17 +61,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('reports')) {
-        obj['reports'] = ApiClient.convertToType(data['reports'], [ReportingV3ReportsGet200ResponseReports]);
+      if (data.hasOwnProperty('reportSearchResults')) {
+        obj['reportSearchResults'] = ApiClient.convertToType(data['reportSearchResults'], [ReportingV3ReportsGet200ResponseReportSearchResults]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/ReportingV3ReportsGet200ResponseReports>} reports
+   * @member {Array.<module:model/ReportingV3ReportsGet200ResponseReportSearchResults>} reportSearchResults
    */
-  exports.prototype['reports'] = undefined;
+  exports.prototype['reportSearchResults'] = undefined;
 
 
 

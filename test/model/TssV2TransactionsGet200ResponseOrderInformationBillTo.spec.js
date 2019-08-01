@@ -68,8 +68,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property middelName (base name: "middelName")', function() {
-      // uncomment below and update the code to test the property middelName
+    it('should have the property middleName (base name: "middleName")', function() {
+      // uncomment below and update the code to test the property middleName
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseOrderInformationBillTo();
       //expect(instance).to.be();
     });

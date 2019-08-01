@@ -21,7 +21,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportDownloadsApi();
 
-var reportDate = new Date("2013-10-20"); // Date | Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd 
+var reportDate = new Date("2013-10-20"); // Date | Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd 
 
 var reportName = "reportName_example"; // String | Name of the report to download
 
@@ -43,7 +43,7 @@ apiInstance.downloadReport(reportDate, reportName, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportDate** | **Date**| Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  | 
+ **reportDate** | **Date**| Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  | 
  **reportName** | **String**| Name of the report to download | 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 

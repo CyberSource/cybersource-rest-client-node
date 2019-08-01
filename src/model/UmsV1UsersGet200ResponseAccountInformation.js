@@ -109,7 +109,8 @@
    */
   exports.prototype['permissions'] = undefined;
   /**
-   * @member {module:model/UmsV1UsersGet200ResponseAccountInformation.StatusEnum} status
+   * Valid values: - active - inactive - locked - disabled - forgotpassword - deleted 
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -129,43 +130,6 @@
    */
   exports.prototype['timezone'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "active"
-     * @const
-     */
-    "active": "active",
-    /**
-     * value: "inactive"
-     * @const
-     */
-    "inactive": "inactive",
-    /**
-     * value: "locked"
-     * @const
-     */
-    "locked": "locked",
-    /**
-     * value: "disabled"
-     * @const
-     */
-    "disabled": "disabled",
-    /**
-     * value: "forgotpassword"
-     * @const
-     */
-    "forgotpassword": "forgotpassword",
-    /**
-     * value: "deleted"
-     * @const
-     */
-    "deleted": "deleted"  };
 
 
   return exports;

@@ -171,7 +171,7 @@
    */
   exports.prototype['transactionAdviceAddendum'] = undefined;
   /**
-   * Code that identifies the value of the `referenceDataNumber` field.  For the possible values, see \"Reference Data Codes\" in [Level II and Level III Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. 
+   * Code that identifies the value of the `referenceDataNumber` field.  For the possible values, see \"Reference Data Codes\" in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. 
    * @member {String} referenceDataCode
    */
   exports.prototype['referenceDataCode'] = undefined;

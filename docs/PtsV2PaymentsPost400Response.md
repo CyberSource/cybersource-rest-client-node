@@ -10,39 +10,3 @@ Name | Type | Description | Notes
 **details** | [**[PtsV2PaymentsPost201ResponseErrorInformationDetails]**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `REQUEST` (value: `"INVALID_REQUEST"`)
-
-
-
-
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `MISSING_FIELD` (value: `"MISSING_FIELD"`)
-
-* `INVALID_DATA` (value: `"INVALID_DATA"`)
-
-* `DUPLICATE_REQUEST` (value: `"DUPLICATE_REQUEST"`)
-
-* `INVALID_CARD` (value: `"INVALID_CARD"`)
-
-* `CARD_TYPE_NOT_ACCEPTED` (value: `"CARD_TYPE_NOT_ACCEPTED"`)
-
-* `INVALID_MERCHANT_CONFIGURATION` (value: `"INVALID_MERCHANT_CONFIGURATION"`)
-
-* `PROCESSOR_UNAVAILABLE` (value: `"PROCESSOR_UNAVAILABLE"`)
-
-* `INVALID_AMOUNT` (value: `"INVALID_AMOUNT"`)
-
-* `INVALID_CARD_TYPE` (value: `"INVALID_CARD_TYPE"`)
-
-* `DEBIT_CARD_USEAGE_EXCEEDD_LIMIT` (value: `"DEBIT_CARD_USEAGE_EXCEEDD_LIMIT"`)
-
-
-
-

@@ -77,17 +77,17 @@
   }
 
   /**
-   * The description for this field is not available.
+   * Customer’s true IP address detected by the application.  For details, see the `true_ipaddress` field description in [CyberSource Decision Manager Device Fingerprinting Guide.](https://www.cybersource.com/developers/documentation/fraud_management) 
    * @member {String} true_ipaddress
    */
   exports.prototype['true_ipaddress'] = undefined;
   /**
-   * The description for this field is not available.
+   * The unique identifier of the device that is returned in the `riskInformation.providers.fingerprint.device_fingerprint_hash` API reply field.  NOTE: For details about the value of this field, see the `decision_provider_#_field_#_value` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  For more details about this field, see the `device_fingerprint_hash` field description in the _CyberSource Decision Manager Device Fingerprinting Guide_on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link) 
    * @member {String} hash
    */
   exports.prototype['hash'] = undefined;
   /**
-   * The description for this field is not available.
+   * The device identifier generated from attributes collected during profiling. Returned by a 3rd party when you use device fingerprinting.  For details, see the `device_fingerprint_smart_id` field description in [CyberSource Decision Manager Device Fingerprinting Guide.](https://www.cybersource.com/developers/documentation/fraud_management) 
    * @member {String} smartId
    */
   exports.prototype['smartId'] = undefined;

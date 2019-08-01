@@ -16,16 +16,3 @@ Name | Type | Description | Notes
 **recipientInformation** | [**PtsV2PayoutsPost201ResponseRecipientInformation**](PtsV2PayoutsPost201ResponseRecipientInformation.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `ACCEPTED` (value: `"ACCEPTED"`)
-
-* `DECLINED` (value: `"DECLINED"`)
-
-* `INVALID_REQUEST` (value: `"INVALID_REQUEST"`)
-
-
-
-
