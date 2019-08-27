@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv1instrumentidentifiersDetails'], factory);
+    define(['ApiClient', 'model/InlineResponse4001Fields'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersDetails'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse4001Fields'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4001 = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersDetails);
+    root.CyberSource.InlineResponse4001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001Fields);
   }
-}(this, function(ApiClient, Tmsv1instrumentidentifiersDetails) {
+}(this, function(ApiClient, InlineResponse4001Fields) {
   'use strict';
 
 
@@ -41,11 +41,17 @@
 
   /**
    * Constructs a new <code>InlineResponse4001</code>.
+   * Error Bean
    * @alias module:model/InlineResponse4001
    * @class
+   * @param code {String} Error code
+   * @param message {String} Error message
    */
-  var exports = function() {
+  var exports = function(code, message) {
     var _this = this;
+
+    _this['code'] = code;
+    _this['message'] = message;
 
 
 
@@ -63,32 +69,58 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('code')) {
+        obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = Tmsv1instrumentidentifiersDetails.constructFromObject(data['details']);
+      if (data.hasOwnProperty('localizationKey')) {
+        obj['localizationKey'] = ApiClient.convertToType(data['localizationKey'], 'String');
+      }
+      if (data.hasOwnProperty('correlationId')) {
+        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
+      }
+      if (data.hasOwnProperty('detail')) {
+        obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
+      }
+      if (data.hasOwnProperty('fields')) {
+        obj['fields'] = ApiClient.convertToType(data['fields'], [InlineResponse4001Fields]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} type
+   * Error code
+   * @member {String} code
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['code'] = undefined;
   /**
-   * The detailed message related to the type stated above.
+   * Error message
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {module:model/Tmsv1instrumentidentifiersDetails} details
+   * Localization Key Name
+   * @member {String} localizationKey
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['localizationKey'] = undefined;
+  /**
+   * Correlation Id
+   * @member {String} correlationId
+   */
+  exports.prototype['correlationId'] = undefined;
+  /**
+   * Error Detail
+   * @member {String} detail
+   */
+  exports.prototype['detail'] = undefined;
+  /**
+   * Error fields List
+   * @member {Array.<module:model/InlineResponse4001Fields>} fields
+   */
+  exports.prototype['fields'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv1instrumentidentifiersDetails'], factory);
+    define(['ApiClient', 'model/ErrorLinks', 'model/InlineResponseDefaultResponseStatus'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersDetails'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorLinks'), require('./InlineResponseDefaultResponseStatus'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Error = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersDetails);
+    root.CyberSource.Error = factory(root.CyberSource.ApiClient, root.CyberSource.ErrorLinks, root.CyberSource.InlineResponseDefaultResponseStatus);
   }
-}(this, function(ApiClient, Tmsv1instrumentidentifiersDetails) {
+}(this, function(ApiClient, ErrorLinks, InlineResponseDefaultResponseStatus) {
   'use strict';
 
 
@@ -49,7 +49,6 @@
 
 
 
-
   };
 
   /**
@@ -63,32 +62,24 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('responseStatus')) {
+        obj['responseStatus'] = InlineResponseDefaultResponseStatus.constructFromObject(data['responseStatus']);
       }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
-      }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = Tmsv1instrumentidentifiersDetails.constructFromObject(data['details']);
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = ErrorLinks.constructFromObject(data['_links']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} type
+   * @member {module:model/InlineResponseDefaultResponseStatus} responseStatus
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['responseStatus'] = undefined;
   /**
-   * The detailed message related to the type stated above.
-   * @member {String} message
+   * @member {module:model/ErrorLinks} _links
    */
-  exports.prototype['message'] = undefined;
-  /**
-   * @member {module:model/Tmsv1instrumentidentifiersDetails} details
-   */
-  exports.prototype['details'] = undefined;
+  exports.prototype['_links'] = undefined;
 
 
 

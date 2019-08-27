@@ -62,14 +62,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property ancestor (base name: "ancestor")', function() {
-      // uncomment below and update the code to test the property ancestor
+    it('should have the property documentation (base name: "documentation")', function() {
+      // uncomment below and update the code to test the property documentation
       //var instane = new CyberSource.Links();
       //expect(instance).to.be();
     });
 
-    it('should have the property successor (base name: "successor")', function() {
-      // uncomment below and update the code to test the property successor
+    it('should have the property next (base name: "next")', function() {
+      // uncomment below and update the code to test the property next
       //var instane = new CyberSource.Links();
       //expect(instance).to.be();
     });

@@ -1,4 +1,4 @@
-# CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+# CyberSource.Tmsv1instrumentidentifiersBankAccount
 
 ## Properties
 Name | Type | Description | Notes

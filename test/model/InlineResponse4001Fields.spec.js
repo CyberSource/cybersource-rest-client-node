@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount();
+    instance = new CyberSource.InlineResponse4001Fields();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,28 @@
       object[property] = value;
   }
 
-  describe('TmsV1InstrumentIdentifiersPost200ResponseBankAccount', function() {
-    it('should create an instance of TmsV1InstrumentIdentifiersPost200ResponseBankAccount', function() {
-      // uncomment below and update the code to test TmsV1InstrumentIdentifiersPost200ResponseBankAccount
-      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount();
-      //expect(instance).to.be.a(CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount);
+  describe('InlineResponse4001Fields', function() {
+    it('should create an instance of InlineResponse4001Fields', function() {
+      // uncomment below and update the code to test InlineResponse4001Fields
+      //var instane = new CyberSource.InlineResponse4001Fields();
+      //expect(instance).to.be.a(CyberSource.InlineResponse4001Fields);
     });
 
-    it('should have the property _number (base name: "number")', function() {
-      // uncomment below and update the code to test the property _number
-      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount();
+    it('should have the property path (base name: "path")', function() {
+      // uncomment below and update the code to test the property path
+      //var instane = new CyberSource.InlineResponse4001Fields();
       //expect(instance).to.be();
     });
 
-    it('should have the property routingNumber (base name: "routingNumber")', function() {
-      // uncomment below and update the code to test the property routingNumber
-      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount();
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
+      //var instane = new CyberSource.InlineResponse4001Fields();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property localizationKey (base name: "localizationKey")', function() {
+      // uncomment below and update the code to test the property localizationKey
+      //var instane = new CyberSource.InlineResponse4001Fields();
       //expect(instance).to.be();
     });
 

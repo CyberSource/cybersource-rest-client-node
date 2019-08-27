@@ -62,6 +62,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property chipValidationType (base name: "chipValidationType")', function() {
+      // uncomment below and update the code to test the property chipValidationType
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property chipValidationResult (base name: "chipValidationResult")', function() {
+      // uncomment below and update the code to test the property chipValidationResult
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

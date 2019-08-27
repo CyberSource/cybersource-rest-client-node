@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **postalCodeRaw** | **String** | Raw Electronic Verification response code from the processor for the customer’s postal code. | [optional] 
 **street** | **String** | Mapped Electronic Verification response code for the customer’s street address.  For details, see &#x60;auth_ev_street&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  | [optional] 
 **streetRaw** | **String** | Raw Electronic Verification response code from the processor for the customer’s street address. | [optional] 
-**name** | **String** | The description for this field is not available.  | [optional] 
-**nameRaw** | **String** | The description for this field is not available. | [optional] 
+**name** | **String** | Mapped Electronic Verification response code for the customer’s name.  | [optional] 
+**nameRaw** | **String** | Raw Electronic Verification response code from the processor for the customer’s name.  | [optional] 
 
 

@@ -73,12 +73,12 @@
   }
 
   /**
-   * The description for this field is not available.
+   * The name of the profile. 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * The description for this field is not available.
+   * Decision returned by the profile; this field contains one of these values: - ACCEPT - REJECT - REVIEW 
    * @member {String} decision
    */
   exports.prototype['decision'] = undefined;

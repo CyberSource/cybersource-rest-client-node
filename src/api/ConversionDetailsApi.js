@@ -96,7 +96,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json'];
+      var accepts = ['application/hal+json', 'application/xml'];
       var returnType = ReportingV3ConversionDetailsGet200Response;
 
       return this.apiClient.callApi(

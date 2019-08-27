@@ -48,6 +48,8 @@
     var _this = this;
 
 
+
+
   };
 
   /**
@@ -64,6 +66,12 @@
       if (data.hasOwnProperty('tags')) {
         obj['tags'] = ApiClient.convertToType(data['tags'], 'String');
       }
+      if (data.hasOwnProperty('chipValidationType')) {
+        obj['chipValidationType'] = ApiClient.convertToType(data['chipValidationType'], 'String');
+      }
+      if (data.hasOwnProperty('chipValidationResult')) {
+        obj['chipValidationResult'] = ApiClient.convertToType(data['chipValidationResult'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +81,16 @@
    * @member {String} tags
    */
   exports.prototype['tags'] = undefined;
+  /**
+   * Entity or service that provided the validation results returned in **chipValidationResult**.  Possible values:  - **02**: MasterCard on-behalf pre-validation service (The MasterCard authorization platform validated the M/Chip cryptogram before the authorization request reached the issuer.)  - **03**: MasterCard on-behalf stand-in service (The MasterCard authorization platform validated the M/Chip cryptogram because the issuer was not available.)  - **50**: Issuer  - **90**: Chip fall-back transaction downgrade process (The chip could not be read.)  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time. 
+   * @member {String} chipValidationType
+   */
+  exports.prototype['chipValidationType'] = undefined;
+  /**
+   * Cryptogram validation results returned by the entity or service specified in **chipValidationType**.  Possible values: - **A**: Application cryptogram is valid, but the application transaction counter (ATC) is outside allowed range. (A large jump in ATC values may indicate data copying or other fraud.) - **C**: Chip validation was completed successfully. - **E**: Application cryptogram is valid but the ATC indicates possible replay fraud. - **F**: Format error in the chip data. - **G**: Application cryptogram is valid but is not a valid authorization request cryptogram (ARQC). - **I**: Application cryptogram is invalid. - **T**: Application cryptogram is valid but terminal verification results (TVR) or card verification results (CVR) are invalid. - **U**: Application cryptogram could not be validated because of a technical error.  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time. 
+   * @member {String} chipValidationResult
+   */
+  exports.prototype['chipValidationResult'] = undefined;
 
 
 

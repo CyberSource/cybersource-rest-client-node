@@ -58,6 +58,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -76,6 +79,15 @@
       }
       if (data.hasOwnProperty('interchangePerItemFee')) {
         obj['interchangePerItemFee'] = ApiClient.convertToType(data['interchangePerItemFee'], 'String');
+      }
+      if (data.hasOwnProperty('interchangeDescription')) {
+        obj['interchangeDescription'] = ApiClient.convertToType(data['interchangeDescription'], 'String');
+      }
+      if (data.hasOwnProperty('interchangePercentage')) {
+        obj['interchangePercentage'] = ApiClient.convertToType(data['interchangePercentage'], 'String');
+      }
+      if (data.hasOwnProperty('interchangePercentageAmount')) {
+        obj['interchangePercentageAmount'] = ApiClient.convertToType(data['interchangePercentageAmount'], 'String');
       }
       if (data.hasOwnProperty('discountPercentage')) {
         obj['discountPercentage'] = ApiClient.convertToType(data['discountPercentage'], 'String');
@@ -115,6 +127,21 @@
    * @member {String} interchangePerItemFee
    */
   exports.prototype['interchangePerItemFee'] = undefined;
+  /**
+   * interchange Description
+   * @member {String} interchangeDescription
+   */
+  exports.prototype['interchangeDescription'] = undefined;
+  /**
+   * interchange Percentage
+   * @member {String} interchangePercentage
+   */
+  exports.prototype['interchangePercentage'] = undefined;
+  /**
+   * interchange Percentage Amount
+   * @member {String} interchangePercentageAmount
+   */
+  exports.prototype['interchangePercentageAmount'] = undefined;
   /**
    * Discount Percentage
    * @member {String} discountPercentage

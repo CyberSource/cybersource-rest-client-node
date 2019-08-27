@@ -138,7 +138,7 @@
    */
   exports.prototype['accountType'] = undefined;
   /**
-   * Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for Visa Platform Connect. 
+   * Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for CyberSource through VisaNet. 
    * @member {String} accountStatus
    */
   exports.prototype['accountStatus'] = undefined;
@@ -178,7 +178,7 @@
    */
   exports.prototype['commercial'] = undefined;
   /**
-   * Type of commercial card. This field is supported only for Visa Platform Connect. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card 
+   * Type of commercial card. This field is supported only for CyberSource through VisaNet. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card 
    * @member {String} group
    */
   exports.prototype['group'] = undefined;

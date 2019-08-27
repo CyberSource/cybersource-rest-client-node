@@ -68,6 +68,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property interchangeDescription (base name: "interchangeDescription")', function() {
+      // uncomment below and update the code to test the property interchangeDescription
+      //var instane = new CyberSource.ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property interchangePercentage (base name: "interchangePercentage")', function() {
+      // uncomment below and update the code to test the property interchangePercentage
+      //var instane = new CyberSource.ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property interchangePercentageAmount (base name: "interchangePercentageAmount")', function() {
+      // uncomment below and update the code to test the property interchangePercentageAmount
+      //var instane = new CyberSource.ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property discountPercentage (base name: "discountPercentage")', function() {
       // uncomment below and update the code to test the property discountPercentage
       //var instane = new CyberSource.ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails();

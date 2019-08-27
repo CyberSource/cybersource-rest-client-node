@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsPaymentInformationFluidData);
     });
 
-    it('should have the property key (base name: "key")', function() {
-      // uncomment below and update the code to test the property key
+    it('should have the property keySerialNumber (base name: "keySerialNumber")', function() {
+      // uncomment below and update the code to test the property keySerialNumber
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformationFluidData();
       //expect(instance).to.be();
     });

@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -86,6 +87,9 @@
       }
       if (data.hasOwnProperty('purchaseLevel')) {
         obj['purchaseLevel'] = ApiClient.convertToType(data['purchaseLevel'], 'String');
+      }
+      if (data.hasOwnProperty('industryDataType')) {
+        obj['industryDataType'] = ApiClient.convertToType(data['industryDataType'], 'String');
       }
       if (data.hasOwnProperty('issuer')) {
         obj['issuer'] = Ptsv2paymentsIssuerInformation.constructFromObject(data['issuer']);
@@ -130,6 +134,11 @@
    * @member {String} purchaseLevel
    */
   exports.prototype['purchaseLevel'] = undefined;
+  /**
+   * Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - **airline** - **restaurant** 
+   * @member {String} industryDataType
+   */
+  exports.prototype['industryDataType'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsIssuerInformation} issuer
    */

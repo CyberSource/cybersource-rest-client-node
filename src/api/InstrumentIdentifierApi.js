@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateInstrumentIdentifierRequest', 'model/InlineResponse4001', 'model/TmsV1InstrumentIdentifiersDelete409Response', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response', 'model/TmsV1InstrumentIdentifiersPost200Response', 'model/UpdateInstrumentIdentifierRequest'], factory);
+    define(['ApiClient', 'model/CreateInstrumentIdentifierRequest', 'model/InlineResponse400', 'model/TmsV1InstrumentIdentifiersDelete409Response', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response', 'model/TmsV1InstrumentIdentifiersPost200Response', 'model/UpdateInstrumentIdentifierRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateInstrumentIdentifierRequest'), require('../model/InlineResponse4001'), require('../model/TmsV1InstrumentIdentifiersDelete409Response'), require('../model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response'), require('../model/TmsV1InstrumentIdentifiersPost200Response'), require('../model/UpdateInstrumentIdentifierRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateInstrumentIdentifierRequest'), require('../model/InlineResponse400'), require('../model/TmsV1InstrumentIdentifiersDelete409Response'), require('../model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response'), require('../model/TmsV1InstrumentIdentifiersPost200Response'), require('../model/UpdateInstrumentIdentifierRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateInstrumentIdentifierRequest, root.CyberSource.InlineResponse4001, root.CyberSource.TmsV1InstrumentIdentifiersDelete409Response, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, root.CyberSource.TmsV1InstrumentIdentifiersPost200Response, root.CyberSource.UpdateInstrumentIdentifierRequest);
+    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateInstrumentIdentifierRequest, root.CyberSource.InlineResponse400, root.CyberSource.TmsV1InstrumentIdentifiersDelete409Response, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, root.CyberSource.TmsV1InstrumentIdentifiersPost200Response, root.CyberSource.UpdateInstrumentIdentifierRequest);
   }
-}(this, function(ApiClient, CreateInstrumentIdentifierRequest, InlineResponse4001, TmsV1InstrumentIdentifiersDelete409Response, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, TmsV1InstrumentIdentifiersPost200Response, UpdateInstrumentIdentifierRequest) {
+}(this, function(ApiClient, CreateInstrumentIdentifierRequest, InlineResponse400, TmsV1InstrumentIdentifiersDelete409Response, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, TmsV1InstrumentIdentifiersPost200Response, UpdateInstrumentIdentifierRequest) {
   'use strict';
 
   /**

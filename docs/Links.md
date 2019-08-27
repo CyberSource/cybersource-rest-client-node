@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
-**ancestor** | [**TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
-**successor** | [**TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
+**self** | [**InlineResponseDefaultLinksNext**](InlineResponseDefaultLinksNext.md) |  | [optional] 
+**documentation** | [**[InlineResponseDefaultLinksNext]**](InlineResponseDefaultLinksNext.md) |  | [optional] 
+**next** | [**[InlineResponseDefaultLinksNext]**](InlineResponseDefaultLinksNext.md) |  | [optional] 
 
 
