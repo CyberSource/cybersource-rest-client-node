@@ -82,7 +82,7 @@
    */
   exports.prototype['suffix'] = undefined;
   /**
-   * The description for this field is not available.
+   * Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number. 
    * @member {String} prefix
    */
   exports.prototype['prefix'] = undefined;

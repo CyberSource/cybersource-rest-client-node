@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount', 'model/TmsV1InstrumentIdentifiersPost200ResponseCard', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinks', 'model/TmsV1InstrumentIdentifiersPost200ResponseMetadata', 'model/TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseCard', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinks', 'model/TmsV1InstrumentIdentifiersPost200ResponseMetadata', 'model/TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation', 'model/Tmsv1instrumentidentifiersBankAccount'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseBankAccount'), require('./TmsV1InstrumentIdentifiersPost200ResponseCard'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinks'), require('./TmsV1InstrumentIdentifiersPost200ResponseMetadata'), require('./TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseCard'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinks'), require('./TmsV1InstrumentIdentifiersPost200ResponseMetadata'), require('./TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation'), require('./Tmsv1instrumentidentifiersBankAccount'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.EmbeddedInstrumentIdentifier = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseCard, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseMetadata, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation);
+    root.CyberSource.EmbeddedInstrumentIdentifier = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseCard, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseMetadata, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation, root.CyberSource.Tmsv1instrumentidentifiersBankAccount);
   }
-}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseBankAccount, TmsV1InstrumentIdentifiersPost200ResponseCard, TmsV1InstrumentIdentifiersPost200ResponseLinks, TmsV1InstrumentIdentifiersPost200ResponseMetadata, TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseCard, TmsV1InstrumentIdentifiersPost200ResponseLinks, TmsV1InstrumentIdentifiersPost200ResponseMetadata, TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation, Tmsv1instrumentidentifiersBankAccount) {
   'use strict';
 
 
@@ -84,7 +84,7 @@
         obj['card'] = TmsV1InstrumentIdentifiersPost200ResponseCard.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('bankAccount')) {
-        obj['bankAccount'] = TmsV1InstrumentIdentifiersPost200ResponseBankAccount.constructFromObject(data['bankAccount']);
+        obj['bankAccount'] = Tmsv1instrumentidentifiersBankAccount.constructFromObject(data['bankAccount']);
       }
       if (data.hasOwnProperty('processingInformation')) {
         obj['processingInformation'] = TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation.constructFromObject(data['processingInformation']);
@@ -106,7 +106,7 @@
    */
   exports.prototype['object'] = undefined;
   /**
-   * 'Current state of the token.'              Valid values: - ACTIVE - CLOSED 
+   * 'Current state of the token.'  Valid values: - ACTIVE - CLOSED 
    * @member {String} state
    */
   exports.prototype['state'] = undefined;
@@ -120,7 +120,7 @@
    */
   exports.prototype['card'] = undefined;
   /**
-   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount} bankAccount
+   * @member {module:model/Tmsv1instrumentidentifiersBankAccount} bankAccount
    */
   exports.prototype['bankAccount'] = undefined;
   /**

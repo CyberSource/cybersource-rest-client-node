@@ -64,8 +64,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('key')) {
-        obj['key'] = ApiClient.convertToType(data['key'], 'String');
+      if (data.hasOwnProperty('keySerialNumber')) {
+        obj['keySerialNumber'] = ApiClient.convertToType(data['keySerialNumber'], 'String');
       }
       if (data.hasOwnProperty('descriptor')) {
         obj['descriptor'] = ApiClient.convertToType(data['descriptor'], 'String');
@@ -82,9 +82,9 @@
 
   /**
    * The encoded or encrypted value that a payment solution returns for an authorization request. For details about the valid values for a key, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html) 
-   * @member {String} key
+   * @member {String} keySerialNumber
    */
-  exports.prototype['key'] = undefined;
+  exports.prototype['keySerialNumber'] = undefined;
   /**
    * The identifier for a payment solution, which is sending the encrypted payment data to CyberSource for decryption. Valid values: - Samsung Pay: `RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ=` **NOTE**: For other payment solutions, the value may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor.  For details about the list of payment solution identifiers, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html).  For details about the encrypted payment data, see the `encrypted_payment_descriptor` field description in the [Card-Present Processing Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). 
    * @member {String} descriptor

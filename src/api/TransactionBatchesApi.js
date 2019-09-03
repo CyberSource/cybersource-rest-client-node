@@ -50,6 +50,57 @@
 	
 
     /**
+     * Callback function to receive the result of the getTransactionBatchDetails operation.
+     * @callback module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get transaction details for a given batch id 
+     * Provides real-time detailed status information about the transactions  that you previously uploaded in the Business Center or processed with  the Offline Transaction File Submission service. 
+     * @param {String} id The batch id assigned for the template.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd 
+     * @param {String} opts.status Allows you to filter by rejected response.  Valid values: - Rejected 
+     * @param {module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getTransactionBatchDetails = function(id, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getTransactionBatchDetails");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+        'uploadDate': opts['uploadDate'],
+        'status': opts['status']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['text/csv', 'application/xml'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/pts/v1/transaction-batch-details/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getTransactionBatchId operation.
      * @callback module:api/TransactionBatchesApi~getTransactionBatchIdCallback
      * @param {String} error Error message, if any.

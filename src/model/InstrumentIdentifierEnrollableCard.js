@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv1instrumentidentifiersBillTo', 'model/Tmsv1instrumentidentifiersCard'], factory);
+    define(['ApiClient', 'model/Tmsv1instrumentidentifiersBankAccount', 'model/Tmsv1instrumentidentifiersBillTo', 'model/Tmsv1instrumentidentifiersCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersBillTo'), require('./Tmsv1instrumentidentifiersCard'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersBankAccount'), require('./Tmsv1instrumentidentifiersBillTo'), require('./Tmsv1instrumentidentifiersCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifierEnrollableCard = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersBillTo, root.CyberSource.Tmsv1instrumentidentifiersCard);
+    root.CyberSource.InstrumentIdentifierEnrollableCard = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersBankAccount, root.CyberSource.Tmsv1instrumentidentifiersBillTo, root.CyberSource.Tmsv1instrumentidentifiersCard);
   }
-}(this, function(ApiClient, Tmsv1instrumentidentifiersBillTo, Tmsv1instrumentidentifiersCard) {
+}(this, function(ApiClient, Tmsv1instrumentidentifiersBankAccount, Tmsv1instrumentidentifiersBillTo, Tmsv1instrumentidentifiersCard) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -69,6 +70,9 @@
       if (data.hasOwnProperty('card')) {
         obj['card'] = Tmsv1instrumentidentifiersCard.constructFromObject(data['card']);
       }
+      if (data.hasOwnProperty('BankAccount')) {
+        obj['BankAccount'] = Tmsv1instrumentidentifiersBankAccount.constructFromObject(data['BankAccount']);
+      }
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = Tmsv1instrumentidentifiersBillTo.constructFromObject(data['billTo']);
       }
@@ -85,6 +89,10 @@
    * @member {module:model/Tmsv1instrumentidentifiersCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * @member {module:model/Tmsv1instrumentidentifiersBankAccount} BankAccount
+   */
+  exports.prototype['BankAccount'] = undefined;
   /**
    * @member {module:model/Tmsv1instrumentidentifiersBillTo} billTo
    */

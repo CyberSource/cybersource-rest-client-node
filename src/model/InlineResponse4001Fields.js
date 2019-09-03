@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseBankAccount = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse4001Fields = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,15 @@
 
 
   /**
-   * The TmsV1InstrumentIdentifiersPost200ResponseBankAccount model module.
-   * @module model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+   * The InlineResponse4001Fields model module.
+   * @module model/InlineResponse4001Fields
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsV1InstrumentIdentifiersPost200ResponseBankAccount</code>.
-   * @alias module:model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+   * Constructs a new <code>InlineResponse4001Fields</code>.
+   * Provide validation failed input field details
+   * @alias module:model/InlineResponse4001Fields
    * @class
    */
   var exports = function() {
@@ -49,39 +50,48 @@
 
 
 
+
   };
 
   /**
-   * Constructs a <code>TmsV1InstrumentIdentifiersPost200ResponseBankAccount</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InlineResponse4001Fields</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount} obj Optional instance to populate.
-   * @return {module:model/TmsV1InstrumentIdentifiersPost200ResponseBankAccount} The populated <code>TmsV1InstrumentIdentifiersPost200ResponseBankAccount</code> instance.
+   * @param {module:model/InlineResponse4001Fields} obj Optional instance to populate.
+   * @return {module:model/InlineResponse4001Fields} The populated <code>InlineResponse4001Fields</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('number')) {
-        obj['number'] = ApiClient.convertToType(data['number'], 'String');
+      if (data.hasOwnProperty('path')) {
+        obj['path'] = ApiClient.convertToType(data['path'], 'String');
       }
-      if (data.hasOwnProperty('routingNumber')) {
-        obj['routingNumber'] = ApiClient.convertToType(data['routingNumber'], 'String');
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+      }
+      if (data.hasOwnProperty('localizationKey')) {
+        obj['localizationKey'] = ApiClient.convertToType(data['localizationKey'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Checking account number.
-   * @member {String} number
+   * Path of the failed property
+   * @member {String} path
    */
-  exports.prototype['number'] = undefined;
+  exports.prototype['path'] = undefined;
   /**
-   * Routing number.
-   * @member {String} routingNumber
+   * Error description about validation failed field
+   * @member {String} message
    */
-  exports.prototype['routingNumber'] = undefined;
+  exports.prototype['message'] = undefined;
+  /**
+   * Localized Key Name
+   * @member {String} localizationKey
+   */
+  exports.prototype['localizationKey'] = undefined;
 
 
 

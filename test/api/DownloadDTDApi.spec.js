@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.InlineResponse400Fields();
+    instance = new CyberSource.DownloadDTDApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,31 +49,17 @@
       object[property] = value;
   }
 
-  describe('InlineResponse400Fields', function() {
-    it('should create an instance of InlineResponse400Fields', function() {
-      // uncomment below and update the code to test InlineResponse400Fields
-      //var instane = new CyberSource.InlineResponse400Fields();
-      //expect(instance).to.be.a(CyberSource.InlineResponse400Fields);
+  describe('DownloadDTDApi', function() {
+    describe('getDTDV2', function() {
+      it('should call getDTDV2 successfully', function(done) {
+        //uncomment below and update the code to test getDTDV2
+        //instance.getDTDV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
-      //var instane = new CyberSource.InlineResponse400Fields();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instane = new CyberSource.InlineResponse400Fields();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property localizationKey (base name: "localizationKey")', function() {
-      // uncomment below and update the code to test the property localizationKey
-      //var instane = new CyberSource.InlineResponse400Fields();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

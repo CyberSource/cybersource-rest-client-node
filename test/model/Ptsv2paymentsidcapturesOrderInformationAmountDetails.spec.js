@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property gratuityAmount (base name: "gratuityAmount")', function() {
+      // uncomment below and update the code to test the property gratuityAmount
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property taxAmount (base name: "taxAmount")', function() {
       // uncomment below and update the code to test the property taxAmount
       //var instane = new CyberSource.Ptsv2paymentsidcapturesOrderInformationAmountDetails();

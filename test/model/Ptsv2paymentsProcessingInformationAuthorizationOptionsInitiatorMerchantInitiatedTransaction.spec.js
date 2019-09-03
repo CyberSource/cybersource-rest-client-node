@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property originalAuthorizedAmount (base name: "originalAuthorizedAmount")', function() {
+      // uncomment below and update the code to test the property originalAuthorizedAmount
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

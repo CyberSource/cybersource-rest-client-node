@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bankAccount (base name: "BankAccount")', function() {
+      // uncomment below and update the code to test the property bankAccount
+      //var instane = new CyberSource.CreateInstrumentIdentifierRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property billTo (base name: "billTo")', function() {
       // uncomment below and update the code to test the property billTo
       //var instane = new CyberSource.CreateInstrumentIdentifierRequest();

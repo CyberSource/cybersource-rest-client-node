@@ -115,12 +115,12 @@
    */
   exports.prototype['emailRaw'] = undefined;
   /**
-   * The description for this field is not available. 
+   * Mapped Electronic Verification response code for the customer’s name. 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * The description for this field is not available.
+   * Raw Electronic Verification response code from the processor for the customer’s name. 
    * @member {String} nameRaw
    */
   exports.prototype['nameRaw'] = undefined;

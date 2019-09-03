@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/V1FileDetailsGet200Response'], factory);
+    define(['ApiClient', 'model/InlineResponse4001', 'model/V1FileDetailsGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/V1FileDetailsGet200Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4001'), require('../model/V1FileDetailsGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SecureFileShareApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.V1FileDetailsGet200Response);
+    root.CyberSource.SecureFileShareApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001, root.CyberSource.V1FileDetailsGet200Response);
   }
-}(this, function(ApiClient, InlineResponse400, V1FileDetailsGet200Response) {
+}(this, function(ApiClient, InlineResponse4001, V1FileDetailsGet200Response) {
   'use strict';
 
   /**

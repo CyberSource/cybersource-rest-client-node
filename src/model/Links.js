@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'], factory);
+    define(['ApiClient', 'model/InlineResponseDefaultLinksNext'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponseDefaultLinksNext'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Links = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinksSelf);
+    root.CyberSource.Links = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponseDefaultLinksNext);
   }
-}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseLinksSelf) {
+}(this, function(ApiClient, InlineResponseDefaultLinksNext) {
   'use strict';
 
 
@@ -64,30 +64,30 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('self')) {
-        obj['self'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['self']);
+        obj['self'] = InlineResponseDefaultLinksNext.constructFromObject(data['self']);
       }
-      if (data.hasOwnProperty('ancestor')) {
-        obj['ancestor'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['ancestor']);
+      if (data.hasOwnProperty('documentation')) {
+        obj['documentation'] = ApiClient.convertToType(data['documentation'], [InlineResponseDefaultLinksNext]);
       }
-      if (data.hasOwnProperty('successor')) {
-        obj['successor'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['successor']);
+      if (data.hasOwnProperty('next')) {
+        obj['next'] = ApiClient.convertToType(data['next'], [InlineResponseDefaultLinksNext]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} self
+   * @member {module:model/InlineResponseDefaultLinksNext} self
    */
   exports.prototype['self'] = undefined;
   /**
-   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} ancestor
+   * @member {Array.<module:model/InlineResponseDefaultLinksNext>} documentation
    */
-  exports.prototype['ancestor'] = undefined;
+  exports.prototype['documentation'] = undefined;
   /**
-   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} successor
+   * @member {Array.<module:model/InlineResponseDefaultLinksNext>} next
    */
-  exports.prototype['successor'] = undefined;
+  exports.prototype['next'] = undefined;
 
 
 

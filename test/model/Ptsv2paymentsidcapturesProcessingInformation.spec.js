@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property industryDataType (base name: "industryDataType")', function() {
+      // uncomment below and update the code to test the property industryDataType
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property issuer (base name: "issuer")', function() {
       // uncomment below and update the code to test the property issuer
       //var instane = new CyberSource.Ptsv2paymentsidcapturesProcessingInformation();

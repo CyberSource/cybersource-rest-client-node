@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response', 'model/RequestBody1'], factory);
+    define(['ApiClient', 'model/InlineResponse4001', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response', 'model/RequestBody1'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'), require('../model/RequestBody1'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4001'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'), require('../model/RequestBody1'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportSubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response, root.CyberSource.RequestBody1);
+    root.CyberSource.ReportSubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response, root.CyberSource.RequestBody1);
   }
-}(this, function(ApiClient, InlineResponse400, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response, RequestBody1) {
+}(this, function(ApiClient, InlineResponse4001, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response, RequestBody1) {
   'use strict';
 
   /**
