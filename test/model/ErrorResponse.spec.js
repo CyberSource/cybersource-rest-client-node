@@ -56,18 +56,6 @@
       //expect(instance).to.be.a(CyberSource.ErrorResponse);
     });
 
-    it('should have the property responseStatus (base name: "responseStatus")', function() {
-      // uncomment below and update the code to test the property responseStatus
-      //var instane = new CyberSource.ErrorResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new CyberSource.ErrorResponse();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

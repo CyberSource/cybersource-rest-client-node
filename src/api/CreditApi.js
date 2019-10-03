@@ -88,7 +88,7 @@
       var returnType = PtsV2CreditsPost201Response;
 
       return this.apiClient.callApi(
-        '/pts/v2/credits/', 'POST',
+        '/pts/v2/credits', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

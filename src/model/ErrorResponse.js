@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponseDefaultLinks', 'model/InlineResponseDefaultResponseStatus'], factory);
+    define(['ApiClient', 'model/InlineResponse4001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponseDefaultLinks'), require('./InlineResponseDefaultResponseStatus'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse4001'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ErrorResponse = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponseDefaultLinks, root.CyberSource.InlineResponseDefaultResponseStatus);
+    root.CyberSource.ErrorResponse = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001);
   }
-}(this, function(ApiClient, InlineResponseDefaultLinks, InlineResponseDefaultResponseStatus) {
+}(this, function(ApiClient, InlineResponse4001) {
   'use strict';
 
 
@@ -43,12 +43,14 @@
    * Constructs a new <code>ErrorResponse</code>.
    * @alias module:model/ErrorResponse
    * @class
+   * @extends Array
    */
   var exports = function() {
     var _this = this;
+    _this = new Array();
+    Object.setPrototypeOf(_this, exports);
 
-
-
+    return _this;
   };
 
   /**
@@ -61,25 +63,12 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+      ApiClient.constructFromObject(data, obj, 'InlineResponse4001');
 
-      if (data.hasOwnProperty('responseStatus')) {
-        obj['responseStatus'] = InlineResponseDefaultResponseStatus.constructFromObject(data['responseStatus']);
-      }
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponseDefaultLinks.constructFromObject(data['_links']);
-      }
     }
     return obj;
   }
 
-  /**
-   * @member {module:model/InlineResponseDefaultResponseStatus} responseStatus
-   */
-  exports.prototype['responseStatus'] = undefined;
-  /**
-   * @member {module:model/InlineResponseDefaultLinks} _links
-   */
-  exports.prototype['_links'] = undefined;
 
 
 

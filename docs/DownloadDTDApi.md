@@ -4,16 +4,16 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDTDV2**](DownloadDTDApi.md#getDTDV2) | **GET** /dtds/{reportDefinitionNameVersion} | Used to download DTDs for reports
+[**getDTDV2**](DownloadDTDApi.md#getDTDV2) | **GET** /dtds/{reportDefinitionNameVersion} | Download DTD for report
 
 
 <a name="getDTDV2"></a>
 # **getDTDV2**
 > getDTDV2(reportDefinitionNameVersion)
 
-Used to download DTDs for reports
+Download DTD for report
 
-Downloads DTDs for reports on no-auth.
+Used to download DTDs for reports on no-auth.
 
 ### Example
 ```javascript

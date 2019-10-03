@@ -58,16 +58,12 @@
      */
 
     /**
-     * Get transaction details for a given batch id 
+     * Get transaction details for a given batch id
      * Provides real-time detailed status information about the transactions  that you previously uploaded in the Business Center or processed with  the Offline Transaction File Submission service. 
      * @param {String} id The batch id assigned for the template.
-     * @param {Object} opts Optional parameters
-     * @param {Date} opts.uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd 
-     * @param {String} opts.status Allows you to filter by rejected response.  Valid values: - Rejected 
      * @param {module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getTransactionBatchDetails = function(id, opts, callback) {
-      opts = opts || {};
+    this.getTransactionBatchDetails = function(id, callback) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -80,8 +76,6 @@
         'id': id
       };
       var queryParams = {
-        'uploadDate': opts['uploadDate'],
-        'status': opts['status']
       };
       var headerParams = {
       };

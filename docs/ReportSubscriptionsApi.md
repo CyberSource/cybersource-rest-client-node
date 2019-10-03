@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> createSubscription(requestBody, opts)
+> createSubscription(createReportSubscriptionRequest, opts)
 
 Create Report Subscription for a report name by organization
 
@@ -24,7 +24,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportSubscriptionsApi();
 
-var requestBody = new CyberSource.RequestBody1(); // RequestBody1 | Report subscription request payload
+var createReportSubscriptionRequest = new CyberSource.CreateReportSubscriptionRequest(); // CreateReportSubscriptionRequest | Report subscription request payload
 
 var opts = { 
   'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
@@ -37,14 +37,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createSubscription(requestBody, opts, callback);
+apiInstance.createSubscription(createReportSubscriptionRequest, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**RequestBody1**](RequestBody1.md)| Report subscription request payload | 
+ **createReportSubscriptionRequest** | [**CreateReportSubscriptionRequest**](CreateReportSubscriptionRequest.md)| Report subscription request payload | 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type

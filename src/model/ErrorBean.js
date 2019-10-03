@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4001Fields'], factory);
+    define(['ApiClient', 'model/InlineResponse400Fields'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4001Fields'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse400Fields'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ErrorBean = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001Fields);
+    root.CyberSource.ErrorBean = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400Fields);
   }
-}(this, function(ApiClient, InlineResponse4001Fields) {
+}(this, function(ApiClient, InlineResponse400Fields) {
   'use strict';
 
 
@@ -85,7 +85,7 @@
         obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
       }
       if (data.hasOwnProperty('fields')) {
-        obj['fields'] = ApiClient.convertToType(data['fields'], [InlineResponse4001Fields]);
+        obj['fields'] = ApiClient.convertToType(data['fields'], [InlineResponse400Fields]);
       }
     }
     return obj;
@@ -118,7 +118,7 @@
   exports.prototype['detail'] = undefined;
   /**
    * Error fields List
-   * @member {Array.<module:model/InlineResponse4001Fields>} fields
+   * @member {Array.<module:model/InlineResponse400Fields>} fields
    */
   exports.prototype['fields'] = undefined;
 

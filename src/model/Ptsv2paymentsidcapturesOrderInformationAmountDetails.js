@@ -66,6 +66,7 @@
 
 
 
+
   };
 
   /**
@@ -135,6 +136,9 @@
       }
       if (data.hasOwnProperty('originalCurrency')) {
         obj['originalCurrency'] = ApiClient.convertToType(data['originalCurrency'], 'String');
+      }
+      if (data.hasOwnProperty('cashbackAmount')) {
+        obj['cashbackAmount'] = ApiClient.convertToType(data['cashbackAmount'], 'String');
       }
     }
     return obj;
@@ -233,6 +237,11 @@
    * @member {String} originalCurrency
    */
   exports.prototype['originalCurrency'] = undefined;
+  /**
+   * Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value. 
+   * @member {String} cashbackAmount
+   */
+  exports.prototype['cashbackAmount'] = undefined;
 
 
 

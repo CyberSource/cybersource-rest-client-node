@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponseDefaultLinksNext'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponseDefaultLinksNext'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Links = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponseDefaultLinksNext);
+    root.CyberSource.Links = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinksSelf);
   }
-}(this, function(ApiClient, InlineResponseDefaultLinksNext) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseLinksSelf) {
   'use strict';
 
 
@@ -64,30 +64,30 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('self')) {
-        obj['self'] = InlineResponseDefaultLinksNext.constructFromObject(data['self']);
+        obj['self'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['self']);
       }
-      if (data.hasOwnProperty('documentation')) {
-        obj['documentation'] = ApiClient.convertToType(data['documentation'], [InlineResponseDefaultLinksNext]);
+      if (data.hasOwnProperty('ancestor')) {
+        obj['ancestor'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['ancestor']);
       }
-      if (data.hasOwnProperty('next')) {
-        obj['next'] = ApiClient.convertToType(data['next'], [InlineResponseDefaultLinksNext]);
+      if (data.hasOwnProperty('successor')) {
+        obj['successor'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['successor']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponseDefaultLinksNext} self
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} self
    */
   exports.prototype['self'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponseDefaultLinksNext>} documentation
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} ancestor
    */
-  exports.prototype['documentation'] = undefined;
+  exports.prototype['ancestor'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponseDefaultLinksNext>} next
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} successor
    */
-  exports.prototype['next'] = undefined;
+  exports.prototype['successor'] = undefined;
 
 
 

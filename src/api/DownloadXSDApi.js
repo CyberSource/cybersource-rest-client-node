@@ -58,8 +58,8 @@
      */
 
     /**
-     * Used to download XSDs for reports
-     * Downloads XSDs for reports on no-auth.
+     * Download XSD for report
+     * Used to download XSDs for reports on no-auth.
      * @param {String} reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes
      * @param {module:api/DownloadXSDApi~getXSDV2Callback} callback The callback function, accepting three arguments: error, data, response
      */

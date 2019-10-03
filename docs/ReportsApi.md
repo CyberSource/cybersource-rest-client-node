@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createReport"></a>
 # **createReport**
-> createReport(requestBody, opts)
+> createReport(createAdhocReportRequest, opts)
 
 Create Adhoc Report
 
@@ -23,7 +23,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportsApi();
 
-var requestBody = new CyberSource.RequestBody(); // RequestBody | Report subscription request payload
+var createAdhocReportRequest = new CyberSource.CreateAdhocReportRequest(); // CreateAdhocReportRequest | Report subscription request payload
 
 var opts = { 
   'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
@@ -36,14 +36,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.createReport(requestBody, opts, callback);
+apiInstance.createReport(createAdhocReportRequest, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**RequestBody**](RequestBody.md)| Report subscription request payload | 
+ **createAdhocReportRequest** | [**CreateAdhocReportRequest**](CreateAdhocReportRequest.md)| Report subscription request payload | 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type

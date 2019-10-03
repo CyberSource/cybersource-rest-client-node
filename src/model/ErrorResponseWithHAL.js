@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400'], factory);
+    define(['ApiClient', 'model/InlineResponse4001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse400'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse4001'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ErrorResponseWithHAL = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400);
+    root.CyberSource.ErrorResponseWithHAL = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001);
   }
-}(this, function(ApiClient, InlineResponse400) {
+}(this, function(ApiClient, InlineResponse4001) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      ApiClient.constructFromObject(data, obj, 'InlineResponse400');
+      ApiClient.constructFromObject(data, obj, 'InlineResponse4001');
 
     }
     return obj;

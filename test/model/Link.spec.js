@@ -62,18 +62,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
-      //var instane = new CyberSource.Link();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property method (base name: "method")', function() {
-      // uncomment below and update the code to test the property method
-      //var instane = new CyberSource.Link();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

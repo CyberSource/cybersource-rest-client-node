@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.InlineResponse4001Fields();
+    instance = new CyberSource.Ptsv2paymentsPaymentInformationPaymentType();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,28 +49,28 @@
       object[property] = value;
   }
 
-  describe('InlineResponse4001Fields', function() {
-    it('should create an instance of InlineResponse4001Fields', function() {
-      // uncomment below and update the code to test InlineResponse4001Fields
-      //var instane = new CyberSource.InlineResponse4001Fields();
-      //expect(instance).to.be.a(CyberSource.InlineResponse4001Fields);
+  describe('Ptsv2paymentsPaymentInformationPaymentType', function() {
+    it('should create an instance of Ptsv2paymentsPaymentInformationPaymentType', function() {
+      // uncomment below and update the code to test Ptsv2paymentsPaymentInformationPaymentType
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationPaymentType();
+      //expect(instance).to.be.a(CyberSource.Ptsv2paymentsPaymentInformationPaymentType);
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
-      //var instane = new CyberSource.InlineResponse4001Fields();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationPaymentType();
       //expect(instance).to.be();
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instane = new CyberSource.InlineResponse4001Fields();
+    it('should have the property subTypeName (base name: "subTypeName")', function() {
+      // uncomment below and update the code to test the property subTypeName
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationPaymentType();
       //expect(instance).to.be();
     });
 
-    it('should have the property localizationKey (base name: "localizationKey")', function() {
-      // uncomment below and update the code to test the property localizationKey
-      //var instane = new CyberSource.InlineResponse4001Fields();
+    it('should have the property method (base name: "method")', function() {
+      // uncomment below and update the code to test the property method
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationPaymentType();
       //expect(instance).to.be();
     });
 

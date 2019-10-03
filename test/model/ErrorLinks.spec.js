@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.ErrorLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property next (base name: "next")', function() {
+      // uncomment below and update the code to test the property next
       //var instane = new CyberSource.ErrorLinks();
       //expect(instance).to.be();
     });
@@ -68,8 +68,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property next (base name: "next")', function() {
-      // uncomment below and update the code to test the property next
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new CyberSource.ErrorLinks();
       //expect(instance).to.be();
     });
