@@ -1,4 +1,4 @@
-# CyberSource.RequestBody1
+# CyberSource.CreateReportSubscriptionRequest
 
 ## Properties
 Name | Type | Description | Notes

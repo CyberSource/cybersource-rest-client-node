@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4001Fields = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse400Fields = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The InlineResponse4001Fields model module.
-   * @module model/InlineResponse4001Fields
+   * The InlineResponse400Fields model module.
+   * @module model/InlineResponse400Fields
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>InlineResponse4001Fields</code>.
+   * Constructs a new <code>InlineResponse400Fields</code>.
    * Provide validation failed input field details
-   * @alias module:model/InlineResponse4001Fields
+   * @alias module:model/InlineResponse400Fields
    * @class
    */
   var exports = function() {
@@ -54,11 +54,11 @@
   };
 
   /**
-   * Constructs a <code>InlineResponse4001Fields</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InlineResponse400Fields</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InlineResponse4001Fields} obj Optional instance to populate.
-   * @return {module:model/InlineResponse4001Fields} The populated <code>InlineResponse4001Fields</code> instance.
+   * @param {module:model/InlineResponse400Fields} obj Optional instance to populate.
+   * @return {module:model/InlineResponse400Fields} The populated <code>InlineResponse400Fields</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

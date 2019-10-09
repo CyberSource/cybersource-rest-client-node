@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsidrefundsPaymentInformationCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsidrefundsPaymentInformationCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard);
+    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsidrefundsPaymentInformationCard) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsidrefundsPaymentInformationCard) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('customer')) {
         obj['customer'] = Ptsv2paymentsPaymentInformationCustomer.constructFromObject(data['customer']);
       }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = Ptsv2paymentsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
+      }
     }
     return obj;
   }
@@ -88,6 +92,10 @@
    * @member {module:model/Ptsv2paymentsPaymentInformationCustomer} customer
    */
   exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationPaymentType} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2creditsProcessingInformationBankTransferOptions', 'model/Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2creditsProcessingInformationBankTransferOptions', 'model/Ptsv2creditsProcessingInformationElectronicBenefitsTransfer', 'model/Ptsv2creditsProcessingInformationPurchaseOptions', 'model/Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2creditsProcessingInformationBankTransferOptions'), require('./Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2creditsProcessingInformationBankTransferOptions'), require('./Ptsv2creditsProcessingInformationElectronicBenefitsTransfer'), require('./Ptsv2creditsProcessingInformationPurchaseOptions'), require('./Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2creditsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2creditsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2paymentsidrefundsProcessingInformationRecurringOptions);
+    root.CyberSource.Ptsv2creditsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2creditsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2creditsProcessingInformationElectronicBenefitsTransfer, root.CyberSource.Ptsv2creditsProcessingInformationPurchaseOptions, root.CyberSource.Ptsv2paymentsidrefundsProcessingInformationRecurringOptions);
   }
-}(this, function(ApiClient, Ptsv2creditsProcessingInformationBankTransferOptions, Ptsv2paymentsidrefundsProcessingInformationRecurringOptions) {
+}(this, function(ApiClient, Ptsv2creditsProcessingInformationBankTransferOptions, Ptsv2creditsProcessingInformationElectronicBenefitsTransfer, Ptsv2creditsProcessingInformationPurchaseOptions, Ptsv2paymentsidrefundsProcessingInformationRecurringOptions) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -104,6 +106,12 @@
       if (data.hasOwnProperty('bankTransferOptions')) {
         obj['bankTransferOptions'] = Ptsv2creditsProcessingInformationBankTransferOptions.constructFromObject(data['bankTransferOptions']);
       }
+      if (data.hasOwnProperty('purchaseOptions')) {
+        obj['purchaseOptions'] = Ptsv2creditsProcessingInformationPurchaseOptions.constructFromObject(data['purchaseOptions']);
+      }
+      if (data.hasOwnProperty('electronicBenefitsTransfer')) {
+        obj['electronicBenefitsTransfer'] = Ptsv2creditsProcessingInformationElectronicBenefitsTransfer.constructFromObject(data['electronicBenefitsTransfer']);
+      }
     }
     return obj;
   }
@@ -161,6 +169,14 @@
    * @member {module:model/Ptsv2creditsProcessingInformationBankTransferOptions} bankTransferOptions
    */
   exports.prototype['bankTransferOptions'] = undefined;
+  /**
+   * @member {module:model/Ptsv2creditsProcessingInformationPurchaseOptions} purchaseOptions
+   */
+  exports.prototype['purchaseOptions'] = undefined;
+  /**
+   * @member {module:model/Ptsv2creditsProcessingInformationElectronicBenefitsTransfer} electronicBenefitsTransfer
+   */
+  exports.prototype['electronicBenefitsTransfer'] = undefined;
 
 
 

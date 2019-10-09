@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsProcessingInformationBankTransferOptions', 'model/Ptsv2paymentsProcessingInformationCaptureOptions', 'model/Ptsv2paymentsProcessingInformationRecurringOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsProcessingInformationBankTransferOptions', 'model/Ptsv2paymentsProcessingInformationCaptureOptions', 'model/Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer', 'model/Ptsv2paymentsProcessingInformationPurchaseOptions', 'model/Ptsv2paymentsProcessingInformationRecurringOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsProcessingInformationBankTransferOptions'), require('./Ptsv2paymentsProcessingInformationCaptureOptions'), require('./Ptsv2paymentsProcessingInformationRecurringOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsProcessingInformationBankTransferOptions'), require('./Ptsv2paymentsProcessingInformationCaptureOptions'), require('./Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer'), require('./Ptsv2paymentsProcessingInformationPurchaseOptions'), require('./Ptsv2paymentsProcessingInformationRecurringOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2paymentsProcessingInformationCaptureOptions, root.CyberSource.Ptsv2paymentsProcessingInformationRecurringOptions);
+    root.CyberSource.Ptsv2paymentsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2paymentsProcessingInformationCaptureOptions, root.CyberSource.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, root.CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions, root.CyberSource.Ptsv2paymentsProcessingInformationRecurringOptions);
   }
-}(this, function(ApiClient, Ptsv2paymentsProcessingInformationAuthorizationOptions, Ptsv2paymentsProcessingInformationBankTransferOptions, Ptsv2paymentsProcessingInformationCaptureOptions, Ptsv2paymentsProcessingInformationRecurringOptions) {
+}(this, function(ApiClient, Ptsv2paymentsProcessingInformationAuthorizationOptions, Ptsv2paymentsProcessingInformationBankTransferOptions, Ptsv2paymentsProcessingInformationCaptureOptions, Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, Ptsv2paymentsProcessingInformationPurchaseOptions, Ptsv2paymentsProcessingInformationRecurringOptions) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -119,6 +121,12 @@
       }
       if (data.hasOwnProperty('bankTransferOptions')) {
         obj['bankTransferOptions'] = Ptsv2paymentsProcessingInformationBankTransferOptions.constructFromObject(data['bankTransferOptions']);
+      }
+      if (data.hasOwnProperty('purchaseOptions')) {
+        obj['purchaseOptions'] = Ptsv2paymentsProcessingInformationPurchaseOptions.constructFromObject(data['purchaseOptions']);
+      }
+      if (data.hasOwnProperty('electronicBenefitsTransfer')) {
+        obj['electronicBenefitsTransfer'] = Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer.constructFromObject(data['electronicBenefitsTransfer']);
       }
     }
     return obj;
@@ -196,6 +204,14 @@
    * @member {module:model/Ptsv2paymentsProcessingInformationBankTransferOptions} bankTransferOptions
    */
   exports.prototype['bankTransferOptions'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessingInformationPurchaseOptions} purchaseOptions
+   */
+  exports.prototype['purchaseOptions'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer} electronicBenefitsTransfer
+   */
+  exports.prototype['electronicBenefitsTransfer'] = undefined;
 
 
 

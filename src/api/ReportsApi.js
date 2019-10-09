@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3ReportsGet200Response', 'model/ReportingV3ReportsIdGet200Response', 'model/Reportingv3ReportDownloadsGet400Response', 'model/RequestBody'], factory);
+    define(['ApiClient', 'model/CreateAdhocReportRequest', 'model/ReportingV3ReportsGet200Response', 'model/ReportingV3ReportsIdGet200Response', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3ReportsGet200Response'), require('../model/ReportingV3ReportsIdGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'), require('../model/RequestBody'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateAdhocReportRequest'), require('../model/ReportingV3ReportsGet200Response'), require('../model/ReportingV3ReportsIdGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportsGet200Response, root.CyberSource.ReportingV3ReportsIdGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response, root.CyberSource.RequestBody);
+    root.CyberSource.ReportsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateAdhocReportRequest, root.CyberSource.ReportingV3ReportsGet200Response, root.CyberSource.ReportingV3ReportsIdGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(ApiClient, ReportingV3ReportsGet200Response, ReportingV3ReportsIdGet200Response, Reportingv3ReportDownloadsGet400Response, RequestBody) {
+}(this, function(ApiClient, CreateAdhocReportRequest, ReportingV3ReportsGet200Response, ReportingV3ReportsIdGet200Response, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**
@@ -60,18 +60,18 @@
     /**
      * Create Adhoc Report
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
-     * @param {module:model/RequestBody} requestBody Report subscription request payload
+     * @param {module:model/CreateAdhocReportRequest} createAdhocReportRequest Report subscription request payload
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/ReportsApi~createReportCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createReport = function(requestBody, opts, callback) {
+    this.createReport = function(createAdhocReportRequest, opts, callback) {
       opts = opts || {};
-      var postBody = requestBody;
+      var postBody = createAdhocReportRequest;
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling createReport");
+      // verify the required parameter 'createAdhocReportRequest' is set
+      if (createAdhocReportRequest === undefined || createAdhocReportRequest === null) {
+        throw new Error("Missing the required parameter 'createAdhocReportRequest' when calling createReport");
       }
 
 

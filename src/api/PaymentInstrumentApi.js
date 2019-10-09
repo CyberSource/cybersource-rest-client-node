@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentInstrumentRequest', 'model/InlineResponse400', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', 'model/UpdatePaymentInstrumentRequest'], factory);
+    define(['ApiClient', 'model/CreatePaymentInstrumentRequest', 'model/InlineResponse4001', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', 'model/UpdatePaymentInstrumentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentInstrumentRequest'), require('../model/InlineResponse400'), require('../model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments'), require('../model/UpdatePaymentInstrumentRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentInstrumentRequest'), require('../model/InlineResponse4001'), require('../model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments'), require('../model/UpdatePaymentInstrumentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentInstrumentRequest, root.CyberSource.InlineResponse400, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, root.CyberSource.UpdatePaymentInstrumentRequest);
+    root.CyberSource.PaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentInstrumentRequest, root.CyberSource.InlineResponse4001, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, root.CyberSource.UpdatePaymentInstrumentRequest);
   }
-}(this, function(ApiClient, CreatePaymentInstrumentRequest, InlineResponse400, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, UpdatePaymentInstrumentRequest) {
+}(this, function(ApiClient, CreatePaymentInstrumentRequest, InlineResponse4001, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, UpdatePaymentInstrumentRequest) {
   'use strict';
 
   /**

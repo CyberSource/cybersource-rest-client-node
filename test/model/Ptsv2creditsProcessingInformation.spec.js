@@ -122,6 +122,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property purchaseOptions (base name: "purchaseOptions")', function() {
+      // uncomment below and update the code to test the property purchaseOptions
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property electronicBenefitsTransfer (base name: "electronicBenefitsTransfer")', function() {
+      // uncomment below and update the code to test the property electronicBenefitsTransfer
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

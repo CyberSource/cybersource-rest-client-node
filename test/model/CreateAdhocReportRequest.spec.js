@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.RequestBody();
+    instance = new CyberSource.CreateAdhocReportRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,76 +49,76 @@
       object[property] = value;
   }
 
-  describe('RequestBody', function() {
-    it('should create an instance of RequestBody', function() {
-      // uncomment below and update the code to test RequestBody
-      //var instane = new CyberSource.RequestBody();
-      //expect(instance).to.be.a(CyberSource.RequestBody);
+  describe('CreateAdhocReportRequest', function() {
+    it('should create an instance of CreateAdhocReportRequest', function() {
+      // uncomment below and update the code to test CreateAdhocReportRequest
+      //var instane = new CyberSource.CreateAdhocReportRequest();
+      //expect(instance).to.be.a(CyberSource.CreateAdhocReportRequest);
     });
 
     it('should have the property organizationId (base name: "organizationId")', function() {
       // uncomment below and update the code to test the property organizationId
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportDefinitionName (base name: "reportDefinitionName")', function() {
       // uncomment below and update the code to test the property reportDefinitionName
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportFields (base name: "reportFields")', function() {
       // uncomment below and update the code to test the property reportFields
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportMimeType (base name: "reportMimeType")', function() {
       // uncomment below and update the code to test the property reportMimeType
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportName (base name: "reportName")', function() {
       // uncomment below and update the code to test the property reportName
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property timezone (base name: "timezone")', function() {
       // uncomment below and update the code to test the property timezone
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportStartTime (base name: "reportStartTime")', function() {
       // uncomment below and update the code to test the property reportStartTime
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportEndTime (base name: "reportEndTime")', function() {
       // uncomment below and update the code to test the property reportEndTime
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportFilters (base name: "reportFilters")', function() {
       // uncomment below and update the code to test the property reportFilters
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportPreferences (base name: "reportPreferences")', function() {
       // uncomment below and update the code to test the property reportPreferences
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property groupName (base name: "groupName")', function() {
       // uncomment below and update the code to test the property groupName
-      //var instane = new CyberSource.RequestBody();
+      //var instane = new CyberSource.CreateAdhocReportRequest();
       //expect(instance).to.be();
     });
 

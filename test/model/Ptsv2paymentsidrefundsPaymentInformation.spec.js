@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

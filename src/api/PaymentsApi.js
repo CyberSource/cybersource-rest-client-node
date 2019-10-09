@@ -88,7 +88,7 @@
       var returnType = PtsV2PaymentsPost201Response;
 
       return this.apiClient.callApi(
-        '/pts/v2/payments/', 'POST',
+        '/pts/v2/payments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

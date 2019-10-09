@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsidreversalsClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidreversalsClientReferenceInformation', 'model/Ptsv2paymentsidvoidsPaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsClientReferenceInformation'), require('./Ptsv2paymentsidvoidsPaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VoidPaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation);
+    root.CyberSource.VoidPaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation, root.CyberSource.Ptsv2paymentsidvoidsPaymentInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsidreversalsClientReferenceInformation) {
+}(this, function(ApiClient, Ptsv2paymentsidreversalsClientReferenceInformation, Ptsv2paymentsidvoidsPaymentInformation) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('clientReferenceInformation')) {
         obj['clientReferenceInformation'] = Ptsv2paymentsidreversalsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
+      if (data.hasOwnProperty('paymentInformation')) {
+        obj['paymentInformation'] = Ptsv2paymentsidvoidsPaymentInformation.constructFromObject(data['paymentInformation']);
+      }
     }
     return obj;
   }
@@ -72,6 +76,10 @@
    * @member {module:model/Ptsv2paymentsidreversalsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsidvoidsPaymentInformation} paymentInformation
+   */
+  exports.prototype['paymentInformation'] = undefined;
 
 
 

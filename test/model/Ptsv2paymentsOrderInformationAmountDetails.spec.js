@@ -194,6 +194,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cashbackAmount (base name: "cashbackAmount")', function() {
+      // uncomment below and update the code to test the property cashbackAmount
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

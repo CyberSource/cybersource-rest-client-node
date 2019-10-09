@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RequestBody1 = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3reportsReportPreferences);
+    root.CyberSource.CreateReportSubscriptionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3reportsReportPreferences);
   }
 }(this, function(ApiClient, Reportingv3reportsReportPreferences) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The RequestBody1 model module.
-   * @module model/RequestBody1
+   * The CreateReportSubscriptionRequest model module.
+   * @module model/CreateReportSubscriptionRequest
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>RequestBody1</code>.
-   * @alias module:model/RequestBody1
+   * Constructs a new <code>CreateReportSubscriptionRequest</code>.
+   * @alias module:model/CreateReportSubscriptionRequest
    * @class
    * @param reportDefinitionName {String} Valid Report Definition Name
    * @param reportFields {Array.<String>} 
@@ -69,11 +69,11 @@
   };
 
   /**
-   * Constructs a <code>RequestBody1</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CreateReportSubscriptionRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/RequestBody1} obj Optional instance to populate.
-   * @return {module:model/RequestBody1} The populated <code>RequestBody1</code> instance.
+   * @param {module:model/CreateReportSubscriptionRequest} obj Optional instance to populate.
+   * @return {module:model/CreateReportSubscriptionRequest} The populated <code>CreateReportSubscriptionRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

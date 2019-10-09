@@ -18,5 +18,7 @@ Name | Type | Description | Notes
 **captureOptions** | [**Ptsv2paymentsProcessingInformationCaptureOptions**](Ptsv2paymentsProcessingInformationCaptureOptions.md) |  | [optional] 
 **recurringOptions** | [**Ptsv2paymentsProcessingInformationRecurringOptions**](Ptsv2paymentsProcessingInformationRecurringOptions.md) |  | [optional] 
 **bankTransferOptions** | [**Ptsv2paymentsProcessingInformationBankTransferOptions**](Ptsv2paymentsProcessingInformationBankTransferOptions.md) |  | [optional] 
+**purchaseOptions** | [**Ptsv2paymentsProcessingInformationPurchaseOptions**](Ptsv2paymentsProcessingInformationPurchaseOptions.md) |  | [optional] 
+**electronicBenefitsTransfer** | [**Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer**](Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer.md) |  | [optional] 
 
 

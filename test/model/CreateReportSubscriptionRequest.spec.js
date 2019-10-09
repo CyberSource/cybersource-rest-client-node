@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.RequestBody1();
+    instance = new CyberSource.CreateReportSubscriptionRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,82 +49,82 @@
       object[property] = value;
   }
 
-  describe('RequestBody1', function() {
-    it('should create an instance of RequestBody1', function() {
-      // uncomment below and update the code to test RequestBody1
-      //var instane = new CyberSource.RequestBody1();
-      //expect(instance).to.be.a(CyberSource.RequestBody1);
+  describe('CreateReportSubscriptionRequest', function() {
+    it('should create an instance of CreateReportSubscriptionRequest', function() {
+      // uncomment below and update the code to test CreateReportSubscriptionRequest
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
+      //expect(instance).to.be.a(CyberSource.CreateReportSubscriptionRequest);
     });
 
     it('should have the property organizationId (base name: "organizationId")', function() {
       // uncomment below and update the code to test the property organizationId
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportDefinitionName (base name: "reportDefinitionName")', function() {
       // uncomment below and update the code to test the property reportDefinitionName
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportFields (base name: "reportFields")', function() {
       // uncomment below and update the code to test the property reportFields
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportMimeType (base name: "reportMimeType")', function() {
       // uncomment below and update the code to test the property reportMimeType
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportFrequency (base name: "reportFrequency")', function() {
       // uncomment below and update the code to test the property reportFrequency
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportName (base name: "reportName")', function() {
       // uncomment below and update the code to test the property reportName
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property timezone (base name: "timezone")', function() {
       // uncomment below and update the code to test the property timezone
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property startTime (base name: "startTime")', function() {
       // uncomment below and update the code to test the property startTime
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property startDay (base name: "startDay")', function() {
       // uncomment below and update the code to test the property startDay
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportFilters (base name: "reportFilters")', function() {
       // uncomment below and update the code to test the property reportFilters
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property reportPreferences (base name: "reportPreferences")', function() {
       // uncomment below and update the code to test the property reportPreferences
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property groupName (base name: "groupName")', function() {
       // uncomment below and update the code to test the property groupName
-      //var instane = new CyberSource.RequestBody1();
+      //var instane = new CyberSource.CreateReportSubscriptionRequest();
       //expect(instance).to.be();
     });
 

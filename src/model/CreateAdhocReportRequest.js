@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RequestBody = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3reportsReportPreferences);
+    root.CyberSource.CreateAdhocReportRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3reportsReportPreferences);
   }
 }(this, function(ApiClient, Reportingv3reportsReportPreferences) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The RequestBody model module.
-   * @module model/RequestBody
+   * The CreateAdhocReportRequest model module.
+   * @module model/CreateAdhocReportRequest
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>RequestBody</code>.
-   * @alias module:model/RequestBody
+   * Constructs a new <code>CreateAdhocReportRequest</code>.
+   * @alias module:model/CreateAdhocReportRequest
    * @class
    */
   var exports = function() {
@@ -61,11 +61,11 @@
   };
 
   /**
-   * Constructs a <code>RequestBody</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CreateAdhocReportRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/RequestBody} obj Optional instance to populate.
-   * @return {module:model/RequestBody} The populated <code>RequestBody</code> instance.
+   * @param {module:model/CreateAdhocReportRequest} obj Optional instance to populate.
+   * @return {module:model/CreateAdhocReportRequest} The populated <code>CreateAdhocReportRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

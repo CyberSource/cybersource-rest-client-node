@@ -56,14 +56,20 @@
       //expect(instance).to.be.a(CyberSource.Error);
     });
 
-    it('should have the property responseStatus (base name: "responseStatus")', function() {
-      // uncomment below and update the code to test the property responseStatus
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new CyberSource.Error();
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
+      //var instane = new CyberSource.Error();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
       //var instane = new CyberSource.Error();
       //expect(instance).to.be();
     });

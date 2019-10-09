@@ -84,7 +84,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['*/*'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = TssV2TransactionsPost201Response;
 
       return this.apiClient.callApi(
