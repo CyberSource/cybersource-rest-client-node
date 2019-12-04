@@ -381,6 +381,14 @@
 
     var token = AuthenticationSDK.Authorization.getToken(this.merchantConfig, this.logger);
 
+    var clientId = getClientId();
+
+    headerParams['v-c-client-id'] = clientId;
+    
+    if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {  
+      headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
+    }
+
     if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.JWT) {
       token = 'Bearer ' + token;
       headerParams['Authorization'] = token;
@@ -413,6 +421,11 @@
     }
 
     return headerParams;
+  }
+
+  function getClientId() {
+    var packageInfo = require('./../package.json');
+    return "cybs-rest-sdk-node-" + packageInfo.version;
   }
   
 {{#emitJSDoc}}{{^usePromises}}  /**
