@@ -91,9 +91,9 @@
       this.agent = new superagent.agent();
     }
 
-	/**
-	 * The filepath where reports are downloaded
-	 */
+    /**
+     * The filepath where reports are downloaded
+     */
     this.downloadFilePath = '';
   };
 
@@ -347,7 +347,7 @@
     return exports.convertToType(data, returnType);
   };
   
-	// Code added by Infosys dev team
+    // Code added by Infosys dev team
 
   var AuthenticationSDK = require('cybersource-rest-auth');
   /**
@@ -359,7 +359,7 @@
 
     this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
     this.constants = AuthenticationSDK.Constants;
-	this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
+    this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
     this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
   }
 
@@ -448,19 +448,19 @@
     var url = this.buildUrl(path, pathParams);
     var useProxy = this.merchantConfig.getUseProxy();
     var proxyAddress = this.merchantConfig.getProxyAddress();
-	var proxyPort = this.merchantConfig.getProxyPort();
-	var proxyUser = this.merchantConfig.getProxyUser();
+    var proxyPort = this.merchantConfig.getProxyPort();
+    var proxyUser = this.merchantConfig.getProxyUser();
     var proxyPassword = this.merchantConfig.getProxyPassword();
 
     var request = superagent(httpMethod, url);    
 
     if (useProxy && (proxyAddress != null && proxyAddress != '')) {
-	  require('superagent-proxy')(require('superagent'));
+      require('superagent-proxy')(require('superagent'));
       var request = superagent(httpMethod, url);
       if ((proxyUser != null && proxyUser != '') && (proxyPassword!= null && proxyPassword != '')) {
         var proxy  = process.env.http_proxy || 'http://' + proxyUser + ':' + proxyPassword + '@' + proxyAddress + ':' + proxyPort; 
       }
-	  else {
+      else {
         var proxy  = process.env.http_proxy || 'http://' +  proxyAddress + ':' + proxyPort;
       }
       request.proxy(proxy); 
@@ -475,7 +475,7 @@
     }
     request.query(this.normalizeParams(queryParams));
 
-	/**
+    /**
      *added by infosys team, to generate requestTarget with pathParam
      */
     var requestTarget = this.buildRequestTarget(path, pathParams, queryParams);
@@ -485,8 +485,8 @@
       || httpMethod.toLowerCase() === this.constants.PUT) {
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
-	headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
-	
+    headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
 
@@ -524,7 +524,7 @@
     var accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
-	  /* Code for downloading file from stream */
+      /* Code for downloading file from stream */
       if (accept === 'application/xml' || accept === 'text/csv') {
         if (accept === 'application/xml') {
           this.downloadFilePath = this.downloadFilePath + '.xml';
@@ -669,7 +669,7 @@
       case 'Date':
         return this.parseDate(String(data));
       case 'Blob':
-      	return data;
+          return data;
       default:
         if (type === Object) {
           // generic object, return directly
