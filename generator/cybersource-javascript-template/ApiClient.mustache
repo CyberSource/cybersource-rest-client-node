@@ -91,9 +91,9 @@
       this.agent = new superagent.agent();
     }
 
-	/**
-	 * The filepath where reports are downloaded
-	 */
+    /**
+     * The filepath where reports are downloaded
+     */
     this.downloadFilePath = '';
   };
 
@@ -347,7 +347,7 @@
     return exports.convertToType(data, returnType);
   };
   
-	// Code added by Infosys dev team
+    // Code added by Infosys dev team
 
   var AuthenticationSDK = require('cybersource-rest-auth');
   /**
@@ -359,7 +359,7 @@
 
     this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
     this.constants = AuthenticationSDK.Constants;
-	this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
+    this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
     this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
   }
 
@@ -385,9 +385,9 @@
 
     headerParams['v-c-client-id'] = clientId;
     
-    if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {  
-      headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
-    }
+    // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {  
+      // headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
+    // }
 
     if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.JWT) {
       token = 'Bearer ' + token;
@@ -470,7 +470,7 @@
     }
     request.query(this.normalizeParams(queryParams));
 
-	/**
+    /**
      *added by infosys team, to generate requestTarget with pathParam
      */
     var requestTarget = this.buildRequestTarget(path, pathParams, queryParams);
@@ -480,8 +480,8 @@
       || httpMethod.toLowerCase() === this.constants.PUT) {
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
-	headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
-	
+    headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+    
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
 
@@ -519,7 +519,7 @@
     var accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
-	  /* Code for downloading file from stream */
+      /* Code for downloading file from stream */
       if (accept === 'application/xml' || accept === 'text/csv') {
         if (accept === 'application/xml') {
           this.downloadFilePath = this.downloadFilePath + '.xml';
@@ -664,7 +664,7 @@
       case 'Date':
         return this.parseDate(String(data));
       case 'Blob':
-      	return data;
+          return data;
       default:
         if (type === Object) {
           // generic object, return directly
