@@ -499,7 +499,7 @@
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
     headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
-    
+
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
 
