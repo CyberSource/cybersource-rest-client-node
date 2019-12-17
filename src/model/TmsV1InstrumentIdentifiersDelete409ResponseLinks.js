@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments);
+    root.CyberSource.TmsV1InstrumentIdentifiersDelete409ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments);
   }
-}(this, function(ApiClient, TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentInstruments')) {
-        obj['paymentInstruments'] = TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments.constructFromObject(data['paymentInstruments']);
+        obj['paymentInstruments'] = TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments.constructFromObject(data['paymentInstruments']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments} paymentInstruments
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments} paymentInstruments
    */
   exports.prototype['paymentInstruments'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource);
+    root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -50,8 +50,6 @@
 
 
 
-
-
   };
 
   /**
@@ -68,17 +66,11 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('subTypeName')) {
-        obj['subTypeName'] = ApiClient.convertToType(data['subTypeName'], 'String');
-      }
-      if (data.hasOwnProperty('fundingSource')) {
-        obj['fundingSource'] = TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource.constructFromObject(data['fundingSource']);
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('method')) {
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
-      }
-      if (data.hasOwnProperty('authenticationMethod')) {
-        obj['authenticationMethod'] = ApiClient.convertToType(data['authenticationMethod'], 'String');
       }
     }
     return obj;
@@ -90,24 +82,15 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * SubType Name is detail information about Payment Type. Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. - `DEBIT` (use this for a PIN debit transaction) 
-   * @member {String} subTypeName
+   * Indicates the payment type used in this payment transaction. Example: credit card, check
+   * @member {String} type
    */
-  exports.prototype['subTypeName'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource} fundingSource
-   */
-  exports.prototype['fundingSource'] = undefined;
-  /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
+   * Indicates the payment method used in this payment transaction.
    * @member {String} method
    */
   exports.prototype['method'] = undefined;
-  /**
-   * A Payment Type Authentication Method is the means used to verify that the presenter of the Payment Type credential is an authorized user of the Payment Instrument. Examples: 3DSecure – Verified by Visa, 3DSecure – MasteCard Secure Code 
-   * @member {String} authenticationMethod
-   */
-  exports.prototype['authenticationMethod'] = undefined;
 
 
 

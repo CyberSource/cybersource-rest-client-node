@@ -70,8 +70,8 @@
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
-      if (data.hasOwnProperty('dateOBirth')) {
-        obj['dateOBirth'] = ApiClient.convertToType(data['dateOBirth'], 'String');
+      if (data.hasOwnProperty('dateOfBirth')) {
+        obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
       }
       if (data.hasOwnProperty('personalIdentification')) {
         obj['personalIdentification'] = ApiClient.convertToType(data['personalIdentification'], [TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformationPersonalIdentification]);
@@ -92,9 +92,9 @@
   exports.prototype['currency'] = undefined;
   /**
    * Date of birth of the customer.  Format: `YYYY-MM-DD` or `YYYYMMDD` 
-   * @member {String} dateOBirth
+   * @member {String} dateOfBirth
    */
-  exports.prototype['dateOBirth'] = undefined;
+  exports.prototype['dateOfBirth'] = undefined;
   /**
    * @member {Array.<module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformationPersonalIdentification>} personalIdentification
    */

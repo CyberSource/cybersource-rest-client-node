@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reportInterval (base name: "reportInterval")', function() {
+      // uncomment below and update the code to test the property reportInterval
+      //var instane = new CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reportName (base name: "reportName")', function() {
       // uncomment below and update the code to test the property reportName
       //var instane = new CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions();

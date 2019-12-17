@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsOrderInformationAmountDetails', 'model/Riskv1decisionsOrderInformationBillTo', 'model/Riskv1decisionsOrderInformationLineItems', 'model/Riskv1decisionsOrderInformationShipTo', 'model/Riskv1decisionsOrderInformationShippingDetails'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsOrderInformationAddress', 'model/Riskv1decisionsOrderInformationAmountDetails', 'model/Riskv1decisionsOrderInformationBillTo', 'model/Riskv1decisionsOrderInformationLineItems', 'model/Riskv1decisionsOrderInformationShipTo', 'model/Riskv1decisionsOrderInformationShippingDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsOrderInformationAmountDetails'), require('./Riskv1decisionsOrderInformationBillTo'), require('./Riskv1decisionsOrderInformationLineItems'), require('./Riskv1decisionsOrderInformationShipTo'), require('./Riskv1decisionsOrderInformationShippingDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsOrderInformationAddress'), require('./Riskv1decisionsOrderInformationAmountDetails'), require('./Riskv1decisionsOrderInformationBillTo'), require('./Riskv1decisionsOrderInformationLineItems'), require('./Riskv1decisionsOrderInformationShipTo'), require('./Riskv1decisionsOrderInformationShippingDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsOrderInformationAmountDetails, root.CyberSource.Riskv1decisionsOrderInformationBillTo, root.CyberSource.Riskv1decisionsOrderInformationLineItems, root.CyberSource.Riskv1decisionsOrderInformationShipTo, root.CyberSource.Riskv1decisionsOrderInformationShippingDetails);
+    root.CyberSource.Riskv1decisionsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsOrderInformationAddress, root.CyberSource.Riskv1decisionsOrderInformationAmountDetails, root.CyberSource.Riskv1decisionsOrderInformationBillTo, root.CyberSource.Riskv1decisionsOrderInformationLineItems, root.CyberSource.Riskv1decisionsOrderInformationShipTo, root.CyberSource.Riskv1decisionsOrderInformationShippingDetails);
   }
-}(this, function(ApiClient, Riskv1decisionsOrderInformationAmountDetails, Riskv1decisionsOrderInformationBillTo, Riskv1decisionsOrderInformationLineItems, Riskv1decisionsOrderInformationShipTo, Riskv1decisionsOrderInformationShippingDetails) {
+}(this, function(ApiClient, Riskv1decisionsOrderInformationAddress, Riskv1decisionsOrderInformationAmountDetails, Riskv1decisionsOrderInformationBillTo, Riskv1decisionsOrderInformationLineItems, Riskv1decisionsOrderInformationShipTo, Riskv1decisionsOrderInformationShippingDetails) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -85,6 +86,9 @@
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = Riskv1decisionsOrderInformationBillTo.constructFromObject(data['billTo']);
       }
+      if (data.hasOwnProperty('address')) {
+        obj['address'] = Riskv1decisionsOrderInformationAddress.constructFromObject(data['address']);
+      }
     }
     return obj;
   }
@@ -115,6 +119,10 @@
    * @member {module:model/Riskv1decisionsOrderInformationBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsOrderInformationAddress} address
+   */
+  exports.prototype['address'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Links = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinksSelf);
+    root.CyberSource.Links = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinksSelf);
   }
-}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseLinksSelf) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments, TmsV1InstrumentIdentifiersPost200ResponseLinksSelf) {
   'use strict';
 
 
@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -66,6 +67,9 @@
       if (data.hasOwnProperty('self')) {
         obj['self'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['self']);
       }
+      if (data.hasOwnProperty('paymentInstruments')) {
+        obj['paymentInstruments'] = TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments.constructFromObject(data['paymentInstruments']);
+      }
       if (data.hasOwnProperty('ancestor')) {
         obj['ancestor'] = TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.constructFromObject(data['ancestor']);
       }
@@ -80,6 +84,10 @@
    * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} self
    */
   exports.prototype['self'] = undefined;
+  /**
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments} paymentInstruments
+   */
+  exports.prototype['paymentInstruments'] = undefined;
   /**
    * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinksSelf} ancestor
    */

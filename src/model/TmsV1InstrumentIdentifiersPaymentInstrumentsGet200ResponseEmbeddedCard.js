@@ -99,7 +99,7 @@
    */
   exports.prototype['expirationMonth'] = undefined;
   /**
-   * Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/).  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.' 
+   * Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/). **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.' 
    * @member {String} expirationYear
    */
   exports.prototype['expirationYear'] = undefined;
@@ -114,7 +114,7 @@
    */
   exports.prototype['issueNumber'] = undefined;
   /**
-   * Month of the start of the Maestro (UK Domestic) card validity period.  Format: `MM`. Possible values: `01` through `12`. 
+   * Month of the start of the Maestro (UK Domestic) card validity period. Format: `MM`. Possible values: `01` through `12`. 
    * @member {String} startMonth
    */
   exports.prototype['startMonth'] = undefined;

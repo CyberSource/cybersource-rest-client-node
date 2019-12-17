@@ -90,6 +90,16 @@
         done();
       });
     });
+    describe('reportingV3PredefinedReportSubscriptionsPut', function() {
+      it('should call reportingV3PredefinedReportSubscriptionsPut successfully', function(done) {
+        //uncomment below and update the code to test reportingV3PredefinedReportSubscriptionsPut
+        //instance.reportingV3PredefinedReportSubscriptionsPut(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

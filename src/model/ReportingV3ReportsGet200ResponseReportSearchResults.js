@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ReportingV3ReportsGet200ResponseLink'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ReportingV3ReportsGet200ResponseLink'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportingV3ReportsGet200ResponseReportSearchResults = factory(root.CyberSource.ApiClient);
+    root.CyberSource.ReportingV3ReportsGet200ResponseReportSearchResults = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportsGet200ResponseLink);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ReportingV3ReportsGet200ResponseLink) {
   'use strict';
 
 
@@ -63,6 +63,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('_link')) {
+        obj['_link'] = ReportingV3ReportsGet200ResponseLink.constructFromObject(data['_link']);
+      }
       if (data.hasOwnProperty('reportDefinitionId')) {
         obj['reportDefinitionId'] = ApiClient.convertToType(data['reportDefinitionId'], 'String');
       }
@@ -126,6 +130,10 @@
   }
 
   /**
+   * @member {module:model/ReportingV3ReportsGet200ResponseLink} _link
+   */
+  exports.prototype['_link'] = undefined;
+  /**
    * Unique Report Identifier of each report type
    * @member {String} reportDefinitionId
    */
@@ -136,17 +144,17 @@
    */
   exports.prototype['reportName'] = undefined;
   /**
-   * Format of the report to get generated  Valid values: - application/xml - text/csv 
+   * Format of the report to get generated Valid Values: - application/xml - text/csv 
    * @member {String} reportMimeType
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
-   * Frequency of the report to get generated  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
+   * Frequency of the report to get generated Valid Values: - DAILY - WEEKLY - MONTHLY - ADHOC 
    * @member {String} reportFrequency
    */
   exports.prototype['reportFrequency'] = undefined;
   /**
-   * Status of the report  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
+   * Status of the report Valid Values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

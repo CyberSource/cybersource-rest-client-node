@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -88,6 +89,9 @@
       }
       if (data.hasOwnProperty('reportFrequency')) {
         obj['reportFrequency'] = ApiClient.convertToType(data['reportFrequency'], 'String');
+      }
+      if (data.hasOwnProperty('reportInterval')) {
+        obj['reportInterval'] = ApiClient.convertToType(data['reportInterval'], 'String');
       }
       if (data.hasOwnProperty('reportName')) {
         obj['reportName'] = ApiClient.convertToType(data['reportName'], 'String');
@@ -138,10 +142,15 @@
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
-   * 'Report Frequency'  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
+   * 'Report Frequency'   Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED 
    * @member {String} reportFrequency
    */
   exports.prototype['reportFrequency'] = undefined;
+  /**
+   * If the reportFrequency is User-defined, reportInterval should be in **ISO 8601 time format** Please refer the following link to know more about ISO 8601 format.[Rfc Time Format](https://en.wikipedia.org/wiki/ISO_8601#Durations)  **Example time format for 2 hours and 30 Mins:**   - PT2H30M **NOTE: Do not document reportInterval field in developer center** 
+   * @member {String} reportInterval
+   */
+  exports.prototype['reportInterval'] = undefined;
   /**
    * Report Name
    * @member {String} reportName

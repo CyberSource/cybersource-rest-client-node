@@ -62,26 +62,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property subTypeName (base name: "subTypeName")', function() {
-      // uncomment below and update the code to test the property subTypeName
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fundingSource (base name: "fundingSource")', function() {
-      // uncomment below and update the code to test the property fundingSource
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType();
       //expect(instance).to.be();
     });
 
     it('should have the property method (base name: "method")', function() {
       // uncomment below and update the code to test the property method
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property authenticationMethod (base name: "authenticationMethod")', function() {
-      // uncomment below and update the code to test the property authenticationMethod
       //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType();
       //expect(instance).to.be();
     });

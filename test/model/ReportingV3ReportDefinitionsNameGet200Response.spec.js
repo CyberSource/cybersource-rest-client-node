@@ -92,6 +92,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultSettings (base name: "defaultSettings")', function() {
+      // uncomment below and update the code to test the property defaultSettings
+      //var instane = new CyberSource.ReportingV3ReportDefinitionsNameGet200Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subscriptionType (base name: "subscriptionType")', function() {
+      // uncomment below and update the code to test the property subscriptionType
+      //var instane = new CyberSource.ReportingV3ReportDefinitionsNameGet200Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

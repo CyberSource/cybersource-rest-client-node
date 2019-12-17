@@ -11,9 +11,9 @@
     if (!root.{{moduleName}}) {
       root.{{moduleName}} = {};
     }
-    root.{{moduleName}}.ApiClient = factory(root.superagent, root.querystring);
+    root.{{moduleName}}.ApiClient = factory(root.superagent, root.superagent_proxy, root.querystring);
   }
-}(this, function(superagent, querystring) {
+}(this, function(superagent, superagent_proxy, querystring) {
   'use strict';
 
 {{#emitJSDoc}}  /**

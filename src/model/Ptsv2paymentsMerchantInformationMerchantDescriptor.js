@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -91,6 +92,9 @@
       }
       if (data.hasOwnProperty('administrativeArea')) {
         obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
+      }
+      if (data.hasOwnProperty('url')) {
+        obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
     }
     return obj;
@@ -136,6 +140,11 @@
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
+  /**
+   * Address of company's website provided by merchant 
+   * @member {String} url
+   */
+  exports.prototype['url'] = undefined;
 
 
 

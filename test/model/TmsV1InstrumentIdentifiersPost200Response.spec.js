@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issuer (base name: "issuer")', function() {
+      // uncomment below and update the code to test the property issuer
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPost200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bankAccount (base name: "bankAccount")', function() {
       // uncomment below and update the code to test the property bankAccount
       //var instane = new CyberSource.TmsV1InstrumentIdentifiersPost200Response();

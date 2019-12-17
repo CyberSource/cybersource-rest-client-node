@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInstruments (base name: "paymentInstruments")', function() {
+      // uncomment below and update the code to test the property paymentInstruments
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ancestor (base name: "ancestor")', function() {
       // uncomment below and update the code to test the property ancestor
       //var instane = new CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks();

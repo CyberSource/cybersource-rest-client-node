@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportingV3ReportDefinitionsGet200ResponseReportDefinitions = factory(root.CyberSource.ApiClient);
+    root.CyberSource.ReportingV3ReportDefinitionsGet200ResponseReportDefinitions = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -80,6 +82,12 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
+      if (data.hasOwnProperty('defaultSettings')) {
+        obj['defaultSettings'] = ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings.constructFromObject(data['defaultSettings']);
+      }
+      if (data.hasOwnProperty('subscriptionType')) {
+        obj['subscriptionType'] = ApiClient.convertToType(data['subscriptionType'], 'String');
+      }
     }
     return obj;
   }
@@ -105,6 +113,15 @@
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
+  /**
+   * @member {module:model/ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings} defaultSettings
+   */
+  exports.prototype['defaultSettings'] = undefined;
+  /**
+   * 'The subscription type for which report definition is required. By default the type will be CUSTOM.' Valid Values: - CLASSIC - CUSTOM - STANDARD 
+   * @member {String} subscriptionType
+   */
+  exports.prototype['subscriptionType'] = undefined;
 
 
 

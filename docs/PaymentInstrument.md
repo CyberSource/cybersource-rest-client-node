@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**TmsV1InstrumentIdentifiersPost200ResponseLinks**](TmsV1InstrumentIdentifiersPost200ResponseLinks.md) |  | [optional] 
+**links** | [**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks.md) |  | [optional] 
 **id** | **String** | Unique identification number assigned by CyberSource to the submitted request. | [optional] 
-**_object** | **String** | &#39;Describes type of token.&#39;  Valid values: - paymentInstrument  | [optional] 
+**_object** | **String** | &#39;Describes type of token.&#39;  Valid values: - instrumentIdentifier  | [optional] 
 **state** | **String** | &#39;Current state of the token.&#39;  Valid values: - ACTIVE - CLOSED  | [optional] 
 **bankAccount** | [**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount.md) |  | [optional] 
 **card** | [**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard.md) |  | [optional] 
@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **processingInformation** | [**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation.md) |  | [optional] 
 **merchantInformation** | [**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation.md) |  | [optional] 
 **metaData** | [**TmsV1InstrumentIdentifiersPost200ResponseMetadata**](TmsV1InstrumentIdentifiersPost200ResponseMetadata.md) |  | [optional] 
-**instrumentIdentifier** | [**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier.md) |  | [optional] 
+**embedded** | [**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded.md) |  | [optional] 
 
 

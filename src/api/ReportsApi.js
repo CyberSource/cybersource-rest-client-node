@@ -164,7 +164,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {String} opts.reportMimeType Valid Report Format  Valid values: - application/xml - text/csv 
-     * @param {String} opts.reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
+     * @param {String} opts.reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC 
      * @param {String} opts.reportName Valid Report Name
      * @param {Number} opts.reportDefinitionId Valid Report Definition Id
      * @param {String} opts.reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 

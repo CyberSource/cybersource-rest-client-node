@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinks', 'model/TmsV1InstrumentIdentifiersPost200ResponseMetadata'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation', 'model/TmsV1InstrumentIdentifiersPost200ResponseMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinks'), require('./TmsV1InstrumentIdentifiersPost200ResponseMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation'), require('./TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation'), require('./TmsV1InstrumentIdentifiersPost200ResponseMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseMetadata);
+    root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseMetadata);
   }
-}(this, function(ApiClient, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation, TmsV1InstrumentIdentifiersPost200ResponseLinks, TmsV1InstrumentIdentifiersPost200ResponseMetadata) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation, TmsV1InstrumentIdentifiersPost200ResponseMetadata) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = TmsV1InstrumentIdentifiersPost200ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -105,15 +105,15 @@
       if (data.hasOwnProperty('metaData')) {
         obj['metaData'] = TmsV1InstrumentIdentifiersPost200ResponseMetadata.constructFromObject(data['metaData']);
       }
-      if (data.hasOwnProperty('instrumentIdentifier')) {
-        obj['instrumentIdentifier'] = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseLinks} _links
+   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -122,7 +122,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * 'Describes type of token.'  Valid values: - paymentInstrument 
+   * 'Describes type of token.'  Valid values: - instrumentIdentifier 
    * @member {String} object
    */
   exports.prototype['object'] = undefined;
@@ -160,9 +160,9 @@
    */
   exports.prototype['metaData'] = undefined;
   /**
-   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier} instrumentIdentifier
+   * @member {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded} _embedded
    */
-  exports.prototype['instrumentIdentifier'] = undefined;
+  exports.prototype['_embedded'] = undefined;
 
 
 
