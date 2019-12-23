@@ -91,7 +91,7 @@
    */
   exports.prototype['country'] = undefined;
   /**
-   * Registered password for the Visa directory server. For Mastercard, this value is always 12345678. 
+   * Registered password for the Visa directory server. 
    * @member {String} password
    */
   exports.prototype['password'] = undefined;
