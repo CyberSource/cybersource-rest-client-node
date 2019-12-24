@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bank (base name: "bank")', function() {
+      // uncomment below and update the code to test the property bank
+      //var instane = new CyberSource.Riskv1decisionsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

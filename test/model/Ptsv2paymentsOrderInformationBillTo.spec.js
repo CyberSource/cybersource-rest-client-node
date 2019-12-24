@@ -158,6 +158,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property emailDomain (base name: "emailDomain")', function() {
+      // uncomment below and update the code to test the property emailDomain
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property phoneNumber (base name: "phoneNumber")', function() {
       // uncomment below and update the code to test the property phoneNumber
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();

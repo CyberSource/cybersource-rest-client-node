@@ -82,12 +82,12 @@
    */
   exports.prototype['code'] = undefined;
   /**
-   * The application name of client which is used to submit the request.
+   * The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. 
    * @member {String} applicationName
    */
   exports.prototype['applicationName'] = undefined;
   /**
-   * The description for this field is not available.
+   * The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. 
    * @member {String} applicationUser
    */
   exports.prototype['applicationUser'] = undefined;

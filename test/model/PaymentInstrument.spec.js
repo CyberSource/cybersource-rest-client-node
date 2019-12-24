@@ -122,8 +122,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property instrumentIdentifier (base name: "instrumentIdentifier")', function() {
-      // uncomment below and update the code to test the property instrumentIdentifier
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
       //var instane = new CyberSource.PaymentInstrument();
       //expect(instance).to.be();
     });

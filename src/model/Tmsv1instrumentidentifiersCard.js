@@ -91,7 +91,7 @@
    */
   exports.prototype['expirationMonth'] = undefined;
   /**
-   * Card expiration year.  Format: `YYYY`. Possible values: `1900` through `2099`. 
+   * Card expiration year. Format: `YYYY`. Possible values: `1900` through `2099`. 
    * @member {String} expirationYear
    */
   exports.prototype['expirationYear'] = undefined;

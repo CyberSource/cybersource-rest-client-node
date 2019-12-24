@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.ReportingV3ReportsGet200ResponseReportSearchResults);
     });
 
+    it('should have the property link (base name: "_link")', function() {
+      // uncomment below and update the code to test the property link
+      //var instane = new CyberSource.ReportingV3ReportsGet200ResponseReportSearchResults();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reportDefinitionId (base name: "reportDefinitionId")', function() {
       // uncomment below and update the code to test the property reportDefinitionId
       //var instane = new CyberSource.ReportingV3ReportsGet200ResponseReportSearchResults();

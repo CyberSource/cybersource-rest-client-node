@@ -68,8 +68,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property dateOBirth (base name: "dateOBirth")', function() {
-      // uncomment below and update the code to test the property dateOBirth
+    it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
+      // uncomment below and update the code to test the property dateOfBirth
       //var instane = new CyberSource.BuyerInformation();
       //expect(instance).to.be();
     });

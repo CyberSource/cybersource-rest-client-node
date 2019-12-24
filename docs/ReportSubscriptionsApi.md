@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteSubscription**](ReportSubscriptionsApi.md#deleteSubscription) | **DELETE** /reporting/v3/report-subscriptions/{reportName} | Delete subscription of a report name by organization
 [**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Get all subscriptions
 [**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Get subscription for report name
+[**reportingV3PredefinedReportSubscriptionsPut**](ReportSubscriptionsApi.md#reportingV3PredefinedReportSubscriptionsPut) | **PUT** /reporting/v3/predefined-report-subscriptions | Create a Standard or Classic subscription
 
 
 <a name="createSubscription"></a>
@@ -182,6 +183,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ReportingV3ReportSubscriptionsGet200ResponseSubscriptions**](ReportingV3ReportSubscriptionsGet200ResponseSubscriptions.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json
+
+<a name="reportingV3PredefinedReportSubscriptionsPut"></a>
+# **reportingV3PredefinedReportSubscriptionsPut**
+> reportingV3PredefinedReportSubscriptionsPut(predefinedSubscriptionRequestBean, opts)
+
+Create a Standard or Classic subscription
+
+Create or update an already existing classic or standard subscription. 
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.ReportSubscriptionsApi();
+
+var predefinedSubscriptionRequestBean = new CyberSource.PredefinedSubscriptionRequestBean(); // PredefinedSubscriptionRequestBean | Report subscription request payload
+
+var opts = { 
+  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.reportingV3PredefinedReportSubscriptionsPut(predefinedSubscriptionRequestBean, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **predefinedSubscriptionRequestBean** | [**PredefinedSubscriptionRequestBean**](PredefinedSubscriptionRequestBean.md)| Report subscription request payload | 
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

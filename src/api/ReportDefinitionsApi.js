@@ -62,6 +62,8 @@
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param {String} reportDefinitionName Name of the Report definition to retrieve
      * @param {Object} opts Optional parameters
+     * @param {String} opts.subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD 
+     * @param {String} opts.reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv 
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/ReportDefinitionsApi~getResourceInfoByReportDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportDefinitionsNameGet200Response}
@@ -80,6 +82,8 @@
         'reportDefinitionName': reportDefinitionName
       };
       var queryParams = {
+        'subscriptionType': opts['subscriptionType'],
+        'reportMimeType': opts['reportMimeType'],
         'organizationId': opts['organizationId']
       };
       var headerParams = {
@@ -111,6 +115,7 @@
      * Get reporting resource information
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD 
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/ReportDefinitionsApi~getResourceV2InfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportDefinitionsGet200Response}
@@ -123,6 +128,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'subscriptionType': opts['subscriptionType'],
         'organizationId': opts['organizationId']
       };
       var headerParams = {

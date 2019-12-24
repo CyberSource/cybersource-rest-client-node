@@ -56,30 +56,6 @@
       //expect(instance).to.be.a(CyberSource.UpdatePaymentInstrumentRequest);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new CyberSource.UpdatePaymentInstrumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new CyberSource.UpdatePaymentInstrumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property _object (base name: "object")', function() {
-      // uncomment below and update the code to test the property _object
-      //var instane = new CyberSource.UpdatePaymentInstrumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new CyberSource.UpdatePaymentInstrumentRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property bankAccount (base name: "bankAccount")', function() {
       // uncomment below and update the code to test the property bankAccount
       //var instane = new CyberSource.UpdatePaymentInstrumentRequest();

@@ -25,6 +25,8 @@ var apiInstance = new CyberSource.ReportDefinitionsApi();
 var reportDefinitionName = "reportDefinitionName_example"; // String | Name of the Report definition to retrieve
 
 var opts = { 
+  'subscriptionType': "subscriptionType_example", // String | The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD 
+  'reportMimeType': "reportMimeType_example", // String | The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv 
   'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
 };
 
@@ -43,6 +45,8 @@ apiInstance.getResourceInfoByReportDefinition(reportDefinitionName, opts, callba
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportDefinitionName** | **String**| Name of the Report definition to retrieve | 
+ **subscriptionType** | **String**| The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  | [optional] 
+ **reportMimeType** | **String**| The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  | [optional] 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type
@@ -73,6 +77,7 @@ var CyberSource = require('CyberSource');
 var apiInstance = new CyberSource.ReportDefinitionsApi();
 
 var opts = { 
+  'subscriptionType': "subscriptionType_example", // String | Valid Values: - CLASSIC - CUSTOM - STANDARD 
   'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
 };
 
@@ -90,6 +95,7 @@ apiInstance.getResourceV2Info(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **subscriptionType** | **String**| Valid Values: - CLASSIC - CUSTOM - STANDARD  | [optional] 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type

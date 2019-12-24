@@ -26,7 +26,8 @@ var reportDate = new Date("2013-10-20"); // Date | Valid date on which to downlo
 var reportName = "reportName_example"; // String | Name of the report to download
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example", // String | Valid Cybersource Organization Id
+  'reportTime': "reportTime_example" // String | Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm 
 };
 
 var callback = function(error, data, response) {
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **reportDate** | **Date**| Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  | 
  **reportName** | **String**| Name of the report to download | 
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **reportTime** | **String**| Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm  | [optional] 
 
 ### Return type
 

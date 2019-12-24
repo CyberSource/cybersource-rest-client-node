@@ -82,7 +82,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license 
+   * Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

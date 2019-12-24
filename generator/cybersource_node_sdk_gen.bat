@@ -4,7 +4,8 @@ cd %~dp0
 REM Delete the previously generated SDK code
 
 rd /s /q ..\docs
-rd /s /q ..\src
+rd /s /q ..\src\api
+rd /s /q ..\src\model
 rd /s /q ..\test
 
 REM Command to generate SDK

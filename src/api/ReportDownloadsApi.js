@@ -64,6 +64,7 @@
      * @param {String} reportName Name of the report to download
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.reportTime Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm 
      * @param {module:api/ReportDownloadsApi~downloadReportCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.downloadReport = function(reportDate, reportName, opts, callback) {
@@ -86,7 +87,8 @@
       var queryParams = {
         'organizationId': opts['organizationId'],
         'reportDate': reportDate,
-        'reportName': reportName
+        'reportName': reportName,
+        'reportTime': opts['reportTime']
       };
       var headerParams = {
       };

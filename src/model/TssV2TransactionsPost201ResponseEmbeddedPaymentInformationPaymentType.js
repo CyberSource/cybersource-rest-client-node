@@ -62,8 +62,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('method')) {
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
@@ -73,12 +73,12 @@
   }
 
   /**
-   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - `CARD` (use this for a PIN debit transaction) 
-   * @member {String} name
+   * Indicates the payment type used in this payment transaction. Example: credit card, check
+   * @member {String} type
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
+   * Indicates the payment method used in this payment transaction.
    * @member {String} method
    */
   exports.prototype['method'] = undefined;

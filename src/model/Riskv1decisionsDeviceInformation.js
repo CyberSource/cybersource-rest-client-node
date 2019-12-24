@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -71,6 +72,9 @@
       }
       if (data.hasOwnProperty('ipAddress')) {
         obj['ipAddress'] = ApiClient.convertToType(data['ipAddress'], 'String');
+      }
+      if (data.hasOwnProperty('networkIpAddress')) {
+        obj['networkIpAddress'] = ApiClient.convertToType(data['networkIpAddress'], 'String');
       }
       if (data.hasOwnProperty('hostName')) {
         obj['hostName'] = ApiClient.convertToType(data['hostName'], 'String');
@@ -98,6 +102,11 @@
    * @member {String} ipAddress
    */
   exports.prototype['ipAddress'] = undefined;
+  /**
+   * Network IP address of the customer (for example, 10.1.27). A network IP address includes up to 256 IP addresses. 
+   * @member {String} networkIpAddress
+   */
+  exports.prototype['networkIpAddress'] = undefined;
   /**
    * DNS resolved hostname from `ipAddress`.
    * @member {String} hostName

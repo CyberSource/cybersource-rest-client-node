@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['superagent', 'querystring'], factory);
+    define(['superagent', 'superagent-proxy', 'querystring'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superagent'), require('querystring'));
+    module.exports = factory(require('superagent'), require('superagent-proxy'), require('querystring'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ApiClient = factory(root.superagent, root.querystring);
+    root.CyberSource.ApiClient = factory(root.superagent, root.superagent_proxy, root.querystring);
   }
-}(this, function(superagent, querystring) {
+}(this, function(superagent, superagent_proxy, querystring) {
   'use strict';
 
   /**
@@ -93,9 +93,9 @@
       this.agent = new superagent.agent();
     }
 
-	/**
-	 * The filepath where reports are downloaded
-	 */
+    /**
+     * The filepath where reports are downloaded
+     */
     this.downloadFilePath = '';
   };
 
@@ -349,7 +349,7 @@
     return exports.convertToType(data, returnType);
   };
   
-	// Code added by Infosys dev team
+    // Code added by Infosys dev team
 
   var AuthenticationSDK = require('cybersource-rest-auth');
   /**
@@ -361,7 +361,7 @@
 
     this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
     this.constants = AuthenticationSDK.Constants;
-	this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
+    this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
     this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
   }
 
@@ -382,6 +382,14 @@
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
     var token = AuthenticationSDK.Authorization.getToken(this.merchantConfig, this.logger);
+
+    var clientId = getClientId();
+
+    headerParams['v-c-client-id'] = clientId;
+    
+    // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {  
+      // headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
+    // }
 
     if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.JWT) {
       token = 'Bearer ' + token;
@@ -416,6 +424,11 @@
 
     return headerParams;
   }
+
+  function getClientId() {
+    var packageInfo = require('./../package.json');
+    return "cybs-rest-sdk-node-" + packageInfo.version;
+  }
   
   /**
    * Callback function to receive the result of the operation.
@@ -448,7 +461,25 @@
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
+    var useProxy = this.merchantConfig.getUseProxy();
+    var proxyAddress = this.merchantConfig.getProxyAddress();
+    var proxyPort = this.merchantConfig.getProxyPort();
+    var proxyUser = this.merchantConfig.getProxyUser();
+    var proxyPassword = this.merchantConfig.getProxyPassword();
+
     var request = superagent(httpMethod, url);
+
+    if (useProxy && (proxyAddress != null && proxyAddress != '')) {
+      require('superagent-proxy')(require('superagent'));
+      var request = superagent(httpMethod, url);
+      if ((proxyUser != null && proxyUser != '') && (proxyPassword!= null && proxyPassword != '')) {
+        var proxy  = process.env.http_proxy || 'http://' + proxyUser + ':' + proxyPassword + '@' + proxyAddress + ':' + proxyPort; 
+      }
+      else {
+        var proxy  = process.env.http_proxy || 'http://' +  proxyAddress + ':' + proxyPort;
+      }
+      request.proxy(proxy); 
+    }
 
     // apply authentications
     this.applyAuthToRequest(request, authNames);
@@ -459,7 +490,7 @@
     }
     request.query(this.normalizeParams(queryParams));
 
-	/**
+    /**
      *added by infosys team, to generate requestTarget with pathParam
      */
     var requestTarget = this.buildRequestTarget(path, pathParams, queryParams);
@@ -469,8 +500,8 @@
       || httpMethod.toLowerCase() === this.constants.PUT) {
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
-	headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
-	
+    headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
 
@@ -508,7 +539,7 @@
     var accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
-	  /* Code for downloading file from stream */
+      /* Code for downloading file from stream */
       if (accept === 'application/xml' || accept === 'text/csv') {
         if (accept === 'application/xml') {
           this.downloadFilePath = this.downloadFilePath + '.xml';
@@ -637,7 +668,7 @@
       case 'Date':
         return this.parseDate(String(data));
       case 'Blob':
-      	return data;
+          return data;
       default:
         if (type === Object) {
           // generic object, return directly
