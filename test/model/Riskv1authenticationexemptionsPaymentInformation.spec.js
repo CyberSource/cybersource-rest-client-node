@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fluidData (base name: "fluidData")', function() {
+      // uncomment below and update the code to test the property fluidData
+      //var instane = new CyberSource.Riskv1authenticationexemptionsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

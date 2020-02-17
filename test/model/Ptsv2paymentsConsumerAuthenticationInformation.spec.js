@@ -98,8 +98,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property ucafCollectionIndicator (base name: "ucafCollectionIndicator")', function() {
-      // uncomment below and update the code to test the property ucafCollectionIndicator
+    it('should have the property strongAuthentication (base name: "strongAuthentication")', function() {
+      // uncomment below and update the code to test the property strongAuthentication
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property directoryServerTransactionId (base name: "directoryServerTransactionId")', function() {
+      // uncomment below and update the code to test the property directoryServerTransactionId
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paSpecificationVersion (base name: "paSpecificationVersion")', function() {
+      // uncomment below and update the code to test the property paSpecificationVersion
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });

@@ -69,7 +69,7 @@
   }
 
   /**
-   * Acquirer bank ID number that corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard. 
+   * Acquirer bank ID number that  corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard. 
    * @member {String} acquirerBin
    */
   exports.prototype['acquirerBin'] = undefined;

@@ -58,7 +58,7 @@
      */
 
     /**
-     * Create a search request
+     * Create a Search Request
      * Create a search request. 
      * @param {module:model/CreateSearchRequest} createSearchRequest 
      * @param {module:api/SearchTransactionsApi~createSearchCallback} callback The callback function, accepting three arguments: error, data, response
@@ -103,7 +103,7 @@
      */
 
     /**
-     * Get Search results
+     * Get Search Results
      * Include the Search ID in the GET request to retrieve the search results.
      * @param {String} searchId Search ID.
      * @param {module:api/SearchTransactionsApi~getSearchCallback} callback The callback function, accepting three arguments: error, data, response

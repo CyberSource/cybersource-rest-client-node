@@ -60,6 +60,16 @@
         done();
       });
     });
+    describe('incrementAuth', function() {
+      it('should call incrementAuth successfully', function(done) {
+        //uncomment below and update the code to test incrementAuth
+        //instance.incrementAuth(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

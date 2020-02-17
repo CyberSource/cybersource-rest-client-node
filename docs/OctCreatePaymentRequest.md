@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**Ptsv2payoutsClientReferenceInformation**](Ptsv2payoutsClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation**](PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**Ptsv2payoutsOrderInformation**](Ptsv2payoutsOrderInformation.md) |  | [optional] 
 **merchantInformation** | [**Ptsv2payoutsMerchantInformation**](Ptsv2payoutsMerchantInformation.md) |  | [optional] 
 **recipientInformation** | [**Ptsv2payoutsRecipientInformation**](Ptsv2payoutsRecipientInformation.md) |  | [optional] 

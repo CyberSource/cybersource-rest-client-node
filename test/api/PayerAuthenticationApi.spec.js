@@ -60,6 +60,16 @@
         done();
       });
     });
+    describe('payerAuthSetup', function() {
+      it('should call payerAuthSetup successfully', function(done) {
+        //uncomment below and update the code to test payerAuthSetup
+        //instance.payerAuthSetup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('validateAuthenticationResults', function() {
       it('should call validateAuthenticationResults successfully', function(done) {
         //uncomment below and update the code to test validateAuthenticationResults

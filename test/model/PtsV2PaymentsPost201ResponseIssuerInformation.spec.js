@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property countrySpecificDiscretionaryData (base name: "countrySpecificDiscretionaryData")', function() {
+      // uncomment below and update the code to test the property countrySpecificDiscretionaryData
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property responseCode (base name: "responseCode")', function() {
       // uncomment below and update the code to test the property responseCode
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseIssuerInformation();

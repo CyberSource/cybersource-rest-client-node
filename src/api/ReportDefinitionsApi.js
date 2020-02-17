@@ -58,7 +58,7 @@
      */
 
     /**
-     * Get report definition
+     * Get Report Definition
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param {String} reportDefinitionName Name of the Report definition to retrieve
      * @param {Object} opts Optional parameters
@@ -112,7 +112,7 @@
      */
 
     /**
-     * Get reporting resource information
+     * Get Reporting Resource Information
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param {Object} opts Optional parameters
      * @param {String} opts.subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD 

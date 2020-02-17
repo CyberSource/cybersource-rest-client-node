@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsIssuerInformation', 'model/Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsIssuerInformation', 'model/Ptsv2paymentsProcessingInformationLoanOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsIssuerInformation'), require('./Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsIssuerInformation'), require('./Ptsv2paymentsProcessingInformationLoanOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidcapturesProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsIssuerInformation, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationCaptureOptions);
+    root.CyberSource.Ptsv2paymentsidcapturesProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsIssuerInformation, root.CyberSource.Ptsv2paymentsProcessingInformationLoanOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationCaptureOptions);
   }
-}(this, function(ApiClient, Ptsv2paymentsIssuerInformation, Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, Ptsv2paymentsidcapturesProcessingInformationCaptureOptions) {
+}(this, function(ApiClient, Ptsv2paymentsIssuerInformation, Ptsv2paymentsProcessingInformationLoanOptions, Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, Ptsv2paymentsidcapturesProcessingInformationCaptureOptions) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -100,12 +101,15 @@
       if (data.hasOwnProperty('captureOptions')) {
         obj['captureOptions'] = Ptsv2paymentsidcapturesProcessingInformationCaptureOptions.constructFromObject(data['captureOptions']);
       }
+      if (data.hasOwnProperty('loanOptions')) {
+        obj['loanOptions'] = Ptsv2paymentsProcessingInformationLoanOptions.constructFromObject(data['loanOptions']);
+      }
     }
     return obj;
   }
 
   /**
-   * Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay. 
+   * Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay. 
    * @member {String} paymentSolution
    */
   exports.prototype['paymentSolution'] = undefined;
@@ -115,17 +119,17 @@
    */
   exports.prototype['reconciliationId'] = undefined;
   /**
-   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments  For details, see `link_to_request` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments  For details, see `link_to_request` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} linkId
    */
   exports.prototype['linkId'] = undefined;
   /**
-   * Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  For details, see `report_group` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  For details, see `report_group` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} reportGroup
    */
   exports.prototype['reportGroup'] = undefined;
   /**
-   * Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For details, see the `vc_order_id` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For details, see the `vc_order_id` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/) 
    * @member {String} visaCheckoutId
    */
   exports.prototype['visaCheckoutId'] = undefined;
@@ -135,7 +139,7 @@
    */
   exports.prototype['purchaseLevel'] = undefined;
   /**
-   * Flag that indicates whether the transaction includes airline or restaurant data.  To send the data in a transaction request to the processor, you must set this field to `airline` or `restaurant`.  **Note** If you do not set this field to one of the possible values, CyberSource does not send any data to the processor.  Possible Values: - `airline` - `restaurant` 
+   * Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit` 
    * @member {String} industryDataType
    */
   exports.prototype['industryDataType'] = undefined;
@@ -151,6 +155,10 @@
    * @member {module:model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions} captureOptions
    */
   exports.prototype['captureOptions'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessingInformationLoanOptions} loanOptions
+   */
+  exports.prototype['loanOptions'] = undefined;
 
 
 

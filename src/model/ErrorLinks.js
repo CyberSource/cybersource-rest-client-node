@@ -63,31 +63,31 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('next')) {
-        obj['next'] = ApiClient.convertToType(data['next'], [InlineResponseDefaultLinksNext]);
+      if (data.hasOwnProperty('self')) {
+        obj['self'] = InlineResponseDefaultLinksNext.constructFromObject(data['self']);
       }
       if (data.hasOwnProperty('documentation')) {
         obj['documentation'] = ApiClient.convertToType(data['documentation'], [InlineResponseDefaultLinksNext]);
       }
-      if (data.hasOwnProperty('self')) {
-        obj['self'] = InlineResponseDefaultLinksNext.constructFromObject(data['self']);
+      if (data.hasOwnProperty('next')) {
+        obj['next'] = ApiClient.convertToType(data['next'], [InlineResponseDefaultLinksNext]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/InlineResponseDefaultLinksNext>} next
+   * @member {module:model/InlineResponseDefaultLinksNext} self
    */
-  exports.prototype['next'] = undefined;
+  exports.prototype['self'] = undefined;
   /**
    * @member {Array.<module:model/InlineResponseDefaultLinksNext>} documentation
    */
   exports.prototype['documentation'] = undefined;
   /**
-   * @member {module:model/InlineResponseDefaultLinksNext} self
+   * @member {Array.<module:model/InlineResponseDefaultLinksNext>} next
    */
-  exports.prototype['self'] = undefined;
+  exports.prototype['next'] = undefined;
 
 
 

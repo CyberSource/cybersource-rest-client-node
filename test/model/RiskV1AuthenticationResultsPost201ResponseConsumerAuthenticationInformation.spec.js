@@ -56,6 +56,18 @@
       //expect(instance).to.be.a(CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation);
     });
 
+    it('should have the property acsRenderingType (base name: "acsRenderingType")', function() {
+      // uncomment below and update the code to test the property acsRenderingType
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property acsTransactionId (base name: "acsTransactionId")', function() {
+      // uncomment below and update the code to test the property acsTransactionId
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authenticationResult (base name: "authenticationResult")', function() {
       // uncomment below and update the code to test the property authenticationResult
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
@@ -64,6 +76,12 @@
 
     it('should have the property authenticationStatusMsg (base name: "authenticationStatusMsg")', function() {
       // uncomment below and update the code to test the property authenticationStatusMsg
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authorizationPayload (base name: "authorizationPayload")', function() {
+      // uncomment below and update the code to test the property authorizationPayload
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -80,8 +98,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property directoryServerErrorCode (base name: "directoryServerErrorCode")', function() {
+      // uncomment below and update the code to test the property directoryServerErrorCode
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property directoryServerErrorDescription (base name: "directoryServerErrorDescription")', function() {
+      // uncomment below and update the code to test the property directoryServerErrorDescription
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property indicator (base name: "indicator")', function() {
       // uncomment below and update the code to test the property indicator
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property interactionCounter (base name: "interactionCounter")', function() {
+      // uncomment below and update the code to test the property interactionCounter
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -104,8 +140,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sdkTransactionId (base name: "sdkTransactionId")', function() {
+      // uncomment below and update the code to test the property sdkTransactionId
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property specificationVersion (base name: "specificationVersion")', function() {
       // uncomment below and update the code to test the property specificationVersion
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property threeDSServerTransactionId (base name: "threeDSServerTransactionId")', function() {
+      // uncomment below and update the code to test the property threeDSServerTransactionId
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -122,8 +170,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property whiteListStatus (base name: "whiteListStatus")', function() {
+      // uncomment below and update the code to test the property whiteListStatus
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property whiteListStatusSource (base name: "whiteListStatusSource")', function() {
+      // uncomment below and update the code to test the property whiteListStatusSource
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property xid (base name: "xid")', function() {
       // uncomment below and update the code to test the property xid
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property directoryServerTransactionId (base name: "directoryServerTransactionId")', function() {
+      // uncomment below and update the code to test the property directoryServerTransactionId
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });

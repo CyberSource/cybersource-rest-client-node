@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property amount (base name: "amount")', function() {
+      // uncomment below and update the code to test the property amount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property amountFunded (base name: "amountFunded")', function() {
       // uncomment below and update the code to test the property amountFunded
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
@@ -116,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property frequency (base name: "frequency")', function() {
+      // uncomment below and update the code to test the property frequency
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property insurance (base name: "insurance")', function() {
       // uncomment below and update the code to test the property insurance
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
@@ -128,8 +140,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property invoiceData (base name: "invoiceData")', function() {
+      // uncomment below and update the code to test the property invoiceData
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property monthlyInterestRate (base name: "monthlyInterestRate")', function() {
       // uncomment below and update the code to test the property monthlyInterestRate
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property planType (base name: "planType")', function() {
+      // uncomment below and update the code to test the property planType
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sequence (base name: "sequence")', function() {
+      // uncomment below and update the code to test the property sequence
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
       //expect(instance).to.be();
     });
@@ -142,6 +172,42 @@
 
     it('should have the property taxesPercentage (base name: "taxesPercentage")', function() {
       // uncomment below and update the code to test the property taxesPercentage
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalAmount (base name: "totalAmount")', function() {
+      // uncomment below and update the code to test the property totalAmount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalCount (base name: "totalCount")', function() {
+      // uncomment below and update the code to test the property totalCount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property minimumTotalCount (base name: "minimumTotalCount")', function() {
+      // uncomment below and update the code to test the property minimumTotalCount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property maximumTotalCount (base name: "maximumTotalCount")', function() {
+      // uncomment below and update the code to test the property maximumTotalCount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstInstallmentAmount (base name: "firstInstallmentAmount")', function() {
+      // uncomment below and update the code to test the property firstInstallmentAmount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstInstallmentDate (base name: "firstInstallmentDate")', function() {
+      // uncomment below and update the code to test the property firstInstallmentDate
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
       //expect(instance).to.be();
     });

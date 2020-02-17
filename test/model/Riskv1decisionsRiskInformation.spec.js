@@ -68,12 +68,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property markingDetails (base name: "markingDetails")', function() {
-      // uncomment below and update the code to test the property markingDetails
-      //var instane = new CyberSource.Riskv1decisionsRiskInformation();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

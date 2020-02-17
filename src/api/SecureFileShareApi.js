@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/V1FileDetailsGet200Response'], factory);
+    define(['ApiClient', 'model/InlineResponse4001', 'model/V1FileDetailsGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/V1FileDetailsGet200Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4001'), require('../model/V1FileDetailsGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SecureFileShareApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.V1FileDetailsGet200Response);
+    root.CyberSource.SecureFileShareApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001, root.CyberSource.V1FileDetailsGet200Response);
   }
-}(this, function(ApiClient, InlineResponse400, V1FileDetailsGet200Response) {
+}(this, function(ApiClient, InlineResponse4001, V1FileDetailsGet200Response) {
   'use strict';
 
   /**
@@ -58,7 +58,7 @@
      */
 
     /**
-     * Download a file with file identifier
+     * Download a File with File Identifier
      * Download a file for the given file identifier
      * @param {String} fileId Unique identifier for each file
      * @param {Object} opts Optional parameters
@@ -107,7 +107,7 @@
      */
 
     /**
-     * Get list of files
+     * Get List of Files
      * Get list of files and it&#39;s information of them available inside the report directory
      * @param {Date} startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd 
      * @param {Date} endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd 

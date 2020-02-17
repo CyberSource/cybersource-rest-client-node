@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sourceAccountTypeDetails (base name: "sourceAccountTypeDetails")', function() {
+      // uncomment below and update the code to test the property sourceAccountTypeDetails
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property securityCode (base name: "securityCode")', function() {
       // uncomment below and update the code to test the property securityCode
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformationCard();

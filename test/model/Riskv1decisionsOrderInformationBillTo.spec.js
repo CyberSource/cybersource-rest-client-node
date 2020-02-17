@@ -110,12 +110,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property emailDomain (base name: "emailDomain")', function() {
-      // uncomment below and update the code to test the property emailDomain
-      //var instane = new CyberSource.Riskv1decisionsOrderInformationBillTo();
-      //expect(instance).to.be();
-    });
-
     it('should have the property postalCode (base name: "postalCode")', function() {
       // uncomment below and update the code to test the property postalCode
       //var instane = new CyberSource.Riskv1decisionsOrderInformationBillTo();

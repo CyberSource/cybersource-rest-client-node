@@ -126,7 +126,7 @@
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
-   * 'The frequency for which subscription is created. For Standard we can have DAILY, WEEKLY and MONTHLY. But for Classic we will have only DAILY.'  Valid Values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'USER_DEFINED' 
+   * 'The frequency for which subscription is created. For Standard we can have DAILY, WEEKLY and MONTHLY. But for Classic we will have only DAILY.' **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'USER_DEFINED' 
    * @member {String} reportFrequency
    */
   exports.prototype['reportFrequency'] = undefined;

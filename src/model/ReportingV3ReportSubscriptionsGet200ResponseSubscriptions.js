@@ -142,7 +142,7 @@
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
-   * 'Report Frequency'   Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED 
+   * 'Report Frequency' **NOTE: Do not document USER_DEFINED Frequency field in developer center**  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED 
    * @member {String} reportFrequency
    */
   exports.prototype['reportFrequency'] = undefined;

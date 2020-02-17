@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsReversalsPost201ResponseLinks', 'model/TssV2TransactionsPost201ResponseEmbedded'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/TssV2TransactionsPost201ResponseEmbedded'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsReversalsPost201ResponseLinks'), require('./TssV2TransactionsPost201ResponseEmbedded'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./TssV2TransactionsPost201ResponseEmbedded'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseLinks, root.CyberSource.TssV2TransactionsPost201ResponseEmbedded);
+    root.CyberSource.TssV2TransactionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.TssV2TransactionsPost201ResponseEmbedded);
   }
-}(this, function(ApiClient, PtsV2PaymentsReversalsPost201ResponseLinks, TssV2TransactionsPost201ResponseEmbedded) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, TssV2TransactionsPost201ResponseEmbedded) {
   'use strict';
 
 
@@ -114,7 +114,7 @@
         obj['_embedded'] = TssV2TransactionsPost201ResponseEmbedded.constructFromObject(data['_embedded']);
       }
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = PtsV2PaymentsReversalsPost201ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = PtsV2IncrementalAuthorizationPatch201ResponseLinks.constructFromObject(data['_links']);
       }
     }
     return obj;
@@ -185,7 +185,7 @@
    */
   exports.prototype['_embedded'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsReversalsPost201ResponseLinks} _links
+   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
 

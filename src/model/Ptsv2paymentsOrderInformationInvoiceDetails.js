@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -111,6 +112,9 @@
       }
       if (data.hasOwnProperty('referenceDataNumber')) {
         obj['referenceDataNumber'] = ApiClient.convertToType(data['referenceDataNumber'], 'String');
+      }
+      if (data.hasOwnProperty('salesSlipNumber')) {
+        obj['salesSlipNumber'] = ApiClient.convertToType(data['salesSlipNumber'], 'Number');
       }
     }
     return obj;
@@ -171,7 +175,7 @@
    */
   exports.prototype['transactionAdviceAddendum'] = undefined;
   /**
-   * Code that identifies the value of the `referenceDataNumber` field.  For the possible values, see \"Reference Data Codes\" in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. 
+   * Code that identifies the value of the `referenceDataNumber` field.  For the possible values, see \"Reference Data Codes\" in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/).  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. 
    * @member {String} referenceDataCode
    */
   exports.prototype['referenceDataCode'] = undefined;
@@ -180,6 +184,11 @@
    * @member {String} referenceDataNumber
    */
   exports.prototype['referenceDataNumber'] = undefined;
+  /**
+   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. 
+   * @member {Number} salesSlipNumber
+   */
+  exports.prototype['salesSlipNumber'] = undefined;
 
 
 

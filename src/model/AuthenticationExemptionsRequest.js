@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2payoutsClientReferenceInformation', 'model/Riskv1authenticationexemptionsAcquirerInformation', 'model/Riskv1authenticationexemptionsDeviceInformation', 'model/Riskv1authenticationexemptionsMerchantInformation', 'model/Riskv1authenticationexemptionsOrderInformation', 'model/Riskv1authenticationexemptionsPaymentInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/Riskv1authenticationexemptionsAcquirerInformation', 'model/Riskv1authenticationexemptionsDeviceInformation', 'model/Riskv1authenticationexemptionsMerchantInformation', 'model/Riskv1authenticationexemptionsOrderInformation', 'model/Riskv1authenticationexemptionsPaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2payoutsClientReferenceInformation'), require('./Riskv1authenticationexemptionsAcquirerInformation'), require('./Riskv1authenticationexemptionsDeviceInformation'), require('./Riskv1authenticationexemptionsMerchantInformation'), require('./Riskv1authenticationexemptionsOrderInformation'), require('./Riskv1authenticationexemptionsPaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./Riskv1authenticationexemptionsAcquirerInformation'), require('./Riskv1authenticationexemptionsDeviceInformation'), require('./Riskv1authenticationexemptionsMerchantInformation'), require('./Riskv1authenticationexemptionsOrderInformation'), require('./Riskv1authenticationexemptionsPaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AuthenticationExemptionsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2payoutsClientReferenceInformation, root.CyberSource.Riskv1authenticationexemptionsAcquirerInformation, root.CyberSource.Riskv1authenticationexemptionsDeviceInformation, root.CyberSource.Riskv1authenticationexemptionsMerchantInformation, root.CyberSource.Riskv1authenticationexemptionsOrderInformation, root.CyberSource.Riskv1authenticationexemptionsPaymentInformation);
+    root.CyberSource.AuthenticationExemptionsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.Riskv1authenticationexemptionsAcquirerInformation, root.CyberSource.Riskv1authenticationexemptionsDeviceInformation, root.CyberSource.Riskv1authenticationexemptionsMerchantInformation, root.CyberSource.Riskv1authenticationexemptionsOrderInformation, root.CyberSource.Riskv1authenticationexemptionsPaymentInformation);
   }
-}(this, function(ApiClient, Ptsv2payoutsClientReferenceInformation, Riskv1authenticationexemptionsAcquirerInformation, Riskv1authenticationexemptionsDeviceInformation, Riskv1authenticationexemptionsMerchantInformation, Riskv1authenticationexemptionsOrderInformation, Riskv1authenticationexemptionsPaymentInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, Riskv1authenticationexemptionsAcquirerInformation, Riskv1authenticationexemptionsDeviceInformation, Riskv1authenticationexemptionsMerchantInformation, Riskv1authenticationexemptionsOrderInformation, Riskv1authenticationexemptionsPaymentInformation) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Ptsv2payoutsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Riskv1authenticationexemptionsOrderInformation.constructFromObject(data['orderInformation']);
@@ -89,7 +89,7 @@
   }
 
   /**
-   * @member {module:model/Ptsv2payoutsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**

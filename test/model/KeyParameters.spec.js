@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property targetOrigin (base name: "targetOrigin")', function() {
+      // uncomment below and update the code to test the property targetOrigin
+      //var instane = new CyberSource.KeyParameters();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -4,14 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadReport**](ReportDownloadsApi.md#downloadReport) | **GET** /reporting/v3/report-downloads | Download a report
+[**downloadReport**](ReportDownloadsApi.md#downloadReport) | **GET** /reporting/v3/report-downloads | Download a Report
 
 
 <a name="downloadReport"></a>
 # **downloadReport**
 > downloadReport(reportDate, reportName, opts)
 
-Download a report
+Download a Report
 
 Download a report using the unique report name and date. 
 

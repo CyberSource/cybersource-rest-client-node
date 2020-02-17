@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsRiskInformationMarkingDetails', 'model/Riskv1decisionsRiskInformationProfile'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsRiskInformationProfile'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsRiskInformationMarkingDetails'), require('./Riskv1decisionsRiskInformationProfile'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsRiskInformationProfile'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsRiskInformationMarkingDetails, root.CyberSource.Riskv1decisionsRiskInformationProfile);
+    root.CyberSource.Riskv1decisionsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsRiskInformationProfile);
   }
-}(this, function(ApiClient, Riskv1decisionsRiskInformationMarkingDetails, Riskv1decisionsRiskInformationProfile) {
+}(this, function(ApiClient, Riskv1decisionsRiskInformationProfile) {
   'use strict';
 
 
@@ -46,7 +46,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
 
@@ -69,9 +68,6 @@
       if (data.hasOwnProperty('eventType')) {
         obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
       }
-      if (data.hasOwnProperty('markingDetails')) {
-        obj['markingDetails'] = Riskv1decisionsRiskInformationMarkingDetails.constructFromObject(data['markingDetails']);
-      }
     }
     return obj;
   }
@@ -85,10 +81,6 @@
    * @member {String} eventType
    */
   exports.prototype['eventType'] = undefined;
-  /**
-   * @member {module:model/Riskv1decisionsRiskInformationMarkingDetails} markingDetails
-   */
-  exports.prototype['markingDetails'] = undefined;
 
 
 

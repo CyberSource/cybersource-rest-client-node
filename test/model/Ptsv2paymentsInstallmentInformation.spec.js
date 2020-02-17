@@ -116,6 +116,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property gracePeriodDuration (base name: "gracePeriodDuration")', function() {
+      // uncomment below and update the code to test the property gracePeriodDuration
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property gracePeriodDurationType (base name: "gracePeriodDurationType")', function() {
+      // uncomment below and update the code to test the property gracePeriodDurationType
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstInstallmentAmount (base name: "firstInstallmentAmount")', function() {
+      // uncomment below and update the code to test the property firstInstallmentAmount
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

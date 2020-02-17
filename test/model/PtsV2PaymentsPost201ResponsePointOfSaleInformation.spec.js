@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property terminalId (base name: "terminalId")', function() {
+      // uncomment below and update the code to test the property terminalId
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

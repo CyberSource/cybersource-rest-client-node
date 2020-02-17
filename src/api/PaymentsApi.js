@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentRequest', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['ApiClient', 'model/CreatePaymentRequest', 'model/IncrementAuthRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/IncrementAuthRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(ApiClient, CreatePaymentRequest, PtsV2PaymentsPost201Response, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response) {
+}(this, function(ApiClient, CreatePaymentRequest, IncrementAuthRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -89,6 +89,58 @@
 
       return this.apiClient.callApi(
         '/pts/v2/payments', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the incrementAuth operation.
+     * @callback module:api/PaymentsApi~incrementAuthCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PtsV2IncrementalAuthorizationPatch201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Increment an Authorization
+     * Use this service to authorize additional charges in a lodging or autorental transaction. Include the ID returned from the original authorization in the PATCH request to add additional charges to that authorization. 
+     * @param {String} id The ID returned from the original authorization request.
+     * @param {module:model/IncrementAuthRequest} incrementAuthRequest 
+     * @param {module:api/PaymentsApi~incrementAuthCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PtsV2IncrementalAuthorizationPatch201Response}
+     */
+    this.incrementAuth = function(id, incrementAuthRequest, callback) {
+      var postBody = incrementAuthRequest;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling incrementAuth");
+      }
+
+      // verify the required parameter 'incrementAuthRequest' is set
+      if (incrementAuthRequest === undefined || incrementAuthRequest === null) {
+        throw new Error("Missing the required parameter 'incrementAuthRequest' when calling incrementAuth");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = PtsV2IncrementalAuthorizationPatch201Response;
+
+      return this.apiClient.callApi(
+        '/pts/v2/payments/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

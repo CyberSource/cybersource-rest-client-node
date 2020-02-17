@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property redemptionInquiry (base name: "redemptionInquiry")', function() {
+      // uncomment below and update the code to test the property redemptionInquiry
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

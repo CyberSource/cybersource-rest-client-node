@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('administrativeArea')) {
         obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
+      }
+      if (data.hasOwnProperty('phone')) {
+        obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
       }
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -140,6 +144,11 @@
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
+  /**
+   * Merchnat phone as contact information for CNP transactions 
+   * @member {String} phone
+   */
+  exports.prototype['phone'] = undefined;
   /**
    * Address of company's website provided by merchant 
    * @member {String} url

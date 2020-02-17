@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsidrefundsPaymentInformationCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsidrefundsPaymentInformationCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard);
+    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsidrefundsPaymentInformationCard) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsidrefundsPaymentInformationCard) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -70,6 +72,12 @@
       if (data.hasOwnProperty('bank')) {
         obj['bank'] = Ptsv2paymentsPaymentInformationBank.constructFromObject(data['bank']);
       }
+      if (data.hasOwnProperty('tokenizedCard')) {
+        obj['tokenizedCard'] = Ptsv2paymentsPaymentInformationTokenizedCard.constructFromObject(data['tokenizedCard']);
+      }
+      if (data.hasOwnProperty('fluidData')) {
+        obj['fluidData'] = Ptsv2paymentsPaymentInformationFluidData.constructFromObject(data['fluidData']);
+      }
       if (data.hasOwnProperty('customer')) {
         obj['customer'] = Ptsv2paymentsPaymentInformationCustomer.constructFromObject(data['customer']);
       }
@@ -88,6 +96,14 @@
    * @member {module:model/Ptsv2paymentsPaymentInformationBank} bank
    */
   exports.prototype['bank'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationTokenizedCard} tokenizedCard
+   */
+  exports.prototype['tokenizedCard'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationFluidData} fluidData
+   */
+  exports.prototype['fluidData'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsPaymentInformationCustomer} customer
    */

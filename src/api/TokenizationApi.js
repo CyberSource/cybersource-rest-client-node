@@ -58,7 +58,7 @@
      */
 
     /**
-     * Tokenize card
+     * Tokenize Card
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param {module:model/TokenizeRequest} tokenizeRequest 
      * @param {module:api/TokenizationApi~tokenizeCallback} callback The callback function, accepting three arguments: error, data, response

@@ -49,6 +49,7 @@
     var _this = this;
 
     _this['encryptionType'] = encryptionType;
+
   };
 
   /**
@@ -65,6 +66,9 @@
       if (data.hasOwnProperty('encryptionType')) {
         obj['encryptionType'] = ApiClient.convertToType(data['encryptionType'], 'String');
       }
+      if (data.hasOwnProperty('targetOrigin')) {
+        obj['targetOrigin'] = ApiClient.convertToType(data['targetOrigin'], 'String');
+      }
     }
     return obj;
   }
@@ -74,6 +78,11 @@
    * @member {String} encryptionType
    */
   exports.prototype['encryptionType'] = undefined;
+  /**
+   * The merchant origin (e.g. https://example.com) used to integrate with Flex API. Required to comply with CORS and CSP standards.
+   * @member {String} targetOrigin
+   */
+  exports.prototype['targetOrigin'] = undefined;
 
 
 

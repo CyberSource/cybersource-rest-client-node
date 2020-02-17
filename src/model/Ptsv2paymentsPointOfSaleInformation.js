@@ -69,6 +69,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -148,17 +151,26 @@
       if (data.hasOwnProperty('partnerSdkVersion')) {
         obj['partnerSdkVersion'] = ApiClient.convertToType(data['partnerSdkVersion'], 'String');
       }
+      if (data.hasOwnProperty('emvApplicationIdentifierAndDedicatedFileName')) {
+        obj['emvApplicationIdentifierAndDedicatedFileName'] = ApiClient.convertToType(data['emvApplicationIdentifierAndDedicatedFileName'], 'String');
+      }
+      if (data.hasOwnProperty('terminalCompliance')) {
+        obj['terminalCompliance'] = ApiClient.convertToType(data['terminalCompliance'], 'String');
+      }
+      if (data.hasOwnProperty('isDedicatedHardwareTerminal')) {
+        obj['isDedicatedHardwareTerminal'] = ApiClient.convertToType(data['isDedicatedHardwareTerminal'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Identifier for the terminal at your retail location. You can define this value yourself, but consult the processor for requirements.  #### FDC Nashville Global To have your account configured to support this field, contact CyberSource Customer Support. This value must be a value that FDC Nashville Global issued to you.  For details, see the `terminal_id` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  **For Payouts**: This field is applicable for CtV. 
+   * Identifier for the terminal at your retail location. You can define this value yourself, but consult the processor for requirements.  #### FDC Nashville Global To have your account configured to support this field, contact CyberSource Customer Support. This value must be a value that FDC Nashville Global issued to you.  For details, see the `terminal_id` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)  **For Payouts**: This field is applicable for CtV. 
    * @member {String} terminalId
    */
   exports.prototype['terminalId'] = undefined;
   /**
-   * Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.  For details, see the `terminal_serial_number` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.  For details, see the `terminal_serial_number` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
    * @member {String} terminalSerialNumber
    */
   exports.prototype['terminalSerialNumber'] = undefined;
@@ -168,22 +180,22 @@
    */
   exports.prototype['laneNumber'] = undefined;
   /**
-   * Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  #### GPN Only values 6, 7, 8, and 9 are supported.  #### TSYS Acquiring Solutions Only value 6 is supported. For details, see the `cat_level` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  #### GPN Only values 6, 7, 8, and 9 are supported.  #### TSYS Acquiring Solutions Only value 6 is supported. For details, see the `cat_level` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
    * @member {Number} catLevel
    */
   exports.prototype['catLevel'] = undefined;
   /**
-   * Method of entering credit card information into the POS terminal. Possible values:   - `contact`: Read from direct contact with chip card.  - `contactless`: Read from a contactless interface using chip data.  - `keyed`: Manually keyed into POS terminal.  - `msd`: Read from a contactless interface using magnetic stripe data (MSD).  - `swiped`: Read from credit card magnetic stripe.  The contact, contactless, and msd values are supported only for EMV transactions.  For details, see the `pos_entry_mode` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Method of entering credit card information into the POS terminal. Possible values:   - `contact`: Read from direct contact with chip card.  - `contactless`: Read from a contactless interface using chip data.  - `keyed`: Manually keyed into POS terminal.  - `msd`: Read from a contactless interface using magnetic stripe data (MSD).  - `swiped`: Read from credit card magnetic stripe.  The contact, contactless, and msd values are supported only for EMV transactions.  For details, see the `pos_entry_mode` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
    * @member {String} entryMode
    */
   exports.prototype['entryMode'] = undefined;
   /**
-   * POS terminal’s capability. Possible values:   - `1`: Terminal has a magnetic stripe reader only.  - `2`: Terminal has a magnetic stripe reader and manual entry capability.  - `3`: Terminal has manual entry capability only.  - `4`: Terminal can read chip cards.  - `5`: Terminal can read contactless chip cards.  The values of 4 and 5 are supported only for EMV transactions. * Applicable only for CTV for Payouts.  For processor-specific details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * POS terminal’s capability. Possible values:   - `1`: Terminal has a magnetic stripe reader only.  - `2`: Terminal has a magnetic stripe reader and manual entry capability.  - `3`: Terminal has manual entry capability only.  - `4`: Terminal can read chip cards.  - `5`: Terminal can read contactless chip cards.  The values of 4 and 5 are supported only for EMV transactions. * Applicable only for CTV for Payouts.  For processor-specific details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
    * @member {Number} terminalCapability
    */
   exports.prototype['terminalCapability'] = undefined;
   /**
-   * A one-digit code that identifies the capability of terminal to capture PINs.  This code does not necessarily mean that a PIN was entered or is included in this message.  POS terminal’s capability. Possible values: - `1`: Terminal has a magnetic stripe reader only. - `2`: Terminal has a magnetic stripe reader and manual entry capability. - `3`: Terminal has manual entry capability only. - `4`: Terminal can read chip cards.* - `5`: Terminal can read contactless chip cards.* * The values of 4 and 5 are supported only for EMV transactions.  For Payouts: This field is applicable for CtV.  For details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * A one-digit code that identifies the capability of terminal to capture PINs.  This code does not necessarily mean that a PIN was entered or is included in this message.  POS terminal’s capability. Possible values: - `1`: Terminal has a magnetic stripe reader only. - `2`: Terminal has a magnetic stripe reader and manual entry capability. - `3`: Terminal has manual entry capability only. - `4`: Terminal can read chip cards.* - `5`: Terminal can read contactless chip cards.* * The values of 4 and 5 are supported only for EMV transactions.  For Payouts: This field is applicable for CtV.  For details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
    * @member {Number} pinEntryCapability
    */
   exports.prototype['pinEntryCapability'] = undefined;
@@ -197,7 +209,7 @@
    */
   exports.prototype['emv'] = undefined;
   /**
-   * Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} amexCapnData
    */
   exports.prototype['amexCapnData'] = undefined;
@@ -259,6 +271,21 @@
    * @member {String} partnerSdkVersion
    */
   exports.prototype['partnerSdkVersion'] = undefined;
+  /**
+   * This 32 byte length-maximum EBCDIC-K value is used to identify which chip application was performed between the terminal and the chip product. The included values are the Application Identifier (AID) and the Dedicated File (DF) name. It is available to early- or full-option VSDC issuers. Only single byte Katakana characters that can map to the EBCDIC-K table expected in the name. 
+   * @member {String} emvApplicationIdentifierAndDedicatedFileName
+   */
+  exports.prototype['emvApplicationIdentifierAndDedicatedFileName'] = undefined;
+  /**
+   * This tag contains indicators to determine if the terminal used for the transaction is compliant with new standards mandated by the Reserve Bank of India. The new standards are applicable to card-present domestic transactions for the country of India. This tag contains one of the following data values:  First byte (Position 1) : Terminal supports TLE - `1` (Not certified) - `2` (Certified)  Second byte (Position 2) : Terminal supports UKPT/DUKPT - `1` (Not certified) - `2` (Certified) 
+   * @member {String} terminalCompliance
+   */
+  exports.prototype['terminalCompliance'] = undefined;
+  /**
+   * This API will indicate mPOS device capability with one  of the following values. - 0: Dongle - 1: Phone or tablet 
+   * @member {String} isDedicatedHardwareTerminal
+   */
+  exports.prototype['isDedicatedHardwareTerminal'] = undefined;
 
 
 

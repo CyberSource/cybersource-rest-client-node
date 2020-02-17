@@ -4,15 +4,15 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getResourceInfoByReportDefinition**](ReportDefinitionsApi.md#getResourceInfoByReportDefinition) | **GET** /reporting/v3/report-definitions/{reportDefinitionName} | Get report definition
-[**getResourceV2Info**](ReportDefinitionsApi.md#getResourceV2Info) | **GET** /reporting/v3/report-definitions | Get reporting resource information
+[**getResourceInfoByReportDefinition**](ReportDefinitionsApi.md#getResourceInfoByReportDefinition) | **GET** /reporting/v3/report-definitions/{reportDefinitionName} | Get Report Definition
+[**getResourceV2Info**](ReportDefinitionsApi.md#getResourceV2Info) | **GET** /reporting/v3/report-definitions | Get Reporting Resource Information
 
 
 <a name="getResourceInfoByReportDefinition"></a>
 # **getResourceInfoByReportDefinition**
 > ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(reportDefinitionName, opts)
 
-Get report definition
+Get Report Definition
 
 View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
 
@@ -66,7 +66,7 @@ No authorization required
 # **getResourceV2Info**
 > ReportingV3ReportDefinitionsGet200Response getResourceV2Info(opts)
 
-Get reporting resource information
+Get Reporting Resource Information
 
 View a list of supported reports and their attributes before subscribing to them. 
 

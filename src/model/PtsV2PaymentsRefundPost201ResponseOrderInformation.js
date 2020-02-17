@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails);
+    root.CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails) {
+}(this, function(ApiClient, PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('invoiceDetails')) {
-        obj['invoiceDetails'] = PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
+        obj['invoiceDetails'] = PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails} invoiceDetails
+   * @member {module:model/PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails} invoiceDetails
    */
   exports.prototype['invoiceDetails'] = undefined;
 

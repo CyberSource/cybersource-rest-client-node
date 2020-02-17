@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
+      //var instane = new CyberSource.PtsV2PaymentsCapturesPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pointOfSaleInformation (base name: "pointOfSaleInformation")', function() {
+      // uncomment below and update the code to test the property pointOfSaleInformation
+      //var instane = new CyberSource.PtsV2PaymentsCapturesPost201Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

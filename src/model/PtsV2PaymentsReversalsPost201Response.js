@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation', 'model/PtsV2PaymentsReversalsPost201ResponseIssuerInformation', 'model/PtsV2PaymentsReversalsPost201ResponseLinks', 'model/PtsV2PaymentsReversalsPost201ResponseProcessorInformation', 'model/PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails', 'model/Ptsv2paymentsidreversalsPointOfSaleInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation', 'model/PtsV2PaymentsReversalsPost201ResponseIssuerInformation', 'model/PtsV2PaymentsReversalsPost201ResponseProcessorInformation', 'model/PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails', 'model/Ptsv2paymentsidreversalsPointOfSaleInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation'), require('./PtsV2PaymentsReversalsPost201ResponseIssuerInformation'), require('./PtsV2PaymentsReversalsPost201ResponseLinks'), require('./PtsV2PaymentsReversalsPost201ResponseProcessorInformation'), require('./PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails'), require('./Ptsv2paymentsidreversalsPointOfSaleInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation'), require('./PtsV2PaymentsReversalsPost201ResponseIssuerInformation'), require('./PtsV2PaymentsReversalsPost201ResponseProcessorInformation'), require('./PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails'), require('./Ptsv2paymentsidreversalsPointOfSaleInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsReversalsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseIssuerInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation);
+    root.CyberSource.PtsV2PaymentsReversalsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseIssuerInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation, PtsV2PaymentsReversalsPost201ResponseIssuerInformation, PtsV2PaymentsReversalsPost201ResponseLinks, PtsV2PaymentsReversalsPost201ResponseProcessorInformation, PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails, Ptsv2paymentsidreversalsPointOfSaleInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation, PtsV2PaymentsReversalsPost201ResponseIssuerInformation, PtsV2PaymentsReversalsPost201ResponseProcessorInformation, PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails, Ptsv2paymentsidreversalsPointOfSaleInformation) {
   'use strict';
 
 
@@ -72,7 +72,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = PtsV2PaymentsReversalsPost201ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = PtsV2IncrementalAuthorizationPatch201ResponseLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -109,11 +109,11 @@
   }
 
   /**
-   * @member {module:model/PtsV2PaymentsReversalsPost201ResponseLinks} _links
+   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationresultsPaymentInformationCard', 'model/Riskv1authenticationresultsPaymentInformationTokenizedCard'], factory);
+    define(['ApiClient', 'model/Riskv1authenticationexemptionsPaymentInformationFluidData', 'model/Riskv1authenticationresultsPaymentInformationCard', 'model/Riskv1authenticationresultsPaymentInformationTokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationresultsPaymentInformationCard'), require('./Riskv1authenticationresultsPaymentInformationTokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationexemptionsPaymentInformationFluidData'), require('./Riskv1authenticationresultsPaymentInformationCard'), require('./Riskv1authenticationresultsPaymentInformationTokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1authenticationresultsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationresultsPaymentInformationCard, root.CyberSource.Riskv1authenticationresultsPaymentInformationTokenizedCard);
+    root.CyberSource.Riskv1authenticationresultsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationexemptionsPaymentInformationFluidData, root.CyberSource.Riskv1authenticationresultsPaymentInformationCard, root.CyberSource.Riskv1authenticationresultsPaymentInformationTokenizedCard);
   }
-}(this, function(ApiClient, Riskv1authenticationresultsPaymentInformationCard, Riskv1authenticationresultsPaymentInformationTokenizedCard) {
+}(this, function(ApiClient, Riskv1authenticationexemptionsPaymentInformationFluidData, Riskv1authenticationresultsPaymentInformationCard, Riskv1authenticationresultsPaymentInformationTokenizedCard) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('tokenizedCard')) {
         obj['tokenizedCard'] = Riskv1authenticationresultsPaymentInformationTokenizedCard.constructFromObject(data['tokenizedCard']);
       }
+      if (data.hasOwnProperty('fluidData')) {
+        obj['fluidData'] = Riskv1authenticationexemptionsPaymentInformationFluidData.constructFromObject(data['fluidData']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/Riskv1authenticationresultsPaymentInformationTokenizedCard} tokenizedCard
    */
   exports.prototype['tokenizedCard'] = undefined;
+  /**
+   * @member {module:model/Riskv1authenticationexemptionsPaymentInformationFluidData} fluidData
+   */
+  exports.prototype['fluidData'] = undefined;
 
 
 

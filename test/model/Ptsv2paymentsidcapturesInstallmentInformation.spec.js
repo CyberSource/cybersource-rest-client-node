@@ -56,8 +56,50 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsidcapturesInstallmentInformation);
     });
 
+    it('should have the property amount (base name: "amount")', function() {
+      // uncomment below and update the code to test the property amount
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property frequency (base name: "frequency")', function() {
+      // uncomment below and update the code to test the property frequency
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property planType (base name: "planType")', function() {
+      // uncomment below and update the code to test the property planType
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sequence (base name: "sequence")', function() {
+      // uncomment below and update the code to test the property sequence
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalAmount (base name: "totalAmount")', function() {
+      // uncomment below and update the code to test the property totalAmount
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalCount (base name: "totalCount")', function() {
+      // uncomment below and update the code to test the property totalCount
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property firstInstallmentDate (base name: "firstInstallmentDate")', function() {
       // uncomment below and update the code to test the property firstInstallmentDate
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstInstallmentAmount (base name: "firstInstallmentAmount")', function() {
+      // uncomment below and update the code to test the property firstInstallmentAmount
       //var instane = new CyberSource.Ptsv2paymentsidcapturesInstallmentInformation();
       //expect(instance).to.be();
     });

@@ -50,6 +50,16 @@
   }
 
   describe('VoidApi', function() {
+    describe('mitVoid', function() {
+      it('should call mitVoid successfully', function(done) {
+        //uncomment below and update the code to test mitVoid
+        //instance.mitVoid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('voidCapture', function() {
       it('should call voidCapture successfully', function(done) {
         //uncomment below and update the code to test voidCapture

@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenizedCard (base name: "tokenizedCard")', function() {
+      // uncomment below and update the code to test the property tokenizedCard
+      //var instane = new CyberSource.InstrumentIdentifierResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property issuer (base name: "issuer")', function() {
       // uncomment below and update the code to test the property issuer
       //var instane = new CyberSource.InstrumentIdentifierResponse();

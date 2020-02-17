@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenizedCard (base name: "tokenizedCard")', function() {
+      // uncomment below and update the code to test the property tokenizedCard
+      //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbeddedInstrumentIdentifier();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bankAccount (base name: "bankAccount")', function() {
       // uncomment below and update the code to test the property bankAccount
       //var instane = new CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbeddedInstrumentIdentifier();

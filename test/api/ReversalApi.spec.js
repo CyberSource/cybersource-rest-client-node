@@ -60,6 +60,16 @@
         done();
       });
     });
+    describe('mitReversal', function() {
+      it('should call mitReversal successfully', function(done) {
+        //uncomment below and update the code to test mitReversal
+        //instance.mitReversal(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

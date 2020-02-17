@@ -68,18 +68,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property acsRenderingType (base name: "acsRenderingType")', function() {
-      // uncomment below and update the code to test the property acsRenderingType
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property acsTransactionId (base name: "acsTransactionId")', function() {
-      // uncomment below and update the code to test the property acsTransactionId
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property acsWindowSize (base name: "acsWindowSize")', function() {
       // uncomment below and update the code to test the property acsWindowSize
       //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
@@ -116,18 +104,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property authorizationPayload (base name: "authorizationPayload")', function() {
-      // uncomment below and update the code to test the property authorizationPayload
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property cardholderMessage (base name: "cardholderMessage")', function() {
-      // uncomment below and update the code to test the property cardholderMessage
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property challengeCancelCode (base name: "challengeCancelCode")', function() {
       // uncomment below and update the code to test the property challengeCancelCode
       //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
@@ -136,12 +112,6 @@
 
     it('should have the property challengeCode (base name: "challengeCode")', function() {
       // uncomment below and update the code to test the property challengeCode
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property challengeRequired (base name: "challengeRequired")', function() {
-      // uncomment below and update the code to test the property challengeRequired
       //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -182,32 +152,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property directoryServerErrorCode (base name: "directoryServerErrorCode")', function() {
-      // uncomment below and update the code to test the property directoryServerErrorCode
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property directoryServerErrorDescription (base name: "directoryServerErrorDescription")', function() {
-      // uncomment below and update the code to test the property directoryServerErrorDescription
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property effectiveAuthenticationType (base name: "effectiveAuthenticationType")', function() {
-      // uncomment below and update the code to test the property effectiveAuthenticationType
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property installmentTotalCount (base name: "installmentTotalCount")', function() {
       // uncomment below and update the code to test the property installmentTotalCount
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ivr (base name: "ivr")', function() {
-      // uncomment below and update the code to test the property ivr
       //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -244,12 +190,6 @@
 
     it('should have the property messageCategory (base name: "messageCategory")', function() {
       // uncomment below and update the code to test the property messageCategory
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property networkScore (base name: "networkScore")', function() {
-      // uncomment below and update the code to test the property networkScore
       //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -332,32 +272,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sdkTransactionId (base name: "sdkTransactionId")', function() {
-      // uncomment below and update the code to test the property sdkTransactionId
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property secureCorporatePaymentIndicator (base name: "secureCorporatePaymentIndicator")', function() {
       // uncomment below and update the code to test the property secureCorporatePaymentIndicator
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property signedParesStatusReason (base name: "signedParesStatusReason")', function() {
-      // uncomment below and update the code to test the property signedParesStatusReason
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property stepUpUrl (base name: "stepUpUrl")', function() {
-      // uncomment below and update the code to test the property stepUpUrl
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property threeDSServerTransactionId (base name: "threeDSServerTransactionId")', function() {
-      // uncomment below and update the code to test the property threeDSServerTransactionId
       //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -370,12 +286,6 @@
 
     it('should have the property whiteListStatus (base name: "whiteListStatus")', function() {
       // uncomment below and update the code to test the property whiteListStatus
-      //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property whiteListStatusSource (base name: "whiteListStatusSource")', function() {
-      // uncomment below and update the code to test the property whiteListStatusSource
       //var instane = new CyberSource.Riskv1authenticationsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
