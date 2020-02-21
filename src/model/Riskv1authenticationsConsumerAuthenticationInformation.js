@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationsConsumerAuthenticationInformationIvr', 'model/Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication'], factory);
+    define(['ApiClient', 'model/Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationsConsumerAuthenticationInformationIvr'), require('./Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1authenticationsConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationsConsumerAuthenticationInformationIvr, root.CyberSource.Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication);
+    root.CyberSource.Riskv1authenticationsConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication);
   }
-}(this, function(ApiClient, Riskv1authenticationsConsumerAuthenticationInformationIvr, Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication) {
+}(this, function(ApiClient, Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication) {
   'use strict';
 
 
@@ -71,17 +71,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
     _this['mcc'] = mcc;
-
 
 
 
@@ -98,12 +88,7 @@
     _this['referenceId'] = referenceId;
 
 
-
-
-
-
     _this['transactionMode'] = transactionMode;
-
 
   };
 
@@ -124,12 +109,6 @@
       if (data.hasOwnProperty('authenticationType')) {
         obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
       }
-      if (data.hasOwnProperty('acsRenderingType')) {
-        obj['acsRenderingType'] = ApiClient.convertToType(data['acsRenderingType'], 'String');
-      }
-      if (data.hasOwnProperty('acsTransactionId')) {
-        obj['acsTransactionId'] = ApiClient.convertToType(data['acsTransactionId'], 'String');
-      }
       if (data.hasOwnProperty('acsWindowSize')) {
         obj['acsWindowSize'] = ApiClient.convertToType(data['acsWindowSize'], 'String');
       }
@@ -148,20 +127,11 @@
       if (data.hasOwnProperty('authenticationTransactionId')) {
         obj['authenticationTransactionId'] = ApiClient.convertToType(data['authenticationTransactionId'], 'String');
       }
-      if (data.hasOwnProperty('authorizationPayload')) {
-        obj['authorizationPayload'] = ApiClient.convertToType(data['authorizationPayload'], 'String');
-      }
-      if (data.hasOwnProperty('cardholderMessage')) {
-        obj['cardholderMessage'] = ApiClient.convertToType(data['cardholderMessage'], 'String');
-      }
       if (data.hasOwnProperty('challengeCancelCode')) {
         obj['challengeCancelCode'] = ApiClient.convertToType(data['challengeCancelCode'], 'String');
       }
       if (data.hasOwnProperty('challengeCode')) {
         obj['challengeCode'] = ApiClient.convertToType(data['challengeCode'], 'String');
-      }
-      if (data.hasOwnProperty('challengeRequired')) {
-        obj['challengeRequired'] = ApiClient.convertToType(data['challengeRequired'], 'String');
       }
       if (data.hasOwnProperty('challengeStatus')) {
         obj['challengeStatus'] = ApiClient.convertToType(data['challengeStatus'], 'String');
@@ -181,20 +151,8 @@
       if (data.hasOwnProperty('deviceChannel')) {
         obj['deviceChannel'] = ApiClient.convertToType(data['deviceChannel'], 'String');
       }
-      if (data.hasOwnProperty('directoryServerErrorCode')) {
-        obj['directoryServerErrorCode'] = ApiClient.convertToType(data['directoryServerErrorCode'], 'String');
-      }
-      if (data.hasOwnProperty('directoryServerErrorDescription')) {
-        obj['directoryServerErrorDescription'] = ApiClient.convertToType(data['directoryServerErrorDescription'], 'String');
-      }
-      if (data.hasOwnProperty('effectiveAuthenticationType')) {
-        obj['effectiveAuthenticationType'] = ApiClient.convertToType(data['effectiveAuthenticationType'], 'String');
-      }
       if (data.hasOwnProperty('installmentTotalCount')) {
         obj['installmentTotalCount'] = ApiClient.convertToType(data['installmentTotalCount'], 'Number');
-      }
-      if (data.hasOwnProperty('ivr')) {
-        obj['ivr'] = Riskv1authenticationsConsumerAuthenticationInformationIvr.constructFromObject(data['ivr']);
       }
       if (data.hasOwnProperty('merchantFraudRate')) {
         obj['merchantFraudRate'] = ApiClient.convertToType(data['merchantFraudRate'], 'String');
@@ -213,9 +171,6 @@
       }
       if (data.hasOwnProperty('messageCategory')) {
         obj['messageCategory'] = ApiClient.convertToType(data['messageCategory'], 'String');
-      }
-      if (data.hasOwnProperty('networkScore')) {
-        obj['networkScore'] = ApiClient.convertToType(data['networkScore'], 'String');
       }
       if (data.hasOwnProperty('npaCode')) {
         obj['npaCode'] = ApiClient.convertToType(data['npaCode'], 'String');
@@ -256,29 +211,14 @@
       if (data.hasOwnProperty('sdkMaxTimeout')) {
         obj['sdkMaxTimeout'] = ApiClient.convertToType(data['sdkMaxTimeout'], 'String');
       }
-      if (data.hasOwnProperty('sdkTransactionId')) {
-        obj['sdkTransactionId'] = ApiClient.convertToType(data['sdkTransactionId'], 'String');
-      }
       if (data.hasOwnProperty('secureCorporatePaymentIndicator')) {
         obj['secureCorporatePaymentIndicator'] = ApiClient.convertToType(data['secureCorporatePaymentIndicator'], 'String');
-      }
-      if (data.hasOwnProperty('signedParesStatusReason')) {
-        obj['signedParesStatusReason'] = ApiClient.convertToType(data['signedParesStatusReason'], 'String');
-      }
-      if (data.hasOwnProperty('stepUpUrl')) {
-        obj['stepUpUrl'] = ApiClient.convertToType(data['stepUpUrl'], 'String');
-      }
-      if (data.hasOwnProperty('threeDSServerTransactionId')) {
-        obj['threeDSServerTransactionId'] = ApiClient.convertToType(data['threeDSServerTransactionId'], 'String');
       }
       if (data.hasOwnProperty('transactionMode')) {
         obj['transactionMode'] = ApiClient.convertToType(data['transactionMode'], 'String');
       }
       if (data.hasOwnProperty('whiteListStatus')) {
         obj['whiteListStatus'] = ApiClient.convertToType(data['whiteListStatus'], 'String');
-      }
-      if (data.hasOwnProperty('whiteListStatusSource')) {
-        obj['whiteListStatusSource'] = ApiClient.convertToType(data['whiteListStatusSource'], 'String');
       }
     }
     return obj;
@@ -293,16 +233,6 @@
    * @member {String} authenticationType
    */
   exports.prototype['authenticationType'] = undefined;
-  /**
-   * Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK. 
-   * @member {String} acsRenderingType
-   */
-  exports.prototype['acsRenderingType'] = undefined;
-  /**
-   * Unique transaction identifier assigned by the ACS to identify a single transaction. 
-   * @member {String} acsTransactionId
-   */
-  exports.prototype['acsTransactionId'] = undefined;
   /**
    * An override field that a merchant can pass in to set the challenge window size to display to the end cardholder.  The ACS (Active Control Server) will reply with content that is formatted appropriately to this window size to allow for the best user experience.  The sizes are width x height in pixels of the window displayed in the cardholder browser window.  01 - 250x400  02 - 390x400  03 - 500x600  04 - 600x400  05 - Full page 
    * @member {String} acsWindowSize
@@ -334,16 +264,6 @@
    */
   exports.prototype['authenticationTransactionId'] = undefined;
   /**
-   * The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow 
-   * @member {String} authorizationPayload
-   */
-  exports.prototype['authorizationPayload'] = undefined;
-  /**
-   * Text provided by the ACS/Issuer to Cardholder during a Frictionless or Decoupled transaction.The Issuer can provide information to Cardholder. For example, “Additional authentication is needed for this transaction, please contact (Issuer Name) at xxx-xxx-xxxx.”. The Issuing Bank can optionally support this value. 
-   * @member {String} cardholderMessage
-   */
-  exports.prototype['cardholderMessage'] = undefined;
-  /**
    * An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK 
    * @member {String} challengeCancelCode
    */
@@ -353,11 +273,6 @@
    * @member {String} challengeCode
    */
   exports.prototype['challengeCode'] = undefined;
-  /**
-   * Indicates whether a challenge is required in order to complete authentication. **Note** Regional mandates might determine that a challenge is required.  Possible values: - `Y`: Challenge required - `N`: Challenge not required **Note**  Used by the Hybrid integration. 
-   * @member {String} challengeRequired
-   */
-  exports.prototype['challengeRequired'] = undefined;
   /**
    * The `consumerAuthenticationInformation.challengeCode` indicates the authentication type/level, or challenge, that was presented to the cardholder at checkout by the merchant when calling the Carte Bancaire 3DS servers via CYBS RISK services. It conveys to the issuer the alternative authentication methods that the consumer used. 
    * @member {String} challengeStatus
@@ -389,29 +304,10 @@
    */
   exports.prototype['deviceChannel'] = undefined;
   /**
-   * The directory server error code indicating a problem with this transaction. 
-   * @member {String} directoryServerErrorCode
-   */
-  exports.prototype['directoryServerErrorCode'] = undefined;
-  /**
-   * Directory server text and additional detail about the error for this transaction. 
-   * @member {String} directoryServerErrorDescription
-   */
-  exports.prototype['directoryServerErrorDescription'] = undefined;
-  /**
-   * This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer). 
-   * @member {String} effectiveAuthenticationType
-   */
-  exports.prototype['effectiveAuthenticationType'] = undefined;
-  /**
    * An integer value greater than 1 indicating the max number of permitted authorizations for installment payments. **Note** This is required if the merchant and cardholder have agreed to installment payments. 
    * @member {Number} installmentTotalCount
    */
   exports.prototype['installmentTotalCount'] = undefined;
-  /**
-   * @member {module:model/Riskv1authenticationsConsumerAuthenticationInformationIvr} ivr
-   */
-  exports.prototype['ivr'] = undefined;
   /**
    * Calculated by merchants as per PSD2** RTS** (EEA** card fraud divided by all EEA card volumes). Possible Values: 1 = Represents fraud rate <=1  2 = Represents fraud rate >1 and <=6  3 = Represents fraud rate >6 and <=13  4 = Represents fraud rate >13 and <=25  5 = Represents fraud rate >25  EEA** = European Economic Area RTS** = Regulatory Technical Standards PSD2** = Payment Services Directive 
    * @member {String} merchantFraudRate
@@ -442,11 +338,6 @@
    * @member {String} messageCategory
    */
   exports.prototype['messageCategory'] = undefined;
-  /**
-   * The global score calculated by the CB scoring platform and returned to merchants. 
-   * @member {String} networkScore
-   */
-  exports.prototype['networkScore'] = undefined;
   /**
    * Non-Payer Authentication Indicator. Possible values: - `01`: Add card - `02`: Maintain card information - `03`: Cardholder verification for EMV token - `04-80` Reserved for EMVCo - `80-90` Reserved DS 
    * @member {String} npaCode
@@ -513,30 +404,10 @@
    */
   exports.prototype['sdkMaxTimeout'] = undefined;
   /**
-   * SDK unique transaction identifier that is generated on each new transaction. 
-   * @member {String} sdkTransactionId
-   */
-  exports.prototype['sdkTransactionId'] = undefined;
-  /**
    * Indicates dedicated payment processes and procedures were used, potential secure corporate payment exemption applies. Possible Values : 0/1 
    * @member {String} secureCorporatePaymentIndicator
    */
   exports.prototype['secureCorporatePaymentIndicator'] = undefined;
-  /**
-   * Provides additional information as to why the PAResStatus has a specific value. 
-   * @member {String} signedParesStatusReason
-   */
-  exports.prototype['signedParesStatusReason'] = undefined;
-  /**
-   * The fully qualified URL that the merchant uses to post a form to the cardholder in order to complete the Consumer Authentication transaction for the Cardinal Cruise API integration. 
-   * @member {String} stepUpUrl
-   */
-  exports.prototype['stepUpUrl'] = undefined;
-  /**
-   * Unique transaction identifier assigned by the 3DS Server to identify a single transaction. 
-   * @member {String} threeDSServerTransactionId
-   */
-  exports.prototype['threeDSServerTransactionId'] = undefined;
   /**
    * Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - `M`: MOTO (Mail Order Telephone Order) - `R`: Retail - `S`: eCommerce - `P`: Mobile Device - `T`: Tablet 
    * @member {String} transactionMode
@@ -547,11 +418,6 @@
    * @member {String} whiteListStatus
    */
   exports.prototype['whiteListStatus'] = undefined;
-  /**
-   * This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS 
-   * @member {String} whiteListStatusSource
-   */
-  exports.prototype['whiteListStatusSource'] = undefined;
 
 
 

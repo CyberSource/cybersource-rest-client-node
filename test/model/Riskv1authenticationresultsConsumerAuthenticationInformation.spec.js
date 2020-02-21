@@ -56,18 +56,6 @@
       //expect(instance).to.be.a(CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation);
     });
 
-    it('should have the property acsRenderingType (base name: "acsRenderingType")', function() {
-      // uncomment below and update the code to test the property acsRenderingType
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property acsTransactionId (base name: "acsTransactionId")', function() {
-      // uncomment below and update the code to test the property acsTransactionId
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property authenticationTransactionId (base name: "authenticationTransactionId")', function() {
       // uncomment below and update the code to test the property authenticationTransactionId
       //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
@@ -80,32 +68,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property challengeCancelCode (base name: "challengeCancelCode")', function() {
-      // uncomment below and update the code to test the property challengeCancelCode
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property effectiveAuthenticationType (base name: "effectiveAuthenticationType")', function() {
       // uncomment below and update the code to test the property effectiveAuthenticationType
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property directoryServerErrorCode (base name: "directoryServerErrorCode")', function() {
-      // uncomment below and update the code to test the property directoryServerErrorCode
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property directoryServerErrorDescription (base name: "directoryServerErrorDescription")', function() {
-      // uncomment below and update the code to test the property directoryServerErrorDescription
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property interactionCounter (base name: "interactionCounter")', function() {
-      // uncomment below and update the code to test the property interactionCounter
       //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -116,32 +80,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sdkTransactionId (base name: "sdkTransactionId")', function() {
-      // uncomment below and update the code to test the property sdkTransactionId
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property signedPares (base name: "signedPares")', function() {
       // uncomment below and update the code to test the property signedPares
       //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
 
-    it('should have the property threeDSServerTransactionId (base name: "threeDSServerTransactionId")', function() {
-      // uncomment below and update the code to test the property threeDSServerTransactionId
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property whiteListStatus (base name: "whiteListStatus")', function() {
       // uncomment below and update the code to test the property whiteListStatus
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property whiteListStatusSource (base name: "whiteListStatusSource")', function() {
-      // uncomment below and update the code to test the property whiteListStatusSource
       //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });

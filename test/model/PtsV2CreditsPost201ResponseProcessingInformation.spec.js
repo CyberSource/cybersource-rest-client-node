@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enhancedDataEnabled (base name: "enhancedDataEnabled")', function() {
+      // uncomment below and update the code to test the property enhancedDataEnabled
+      //var instane = new CyberSource.PtsV2CreditsPost201ResponseProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

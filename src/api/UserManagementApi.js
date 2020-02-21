@@ -58,7 +58,7 @@
      */
 
     /**
-     * Get user information
+     * Get User Information
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId This is the orgId of the organization which the user belongs to.

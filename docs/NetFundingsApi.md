@@ -4,14 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getNetFundingDetails**](NetFundingsApi.md#getNetFundingDetails) | **GET** /reporting/v3/net-fundings | Get Netfunding information for an account or a merchant
+[**getNetFundingDetails**](NetFundingsApi.md#getNetFundingDetails) | **GET** /reporting/v3/net-fundings | Get Netfunding Information for an Account or a Merchant
 
 
 <a name="getNetFundingDetails"></a>
 # **getNetFundingDetails**
 > ReportingV3NetFundingsGet200Response getNetFundingDetails(startTime, endTime, opts)
 
-Get Netfunding information for an account or a merchant
+Get Netfunding Information for an Account or a Merchant
 
 Get Netfunding information for an account or a merchant.
 

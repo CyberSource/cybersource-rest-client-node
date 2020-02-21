@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
+      //var instane = new CyberSource.CheckPayerAuthEnrollmentRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property buyerInformation (base name: "buyerInformation")', function() {
       // uncomment below and update the code to test the property buyerInformation
       //var instane = new CyberSource.CheckPayerAuthEnrollmentRequest();

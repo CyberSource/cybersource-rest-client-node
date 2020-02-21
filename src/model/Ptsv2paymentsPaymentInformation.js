@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('paymentType')) {
         obj['paymentType'] = Ptsv2paymentsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
       }
+      if (data.hasOwnProperty('initiationChannel')) {
+        obj['initiationChannel'] = ApiClient.convertToType(data['initiationChannel'], 'String');
+      }
     }
     return obj;
   }
@@ -112,6 +116,11 @@
    * @member {module:model/Ptsv2paymentsPaymentInformationPaymentType} paymentType
    */
   exports.prototype['paymentType'] = undefined;
+  /**
+   * \"This tag contains a MesterCard defined code that provides information about the type of device used to initiate a non-card transaction. Valid values for this tag are: - 00 Card (default) - 01 Mobile network operator (MNO) controlled removal secure element (SIM or UICC) personalized for use with a mobile phone or smartphone> - 02 Key fob - 03  Watch - 04  Mobile tag - 05  Wristband - 06  Mobile phone case or sleeve - 07  Mobile phone or smartphone with a fixed, (non-removable), secure element controlled by the MNO, for example, code division multiple access (CDMA) - 08  Removable secure element not controlled by the MNO, for example, memory card personalized for use with a mobile phone or smartphone - 09 Mobile phonen or smartphone with a fixed, (non-removable), secure element not controlled by the MNO - 10 MNO controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - 11 Tablet or e-book with a fixed, (non-removable), secure element controlled by the MNO - 12 Removable secure element not controlled by the MNO, for example, memory card personalized for use with a tablet or e-book - 13 Table or e-book with fixed, (non-removable) secure element not controlled by the MNO - 14 - 99 = (Reserved for future use) 
+   * @member {String} initiationChannel
+   */
+  exports.prototype['initiationChannel'] = undefined;
 
 
 

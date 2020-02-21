@@ -188,6 +188,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property emvApplicationIdentifierAndDedicatedFileName (base name: "emvApplicationIdentifierAndDedicatedFileName")', function() {
+      // uncomment below and update the code to test the property emvApplicationIdentifierAndDedicatedFileName
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property terminalCompliance (base name: "terminalCompliance")', function() {
+      // uncomment below and update the code to test the property terminalCompliance
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isDedicatedHardwareTerminal (base name: "isDedicatedHardwareTerminal")', function() {
+      // uncomment below and update the code to test the property isDedicatedHardwareTerminal
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

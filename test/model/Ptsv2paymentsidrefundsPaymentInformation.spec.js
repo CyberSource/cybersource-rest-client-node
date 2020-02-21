@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenizedCard (base name: "tokenizedCard")', function() {
+      // uncomment below and update the code to test the property tokenizedCard
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fluidData (base name: "fluidData")', function() {
+      // uncomment below and update the code to test the property fluidData
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property customer (base name: "customer")', function() {
       // uncomment below and update the code to test the property customer
       //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();

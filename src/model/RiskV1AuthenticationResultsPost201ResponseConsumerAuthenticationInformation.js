@@ -59,6 +59,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -72,11 +83,20 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('acsRenderingType')) {
+        obj['acsRenderingType'] = ApiClient.convertToType(data['acsRenderingType'], 'String');
+      }
+      if (data.hasOwnProperty('acsTransactionId')) {
+        obj['acsTransactionId'] = ApiClient.convertToType(data['acsTransactionId'], 'String');
+      }
       if (data.hasOwnProperty('authenticationResult')) {
         obj['authenticationResult'] = ApiClient.convertToType(data['authenticationResult'], 'String');
       }
       if (data.hasOwnProperty('authenticationStatusMsg')) {
         obj['authenticationStatusMsg'] = ApiClient.convertToType(data['authenticationStatusMsg'], 'String');
+      }
+      if (data.hasOwnProperty('authorizationPayload')) {
+        obj['authorizationPayload'] = ApiClient.convertToType(data['authorizationPayload'], 'String');
       }
       if (data.hasOwnProperty('cavv')) {
         obj['cavv'] = ApiClient.convertToType(data['cavv'], 'String');
@@ -84,8 +104,17 @@
       if (data.hasOwnProperty('cavvAlgorithm')) {
         obj['cavvAlgorithm'] = ApiClient.convertToType(data['cavvAlgorithm'], 'String');
       }
+      if (data.hasOwnProperty('directoryServerErrorCode')) {
+        obj['directoryServerErrorCode'] = ApiClient.convertToType(data['directoryServerErrorCode'], 'String');
+      }
+      if (data.hasOwnProperty('directoryServerErrorDescription')) {
+        obj['directoryServerErrorDescription'] = ApiClient.convertToType(data['directoryServerErrorDescription'], 'String');
+      }
       if (data.hasOwnProperty('indicator')) {
         obj['indicator'] = ApiClient.convertToType(data['indicator'], 'String');
+      }
+      if (data.hasOwnProperty('interactionCounter')) {
+        obj['interactionCounter'] = ApiClient.convertToType(data['interactionCounter'], 'String');
       }
       if (data.hasOwnProperty('eci')) {
         obj['eci'] = ApiClient.convertToType(data['eci'], 'String');
@@ -96,8 +125,14 @@
       if (data.hasOwnProperty('paresStatus')) {
         obj['paresStatus'] = ApiClient.convertToType(data['paresStatus'], 'String');
       }
+      if (data.hasOwnProperty('sdkTransactionId')) {
+        obj['sdkTransactionId'] = ApiClient.convertToType(data['sdkTransactionId'], 'String');
+      }
       if (data.hasOwnProperty('specificationVersion')) {
         obj['specificationVersion'] = ApiClient.convertToType(data['specificationVersion'], 'String');
+      }
+      if (data.hasOwnProperty('threeDSServerTransactionId')) {
+        obj['threeDSServerTransactionId'] = ApiClient.convertToType(data['threeDSServerTransactionId'], 'String');
       }
       if (data.hasOwnProperty('ucafAuthenticationData')) {
         obj['ucafAuthenticationData'] = ApiClient.convertToType(data['ucafAuthenticationData'], 'String');
@@ -105,13 +140,32 @@
       if (data.hasOwnProperty('ucafCollectionIndicator')) {
         obj['ucafCollectionIndicator'] = ApiClient.convertToType(data['ucafCollectionIndicator'], 'Number');
       }
+      if (data.hasOwnProperty('whiteListStatus')) {
+        obj['whiteListStatus'] = ApiClient.convertToType(data['whiteListStatus'], 'String');
+      }
+      if (data.hasOwnProperty('whiteListStatusSource')) {
+        obj['whiteListStatusSource'] = ApiClient.convertToType(data['whiteListStatusSource'], 'String');
+      }
       if (data.hasOwnProperty('xid')) {
         obj['xid'] = ApiClient.convertToType(data['xid'], 'String');
+      }
+      if (data.hasOwnProperty('directoryServerTransactionId')) {
+        obj['directoryServerTransactionId'] = ApiClient.convertToType(data['directoryServerTransactionId'], 'String');
       }
     }
     return obj;
   }
 
+  /**
+   * Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK. 
+   * @member {String} acsRenderingType
+   */
+  exports.prototype['acsRenderingType'] = undefined;
+  /**
+   * Unique transaction identifier assigned by the ACS to identify a single transaction. 
+   * @member {String} acsTransactionId
+   */
+  exports.prototype['acsTransactionId'] = undefined;
   /**
    * Raw authentication data that comes from the cardissuing bank. Primary authentication field that indicates if authentication was successful and if liability shift occurred. You should examine first the result of this field. This field contains one of these values: - `-1`: Invalid PARes. - `0`: Successful validation. - `1`: Cardholder is not participating, but the attempt to authenticate was recorded. - `6`: Issuer unable to perform authentication. - `9`: Cardholder did not complete authentication. 
    * @member {String} authenticationResult
@@ -123,6 +177,11 @@
    */
   exports.prototype['authenticationStatusMsg'] = undefined;
   /**
+   * The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow 
+   * @member {String} authorizationPayload
+   */
+  exports.prototype['authorizationPayload'] = undefined;
+  /**
    * Unique identifier generated by the card-issuing bank for Visa, American Express, JCB, Diners Club, and Discover transactions after the customer is authenticated. The value is in base64. When you request the card authorization service, CyberSource automatically converts the value, not the field name, to the format required by your payment processor. 
    * @member {String} cavv
    */
@@ -133,10 +192,25 @@
    */
   exports.prototype['cavvAlgorithm'] = undefined;
   /**
+   * The directory server error code indicating a problem with this transaction. 
+   * @member {String} directoryServerErrorCode
+   */
+  exports.prototype['directoryServerErrorCode'] = undefined;
+  /**
+   * Directory server text and additional detail about the error for this transaction. 
+   * @member {String} directoryServerErrorDescription
+   */
+  exports.prototype['directoryServerErrorDescription'] = undefined;
+  /**
    * Indicator used to differentiate Internet transactions from other types. The authentication failed if this field is not returned. For Visa, if your payment processor is Streamline, Barclays, AIBMS, or FDC Germany, you receive the value vbv_failure instead of internet when eci is 07. The value of this field is passed automatically to the authorization service if you request the services together. This field contains one of these values: - `aesk`: American Express SafeKey authentication verified successfully. - `aesk_attempted`: Card not enrolled in American Express SafeKey, but the attempt to authenticate was recorded. - `dipb`: Discover ProtectBuy authentication verified successfully. - `dipb_attempted`: Card not enrolled in Discover ProtectBuy, but the attempt to authenticate was recorded. - `internet`: Authentication was not verified successfully. - `js`: J/Secure authentication verified successfully. - `js_attempted`: Card not enrolled in J/Secure, but the attempt to authenticate was recorded. - `moto`: Mail or telephone order. - `pb_attempted`: Card not enrolled in Diners Club ProtectBuy, but the attempt to authenticate was recorded. - `recurring`: Recurring transaction. - `spa`: Mastercard Identity Check authentication verified successfully. - `spa_failure`: Mastercard Identity Check failed authentication. - `vbv`: Visa Secure authentication verified successfully. - `vbv_attempted`: Card not enrolled in Visa Secure, but the attempt to authenticate was recorded. - `vbv_failure`: Visa Secure authentication unavailable. 
    * @member {String} indicator
    */
   exports.prototype['indicator'] = undefined;
+  /**
+   * Indicates the number of authentication cycles attempted by the cardholder and is tracked by the Issuing Banks ACS.Example: if customer gets the challenge window and enter in their one time password and hit submit then that interaction counter should just be 1. When customer gets the challenge window and the bank asks if they want to have the one time password  sent to their phone or their email and they have to choose before going to the next screen to enter in their one time password then this interaction count would be 2. One for the selection of how they want the one time password delivered and another with them actually entering in the one time password and hitting the submit button. 
+   * @member {String} interactionCounter
+   */
+  exports.prototype['interactionCounter'] = undefined;
   /**
    * Note This field applies only to non-U.S-issued cards.  For enroll, Numeric electronic commerce indicator (ECI) returned only for Visa, American Express, JCB, Diners Club, and Discover transactions when the card is not enrolled. For more information, see \"Interpreting the Reply,\" page 22.  If you are not using the CyberSource payment services, you must send this value to your payment processor in the subsequent request for card authorization. This field contains one of these values: - `06`: The card can be enrolled. Liability shift. - `07`: The card cannot be enrolled. No liability shift.  For validate, Numeric electronic commerce indicator (ECI) returned only for Visa, American Express, JCB, Diners Club, and Discover transactions. The field is absent when authentication fails. You must send this value to your payment processor in the subsequent request for card authorization. This field contains one of these values: - `05`: Successful authentication - `06`: Authentication attempted - `07`: Failed authentication (No response from the merchant because of a problem.) 
    * @member {String} eci
@@ -153,10 +227,20 @@
    */
   exports.prototype['paresStatus'] = undefined;
   /**
+   * SDK unique transaction identifier that is generated on each new transaction. 
+   * @member {String} sdkTransactionId
+   */
+  exports.prototype['sdkTransactionId'] = undefined;
+  /**
    * This field contains the 3D Secure version that was used to process the transaction. For example, 1.0.2 or 2.0.0. 
    * @member {String} specificationVersion
    */
   exports.prototype['specificationVersion'] = undefined;
+  /**
+   * Unique transaction identifier assigned by the 3DS Server to identify a single transaction. 
+   * @member {String} threeDSServerTransactionId
+   */
+  exports.prototype['threeDSServerTransactionId'] = undefined;
   /**
    * AAV is a unique identifier generated by the card-issuing bank for Mastercard Identity Check transactions after the customer is authenticated. The value is in base64. Include the data in the card authorization request. 
    * @member {String} ucafAuthenticationData
@@ -168,10 +252,25 @@
    */
   exports.prototype['ucafCollectionIndicator'] = undefined;
   /**
+   * Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder 
+   * @member {String} whiteListStatus
+   */
+  exports.prototype['whiteListStatus'] = undefined;
+  /**
+   * This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS 
+   * @member {String} whiteListStatusSource
+   */
+  exports.prototype['whiteListStatusSource'] = undefined;
+  /**
    * Transaction identifier generated by CyberSource for successful enrollment or validation checks. Use this value, which is in base64, to match an outgoing PAReq with an incoming PARes. CyberSource forwards the XID with the card authorization service to these payment processors in these cases: - Barclays - Streamline (when the **ecommerceIndicator**`=spa`) 
    * @member {String} xid
    */
   exports.prototype['xid'] = undefined;
+  /**
+   * The Directory Server Transaction ID is generated by the Mastercard Directory Server during the authentication transaction and passed back to the merchant with the authentication results. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 114-149, Field: MC AVV Verification—Directory Server Transaction ID 
+   * @member {String} directoryServerTransactionId
+   */
+  exports.prototype['directoryServerTransactionId'] = undefined;
 
 
 

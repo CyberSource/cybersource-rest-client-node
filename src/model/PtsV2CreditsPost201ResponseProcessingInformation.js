@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('bankTransferOptions')) {
         obj['bankTransferOptions'] = PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions.constructFromObject(data['bankTransferOptions']);
       }
+      if (data.hasOwnProperty('enhancedDataEnabled')) {
+        obj['enhancedDataEnabled'] = ApiClient.convertToType(data['enhancedDataEnabled'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -72,6 +76,11 @@
    * @member {module:model/PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions} bankTransferOptions
    */
   exports.prototype['bankTransferOptions'] = undefined;
+  /**
+   * - true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor. 
+   * @member {Boolean} enhancedDataEnabled
+   */
+  exports.prototype['enhancedDataEnabled'] = undefined;
 
 
 

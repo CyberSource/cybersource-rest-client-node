@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseCard', 'model/TmsV1InstrumentIdentifiersPost200ResponseIssuer', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinks', 'model/TmsV1InstrumentIdentifiersPost200ResponseMetadata', 'model/TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation', 'model/Tmsv1instrumentidentifiersBankAccount'], factory);
+    define(['ApiClient', 'model/TmsV1InstrumentIdentifiersPost200ResponseCard', 'model/TmsV1InstrumentIdentifiersPost200ResponseIssuer', 'model/TmsV1InstrumentIdentifiersPost200ResponseLinks', 'model/TmsV1InstrumentIdentifiersPost200ResponseMetadata', 'model/TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation', 'model/TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard', 'model/Tmsv1instrumentidentifiersBankAccount'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseCard'), require('./TmsV1InstrumentIdentifiersPost200ResponseIssuer'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinks'), require('./TmsV1InstrumentIdentifiersPost200ResponseMetadata'), require('./TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation'), require('./Tmsv1instrumentidentifiersBankAccount'));
+    module.exports = factory(require('../ApiClient'), require('./TmsV1InstrumentIdentifiersPost200ResponseCard'), require('./TmsV1InstrumentIdentifiersPost200ResponseIssuer'), require('./TmsV1InstrumentIdentifiersPost200ResponseLinks'), require('./TmsV1InstrumentIdentifiersPost200ResponseMetadata'), require('./TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation'), require('./TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard'), require('./Tmsv1instrumentidentifiersBankAccount'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsV1InstrumentIdentifiersPost200Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseCard, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseIssuer, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseMetadata, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation, root.CyberSource.Tmsv1instrumentidentifiersBankAccount);
+    root.CyberSource.TmsV1InstrumentIdentifiersPost200Response = factory(root.CyberSource.ApiClient, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseCard, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseIssuer, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseLinks, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseMetadata, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation, root.CyberSource.TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard, root.CyberSource.Tmsv1instrumentidentifiersBankAccount);
   }
-}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseCard, TmsV1InstrumentIdentifiersPost200ResponseIssuer, TmsV1InstrumentIdentifiersPost200ResponseLinks, TmsV1InstrumentIdentifiersPost200ResponseMetadata, TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation, Tmsv1instrumentidentifiersBankAccount) {
+}(this, function(ApiClient, TmsV1InstrumentIdentifiersPost200ResponseCard, TmsV1InstrumentIdentifiersPost200ResponseIssuer, TmsV1InstrumentIdentifiersPost200ResponseLinks, TmsV1InstrumentIdentifiersPost200ResponseMetadata, TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation, TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard, Tmsv1instrumentidentifiersBankAccount) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -83,6 +84,9 @@
       }
       if (data.hasOwnProperty('card')) {
         obj['card'] = TmsV1InstrumentIdentifiersPost200ResponseCard.constructFromObject(data['card']);
+      }
+      if (data.hasOwnProperty('tokenizedCard')) {
+        obj['tokenizedCard'] = TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard.constructFromObject(data['tokenizedCard']);
       }
       if (data.hasOwnProperty('issuer')) {
         obj['issuer'] = TmsV1InstrumentIdentifiersPost200ResponseIssuer.constructFromObject(data['issuer']);
@@ -123,6 +127,10 @@
    * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard} tokenizedCard
+   */
+  exports.prototype['tokenizedCard'] = undefined;
   /**
    * @member {module:model/TmsV1InstrumentIdentifiersPost200ResponseIssuer} issuer
    */

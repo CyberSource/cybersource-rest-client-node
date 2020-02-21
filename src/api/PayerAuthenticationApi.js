@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CheckPayerAuthEnrollmentRequest', 'model/PtsV2PaymentsPost502Response', 'model/Request', 'model/RiskV1AuthenticationExcemptionsPost400Response', 'model/RiskV1AuthenticationResultsPost201Response', 'model/RiskV1AuthenticationsPost201Response'], factory);
+    define(['ApiClient', 'model/CheckPayerAuthEnrollmentRequest', 'model/PayerAuthSetupRequest', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1AuthenticationExcemptionsPost400Response', 'model/RiskV1AuthenticationResultsPost201Response', 'model/RiskV1AuthenticationSetupsPost201Response', 'model/RiskV1AuthenticationsPost201Response', 'model/RiskV1AuthenticationsPost400Response', 'model/ValidateRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CheckPayerAuthEnrollmentRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/Request'), require('../model/RiskV1AuthenticationExcemptionsPost400Response'), require('../model/RiskV1AuthenticationResultsPost201Response'), require('../model/RiskV1AuthenticationsPost201Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CheckPayerAuthEnrollmentRequest'), require('../model/PayerAuthSetupRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1AuthenticationExcemptionsPost400Response'), require('../model/RiskV1AuthenticationResultsPost201Response'), require('../model/RiskV1AuthenticationSetupsPost201Response'), require('../model/RiskV1AuthenticationsPost201Response'), require('../model/RiskV1AuthenticationsPost400Response'), require('../model/ValidateRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PayerAuthenticationApi = factory(root.CyberSource.ApiClient, root.CyberSource.CheckPayerAuthEnrollmentRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.Request, root.CyberSource.RiskV1AuthenticationExcemptionsPost400Response, root.CyberSource.RiskV1AuthenticationResultsPost201Response, root.CyberSource.RiskV1AuthenticationsPost201Response);
+    root.CyberSource.PayerAuthenticationApi = factory(root.CyberSource.ApiClient, root.CyberSource.CheckPayerAuthEnrollmentRequest, root.CyberSource.PayerAuthSetupRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1AuthenticationExcemptionsPost400Response, root.CyberSource.RiskV1AuthenticationResultsPost201Response, root.CyberSource.RiskV1AuthenticationSetupsPost201Response, root.CyberSource.RiskV1AuthenticationsPost201Response, root.CyberSource.RiskV1AuthenticationsPost400Response, root.CyberSource.ValidateRequest);
   }
-}(this, function(ApiClient, CheckPayerAuthEnrollmentRequest, PtsV2PaymentsPost502Response, Request, RiskV1AuthenticationExcemptionsPost400Response, RiskV1AuthenticationResultsPost201Response, RiskV1AuthenticationsPost201Response) {
+}(this, function(ApiClient, CheckPayerAuthEnrollmentRequest, PayerAuthSetupRequest, PtsV2PaymentsPost502Response, RiskV1AuthenticationExcemptionsPost400Response, RiskV1AuthenticationResultsPost201Response, RiskV1AuthenticationSetupsPost201Response, RiskV1AuthenticationsPost201Response, RiskV1AuthenticationsPost400Response, ValidateRequest) {
   'use strict';
 
   /**
@@ -58,7 +58,7 @@
      */
 
     /**
-     * Check payer auth enrollment
+     * Check Payer Auth Enrollment
      * This call verifies that the card is enrolled in a card authentication program.
      * @param {module:model/CheckPayerAuthEnrollmentRequest} checkPayerAuthEnrollmentRequest 
      * @param {module:api/PayerAuthenticationApi~checkPayerAuthEnrollmentCallback} callback The callback function, accepting three arguments: error, data, response
@@ -95,6 +95,51 @@
     }
 
     /**
+     * Callback function to receive the result of the payerAuthSetup operation.
+     * @callback module:api/PayerAuthenticationApi~payerAuthSetupCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RiskV1AuthenticationSetupsPost201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Setup Payer Auth
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     * @param {module:model/PayerAuthSetupRequest} payerAuthSetupRequest 
+     * @param {module:api/PayerAuthenticationApi~payerAuthSetupCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RiskV1AuthenticationSetupsPost201Response}
+     */
+    this.payerAuthSetup = function(payerAuthSetupRequest, callback) {
+      var postBody = payerAuthSetupRequest;
+
+      // verify the required parameter 'payerAuthSetupRequest' is set
+      if (payerAuthSetupRequest === undefined || payerAuthSetupRequest === null) {
+        throw new Error("Missing the required parameter 'payerAuthSetupRequest' when calling payerAuthSetup");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = RiskV1AuthenticationSetupsPost201Response;
+
+      return this.apiClient.callApi(
+        '/risk/v1/authentication-setups', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the validateAuthenticationResults operation.
      * @callback module:api/PayerAuthenticationApi~validateAuthenticationResultsCallback
      * @param {String} error Error message, if any.
@@ -103,18 +148,18 @@
      */
 
     /**
-     * Validate authentication results
+     * Validate Authentication Results
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
-     * @param {module:model/Request} request 
+     * @param {module:model/ValidateRequest} validateRequest 
      * @param {module:api/PayerAuthenticationApi~validateAuthenticationResultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1AuthenticationResultsPost201Response}
      */
-    this.validateAuthenticationResults = function(request, callback) {
-      var postBody = request;
+    this.validateAuthenticationResults = function(validateRequest, callback) {
+      var postBody = validateRequest;
 
-      // verify the required parameter 'request' is set
-      if (request === undefined || request === null) {
-        throw new Error("Missing the required parameter 'request' when calling validateAuthenticationResults");
+      // verify the required parameter 'validateRequest' is set
+      if (validateRequest === undefined || validateRequest === null) {
+        throw new Error("Missing the required parameter 'validateRequest' when calling validateAuthenticationResults");
       }
 
 

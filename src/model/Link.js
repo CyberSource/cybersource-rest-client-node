@@ -48,6 +48,8 @@
     var _this = this;
 
 
+
+
   };
 
   /**
@@ -64,14 +66,31 @@
       if (data.hasOwnProperty('href')) {
         obj['href'] = ApiClient.convertToType(data['href'], 'String');
       }
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
+      }
+      if (data.hasOwnProperty('method')) {
+        obj['method'] = ApiClient.convertToType(data['method'], 'String');
+      }
     }
     return obj;
   }
 
   /**
+   * URI of the linked resource.
    * @member {String} href
    */
   exports.prototype['href'] = undefined;
+  /**
+   * Label of the linked resource.
+   * @member {String} title
+   */
+  exports.prototype['title'] = undefined;
+  /**
+   * HTTP method of the linked resource.
+   * @member {String} method
+   */
+  exports.prototype['method'] = undefined;
 
 
 

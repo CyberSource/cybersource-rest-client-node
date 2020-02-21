@@ -50,6 +50,16 @@
   }
 
   describe('ReportSubscriptionsApi', function() {
+    describe('createStandardOrClassicSubscription', function() {
+      it('should call createStandardOrClassicSubscription successfully', function(done) {
+        //uncomment below and update the code to test createStandardOrClassicSubscription
+        //instance.createStandardOrClassicSubscription(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createSubscription', function() {
       it('should call createSubscription successfully', function(done) {
         //uncomment below and update the code to test createSubscription
@@ -84,16 +94,6 @@
       it('should call getSubscription successfully', function(done) {
         //uncomment below and update the code to test getSubscription
         //instance.getSubscription(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('reportingV3PredefinedReportSubscriptionsPut', function() {
-      it('should call reportingV3PredefinedReportSubscriptionsPut successfully', function(done) {
-        //uncomment below and update the code to test reportingV3PredefinedReportSubscriptionsPut
-        //instance.reportingV3PredefinedReportSubscriptionsPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

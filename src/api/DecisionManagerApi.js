@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateDecisionManagerCaseRequest', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response'], factory);
+    define(['ApiClient', 'model/AddNegativeListRequest', 'model/CreateDecisionManagerCaseRequest', 'model/FraudMarkingActionRequest', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1UpdatePost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateDecisionManagerCaseRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddNegativeListRequest'), require('../model/CreateDecisionManagerCaseRequest'), require('../model/FraudMarkingActionRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1UpdatePost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DecisionManagerApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateDecisionManagerCaseRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response);
+    root.CyberSource.DecisionManagerApi = factory(root.CyberSource.ApiClient, root.CyberSource.AddNegativeListRequest, root.CyberSource.CreateDecisionManagerCaseRequest, root.CyberSource.FraudMarkingActionRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1UpdatePost201Response);
   }
-}(this, function(ApiClient, CreateDecisionManagerCaseRequest, PtsV2PaymentsPost502Response, RiskV1DecisionsPost201Response, RiskV1DecisionsPost400Response) {
+}(this, function(ApiClient, AddNegativeListRequest, CreateDecisionManagerCaseRequest, FraudMarkingActionRequest, PtsV2PaymentsPost502Response, RiskV1DecisionsPost201Response, RiskV1DecisionsPost400Response, RiskV1UpdatePost201Response) {
   'use strict';
 
   /**
@@ -48,6 +48,58 @@
 
 	this.apiClient.setConfiguration(configObject);
 	
+
+    /**
+     * Callback function to receive the result of the addNegative operation.
+     * @callback module:api/DecisionManagerApi~addNegativeCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RiskV1UpdatePost201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * List Management
+     * This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be &#39;postiive&#39;, &#39;negative&#39; or &#39;review&#39;. 
+     * @param {String} type The list to be updated. It can be &#39;positive&#39;, &#39;negative&#39; or &#39;review&#39;.
+     * @param {module:model/AddNegativeListRequest} addNegativeListRequest 
+     * @param {module:api/DecisionManagerApi~addNegativeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RiskV1UpdatePost201Response}
+     */
+    this.addNegative = function(type, addNegativeListRequest, callback) {
+      var postBody = addNegativeListRequest;
+
+      // verify the required parameter 'type' is set
+      if (type === undefined || type === null) {
+        throw new Error("Missing the required parameter 'type' when calling addNegative");
+      }
+
+      // verify the required parameter 'addNegativeListRequest' is set
+      if (addNegativeListRequest === undefined || addNegativeListRequest === null) {
+        throw new Error("Missing the required parameter 'addNegativeListRequest' when calling addNegative");
+      }
+
+
+      var pathParams = {
+        'type': type
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = RiskV1UpdatePost201Response;
+
+      return this.apiClient.callApi(
+        '/risk/v1/lists/{type}/entries', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the createDecisionManagerCase operation.
@@ -89,6 +141,58 @@
 
       return this.apiClient.callApi(
         '/risk/v1/decisions', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the fraudUpdate operation.
+     * @callback module:api/DecisionManagerApi~fraudUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RiskV1UpdatePost201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Fraud Marking
+     * This can be used to - 1. Add known fraudulent data to the fraud history 2. Remove data added to history with Transaction Marking Tool or by uploading chargeback files 3. Remove chargeback data from history that was automatically added. For detailed information, contact your Cybersource representative  Place the request ID of the transaction you want to mark as suspect (or remove from history) as the path parameter in this request. 
+     * @param {String} id Request ID of the transaction that you want to mark as suspect or remove from history.
+     * @param {module:model/FraudMarkingActionRequest} fraudMarkingActionRequest 
+     * @param {module:api/DecisionManagerApi~fraudUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RiskV1UpdatePost201Response}
+     */
+    this.fraudUpdate = function(id, fraudMarkingActionRequest, callback) {
+      var postBody = fraudMarkingActionRequest;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling fraudUpdate");
+      }
+
+      // verify the required parameter 'fraudMarkingActionRequest' is set
+      if (fraudMarkingActionRequest === undefined || fraudMarkingActionRequest === null) {
+        throw new Error("Missing the required parameter 'fraudMarkingActionRequest' when calling fraudUpdate");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = RiskV1UpdatePost201Response;
+
+      return this.apiClient.callApi(
+        '/risk/v1/decisions/{id}/marking', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

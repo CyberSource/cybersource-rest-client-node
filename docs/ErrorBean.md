@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **localizationKey** | **String** | Localization Key Name | [optional] 
 **correlationId** | **String** | Correlation Id | [optional] 
 **detail** | **String** | Error Detail | [optional] 
-**fields** | [**[InlineResponse400Fields]**](InlineResponse400Fields.md) | Error fields List | [optional] 
+**fields** | [**[InlineResponse4001Fields]**](InlineResponse4001Fields.md) | Error fields List | [optional] 
 
 

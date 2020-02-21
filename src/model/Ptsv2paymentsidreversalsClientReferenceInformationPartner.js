@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('solutionId')) {
         obj['solutionId'] = ApiClient.convertToType(data['solutionId'], 'String');
       }
+      if (data.hasOwnProperty('thirdPartyCertificationNumber')) {
+        obj['thirdPartyCertificationNumber'] = ApiClient.convertToType(data['thirdPartyCertificationNumber'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {String} solutionId
    */
   exports.prototype['solutionId'] = undefined;
+  /**
+   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet. 
+   * @member {String} thirdPartyCertificationNumber
+   */
+  exports.prototype['thirdPartyCertificationNumber'] = undefined;
 
 
 

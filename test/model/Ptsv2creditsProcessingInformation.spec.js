@@ -110,6 +110,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property walletType (base name: "walletType")', function() {
+      // uncomment below and update the code to test the property walletType
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nationalNetDomesticData (base name: "nationalNetDomesticData")', function() {
+      // uncomment below and update the code to test the property nationalNetDomesticData
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property networkRoutingOrder (base name: "networkRoutingOrder")', function() {
+      // uncomment below and update the code to test the property networkRoutingOrder
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property recurringOptions (base name: "recurringOptions")', function() {
       // uncomment below and update the code to test the property recurringOptions
       //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
@@ -130,6 +148,18 @@
 
     it('should have the property electronicBenefitsTransfer (base name: "electronicBenefitsTransfer")', function() {
       // uncomment below and update the code to test the property electronicBenefitsTransfer
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property loanOptions (base name: "loanOptions")', function() {
+      // uncomment below and update the code to test the property loanOptions
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property japanPaymentOptions (base name: "japanPaymentOptions")', function() {
+      // uncomment below and update the code to test the property japanPaymentOptions
       //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
       //expect(instance).to.be();
     });

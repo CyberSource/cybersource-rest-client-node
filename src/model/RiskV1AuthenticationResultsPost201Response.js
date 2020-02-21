@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/PtsV2PaymentsReversalsPost201ResponseLinks', 'model/Ptsv2payoutsClientReferenceInformation', 'model/RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./PtsV2PaymentsReversalsPost201ResponseLinks'), require('./Ptsv2payoutsClientReferenceInformation'), require('./RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1AuthenticationResultsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsReversalsPost201ResponseLinks, root.CyberSource.Ptsv2payoutsClientReferenceInformation, root.CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation);
+    root.CyberSource.RiskV1AuthenticationResultsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformation, PtsV2PaymentsReversalsPost201ResponseLinks, Ptsv2payoutsClientReferenceInformation, RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseErrorInformation, RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation) {
   'use strict';
 
 
@@ -71,7 +71,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = PtsV2PaymentsReversalsPost201ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = PtsV2IncrementalAuthorizationPatch201ResponseLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -92,7 +92,7 @@
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Ptsv2payoutsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('consumerAuthenticationInformation')) {
         obj['consumerAuthenticationInformation'] = RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
@@ -105,11 +105,11 @@
   }
 
   /**
-   * @member {module:model/PtsV2PaymentsReversalsPost201ResponseLinks} _links
+   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
@@ -139,7 +139,7 @@
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {module:model/Ptsv2payoutsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**

@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property industryDataType (base name: "industryDataType")', function() {
+      // uncomment below and update the code to test the property industryDataType
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

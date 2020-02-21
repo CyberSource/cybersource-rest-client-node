@@ -134,6 +134,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property salesSlipNumber (base name: "salesSlipNumber")', function() {
+      // uncomment below and update the code to test the property salesSlipNumber
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('level3TransmissionStatus')) {
         obj['level3TransmissionStatus'] = ApiClient.convertToType(data['level3TransmissionStatus'], 'Boolean');
       }
+      if (data.hasOwnProperty('salesSlipNumber')) {
+        obj['salesSlipNumber'] = ApiClient.convertToType(data['salesSlipNumber'], 'Number');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {Boolean} level3TransmissionStatus
    */
   exports.prototype['level3TransmissionStatus'] = undefined;
+  /**
+   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. 
+   * @member {Number} salesSlipNumber
+   */
+  exports.prototype['salesSlipNumber'] = undefined;
 
 
 

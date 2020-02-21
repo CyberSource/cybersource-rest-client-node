@@ -53,6 +53,8 @@
 
 
 
+
+
   };
 
   /**
@@ -80,6 +82,12 @@
       }
       if (data.hasOwnProperty('routingMethod')) {
         obj['routingMethod'] = ApiClient.convertToType(data['routingMethod'], 'String');
+      }
+      if (data.hasOwnProperty('carrier')) {
+        obj['carrier'] = ApiClient.convertToType(data['carrier'], 'String');
+      }
+      if (data.hasOwnProperty('organization')) {
+        obj['organization'] = ApiClient.convertToType(data['organization'], 'String');
       }
     }
     return obj;
@@ -110,6 +118,16 @@
    * @member {String} routingMethod
    */
   exports.prototype['routingMethod'] = undefined;
+  /**
+   * Provides the name of the organization that owns the ASN. The carrier is responsible for the traffic carried on the network or set of networks designated as an Autonomous System (AS) and identified by the ASN. While there are more than 27,000 active ASNs, there are fewer carriers, because a single carrier often manages several ASNs. 
+   * @member {String} carrier
+   */
+  exports.prototype['carrier'] = undefined;
+  /**
+   * The Registering Organization is the entity responsible for the actions and content associated with a given block of IP addresses. This is in contrast to the carrier, which is responsible for the routing of traffic for network blocks. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks. 
+   * @member {String} organization
+   */
+  exports.prototype['organization'] = undefined;
 
 
 

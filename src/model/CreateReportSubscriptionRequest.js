@@ -46,7 +46,7 @@
    * @param reportDefinitionName {String} Valid Report Definition Name
    * @param reportFields {Array.<String>} 
    * @param reportMimeType {String} Valid values: - application/xml - text/csv 
-   * @param reportFrequency {String} 'The frequency for which subscription is created.'  Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED' 
+   * @param reportFrequency {String} 'The frequency for which subscription is created.' **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED' 
    * @param reportName {String} 
    * @param timezone {String} 
    * @param startTime {String} The hour at which the report generation should start. It should be in hhmm format.
@@ -143,7 +143,7 @@
    */
   exports.prototype['reportMimeType'] = undefined;
   /**
-   * 'The frequency for which subscription is created.'  Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED' 
+   * 'The frequency for which subscription is created.' **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED' 
    * @member {String} reportFrequency
    */
   exports.prototype['reportFrequency'] = undefined;

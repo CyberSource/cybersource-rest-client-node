@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -89,8 +91,14 @@
       if (data.hasOwnProperty('ucafAuthenticationData')) {
         obj['ucafAuthenticationData'] = ApiClient.convertToType(data['ucafAuthenticationData'], 'String');
       }
-      if (data.hasOwnProperty('ucafCollectionIndicator')) {
-        obj['ucafCollectionIndicator'] = ApiClient.convertToType(data['ucafCollectionIndicator'], 'String');
+      if (data.hasOwnProperty('strongAuthentication')) {
+        obj['strongAuthentication'] = Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.constructFromObject(data['strongAuthentication']);
+      }
+      if (data.hasOwnProperty('directoryServerTransactionId')) {
+        obj['directoryServerTransactionId'] = ApiClient.convertToType(data['directoryServerTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('paSpecificationVersion')) {
+        obj['paSpecificationVersion'] = ApiClient.convertToType(data['paSpecificationVersion'], 'String');
       }
     }
     return obj;
@@ -107,35 +115,44 @@
    */
   exports.prototype['cavvAlgorithm'] = undefined;
   /**
-   * Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} eciRaw
    */
   exports.prototype['eciRaw'] = undefined;
   /**
-   * Payer authentication response status.  For details, see `pares_status` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Payer authentication response status.  For details, see `pares_status` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} paresStatus
    */
   exports.prototype['paresStatus'] = undefined;
   /**
-   * Verification response enrollment status.  For details, see `veres_enrolled` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Verification response enrollment status.  For details, see `veres_enrolled` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} veresEnrolled
    */
   exports.prototype['veresEnrolled'] = undefined;
   /**
-   * Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} xid
    */
   exports.prototype['xid'] = undefined;
   /**
-   * Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} ucafAuthenticationData
    */
   exports.prototype['ucafAuthenticationData'] = undefined;
   /**
-   * Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator 
-   * @member {String} ucafCollectionIndicator
+   * @member {module:model/Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication} strongAuthentication
    */
-  exports.prototype['ucafCollectionIndicator'] = undefined;
+  exports.prototype['strongAuthentication'] = undefined;
+  /**
+   * The Directory Server Transaction ID is generated by the Mastercard Directory Server during the authentication transaction and passed back to the merchant with the authentication results. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 114-149, Field: MC AVV Verification—Directory Server Transaction ID 
+   * @member {String} directoryServerTransactionId
+   */
+  exports.prototype['directoryServerTransactionId'] = undefined;
+  /**
+   * This field contains 3DS version that was used for Secured Consumer Authentication (SCA). For example 3DS secure version 1.0.2 or 2.0.0 is used for Secured Consumer Authentication. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 113 , Field: MC AVV Verification—Program Protocol It will contain one of the following values: - `1` (3D Secure Version 1.0 (3DS 1.0)) - `2` (EMV 3-D Secure (3DS 2.0)) 
+   * @member {String} paSpecificationVersion
+   */
+  exports.prototype['paSpecificationVersion'] = undefined;
 
 
 

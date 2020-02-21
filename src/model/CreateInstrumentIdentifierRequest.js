@@ -81,7 +81,7 @@
   }
 
   /**
-   * Type of Card
+   * Enrol card for a Network Token
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

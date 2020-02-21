@@ -58,12 +58,16 @@
      */
 
     /**
-     * Get transaction details for a given batch id
-     * Provides real-time detailed status information about the transactions  that you previously uploaded in the Business Center or processed with  the Offline Transaction File Submission service. 
+     * Get Transaction Details for a given Batch Id
+     * Provides real-time detailed status information about the transactions that you previously uploaded in the Business Center or processed with the Offline Transaction File Submission service. 
      * @param {String} id The batch id assigned for the template.
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd 
+     * @param {String} opts.status Allows you to filter by rejected response.  Valid values: - Rejected 
      * @param {module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getTransactionBatchDetails = function(id, callback) {
+    this.getTransactionBatchDetails = function(id, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -76,6 +80,8 @@
         'id': id
       };
       var queryParams = {
+        'uploadDate': opts['uploadDate'],
+        'status': opts['status']
       };
       var headerParams = {
       };
@@ -84,7 +90,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['text/csv', 'application/xml'];
+      var accepts = ['text/csv', 'application/xml', 'text/vnd.cybersource.map-csv'];
       var returnType = null;
 
       return this.apiClient.callApi(
@@ -103,7 +109,7 @@
      */
 
     /**
-     * Get individual batch file
+     * Get Individual Batch File
      * Provide the search range
      * @param {String} id The batch id assigned for the template.
      * @param {module:api/TransactionBatchesApi~getTransactionBatchIdCallback} callback The callback function, accepting three arguments: error, data, response
@@ -149,7 +155,7 @@
      */
 
     /**
-     * Get a list of batch files
+     * Get a List of Batch Files
      * Provide the search range
      * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ 
      * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ 

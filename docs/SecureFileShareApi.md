@@ -4,15 +4,15 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getFile**](SecureFileShareApi.md#getFile) | **GET** /sfs/v1/files/{fileId} | Download a file with file identifier
-[**getFileDetail**](SecureFileShareApi.md#getFileDetail) | **GET** /sfs/v1/file-details | Get list of files
+[**getFile**](SecureFileShareApi.md#getFile) | **GET** /sfs/v1/files/{fileId} | Download a File with File Identifier
+[**getFileDetail**](SecureFileShareApi.md#getFileDetail) | **GET** /sfs/v1/file-details | Get List of Files
 
 
 <a name="getFile"></a>
 # **getFile**
 > getFile(fileId, opts)
 
-Download a file with file identifier
+Download a File with File Identifier
 
 Download a file for the given file identifier
 
@@ -62,7 +62,7 @@ No authorization required
 # **getFileDetail**
 > V1FileDetailsGet200Response getFileDetail(startDate, endDate, opts)
 
-Get list of files
+Get List of Files
 
 Get list of files and it&#39;s information of them available inside the report directory
 

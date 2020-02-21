@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sourceAccountType (base name: "sourceAccountType")', function() {
+      // uncomment below and update the code to test the property sourceAccountType
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sourceAccountTypeDetails (base name: "sourceAccountTypeDetails")', function() {
+      // uncomment below and update the code to test the property sourceAccountTypeDetails
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

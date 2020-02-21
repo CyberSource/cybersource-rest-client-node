@@ -4,14 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPurchaseAndRefundDetails**](PurchaseAndRefundDetailsApi.md#getPurchaseAndRefundDetails) | **GET** /reporting/v3/purchase-refund-details | Get Purchase and Refund details
+[**getPurchaseAndRefundDetails**](PurchaseAndRefundDetailsApi.md#getPurchaseAndRefundDetails) | **GET** /reporting/v3/purchase-refund-details | Get Purchase and Refund Details
 
 
 <a name="getPurchaseAndRefundDetails"></a>
 # **getPurchaseAndRefundDetails**
 > ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(startTime, endTime, opts)
 
-Get Purchase and Refund details
+Get Purchase and Refund Details
 
 Download the Purchase and Refund Details report. This report report includes all purchases and refund transactions, as well as all activities related to transactions resulting in an adjustment to the net proceeds. 
 

@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property phone (base name: "phone")', function() {
+      // uncomment below and update the code to test the property phone
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
       //var instane = new CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor();

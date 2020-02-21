@@ -14,5 +14,7 @@ Name | Type | Description | Notes
 **pointOfSaleInformation** | [**Ptsv2paymentsidcapturesPointOfSaleInformation**](Ptsv2paymentsidcapturesPointOfSaleInformation.md) |  | [optional] 
 **merchantDefinedInformation** | [**[Ptsv2paymentsMerchantDefinedInformation]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines.  | [optional] 
 **installmentInformation** | [**Ptsv2paymentsidcapturesInstallmentInformation**](Ptsv2paymentsidcapturesInstallmentInformation.md) |  | [optional] 
+**travelInformation** | [**Ptsv2paymentsidcapturesTravelInformation**](Ptsv2paymentsidcapturesTravelInformation.md) |  | [optional] 
+**promotionInformation** | [**Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
 
 

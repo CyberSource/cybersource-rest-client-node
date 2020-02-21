@@ -68,12 +68,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property networkIpAddress (base name: "networkIpAddress")', function() {
-      // uncomment below and update the code to test the property networkIpAddress
-      //var instane = new CyberSource.Riskv1decisionsDeviceInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property hostName (base name: "hostName")', function() {
       // uncomment below and update the code to test the property hostName
       //var instane = new CyberSource.Riskv1decisionsDeviceInformation();

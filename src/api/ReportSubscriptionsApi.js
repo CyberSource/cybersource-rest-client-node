@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateReportSubscriptionRequest', 'model/InlineResponse400', 'model/PredefinedSubscriptionRequestBean', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
+    define(['ApiClient', 'model/CreateReportSubscriptionRequest', 'model/InlineResponse4001', 'model/PredefinedSubscriptionRequestBean', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateReportSubscriptionRequest'), require('../model/InlineResponse400'), require('../model/PredefinedSubscriptionRequestBean'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateReportSubscriptionRequest'), require('../model/InlineResponse4001'), require('../model/PredefinedSubscriptionRequestBean'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportSubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateReportSubscriptionRequest, root.CyberSource.InlineResponse400, root.CyberSource.PredefinedSubscriptionRequestBean, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
+    root.CyberSource.ReportSubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateReportSubscriptionRequest, root.CyberSource.InlineResponse4001, root.CyberSource.PredefinedSubscriptionRequestBean, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(ApiClient, CreateReportSubscriptionRequest, InlineResponse400, PredefinedSubscriptionRequestBean, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response) {
+}(this, function(ApiClient, CreateReportSubscriptionRequest, InlineResponse4001, PredefinedSubscriptionRequestBean, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**
@@ -50,6 +50,54 @@
 	
 
     /**
+     * Callback function to receive the result of the createStandardOrClassicSubscription operation.
+     * @callback module:api/ReportSubscriptionsApi~createStandardOrClassicSubscriptionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a Standard or Classic Subscription
+     * Create or update an already existing classic or standard subscription. 
+     * @param {module:model/PredefinedSubscriptionRequestBean} predefinedSubscriptionRequestBean Report subscription request payload
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {module:api/ReportSubscriptionsApi~createStandardOrClassicSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.createStandardOrClassicSubscription = function(predefinedSubscriptionRequestBean, opts, callback) {
+      opts = opts || {};
+      var postBody = predefinedSubscriptionRequestBean;
+
+      // verify the required parameter 'predefinedSubscriptionRequestBean' is set
+      if (predefinedSubscriptionRequestBean === undefined || predefinedSubscriptionRequestBean === null) {
+        throw new Error("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'organizationId': opts['organizationId']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/reporting/v3/predefined-report-subscriptions', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the createSubscription operation.
      * @callback module:api/ReportSubscriptionsApi~createSubscriptionCallback
      * @param {String} error Error message, if any.
@@ -58,7 +106,7 @@
      */
 
     /**
-     * Create Report Subscription for a report name by organization
+     * Create Report Subscription for a Report Name by Organization
      * Create a report subscription for your organization. The report name must be unique. 
      * @param {module:model/CreateReportSubscriptionRequest} createReportSubscriptionRequest Report subscription request payload
      * @param {Object} opts Optional parameters
@@ -106,7 +154,7 @@
      */
 
     /**
-     * Delete subscription of a report name by organization
+     * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param {String} reportName Name of the Report to Delete
      * @param {module:api/ReportSubscriptionsApi~deleteSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
@@ -151,7 +199,7 @@
      */
 
     /**
-     * Get all subscriptions
+     * Get All Subscriptions
      * View a summary of all report subscriptions. 
      * @param {module:api/ReportSubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200Response}
@@ -190,7 +238,7 @@
      */
 
     /**
-     * Get subscription for report name
+     * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param {String} reportName Name of the Report to Retrieve
      * @param {module:api/ReportSubscriptionsApi~getSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
@@ -222,54 +270,6 @@
 
       return this.apiClient.callApi(
         '/reporting/v3/report-subscriptions/{reportName}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the reportingV3PredefinedReportSubscriptionsPut operation.
-     * @callback module:api/ReportSubscriptionsApi~reportingV3PredefinedReportSubscriptionsPutCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create a Standard or Classic subscription
-     * Create or update an already existing classic or standard subscription. 
-     * @param {module:model/PredefinedSubscriptionRequestBean} predefinedSubscriptionRequestBean Report subscription request payload
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
-     * @param {module:api/ReportSubscriptionsApi~reportingV3PredefinedReportSubscriptionsPutCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.reportingV3PredefinedReportSubscriptionsPut = function(predefinedSubscriptionRequestBean, opts, callback) {
-      opts = opts || {};
-      var postBody = predefinedSubscriptionRequestBean;
-
-      // verify the required parameter 'predefinedSubscriptionRequestBean' is set
-      if (predefinedSubscriptionRequestBean === undefined || predefinedSubscriptionRequestBean === null) {
-        throw new Error("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling reportingV3PredefinedReportSubscriptionsPut");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'organizationId': opts['organizationId']
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/reporting/v3/predefined-report-subscriptions', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

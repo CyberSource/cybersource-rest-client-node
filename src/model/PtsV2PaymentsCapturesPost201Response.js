@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsCapturesPost201ResponseLinks', 'model/PtsV2PaymentsCapturesPost201ResponseOrderInformation', 'model/PtsV2PaymentsCapturesPost201ResponseProcessorInformation', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsCapturesPost201ResponseLinks', 'model/PtsV2PaymentsCapturesPost201ResponseOrderInformation', 'model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsCapturesPost201ResponseProcessingInformation', 'model/PtsV2PaymentsCapturesPost201ResponseProcessorInformation', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsCapturesPost201ResponseLinks'), require('./PtsV2PaymentsCapturesPost201ResponseOrderInformation'), require('./PtsV2PaymentsCapturesPost201ResponseProcessorInformation'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsCapturesPost201ResponseLinks'), require('./PtsV2PaymentsCapturesPost201ResponseOrderInformation'), require('./PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'), require('./PtsV2PaymentsCapturesPost201ResponseProcessingInformation'), require('./PtsV2PaymentsCapturesPost201ResponseProcessorInformation'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsCapturesPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseLinks, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation);
+    root.CyberSource.PtsV2PaymentsCapturesPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseLinks, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseProcessingInformation, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation);
   }
-}(this, function(ApiClient, PtsV2PaymentsCapturesPost201ResponseLinks, PtsV2PaymentsCapturesPost201ResponseOrderInformation, PtsV2PaymentsCapturesPost201ResponseProcessorInformation, PtsV2PaymentsPost201ResponseClientReferenceInformation) {
+}(this, function(ApiClient, PtsV2PaymentsCapturesPost201ResponseLinks, PtsV2PaymentsCapturesPost201ResponseOrderInformation, PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, PtsV2PaymentsCapturesPost201ResponseProcessingInformation, PtsV2PaymentsCapturesPost201ResponseProcessorInformation, PtsV2PaymentsPost201ResponseClientReferenceInformation) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -92,6 +94,12 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = PtsV2PaymentsCapturesPost201ResponseOrderInformation.constructFromObject(data['orderInformation']);
       }
+      if (data.hasOwnProperty('processingInformation')) {
+        obj['processingInformation'] = PtsV2PaymentsCapturesPost201ResponseProcessingInformation.constructFromObject(data['processingInformation']);
+      }
+      if (data.hasOwnProperty('pointOfSaleInformation')) {
+        obj['pointOfSaleInformation'] = PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+      }
     }
     return obj;
   }
@@ -101,7 +109,7 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
@@ -132,6 +140,14 @@
    * @member {module:model/PtsV2PaymentsCapturesPost201ResponseOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsCapturesPost201ResponseProcessingInformation} processingInformation
+   */
+  exports.prototype['processingInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation} pointOfSaleInformation
+   */
+  exports.prototype['pointOfSaleInformation'] = undefined;
 
 
 

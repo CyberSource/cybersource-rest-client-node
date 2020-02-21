@@ -122,6 +122,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property travelInformation (base name: "travelInformation")', function() {
+      // uncomment below and update the code to test the property travelInformation
+      //var instane = new CyberSource.CapturePaymentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property promotionInformation (base name: "promotionInformation")', function() {
+      // uncomment below and update the code to test the property promotionInformation
+      //var instane = new CyberSource.CapturePaymentRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

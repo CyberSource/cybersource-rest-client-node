@@ -73,12 +73,12 @@
   }
 
   /**
-   * Mapped response code for Visa Secure and American Express SafeKey.  For processor-specific details, see `auth_cavv_response_code` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Mapped response code for Visa Secure and American Express SafeKey.  For processor-specific details, see `auth_cavv_response_code` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
   /**
-   * Raw response code sent directly from the processor for Visa Secure and American Express SafeKey:  For processor-specific details, see `auth_cavv_response_code_raw` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Raw response code sent directly from the processor for Visa Secure and American Express SafeKey:  For processor-specific details, see `auth_cavv_response_code_raw` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} codeRaw
    */
   exports.prototype['codeRaw'] = undefined;

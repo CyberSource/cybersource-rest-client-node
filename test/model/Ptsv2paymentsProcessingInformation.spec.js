@@ -158,6 +158,48 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loanOptions (base name: "loanOptions")', function() {
+      // uncomment below and update the code to test the property loanOptions
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property walletType (base name: "walletType")', function() {
+      // uncomment below and update the code to test the property walletType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nationalNetDomesticData (base name: "nationalNetDomesticData")', function() {
+      // uncomment below and update the code to test the property nationalNetDomesticData
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property japanPaymentOptions (base name: "japanPaymentOptions")', function() {
+      // uncomment below and update the code to test the property japanPaymentOptions
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mobileRemotePaymentType (base name: "mobileRemotePaymentType")', function() {
+      // uncomment below and update the code to test the property mobileRemotePaymentType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property extendedCreditTotalCount (base name: "extendedCreditTotalCount")', function() {
+      // uncomment below and update the code to test the property extendedCreditTotalCount
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property networkRoutingOrder (base name: "networkRoutingOrder")', function() {
+      // uncomment below and update the code to test the property networkRoutingOrder
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

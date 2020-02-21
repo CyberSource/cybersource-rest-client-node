@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property card (base name: "card")', function() {
+      // uncomment below and update the code to test the property card
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

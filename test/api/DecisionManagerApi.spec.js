@@ -50,10 +50,30 @@
   }
 
   describe('DecisionManagerApi', function() {
+    describe('addNegative', function() {
+      it('should call addNegative successfully', function(done) {
+        //uncomment below and update the code to test addNegative
+        //instance.addNegative(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createDecisionManagerCase', function() {
       it('should call createDecisionManagerCase successfully', function(done) {
         //uncomment below and update the code to test createDecisionManagerCase
         //instance.createDecisionManagerCase(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fraudUdate', function() {
+      it('should call fraudUdate successfully', function(done) {
+        //uncomment below and update the code to test fraudUdate
+        //instance.fraudUdate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

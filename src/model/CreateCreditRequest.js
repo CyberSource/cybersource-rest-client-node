@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2creditsPointOfSaleInformation', 'model/Ptsv2creditsProcessingInformation', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsDeviceInformation', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2paymentsidcapturesAggregatorInformation', 'model/Ptsv2paymentsidcapturesBuyerInformation', 'model/Ptsv2paymentsidrefundsMerchantInformation', 'model/Ptsv2paymentsidrefundsOrderInformation', 'model/Ptsv2paymentsidrefundsPaymentInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2creditsInstallmentInformation', 'model/Ptsv2creditsProcessingInformation', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsDeviceInformation', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2paymentsPointOfSaleInformation', 'model/Ptsv2paymentsPromotionInformation', 'model/Ptsv2paymentsidcapturesAggregatorInformation', 'model/Ptsv2paymentsidcapturesBuyerInformation', 'model/Ptsv2paymentsidcapturesTravelInformation', 'model/Ptsv2paymentsidrefundsMerchantInformation', 'model/Ptsv2paymentsidrefundsOrderInformation', 'model/Ptsv2paymentsidrefundsPaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2creditsPointOfSaleInformation'), require('./Ptsv2creditsProcessingInformation'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsDeviceInformation'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Ptsv2paymentsidcapturesAggregatorInformation'), require('./Ptsv2paymentsidcapturesBuyerInformation'), require('./Ptsv2paymentsidrefundsMerchantInformation'), require('./Ptsv2paymentsidrefundsOrderInformation'), require('./Ptsv2paymentsidrefundsPaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2creditsInstallmentInformation'), require('./Ptsv2creditsProcessingInformation'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsDeviceInformation'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Ptsv2paymentsPointOfSaleInformation'), require('./Ptsv2paymentsPromotionInformation'), require('./Ptsv2paymentsidcapturesAggregatorInformation'), require('./Ptsv2paymentsidcapturesBuyerInformation'), require('./Ptsv2paymentsidcapturesTravelInformation'), require('./Ptsv2paymentsidrefundsMerchantInformation'), require('./Ptsv2paymentsidrefundsOrderInformation'), require('./Ptsv2paymentsidrefundsPaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateCreditRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2creditsPointOfSaleInformation, root.CyberSource.Ptsv2creditsProcessingInformation, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsDeviceInformation, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Ptsv2paymentsidcapturesAggregatorInformation, root.CyberSource.Ptsv2paymentsidcapturesBuyerInformation, root.CyberSource.Ptsv2paymentsidrefundsMerchantInformation, root.CyberSource.Ptsv2paymentsidrefundsOrderInformation, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation);
+    root.CyberSource.CreateCreditRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2creditsInstallmentInformation, root.CyberSource.Ptsv2creditsProcessingInformation, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsDeviceInformation, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Ptsv2paymentsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsPromotionInformation, root.CyberSource.Ptsv2paymentsidcapturesAggregatorInformation, root.CyberSource.Ptsv2paymentsidcapturesBuyerInformation, root.CyberSource.Ptsv2paymentsidcapturesTravelInformation, root.CyberSource.Ptsv2paymentsidrefundsMerchantInformation, root.CyberSource.Ptsv2paymentsidrefundsOrderInformation, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation);
   }
-}(this, function(ApiClient, Ptsv2creditsPointOfSaleInformation, Ptsv2creditsProcessingInformation, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsDeviceInformation, Ptsv2paymentsMerchantDefinedInformation, Ptsv2paymentsidcapturesAggregatorInformation, Ptsv2paymentsidcapturesBuyerInformation, Ptsv2paymentsidrefundsMerchantInformation, Ptsv2paymentsidrefundsOrderInformation, Ptsv2paymentsidrefundsPaymentInformation) {
+}(this, function(ApiClient, Ptsv2creditsInstallmentInformation, Ptsv2creditsProcessingInformation, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsDeviceInformation, Ptsv2paymentsMerchantDefinedInformation, Ptsv2paymentsPointOfSaleInformation, Ptsv2paymentsPromotionInformation, Ptsv2paymentsidcapturesAggregatorInformation, Ptsv2paymentsidcapturesBuyerInformation, Ptsv2paymentsidcapturesTravelInformation, Ptsv2paymentsidrefundsMerchantInformation, Ptsv2paymentsidrefundsOrderInformation, Ptsv2paymentsidrefundsPaymentInformation) {
   'use strict';
 
 
@@ -46,6 +46,9 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
 
 
 
@@ -95,10 +98,19 @@
         obj['aggregatorInformation'] = Ptsv2paymentsidcapturesAggregatorInformation.constructFromObject(data['aggregatorInformation']);
       }
       if (data.hasOwnProperty('pointOfSaleInformation')) {
-        obj['pointOfSaleInformation'] = Ptsv2creditsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+        obj['pointOfSaleInformation'] = Ptsv2paymentsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
       }
       if (data.hasOwnProperty('merchantDefinedInformation')) {
         obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [Ptsv2paymentsMerchantDefinedInformation]);
+      }
+      if (data.hasOwnProperty('installmentInformation')) {
+        obj['installmentInformation'] = Ptsv2creditsInstallmentInformation.constructFromObject(data['installmentInformation']);
+      }
+      if (data.hasOwnProperty('travelInformation')) {
+        obj['travelInformation'] = Ptsv2paymentsidcapturesTravelInformation.constructFromObject(data['travelInformation']);
+      }
+      if (data.hasOwnProperty('promotionInformation')) {
+        obj['promotionInformation'] = Ptsv2paymentsPromotionInformation.constructFromObject(data['promotionInformation']);
       }
     }
     return obj;
@@ -137,7 +149,7 @@
    */
   exports.prototype['aggregatorInformation'] = undefined;
   /**
-   * @member {module:model/Ptsv2creditsPointOfSaleInformation} pointOfSaleInformation
+   * @member {module:model/Ptsv2paymentsPointOfSaleInformation} pointOfSaleInformation
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
   /**
@@ -145,6 +157,18 @@
    * @member {Array.<module:model/Ptsv2paymentsMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2creditsInstallmentInformation} installmentInformation
+   */
+  exports.prototype['installmentInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsidcapturesTravelInformation} travelInformation
+   */
+  exports.prototype['travelInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPromotionInformation} promotionInformation
+   */
+  exports.prototype['promotionInformation'] = undefined;
 
 
 

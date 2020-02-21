@@ -55,6 +55,8 @@
 
 
 
+
+
   };
 
   /**
@@ -91,6 +93,12 @@
       }
       if (data.hasOwnProperty('startYear')) {
         obj['startYear'] = ApiClient.convertToType(data['startYear'], 'String');
+      }
+      if (data.hasOwnProperty('sourceAccountType')) {
+        obj['sourceAccountType'] = ApiClient.convertToType(data['sourceAccountType'], 'String');
+      }
+      if (data.hasOwnProperty('sourceAccountTypeDetails')) {
+        obj['sourceAccountTypeDetails'] = ApiClient.convertToType(data['sourceAccountTypeDetails'], 'String');
       }
     }
     return obj;
@@ -136,6 +144,16 @@
    * @member {String} startYear
    */
   exports.prototype['startYear'] = undefined;
+  /**
+   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  This field is required in the following cases:   - Debit transactions on Cielo and Comercio Latino.   - Transactions with Brazilian-issued cards on CyberSource through VisaNet.   - Applicable only for CyberSource through VisaNet (CtV).      **Note** Combo cards in Brazil contain credit and debit functionality in a single card. Visa systems use a credit bank identification number (BIN) for this type of card. Using the BIN to determine whether a card is debit or credit can cause transactions with these cards to be processed incorrectly. CyberSource strongly recommends that you include this field for combo card transactions.  Possible values include the following.   - `CHECKING`: Checking account  - `CREDIT`: Credit card account  - `SAVING`: Saving account  - `LINE_OF_CREDIT`: Line of credit or credit portion of combo card  - `PREPAID`: Prepaid card account or prepaid portion of combo card  - `UNIVERSAL`: Universal account 
+   * @member {String} sourceAccountType
+   */
+  exports.prototype['sourceAccountType'] = undefined;
+  /**
+   * Type of account that is being used when the value for the override_payment_method field is line of credit (LI) or prepaid card (PP). Possible values for line of credit: - `AGRC`: Visa Agro Custeio - `AGRE`: Visa Agro Electron - `AGRI`: Visa Agro Investimento - `AGRO`: Visa Agro Possible values for prepaid card: - `VVA`: Visa Vale Alimentacao - `VVF`: Visa Vale Flex - `VVR`: Visa Vale Refeicao This field is supported only for combo card transactions in Brazil on CyberSource through VisaNet. The value for this field corresponds to the following data in the TC 33 capture file5: Record: CP07 TCR0, Position: 44-47, Field: Account Accessed 
+   * @member {String} sourceAccountTypeDetails
+   */
+  exports.prototype['sourceAccountTypeDetails'] = undefined;
 
 
 
