@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eciRaw (base name: "eciRaw")', function() {
+      // uncomment below and update the code to test the property eciRaw
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

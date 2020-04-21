@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsRiskInformationProfile'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsRiskInformationProfile'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsRiskInformationProfile'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRiskInformationProfile'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsRiskInformationProfile);
+    root.CyberSource.Riskv1decisionsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRiskInformationProfile);
   }
-}(this, function(ApiClient, Riskv1decisionsRiskInformationProfile) {
+}(this, function(ApiClient, Ptsv2paymentsRiskInformationProfile) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('profile')) {
-        obj['profile'] = Riskv1decisionsRiskInformationProfile.constructFromObject(data['profile']);
+        obj['profile'] = Ptsv2paymentsRiskInformationProfile.constructFromObject(data['profile']);
       }
       if (data.hasOwnProperty('eventType')) {
         obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/Riskv1decisionsRiskInformationProfile} profile
+   * @member {module:model/Ptsv2paymentsRiskInformationProfile} profile
    */
   exports.prototype['profile'] = undefined;
   /**

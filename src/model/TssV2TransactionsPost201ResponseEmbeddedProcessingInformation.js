@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('businessApplicationId')) {
         obj['businessApplicationId'] = ApiClient.convertToType(data['businessApplicationId'], 'String');
       }
+      if (data.hasOwnProperty('commerceIndicator')) {
+        obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {String} businessApplicationId
    */
   exports.prototype['businessApplicationId'] = undefined;
+  /**
+   * Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: `vbv` (Successful Verified by Visa transaction)     * 6: `spa` (MasterCard SecureCode transaction)     * 7: `internet` (default) (eCommerce order placed by     using a Web site)     * 8: `vbv_attempted` (Verified by Visa transaction     was attempted but not authenticated)     * E: `vbv_failure` (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: `spa_failure` (MasterCard SecureCode     authentication failed)     * M: `moto` (Mail order or telephone order)     * P: `retail` (Point-of-sale transaction)     * R: `recurring` (Recurring transaction)     * S: `install` (Installment payment) 
+   * @member {String} commerceIndicator
+   */
+  exports.prototype['commerceIndicator'] = undefined;
 
 
 

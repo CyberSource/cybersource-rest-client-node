@@ -17,5 +17,7 @@ Name | Type | Description | Notes
 **orderInformation** | [**PtsV2PaymentsPost201ResponseOrderInformation**](PtsV2PaymentsPost201ResponseOrderInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**PtsV2PaymentsPost201ResponsePointOfSaleInformation**](PtsV2PaymentsPost201ResponsePointOfSaleInformation.md) |  | [optional] 
 **installmentInformation** | [**PtsV2PaymentsPost201ResponseInstallmentInformation**](PtsV2PaymentsPost201ResponseInstallmentInformation.md) |  | [optional] 
+**riskInformation** | [**PtsV2PaymentsPost201ResponseRiskInformation**](PtsV2PaymentsPost201ResponseRiskInformation.md) |  | [optional] 
+**consumerAuthenticationInformation** | [**PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation**](PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation.md) |  | [optional] 
 
 

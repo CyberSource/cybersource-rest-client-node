@@ -70,10 +70,10 @@
         done();
       });
     });
-    describe('fraudUdate', function() {
-      it('should call fraudUdate successfully', function(done) {
-        //uncomment below and update the code to test fraudUdate
-        //instance.fraudUdate(function(error) {
+    describe('fraudUpdate', function() {
+      it('should call fraudUpdate successfully', function(done) {
+        //uncomment below and update the code to test fraudUpdate
+        //instance.fraudUpdate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amountDetails** | [**Riskv1decisionsOrderInformationAmountDetails**](Riskv1decisionsOrderInformationAmountDetails.md) |  | [optional] 
+**amountDetails** | [**Riskv1authenticationsOrderInformationAmountDetails**](Riskv1authenticationsOrderInformationAmountDetails.md) |  | [optional] 
 **lineItems** | [**[Riskv1authenticationresultsOrderInformationLineItems]**](Riskv1authenticationresultsOrderInformationLineItems.md) |  | [optional] 
 
 

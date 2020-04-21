@@ -43,12 +43,13 @@
    * Constructs a new <code>Riskv1authenticationsBuyerInformation</code>.
    * @alias module:model/Riskv1authenticationsBuyerInformation
    * @class
+   * @param mobilePhone {Number} Cardholder’s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
    */
-  var exports = function() {
+  var exports = function(mobilePhone) {
     var _this = this;
 
 
-
+    _this['mobilePhone'] = mobilePhone;
   };
 
   /**

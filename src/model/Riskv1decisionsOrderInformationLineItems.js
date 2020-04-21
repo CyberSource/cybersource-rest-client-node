@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsOrderInformationPassenger'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationPassenger'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsOrderInformationPassenger'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationPassenger'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsOrderInformationPassenger);
+    root.CyberSource.Riskv1decisionsOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationPassenger);
   }
-}(this, function(ApiClient, Riskv1decisionsOrderInformationPassenger) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationPassenger) {
   'use strict';
 
 
@@ -94,7 +94,7 @@
         obj['distributorProductSku'] = ApiClient.convertToType(data['distributorProductSku'], 'String');
       }
       if (data.hasOwnProperty('passenger')) {
-        obj['passenger'] = Riskv1decisionsOrderInformationPassenger.constructFromObject(data['passenger']);
+        obj['passenger'] = Ptsv2paymentsOrderInformationPassenger.constructFromObject(data['passenger']);
       }
     }
     return obj;
@@ -131,7 +131,7 @@
    */
   exports.prototype['productCode'] = undefined;
   /**
-   * Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. 
+   * This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. 
    * @member {Boolean} gift
    */
   exports.prototype['gift'] = undefined;
@@ -141,7 +141,7 @@
    */
   exports.prototype['distributorProductSku'] = undefined;
   /**
-   * @member {module:model/Riskv1decisionsOrderInformationPassenger} passenger
+   * @member {module:model/Ptsv2paymentsOrderInformationPassenger} passenger
    */
   exports.prototype['passenger'] = undefined;
 

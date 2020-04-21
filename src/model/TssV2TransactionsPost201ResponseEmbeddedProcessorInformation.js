@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('processor')) {
         obj['processor'] = TssV2TransactionsGet200ResponseProcessorInformationProcessor.constructFromObject(data['processor']);
       }
+      if (data.hasOwnProperty('approvalCode')) {
+        obj['approvalCode'] = ApiClient.convertToType(data['approvalCode'], 'String');
+      }
     }
     return obj;
   }
@@ -72,6 +76,11 @@
    * @member {module:model/TssV2TransactionsGet200ResponseProcessorInformationProcessor} processor
    */
   exports.prototype['processor'] = undefined;
+  /**
+   * Authorization code. Returned only when the processor returns this value. 
+   * @member {String} approvalCode
+   */
+  exports.prototype['approvalCode'] = undefined;
 
 
 

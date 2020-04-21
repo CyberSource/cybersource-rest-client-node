@@ -113,6 +113,7 @@
      * @param {Date} endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd 
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml 
      * @param {module:api/SecureFileShareApi~getFileDetailCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/V1FileDetailsGet200Response}
      */
@@ -136,7 +137,8 @@
       var queryParams = {
         'startDate': startDate,
         'endDate': endDate,
-        'organizationId': opts['organizationId']
+        'organizationId': opts['organizationId'],
+        'name': opts['name']
       };
       var headerParams = {
       };

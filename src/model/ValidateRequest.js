@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationresultsConsumerAuthenticationInformation', 'model/Riskv1authenticationresultsOrderInformation', 'model/Riskv1authenticationresultsPaymentInformation', 'model/Riskv1authenticationsetupsClientReferenceInformation', 'model/Riskv1authenticationsetupsProcessingInformation'], factory);
+    define(['ApiClient', 'model/Riskv1authenticationresultsConsumerAuthenticationInformation', 'model/Riskv1authenticationresultsOrderInformation', 'model/Riskv1authenticationresultsPaymentInformation', 'model/Riskv1authenticationsClientReferenceInformation', 'model/Riskv1authenticationsProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationresultsConsumerAuthenticationInformation'), require('./Riskv1authenticationresultsOrderInformation'), require('./Riskv1authenticationresultsPaymentInformation'), require('./Riskv1authenticationsetupsClientReferenceInformation'), require('./Riskv1authenticationsetupsProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationresultsConsumerAuthenticationInformation'), require('./Riskv1authenticationresultsOrderInformation'), require('./Riskv1authenticationresultsPaymentInformation'), require('./Riskv1authenticationsClientReferenceInformation'), require('./Riskv1authenticationsProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ValidateRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation, root.CyberSource.Riskv1authenticationresultsOrderInformation, root.CyberSource.Riskv1authenticationresultsPaymentInformation, root.CyberSource.Riskv1authenticationsetupsClientReferenceInformation, root.CyberSource.Riskv1authenticationsetupsProcessingInformation);
+    root.CyberSource.ValidateRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation, root.CyberSource.Riskv1authenticationresultsOrderInformation, root.CyberSource.Riskv1authenticationresultsPaymentInformation, root.CyberSource.Riskv1authenticationsClientReferenceInformation, root.CyberSource.Riskv1authenticationsProcessingInformation);
   }
-}(this, function(ApiClient, Riskv1authenticationresultsConsumerAuthenticationInformation, Riskv1authenticationresultsOrderInformation, Riskv1authenticationresultsPaymentInformation, Riskv1authenticationsetupsClientReferenceInformation, Riskv1authenticationsetupsProcessingInformation) {
+}(this, function(ApiClient, Riskv1authenticationresultsConsumerAuthenticationInformation, Riskv1authenticationresultsOrderInformation, Riskv1authenticationresultsPaymentInformation, Riskv1authenticationsClientReferenceInformation, Riskv1authenticationsProcessingInformation) {
   'use strict';
 
 
@@ -66,10 +66,10 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Riskv1authenticationsetupsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Riskv1authenticationsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = Riskv1authenticationsetupsProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = Riskv1authenticationsProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Riskv1authenticationresultsOrderInformation.constructFromObject(data['orderInformation']);
@@ -85,11 +85,11 @@
   }
 
   /**
-   * @member {module:model/Riskv1authenticationsetupsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Riskv1authenticationsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * @member {module:model/Riskv1authenticationsetupsProcessingInformation} processingInformation
+   * @member {module:model/Riskv1authenticationsProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
   /**

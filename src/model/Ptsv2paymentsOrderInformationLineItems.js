@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetailsTaxDetails', 'model/Ptsv2paymentsOrderInformationPassenger'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'), require('./Ptsv2paymentsOrderInformationPassenger'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails);
+    root.CyberSource.Ptsv2paymentsOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails, root.CyberSource.Ptsv2paymentsOrderInformationPassenger);
   }
-}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetailsTaxDetails) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetailsTaxDetails, Ptsv2paymentsOrderInformationPassenger) {
   'use strict';
 
 
@@ -46,6 +46,11 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
 
 
 
@@ -163,6 +168,21 @@
       }
       if (data.hasOwnProperty('referenceDataNumber')) {
         obj['referenceDataNumber'] = ApiClient.convertToType(data['referenceDataNumber'], 'String');
+      }
+      if (data.hasOwnProperty('productDescription')) {
+        obj['productDescription'] = ApiClient.convertToType(data['productDescription'], 'String');
+      }
+      if (data.hasOwnProperty('giftCardCurrency')) {
+        obj['giftCardCurrency'] = ApiClient.convertToType(data['giftCardCurrency'], 'Number');
+      }
+      if (data.hasOwnProperty('shippingDestinationTypes')) {
+        obj['shippingDestinationTypes'] = ApiClient.convertToType(data['shippingDestinationTypes'], 'String');
+      }
+      if (data.hasOwnProperty('gift')) {
+        obj['gift'] = ApiClient.convertToType(data['gift'], 'Boolean');
+      }
+      if (data.hasOwnProperty('passenger')) {
+        obj['passenger'] = Ptsv2paymentsOrderInformationPassenger.constructFromObject(data['passenger']);
       }
     }
     return obj;
@@ -297,6 +317,30 @@
    * @member {String} referenceDataNumber
    */
   exports.prototype['referenceDataNumber'] = undefined;
+  /**
+   * Brief description of item.
+   * @member {String} productDescription
+   */
+  exports.prototype['productDescription'] = undefined;
+  /**
+   * When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the currency used for the gift card purchase.  For details, see `pa_gift_card_currency` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/Payer_Authentication_SCMP_API.pdf)  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) 
+   * @member {Number} giftCardCurrency
+   */
+  exports.prototype['giftCardCurrency'] = undefined;
+  /**
+   * Destination to where the item will be shipped. Example: Commercial, Residential, Store 
+   * @member {String} shippingDestinationTypes
+   */
+  exports.prototype['shippingDestinationTypes'] = undefined;
+  /**
+   * This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. 
+   * @member {Boolean} gift
+   */
+  exports.prototype['gift'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsOrderInformationPassenger} passenger
+   */
+  exports.prototype['passenger'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/RiskV1DecisionsPost201ResponsePaymentInformation', 'model/RiskV1DecisionsPost201ResponseRiskInformation'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseRiskInformation', 'model/RiskV1DecisionsPost201ResponsePaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./RiskV1DecisionsPost201ResponsePaymentInformation'), require('./RiskV1DecisionsPost201ResponseRiskInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseRiskInformation'), require('./RiskV1DecisionsPost201ResponsePaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1DecisionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.RiskV1DecisionsPost201ResponsePaymentInformation, root.CyberSource.RiskV1DecisionsPost201ResponseRiskInformation);
+    root.CyberSource.RiskV1DecisionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation, root.CyberSource.RiskV1DecisionsPost201ResponsePaymentInformation);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformation, PtsV2PaymentsPost201ResponseLinks, RiskV1DecisionsPost201ResponsePaymentInformation, RiskV1DecisionsPost201ResponseRiskInformation) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformation, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseRiskInformation, RiskV1DecisionsPost201ResponsePaymentInformation) {
   'use strict';
 
 
@@ -84,7 +84,7 @@
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('riskInformation')) {
-        obj['riskInformation'] = RiskV1DecisionsPost201ResponseRiskInformation.constructFromObject(data['riskInformation']);
+        obj['riskInformation'] = PtsV2PaymentsPost201ResponseRiskInformation.constructFromObject(data['riskInformation']);
       }
       if (data.hasOwnProperty('paymentInformation')) {
         obj['paymentInformation'] = RiskV1DecisionsPost201ResponsePaymentInformation.constructFromObject(data['paymentInformation']);
@@ -116,12 +116,12 @@
    */
   exports.prototype['submitTimeLocal'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW` 
+   * The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `CHALLENGE`   - `PENDING_AUTHENTICATION` 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/RiskV1DecisionsPost201ResponseRiskInformation} riskInformation
+   * @member {module:model/PtsV2PaymentsPost201ResponseRiskInformation} riskInformation
    */
   exports.prototype['riskInformation'] = undefined;
   /**

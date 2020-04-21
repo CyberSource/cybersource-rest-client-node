@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsidOrderInformationAmountDetails);
     });
 
-    it('should have the property additonalAmount (base name: "additonalAmount")', function() {
-      // uncomment below and update the code to test the property additonalAmount
+    it('should have the property additionalAmount (base name: "additionalAmount")', function() {
+      // uncomment below and update the code to test the property additionalAmount
       //var instane = new CyberSource.Ptsv2paymentsidOrderInformationAmountDetails();
       //expect(instance).to.be();
     });

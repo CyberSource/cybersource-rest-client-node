@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="generatePublicKey"></a>
 # **generatePublicKey**
-> FlexV1KeysPost200Response generatePublicKey(generatePublicKeyRequest)
+> FlexV1KeysPost200Response generatePublicKey(generatePublicKeyRequest, opts)
 
 Generate Key
 
@@ -23,6 +23,9 @@ var apiInstance = new CyberSource.KeyGenerationApi();
 
 var generatePublicKeyRequest = new CyberSource.GeneratePublicKeyRequest(); // GeneratePublicKeyRequest | 
 
+var opts = { 
+  'format': "legacy" // String | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -31,7 +34,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.generatePublicKey(generatePublicKeyRequest, callback);
+apiInstance.generatePublicKey(generatePublicKeyRequest, opts, callback);
 ```
 
 ### Parameters
@@ -39,6 +42,7 @@ apiInstance.generatePublicKey(generatePublicKeyRequest, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  | 
+ **format** | **String**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [optional] [default to legacy]
 
 ### Return type
 

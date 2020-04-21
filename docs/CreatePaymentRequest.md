@@ -19,5 +19,9 @@ Name | Type | Description | Notes
 **installmentInformation** | [**Ptsv2paymentsInstallmentInformation**](Ptsv2paymentsInstallmentInformation.md) |  | [optional] 
 **travelInformation** | [**Ptsv2paymentsTravelInformation**](Ptsv2paymentsTravelInformation.md) |  | [optional] 
 **promotionInformation** | [**Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
+**tokenInformation** | [**Ptsv2paymentsTokenInformation**](Ptsv2paymentsTokenInformation.md) |  | [optional] 
+**riskInformation** | [**Ptsv2paymentsRiskInformation**](Ptsv2paymentsRiskInformation.md) |  | [optional] 
+**acquirerInformation** | [**Ptsv2paymentsAcquirerInformation**](Ptsv2paymentsAcquirerInformation.md) |  | [optional] 
+**recurringPaymentInformation** | [**Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 
 
 

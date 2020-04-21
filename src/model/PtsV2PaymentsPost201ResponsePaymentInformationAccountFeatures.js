@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures = factory(root.CyberSource.ApiClient);
+    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances) {
   'use strict';
 
 
@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -82,6 +83,9 @@
       }
       if (data.hasOwnProperty('accountStatus')) {
         obj['accountStatus'] = ApiClient.convertToType(data['accountStatus'], 'String');
+      }
+      if (data.hasOwnProperty('balances')) {
+        obj['balances'] = ApiClient.convertToType(data['balances'], [PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances]);
       }
       if (data.hasOwnProperty('balanceAmount')) {
         obj['balanceAmount'] = ApiClient.convertToType(data['balanceAmount'], 'String');
@@ -143,6 +147,11 @@
    */
   exports.prototype['accountStatus'] = undefined;
   /**
+   * This is an array of multiple balances information an issuer can return for a given card.
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances>} balances
+   */
+  exports.prototype['balances'] = undefined;
+  /**
    * Remaining balance on the account. 
    * @member {String} balanceAmount
    */
@@ -158,7 +167,7 @@
    */
   exports.prototype['currency'] = undefined;
   /**
-   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-** 
+   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **positive**  - **negative** 
    * @member {String} balanceSign
    */
   exports.prototype['balanceSign'] = undefined;

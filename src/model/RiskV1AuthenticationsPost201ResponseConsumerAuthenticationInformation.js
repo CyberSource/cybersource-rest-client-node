@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr);
+    root.CyberSource.RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr);
   }
-}(this, function(ApiClient, RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr) {
   'use strict';
 
 
@@ -150,7 +150,7 @@
         obj['effectiveAuthenticationType'] = ApiClient.convertToType(data['effectiveAuthenticationType'], 'String');
       }
       if (data.hasOwnProperty('ivr')) {
-        obj['ivr'] = RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.constructFromObject(data['ivr']);
+        obj['ivr'] = PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr.constructFromObject(data['ivr']);
       }
       if (data.hasOwnProperty('networkScore')) {
         obj['networkScore'] = ApiClient.convertToType(data['networkScore'], 'String');
@@ -295,7 +295,7 @@
    */
   exports.prototype['effectiveAuthenticationType'] = undefined;
   /**
-   * @member {module:model/RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr} ivr
+   * @member {module:model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr} ivr
    */
   exports.prototype['ivr'] = undefined;
   /**

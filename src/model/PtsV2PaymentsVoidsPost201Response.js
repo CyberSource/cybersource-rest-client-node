@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsVoidsPost201ResponseProcessorInformation', 'model/PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsVoidsPost201ResponseProcessorInformation'), require('./PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsVoidsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails);
+    root.CyberSource.PtsV2PaymentsVoidsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsVoidsPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsVoidsPost201ResponseProcessorInformation, PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('voidAmountDetails')) {
         obj['voidAmountDetails'] = PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails.constructFromObject(data['voidAmountDetails']);
       }
+      if (data.hasOwnProperty('processorInformation')) {
+        obj['processorInformation'] = PtsV2PaymentsVoidsPost201ResponseProcessorInformation.constructFromObject(data['processorInformation']);
+      }
     }
     return obj;
   }
@@ -115,6 +119,10 @@
    * @member {module:model/PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails} voidAmountDetails
    */
   exports.prototype['voidAmountDetails'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsVoidsPost201ResponseProcessorInformation} processorInformation
+   */
+  exports.prototype['processorInformation'] = undefined;
 
 
 
