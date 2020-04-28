@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsOrderInformationPassenger'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationPassenger'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsOrderInformationPassenger'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationPassenger'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1authenticationsOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsOrderInformationPassenger);
+    root.CyberSource.Riskv1authenticationsOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationPassenger);
   }
-}(this, function(ApiClient, Riskv1decisionsOrderInformationPassenger) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationPassenger) {
   'use strict';
 
 
@@ -93,7 +93,7 @@
         obj['productName'] = ApiClient.convertToType(data['productName'], 'String');
       }
       if (data.hasOwnProperty('passenger')) {
-        obj['passenger'] = Riskv1decisionsOrderInformationPassenger.constructFromObject(data['passenger']);
+        obj['passenger'] = Ptsv2paymentsOrderInformationPassenger.constructFromObject(data['passenger']);
       }
       if (data.hasOwnProperty('shippingDestinationTypes')) {
         obj['shippingDestinationTypes'] = ApiClient.convertToType(data['shippingDestinationTypes'], 'String');
@@ -141,7 +141,7 @@
    */
   exports.prototype['productName'] = undefined;
   /**
-   * @member {module:model/Riskv1decisionsOrderInformationPassenger} passenger
+   * @member {module:model/Ptsv2paymentsOrderInformationPassenger} passenger
    */
   exports.prototype['passenger'] = undefined;
   /**

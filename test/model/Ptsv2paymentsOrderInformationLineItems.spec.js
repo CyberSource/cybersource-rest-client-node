@@ -212,6 +212,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property productDescription (base name: "productDescription")', function() {
+      // uncomment below and update the code to test the property productDescription
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property giftCardCurrency (base name: "giftCardCurrency")', function() {
+      // uncomment below and update the code to test the property giftCardCurrency
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingDestinationTypes (base name: "shippingDestinationTypes")', function() {
+      // uncomment below and update the code to test the property shippingDestinationTypes
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property gift (base name: "gift")', function() {
+      // uncomment below and update the code to test the property gift
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property passenger (base name: "passenger")', function() {
+      // uncomment below and update the code to test the property passenger
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

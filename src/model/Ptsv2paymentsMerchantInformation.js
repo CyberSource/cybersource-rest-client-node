@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('serviceFeeDescriptor')) {
         obj['serviceFeeDescriptor'] = Ptsv2paymentsMerchantInformationServiceFeeDescriptor.constructFromObject(data['serviceFeeDescriptor']);
+      }
+      if (data.hasOwnProperty('merchantName')) {
+        obj['merchantName'] = ApiClient.convertToType(data['merchantName'], 'String');
       }
     }
     return obj;
@@ -143,6 +147,11 @@
    * @member {module:model/Ptsv2paymentsMerchantInformationServiceFeeDescriptor} serviceFeeDescriptor
    */
   exports.prototype['serviceFeeDescriptor'] = undefined;
+  /**
+   * Use this field only if you are requesting payment with Payer Authentication serice together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
+   * @member {String} merchantName
+   */
+  exports.prototype['merchantName'] = undefined;
 
 
 

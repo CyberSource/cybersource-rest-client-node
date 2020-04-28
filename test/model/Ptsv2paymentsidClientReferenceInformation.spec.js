@@ -68,6 +68,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property applicationName (base name: "applicationName")', function() {
+      // uncomment below and update the code to test the property applicationName
+      //var instane = new CyberSource.Ptsv2paymentsidClientReferenceInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property applicationVersion (base name: "applicationVersion")', function() {
+      // uncomment below and update the code to test the property applicationVersion
+      //var instane = new CyberSource.Ptsv2paymentsidClientReferenceInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property applicationUser (base name: "applicationUser")', function() {
+      // uncomment below and update the code to test the property applicationUser
+      //var instane = new CyberSource.Ptsv2paymentsidClientReferenceInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

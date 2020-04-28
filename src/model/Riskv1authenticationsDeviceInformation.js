@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationsDeviceInformationRawData'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsDeviceInformationRawData'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationsDeviceInformationRawData'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsDeviceInformationRawData'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1authenticationsDeviceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationsDeviceInformationRawData);
+    root.CyberSource.Riskv1authenticationsDeviceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsDeviceInformationRawData);
   }
-}(this, function(ApiClient, Riskv1authenticationsDeviceInformationRawData) {
+}(this, function(ApiClient, Ptsv2paymentsDeviceInformationRawData) {
   'use strict';
 
 
@@ -76,7 +76,7 @@
         obj['ipAddress'] = ApiClient.convertToType(data['ipAddress'], 'String');
       }
       if (data.hasOwnProperty('rawData')) {
-        obj['rawData'] = ApiClient.convertToType(data['rawData'], [Riskv1authenticationsDeviceInformationRawData]);
+        obj['rawData'] = ApiClient.convertToType(data['rawData'], [Ptsv2paymentsDeviceInformationRawData]);
       }
       if (data.hasOwnProperty('httpAcceptBrowserValue')) {
         obj['httpAcceptBrowserValue'] = ApiClient.convertToType(data['httpAcceptBrowserValue'], 'String');
@@ -118,7 +118,7 @@
    */
   exports.prototype['ipAddress'] = undefined;
   /**
-   * @member {Array.<module:model/Riskv1authenticationsDeviceInformationRawData>} rawData
+   * @member {Array.<module:model/Ptsv2paymentsDeviceInformationRawData>} rawData
    */
   exports.prototype['rawData'] = undefined;
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions', 'model/TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions'], factory);
+    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions', 'model/TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions', 'model/TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions'), require('./TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions'));
+    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions'), require('./TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions'), require('./TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions, root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions);
+    root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions, root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions, root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions, TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions) {
+}(this, function(ApiClient, TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions, TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions, TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('bankTransferOptions')) {
         obj['bankTransferOptions'] = TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions.constructFromObject(data['bankTransferOptions']);
       }
+      if (data.hasOwnProperty('japanPaymentOptions')) {
+        obj['japanPaymentOptions'] = TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.constructFromObject(data['japanPaymentOptions']);
+      }
     }
     return obj;
   }
@@ -90,7 +94,7 @@
    */
   exports.prototype['paymentSolution'] = undefined;
   /**
-   * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Ingenico ePayments Ingenico ePayments was previously called _Global Collect_. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed in \"Commerce Indicators\" section of [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Payouts OCT (Original Credit Transaction) Value for an OCT transaction: - `internet` For details, see the `e_commerce_indicator` field description in [Payouts Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/payouts_SCMP/html/)  #### Other Types of Transactions For details, see \"Commerce Indicators\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: `vbv` (Successful Verified by Visa transaction)     * 6: `spa` (MasterCard SecureCode transaction)     * 7: `internet` (default) (eCommerce order placed by     using a Web site)     * 8: `vbv_attempted` (Verified by Visa transaction     was attempted but not authenticated)     * E: `vbv_failure` (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: `spa_failure` (MasterCard SecureCode     authentication failed)     * M: `moto` (Mail order or telephone order)     * P: `retail` (Point-of-sale transaction)     * R: `recurring` (Recurring transaction)     * S: `install` (Installment payment) 
    * @member {String} commerceIndicator
    */
   exports.prototype['commerceIndicator'] = undefined;
@@ -107,6 +111,10 @@
    * @member {module:model/TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions} bankTransferOptions
    */
   exports.prototype['bankTransferOptions'] = undefined;
+  /**
+   * @member {module:model/TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions} japanPaymentOptions
+   */
+  exports.prototype['japanPaymentOptions'] = undefined;
 
 
 

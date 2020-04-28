@@ -92,6 +92,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property returnsAccepted (base name: "returnsAccepted")', function() {
+      // uncomment below and update the code to test the property returnsAccepted
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preOrder (base name: "preOrder")', function() {
+      // uncomment below and update the code to test the property preOrder
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preOrderDate (base name: "preOrderDate")', function() {
+      // uncomment below and update the code to test the property preOrderDate
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reordered (base name: "reordered")', function() {
+      // uncomment below and update the code to test the property reordered
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalOffersCount (base name: "totalOffersCount")', function() {
+      // uncomment below and update the code to test the property totalOffersCount
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

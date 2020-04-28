@@ -43,12 +43,8 @@
    * Constructs a new <code>Riskv1authenticationsConsumerAuthenticationInformation</code>.
    * @alias module:model/Riskv1authenticationsConsumerAuthenticationInformation
    * @class
-   * @param mcc {String} Merchant category code. **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
-   * @param overrideCountryCode {String} Two-character ISO standard Country Codes. 
-   * @param referenceId {String} Reference ID that corresponds to the device fingerprinting data that was collected previously. Note Required for Hybrid integration. 
-   * @param transactionMode {String} Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - `M`: MOTO (Mail Order Telephone Order) - `R`: Retail - `S`: eCommerce - `P`: Mobile Device - `T`: Tablet 
    */
-  var exports = function(mcc, overrideCountryCode, referenceId, transactionMode) {
+  var exports = function() {
     var _this = this;
 
 
@@ -71,12 +67,6 @@
 
 
 
-    _this['mcc'] = mcc;
-
-
-
-
-    _this['overrideCountryCode'] = overrideCountryCode;
 
 
 
@@ -85,10 +75,16 @@
 
 
 
-    _this['referenceId'] = referenceId;
 
 
-    _this['transactionMode'] = transactionMode;
+
+
+
+
+
+
+
+
 
   };
 

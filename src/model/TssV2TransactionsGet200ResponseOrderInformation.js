@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseOrderInformationAmountDetails', 'model/TssV2TransactionsGet200ResponseOrderInformationBillTo', 'model/TssV2TransactionsGet200ResponseOrderInformationLineItems', 'model/TssV2TransactionsGet200ResponseOrderInformationShipTo', 'model/TssV2TransactionsGet200ResponseOrderInformationShippingDetails'], factory);
+    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseOrderInformationAmountDetails', 'model/TssV2TransactionsGet200ResponseOrderInformationBillTo', 'model/TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails', 'model/TssV2TransactionsGet200ResponseOrderInformationLineItems', 'model/TssV2TransactionsGet200ResponseOrderInformationShipTo', 'model/TssV2TransactionsGet200ResponseOrderInformationShippingDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseOrderInformationAmountDetails'), require('./TssV2TransactionsGet200ResponseOrderInformationBillTo'), require('./TssV2TransactionsGet200ResponseOrderInformationLineItems'), require('./TssV2TransactionsGet200ResponseOrderInformationShipTo'), require('./TssV2TransactionsGet200ResponseOrderInformationShippingDetails'));
+    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseOrderInformationAmountDetails'), require('./TssV2TransactionsGet200ResponseOrderInformationBillTo'), require('./TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails'), require('./TssV2TransactionsGet200ResponseOrderInformationLineItems'), require('./TssV2TransactionsGet200ResponseOrderInformationShipTo'), require('./TssV2TransactionsGet200ResponseOrderInformationShippingDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationAmountDetails, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationBillTo, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationLineItems, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationShipTo, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationShippingDetails);
+    root.CyberSource.TssV2TransactionsGet200ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationAmountDetails, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationBillTo, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationLineItems, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationShipTo, root.CyberSource.TssV2TransactionsGet200ResponseOrderInformationShippingDetails);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200ResponseOrderInformationAmountDetails, TssV2TransactionsGet200ResponseOrderInformationBillTo, TssV2TransactionsGet200ResponseOrderInformationLineItems, TssV2TransactionsGet200ResponseOrderInformationShipTo, TssV2TransactionsGet200ResponseOrderInformationShippingDetails) {
+}(this, function(ApiClient, TssV2TransactionsGet200ResponseOrderInformationAmountDetails, TssV2TransactionsGet200ResponseOrderInformationBillTo, TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails, TssV2TransactionsGet200ResponseOrderInformationLineItems, TssV2TransactionsGet200ResponseOrderInformationShipTo, TssV2TransactionsGet200ResponseOrderInformationShippingDetails) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('shippingDetails')) {
         obj['shippingDetails'] = TssV2TransactionsGet200ResponseOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
       }
+      if (data.hasOwnProperty('invoiceDetails')) {
+        obj['invoiceDetails'] = TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
+      }
     }
     return obj;
   }
@@ -105,6 +109,10 @@
    * @member {module:model/TssV2TransactionsGet200ResponseOrderInformationShippingDetails} shippingDetails
    */
   exports.prototype['shippingDetails'] = undefined;
+  /**
+   * @member {module:model/TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails} invoiceDetails
+   */
+  exports.prototype['invoiceDetails'] = undefined;
 
 
 

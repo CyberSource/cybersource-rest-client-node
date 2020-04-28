@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property balances (base name: "balances")', function() {
+      // uncomment below and update the code to test the property balances
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures();
+      //expect(instance).to.be();
+    });
+
     it('should have the property balanceAmount (base name: "balanceAmount")', function() {
       // uncomment below and update the code to test the property balanceAmount
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures();

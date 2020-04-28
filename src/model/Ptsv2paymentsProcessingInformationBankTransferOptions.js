@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -99,6 +100,9 @@
       }
       if (data.hasOwnProperty('fraudScreeningLevel')) {
         obj['fraudScreeningLevel'] = ApiClient.convertToType(data['fraudScreeningLevel'], 'String');
+      }
+      if (data.hasOwnProperty('customerPresent')) {
+        obj['customerPresent'] = ApiClient.convertToType(data['customerPresent'], 'String');
       }
     }
     return obj;
@@ -154,6 +158,11 @@
    * @member {String} fraudScreeningLevel
    */
   exports.prototype['fraudScreeningLevel'] = undefined;
+  /**
+   * Indicates whether a customer is physically present and whether the customer is enrolling in CyberSource Recurring Billing.  Possible values: - `1`: Customer is present and not enrolling. - `2`: Customer is not present and not enrolling. - `3`: Customer is present and enrolling. - `4`: Customer is not present and enrolling. 
+   * @member {String} customerPresent
+   */
+  exports.prototype['customerPresent'] = undefined;
 
 
 

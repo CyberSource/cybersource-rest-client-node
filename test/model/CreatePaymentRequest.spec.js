@@ -152,6 +152,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenInformation (base name: "tokenInformation")', function() {
+      // uncomment below and update the code to test the property tokenInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property riskInformation (base name: "riskInformation")', function() {
+      // uncomment below and update the code to test the property riskInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property acquirerInformation (base name: "acquirerInformation")', function() {
+      // uncomment below and update the code to test the property acquirerInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property recurringPaymentInformation (base name: "recurringPaymentInformation")', function() {
+      // uncomment below and update the code to test the property recurringPaymentInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

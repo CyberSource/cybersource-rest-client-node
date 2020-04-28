@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidreversalsPointOfSaleInformationEmv'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsPointOfSaleInformationEmv'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformationEmv);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsidreversalsPointOfSaleInformationEmv) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('terminalCapability')) {
         obj['terminalCapability'] = ApiClient.convertToType(data['terminalCapability'], 'Number');
       }
+      if (data.hasOwnProperty('emv')) {
+        obj['emv'] = Ptsv2paymentsidreversalsPointOfSaleInformationEmv.constructFromObject(data['emv']);
+      }
     }
     return obj;
   }
@@ -82,6 +86,10 @@
    * @member {Number} terminalCapability
    */
   exports.prototype['terminalCapability'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsidreversalsPointOfSaleInformationEmv} emv
+   */
+  exports.prototype['emv'] = undefined;
 
 
 

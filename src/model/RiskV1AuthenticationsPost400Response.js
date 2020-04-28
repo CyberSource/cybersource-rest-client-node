@@ -90,17 +90,17 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status for payerAuthentication 400 setup calls. Possible values are: - INVALID_REQUEST 
+   * The status for payerAuthentication 201 enroll and validate calls. Value is: - AUTHENTICATION_FAILED 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status. 
+   * The reason of the status. Value is Failed_Authentication. 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be setup. 
+   * The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be authenticated. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;

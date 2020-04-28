@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property commerceIndicator (base name: "commerceIndicator")', function() {
+      // uncomment below and update the code to test the property commerceIndicator
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

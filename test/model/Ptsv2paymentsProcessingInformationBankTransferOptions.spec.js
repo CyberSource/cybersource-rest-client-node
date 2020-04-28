@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customerPresent (base name: "customerPresent")', function() {
+      // uncomment below and update the code to test the property customerPresent
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationBankTransferOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

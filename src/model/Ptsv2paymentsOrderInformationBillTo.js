@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationBillToCompany'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationBillToCompany'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsOrderInformationBillTo = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2paymentsOrderInformationBillTo = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationBillToCompany);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationBillToCompany) {
   'use strict';
 
 
@@ -96,7 +96,7 @@
         obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
       if (data.hasOwnProperty('company')) {
-        obj['company'] = ApiClient.convertToType(data['company'], 'String');
+        obj['company'] = Ptsv2paymentsOrderInformationBillToCompany.constructFromObject(data['company']);
       }
       if (data.hasOwnProperty('address1')) {
         obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
@@ -170,8 +170,7 @@
    */
   exports.prototype['title'] = undefined;
   /**
-   * Name of the customer’s company.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks. For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
-   * @member {String} company
+   * @member {module:model/Ptsv2paymentsOrderInformationBillToCompany} company
    */
   exports.prototype['company'] = undefined;
   /**

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addNegative**](DecisionManagerApi.md#addNegative) | **POST** /risk/v1/lists/{type}/entries | List Management
 [**createDecisionManagerCase**](DecisionManagerApi.md#createDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
-[**fraudUdate**](DecisionManagerApi.md#fraudUdate) | **POST** /risk/v1/decisions/{id}/marking | Fraud Marking
+[**fraudUpdate**](DecisionManagerApi.md#fraudUpdate) | **POST** /risk/v1/decisions/{id}/marking | Fraud Marking
 
 
 <a name="addNegative"></a>
@@ -104,9 +104,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/hal+json;charset=utf-8
 
-<a name="fraudUdate"></a>
-# **fraudUdate**
-> RiskV1UpdatePost201Response fraudUdate(id, fraudMarkingActionRequest)
+<a name="fraudUpdate"></a>
+# **fraudUpdate**
+> RiskV1UpdatePost201Response fraudUpdate(id, fraudMarkingActionRequest)
 
 Fraud Marking
 
@@ -130,7 +130,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.fraudUdate(id, fraudMarkingActionRequest, callback);
+apiInstance.fraudUpdate(id, fraudMarkingActionRequest, callback);
 ```
 
 ### Parameters

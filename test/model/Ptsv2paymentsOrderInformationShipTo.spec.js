@@ -128,6 +128,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property destinationTypes (base name: "destinationTypes")', function() {
+      // uncomment below and update the code to test the property destinationTypes
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property destinationCode (base name: "destinationCode")', function() {
+      // uncomment below and update the code to test the property destinationCode
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property method (base name: "method")', function() {
+      // uncomment below and update the code to test the property method
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

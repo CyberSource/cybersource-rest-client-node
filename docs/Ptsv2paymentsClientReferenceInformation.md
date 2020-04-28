@@ -7,5 +7,8 @@ Name | Type | Description | Notes
 **transactionId** | **String** | Identifier that you assign to the transaction.  **Note** Use this field only if you want to support merchant-initiated reversal and void operations.  For details, see \&quot;Merchant-Initiated Reversals and Voids\&quot; in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  | [optional] 
 **comments** | **String** | Comments | [optional] 
 **partner** | [**Ptsv2paymentsClientReferenceInformationPartner**](Ptsv2paymentsClientReferenceInformationPartner.md) |  | [optional] 
+**applicationName** | **String** | The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource.  | [optional] 
+**applicationVersion** | **String** | Version of the CyberSource application or integration used for a transaction.  | [optional] 
+**applicationUser** | **String** | The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method.  | [optional] 
 
 

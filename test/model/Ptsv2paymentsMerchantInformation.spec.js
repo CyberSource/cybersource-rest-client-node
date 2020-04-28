@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantName (base name: "merchantName")', function() {
+      // uncomment below and update the code to test the property merchantName
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

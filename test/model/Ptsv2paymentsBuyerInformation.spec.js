@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property mobilePhone (base name: "mobilePhone")', function() {
+      // uncomment below and update the code to test the property mobilePhone
+      //var instane = new CyberSource.Ptsv2paymentsBuyerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -87,12 +87,12 @@
    */
   exports.prototype['notes'] = undefined;
   /**
-   * Reason for adding the transaction to the negative list. This field can contain one of the following values: - fraud_chargeback: You have received a fraud-related chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction. 
+   * Reason for adding the transaction to the negative list. This field can contain one of the following values: - `fraud_chargeback:` You have received a fraud-related chargeback for the transaction. - `non_fraud_chargeback:` You have received a non-fraudulent chargeback for the transaction. - `suspected:` You believe that you will probably receive a chargeback for the transaction. - `creditback:` You issued a refund to the customer to avoid a chargeback for the transaction. 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * Name of the customer’s record entered in the list. For the positive list, it is required if action_ code=add_positive. If absent from the request, ics_risk_update creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, record_name, customer_firstname, and customer_lastname are optional. 
+   * Name of the customer’s record entered in the list. For the positive list, it is required if `action_ code`=`add_positive`. If absent from the request, `ics_risk_update` creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, `record_name`, `customer_firstname`, and `customer_lastname` are optional. 
    * @member {String} recordName
    */
   exports.prototype['recordName'] = undefined;

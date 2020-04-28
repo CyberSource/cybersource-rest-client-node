@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('transactionId')) {
         obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
       }
+      if (data.hasOwnProperty('eciRaw')) {
+        obj['eciRaw'] = ApiClient.convertToType(data['eciRaw'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {String} transactionId
    */
   exports.prototype['transactionId'] = undefined;
+  /**
+   * Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * @member {String} eciRaw
+   */
+  exports.prototype['eciRaw'] = undefined;
 
 
 
