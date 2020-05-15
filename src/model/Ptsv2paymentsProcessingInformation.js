@@ -71,6 +71,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('actionList')) {
+        obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
+      }
       if (data.hasOwnProperty('capture')) {
         obj['capture'] = ApiClient.convertToType(data['capture'], 'Boolean');
       }
@@ -161,7 +165,12 @@
   }
 
   /**
-   * Flag that specifies whether to also include capture service in the submitted request or not.  Possible values: - **true** - **false** (default). 
+   * Array of actions (one or more) to be included in the payment to invoke bundled serviecs along with payment.  Possible values are one or more of follows:   - `DECISION`: Use this when you want to check Risk Score along with your payment request.   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request. 
+   * @member {Array.<String>} actionList
+   */
+  exports.prototype['actionList'] = undefined;
+  /**
+   * Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - `true`: Include a capture with an authorization request. - `false`: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. 
    * @member {Boolean} capture
    * @default false
    */
@@ -177,7 +186,7 @@
    */
   exports.prototype['businessApplicationId'] = undefined;
   /**
-   * Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: `vbv` (Successful Verified by Visa transaction)     * 6: `spa` (MasterCard SecureCode transaction)     * 7: `internet` (default) (eCommerce order placed by     using a Web site)     * 8: `vbv_attempted` (Verified by Visa transaction     was attempted but not authenticated)     * E: `vbv_failure` (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: `spa_failure` (MasterCard SecureCode     authentication failed)     * M: `moto` (Mail order or telephone order)     * P: `retail` (Point-of-sale transaction)     * R: `recurring` (Recurring transaction)     * S: `install` (Installment payment) 
+   * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional. Only `internet`, `moto`, `recurring`, and `recurring_internet` are valid values.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Other Types of Transactions See Appendix I, \"Commerce Indicators,\" on page 441.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. 
    * @member {String} commerceIndicator
    */
   exports.prototype['commerceIndicator'] = undefined;
@@ -212,7 +221,7 @@
    */
   exports.prototype['visaCheckoutId'] = undefined;
   /**
-   * Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit` 
+   * Indicates that the transaction includes airline data or restaurant data. Possible Values: - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit`  #### Card Present You must set this field to `airline` in order for airline data to be sent to the processor. For example, if this field is not set to `airline` or is not included in the request, no airline data is sent to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor. When this field is not set to `restaurant` or is not included in the request, no restaurant data is sent to the processor.  Restaurant data is supported only on CyberSource through VisaNet. 
    * @member {String} industryDataType
    */
   exports.prototype['industryDataType'] = undefined;
@@ -259,7 +268,7 @@
    */
   exports.prototype['japanPaymentOptions'] = undefined;
   /**
-   * This tag contains one of the following values: - `1` :  Remote purchase (Consumer initiated) face-to-face - `2` :  Remote purchase (Consumer initiated) ecommerce - `3` :  Remote purchase (Consumer initiated) MOTO - `4` :  Bill Pay (Consumer initiated) - `5` :  Top-up (Consumer initiated) - `6` :  Cash-out (Consumer initiated) - `7` :  Case-out (ATM/Agent triggered) - `8` :  Remote purchase (Merchant triggered) face-to-face - `9` :  Remote purchase (Merchant triggered) ecommerce 
+   * Type of payment initiated from a cardholder's mobile device. Possible values: - `1` :  Consumer-initiated remote purchase, face-to-face - `2` :  Consumer-initiated remote purchase, e-commerce - `3` :  Consumer-initiated remote purchase, mail order / telephone order - `4` :  Consumer-initiated bill pay - `5` :  Consumer-initiated top up - `6` :  Consumer-initiated cash out - `7` :  ATM triggered or agent-initiated cash out - `8` :  Merchant-initiated remote purchase, face-to-face - `9` :  Merchant-initiated remote purchase, e-commerce  This field is supported only for Mastercard transactions on CyberSource through VisaNet.  Optional field.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 94 - Field: Mastercard Mobile Remote Payment Program Indicator  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
    * @member {String} mobileRemotePaymentType
    */
   exports.prototype['mobileRemotePaymentType'] = undefined;

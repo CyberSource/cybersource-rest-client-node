@@ -103,7 +103,7 @@
    */
   exports.prototype['productName'] = undefined;
   /**
-   * Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling. 
+   * Identification code for the product. For Payment and Capture APIs, this field is required when above `productCode` is not **default** or one of the values related to shipping and/or handling. 
    * @member {String} productSku
    */
   exports.prototype['productSku'] = undefined;

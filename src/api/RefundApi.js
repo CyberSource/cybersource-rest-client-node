@@ -59,7 +59,7 @@
 
     /**
      * Refund a Capture
-     * Include the capture ID in the POST request to refund the captured amount. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
      * @param {module:model/RefundCaptureRequest} refundCaptureRequest 
      * @param {String} id The capture ID. This ID is returned from a previous capture request.
      * @param {module:api/RefundApi~refundCaptureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -111,7 +111,7 @@
 
     /**
      * Refund a Payment
-     * Include the payment ID in the POST request to refund the payment amount. 
+     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
      * @param {module:model/RefundPaymentRequest} refundPaymentRequest 
      * @param {String} id The payment ID. This ID is returned from a previous payment request.
      * @param {module:api/RefundApi~refundPaymentCallback} callback The callback function, accepting three arguments: error, data, response

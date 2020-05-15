@@ -77,17 +77,17 @@
   }
 
   /**
-   * Remaining balance on the account. 
+   * Remaining balance on the account.  Returned by authorization service. 
    * @member {String} balanceAmount
    */
   exports.prototype['balanceAmount'] = undefined;
   /**
-   * Remaining balance on the account. 
+   * Remaining balance on the account.  Returned by authorization service. 
    * @member {String} previousBalanceAmount
    */
   exports.prototype['previousBalanceAmount'] = undefined;
   /**
-   * Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see `auth_account_balance_currency` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  Returned by authorization service. 
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;

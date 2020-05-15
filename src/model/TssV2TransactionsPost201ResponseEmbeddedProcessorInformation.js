@@ -77,7 +77,7 @@
    */
   exports.prototype['processor'] = undefined;
   /**
-   * Authorization code. Returned only when the processor returns this value. 
+   * Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE. See \"Encoded Account Numbers,\" page 136.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. See \"Zero Amount Authorizations,\" page 230. 
    * @member {String} approvalCode
    */
   exports.prototype['approvalCode'] = undefined;

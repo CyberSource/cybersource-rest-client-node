@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCard', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationTokenizedCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCard', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsPaymentInformationTokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCard'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCard'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCard, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard);
+    root.CyberSource.Ptsv2paymentsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCard, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCard, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationTokenizedCard) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCard, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsPaymentInformationTokenizedCard) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -81,6 +82,9 @@
       if (data.hasOwnProperty('bank')) {
         obj['bank'] = Ptsv2paymentsPaymentInformationBank.constructFromObject(data['bank']);
       }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = Ptsv2paymentsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
+      }
       if (data.hasOwnProperty('initiationChannel')) {
         obj['initiationChannel'] = ApiClient.convertToType(data['initiationChannel'], 'String');
       }
@@ -109,7 +113,11 @@
    */
   exports.prototype['bank'] = undefined;
   /**
-   * \"This tag contains a MesterCard defined code that provides information about the type of device used to initiate a non-card transaction. Valid values for this tag are: - 00 Card (default) - 01 Mobile network operator (MNO) controlled removal secure element (SIM or UICC) personalized for use with a mobile phone or smartphone> - 02 Key fob - 03  Watch - 04  Mobile tag - 05  Wristband - 06  Mobile phone case or sleeve - 07  Mobile phone or smartphone with a fixed, (non-removable), secure element controlled by the MNO, for example, code division multiple access (CDMA) - 08  Removable secure element not controlled by the MNO, for example, memory card personalized for use with a mobile phone or smartphone - 09 Mobile phonen or smartphone with a fixed, (non-removable), secure element not controlled by the MNO - 10 MNO controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - 11 Tablet or e-book with a fixed, (non-removable), secure element controlled by the MNO - 12 Removable secure element not controlled by the MNO, for example, memory card personalized for use with a tablet or e-book - 13 Table or e-book with fixed, (non-removable) secure element not controlled by the MNO - 14 - 99 = (Reserved for future use) 
+   * @member {module:model/Ptsv2paymentsPaymentInformationPaymentType} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
+  /**
+   * Mastercard-defined code that indicates how the account information was obtained.  - `00` (default): Card - `01`: Removable secure element that is personalized for use with a mobile phone and controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `02`: Key fob - `03`: Watch - `04`: Mobile tag - `05`: Wristband - `06`: Mobile phone case or sleeve - `07`: Mobile phone with a non-removable, secure element that is controlled by the wireless service provider; for example, code division multiple access (CDMA) - `08`: Removable secure element that is personalized for use with a mobile phone and not controlled by the wireless service provider; example: memory card - `09`: Mobile phone with a non-removable, secure element that is not controlled by the wireless service provider - `10`: Removable secure element that is personalized for use with a tablet or e-book and is controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `11`: Tablet or e-book with a non-removable, secure element that is controlled by the wireless service provider - `12`: Removable secure element that is personalized for use with a tablet or e-book and is not controlled by the wireless service provider - `13`: Tablet or e-book with a non-removable, secure element that is not controlled by the wireless service provider  This field is supported only for Mastercard on CyberSource through VisaNet.  #### Used by **Authorization**\\ Optional field. 
    * @member {String} initiationChannel
    */
   exports.prototype['initiationChannel'] = undefined;

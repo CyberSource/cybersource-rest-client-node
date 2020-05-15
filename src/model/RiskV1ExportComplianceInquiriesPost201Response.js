@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation', 'model/RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation'), require('./RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1ExportComplianceInquiriesPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation);
+    root.CyberSource.RiskV1ExportComplianceInquiriesPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation, root.CyberSource.RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseErrorInformation, RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, PtsV2IncrementalAuthorizationPatch201ResponseLinks, RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation, RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation) {
   'use strict';
 
 
@@ -46,7 +46,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
 
@@ -85,9 +84,6 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
-      }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
@@ -98,7 +94,7 @@
         obj['exportComplianceInformation'] = RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation.constructFromObject(data['exportComplianceInformation']);
       }
       if (data.hasOwnProperty('errorInformation')) {
-        obj['errorInformation'] = PtsV2PaymentsPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
+        obj['errorInformation'] = RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
       }
     }
     return obj;
@@ -114,7 +110,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. 
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
@@ -129,11 +125,6 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status. Value can be   - CUSTOMER_WATCHLIST_MATCH   - ADDRESS_COUNTRY_WATCHLIST_MATCH   - EMAIL_COUNTRY_WATCHLIST_MATCH   - IP_COUNTRY_WATCHLIST_MATCH 
-   * @member {String} reason
-   */
-  exports.prototype['reason'] = undefined;
-  /**
    * The message describing the reason of the status. Value can be   - The customer matched the Denied Parties List   - The Export bill_country/ship_country  match   - Export email_country match   - Export hostname_country/ip_country match 
    * @member {String} message
    */
@@ -147,7 +138,7 @@
    */
   exports.prototype['exportComplianceInformation'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseErrorInformation} errorInformation
+   * @member {module:model/RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation} errorInformation
    */
   exports.prototype['errorInformation'] = undefined;
 

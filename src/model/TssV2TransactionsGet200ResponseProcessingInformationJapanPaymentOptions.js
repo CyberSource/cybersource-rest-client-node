@@ -86,7 +86,7 @@
    */
   exports.prototype['paymentMethod'] = undefined;
   /**
-   * This value is the 13-digit JCCA number.
+   * Unique Japan Credit Card Association (JCCA) terminal identifier.  The difference between this field and the `pointOfSaleInformation.terminalID` field is that you can define `pointOfSaleInformation.terminalID`, but `processingInformation.japanPaymentOptions.terminalId` is defined by the JCCA and is used only in Japan.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field. 
    * @member {String} terminalId
    */
   exports.prototype['terminalId'] = undefined;

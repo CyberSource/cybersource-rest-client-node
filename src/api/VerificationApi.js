@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1AddressVerificationsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1ExportComplianceInquiriesPost201Response', 'model/ValidateExportComplianceRequest', 'model/VerifyCustomerAddressRequest'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1AddressVerificationsPost201Response', 'model/RiskV1DecisionsPost400Response1', 'model/RiskV1ExportComplianceInquiriesPost201Response', 'model/ValidateExportComplianceRequest', 'model/VerifyCustomerAddressRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1AddressVerificationsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1ExportComplianceInquiriesPost201Response'), require('../model/ValidateExportComplianceRequest'), require('../model/VerifyCustomerAddressRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1AddressVerificationsPost201Response'), require('../model/RiskV1DecisionsPost400Response1'), require('../model/RiskV1ExportComplianceInquiriesPost201Response'), require('../model/ValidateExportComplianceRequest'), require('../model/VerifyCustomerAddressRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VerificationApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1AddressVerificationsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1ExportComplianceInquiriesPost201Response, root.CyberSource.ValidateExportComplianceRequest, root.CyberSource.VerifyCustomerAddressRequest);
+    root.CyberSource.VerificationApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1AddressVerificationsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response1, root.CyberSource.RiskV1ExportComplianceInquiriesPost201Response, root.CyberSource.ValidateExportComplianceRequest, root.CyberSource.VerifyCustomerAddressRequest);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost502Response, RiskV1AddressVerificationsPost201Response, RiskV1DecisionsPost400Response, RiskV1ExportComplianceInquiriesPost201Response, ValidateExportComplianceRequest, VerifyCustomerAddressRequest) {
+}(this, function(ApiClient, PtsV2PaymentsPost502Response, RiskV1AddressVerificationsPost201Response, RiskV1DecisionsPost400Response1, RiskV1ExportComplianceInquiriesPost201Response, ValidateExportComplianceRequest, VerifyCustomerAddressRequest) {
   'use strict';
 
   /**

@@ -86,6 +86,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property numberOfPassengers (base name: "numberOfPassengers")', function() {
+      // uncomment below and update the code to test the property numberOfPassengers
+      //var instane = new CyberSource.Riskv1decisionsTravelInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property passengers (base name: "passengers")', function() {
+      // uncomment below and update the code to test the property passengers
+      //var instane = new CyberSource.Riskv1decisionsTravelInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

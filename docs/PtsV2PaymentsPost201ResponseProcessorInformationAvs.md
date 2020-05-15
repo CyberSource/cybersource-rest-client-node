@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** | AVS result code.  | [optional] 
-**codeRaw** | **String** | AVS result code sent directly from the processor. Returned only when the processor returns this value. Important Do not use this field to evaluate the result of AVS. Use for debugging purposes only.  | [optional] 
+**code** | **String** | AVS result code.  Returned by authorization service.  | [optional] 
+**codeRaw** | **String** | AVS result code sent directly from the processor. Returned only when the processor returns this value. **Important** Do not use this field to evaluate the result of AVS. Use for debugging purposes only.  Returned by authorization service.  | [optional] 
 
 

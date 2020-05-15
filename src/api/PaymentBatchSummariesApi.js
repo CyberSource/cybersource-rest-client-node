@@ -102,7 +102,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json'];
+      var accepts = ['application/hal+json', 'text/csv', 'application/xml'];
       var returnType = ReportingV3PaymentBatchSummariesGet200Response;
 
       return this.apiClient.callApi(

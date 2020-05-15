@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsidrefundsPaymentInformationCard', 'model/Ptsv2paymentsidrefundsPaymentInformationPaymentType'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsidrefundsPaymentInformationCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'), require('./Ptsv2paymentsidrefundsPaymentInformationPaymentType'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationPaymentType);
+    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsidrefundsPaymentInformationCard, Ptsv2paymentsidrefundsPaymentInformationPaymentType) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsidrefundsPaymentInformationCard) {
   'use strict';
 
 
@@ -82,7 +82,7 @@
         obj['customer'] = Ptsv2paymentsPaymentInformationCustomer.constructFromObject(data['customer']);
       }
       if (data.hasOwnProperty('paymentType')) {
-        obj['paymentType'] = Ptsv2paymentsidrefundsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
+        obj['paymentType'] = Ptsv2paymentsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
       }
     }
     return obj;
@@ -109,7 +109,7 @@
    */
   exports.prototype['customer'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsidrefundsPaymentInformationPaymentType} paymentType
+   * @member {module:model/Ptsv2paymentsPaymentInformationPaymentType} paymentType
    */
   exports.prototype['paymentType'] = undefined;
 

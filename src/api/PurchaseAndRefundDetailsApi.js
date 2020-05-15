@@ -106,7 +106,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json'];
+      var accepts = ['application/hal+json', 'application/xml', 'text/csv'];
       var returnType = ReportingV3PurchaseRefundDetailsGet200Response;
 
       return this.apiClient.callApi(

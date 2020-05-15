@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Riskv1decisionsOrderInformationLineItems);
     });
 
+    it('should have the property totalAmount (base name: "totalAmount")', function() {
+      // uncomment below and update the code to test the property totalAmount
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
     it('should have the property unitPrice (base name: "unitPrice")', function() {
       // uncomment below and update the code to test the property unitPrice
       //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
@@ -68,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property giftCardCurrency (base name: "giftCardCurrency")', function() {
+      // uncomment below and update the code to test the property giftCardCurrency
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
     it('should have the property productSKU (base name: "productSKU")', function() {
       // uncomment below and update the code to test the property productSKU
       //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
@@ -76,6 +88,12 @@
 
     it('should have the property productRisk (base name: "productRisk")', function() {
       // uncomment below and update the code to test the property productRisk
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productDescription (base name: "productDescription")', function() {
+      // uncomment below and update the code to test the property productDescription
       //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
       //expect(instance).to.be();
     });
@@ -106,6 +124,18 @@
 
     it('should have the property passenger (base name: "passenger")', function() {
       // uncomment below and update the code to test the property passenger
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingDestinationTypes (base name: "shippingDestinationTypes")', function() {
+      // uncomment below and update the code to test the property shippingDestinationTypes
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxAmount (base name: "taxAmount")', function() {
+      // uncomment below and update the code to test the property taxAmount
       //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
       //expect(instance).to.be();
     });

@@ -68,8 +68,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property departureDateTime (base name: "departureDateTime")', function() {
-      // uncomment below and update the code to test the property departureDateTime
+    it('should have the property carrierCode (base name: "carrierCode")', function() {
+      // uncomment below and update the code to test the property carrierCode
+      //var instane = new CyberSource.Riskv1decisionsTravelInformationLegs();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property departureDate (base name: "departureDate")', function() {
+      // uncomment below and update the code to test the property departureDate
       //var instane = new CyberSource.Riskv1decisionsTravelInformationLegs();
       //expect(instance).to.be();
     });

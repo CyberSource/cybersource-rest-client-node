@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cardVerification (base name: "cardVerification")', function() {
+      // uncomment below and update the code to test the property cardVerification
+      //var instane = new CyberSource.Riskv1decisionsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

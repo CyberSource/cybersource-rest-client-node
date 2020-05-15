@@ -73,7 +73,7 @@
   }
 
   /**
-   * IP address of the customer. 
+   * IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. 
    * @member {String} ipAddress
    */
   exports.prototype['ipAddress'] = undefined;

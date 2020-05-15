@@ -62,6 +62,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property preOrder (base name: "preOrder")', function() {
+      // uncomment below and update the code to test the property preOrder
+      //var instane = new CyberSource.Riskv1decisionsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preOrderDate (base name: "preOrderDate")', function() {
+      // uncomment below and update the code to test the property preOrderDate
+      //var instane = new CyberSource.Riskv1decisionsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reordered (base name: "reordered")', function() {
+      // uncomment below and update the code to test the property reordered
+      //var instane = new CyberSource.Riskv1decisionsOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property shippingDetails (base name: "shippingDetails")', function() {
       // uncomment below and update the code to test the property shippingDetails
       //var instane = new CyberSource.Riskv1decisionsOrderInformation();
@@ -88,6 +106,12 @@
 
     it('should have the property billTo (base name: "billTo")', function() {
       // uncomment below and update the code to test the property billTo
+      //var instane = new CyberSource.Riskv1decisionsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalOffersCount (base name: "totalOffersCount")', function() {
+      // uncomment below and update the code to test the property totalOffersCount
       //var instane = new CyberSource.Riskv1decisionsOrderInformation();
       //expect(instance).to.be();
     });

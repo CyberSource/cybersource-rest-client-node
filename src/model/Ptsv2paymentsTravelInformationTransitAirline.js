@@ -251,7 +251,7 @@
    */
   exports.prototype['transactionType'] = undefined;
   /**
-   * Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets.. 
+   * The field is not currently supported. 
    * @member {String} extendedPaymentCode
    */
   exports.prototype['extendedPaymentCode'] = undefined;
@@ -271,12 +271,12 @@
    */
   exports.prototype['documentType'] = undefined;
   /**
-   * Ticket number or a value that might be a booking reference number. 
+   * The field is not currently supported. 
    * @member {String} documentNumber
    */
   exports.prototype['documentNumber'] = undefined;
   /**
-   * Number of travel legs. Numbering for the travel legs: 0 to 3. 
+   * The field is not currently supported. 
    * @member {Number} documentNumberOfParts
    */
   exports.prototype['documentNumberOfParts'] = undefined;
@@ -386,7 +386,7 @@
    */
   exports.prototype['exchangeTicketFeeAmount'] = undefined;
   /**
-   * Type of journey such as one way or round trip. 
+   * The field is not currently supported. 
    * @member {String} reservationType
    */
   exports.prototype['reservationType'] = undefined;

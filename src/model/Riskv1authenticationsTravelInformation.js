@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationsTravelInformationLegs', 'model/Riskv1authenticationsTravelInformationPassengers'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsTravelInformationLegs', 'model/Riskv1decisionsTravelInformationPassengers'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationsTravelInformationLegs'), require('./Riskv1authenticationsTravelInformationPassengers'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsTravelInformationLegs'), require('./Riskv1decisionsTravelInformationPassengers'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1authenticationsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationsTravelInformationLegs, root.CyberSource.Riskv1authenticationsTravelInformationPassengers);
+    root.CyberSource.Riskv1authenticationsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsTravelInformationLegs, root.CyberSource.Riskv1decisionsTravelInformationPassengers);
   }
-}(this, function(ApiClient, Riskv1authenticationsTravelInformationLegs, Riskv1authenticationsTravelInformationPassengers) {
+}(this, function(ApiClient, Riskv1decisionsTravelInformationLegs, Riskv1decisionsTravelInformationPassengers) {
   'use strict';
 
 
@@ -64,20 +64,20 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('legs')) {
-        obj['legs'] = ApiClient.convertToType(data['legs'], [Riskv1authenticationsTravelInformationLegs]);
+        obj['legs'] = ApiClient.convertToType(data['legs'], [Riskv1decisionsTravelInformationLegs]);
       }
       if (data.hasOwnProperty('numberOfPassengers')) {
         obj['numberOfPassengers'] = ApiClient.convertToType(data['numberOfPassengers'], 'Number');
       }
       if (data.hasOwnProperty('passengers')) {
-        obj['passengers'] = ApiClient.convertToType(data['passengers'], [Riskv1authenticationsTravelInformationPassengers]);
+        obj['passengers'] = ApiClient.convertToType(data['passengers'], [Riskv1decisionsTravelInformationPassengers]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/Riskv1authenticationsTravelInformationLegs>} legs
+   * @member {Array.<module:model/Riskv1decisionsTravelInformationLegs>} legs
    */
   exports.prototype['legs'] = undefined;
   /**
@@ -86,7 +86,7 @@
    */
   exports.prototype['numberOfPassengers'] = undefined;
   /**
-   * @member {Array.<module:model/Riskv1authenticationsTravelInformationPassengers>} passengers
+   * @member {Array.<module:model/Riskv1decisionsTravelInformationPassengers>} passengers
    */
   exports.prototype['passengers'] = undefined;
 

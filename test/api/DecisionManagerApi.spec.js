@@ -60,10 +60,10 @@
         done();
       });
     });
-    describe('createDecisionManagerCase', function() {
-      it('should call createDecisionManagerCase successfully', function(done) {
-        //uncomment below and update the code to test createDecisionManagerCase
-        //instance.createDecisionManagerCase(function(error) {
+    describe('createBundledDecisionManagerCase', function() {
+      it('should call createBundledDecisionManagerCase successfully', function(done) {
+        //uncomment below and update the code to test createBundledDecisionManagerCase
+        //instance.createBundledDecisionManagerCase(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

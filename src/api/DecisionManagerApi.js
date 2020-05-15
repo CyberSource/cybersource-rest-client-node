@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddNegativeListRequest', 'model/CreateDecisionManagerCaseRequest', 'model/FraudMarkingActionRequest', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1UpdatePost201Response'], factory);
+    define(['ApiClient', 'model/AddNegativeListRequest', 'model/CreateBundledDecisionManagerCaseRequest', 'model/FraudMarkingActionRequest', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1DecisionsPost400Response1', 'model/RiskV1UpdatePost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AddNegativeListRequest'), require('../model/CreateDecisionManagerCaseRequest'), require('../model/FraudMarkingActionRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1UpdatePost201Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddNegativeListRequest'), require('../model/CreateBundledDecisionManagerCaseRequest'), require('../model/FraudMarkingActionRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1DecisionsPost400Response1'), require('../model/RiskV1UpdatePost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DecisionManagerApi = factory(root.CyberSource.ApiClient, root.CyberSource.AddNegativeListRequest, root.CyberSource.CreateDecisionManagerCaseRequest, root.CyberSource.FraudMarkingActionRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1UpdatePost201Response);
+    root.CyberSource.DecisionManagerApi = factory(root.CyberSource.ApiClient, root.CyberSource.AddNegativeListRequest, root.CyberSource.CreateBundledDecisionManagerCaseRequest, root.CyberSource.FraudMarkingActionRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1DecisionsPost400Response1, root.CyberSource.RiskV1UpdatePost201Response);
   }
-}(this, function(ApiClient, AddNegativeListRequest, CreateDecisionManagerCaseRequest, FraudMarkingActionRequest, PtsV2PaymentsPost502Response, RiskV1DecisionsPost201Response, RiskV1DecisionsPost400Response, RiskV1UpdatePost201Response) {
+}(this, function(ApiClient, AddNegativeListRequest, CreateBundledDecisionManagerCaseRequest, FraudMarkingActionRequest, PtsV2PaymentsPost502Response, RiskV1DecisionsPost201Response, RiskV1DecisionsPost400Response, RiskV1DecisionsPost400Response1, RiskV1UpdatePost201Response) {
   'use strict';
 
   /**
@@ -102,8 +102,8 @@
     }
 
     /**
-     * Callback function to receive the result of the createDecisionManagerCase operation.
-     * @callback module:api/DecisionManagerApi~createDecisionManagerCaseCallback
+     * Callback function to receive the result of the createBundledDecisionManagerCase operation.
+     * @callback module:api/DecisionManagerApi~createBundledDecisionManagerCaseCallback
      * @param {String} error Error message, if any.
      * @param {module:model/RiskV1DecisionsPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -111,17 +111,17 @@
 
     /**
      * Create Decision Manager Case
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
-     * @param {module:model/CreateDecisionManagerCaseRequest} createDecisionManagerCaseRequest 
-     * @param {module:api/DecisionManagerApi~createDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
+     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+     * @param {module:model/CreateBundledDecisionManagerCaseRequest} createBundledDecisionManagerCaseRequest 
+     * @param {module:api/DecisionManagerApi~createBundledDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1DecisionsPost201Response}
      */
-    this.createDecisionManagerCase = function(createDecisionManagerCaseRequest, callback) {
-      var postBody = createDecisionManagerCaseRequest;
+    this.createBundledDecisionManagerCase = function(createBundledDecisionManagerCaseRequest, callback) {
+      var postBody = createBundledDecisionManagerCaseRequest;
 
-      // verify the required parameter 'createDecisionManagerCaseRequest' is set
-      if (createDecisionManagerCaseRequest === undefined || createDecisionManagerCaseRequest === null) {
-        throw new Error("Missing the required parameter 'createDecisionManagerCaseRequest' when calling createDecisionManagerCase");
+      // verify the required parameter 'createBundledDecisionManagerCaseRequest' is set
+      if (createBundledDecisionManagerCaseRequest === undefined || createBundledDecisionManagerCaseRequest === null) {
+        throw new Error("Missing the required parameter 'createBundledDecisionManagerCaseRequest' when calling createBundledDecisionManagerCase");
       }
 
 

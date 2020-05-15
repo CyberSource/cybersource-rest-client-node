@@ -87,7 +87,7 @@
    */
   exports.prototype['solutionId'] = undefined;
   /**
-   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet. 
+   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization, Authorization Reversal, Capture, Credit, Incremental Authorization, and Void** Optional field. 
    * @member {String} thirdPartyCertificationNumber
    */
   exports.prototype['thirdPartyCertificationNumber'] = undefined;
