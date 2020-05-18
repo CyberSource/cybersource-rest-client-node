@@ -64,5 +64,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json
+ - **Accept**: application/hal+json, text/csv, application/xml
 

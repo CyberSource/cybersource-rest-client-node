@@ -4,7 +4,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**mitVoid**](VoidApi.md#mitVoid) | **POST** /pts/v2/voids/ | Merchant Initiated Void
+[**mitVoid**](VoidApi.md#mitVoid) | **POST** /pts/v2/voids/ | Timeout Void
 [**voidCapture**](VoidApi.md#voidCapture) | **POST** /pts/v2/captures/{id}/voids | Void a Capture
 [**voidCredit**](VoidApi.md#voidCredit) | **POST** /pts/v2/credits/{id}/voids | Void a Credit
 [**voidPayment**](VoidApi.md#voidPayment) | **POST** /pts/v2/payments/{id}/voids | Void a Payment
@@ -15,9 +15,9 @@ Method | HTTP request | Description
 # **mitVoid**
 > PtsV2PaymentsVoidsPost201Response mitVoid(mitVoidRequest)
 
-Merchant Initiated Void
+Timeout Void
 
-This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
+This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to timeout). This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in your payment, capture, refund, or credit API call and use same transactionId in this API request payload to reverse the payment.
 
 ### Example
 ```javascript
@@ -63,7 +63,7 @@ No authorization required
 
 Void a Capture
 
-Include the capture ID in the POST request to cancel the capture.
+Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
 
 ### Example
 ```javascript
@@ -161,7 +161,7 @@ No authorization required
 
 Void a Payment
 
-Include the payment ID in the POST request to cancel the payment.
+Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
 
 ### Example
 ```javascript

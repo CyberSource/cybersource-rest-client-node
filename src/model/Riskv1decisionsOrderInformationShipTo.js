@@ -41,12 +41,14 @@
 
   /**
    * Constructs a new <code>Riskv1decisionsOrderInformationShipTo</code>.
-   * Contains recipient shipping information.
    * @alias module:model/Riskv1decisionsOrderInformationShipTo
    * @class
    */
   var exports = function() {
     var _this = this;
+
+
+
 
 
 
@@ -82,6 +84,9 @@
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
       }
+      if (data.hasOwnProperty('destinationTypes')) {
+        obj['destinationTypes'] = ApiClient.convertToType(data['destinationTypes'], 'String');
+      }
       if (data.hasOwnProperty('locality')) {
         obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
       }
@@ -97,42 +102,53 @@
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
+      if (data.hasOwnProperty('destinationCode')) {
+        obj['destinationCode'] = ApiClient.convertToType(data['destinationCode'], 'Number');
+      }
+      if (data.hasOwnProperty('method')) {
+        obj['method'] = ApiClient.convertToType(data['method'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * First line of the shipping address.
+   * First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
   /**
-   * Second line of the shipping address.
+   * Second line of the shipping address.  Optional field. 
    * @member {String} address2
    */
   exports.prototype['address2'] = undefined;
   /**
-   * State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. 
+   * State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
   /**
-   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
+   * Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
   /**
-   * City of the shipping address.
+   * Shipping destination of item. Example: Commercial, Residential, Store 
+   * @member {String} destinationTypes
+   */
+  exports.prototype['destinationTypes'] = undefined;
+  /**
+   * City of the shipping address.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. 
    * @member {String} locality
    */
   exports.prototype['locality'] = undefined;
   /**
-   * First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
+   * First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
   /**
-   * Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 
+   * Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
@@ -142,10 +158,20 @@
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
-   * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side. 
+   * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  #### American Express Direct Before sending the postal code to the processor, all nonalphanumeric characters are removed and, if the remaining value is longer than nine characters, the value is truncated starting from the right side. 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
+  /**
+   * Indicates destination chosen for the transaction. Possible values: - 01- Ship to cardholder billing address - 02- Ship to another verified address on file with merchant - 03- Ship to address that is different than billing address - 04- Ship to store (store address should be populated on request) - 05- Digital goods - 06- Travel and event tickets, not shipped - 07- Other 
+   * @member {Number} destinationCode
+   */
+  exports.prototype['destinationCode'] = undefined;
+  /**
+   * Shipping method for the product. Possible values: - lowcost: Lowest-cost service - sameday: Courier or same-day service - oneday: Next-day or overnight service - twoday: Two-day service - threeday: Three-day service - pickup: Store pick-up - other: Other shipping method - none: No shipping method because product is a service or subscription Required for American Express SafeKey (U.S.). 
+   * @member {String} method
+   */
+  exports.prototype['method'] = undefined;
 
 
 

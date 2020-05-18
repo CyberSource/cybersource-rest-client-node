@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseRiskInformation', 'model/RiskV1DecisionsPost201ResponsePaymentInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseRiskInformation', 'model/RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation', 'model/RiskV1DecisionsPost201ResponseErrorInformation', 'model/RiskV1DecisionsPost201ResponseOrderInformation', 'model/RiskV1DecisionsPost201ResponsePaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseRiskInformation'), require('./RiskV1DecisionsPost201ResponsePaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseRiskInformation'), require('./RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation'), require('./RiskV1DecisionsPost201ResponseErrorInformation'), require('./RiskV1DecisionsPost201ResponseOrderInformation'), require('./RiskV1DecisionsPost201ResponsePaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1DecisionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation, root.CyberSource.RiskV1DecisionsPost201ResponsePaymentInformation);
+    root.CyberSource.RiskV1DecisionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation, root.CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation, root.CyberSource.RiskV1DecisionsPost201ResponseErrorInformation, root.CyberSource.RiskV1DecisionsPost201ResponseOrderInformation, root.CyberSource.RiskV1DecisionsPost201ResponsePaymentInformation);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformation, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseRiskInformation, RiskV1DecisionsPost201ResponsePaymentInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseRiskInformation, RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation, RiskV1DecisionsPost201ResponseErrorInformation, RiskV1DecisionsPost201ResponseOrderInformation, RiskV1DecisionsPost201ResponsePaymentInformation) {
   'use strict';
 
 
@@ -46,6 +46,9 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
 
 
 
@@ -89,8 +92,17 @@
       if (data.hasOwnProperty('paymentInformation')) {
         obj['paymentInformation'] = RiskV1DecisionsPost201ResponsePaymentInformation.constructFromObject(data['paymentInformation']);
       }
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      }
+      if (data.hasOwnProperty('orderInformation')) {
+        obj['orderInformation'] = RiskV1DecisionsPost201ResponseOrderInformation.constructFromObject(data['orderInformation']);
+      }
+      if (data.hasOwnProperty('consumerAuthenticationInformation')) {
+        obj['consumerAuthenticationInformation'] = RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
+      }
       if (data.hasOwnProperty('errorInformation')) {
-        obj['errorInformation'] = PtsV2PaymentsPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
+        obj['errorInformation'] = RiskV1DecisionsPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
       }
     }
     return obj;
@@ -106,7 +118,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. 
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
@@ -116,7 +128,7 @@
    */
   exports.prototype['submitTimeLocal'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `CHALLENGE`   - `PENDING_AUTHENTICATION` 
+   * The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `PENDING_AUTHENTICATION`   - `INVALID_REQUEST`   - `AUTHENTICATION_FAILED`   - `CHALLENGE` 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
@@ -129,7 +141,19 @@
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseErrorInformation} errorInformation
+   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation} clientReferenceInformation
+   */
+  exports.prototype['clientReferenceInformation'] = undefined;
+  /**
+   * @member {module:model/RiskV1DecisionsPost201ResponseOrderInformation} orderInformation
+   */
+  exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {module:model/RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation} consumerAuthenticationInformation
+   */
+  exports.prototype['consumerAuthenticationInformation'] = undefined;
+  /**
+   * @member {module:model/RiskV1DecisionsPost201ResponseErrorInformation} errorInformation
    */
   exports.prototype['errorInformation'] = undefined;
 

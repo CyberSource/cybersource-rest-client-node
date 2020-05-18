@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addNegative**](DecisionManagerApi.md#addNegative) | **POST** /risk/v1/lists/{type}/entries | List Management
-[**createDecisionManagerCase**](DecisionManagerApi.md#createDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
+[**createBundledDecisionManagerCase**](DecisionManagerApi.md#createBundledDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
 [**fraudUpdate**](DecisionManagerApi.md#fraudUpdate) | **POST** /risk/v1/decisions/{id}/marking | Fraud Marking
 
 
@@ -58,13 +58,13 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/hal+json;charset=utf-8
 
-<a name="createDecisionManagerCase"></a>
-# **createDecisionManagerCase**
-> RiskV1DecisionsPost201Response createDecisionManagerCase(createDecisionManagerCaseRequest)
+<a name="createBundledDecisionManagerCase"></a>
+# **createBundledDecisionManagerCase**
+> RiskV1DecisionsPost201Response createBundledDecisionManagerCase(createBundledDecisionManagerCaseRequest)
 
 Create Decision Manager Case
 
-This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
+This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
 
 ### Example
 ```javascript
@@ -72,7 +72,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.DecisionManagerApi();
 
-var createDecisionManagerCaseRequest = new CyberSource.CreateDecisionManagerCaseRequest(); // CreateDecisionManagerCaseRequest | 
+var createBundledDecisionManagerCaseRequest = new CyberSource.CreateBundledDecisionManagerCaseRequest(); // CreateBundledDecisionManagerCaseRequest | 
 
 
 var callback = function(error, data, response) {
@@ -82,14 +82,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createDecisionManagerCase(createDecisionManagerCaseRequest, callback);
+apiInstance.createBundledDecisionManagerCase(createBundledDecisionManagerCaseRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createDecisionManagerCaseRequest** | [**CreateDecisionManagerCaseRequest**](CreateDecisionManagerCaseRequest.md)|  | 
+ **createBundledDecisionManagerCaseRequest** | [**CreateBundledDecisionManagerCaseRequest**](CreateBundledDecisionManagerCaseRequest.md)|  | 
 
 ### Return type
 

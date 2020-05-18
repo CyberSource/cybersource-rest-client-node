@@ -88,7 +88,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/xsds/{reportDefinitionNameVersion}', 'GET',
+        '/reporting/v3/xsds/{reportDefinitionNameVersion}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

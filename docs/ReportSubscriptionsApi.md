@@ -113,7 +113,7 @@ No authorization required
 
 <a name="deleteSubscription"></a>
 # **deleteSubscription**
-> deleteSubscription(reportName)
+> deleteSubscription(reportName, opts)
 
 Delete Subscription of a Report Name by Organization
 
@@ -127,6 +127,9 @@ var apiInstance = new CyberSource.ReportSubscriptionsApi();
 
 var reportName = "reportName_example"; // String | Name of the Report to Delete
 
+var opts = { 
+  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -135,7 +138,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteSubscription(reportName, callback);
+apiInstance.deleteSubscription(reportName, opts, callback);
 ```
 
 ### Parameters
@@ -143,6 +146,7 @@ apiInstance.deleteSubscription(reportName, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Delete | 
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type
 
@@ -159,7 +163,7 @@ No authorization required
 
 <a name="getAllSubscriptions"></a>
 # **getAllSubscriptions**
-> ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions()
+> ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(opts)
 
 Get All Subscriptions
 
@@ -171,6 +175,10 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ReportSubscriptionsApi();
 
+var opts = { 
+  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+};
+
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -178,11 +186,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllSubscriptions(callback);
+apiInstance.getAllSubscriptions(opts, callback);
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type
 
@@ -199,7 +210,7 @@ No authorization required
 
 <a name="getSubscription"></a>
 # **getSubscription**
-> ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(reportName)
+> ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(reportName, opts)
 
 Get Subscription for Report Name
 
@@ -213,6 +224,9 @@ var apiInstance = new CyberSource.ReportSubscriptionsApi();
 
 var reportName = "reportName_example"; // String | Name of the Report to Retrieve
 
+var opts = { 
+  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -221,7 +235,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSubscription(reportName, callback);
+apiInstance.getSubscription(reportName, opts, callback);
 ```
 
 ### Parameters
@@ -229,6 +243,7 @@ apiInstance.getSubscription(reportName, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Retrieve | 
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
 
 ### Return type
 

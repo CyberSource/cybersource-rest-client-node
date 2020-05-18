@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsTravelInformationLegs'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsTravelInformationLegs', 'model/Riskv1decisionsTravelInformationPassengers'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsTravelInformationLegs'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsTravelInformationLegs'), require('./Riskv1decisionsTravelInformationPassengers'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsTravelInformationLegs);
+    root.CyberSource.Riskv1decisionsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsTravelInformationLegs, root.CyberSource.Riskv1decisionsTravelInformationPassengers);
   }
-}(this, function(ApiClient, Riskv1decisionsTravelInformationLegs) {
+}(this, function(ApiClient, Riskv1decisionsTravelInformationLegs, Riskv1decisionsTravelInformationPassengers) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -80,6 +82,12 @@
       if (data.hasOwnProperty('legs')) {
         obj['legs'] = ApiClient.convertToType(data['legs'], [Riskv1decisionsTravelInformationLegs]);
       }
+      if (data.hasOwnProperty('numberOfPassengers')) {
+        obj['numberOfPassengers'] = ApiClient.convertToType(data['numberOfPassengers'], 'Number');
+      }
+      if (data.hasOwnProperty('passengers')) {
+        obj['passengers'] = ApiClient.convertToType(data['passengers'], [Riskv1decisionsTravelInformationPassengers]);
+      }
     }
     return obj;
   }
@@ -108,6 +116,15 @@
    * @member {Array.<module:model/Riskv1decisionsTravelInformationLegs>} legs
    */
   exports.prototype['legs'] = undefined;
+  /**
+   * Number of passengers for whom the ticket was issued. If you do not include this field in your request, CyberSource uses a default value of 1. Required for American Express SafeKey (U.S.) for travel-related requests. 
+   * @member {Number} numberOfPassengers
+   */
+  exports.prototype['numberOfPassengers'] = undefined;
+  /**
+   * @member {Array.<module:model/Riskv1decisionsTravelInformationPassengers>} passengers
+   */
+  exports.prototype['passengers'] = undefined;
 
 
 

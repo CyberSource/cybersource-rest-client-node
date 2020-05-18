@@ -166,7 +166,7 @@
    */
   exports.prototype['commodityCode'] = undefined;
   /**
-   * Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**. 
+   * Identifier for the merchandise. This field is supported only on the processors listed in this field description.  #### American Express Direct Possible value: - 1000: Gift card  #### CyberSource through VisaNet This value must be right justified. In Japan, this value is called a _goods code_.  #### JCN Gateway This value must be right justified. In Japan, this value is called a _goods code_. 
    * @member {Number} merchandiseCode
    */
   exports.prototype['merchandiseCode'] = undefined;
@@ -185,7 +185,7 @@
    */
   exports.prototype['referenceDataNumber'] = undefined;
   /**
-   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. 
+   * Transaction identifier that is generated. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.  Optional field.  #### Card Present processing message If you included this field in the request, the returned value is the value that you sent in the request. If you did not include this field in the request, the system generated this value for you.  The difference between this reply field and the `processorInformation.systemTraceAuditNumber` field is that the system generates the system trace audit number (STAN), and you must print the receipt number on the receipt; whereas you can generate the sales slip number, and you can choose to print the sales slip number on the receipt. 
    * @member {Number} salesSlipNumber
    */
   exports.prototype['salesSlipNumber'] = undefined;

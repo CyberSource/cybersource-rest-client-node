@@ -88,7 +88,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/dtds/{reportDefinitionNameVersion}', 'GET',
+        '/reporting/v3/dtds/{reportDefinitionNameVersion}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -58,8 +58,8 @@
      */
 
     /**
-     * Get User Information
-     * This endpoint is to get all the user information depending on the filter criteria passed in the query.
+     * Get User Information - Deprecated
+     * This endpoint is deprecated. Please use the search end point.
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId This is the orgId of the organization which the user belongs to.
      * @param {String} opts.userName User ID of the user you want to get details on.

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsPaymentInformationCard', 'model/Riskv1decisionsPaymentInformationTokenizedCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Riskv1decisionsPaymentInformationCard', 'model/Riskv1decisionsPaymentInformationCustomer', 'model/Riskv1decisionsPaymentInformationTokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsPaymentInformationCard'), require('./Riskv1decisionsPaymentInformationTokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Riskv1decisionsPaymentInformationCard'), require('./Riskv1decisionsPaymentInformationCustomer'), require('./Riskv1decisionsPaymentInformationTokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsPaymentInformationCard, root.CyberSource.Riskv1decisionsPaymentInformationTokenizedCard);
+    root.CyberSource.Riskv1decisionsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Riskv1decisionsPaymentInformationCard, root.CyberSource.Riskv1decisionsPaymentInformationCustomer, root.CyberSource.Riskv1decisionsPaymentInformationTokenizedCard);
   }
-}(this, function(ApiClient, Riskv1decisionsPaymentInformationCard, Riskv1decisionsPaymentInformationTokenizedCard) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Riskv1decisionsPaymentInformationCard, Riskv1decisionsPaymentInformationCustomer, Riskv1decisionsPaymentInformationTokenizedCard) {
   'use strict';
 
 
@@ -50,6 +50,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -69,6 +72,15 @@
       if (data.hasOwnProperty('tokenizedCard')) {
         obj['tokenizedCard'] = Riskv1decisionsPaymentInformationTokenizedCard.constructFromObject(data['tokenizedCard']);
       }
+      if (data.hasOwnProperty('customer')) {
+        obj['customer'] = Riskv1decisionsPaymentInformationCustomer.constructFromObject(data['customer']);
+      }
+      if (data.hasOwnProperty('bank')) {
+        obj['bank'] = Ptsv2paymentsPaymentInformationBank.constructFromObject(data['bank']);
+      }
+      if (data.hasOwnProperty('method')) {
+        obj['method'] = ApiClient.convertToType(data['method'], 'String');
+      }
     }
     return obj;
   }
@@ -81,6 +93,19 @@
    * @member {module:model/Riskv1decisionsPaymentInformationTokenizedCard} tokenizedCard
    */
   exports.prototype['tokenizedCard'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsPaymentInformationCustomer} customer
+   */
+  exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationBank} bank
+   */
+  exports.prototype['bank'] = undefined;
+  /**
+   * Method of payment used for the order. This field can contain one of the following values:   - `consumer` (default): Customer credit card   - `corporate`: Corporate credit card   - `debit`: Debit card, such as a Maestro (UK Domestic) card   - `cod`: Collect on delivery   - `check`: Electronic check   - `p2p`: Person-to-person payment   - `private1`: Private label credit card   - `other`: Other payment method 
+   * @member {String} method
+   */
+  exports.prototype['method'] = undefined;
 
 
 

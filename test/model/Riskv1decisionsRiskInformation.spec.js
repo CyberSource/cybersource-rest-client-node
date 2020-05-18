@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property buyerHistory (base name: "buyerHistory")', function() {
+      // uncomment below and update the code to test the property buyerHistory
+      //var instane = new CyberSource.Riskv1decisionsRiskInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

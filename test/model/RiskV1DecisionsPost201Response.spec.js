@@ -98,6 +98,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
+      // uncomment below and update the code to test the property clientReferenceInformation
+      //var instane = new CyberSource.RiskV1DecisionsPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderInformation (base name: "orderInformation")', function() {
+      // uncomment below and update the code to test the property orderInformation
+      //var instane = new CyberSource.RiskV1DecisionsPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property consumerAuthenticationInformation (base name: "consumerAuthenticationInformation")', function() {
+      // uncomment below and update the code to test the property consumerAuthenticationInformation
+      //var instane = new CyberSource.RiskV1DecisionsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property errorInformation (base name: "errorInformation")', function() {
       // uncomment below and update the code to test the property errorInformation
       //var instane = new CyberSource.RiskV1DecisionsPost201Response();

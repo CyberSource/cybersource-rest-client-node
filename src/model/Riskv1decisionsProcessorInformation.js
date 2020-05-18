@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsProcessorInformationAvs'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsProcessorInformationAvs', 'model/Riskv1decisionsProcessorInformationCardVerification'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsProcessorInformationAvs'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsProcessorInformationAvs'), require('./Riskv1decisionsProcessorInformationCardVerification'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsProcessorInformationAvs);
+    root.CyberSource.Riskv1decisionsProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsProcessorInformationAvs, root.CyberSource.Riskv1decisionsProcessorInformationCardVerification);
   }
-}(this, function(ApiClient, Riskv1decisionsProcessorInformationAvs) {
+}(this, function(ApiClient, Riskv1decisionsProcessorInformationAvs, Riskv1decisionsProcessorInformationCardVerification) {
   'use strict';
 
 
@@ -49,6 +49,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -65,6 +66,9 @@
       if (data.hasOwnProperty('avs')) {
         obj['avs'] = Riskv1decisionsProcessorInformationAvs.constructFromObject(data['avs']);
       }
+      if (data.hasOwnProperty('cardVerification')) {
+        obj['cardVerification'] = Riskv1decisionsProcessorInformationCardVerification.constructFromObject(data['cardVerification']);
+      }
     }
     return obj;
   }
@@ -73,6 +77,10 @@
    * @member {module:model/Riskv1decisionsProcessorInformationAvs} avs
    */
   exports.prototype['avs'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsProcessorInformationCardVerification} cardVerification
+   */
+  exports.prototype['cardVerification'] = undefined;
 
 
 

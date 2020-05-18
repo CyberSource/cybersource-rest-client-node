@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property initiationChannel (base name: "initiationChannel")', function() {
       // uncomment below and update the code to test the property initiationChannel
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();

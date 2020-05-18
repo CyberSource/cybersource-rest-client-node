@@ -86,12 +86,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property reason (base name: "reason")', function() {
-      // uncomment below and update the code to test the property reason
-      //var instane = new CyberSource.RiskV1AuthenticationsPost201Response();
-      //expect(instance).to.be();
-    });
-
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
       //var instane = new CyberSource.RiskV1AuthenticationsPost201Response();

@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -69,8 +70,11 @@
       if (data.hasOwnProperty('destination')) {
         obj['destination'] = ApiClient.convertToType(data['destination'], 'String');
       }
-      if (data.hasOwnProperty('departureDateTime')) {
-        obj['departureDateTime'] = ApiClient.convertToType(data['departureDateTime'], 'String');
+      if (data.hasOwnProperty('carrierCode')) {
+        obj['carrierCode'] = ApiClient.convertToType(data['carrierCode'], 'String');
+      }
+      if (data.hasOwnProperty('departureDate')) {
+        obj['departureDate'] = ApiClient.convertToType(data['departureDate'], 'String');
       }
     }
     return obj;
@@ -87,10 +91,15 @@
    */
   exports.prototype['destination'] = undefined;
   /**
-   * Departure date and time for the each leg of the trip. Use one of the following formats: - `yyyy-MM-dd HH:mm z` - `yyyy-MM-dd hh:mm a z` - `yyyy-MM-dd hh:mma z`  Where:\\ `HH` = hour in 24-hour format\\ `hh` = hour in 12-hour format\\ `a` = am or pm (case insensitive)\\ `z` = time zone of the departing flight. For example, if the airline is based in city A, but the flight departs from city B, `z` is the time zone of city B at the time of departure.\\ **Important** For travel information, use GMT instead of UTC, or use the local time zone.  #### Examples  2011-03-20 11:30 PM PDT\\ 2011-03-20 11:30pm GMT\\ 2011-03-20 11:30pm GMT-05:00\\ Eastern Standard Time: GMT-05:00 or EST\\  **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. 
-   * @member {String} departureDateTime
+   * International Air Transport Association (IATA) code for the carrier for this leg of the trip. Required for each leg. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see `airline_leg#_carrier_code` in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf) 
+   * @member {String} carrierCode
    */
-  exports.prototype['departureDateTime'] = undefined;
+  exports.prototype['carrierCode'] = undefined;
+  /**
+   * Departure date for the first leg of the trip. Format: YYYYMMDD. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see `airline_leg#_leg_departure_date` in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf) 
+   * @member {String} departureDate
+   */
+  exports.prototype['departureDate'] = undefined;
 
 
 

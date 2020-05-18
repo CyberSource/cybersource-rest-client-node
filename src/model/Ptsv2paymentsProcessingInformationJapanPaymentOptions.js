@@ -107,7 +107,7 @@
    */
   exports.prototype['installments'] = undefined;
   /**
-   * This value is the 13-digit JCCA number.
+   * Unique Japan Credit Card Association (JCCA) terminal identifier.  The difference between this field and the `pointOfSaleInformation.terminalID` field is that you can define `pointOfSaleInformation.terminalID`, but `processingInformation.japanPaymentOptions.terminalId` is defined by the JCCA and is used only in Japan.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field. 
    * @member {String} terminalId
    */
   exports.prototype['terminalId'] = undefined;
@@ -127,7 +127,7 @@
    */
   exports.prototype['businessNameKatakana'] = undefined;
   /**
-   * Japanese Industrial Standard Type 2 (JIS2) track data from the front of the card. This field is supported only on JCN Gateway. 
+   * Japanese Industrial Standard Type 2 (JIS2) track data from the front of the card.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field. 
    * @member {String} jis2TrackData
    */
   exports.prototype['jis2TrackData'] = undefined;

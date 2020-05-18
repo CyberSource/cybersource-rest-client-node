@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsDeviceInformationRawData'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsDeviceInformationRawData'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsDeviceInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Riskv1decisionsDeviceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsDeviceInformationRawData);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsDeviceInformationRawData) {
   'use strict';
 
 
@@ -46,6 +46,17 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -84,6 +95,39 @@
       if (data.hasOwnProperty('userAgent')) {
         obj['userAgent'] = ApiClient.convertToType(data['userAgent'], 'String');
       }
+      if (data.hasOwnProperty('rawData')) {
+        obj['rawData'] = ApiClient.convertToType(data['rawData'], [Ptsv2paymentsDeviceInformationRawData]);
+      }
+      if (data.hasOwnProperty('httpAcceptBrowserValue')) {
+        obj['httpAcceptBrowserValue'] = ApiClient.convertToType(data['httpAcceptBrowserValue'], 'String');
+      }
+      if (data.hasOwnProperty('httpAcceptContent')) {
+        obj['httpAcceptContent'] = ApiClient.convertToType(data['httpAcceptContent'], 'String');
+      }
+      if (data.hasOwnProperty('httpBrowserLanguage')) {
+        obj['httpBrowserLanguage'] = ApiClient.convertToType(data['httpBrowserLanguage'], 'String');
+      }
+      if (data.hasOwnProperty('httpBrowserJavaEnabled')) {
+        obj['httpBrowserJavaEnabled'] = ApiClient.convertToType(data['httpBrowserJavaEnabled'], 'Boolean');
+      }
+      if (data.hasOwnProperty('httpBrowserJavaScriptEnabled')) {
+        obj['httpBrowserJavaScriptEnabled'] = ApiClient.convertToType(data['httpBrowserJavaScriptEnabled'], 'Boolean');
+      }
+      if (data.hasOwnProperty('httpBrowserColorDepth')) {
+        obj['httpBrowserColorDepth'] = ApiClient.convertToType(data['httpBrowserColorDepth'], 'String');
+      }
+      if (data.hasOwnProperty('httpBrowserScreenHeight')) {
+        obj['httpBrowserScreenHeight'] = ApiClient.convertToType(data['httpBrowserScreenHeight'], 'String');
+      }
+      if (data.hasOwnProperty('httpBrowserScreenWidth')) {
+        obj['httpBrowserScreenWidth'] = ApiClient.convertToType(data['httpBrowserScreenWidth'], 'String');
+      }
+      if (data.hasOwnProperty('httpBrowserTimeDifference')) {
+        obj['httpBrowserTimeDifference'] = ApiClient.convertToType(data['httpBrowserTimeDifference'], 'String');
+      }
+      if (data.hasOwnProperty('userAgentBrowserValue')) {
+        obj['userAgentBrowserValue'] = ApiClient.convertToType(data['userAgentBrowserValue'], 'String');
+      }
     }
     return obj;
   }
@@ -94,7 +138,7 @@
    */
   exports.prototype['cookiesAccepted'] = undefined;
   /**
-   * IP address of the customer. 
+   * IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. 
    * @member {String} ipAddress
    */
   exports.prototype['ipAddress'] = undefined;
@@ -118,6 +162,60 @@
    * @member {String} userAgent
    */
   exports.prototype['userAgent'] = undefined;
+  /**
+   * @member {Array.<module:model/Ptsv2paymentsDeviceInformationRawData>} rawData
+   */
+  exports.prototype['rawData'] = undefined;
+  /**
+   * Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request. 
+   * @member {String} httpAcceptBrowserValue
+   */
+  exports.prototype['httpAcceptBrowserValue'] = undefined;
+  /**
+   * The exact content of the HTTP accept header. 
+   * @member {String} httpAcceptContent
+   */
+  exports.prototype['httpAcceptContent'] = undefined;
+  /**
+   * Value represents the browser language as defined in IETF BCP47. Example:en-US, refer  https://en.wikipedia.org/wiki/IETF_language_tag for more details. 
+   * @member {String} httpBrowserLanguage
+   */
+  exports.prototype['httpBrowserLanguage'] = undefined;
+  /**
+   * A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False 
+   * @member {Boolean} httpBrowserJavaEnabled
+   */
+  exports.prototype['httpBrowserJavaEnabled'] = undefined;
+  /**
+   * A Boolean value that represents the ability of the cardholder browser to execute JavaScript. Possible Values:True/False. **Note**: Merchants should be able to know the values from fingerprint details of cardholder's browser. 
+   * @member {Boolean} httpBrowserJavaScriptEnabled
+   */
+  exports.prototype['httpBrowserJavaScriptEnabled'] = undefined;
+  /**
+   * Value represents the bit depth of the color palette for displaying images, in bits per pixel. Example : 24, refer https://en.wikipedia.org/wiki/Color_depth for more details 
+   * @member {String} httpBrowserColorDepth
+   */
+  exports.prototype['httpBrowserColorDepth'] = undefined;
+  /**
+   * Total height of the Cardholder's scree in pixels, example: 864. 
+   * @member {String} httpBrowserScreenHeight
+   */
+  exports.prototype['httpBrowserScreenHeight'] = undefined;
+  /**
+   * Total width of the cardholder's screen in pixels. Example: 1536. 
+   * @member {String} httpBrowserScreenWidth
+   */
+  exports.prototype['httpBrowserScreenWidth'] = undefined;
+  /**
+   * Time difference between UTC time and the cardholder browser local time, in minutes, Example:300 
+   * @member {String} httpBrowserTimeDifference
+   */
+  exports.prototype['httpBrowserTimeDifference'] = undefined;
+  /**
+   * Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request. 
+   * @member {String} userAgentBrowserValue
+   */
+  exports.prototype['userAgentBrowserValue'] = undefined;
 
 
 

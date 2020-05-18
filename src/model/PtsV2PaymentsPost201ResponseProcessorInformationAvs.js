@@ -73,12 +73,12 @@
   }
 
   /**
-   * AVS result code. 
+   * AVS result code.  Returned by authorization service. 
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
   /**
-   * AVS result code sent directly from the processor. Returned only when the processor returns this value. Important Do not use this field to evaluate the result of AVS. Use for debugging purposes only. 
+   * AVS result code sent directly from the processor. Returned only when the processor returns this value. **Important** Do not use this field to evaluate the result of AVS. Use for debugging purposes only.  Returned by authorization service. 
    * @member {String} codeRaw
    */
   exports.prototype['codeRaw'] = undefined;

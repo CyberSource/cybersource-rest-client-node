@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsProcessingInformation);
     });
 
+    it('should have the property actionList (base name: "actionList")', function() {
+      // uncomment below and update the code to test the property actionList
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property capture (base name: "capture")', function() {
       // uncomment below and update the code to test the property capture
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();

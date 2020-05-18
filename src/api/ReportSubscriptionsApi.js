@@ -157,9 +157,12 @@
      * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param {String} reportName Name of the Report to Delete
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/ReportSubscriptionsApi~deleteSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteSubscription = function(reportName, callback) {
+    this.deleteSubscription = function(reportName, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'reportName' is set
@@ -172,6 +175,7 @@
         'reportName': reportName
       };
       var queryParams = {
+        'organizationId': opts['organizationId']
       };
       var headerParams = {
       };
@@ -201,16 +205,20 @@
     /**
      * Get All Subscriptions
      * View a summary of all report subscriptions. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/ReportSubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200Response}
      */
-    this.getAllSubscriptions = function(callback) {
+    this.getAllSubscriptions = function(opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'organizationId': opts['organizationId']
       };
       var headerParams = {
       };
@@ -241,10 +249,13 @@
      * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param {String} reportName Name of the Report to Retrieve
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/ReportSubscriptionsApi~getSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions}
      */
-    this.getSubscription = function(reportName, callback) {
+    this.getSubscription = function(reportName, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'reportName' is set
@@ -257,6 +268,7 @@
         'reportName': reportName
       };
       var queryParams = {
+        'organizationId': opts['organizationId']
       };
       var headerParams = {
       };

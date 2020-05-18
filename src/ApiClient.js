@@ -97,6 +97,11 @@
      * The filepath where reports are downloaded
      */
     this.downloadFilePath = '';
+
+    /**
+     * The user-defined Accept Header Type
+     */
+    this.acceptHeader = '';
   };
 
   /**
@@ -537,6 +542,11 @@
     }
 
     var accept = this.jsonPreferredMime(accepts);
+
+    if (this.acceptHeader) {
+      accept = this.acceptHeader;
+    }
+
     if (accept) {
       request.accept(accept);
       /* Code for downloading file from stream */

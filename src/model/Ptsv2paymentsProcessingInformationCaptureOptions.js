@@ -87,7 +87,7 @@
    */
   exports.prototype['totalCaptureCount'] = undefined;
   /**
-   * Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet.\\ `Format: MMDD` 
+   * Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet. Format: `MMDD`  #### Used by **Authorization** Optional field. 
    * @member {String} dateToCapture
    */
   exports.prototype['dateToCapture'] = undefined;

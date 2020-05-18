@@ -4,16 +4,16 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUsers**](UserManagementApi.md#getUsers) | **GET** /ums/v1/users | Get User Information
+[**getUsers**](UserManagementApi.md#getUsers) | **GET** /ums/v1/users | Get User Information - Deprecated
 
 
 <a name="getUsers"></a>
 # **getUsers**
 > UmsV1UsersGet200Response getUsers(opts)
 
-Get User Information
+Get User Information - Deprecated
 
-This endpoint is to get all the user information depending on the filter criteria passed in the query.
+This endpoint is deprecated. Please use the search end point.
 
 ### Example
 ```javascript

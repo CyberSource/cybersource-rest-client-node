@@ -85,22 +85,22 @@
   }
 
   /**
-   * First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
+   * First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
   /**
-   * Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 
+   * Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * First line of the shipping address.
+   * First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
   /**
-   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
+   * Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
    * @member {String} country
    */
   exports.prototype['country'] = undefined;

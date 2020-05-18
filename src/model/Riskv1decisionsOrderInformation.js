@@ -54,6 +54,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -70,6 +74,15 @@
       if (data.hasOwnProperty('amountDetails')) {
         obj['amountDetails'] = Riskv1decisionsOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
+      if (data.hasOwnProperty('preOrder')) {
+        obj['preOrder'] = ApiClient.convertToType(data['preOrder'], 'String');
+      }
+      if (data.hasOwnProperty('preOrderDate')) {
+        obj['preOrderDate'] = ApiClient.convertToType(data['preOrderDate'], 'String');
+      }
+      if (data.hasOwnProperty('reordered')) {
+        obj['reordered'] = ApiClient.convertToType(data['reordered'], 'Boolean');
+      }
       if (data.hasOwnProperty('shippingDetails')) {
         obj['shippingDetails'] = Riskv1decisionsOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
       }
@@ -85,6 +98,9 @@
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = Riskv1decisionsOrderInformationBillTo.constructFromObject(data['billTo']);
       }
+      if (data.hasOwnProperty('totalOffersCount')) {
+        obj['totalOffersCount'] = ApiClient.convertToType(data['totalOffersCount'], 'String');
+      }
     }
     return obj;
   }
@@ -93,6 +109,21 @@
    * @member {module:model/Riskv1decisionsOrderInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
+  /**
+   * Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability 
+   * @member {String} preOrder
+   */
+  exports.prototype['preOrder'] = undefined;
+  /**
+   * Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD 
+   * @member {String} preOrderDate
+   */
+  exports.prototype['preOrderDate'] = undefined;
+  /**
+   * Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered 
+   * @member {Boolean} reordered
+   */
+  exports.prototype['reordered'] = undefined;
   /**
    * @member {module:model/Riskv1decisionsOrderInformationShippingDetails} shippingDetails
    */
@@ -115,6 +146,11 @@
    * @member {module:model/Riskv1decisionsOrderInformationBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
+  /**
+   * Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99 
+   * @member {String} totalOffersCount
+   */
+  exports.prototype['totalOffersCount'] = undefined;
 
 
 
