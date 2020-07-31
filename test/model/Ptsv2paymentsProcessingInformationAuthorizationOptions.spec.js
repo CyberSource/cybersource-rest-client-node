@@ -134,6 +134,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transitTransactionType (base name: "transitTransactionType")', function() {
+      // uncomment below and update the code to test the property transitTransactionType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property aggregatedAuthIndicator (base name: "aggregatedAuthIndicator")', function() {
+      // uncomment below and update the code to test the property aggregatedAuthIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property debtRecoveryIndicator (base name: "debtRecoveryIndicator")', function() {
+      // uncomment below and update the code to test the property debtRecoveryIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property deferredAuthIndicator (base name: "deferredAuthIndicator")', function() {
+      // uncomment below and update the code to test the property deferredAuthIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

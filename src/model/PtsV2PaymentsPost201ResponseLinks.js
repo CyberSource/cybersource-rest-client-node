@@ -50,6 +50,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -72,6 +76,18 @@
       if (data.hasOwnProperty('capture')) {
         obj['capture'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['capture']);
       }
+      if (data.hasOwnProperty('customer')) {
+        obj['customer'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['customer']);
+      }
+      if (data.hasOwnProperty('paymentInstrument')) {
+        obj['paymentInstrument'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['paymentInstrument']);
+      }
+      if (data.hasOwnProperty('shippingAddress')) {
+        obj['shippingAddress'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['shippingAddress']);
+      }
+      if (data.hasOwnProperty('instrumentIdentifier')) {
+        obj['instrumentIdentifier'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['instrumentIdentifier']);
+      }
     }
     return obj;
   }
@@ -88,6 +104,22 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} capture
    */
   exports.prototype['capture'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} customer
+   */
+  exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} paymentInstrument
+   */
+  exports.prototype['paymentInstrument'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} shippingAddress
+   */
+  exports.prototype['shippingAddress'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} instrumentIdentifier
+   */
+  exports.prototype['instrumentIdentifier'] = undefined;
 
 
 

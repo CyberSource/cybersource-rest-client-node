@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **locality** | **String** | City in the address of the company purchasing the product. | [optional] 
 **administrativeArea** | **String** | State or province in the address of the company purchasing the product. Use the State, Province, and Territory Codes for the United States and Canada.  | [optional] 
 **postalCode** | **String** | Postal code in the address of the company purchasing the product. The postal code must consist of 5 to 9 digits.  When the company country is the U.S., the 9-digit postal code must follow this format: **[5 digits][dash][4 digits]** #### Example &#x60;12345-6789&#x60;  When the company country is Canada, the 6-digit postal code must follow this format: **[alpha][numeric][alpha][space][numeric][alpha][numeric]** #### Example &#x60;A1B 2C3&#x60;  | [optional] 
-**country** | **String** | Country in the address of the company purchasing the product. Use the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  | [optional] 
+**country** | **String** | Country in the address of the company purchasing the product. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  | [optional] 
 
 

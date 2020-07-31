@@ -93,7 +93,7 @@
   }
 
   /**
-   * IATA2 airline code. Format: English characters only. 
+   * IATA2 airline code. Format: English characters only. Required for Mastercard; optional for all other card types. 
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
@@ -108,7 +108,7 @@
    */
   exports.prototype['address'] = undefined;
   /**
-   * City in which the transactionoccurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only 
+   * City in which the transaction occurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only. Optional request field. 
    * @member {String} locality
    */
   exports.prototype['locality'] = undefined;

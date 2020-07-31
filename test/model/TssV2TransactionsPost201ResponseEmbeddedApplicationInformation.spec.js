@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation);
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property reasonCode (base name: "reasonCode")', function() {
       // uncomment below and update the code to test the property reasonCode
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation();

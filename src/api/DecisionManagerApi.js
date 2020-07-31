@@ -110,8 +110,8 @@
      */
 
     /**
-     * Create Decision Manager Case
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+     * Create Decision Manager
+     * Decision Manager can help you automate and streamline your fraud operations. Decision Manager will return a decision based on the request values.
      * @param {module:model/CreateBundledDecisionManagerCaseRequest} createBundledDecisionManagerCaseRequest 
      * @param {module:api/DecisionManagerApi~createBundledDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1DecisionsPost201Response}

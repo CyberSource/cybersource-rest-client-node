@@ -98,6 +98,7 @@
 
 
 
+
   };
 
   /**
@@ -128,6 +129,9 @@
       }
       if (data.hasOwnProperty('xid')) {
         obj['xid'] = ApiClient.convertToType(data['xid'], 'String');
+      }
+      if (data.hasOwnProperty('ucafCollectionIndicator')) {
+        obj['ucafCollectionIndicator'] = ApiClient.convertToType(data['ucafCollectionIndicator'], 'String');
       }
       if (data.hasOwnProperty('ucafAuthenticationData')) {
         obj['ucafAuthenticationData'] = ApiClient.convertToType(data['ucafAuthenticationData'], 'String');
@@ -299,6 +303,11 @@
    */
   exports.prototype['xid'] = undefined;
   /**
+   * Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator 
+   * @member {String} ucafCollectionIndicator
+   */
+  exports.prototype['ucafCollectionIndicator'] = undefined;
+  /**
    * Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} ucafAuthenticationData
    */
@@ -438,7 +447,7 @@
    */
   exports.prototype['overridePaymentMethod'] = undefined;
   /**
-   * Two-character ISO standard Country Codes. 
+   * Two-character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).. 
    * @member {String} overrideCountryCode
    */
   exports.prototype['overrideCountryCode'] = undefined;

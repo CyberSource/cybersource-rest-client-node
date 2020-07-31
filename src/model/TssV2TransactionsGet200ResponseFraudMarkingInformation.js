@@ -69,7 +69,7 @@
   }
 
   /**
-   * Reason for adding the transaction to the negative list. This field can contain one of the following values: - fraud_chargeback: You have received a fraudrelated chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction.  For details, see the `marking_reason` field description in _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * Reason for adding the transaction to the negative list. This field can contain one of the following values: - fraud_chargeback: You have received a fraudrelated chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction. 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

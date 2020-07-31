@@ -82,7 +82,7 @@
    */
   exports.prototype['event'] = undefined;
   /**
-   * The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day 
+   * The date and time when the invoice event was triggered in ISO 8601 format. Format: YYYY-MM-DDThh:mm:ssZ 
    * @member {Date} date
    */
   exports.prototype['date'] = undefined;

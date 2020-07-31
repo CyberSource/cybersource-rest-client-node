@@ -233,12 +233,12 @@
   }
 
   /**
-   * Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: MMDDYY. For best interchange rates, make sure it is a valid date. 
+   * Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date. 
    * @member {String} checkInDate
    */
   exports.prototype['checkInDate'] = undefined;
   /**
-   * Date on which the guest checked out. Format: MMDDYY. For best interchange rates, make sure it is a valid date. 
+   * Date on which the guest checked out. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date. 
    * @member {String} checkOutDate
    */
   exports.prototype['checkOutDate'] = undefined;

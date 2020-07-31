@@ -86,6 +86,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInstrument (base name: "paymentInstrument")', function() {
+      // uncomment below and update the code to test the property paymentInstrument
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property instrumentIdentifier (base name: "instrumentIdentifier")', function() {
+      // uncomment below and update the code to test the property instrumentIdentifier
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingAddress (base name: "shippingAddress")', function() {
+      // uncomment below and update the code to test the property shippingAddress
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property legacyToken (base name: "legacyToken")', function() {
+      // uncomment below and update the code to test the property legacyToken
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentType (base name: "paymentType")', function() {
       // uncomment below and update the code to test the property paymentType
       //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();

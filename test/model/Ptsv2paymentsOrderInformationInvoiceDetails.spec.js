@@ -140,6 +140,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property invoiceDate (base name: "invoiceDate")', function() {
+      // uncomment below and update the code to test the property invoiceDate
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

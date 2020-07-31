@@ -160,12 +160,12 @@
    */
   exports.prototype['locality'] = undefined;
   /**
-   * Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada. 
+   * Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
   /**
-   * Country of sender. Use the ISO Standard Country Codes. * CTV (3) 
+   * Country of sender. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). * CTV (3) 
    * @member {String} countryCode
    */
   exports.prototype['countryCode'] = undefined;

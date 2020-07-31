@@ -146,6 +146,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property healthCareInformation (base name: "healthCareInformation")', function() {
+      // uncomment below and update the code to test the property healthCareInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property promotionInformation (base name: "promotionInformation")', function() {
       // uncomment below and update the code to test the property promotionInformation
       //var instane = new CyberSource.CreatePaymentRequest();

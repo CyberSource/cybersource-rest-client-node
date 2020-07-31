@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ucafCollectionIndicator (base name: "ucafCollectionIndicator")', function() {
+      // uncomment below and update the code to test the property ucafCollectionIndicator
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ucafAuthenticationData (base name: "ucafAuthenticationData")', function() {
       // uncomment below and update the code to test the property ucafAuthenticationData
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();

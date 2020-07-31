@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customer (base name: "customer")', function() {
+      // uncomment below and update the code to test the property customer
+      //var instane = new CyberSource.Riskv1authenticationsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInstrument (base name: "paymentInstrument")', function() {
+      // uncomment below and update the code to test the property paymentInstrument
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingAddress (base name: "shippingAddress")', function() {
+      // uncomment below and update the code to test the property shippingAddress
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

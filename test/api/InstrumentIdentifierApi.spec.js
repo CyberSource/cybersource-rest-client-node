@@ -50,30 +50,10 @@
   }
 
   describe('InstrumentIdentifierApi', function() {
-    describe('createInstrumentIdentifier', function() {
-      it('should call createInstrumentIdentifier successfully', function(done) {
-        //uncomment below and update the code to test createInstrumentIdentifier
-        //instance.createInstrumentIdentifier(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteInstrumentIdentifier', function() {
       it('should call deleteInstrumentIdentifier successfully', function(done) {
         //uncomment below and update the code to test deleteInstrumentIdentifier
         //instance.deleteInstrumentIdentifier(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getAllPaymentInstruments', function() {
-      it('should call getAllPaymentInstruments successfully', function(done) {
-        //uncomment below and update the code to test getAllPaymentInstruments
-        //instance.getAllPaymentInstruments(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -90,10 +70,30 @@
         done();
       });
     });
-    describe('updateInstrumentIdentifier', function() {
-      it('should call updateInstrumentIdentifier successfully', function(done) {
-        //uncomment below and update the code to test updateInstrumentIdentifier
-        //instance.updateInstrumentIdentifier(function(error) {
+    describe('getInstrumentIdentifierPaymentInstrumentsList', function() {
+      it('should call getInstrumentIdentifierPaymentInstrumentsList successfully', function(done) {
+        //uncomment below and update the code to test getInstrumentIdentifierPaymentInstrumentsList
+        //instance.getInstrumentIdentifierPaymentInstrumentsList(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('patchInstrumentIdentifier', function() {
+      it('should call patchInstrumentIdentifier successfully', function(done) {
+        //uncomment below and update the code to test patchInstrumentIdentifier
+        //instance.patchInstrumentIdentifier(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postInstrumentIdentifier', function() {
+      it('should call postInstrumentIdentifier successfully', function(done) {
+        //uncomment below and update the code to test postInstrumentIdentifier
+        //instance.postInstrumentIdentifier(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateInstrumentIdentifierRequest', 'model/InlineResponse400', 'model/TmsV1InstrumentIdentifiersDelete409Response', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response', 'model/TmsV1InstrumentIdentifiersPost200Response', 'model/UpdateInstrumentIdentifierRequest'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentListForCustomer', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateInstrumentIdentifierRequest'), require('../model/InlineResponse400'), require('../model/TmsV1InstrumentIdentifiersDelete409Response'), require('../model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response'), require('../model/TmsV1InstrumentIdentifiersPost200Response'), require('../model/UpdateInstrumentIdentifierRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentListForCustomer'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateInstrumentIdentifierRequest, root.CyberSource.InlineResponse400, root.CyberSource.TmsV1InstrumentIdentifiersDelete409Response, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, root.CyberSource.TmsV1InstrumentIdentifiersPost200Response, root.CyberSource.UpdateInstrumentIdentifierRequest);
+    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentListForCustomer, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
   }
-}(this, function(ApiClient, CreateInstrumentIdentifierRequest, InlineResponse400, TmsV1InstrumentIdentifiersDelete409Response, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, TmsV1InstrumentIdentifiersPost200Response, UpdateInstrumentIdentifierRequest) {
+}(this, function(ApiClient, InlineResponse400, PatchInstrumentIdentifierRequest, PaymentInstrumentListForCustomer, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
   'use strict';
 
   /**
@@ -50,57 +50,6 @@
 	
 
     /**
-     * Callback function to receive the result of the createInstrumentIdentifier operation.
-     * @callback module:api/InstrumentIdentifierApi~createInstrumentIdentifierCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1InstrumentIdentifiersPost200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create an Instrument Identifier
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {module:model/CreateInstrumentIdentifierRequest} createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card
-     * @param {module:api/InstrumentIdentifierApi~createInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPost200Response}
-     */
-    this.createInstrumentIdentifier = function(profileId, createInstrumentIdentifierRequest, callback) {
-      var postBody = createInstrumentIdentifierRequest;
-
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling createInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'createInstrumentIdentifierRequest' is set
-      if (createInstrumentIdentifierRequest === undefined || createInstrumentIdentifierRequest === null) {
-        throw new Error("Missing the required parameter 'createInstrumentIdentifierRequest' when calling createInstrumentIdentifier");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'profile-id': profileId
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = TmsV1InstrumentIdentifiersPost200Response;
-
-      return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the deleteInstrumentIdentifier operation.
      * @callback module:api/InstrumentIdentifierApi~deleteInstrumentIdentifierCallback
      * @param {String} error Error message, if any.
@@ -110,31 +59,28 @@
 
     /**
      * Delete an Instrument Identifier
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} tokenId The TokenId of an Instrument Identifier.
+     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~deleteInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteInstrumentIdentifier = function(profileId, tokenId, callback) {
+    this.deleteInstrumentIdentifier = function(instrumentIdentifierTokenId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling deleteInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'tokenId' is set
-      if (tokenId === undefined || tokenId === null) {
-        throw new Error("Missing the required parameter 'tokenId' when calling deleteInstrumentIdentifier");
+      // verify the required parameter 'instrumentIdentifierTokenId' is set
+      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling deleteInstrumentIdentifier");
       }
 
 
       var pathParams = {
-        'tokenId': tokenId
+        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
       };
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId
+        'profile-id': opts['profileId']
       };
       var formParams = {
       };
@@ -145,65 +91,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{tokenId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getAllPaymentInstruments operation.
-     * @callback module:api/InstrumentIdentifierApi~getAllPaymentInstrumentsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve all Payment Instruments
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} tokenId The TokenId of an Instrument Identifier.
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
-     * @param {Number} opts.limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
-     * @param {module:api/InstrumentIdentifierApi~getAllPaymentInstrumentsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response}
-     */
-    this.getAllPaymentInstruments = function(profileId, tokenId, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling getAllPaymentInstruments");
-      }
-
-      // verify the required parameter 'tokenId' is set
-      if (tokenId === undefined || tokenId === null) {
-        throw new Error("Missing the required parameter 'tokenId' when calling getAllPaymentInstruments");
-      }
-
-
-      var pathParams = {
-        'tokenId': tokenId
-      };
-      var queryParams = {
-        'offset': opts['offset'],
-        'limit': opts['limit']
-      };
-      var headerParams = {
-        'profile-id': profileId
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response;
-
-      return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{tokenId}/paymentinstruments', 'GET',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -213,38 +101,35 @@
      * Callback function to receive the result of the getInstrumentIdentifier operation.
      * @callback module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1InstrumentIdentifiersPost200Response} data The data returned by the service call.
+     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Retrieve an Instrument Identifier
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} tokenId The TokenId of an Instrument Identifier.
+     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPost200Response}
+     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
      */
-    this.getInstrumentIdentifier = function(profileId, tokenId, callback) {
+    this.getInstrumentIdentifier = function(instrumentIdentifierTokenId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling getInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'tokenId' is set
-      if (tokenId === undefined || tokenId === null) {
-        throw new Error("Missing the required parameter 'tokenId' when calling getInstrumentIdentifier");
+      // verify the required parameter 'instrumentIdentifierTokenId' is set
+      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifier");
       }
 
 
       var pathParams = {
-        'tokenId': tokenId
+        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
       };
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId
+        'profile-id': opts['profileId']
       };
       var formParams = {
       };
@@ -252,57 +137,52 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = TmsV1InstrumentIdentifiersPost200Response;
+      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{tokenId}', 'GET',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the updateInstrumentIdentifier operation.
-     * @callback module:api/InstrumentIdentifierApi~updateInstrumentIdentifierCallback
+     * Callback function to receive the result of the getInstrumentIdentifierPaymentInstrumentsList operation.
+     * @callback module:api/InstrumentIdentifierApi~getInstrumentIdentifierPaymentInstrumentsListCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1InstrumentIdentifiersPost200Response} data The data returned by the service call.
+     * @param {module:model/PaymentInstrumentListForCustomer} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Update a Instrument Identifier
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} tokenId The TokenId of an Instrument Identifier.
-     * @param {module:model/UpdateInstrumentIdentifierRequest} updateInstrumentIdentifierRequest Specify the previous transaction ID to update.
-     * @param {module:api/InstrumentIdentifierApi~updateInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPost200Response}
+     * List Payment Instruments for an Instrument Identifier
+     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {Number} opts.offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
+     * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
+     * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentInstrumentListForCustomer}
      */
-    this.updateInstrumentIdentifier = function(profileId, tokenId, updateInstrumentIdentifierRequest, callback) {
-      var postBody = updateInstrumentIdentifierRequest;
+    this.getInstrumentIdentifierPaymentInstrumentsList = function(instrumentIdentifierTokenId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling updateInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'tokenId' is set
-      if (tokenId === undefined || tokenId === null) {
-        throw new Error("Missing the required parameter 'tokenId' when calling updateInstrumentIdentifier");
-      }
-
-      // verify the required parameter 'updateInstrumentIdentifierRequest' is set
-      if (updateInstrumentIdentifierRequest === undefined || updateInstrumentIdentifierRequest === null) {
-        throw new Error("Missing the required parameter 'updateInstrumentIdentifierRequest' when calling updateInstrumentIdentifier");
+      // verify the required parameter 'instrumentIdentifierTokenId' is set
+      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifierPaymentInstrumentsList");
       }
 
 
       var pathParams = {
-        'tokenId': tokenId
+        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
       };
       var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit']
       };
       var headerParams = {
-        'profile-id': profileId
+        'profile-id': opts['profileId']
       };
       var formParams = {
       };
@@ -310,10 +190,115 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = TmsV1InstrumentIdentifiersPost200Response;
+      var returnType = PaymentInstrumentListForCustomer;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{tokenId}', 'PATCH',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the patchInstrumentIdentifier operation.
+     * @callback module:api/InstrumentIdentifierApi~patchInstrumentIdentifierCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an Instrument Identifier
+     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * @param {module:model/PatchInstrumentIdentifierRequest} patchInstrumentIdentifierRequest Specify the previous transaction ID to update.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
+     * @param {module:api/InstrumentIdentifierApi~patchInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
+     */
+    this.patchInstrumentIdentifier = function(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = patchInstrumentIdentifierRequest;
+
+      // verify the required parameter 'instrumentIdentifierTokenId' is set
+      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling patchInstrumentIdentifier");
+      }
+
+      // verify the required parameter 'patchInstrumentIdentifierRequest' is set
+      if (patchInstrumentIdentifierRequest === undefined || patchInstrumentIdentifierRequest === null) {
+        throw new Error("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier");
+      }
+
+
+      var pathParams = {
+        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'profile-id': opts['profileId'],
+        'if-match': opts['ifMatch']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+
+      return this.apiClient.callApi(
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the postInstrumentIdentifier operation.
+     * @callback module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create an Instrument Identifier
+     * @param {module:model/PostInstrumentIdentifierRequest} postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
+     */
+    this.postInstrumentIdentifier = function(postInstrumentIdentifierRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = postInstrumentIdentifierRequest;
+
+      // verify the required parameter 'postInstrumentIdentifierRequest' is set
+      if (postInstrumentIdentifierRequest === undefined || postInstrumentIdentifierRequest === null) {
+        throw new Error("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'profile-id': opts['profileId']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+
+      return this.apiClient.callApi(
+        '/tms/v1/instrumentidentifiers', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

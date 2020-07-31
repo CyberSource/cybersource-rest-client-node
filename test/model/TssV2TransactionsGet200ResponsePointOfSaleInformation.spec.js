@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation);
     });
 
+    it('should have the property terminalId (base name: "terminalId")', function() {
+      // uncomment below and update the code to test the property terminalId
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property entryMode (base name: "entryMode")', function() {
       // uncomment below and update the code to test the property entryMode
       //var instane = new CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation();

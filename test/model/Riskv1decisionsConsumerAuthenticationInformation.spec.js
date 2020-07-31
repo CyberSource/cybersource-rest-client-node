@@ -242,6 +242,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property returnUrl (base name: "returnUrl")', function() {
+      // uncomment below and update the code to test the property returnUrl
+      //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property requestorId (base name: "requestorId")', function() {
       // uncomment below and update the code to test the property requestorId
       //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();
