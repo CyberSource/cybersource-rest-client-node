@@ -106,7 +106,7 @@
    */
   exports.prototype['barCode'] = undefined;
   /**
-   * Value can be - Canada - US - International. The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info. 
+   * Value can be - Canada - US - International The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info. 
    * @member {String} applicableRegion
    */
   exports.prototype['applicableRegion'] = undefined;

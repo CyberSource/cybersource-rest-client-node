@@ -90,7 +90,7 @@
         obj['rMessage'] = ApiClient.convertToType(data['rMessage'], 'String');
       }
       if (data.hasOwnProperty('returnCode')) {
-        obj['returnCode'] = ApiClient.convertToType(data['returnCode'], 'String');
+        obj['returnCode'] = ApiClient.convertToType(data['returnCode'], 'Number');
       }
     }
     return obj;
@@ -133,7 +133,7 @@
   exports.prototype['rMessage'] = undefined;
   /**
    * The description for this field is not available.
-   * @member {String} returnCode
+   * @member {Number} returnCode
    */
   exports.prototype['returnCode'] = undefined;
 

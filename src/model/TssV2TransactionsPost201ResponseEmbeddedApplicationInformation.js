@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200ResponseApplicationInformationApplications'], factory);
+    define(['ApiClient', 'model/TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsGet200ResponseApplicationInformationApplications'));
+    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200ResponseApplicationInformationApplications);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200ResponseApplicationInformationApplications) {
+}(this, function(ApiClient, TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications) {
   'use strict';
 
 
@@ -52,7 +52,6 @@
 
 
 
-
   };
 
   /**
@@ -66,9 +65,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
       if (data.hasOwnProperty('reasonCode')) {
         obj['reasonCode'] = ApiClient.convertToType(data['reasonCode'], 'String');
       }
@@ -79,42 +75,37 @@
         obj['rFlag'] = ApiClient.convertToType(data['rFlag'], 'String');
       }
       if (data.hasOwnProperty('applications')) {
-        obj['applications'] = ApiClient.convertToType(data['applications'], [TssV2TransactionsGet200ResponseApplicationInformationApplications]);
+        obj['applications'] = ApiClient.convertToType(data['applications'], [TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications]);
       }
       if (data.hasOwnProperty('returnCode')) {
-        obj['returnCode'] = ApiClient.convertToType(data['returnCode'], 'String');
+        obj['returnCode'] = ApiClient.convertToType(data['returnCode'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * The status of the submitted transaction.
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
    * Indicates the reason why a request succeeded or failed and possible action to take if a request fails.  For details, see the appendix of reason codes in the documentation for the relevant payment method. 
    * @member {String} reasonCode
    */
   exports.prototype['reasonCode'] = undefined;
   /**
-   * Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful.  For details, see `auth_rcode` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful. 
    * @member {String} rCode
    */
   exports.prototype['rCode'] = undefined;
   /**
-   * One-word description of the result of the application.  For details, see `auth_rflag` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * One-word description of the result of the application. 
    * @member {String} rFlag
    */
   exports.prototype['rFlag'] = undefined;
   /**
-   * @member {Array.<module:model/TssV2TransactionsGet200ResponseApplicationInformationApplications>} applications
+   * @member {Array.<module:model/TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications>} applications
    */
   exports.prototype['applications'] = undefined;
   /**
    * The description for this field is not available.
-   * @member {String} returnCode
+   * @member {Number} returnCode
    */
   exports.prototype['returnCode'] = undefined;
 

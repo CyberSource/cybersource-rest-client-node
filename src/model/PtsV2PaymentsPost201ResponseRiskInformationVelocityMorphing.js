@@ -77,7 +77,7 @@
   }
 
   /**
-   * Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction.  For all possible values, see the `decision_velocity_morphing_#_count` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction. 
    * @member {Number} count
    */
   exports.prototype['count'] = undefined;

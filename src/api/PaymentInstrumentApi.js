@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentInstrumentRequest', 'model/InlineResponse400', 'model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', 'model/UpdatePaymentInstrumentRequest'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/PatchPaymentInstrumentRequest', 'model/PostPaymentInstrumentRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrument'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentInstrumentRequest'), require('../model/InlineResponse400'), require('../model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments'), require('../model/UpdatePaymentInstrumentRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchPaymentInstrumentRequest'), require('../model/PostPaymentInstrumentRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrument'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentInstrumentRequest, root.CyberSource.InlineResponse400, root.CyberSource.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, root.CyberSource.UpdatePaymentInstrumentRequest);
+    root.CyberSource.PaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchPaymentInstrumentRequest, root.CyberSource.PostPaymentInstrumentRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrument);
   }
-}(this, function(ApiClient, CreatePaymentInstrumentRequest, InlineResponse400, TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, UpdatePaymentInstrumentRequest) {
+}(this, function(ApiClient, InlineResponse400, PatchPaymentInstrumentRequest, PostPaymentInstrumentRequest, Tmsv2customersEmbeddedDefaultPaymentInstrument) {
   'use strict';
 
   /**
@@ -50,57 +50,6 @@
 	
 
     /**
-     * Callback function to receive the result of the createPaymentInstrument operation.
-     * @callback module:api/PaymentInstrumentApi~createPaymentInstrumentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create a Payment Instrument
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {module:model/CreatePaymentInstrumentRequest} createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account.
-     * @param {module:api/PaymentInstrumentApi~createPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments}
-     */
-    this.createPaymentInstrument = function(profileId, createPaymentInstrumentRequest, callback) {
-      var postBody = createPaymentInstrumentRequest;
-
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling createPaymentInstrument");
-      }
-
-      // verify the required parameter 'createPaymentInstrumentRequest' is set
-      if (createPaymentInstrumentRequest === undefined || createPaymentInstrumentRequest === null) {
-        throw new Error("Missing the required parameter 'createPaymentInstrumentRequest' when calling createPaymentInstrument");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'profile-id': profileId
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
-
-      return this.apiClient.callApi(
-        '/tms/v1/paymentinstruments', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the deletePaymentInstrument operation.
      * @callback module:api/PaymentInstrumentApi~deletePaymentInstrumentCallback
      * @param {String} error Error message, if any.
@@ -110,31 +59,28 @@
 
     /**
      * Delete a Payment Instrument
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} tokenId The TokenId of a Payment Instrument.
+     * @param {String} paymentInstrumentTokenId The TokenId of a payment instrument.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
      * @param {module:api/PaymentInstrumentApi~deletePaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deletePaymentInstrument = function(profileId, tokenId, callback) {
+    this.deletePaymentInstrument = function(paymentInstrumentTokenId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling deletePaymentInstrument");
-      }
-
-      // verify the required parameter 'tokenId' is set
-      if (tokenId === undefined || tokenId === null) {
-        throw new Error("Missing the required parameter 'tokenId' when calling deletePaymentInstrument");
+      // verify the required parameter 'paymentInstrumentTokenId' is set
+      if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {
+        throw new Error("Missing the required parameter 'paymentInstrumentTokenId' when calling deletePaymentInstrument");
       }
 
 
       var pathParams = {
-        'tokenId': tokenId
+        'paymentInstrumentTokenId': paymentInstrumentTokenId
       };
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId
+        'profile-id': opts['profileId']
       };
       var formParams = {
       };
@@ -145,7 +91,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/tms/v1/paymentinstruments/{tokenId}', 'DELETE',
+        '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -155,38 +101,35 @@
      * Callback function to receive the result of the getPaymentInstrument operation.
      * @callback module:api/PaymentInstrumentApi~getPaymentInstrumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments} data The data returned by the service call.
+     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Retrieve a Payment Instrument
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} tokenId The TokenId of a Payment Instrument.
+     * @param {String} paymentInstrumentTokenId The TokenId of a payment instrument.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
      * @param {module:api/PaymentInstrumentApi~getPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments}
+     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
      */
-    this.getPaymentInstrument = function(profileId, tokenId, callback) {
+    this.getPaymentInstrument = function(paymentInstrumentTokenId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling getPaymentInstrument");
-      }
-
-      // verify the required parameter 'tokenId' is set
-      if (tokenId === undefined || tokenId === null) {
-        throw new Error("Missing the required parameter 'tokenId' when calling getPaymentInstrument");
+      // verify the required parameter 'paymentInstrumentTokenId' is set
+      if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {
+        throw new Error("Missing the required parameter 'paymentInstrumentTokenId' when calling getPaymentInstrument");
       }
 
 
       var pathParams = {
-        'tokenId': tokenId
+        'paymentInstrumentTokenId': paymentInstrumentTokenId
       };
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId
+        'profile-id': opts['profileId']
       };
       var formParams = {
       };
@@ -194,57 +137,56 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
+      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrument;
 
       return this.apiClient.callApi(
-        '/tms/v1/paymentinstruments/{tokenId}', 'GET',
+        '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the updatePaymentInstrument operation.
-     * @callback module:api/PaymentInstrumentApi~updatePaymentInstrumentCallback
+     * Callback function to receive the result of the patchPaymentInstrument operation.
+     * @callback module:api/PaymentInstrumentApi~patchPaymentInstrumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments} data The data returned by the service call.
+     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Update a Payment Instrument
-     * @param {String} profileId The id of a profile containing user specific TMS configuration.
-     * @param {String} tokenId The TokenId of a Payment Instrument.
-     * @param {module:model/UpdatePaymentInstrumentRequest} updatePaymentInstrumentRequest Specify the customer&#39;s payment details.
-     * @param {module:api/PaymentInstrumentApi~updatePaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments}
+     * @param {String} paymentInstrumentTokenId The TokenId of a payment instrument.
+     * @param {module:model/PatchPaymentInstrumentRequest} patchPaymentInstrumentRequest 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
+     * @param {module:api/PaymentInstrumentApi~patchPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
      */
-    this.updatePaymentInstrument = function(profileId, tokenId, updatePaymentInstrumentRequest, callback) {
-      var postBody = updatePaymentInstrumentRequest;
+    this.patchPaymentInstrument = function(paymentInstrumentTokenId, patchPaymentInstrumentRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = patchPaymentInstrumentRequest;
 
-      // verify the required parameter 'profileId' is set
-      if (profileId === undefined || profileId === null) {
-        throw new Error("Missing the required parameter 'profileId' when calling updatePaymentInstrument");
+      // verify the required parameter 'paymentInstrumentTokenId' is set
+      if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {
+        throw new Error("Missing the required parameter 'paymentInstrumentTokenId' when calling patchPaymentInstrument");
       }
 
-      // verify the required parameter 'tokenId' is set
-      if (tokenId === undefined || tokenId === null) {
-        throw new Error("Missing the required parameter 'tokenId' when calling updatePaymentInstrument");
-      }
-
-      // verify the required parameter 'updatePaymentInstrumentRequest' is set
-      if (updatePaymentInstrumentRequest === undefined || updatePaymentInstrumentRequest === null) {
-        throw new Error("Missing the required parameter 'updatePaymentInstrumentRequest' when calling updatePaymentInstrument");
+      // verify the required parameter 'patchPaymentInstrumentRequest' is set
+      if (patchPaymentInstrumentRequest === undefined || patchPaymentInstrumentRequest === null) {
+        throw new Error("Missing the required parameter 'patchPaymentInstrumentRequest' when calling patchPaymentInstrument");
       }
 
 
       var pathParams = {
-        'tokenId': tokenId
+        'paymentInstrumentTokenId': paymentInstrumentTokenId
       };
       var queryParams = {
       };
       var headerParams = {
-        'profile-id': profileId
+        'profile-id': opts['profileId'],
+        'if-match': opts['ifMatch']
       };
       var formParams = {
       };
@@ -252,10 +194,58 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
+      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrument;
 
       return this.apiClient.callApi(
-        '/tms/v1/paymentinstruments/{tokenId}', 'PATCH',
+        '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the postPaymentInstrument operation.
+     * @callback module:api/PaymentInstrumentApi~postPaymentInstrumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a Payment Instrument
+     * @param {module:model/PostPaymentInstrumentRequest} postPaymentInstrumentRequest 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {module:api/PaymentInstrumentApi~postPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
+     */
+    this.postPaymentInstrument = function(postPaymentInstrumentRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = postPaymentInstrumentRequest;
+
+      // verify the required parameter 'postPaymentInstrumentRequest' is set
+      if (postPaymentInstrumentRequest === undefined || postPaymentInstrumentRequest === null) {
+        throw new Error("Missing the required parameter 'postPaymentInstrumentRequest' when calling postPaymentInstrument");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'profile-id': opts['profileId']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrument;
+
+      return this.apiClient.callApi(
+        '/tms/v1/paymentinstruments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

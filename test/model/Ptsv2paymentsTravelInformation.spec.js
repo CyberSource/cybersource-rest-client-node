@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property autoRental (base name: "autoRental")', function() {
+      // uncomment below and update the code to test the property autoRental
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lodging (base name: "lodging")', function() {
       // uncomment below and update the code to test the property lodging
       //var instane = new CyberSource.Ptsv2paymentsTravelInformation();

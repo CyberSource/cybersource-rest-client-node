@@ -95,12 +95,12 @@
    */
   exports.prototype['reasonCode'] = undefined;
   /**
-   * Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful.  For details, see `auth_rcode` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful. 
    * @member {String} rCode
    */
   exports.prototype['rCode'] = undefined;
   /**
-   * One-word description of the result of the application.  For details, see `auth_rflag` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * One-word description of the result of the application. 
    * @member {String} rFlag
    */
   exports.prototype['rFlag'] = undefined;

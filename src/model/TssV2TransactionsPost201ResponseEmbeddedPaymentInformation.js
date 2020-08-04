@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType'], factory);
+    define(['ApiClient', 'model/Riskv1authenticationsetupsPaymentInformationCustomer', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationsetupsPaymentInformationCustomer'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationsetupsPaymentInformationCustomer, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType) {
+}(this, function(ApiClient, Riskv1authenticationsetupsPaymentInformationCustomer, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard, TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['paymentType'] = TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.constructFromObject(data['paymentType']);
       }
       if (data.hasOwnProperty('customer')) {
-        obj['customer'] = Ptsv2paymentsPaymentInformationCustomer.constructFromObject(data['customer']);
+        obj['customer'] = Riskv1authenticationsetupsPaymentInformationCustomer.constructFromObject(data['customer']);
       }
       if (data.hasOwnProperty('card')) {
         obj['card'] = TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard.constructFromObject(data['card']);
@@ -81,7 +81,7 @@
    */
   exports.prototype['paymentType'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsPaymentInformationCustomer} customer
+   * @member {module:model/Riskv1authenticationsetupsPaymentInformationCustomer} customer
    */
   exports.prototype['customer'] = undefined;
   /**

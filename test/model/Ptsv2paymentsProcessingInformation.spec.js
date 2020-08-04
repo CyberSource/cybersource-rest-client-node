@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property actionTokenTypes (base name: "actionTokenTypes")', function() {
+      // uncomment below and update the code to test the property actionTokenTypes
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property capture (base name: "capture")', function() {
       // uncomment below and update the code to test the property capture
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();

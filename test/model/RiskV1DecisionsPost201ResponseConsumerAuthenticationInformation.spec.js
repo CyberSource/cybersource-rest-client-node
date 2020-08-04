@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation);
     });
 
+    it('should have the property accessToken (base name: "accessToken")', function() {
+      // uncomment below and update the code to test the property accessToken
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property acsRenderingType (base name: "acsRenderingType")', function() {
       // uncomment below and update the code to test the property acsRenderingType
       //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();

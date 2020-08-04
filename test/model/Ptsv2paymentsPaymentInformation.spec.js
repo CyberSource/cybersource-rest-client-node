@@ -80,6 +80,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInstrument (base name: "paymentInstrument")', function() {
+      // uncomment below and update the code to test the property paymentInstrument
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property instrumentIdentifier (base name: "instrumentIdentifier")', function() {
+      // uncomment below and update the code to test the property instrumentIdentifier
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingAddress (base name: "shippingAddress")', function() {
+      // uncomment below and update the code to test the property shippingAddress
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property legacyToken (base name: "legacyToken")', function() {
+      // uncomment below and update the code to test the property legacyToken
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bank (base name: "bank")', function() {
       // uncomment below and update the code to test the property bank
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();

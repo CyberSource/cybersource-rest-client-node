@@ -77,7 +77,7 @@
    */
   exports.prototype['bankTransferOptions'] = undefined;
   /**
-   * - true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor. 
+   * The possible values for the reply field are: - `true` : the airline data was included in the request to the processor. - `false` : the airline data was not included in the request to the processor.  Returned by authorization, capture, or credit services. 
    * @member {Boolean} enhancedDataEnabled
    */
   exports.prototype['enhancedDataEnabled'] = undefined;

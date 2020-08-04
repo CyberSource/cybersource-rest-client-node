@@ -108,7 +108,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf) 
+   * Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). 
    * @member {String} phone
    */
   exports.prototype['phone'] = undefined;
@@ -133,7 +133,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * Passenger's nationality country. Use the two character ISO Standard Country Codes.
+   * Passenger's nationality country. Use the two character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).
    * @member {String} nationality
    */
   exports.prototype['nationality'] = undefined;

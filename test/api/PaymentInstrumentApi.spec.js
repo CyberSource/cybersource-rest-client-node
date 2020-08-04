@@ -50,16 +50,6 @@
   }
 
   describe('PaymentInstrumentApi', function() {
-    describe('createPaymentInstrument', function() {
-      it('should call createPaymentInstrument successfully', function(done) {
-        //uncomment below and update the code to test createPaymentInstrument
-        //instance.createPaymentInstrument(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deletePaymentInstrument', function() {
       it('should call deletePaymentInstrument successfully', function(done) {
         //uncomment below and update the code to test deletePaymentInstrument
@@ -80,10 +70,20 @@
         done();
       });
     });
-    describe('updatePaymentInstrument', function() {
-      it('should call updatePaymentInstrument successfully', function(done) {
-        //uncomment below and update the code to test updatePaymentInstrument
-        //instance.updatePaymentInstrument(function(error) {
+    describe('patchPaymentInstrument', function() {
+      it('should call patchPaymentInstrument successfully', function(done) {
+        //uncomment below and update the code to test patchPaymentInstrument
+        //instance.patchPaymentInstrument(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postPaymentInstrument', function() {
+      it('should call postPaymentInstrument successfully', function(done) {
+        //uncomment below and update the code to test postPaymentInstrument
+        //instance.postPaymentInstrument(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

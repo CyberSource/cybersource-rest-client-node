@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="generatePublicKey"></a>
 # **generatePublicKey**
-> FlexV1KeysPost200Response generatePublicKey(generatePublicKeyRequest, opts)
+> FlexV1KeysPost200Response generatePublicKey(format, generatePublicKeyRequest)
 
 Generate Key
 
@@ -21,11 +21,10 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.KeyGenerationApi();
 
+var format = "JWT"; // String | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
+
 var generatePublicKeyRequest = new CyberSource.GeneratePublicKeyRequest(); // GeneratePublicKeyRequest | 
 
-var opts = { 
-  'format': "legacy" // String | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -34,15 +33,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.generatePublicKey(generatePublicKeyRequest, opts, callback);
+apiInstance.generatePublicKey(format, generatePublicKeyRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **format** | **String**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [default to JWT]
  **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  | 
- **format** | **String**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [optional] [default to legacy]
 
 ### Return type
 

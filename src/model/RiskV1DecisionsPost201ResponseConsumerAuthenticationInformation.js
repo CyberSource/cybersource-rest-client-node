@@ -82,6 +82,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accessToken')) {
+        obj['accessToken'] = ApiClient.convertToType(data['accessToken'], 'String');
+      }
       if (data.hasOwnProperty('acsRenderingType')) {
         obj['acsRenderingType'] = ApiClient.convertToType(data['acsRenderingType'], 'String');
       }
@@ -186,7 +190,7 @@
         obj['ucafAuthenticationData'] = ApiClient.convertToType(data['ucafAuthenticationData'], 'String');
       }
       if (data.hasOwnProperty('ucafCollectionIndicator')) {
-        obj['ucafCollectionIndicator'] = ApiClient.convertToType(data['ucafCollectionIndicator'], 'Number');
+        obj['ucafCollectionIndicator'] = ApiClient.convertToType(data['ucafCollectionIndicator'], 'String');
       }
       if (data.hasOwnProperty('veresEnrolled')) {
         obj['veresEnrolled'] = ApiClient.convertToType(data['veresEnrolled'], 'String');
@@ -204,6 +208,11 @@
     return obj;
   }
 
+  /**
+   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. 
+   * @member {String} accessToken
+   */
+  exports.prototype['accessToken'] = undefined;
   /**
    * Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK. 
    * @member {String} acsRenderingType
@@ -355,7 +364,7 @@
   exports.prototype['ucafAuthenticationData'] = undefined;
   /**
    * For enroll, Returned only for Mastercard transactions. Indicates that authentication is not required because the customer is not enrolled. Add the value of this field to the authorization field ucaf_collection_indicator. This field can contain these values: 0, 1.  For validate, Numeric electronic commerce indicator (ECI) returned only for Mastercard Identity Check transactions. The field is absent when authentication fails. You must send this value to your payment processor in the request for card authorization. This field contain one of these values: - `0`: Authentication data not collected, and customer authentication was not completed. - `1`: Authentication data not collected because customer authentication was not completed. - `2`: Authentication data collected because customer completed authentication. 
-   * @member {Number} ucafCollectionIndicator
+   * @member {String} ucafCollectionIndicator
    */
   exports.prototype['ucafCollectionIndicator'] = undefined;
   /**

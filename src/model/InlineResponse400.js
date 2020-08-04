@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv1instrumentidentifiersDetails'], factory);
+    define(['ApiClient', 'model/InlineResponse400Errors'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv1instrumentidentifiersDetails'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse400Errors'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse400 = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv1instrumentidentifiersDetails);
+    root.CyberSource.InlineResponse400 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400Errors);
   }
-}(this, function(ApiClient, Tmsv1instrumentidentifiersDetails) {
+}(this, function(ApiClient, InlineResponse400Errors) {
   'use strict';
 
 
@@ -48,8 +48,6 @@
     var _this = this;
 
 
-
-
   };
 
   /**
@@ -63,32 +61,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
-      }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = Tmsv1instrumentidentifiersDetails.constructFromObject(data['details']);
+      if (data.hasOwnProperty('errors')) {
+        obj['errors'] = ApiClient.convertToType(data['errors'], [InlineResponse400Errors]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} type
+   * @member {Array.<module:model/InlineResponse400Errors>} errors
    */
-  exports.prototype['type'] = undefined;
-  /**
-   * The detailed message related to the type stated above.
-   * @member {String} message
-   */
-  exports.prototype['message'] = undefined;
-  /**
-   * @member {module:model/Tmsv1instrumentidentifiersDetails} details
-   */
-  exports.prototype['details'] = undefined;
+  exports.prototype['errors'] = undefined;
 
 
 

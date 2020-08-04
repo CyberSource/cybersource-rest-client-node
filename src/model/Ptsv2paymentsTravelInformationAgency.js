@@ -73,7 +73,7 @@
   }
 
   /**
-   * Code of travel agency that made the vehicle rental reservation. 
+   * International Air Transport Association (IATA) code of travel agency that made the vehicle rental reservation. 
    * @member {String} code
    */
   exports.prototype['code'] = undefined;

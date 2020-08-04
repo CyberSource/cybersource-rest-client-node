@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Flexv1tokensCardInfo'], factory);
+    define(['ApiClient', 'model/TokenizeParametersCardInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Flexv1tokensCardInfo'));
+    module.exports = factory(require('../ApiClient'), require('./TokenizeParametersCardInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenizeParameters = factory(root.CyberSource.ApiClient, root.CyberSource.Flexv1tokensCardInfo);
+    root.CyberSource.TokenizeParameters = factory(root.CyberSource.ApiClient, root.CyberSource.TokenizeParametersCardInfo);
   }
-}(this, function(ApiClient, Flexv1tokensCardInfo) {
+}(this, function(ApiClient, TokenizeParametersCardInfo) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['keyId'] = ApiClient.convertToType(data['keyId'], 'String');
       }
       if (data.hasOwnProperty('cardInfo')) {
-        obj['cardInfo'] = Flexv1tokensCardInfo.constructFromObject(data['cardInfo']);
+        obj['cardInfo'] = TokenizeParametersCardInfo.constructFromObject(data['cardInfo']);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['keyId'] = undefined;
   /**
-   * @member {module:model/Flexv1tokensCardInfo} cardInfo
+   * @member {module:model/TokenizeParametersCardInfo} cardInfo
    */
   exports.prototype['cardInfo'] = undefined;
 

@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property responseAccessToken (base name: "responseAccessToken")', function() {
+      // uncomment below and update the code to test the property responseAccessToken
+      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property signedParesStatusReason (base name: "signedParesStatusReason")', function() {
       // uncomment below and update the code to test the property signedParesStatusReason
       //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();

@@ -86,6 +86,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property deliveryLanguage (base name: "deliveryLanguage")', function() {
+      // uncomment below and update the code to test the property deliveryLanguage
+      //var instane = new CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property defaultCurrencyCode (base name: "defaultCurrencyCode")', function() {
+      // uncomment below and update the code to test the property defaultCurrencyCode
+      //var instane = new CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

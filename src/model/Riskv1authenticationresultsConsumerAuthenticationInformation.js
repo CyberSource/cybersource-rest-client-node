@@ -52,6 +52,7 @@
 
 
 
+
     _this['signedPares'] = signedPares;
 
   };
@@ -75,6 +76,9 @@
       }
       if (data.hasOwnProperty('effectiveAuthenticationType')) {
         obj['effectiveAuthenticationType'] = ApiClient.convertToType(data['effectiveAuthenticationType'], 'String');
+      }
+      if (data.hasOwnProperty('responseAccessToken')) {
+        obj['responseAccessToken'] = ApiClient.convertToType(data['responseAccessToken'], 'String');
       }
       if (data.hasOwnProperty('signedParesStatusReason')) {
         obj['signedParesStatusReason'] = ApiClient.convertToType(data['signedParesStatusReason'], 'String');
@@ -104,6 +108,11 @@
    * @member {String} effectiveAuthenticationType
    */
   exports.prototype['effectiveAuthenticationType'] = undefined;
+  /**
+   * A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. 
+   * @member {String} responseAccessToken
+   */
+  exports.prototype['responseAccessToken'] = undefined;
   /**
    * Provides additional information as to why the PAResStatus has a specific value. 
    * @member {String} signedParesStatusReason

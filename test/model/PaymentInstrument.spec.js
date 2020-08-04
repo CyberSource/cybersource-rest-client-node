@@ -116,8 +116,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property metaData (base name: "metaData")', function() {
-      // uncomment below and update the code to test the property metaData
+    it('should have the property instrumentIdentifier (base name: "instrumentIdentifier")', function() {
+      // uncomment below and update the code to test the property instrumentIdentifier
+      //var instane = new CyberSource.PaymentInstrument();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property metadata (base name: "metadata")', function() {
+      // uncomment below and update the code to test the property metadata
       //var instane = new CyberSource.PaymentInstrument();
       //expect(instance).to.be();
     });

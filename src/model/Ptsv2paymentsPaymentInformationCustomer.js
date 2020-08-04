@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('customerId')) {
         obj['customerId'] = ApiClient.convertToType(data['customerId'], 'String');
       }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} customerId
    */
   exports.prototype['customerId'] = undefined;
+  /**
+   * Unique identifier for the Customer token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional. 
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
 
 
 

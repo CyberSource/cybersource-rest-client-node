@@ -138,7 +138,7 @@
         obj['ucafAuthenticationData'] = ApiClient.convertToType(data['ucafAuthenticationData'], 'String');
       }
       if (data.hasOwnProperty('ucafCollectionIndicator')) {
-        obj['ucafCollectionIndicator'] = ApiClient.convertToType(data['ucafCollectionIndicator'], 'Number');
+        obj['ucafCollectionIndicator'] = ApiClient.convertToType(data['ucafCollectionIndicator'], 'String');
       }
       if (data.hasOwnProperty('whiteListStatus')) {
         obj['whiteListStatus'] = ApiClient.convertToType(data['whiteListStatus'], 'String');
@@ -248,7 +248,7 @@
   exports.prototype['ucafAuthenticationData'] = undefined;
   /**
    * For enroll, Returned only for Mastercard transactions. Indicates that authentication is not required because the customer is not enrolled. Add the value of this field to the authorization field ucaf_collection_indicator. This field can contain these values: 0, 1.  For validate, Numeric electronic commerce indicator (ECI) returned only for Mastercard Identity Check transactions. The field is absent when authentication fails. You must send this value to your payment processor in the request for card authorization. This field contain one of these values: - `0`: Authentication data not collected, and customer authentication was not completed. - `1`: Authentication data not collected because customer authentication was not completed. - `2`: Authentication data collected because customer completed authentication. 
-   * @member {Number} ucafCollectionIndicator
+   * @member {String} ucafCollectionIndicator
    */
   exports.prototype['ucafCollectionIndicator'] = undefined;
   /**

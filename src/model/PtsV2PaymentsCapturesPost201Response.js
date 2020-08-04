@@ -94,11 +94,11 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = PtsV2PaymentsCapturesPost201ResponseOrderInformation.constructFromObject(data['orderInformation']);
       }
-      if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = PtsV2PaymentsCapturesPost201ResponseProcessingInformation.constructFromObject(data['processingInformation']);
-      }
       if (data.hasOwnProperty('pointOfSaleInformation')) {
         obj['pointOfSaleInformation'] = PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+      }
+      if (data.hasOwnProperty('processingInformation')) {
+        obj['processingInformation'] = PtsV2PaymentsCapturesPost201ResponseProcessingInformation.constructFromObject(data['processingInformation']);
       }
     }
     return obj;
@@ -109,12 +109,12 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
+   * An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services. 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. 
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. 
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
@@ -124,7 +124,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60) 
+   * Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60) 
    * @member {String} reconciliationId
    */
   exports.prototype['reconciliationId'] = undefined;
@@ -141,13 +141,13 @@
    */
   exports.prototype['orderInformation'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsCapturesPost201ResponseProcessingInformation} processingInformation
-   */
-  exports.prototype['processingInformation'] = undefined;
-  /**
    * @member {module:model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation} pointOfSaleInformation
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsCapturesPost201ResponseProcessingInformation} processingInformation
+   */
+  exports.prototype['processingInformation'] = undefined;
 
 
 

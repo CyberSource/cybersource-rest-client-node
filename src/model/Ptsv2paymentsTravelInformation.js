@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsTravelInformationAgency', 'model/Ptsv2paymentsTravelInformationLodging', 'model/Ptsv2paymentsTravelInformationTransit'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsTravelInformationAgency', 'model/Ptsv2paymentsTravelInformationAutoRental', 'model/Ptsv2paymentsTravelInformationLodging', 'model/Ptsv2paymentsTravelInformationTransit'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTravelInformationAgency'), require('./Ptsv2paymentsTravelInformationLodging'), require('./Ptsv2paymentsTravelInformationTransit'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTravelInformationAgency'), require('./Ptsv2paymentsTravelInformationAutoRental'), require('./Ptsv2paymentsTravelInformationLodging'), require('./Ptsv2paymentsTravelInformationTransit'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTravelInformationAgency, root.CyberSource.Ptsv2paymentsTravelInformationLodging, root.CyberSource.Ptsv2paymentsTravelInformationTransit);
+    root.CyberSource.Ptsv2paymentsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTravelInformationAgency, root.CyberSource.Ptsv2paymentsTravelInformationAutoRental, root.CyberSource.Ptsv2paymentsTravelInformationLodging, root.CyberSource.Ptsv2paymentsTravelInformationTransit);
   }
-}(this, function(ApiClient, Ptsv2paymentsTravelInformationAgency, Ptsv2paymentsTravelInformationLodging, Ptsv2paymentsTravelInformationTransit) {
+}(this, function(ApiClient, Ptsv2paymentsTravelInformationAgency, Ptsv2paymentsTravelInformationAutoRental, Ptsv2paymentsTravelInformationLodging, Ptsv2paymentsTravelInformationTransit) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -70,6 +71,9 @@
       if (data.hasOwnProperty('agency')) {
         obj['agency'] = Ptsv2paymentsTravelInformationAgency.constructFromObject(data['agency']);
       }
+      if (data.hasOwnProperty('autoRental')) {
+        obj['autoRental'] = Ptsv2paymentsTravelInformationAutoRental.constructFromObject(data['autoRental']);
+      }
       if (data.hasOwnProperty('lodging')) {
         obj['lodging'] = Ptsv2paymentsTravelInformationLodging.constructFromObject(data['lodging']);
       }
@@ -81,7 +85,7 @@
   }
 
   /**
-   * Duration for which the vehicle was rented or lodge/hotel was booked. 
+   * Duration of the auto rental or lodging rental.  #### Auto rental This field is supported for Visa, MasterCard, and American Express. **Important** If this field is not included when the `processingInformation.industryDataType` is auto rental, the transaction is declined. 
    * @member {String} duration
    */
   exports.prototype['duration'] = undefined;
@@ -89,6 +93,10 @@
    * @member {module:model/Ptsv2paymentsTravelInformationAgency} agency
    */
   exports.prototype['agency'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsTravelInformationAutoRental} autoRental
+   */
+  exports.prototype['autoRental'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsTravelInformationLodging} lodging
    */

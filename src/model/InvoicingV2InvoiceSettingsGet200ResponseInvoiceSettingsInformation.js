@@ -52,6 +52,8 @@
 
 
 
+
+
   };
 
   /**
@@ -79,6 +81,12 @@
       }
       if (data.hasOwnProperty('headerStyle')) {
         obj['headerStyle'] = InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle.constructFromObject(data['headerStyle']);
+      }
+      if (data.hasOwnProperty('deliveryLanguage')) {
+        obj['deliveryLanguage'] = ApiClient.convertToType(data['deliveryLanguage'], 'String');
+      }
+      if (data.hasOwnProperty('defaultCurrencyCode')) {
+        obj['defaultCurrencyCode'] = ApiClient.convertToType(data['defaultCurrencyCode'], 'String');
       }
     }
     return obj;
@@ -108,6 +116,16 @@
    * @member {module:model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle} headerStyle
    */
   exports.prototype['headerStyle'] = undefined;
+  /**
+   * The language of the email that we send to your customers. Possible values are `zh-CN`, `zh-TW`, `en-US`, `fr-FR`, `de-DE`, `ja-JP`, `pt-BR`, `ru-RU` and `es-419`.
+   * @member {String} deliveryLanguage
+   */
+  exports.prototype['deliveryLanguage'] = undefined;
+  /**
+   * Currency used for the order. Use the three-character [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  #### Used by **Authorization** Required field.  **Authorization Reversal** For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your payment authorization request.  #### PIN Debit Currency for the amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf). Returned by PIN debit purchase.  For PIN debit reversal requests, you must use the same currency that was used for the PIN debit purchase or PIN debit credit that you are reversing. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf).  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit.  #### DCC for First Data Your local currency. For details, see the `currency` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).  #### Tax Calculation Required for international tax and value added tax only. Optional for U.S. and Canadian taxes. Your local currency. 
+   * @member {String} defaultCurrencyCode
+   */
+  exports.prototype['defaultCurrencyCode'] = undefined;
 
 
 

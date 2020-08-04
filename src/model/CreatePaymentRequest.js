@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsAcquirerInformation', 'model/Ptsv2paymentsAggregatorInformation', 'model/Ptsv2paymentsBuyerInformation', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsConsumerAuthenticationInformation', 'model/Ptsv2paymentsDeviceInformation', 'model/Ptsv2paymentsInstallmentInformation', 'model/Ptsv2paymentsIssuerInformation', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2paymentsMerchantInformation', 'model/Ptsv2paymentsOrderInformation', 'model/Ptsv2paymentsPaymentInformation', 'model/Ptsv2paymentsPointOfSaleInformation', 'model/Ptsv2paymentsProcessingInformation', 'model/Ptsv2paymentsPromotionInformation', 'model/Ptsv2paymentsRecipientInformation', 'model/Ptsv2paymentsRecurringPaymentInformation', 'model/Ptsv2paymentsRiskInformation', 'model/Ptsv2paymentsTokenInformation', 'model/Ptsv2paymentsTravelInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsAcquirerInformation', 'model/Ptsv2paymentsAggregatorInformation', 'model/Ptsv2paymentsBuyerInformation', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsConsumerAuthenticationInformation', 'model/Ptsv2paymentsDeviceInformation', 'model/Ptsv2paymentsHealthCareInformation', 'model/Ptsv2paymentsInstallmentInformation', 'model/Ptsv2paymentsIssuerInformation', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2paymentsMerchantInformation', 'model/Ptsv2paymentsOrderInformation', 'model/Ptsv2paymentsPaymentInformation', 'model/Ptsv2paymentsPointOfSaleInformation', 'model/Ptsv2paymentsProcessingInformation', 'model/Ptsv2paymentsPromotionInformation', 'model/Ptsv2paymentsRecipientInformation', 'model/Ptsv2paymentsRecurringPaymentInformation', 'model/Ptsv2paymentsRiskInformation', 'model/Ptsv2paymentsTokenInformation', 'model/Ptsv2paymentsTravelInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsAcquirerInformation'), require('./Ptsv2paymentsAggregatorInformation'), require('./Ptsv2paymentsBuyerInformation'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsConsumerAuthenticationInformation'), require('./Ptsv2paymentsDeviceInformation'), require('./Ptsv2paymentsInstallmentInformation'), require('./Ptsv2paymentsIssuerInformation'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Ptsv2paymentsMerchantInformation'), require('./Ptsv2paymentsOrderInformation'), require('./Ptsv2paymentsPaymentInformation'), require('./Ptsv2paymentsPointOfSaleInformation'), require('./Ptsv2paymentsProcessingInformation'), require('./Ptsv2paymentsPromotionInformation'), require('./Ptsv2paymentsRecipientInformation'), require('./Ptsv2paymentsRecurringPaymentInformation'), require('./Ptsv2paymentsRiskInformation'), require('./Ptsv2paymentsTokenInformation'), require('./Ptsv2paymentsTravelInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsAcquirerInformation'), require('./Ptsv2paymentsAggregatorInformation'), require('./Ptsv2paymentsBuyerInformation'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsConsumerAuthenticationInformation'), require('./Ptsv2paymentsDeviceInformation'), require('./Ptsv2paymentsHealthCareInformation'), require('./Ptsv2paymentsInstallmentInformation'), require('./Ptsv2paymentsIssuerInformation'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Ptsv2paymentsMerchantInformation'), require('./Ptsv2paymentsOrderInformation'), require('./Ptsv2paymentsPaymentInformation'), require('./Ptsv2paymentsPointOfSaleInformation'), require('./Ptsv2paymentsProcessingInformation'), require('./Ptsv2paymentsPromotionInformation'), require('./Ptsv2paymentsRecipientInformation'), require('./Ptsv2paymentsRecurringPaymentInformation'), require('./Ptsv2paymentsRiskInformation'), require('./Ptsv2paymentsTokenInformation'), require('./Ptsv2paymentsTravelInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreatePaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsAcquirerInformation, root.CyberSource.Ptsv2paymentsAggregatorInformation, root.CyberSource.Ptsv2paymentsBuyerInformation, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformation, root.CyberSource.Ptsv2paymentsDeviceInformation, root.CyberSource.Ptsv2paymentsInstallmentInformation, root.CyberSource.Ptsv2paymentsIssuerInformation, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Ptsv2paymentsMerchantInformation, root.CyberSource.Ptsv2paymentsOrderInformation, root.CyberSource.Ptsv2paymentsPaymentInformation, root.CyberSource.Ptsv2paymentsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsProcessingInformation, root.CyberSource.Ptsv2paymentsPromotionInformation, root.CyberSource.Ptsv2paymentsRecipientInformation, root.CyberSource.Ptsv2paymentsRecurringPaymentInformation, root.CyberSource.Ptsv2paymentsRiskInformation, root.CyberSource.Ptsv2paymentsTokenInformation, root.CyberSource.Ptsv2paymentsTravelInformation);
+    root.CyberSource.CreatePaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsAcquirerInformation, root.CyberSource.Ptsv2paymentsAggregatorInformation, root.CyberSource.Ptsv2paymentsBuyerInformation, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformation, root.CyberSource.Ptsv2paymentsDeviceInformation, root.CyberSource.Ptsv2paymentsHealthCareInformation, root.CyberSource.Ptsv2paymentsInstallmentInformation, root.CyberSource.Ptsv2paymentsIssuerInformation, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Ptsv2paymentsMerchantInformation, root.CyberSource.Ptsv2paymentsOrderInformation, root.CyberSource.Ptsv2paymentsPaymentInformation, root.CyberSource.Ptsv2paymentsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsProcessingInformation, root.CyberSource.Ptsv2paymentsPromotionInformation, root.CyberSource.Ptsv2paymentsRecipientInformation, root.CyberSource.Ptsv2paymentsRecurringPaymentInformation, root.CyberSource.Ptsv2paymentsRiskInformation, root.CyberSource.Ptsv2paymentsTokenInformation, root.CyberSource.Ptsv2paymentsTravelInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsAcquirerInformation, Ptsv2paymentsAggregatorInformation, Ptsv2paymentsBuyerInformation, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsConsumerAuthenticationInformation, Ptsv2paymentsDeviceInformation, Ptsv2paymentsInstallmentInformation, Ptsv2paymentsIssuerInformation, Ptsv2paymentsMerchantDefinedInformation, Ptsv2paymentsMerchantInformation, Ptsv2paymentsOrderInformation, Ptsv2paymentsPaymentInformation, Ptsv2paymentsPointOfSaleInformation, Ptsv2paymentsProcessingInformation, Ptsv2paymentsPromotionInformation, Ptsv2paymentsRecipientInformation, Ptsv2paymentsRecurringPaymentInformation, Ptsv2paymentsRiskInformation, Ptsv2paymentsTokenInformation, Ptsv2paymentsTravelInformation) {
+}(this, function(ApiClient, Ptsv2paymentsAcquirerInformation, Ptsv2paymentsAggregatorInformation, Ptsv2paymentsBuyerInformation, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsConsumerAuthenticationInformation, Ptsv2paymentsDeviceInformation, Ptsv2paymentsHealthCareInformation, Ptsv2paymentsInstallmentInformation, Ptsv2paymentsIssuerInformation, Ptsv2paymentsMerchantDefinedInformation, Ptsv2paymentsMerchantInformation, Ptsv2paymentsOrderInformation, Ptsv2paymentsPaymentInformation, Ptsv2paymentsPointOfSaleInformation, Ptsv2paymentsProcessingInformation, Ptsv2paymentsPromotionInformation, Ptsv2paymentsRecipientInformation, Ptsv2paymentsRecurringPaymentInformation, Ptsv2paymentsRiskInformation, Ptsv2paymentsTokenInformation, Ptsv2paymentsTravelInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -124,6 +125,9 @@
       }
       if (data.hasOwnProperty('travelInformation')) {
         obj['travelInformation'] = Ptsv2paymentsTravelInformation.constructFromObject(data['travelInformation']);
+      }
+      if (data.hasOwnProperty('healthCareInformation')) {
+        obj['healthCareInformation'] = Ptsv2paymentsHealthCareInformation.constructFromObject(data['healthCareInformation']);
       }
       if (data.hasOwnProperty('promotionInformation')) {
         obj['promotionInformation'] = Ptsv2paymentsPromotionInformation.constructFromObject(data['promotionInformation']);
@@ -205,6 +209,10 @@
    * @member {module:model/Ptsv2paymentsTravelInformation} travelInformation
    */
   exports.prototype['travelInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsHealthCareInformation} healthCareInformation
+   */
+  exports.prototype['healthCareInformation'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsPromotionInformation} promotionInformation
    */

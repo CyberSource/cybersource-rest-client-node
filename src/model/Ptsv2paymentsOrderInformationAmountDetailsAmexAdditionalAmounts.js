@@ -78,7 +78,7 @@
    */
   exports.prototype['code'] = undefined;
   /**
-   * Additional amount. This field is supported only for **American Express Direct**.  For processor-specific information, see the additional_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Additional amount. This field is supported only for **American Express Direct**. 
    * @member {String} amount
    */
   exports.prototype['amount'] = undefined;
