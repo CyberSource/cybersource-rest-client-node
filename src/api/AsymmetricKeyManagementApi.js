@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2011', 'model/InlineResponse4002', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse4002', 'model/KmsV2KeysAsymDeletesPost200Response', 'model/KmsV2KeysAsymGet200Response', 'model/KmsV2KeysAsymPost201Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse2002'), require('../model/InlineResponse2003'), require('../model/InlineResponse2011'), require('../model/InlineResponse4002'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse4002'), require('../model/KmsV2KeysAsymDeletesPost200Response'), require('../model/KmsV2KeysAsymGet200Response'), require('../model/KmsV2KeysAsymPost201Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse4002, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.KmsV2KeysAsymDeletesPost200Response, root.CyberSource.KmsV2KeysAsymGet200Response, root.CyberSource.KmsV2KeysAsymPost201Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse2002, InlineResponse2003, InlineResponse2011, InlineResponse4002, PtsV2PaymentsPost502Response) {
+}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse4002, KmsV2KeysAsymDeletesPost200Response, KmsV2KeysAsymGet200Response, KmsV2KeysAsymPost201Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createP12Keys operation.
      * @callback module:api/AsymmetricKeyManagementApi~createP12KeysCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2011} data The data returned by the service call.
+     * @param {module:model/KmsV2KeysAsymPost201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * &#39;Create one or more PKCS#12 keys&#39; 
      * @param {module:model/CreateP12KeysRequest} createP12KeysRequest 
      * @param {module:api/AsymmetricKeyManagementApi~createP12KeysCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2011}
+     * data is of type: {@link module:model/KmsV2KeysAsymPost201Response}
      */
     this.createP12Keys = function(createP12KeysRequest, callback) {
       var postBody = createP12KeysRequest;
@@ -85,7 +85,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2011;
+      var returnType = KmsV2KeysAsymPost201Response;
 
       return this.apiClient.callApi(
         '/kms/v2/keys-asym', 'POST',
@@ -98,7 +98,7 @@
      * Callback function to receive the result of the deleteBulkP12Keys operation.
      * @callback module:api/AsymmetricKeyManagementApi~deleteBulkP12KeysCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
+     * @param {module:model/KmsV2KeysAsymDeletesPost200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -107,7 +107,7 @@
      * &#39;Delete one or more PKCS#12 keys&#39; 
      * @param {module:model/DeleteBulkP12KeysRequest} deleteBulkP12KeysRequest 
      * @param {module:api/AsymmetricKeyManagementApi~deleteBulkP12KeysCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * data is of type: {@link module:model/KmsV2KeysAsymDeletesPost200Response}
      */
     this.deleteBulkP12Keys = function(deleteBulkP12KeysRequest, callback) {
       var postBody = deleteBulkP12KeysRequest;
@@ -130,7 +130,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2003;
+      var returnType = KmsV2KeysAsymDeletesPost200Response;
 
       return this.apiClient.callApi(
         '/kms/v2/keys-asym/deletes', 'POST',
@@ -143,7 +143,7 @@
      * Callback function to receive the result of the getP12KeyDetails operation.
      * @callback module:api/AsymmetricKeyManagementApi~getP12KeyDetailsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/KmsV2KeysAsymGet200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -152,7 +152,7 @@
      * Retrieves keys details by providing the key id.
      * @param {String} keyId Key ID. 
      * @param {module:api/AsymmetricKeyManagementApi~getP12KeyDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/KmsV2KeysAsymGet200Response}
      */
     this.getP12KeyDetails = function(keyId, callback) {
       var postBody = null;
@@ -176,7 +176,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2002;
+      var returnType = KmsV2KeysAsymGet200Response;
 
       return this.apiClient.callApi(
         '/kms/v2/keys-asym/{keyId}', 'GET',

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createV2SharedSecretKeys"></a>
 # **createV2SharedSecretKeys**
-> InlineResponse201 createV2SharedSecretKeys(createSharedSecretKeysRequest)
+> KmsV2KeysSymPost201Response createV2SharedSecretKeys(createSharedSecretKeysRequest)
 
 Create Shared-Secret Keys
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**KmsV2KeysSymPost201Response**](KmsV2KeysSymPost201Response.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 
 <a name="deleteBulkSymmetricKeys"></a>
 # **deleteBulkSymmetricKeys**
-> InlineResponse2001 deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest)
+> KmsV2KeysSymDeletesPost200Response deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest)
 
 Delete one or more Symmetric keys
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**KmsV2KeysSymDeletesPost200Response**](KmsV2KeysSymDeletesPost200Response.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ No authorization required
 
 <a name="getKeyDetails"></a>
 # **getKeyDetails**
-> InlineResponse200 getKeyDetails(keyId)
+> KmsV2KeysSymGet200Response getKeyDetails(keyId)
 
 Retrieves shared secret key details
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**KmsV2KeysSymGet200Response**](KmsV2KeysSymGet200Response.md)
 
 ### Authorization
 

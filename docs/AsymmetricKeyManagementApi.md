@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createP12Keys"></a>
 # **createP12Keys**
-> InlineResponse2011 createP12Keys(createP12KeysRequest)
+> KmsV2KeysAsymPost201Response createP12Keys(createP12KeysRequest)
 
 Create one or more PKCS#12 keys
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**KmsV2KeysAsymPost201Response**](KmsV2KeysAsymPost201Response.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 
 <a name="deleteBulkP12Keys"></a>
 # **deleteBulkP12Keys**
-> InlineResponse2003 deleteBulkP12Keys(deleteBulkP12KeysRequest)
+> KmsV2KeysAsymDeletesPost200Response deleteBulkP12Keys(deleteBulkP12KeysRequest)
 
 Delete one or more PKCS#12 keys
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**KmsV2KeysAsymDeletesPost200Response**](KmsV2KeysAsymDeletesPost200Response.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ No authorization required
 
 <a name="getP12KeyDetails"></a>
 # **getP12KeyDetails**
-> InlineResponse2002 getP12KeyDetails(keyId)
+> KmsV2KeysAsymGet200Response getP12KeyDetails(keyId)
 
 Retrieves PKCS#12 key details
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**KmsV2KeysAsymGet200Response**](KmsV2KeysAsymGet200Response.md)
 
 ### Authorization
 
