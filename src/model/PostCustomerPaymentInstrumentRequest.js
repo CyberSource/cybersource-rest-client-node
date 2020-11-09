@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -81,6 +82,9 @@
       }
       if (data.hasOwnProperty('object')) {
         obj['object'] = ApiClient.convertToType(data['object'], 'String');
+      }
+      if (data.hasOwnProperty('default')) {
+        obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -130,6 +134,11 @@
    * @member {String} object
    */
   exports.prototype['object'] = undefined;
+  /**
+   * Flag that indicates whether customer payment instrument is the dafault. Valid values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default. 
+   * @member {Boolean} default
+   */
+  exports.prototype['default'] = undefined;
   /**
    * Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed. 
    * @member {String} state

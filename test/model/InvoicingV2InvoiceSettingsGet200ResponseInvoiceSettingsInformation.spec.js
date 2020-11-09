@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property payerAuthentication3DSVersion (base name: "payerAuthentication3DSVersion")', function() {
+      // uncomment below and update the code to test the property payerAuthentication3DSVersion
+      //var instane = new CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

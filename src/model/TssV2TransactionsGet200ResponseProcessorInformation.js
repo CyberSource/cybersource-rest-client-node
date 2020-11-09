@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/Riskv1decisionsProcessorInformationCardVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults', 'model/TssV2TransactionsGet200ResponseProcessorInformationProcessor'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/Riskv1decisionsProcessorInformationCardVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults', 'model/TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting', 'model/TssV2TransactionsGet200ResponseProcessorInformationProcessor'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./Riskv1decisionsProcessorInformationCardVerification'), require('./TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'), require('./TssV2TransactionsGet200ResponseProcessorInformationProcessor'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./Riskv1decisionsProcessorInformationCardVerification'), require('./TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'), require('./TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting'), require('./TssV2TransactionsGet200ResponseProcessorInformationProcessor'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.Riskv1decisionsProcessorInformationCardVerification, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationProcessor);
+    root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.Riskv1decisionsProcessorInformationCardVerification, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationProcessor);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, Riskv1decisionsProcessorInformationCardVerification, TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, TssV2TransactionsGet200ResponseProcessorInformationProcessor) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, Riskv1decisionsProcessorInformationCardVerification, TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting, TssV2TransactionsGet200ResponseProcessorInformationProcessor) {
   'use strict';
 
 
@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -75,6 +76,9 @@
 
       if (data.hasOwnProperty('processor')) {
         obj['processor'] = TssV2TransactionsGet200ResponseProcessorInformationProcessor.constructFromObject(data['processor']);
+      }
+      if (data.hasOwnProperty('multiProcessorRouting')) {
+        obj['multiProcessorRouting'] = ApiClient.convertToType(data['multiProcessorRouting'], [TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting]);
       }
       if (data.hasOwnProperty('transactionId')) {
         obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
@@ -120,6 +124,11 @@
    * @member {module:model/TssV2TransactionsGet200ResponseProcessorInformationProcessor} processor
    */
   exports.prototype['processor'] = undefined;
+  /**
+   * An array of object that contains the list of acquirer response codes & reasons if a transaction is routed to multiple acquirers.
+   * @member {Array.<module:model/TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting>} multiProcessorRouting
+   */
+  exports.prototype['multiProcessorRouting'] = undefined;
   /**
    * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value.  Returned by the authorization service.  #### PIN debit Transaction identifier generated by the processor.  Returned by PIN debit credit.  #### GPX Processor transaction ID.  #### Cielo For Cielo, this value is the non-sequential unit (NSU) and is supported for all transactions. The value is generated by Cielo or the issuing bank.  #### Comercio Latino For Comercio Latino, this value is the proof of sale or non-sequential unit (NSU) number generated by the acquirers Cielo and Rede, or the issuing bank.  #### CyberSource through VisaNet and GPN For details about this value for CyberSource through VisaNet and GPN, see \"Network Transaction Identifiers\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Moneris This value identifies the transaction on a host system. It contains the following information: - Terminal used to process the transaction - Shift during which the transaction took place - Batch number - Transaction number within the batch You must store this value. If you give the customer a receipt, display this value on the receipt.  **Example** For the value 66012345001069003: - Terminal ID = 66012345 - Shift number = 001 - Batch number = 069 - Transaction number = 003 
    * @member {String} transactionId

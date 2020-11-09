@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -69,6 +70,9 @@
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('default')) {
+        obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
       }
       if (data.hasOwnProperty('shipTo')) {
         obj['shipTo'] = Tmsv2customersEmbeddedDefaultShippingAddressShipTo.constructFromObject(data['shipTo']);
@@ -89,6 +93,11 @@
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
+  /**
+   * Flag that indicates whether customer shipping address is the dafault. Valid values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. 
+   * @member {Boolean} default
+   */
+  exports.prototype['default'] = undefined;
   /**
    * @member {module:model/Tmsv2customersEmbeddedDefaultShippingAddressShipTo} shipTo
    */

@@ -104,6 +104,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property scheme (base name: "scheme")', function() {
+      // uncomment below and update the code to test the property scheme
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bin (base name: "bin")', function() {
+      // uncomment below and update the code to test the property bin
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountType (base name: "accountType")', function() {
+      // uncomment below and update the code to test the property accountType
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property issuer (base name: "issuer")', function() {
+      // uncomment below and update the code to test the property issuer
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property binCountry (base name: "binCountry")', function() {
+      // uncomment below and update the code to test the property binCountry
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

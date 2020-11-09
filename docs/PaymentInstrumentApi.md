@@ -165,6 +165,8 @@ No authorization required
 
 Create a Payment Instrument
 
+Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
+
 ### Example
 ```javascript
 var CyberSource = require('CyberSource');

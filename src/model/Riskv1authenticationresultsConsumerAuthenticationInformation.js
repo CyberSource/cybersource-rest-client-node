@@ -109,7 +109,7 @@
    */
   exports.prototype['effectiveAuthenticationType'] = undefined;
   /**
-   * A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. 
+   * A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. Note - Max Length of this field is 2048 characters. 
    * @member {String} responseAccessToken
    */
   exports.prototype['responseAccessToken'] = undefined;

@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property multiProcessorRouting (base name: "multiProcessorRouting")', function() {
+      // uncomment below and update the code to test the property multiProcessorRouting
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property transactionId (base name: "transactionId")', function() {
       // uncomment below and update the code to test the property transactionId
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
