@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('defaultCurrencyCode')) {
         obj['defaultCurrencyCode'] = ApiClient.convertToType(data['defaultCurrencyCode'], 'String');
+      }
+      if (data.hasOwnProperty('payerAuthentication3DSVersion')) {
+        obj['payerAuthentication3DSVersion'] = ApiClient.convertToType(data['payerAuthentication3DSVersion'], 'String');
       }
     }
     return obj;
@@ -126,6 +130,11 @@
    * @member {String} defaultCurrencyCode
    */
   exports.prototype['defaultCurrencyCode'] = undefined;
+  /**
+   * The 3D Secure payer authentication version or status for a merchant's invoice payments. Possible values are: - `1` - `2` - `None` - `Disabled` 
+   * @member {String} payerAuthentication3DSVersion
+   */
+  exports.prototype['payerAuthentication3DSVersion'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation'], factory);
+    define(['ApiClient', 'model/Invoicingv2invoiceSettingsInvoiceSettingsInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoiceSettingsInvoiceSettingsInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoiceSettingsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation);
+    root.CyberSource.InvoiceSettingsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoiceSettingsInvoiceSettingsInformation);
   }
-}(this, function(ApiClient, InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation) {
+}(this, function(ApiClient, Invoicingv2invoiceSettingsInvoiceSettingsInformation) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('invoiceSettingsInformation')) {
-        obj['invoiceSettingsInformation'] = InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.constructFromObject(data['invoiceSettingsInformation']);
+        obj['invoiceSettingsInformation'] = Invoicingv2invoiceSettingsInvoiceSettingsInformation.constructFromObject(data['invoiceSettingsInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation} invoiceSettingsInformation
+   * @member {module:model/Invoicingv2invoiceSettingsInvoiceSettingsInformation} invoiceSettingsInformation
    */
   exports.prototype['invoiceSettingsInformation'] = undefined;
 

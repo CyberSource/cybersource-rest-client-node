@@ -209,7 +209,7 @@
   }
 
   /**
-   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. 
+   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters. 
    * @member {String} accessToken
    */
   exports.prototype['accessToken'] = undefined;
@@ -274,7 +274,7 @@
    */
   exports.prototype['decoupledAuthenticationIndicator'] = undefined;
   /**
-   * The directory server error code indicating a problem with this transaction. 
+   * The directory server error code indicating a problem with this transaction. Note - Max Length of this field is typically 3 characters. 
    * @member {String} directoryServerErrorCode
    */
   exports.prototype['directoryServerErrorCode'] = undefined;

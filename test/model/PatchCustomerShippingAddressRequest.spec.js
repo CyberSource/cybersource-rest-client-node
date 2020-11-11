@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property _default (base name: "default")', function() {
+      // uncomment below and update the code to test the property _default
+      //var instane = new CyberSource.PatchCustomerShippingAddressRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property shipTo (base name: "shipTo")', function() {
       // uncomment below and update the code to test the property shipTo
       //var instane = new CyberSource.PatchCustomerShippingAddressRequest();

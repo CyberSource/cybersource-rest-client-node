@@ -213,6 +213,7 @@
 
     /**
      * Create a Payment Instrument
+     * Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
      * @param {module:model/PostPaymentInstrumentRequest} postPaymentInstrumentRequest 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.

@@ -192,7 +192,7 @@
    */
   exports.prototype['cavvAlgorithm'] = undefined;
   /**
-   * The directory server error code indicating a problem with this transaction. 
+   * The directory server error code indicating a problem with this transaction. Note - Max Length of this field is typically 3 characters. 
    * @member {String} directoryServerErrorCode
    */
   exports.prototype['directoryServerErrorCode'] = undefined;
