@@ -100,6 +100,16 @@
         done();
       });
     });
+    describe('postInstrumentIdentifierEnrollment', function() {
+      it('should call postInstrumentIdentifierEnrollment successfully', function(done) {
+        //uncomment below and update the code to test postInstrumentIdentifierEnrollment
+        //instance.postInstrumentIdentifierEnrollment(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

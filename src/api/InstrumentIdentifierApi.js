@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentListForCustomer', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentListForCustomer', 'model/PostInstrumentIdentifierEnrollmentRequest', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentListForCustomer'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentListForCustomer'), require('../model/PostInstrumentIdentifierEnrollmentRequest'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentListForCustomer, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
+    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentListForCustomer, root.CyberSource.PostInstrumentIdentifierEnrollmentRequest, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
   }
-}(this, function(ApiClient, InlineResponse400, PatchInstrumentIdentifierRequest, PaymentInstrumentListForCustomer, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
+}(this, function(ApiClient, InlineResponse400, PatchInstrumentIdentifierRequest, PaymentInstrumentListForCustomer, PostInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
   'use strict';
 
   /**
@@ -266,7 +266,7 @@
 
     /**
      * Create an Instrument Identifier
-     * @param {module:model/PostInstrumentIdentifierRequest} postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card
+     * @param {module:model/PostInstrumentIdentifierRequest} postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
@@ -299,6 +299,60 @@
 
       return this.apiClient.callApi(
         '/tms/v1/instrumentidentifiers', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the postInstrumentIdentifierEnrollment operation.
+     * @callback module:api/InstrumentIdentifierApi~postInstrumentIdentifierEnrollmentCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Enroll an Instrument Identifier for Network Tokenization
+     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * @param {module:model/PostInstrumentIdentifierEnrollmentRequest} postInstrumentIdentifierEnrollmentRequest Specify Enrollable Card details
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierEnrollmentCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.postInstrumentIdentifierEnrollment = function(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = postInstrumentIdentifierEnrollmentRequest;
+
+      // verify the required parameter 'instrumentIdentifierTokenId' is set
+      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling postInstrumentIdentifierEnrollment");
+      }
+
+      // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
+      if (postInstrumentIdentifierEnrollmentRequest === undefined || postInstrumentIdentifierEnrollmentRequest === null) {
+        throw new Error("Missing the required parameter 'postInstrumentIdentifierEnrollmentRequest' when calling postInstrumentIdentifierEnrollment");
+      }
+
+
+      var pathParams = {
+        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'profile-id': opts['profileId']
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/enrollment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
