@@ -43,14 +43,13 @@
    * Constructs a new <code>AddNegativeListRequest</code>.
    * @alias module:model/AddNegativeListRequest
    * @class
-   * @param clientReferenceInformation {module:model/Riskv1decisionsClientReferenceInformation} 
    */
-  var exports = function(clientReferenceInformation) {
+  var exports = function() {
     var _this = this;
 
 
 
-    _this['clientReferenceInformation'] = clientReferenceInformation;
+
 
 
 

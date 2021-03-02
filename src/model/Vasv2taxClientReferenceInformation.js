@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Vasv2taxClientReferenceInformationPartner'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsClientReferenceInformationPartner'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Vasv2taxClientReferenceInformationPartner'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsClientReferenceInformationPartner'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Vasv2taxClientReferenceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Vasv2taxClientReferenceInformationPartner);
+    root.CyberSource.Vasv2taxClientReferenceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsClientReferenceInformationPartner);
   }
-}(this, function(ApiClient, Vasv2taxClientReferenceInformationPartner) {
+}(this, function(ApiClient, Riskv1decisionsClientReferenceInformationPartner) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
       if (data.hasOwnProperty('partner')) {
-        obj['partner'] = Vasv2taxClientReferenceInformationPartner.constructFromObject(data['partner']);
+        obj['partner'] = Riskv1decisionsClientReferenceInformationPartner.constructFromObject(data['partner']);
       }
       if (data.hasOwnProperty('comments')) {
         obj['comments'] = ApiClient.convertToType(data['comments'], 'String');
@@ -82,7 +82,7 @@
    */
   exports.prototype['code'] = undefined;
   /**
-   * @member {module:model/Vasv2taxClientReferenceInformationPartner} partner
+   * @member {module:model/Riskv1decisionsClientReferenceInformationPartner} partner
    */
   exports.prototype['partner'] = undefined;
   /**

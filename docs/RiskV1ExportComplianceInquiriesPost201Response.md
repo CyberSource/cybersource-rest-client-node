@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **submitTimeLocal** | **String** | Time that the transaction was submitted in local time. | [optional] 
 **status** | **String** | The status for the call can be: - COMPLETED - INVALID_REQUEST - DECLINED  | [optional] 
 **message** | **String** | The message describing the reason of the status. Value can be   - The customer matched the Denied Parties List   - The Export bill_country/ship_country  match   - Export email_country match   - Export hostname_country/ip_country match  | [optional] 
-**clientReferenceInformation** | [**PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation**](PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**RiskV1DecisionsPost201ResponseClientReferenceInformation**](RiskV1DecisionsPost201ResponseClientReferenceInformation.md) |  | [optional] 
 **exportComplianceInformation** | [**RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation**](RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation.md) |  | [optional] 
 **errorInformation** | [**RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation**](RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation.md) |  | [optional] 
 

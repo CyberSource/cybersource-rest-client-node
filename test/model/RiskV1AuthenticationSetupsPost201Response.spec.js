@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
+      // uncomment below and update the code to test the property clientReferenceInformation
+      //var instane = new CyberSource.RiskV1AuthenticationSetupsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property errorInformation (base name: "errorInformation")', function() {
       // uncomment below and update the code to test the property errorInformation
       //var instane = new CyberSource.RiskV1AuthenticationSetupsPost201Response();

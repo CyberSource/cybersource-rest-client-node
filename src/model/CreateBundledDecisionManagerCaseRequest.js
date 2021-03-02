@@ -43,13 +43,12 @@
    * Constructs a new <code>CreateBundledDecisionManagerCaseRequest</code>.
    * @alias module:model/CreateBundledDecisionManagerCaseRequest
    * @class
-   * @param clientReferenceInformation {module:model/Riskv1decisionsClientReferenceInformation} 
    * @param orderInformation {module:model/Riskv1decisionsOrderInformation} 
    */
-  var exports = function(clientReferenceInformation, orderInformation) {
+  var exports = function(orderInformation) {
     var _this = this;
 
-    _this['clientReferenceInformation'] = clientReferenceInformation;
+
 
 
 

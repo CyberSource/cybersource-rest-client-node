@@ -140,6 +140,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property healthCareInformation (base name: "healthCareInformation")', function() {
+      // uncomment below and update the code to test the property healthCareInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property merchantDefinedInformation (base name: "merchantDefinedInformation")', function() {
       // uncomment below and update the code to test the property merchantDefinedInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();

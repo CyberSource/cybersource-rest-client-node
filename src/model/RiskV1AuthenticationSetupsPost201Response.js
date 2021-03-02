@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation', 'model/RiskV1AuthenticationSetupsPost201ResponseErrorInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation', 'model/RiskV1AuthenticationSetupsPost201ResponseErrorInformation', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation'), require('./RiskV1AuthenticationSetupsPost201ResponseErrorInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation'), require('./RiskV1AuthenticationSetupsPost201ResponseErrorInformation'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1AuthenticationSetupsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation, root.CyberSource.RiskV1AuthenticationSetupsPost201ResponseErrorInformation);
+    root.CyberSource.RiskV1AuthenticationSetupsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation, root.CyberSource.RiskV1AuthenticationSetupsPost201ResponseErrorInformation, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation, RiskV1AuthenticationSetupsPost201ResponseErrorInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation, RiskV1AuthenticationSetupsPost201ResponseErrorInformation, RiskV1DecisionsPost201ResponseClientReferenceInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -81,6 +82,9 @@
       if (data.hasOwnProperty('consumerAuthenticationInformation')) {
         obj['consumerAuthenticationInformation'] = RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
       }
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = RiskV1DecisionsPost201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      }
       if (data.hasOwnProperty('errorInformation')) {
         obj['errorInformation'] = RiskV1AuthenticationSetupsPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
       }
@@ -111,6 +115,10 @@
    * @member {module:model/RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation} consumerAuthenticationInformation
    */
   exports.prototype['consumerAuthenticationInformation'] = undefined;
+  /**
+   * @member {module:model/RiskV1DecisionsPost201ResponseClientReferenceInformation} clientReferenceInformation
+   */
+  exports.prototype['clientReferenceInformation'] = undefined;
   /**
    * @member {module:model/RiskV1AuthenticationSetupsPost201ResponseErrorInformation} errorInformation
    */

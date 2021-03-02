@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**Riskv1decisionsClientReferenceInformation**](Riskv1decisionsClientReferenceInformation.md) |  | 
+**clientReferenceInformation** | [**Riskv1decisionsClientReferenceInformation**](Riskv1decisionsClientReferenceInformation.md) |  | [optional] 
 **processorInformation** | [**Riskv1decisionsProcessorInformation**](Riskv1decisionsProcessorInformation.md) |  | [optional] 
 **processingInformation** | [**Riskv1decisionsProcessingInformation**](Riskv1decisionsProcessingInformation.md) |  | [optional] 
 **paymentInformation** | [**Riskv1decisionsPaymentInformation**](Riskv1decisionsPaymentInformation.md) |  | [optional] 
