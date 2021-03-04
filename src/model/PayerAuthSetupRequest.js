@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationsetupsClientReferenceInformation', 'model/Riskv1authenticationsetupsPaymentInformation', 'model/Riskv1authenticationsetupsProcessingInformation', 'model/Riskv1authenticationsetupsTokenInformation'], factory);
+    define(['ApiClient', 'model/Riskv1authenticationsetupsPaymentInformation', 'model/Riskv1authenticationsetupsProcessingInformation', 'model/Riskv1authenticationsetupsTokenInformation', 'model/Riskv1decisionsClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationsetupsClientReferenceInformation'), require('./Riskv1authenticationsetupsPaymentInformation'), require('./Riskv1authenticationsetupsProcessingInformation'), require('./Riskv1authenticationsetupsTokenInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationsetupsPaymentInformation'), require('./Riskv1authenticationsetupsProcessingInformation'), require('./Riskv1authenticationsetupsTokenInformation'), require('./Riskv1decisionsClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PayerAuthSetupRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationsetupsClientReferenceInformation, root.CyberSource.Riskv1authenticationsetupsPaymentInformation, root.CyberSource.Riskv1authenticationsetupsProcessingInformation, root.CyberSource.Riskv1authenticationsetupsTokenInformation);
+    root.CyberSource.PayerAuthSetupRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationsetupsPaymentInformation, root.CyberSource.Riskv1authenticationsetupsProcessingInformation, root.CyberSource.Riskv1authenticationsetupsTokenInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation);
   }
-}(this, function(ApiClient, Riskv1authenticationsetupsClientReferenceInformation, Riskv1authenticationsetupsPaymentInformation, Riskv1authenticationsetupsProcessingInformation, Riskv1authenticationsetupsTokenInformation) {
+}(this, function(ApiClient, Riskv1authenticationsetupsPaymentInformation, Riskv1authenticationsetupsProcessingInformation, Riskv1authenticationsetupsTokenInformation, Riskv1decisionsClientReferenceInformation) {
   'use strict';
 
 
@@ -65,7 +65,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Riskv1authenticationsetupsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Riskv1decisionsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('paymentInformation')) {
         obj['paymentInformation'] = Riskv1authenticationsetupsPaymentInformation.constructFromObject(data['paymentInformation']);
@@ -81,7 +81,7 @@
   }
 
   /**
-   * @member {module:model/Riskv1authenticationsetupsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Riskv1decisionsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**

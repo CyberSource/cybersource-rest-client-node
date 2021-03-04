@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -77,6 +78,9 @@
       if (data.hasOwnProperty('customerList')) {
         obj['customerList'] = ApiClient.convertToType(data['customerList'], ['String']);
       }
+      if (data.hasOwnProperty('deviceBehavior')) {
+        obj['deviceBehavior'] = ApiClient.convertToType(data['deviceBehavior'], ['String']);
+      }
       if (data.hasOwnProperty('identityChange')) {
         obj['identityChange'] = ApiClient.convertToType(data['identityChange'], ['String']);
       }
@@ -97,42 +101,47 @@
   }
 
   /**
-   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  Returned by Decision Manager service. 
+   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules. 
    * @member {Array.<String>} velocity
    */
   exports.prototype['velocity'] = undefined;
   /**
-   * Indicates a mismatch between the customer’s billing and shipping addresses.  Returned by scoring service. 
+   * Indicates a mismatch between the customer’s billing and shipping addresses. 
    * @member {Array.<String>} address
    */
   exports.prototype['address'] = undefined;
   /**
-   * Indicates that customer information is associated with transactions that are either on the negative or the positive list.  Returned by scoring service. 
+   * Indicates that customer information is associated with transactions that are either on the negative or the positive list. 
    * @member {Array.<String>} customerList
    */
   exports.prototype['customerList'] = undefined;
   /**
-   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  Returned by scoring service. 
+   * Indicates the device behavior information code(s) returned from device fingerprinting. 
+   * @member {Array.<String>} deviceBehavior
+   */
+  exports.prototype['deviceBehavior'] = undefined;
+  /**
+   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. 
    * @member {Array.<String>} identityChange
    */
   exports.prototype['identityChange'] = undefined;
   /**
-   * Indicates a problem with the customer’s email address, IP address, or billing address.  Returned by scoring service. 
+   * Indicates a problem with the customer’s email address, IP address, or billing address. 
    * @member {Array.<String>} internet
    */
   exports.prototype['internet'] = undefined;
   /**
-   * Indicates a problem with the customer’s phone number.  Returned by scoring service. 
+   * Indicates a problem with the customer’s phone number. 
    * @member {Array.<String>} phone
    */
   exports.prototype['phone'] = undefined;
   /**
-   * Indicates that the customer provided potentially suspicious information.  Returned by scoring service. 
+   * Indicates that the customer provided potentially suspicious information. 
    * @member {Array.<String>} suspicious
    */
   exports.prototype['suspicious'] = undefined;
   /**
-   * Indicates that the customer has a high purchase frequency.  Returned by scoring service. 
+   * Indicates that the customer has a high purchase frequency. 
    * @member {Array.<String>} globalVelocity
    */
   exports.prototype['globalVelocity'] = undefined;

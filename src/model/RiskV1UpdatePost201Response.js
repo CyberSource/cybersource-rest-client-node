@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1UpdatePost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks);
+    root.CyberSource.RiskV1UpdatePost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, PtsV2IncrementalAuthorizationPatch201ResponseLinks) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, RiskV1DecisionsPost201ResponseClientReferenceInformation) {
   'use strict';
 
 
@@ -69,7 +69,7 @@
         obj['_links'] = PtsV2IncrementalAuthorizationPatch201ResponseLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('clientReferenceInformaton')) {
-        obj['clientReferenceInformaton'] = PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformaton']);
+        obj['clientReferenceInformaton'] = RiskV1DecisionsPost201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformaton']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -89,7 +89,7 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation} clientReferenceInformaton
+   * @member {module:model/RiskV1DecisionsPost201ResponseClientReferenceInformation} clientReferenceInformaton
    */
   exports.prototype['clientReferenceInformaton'] = undefined;
   /**

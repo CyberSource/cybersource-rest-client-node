@@ -1,6 +1,6 @@
 {
   "name": "cybersource-rest-client",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Node.js SDK for the CyberSource REST API",
   "license": "CyberSource",
   "main": "src/index.js",
@@ -13,7 +13,7 @@
   "dependencies": {
     "superagent": "3.8.3",
     "superagent-proxy": "^2.0.0",
-    "cybersource-rest-auth": "0.0.7"
+    "cybersource-rest-auth": "0.0.8"
   },
   "devDependencies": {
     "mocha": "~5.2.0",

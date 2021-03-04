@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1addressverificationsBuyerInformation', 'model/Riskv1addressverificationsClientReferenceInformation', 'model/Riskv1addressverificationsOrderInformation'], factory);
+    define(['ApiClient', 'model/Riskv1addressverificationsBuyerInformation', 'model/Riskv1addressverificationsOrderInformation', 'model/Riskv1decisionsClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1addressverificationsBuyerInformation'), require('./Riskv1addressverificationsClientReferenceInformation'), require('./Riskv1addressverificationsOrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1addressverificationsBuyerInformation'), require('./Riskv1addressverificationsOrderInformation'), require('./Riskv1decisionsClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VerifyCustomerAddressRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1addressverificationsBuyerInformation, root.CyberSource.Riskv1addressverificationsClientReferenceInformation, root.CyberSource.Riskv1addressverificationsOrderInformation);
+    root.CyberSource.VerifyCustomerAddressRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1addressverificationsBuyerInformation, root.CyberSource.Riskv1addressverificationsOrderInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation);
   }
-}(this, function(ApiClient, Riskv1addressverificationsBuyerInformation, Riskv1addressverificationsClientReferenceInformation, Riskv1addressverificationsOrderInformation) {
+}(this, function(ApiClient, Riskv1addressverificationsBuyerInformation, Riskv1addressverificationsOrderInformation, Riskv1decisionsClientReferenceInformation) {
   'use strict';
 
 
@@ -64,7 +64,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Riskv1addressverificationsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Riskv1decisionsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Riskv1addressverificationsOrderInformation.constructFromObject(data['orderInformation']);
@@ -77,7 +77,7 @@
   }
 
   /**
-   * @member {module:model/Riskv1addressverificationsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Riskv1decisionsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**

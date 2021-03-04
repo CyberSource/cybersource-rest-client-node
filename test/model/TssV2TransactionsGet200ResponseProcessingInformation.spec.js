@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.TssV2TransactionsGet200ResponseProcessingInformation);
     });
 
+    it('should have the property industryDataType (base name: "industryDataType")', function() {
+      // uncomment below and update the code to test the property industryDataType
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentSolution (base name: "paymentSolution")', function() {
       // uncomment below and update the code to test the property paymentSolution
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformation();

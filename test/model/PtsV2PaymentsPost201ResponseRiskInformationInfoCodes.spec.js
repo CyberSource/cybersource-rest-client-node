@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property deviceBehavior (base name: "deviceBehavior")', function() {
+      // uncomment below and update the code to test the property deviceBehavior
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseRiskInformationInfoCodes();
+      //expect(instance).to.be();
+    });
+
     it('should have the property identityChange (base name: "identityChange")', function() {
       // uncomment below and update the code to test the property identityChange
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseRiskInformationInfoCodes();
