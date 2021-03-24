@@ -365,7 +365,7 @@
     this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
     this.constants = AuthenticationSDK.Constants;
     this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
-    this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig);
+    this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig, 'ApiClient');
   }
 
   /**
