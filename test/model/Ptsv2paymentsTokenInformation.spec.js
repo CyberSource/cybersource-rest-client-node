@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property networkTokenOption (base name: "networkTokenOption")', function() {
+      // uncomment below and update the code to test the property networkTokenOption
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

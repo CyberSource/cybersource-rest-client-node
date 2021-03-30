@@ -63,6 +63,7 @@
 
 
 
+
   };
 
   /**
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('fingerprintSessionId')) {
         obj['fingerprintSessionId'] = ApiClient.convertToType(data['fingerprintSessionId'], 'String');
+      }
+      if (data.hasOwnProperty('useRawFingerprintSessionId')) {
+        obj['useRawFingerprintSessionId'] = ApiClient.convertToType(data['useRawFingerprintSessionId'], 'Boolean');
       }
       if (data.hasOwnProperty('rawData')) {
         obj['rawData'] = ApiClient.convertToType(data['rawData'], [Ptsv2paymentsDeviceInformationRawData]);
@@ -148,6 +152,11 @@
    * @member {String} fingerprintSessionId
    */
   exports.prototype['fingerprintSessionId'] = undefined;
+  /**
+   * Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. 
+   * @member {Boolean} useRawFingerprintSessionId
+   */
+  exports.prototype['useRawFingerprintSessionId'] = undefined;
   /**
    * @member {Array.<module:model/Ptsv2paymentsDeviceInformationRawData>} rawData
    */

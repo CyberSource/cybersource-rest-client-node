@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentSolution (base name: "paymentSolution")', function() {
+      // uncomment below and update the code to test the property paymentSolution
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property enhancedDataEnabled (base name: "enhancedDataEnabled")', function() {
       // uncomment below and update the code to test the property enhancedDataEnabled
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation();

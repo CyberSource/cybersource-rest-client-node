@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('shippingAddress')) {
         obj['shippingAddress'] = Ptsv2paymentsTokenInformationShippingAddress.constructFromObject(data['shippingAddress']);
       }
+      if (data.hasOwnProperty('networkTokenOption')) {
+        obj['networkTokenOption'] = ApiClient.convertToType(data['networkTokenOption'], 'String');
+      }
     }
     return obj;
   }
@@ -98,6 +102,11 @@
    * @member {module:model/Ptsv2paymentsTokenInformationShippingAddress} shippingAddress
    */
   exports.prototype['shippingAddress'] = undefined;
+  /**
+   * Indicates whether a payment network token associated with a TMS token should be used for authorization. This field can contain one of following values:  - `ignore`: Use a tokenized card number for an authorization, even if the TMS token has an associated payment network token. - `prefer`: (Default) Use an associated payment network token for an authorization if the TMS token has one; otherwise, use the tokenized card number. 
+   * @member {String} networkTokenOption
+   */
+  exports.prototype['networkTokenOption'] = undefined;
 
 
 
