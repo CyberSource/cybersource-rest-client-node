@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Riskv1authenticationsBuyerInformation);
     });
 
+    it('should have the property merchantCustomerId (base name: "merchantCustomerId")', function() {
+      // uncomment below and update the code to test the property merchantCustomerId
+      //var instane = new CyberSource.Riskv1authenticationsBuyerInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property personalIdentification (base name: "personalIdentification")', function() {
       // uncomment below and update the code to test the property personalIdentification
       //var instane = new CyberSource.Riskv1authenticationsBuyerInformation();

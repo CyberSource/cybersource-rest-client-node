@@ -43,9 +43,8 @@
    * Constructs a new <code>Riskv1authenticationresultsConsumerAuthenticationInformation</code>.
    * @alias module:model/Riskv1authenticationresultsConsumerAuthenticationInformation
    * @class
-   * @param signedPares {String} Payer authentication result (PARes) message returned by the card-issuing bank. If you need to show proof of enrollment checking, you may need to decrypt and parse the string for the information required by the payment card company. For more information, see \"Storing Payer Authentication Data,\" page 160. Important The value is in base64. You must remove all carriage returns and line feeds before adding the PARes to the request. 
    */
-  var exports = function(signedPares) {
+  var exports = function() {
     var _this = this;
 
 
@@ -53,7 +52,7 @@
 
 
 
-    _this['signedPares'] = signedPares;
+
 
   };
 

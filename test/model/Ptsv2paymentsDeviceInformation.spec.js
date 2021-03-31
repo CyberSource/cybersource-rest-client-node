@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property useRawFingerprintSessionId (base name: "useRawFingerprintSessionId")', function() {
+      // uncomment below and update the code to test the property useRawFingerprintSessionId
+      //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property rawData (base name: "rawData")', function() {
       // uncomment below and update the code to test the property rawData
       //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
