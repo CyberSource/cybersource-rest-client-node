@@ -2,6 +2,7 @@
   "name": "cybersource-rest-client",
   "version": "0.0.26",
   "description": "Node.js SDK for the CyberSource REST API",
+  "author": "developer@cybersource.com",
   "license": "CyberSource",
   "main": "src/index.js",
   "scripts": {
@@ -13,10 +14,25 @@
   "dependencies": {
     "superagent": "3.8.3",
     "superagent-proxy": "^2.0.0",
-    "cybersource-rest-auth": "0.0.10"
+    "app-root-path": "^2.1.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "collections": "^5.1.2",
+    "jwt-simple": "^0.5.1",
+    "memory-cache": "^0.2.0",
+    "node-forge": "^0.10.0",
+    "promise": "^8.0.1",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.1"
   },
+  "keywords": [
+    "nodeJS"
+  ],
   "devDependencies": {
-    "mocha": "~5.2.0",
+    "mocha": "^5.2.0",
+    "mocha-sonarqube-reporter": "^1.0.1",
+    "nyc": "^12.0.2",
+    "sonar-scanner": "^3.1.0",
     "@sinonjs/formatio": "3.0.0",
     "expect.js": "~0.3.1"
   }
