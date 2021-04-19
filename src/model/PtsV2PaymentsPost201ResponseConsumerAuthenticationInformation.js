@@ -87,6 +87,7 @@
 
 
 
+
   };
 
   /**
@@ -100,6 +101,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accessToken')) {
+        obj['accessToken'] = ApiClient.convertToType(data['accessToken'], 'String');
+      }
       if (data.hasOwnProperty('acsRenderingType')) {
         obj['acsRenderingType'] = ApiClient.convertToType(data['acsRenderingType'], 'String');
       }
@@ -224,6 +228,11 @@
     return obj;
   }
 
+  /**
+   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters. 
+   * @member {String} accessToken
+   */
+  exports.prototype['accessToken'] = undefined;
   /**
    * Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK. 
    * @member {String} acsRenderingType
