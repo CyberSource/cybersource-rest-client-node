@@ -2,18 +2,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['superagent', 'superagent-proxy', 'querystring'], factory);
+    define(['superagent', 'superagent-proxy', 'querystring', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superagent'), require('superagent-proxy'), require('querystring'));
+    module.exports = factory(require('superagent'), require('superagent-proxy'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'));
   } else {
     // Browser globals (root is window)
     if (!root.{{moduleName}}) {
       root.{{moduleName}} = {};
     }
-    root.{{moduleName}}.ApiClient = factory(root.superagent, root.superagent_proxy, root.querystring);
+    root.{{moduleName}}.ApiClient = factory(root.superagent, root.superagent_proxy, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest);
   }
-}(this, function(superagent, superagent_proxy, querystring) {
+}(this, function(superagent, superagent_proxy, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest) {
   'use strict';
 
 {{#emitJSDoc}}  /**
@@ -354,7 +354,6 @@
   
     // Code added by Infosys dev team
 
-  var AuthenticationSDK = require('cybersource-rest-auth');
   /**
    * This method will set the merchantConfig object global
    * 
@@ -362,10 +361,10 @@
    */
   exports.prototype.setConfiguration = function (configObject) {
 
-    this.merchantConfig = new AuthenticationSDK.MerchantConfig(configObject);
-    this.constants = AuthenticationSDK.Constants;
+    this.merchantConfig = new MerchantConfig(configObject);
+    this.constants = Constants;
     this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
-    this.logger = AuthenticationSDK.Logger.getLogger(this.merchantConfig, 'ApiClient');
+    this.logger = Logger.getLogger(this.merchantConfig, 'ApiClient');
   }
 
   /**
@@ -384,7 +383,7 @@
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
-    var token = AuthenticationSDK.Authorization.getToken(this.merchantConfig, this.logger);
+    var token = Authorization.getToken(this.merchantConfig, this.logger);
 
     var clientId = getClientId();
 
@@ -405,7 +404,7 @@
       if (httpMethod.toLowerCase() === this.constants.POST
         || httpMethod.toLowerCase() === this.constants.PATCH
         || httpMethod.toLowerCase() === this.constants.PUT) {
-        var digest = AuthenticationSDK.PayloadDigest.generateDigest(this.merchantConfig, this.logger);
+        var digest = PayloadDigest.generateDigest(this.merchantConfig, this.logger);
         digest = this.constants.SIGNATURE_ALGORITHAM + digest;
         this.logger.info(this.constants.DIGEST + " : " + digest);
         headerParams['digest'] = digest;
