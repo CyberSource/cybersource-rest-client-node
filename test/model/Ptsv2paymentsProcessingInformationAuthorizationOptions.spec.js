@@ -134,8 +134,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property transitTransactionType (base name: "transitTransactionType")', function() {
-      // uncomment below and update the code to test the property transitTransactionType
+    it('should have the property transportationMode (base name: "transportationMode")', function() {
+      // uncomment below and update the code to test the property transportationMode
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
       //expect(instance).to.be();
     });

@@ -116,8 +116,8 @@
       if (data.hasOwnProperty('redemptionInquiry')) {
         obj['redemptionInquiry'] = ApiClient.convertToType(data['redemptionInquiry'], 'Boolean');
       }
-      if (data.hasOwnProperty('transitTransactionType')) {
-        obj['transitTransactionType'] = ApiClient.convertToType(data['transitTransactionType'], 'String');
+      if (data.hasOwnProperty('transportationMode')) {
+        obj['transportationMode'] = ApiClient.convertToType(data['transportationMode'], 'String');
       }
       if (data.hasOwnProperty('aggregatedAuthIndicator')) {
         obj['aggregatedAuthIndicator'] = ApiClient.convertToType(data['aggregatedAuthIndicator'], 'String');
@@ -200,9 +200,9 @@
   exports.prototype['redemptionInquiry'] = undefined;
   /**
    * Type of transportation mode :  Possible Values: - 00 = Unknown - 01 = Urban bus - 02 = Interurban bus - 03=Lighttrainmasstransit(Underground Metro LTR) - 04 = Train - 05 = Commuter train - 06 = Water-borne vehicle - 07 = Toll - 08 = Parking - 09 = Taxi - 10 = High-speed train - 11 = Rural bus - 12 = Express commuter train - 13 = Para transit - 14 = Self drive vehicle - 15 = Coach - 16 = Locomotive - 17 = Powered motor coach - 18 = Trailer - 19 = Regional train - 20 = Inter-city - 21 = Funicular train - 22 = Cable car 
-   * @member {String} transitTransactionType
+   * @member {String} transportationMode
    */
-  exports.prototype['transitTransactionType'] = undefined;
+  exports.prototype['transportationMode'] = undefined;
   /**
    * Indicates if transaction is an aggregated auth  Possible values: - **true** - **false** 
    * @member {String} aggregatedAuthIndicator

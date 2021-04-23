@@ -51,6 +51,8 @@
 
 
 
+
+
   };
 
   /**
@@ -70,8 +72,14 @@
       if (data.hasOwnProperty('frequency')) {
         obj['frequency'] = ApiClient.convertToType(data['frequency'], 'Number');
       }
+      if (data.hasOwnProperty('numberOfPayments')) {
+        obj['numberOfPayments'] = ApiClient.convertToType(data['numberOfPayments'], 'Number');
+      }
       if (data.hasOwnProperty('originalPurchaseDate')) {
         obj['originalPurchaseDate'] = ApiClient.convertToType(data['originalPurchaseDate'], 'String');
+      }
+      if (data.hasOwnProperty('sequenceNumber')) {
+        obj['sequenceNumber'] = ApiClient.convertToType(data['sequenceNumber'], 'Number');
       }
     }
     return obj;
@@ -88,10 +96,20 @@
    */
   exports.prototype['frequency'] = undefined;
   /**
+   * Total number of payments for the duration of the recurring subscription. 
+   * @member {Number} numberOfPayments
+   */
+  exports.prototype['numberOfPayments'] = undefined;
+  /**
    * Date of original purchase. Required for recurring transactions. Format: `YYYY-MM-DDTHH:MM:SSZ` **Note**: If this field is empty, the current date is used. 
    * @member {String} originalPurchaseDate
    */
   exports.prototype['originalPurchaseDate'] = undefined;
+  /**
+   * This field is mandatory for Cartes Bancaires recurring transactions on Credit Mutuel-CIC.       This field records recurring sequence, e.g. 1st for initial,  2 for subsequent, 3 etc 
+   * @member {Number} sequenceNumber
+   */
+  exports.prototype['sequenceNumber'] = undefined;
 
 
 

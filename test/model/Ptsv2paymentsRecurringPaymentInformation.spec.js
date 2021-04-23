@@ -68,8 +68,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property numberOfPayments (base name: "numberOfPayments")', function() {
+      // uncomment below and update the code to test the property numberOfPayments
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property originalPurchaseDate (base name: "originalPurchaseDate")', function() {
       // uncomment below and update the code to test the property originalPurchaseDate
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sequenceNumber (base name: "sequenceNumber")', function() {
+      // uncomment below and update the code to test the property sequenceNumber
       //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
       //expect(instance).to.be();
     });

@@ -78,7 +78,7 @@
    */
   exports.prototype['amountType'] = undefined;
   /**
-   * Total Amount that has been spent on transit healthcare. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer. 
+   * Total Amount that has been spent on the corresponding amountType. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer. 
    * @member {String} amount
    */
   exports.prototype['amount'] = undefined;

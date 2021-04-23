@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acsTransactionId (base name: "acsTransactionId")', function() {
+      // uncomment below and update the code to test the property acsTransactionId
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property acsWindowSize (base name: "acsWindowSize")', function() {
       // uncomment below and update the code to test the property acsWindowSize
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
@@ -250,6 +256,12 @@
 
     it('should have the property messageCategory (base name: "messageCategory")', function() {
       // uncomment below and update the code to test the property messageCategory
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property networkScore (base name: "networkScore")', function() {
+      // uncomment below and update the code to test the property networkScore
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
