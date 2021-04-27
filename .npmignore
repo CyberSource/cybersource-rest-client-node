@@ -1,0 +1,8 @@
+test
+generator
+.git
+.swagger-codegen
+.swagger-codegen-ignore
+.travis.yml
+git_push.sh
+mocha.opts
