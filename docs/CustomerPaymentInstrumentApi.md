@@ -115,7 +115,7 @@ No authorization required
 
 <a name="getCustomerPaymentInstrumentsList"></a>
 # **getCustomerPaymentInstrumentsList**
-> PaymentInstrumentListForCustomer getCustomerPaymentInstrumentsList(customerTokenId, opts)
+> PaymentInstrumentList getCustomerPaymentInstrumentsList(customerTokenId, opts)
 
 List Payment Instruments for a Customer
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentInstrumentListForCustomer**](PaymentInstrumentListForCustomer.md)
+[**PaymentInstrumentList**](PaymentInstrumentList.md)
 
 ### Authorization
 

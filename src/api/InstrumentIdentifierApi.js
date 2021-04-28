@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentListForCustomer', 'model/PostInstrumentIdentifierEnrollmentRequest', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentList', 'model/PostInstrumentIdentifierEnrollmentRequest', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentListForCustomer'), require('../model/PostInstrumentIdentifierEnrollmentRequest'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentList'), require('../model/PostInstrumentIdentifierEnrollmentRequest'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentListForCustomer, root.CyberSource.PostInstrumentIdentifierEnrollmentRequest, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
+    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostInstrumentIdentifierEnrollmentRequest, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
   }
-}(this, function(ApiClient, InlineResponse400, PatchInstrumentIdentifierRequest, PaymentInstrumentListForCustomer, PostInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
+}(this, function(ApiClient, InlineResponse400, PatchInstrumentIdentifierRequest, PaymentInstrumentList, PostInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
   'use strict';
 
   /**
@@ -150,7 +150,7 @@
      * Callback function to receive the result of the getInstrumentIdentifierPaymentInstrumentsList operation.
      * @callback module:api/InstrumentIdentifierApi~getInstrumentIdentifierPaymentInstrumentsListCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaymentInstrumentListForCustomer} data The data returned by the service call.
+     * @param {module:model/PaymentInstrumentList} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -162,7 +162,7 @@
      * @param {Number} opts.offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaymentInstrumentListForCustomer}
+     * data is of type: {@link module:model/PaymentInstrumentList}
      */
     this.getInstrumentIdentifierPaymentInstrumentsList = function(instrumentIdentifierTokenId, opts, callback) {
       opts = opts || {};
@@ -190,7 +190,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = PaymentInstrumentListForCustomer;
+      var returnType = PaymentInstrumentList;
 
       return this.apiClient.callApi(
         '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments', 'GET',

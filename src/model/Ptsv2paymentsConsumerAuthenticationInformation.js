@@ -99,6 +99,8 @@
 
 
 
+
+
   };
 
   /**
@@ -147,6 +149,9 @@
       }
       if (data.hasOwnProperty('authenticationType')) {
         obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
+      }
+      if (data.hasOwnProperty('acsTransactionId')) {
+        obj['acsTransactionId'] = ApiClient.convertToType(data['acsTransactionId'], 'String');
       }
       if (data.hasOwnProperty('acsWindowSize')) {
         obj['acsWindowSize'] = ApiClient.convertToType(data['acsWindowSize'], 'String');
@@ -210,6 +215,9 @@
       }
       if (data.hasOwnProperty('messageCategory')) {
         obj['messageCategory'] = ApiClient.convertToType(data['messageCategory'], 'String');
+      }
+      if (data.hasOwnProperty('networkScore')) {
+        obj['networkScore'] = ApiClient.convertToType(data['networkScore'], 'String');
       }
       if (data.hasOwnProperty('npaCode')) {
         obj['npaCode'] = ApiClient.convertToType(data['npaCode'], 'String');
@@ -332,6 +340,11 @@
    */
   exports.prototype['authenticationType'] = undefined;
   /**
+   * Unique transaction identifier assigned by the ACS to identify a single transaction.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. 
+   * @member {String} acsTransactionId
+   */
+  exports.prototype['acsTransactionId'] = undefined;
+  /**
    * An override field that a merchant can pass in to set the challenge window size to display to the end cardholder.  The ACS (Active Control Server) will reply with content that is formatted appropriately to this window size to allow for the best user experience.  The sizes are width x height in pixels of the window displayed in the cardholder browser window.  01 - 250x400  02 - 390x400  03 - 500x600  04 - 600x400  05 - Full page 
    * @member {String} acsWindowSize
    */
@@ -352,7 +365,7 @@
    */
   exports.prototype['alternateAuthenticationMethod'] = undefined;
   /**
-   * The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider. 
+   * The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. Format: YYYYMMDDHHMMSS 
    * @member {String} authenticationDate
    */
   exports.prototype['authenticationDate'] = undefined;
@@ -436,6 +449,11 @@
    * @member {String} messageCategory
    */
   exports.prototype['messageCategory'] = undefined;
+  /**
+   * The global score calculated by the CB scoring platform and returned to merchants.  Possible values:  - '00' - '99'  When you request the payer authentication and authorization services separately, get the value for this field from the pa_network_score reply field.         This field is supported only for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. 
+   * @member {String} networkScore
+   */
+  exports.prototype['networkScore'] = undefined;
   /**
    * Non-Payer Authentication Indicator. Possible values: - `01`: Add card - `02`: Maintain card information - `03`: Cardholder verification for EMV token - `04-80` Reserved for EMVCo - `80-90` Reserved DS 
    * @member {String} npaCode
