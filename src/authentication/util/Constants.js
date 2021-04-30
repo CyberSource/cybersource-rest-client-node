@@ -68,7 +68,7 @@ module.exports = {
     REQUEST_JSON_EMPTY                :  "RequestJsonPath not provided",
     INVALID_LOGDIRECTORY              :  "Entered log directory does not exists. Taking default log directory ./log",
     INVALID_REQUEST_TYPE_METHOD       :  "Entered Request Type should be (GET/POST/PUT/DELETE)",
-    DEPRECATED_RUN_ENVIRONMENT        :  "The value provided for this field `RunEnvironment` has been deprecated and will not be used anymore.\n\nPlease refer to the README file [ https//github.com/CyberSource/cybersource-rest-samples-csharp/blob/master/README.md ] for information about the new values that are accepted.",
+    DEPRECATED_RUN_ENVIRONMENT        :  "The value provided for this field `RunEnvironment` has been deprecated and will not be used anymore.\n\nPlease refer to the README file [ https://github.com/CyberSource/cybersource-rest-samples-node/blob/master/README.md ] for information about the new values that are accepted.",
     /*Fall back default values*/
 
     DEFAULT_LOG_SIZE                  :  "10485760", //10 MB
