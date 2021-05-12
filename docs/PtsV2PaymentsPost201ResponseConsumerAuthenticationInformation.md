@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accessToken** | **String** | JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters.  | [optional] 
 **acsRenderingType** | **String** | Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK.  | [optional] 
 **acsTransactionId** | **String** | Unique transaction identifier assigned by the ACS to identify a single transaction.  | [optional] 
 **acsUrl** | **String** | URL for the card-issuing bank’s authentication form that you receive when the card is enrolled. The value can be very large.  | [optional] 

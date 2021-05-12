@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1addressverificationsBuyerInformation', 'model/Riskv1decisionsClientReferenceInformation', 'model/Riskv1exportcomplianceinquiriesDeviceInformation', 'model/Riskv1exportcomplianceinquiriesExportComplianceInformation', 'model/Riskv1exportcomplianceinquiriesOrderInformation'], factory);
+    define(['ApiClient', 'model/Riskv1addressverificationsBuyerInformation', 'model/Riskv1exportcomplianceinquiriesDeviceInformation', 'model/Riskv1exportcomplianceinquiriesExportComplianceInformation', 'model/Riskv1exportcomplianceinquiriesOrderInformation', 'model/Riskv1liststypeentriesClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1addressverificationsBuyerInformation'), require('./Riskv1decisionsClientReferenceInformation'), require('./Riskv1exportcomplianceinquiriesDeviceInformation'), require('./Riskv1exportcomplianceinquiriesExportComplianceInformation'), require('./Riskv1exportcomplianceinquiriesOrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1addressverificationsBuyerInformation'), require('./Riskv1exportcomplianceinquiriesDeviceInformation'), require('./Riskv1exportcomplianceinquiriesExportComplianceInformation'), require('./Riskv1exportcomplianceinquiriesOrderInformation'), require('./Riskv1liststypeentriesClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ValidateExportComplianceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1addressverificationsBuyerInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesDeviceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesExportComplianceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesOrderInformation);
+    root.CyberSource.ValidateExportComplianceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1addressverificationsBuyerInformation, root.CyberSource.Riskv1exportcomplianceinquiriesDeviceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesExportComplianceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesOrderInformation, root.CyberSource.Riskv1liststypeentriesClientReferenceInformation);
   }
-}(this, function(ApiClient, Riskv1addressverificationsBuyerInformation, Riskv1decisionsClientReferenceInformation, Riskv1exportcomplianceinquiriesDeviceInformation, Riskv1exportcomplianceinquiriesExportComplianceInformation, Riskv1exportcomplianceinquiriesOrderInformation) {
+}(this, function(ApiClient, Riskv1addressverificationsBuyerInformation, Riskv1exportcomplianceinquiriesDeviceInformation, Riskv1exportcomplianceinquiriesExportComplianceInformation, Riskv1exportcomplianceinquiriesOrderInformation, Riskv1liststypeentriesClientReferenceInformation) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Riskv1decisionsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Riskv1liststypeentriesClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Riskv1exportcomplianceinquiriesOrderInformation.constructFromObject(data['orderInformation']);
@@ -85,7 +85,7 @@
   }
 
   /**
-   * @member {module:model/Riskv1decisionsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Riskv1liststypeentriesClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**

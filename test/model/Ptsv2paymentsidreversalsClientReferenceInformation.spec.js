@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pausedRequestId (base name: "pausedRequestId")', function() {
+      // uncomment below and update the code to test the property pausedRequestId
+      //var instane = new CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
       //var instane = new CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation();

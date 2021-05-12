@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property responseAccessToken (base name: "responseAccessToken")', function() {
+      // uncomment below and update the code to test the property responseAccessToken
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property acsTransactionId (base name: "acsTransactionId")', function() {
       // uncomment below and update the code to test the property acsTransactionId
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
@@ -310,6 +316,12 @@
 
     it('should have the property productCode (base name: "productCode")', function() {
       // uncomment below and update the code to test the property productCode
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property returnUrl (base name: "returnUrl")', function() {
+      // uncomment below and update the code to test the property returnUrl
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
