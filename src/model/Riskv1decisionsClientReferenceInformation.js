@@ -51,6 +51,7 @@
     _this['code'] = code;
 
 
+
   };
 
   /**
@@ -67,6 +68,9 @@
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
+      if (data.hasOwnProperty('pausedRequestId')) {
+        obj['pausedRequestId'] = ApiClient.convertToType(data['pausedRequestId'], 'String');
+      }
       if (data.hasOwnProperty('comments')) {
         obj['comments'] = ApiClient.convertToType(data['comments'], 'String');
       }
@@ -82,6 +86,11 @@
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
+  /**
+   * Used to resume a transaction that was paused for an order modification rule to allow for payer authentication to complete. To resume and continue with the authorization/decision service flow, call the services and include the request id from the prior decision call. 
+   * @member {String} pausedRequestId
+   */
+  exports.prototype['pausedRequestId'] = undefined;
   /**
    * Brief description of the order or any comment you wish to add to the order. 
    * @member {String} comments
