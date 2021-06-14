@@ -101,6 +101,8 @@
 
 
 
+
+
   };
 
   /**
@@ -149,6 +151,9 @@
       }
       if (data.hasOwnProperty('authenticationType')) {
         obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
+      }
+      if (data.hasOwnProperty('responseAccessToken')) {
+        obj['responseAccessToken'] = ApiClient.convertToType(data['responseAccessToken'], 'String');
       }
       if (data.hasOwnProperty('acsTransactionId')) {
         obj['acsTransactionId'] = ApiClient.convertToType(data['acsTransactionId'], 'String');
@@ -242,6 +247,9 @@
       }
       if (data.hasOwnProperty('productCode')) {
         obj['productCode'] = ApiClient.convertToType(data['productCode'], 'String');
+      }
+      if (data.hasOwnProperty('returnUrl')) {
+        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
       }
       if (data.hasOwnProperty('requestorId')) {
         obj['requestorId'] = ApiClient.convertToType(data['requestorId'], 'String');
@@ -339,6 +347,11 @@
    * @member {String} authenticationType
    */
   exports.prototype['authenticationType'] = undefined;
+  /**
+   * JWT returned by the 3D Secure provider when the authentication is complete. Required for Hybrid integration if you use the Cybersource-generated access token. Note: Max. length of this field is 2048 characters. 
+   * @member {String} responseAccessToken
+   */
+  exports.prototype['responseAccessToken'] = undefined;
   /**
    * Unique transaction identifier assigned by the ACS to identify a single transaction.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. 
    * @member {String} acsTransactionId
@@ -494,6 +507,11 @@
    * @member {String} productCode
    */
   exports.prototype['productCode'] = undefined;
+  /**
+   * The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant's return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call. 
+   * @member {String} returnUrl
+   */
+  exports.prototype['returnUrl'] = undefined;
   /**
    * Cardinal's directory server assigned 3DS Requestor ID value
    * @member {String} requestorId

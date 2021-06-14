@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsClientReferenceInformation', 'model/Riskv1liststypeentriesBuyerInformation', 'model/Riskv1liststypeentriesDeviceInformation', 'model/Riskv1liststypeentriesOrderInformation', 'model/Riskv1liststypeentriesPaymentInformation', 'model/Riskv1liststypeentriesRiskInformation'], factory);
+    define(['ApiClient', 'model/Riskv1liststypeentriesBuyerInformation', 'model/Riskv1liststypeentriesClientReferenceInformation', 'model/Riskv1liststypeentriesDeviceInformation', 'model/Riskv1liststypeentriesOrderInformation', 'model/Riskv1liststypeentriesPaymentInformation', 'model/Riskv1liststypeentriesRiskInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsClientReferenceInformation'), require('./Riskv1liststypeentriesBuyerInformation'), require('./Riskv1liststypeentriesDeviceInformation'), require('./Riskv1liststypeentriesOrderInformation'), require('./Riskv1liststypeentriesPaymentInformation'), require('./Riskv1liststypeentriesRiskInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1liststypeentriesBuyerInformation'), require('./Riskv1liststypeentriesClientReferenceInformation'), require('./Riskv1liststypeentriesDeviceInformation'), require('./Riskv1liststypeentriesOrderInformation'), require('./Riskv1liststypeentriesPaymentInformation'), require('./Riskv1liststypeentriesRiskInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AddNegativeListRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsClientReferenceInformation, root.CyberSource.Riskv1liststypeentriesBuyerInformation, root.CyberSource.Riskv1liststypeentriesDeviceInformation, root.CyberSource.Riskv1liststypeentriesOrderInformation, root.CyberSource.Riskv1liststypeentriesPaymentInformation, root.CyberSource.Riskv1liststypeentriesRiskInformation);
+    root.CyberSource.AddNegativeListRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1liststypeentriesBuyerInformation, root.CyberSource.Riskv1liststypeentriesClientReferenceInformation, root.CyberSource.Riskv1liststypeentriesDeviceInformation, root.CyberSource.Riskv1liststypeentriesOrderInformation, root.CyberSource.Riskv1liststypeentriesPaymentInformation, root.CyberSource.Riskv1liststypeentriesRiskInformation);
   }
-}(this, function(ApiClient, Riskv1decisionsClientReferenceInformation, Riskv1liststypeentriesBuyerInformation, Riskv1liststypeentriesDeviceInformation, Riskv1liststypeentriesOrderInformation, Riskv1liststypeentriesPaymentInformation, Riskv1liststypeentriesRiskInformation) {
+}(this, function(ApiClient, Riskv1liststypeentriesBuyerInformation, Riskv1liststypeentriesClientReferenceInformation, Riskv1liststypeentriesDeviceInformation, Riskv1liststypeentriesOrderInformation, Riskv1liststypeentriesPaymentInformation, Riskv1liststypeentriesRiskInformation) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
         obj['paymentInformation'] = Riskv1liststypeentriesPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Riskv1decisionsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Riskv1liststypeentriesClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('deviceInformation')) {
         obj['deviceInformation'] = Riskv1liststypeentriesDeviceInformation.constructFromObject(data['deviceInformation']);
@@ -97,7 +97,7 @@
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
-   * @member {module:model/Riskv1decisionsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Riskv1liststypeentriesClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
