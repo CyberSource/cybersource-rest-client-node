@@ -195,7 +195,7 @@
    */
   exports.prototype['terminalCapability'] = undefined;
   /**
-   * A one-digit code that identifies the capability of terminal to capture PINs.  This code does not necessarily mean that a PIN was entered or is included in this message.  POS terminal’s capability. Possible values: - `1`: Terminal has a magnetic stripe reader only. - `2`: Terminal has a magnetic stripe reader and manual entry capability. - `3`: Terminal has manual entry capability only. - `4`: Terminal can read chip cards.* - `5`: Terminal can read contactless chip cards.* * The values of 4 and 5 are supported only for EMV transactions.  For Payouts: This field is applicable for CtV. 
+   * A one-digit code that identifies the capability of terminal to capture PINs. This code does not necessarily mean that a PIN was entered or is included in this message. For Payouts: This field is applicable for CtV. For details, see the `terminal_pin_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
    * @member {Number} pinEntryCapability
    */
   exports.prototype['pinEntryCapability'] = undefined;

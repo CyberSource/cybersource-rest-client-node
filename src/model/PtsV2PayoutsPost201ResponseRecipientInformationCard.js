@@ -73,7 +73,7 @@
   }
 
   /**
-   * This field shows the available balance in the prepaid account.  Acquirers always receive the available balance in the transaction currency. 
+   * This field shows the available balance in the prepaid account. Acquirers always receive the available balance in the transaction currency. 
    * @member {String} balance
    */
   exports.prototype['balance'] = undefined;
