@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property payByPointsIndicator (base name: "payByPointsIndicator")', function() {
+      // uncomment below and update the code to test the property payByPointsIndicator
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

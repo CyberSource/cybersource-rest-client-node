@@ -92,7 +92,7 @@
    */
   exports.prototype['keySerialNumber'] = undefined;
   /**
-   * The identifier for a payment solution, which is sending the encrypted payment data for decryption. Valid values: - Samsung Pay: `RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ=`  **Note**: For other payment solutions, the value may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor.  #### Used by **Authorization and Standalone Credits** Required for authorizations and standalone credits that use Bluefin PCI P2PE.  #### Card Present processing Format of the encrypted payment data. The value for Bluefin PCI P2PE is `Ymx1ZWZpbg==`. 
+   * The identifier for a payment solution, which is sending the encrypted payment data for decryption. Valid values: - Samsung Pay: `RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ=`  **Note**: For other payment solutions, the value may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor.  #### Used by **Authorization and Standalone Credits** Required for authorizations and standalone credits that use Bluefin PCI P2PE.  #### Card Present processing Format of the encrypted payment data. The value for Bluefin PCI P2PE is `Ymx1ZWZpbg==`. Base64 format only. The value for Cybersource P2PE decryption is as follows: `RklEPUVNVi5QQVlNRU5ULkFQSQ==` if `paymentInformation.fluidData.encoding` is \"HEX\" `4649443D454D562E5041594D454E542E415049` if `paymentInformation.fluidData.encoding` is \"base64\" 
    * @member {String} descriptor
    */
   exports.prototype['descriptor'] = undefined;

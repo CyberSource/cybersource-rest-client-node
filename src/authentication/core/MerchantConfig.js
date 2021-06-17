@@ -306,21 +306,12 @@ MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logg
         if (typeof (this.runEnvironment) !== "string") {
             this.runEnvironment = this.runEnvironment.toString();
         }
-        if (this.runEnvironment.toLowerCase() === Constants.SANDBOX_RUN_ENV) {
-            this.setRequestHost(Constants.SANDBOX_URL);
-        } else if (this.runEnvironment.toLowerCase() === Constants.PRODUCTION_RUN_ENV) {
-            this.setRequestHost(Constants.PRODUCTION_URL);
-        } else if (this.runEnvironment.toLowerCase() === Constants.BOA_SANDBOX_RUN_ENV) {
-            this.setRequestHost(Constants.BOA_SANDBOX_URL);
-        } else if (this.runEnvironment.toLowerCase() === Constants.BOA_PRODUCTION_RUN_ENV) {
-            this.setRequestHost(Constants.BOA_PRODUCTION_URL);
-        } else if (this.runEnvironment.toLowerCase() === Constants.IDC_SANDBOX_RUN_ENV) {
-            this.setRequestHost(Constants.IDC_SANDBOX_URL);
-        } else if (this.runEnvironment.toLowerCase() === Constants.IDC_PRODUCTION_RUN_ENV) {
-            this.setRequestHost(Constants.IDC_PRODUCTION_URL);
-        } else {
-            this.setRequestHost(this.runEnvironment);
+
+        if (Constants.OLD_RUN_ENVIRONMENT_CONSTANTS.includes(this.runEnvironment.toUpperCase())) {
+            ApiException.ApiException(Constants.DEPRECATED_RUN_ENVIRONMENT, logger);
         }
+
+        this.setRequestHost(this.runEnvironment);
     }
 
 }

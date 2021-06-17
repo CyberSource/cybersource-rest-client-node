@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsRiskInformationBuyerHistory', 'model/Ptsv2paymentsRiskInformationProfile'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsRiskInformationAuxiliaryData', 'model/Ptsv2paymentsRiskInformationBuyerHistory', 'model/Ptsv2paymentsRiskInformationProfile'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRiskInformationBuyerHistory'), require('./Ptsv2paymentsRiskInformationProfile'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRiskInformationAuxiliaryData'), require('./Ptsv2paymentsRiskInformationBuyerHistory'), require('./Ptsv2paymentsRiskInformationProfile'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRiskInformationBuyerHistory, root.CyberSource.Ptsv2paymentsRiskInformationProfile);
+    root.CyberSource.Ptsv2paymentsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRiskInformationAuxiliaryData, root.CyberSource.Ptsv2paymentsRiskInformationBuyerHistory, root.CyberSource.Ptsv2paymentsRiskInformationProfile);
   }
-}(this, function(ApiClient, Ptsv2paymentsRiskInformationBuyerHistory, Ptsv2paymentsRiskInformationProfile) {
+}(this, function(ApiClient, Ptsv2paymentsRiskInformationAuxiliaryData, Ptsv2paymentsRiskInformationBuyerHistory, Ptsv2paymentsRiskInformationProfile) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('buyerHistory')) {
         obj['buyerHistory'] = Ptsv2paymentsRiskInformationBuyerHistory.constructFromObject(data['buyerHistory']);
       }
+      if (data.hasOwnProperty('auxiliaryData')) {
+        obj['auxiliaryData'] = ApiClient.convertToType(data['auxiliaryData'], [Ptsv2paymentsRiskInformationAuxiliaryData]);
+      }
     }
     return obj;
   }
@@ -90,6 +94,10 @@
    * @member {module:model/Ptsv2paymentsRiskInformationBuyerHistory} buyerHistory
    */
   exports.prototype['buyerHistory'] = undefined;
+  /**
+   * @member {Array.<module:model/Ptsv2paymentsRiskInformationAuxiliaryData>} auxiliaryData
+   */
+  exports.prototype['auxiliaryData'] = undefined;
 
 
 

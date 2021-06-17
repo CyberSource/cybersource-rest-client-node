@@ -62,6 +62,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property expirationMonth (base name: "expirationMonth")', function() {
+      // uncomment below and update the code to test the property expirationMonth
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationYear (base name: "expirationYear")', function() {
+      // uncomment below and update the code to test the property expirationYear
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property prefix (base name: "prefix")', function() {
+      // uncomment below and update the code to test the property prefix
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

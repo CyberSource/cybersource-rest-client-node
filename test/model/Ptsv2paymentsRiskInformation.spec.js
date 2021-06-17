@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property auxiliaryData (base name: "auxiliaryData")', function() {
+      // uncomment below and update the code to test the property auxiliaryData
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

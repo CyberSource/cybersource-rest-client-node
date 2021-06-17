@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rewardPointsDetails (base name: "rewardPointsDetails")', function() {
+      // uncomment below and update the code to test the property rewardPointsDetails
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
