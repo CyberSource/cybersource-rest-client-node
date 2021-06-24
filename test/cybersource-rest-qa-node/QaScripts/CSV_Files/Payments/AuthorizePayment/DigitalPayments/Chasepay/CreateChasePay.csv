@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CCP_01,100.00,Success
+CCP_02,200,Fails
+CCP_03,GHJ34,Fails

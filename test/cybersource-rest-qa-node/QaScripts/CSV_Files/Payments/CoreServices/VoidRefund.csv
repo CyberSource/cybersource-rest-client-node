@@ -1,0 +1,3 @@
+testCaseId,refundId,status,message
+VAR_01,5445930962056180603005,VOIDED,Success
+VAR_02,8964213433846812344644,VOIDED,Fails due to invalid paymentId

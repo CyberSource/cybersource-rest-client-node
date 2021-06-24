@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CRB_01,5432.00,Success
+CRB_02,3000,Fails
+CRB_03,KLP7,Fails due to invalid amount

@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CFC_01,100.00,Success
+CFC_02,200,Fails
+CFC_03,AGP5,Fails due to invalid amount

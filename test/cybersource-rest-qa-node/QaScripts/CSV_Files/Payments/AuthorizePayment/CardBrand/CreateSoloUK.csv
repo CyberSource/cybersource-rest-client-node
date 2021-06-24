@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CSU_01,106.00,Success
+CSU_02,200,Fails
+CSU_03,KLM76,Fails due to invalid amount
