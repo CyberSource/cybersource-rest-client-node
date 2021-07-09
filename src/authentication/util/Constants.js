@@ -12,6 +12,8 @@ module.exports = {
     HTTP_URL_PREFIX                   :  "https://",
     HTTP                              :  "http_signature",
     JWT                               :  "jwt",
+    OAUTH                             :  "oauth",
+    MUTUAL_AUTH                       :  "mutual_auth",   
     V_C_MERCHANTID                    :  "v-c-merchant-id",
     DATE                              :  "date",
     HOST                              :  "host",
@@ -69,6 +71,14 @@ module.exports = {
     INVALID_LOGDIRECTORY              :  "Entered log directory does not exists. Taking default log directory ./log",
     INVALID_REQUEST_TYPE_METHOD       :  "Entered Request Type should be (GET/POST/PUT/DELETE)",
     DEPRECATED_RUN_ENVIRONMENT        :  "The value provided for this field `RunEnvironment` has been deprecated and will not be used anymore.\n\nPlease refer to the README file [ https://github.com/CyberSource/cybersource-rest-samples-node/blob/master/README.md ] for information about the new values that are accepted.",
+    ENABLE_CLIENT_CERT_EMPTY          :  "Enable Clientcert is Empty/Null",
+    CLIENT_CERT_DIR_EMPTY             :  "Client Cert Directory is Empty/Null",
+    SSL_CLIENT_CERT_EMPTY             :  "SSL Client Cert is Empty/Null",
+    PRIVATE_KEY_EMPTY                 :  "Private Key is Empty/Null",
+    CLIENT_ID_EMPTY                   :  "Client Id is Empty/Null",
+    CLIENT_SECRET_EMPTY               :  "Client Secret is Empty/Null",
+    ACCESS_TOKEN_EMPTY                :  "AccessToken is Empty/Null",
+    REFRESH_TOKEN_EMPTY               :  "RefreshToken is Empty/Null",
     /*Fall back default values*/
 
     DEFAULT_LOG_SIZE                  :  "10485760", //10 MB

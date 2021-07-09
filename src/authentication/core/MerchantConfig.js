@@ -53,6 +53,18 @@ function MerchantConfig(result) {
     this.useMetaKey = result.useMetaKey;
     this.portfolioID = result.portfolioID;
 
+    /* MutualAuth Parameters */
+    this.enableClientCert = result.enableClientCert;
+    this.clientCertDir = result.clientCertDir;
+    this.sslClientCert = result.sslClientCert;
+    this.privateKey = result.privateKey;
+
+    /* OAuth Parameters */
+    this.clientId = result.clientId;
+    this.clientSecret = result.clientSecret;
+    this.accessToken = result.accessToken;
+    this.refreshToken = result.refreshToken;
+
     this.runEnvironment = result.runEnvironment;
 
     this.solutionId = result.solutionId;
@@ -106,6 +118,38 @@ MerchantConfig.prototype.setPortfolioID = function setPortfolioID(portfolioID) {
     this.portfolioID = portfolioID;
 };
 
+MerchantConfig.prototype.setEnableClientCert = function setEnableClientCert(enableClientCert) {
+    this.enableClientCert = enableClientCert;
+};
+
+MerchantConfig.prototype.setClientCertDir = function setClientCertDir(clientCertDir) {
+    this.clientCertDir = clientCertDir;
+};
+
+MerchantConfig.prototype.setSSLClientCert = function setSSLClientCert(sslClientCert) {
+    this.sslClientCert = sslClientCert;
+};
+
+MerchantConfig.prototype.setPrivateKey = function setPrivateKey(privateKey) {
+    this.privateKey = privateKey;
+};
+
+MerchantConfig.prototype.setClientId = function setClientId(clientId) {
+    this.clientId = clientId;
+};
+
+MerchantConfig.prototype.setClientSecret = function setClientSecret(clientSecret) {
+    this.clientSecret = clientSecret;
+};
+
+MerchantConfig.prototype.setAccessToken = function setAccessToken(accessToken) {
+    this.accessToken = accessToken;
+};
+
+MerchantConfig.prototype.setRefreshToken = function setRefreshToken(refreshToken) {
+    this.refreshToken = refreshToken;
+};
+
 MerchantConfig.prototype.setEnableLog = function setEnableLog(enableLog) {
     this.enableLog = enableLog;
 };
@@ -144,6 +188,38 @@ MerchantConfig.prototype.getUseMetaKey = function getUseMetaKey() {
 
 MerchantConfig.prototype.getPortfolioID = function getPortfolioID() {
     return this.portfolioID;
+};
+
+MerchantConfig.prototype.getEnableClientCert = function getEnableClientCert() {
+    return this.enableClientCert;
+};
+
+MerchantConfig.prototype.getClientCertDir = function getClientCertDir() {
+    return this.clientCertDir;
+};
+
+MerchantConfig.prototype.getSSLClientCert = function getSSLClientCert() {
+    return this.sslClientCert;
+};
+
+MerchantConfig.prototype.getPrivateKey = function getPrivateKey() {
+    return this.privateKey;
+};
+
+MerchantConfig.prototype.getClientId = function getClientId() {
+    return this.clientId;
+};
+
+MerchantConfig.prototype.getClientSecret = function getClientSecret() {
+    return this.clientSecret;
+};
+
+MerchantConfig.prototype.getAccessToken = function getAccessToken() {
+    return this.accessToken;
+};
+
+MerchantConfig.prototype.getRefreshToken = function getRefreshToken() {
+    return this.refreshToken;
 };
 
 MerchantConfig.prototype.getKeysDirectory = function getKeysDirectory() {
@@ -374,11 +450,6 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
     this.runEnvironmentCheck(logger);
 
-    // verifying mandatory properties
-    if (this.merchantID === null || this.merchantID === "" || this.merchantID === undefined) {
-        ApiException.ApiException(Constants.MERCHANTID_REQ, logger);
-    }
-
     if (this.authenticationType === null || this.authenticationType === "" || this.authenticationType === undefined) {
         ApiException.ApiException(Constants.AUTHENTICATION_REQ, logger);
     }
@@ -391,14 +462,55 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         ApiException.ApiException(Constants.PORTFOLIO_ID_REQ, logger);
     }
 
+    if (typeof (this.enableClientCert) !== "boolean") {
+        this.enableClientCert = false;
+    }
+    else if(this.enableClientCert)
+    {
+        if (this.clientCertDir === null || this.clientCertDir === "" || this.clientCertDir === undefined) {
+            ApiException.ApiException(Constants.CLIENT_CERT_DIR_EMPTY, logger);
+        }
+        else if (typeof (this.clientCertDir) !== "string") {
+            this.clientCertDir = this.clientCertDir.toString();
+        }
+        if (this.sslClientCert === null || this.sslClientCert === "" || this.sslClientCert === undefined) {
+            ApiException.ApiException(Constants.SSL_CLIENT_CERT_EMPTY, logger);
+        }
+        else if (typeof (this.sslClientCert) !== "string") {
+            this.sslClientCert = this.sslClientCert.toString();
+        }
+        if (this.privateKey === null || this.privateKey === "" || this.privateKey === undefined) {
+            ApiException.ApiException(Constants.PRIVATE_KEY_EMPTY, logger);
+        }
+        else if (typeof (this.privateKey) !== "string") {
+            this.privateKey = this.privateKey.toString();
+        }
+        
+        var certFile = path.resolve(path.join(this.clientCertDir, this.sslClientCert));
+        var keyFile = path.resolve(path.join(this.clientCertDir, this.privateKey));
+
+        if(!(fs.existsSync(keyFile) && fs.existsSync(certFile)))
+        {
+            ApiException.ApiException(Constants.FILE_NOT_FOUND, logger);
+        }
+    }
+
+
     //authentication mechanism specific checks
     if (typeof (this.authenticationType) === "string") {
         if (this.authenticationType.toLowerCase() === Constants.HTTP) {
-            if (this.merchantKeyId === null || this.merchantKeyId === "" || this.merchantKeyId === undefined) {
-                ApiException.ApiException(Constants.MERCHANT_KEY_ID_REQ, logger);
+            // verifying mandatory properties
+            if (this.merchantID === null || this.merchantID === "" || this.merchantID === undefined) {
+                ApiException.ApiException(Constants.MERCHANTID_REQ, logger);
             }
             else if (typeof (this.merchantID) !== "string") {
                 this.merchantID = this.merchantID.toString();
+            }
+            if (this.merchantKeyId === null || this.merchantKeyId === "" || this.merchantKeyId === undefined) {
+                ApiException.ApiException(Constants.MERCHANT_KEY_ID_REQ, logger);
+            }
+            else if (typeof (this.merchantKeyId) !== "string") {
+                this.merchantKeyId = this.merchantKeyId.toString();
             }
 
             if (this.merchantsecretKey === null || this.merchantsecretKey === "" || this.merchantsecretKey === undefined) {
@@ -410,6 +522,12 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         }
 
         else if (this.authenticationType.toLowerCase() === Constants.JWT) {
+            if (this.merchantID === null || this.merchantID === "" || this.merchantID === undefined) {
+                ApiException.ApiException(Constants.MERCHANTID_REQ, logger);
+            }
+            else if (typeof (this.merchantID) !== "string") {
+                this.merchantID = this.merchantID.toString();
+            }
             if (this.keyAlias === null || this.keyAlias === "" || this.keyAlias === undefined) {
                 this.keyAlias = this.merchantID;
                 logger.warn(Constants.KEY_ALIAS_NULL_EMPTY);
@@ -432,6 +550,36 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             if (this.keyFilename === null || this.keyFilename === "" || this.keyFilename === undefined) {
                 this.keyFilename = this.merchantID;
                 logger.warn(Constants.KEY_FILE_EMPTY);
+            }
+        }
+        else if (this.authenticationType.toLowerCase() === Constants.OAUTH)
+        {
+            if (this.accessToken === null || this.accessToken === "" || this.accessToken === undefined) {
+                ApiException.ApiException(Constants.ACCESS_TOKEN_EMPTY, logger);
+            }
+            else if (typeof (this.accessToken) !== "string") {
+                this.accessToken = this.accessToken.toString();
+            }
+            if (this.refreshToken === null || this.refreshToken === "" || this.refreshToken === undefined) {
+                ApiException.ApiException(Constants.REFRESH_TOKEN_EMPTY, logger);
+            }
+            else if (typeof (this.refreshToken) !== "string") {
+                this.refreshToken = this.refreshToken.toString();
+            }
+        }
+        else if (this.authenticationType.toLowerCase() === Constants.MUTUAL_AUTH)
+        {
+            if (this.clientId === null || this.clientId === "" || this.clientId === undefined) {
+                ApiException.ApiException(Constants.CLIENT_ID_EMPTY, logger);
+            }
+            else if (typeof (this.clientId) !== "string") {
+                this.clientId = this.clientId.toString();
+            }
+            if (this.clientSecret === null || this.clientSecret === "" || this.clientSecret === undefined) {
+                ApiException.ApiException(Constants.CLIENT_SECRET_EMPTY, logger);
+            }
+            else if (typeof (this.clientSecret) !== "string") {
+                this.clientSecret = this.clientSecret.toString();
             }
         }
         else {
