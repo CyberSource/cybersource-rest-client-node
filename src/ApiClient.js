@@ -490,7 +490,7 @@
       }
       request.proxy(proxy); 
     }
-    
+
     var fslib = require('fs');
     var pathlib = require('path');
 
@@ -522,9 +522,10 @@
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
 
-    if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH) {
+    if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
+    {
       headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
-    }    
+    }
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));

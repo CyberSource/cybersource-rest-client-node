@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantCustomerId (base name: "merchantCustomerId")', function() {
+      // uncomment below and update the code to test the property merchantCustomerId
+      //var instane = new CyberSource.Invoicingv2invoicesCustomerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

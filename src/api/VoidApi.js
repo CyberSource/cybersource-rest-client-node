@@ -104,7 +104,7 @@
 
     /**
      * Void a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to cancel the capture. 
      * @param {module:model/VoidCaptureRequest} voidCaptureRequest 
      * @param {String} id The capture ID returned from a previous capture request.
      * @param {module:api/VoidApi~voidCaptureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -208,7 +208,7 @@
 
     /**
      * Void a Payment
-     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
+     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to cancel the payment. 
      * @param {module:model/VoidPaymentRequest} voidPaymentRequest 
      * @param {String} id The payment ID returned from a previous payment request.
      * @param {module:api/VoidApi~voidPaymentCallback} callback The callback function, accepting three arguments: error, data, response

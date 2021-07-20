@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions = factory(root.CyberSource.ApiClient);
+    root.CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('authType')) {
         obj['authType'] = ApiClient.convertToType(data['authType'], 'String');
       }
+      if (data.hasOwnProperty('initiator')) {
+        obj['initiator'] = Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator.constructFromObject(data['initiator']);
+      }
     }
     return obj;
   }
@@ -73,6 +77,10 @@
    * @member {String} authType
    */
   exports.prototype['authType'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator} initiator
+   */
+  exports.prototype['initiator'] = undefined;
 
 
 
