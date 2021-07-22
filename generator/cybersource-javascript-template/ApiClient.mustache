@@ -426,7 +426,7 @@
     else if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.OAUTH) {
       token = 'Bearer ' + token;
       headerParams['Authorization'] = token;
-      this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
+      // this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
     }
 
     return headerParams;
