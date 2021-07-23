@@ -72,6 +72,7 @@
 
 
 
+
   };
 
   /**
@@ -102,9 +103,6 @@
       }
       if (data.hasOwnProperty('terminalCapability')) {
         obj['terminalCapability'] = ApiClient.convertToType(data['terminalCapability'], 'Number');
-      }
-      if (data.hasOwnProperty('pinEntryCapability')) {
-        obj['pinEntryCapability'] = ApiClient.convertToType(data['pinEntryCapability'], 'Number');
       }
       if (data.hasOwnProperty('operatingEnvironment')) {
         obj['operatingEnvironment'] = ApiClient.convertToType(data['operatingEnvironment'], 'String');
@@ -160,6 +158,12 @@
       if (data.hasOwnProperty('isDedicatedHardwareTerminal')) {
         obj['isDedicatedHardwareTerminal'] = ApiClient.convertToType(data['isDedicatedHardwareTerminal'], 'String');
       }
+      if (data.hasOwnProperty('terminalModel')) {
+        obj['terminalModel'] = ApiClient.convertToType(data['terminalModel'], 'String');
+      }
+      if (data.hasOwnProperty('terminalMake')) {
+        obj['terminalMake'] = ApiClient.convertToType(data['terminalMake'], 'String');
+      }
     }
     return obj;
   }
@@ -194,11 +198,6 @@
    * @member {Number} terminalCapability
    */
   exports.prototype['terminalCapability'] = undefined;
-  /**
-   * A one-digit code that identifies the capability of terminal to capture PINs. This code does not necessarily mean that a PIN was entered or is included in this message. For Payouts: This field is applicable for CtV. For details, see the `terminal_pin_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
-   * @member {Number} pinEntryCapability
-   */
-  exports.prototype['pinEntryCapability'] = undefined;
   /**
    * Operating environment.  Possible values for all card types except Mastercard: - `0`: No terminal used or unknown environment. - `1`: On merchant premises, attended. - `2`: On merchant premises, unattended. Examples: oil, kiosks, self-checkout, mobile telephone, personal digital assistant (PDA). - `3`: Off merchant premises, attended. Examples: portable POS devices at trade shows, at service calls, or in taxis. - `4`: Off merchant premises, unattended. Examples: vending machines, home computer, mobile telephone, PDA. - `5`: On premises of cardholder, unattended. - `9`: Unknown delivery mode. - `S`: Electronic delivery of product. Examples: music, software, or eTickets that are downloaded over the internet. - `T`: Physical delivery of product. Examples: music or software that is delivered by mail or by a courier.  #### Possible values for Mastercard: - `2`: On merchant premises, unattended, or cardholder terminal. Examples: oil, kiosks, self-checkout, home computer, mobile telephone, personal digital assistant (PDA). Cardholder terminal is supported only for Mastercard transactions on CyberSource through VisaNet. - `4`: Off merchant premises, unattended, or cardholder terminal. Examples: vending machines, home computer, mobile telephone, PDA. Cardholder terminal is supported only for Mastercard transactions on CyberSource through VisaNet.  This field is supported only for American Express Direct and CyberSource through VisaNet. 
    * @member {String} operatingEnvironment
@@ -286,6 +285,16 @@
    * @member {String} isDedicatedHardwareTerminal
    */
   exports.prototype['isDedicatedHardwareTerminal'] = undefined;
+  /**
+   * This is the model name of the reader which is used to accept the payment. Possible values:  - E3555  - P400  - A920 
+   * @member {String} terminalModel
+   */
+  exports.prototype['terminalModel'] = undefined;
+  /**
+   * This is the manufacturer name of the reader which is used to accept the payment. Possible values:  - PAX  - Verifone  - Ingenico 
+   * @member {String} terminalMake
+   */
+  exports.prototype['terminalMake'] = undefined;
 
 
 

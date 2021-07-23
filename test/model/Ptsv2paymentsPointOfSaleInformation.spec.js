@@ -92,12 +92,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property pinEntryCapability (base name: "pinEntryCapability")', function() {
-      // uncomment below and update the code to test the property pinEntryCapability
-      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property operatingEnvironment (base name: "operatingEnvironment")', function() {
       // uncomment below and update the code to test the property operatingEnvironment
       //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
@@ -202,6 +196,18 @@
 
     it('should have the property isDedicatedHardwareTerminal (base name: "isDedicatedHardwareTerminal")', function() {
       // uncomment below and update the code to test the property isDedicatedHardwareTerminal
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property terminalModel (base name: "terminalModel")', function() {
+      // uncomment below and update the code to test the property terminalModel
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property terminalMake (base name: "terminalMake")', function() {
+      // uncomment below and update the code to test the property terminalMake
       //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
       //expect(instance).to.be();
     });

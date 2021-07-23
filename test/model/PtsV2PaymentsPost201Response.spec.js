@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentAccountInformation (base name: "paymentAccountInformation")', function() {
+      // uncomment below and update the code to test the property paymentAccountInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentInformation (base name: "paymentInformation")', function() {
       // uncomment below and update the code to test the property paymentInformation
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();

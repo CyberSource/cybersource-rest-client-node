@@ -1,4 +1,4 @@
-# CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationCard
+# CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
 
 ## Properties
 Name | Type | Description | Notes

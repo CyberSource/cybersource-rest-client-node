@@ -64,7 +64,6 @@
 
 
 
-
   };
 
   /**
@@ -89,9 +88,6 @@
       }
       if (data.hasOwnProperty('fingerprintSessionId')) {
         obj['fingerprintSessionId'] = ApiClient.convertToType(data['fingerprintSessionId'], 'String');
-      }
-      if (data.hasOwnProperty('useRawFingerprintSessionId')) {
-        obj['useRawFingerprintSessionId'] = ApiClient.convertToType(data['useRawFingerprintSessionId'], 'Boolean');
       }
       if (data.hasOwnProperty('httpBrowserEmail')) {
         obj['httpBrowserEmail'] = ApiClient.convertToType(data['httpBrowserEmail'], 'String');
@@ -156,11 +152,6 @@
    * @member {String} fingerprintSessionId
    */
   exports.prototype['fingerprintSessionId'] = undefined;
-  /**
-   * Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. 
-   * @member {Boolean} useRawFingerprintSessionId
-   */
-  exports.prototype['useRawFingerprintSessionId'] = undefined;
   /**
    * Email address set in the customer’s browser, which may differ from customer email. 
    * @member {String} httpBrowserEmail

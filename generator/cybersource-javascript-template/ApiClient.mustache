@@ -385,9 +385,9 @@
 
     var token = Authorization.getToken(this.merchantConfig, this.logger);
 
-    var clientId = getClientId();
+    // var clientId = getClientId();
 
-    headerParams['v-c-client-id'] = clientId;
+    // headerParams['v-c-client-id'] = clientId;
     
     // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {  
       // headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
@@ -422,6 +422,11 @@
       this.logger.info('signature : ' + token);
       this.logger.info('User-Agent : ' + headerParams['User-Agent']);
       this.logger.info(this.constants.END_TRANSACTION);
+    }
+    else if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.OAUTH) {
+      token = 'Bearer ' + token;
+      headerParams['Authorization'] = token;
+      // this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
     }
 
     return headerParams;
@@ -468,6 +473,7 @@
     var proxyPort = this.merchantConfig.getProxyPort();
     var proxyUser = this.merchantConfig.getProxyUser();
     var proxyPassword = this.merchantConfig.getProxyPassword();
+    var enableClientCert = this.merchantConfig.getEnableClientCert();
 
     var request = superagent(httpMethod, url);
 
@@ -481,6 +487,17 @@
         var proxy  = process.env.http_proxy || 'http://' +  proxyAddress + ':' + proxyPort;
       }
       request.proxy(proxy); 
+    }
+
+    var fslib = require('fs');
+    var pathlib = require('path');
+
+    if(enableClientCert)
+    {      
+      var certFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getSSLClientCert()));
+      var keyFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getPrivateKey()));
+      request.cert(fslib.readFileSync(certFile));
+      request.key(fslib.readFileSync(keyFile));
     }
 
     // apply authentications
@@ -502,7 +519,11 @@
       || httpMethod.toLowerCase() === this.constants.PUT) {
       bodyParam = JSON.stringify(bodyParam, null, 0);
     }
-    headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+
+    if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
+    {
+      headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+    }
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
@@ -521,7 +542,9 @@
     }
 
     if (contentType === 'application/x-www-form-urlencoded') {
-      request.send(querystring.stringify(this.normalizeParams(formParams)));
+      request.type('form');      
+      formParams = bodyParam
+      request.send(JSON.parse(formParams));
     } else if (contentType == 'multipart/form-data') {
       var _formParams = this.normalizeParams(formParams);
       for (var key in _formParams) {

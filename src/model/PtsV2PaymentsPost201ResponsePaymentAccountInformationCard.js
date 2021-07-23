@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationCard = factory(root.CyberSource.ApiClient);
+    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The PtsV2PaymentsPost201ResponsePaymentInformationCard model module.
-   * @module model/PtsV2PaymentsPost201ResponsePaymentInformationCard
+   * The PtsV2PaymentsPost201ResponsePaymentAccountInformationCard model module.
+   * @module model/PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>PtsV2PaymentsPost201ResponsePaymentInformationCard</code>.
-   * @alias module:model/PtsV2PaymentsPost201ResponsePaymentInformationCard
+   * Constructs a new <code>PtsV2PaymentsPost201ResponsePaymentAccountInformationCard</code>.
+   * @alias module:model/PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
    * @class
    */
   var exports = function() {
@@ -55,11 +55,11 @@
   };
 
   /**
-   * Constructs a <code>PtsV2PaymentsPost201ResponsePaymentInformationCard</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PtsV2PaymentsPost201ResponsePaymentAccountInformationCard</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/PtsV2PaymentsPost201ResponsePaymentInformationCard} obj Optional instance to populate.
-   * @return {module:model/PtsV2PaymentsPost201ResponsePaymentInformationCard} The populated <code>PtsV2PaymentsPost201ResponsePaymentInformationCard</code> instance.
+   * @param {module:model/PtsV2PaymentsPost201ResponsePaymentAccountInformationCard} obj Optional instance to populate.
+   * @return {module:model/PtsV2PaymentsPost201ResponsePaymentAccountInformationCard} The populated <code>PtsV2PaymentsPost201ResponsePaymentAccountInformationCard</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
