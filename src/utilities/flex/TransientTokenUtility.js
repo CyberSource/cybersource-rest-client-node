@@ -1,7 +1,12 @@
 
 'use strict';
 
-function TransientTokenGenerator(jwt)
+function TransientTokenUtility()
+{
+
+}
+
+TransientTokenUtility.prototype.parseToken = function parseToken(jwt)
 {
     var splitContents = jwt.split(".");
     if(splitContents.length > 1)
@@ -13,7 +18,5 @@ function TransientTokenGenerator(jwt)
         // return JTI string
         return transientTokenModel;
     }
-
 }
-
-module.exports = TransientTokenGenerator;
+module.exports = TransientTokenUtility;
