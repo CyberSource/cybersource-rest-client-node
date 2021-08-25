@@ -74,7 +74,6 @@
 
 
 
-
   };
 
   /**
@@ -102,9 +101,6 @@
       }
       if (data.hasOwnProperty('networkTransactionId')) {
         obj['networkTransactionId'] = ApiClient.convertToType(data['networkTransactionId'], 'String');
-      }
-      if (data.hasOwnProperty('providerTransactionId')) {
-        obj['providerTransactionId'] = ApiClient.convertToType(data['providerTransactionId'], 'String');
       }
       if (data.hasOwnProperty('responseCode')) {
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
@@ -187,7 +183,7 @@
    */
   exports.prototype['approvalCode'] = undefined;
   /**
-   * The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present. 
+   * The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same transaction. This field is used by Streamline and HSBC UK only, at present. 
    * @member {String} cardReferenceData
    */
   exports.prototype['cardReferenceData'] = undefined;
@@ -197,15 +193,10 @@
    */
   exports.prototype['transactionId'] = undefined;
   /**
-   * The description for this field is not available.
+   * Same value as `processorInformation.transactionId`
    * @member {String} networkTransactionId
    */
   exports.prototype['networkTransactionId'] = undefined;
-  /**
-   * The description for this field is not available.
-   * @member {String} providerTransactionId
-   */
-  exports.prototype['providerTransactionId'] = undefined;
   /**
    * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3) 
    * @member {String} responseCode

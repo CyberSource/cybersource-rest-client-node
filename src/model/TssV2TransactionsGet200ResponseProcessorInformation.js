@@ -60,7 +60,6 @@
 
 
 
-
   };
 
   /**
@@ -88,9 +87,6 @@
       }
       if (data.hasOwnProperty('responseId')) {
         obj['responseId'] = ApiClient.convertToType(data['responseId'], 'String');
-      }
-      if (data.hasOwnProperty('providerTransactionId')) {
-        obj['providerTransactionId'] = ApiClient.convertToType(data['providerTransactionId'], 'String');
       }
       if (data.hasOwnProperty('approvalCode')) {
         obj['approvalCode'] = ApiClient.convertToType(data['approvalCode'], 'String');
@@ -135,7 +131,7 @@
    */
   exports.prototype['transactionId'] = undefined;
   /**
-   * The description for this field is not available.
+   * Same value as `processorInformation.transactionId`
    * @member {String} networkTransactionId
    */
   exports.prototype['networkTransactionId'] = undefined;
@@ -144,11 +140,6 @@
    * @member {String} responseId
    */
   exports.prototype['responseId'] = undefined;
-  /**
-   * The description for this field is not available.
-   * @member {String} providerTransactionId
-   */
-  exports.prototype['providerTransactionId'] = undefined;
   /**
    * Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### PIN debit Authorization code that is returned by the processor.  Returned by PIN debit credit.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. 
    * @member {String} approvalCode

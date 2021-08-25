@@ -86,12 +86,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property providerTransactionId (base name: "providerTransactionId")', function() {
-      // uncomment below and update the code to test the property providerTransactionId
-      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property responseCode (base name: "responseCode")', function() {
       // uncomment below and update the code to test the property responseCode
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
