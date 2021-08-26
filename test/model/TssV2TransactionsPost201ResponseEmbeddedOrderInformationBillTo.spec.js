@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address1 (base name: "address1")', function() {
+      // uncomment below and update the code to test the property address1
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo();

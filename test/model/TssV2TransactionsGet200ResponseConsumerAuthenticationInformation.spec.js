@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property strongAuthentication (base name: "strongAuthentication")', function() {
+      // uncomment below and update the code to test the property strongAuthentication
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

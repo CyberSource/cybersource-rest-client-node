@@ -95,7 +95,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - DEBIT_CARD_USEAGE_EXCEEDD_LIMIT 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

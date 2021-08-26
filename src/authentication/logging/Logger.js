@@ -32,9 +32,11 @@ function createTransportFromConfig(mConfig) {
   var maxLogFiles = mConfig.getMaxLogFiles();
   var logFileName = mConfig.getLogFileName();
   var logDirectory = mConfig.getLogDirectory();
-  var enableLog = mConfig.getEnableLog();
+  var enableLog = mConfig.getEnableLog();  
 
-  transports.push(new winston.transports.DailyRotateFile({
+  if(enableLog)
+  {
+    transports.push(new winston.transports.DailyRotateFile({
       level: loggingLevel,
       filename: logFileName + '-%DATE%.log',
       datePattern: 'YYYY-MM-DD',
@@ -42,7 +44,14 @@ function createTransportFromConfig(mConfig) {
       dirname: logDirectory,
       maxFiles: maxLogFiles,
       silent: !enableLog
-  }));
+    }));
+  }
+  else
+  {
+    transports.push(new winston.transports.Console({
+      silent: !enableLog
+    }));
+  }
 
   return transports;
 }
