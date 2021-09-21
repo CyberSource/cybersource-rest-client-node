@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationresultsOrderInformationLineItems', 'model/Riskv1authenticationsOrderInformationAmountDetails'], factory);
+    define(['ApiClient', 'model/Riskv1authenticationresultsOrderInformationAmountDetails', 'model/Riskv1authenticationresultsOrderInformationLineItems'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationresultsOrderInformationLineItems'), require('./Riskv1authenticationsOrderInformationAmountDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationresultsOrderInformationAmountDetails'), require('./Riskv1authenticationresultsOrderInformationLineItems'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1authenticationresultsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationresultsOrderInformationLineItems, root.CyberSource.Riskv1authenticationsOrderInformationAmountDetails);
+    root.CyberSource.Riskv1authenticationresultsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationresultsOrderInformationAmountDetails, root.CyberSource.Riskv1authenticationresultsOrderInformationLineItems);
   }
-}(this, function(ApiClient, Riskv1authenticationresultsOrderInformationLineItems, Riskv1authenticationsOrderInformationAmountDetails) {
+}(this, function(ApiClient, Riskv1authenticationresultsOrderInformationAmountDetails, Riskv1authenticationresultsOrderInformationLineItems) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amountDetails')) {
-        obj['amountDetails'] = Riskv1authenticationsOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
+        obj['amountDetails'] = Riskv1authenticationresultsOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Riskv1authenticationresultsOrderInformationLineItems]);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/Riskv1authenticationsOrderInformationAmountDetails} amountDetails
+   * @member {module:model/Riskv1authenticationresultsOrderInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
   /**

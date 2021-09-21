@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iban (base name: "iban")', function() {
+      // uncomment below and update the code to test the property iban
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationBank();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
