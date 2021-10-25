@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "superagent": "3.8.3",
-    "superagent-proxy": "^2.0.0",
+    "superagent-proxy": "^3.0.0",
     "app-root-path": "^2.1.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",

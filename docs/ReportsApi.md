@@ -26,7 +26,7 @@ var apiInstance = new CyberSource.ReportsApi();
 var createAdhocReportRequest = new CyberSource.CreateAdhocReportRequest(); // CreateAdhocReportRequest | Report subscription request payload
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example" // String | Valid Organization Id
 };
 
 var callback = function(error, data, response) {
@@ -44,7 +44,7 @@ apiInstance.createReport(createAdhocReportRequest, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createAdhocReportRequest** | [**CreateAdhocReportRequest**](CreateAdhocReportRequest.md)| Report subscription request payload | 
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
 
 ### Return type
 
@@ -76,7 +76,7 @@ var apiInstance = new CyberSource.ReportsApi();
 var reportId = "reportId_example"; // String | Valid Report Id
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example" // String | Valid Organization Id
 };
 
 var callback = function(error, data, response) {
@@ -94,7 +94,7 @@ apiInstance.getReportByReportId(reportId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportId** | **String**| Valid Report Id | 
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
 
 ### Return type
 
@@ -130,7 +130,7 @@ var endTime = new Date("2013-10-20T19:20:30+01:00"); // Date | Valid report End 
 var timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search  Valid values: - reportTimeFrame - executedTime 
 
 var opts = { 
-  'organizationId': "organizationId_example", // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example", // String | Valid Organization Id
   'reportMimeType': "reportMimeType_example", // String | Valid Report Format  Valid values: - application/xml - text/csv 
   'reportFrequency': "reportFrequency_example", // String | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC 
   'reportName': "reportName_example", // String | Valid Report Name
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
  **startTime** | **Date**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  | 
  **endTime** | **Date**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  | 
  **timeQueryType** | **String**| Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  | 
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
  **reportMimeType** | **String**| Valid Report Format  Valid values: - application/xml - text/csv  | [optional] 
  **reportFrequency** | **String**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  | [optional] 
  **reportName** | **String**| Valid Report Name | [optional] 

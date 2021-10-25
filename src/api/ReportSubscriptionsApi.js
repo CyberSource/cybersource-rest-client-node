@@ -62,7 +62,7 @@
      * Create or update an already existing classic or standard subscription. 
      * @param {module:model/PredefinedSubscriptionRequestBean} predefinedSubscriptionRequestBean Report subscription request payload
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~createStandardOrClassicSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.createStandardOrClassicSubscription = function(predefinedSubscriptionRequestBean, opts, callback) {
@@ -110,7 +110,7 @@
      * Create a report subscription for your organization. The report name must be unique. 
      * @param {module:model/CreateReportSubscriptionRequest} createReportSubscriptionRequest Report subscription request payload
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~createSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.createSubscription = function(createReportSubscriptionRequest, opts, callback) {
@@ -158,7 +158,7 @@
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param {String} reportName Name of the Report to Delete
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~deleteSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteSubscription = function(reportName, opts, callback) {
@@ -206,7 +206,7 @@
      * Get All Subscriptions
      * View a summary of all report subscriptions. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200Response}
      */
@@ -250,7 +250,7 @@
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param {String} reportName Name of the Report to Retrieve
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~getSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions}
      */
