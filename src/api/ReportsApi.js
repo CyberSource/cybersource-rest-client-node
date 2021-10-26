@@ -62,7 +62,7 @@
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      * @param {module:model/CreateAdhocReportRequest} createAdhocReportRequest Report subscription request payload
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportsApi~createReportCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.createReport = function(createAdhocReportRequest, opts, callback) {
@@ -110,7 +110,7 @@
      * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param {String} reportId Valid Report Id
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportsApi~getReportByReportIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportsIdGet200Response}
      */
@@ -162,7 +162,7 @@
      * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
      * @param {String} timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.organizationId Valid Cybersource Organization Id
+     * @param {String} opts.organizationId Valid Organization Id
      * @param {String} opts.reportMimeType Valid Report Format  Valid values: - application/xml - text/csv 
      * @param {String} opts.reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC 
      * @param {String} opts.reportName Valid Report Name

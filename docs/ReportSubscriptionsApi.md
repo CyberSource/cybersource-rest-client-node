@@ -28,7 +28,7 @@ var apiInstance = new CyberSource.ReportSubscriptionsApi();
 var predefinedSubscriptionRequestBean = new CyberSource.PredefinedSubscriptionRequestBean(); // PredefinedSubscriptionRequestBean | Report subscription request payload
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example" // String | Valid Organization Id
 };
 
 var callback = function(error, data, response) {
@@ -46,7 +46,7 @@ apiInstance.createStandardOrClassicSubscription(predefinedSubscriptionRequestBea
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **predefinedSubscriptionRequestBean** | [**PredefinedSubscriptionRequestBean**](PredefinedSubscriptionRequestBean.md)| Report subscription request payload | 
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
 
 ### Return type
 
@@ -78,7 +78,7 @@ var apiInstance = new CyberSource.ReportSubscriptionsApi();
 var createReportSubscriptionRequest = new CyberSource.CreateReportSubscriptionRequest(); // CreateReportSubscriptionRequest | Report subscription request payload
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example" // String | Valid Organization Id
 };
 
 var callback = function(error, data, response) {
@@ -96,7 +96,7 @@ apiInstance.createSubscription(createReportSubscriptionRequest, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createReportSubscriptionRequest** | [**CreateReportSubscriptionRequest**](CreateReportSubscriptionRequest.md)| Report subscription request payload | 
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
 
 ### Return type
 
@@ -128,7 +128,7 @@ var apiInstance = new CyberSource.ReportSubscriptionsApi();
 var reportName = "reportName_example"; // String | Name of the Report to Delete
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example" // String | Valid Organization Id
 };
 
 var callback = function(error, data, response) {
@@ -146,7 +146,7 @@ apiInstance.deleteSubscription(reportName, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Delete | 
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
 
 ### Return type
 
@@ -176,7 +176,7 @@ var CyberSource = require('CyberSource');
 var apiInstance = new CyberSource.ReportSubscriptionsApi();
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example" // String | Valid Organization Id
 };
 
 var callback = function(error, data, response) {
@@ -193,7 +193,7 @@ apiInstance.getAllSubscriptions(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
 
 ### Return type
 
@@ -225,7 +225,7 @@ var apiInstance = new CyberSource.ReportSubscriptionsApi();
 var reportName = "reportName_example"; // String | Name of the Report to Retrieve
 
 var opts = { 
-  'organizationId': "organizationId_example" // String | Valid Cybersource Organization Id
+  'organizationId': "organizationId_example" // String | Valid Organization Id
 };
 
 var callback = function(error, data, response) {
@@ -243,7 +243,7 @@ apiInstance.getSubscription(reportName, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Retrieve | 
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional] 
+ **organizationId** | **String**| Valid Organization Id | [optional] 
 
 ### Return type
 
