@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -75,6 +76,9 @@
       }
       if (data.hasOwnProperty('middleInitial')) {
         obj['middleInitial'] = ApiClient.convertToType(data['middleInitial'], 'String');
+      }
+      if (data.hasOwnProperty('middleName')) {
+        obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
       }
       if (data.hasOwnProperty('lastName')) {
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
@@ -114,6 +118,11 @@
    * @member {String} middleInitial
    */
   exports.prototype['middleInitial'] = undefined;
+  /**
+   * Recipient’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * @member {String} middleName
+   */
+  exports.prototype['middleName'] = undefined;
   /**
    * Last name of recipient. characters. * CTV (14) * Paymentech (30) 
    * @member {String} lastName

@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('delegatedAuthenticationExemptionIndicator')) {
         obj['delegatedAuthenticationExemptionIndicator'] = ApiClient.convertToType(data['delegatedAuthenticationExemptionIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('outageExemptionIndicator')) {
+        obj['outageExemptionIndicator'] = ApiClient.convertToType(data['outageExemptionIndicator'], 'String');
       }
       if (data.hasOwnProperty('authenticationIndicator')) {
         obj['authenticationIndicator'] = ApiClient.convertToType(data['authenticationIndicator'], 'String');
@@ -113,6 +117,11 @@
    * @member {String} delegatedAuthenticationExemptionIndicator
    */
   exports.prototype['delegatedAuthenticationExemptionIndicator'] = undefined;
+  /**
+   * This field will contain the outage exemption indicator with one of the following values: Possible values: - `0`  (Outage Authentication exemption does not apply to the transaction) - `1` (Outage exempt from SCA as authentication could not be done due to outage) 
+   * @member {String} outageExemptionIndicator
+   */
+  exports.prototype['outageExemptionIndicator'] = undefined;
   /**
    * Indicates the type of Authentication request  01 - Payment transaction  02 - Recurring transaction  03 - Installment transaction  04 - Add card  05 - Maintain card  06 - Cardholder verification as part of EMV token ID and V 
    * @member {String} authenticationIndicator

@@ -60,6 +60,8 @@
 
 
 
+
+
   };
 
   /**
@@ -111,6 +113,12 @@
       }
       if (data.hasOwnProperty('firstInstallmentAmount')) {
         obj['firstInstallmentAmount'] = ApiClient.convertToType(data['firstInstallmentAmount'], 'String');
+      }
+      if (data.hasOwnProperty('validationIndicator')) {
+        obj['validationIndicator'] = ApiClient.convertToType(data['validationIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('identifier')) {
+        obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
       }
     }
     return obj;
@@ -181,6 +189,16 @@
    * @member {String} firstInstallmentAmount
    */
   exports.prototype['firstInstallmentAmount'] = undefined;
+  /**
+   * Standing Instruction/Installment validation indicator. - '1': Prevalidated - '2': Not Validated 
+   * @member {String} validationIndicator
+   */
+  exports.prototype['validationIndicator'] = undefined;
+  /**
+   * Standing Instruction/Installment identifier. 
+   * @member {String} identifier
+   */
+  exports.prototype['identifier'] = undefined;
 
 
 

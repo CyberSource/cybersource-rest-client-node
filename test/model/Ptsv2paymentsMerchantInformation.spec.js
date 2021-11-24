@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property domainName (base name: "domainName")', function() {
+      // uncomment below and update the code to test the property domainName
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property salesOrganizationId (base name: "salesOrganizationId")', function() {
       // uncomment below and update the code to test the property salesOrganizationId
       //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();

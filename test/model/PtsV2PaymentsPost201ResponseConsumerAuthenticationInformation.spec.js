@@ -176,6 +176,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property strongAuthentication (base name: "strongAuthentication")', function() {
+      // uncomment below and update the code to test the property strongAuthentication
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property networkScore (base name: "networkScore")', function() {
       // uncomment below and update the code to test the property networkScore
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation();

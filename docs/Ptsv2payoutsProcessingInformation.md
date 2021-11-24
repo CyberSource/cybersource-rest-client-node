@@ -8,5 +8,7 @@ Name | Type | Description | Notes
 **commerceIndicator** | **String** | Type of transaction.  Value for an OCT transaction: - &#x60;internet&#x60;  For details, see the &#x60;e_commerce_indicator&#x60; field description in [Payouts Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/payouts_SCMP/html/)  | [optional] 
 **reconciliationId** | **String** | Please check with Cybersource customer support to see if your merchant account is configured correctly so you can include this field in your request. * For Payouts: max length for FDCCompass is String (22).  | [optional] 
 **payoutsOptions** | [**Ptsv2payoutsProcessingInformationPayoutsOptions**](Ptsv2payoutsProcessingInformationPayoutsOptions.md) |  | [optional] 
+**transactionReason** | **String** | Transaction reason code.  | [optional] 
+**purposeOfPayment** | **String** | This will send purpose of funds code for original credit transactions (OCTs).  | [optional] 
 
 

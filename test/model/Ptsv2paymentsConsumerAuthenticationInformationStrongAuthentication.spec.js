@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property outageExemptionIndicator (base name: "outageExemptionIndicator")', function() {
+      // uncomment below and update the code to test the property outageExemptionIndicator
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authenticationIndicator (base name: "authenticationIndicator")', function() {
       // uncomment below and update the code to test the property authenticationIndicator
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication();

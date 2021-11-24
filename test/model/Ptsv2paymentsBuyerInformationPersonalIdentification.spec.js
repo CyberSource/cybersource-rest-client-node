@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property verificationResults (base name: "verificationResults")', function() {
+      // uncomment below and update the code to test the property verificationResults
+      //var instane = new CyberSource.Ptsv2paymentsBuyerInformationPersonalIdentification();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
