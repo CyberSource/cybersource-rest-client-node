@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
 
       if (data.hasOwnProperty('merchantDescriptor')) {
         obj['merchantDescriptor'] = Ptsv2paymentsMerchantInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
+      }
+      if (data.hasOwnProperty('domainName')) {
+        obj['domainName'] = ApiClient.convertToType(data['domainName'], 'String');
       }
       if (data.hasOwnProperty('salesOrganizationId')) {
         obj['salesOrganizationId'] = ApiClient.convertToType(data['salesOrganizationId'], 'String');
@@ -108,6 +112,11 @@
    * @member {module:model/Ptsv2paymentsMerchantInformationMerchantDescriptor} merchantDescriptor
    */
   exports.prototype['merchantDescriptor'] = undefined;
+  /**
+   * This field will contain either the merchant url or the reverse domain as per the requirement for DSRP Format 3. This might vary transaction to transaction and might not be static. Merchant needs to have access to send this value for all DSRP program. 
+   * @member {String} domainName
+   */
+  exports.prototype['domainName'] = undefined;
   /**
    * Company ID assigned to an independent sales organization. Get this value from Mastercard.  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 106-116 - Field: Mastercard Independent Sales Organization ID  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.  For processor-specific information, see the `sales_organization_ID` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @member {String} salesOrganizationId

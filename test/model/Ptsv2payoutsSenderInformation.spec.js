@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property middleName (base name: "middleName")', function() {
+      // uncomment below and update the code to test the property middleName
+      //var instane = new CyberSource.Ptsv2payoutsSenderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
       //var instane = new CyberSource.Ptsv2payoutsSenderInformation();

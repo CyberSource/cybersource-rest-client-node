@@ -30,5 +30,6 @@ Name | Type | Description | Notes
 **name** | **String** | Name of the Processor.  | [optional] 
 **routing** | [**PtsV2PaymentsPost201ResponseProcessorInformationRouting**](PtsV2PaymentsPost201ResponseProcessorInformationRouting.md) |  | [optional] 
 **merchantNumber** | **String** | Identifier that was assigned to you by your acquirer. This value must be printed on the receipt.  #### Returned by Authorizations and Credits.  This reply field is only supported by merchants who have installed client software on their POS terminals and use these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX  | [optional] 
+**retrievalReferenceNumber** | **String** | #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number.  | [optional] 
 
 

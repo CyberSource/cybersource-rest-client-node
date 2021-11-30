@@ -152,6 +152,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property buyerInformation (base name: "buyerInformation")', function() {
+      // uncomment below and update the code to test the property buyerInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property riskInformation (base name: "riskInformation")', function() {
       // uncomment below and update the code to test the property riskInformation
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();

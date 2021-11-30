@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr', 'model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr'), require('./PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr);
+    root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr, root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr, PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -160,6 +161,9 @@
       }
       if (data.hasOwnProperty('ivr')) {
         obj['ivr'] = PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr.constructFromObject(data['ivr']);
+      }
+      if (data.hasOwnProperty('strongAuthentication')) {
+        obj['strongAuthentication'] = PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication.constructFromObject(data['strongAuthentication']);
       }
       if (data.hasOwnProperty('networkScore')) {
         obj['networkScore'] = ApiClient.convertToType(data['networkScore'], 'String');
@@ -327,6 +331,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr} ivr
    */
   exports.prototype['ivr'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication} strongAuthentication
+   */
+  exports.prototype['strongAuthentication'] = undefined;
   /**
    * The global score calculated by the CB scoring platform and returned to merchants. 
    * @member {String} networkScore

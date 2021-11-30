@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property partner (base name: "partner")', function() {
+      // uncomment below and update the code to test the property partner
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

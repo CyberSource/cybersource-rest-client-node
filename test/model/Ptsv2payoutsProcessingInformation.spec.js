@@ -86,6 +86,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionReason (base name: "transactionReason")', function() {
+      // uncomment below and update the code to test the property transactionReason
+      //var instane = new CyberSource.Ptsv2payoutsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property purposeOfPayment (base name: "purposeOfPayment")', function() {
+      // uncomment below and update the code to test the property purposeOfPayment
+      //var instane = new CyberSource.Ptsv2payoutsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('applicationUser')) {
         obj['applicationUser'] = ApiClient.convertToType(data['applicationUser'], 'String');
       }
+      if (data.hasOwnProperty('partner')) {
+        obj['partner'] = TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner.constructFromObject(data['partner']);
+      }
     }
     return obj;
   }
@@ -91,6 +95,10 @@
    * @member {String} applicationUser
    */
   exports.prototype['applicationUser'] = undefined;
+  /**
+   * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner} partner
+   */
+  exports.prototype['partner'] = undefined;
 
 
 

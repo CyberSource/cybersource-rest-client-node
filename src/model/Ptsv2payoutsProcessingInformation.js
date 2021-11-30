@@ -52,6 +52,8 @@
 
 
 
+
+
   };
 
   /**
@@ -79,6 +81,12 @@
       }
       if (data.hasOwnProperty('payoutsOptions')) {
         obj['payoutsOptions'] = Ptsv2payoutsProcessingInformationPayoutsOptions.constructFromObject(data['payoutsOptions']);
+      }
+      if (data.hasOwnProperty('transactionReason')) {
+        obj['transactionReason'] = ApiClient.convertToType(data['transactionReason'], 'String');
+      }
+      if (data.hasOwnProperty('purposeOfPayment')) {
+        obj['purposeOfPayment'] = ApiClient.convertToType(data['purposeOfPayment'], 'String');
       }
     }
     return obj;
@@ -108,6 +116,16 @@
    * @member {module:model/Ptsv2payoutsProcessingInformationPayoutsOptions} payoutsOptions
    */
   exports.prototype['payoutsOptions'] = undefined;
+  /**
+   * Transaction reason code. 
+   * @member {String} transactionReason
+   */
+  exports.prototype['transactionReason'] = undefined;
+  /**
+   * This will send purpose of funds code for original credit transactions (OCTs). 
+   * @member {String} purposeOfPayment
+   */
+  exports.prototype['purposeOfPayment'] = undefined;
 
 
 

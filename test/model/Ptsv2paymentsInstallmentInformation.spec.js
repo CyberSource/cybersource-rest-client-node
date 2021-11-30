@@ -134,6 +134,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property validationIndicator (base name: "validationIndicator")', function() {
+      // uncomment below and update the code to test the property validationIndicator
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property identifier (base name: "identifier")', function() {
+      // uncomment below and update the code to test the property identifier
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

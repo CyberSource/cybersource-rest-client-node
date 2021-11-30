@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **firstName** | **String** | First name of recipient. characters. * CTV (14) * Paymentech (30)  | [optional] 
 **middleInitial** | **String** | Middle Initial of recipient. Required only for FDCCompass.  | [optional] 
+**middleName** | **String** | Recipient’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  | [optional] 
 **lastName** | **String** | Last name of recipient. characters. * CTV (14) * Paymentech (30)  | [optional] 
 **address1** | **String** | Recipient address information. Required only for FDCCompass. | [optional] 
 **locality** | **String** | Recipient city. Required only for FDCCompass. | [optional] 

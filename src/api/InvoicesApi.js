@@ -84,7 +84,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InvoicingV2InvoicesPost201Response;
 
       return this.apiClient.callApi(
@@ -141,7 +141,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InvoicingV2InvoicesAllGet200Response;
 
       return this.apiClient.callApi(
@@ -187,7 +187,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InvoicingV2InvoicesGet200Response;
 
       return this.apiClient.callApi(
@@ -233,7 +233,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InvoicingV2InvoicesPost201Response;
 
       return this.apiClient.callApi(
@@ -279,7 +279,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InvoicingV2InvoicesPost201Response;
 
       return this.apiClient.callApi(
@@ -331,7 +331,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InvoicingV2InvoicesPost201Response;
 
       return this.apiClient.callApi(

@@ -18,4 +18,25 @@ git checkout ..\README.md
 
 git checkout ..\package.json
 
+git checkout ..\src\api\OAuthApi.js
+git checkout ..\src\model\AccessTokenResponse.js
+git checkout ..\src\model\CreateAccessTokenRequest.js
+git checkout ..\src\model\BadRequestError.js
+git checkout ..\src\model\ResourceNotFoundError.js
+git checkout ..\src\model\UnauthorizedClientError.js
+
+git checkout ..\docs\OAuthApi.md
+git checkout ..\docs\AccessTokenResponse.md
+git checkout ..\docs\CreateAccessTokenRequest.md
+git checkout ..\docs\BadRequestError.md
+git checkout ..\docs\ResourceNotFoundError.md
+git checkout ..\docs\UnauthorizedClientError.md
+
+git checkout ..\test\api\OAuthApi.js
+git checkout ..\test\model\AccessTokenResponse.js
+git checkout ..\test\model\CreateAccessTokenRequest.js
+git checkout ..\test\model\BadRequestError.js
+git checkout ..\test\model\ResourceNotFoundError.js
+git checkout ..\test\model\UnauthorizedClientError.js
+
 pause
