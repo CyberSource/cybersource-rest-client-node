@@ -3864,11 +3864,14 @@
   };
   
   exports.TokenVerification = require('./utilities/flex/TokenVerification.js');
-  exports.Authorization = require('./authentication/core/Authorization.js'),
-  exports.MerchantConfig = require('./authentication/core/MerchantConfig.js'),
-  exports.Logger = require('./authentication/logging/Logger.js'),
-  exports.Constants = require('./authentication/util/Constants.js'),
-  exports.PayloadDigest = require('./authentication/payloadDigest/DigestGenerator.js')
+  exports.Authorization = require('./authentication/core/Authorization.js');
+  exports.MerchantConfig = require('./authentication/core/MerchantConfig.js');
+  exports.Logger = require('./authentication/logging/Logger.js');
+  exports.Constants = require('./authentication/util/Constants.js');
+  exports.PayloadDigest = require('./authentication/payloadDigest/DigestGenerator.js');
+  exports.LogConfiguration = require('./authentication/logging/LogConfiguration.js');
+  exports.SensitiveDataTags = require('./authentication/logging/SensitiveDataTags.js');
+  exports.SensitiveDataMasker = require('./authentication/logging/SensitiveDataMasker.js');
 
   return exports;
 }));

@@ -4,6 +4,7 @@ var Constants = require('../util/Constants');
 var Logger = require('../logging/Logger');
 var Map = require('collections/map');
 var ApiException = require('../util/ApiException');
+var LogConfiguration = require('../logging/LogConfiguration');
 
 /**
  * This function has all the merchentConfig properties getters and setters methods
@@ -22,20 +23,12 @@ function MerchantConfig(result) {
     this.requestTarget;
     this.requestJsonData;
 
-    /*Logging Parameters */
-    this.logDirectory = result.logDirectory;
-    this.logFilename = result.logFilename;
-    this.logFileMaxSize = result.logFileMaxSize;
-    this.loggingLevel = result.loggingLevel;
-    this.maxLogFiles = result.maxLogFiles;
-
     /* JWT Parameters*/
     this.keysDirectory = result.keysDirectory;
     this.keyAlias = result.keyAlias;
     this.keyPass = result.keyPass;
     this.keyType;
     this.keyFilename = result.keyFileName;
-    this.enableLog = result.enableLog;
     this.useHttpClient;
 
     /* proxy Parameters*/
@@ -68,6 +61,8 @@ function MerchantConfig(result) {
     this.runEnvironment = result.runEnvironment;
 
     this.solutionId = result.solutionId;
+
+    this.logConfiguration = new LogConfiguration(result.logConfiguration);
 
     /* Fallback logic*/
     this.defaultPropValues();
@@ -150,14 +145,6 @@ MerchantConfig.prototype.setRefreshToken = function setRefreshToken(refreshToken
     this.refreshToken = refreshToken;
 };
 
-MerchantConfig.prototype.setEnableLog = function setEnableLog(enableLog) {
-    this.enableLog = enableLog;
-};
-
-MerchantConfig.prototype.setLogDirectory = function setLogDirectory(logDirectory) {
-    this.logDirectory = logDirectory;
-};
-
 MerchantConfig.prototype.setSolutionId = function setSolutionId(solutionId) {
     this.solutionId = solutionId;
 };
@@ -234,52 +221,12 @@ MerchantConfig.prototype.getMerchantsecretKey = function getMerchantsecretKey() 
     return this.merchantsecretKey;
 };
 
-MerchantConfig.prototype.getEnableLog = function getEnableLog() {
-    return this.enableLog;
-};
-
-MerchantConfig.prototype.getLogDirectory = function getLogDirectory() {
-    return this.logDirectory;
-};
-
 MerchantConfig.prototype.getSolutionId = function getSolutionId() {
     return this.solutionId;
 };
 
 MerchantConfig.prototype.getURL = function getURL() {
     return this.url;
-};
-
-MerchantConfig.prototype.getLogFileMaxSize = function getLogFileMaxSize() {
-    return this.logFileMaxSize;
-};
-
-MerchantConfig.prototype.setLogFileMaxSize = function setLogFileMaxSize(logFileMaxSize) {
-    this.logFileMaxSize = logFileMaxSize;
-};
-
-MerchantConfig.prototype.getLogFileName = function getLogFileName() {
-    return this.logFilename;
-};
-
-MerchantConfig.prototype.setLogFileName = function setLogFileName(logFilename) {
-    this.logFilename = logFilename;
-};
-
-MerchantConfig.prototype.getLoggingLevel = function getLoggingLevel() {
-    return this.loggingLevel;
-};
-
-MerchantConfig.prototype.setLoggingLevel = function setLoggingLevel(loggingLevel) {
-    this.loggingLevel = loggingLevel;
-};
-
-MerchantConfig.prototype.getMaxLogFiles = function getMaxLogFiles() {
-    return this.maxLogFiles;
-};
-
-MerchantConfig.prototype.setMaxLogFiles = function setMaxLogFiles(maxLogFiles) {
-    this.maxLogFiles = maxLogFiles;
 };
 
 MerchantConfig.prototype.getRequestTarget = function getRequestTarget() {
@@ -321,7 +268,6 @@ MerchantConfig.prototype.getRunEnvironment = function getRunEnvironment() {
 MerchantConfig.prototype.setRunEnvironment = function setRunEnvironment(runEnvironment) {
     this.runEnvironment = runEnvironment;
 }
-
 
 MerchantConfig.prototype.getProxyAddress = function getProxyAddress() {
     return this.proxyAddress;
@@ -372,6 +318,14 @@ MerchantConfig.prototype.setKeyFileName = function setKeyFileName(keyFilename) {
     this.keyFilename = keyFilename;
 }
 
+MerchantConfig.prototype.getLogConfiguration = function getLogConfiguration() {
+    return this.logConfiguration;
+}
+
+MerchantConfig.prototype.setLogConfiguration = function setLogConfiguration(logConfig) {
+    this.logConfiguration = new LogConfiguration(logConfig);
+}
+
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
 
     /*url*/
@@ -396,51 +350,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
     var warningMessage = "";
     //fallback for missing values
-    if (this.enableLog === null || this.enableLog === "" || this.enableLog === undefined) {
-        this.enableLog = true;
-    }
-    else if (typeof (this.enableLog) !== "boolean") {
-        this.enableLog = false;
-    }
-
-    if (this.logFileMaxSize === null || this.logFileMaxSize === "" || this.logFileMaxSize === undefined) {
-        this.logFileMaxSize = Constants.DEFAULT_LOG_SIZE;
-    }
-
-    if (this.maxLogFiles === null || this.maxLogFiles === "" || this.maxLogFiles === undefined) {
-        this.maxLogFiles = Constants.DEFAULT_MAX_LOG_FILES;
-    }
-
-    if (this.loggingLevel === null || this.loggingLevel === "" || this.loggingLevel === undefined) {
-        this.loggingLevel = Constants.DEFAULT_LOGGING_LEVEL;
-    }
-
-    var fs = require('fs');
-    var path = require('path');
-    if (this.logDirectory === null || this.logDirectory === "" || this.logDirectory === undefined) {
-        this.logDirectory = Constants.DEFAULT_LOG_DIRECTORY;
-        if (!fs.existsSync(this.logDirectory) && this.enableLog === true) {
-            fs.mkdir(path.resolve(this.logDirectory), function (err) {
-                if (err)
-                    throw err;
-            })
-        }
-    }
-    else if (!fs.existsSync(this.logDirectory)) {
-        this.logDirectory = Constants.DEFAULT_LOG_DIRECTORY;
-        warningMessage += Constants.INVALID_LOGDIRECTORY;
-        if (!fs.existsSync(this.logDirectory) && this.enableLog === true) {
-            fs.mkdir(path.resolve(this.logDirectory), function (err) {
-                if (err)
-                    throw err;
-            })
-        }
-    }
-
-
-    if (this.logFilename === null || this.logFilename === "" || this.logFilename === undefined) {
-        this.logFilename = Constants.DEFAULT_LOG_FILENAME;
-    }
+    this.logConfiguration.getDefaultLoggingProperties(warningMessage);
 
     var logger = Logger.getLogger(this, 'MerchantConfig');
     logger.info(Constants.BEGIN_TRANSACTION);
