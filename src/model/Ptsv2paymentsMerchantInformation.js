@@ -58,6 +58,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -100,6 +103,15 @@
       }
       if (data.hasOwnProperty('serviceFeeDescriptor')) {
         obj['serviceFeeDescriptor'] = Ptsv2paymentsMerchantInformationServiceFeeDescriptor.constructFromObject(data['serviceFeeDescriptor']);
+      }
+      if (data.hasOwnProperty('cancelUrl')) {
+        obj['cancelUrl'] = ApiClient.convertToType(data['cancelUrl'], 'String');
+      }
+      if (data.hasOwnProperty('successUrl')) {
+        obj['successUrl'] = ApiClient.convertToType(data['successUrl'], 'String');
+      }
+      if (data.hasOwnProperty('failureUrl')) {
+        obj['failureUrl'] = ApiClient.convertToType(data['failureUrl'], 'String');
       }
       if (data.hasOwnProperty('merchantName')) {
         obj['merchantName'] = ApiClient.convertToType(data['merchantName'], 'String');
@@ -156,6 +168,21 @@
    * @member {module:model/Ptsv2paymentsMerchantInformationServiceFeeDescriptor} serviceFeeDescriptor
    */
   exports.prototype['serviceFeeDescriptor'] = undefined;
+  /**
+   * customer would be redirected to this url based on the decision of the transaction
+   * @member {String} cancelUrl
+   */
+  exports.prototype['cancelUrl'] = undefined;
+  /**
+   * customer would be redirected to this url based on the decision of the transaction
+   * @member {String} successUrl
+   */
+  exports.prototype['successUrl'] = undefined;
+  /**
+   * customer would be redirected to this url based on the decision of the transaction
+   * @member {String} failureUrl
+   */
+  exports.prototype['failureUrl'] = undefined;
   /**
    * Use this field only if you are requesting payment with Payer Authentication serice together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
    * @member {String} merchantName

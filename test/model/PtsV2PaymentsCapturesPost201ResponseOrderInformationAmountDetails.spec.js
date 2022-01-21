@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processorTransactionFee (base name: "processorTransactionFee")', function() {
+      // uncomment below and update the code to test the property processorTransactionFee
+      //var instane = new CyberSource.PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subTotalAmount (base name: "subTotalAmount")', function() {
+      // uncomment below and update the code to test the property subTotalAmount
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property currency (base name: "currency")', function() {
       // uncomment below and update the code to test the property currency
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();

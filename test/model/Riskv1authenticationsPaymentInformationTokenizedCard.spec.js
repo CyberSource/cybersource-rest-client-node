@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Riskv1authenticationsPaymentInformationTokenizedCard);
     });
 
+    it('should have the property transactionType (base name: "transactionType")', function() {
+      // uncomment below and update the code to test the property transactionType
+      //var instane = new CyberSource.Riskv1authenticationsPaymentInformationTokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instane = new CyberSource.Riskv1authenticationsPaymentInformationTokenizedCard();

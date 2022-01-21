@@ -224,6 +224,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentUrl (base name: "paymentUrl")', function() {
+      // uncomment below and update the code to test the property paymentUrl
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property completeUrl (base name: "completeUrl")', function() {
+      // uncomment below and update the code to test the property completeUrl
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

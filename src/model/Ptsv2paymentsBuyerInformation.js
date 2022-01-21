@@ -54,6 +54,8 @@
 
 
 
+
+
   };
 
   /**
@@ -84,6 +86,12 @@
       }
       if (data.hasOwnProperty('hashedPassword')) {
         obj['hashedPassword'] = ApiClient.convertToType(data['hashedPassword'], 'String');
+      }
+      if (data.hasOwnProperty('gender')) {
+        obj['gender'] = ApiClient.convertToType(data['gender'], 'String');
+      }
+      if (data.hasOwnProperty('language')) {
+        obj['language'] = ApiClient.convertToType(data['language'], 'String');
       }
       if (data.hasOwnProperty('mobilePhone')) {
         obj['mobilePhone'] = ApiClient.convertToType(data['mobilePhone'], 'Number');
@@ -121,6 +129,16 @@
    * @member {String} hashedPassword
    */
   exports.prototype['hashedPassword'] = undefined;
+  /**
+   * Customer's gender. Possible values are F (female), M (male),O (other).
+   * @member {String} gender
+   */
+  exports.prototype['gender'] = undefined;
+  /**
+   * language setting of the user
+   * @member {String} language
+   */
+  exports.prototype['language'] = undefined;
   /**
    * Cardholder’s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
    * @member {Number} mobilePhone

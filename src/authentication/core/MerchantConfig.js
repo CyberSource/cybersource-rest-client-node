@@ -477,7 +477,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
                 this.refreshToken = this.refreshToken.toString();
             }
         }
-        else if (this.authenticationType.toLowerCase() === Constants.MUTUAL_AUTH)
+        else if (this.authenticationType.toLowerCase() === Constants.MUTUAL_AUTH && this.enableClientCert)
         {
             if (this.clientId === null || this.clientId === "" || this.clientId === undefined) {
                 ApiException.ApiException(Constants.CLIENT_ID_EMPTY, logger);

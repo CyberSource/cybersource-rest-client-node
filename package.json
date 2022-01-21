@@ -20,7 +20,7 @@
     "collections": "^5.1.2",
     "jwt-simple": "^0.5.1",
     "memory-cache": "^0.2.0",
-    "node-forge": "^0.10.0",
+    "node-forge": ">=1.0.0",
     "promise": "^8.0.1",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.1"

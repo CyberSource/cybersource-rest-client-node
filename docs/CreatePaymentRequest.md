@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **healthCareInformation** | [**Ptsv2paymentsHealthCareInformation**](Ptsv2paymentsHealthCareInformation.md) |  | [optional] 
 **promotionInformation** | [**Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
 **tokenInformation** | [**Ptsv2paymentsTokenInformation**](Ptsv2paymentsTokenInformation.md) |  | [optional] 
+**invoiceDetails** | [**Ptsv2paymentsInvoiceDetails**](Ptsv2paymentsInvoiceDetails.md) |  | [optional] 
+**processorInformation** | [**Ptsv2paymentsProcessorInformation**](Ptsv2paymentsProcessorInformation.md) |  | [optional] 
 **riskInformation** | [**Ptsv2paymentsRiskInformation**](Ptsv2paymentsRiskInformation.md) |  | [optional] 
 **acquirerInformation** | [**Ptsv2paymentsAcquirerInformation**](Ptsv2paymentsAcquirerInformation.md) |  | [optional] 
 **recurringPaymentInformation** | [**Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 

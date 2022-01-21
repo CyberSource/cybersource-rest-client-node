@@ -32,11 +32,11 @@ git checkout ..\docs\BadRequestError.md
 git checkout ..\docs\ResourceNotFoundError.md
 git checkout ..\docs\UnauthorizedClientError.md
 
-git checkout ..\test\api\OAuthApi.js
-git checkout ..\test\model\AccessTokenResponse.js
-git checkout ..\test\model\CreateAccessTokenRequest.js
-git checkout ..\test\model\BadRequestError.js
-git checkout ..\test\model\ResourceNotFoundError.js
-git checkout ..\test\model\UnauthorizedClientError.js
+git checkout ..\test\api\OAuthApi.spec.js
+git checkout ..\test\model\AccessTokenResponse.spec.js
+git checkout ..\test\model\CreateAccessTokenRequest.spec.js
+git checkout ..\test\model\BadRequestError.spec.js
+git checkout ..\test\model\ResourceNotFoundError.spec.js
+git checkout ..\test\model\UnauthorizedClientError.spec.js
 
 pause

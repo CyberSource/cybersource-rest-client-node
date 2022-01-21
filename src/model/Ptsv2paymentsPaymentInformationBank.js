@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('iban')) {
         obj['iban'] = ApiClient.convertToType(data['iban'], 'String');
       }
+      if (data.hasOwnProperty('swiftCode')) {
+        obj['swiftCode'] = ApiClient.convertToType(data['swiftCode'], 'String');
+      }
     }
     return obj;
   }
@@ -90,6 +94,11 @@
    * @member {String} iban
    */
   exports.prototype['iban'] = undefined;
+  /**
+   * Bank’s SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @member {String} swiftCode
+   */
+  exports.prototype['swiftCode'] = undefined;
 
 
 

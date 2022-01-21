@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -91,6 +92,9 @@
       }
       if (data.hasOwnProperty('useRawFingerprintSessionId')) {
         obj['useRawFingerprintSessionId'] = ApiClient.convertToType(data['useRawFingerprintSessionId'], 'Boolean');
+      }
+      if (data.hasOwnProperty('deviceType')) {
+        obj['deviceType'] = ApiClient.convertToType(data['deviceType'], 'String');
       }
       if (data.hasOwnProperty('rawData')) {
         obj['rawData'] = ApiClient.convertToType(data['rawData'], [Ptsv2paymentsDeviceInformationRawData]);
@@ -157,6 +161,11 @@
    * @member {Boolean} useRawFingerprintSessionId
    */
   exports.prototype['useRawFingerprintSessionId'] = undefined;
+  /**
+   * The device type at the client side.
+   * @member {String} deviceType
+   */
+  exports.prototype['deviceType'] = undefined;
   /**
    * @member {Array.<module:model/Ptsv2paymentsDeviceInformationRawData>} rawData
    */

@@ -116,6 +116,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cancelUrl (base name: "cancelUrl")', function() {
+      // uncomment below and update the code to test the property cancelUrl
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property successUrl (base name: "successUrl")', function() {
+      // uncomment below and update the code to test the property successUrl
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property failureUrl (base name: "failureUrl")', function() {
+      // uncomment below and update the code to test the property failureUrl
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property merchantName (base name: "merchantName")', function() {
       // uncomment below and update the code to test the property merchantName
       //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();

@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reconciliationId (base name: "reconciliationId")', function() {
+      // uncomment below and update the code to test the property reconciliationId
+      //var instane = new CyberSource.Ptsv2paymentsClientReferenceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pausedRequestId (base name: "pausedRequestId")', function() {
       // uncomment below and update the code to test the property pausedRequestId
       //var instane = new CyberSource.Ptsv2paymentsClientReferenceInformation();
