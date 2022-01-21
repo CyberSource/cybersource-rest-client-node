@@ -2,12 +2,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient'{{#models}}, '{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{importPath}}'{{/models}}{{#apiInfo}}{{#apis}}, '{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#apiPackage}}{{apiPackage}}/{{/apiPackage}}{{importPath}}'{{/apis}}{{/apiInfo}}], factory);
+    define(['{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient'{{#models}}, '{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{importPath}}'{{/models}}, 'model/AccessTokenResponse', 'model/BadRequestError', 'model/CreateAccessTokenRequest', 'model/ResourceNotFoundError', 'model/UnauthorizedClientError'{{#apiInfo}}{{#apis}}, '{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#apiPackage}}{{apiPackage}}/{{/apiPackage}}{{importPath}}'{{/apis}}{{/apiInfo}}, 'api/OAuthApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'){{#models}}, require('./{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{importPath}}'){{/models}}{{#apiInfo}}{{#apis}}, require('./{{#apiPackage}}{{apiPackage}}/{{/apiPackage}}{{importPath}}'){{/apis}}{{/apiInfo}});
+    module.exports = factory(require('./ApiClient'){{#models}}, require('./{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{importPath}}'){{/models}}, require('./model/AccessTokenResponse'), require('./model/BadRequestError'), require('./model/CreateAccessTokenRequest'), require('./model/ResourceNotFoundError'), require('./model/UnauthorizedClientError'){{#apiInfo}}{{#apis}}, require('./{{#apiPackage}}{{apiPackage}}/{{/apiPackage}}{{importPath}}'){{/apis}}{{/apiInfo}}, require('./api/OAuthApi'));
   }
-}(function(ApiClient{{#models}}{{#model}}, {{classFilename}}{{/model}}{{/models}}{{#apiInfo}}{{#apis}}, {{importPath}}{{/apis}}{{/apiInfo}}) {
+}(function(ApiClient{{#models}}{{#model}}, {{classFilename}}{{/model}}{{/models}}, AccessTokenResponse, BadRequestError, CreateAccessTokenRequest, ResourceNotFoundError, UnauthorizedClientError{{#apiInfo}}{{#apis}}, {{importPath}}{{/apis}}{{/apiInfo}}, OAuthApi) {
   'use strict';
 
 {{#emitJSDoc}}  /**{{#projectDescription}}
@@ -51,20 +51,53 @@
      * The <importPath> model constructor.
      * @property {module:<#invokerPackage><invokerPackage>/</invokerPackage><#modelPackage><modelPackage>/</modelPackage><importPath>}
      */</emitJSDoc>
-    <importPath>: <importPath></models><#apiInfo><#apis>,<#emitJSDoc>
+    <importPath>: <importPath></models>,
+    /**
+     * The AccessTokenResponse model constructor.
+     * @property {module:model/AccessTokenResponse}
+     */
+    AccessTokenResponse: AccessTokenResponse,
+    /**
+     * The BadRequestError model constructor.
+     * @property {module:model/BadRequestError}
+     */
+    BadRequestError: BadRequestError,
+    /**
+     * The CreateAccessTokenRequest model constructor.
+     * @property {module:model/CreateAccessTokenRequest}
+     */
+    CreateAccessTokenRequest: CreateAccessTokenRequest,
+    /**
+     * The ResourceNotFoundError model constructor.
+     * @property {module:model/ResourceNotFoundError}
+     */
+    ResourceNotFoundError: ResourceNotFoundError,
+    /**
+     * The UnauthorizedClientError model constructor.
+     * @property {module:model/UnauthorizedClientError}
+     */
+    UnauthorizedClientError: UnauthorizedClientError<#apiInfo><#apis>,<#emitJSDoc>
     /**
      * The <importPath> service constructor.
      * @property {module:<#invokerPackage><invokerPackage>/</invokerPackage><#apiPackage><apiPackage>/</apiPackage><importPath>}
      */</emitJSDoc>
-    <importPath>: <importPath></apis></apiInfo>
+    <importPath>: <importPath></apis></apiInfo>,
+    /**
+     * The OAuthApi service constructor.
+     * @property {module:api/OAuthApi}
+     */
+    OAuthApi: OAuthApi
   };
   
   exports.TokenVerification = require('./utilities/flex/TokenVerification.js');
-  exports.Authorization = require('./authentication/core/Authorization.js'),
-  exports.MerchantConfig = require('./authentication/core/MerchantConfig.js'),
-  exports.Logger = require('./authentication/logging/Logger.js'),
-  exports.Constants = require('./authentication/util/Constants.js'),
-  exports.PayloadDigest = require('./authentication/payloadDigest/DigestGenerator.js')
+  exports.Authorization = require('./authentication/core/Authorization.js');
+  exports.MerchantConfig = require('./authentication/core/MerchantConfig.js');
+  exports.Logger = require('./authentication/logging/Logger.js');
+  exports.Constants = require('./authentication/util/Constants.js');
+  exports.PayloadDigest = require('./authentication/payloadDigest/DigestGenerator.js');
+  exports.LogConfiguration = require('./authentication/logging/LogConfiguration.js');
+  exports.SensitiveDataTags = require('./authentication/logging/SensitiveDataTags.js');
+  exports.SensitiveDataMasker = require('./authentication/logging/SensitiveDataMasker.js');
 
   return exports;<={{ }}=>
 }));
