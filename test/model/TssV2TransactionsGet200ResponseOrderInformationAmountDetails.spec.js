@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property surcharge (base name: "surcharge")', function() {
+      // uncomment below and update the code to test the property surcharge
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

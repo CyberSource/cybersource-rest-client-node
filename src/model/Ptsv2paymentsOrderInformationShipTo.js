@@ -62,6 +62,8 @@
 
 
 
+
+
   };
 
   /**
@@ -75,8 +77,14 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
+      }
       if (data.hasOwnProperty('firstName')) {
         obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+      }
+      if (data.hasOwnProperty('middleName')) {
+        obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
       }
       if (data.hasOwnProperty('lastName')) {
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
@@ -125,10 +133,20 @@
   }
 
   /**
+   * The title of the person receiving the product.
+   * @member {String} title
+   */
+  exports.prototype['title'] = undefined;
+  /**
    * First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
+  /**
+   * Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * @member {String} middleName
+   */
+  exports.prototype['middleName'] = undefined;
   /**
    * Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @member {String} lastName

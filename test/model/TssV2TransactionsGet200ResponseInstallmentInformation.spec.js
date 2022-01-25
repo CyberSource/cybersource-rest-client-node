@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property identifier (base name: "identifier")', function() {
+      // uncomment below and update the code to test the property identifier
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

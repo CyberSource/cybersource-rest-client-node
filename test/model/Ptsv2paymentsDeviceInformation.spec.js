@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property deviceType (base name: "deviceType")', function() {
+      // uncomment below and update the code to test the property deviceType
+      //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property rawData (base name: "rawData")', function() {
       // uncomment below and update the code to test the property rawData
       //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();

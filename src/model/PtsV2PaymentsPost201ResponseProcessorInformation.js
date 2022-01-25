@@ -75,6 +75,8 @@
 
 
 
+
+
   };
 
   /**
@@ -171,6 +173,12 @@
       }
       if (data.hasOwnProperty('retrievalReferenceNumber')) {
         obj['retrievalReferenceNumber'] = ApiClient.convertToType(data['retrievalReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('paymentUrl')) {
+        obj['paymentUrl'] = ApiClient.convertToType(data['paymentUrl'], 'String');
+      }
+      if (data.hasOwnProperty('completeUrl')) {
+        obj['completeUrl'] = ApiClient.convertToType(data['completeUrl'], 'String');
       }
     }
     return obj;
@@ -308,6 +316,16 @@
    * @member {String} retrievalReferenceNumber
    */
   exports.prototype['retrievalReferenceNumber'] = undefined;
+  /**
+   * Direct the customer to this URL to complete the payment.
+   * @member {String} paymentUrl
+   */
+  exports.prototype['paymentUrl'] = undefined;
+  /**
+   * The redirect URL for forwarding the consumer to complete page.  This redirect needed by PSP to track browser information of consumer. PSP then redirect consumer to merchant success URL. 
+   * @member {String} completeUrl
+   */
+  exports.prototype['completeUrl'] = undefined;
 
 
 

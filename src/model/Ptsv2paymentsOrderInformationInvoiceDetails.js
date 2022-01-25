@@ -62,6 +62,7 @@
 
 
 
+
   };
 
   /**
@@ -119,6 +120,9 @@
       }
       if (data.hasOwnProperty('invoiceDate')) {
         obj['invoiceDate'] = ApiClient.convertToType(data['invoiceDate'], 'String');
+      }
+      if (data.hasOwnProperty('costCenter')) {
+        obj['costCenter'] = ApiClient.convertToType(data['costCenter'], 'String');
       }
     }
     return obj;
@@ -198,6 +202,11 @@
    * @member {String} invoiceDate
    */
   exports.prototype['invoiceDate'] = undefined;
+  /**
+   * Cost centre of the merchant
+   * @member {String} costCenter
+   */
+  exports.prototype['costCenter'] = undefined;
 
 
 

@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
+      if (data.hasOwnProperty('processorTransactionFee')) {
+        obj['processorTransactionFee'] = ApiClient.convertToType(data['processorTransactionFee'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;
+  /**
+   * The fee decided by the PSP/Processor per transaction.
+   * @member {String} processorTransactionFee
+   */
+  exports.prototype['processorTransactionFee'] = undefined;
 
 
 

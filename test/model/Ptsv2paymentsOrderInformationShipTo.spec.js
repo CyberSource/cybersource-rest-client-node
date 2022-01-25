@@ -56,8 +56,20 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsOrderInformationShipTo);
     });
 
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property firstName (base name: "firstName")', function() {
       // uncomment below and update the code to test the property firstName
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property middleName (base name: "middleName")', function() {
+      // uncomment below and update the code to test the property middleName
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
       //expect(instance).to.be();
     });

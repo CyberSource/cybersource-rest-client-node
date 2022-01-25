@@ -164,6 +164,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property invoiceDetails (base name: "invoiceDetails")', function() {
+      // uncomment below and update the code to test the property invoiceDetails
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processorInformation (base name: "processorInformation")', function() {
+      // uncomment below and update the code to test the property processorInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property riskInformation (base name: "riskInformation")', function() {
       // uncomment below and update the code to test the property riskInformation
       //var instane = new CyberSource.CreatePaymentRequest();

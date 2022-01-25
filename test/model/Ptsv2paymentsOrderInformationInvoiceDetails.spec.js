@@ -146,6 +146,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property costCenter (base name: "costCenter")', function() {
+      // uncomment below and update the code to test the property costCenter
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

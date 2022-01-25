@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('numberOfInstallments')) {
         obj['numberOfInstallments'] = ApiClient.convertToType(data['numberOfInstallments'], 'String');
       }
+      if (data.hasOwnProperty('identifier')) {
+        obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} numberOfInstallments
    */
   exports.prototype['numberOfInstallments'] = undefined;
+  /**
+   * Standing Instruction/Installment identifier. 
+   * @member {String} identifier
+   */
+  exports.prototype['identifier'] = undefined;
 
 
 

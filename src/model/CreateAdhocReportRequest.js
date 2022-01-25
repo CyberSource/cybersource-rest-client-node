@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Reportingv3reportsReportPreferences'], factory);
+    define(['ApiClient', 'model/Reportingv3reportsReportFilters', 'model/Reportingv3reportsReportPreferences'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Reportingv3reportsReportPreferences'));
+    module.exports = factory(require('../ApiClient'), require('./Reportingv3reportsReportFilters'), require('./Reportingv3reportsReportPreferences'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateAdhocReportRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3reportsReportPreferences);
+    root.CyberSource.CreateAdhocReportRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Reportingv3reportsReportFilters, root.CyberSource.Reportingv3reportsReportPreferences);
   }
-}(this, function(ApiClient, Reportingv3reportsReportPreferences) {
+}(this, function(ApiClient, Reportingv3reportsReportFilters, Reportingv3reportsReportPreferences) {
   'use strict';
 
 
@@ -96,7 +96,7 @@
         obj['reportEndTime'] = ApiClient.convertToType(data['reportEndTime'], 'Date');
       }
       if (data.hasOwnProperty('reportFilters')) {
-        obj['reportFilters'] = ApiClient.convertToType(data['reportFilters'], {'String': ['String']});
+        obj['reportFilters'] = Reportingv3reportsReportFilters.constructFromObject(data['reportFilters']);
       }
       if (data.hasOwnProperty('reportPreferences')) {
         obj['reportPreferences'] = Reportingv3reportsReportPreferences.constructFromObject(data['reportPreferences']);
@@ -148,8 +148,7 @@
    */
   exports.prototype['reportEndTime'] = undefined;
   /**
-   * List of filters to apply
-   * @member {Object.<String, Array.<String>>} reportFilters
+   * @member {module:model/Reportingv3reportsReportFilters} reportFilters
    */
   exports.prototype['reportFilters'] = undefined;
   /**
