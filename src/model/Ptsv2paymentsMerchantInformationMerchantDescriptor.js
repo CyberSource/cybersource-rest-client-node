@@ -145,7 +145,7 @@
    */
   exports.prototype['administrativeArea'] = undefined;
   /**
-   * Merchnat phone as contact information for CNP transactions 
+   * Merchant phone as contact information for CNP transactions 
    * @member {String} phone
    */
   exports.prototype['phone'] = undefined;

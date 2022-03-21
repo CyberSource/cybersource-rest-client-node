@@ -80,12 +80,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instane = new CyberSource.TssV2TransactionsGet200Response();
-      //expect(instance).to.be();
-    });
-
     it('should have the property submitTimeUTC (base name: "submitTimeUTC")', function() {
       // uncomment below and update the code to test the property submitTimeUTC
       //var instane = new CyberSource.TssV2TransactionsGet200Response();
@@ -196,6 +190,12 @@
 
     it('should have the property senderInformation (base name: "senderInformation")', function() {
       // uncomment below and update the code to test the property senderInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tokenInformation (base name: "tokenInformation")', function() {
+      // uncomment below and update the code to test the property tokenInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();
       //expect(instance).to.be();
     });

@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -115,6 +116,9 @@
       }
       if (data.hasOwnProperty('responseCodeSource')) {
         obj['responseCodeSource'] = ApiClient.convertToType(data['responseCodeSource'], 'String');
+      }
+      if (data.hasOwnProperty('paymentAccountReferenceNumber')) {
+        obj['paymentAccountReferenceNumber'] = ApiClient.convertToType(data['paymentAccountReferenceNumber'], 'String');
       }
     }
     return obj;
@@ -185,6 +189,11 @@
    * @member {String} responseCodeSource
    */
   exports.prototype['responseCodeSource'] = undefined;
+  /**
+   * Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
+   * @member {String} paymentAccountReferenceNumber
+   */
+  exports.prototype['paymentAccountReferenceNumber'] = undefined;
 
 
 

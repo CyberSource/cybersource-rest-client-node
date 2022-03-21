@@ -140,6 +140,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentAccountReferenceNumber (base name: "paymentAccountReferenceNumber")', function() {
+      // uncomment below and update the code to test the property paymentAccountReferenceNumber
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
