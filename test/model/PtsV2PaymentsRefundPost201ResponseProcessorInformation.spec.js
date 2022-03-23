@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation);
     });
 
+    it('should have the property approvalCode (base name: "approvalCode")', function() {
+      // uncomment below and update the code to test the property approvalCode
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property transactionId (base name: "transactionId")', function() {
       // uncomment below and update the code to test the property transactionId
       //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();

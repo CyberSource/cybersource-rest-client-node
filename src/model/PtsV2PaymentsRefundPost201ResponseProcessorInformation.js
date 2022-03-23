@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -65,6 +66,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('approvalCode')) {
+        obj['approvalCode'] = ApiClient.convertToType(data['approvalCode'], 'String');
+      }
       if (data.hasOwnProperty('transactionId')) {
         obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
       }
@@ -84,6 +88,11 @@
     return obj;
   }
 
+  /**
+   * Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### PIN debit Authorization code that is returned by the processor.  Returned by PIN debit credit.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. 
+   * @member {String} approvalCode
+   */
+  exports.prototype['approvalCode'] = undefined;
   /**
    * Processor transaction ID.  This value identifies the transaction on a host system. This value is supported only for Moneris. It contains this information:   - Terminal used to process the transaction  - Shift during which the transaction took place  - Batch number  - Transaction number within the batch  You must store this value. If you give the customer a receipt, display this value on the receipt.  Example For the value 66012345001069003:   - Terminal ID = 66012345  - Shift number = 001  - Batch number = 069  - Transaction number = 003 
    * @member {String} transactionId
