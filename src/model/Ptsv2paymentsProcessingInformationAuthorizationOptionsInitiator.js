@@ -71,7 +71,7 @@
         obj['credentialStoredOnFile'] = ApiClient.convertToType(data['credentialStoredOnFile'], 'Boolean');
       }
       if (data.hasOwnProperty('storedCredentialUsed')) {
-        obj['storedCredentialUsed'] = ApiClient.convertToType(data['storedCredentialUsed'], 'Boolean');
+        obj['storedCredentialUsed'] = ApiClient.convertToType(data['storedCredentialUsed'], 'String');
       }
       if (data.hasOwnProperty('merchantInitiatedTransaction')) {
         obj['merchantInitiatedTransaction'] = Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.constructFromObject(data['merchantInitiatedTransaction']);
@@ -91,8 +91,8 @@
    */
   exports.prototype['credentialStoredOnFile'] = undefined;
   /**
-   * Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file. 
-   * @member {Boolean} storedCredentialUsed
+   * Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **Y** means the merchant-initiated transaction came from a card that was already stored on file. - **N**  means the merchant-initiated transaction came from a card that was not stored on file. 
+   * @member {String} storedCredentialUsed
    */
   exports.prototype['storedCredentialUsed'] = undefined;
   /**
