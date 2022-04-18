@@ -5,6 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createV2SharedSecretKeys**](SymmetricKeyManagementApi.md#createV2SharedSecretKeys) | **POST** /kms/v2/keys-sym | Create Shared-Secret Keys
+[**createV2SharedSecretKeysVerifi**](SymmetricKeyManagementApi.md#createV2SharedSecretKeysVerifi) | **POST** /kms/v2/keys-sym/verifi | Create Shared-Secret Keys as per verifi spec
 [**deleteBulkSymmetricKeys**](SymmetricKeyManagementApi.md#deleteBulkSymmetricKeys) | **POST** /kms/v2/keys-sym/deletes | Delete one or more Symmetric keys
 [**getKeyDetails**](SymmetricKeyManagementApi.md#getKeyDetails) | **GET** /kms/v2/keys-sym/{keyId} | Retrieves shared secret key details
 
@@ -41,6 +42,55 @@ apiInstance.createV2SharedSecretKeys(createSharedSecretKeysRequest, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createSharedSecretKeysRequest** | [**CreateSharedSecretKeysRequest**](CreateSharedSecretKeysRequest.md)|  | 
+
+### Return type
+
+[**KmsV2KeysSymPost201Response**](KmsV2KeysSymPost201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="createV2SharedSecretKeysVerifi"></a>
+# **createV2SharedSecretKeysVerifi**
+> KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysVerifiRequest)
+
+Create Shared-Secret Keys as per verifi spec
+
+Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.SymmetricKeyManagementApi();
+
+var vIcDomain = "vIcDomain_example"; // String | domain
+
+var createSharedSecretKeysVerifiRequest = new CyberSource.CreateSharedSecretKeysVerifiRequest(); // CreateSharedSecretKeysVerifiRequest | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysVerifiRequest, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vIcDomain** | **String**| domain | 
+ **createSharedSecretKeysVerifiRequest** | [**CreateSharedSecretKeysVerifiRequest**](CreateSharedSecretKeysVerifiRequest.md)|  | 
 
 ### Return type
 

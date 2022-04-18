@@ -60,6 +60,16 @@
         done();
       });
     });
+    describe('createV2SharedSecretKeysVerifi', function() {
+      it('should call createV2SharedSecretKeysVerifi successfully', function(done) {
+        //uncomment below and update the code to test createV2SharedSecretKeysVerifi
+        //instance.createV2SharedSecretKeysVerifi(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteBulkSymmetricKeys', function() {
       it('should call deleteBulkSymmetricKeys successfully', function(done) {
         //uncomment below and update the code to test deleteBulkSymmetricKeys
