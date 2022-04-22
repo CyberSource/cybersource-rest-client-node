@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateSharedSecretKeysRequest', 'model/DeleteBulkSymmetricKeysRequest', 'model/InlineResponse4002', 'model/KmsV2KeysSymDeletesPost200Response', 'model/KmsV2KeysSymGet200Response', 'model/KmsV2KeysSymPost201Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['ApiClient', 'model/CreateSharedSecretKeysRequest', 'model/CreateSharedSecretKeysVerifiRequest', 'model/DeleteBulkSymmetricKeysRequest', 'model/InlineResponse4002', 'model/KmsV2KeysSymDeletesPost200Response', 'model/KmsV2KeysSymGet200Response', 'model/KmsV2KeysSymPost201Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateSharedSecretKeysRequest'), require('../model/DeleteBulkSymmetricKeysRequest'), require('../model/InlineResponse4002'), require('../model/KmsV2KeysSymDeletesPost200Response'), require('../model/KmsV2KeysSymGet200Response'), require('../model/KmsV2KeysSymPost201Response'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateSharedSecretKeysRequest'), require('../model/CreateSharedSecretKeysVerifiRequest'), require('../model/DeleteBulkSymmetricKeysRequest'), require('../model/InlineResponse4002'), require('../model/KmsV2KeysSymDeletesPost200Response'), require('../model/KmsV2KeysSymGet200Response'), require('../model/KmsV2KeysSymPost201Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSharedSecretKeysRequest, root.CyberSource.DeleteBulkSymmetricKeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.KmsV2KeysSymDeletesPost200Response, root.CyberSource.KmsV2KeysSymGet200Response, root.CyberSource.KmsV2KeysSymPost201Response, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.SymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSharedSecretKeysRequest, root.CyberSource.CreateSharedSecretKeysVerifiRequest, root.CyberSource.DeleteBulkSymmetricKeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.KmsV2KeysSymDeletesPost200Response, root.CyberSource.KmsV2KeysSymGet200Response, root.CyberSource.KmsV2KeysSymPost201Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(ApiClient, CreateSharedSecretKeysRequest, DeleteBulkSymmetricKeysRequest, InlineResponse4002, KmsV2KeysSymDeletesPost200Response, KmsV2KeysSymGet200Response, KmsV2KeysSymPost201Response, PtsV2PaymentsPost502Response) {
+}(this, function(ApiClient, CreateSharedSecretKeysRequest, CreateSharedSecretKeysVerifiRequest, DeleteBulkSymmetricKeysRequest, InlineResponse4002, KmsV2KeysSymDeletesPost200Response, KmsV2KeysSymGet200Response, KmsV2KeysSymPost201Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -89,6 +89,58 @@
 
       return this.apiClient.callApi(
         '/kms/v2/keys-sym', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createV2SharedSecretKeysVerifi operation.
+     * @callback module:api/SymmetricKeyManagementApi~createV2SharedSecretKeysVerifiCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/KmsV2KeysSymPost201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create Shared-Secret Keys as per verifi spec
+     * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
+     * @param {String} vIcDomain domain
+     * @param {module:model/CreateSharedSecretKeysVerifiRequest} createSharedSecretKeysVerifiRequest 
+     * @param {module:api/SymmetricKeyManagementApi~createV2SharedSecretKeysVerifiCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/KmsV2KeysSymPost201Response}
+     */
+    this.createV2SharedSecretKeysVerifi = function(vIcDomain, createSharedSecretKeysVerifiRequest, callback) {
+      var postBody = createSharedSecretKeysVerifiRequest;
+
+      // verify the required parameter 'vIcDomain' is set
+      if (vIcDomain === undefined || vIcDomain === null) {
+        throw new Error("Missing the required parameter 'vIcDomain' when calling createV2SharedSecretKeysVerifi");
+      }
+
+      // verify the required parameter 'createSharedSecretKeysVerifiRequest' is set
+      if (createSharedSecretKeysVerifiRequest === undefined || createSharedSecretKeysVerifiRequest === null) {
+        throw new Error("Missing the required parameter 'createSharedSecretKeysVerifiRequest' when calling createV2SharedSecretKeysVerifi");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'v-ic-domain': vIcDomain
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = KmsV2KeysSymPost201Response;
+
+      return this.apiClient.callApi(
+        '/kms/v2/keys-sym/verifi', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
