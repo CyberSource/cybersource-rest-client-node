@@ -32,6 +32,8 @@ exports.getSensitiveDataTags = function () {
     tags.push("type");
     tags.push("token");
     tags.push("signature");
+    tags.push("prefix");
+    tags.push("bin");
 
     return tags;
 }
