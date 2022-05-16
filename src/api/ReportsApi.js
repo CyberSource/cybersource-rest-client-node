@@ -117,6 +117,9 @@
     this.getReportByReportId = function(reportId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'reportId' is set
       if (reportId === undefined || reportId === null) {
@@ -174,6 +177,9 @@
     this.searchReports = function(startTime, endTime, timeQueryType, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'startTime' is set
       if (startTime === undefined || startTime === null) {

@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = Ptsv2payoutsOrderInformationBillTo.constructFromObject(data['billTo']);
       }
+      if (data.hasOwnProperty('isCryptocurrencyPurchase')) {
+        obj['isCryptocurrencyPurchase'] = ApiClient.convertToType(data['isCryptocurrencyPurchase'], 'String');
+      }
     }
     return obj;
   }
@@ -80,6 +84,11 @@
    * @member {module:model/Ptsv2payoutsOrderInformationBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
+  /**
+   * #### Visa Platform Connect : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. Additional values to add : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. valid values are - Y/y, true - N/n, false 
+   * @member {String} isCryptocurrencyPurchase
+   */
+  exports.prototype['isCryptocurrencyPurchase'] = undefined;
 
 
 

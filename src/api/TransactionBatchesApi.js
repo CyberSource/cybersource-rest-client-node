@@ -69,6 +69,9 @@
     this.getTransactionBatchDetails = function(id, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -117,6 +120,9 @@
      */
     this.getTransactionBatchId = function(id, callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -164,6 +170,9 @@
      */
     this.getTransactionBatches = function(startTime, endTime, callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'startTime' is set
       if (startTime === undefined || startTime === null) {

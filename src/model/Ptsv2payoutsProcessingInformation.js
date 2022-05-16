@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2payoutsProcessingInformationPayoutsOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2payoutsProcessingInformationFundingOptions', 'model/Ptsv2payoutsProcessingInformationPayoutsOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2payoutsProcessingInformationPayoutsOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2payoutsProcessingInformationFundingOptions'), require('./Ptsv2payoutsProcessingInformationPayoutsOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2payoutsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2payoutsProcessingInformationPayoutsOptions);
+    root.CyberSource.Ptsv2payoutsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2payoutsProcessingInformationFundingOptions, root.CyberSource.Ptsv2payoutsProcessingInformationPayoutsOptions);
   }
-}(this, function(ApiClient, Ptsv2payoutsProcessingInformationPayoutsOptions) {
+}(this, function(ApiClient, Ptsv2payoutsProcessingInformationFundingOptions, Ptsv2payoutsProcessingInformationPayoutsOptions) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -88,6 +89,9 @@
       if (data.hasOwnProperty('purposeOfPayment')) {
         obj['purposeOfPayment'] = ApiClient.convertToType(data['purposeOfPayment'], 'String');
       }
+      if (data.hasOwnProperty('fundingOptions')) {
+        obj['fundingOptions'] = Ptsv2payoutsProcessingInformationFundingOptions.constructFromObject(data['fundingOptions']);
+      }
     }
     return obj;
   }
@@ -126,6 +130,10 @@
    * @member {String} purposeOfPayment
    */
   exports.prototype['purposeOfPayment'] = undefined;
+  /**
+   * @member {module:model/Ptsv2payoutsProcessingInformationFundingOptions} fundingOptions
+   */
+  exports.prototype['fundingOptions'] = undefined;
 
 
 

@@ -66,6 +66,9 @@
      */
     this.getTransaction = function(id, callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {

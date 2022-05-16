@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -91,6 +92,9 @@
       }
       if (data.hasOwnProperty('returnsAccepted')) {
         obj['returnsAccepted'] = ApiClient.convertToType(data['returnsAccepted'], 'Boolean');
+      }
+      if (data.hasOwnProperty('isCryptocurrencyPurchase')) {
+        obj['isCryptocurrencyPurchase'] = ApiClient.convertToType(data['isCryptocurrencyPurchase'], 'String');
       }
       if (data.hasOwnProperty('preOrder')) {
         obj['preOrder'] = ApiClient.convertToType(data['preOrder'], 'String');
@@ -137,6 +141,11 @@
    * @member {Boolean} returnsAccepted
    */
   exports.prototype['returnsAccepted'] = undefined;
+  /**
+   * #### Visa Platform Connect : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. Additional values to add : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. valid values are - Y/y, true - N/n, false 
+   * @member {String} isCryptocurrencyPurchase
+   */
+  exports.prototype['isCryptocurrencyPurchase'] = undefined;
   /**
    * Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability 
    * @member {String} preOrder

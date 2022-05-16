@@ -65,6 +65,9 @@
      */
     this.getInvoiceSettings = function(callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
 
       var pathParams = {

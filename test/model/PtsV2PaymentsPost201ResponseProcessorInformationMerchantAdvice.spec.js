@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property nameMatch (base name: "nameMatch")', function() {
+      // uncomment below and update the code to test the property nameMatch
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

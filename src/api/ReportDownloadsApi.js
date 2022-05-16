@@ -69,6 +69,9 @@
     this.downloadReport = function(reportDate, reportName, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'reportDate' is set
       if (reportDate === undefined || reportDate === null) {

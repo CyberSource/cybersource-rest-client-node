@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
 
       if (data.hasOwnProperty('authType')) {
         obj['authType'] = ApiClient.convertToType(data['authType'], 'String');
+      }
+      if (data.hasOwnProperty('panReturnIndicator')) {
+        obj['panReturnIndicator'] = ApiClient.convertToType(data['panReturnIndicator'], 'String');
       }
       if (data.hasOwnProperty('verbalAuthCode')) {
         obj['verbalAuthCode'] = ApiClient.convertToType(data['verbalAuthCode'], 'String');
@@ -137,6 +141,11 @@
    * @member {String} authType
    */
   exports.prototype['authType'] = undefined;
+  /**
+   * #### Visa Platform Connect The field contains the PAN translation indicator for American Express Contactless Transaction. Valid value is   1- Expresspay Translation, PAN request 2- Expresspay Translation, PAN and Expiry date request 
+   * @member {String} panReturnIndicator
+   */
+  exports.prototype['panReturnIndicator'] = undefined;
   /**
    * Authorization code.  #### Forced Capture Use this field to send the authorization code you received from a payment that you authorized outside the CyberSource system.  #### PIN debit Authorization code that is returned by the processor.  Returned by PIN debit purchase.  #### Verbal Authorization Use this field in CAPTURE API to send the verbally received authorization code.  For processor-specific information, see the `auth_code` field description in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html). 
    * @member {String} verbalAuthCode

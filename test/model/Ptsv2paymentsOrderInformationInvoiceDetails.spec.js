@@ -152,6 +152,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issuerMessage (base name: "issuerMessage")', function() {
+      // uncomment below and update the code to test the property issuerMessage
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

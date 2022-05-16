@@ -164,6 +164,9 @@
     this.deleteSubscription = function(reportName, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('DELETE' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'reportName' is set
       if (reportName === undefined || reportName === null) {
@@ -213,6 +216,9 @@
     this.getAllSubscriptions = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
 
       var pathParams = {
@@ -257,6 +263,9 @@
     this.getSubscription = function(reportName, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'reportName' is set
       if (reportName === undefined || reportName === null) {

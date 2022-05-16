@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property hashedNumber (base name: "hashedNumber")', function() {
+      // uncomment below and update the code to test the property hashedNumber
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

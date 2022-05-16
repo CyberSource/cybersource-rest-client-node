@@ -62,6 +62,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -119,6 +122,15 @@
       }
       if (data.hasOwnProperty('vatRegistrationNumber')) {
         obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
+      }
+      if (data.hasOwnProperty('personalIdType')) {
+        obj['personalIdType'] = ApiClient.convertToType(data['personalIdType'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('identificationNumber')) {
+        obj['identificationNumber'] = ApiClient.convertToType(data['identificationNumber'], 'String');
       }
     }
     return obj;
@@ -198,6 +210,21 @@
    * @member {String} vatRegistrationNumber
    */
   exports.prototype['vatRegistrationNumber'] = undefined;
+  /**
+   * #### Visa Platform Connect This tag will contain the type of sender identification. The valid values are: • BTHD (Date of birth) • CUID (Customer identification (unspecified)) • NTID (National identification) • PASN (Passport number) • DRLN (Driver license) • TXIN (Tax identification) • CPNY (Company registration number) • PRXY (Proxy identification) • SSNB (Social security number) • ARNB (Alien registration number) • LAWE (Law enforcement identification) • MILI (Military identification) • TRVL (Travel identification (non-passport)) • EMAL (Email) • PHON (Phone number) 
+   * @member {String} personalIdType
+   */
+  exports.prototype['personalIdType'] = undefined;
+  /**
+   * #### Visa Platform Connect This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are: • B (Business) • I (Individual) 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * #### Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender. 
+   * @member {String} identificationNumber
+   */
+  exports.prototype['identificationNumber'] = undefined;
 
 
 

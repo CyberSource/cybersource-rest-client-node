@@ -63,6 +63,7 @@
 
 
 
+
   };
 
   /**
@@ -123,6 +124,9 @@
       }
       if (data.hasOwnProperty('costCenter')) {
         obj['costCenter'] = ApiClient.convertToType(data['costCenter'], 'String');
+      }
+      if (data.hasOwnProperty('issuerMessage')) {
+        obj['issuerMessage'] = ApiClient.convertToType(data['issuerMessage'], 'String');
       }
     }
     return obj;
@@ -207,6 +211,11 @@
    * @member {String} costCenter
    */
   exports.prototype['costCenter'] = undefined;
+  /**
+   * Text message from the issuer. If you give the customer a receipt, display this value on the receipt.
+   * @member {String} issuerMessage
+   */
+  exports.prototype['issuerMessage'] = undefined;
 
 
 

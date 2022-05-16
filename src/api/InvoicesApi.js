@@ -115,6 +115,9 @@
     this.getAllInvoices = function(offset, limit, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'offset' is set
       if (offset === undefined || offset === null) {
@@ -168,6 +171,9 @@
      */
     this.getInvoice = function(id, callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -214,6 +220,9 @@
      */
     this.performCancelAction = function(id, callback) {
       var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -260,6 +269,9 @@
      */
     this.performSendAction = function(id, callback) {
       var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {

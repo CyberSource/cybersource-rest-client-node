@@ -18,5 +18,8 @@ Name | Type | Description | Notes
 **phoneNumber** | **String** | Sender’s phone number. Required only for FDCCompass. | [optional] 
 **dateOfBirth** | **String** | Sender’s date of birth in YYYYMMDD format. Required only for FDCCompass. | [optional] 
 **vatRegistrationNumber** | **String** | Customer&#39;s government-assigned tax identification number.  | [optional] 
+**personalIdType** | **String** | #### Visa Platform Connect This tag will contain the type of sender identification. The valid values are: • BTHD (Date of birth) • CUID (Customer identification (unspecified)) • NTID (National identification) • PASN (Passport number) • DRLN (Driver license) • TXIN (Tax identification) • CPNY (Company registration number) • PRXY (Proxy identification) • SSNB (Social security number) • ARNB (Alien registration number) • LAWE (Law enforcement identification) • MILI (Military identification) • TRVL (Travel identification (non-passport)) • EMAL (Email) • PHON (Phone number)  | [optional] 
+**type** | **String** | #### Visa Platform Connect This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are: • B (Business) • I (Individual)  | [optional] 
+**identificationNumber** | **String** | #### Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender.  | [optional] 
 
 

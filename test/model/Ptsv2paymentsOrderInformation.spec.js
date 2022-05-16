@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isCryptocurrencyPurchase (base name: "isCryptocurrencyPurchase")', function() {
+      // uncomment below and update the code to test the property isCryptocurrencyPurchase
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property preOrder (base name: "preOrder")', function() {
       // uncomment below and update the code to test the property preOrder
       //var instane = new CyberSource.Ptsv2paymentsOrderInformation();

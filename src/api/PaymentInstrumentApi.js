@@ -67,6 +67,9 @@
     this.deletePaymentInstrument = function(paymentInstrumentTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('DELETE' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'paymentInstrumentTokenId' is set
       if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {
@@ -116,6 +119,9 @@
     this.getPaymentInstrument = function(paymentInstrumentTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'paymentInstrumentTokenId' is set
       if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {

@@ -212,6 +212,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property serviceCode (base name: "serviceCode")', function() {
+      // uncomment below and update the code to test the property serviceCode
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

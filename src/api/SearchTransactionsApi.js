@@ -111,6 +111,9 @@
      */
     this.getSearch = function(searchId, callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'searchId' is set
       if (searchId === undefined || searchId === null) {

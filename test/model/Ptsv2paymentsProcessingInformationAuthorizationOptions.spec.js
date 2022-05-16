@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property panReturnIndicator (base name: "panReturnIndicator")', function() {
+      // uncomment below and update the code to test the property panReturnIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property verbalAuthCode (base name: "verbalAuthCode")', function() {
       // uncomment below and update the code to test the property verbalAuthCode
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();

@@ -68,6 +68,9 @@
     this.getFile = function(fileId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'fileId' is set
       if (fileId === undefined || fileId === null) {
@@ -120,6 +123,9 @@
     this.getFileDetail = function(startDate, endDate, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'startDate' is set
       if (startDate === undefined || startDate === null) {

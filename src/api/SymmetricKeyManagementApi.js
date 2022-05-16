@@ -208,6 +208,9 @@
      */
     this.getKeyDetails = function(keyId, callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'keyId' is set
       if (keyId === undefined || keyId === null) {
