@@ -68,6 +68,9 @@
     this.deleteCustomerPaymentInstrument = function(customerTokenId, paymentInstrumentTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('DELETE' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'customerTokenId' is set
       if (customerTokenId === undefined || customerTokenId === null) {
@@ -124,6 +127,9 @@
     this.getCustomerPaymentInstrument = function(customerTokenId, paymentInstrumentTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'customerTokenId' is set
       if (customerTokenId === undefined || customerTokenId === null) {
@@ -181,6 +187,9 @@
     this.getCustomerPaymentInstrumentsList = function(customerTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'customerTokenId' is set
       if (customerTokenId === undefined || customerTokenId === null) {

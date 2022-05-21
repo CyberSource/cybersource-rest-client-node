@@ -57,6 +57,11 @@
 </emitJSDoc>    this.<operationId><#usePromises>WithHttpInfo</usePromises> = function(<vendorExtensions.x-codegen-argList>) {<#hasOptionalParams>
       opts = opts || {};</hasOptionalParams>
       var postBody = <#bodyParam><#required><paramName></required><^required>opts['<paramName>']</required></bodyParam><^bodyParam>null</bodyParam>;
+      <^bodyParam>
+      if ('<httpMethod>' == 'POST') {
+        postBody = '{}';
+      }
+      </bodyParam>
 <#allParams><#required>
       // verify the required parameter '<paramName>' is set
       if (<paramName> === undefined || <paramName> === null) {

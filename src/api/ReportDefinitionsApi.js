@@ -71,6 +71,9 @@
     this.getResourceInfoByReportDefinition = function(reportDefinitionName, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'reportDefinitionName' is set
       if (reportDefinitionName === undefined || reportDefinitionName === null) {
@@ -123,6 +126,9 @@
     this.getResourceV2Info = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
 
       var pathParams = {

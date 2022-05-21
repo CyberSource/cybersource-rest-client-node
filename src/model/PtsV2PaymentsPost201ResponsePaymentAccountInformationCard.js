@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('prefix')) {
         obj['prefix'] = ApiClient.convertToType(data['prefix'], 'String');
+      }
+      if (data.hasOwnProperty('hashedNumber')) {
+        obj['hashedNumber'] = ApiClient.convertToType(data['hashedNumber'], 'String');
       }
     }
     return obj;
@@ -109,6 +113,11 @@
    * @member {String} prefix
    */
   exports.prototype['prefix'] = undefined;
+  /**
+   * #### Visa Platform Connect This API field will contain the SHA 256 hashed value of PAN. 
+   * @member {String} hashedNumber
+   */
+  exports.prototype['hashedNumber'] = undefined;
 
 
 

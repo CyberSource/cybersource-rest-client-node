@@ -73,6 +73,7 @@
 
 
 
+
   };
 
   /**
@@ -163,6 +164,9 @@
       }
       if (data.hasOwnProperty('terminalMake')) {
         obj['terminalMake'] = ApiClient.convertToType(data['terminalMake'], 'String');
+      }
+      if (data.hasOwnProperty('serviceCode')) {
+        obj['serviceCode'] = ApiClient.convertToType(data['serviceCode'], 'String');
       }
     }
     return obj;
@@ -297,6 +301,11 @@
    * @member {String} terminalMake
    */
   exports.prototype['terminalMake'] = undefined;
+  /**
+   * #### Visa Platform Connect Mastercard service code that is included in the track data. You can extract the service code from the track data and provide it in this API field. This field is supported only for Mastercard on Visa Platform Connect. 
+   * @member {String} serviceCode
+   */
+  exports.prototype['serviceCode'] = undefined;
 
 
 

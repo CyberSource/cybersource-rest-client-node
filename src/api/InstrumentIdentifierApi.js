@@ -67,6 +67,9 @@
     this.deleteInstrumentIdentifier = function(instrumentIdentifierTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('DELETE' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'instrumentIdentifierTokenId' is set
       if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
@@ -116,6 +119,9 @@
     this.getInstrumentIdentifier = function(instrumentIdentifierTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'instrumentIdentifierTokenId' is set
       if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
@@ -167,6 +173,9 @@
     this.getInstrumentIdentifierPaymentInstrumentsList = function(instrumentIdentifierTokenId, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'instrumentIdentifierTokenId' is set
       if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {

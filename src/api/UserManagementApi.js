@@ -71,6 +71,9 @@
     this.getUsers = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
 
       var pathParams = {

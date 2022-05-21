@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isRepeat (base name: "isRepeat")', function() {
+      // uncomment below and update the code to test the property isRepeat
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformationEmv();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

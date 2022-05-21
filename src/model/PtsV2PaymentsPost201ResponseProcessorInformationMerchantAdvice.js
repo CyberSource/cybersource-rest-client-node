@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('codeRaw')) {
         obj['codeRaw'] = ApiClient.convertToType(data['codeRaw'], 'String');
       }
+      if (data.hasOwnProperty('nameMatch')) {
+        obj['nameMatch'] = ApiClient.convertToType(data['nameMatch'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {String} codeRaw
    */
   exports.prototype['codeRaw'] = undefined;
+  /**
+   * #### Visa Platform Connect The field contains will contain the Account Name Request Result for zero amount Authorization request. Valid values are:  00 = Name Match Performed 01 = Name Match not Performed 02 = Name Match not supported 
+   * @member {String} nameMatch
+   */
+  exports.prototype['nameMatch'] = undefined;
 
 
 

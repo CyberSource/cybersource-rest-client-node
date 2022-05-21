@@ -65,6 +65,9 @@
      */
     this.getDTDV2 = function(reportDefinitionNameVersion, callback) {
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'reportDefinitionNameVersion' is set
       if (reportDefinitionNameVersion === undefined || reportDefinitionNameVersion === null) {

@@ -70,6 +70,9 @@
     this.getChargebackSummaries = function(startTime, endTime, opts, callback) {
       opts = opts || {};
       var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'startTime' is set
       if (startTime === undefined || startTime === null) {

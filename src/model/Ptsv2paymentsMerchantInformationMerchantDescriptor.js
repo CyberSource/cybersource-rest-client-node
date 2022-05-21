@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -99,6 +100,9 @@
       }
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
+      }
+      if (data.hasOwnProperty('countryOfOrigin')) {
+        obj['countryOfOrigin'] = ApiClient.convertToType(data['countryOfOrigin'], 'String');
       }
     }
     return obj;
@@ -154,6 +158,11 @@
    * @member {String} url
    */
   exports.prototype['url'] = undefined;
+  /**
+   * #### Visa Platform Connect This field will indicate merchant country of origin 
+   * @member {String} countryOfOrigin
+   */
+  exports.prototype['countryOfOrigin'] = undefined;
 
 
 

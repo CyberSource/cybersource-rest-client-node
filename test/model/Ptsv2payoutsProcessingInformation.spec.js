@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fundingOptions (base name: "fundingOptions")', function() {
+      // uncomment below and update the code to test the property fundingOptions
+      //var instane = new CyberSource.Ptsv2payoutsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

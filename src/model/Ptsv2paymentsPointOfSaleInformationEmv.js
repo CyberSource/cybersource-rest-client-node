@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('fallbackCondition')) {
         obj['fallbackCondition'] = ApiClient.convertToType(data['fallbackCondition'], 'Number');
       }
+      if (data.hasOwnProperty('isRepeat')) {
+        obj['isRepeat'] = ApiClient.convertToType(data['isRepeat'], 'String');
+      }
     }
     return obj;
   }
@@ -102,14 +106,18 @@
   /**
    * Indicates whether a fallback method was used to enter credit card information into the POS terminal. When a technical problem prevents a successful exchange of information between a chip card and a chip-capable terminal:   1. Swipe the card or key the credit card information into the POS terminal.  2. Use the pointOfSaleInformation.entryMode field to indicate whether the information was swiped or keyed.   Possible values: - `true`: Fallback method was used. - `false` (default): Fallback method was not used.  This field is supported only on American Express Direct, Chase Paymentech Solutions, CyberSource through VisaNet, FDC Nashville Global, GPN, JCN Gateway, OmniPay Direct, and SIX. 
    * @member {Boolean} fallback
-   * @default false
    */
-  exports.prototype['fallback'] = false;
+  exports.prototype['fallback'] = undefined;
   /**
-   * Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - `1`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - `2`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**.  **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field  when the EMV terminal does not have any applications in common with the EMV card. 
+   * Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - `1`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal either used information from a successful chip read or it was not a chip transaction.  - `2`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**. **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field when the EMV terminal does not have any applications in common with the EMV card. 
    * @member {Number} fallbackCondition
    */
   exports.prototype['fallbackCondition'] = undefined;
+  /**
+   * #### Visa Platform Connect Value 1  indicates this transaction is intentionally duplicated  The field contains value “1” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. 
+   * @member {String} isRepeat
+   */
+  exports.prototype['isRepeat'] = undefined;
 
 
 

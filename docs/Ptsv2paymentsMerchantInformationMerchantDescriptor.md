@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **administrativeArea** | **String** | The state where the merchant is located.  #### PIN debit State code or region code for your business. Use the Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf) This value might be displayed on the cardholder’s statement.  When you do not include this value in your PIN debit request, the merchant name from your account is used. **Important** This value must consist of English characters.  **Note** This field is supported only for businesses located in the U.S. or Canada.  Optional field for PIN debit credit or PIN debit purchase.  | [optional] 
 **phone** | **String** | Merchant phone as contact information for CNP transactions  | [optional] 
 **url** | **String** | Address of company&#39;s website provided by merchant  | [optional] 
+**countryOfOrigin** | **String** | #### Visa Platform Connect This field will indicate merchant country of origin  | [optional] 
 
 

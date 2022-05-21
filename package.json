@@ -29,11 +29,12 @@
     "nodeJS"
   ],
   "devDependencies": {
+    "@sinonjs/formatio": "3.0.0",
+    "expect.js": "~0.3.1",
+    "jwk-to-pem": "^2.0.5",
     "mocha": "^5.2.0",
     "mocha-sonarqube-reporter": "^1.0.1",
     "nyc": "^12.0.2",
-    "sonar-scanner": "^3.1.0",
-    "@sinonjs/formatio": "3.0.0",
-    "expect.js": "~0.3.1"
+    "sonar-scanner": "^3.1.0"
   }
 }

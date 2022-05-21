@@ -146,6 +146,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property personalIdType (base name: "personalIdType")', function() {
+      // uncomment below and update the code to test the property personalIdType
+      //var instane = new CyberSource.Ptsv2payoutsSenderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.Ptsv2payoutsSenderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property identificationNumber (base name: "identificationNumber")', function() {
+      // uncomment below and update the code to test the property identificationNumber
+      //var instane = new CyberSource.Ptsv2payoutsSenderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
