@@ -80,6 +80,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cryptogram (base name: "cryptogram")', function() {
+      // uncomment below and update the code to test the property cryptogram
+      //var instane = new CyberSource.Riskv1authenticationsPaymentInformationTokenizedCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property securityCode (base name: "securityCode")', function() {
+      // uncomment below and update the code to test the property securityCode
+      //var instane = new CyberSource.Riskv1authenticationsPaymentInformationTokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
       //var instane = new CyberSource.Riskv1authenticationsPaymentInformationTokenizedCard();

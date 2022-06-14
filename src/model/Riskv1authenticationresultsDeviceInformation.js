@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Riskv1authenticationresultsDeviceInformation = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The TssV2TransactionsPost201ResponseEmbeddedDeviceInformation model module.
-   * @module model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+   * The Riskv1authenticationresultsDeviceInformation model module.
+   * @module model/Riskv1authenticationresultsDeviceInformation
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TssV2TransactionsPost201ResponseEmbeddedDeviceInformation</code>.
-   * @alias module:model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+   * Constructs a new <code>Riskv1authenticationresultsDeviceInformation</code>.
+   * @alias module:model/Riskv1authenticationresultsDeviceInformation
    * @class
    */
   var exports = function() {
@@ -51,11 +51,11 @@
   };
 
   /**
-   * Constructs a <code>TssV2TransactionsPost201ResponseEmbeddedDeviceInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Riskv1authenticationresultsDeviceInformation</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation} obj Optional instance to populate.
-   * @return {module:model/TssV2TransactionsPost201ResponseEmbeddedDeviceInformation} The populated <code>TssV2TransactionsPost201ResponseEmbeddedDeviceInformation</code> instance.
+   * @param {module:model/Riskv1authenticationresultsDeviceInformation} obj Optional instance to populate.
+   * @return {module:model/Riskv1authenticationresultsDeviceInformation} The populated <code>Riskv1authenticationresultsDeviceInformation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

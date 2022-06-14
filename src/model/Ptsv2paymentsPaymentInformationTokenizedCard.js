@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -100,6 +101,9 @@
       if (data.hasOwnProperty('securityCode')) {
         obj['securityCode'] = ApiClient.convertToType(data['securityCode'], 'String');
       }
+      if (data.hasOwnProperty('securityCodeIndicator')) {
+        obj['securityCodeIndicator'] = ApiClient.convertToType(data['securityCodeIndicator'], 'String');
+      }
     }
     return obj;
   }
@@ -125,7 +129,7 @@
    */
   exports.prototype['type'] = undefined;
   /**
-   * This field is used internally.
+   * This field contains token information.
    * @member {String} cryptogram
    */
   exports.prototype['cryptogram'] = undefined;
@@ -135,7 +139,7 @@
    */
   exports.prototype['requestorId'] = undefined;
   /**
-   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. 
+   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: For Rupay and In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. 
    * @member {String} transactionType
    */
   exports.prototype['transactionType'] = undefined;
@@ -154,6 +158,11 @@
    * @member {String} securityCode
    */
   exports.prototype['securityCode'] = undefined;
+  /**
+   * Indicates whether a CVN code was sent. Possible values:   - `0` (default): CVN service not requested. This default value is used when you do not include      `securityCode` field in the request.  - `1` (default): CVN service requested and supported. This default value is used when you include      `securityCode` field in the request.  - `2`: CVN on credit card is illegible.  - `9`: CVN was not imprinted on credit card.  #### FDMS Nashville Required for American Express cards; otherwise, optional.  #### TSYS Acquiring Solutions Optional if `pointOfSaleInformation.entryMode=keyed`; otherwise, not used.  #### All other processors Optional. 
+   * @member {String} securityCodeIndicator
+   */
+  exports.prototype['securityCodeIndicator'] = undefined;
 
 
 

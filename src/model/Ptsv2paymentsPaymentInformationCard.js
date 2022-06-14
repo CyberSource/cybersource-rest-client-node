@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -115,6 +116,9 @@
       }
       if (data.hasOwnProperty('productName')) {
         obj['productName'] = ApiClient.convertToType(data['productName'], 'String');
+      }
+      if (data.hasOwnProperty('typeSelectionIndicator')) {
+        obj['typeSelectionIndicator'] = ApiClient.convertToType(data['typeSelectionIndicator'], 'String');
       }
     }
     return obj;
@@ -190,6 +194,11 @@
    * @member {String} productName
    */
   exports.prototype['productName'] = undefined;
+  /**
+   * Flag that identifies how the card type was selected.  Possible values: - 0: Card type was selected based on default acquirer settings. - 1: Customer selected the card type. 
+   * @member {String} typeSelectionIndicator
+   */
+  exports.prototype['typeSelectionIndicator'] = undefined;
 
 
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **buyerInformation** | [**TssV2TransactionsPost201ResponseEmbeddedBuyerInformation**](TssV2TransactionsPost201ResponseEmbeddedBuyerInformation.md) |  | [optional] 
 **clientReferenceInformation** | [**TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation**](TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation**](TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation.md) |  | [optional] 
-**deviceInformation** | [**TssV2TransactionsPost201ResponseEmbeddedDeviceInformation**](TssV2TransactionsPost201ResponseEmbeddedDeviceInformation.md) |  | [optional] 
+**deviceInformation** | [**Riskv1authenticationresultsDeviceInformation**](Riskv1authenticationresultsDeviceInformation.md) |  | [optional] 
 **fraudMarkingInformation** | [**TssV2TransactionsGet200ResponseFraudMarkingInformation**](TssV2TransactionsGet200ResponseFraudMarkingInformation.md) |  | [optional] 
 **merchantDefinedInformation** | [**[Ptsv2paymentsMerchantDefinedInformation]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines.  | [optional] 
 **merchantInformation** | [**TssV2TransactionsPost201ResponseEmbeddedMerchantInformation**](TssV2TransactionsPost201ResponseEmbeddedMerchantInformation.md) |  | [optional] 

@@ -80,6 +80,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authenticationTransactionId (base name: "authenticationTransactionId")', function() {
+      // uncomment below and update the code to test the property authenticationTransactionId
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authenticationTransactionContextId (base name: "authenticationTransactionContextId")', function() {
+      // uncomment below and update the code to test the property authenticationTransactionContextId
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionToken (base name: "transactionToken")', function() {
+      // uncomment below and update the code to test the property transactionToken
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authorizationPayload (base name: "authorizationPayload")', function() {
       // uncomment below and update the code to test the property authorizationPayload
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();

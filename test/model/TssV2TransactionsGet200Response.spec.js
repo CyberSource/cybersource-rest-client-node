@@ -164,6 +164,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInsightsInformation (base name: "paymentInsightsInformation")', function() {
+      // uncomment below and update the code to test the property paymentInsightsInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property processingInformation (base name: "processingInformation")', function() {
       // uncomment below and update the code to test the property processingInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();

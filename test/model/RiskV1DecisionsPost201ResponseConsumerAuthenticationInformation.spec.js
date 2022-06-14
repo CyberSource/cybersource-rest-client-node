@@ -92,8 +92,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authenticationType (base name: "authenticationType")', function() {
+      // uncomment below and update the code to test the property authenticationType
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authenticationTransactionId (base name: "authenticationTransactionId")', function() {
       // uncomment below and update the code to test the property authenticationTransactionId
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authenticationTransactionContextId (base name: "authenticationTransactionContextId")', function() {
+      // uncomment below and update the code to test the property authenticationTransactionContextId
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property validityPeriod (base name: "validityPeriod")', function() {
+      // uncomment below and update the code to test the property validityPeriod
       //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });

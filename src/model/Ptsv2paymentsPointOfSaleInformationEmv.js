@@ -82,7 +82,7 @@
         obj['fallbackCondition'] = ApiClient.convertToType(data['fallbackCondition'], 'Number');
       }
       if (data.hasOwnProperty('isRepeat')) {
-        obj['isRepeat'] = ApiClient.convertToType(data['isRepeat'], 'String');
+        obj['isRepeat'] = ApiClient.convertToType(data['isRepeat'], 'Boolean');
       }
     }
     return obj;
@@ -114,8 +114,8 @@
    */
   exports.prototype['fallbackCondition'] = undefined;
   /**
-   * #### Visa Platform Connect Value 1  indicates this transaction is intentionally duplicated  The field contains value “1” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. 
-   * @member {String} isRepeat
+   * #### Visa Platform Connect Value “true” indicates this transaction is intentionally duplicated . The field contains value “true” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. 
+   * @member {Boolean} isRepeat
    */
   exports.prototype['isRepeat'] = undefined;
 

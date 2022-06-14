@@ -70,6 +70,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -94,6 +97,15 @@
       }
       if (data.hasOwnProperty('authenticationStatusMsg')) {
         obj['authenticationStatusMsg'] = ApiClient.convertToType(data['authenticationStatusMsg'], 'String');
+      }
+      if (data.hasOwnProperty('authenticationTransactionId')) {
+        obj['authenticationTransactionId'] = ApiClient.convertToType(data['authenticationTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('authenticationTransactionContextId')) {
+        obj['authenticationTransactionContextId'] = ApiClient.convertToType(data['authenticationTransactionContextId'], 'String');
+      }
+      if (data.hasOwnProperty('transactionToken')) {
+        obj['transactionToken'] = ApiClient.convertToType(data['transactionToken'], 'String');
       }
       if (data.hasOwnProperty('authorizationPayload')) {
         obj['authorizationPayload'] = ApiClient.convertToType(data['authorizationPayload'], 'String');
@@ -176,6 +188,21 @@
    * @member {String} authenticationStatusMsg
    */
   exports.prototype['authenticationStatusMsg'] = undefined;
+  /**
+   * Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. 
+   * @member {String} authenticationTransactionId
+   */
+  exports.prototype['authenticationTransactionId'] = undefined;
+  /**
+   * Payer authentication transaction identifier passed to link the validation and authorization calls. 
+   * @member {String} authenticationTransactionContextId
+   */
+  exports.prototype['authenticationTransactionContextId'] = undefined;
+  /**
+   * Web based token used to authenticate consumer with Rupay authentication provider. 
+   * @member {String} transactionToken
+   */
+  exports.prototype['transactionToken'] = undefined;
   /**
    * The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow 
    * @member {String} authorizationPayload

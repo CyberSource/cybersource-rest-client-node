@@ -69,6 +69,7 @@
 
 
 
+
   };
 
   /**
@@ -147,6 +148,9 @@
       }
       if (data.hasOwnProperty('eventRequestedTime')) {
         obj['eventRequestedTime'] = ApiClient.convertToType(data['eventRequestedTime'], 'Date');
+      }
+      if (data.hasOwnProperty('preDisputeFlag')) {
+        obj['preDisputeFlag'] = ApiClient.convertToType(data['preDisputeFlag'], 'String');
       }
     }
     return obj;
@@ -262,6 +266,11 @@
    * @member {Date} eventRequestedTime
    */
   exports.prototype['eventRequestedTime'] = undefined;
+  /**
+   * Pre Dispute Flag
+   * @member {String} preDisputeFlag
+   */
+  exports.prototype['preDisputeFlag'] = undefined;
 
 
 

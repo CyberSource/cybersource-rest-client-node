@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **orderInformation** | [**Riskv1authenticationresultsOrderInformation**](Riskv1authenticationresultsOrderInformation.md) |  | [optional] 
 **paymentInformation** | [**Riskv1authenticationresultsPaymentInformation**](Riskv1authenticationresultsPaymentInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**Riskv1authenticationresultsConsumerAuthenticationInformation**](Riskv1authenticationresultsConsumerAuthenticationInformation.md) |  | [optional] 
+**deviceInformation** | [**Riskv1authenticationresultsDeviceInformation**](Riskv1authenticationresultsDeviceInformation.md) |  | [optional] 
 
 
