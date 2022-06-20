@@ -62,6 +62,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authenticationTransactionContext (base name: "authenticationTransactionContext")', function() {
+      // uncomment below and update the code to test the property authenticationTransactionContext
+      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property otpToken (base name: "otpToken")', function() {
+      // uncomment below and update the code to test the property otpToken
+      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authenticationType (base name: "authenticationType")', function() {
       // uncomment below and update the code to test the property authenticationType
       //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();

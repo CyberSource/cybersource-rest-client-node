@@ -74,6 +74,7 @@
 
 
 
+
   };
 
   /**
@@ -167,6 +168,9 @@
       }
       if (data.hasOwnProperty('payByPointsIndicator')) {
         obj['payByPointsIndicator'] = ApiClient.convertToType(data['payByPointsIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('isReturnAuthRecordEnabled')) {
+        obj['isReturnAuthRecordEnabled'] = ApiClient.convertToType(data['isReturnAuthRecordEnabled'], 'Boolean');
       }
     }
     return obj;
@@ -300,6 +304,11 @@
    * @member {Boolean} payByPointsIndicator
    */
   exports.prototype['payByPointsIndicator'] = undefined;
+  /**
+   * Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false 
+   * @member {Boolean} isReturnAuthRecordEnabled
+   */
+  exports.prototype['isReturnAuthRecordEnabled'] = undefined;
 
 
 

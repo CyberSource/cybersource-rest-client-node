@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property securityCodeIndicator (base name: "securityCodeIndicator")', function() {
+      // uncomment below and update the code to test the property securityCodeIndicator
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -87,6 +87,7 @@
 
 
 
+
   };
 
   /**
@@ -123,6 +124,9 @@
       }
       if (data.hasOwnProperty('authenticationTransactionId')) {
         obj['authenticationTransactionId'] = ApiClient.convertToType(data['authenticationTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('transactionFlowIndicator')) {
+        obj['transactionFlowIndicator'] = ApiClient.convertToType(data['transactionFlowIndicator'], 'Number');
       }
       if (data.hasOwnProperty('challengeCancelCode')) {
         obj['challengeCancelCode'] = ApiClient.convertToType(data['challengeCancelCode'], 'String');
@@ -229,7 +233,7 @@
    */
   exports.prototype['strongAuthentication'] = undefined;
   /**
-   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
    * @member {String} authenticationType
    */
   exports.prototype['authenticationType'] = undefined;
@@ -259,10 +263,15 @@
    */
   exports.prototype['authenticationDate'] = undefined;
   /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. 
+   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service. 
    * @member {String} authenticationTransactionId
    */
   exports.prototype['authenticationTransactionId'] = undefined;
+  /**
+   * This  field is only applicable to Rupay and is optional. Merchant will have to pass a valid value from 01 through 07 which indicates the transaction flow. Below are the possible values. 01:NW – Transaction performed at domestic merchant. 02:TW - Transaction performed at domestic merchant along with Token provisioning. 03:IT – Transaction performed at International merchant. 04:AT- Authentication Transaction Only. 05:AW- Authentication transaction for provisioning. 06:DI- Domestic InApp Transaction. 07:II- International InApp transaction. 
+   * @member {Number} transactionFlowIndicator
+   */
+  exports.prototype['transactionFlowIndicator'] = undefined;
   /**
    * An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK 
    * @member {String} challengeCancelCode

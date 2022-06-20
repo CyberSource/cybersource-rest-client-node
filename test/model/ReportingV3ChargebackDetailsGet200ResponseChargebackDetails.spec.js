@@ -188,6 +188,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property preDisputeFlag (base name: "preDisputeFlag")', function() {
+      // uncomment below and update the code to test the property preDisputeFlag
+      //var instane = new CyberSource.ReportingV3ChargebackDetailsGet200ResponseChargebackDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

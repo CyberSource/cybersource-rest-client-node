@@ -54,6 +54,8 @@
 
 
 
+
+
   };
 
   /**
@@ -69,6 +71,12 @@
 
       if (data.hasOwnProperty('authenticationTransactionId')) {
         obj['authenticationTransactionId'] = ApiClient.convertToType(data['authenticationTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('authenticationTransactionContext')) {
+        obj['authenticationTransactionContext'] = ApiClient.convertToType(data['authenticationTransactionContext'], 'String');
+      }
+      if (data.hasOwnProperty('otpToken')) {
+        obj['otpToken'] = ApiClient.convertToType(data['otpToken'], 'String');
       }
       if (data.hasOwnProperty('authenticationType')) {
         obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
@@ -93,12 +101,22 @@
   }
 
   /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. 
+   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service. 
    * @member {String} authenticationTransactionId
    */
   exports.prototype['authenticationTransactionId'] = undefined;
   /**
-   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * Authentication transaction context is used as a unique identifier to link enroll and validate call. 
+   * @member {String} authenticationTransactionContext
+   */
+  exports.prototype['authenticationTransactionContext'] = undefined;
+  /**
+   * OTP entered by the card holder. 
+   * @member {String} otpToken
+   */
+  exports.prototype['otpToken'] = undefined;
+  /**
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
    * @member {String} authenticationType
    */
   exports.prototype['authenticationType'] = undefined;

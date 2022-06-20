@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInsightsInformation (base name: "paymentInsightsInformation")', function() {
+      // uncomment below and update the code to test the property paymentInsightsInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderInformation (base name: "orderInformation")', function() {
       // uncomment below and update the code to test the property orderInformation
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();

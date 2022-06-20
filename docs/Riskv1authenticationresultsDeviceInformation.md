@@ -1,4 +1,4 @@
-# CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+# CyberSource.Riskv1authenticationresultsDeviceInformation
 
 ## Properties
 Name | Type | Description | Notes

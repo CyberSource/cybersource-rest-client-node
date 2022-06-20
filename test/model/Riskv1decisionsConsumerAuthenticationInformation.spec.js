@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionFlowIndicator (base name: "transactionFlowIndicator")', function() {
+      // uncomment below and update the code to test the property transactionFlowIndicator
+      //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property challengeCancelCode (base name: "challengeCancelCode")', function() {
       // uncomment below and update the code to test the property challengeCancelCode
       //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();

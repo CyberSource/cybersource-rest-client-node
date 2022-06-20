@@ -263,7 +263,7 @@
    */
   exports.prototype['authorizationPayload'] = undefined;
   /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. 
+   * Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. 
    * @member {String} authenticationTransactionId
    */
   exports.prototype['authenticationTransactionId'] = undefined;

@@ -218,6 +218,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isReturnAuthRecordEnabled (base name: "isReturnAuthRecordEnabled")', function() {
+      // uncomment below and update the code to test the property isReturnAuthRecordEnabled
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -83,6 +83,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -114,8 +117,17 @@
       if (data.hasOwnProperty('authorizationPayload')) {
         obj['authorizationPayload'] = ApiClient.convertToType(data['authorizationPayload'], 'String');
       }
+      if (data.hasOwnProperty('authenticationType')) {
+        obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
+      }
       if (data.hasOwnProperty('authenticationTransactionId')) {
         obj['authenticationTransactionId'] = ApiClient.convertToType(data['authenticationTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('authenticationTransactionContextId')) {
+        obj['authenticationTransactionContextId'] = ApiClient.convertToType(data['authenticationTransactionContextId'], 'String');
+      }
+      if (data.hasOwnProperty('validityPeriod')) {
+        obj['validityPeriod'] = ApiClient.convertToType(data['validityPeriod'], 'Number');
       }
       if (data.hasOwnProperty('cardholderMessage')) {
         obj['cardholderMessage'] = ApiClient.convertToType(data['cardholderMessage'], 'String');
@@ -239,10 +251,25 @@
    */
   exports.prototype['authorizationPayload'] = undefined;
   /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. 
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * @member {String} authenticationType
+   */
+  exports.prototype['authenticationType'] = undefined;
+  /**
+   * Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. 
    * @member {String} authenticationTransactionId
    */
   exports.prototype['authenticationTransactionId'] = undefined;
+  /**
+   * Payer authentication transaction identifier passed to link the validation and authorization calls. 
+   * @member {String} authenticationTransactionContextId
+   */
+  exports.prototype['authenticationTransactionContextId'] = undefined;
+  /**
+   * Describes validity of OTP in minutes for incoming transaction.        . 
+   * @member {Number} validityPeriod
+   */
+  exports.prototype['validityPeriod'] = undefined;
   /**
    * Text provided by the ACS/Issuer to Cardholder during a Frictionless or Decoupled transaction.The Issuer can provide information to Cardholder. For example, “Additional authentication is needed for this transaction, please contact (Issuer Name) at xxx-xxx-xxxx.”. The Issuing Bank can optionally support this value. 
    * @member {String} cardholderMessage

@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation();
+    instance = new CyberSource.Riskv1authenticationresultsDeviceInformation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,16 +49,16 @@
       object[property] = value;
   }
 
-  describe('TssV2TransactionsPost201ResponseEmbeddedDeviceInformation', function() {
-    it('should create an instance of TssV2TransactionsPost201ResponseEmbeddedDeviceInformation', function() {
-      // uncomment below and update the code to test TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
-      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation();
-      //expect(instance).to.be.a(CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation);
+  describe('Riskv1authenticationresultsDeviceInformation', function() {
+    it('should create an instance of Riskv1authenticationresultsDeviceInformation', function() {
+      // uncomment below and update the code to test Riskv1authenticationresultsDeviceInformation
+      //var instane = new CyberSource.Riskv1authenticationresultsDeviceInformation();
+      //expect(instance).to.be.a(CyberSource.Riskv1authenticationresultsDeviceInformation);
     });
 
     it('should have the property ipAddress (base name: "ipAddress")', function() {
       // uncomment below and update the code to test the property ipAddress
-      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation();
+      //var instane = new CyberSource.Riskv1authenticationresultsDeviceInformation();
       //expect(instance).to.be();
     });
 

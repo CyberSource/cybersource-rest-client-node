@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **issuerInformation** | [**PtsV2PaymentsPost201ResponseIssuerInformation**](PtsV2PaymentsPost201ResponseIssuerInformation.md) |  | [optional] 
 **paymentAccountInformation** | [**PtsV2PaymentsPost201ResponsePaymentAccountInformation**](PtsV2PaymentsPost201ResponsePaymentAccountInformation.md) |  | [optional] 
 **paymentInformation** | [**PtsV2PaymentsPost201ResponsePaymentInformation**](PtsV2PaymentsPost201ResponsePaymentInformation.md) |  | [optional] 
+**paymentInsightsInformation** | [**PtsV2PaymentsPost201ResponsePaymentInsightsInformation**](PtsV2PaymentsPost201ResponsePaymentInsightsInformation.md) |  | [optional] 
 **orderInformation** | [**PtsV2PaymentsPost201ResponseOrderInformation**](PtsV2PaymentsPost201ResponseOrderInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**PtsV2PaymentsPost201ResponsePointOfSaleInformation**](PtsV2PaymentsPost201ResponsePointOfSaleInformation.md) |  | [optional] 
 **installmentInformation** | [**PtsV2PaymentsPost201ResponseInstallmentInformation**](PtsV2PaymentsPost201ResponseInstallmentInformation.md) |  | [optional] 
