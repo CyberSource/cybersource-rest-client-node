@@ -15,7 +15,10 @@ const unmaskedLoggingFormat = printf(({ level, message, label, timestamp }) => {
 exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryLogger') {
   var enableLog = merchantConfig.getLogConfiguration().isLogEnabled();
   var enableMasking = merchantConfig.getLogConfiguration().isMaskingEnabled();
-  var loggerCategoryRandomiser = Math.floor((Math.random() * 1000) + 1);
+  var loggerCategoryRandomiser = Math.floor(Math.random() * (1000000000 - 100 + 1)) + 100;
+
+  loggerCategory = loggerCategory + loggerCategoryRandomiser;
+
   var newLogger;
 
   if (enableLog) {
@@ -23,7 +26,7 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
 
     var loggingLevel = merchantConfig.getLogConfiguration().getLoggingLevel();
 
-    newLogger = winston.loggers.get(loggerCategory + loggerCategoryRandomiser, {
+    newLogger = winston.loggers.get(loggerCategory, {
       level: loggingLevel,
       format: combine(
         label({ label: loggerCategory }),
@@ -33,7 +36,7 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
       transports: appTransports
     });
   } else {
-    newLogger = winston.loggers.get(loggerCategory + loggerCategoryRandomiser, {
+    newLogger = winston.loggers.get(loggerCategory, {
       level: loggingLevel,
       format: combine(
         label({ label: loggerCategory }),
