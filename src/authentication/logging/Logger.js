@@ -3,6 +3,7 @@ const { format } = require('winston');
 const DataMasker = require('./SensitiveDataMasker');
 const { combine, timestamp, label, printf } = format;
 require('winston-daily-rotate-file');
+const ExternalLoggerWrapper = require('../logging/ExternalLoggerWrapper');
 
 const maskedLoggingFormat = printf(({ level, message, label, timestamp }) => {
   return `[${timestamp}] [${level.toUpperCase()}] [${label}] : ${DataMasker.maskSensitiveData(message)}`;
@@ -13,6 +14,12 @@ const unmaskedLoggingFormat = printf(({ level, message, label, timestamp }) => {
 });
 
 exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryLogger') {
+
+  if(merchantConfig.getLogConfiguration().isExternalLoggerSet() && merchantConfig.getLogConfiguration().getExternalLoggerObj().getExternalLogger()
+      && merchantConfig.getLogConfiguration().getExternalLoggerObj() instanceof ExternalLoggerWrapper){
+    let logger = merchantConfig.getLogConfiguration().getExternalLoggerObj().getExternalLogger();
+    return logger;
+  }
   var enableLog = merchantConfig.getLogConfiguration().isLogEnabled();
   var enableMasking = merchantConfig.getLogConfiguration().isMaskingEnabled();
   var loggerCategoryRandomiser = Math.floor((Math.random() * 1000) + 1);
@@ -26,9 +33,9 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
     newLogger = winston.loggers.get(loggerCategory + loggerCategoryRandomiser, {
       level: loggingLevel,
       format: combine(
-        label({ label: loggerCategory }),
-        timestamp(),
-        enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
+          label({ label: loggerCategory }),
+          timestamp(),
+          enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
       ),
       transports: appTransports
     });

@@ -13,3 +13,8 @@ exports.AuthException = function (message) {
     var err = new Error(message);
     throw err;
 }
+
+exports.LoggerException = function (message) {
+    var err = new Error(message);
+    console.log(err);
+}

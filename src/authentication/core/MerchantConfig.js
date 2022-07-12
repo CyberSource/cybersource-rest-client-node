@@ -526,7 +526,9 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
         return merchantMap.toObject();
     }
-    logger.clear();
+    if(!this.logConfiguration.isExternalLoggerSet){
+        logger.clear();
+    }
 }
 
 module.exports = MerchantConfig;
