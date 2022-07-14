@@ -3,8 +3,6 @@
 var Constants = require('../util/Constants');
 const ExternalLoggerWrapper = require('../logging/ExternalLoggerWrapper');
 const ApiException = require('../util/ApiException');
-const fs = require("fs");
-const path = require("path");
 
 class LogConfiguration {
     enableLog;
