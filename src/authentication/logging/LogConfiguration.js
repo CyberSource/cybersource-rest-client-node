@@ -3,6 +3,8 @@
 var Constants = require('../util/Constants');
 const ExternalLoggerWrapper = require('../logging/ExternalLoggerWrapper');
 const ApiException = require('../util/ApiException');
+const fs = require("fs");
+const path = require("path");
 
 class LogConfiguration {
     enableLog;
@@ -12,8 +14,8 @@ class LogConfiguration {
     loggingLevel;
     maxLogFiles;
     enableMasking;
+    hasExternalLogger;
     externalLogger;
-    externalLoggerObj;
 
     constructor(logConfig) {
         this.setLogEnable(logConfig.enableLog);
@@ -23,8 +25,8 @@ class LogConfiguration {
         this.setLoggingLevel(logConfig.loggingLevel);
         this.setMaxLogFiles(logConfig.maxLogFiles);
         this.setMaskingEnabled(logConfig.enableMasking);
+        this.setHasExternalLogger(logConfig.hasExternalLogger);
         this.setExternalLogger(logConfig.externalLogger);
-        this.setExternalLoggerObj(logConfig.externalLoggerObj);
     }
 
     isLogEnabled() {
@@ -49,20 +51,20 @@ class LogConfiguration {
         this.enableMasking = enableMaskingValue;
     }
 
+    setHasExternalLogger(hasExternalLogger){
+        this.hasExternalLogger = hasExternalLogger;
+    }
+
+    isExternalLoggerSet(){
+        return this.hasExternalLogger;
+    }
+
     setExternalLogger(externalLogger){
         this.externalLogger = externalLogger;
     }
 
-    isExternalLoggerSet(){
+    getExternalLogger(){
         return this.externalLogger;
-    }
-
-    setExternalLoggerObj(externalLoggerObj){
-        this.externalLoggerObj = externalLoggerObj;
-    }
-
-    getExternalLoggerObj(){
-        return this.externalLoggerObj;
     }
 
     getLogDirectory () {
@@ -122,16 +124,16 @@ class LogConfiguration {
 
     getDefaultLoggingProperties(warningMessage) {
 
-        if(typeof (this.externalLogger) === "boolean" && this.externalLogger === true){
-            this.externalLogger = true;
+        if(typeof (this.hasExternalLogger) === "boolean" && this.hasExternalLogger === true){
+            this.hasExternalLogger = true;
         } else {
-            this.externalLogger = false;
+            this.hasExternalLogger = false;
         }
 
-        if(typeof (this.externalLoggerObj) === "Object" || !(this.externalLoggerObj instanceof ExternalLoggerWrapper)
-            && this.externalLoggerObj === undefined || !(this.externalLoggerObj.isLoggerEmpty())){
+        if((typeof (this.externalLogger) === "object" && !(this.externalLogger instanceof ExternalLoggerWrapper))
+            || this.externalLogger === undefined || !(this.externalLogger.isLoggerEmpty())){
             ApiException.LoggerException("No valid external logger object found. Turning off external logger flag.")
-            this.externalLogger = false;
+            this.hasExternalLogger = false;
         }
 
         if (typeof (this.enableLog) === "boolean" && this.enableLog === true) {

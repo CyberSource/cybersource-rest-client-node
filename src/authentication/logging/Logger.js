@@ -15,9 +15,10 @@ const unmaskedLoggingFormat = printf(({ level, message, label, timestamp }) => {
 
 exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryLogger') {
 
-  if(merchantConfig.getLogConfiguration().isExternalLoggerSet() && merchantConfig.getLogConfiguration().getExternalLoggerObj().getExternalLogger()
-      && merchantConfig.getLogConfiguration().getExternalLoggerObj() instanceof ExternalLoggerWrapper){
-    let logger = merchantConfig.getLogConfiguration().getExternalLoggerObj().getExternalLogger();
+  if(merchantConfig.getLogConfiguration().isExternalLoggerSet() && merchantConfig.getLogConfiguration().getExternalLogger()
+      && merchantConfig.getLogConfiguration().getExternalLogger().getLogger()
+      && merchantConfig.getLogConfiguration().getExternalLogger() instanceof ExternalLoggerWrapper){
+    let logger = merchantConfig.getLogConfiguration().getExternalLogger().getLogger();
     return logger;
   }
   var enableLog = merchantConfig.getLogConfiguration().isLogEnabled();
@@ -43,9 +44,9 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
     newLogger = winston.loggers.get(loggerCategory + loggerCategoryRandomiser, {
       level: loggingLevel,
       format: combine(
-        label({ label: loggerCategory }),
-        timestamp(),
-        enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
+          label({ label: loggerCategory }),
+          timestamp(),
+          enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
       ),
       transports: [new winston.transports.Console({
         silent: !enableLog

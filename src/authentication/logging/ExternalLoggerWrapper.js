@@ -8,7 +8,7 @@ class ExternalLoggerWrapper{
         this.extLogger = externalLogger;
     }
 
-    getExternalLogger(){
+    getLogger(){
         return this.extLogger;
     }
 
