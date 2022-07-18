@@ -14,6 +14,8 @@ java -jar swagger-codegen-cli-2.3.0.jar generate -t cybersource-javascript-templ
 
 powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Object { $_ -replace 'contentTypes = \[''\*_\/_\*;charset=utf-8', 'contentTypes = [''*/*;charset=utf-8' } | Set-Content ..\src\Api\SecureFileShareApi.js"
 
+powershell -Command "(Get-Content ..\docs\SecureFileShareApi.md) | ForEach-Object { $_ -replace '\*\*Content-Type\*\*: \*_\/_\*;charset=utf-8', '**Content-Type**: */*;charset=utf-8' } | Set-Content ..\docs\SecureFileShareApi.md"
+
 git checkout ..\README.md
 
 git checkout ..\package.json
