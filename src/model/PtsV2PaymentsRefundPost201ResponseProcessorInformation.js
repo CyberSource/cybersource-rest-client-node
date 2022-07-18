@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -83,6 +84,9 @@
       }
       if (data.hasOwnProperty('achVerification')) {
         obj['achVerification'] = PtsV2PaymentsPost201ResponseProcessorInformationAchVerification.constructFromObject(data['achVerification']);
+      }
+      if (data.hasOwnProperty('networkTransactionId')) {
+        obj['networkTransactionId'] = ApiClient.convertToType(data['networkTransactionId'], 'String');
       }
     }
     return obj;
@@ -117,6 +121,11 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification} achVerification
    */
   exports.prototype['achVerification'] = undefined;
+  /**
+   * Same value as `processorInformation.transactionId`
+   * @member {String} networkTransactionId
+   */
+  exports.prototype['networkTransactionId'] = undefined;
 
 
 
