@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property networkTransactionId (base name: "networkTransactionId")', function() {
+      // uncomment below and update the code to test the property networkTransactionId
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
