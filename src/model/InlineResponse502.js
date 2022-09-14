@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4002 = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse502 = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The InlineResponse4002 model module.
-   * @module model/InlineResponse4002
+   * The InlineResponse502 model module.
+   * @module model/InlineResponse502
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>InlineResponse4002</code>.
-   * @alias module:model/InlineResponse4002
+   * Constructs a new <code>InlineResponse502</code>.
+   * @alias module:model/InlineResponse502
    * @class
    */
   var exports = function() {
@@ -55,11 +55,11 @@
   };
 
   /**
-   * Constructs a <code>InlineResponse4002</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InlineResponse502</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InlineResponse4002} obj Optional instance to populate.
-   * @return {module:model/InlineResponse4002} The populated <code>InlineResponse4002</code> instance.
+   * @param {module:model/InlineResponse502} obj Optional instance to populate.
+   * @return {module:model/InlineResponse502} The populated <code>InlineResponse502</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -90,12 +90,12 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
+   * The status of the submitted transaction.  Possible values:  - SERVER_ERROR 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD 
+   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

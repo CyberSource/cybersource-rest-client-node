@@ -90,7 +90,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*;charset=utf-8'];
+      var contentTypes = ['*/*'];
       var accepts = ['application/xml', 'text/csv', 'application/pdf'];
       var returnType = null;
 
@@ -152,7 +152,7 @@
       };
 
       var authNames = [];
-      var contentTypes = ['*/*;charset=utf-8'];
+      var contentTypes = ['*/*'];
       var accepts = ['application/hal+json'];
       var returnType = V1FileDetailsGet200Response;
 

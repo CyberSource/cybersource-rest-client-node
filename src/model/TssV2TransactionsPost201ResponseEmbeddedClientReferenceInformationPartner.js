@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner = factory(root.CyberSource.ApiClient);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,29 +34,28 @@
 
 
   /**
-   * The TssV2TransactionsGet200ResponseClientReferenceInformationPartner model module.
-   * @module model/TssV2TransactionsGet200ResponseClientReferenceInformationPartner
+   * The TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner model module.
+   * @module model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TssV2TransactionsGet200ResponseClientReferenceInformationPartner</code>.
-   * @alias module:model/TssV2TransactionsGet200ResponseClientReferenceInformationPartner
+   * Constructs a new <code>TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner</code>.
+   * @alias module:model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
   };
 
   /**
-   * Constructs a <code>TssV2TransactionsGet200ResponseClientReferenceInformationPartner</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TssV2TransactionsGet200ResponseClientReferenceInformationPartner} obj Optional instance to populate.
-   * @return {module:model/TssV2TransactionsGet200ResponseClientReferenceInformationPartner} The populated <code>TssV2TransactionsGet200ResponseClientReferenceInformationPartner</code> instance.
+   * @param {module:model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner} obj Optional instance to populate.
+   * @return {module:model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner} The populated <code>TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -64,9 +63,6 @@
 
       if (data.hasOwnProperty('solutionId')) {
         obj['solutionId'] = ApiClient.convertToType(data['solutionId'], 'String');
-      }
-      if (data.hasOwnProperty('thirdPartyCertificationNumber')) {
-        obj['thirdPartyCertificationNumber'] = ApiClient.convertToType(data['thirdPartyCertificationNumber'], 'String');
       }
     }
     return obj;
@@ -77,11 +73,6 @@
    * @member {String} solutionId
    */
   exports.prototype['solutionId'] = undefined;
-  /**
-   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization, Authorization Reversal, Capture, Credit, Incremental Authorization, and Void** Optional field.  #### PIN debit Required field for PIN debit credit, PIN debit purchase, or PIN debit reversal request. 
-   * @member {String} thirdPartyCertificationNumber
-   */
-  exports.prototype['thirdPartyCertificationNumber'] = undefined;
 
 
 

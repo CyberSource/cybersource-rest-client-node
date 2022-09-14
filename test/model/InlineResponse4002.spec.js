@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property statusCode (base name: "statusCode")', function() {
+      // uncomment below and update the code to test the property statusCode
+      //var instane = new CyberSource.InlineResponse4002();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

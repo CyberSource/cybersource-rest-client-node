@@ -74,6 +74,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('terminalSerialNumber')) {
         obj['terminalSerialNumber'] = ApiClient.convertToType(data['terminalSerialNumber'], 'String');
+      }
+      if (data.hasOwnProperty('cardholderVerificationMethodUsed')) {
+        obj['cardholderVerificationMethodUsed'] = ApiClient.convertToType(data['cardholderVerificationMethodUsed'], 'Number');
       }
       if (data.hasOwnProperty('laneNumber')) {
         obj['laneNumber'] = ApiClient.convertToType(data['laneNumber'], 'String');
@@ -182,6 +186,11 @@
    * @member {String} terminalSerialNumber
    */
   exports.prototype['terminalSerialNumber'] = undefined;
+  /**
+   * Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM 
+   * @member {Number} cardholderVerificationMethodUsed
+   */
+  exports.prototype['cardholderVerificationMethodUsed'] = undefined;
   /**
    * Identifier for an alternate terminal at your retail location. You define the value for this field.  This field is supported only for MasterCard transactions on FDC Nashville Global. Otherwise, this field is not used by all other processors. Use the `terminalId` field to identify the main terminal at your retail location. If your retail location has multiple terminals, use this `laneNumber` field to identify the terminal used for the transaction.  This field is a pass-through, which means that the value is not checked or modified in any way before sending it to the processor.  Optional field.  #### Card present reply messaging Identifier for an alternate terminal at your retail location. You defined the value for this field in the request message. This value must be printed on the receipt.  This field is supported only for MasterCard transactions on FDC Nashville Global. 
    * @member {String} laneNumber

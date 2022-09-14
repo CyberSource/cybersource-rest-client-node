@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsPaymentInformationPaymentTypeMethod = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2voidsProcessingInformation = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The Ptsv2paymentsPaymentInformationPaymentTypeMethod model module.
-   * @module model/Ptsv2paymentsPaymentInformationPaymentTypeMethod
+   * The Ptsv2voidsProcessingInformation model module.
+   * @module model/Ptsv2voidsProcessingInformation
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>Ptsv2paymentsPaymentInformationPaymentTypeMethod</code>.
-   * @alias module:model/Ptsv2paymentsPaymentInformationPaymentTypeMethod
+   * Constructs a new <code>Ptsv2voidsProcessingInformation</code>.
+   * @alias module:model/Ptsv2voidsProcessingInformation
    * @class
    */
   var exports = function() {
@@ -51,28 +51,28 @@
   };
 
   /**
-   * Constructs a <code>Ptsv2paymentsPaymentInformationPaymentTypeMethod</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Ptsv2voidsProcessingInformation</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Ptsv2paymentsPaymentInformationPaymentTypeMethod} obj Optional instance to populate.
-   * @return {module:model/Ptsv2paymentsPaymentInformationPaymentTypeMethod} The populated <code>Ptsv2paymentsPaymentInformationPaymentTypeMethod</code> instance.
+   * @param {module:model/Ptsv2voidsProcessingInformation} obj Optional instance to populate.
+   * @return {module:model/Ptsv2voidsProcessingInformation} The populated <code>Ptsv2voidsProcessingInformation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('paymentId')) {
+        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data 
-   * @member {String} name
+   * This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
+   * @member {String} paymentId
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['paymentId'] = undefined;
 
 
 

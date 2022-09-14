@@ -164,6 +164,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cashAdvanceIndicator (base name: "cashAdvanceIndicator")', function() {
+      // uncomment below and update the code to test the property cashAdvanceIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

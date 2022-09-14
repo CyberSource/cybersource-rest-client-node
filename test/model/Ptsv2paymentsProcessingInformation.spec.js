@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property commerceIndicatorLabel (base name: "commerceIndicatorLabel")', function() {
+      // uncomment below and update the code to test the property commerceIndicatorLabel
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentSolution (base name: "paymentSolution")', function() {
       // uncomment below and update the code to test the property paymentSolution
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
@@ -112,6 +118,12 @@
 
     it('should have the property purchaseLevel (base name: "purchaseLevel")', function() {
       // uncomment below and update the code to test the property purchaseLevel
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentId (base name: "paymentId")', function() {
+      // uncomment below and update the code to test the property paymentId
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
       //expect(instance).to.be();
     });

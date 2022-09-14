@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
+    instance = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationFluidData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,16 @@
       object[property] = value;
   }
 
-  describe('TssV2TransactionsGet200ResponseClientReferenceInformationPartner', function() {
-    it('should create an instance of TssV2TransactionsGet200ResponseClientReferenceInformationPartner', function() {
-      // uncomment below and update the code to test TssV2TransactionsGet200ResponseClientReferenceInformationPartner
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
-      //expect(instance).to.be.a(CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner);
+  describe('TssV2TransactionsGet200ResponsePaymentInformationFluidData', function() {
+    it('should create an instance of TssV2TransactionsGet200ResponsePaymentInformationFluidData', function() {
+      // uncomment below and update the code to test TssV2TransactionsGet200ResponsePaymentInformationFluidData
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationFluidData();
+      //expect(instance).to.be.a(CyberSource.TssV2TransactionsGet200ResponsePaymentInformationFluidData);
     });
 
-    it('should have the property solutionId (base name: "solutionId")', function() {
-      // uncomment below and update the code to test the property solutionId
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property thirdPartyCertificationNumber (base name: "thirdPartyCertificationNumber")', function() {
-      // uncomment below and update the code to test the property thirdPartyCertificationNumber
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
+    it('should have the property descriptor (base name: "descriptor")', function() {
+      // uncomment below and update the code to test the property descriptor
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationFluidData();
       //expect(instance).to.be();
     });
 

@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
+      //var instane = new CyberSource.MitVoidRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

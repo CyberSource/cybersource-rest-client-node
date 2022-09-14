@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property commerceIndicatorLabel (base name: "commerceIndicatorLabel")', function() {
+      // uncomment below and update the code to test the property commerceIndicatorLabel
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

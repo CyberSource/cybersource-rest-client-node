@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       }
       if (data.hasOwnProperty('terminalCapability')) {
         obj['terminalCapability'] = ApiClient.convertToType(data['terminalCapability'], 'Number');
+      }
+      if (data.hasOwnProperty('cardholderVerificationMethodUsed')) {
+        obj['cardholderVerificationMethodUsed'] = ApiClient.convertToType(data['cardholderVerificationMethodUsed'], 'Number');
       }
       if (data.hasOwnProperty('emv')) {
         obj['emv'] = Ptsv2paymentsidreversalsPointOfSaleInformationEmv.constructFromObject(data['emv']);
@@ -95,6 +99,11 @@
    * @member {Number} terminalCapability
    */
   exports.prototype['terminalCapability'] = undefined;
+  /**
+   * Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM 
+   * @member {Number} cardholderVerificationMethodUsed
+   */
+  exports.prototype['cardholderVerificationMethodUsed'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsidreversalsPointOfSaleInformationEmv} emv
    */

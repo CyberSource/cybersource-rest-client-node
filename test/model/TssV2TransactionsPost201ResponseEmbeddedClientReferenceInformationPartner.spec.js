@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
+    instance = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,16 @@
       object[property] = value;
   }
 
-  describe('TssV2TransactionsGet200ResponseClientReferenceInformationPartner', function() {
-    it('should create an instance of TssV2TransactionsGet200ResponseClientReferenceInformationPartner', function() {
-      // uncomment below and update the code to test TssV2TransactionsGet200ResponseClientReferenceInformationPartner
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
-      //expect(instance).to.be.a(CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner);
+  describe('TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner', function() {
+    it('should create an instance of TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner', function() {
+      // uncomment below and update the code to test TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner();
+      //expect(instance).to.be.a(CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner);
     });
 
     it('should have the property solutionId (base name: "solutionId")', function() {
       // uncomment below and update the code to test the property solutionId
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property thirdPartyCertificationNumber (base name: "thirdPartyCertificationNumber")', function() {
-      // uncomment below and update the code to test the property thirdPartyCertificationNumber
-      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner();
       //expect(instance).to.be();
     });
 

@@ -65,6 +65,7 @@
 
 
 
+
   };
 
   /**
@@ -131,6 +132,9 @@
       }
       if (data.hasOwnProperty('deferredAuthIndicator')) {
         obj['deferredAuthIndicator'] = ApiClient.convertToType(data['deferredAuthIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('cashAdvanceIndicator')) {
+        obj['cashAdvanceIndicator'] = ApiClient.convertToType(data['cashAdvanceIndicator'], 'Boolean');
       }
     }
     return obj;
@@ -227,6 +231,11 @@
    * @member {Boolean} deferredAuthIndicator
    */
   exports.prototype['deferredAuthIndicator'] = undefined;
+  /**
+   * This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - `true` (Cash advance is supported)   - `false` (default: cash advance is not supported) 
+   * @member {Boolean} cashAdvanceIndicator
+   */
+  exports.prototype['cashAdvanceIndicator'] = undefined;
 
 
 

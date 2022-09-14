@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateSharedSecretKeysRequest', 'model/CreateSharedSecretKeysVerifiRequest', 'model/DeleteBulkSymmetricKeysRequest', 'model/InlineResponse4002', 'model/KmsV2KeysSymDeletesPost200Response', 'model/KmsV2KeysSymGet200Response', 'model/KmsV2KeysSymPost201Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['ApiClient', 'model/CreateSharedSecretKeysRequest', 'model/CreateSharedSecretKeysVerifiRequest', 'model/DeleteBulkSymmetricKeysRequest', 'model/InlineResponse4002', 'model/InlineResponse502', 'model/KmsV2KeysSymDeletesPost200Response', 'model/KmsV2KeysSymGet200Response', 'model/KmsV2KeysSymPost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateSharedSecretKeysRequest'), require('../model/CreateSharedSecretKeysVerifiRequest'), require('../model/DeleteBulkSymmetricKeysRequest'), require('../model/InlineResponse4002'), require('../model/KmsV2KeysSymDeletesPost200Response'), require('../model/KmsV2KeysSymGet200Response'), require('../model/KmsV2KeysSymPost201Response'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateSharedSecretKeysRequest'), require('../model/CreateSharedSecretKeysVerifiRequest'), require('../model/DeleteBulkSymmetricKeysRequest'), require('../model/InlineResponse4002'), require('../model/InlineResponse502'), require('../model/KmsV2KeysSymDeletesPost200Response'), require('../model/KmsV2KeysSymGet200Response'), require('../model/KmsV2KeysSymPost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSharedSecretKeysRequest, root.CyberSource.CreateSharedSecretKeysVerifiRequest, root.CyberSource.DeleteBulkSymmetricKeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.KmsV2KeysSymDeletesPost200Response, root.CyberSource.KmsV2KeysSymGet200Response, root.CyberSource.KmsV2KeysSymPost201Response, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.SymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSharedSecretKeysRequest, root.CyberSource.CreateSharedSecretKeysVerifiRequest, root.CyberSource.DeleteBulkSymmetricKeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse502, root.CyberSource.KmsV2KeysSymDeletesPost200Response, root.CyberSource.KmsV2KeysSymGet200Response, root.CyberSource.KmsV2KeysSymPost201Response);
   }
-}(this, function(ApiClient, CreateSharedSecretKeysRequest, CreateSharedSecretKeysVerifiRequest, DeleteBulkSymmetricKeysRequest, InlineResponse4002, KmsV2KeysSymDeletesPost200Response, KmsV2KeysSymGet200Response, KmsV2KeysSymPost201Response, PtsV2PaymentsPost502Response) {
+}(this, function(ApiClient, CreateSharedSecretKeysRequest, CreateSharedSecretKeysVerifiRequest, DeleteBulkSymmetricKeysRequest, InlineResponse4002, InlineResponse502, KmsV2KeysSymDeletesPost200Response, KmsV2KeysSymGet200Response, KmsV2KeysSymPost201Response) {
   'use strict';
 
   /**

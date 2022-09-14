@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cardholderVerificationMethodUsed (base name: "cardholderVerificationMethodUsed")', function() {
+      // uncomment below and update the code to test the property cardholderVerificationMethodUsed
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property emv (base name: "emv")', function() {
       // uncomment below and update the code to test the property emv
       //var instane = new CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation();
