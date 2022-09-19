@@ -128,8 +128,8 @@ class LogConfiguration {
             this.hasExternalLogger = false;
         }
 
-        if((typeof (this.externalLogger) === "object" && !(this.externalLogger instanceof ExternalLoggerWrapper))
-            || this.externalLogger === undefined || !(this.externalLogger.isLoggerEmpty())){
+        if(this.hasExternalLogger == true && ((typeof (this.externalLogger) === "object" && !(this.externalLogger instanceof ExternalLoggerWrapper))
+            || this.externalLogger === undefined || (this.externalLogger.isLoggerEmpty()))){
             ApiException.LoggerException("No valid external logger object found. Turning off external logger flag.")
             this.hasExternalLogger = false;
         }

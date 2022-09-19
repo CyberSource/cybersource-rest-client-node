@@ -13,9 +13,7 @@ class ExternalLoggerWrapper{
     }
 
     isLoggerEmpty(){
-        if(this.extLogger === undefined)
-            return false;
-        return true;
+        return typeof this.extLogger === 'undefined'
     }
 }
 
