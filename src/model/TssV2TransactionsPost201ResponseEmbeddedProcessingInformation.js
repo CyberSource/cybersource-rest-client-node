@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('commerceIndicator')) {
         obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
       }
+      if (data.hasOwnProperty('commerceIndicatorLabel')) {
+        obj['commerceIndicatorLabel'] = ApiClient.convertToType(data['commerceIndicatorLabel'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +95,11 @@
    * @member {String} commerceIndicator
    */
   exports.prototype['commerceIndicator'] = undefined;
+  /**
+   * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \"Commerce Indicators,\" on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\" 
+   * @member {String} commerceIndicatorLabel
+   */
+  exports.prototype['commerceIndicatorLabel'] = undefined;
 
 
 

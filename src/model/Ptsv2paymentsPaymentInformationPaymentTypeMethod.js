@@ -69,7 +69,7 @@
   }
 
   /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal 
+   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;

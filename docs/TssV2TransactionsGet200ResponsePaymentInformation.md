@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **paymentInstrument** | [**PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument**](PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument.md) |  | [optional] 
 **instrumentIdentifier** | [**TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier**](TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier.md) |  | [optional] 
 **shippingAddress** | [**PtsV2PaymentsPost201ResponseTokenInformationShippingAddress**](PtsV2PaymentsPost201ResponseTokenInformationShippingAddress.md) |  | [optional] 
+**fluidData** | [**TssV2TransactionsGet200ResponsePaymentInformationFluidData**](TssV2TransactionsGet200ResponsePaymentInformationFluidData.md) |  | [optional] 
 
 

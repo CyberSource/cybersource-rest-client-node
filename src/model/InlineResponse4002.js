@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
+      if (data.hasOwnProperty('statusCode')) {
+        obj['statusCode'] = ApiClient.convertToType(data['statusCode'], 'String');
+      }
     }
     return obj;
   }
@@ -91,7 +95,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
+   * The reason of the status.  Possible values:  - MISSING_FIELD 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
@@ -100,6 +104,11 @@
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
+  /**
+   * HTTP status code of the submitted request.  Possible values:  - 500 
+   * @member {String} statusCode
+   */
+  exports.prototype['statusCode'] = undefined;
 
 
 

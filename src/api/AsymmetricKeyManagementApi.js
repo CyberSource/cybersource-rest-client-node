@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse4002', 'model/KmsV2KeysAsymDeletesPost200Response', 'model/KmsV2KeysAsymGet200Response', 'model/KmsV2KeysAsymPost201Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse4002', 'model/InlineResponse502', 'model/KmsV2KeysAsymDeletesPost200Response', 'model/KmsV2KeysAsymGet200Response', 'model/KmsV2KeysAsymPost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse4002'), require('../model/KmsV2KeysAsymDeletesPost200Response'), require('../model/KmsV2KeysAsymGet200Response'), require('../model/KmsV2KeysAsymPost201Response'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse4002'), require('../model/InlineResponse502'), require('../model/KmsV2KeysAsymDeletesPost200Response'), require('../model/KmsV2KeysAsymGet200Response'), require('../model/KmsV2KeysAsymPost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.KmsV2KeysAsymDeletesPost200Response, root.CyberSource.KmsV2KeysAsymGet200Response, root.CyberSource.KmsV2KeysAsymPost201Response, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse502, root.CyberSource.KmsV2KeysAsymDeletesPost200Response, root.CyberSource.KmsV2KeysAsymGet200Response, root.CyberSource.KmsV2KeysAsymPost201Response);
   }
-}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse4002, KmsV2KeysAsymDeletesPost200Response, KmsV2KeysAsymGet200Response, KmsV2KeysAsymPost201Response, PtsV2PaymentsPost502Response) {
+}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse4002, InlineResponse502, KmsV2KeysAsymDeletesPost200Response, KmsV2KeysAsymGet200Response, KmsV2KeysAsymPost201Response) {
   'use strict';
 
   /**
@@ -58,8 +58,8 @@
      */
 
     /**
-     * Create one or more PKCS#12 keys
-     * &#39;Create one or more PKCS#12 keys&#39; 
+     * Create one or more PKCS12 keys
+     * &#39;Create one or more PKCS12 keys&#39; 
      * @param {module:model/CreateP12KeysRequest} createP12KeysRequest 
      * @param {module:api/AsymmetricKeyManagementApi~createP12KeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysAsymPost201Response}
@@ -103,8 +103,8 @@
      */
 
     /**
-     * Delete one or more PKCS#12 keys
-     * &#39;Delete one or more PKCS#12 keys&#39; 
+     * Delete one or more PKCS12 keys
+     * &#39;Delete one or more PKCS12 keys&#39; 
      * @param {module:model/DeleteBulkP12KeysRequest} deleteBulkP12KeysRequest 
      * @param {module:api/AsymmetricKeyManagementApi~deleteBulkP12KeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysAsymDeletesPost200Response}
@@ -148,7 +148,7 @@
      */
 
     /**
-     * Retrieves PKCS#12 key details
+     * Retrieves PKCS12 key details
      * Retrieves keys details by providing the key id.
      * @param {String} keyId Key ID. 
      * @param {module:api/AsymmetricKeyManagementApi~getP12KeyDetailsCallback} callback The callback function, accepting three arguments: error, data, response

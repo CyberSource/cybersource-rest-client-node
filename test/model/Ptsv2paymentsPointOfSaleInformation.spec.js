@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cardholderVerificationMethodUsed (base name: "cardholderVerificationMethodUsed")', function() {
+      // uncomment below and update the code to test the property cardholderVerificationMethodUsed
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property laneNumber (base name: "laneNumber")', function() {
       // uncomment below and update the code to test the property laneNumber
       //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();

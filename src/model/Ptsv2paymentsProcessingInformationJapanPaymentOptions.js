@@ -55,6 +55,12 @@
 
 
 
+
+
+
+
+
+
   };
 
   /**
@@ -70,6 +76,24 @@
 
       if (data.hasOwnProperty('paymentMethod')) {
         obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+      }
+      if (data.hasOwnProperty('bonuses')) {
+        obj['bonuses'] = ApiClient.convertToType(data['bonuses'], 'String');
+      }
+      if (data.hasOwnProperty('bonusMonth')) {
+        obj['bonusMonth'] = ApiClient.convertToType(data['bonusMonth'], 'String');
+      }
+      if (data.hasOwnProperty('secondBonusMonth')) {
+        obj['secondBonusMonth'] = ApiClient.convertToType(data['secondBonusMonth'], 'String');
+      }
+      if (data.hasOwnProperty('bonusAmount')) {
+        obj['bonusAmount'] = ApiClient.convertToType(data['bonusAmount'], 'String');
+      }
+      if (data.hasOwnProperty('secondBonusAmount')) {
+        obj['secondBonusAmount'] = ApiClient.convertToType(data['secondBonusAmount'], 'String');
+      }
+      if (data.hasOwnProperty('preapprovalType')) {
+        obj['preapprovalType'] = ApiClient.convertToType(data['preapprovalType'], 'String');
       }
       if (data.hasOwnProperty('installments')) {
         obj['installments'] = ApiClient.convertToType(data['installments'], 'String');
@@ -101,6 +125,36 @@
    * @member {String} paymentMethod
    */
   exports.prototype['paymentMethod'] = undefined;
+  /**
+   * This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6. 
+   * @member {String} bonuses
+   */
+  exports.prototype['bonuses'] = undefined;
+  /**
+   * This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12. 
+   * @member {String} bonusMonth
+   */
+  exports.prototype['bonusMonth'] = undefined;
+  /**
+   * This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12. 
+   * @member {String} secondBonusMonth
+   */
+  exports.prototype['secondBonusMonth'] = undefined;
+  /**
+   * This value contains the bonus amount of the first month. Maximum value without decimal 99999999. 
+   * @member {String} bonusAmount
+   */
+  exports.prototype['bonusAmount'] = undefined;
+  /**
+   * This value contains the bonus amount of the second month. Maximum value without decimal 99999999. 
+   * @member {String} secondBonusAmount
+   */
+  exports.prototype['secondBonusAmount'] = undefined;
+  /**
+   * This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 = Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 = Negative card authorization (authorization-only with 0 or 1 amount) - 2 = Reservation of authorization (authorization-only with amount) - 3 = Cancel transaction - 4 = Merchant-initiated reversal/refund transactions - 5 = Cancel reservation of authorization - 6 = Post authorization 
+   * @member {String} preapprovalType
+   */
+  exports.prototype['preapprovalType'] = undefined;
   /**
    * Number of Installments. 
    * @member {String} installments

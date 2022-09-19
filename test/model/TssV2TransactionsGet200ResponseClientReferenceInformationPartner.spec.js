@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property thirdPartyCertificationNumber (base name: "thirdPartyCertificationNumber")', function() {
+      // uncomment below and update the code to test the property thirdPartyCertificationNumber
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformationPartner();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

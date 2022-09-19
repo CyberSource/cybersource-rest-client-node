@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property externalOrganizationId (base name: "externalOrganizationId")', function() {
+      // uncomment below and update the code to test the property externalOrganizationId
+      //var instane = new CyberSource.KmsV2KeysSymPost201ResponseKeyInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property referenceNumber (base name: "referenceNumber")', function() {
       // uncomment below and update the code to test the property referenceNumber
       //var instane = new CyberSource.KmsV2KeysSymPost201ResponseKeyInformation();
