@@ -2,7 +2,6 @@
 
 var Constants = require('../util/Constants');
 var Logger = require('../logging/Logger');
-var Map = require('collections/map');
 var ApiException = require('../util/ApiException');
 var LogConfiguration = require('../logging/LogConfiguration');
 
@@ -524,7 +523,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             })
         });
 
-        return merchantMap.toObject();
+        return Object.fromEntries(merchantMap);
     }
     if(!this.logConfiguration.isExternalLoggerSet){
         logger.clear();
