@@ -6,7 +6,7 @@ var ApiException = require('../util/ApiException');
 var LogConfiguration = require('../logging/LogConfiguration');
 
 /**
- * This function has all the merchentConfig properties getters and setters methods
+ * This function has all the merchantConfig properties getters and setters methods
  * 
  * @param  result 
  */
@@ -500,8 +500,8 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     /**
-     * This method is to log all merchantConfic properties 
-     * excluding HideMerchantConfigProperies defined in Constants
+     * This method is to log all merchantConfig properties 
+     * excluding HideMerchantConfigProperties defined in Constants
      * 
      * @param {*} merchantConfig 
      */
@@ -513,17 +513,14 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             hiddenPropertiesArray.push(each.trim());
         });
 
-        var merchantMap = new Map(Object.entries(merchantConfig));
-        //iterating the merchantConfig Object 
-        merchantMap.forEach(function (value, key) {
-            hiddenPropertiesArray.forEach(function (hide) {
-                if (key === hide) {
-                    merchantMap.delete(key);
-                }
-            })
-        });
+        const filteredMerchantConfig = {};
+        for (key in merchantConfig) {
+            if (!hiddenPropertiesArray.includes(key)) {
+                filteredMerchantConfig[key] = merchantConfig[key];
+            }
+        }
 
-        return Object.fromEntries(merchantMap);
+        return filteredMerchantConfig;
     }
     if(!this.logConfiguration.isExternalLoggerSet){
         logger.clear();
