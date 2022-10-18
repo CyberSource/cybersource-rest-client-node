@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
+      // uncomment below and update the code to test the property issuerInformation
+      //var instane = new CyberSource.PtsV2PayoutsPost201Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

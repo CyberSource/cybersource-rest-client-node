@@ -53,6 +53,12 @@
 
 
 
+
+
+
+
+
+
   };
 
   /**
@@ -80,6 +86,24 @@
       }
       if (data.hasOwnProperty('sequenceNumber')) {
         obj['sequenceNumber'] = ApiClient.convertToType(data['sequenceNumber'], 'Number');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('occurrence')) {
+        obj['occurrence'] = ApiClient.convertToType(data['occurrence'], 'String');
+      }
+      if (data.hasOwnProperty('validationIndicator')) {
+        obj['validationIndicator'] = ApiClient.convertToType(data['validationIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('amountType')) {
+        obj['amountType'] = ApiClient.convertToType(data['amountType'], 'String');
+      }
+      if (data.hasOwnProperty('maximumAmount')) {
+        obj['maximumAmount'] = ApiClient.convertToType(data['maximumAmount'], 'String');
+      }
+      if (data.hasOwnProperty('referenceNumber')) {
+        obj['referenceNumber'] = ApiClient.convertToType(data['referenceNumber'], 'String');
       }
     }
     return obj;
@@ -110,6 +134,36 @@
    * @member {Number} sequenceNumber
    */
   exports.prototype['sequenceNumber'] = undefined;
+  /**
+   * This contains the type of recurring payment. Valid Values : 1 - Registration/First transaction 2 - Subsequent transaction 3 - Modification 4 - Cancellation 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * This value indicates how often a recurring payment occurs. Valid Values : • 01 (Daily) • 02 (Twice weekly) • 03 (Weekly) • 04 (Ten days) • 05 (Fortnightly) • 06 (Monthly) • 07 (Every two months) • 08 (Trimester) • 09 (Quarterly) • 10 (Twice yearly) • 11 (Annually) • 12 (Unscheduled) 
+   * @member {String} occurrence
+   */
+  exports.prototype['occurrence'] = undefined;
+  /**
+   * This tag will contain a value that indicates whether or not the recurring payment transaction has been validated. Valid values : 0- Not validated 1- Validated 
+   * @member {String} validationIndicator
+   */
+  exports.prototype['validationIndicator'] = undefined;
+  /**
+   * Indicates recurring amount type agreed by the cardholder Valid Values : 1- Fixed amount recurring payment 2- Recurring payment with maximum amount 
+   * @member {String} amountType
+   */
+  exports.prototype['amountType'] = undefined;
+  /**
+   * This API field will contain the maximum amount agreed to by the cardholder. The currency of this amount will be specified in Field 49—Currency Code,Transaction. 
+   * @member {String} maximumAmount
+   */
+  exports.prototype['maximumAmount'] = undefined;
+  /**
+   * This will contain a unique reference number for the recurring payment transaction. 
+   * @member {String} referenceNumber
+   */
+  exports.prototype['referenceNumber'] = undefined;
 
 
 

@@ -68,6 +68,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lowValueExemptionResult (base name: "lowValueExemptionResult")', function() {
+      // uncomment below and update the code to test the property lowValueExemptionResult
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property secureCorporatePaymentResult (base name: "secureCorporatePaymentResult")', function() {
+      // uncomment below and update the code to test the property secureCorporatePaymentResult
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionRiskAnalysisExemptionResult (base name: "transactionRiskAnalysisExemptionResult")', function() {
+      // uncomment below and update the code to test the property transactionRiskAnalysisExemptionResult
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

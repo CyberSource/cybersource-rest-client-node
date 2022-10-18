@@ -86,6 +86,42 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property occurrence (base name: "occurrence")', function() {
+      // uncomment below and update the code to test the property occurrence
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property validationIndicator (base name: "validationIndicator")', function() {
+      // uncomment below and update the code to test the property validationIndicator
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property amountType (base name: "amountType")', function() {
+      // uncomment below and update the code to test the property amountType
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property maximumAmount (base name: "maximumAmount")', function() {
+      // uncomment below and update the code to test the property maximumAmount
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referenceNumber (base name: "referenceNumber")', function() {
+      // uncomment below and update the code to test the property referenceNumber
+      //var instane = new CyberSource.Ptsv2paymentsRecurringPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

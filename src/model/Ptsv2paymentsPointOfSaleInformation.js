@@ -251,7 +251,7 @@
    */
   exports.prototype['terminalCardCaptureCapability'] = undefined;
   /**
-   * Indicates whether the terminal can print or display messages.  Possible values: - 1: Neither - 2: Print only - 3: Display only - 4: Print and display  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX  Optional field. 
+   * Indicates whether the terminal can print or display messages.  Possible values: - 1: Neither - 2: Print only - 3: Display only - 4: Print and display - 5: Merchant terminal supports purchase only approvals  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX - VisaNet  Optional field. 
    * @member {String} terminalOutputCapability
    */
   exports.prototype['terminalOutputCapability'] = undefined;
