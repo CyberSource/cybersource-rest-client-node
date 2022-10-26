@@ -17,7 +17,6 @@
     "app-root-path": "^2.1.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "collections": "^5.1.2",
     "jwt-simple": "^0.5.1",
     "memory-cache": "^0.2.0",
     "node-forge": ">=1.0.0",
