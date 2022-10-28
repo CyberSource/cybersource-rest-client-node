@@ -2,7 +2,6 @@
 
 var Constants = require('../util/Constants');
 var Logger = require('../logging/Logger');
-var Map = require('collections/map');
 var ApiException = require('../util/ApiException');
 var LogConfiguration = require('../logging/LogConfiguration');
 
@@ -514,17 +513,14 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             hiddenPropertiesArray.push(each.trim());
         });
 
-        var merchantMap = new Map(Object.entries(merchantConfig));
-        //iterating the merchantConfig Object 
-        merchantMap.forEach(function (value, key) {
-            hiddenPropertiesArray.forEach(function (hide) {
-                if (key === hide) {
-                    merchantMap.delete(key);
-                }
-            })
-        });
+        const filteredMerchantConfig = {};
+        for (key in merchantConfig) {
+            if (!hiddenPropertiesArray.includes(key)) {
+                filteredMerchantConfig[key] = merchantConfig[key];
+            }
+        }
 
-        return merchantMap.toObject();
+        return filteredMerchantConfig;
     }
     if(!this.logConfiguration.isExternalLoggerSet){
         logger.clear();

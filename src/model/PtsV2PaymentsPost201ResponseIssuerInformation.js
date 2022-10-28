@@ -51,7 +51,6 @@
 
 
 
-
   };
 
   /**
@@ -77,9 +76,6 @@
       if (data.hasOwnProperty('responseCode')) {
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
       }
-      if (data.hasOwnProperty('responseRaw')) {
-        obj['responseRaw'] = ApiClient.convertToType(data['responseRaw'], 'String');
-      }
     }
     return obj;
   }
@@ -104,11 +100,6 @@
    * @member {String} responseCode
    */
   exports.prototype['responseCode'] = undefined;
-  /**
-   * issuerInformation.responseRaw is the raw processor auth response returned to merchant in CYBS auth response if auth request includes \"processingInformation.isReturnAuthRecordEnabled=true\".  If supported by the gateway code, it is available to merchants who auth through CYBS and run their own settlement processing. 
-   * @member {String} responseRaw
-   */
-  exports.prototype['responseRaw'] = undefined;
 
 
 

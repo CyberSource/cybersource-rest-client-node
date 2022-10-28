@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **orderInformation** | [**PtsV2PayoutsPost201ResponseOrderInformation**](PtsV2PayoutsPost201ResponseOrderInformation.md) |  | [optional] 
 **processorInformation** | [**PtsV2PayoutsPost201ResponseProcessorInformation**](PtsV2PayoutsPost201ResponseProcessorInformation.md) |  | [optional] 
 **recipientInformation** | [**PtsV2PayoutsPost201ResponseRecipientInformation**](PtsV2PayoutsPost201ResponseRecipientInformation.md) |  | [optional] 
+**issuerInformation** | [**PtsV2PayoutsPost201ResponseIssuerInformation**](PtsV2PayoutsPost201ResponseIssuerInformation.md) |  | [optional] 
 
 

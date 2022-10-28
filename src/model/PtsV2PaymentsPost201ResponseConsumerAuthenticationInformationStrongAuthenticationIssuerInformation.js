@@ -49,6 +49,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -68,6 +71,15 @@
       if (data.hasOwnProperty('trustedMerchantExemptionResult')) {
         obj['trustedMerchantExemptionResult'] = ApiClient.convertToType(data['trustedMerchantExemptionResult'], 'String');
       }
+      if (data.hasOwnProperty('lowValueExemptionResult')) {
+        obj['lowValueExemptionResult'] = ApiClient.convertToType(data['lowValueExemptionResult'], 'String');
+      }
+      if (data.hasOwnProperty('secureCorporatePaymentResult')) {
+        obj['secureCorporatePaymentResult'] = ApiClient.convertToType(data['secureCorporatePaymentResult'], 'String');
+      }
+      if (data.hasOwnProperty('transactionRiskAnalysisExemptionResult')) {
+        obj['transactionRiskAnalysisExemptionResult'] = ApiClient.convertToType(data['transactionRiskAnalysisExemptionResult'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +94,21 @@
    * @member {String} trustedMerchantExemptionResult
    */
   exports.prototype['trustedMerchantExemptionResult'] = undefined;
+  /**
+   * This will be the value returned by Visanet when low value exemption has been requested.  Valid values: Visa Platform Connect - `2` Low value exemption validated/honored - `3` Low value exemption failed validation/not honored 
+   * @member {String} lowValueExemptionResult
+   */
+  exports.prototype['lowValueExemptionResult'] = undefined;
+  /**
+   * This will be the value returned by Visanet when secure corporate payment (scp) exemption has been requested.  Valid values: Visa Platform Connect - `2` Secure corporate payment exemption validated/honored - `3` Secure corporate payment exemption failed validation/not honored 
+   * @member {String} secureCorporatePaymentResult
+   */
+  exports.prototype['secureCorporatePaymentResult'] = undefined;
+  /**
+   * This will be the value returned by Visanet when transaction risk analysis (TRA) exemption has been requested.    Valid values: Visa Platform Connect   - `2` transaction risk analysis (TRA) exemption validated/honored   - `3` transaction risk analysis (TRA) exemption failed validation/not honored 
+   * @member {String} transactionRiskAnalysisExemptionResult
+   */
+  exports.prototype['transactionRiskAnalysisExemptionResult'] = undefined;
 
 
 

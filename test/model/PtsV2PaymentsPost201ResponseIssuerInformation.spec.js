@@ -80,12 +80,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property responseRaw (base name: "responseRaw")', function() {
-      // uncomment below and update the code to test the property responseRaw
-      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseIssuerInformation();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));
