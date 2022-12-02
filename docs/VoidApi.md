@@ -4,7 +4,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**mitVoid**](VoidApi.md#mitVoid) | **POST** /pts/v2/voids/ | Timeout Void
+[**mitVoid**](VoidApi.md#mitVoid) | **POST** /pts/v2/voids | Timeout Void
 [**voidCapture**](VoidApi.md#voidCapture) | **POST** /pts/v2/captures/{id}/voids | Void a Capture
 [**voidCredit**](VoidApi.md#voidCredit) | **POST** /pts/v2/credits/{id}/voids | Void a Credit
 [**voidPayment**](VoidApi.md#voidPayment) | **POST** /pts/v2/payments/{id}/voids | Void a Payment

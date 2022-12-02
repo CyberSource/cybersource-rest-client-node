@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **cancelUrl** | **String** | customer would be redirected to this url based on the decision of the transaction | [optional] 
 **successUrl** | **String** | customer would be redirected to this url based on the decision of the transaction | [optional] 
 **failureUrl** | **String** | customer would be redirected to this url based on the decision of the transaction | [optional] 
-**merchantName** | **String** | Use this field only if you are requesting payment with Payer Authentication serice together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank.  | [optional] 
+**merchantName** | **String** | Use this field only if you are requesting payment with Payer Authentication service together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank.  | [optional] 
 
 

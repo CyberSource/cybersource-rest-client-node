@@ -80,6 +80,16 @@
         done();
       });
     });
+    describe('updateAsymKey', function() {
+      it('should call updateAsymKey successfully', function(done) {
+        //uncomment below and update the code to test updateAsymKey
+        //instance.updateAsymKey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

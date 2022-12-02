@@ -184,7 +184,7 @@
    */
   exports.prototype['failureUrl'] = undefined;
   /**
-   * Use this field only if you are requesting payment with Payer Authentication serice together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
+   * Use this field only if you are requesting payment with Payer Authentication service together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
    * @member {String} merchantName
    */
   exports.prototype['merchantName'] = undefined;

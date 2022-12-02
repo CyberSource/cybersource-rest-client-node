@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authReversal**](ReversalApi.md#authReversal) | **POST** /pts/v2/payments/{id}/reversals | Process an Authorization Reversal
-[**mitReversal**](ReversalApi.md#mitReversal) | **POST** /pts/v2/reversals/ | Timeout Reversal
+[**mitReversal**](ReversalApi.md#mitReversal) | **POST** /pts/v2/reversals | Timeout Reversal
 
 
 <a name="authReversal"></a>

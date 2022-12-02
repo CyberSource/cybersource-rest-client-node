@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse4002', 'model/InlineResponse502', 'model/KmsV2KeysAsymDeletesPost200Response', 'model/KmsV2KeysAsymGet200Response', 'model/KmsV2KeysAsymPost201Response'], factory);
+    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse4002', 'model/InlineResponse4003', 'model/InlineResponse500', 'model/InlineResponse502', 'model/KmsV2KeysAsymDeletesPost200Response', 'model/KmsV2KeysAsymGet200Response', 'model/KmsV2KeysAsymPost201Response', 'model/UpdateAsymKeysRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse4002'), require('../model/InlineResponse502'), require('../model/KmsV2KeysAsymDeletesPost200Response'), require('../model/KmsV2KeysAsymGet200Response'), require('../model/KmsV2KeysAsymPost201Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse4002'), require('../model/InlineResponse4003'), require('../model/InlineResponse500'), require('../model/InlineResponse502'), require('../model/KmsV2KeysAsymDeletesPost200Response'), require('../model/KmsV2KeysAsymGet200Response'), require('../model/KmsV2KeysAsymPost201Response'), require('../model/UpdateAsymKeysRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse502, root.CyberSource.KmsV2KeysAsymDeletesPost200Response, root.CyberSource.KmsV2KeysAsymGet200Response, root.CyberSource.KmsV2KeysAsymPost201Response);
+    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse500, root.CyberSource.InlineResponse502, root.CyberSource.KmsV2KeysAsymDeletesPost200Response, root.CyberSource.KmsV2KeysAsymGet200Response, root.CyberSource.KmsV2KeysAsymPost201Response, root.CyberSource.UpdateAsymKeysRequest);
   }
-}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse4002, InlineResponse502, KmsV2KeysAsymDeletesPost200Response, KmsV2KeysAsymGet200Response, KmsV2KeysAsymPost201Response) {
+}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse4002, InlineResponse4003, InlineResponse500, InlineResponse502, KmsV2KeysAsymDeletesPost200Response, KmsV2KeysAsymGet200Response, KmsV2KeysAsymPost201Response, UpdateAsymKeysRequest) {
   'use strict';
 
   /**
@@ -183,6 +183,58 @@
 
       return this.apiClient.callApi(
         '/kms/v2/keys-asym/{keyId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateAsymKey operation.
+     * @callback module:api/AsymmetricKeyManagementApi~updateAsymKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Activate or De-activate Asymmetric Key
+     * Activate or De-activate Asymmetric Key 
+     * @param {String} keyId Key ID. 
+     * @param {module:model/UpdateAsymKeysRequest} updateAsymKeysRequest 
+     * @param {module:api/AsymmetricKeyManagementApi~updateAsymKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.updateAsymKey = function(keyId, updateAsymKeysRequest, callback) {
+      var postBody = updateAsymKeysRequest;
+
+      // verify the required parameter 'keyId' is set
+      if (keyId === undefined || keyId === null) {
+        throw new Error("Missing the required parameter 'keyId' when calling updateAsymKey");
+      }
+
+      // verify the required parameter 'updateAsymKeysRequest' is set
+      if (updateAsymKeysRequest === undefined || updateAsymKeysRequest === null) {
+        throw new Error("Missing the required parameter 'updateAsymKeysRequest' when calling updateAsymKey");
+      }
+
+
+      var pathParams = {
+        'keyId': keyId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/kms/v2/keys-asym/{keyId}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

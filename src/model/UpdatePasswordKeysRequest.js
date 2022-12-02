@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4003Details = factory(root.CyberSource.ApiClient);
+    root.CyberSource.UpdatePasswordKeysRequest = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,52 +34,56 @@
 
 
   /**
-   * The InlineResponse4003Details model module.
-   * @module model/InlineResponse4003Details
+   * The UpdatePasswordKeysRequest model module.
+   * @module model/UpdatePasswordKeysRequest
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>InlineResponse4003Details</code>.
-   * @alias module:model/InlineResponse4003Details
+   * Constructs a new <code>UpdatePasswordKeysRequest</code>.
+   * @alias module:model/UpdatePasswordKeysRequest
    * @class
+   * @param status {String} Status can be active/inactive
+   * @param organizationId {String} Organization Id
    */
-  var exports = function() {
+  var exports = function(status, organizationId) {
     var _this = this;
 
-
-
+    _this['status'] = status;
+    _this['organizationId'] = organizationId;
   };
 
   /**
-   * Constructs a <code>InlineResponse4003Details</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>UpdatePasswordKeysRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InlineResponse4003Details} obj Optional instance to populate.
-   * @return {module:model/InlineResponse4003Details} The populated <code>InlineResponse4003Details</code> instance.
+   * @param {module:model/UpdatePasswordKeysRequest} obj Optional instance to populate.
+   * @return {module:model/UpdatePasswordKeysRequest} The populated <code>UpdatePasswordKeysRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('location')) {
-        obj['location'] = ApiClient.convertToType(data['location'], 'String');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+      if (data.hasOwnProperty('organizationId')) {
+        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} location
+   * Status can be active/inactive
+   * @member {String} status
    */
-  exports.prototype['location'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * @member {String} message
+   * Organization Id
+   * @member {String} organizationId
    */
-  exports.prototype['message'] = undefined;
+  exports.prototype['organizationId'] = undefined;
 
 
 

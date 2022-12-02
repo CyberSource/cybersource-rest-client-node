@@ -1,4 +1,4 @@
-# CyberSource.InlineResponse4003Details
+# CyberSource.InlineResponse4004Details
 
 ## Properties
 Name | Type | Description | Notes

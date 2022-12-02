@@ -151,7 +151,7 @@
    */
   exports.prototype['offset'] = undefined;
   /**
-   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2000. 
+   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. 
    * @member {Number} limit
    */
   exports.prototype['limit'] = undefined;
