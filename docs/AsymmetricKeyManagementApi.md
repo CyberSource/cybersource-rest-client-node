@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createP12Keys**](AsymmetricKeyManagementApi.md#createP12Keys) | **POST** /kms/v2/keys-asym | Create one or more PKCS12 keys
 [**deleteBulkP12Keys**](AsymmetricKeyManagementApi.md#deleteBulkP12Keys) | **POST** /kms/v2/keys-asym/deletes | Delete one or more PKCS12 keys
 [**getP12KeyDetails**](AsymmetricKeyManagementApi.md#getP12KeyDetails) | **GET** /kms/v2/keys-asym/{keyId} | Retrieves PKCS12 key details
+[**updateAsymKey**](AsymmetricKeyManagementApi.md#updateAsymKey) | **PATCH** /kms/v2/keys-asym/{keyId} | Activate or De-activate Asymmetric Key
 
 
 <a name="createP12Keys"></a>
@@ -137,6 +138,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**KmsV2KeysAsymGet200Response**](KmsV2KeysAsymGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="updateAsymKey"></a>
+# **updateAsymKey**
+> Object updateAsymKey(keyId, updateAsymKeysRequest)
+
+Activate or De-activate Asymmetric Key
+
+Activate or De-activate Asymmetric Key 
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.AsymmetricKeyManagementApi();
+
+var keyId = "keyId_example"; // String | Key ID. 
+
+var updateAsymKeysRequest = new CyberSource.UpdateAsymKeysRequest(); // UpdateAsymKeysRequest | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateAsymKey(keyId, updateAsymKeysRequest, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keyId** | **String**| Key ID.  | 
+ **updateAsymKeysRequest** | [**UpdateAsymKeysRequest**](UpdateAsymKeysRequest.md)|  | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 

@@ -140,7 +140,7 @@
       var returnType = PtsV2PaymentsReversalsPost201Response;
 
       return this.apiClient.callApi(
-        '/pts/v2/reversals/', 'POST',
+        '/pts/v2/reversals', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

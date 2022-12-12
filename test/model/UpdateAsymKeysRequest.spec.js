@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.InlineResponse4003Details();
+    instance = new CyberSource.UpdateAsymKeysRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('InlineResponse4003Details', function() {
-    it('should create an instance of InlineResponse4003Details', function() {
-      // uncomment below and update the code to test InlineResponse4003Details
-      //var instane = new CyberSource.InlineResponse4003Details();
-      //expect(instance).to.be.a(CyberSource.InlineResponse4003Details);
+  describe('UpdateAsymKeysRequest', function() {
+    it('should create an instance of UpdateAsymKeysRequest', function() {
+      // uncomment below and update the code to test UpdateAsymKeysRequest
+      //var instane = new CyberSource.UpdateAsymKeysRequest();
+      //expect(instance).to.be.a(CyberSource.UpdateAsymKeysRequest);
     });
 
-    it('should have the property location (base name: "location")', function() {
-      // uncomment below and update the code to test the property location
-      //var instane = new CyberSource.InlineResponse4003Details();
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new CyberSource.UpdateAsymKeysRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instane = new CyberSource.InlineResponse4003Details();
+    it('should have the property organizationId (base name: "organizationId")', function() {
+      // uncomment below and update the code to test the property organizationId
+      //var instane = new CyberSource.UpdateAsymKeysRequest();
       //expect(instance).to.be();
     });
 
