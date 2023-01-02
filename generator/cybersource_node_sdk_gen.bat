@@ -11,10 +11,14 @@ rd /s /q ..\test
 REM Command to generate SDK
 
 java -jar swagger-codegen-cli-2.3.0.jar generate -t cybersource-javascript-template -i cybersource-rest-spec.json -l javascript -o ../  -c cybersource-node-config.json
-
+                                                                                                                                                                                           
 powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Object { $_ -replace 'contentTypes = \[''\*_\/_\*;charset=utf-8', 'contentTypes = [''*/*;charset=utf-8' } | Set-Content ..\src\Api\SecureFileShareApi.js"
 
 powershell -Command "(Get-Content ..\docs\SecureFileShareApi.md) | ForEach-Object { $_ -replace '\*\*Content-Type\*\*: \*_\/_\*;charset=utf-8', '**Content-Type**: */*;charset=utf-8' } | Set-Content ..\docs\SecureFileShareApi.md"
+
+powershell -Command "(Get-Content ..\src\Api\UnifiedCheckoutCaptureContextApi.js) | ForEach-Object { $_ -replace 'returnType = null', 'returnType = ''String''' } | Set-Content ..\src\Api\UnifiedCheckoutCaptureContextApi.js"
+
+powershell -Command "(Get-Content ..\docs\UnifiedCheckoutCaptureContextApi.md) | ForEach-Object { $_ -replace 'null \(empty response body\)', 'String' } | Set-Content ..\docs\UnifiedCheckoutCaptureContextApi.md"
 
 git checkout ..\README.md
 
