@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createPayment**](PaymentsApi.md#createPayment) | **POST** /pts/v2/payments | Process a Payment
 [**incrementAuth**](PaymentsApi.md#incrementAuth) | **PATCH** /pts/v2/payments/{id} | Increment an Authorization
+[**refreshPaymentStatus**](PaymentsApi.md#refreshPaymentStatus) | **POST** /pts/v2/refresh-payment-status/{id} | Check a Payment Status
 
 
 <a name="createPayment"></a>
@@ -93,6 +94,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PtsV2IncrementalAuthorizationPatch201Response**](PtsV2IncrementalAuthorizationPatch201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="refreshPaymentStatus"></a>
+# **refreshPaymentStatus**
+> PtsV2PaymentsPost201Response1 refreshPaymentStatus(id, refreshPaymentStatusRequest)
+
+Check a Payment Status
+
+Checks and updates the payment status 
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.PaymentsApi();
+
+var id = "id_example"; // String | The payment id whose status needs to be checked and updated.
+
+var refreshPaymentStatusRequest = new CyberSource.RefreshPaymentStatusRequest(); // RefreshPaymentStatusRequest | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.refreshPaymentStatus(id, refreshPaymentStatusRequest, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The payment id whose status needs to be checked and updated. | 
+ **refreshPaymentStatusRequest** | [**RefreshPaymentStatusRequest**](RefreshPaymentStatusRequest.md)|  | 
+
+### Return type
+
+[**PtsV2PaymentsPost201Response1**](PtsV2PaymentsPost201Response1.md)
 
 ### Authorization
 

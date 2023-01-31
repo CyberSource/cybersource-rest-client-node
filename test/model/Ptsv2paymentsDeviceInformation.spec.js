@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property appUrl (base name: "appUrl")', function() {
+      // uncomment below and update the code to test the property appUrl
+      //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property rawData (base name: "rawData")', function() {
       // uncomment below and update the code to test the property rawData
       //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();

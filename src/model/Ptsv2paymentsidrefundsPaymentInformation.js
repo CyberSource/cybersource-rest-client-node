@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationEWallet', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationInstrumentIdentifier', 'model/Ptsv2paymentsPaymentInformationLegacyToken', 'model/Ptsv2paymentsPaymentInformationPaymentInstrument', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsPaymentInformationShippingAddress', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsidrefundsPaymentInformationBank', 'model/Ptsv2paymentsidrefundsPaymentInformationCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationInstrumentIdentifier', 'model/Ptsv2paymentsPaymentInformationLegacyToken', 'model/Ptsv2paymentsPaymentInformationPaymentInstrument', 'model/Ptsv2paymentsPaymentInformationShippingAddress', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsidrefundsPaymentInformationBank', 'model/Ptsv2paymentsidrefundsPaymentInformationCard', 'model/Ptsv2paymentsidrefundsPaymentInformationEWallet', 'model/Ptsv2paymentsidrefundsPaymentInformationPaymentType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationEWallet'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationInstrumentIdentifier'), require('./Ptsv2paymentsPaymentInformationLegacyToken'), require('./Ptsv2paymentsPaymentInformationPaymentInstrument'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsPaymentInformationShippingAddress'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsidrefundsPaymentInformationBank'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationInstrumentIdentifier'), require('./Ptsv2paymentsPaymentInformationLegacyToken'), require('./Ptsv2paymentsPaymentInformationPaymentInstrument'), require('./Ptsv2paymentsPaymentInformationShippingAddress'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsidrefundsPaymentInformationBank'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'), require('./Ptsv2paymentsidrefundsPaymentInformationEWallet'), require('./Ptsv2paymentsidrefundsPaymentInformationPaymentType'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationEWallet, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationInstrumentIdentifier, root.CyberSource.Ptsv2paymentsPaymentInformationLegacyToken, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsPaymentInformationShippingAddress, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationBank, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard);
+    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationInstrumentIdentifier, root.CyberSource.Ptsv2paymentsPaymentInformationLegacyToken, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsPaymentInformationShippingAddress, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationBank, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationEWallet, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationPaymentType);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationEWallet, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationInstrumentIdentifier, Ptsv2paymentsPaymentInformationLegacyToken, Ptsv2paymentsPaymentInformationPaymentInstrument, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsPaymentInformationShippingAddress, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsidrefundsPaymentInformationBank, Ptsv2paymentsidrefundsPaymentInformationCard) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationInstrumentIdentifier, Ptsv2paymentsPaymentInformationLegacyToken, Ptsv2paymentsPaymentInformationPaymentInstrument, Ptsv2paymentsPaymentInformationShippingAddress, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsidrefundsPaymentInformationBank, Ptsv2paymentsidrefundsPaymentInformationCard, Ptsv2paymentsidrefundsPaymentInformationEWallet, Ptsv2paymentsidrefundsPaymentInformationPaymentType) {
   'use strict';
 
 
@@ -99,10 +99,10 @@
         obj['legacyToken'] = Ptsv2paymentsPaymentInformationLegacyToken.constructFromObject(data['legacyToken']);
       }
       if (data.hasOwnProperty('paymentType')) {
-        obj['paymentType'] = Ptsv2paymentsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
+        obj['paymentType'] = Ptsv2paymentsidrefundsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
       }
       if (data.hasOwnProperty('eWallet')) {
-        obj['eWallet'] = Ptsv2paymentsPaymentInformationEWallet.constructFromObject(data['eWallet']);
+        obj['eWallet'] = Ptsv2paymentsidrefundsPaymentInformationEWallet.constructFromObject(data['eWallet']);
       }
     }
     return obj;
@@ -145,11 +145,11 @@
    */
   exports.prototype['legacyToken'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsPaymentInformationPaymentType} paymentType
+   * @member {module:model/Ptsv2paymentsidrefundsPaymentInformationPaymentType} paymentType
    */
   exports.prototype['paymentType'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsPaymentInformationEWallet} eWallet
+   * @member {module:model/Ptsv2paymentsidrefundsPaymentInformationEWallet} eWallet
    */
   exports.prototype['eWallet'] = undefined;
 

@@ -67,6 +67,8 @@
 
 
 
+
+
   };
 
   /**
@@ -119,6 +121,9 @@
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
+      if (data.hasOwnProperty('county')) {
+        obj['county'] = ApiClient.convertToType(data['county'], 'String');
+      }
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
       }
@@ -139,6 +144,9 @@
       }
       if (data.hasOwnProperty('phoneType')) {
         obj['phoneType'] = ApiClient.convertToType(data['phoneType'], 'String');
+      }
+      if (data.hasOwnProperty('verificationStatus')) {
+        obj['verificationStatus'] = ApiClient.convertToType(data['verificationStatus'], 'String');
       }
     }
     return obj;
@@ -209,6 +217,11 @@
    */
   exports.prototype['postalCode'] = undefined;
   /**
+   * U.S. county if available.
+   * @member {String} county
+   */
+  exports.prototype['county'] = undefined;
+  /**
    * Payment card billing country. Use the two-character [ISO Standard Country Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### Chase Paymentech Solutions Optional field.  ####  Credit Mutuel-CIC Optional field.  #### OmniPay Direct Optional field.  #### SIX Optional field.  #### TSYS Acquiring Solutions Required when `processingInformation.billPaymentOptions.billPayment=true` and `pointOfSaleInformation.entryMode=keyed`.  #### Worldpay VAP Optional field.  #### All other processors Not used. 
    * @member {String} country
    */
@@ -243,6 +256,11 @@
    * @member {String} phoneType
    */
   exports.prototype['phoneType'] = undefined;
+  /**
+   * Whether buyer has verified their identity. Used in case of PayPal transactions.  Possible Values: * VERIFIED * UNVERIFIED 
+   * @member {String} verificationStatus
+   */
+  exports.prototype['verificationStatus'] = undefined;
 
 
 

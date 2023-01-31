@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentRequest', 'model/IncrementAuthRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['ApiClient', 'model/CreatePaymentRequest', 'model/IncrementAuthRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost201Response1', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/RefreshPaymentStatusRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/IncrementAuthRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/IncrementAuthRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost201Response1'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RefreshPaymentStatusRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost201Response1, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RefreshPaymentStatusRequest);
   }
-}(this, function(ApiClient, CreatePaymentRequest, IncrementAuthRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response) {
+}(this, function(ApiClient, CreatePaymentRequest, IncrementAuthRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost201Response1, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, RefreshPaymentStatusRequest) {
   'use strict';
 
   /**
@@ -141,6 +141,58 @@
 
       return this.apiClient.callApi(
         '/pts/v2/payments/{id}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the refreshPaymentStatus operation.
+     * @callback module:api/PaymentsApi~refreshPaymentStatusCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PtsV2PaymentsPost201Response1} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Check a Payment Status
+     * Checks and updates the payment status 
+     * @param {String} id The payment id whose status needs to be checked and updated.
+     * @param {module:model/RefreshPaymentStatusRequest} refreshPaymentStatusRequest 
+     * @param {module:api/PaymentsApi~refreshPaymentStatusCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PtsV2PaymentsPost201Response1}
+     */
+    this.refreshPaymentStatus = function(id, refreshPaymentStatusRequest, callback) {
+      var postBody = refreshPaymentStatusRequest;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling refreshPaymentStatus");
+      }
+
+      // verify the required parameter 'refreshPaymentStatusRequest' is set
+      if (refreshPaymentStatusRequest === undefined || refreshPaymentStatusRequest === null) {
+        throw new Error("Missing the required parameter 'refreshPaymentStatusRequest' when calling refreshPaymentStatus");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = PtsV2PaymentsPost201Response1;
+
+      return this.apiClient.callApi(
+        '/pts/v2/refresh-payment-status/{id}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

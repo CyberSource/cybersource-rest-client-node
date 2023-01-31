@@ -68,6 +68,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
+      // uncomment below and update the code to test the property dateOfBirth
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesBuyerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property gender (base name: "gender")', function() {
+      // uncomment below and update the code to test the property gender
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesBuyerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property language (base name: "language")', function() {
+      // uncomment below and update the code to test the property language
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesBuyerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property personalIdentification (base name: "personalIdentification")', function() {
+      // uncomment below and update the code to test the property personalIdentification
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesBuyerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
