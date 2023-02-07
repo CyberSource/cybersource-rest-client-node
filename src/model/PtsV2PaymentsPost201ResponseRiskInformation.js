@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseRiskInformationInfoCodes', 'model/PtsV2PaymentsPost201ResponseRiskInformationIpAddress', 'model/PtsV2PaymentsPost201ResponseRiskInformationProfile', 'model/PtsV2PaymentsPost201ResponseRiskInformationProviders', 'model/PtsV2PaymentsPost201ResponseRiskInformationRules', 'model/PtsV2PaymentsPost201ResponseRiskInformationScore', 'model/PtsV2PaymentsPost201ResponseRiskInformationTravel', 'model/PtsV2PaymentsPost201ResponseRiskInformationVelocity'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseRiskInformationInfoCodes', 'model/PtsV2PaymentsPost201ResponseRiskInformationIpAddress', 'model/PtsV2PaymentsPost201ResponseRiskInformationProfile', 'model/PtsV2PaymentsPost201ResponseRiskInformationRules', 'model/PtsV2PaymentsPost201ResponseRiskInformationScore', 'model/PtsV2PaymentsPost201ResponseRiskInformationTravel', 'model/PtsV2PaymentsPost201ResponseRiskInformationVelocity'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseRiskInformationInfoCodes'), require('./PtsV2PaymentsPost201ResponseRiskInformationIpAddress'), require('./PtsV2PaymentsPost201ResponseRiskInformationProfile'), require('./PtsV2PaymentsPost201ResponseRiskInformationProviders'), require('./PtsV2PaymentsPost201ResponseRiskInformationRules'), require('./PtsV2PaymentsPost201ResponseRiskInformationScore'), require('./PtsV2PaymentsPost201ResponseRiskInformationTravel'), require('./PtsV2PaymentsPost201ResponseRiskInformationVelocity'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseRiskInformationInfoCodes'), require('./PtsV2PaymentsPost201ResponseRiskInformationIpAddress'), require('./PtsV2PaymentsPost201ResponseRiskInformationProfile'), require('./PtsV2PaymentsPost201ResponseRiskInformationRules'), require('./PtsV2PaymentsPost201ResponseRiskInformationScore'), require('./PtsV2PaymentsPost201ResponseRiskInformationTravel'), require('./PtsV2PaymentsPost201ResponseRiskInformationVelocity'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationInfoCodes, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationIpAddress, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationProfile, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationProviders, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationRules, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationScore, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationTravel, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationVelocity);
+    root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationInfoCodes, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationIpAddress, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationProfile, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationRules, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationScore, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationTravel, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformationVelocity);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseRiskInformationInfoCodes, PtsV2PaymentsPost201ResponseRiskInformationIpAddress, PtsV2PaymentsPost201ResponseRiskInformationProfile, PtsV2PaymentsPost201ResponseRiskInformationProviders, PtsV2PaymentsPost201ResponseRiskInformationRules, PtsV2PaymentsPost201ResponseRiskInformationScore, PtsV2PaymentsPost201ResponseRiskInformationTravel, PtsV2PaymentsPost201ResponseRiskInformationVelocity) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseRiskInformationInfoCodes, PtsV2PaymentsPost201ResponseRiskInformationIpAddress, PtsV2PaymentsPost201ResponseRiskInformationProfile, PtsV2PaymentsPost201ResponseRiskInformationRules, PtsV2PaymentsPost201ResponseRiskInformationScore, PtsV2PaymentsPost201ResponseRiskInformationTravel, PtsV2PaymentsPost201ResponseRiskInformationVelocity) {
   'use strict';
 
 
@@ -96,7 +96,7 @@
         obj['ipAddress'] = PtsV2PaymentsPost201ResponseRiskInformationIpAddress.constructFromObject(data['ipAddress']);
       }
       if (data.hasOwnProperty('providers')) {
-        obj['providers'] = PtsV2PaymentsPost201ResponseRiskInformationProviders.constructFromObject(data['providers']);
+        obj['providers'] = ApiClient.convertToType(data['providers'], {'String': {'String': 'String'}});
       }
       if (data.hasOwnProperty('travel')) {
         obj['travel'] = PtsV2PaymentsPost201ResponseRiskInformationTravel.constructFromObject(data['travel']);
@@ -140,7 +140,8 @@
    */
   exports.prototype['ipAddress'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseRiskInformationProviders} providers
+   * Name of the 3rd party provider, for example, Emailage. For all possible values, see the `decision_provider_#_name` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+   * @member {Object.<String, Object.<String, String>>} providers
    */
   exports.prototype['providers'] = undefined;
   /**

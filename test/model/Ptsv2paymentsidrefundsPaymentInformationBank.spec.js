@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property swiftCode (base name: "swiftCode")', function() {
+      // uncomment below and update the code to test the property swiftCode
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformationBank();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -134,6 +134,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property county (base name: "county")', function() {
+      // uncomment below and update the code to test the property county
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
@@ -172,6 +178,12 @@
 
     it('should have the property phoneType (base name: "phoneType")', function() {
       // uncomment below and update the code to test the property phoneType
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property verificationStatus (base name: "verificationStatus")', function() {
+      // uncomment below and update the code to test the property verificationStatus
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
       //expect(instance).to.be();
     });

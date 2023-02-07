@@ -57,6 +57,8 @@
 
 
 
+
+
   };
 
   /**
@@ -99,6 +101,12 @@
       }
       if (data.hasOwnProperty('sourceAccountTypeDetails')) {
         obj['sourceAccountTypeDetails'] = ApiClient.convertToType(data['sourceAccountTypeDetails'], 'String');
+      }
+      if (data.hasOwnProperty('securityCode')) {
+        obj['securityCode'] = ApiClient.convertToType(data['securityCode'], 'String');
+      }
+      if (data.hasOwnProperty('useAs')) {
+        obj['useAs'] = ApiClient.convertToType(data['useAs'], 'String');
       }
     }
     return obj;
@@ -154,6 +162,16 @@
    * @member {String} sourceAccountTypeDetails
    */
   exports.prototype['sourceAccountTypeDetails'] = undefined;
+  /**
+   * Card Verification Number.  #### FDMS Nashville Required for American Express or if swiped; otherwise, optional.  #### Ingenico ePayments Do not include this field when `commerceIndicator=recurring`. **Note** Ingenico ePayments was previously called _Global Collect_.  #### TSYS Acquiring Solutions Optional if pointOfSaleInformation.entryMode=keyed; otherwise, not used.  #### GPX Optional.  #### All other processors: Optional. 
+   * @member {String} securityCode
+   */
+  exports.prototype['securityCode'] = undefined;
+  /**
+   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  Possible values:   - C: Credit transaction  - D: Debit transaction  This field is supported only for all card Types on Visa Platform Connect.  This field is required for:  - Debit transactions on Cielo and Comercio Latino.  - Transactions with Brazilian-issued cards on CyberSource through VisaNet.  **Note** The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 51 - Field: Combination Card Transaction Identifier 
+   * @member {String} useAs
+   */
+  exports.prototype['useAs'] = undefined;
 
 
 

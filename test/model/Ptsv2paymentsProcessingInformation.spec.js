@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enableEscrowOption (base name: "enableEscrowOption")', function() {
+      // uncomment below and update the code to test the property enableEscrowOption
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property actionTokenTypes (base name: "actionTokenTypes")', function() {
       // uncomment below and update the code to test the property actionTokenTypes
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();

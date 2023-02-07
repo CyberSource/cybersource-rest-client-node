@@ -70,6 +70,16 @@
         done();
       });
     });
+    describe('refreshPaymentStatus', function() {
+      it('should call refreshPaymentStatus successfully', function(done) {
+        //uncomment below and update the code to test refreshPaymentStatus
+        //instance.refreshPaymentStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

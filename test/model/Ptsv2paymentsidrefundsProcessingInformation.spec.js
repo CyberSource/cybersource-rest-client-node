@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsidrefundsProcessingInformation);
     });
 
+    it('should have the property actionList (base name: "actionList")', function() {
+      // uncomment below and update the code to test the property actionList
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentSolution (base name: "paymentSolution")', function() {
       // uncomment below and update the code to test the property paymentSolution
       //var instane = new CyberSource.Ptsv2paymentsidrefundsProcessingInformation();
@@ -100,6 +106,18 @@
 
     it('should have the property industryDataType (base name: "industryDataType")', function() {
       // uncomment below and update the code to test the property industryDataType
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property refundOptions (base name: "refundOptions")', function() {
+      // uncomment below and update the code to test the property refundOptions
       //var instane = new CyberSource.Ptsv2paymentsidrefundsProcessingInformation();
       //expect(instance).to.be();
     });

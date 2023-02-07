@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+String
 
 ### Authorization
 

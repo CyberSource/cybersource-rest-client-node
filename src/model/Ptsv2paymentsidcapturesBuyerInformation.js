@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidcapturesBuyerInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2paymentsidcapturesBuyerInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification) {
   'use strict';
 
 
@@ -46,6 +46,10 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
 
 
 
@@ -68,6 +72,18 @@
       if (data.hasOwnProperty('vatRegistrationNumber')) {
         obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
       }
+      if (data.hasOwnProperty('dateOfBirth')) {
+        obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
+      }
+      if (data.hasOwnProperty('gender')) {
+        obj['gender'] = ApiClient.convertToType(data['gender'], 'String');
+      }
+      if (data.hasOwnProperty('language')) {
+        obj['language'] = ApiClient.convertToType(data['language'], 'String');
+      }
+      if (data.hasOwnProperty('personalIdentification')) {
+        obj['personalIdentification'] = ApiClient.convertToType(data['personalIdentification'], [Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification]);
+      }
     }
     return obj;
   }
@@ -82,6 +98,25 @@
    * @member {String} vatRegistrationNumber
    */
   exports.prototype['vatRegistrationNumber'] = undefined;
+  /**
+   * Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see `recipient_date_of_birth` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * @member {String} dateOfBirth
+   */
+  exports.prototype['dateOfBirth'] = undefined;
+  /**
+   * Customer's gender. Possible values are F (female), M (male),O (other).
+   * @member {String} gender
+   */
+  exports.prototype['gender'] = undefined;
+  /**
+   * language setting of the user
+   * @member {String} language
+   */
+  exports.prototype['language'] = undefined;
+  /**
+   * @member {Array.<module:model/Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification>} personalIdentification
+   */
+  exports.prototype['personalIdentification'] = undefined;
 
 
 

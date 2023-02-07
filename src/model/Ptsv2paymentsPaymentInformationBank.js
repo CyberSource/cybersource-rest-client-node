@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('swiftCode')) {
         obj['swiftCode'] = ApiClient.convertToType(data['swiftCode'], 'String');
       }
+      if (data.hasOwnProperty('code')) {
+        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+      }
     }
     return obj;
   }
@@ -99,6 +103,11 @@
    * @member {String} swiftCode
    */
   exports.prototype['swiftCode'] = undefined;
+  /**
+   * Bank code of the consumer’s account 
+   * @member {String} code
+   */
+  exports.prototype['code'] = undefined;
 
 
 

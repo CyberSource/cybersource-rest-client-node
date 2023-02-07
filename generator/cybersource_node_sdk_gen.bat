@@ -16,6 +16,10 @@ powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Ob
 
 powershell -Command "(Get-Content ..\docs\SecureFileShareApi.md) | ForEach-Object { $_ -replace '\*\*Content-Type\*\*: \*_\/_\*;charset=utf-8', '**Content-Type**: */*;charset=utf-8' } | Set-Content ..\docs\SecureFileShareApi.md"
 
+powershell -Command "(Get-Content ..\src\Api\UnifiedCheckoutCaptureContextApi.js) | ForEach-Object { $_ -replace 'returnType = null', 'returnType = ''String''' } | Set-Content ..\src\Api\UnifiedCheckoutCaptureContextApi.js"
+
+powershell -Command "(Get-Content ..\docs\UnifiedCheckoutCaptureContextApi.md) | ForEach-Object { $_ -replace 'null \(empty response body\)', 'String' } | Set-Content ..\docs\UnifiedCheckoutCaptureContextApi.md"
+
 git checkout ..\README.md
 
 git checkout ..\package.json

@@ -236,6 +236,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property signature (base name: "signature")', function() {
+      // uncomment below and update the code to test the property signature
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property publicKey (base name: "publicKey")', function() {
+      // uncomment below and update the code to test the property publicKey
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

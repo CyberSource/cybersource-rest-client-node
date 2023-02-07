@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidrefundsProcessingInformationRecurringOptions', 'model/Ptsv2paymentsidrefundsProcessingInformationRefundOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'), require('./Ptsv2paymentsidrefundsProcessingInformationRefundOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidrefundsProcessingInformationRecurringOptions);
+    root.CyberSource.Ptsv2paymentsidrefundsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidrefundsProcessingInformationRecurringOptions, root.CyberSource.Ptsv2paymentsidrefundsProcessingInformationRefundOptions);
   }
-}(this, function(ApiClient, Ptsv2paymentsidrefundsProcessingInformationRecurringOptions) {
+}(this, function(ApiClient, Ptsv2paymentsidrefundsProcessingInformationRecurringOptions, Ptsv2paymentsidrefundsProcessingInformationRefundOptions) {
   'use strict';
 
 
@@ -55,6 +55,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -68,6 +71,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('actionList')) {
+        obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
+      }
       if (data.hasOwnProperty('paymentSolution')) {
         obj['paymentSolution'] = ApiClient.convertToType(data['paymentSolution'], 'String');
       }
@@ -92,10 +98,21 @@
       if (data.hasOwnProperty('industryDataType')) {
         obj['industryDataType'] = ApiClient.convertToType(data['industryDataType'], 'String');
       }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = ApiClient.convertToType(data['paymentType'], 'String');
+      }
+      if (data.hasOwnProperty('refundOptions')) {
+        obj['refundOptions'] = Ptsv2paymentsidrefundsProcessingInformationRefundOptions.constructFromObject(data['refundOptions']);
+      }
     }
     return obj;
   }
 
+  /**
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment status.  Possible values are one or more of follows:   - `AP_REFUND`: Use this when Alternative Payment Refund service is requested. 
+   * @member {Array.<String>} actionList
+   */
+  exports.prototype['actionList'] = undefined;
   /**
    * Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `027`: Click to Pay. 
    * @member {String} paymentSolution
@@ -135,6 +152,15 @@
    * @member {String} industryDataType
    */
   exports.prototype['industryDataType'] = undefined;
+  /**
+   * Identifier for the payment type
+   * @member {String} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsidrefundsProcessingInformationRefundOptions} refundOptions
+   */
+  exports.prototype['refundOptions'] = undefined;
 
 
 

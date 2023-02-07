@@ -84,7 +84,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/jwt'];
-      var returnType = null;
+      var returnType = 'String';
 
       return this.apiClient.callApi(
         '/up/v1/capture-contexts', 'POST',

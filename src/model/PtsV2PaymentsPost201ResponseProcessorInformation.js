@@ -77,6 +77,8 @@
 
 
 
+
+
   };
 
   /**
@@ -179,6 +181,12 @@
       }
       if (data.hasOwnProperty('completeUrl')) {
         obj['completeUrl'] = ApiClient.convertToType(data['completeUrl'], 'String');
+      }
+      if (data.hasOwnProperty('signature')) {
+        obj['signature'] = ApiClient.convertToType(data['signature'], 'String');
+      }
+      if (data.hasOwnProperty('publicKey')) {
+        obj['publicKey'] = ApiClient.convertToType(data['publicKey'], 'String');
       }
     }
     return obj;
@@ -326,6 +334,14 @@
    * @member {String} completeUrl
    */
   exports.prototype['completeUrl'] = undefined;
+  /**
+   * @member {String} signature
+   */
+  exports.prototype['signature'] = undefined;
+  /**
+   * @member {String} publicKey
+   */
+  exports.prototype['publicKey'] = undefined;
 
 
 

@@ -65,6 +65,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('deviceType')) {
         obj['deviceType'] = ApiClient.convertToType(data['deviceType'], 'String');
+      }
+      if (data.hasOwnProperty('appUrl')) {
+        obj['appUrl'] = ApiClient.convertToType(data['appUrl'], 'String');
       }
       if (data.hasOwnProperty('rawData')) {
         obj['rawData'] = ApiClient.convertToType(data['rawData'], [Ptsv2paymentsDeviceInformationRawData]);
@@ -166,6 +170,11 @@
    * @member {String} deviceType
    */
   exports.prototype['deviceType'] = undefined;
+  /**
+   * This field will contain the deep link that would help the Customer App to wake up. 
+   * @member {String} appUrl
+   */
+  exports.prototype['appUrl'] = undefined;
   /**
    * @member {Array.<module:model/Ptsv2paymentsDeviceInformationRawData>} rawData
    */

@@ -116,6 +116,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property securityCode (base name: "securityCode")', function() {
+      // uncomment below and update the code to test the property securityCode
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property useAs (base name: "useAs")', function() {
+      // uncomment below and update the code to test the property useAs
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

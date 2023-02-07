@@ -77,6 +77,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
 
       if (data.hasOwnProperty('actionList')) {
         obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
+      }
+      if (data.hasOwnProperty('enableEscrowOption')) {
+        obj['enableEscrowOption'] = ApiClient.convertToType(data['enableEscrowOption'], 'Boolean');
       }
       if (data.hasOwnProperty('actionTokenTypes')) {
         obj['actionTokenTypes'] = ApiClient.convertToType(data['actionTokenTypes'], ['String']);
@@ -185,10 +189,15 @@
   }
 
   /**
-   * Array of actions (one or more) to be included in the payment to invoke bundled serviecs along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request. 
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested. 
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
+  /**
+   * Indicates whether to use the customer’s escrow agreement. Possible values: - `true`: yes, use the customer’s escrow agreement. - `false`: no, do not use the customer’s escrow agreement.  
+   * @member {Boolean} enableEscrowOption
+   */
+  exports.prototype['enableEscrowOption'] = undefined;
   /**
    * CyberSource tokens types you are performing a create on. If not supplied the default token type for the merchants token vault will be used.  Valid values: - customer - paymentInstrument - instrumentIdentifier - shippingAddress 
    * @member {Array.<String>} actionTokenTypes

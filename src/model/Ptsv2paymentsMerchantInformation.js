@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -112,6 +113,9 @@
       }
       if (data.hasOwnProperty('failureUrl')) {
         obj['failureUrl'] = ApiClient.convertToType(data['failureUrl'], 'String');
+      }
+      if (data.hasOwnProperty('returnUrl')) {
+        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
       }
       if (data.hasOwnProperty('merchantName')) {
         obj['merchantName'] = ApiClient.convertToType(data['merchantName'], 'String');
@@ -183,6 +187,11 @@
    * @member {String} failureUrl
    */
   exports.prototype['failureUrl'] = undefined;
+  /**
+   * URL for displaying payment results to the consumer (notifications) after the transaction is processed. Usually this URL belongs to merchant and its behavior is defined by merchant 
+   * @member {String} returnUrl
+   */
+  exports.prototype['returnUrl'] = undefined;
   /**
    * Use this field only if you are requesting payment with Payer Authentication service together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
    * @member {String} merchantName
