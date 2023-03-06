@@ -59,9 +59,15 @@ function MerchantConfig(result) {
 
     this.runEnvironment = result.runEnvironment;
 
+    /* Intermediate Host */
+    this.intermediateHost = result.intermediateHost;
+
     this.solutionId = result.solutionId;
 
     this.logConfiguration = new LogConfiguration(result.logConfiguration);
+
+    /* Default Custom Headers */
+    this.defaultHeaders = result.defaultHeaders;
 
     /* Fallback logic*/
     this.defaultPropValues();
@@ -268,6 +274,14 @@ MerchantConfig.prototype.setRunEnvironment = function setRunEnvironment(runEnvir
     this.runEnvironment = runEnvironment;
 }
 
+MerchantConfig.prototype.getIntermediateHost = function getIntermediateHost() {
+    return this.intermediateHost;
+}
+
+MerchantConfig.prototype.setIntermediateHost = function setIntermediateHost(intermediateHost) {
+    this.intermediateHost = intermediateHost;
+}
+
 MerchantConfig.prototype.getProxyAddress = function getProxyAddress() {
     return this.proxyAddress;
 }
@@ -323,6 +337,14 @@ MerchantConfig.prototype.getLogConfiguration = function getLogConfiguration() {
 
 MerchantConfig.prototype.setLogConfiguration = function setLogConfiguration(logConfig) {
     this.logConfiguration = new LogConfiguration(logConfig);
+}
+
+MerchantConfig.prototype.getDefaultHeaders = function getDefaultHeaders() {
+    return this.defaultHeaders;
+}
+
+MerchantConfig.prototype.setDefaultHeaders = function setDefaultHeaders(defaultHeaders) {
+    return this.defaultHeaders;
 }
 
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
