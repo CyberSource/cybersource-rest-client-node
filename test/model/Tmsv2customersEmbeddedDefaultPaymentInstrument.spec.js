@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrument();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bankAccount (base name: "bankAccount")', function() {
       // uncomment below and update the code to test the property bankAccount
       //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrument();

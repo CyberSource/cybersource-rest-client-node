@@ -117,22 +117,22 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * The id of the Instrument Identifier Token. 
+   * The Id of the Instrument Identifier Token. 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * The type of token.  Valid values: - instrumentIdentifier 
+   * The type.  Possible Values: - instrumentIdentifier 
    * @member {String} object
    */
   exports.prototype['object'] = undefined;
   /**
-   * Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed. 
+   * Issuers state for the card number. Possible Values: - ACTIVE - CLOSED : The account has been closed. 
    * @member {String} state
    */
   exports.prototype['state'] = undefined;
   /**
-   * The type of Instrument Identifier. Valid values: - enrollable card 
+   * The type of Instrument Identifier. Possible Values: - enrollable card 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

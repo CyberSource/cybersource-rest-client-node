@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('contactInformation')) {
         obj['contactInformation'] = UmsV1UsersGet200ResponseContactInformation.constructFromObject(data['contactInformation']);
       }
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = ApiClient.convertToType(data['customFields'], {'String': 'String'});
+      }
     }
     return obj;
   }
@@ -88,6 +92,10 @@
    * @member {module:model/UmsV1UsersGet200ResponseContactInformation} contactInformation
    */
   exports.prototype['contactInformation'] = undefined;
+  /**
+   * @member {Object.<String, String>} customFields
+   */
+  exports.prototype['customFields'] = undefined;
 
 
 

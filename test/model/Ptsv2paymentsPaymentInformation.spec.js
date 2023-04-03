@@ -56,18 +56,6 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsPaymentInformation);
     });
 
-    it('should have the property intent (base name: "intent")', function() {
-      // uncomment below and update the code to test the property intent
-      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property countryCode (base name: "countryCode")', function() {
-      // uncomment below and update the code to test the property countryCode
-      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property card (base name: "card")', function() {
       // uncomment below and update the code to test the property card
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();

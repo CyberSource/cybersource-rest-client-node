@@ -302,6 +302,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property scoreRequest (base name: "scoreRequest")', function() {
+      // uncomment below and update the code to test the property scoreRequest
+      //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

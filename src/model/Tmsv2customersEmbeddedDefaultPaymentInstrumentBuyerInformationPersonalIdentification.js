@@ -82,7 +82,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * The type of the identification.  Valid values:   - driver license 
+   * The type of the identification.  Possible Values:   - driver license 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

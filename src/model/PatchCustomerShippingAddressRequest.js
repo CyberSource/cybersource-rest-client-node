@@ -89,12 +89,12 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * The id of the Shipping Address Token.
+   * The Id of the Shipping Address Token.
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Flag that indicates whether customer shipping address is the dafault. Valid values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. 
+   * Flag that indicates whether customer shipping address is the dafault. Possible Values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. 
    * @member {Boolean} default
    */
   exports.prototype['default'] = undefined;

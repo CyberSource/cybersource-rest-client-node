@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('whiteListStatus')) {
         obj['whiteListStatus'] = ApiClient.convertToType(data['whiteListStatus'], 'String');
+      }
+      if (data.hasOwnProperty('credentialEncrypted')) {
+        obj['credentialEncrypted'] = ApiClient.convertToType(data['credentialEncrypted'], 'String');
       }
     }
     return obj;
@@ -145,6 +149,11 @@
    * @member {String} whiteListStatus
    */
   exports.prototype['whiteListStatus'] = undefined;
+  /**
+   * A flag to indicate if the passed credential has been encrypted by the Merchant.
+   * @member {String} credentialEncrypted
+   */
+  exports.prototype['credentialEncrypted'] = undefined;
 
 
 

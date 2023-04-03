@@ -62,14 +62,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property next (base name: "next")', function() {
-      // uncomment below and update the code to test the property next
+    it('should have the property update (base name: "update")', function() {
+      // uncomment below and update the code to test the property update
       //var instane = new CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks();
       //expect(instance).to.be();
     });
 
-    it('should have the property previous (base name: "previous")', function() {
-      // uncomment below and update the code to test the property previous
+    it('should have the property deliver (base name: "deliver")', function() {
+      // uncomment below and update the code to test the property deliver
+      //var instane = new CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cancel (base name: "cancel")', function() {
+      // uncomment below and update the code to test the property cancel
       //var instane = new CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks();
       //expect(instance).to.be();
     });

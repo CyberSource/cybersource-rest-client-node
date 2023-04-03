@@ -69,7 +69,7 @@
   }
 
   /**
-   * The creator of the Customer token. 
+   * The creator of the Customer. 
    * @member {String} creator
    */
   exports.prototype['creator'] = undefined;

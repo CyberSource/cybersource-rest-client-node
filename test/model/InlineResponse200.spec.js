@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse200);
     });
 
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new CyberSource.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
     it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
       // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse200();
@@ -68,26 +74,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property offset (base name: "offset")', function() {
-      // uncomment below and update the code to test the property offset
-      //var instane = new CyberSource.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property limit (base name: "limit")', function() {
-      // uncomment below and update the code to test the property limit
-      //var instane = new CyberSource.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sort (base name: "sort")', function() {
-      // uncomment below and update the code to test the property sort
-      //var instane = new CyberSource.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property keys (base name: "keys")', function() {
-      // uncomment below and update the code to test the property keys
+    it('should have the property plans (base name: "plans")', function() {
+      // uncomment below and update the code to test the property plans
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });

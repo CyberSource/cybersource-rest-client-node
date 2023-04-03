@@ -58,6 +58,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -100,6 +110,36 @@
       }
       if (data.hasOwnProperty('taxAmount')) {
         obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'String');
+      }
+      if (data.hasOwnProperty('shippingAddress1')) {
+        obj['shippingAddress1'] = ApiClient.convertToType(data['shippingAddress1'], 'String');
+      }
+      if (data.hasOwnProperty('shippingAddress2')) {
+        obj['shippingAddress2'] = ApiClient.convertToType(data['shippingAddress2'], 'String');
+      }
+      if (data.hasOwnProperty('shippingCity')) {
+        obj['shippingCity'] = ApiClient.convertToType(data['shippingCity'], 'String');
+      }
+      if (data.hasOwnProperty('shippingCountryCode')) {
+        obj['shippingCountryCode'] = ApiClient.convertToType(data['shippingCountryCode'], 'String');
+      }
+      if (data.hasOwnProperty('shippingFirstName')) {
+        obj['shippingFirstName'] = ApiClient.convertToType(data['shippingFirstName'], 'String');
+      }
+      if (data.hasOwnProperty('shippingLastName')) {
+        obj['shippingLastName'] = ApiClient.convertToType(data['shippingLastName'], 'String');
+      }
+      if (data.hasOwnProperty('shippingMiddleName')) {
+        obj['shippingMiddleName'] = ApiClient.convertToType(data['shippingMiddleName'], 'String');
+      }
+      if (data.hasOwnProperty('shippingPhone')) {
+        obj['shippingPhone'] = ApiClient.convertToType(data['shippingPhone'], 'Number');
+      }
+      if (data.hasOwnProperty('shippingPostalCode')) {
+        obj['shippingPostalCode'] = ApiClient.convertToType(data['shippingPostalCode'], 'Number');
+      }
+      if (data.hasOwnProperty('shippingState')) {
+        obj['shippingState'] = ApiClient.convertToType(data['shippingState'], 'String');
       }
     }
     return obj;
@@ -154,6 +194,56 @@
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;
+  /**
+   * Address where item will be shipped
+   * @member {String} shippingAddress1
+   */
+  exports.prototype['shippingAddress1'] = undefined;
+  /**
+   * Address where item will be shipped
+   * @member {String} shippingAddress2
+   */
+  exports.prototype['shippingAddress2'] = undefined;
+  /**
+   * City where item will be shipped
+   * @member {String} shippingCity
+   */
+  exports.prototype['shippingCity'] = undefined;
+  /**
+   * Country where item will be shipped
+   * @member {String} shippingCountryCode
+   */
+  exports.prototype['shippingCountryCode'] = undefined;
+  /**
+   * Customer's first name
+   * @member {String} shippingFirstName
+   */
+  exports.prototype['shippingFirstName'] = undefined;
+  /**
+   * Customer's last name
+   * @member {String} shippingLastName
+   */
+  exports.prototype['shippingLastName'] = undefined;
+  /**
+   * Customer's middle name
+   * @member {String} shippingMiddleName
+   */
+  exports.prototype['shippingMiddleName'] = undefined;
+  /**
+   * Phone number where item will be shipped
+   * @member {Number} shippingPhone
+   */
+  exports.prototype['shippingPhone'] = undefined;
+  /**
+   * Postal code where item will be shipped
+   * @member {Number} shippingPostalCode
+   */
+  exports.prototype['shippingPostalCode'] = undefined;
+  /**
+   * State where item will be shipped
+   * @member {String} shippingState
+   */
+  exports.prototype['shippingState'] = undefined;
 
 
 

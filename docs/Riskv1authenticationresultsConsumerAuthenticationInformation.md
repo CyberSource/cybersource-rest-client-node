@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **signedParesStatusReason** | **String** | Provides additional information as to why the PAResStatus has a specific value.  | [optional] 
 **signedPares** | **String** | Payer authentication result (PARes) message returned by the card-issuing bank. If you need to show proof of enrollment checking, you may need to decrypt and parse the string for the information required by the payment card company. For more information, see \&quot;Storing Payer Authentication Data,\&quot; page 160. Important The value is in base64. You must remove all carriage returns and line feeds before adding the PARes to the request.  | [optional] 
 **whiteListStatus** | **String** | Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder  | [optional] 
+**credentialEncrypted** | **String** | A flag to indicate if the passed credential has been encrypted by the Merchant. | [optional] 
 
 

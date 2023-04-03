@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -66,11 +67,14 @@
       if (data.hasOwnProperty('self')) {
         obj['self'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['self']);
       }
-      if (data.hasOwnProperty('next')) {
-        obj['next'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['next']);
+      if (data.hasOwnProperty('update')) {
+        obj['update'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['update']);
       }
-      if (data.hasOwnProperty('previous')) {
-        obj['previous'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['previous']);
+      if (data.hasOwnProperty('deliver')) {
+        obj['deliver'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['deliver']);
+      }
+      if (data.hasOwnProperty('cancel')) {
+        obj['cancel'] = PtsV2PaymentsPost201ResponseLinksSelf.constructFromObject(data['cancel']);
       }
     }
     return obj;
@@ -81,13 +85,17 @@
    */
   exports.prototype['self'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} next
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} update
    */
-  exports.prototype['next'] = undefined;
+  exports.prototype['update'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} previous
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} deliver
    */
-  exports.prototype['previous'] = undefined;
+  exports.prototype['deliver'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf} cancel
+   */
+  exports.prototype['cancel'] = undefined;
 
 
 

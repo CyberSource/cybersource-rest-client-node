@@ -59,8 +59,6 @@
 
 
 
-
-
   };
 
   /**
@@ -74,12 +72,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('intent')) {
-        obj['intent'] = ApiClient.convertToType(data['intent'], 'String');
-      }
-      if (data.hasOwnProperty('countryCode')) {
-        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
-      }
       if (data.hasOwnProperty('card')) {
         obj['card'] = Ptsv2paymentsPaymentInformationCard.constructFromObject(data['card']);
       }
@@ -120,16 +112,6 @@
     return obj;
   }
 
-  /**
-   * Intent. 
-   * @member {String} intent
-   */
-  exports.prototype['intent'] = undefined;
-  /**
-   * Country code. 
-   * @member {String} countryCode
-   */
-  exports.prototype['countryCode'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsPaymentInformationCard} card
    */

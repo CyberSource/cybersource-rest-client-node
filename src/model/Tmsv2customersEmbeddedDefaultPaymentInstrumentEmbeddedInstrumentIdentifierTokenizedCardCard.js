@@ -83,7 +83,7 @@
    */
   exports.prototype['suffix'] = undefined;
   /**
-   *  Two-digit month in which the customer’s latest payment card expires.  Format: `MM`.  Valid values: `01` through `12`. 
+   *  Two-digit month in which the customer’s latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. 
    * @member {String} expirationMonth
    */
   exports.prototype['expirationMonth'] = undefined;

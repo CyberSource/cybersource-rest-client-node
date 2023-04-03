@@ -69,7 +69,7 @@
   }
 
   /**
-   * The id of the Instrument Identifier token linked to the Payment Instrument. 
+   * The Id of the Instrument Identifier linked to the Payment Instrument. 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;

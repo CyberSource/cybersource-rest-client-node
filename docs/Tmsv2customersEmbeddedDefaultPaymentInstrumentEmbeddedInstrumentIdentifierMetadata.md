@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**creator** | **String** | The creator of the Instrument Identifier token. | [optional] 
+**creator** | **String** | The creator of the Instrument Identifier. | [optional] 
 
 

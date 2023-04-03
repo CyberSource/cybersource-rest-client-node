@@ -69,7 +69,7 @@
   }
 
   /**
-   * The id of the Customers default Payment Instrument 
+   * The Id of the Customers default Payment Instrument 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;

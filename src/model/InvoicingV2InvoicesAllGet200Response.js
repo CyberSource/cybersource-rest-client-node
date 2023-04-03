@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InvoicingV2InvoicesAllGet200ResponseInvoices', 'model/InvoicingV2InvoicesAllGet200ResponseLinks'], factory);
+    define(['ApiClient', 'model/InlineResponse200Links', 'model/InvoicingV2InvoicesAllGet200ResponseInvoices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoicesAllGet200ResponseInvoices'), require('./InvoicingV2InvoicesAllGet200ResponseLinks'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse200Links'), require('./InvoicingV2InvoicesAllGet200ResponseInvoices'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicingV2InvoicesAllGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseInvoices, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks);
+    root.CyberSource.InvoicingV2InvoicesAllGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200Links, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseInvoices);
   }
-}(this, function(ApiClient, InvoicingV2InvoicesAllGet200ResponseInvoices, InvoicingV2InvoicesAllGet200ResponseLinks) {
+}(this, function(ApiClient, InlineResponse200Links, InvoicingV2InvoicesAllGet200ResponseInvoices) {
   'use strict';
 
 
@@ -65,7 +65,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InvoicingV2InvoicesAllGet200ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = InlineResponse200Links.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('submitTimeUtc')) {
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
@@ -81,7 +81,7 @@
   }
 
   /**
-   * @member {module:model/InvoicingV2InvoicesAllGet200ResponseLinks} _links
+   * @member {module:model/InlineResponse200Links} _links
    */
   exports.prototype['_links'] = undefined;
   /**

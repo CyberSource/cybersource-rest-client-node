@@ -86,6 +86,12 @@
 
 
 
+
+
+
+
+
+
   };
 
   /**
@@ -215,6 +221,24 @@
       }
       if (data.hasOwnProperty('directoryServerTransactionId')) {
         obj['directoryServerTransactionId'] = ApiClient.convertToType(data['directoryServerTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('acsOperatorID')) {
+        obj['acsOperatorID'] = ApiClient.convertToType(data['acsOperatorID'], 'Number');
+      }
+      if (data.hasOwnProperty('acsReferenceNumber')) {
+        obj['acsReferenceNumber'] = ApiClient.convertToType(data['acsReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('idciDecision')) {
+        obj['idciDecision'] = ApiClient.convertToType(data['idciDecision'], 'String');
+      }
+      if (data.hasOwnProperty('idciReasonCode1')) {
+        obj['idciReasonCode1'] = ApiClient.convertToType(data['idciReasonCode1'], 'String');
+      }
+      if (data.hasOwnProperty('idciReasonCode2')) {
+        obj['idciReasonCode2'] = ApiClient.convertToType(data['idciReasonCode2'], 'String');
+      }
+      if (data.hasOwnProperty('idciScore')) {
+        obj['idciScore'] = ApiClient.convertToType(data['idciScore'], 'Number');
       }
     }
     return obj;
@@ -414,6 +438,36 @@
    * @member {String} directoryServerTransactionId
    */
   exports.prototype['directoryServerTransactionId'] = undefined;
+  /**
+   * Directory Server assigned ACS identifier.
+   * @member {Number} acsOperatorID
+   */
+  exports.prototype['acsOperatorID'] = undefined;
+  /**
+   * Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+   * @member {String} acsReferenceNumber
+   */
+  exports.prototype['acsReferenceNumber'] = undefined;
+  /**
+   * Decision on the Risk Assessment from Mastercard.
+   * @member {String} idciDecision
+   */
+  exports.prototype['idciDecision'] = undefined;
+  /**
+   * ReasonCode from Mastercard
+   * @member {String} idciReasonCode1
+   */
+  exports.prototype['idciReasonCode1'] = undefined;
+  /**
+   * ReasonCode from Mastercard
+   * @member {String} idciReasonCode2
+   */
+  exports.prototype['idciReasonCode2'] = undefined;
+  /**
+   * Risk Assessment from Mastercard
+   * @member {Number} idciScore
+   */
+  exports.prototype['idciScore'] = undefined;
 
 
 

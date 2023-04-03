@@ -95,7 +95,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - CAPTURE_ALREADY_VOIDED  - ACCOUNT_NOT_ALLOWED_CREDIT 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - CAPTURE_ALREADY_VOIDED  - ACCOUNT_NOT_ALLOWED_CREDIT  - NOT_SUPPORTED 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property emv (base name: "emv")', function() {
+      // uncomment below and update the code to test the property emv
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InvoicingV2InvoicesAllGet200ResponseLinks1', 'model/InvoicingV2InvoicesGet200ResponseInvoiceHistory', 'model/InvoicingV2InvoicesPost201ResponseInvoiceInformation', 'model/InvoicingV2InvoicesPost201ResponseOrderInformation', 'model/Invoicingv2invoicesCustomerInformation'], factory);
+    define(['ApiClient', 'model/InvoicingV2InvoicesAllGet200ResponseLinks', 'model/InvoicingV2InvoicesGet200ResponseInvoiceHistory', 'model/InvoicingV2InvoicesPost201ResponseInvoiceInformation', 'model/InvoicingV2InvoicesPost201ResponseOrderInformation', 'model/Invoicingv2invoicesCustomerInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoicesAllGet200ResponseLinks1'), require('./InvoicingV2InvoicesGet200ResponseInvoiceHistory'), require('./InvoicingV2InvoicesPost201ResponseInvoiceInformation'), require('./InvoicingV2InvoicesPost201ResponseOrderInformation'), require('./Invoicingv2invoicesCustomerInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoicesAllGet200ResponseLinks'), require('./InvoicingV2InvoicesGet200ResponseInvoiceHistory'), require('./InvoicingV2InvoicesPost201ResponseInvoiceInformation'), require('./InvoicingV2InvoicesPost201ResponseOrderInformation'), require('./Invoicingv2invoicesCustomerInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicingV2InvoicesGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks1, root.CyberSource.InvoicingV2InvoicesGet200ResponseInvoiceHistory, root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation, root.CyberSource.InvoicingV2InvoicesPost201ResponseOrderInformation, root.CyberSource.Invoicingv2invoicesCustomerInformation);
+    root.CyberSource.InvoicingV2InvoicesGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks, root.CyberSource.InvoicingV2InvoicesGet200ResponseInvoiceHistory, root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation, root.CyberSource.InvoicingV2InvoicesPost201ResponseOrderInformation, root.CyberSource.Invoicingv2invoicesCustomerInformation);
   }
-}(this, function(ApiClient, InvoicingV2InvoicesAllGet200ResponseLinks1, InvoicingV2InvoicesGet200ResponseInvoiceHistory, InvoicingV2InvoicesPost201ResponseInvoiceInformation, InvoicingV2InvoicesPost201ResponseOrderInformation, Invoicingv2invoicesCustomerInformation) {
+}(this, function(ApiClient, InvoicingV2InvoicesAllGet200ResponseLinks, InvoicingV2InvoicesGet200ResponseInvoiceHistory, InvoicingV2InvoicesPost201ResponseInvoiceInformation, InvoicingV2InvoicesPost201ResponseOrderInformation, Invoicingv2invoicesCustomerInformation) {
   'use strict';
 
 
@@ -69,7 +69,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InvoicingV2InvoicesAllGet200ResponseLinks1.constructFromObject(data['_links']);
+        obj['_links'] = InvoicingV2InvoicesAllGet200ResponseLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -97,7 +97,7 @@
   }
 
   /**
-   * @member {module:model/InvoicingV2InvoicesAllGet200ResponseLinks1} _links
+   * @member {module:model/InvoicingV2InvoicesAllGet200ResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**

@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Tmsv2customersEmbedded</code>.
-   * Additional resources for the Customer token. 
+   * Additional resources for the Customer. 
    * @alias module:model/Tmsv2customersEmbedded
    * @class
    */

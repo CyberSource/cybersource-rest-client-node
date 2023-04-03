@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4003', 'model/InlineResponse500', 'model/UpdatePGPKeysRequest1'], factory);
+    define(['ApiClient', 'model/InlineResponse4005', 'model/InlineResponse5001', 'model/UpdatePGPKeysRequest1'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4003'), require('../model/InlineResponse500'), require('../model/UpdatePGPKeysRequest1'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4005'), require('../model/InlineResponse5001'), require('../model/UpdatePGPKeysRequest1'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.KeyManagementScmpApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse500, root.CyberSource.UpdatePGPKeysRequest1);
+    root.CyberSource.KeyManagementScmpApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse5001, root.CyberSource.UpdatePGPKeysRequest1);
   }
-}(this, function(ApiClient, InlineResponse4003, InlineResponse500, UpdatePGPKeysRequest1) {
+}(this, function(ApiClient, InlineResponse4005, InlineResponse5001, UpdatePGPKeysRequest1) {
   'use strict';
 
   /**

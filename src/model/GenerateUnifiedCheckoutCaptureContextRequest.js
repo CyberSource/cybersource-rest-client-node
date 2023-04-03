@@ -105,7 +105,7 @@
    */
   exports.prototype['targetOrigins'] = undefined;
   /**
-   * verson number of Unified Checkout being used
+   * version number of Unified Checkout being used
    * @member {String} clientVersion
    */
   exports.prototype['clientVersion'] = undefined;

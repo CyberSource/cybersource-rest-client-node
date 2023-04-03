@@ -158,6 +158,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pinEntrySolution (base name: "pinEntrySolution")', function() {
+      // uncomment below and update the code to test the property pinEntrySolution
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property deviceId (base name: "deviceId")', function() {
       // uncomment below and update the code to test the property deviceId
       //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();

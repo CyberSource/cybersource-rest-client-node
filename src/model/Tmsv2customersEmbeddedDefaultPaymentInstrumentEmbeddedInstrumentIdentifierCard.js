@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard</code>.
-   * The expirationMonth, expirationYear and securityCode is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier token. 
+   * The expirationMonth, expirationYear and securityCode is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier. 
    * @alias module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard
    * @class
    */
@@ -87,7 +87,7 @@
    */
   exports.prototype['number'] = undefined;
   /**
-   * Two-digit month in which the payment card expires.  Format: `MM`.  Valid values: `01` through `12`. 
+   * Two-digit month in which the payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. 
    * @member {String} expirationMonth
    */
   exports.prototype['expirationMonth'] = undefined;
@@ -97,7 +97,7 @@
    */
   exports.prototype['expirationYear'] = undefined;
   /**
-   * Card Verification Number. 
+   * Card Verification Code.  This value is sent to the issuer to support the approval of a network token provision. It is not persisted against the Instrument Identifier. 
    * @member {String} securityCode
    */
   exports.prototype['securityCode'] = undefined;

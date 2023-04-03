@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentList', 'model/PostInstrumentIdentifierEnrollmentRequest', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentList', 'model/PostInstrumentIdentifierEnrollmentRequest', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentList'), require('../model/PostInstrumentIdentifierEnrollmentRequest'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentList'), require('../model/PostInstrumentIdentifierEnrollmentRequest'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostInstrumentIdentifierEnrollmentRequest, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
+    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostInstrumentIdentifierEnrollmentRequest, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
   }
-}(this, function(ApiClient, InlineResponse400, PatchInstrumentIdentifierRequest, PaymentInstrumentList, PostInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
+}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchInstrumentIdentifierRequest, PaymentInstrumentList, PostInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
   'use strict';
 
   /**
@@ -59,26 +59,27 @@
 
     /**
      * Delete an Instrument Identifier
-     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing &lt;br&gt;and account numbers.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the &lt;br&gt;Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) &lt;br&gt;or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting an Instrument Identifier**&lt;br&gt;Your system can use this API to delete an existing Instrument Identifier.&lt;br&gt;An Instrument Identifier cannot be deleted if it is linked to any Payment Instruments.&lt;br&gt;You can [retrieve all Payment Instruments associated with an Instrument Identifier](#token-management_instrument-identifier_list-payment-instruments-for-an-instrument-identifier). 
+     * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~deleteInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteInstrumentIdentifier = function(instrumentIdentifierTokenId, opts, callback) {
+    this.deleteInstrumentIdentifier = function(instrumentIdentifierId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('DELETE' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'instrumentIdentifierTokenId' is set
-      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
-        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling deleteInstrumentIdentifier");
+      // verify the required parameter 'instrumentIdentifierId' is set
+      if (instrumentIdentifierId === undefined || instrumentIdentifierId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierId' when calling deleteInstrumentIdentifier");
       }
 
 
       var pathParams = {
-        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
+        'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
       };
@@ -94,7 +95,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}', 'DELETE',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -110,27 +111,28 @@
 
     /**
      * Retrieve an Instrument Identifier
-     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).&lt;br&gt;&lt;br&gt;**Retrieving an Instrument Identifier**&lt;br&gt;Your system can use this API to retrieve an Instrument Identifier.&lt;br&gt;**Note: the actual card data will be masked.**&lt;br&gt;The Instrument Identifier will also be returned when retrieving a [Customer](#token-management_customer_retrieve-a-customer), [Customer Payment Instrument](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_retrieve-a-payment-instrument).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Instrument Identifiers**&lt;br&gt;To perform a payment with an Instrument Identifier simply specify the [Instrument Identifier Id in the payments request along with the expiration date, card type, &amp; billing address](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-instrument-identifier-token-id_liveconsole-tab-request-body).&lt;br&gt;When an Instrument Identifier is used in a payment the **_previousTransactionId_** and **_originalAuthorizedAmount_** values are automatically recorded.&lt;br&gt;These values will be added for you to future Merchant Initiated Transaction payments. 
+     * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
      */
-    this.getInstrumentIdentifier = function(instrumentIdentifierTokenId, opts, callback) {
+    this.getInstrumentIdentifier = function(instrumentIdentifierId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'instrumentIdentifierTokenId' is set
-      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
-        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifier");
+      // verify the required parameter 'instrumentIdentifierId' is set
+      if (instrumentIdentifierId === undefined || instrumentIdentifierId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifier");
       }
 
 
       var pathParams = {
-        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
+        'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
       };
@@ -146,7 +148,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}', 'GET',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -162,29 +164,30 @@
 
     /**
      * List Payment Instruments for an Instrument Identifier
-     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing &lt;br&gt;and account numbers.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the &lt;br&gt;Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) &lt;br&gt;or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving all Payment Instruments associated with an Instrument Identifier**&lt;br&gt;Your system can use this API to retrieve all Payment Instruments linked to an Instrument Identifier. 
+     * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {Number} opts.offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentInstrumentList}
      */
-    this.getInstrumentIdentifierPaymentInstrumentsList = function(instrumentIdentifierTokenId, opts, callback) {
+    this.getInstrumentIdentifierPaymentInstrumentsList = function(instrumentIdentifierId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'instrumentIdentifierTokenId' is set
-      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
-        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifierPaymentInstrumentsList");
+      // verify the required parameter 'instrumentIdentifierId' is set
+      if (instrumentIdentifierId === undefined || instrumentIdentifierId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifierPaymentInstrumentsList");
       }
 
 
       var pathParams = {
-        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
+        'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
         'offset': opts['offset'],
@@ -202,7 +205,7 @@
       var returnType = PaymentInstrumentList;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments', 'GET',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/paymentinstruments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -218,21 +221,22 @@
 
     /**
      * Update an Instrument Identifier
-     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
-     * @param {module:model/PatchInstrumentIdentifierRequest} patchInstrumentIdentifierRequest Specify the previous transaction ID to update.
+     * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating an Instrument Identifier**&lt;br&gt;When an Instrument Identifier is used in a payment the **_previousTransactionId_** and **_originalAuthorizedAmount_** values are automatically recorded.&lt;br&gt;These values will be added for you to future Merchant Initiated Transaction payments.&lt;br&gt;Your system can use this API to update these values. 
+     * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
+     * @param {module:model/PatchInstrumentIdentifierRequest} patchInstrumentIdentifierRequest Specify the previous transaction Id to update.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/InstrumentIdentifierApi~patchInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
      */
-    this.patchInstrumentIdentifier = function(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, opts, callback) {
+    this.patchInstrumentIdentifier = function(instrumentIdentifierId, patchInstrumentIdentifierRequest, opts, callback) {
       opts = opts || {};
       var postBody = patchInstrumentIdentifierRequest;
 
-      // verify the required parameter 'instrumentIdentifierTokenId' is set
-      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
-        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling patchInstrumentIdentifier");
+      // verify the required parameter 'instrumentIdentifierId' is set
+      if (instrumentIdentifierId === undefined || instrumentIdentifierId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierId' when calling patchInstrumentIdentifier");
       }
 
       // verify the required parameter 'patchInstrumentIdentifierRequest' is set
@@ -242,7 +246,7 @@
 
 
       var pathParams = {
-        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
+        'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
       };
@@ -259,7 +263,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}', 'PATCH',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -275,9 +279,10 @@
 
     /**
      * Create an Instrument Identifier
+     * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).&lt;br&gt;&lt;br&gt;**Creating an Instrument Identifier**&lt;br&gt;It is recommended you [create an Instrument Identifier via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-instrument-identifier-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;An Instrument Identifier will also be created if you [create a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body)&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Instrument Identifiers**&lt;br&gt;To perform a payment with an Instrument Identifier simply specify the [Instrument Identifier Id in the payments request along with the expiration date, card type, &amp; billing address](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-instrument-identifier-token-id_liveconsole-tab-request-body).&lt;br&gt;When an Instrument Identifier is used in a payment the **_previousTransactionId_** and **_originalAuthorizedAmount_** values are automatically recorded.&lt;br&gt;These values will be added for you to future Merchant Initiated Transaction payments. 
      * @param {module:model/PostInstrumentIdentifierRequest} postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
      */
@@ -322,20 +327,21 @@
      */
 
     /**
-     * Enroll an Instrument Identifier for Network Tokenization
-     * @param {String} instrumentIdentifierTokenId The TokenId of a Instrument Identifier.
+     * Enroll an Instrument Identifier for Payment Network Token
+     * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Enroll an Instrument Identifier for a Payment Network Token**&lt;br&gt;Your system can use this API to provision a Network token for an existing Instrument Identifier.&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Network token can be [provisioned when creating an Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier_samplerequests-dropdown_create-instrument-identifier-card-enroll-for-network-token_liveconsole-tab-request-body).This will occur automatically when creating a [Customer](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), [Payment Instrument](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body) or [Instrument Identifier](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-instrument-identifier-token-creation_liveconsole-tab-request-body) via the Payments API.&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide. 
+     * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
      * @param {module:model/PostInstrumentIdentifierEnrollmentRequest} postInstrumentIdentifierEnrollmentRequest Specify Enrollable Card details
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierEnrollmentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.postInstrumentIdentifierEnrollment = function(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, opts, callback) {
+    this.postInstrumentIdentifierEnrollment = function(instrumentIdentifierId, postInstrumentIdentifierEnrollmentRequest, opts, callback) {
       opts = opts || {};
       var postBody = postInstrumentIdentifierEnrollmentRequest;
 
-      // verify the required parameter 'instrumentIdentifierTokenId' is set
-      if (instrumentIdentifierTokenId === undefined || instrumentIdentifierTokenId === null) {
-        throw new Error("Missing the required parameter 'instrumentIdentifierTokenId' when calling postInstrumentIdentifierEnrollment");
+      // verify the required parameter 'instrumentIdentifierId' is set
+      if (instrumentIdentifierId === undefined || instrumentIdentifierId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierId' when calling postInstrumentIdentifierEnrollment");
       }
 
       // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
@@ -345,7 +351,7 @@
 
 
       var pathParams = {
-        'instrumentIdentifierTokenId': instrumentIdentifierTokenId
+        'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
       };
@@ -361,7 +367,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/enrollment', 'POST',
+        '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

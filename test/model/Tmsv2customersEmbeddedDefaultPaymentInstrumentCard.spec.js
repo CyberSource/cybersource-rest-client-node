@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property hash (base name: "hash")', function() {
+      // uncomment below and update the code to test the property hash
+      //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tokenizedInformation (base name: "tokenizedInformation")', function() {
       // uncomment below and update the code to test the property tokenizedInformation
       //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentCard();

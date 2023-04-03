@@ -9,11 +9,11 @@ Method | HTTP request | Description
 
 <a name="generateUnifiedCheckoutCaptureContext"></a>
 # **generateUnifiedCheckoutCaptureContext**
-> generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest)
+> &#39;String&#39; generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest)
 
 Generate Unified Checkout Capture Context
 
-Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the paramiters for how Unified Chkcout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initate Unified Checkout within a merchnat web page
+Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the parameters for how Unified Checkout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initiate Unified Checkout within a merchant web page
 
 ### Example
 ```javascript
@@ -28,7 +28,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest, callback);
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-String
+**&#39;String&#39;**
 
 ### Authorization
 
