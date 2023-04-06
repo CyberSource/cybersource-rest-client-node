@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('number')) {
         obj['number'] = ApiClient.convertToType(data['number'], 'String');
@@ -93,22 +97,27 @@
   }
 
   /**
-   * The network token card association brand Valid values: - visa - mastercard 
+   * The network token card association brand Possible Values: - visa - mastercard 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
-   * Issuers state for the network token Valid values: - ACTIVE - SUSPENDED : This state can change to ACTIVE or DELETED. - DELETED : This is a final state for the network token. 
+   * State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. 
    * @member {String} state
    */
   exports.prototype['state'] = undefined;
   /**
-   * The token requestors customer’s payment network token 
+   * Issuers state for the network token Possible Values: - INVALID_REQUEST : The network token provision request contained invalid data. - CARD_VERIFICATION_FAILED : The network token provision request contained data that could not be verified. - CARD_NOT_ELIGIBLE : Card can currently not be used with issuer for tokenization. - CARD_NOT_ALLOWED : Card can currently not be used with card association for tokenization. - DECLINED : Card can currently not be used with issuer for tokenization. - SERVICE_UNAVAILABLE : The network token service was unavailable or timed out. - SYSTEM_ERROR : An unexpected error occurred with network token service, check configuration. 
+   * @member {String} reason
+   */
+  exports.prototype['reason'] = undefined;
+  /**
+   * The token requestors network token 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;
   /**
-   * Two-digit month in which the network token expires.  Format: `MM`.  Valid values: `01` through `12`. 
+   * Two-digit month in which the network token expires.  Format: `MM`.  Possible Values: `01` through `12`. 
    * @member {String} expirationMonth
    */
   exports.prototype['expirationMonth'] = undefined;

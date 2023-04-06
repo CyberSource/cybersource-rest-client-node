@@ -51,6 +51,7 @@
 
 
     _this['mobilePhone'] = mobilePhone;
+
   };
 
   /**
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('mobilePhone')) {
         obj['mobilePhone'] = ApiClient.convertToType(data['mobilePhone'], 'Number');
       }
+      if (data.hasOwnProperty('workPhone')) {
+        obj['workPhone'] = ApiClient.convertToType(data['workPhone'], 'Number');
+      }
     }
     return obj;
   }
@@ -92,6 +96,11 @@
    * @member {Number} mobilePhone
    */
   exports.prototype['mobilePhone'] = undefined;
+  /**
+   * Cardholder's work phone number.
+   * @member {Number} workPhone
+   */
+  exports.prototype['workPhone'] = undefined;
 
 
 

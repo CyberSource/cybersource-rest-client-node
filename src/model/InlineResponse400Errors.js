@@ -77,12 +77,12 @@
   }
 
   /**
-   * The type of error.
+   * The type of error.  Possible Values:   - invalidHeaders   - missingHeaders   - invalidFields   - missingFields   - unsupportedPaymentMethodModification   - invalidCombination 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
-   * The detailed message related to the type stated above.
+   * The detailed message related to the type.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;

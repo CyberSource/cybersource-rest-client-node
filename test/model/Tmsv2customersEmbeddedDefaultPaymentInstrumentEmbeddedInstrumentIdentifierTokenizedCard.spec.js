@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
+      //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
       //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard();

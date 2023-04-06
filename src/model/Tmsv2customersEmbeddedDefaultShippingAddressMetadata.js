@@ -69,7 +69,7 @@
   }
 
   /**
-   * The creator of the Shipping Address token.
+   * The creator of the Shipping Address.
    * @member {String} creator
    */
   exports.prototype['creator'] = undefined;

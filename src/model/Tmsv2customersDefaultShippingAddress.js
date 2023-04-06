@@ -69,7 +69,7 @@
   }
 
   /**
-   * The id of the Customers default Shipping Address 
+   * The Id of the Customers default Shipping Address 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;

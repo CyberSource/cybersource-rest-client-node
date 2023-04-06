@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidreversalsPointOfSaleInformationEmv', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsPointOfSaleInformationEmv'), require('./TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformationEmv, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner);
   }
-}(this, function(ApiClient, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner) {
+}(this, function(ApiClient, Ptsv2paymentsidreversalsPointOfSaleInformationEmv, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('partner')) {
         obj['partner'] = TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner.constructFromObject(data['partner']);
       }
+      if (data.hasOwnProperty('emv')) {
+        obj['emv'] = Ptsv2paymentsidreversalsPointOfSaleInformationEmv.constructFromObject(data['emv']);
+      }
     }
     return obj;
   }
@@ -99,6 +103,10 @@
    * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner} partner
    */
   exports.prototype['partner'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsidreversalsPointOfSaleInformationEmv} emv
+   */
+  exports.prototype['emv'] = undefined;
 
 
 

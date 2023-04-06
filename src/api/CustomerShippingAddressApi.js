@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/PatchCustomerShippingAddressRequest', 'model/PostCustomerShippingAddressRequest', 'model/ShippingAddressListForCustomer', 'model/Tmsv2customersEmbeddedDefaultShippingAddress'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchCustomerShippingAddressRequest', 'model/PostCustomerShippingAddressRequest', 'model/ShippingAddressListForCustomer', 'model/Tmsv2customersEmbeddedDefaultShippingAddress'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchCustomerShippingAddressRequest'), require('../model/PostCustomerShippingAddressRequest'), require('../model/ShippingAddressListForCustomer'), require('../model/Tmsv2customersEmbeddedDefaultShippingAddress'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchCustomerShippingAddressRequest'), require('../model/PostCustomerShippingAddressRequest'), require('../model/ShippingAddressListForCustomer'), require('../model/Tmsv2customersEmbeddedDefaultShippingAddress'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CustomerShippingAddressApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchCustomerShippingAddressRequest, root.CyberSource.PostCustomerShippingAddressRequest, root.CyberSource.ShippingAddressListForCustomer, root.CyberSource.Tmsv2customersEmbeddedDefaultShippingAddress);
+    root.CyberSource.CustomerShippingAddressApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchCustomerShippingAddressRequest, root.CyberSource.PostCustomerShippingAddressRequest, root.CyberSource.ShippingAddressListForCustomer, root.CyberSource.Tmsv2customersEmbeddedDefaultShippingAddress);
   }
-}(this, function(ApiClient, InlineResponse400, PatchCustomerShippingAddressRequest, PostCustomerShippingAddressRequest, ShippingAddressListForCustomer, Tmsv2customersEmbeddedDefaultShippingAddress) {
+}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchCustomerShippingAddressRequest, PostCustomerShippingAddressRequest, ShippingAddressListForCustomer, Tmsv2customersEmbeddedDefaultShippingAddress) {
   'use strict';
 
   /**
@@ -59,33 +59,34 @@
 
     /**
      * Delete a Customer Shipping Address
-     * @param {String} customerTokenId The TokenId of a customer.
-     * @param {String} shippingAddressTokenId The TokenId of an shipping address.
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customers Shipping Address**&lt;br&gt;Your system can use this API to delete an existing Shipping Address for a Customer.&lt;br&gt;If a customer has more than one Shipping Address then the default Shipping Address cannot be deleted without first selecting a [new default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body). 
+     * @param {String} customerId The Id of a Customer.
+     * @param {String} shippingAddressId The Id of a shipping address.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerShippingAddressApi~deleteCustomerShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCustomerShippingAddress = function(customerTokenId, shippingAddressTokenId, opts, callback) {
+    this.deleteCustomerShippingAddress = function(customerId, shippingAddressId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('DELETE' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling deleteCustomerShippingAddress");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling deleteCustomerShippingAddress");
       }
 
-      // verify the required parameter 'shippingAddressTokenId' is set
-      if (shippingAddressTokenId === undefined || shippingAddressTokenId === null) {
-        throw new Error("Missing the required parameter 'shippingAddressTokenId' when calling deleteCustomerShippingAddress");
+      // verify the required parameter 'shippingAddressId' is set
+      if (shippingAddressId === undefined || shippingAddressId === null) {
+        throw new Error("Missing the required parameter 'shippingAddressId' when calling deleteCustomerShippingAddress");
       }
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId,
-        'shippingAddressTokenId': shippingAddressTokenId
+        'customerId': customerId,
+        'shippingAddressId': shippingAddressId
       };
       var queryParams = {
       };
@@ -101,7 +102,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}', 'DELETE',
+        '/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -117,34 +118,35 @@
 
     /**
      * Retrieve a Customer Shipping Address
-     * @param {String} customerTokenId The TokenId of a customer.
-     * @param {String} shippingAddressTokenId The TokenId of an shipping address.
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Customer Shipping Address**&lt;br&gt;Your system can use this API to retrieve an existing Shipping Address for a Customer.&lt;br&gt;To perform a payment with a particular Shipping Address simply specify the [Shipping Address Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param {String} customerId The Id of a Customer.
+     * @param {String} shippingAddressId The Id of a shipping address.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerShippingAddressApi~getCustomerShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultShippingAddress}
      */
-    this.getCustomerShippingAddress = function(customerTokenId, shippingAddressTokenId, opts, callback) {
+    this.getCustomerShippingAddress = function(customerId, shippingAddressId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddress");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerShippingAddress");
       }
 
-      // verify the required parameter 'shippingAddressTokenId' is set
-      if (shippingAddressTokenId === undefined || shippingAddressTokenId === null) {
-        throw new Error("Missing the required parameter 'shippingAddressTokenId' when calling getCustomerShippingAddress");
+      // verify the required parameter 'shippingAddressId' is set
+      if (shippingAddressId === undefined || shippingAddressId === null) {
+        throw new Error("Missing the required parameter 'shippingAddressId' when calling getCustomerShippingAddress");
       }
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId,
-        'shippingAddressTokenId': shippingAddressTokenId
+        'customerId': customerId,
+        'shippingAddressId': shippingAddressId
       };
       var queryParams = {
       };
@@ -160,7 +162,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultShippingAddress;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}', 'GET',
+        '/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -176,29 +178,30 @@
 
     /**
      * List Shipping Addresses for a Customer
-     * @param {String} customerTokenId The TokenId of a customer.
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving all Customer Shipping Addresses**&lt;br&gt;Your system can use this API to retrieve all existing Shipping Addresses for a Customer. 
+     * @param {String} customerId The Id of a Customer.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {Number} opts.offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/CustomerShippingAddressApi~getCustomerShippingAddressesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ShippingAddressListForCustomer}
      */
-    this.getCustomerShippingAddressesList = function(customerTokenId, opts, callback) {
+    this.getCustomerShippingAddressesList = function(customerId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddressesList");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerShippingAddressesList");
       }
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId
+        'customerId': customerId
       };
       var queryParams = {
         'offset': opts['offset'],
@@ -216,7 +219,7 @@
       var returnType = ShippingAddressListForCustomer;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/shipping-addresses', 'GET',
+        '/tms/v2/customers/{customerId}/shipping-addresses', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -232,27 +235,28 @@
 
     /**
      * Update a Customer Shipping Address
-     * @param {String} customerTokenId The TokenId of a customer.
-     * @param {String} shippingAddressTokenId The TokenId of an shipping address.
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customers Shipping Address**&lt;br&gt;Your system can use this API to update an existing Shipping Addresses for a Customer, including selecting a [default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body) for use in payments. 
+     * @param {String} customerId The Id of a Customer.
+     * @param {String} shippingAddressId The Id of a shipping address.
      * @param {module:model/PatchCustomerShippingAddressRequest} patchCustomerShippingAddressRequest 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/CustomerShippingAddressApi~patchCustomersShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultShippingAddress}
      */
-    this.patchCustomersShippingAddress = function(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, opts, callback) {
+    this.patchCustomersShippingAddress = function(customerId, shippingAddressId, patchCustomerShippingAddressRequest, opts, callback) {
       opts = opts || {};
       var postBody = patchCustomerShippingAddressRequest;
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling patchCustomersShippingAddress");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling patchCustomersShippingAddress");
       }
 
-      // verify the required parameter 'shippingAddressTokenId' is set
-      if (shippingAddressTokenId === undefined || shippingAddressTokenId === null) {
-        throw new Error("Missing the required parameter 'shippingAddressTokenId' when calling patchCustomersShippingAddress");
+      // verify the required parameter 'shippingAddressId' is set
+      if (shippingAddressId === undefined || shippingAddressId === null) {
+        throw new Error("Missing the required parameter 'shippingAddressId' when calling patchCustomersShippingAddress");
       }
 
       // verify the required parameter 'patchCustomerShippingAddressRequest' is set
@@ -262,8 +266,8 @@
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId,
-        'shippingAddressTokenId': shippingAddressTokenId
+        'customerId': customerId,
+        'shippingAddressId': shippingAddressId
       };
       var queryParams = {
       };
@@ -280,7 +284,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultShippingAddress;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}', 'PATCH',
+        '/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -296,21 +300,21 @@
 
     /**
      * Create a Customer Shipping Address
-     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
-     * @param {String} customerTokenId The TokenId of a customer.
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Creating a Customer Shipping Address**&lt;br&gt;Your system can use this API to create an existing Customers default or non default Shipping Address.&lt;br&gt;You can also create additional Customer Shipping Addresses via the [Payments API](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body). 
+     * @param {String} customerId The Id of a Customer.
      * @param {module:model/PostCustomerShippingAddressRequest} postCustomerShippingAddressRequest 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerShippingAddressApi~postCustomerShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultShippingAddress}
      */
-    this.postCustomerShippingAddress = function(customerTokenId, postCustomerShippingAddressRequest, opts, callback) {
+    this.postCustomerShippingAddress = function(customerId, postCustomerShippingAddressRequest, opts, callback) {
       opts = opts || {};
       var postBody = postCustomerShippingAddressRequest;
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling postCustomerShippingAddress");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling postCustomerShippingAddress");
       }
 
       // verify the required parameter 'postCustomerShippingAddressRequest' is set
@@ -320,7 +324,7 @@
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId
+        'customerId': customerId
       };
       var queryParams = {
       };
@@ -336,7 +340,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultShippingAddress;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/shipping-addresses', 'POST',
+        '/tms/v2/customers/{customerId}/shipping-addresses', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

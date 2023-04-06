@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded</code>.
-   * Additional resources for the Payment Instrument token. 
+   * Additional resources for the Payment Instrument. 
    * @alias module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded
    * @class
    */

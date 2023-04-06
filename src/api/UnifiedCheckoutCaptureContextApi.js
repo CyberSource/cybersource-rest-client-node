@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GenerateUnifiedCheckoutCaptureContextRequest', 'model/InlineResponse4004'], factory);
+    define(['ApiClient', 'model/GenerateUnifiedCheckoutCaptureContextRequest', 'model/InlineResponse4006'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/GenerateUnifiedCheckoutCaptureContextRequest'), require('../model/InlineResponse4004'));
+    module.exports = factory(require('../ApiClient'), require('../model/GenerateUnifiedCheckoutCaptureContextRequest'), require('../model/InlineResponse4006'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UnifiedCheckoutCaptureContextApi = factory(root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest, root.CyberSource.InlineResponse4004);
+    root.CyberSource.UnifiedCheckoutCaptureContextApi = factory(root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest, root.CyberSource.InlineResponse4006);
   }
-}(this, function(ApiClient, GenerateUnifiedCheckoutCaptureContextRequest, InlineResponse4004) {
+}(this, function(ApiClient, GenerateUnifiedCheckoutCaptureContextRequest, InlineResponse4006) {
   'use strict';
 
   /**
@@ -53,15 +53,16 @@
      * Callback function to receive the result of the generateUnifiedCheckoutCaptureContext operation.
      * @callback module:api/UnifiedCheckoutCaptureContextApi~generateUnifiedCheckoutCaptureContextCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {'String'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Generate Unified Checkout Capture Context
-     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the paramiters for how Unified Chkcout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initate Unified Checkout within a merchnat web page
+     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the parameters for how Unified Checkout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initiate Unified Checkout within a merchant web page
      * @param {module:model/GenerateUnifiedCheckoutCaptureContextRequest} generateUnifiedCheckoutCaptureContextRequest 
      * @param {module:api/UnifiedCheckoutCaptureContextApi~generateUnifiedCheckoutCaptureContextCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'String'}
      */
     this.generateUnifiedCheckoutCaptureContext = function(generateUnifiedCheckoutCaptureContextRequest, callback) {
       var postBody = generateUnifiedCheckoutCaptureContextRequest;

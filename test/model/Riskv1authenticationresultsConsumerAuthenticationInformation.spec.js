@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property credentialEncrypted (base name: "credentialEncrypted")', function() {
+      // uncomment below and update the code to test the property credentialEncrypted
+      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

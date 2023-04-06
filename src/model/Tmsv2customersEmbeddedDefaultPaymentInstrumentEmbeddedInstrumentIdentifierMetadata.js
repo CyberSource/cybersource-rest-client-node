@@ -69,7 +69,7 @@
   }
 
   /**
-   * The creator of the Instrument Identifier token.
+   * The creator of the Instrument Identifier.
    * @member {String} creator
    */
   exports.prototype['creator'] = undefined;

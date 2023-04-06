@@ -363,7 +363,16 @@
 
     this.merchantConfig = new MerchantConfig(configObject);
     this.constants = Constants;
-    this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
+    if(this.merchantConfig.getIntermediateHost()) {
+      if(this.merchantConfig.getIntermediateHost().startsWith(this.constants.HTTP_URL_PREFIX) || 
+        this.merchantConfig.getIntermediateHost().startsWith('http://')) {
+          this.basePath = this.merchantConfig.getIntermediateHost();
+      } else {
+        this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getIntermediateHost();
+      }
+    } else {
+      this.basePath = this.constants.HTTP_URL_PREFIX + this.merchantConfig.getRequestHost();
+    }
     this.logger = Logger.getLogger(this.merchantConfig, 'ApiClient');
   }
 
@@ -523,6 +532,12 @@
     if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
     {
       headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+    }
+
+    if(this.merchantConfig.getDefaultHeaders()) {
+      for (const [key, value] of Object.entries(this.merchantConfig.getDefaultHeaders())) {
+        headerParams[`${key}`] = `${value}`;
+      }
     }
 
     // set header parameters

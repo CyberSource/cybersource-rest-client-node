@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customFields (base name: "customFields")', function() {
+      // uncomment below and update the code to test the property customFields
+      //var instane = new CyberSource.UmsV1UsersGet200ResponseUsers();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

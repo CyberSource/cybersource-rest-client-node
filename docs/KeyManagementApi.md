@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="searchKeys"></a>
 # **searchKeys**
-> InlineResponse200 searchKeys(opts)
+> InlineResponse20011 searchKeys(opts)
 
 Search Keys
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 

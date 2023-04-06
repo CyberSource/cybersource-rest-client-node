@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4001Fields'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4001Fields'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001Fields);
+    root.CyberSource.InlineResponse4001 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
-}(this, function(ApiClient, InlineResponse4001Fields) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
 
 
@@ -41,17 +41,13 @@
 
   /**
    * Constructs a new <code>InlineResponse4001</code>.
-   * Error Bean
    * @alias module:model/InlineResponse4001
    * @class
-   * @param code {String} Error code
-   * @param message {String} Error message
    */
-  var exports = function(code, message) {
+  var exports = function() {
     var _this = this;
 
-    _this['code'] = code;
-    _this['message'] = message;
+
 
 
 
@@ -69,58 +65,49 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('code')) {
-        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('localizationKey')) {
-        obj['localizationKey'] = ApiClient.convertToType(data['localizationKey'], 'String');
-      }
-      if (data.hasOwnProperty('correlationId')) {
-        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
-      }
-      if (data.hasOwnProperty('detail')) {
-        obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
-      }
-      if (data.hasOwnProperty('fields')) {
-        obj['fields'] = ApiClient.convertToType(data['fields'], [InlineResponse4001Fields]);
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
       }
     }
     return obj;
   }
 
   /**
-   * Error code
-   * @member {String} code
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['code'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * Error message
+   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION 
+   * @member {String} reason
+   */
+  exports.prototype['reason'] = undefined;
+  /**
+   * The detail message related to the status and reason listed above.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * Localization Key Name
-   * @member {String} localizationKey
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
    */
-  exports.prototype['localizationKey'] = undefined;
-  /**
-   * Correlation Id
-   * @member {String} correlationId
-   */
-  exports.prototype['correlationId'] = undefined;
-  /**
-   * Error Detail
-   * @member {String} detail
-   */
-  exports.prototype['detail'] = undefined;
-  /**
-   * Error fields List
-   * @member {Array.<module:model/InlineResponse4001Fields>} fields
-   */
-  exports.prototype['fields'] = undefined;
+  exports.prototype['details'] = undefined;
 
 
 

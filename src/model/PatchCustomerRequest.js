@@ -109,7 +109,7 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * The id of the Customer Token.
+   * The Id of the Customer Token.
    * @member {String} id
    */
   exports.prototype['id'] = undefined;

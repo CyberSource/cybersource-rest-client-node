@@ -290,6 +290,42 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acsOperatorID (base name: "acsOperatorID")', function() {
+      // uncomment below and update the code to test the property acsOperatorID
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property acsReferenceNumber (base name: "acsReferenceNumber")', function() {
+      // uncomment below and update the code to test the property acsReferenceNumber
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property idciDecision (base name: "idciDecision")', function() {
+      // uncomment below and update the code to test the property idciDecision
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property idciReasonCode1 (base name: "idciReasonCode1")', function() {
+      // uncomment below and update the code to test the property idciReasonCode1
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property idciReasonCode2 (base name: "idciReasonCode2")', function() {
+      // uncomment below and update the code to test the property idciReasonCode2
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property idciScore (base name: "idciScore")', function() {
+      // uncomment below and update the code to test the property idciScore
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('previousTransactionId')) {
         obj['previousTransactionId'] = ApiClient.convertToType(data['previousTransactionId'], 'String');
       }
+      if (data.hasOwnProperty('originalAuthorizedAmount')) {
+        obj['originalAuthorizedAmount'] = ApiClient.convertToType(data['originalAuthorizedAmount'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} previousTransactionId
    */
   exports.prototype['previousTransactionId'] = undefined;
+  /**
+   * Amount of the original authorization. 
+   * @member {String} originalAuthorizedAmount
+   */
+  exports.prototype['originalAuthorizedAmount'] = undefined;
 
 
 

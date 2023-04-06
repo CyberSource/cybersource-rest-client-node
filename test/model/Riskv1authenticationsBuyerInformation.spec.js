@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property workPhone (base name: "workPhone")', function() {
+      // uncomment below and update the code to test the property workPhone
+      //var instane = new CyberSource.Riskv1authenticationsBuyerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

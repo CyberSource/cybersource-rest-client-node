@@ -116,6 +116,66 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shippingAddress1 (base name: "shippingAddress1")', function() {
+      // uncomment below and update the code to test the property shippingAddress1
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingAddress2 (base name: "shippingAddress2")', function() {
+      // uncomment below and update the code to test the property shippingAddress2
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingCity (base name: "shippingCity")', function() {
+      // uncomment below and update the code to test the property shippingCity
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingCountryCode (base name: "shippingCountryCode")', function() {
+      // uncomment below and update the code to test the property shippingCountryCode
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingFirstName (base name: "shippingFirstName")', function() {
+      // uncomment below and update the code to test the property shippingFirstName
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingLastName (base name: "shippingLastName")', function() {
+      // uncomment below and update the code to test the property shippingLastName
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingMiddleName (base name: "shippingMiddleName")', function() {
+      // uncomment below and update the code to test the property shippingMiddleName
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingPhone (base name: "shippingPhone")', function() {
+      // uncomment below and update the code to test the property shippingPhone
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingPostalCode (base name: "shippingPostalCode")', function() {
+      // uncomment below and update the code to test the property shippingPostalCode
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingState (base name: "shippingState")', function() {
+      // uncomment below and update the code to test the property shippingState
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

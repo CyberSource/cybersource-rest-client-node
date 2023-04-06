@@ -69,7 +69,7 @@
   }
 
   /**
-   * The creator of the Payment Instrument token. 
+   * The creator of the Payment Instrument. 
    * @member {String} creator
    */
   exports.prototype['creator'] = undefined;

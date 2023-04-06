@@ -75,6 +75,7 @@
 
 
 
+
   };
 
   /**
@@ -138,6 +139,9 @@
       }
       if (data.hasOwnProperty('terminalPinCapability')) {
         obj['terminalPinCapability'] = ApiClient.convertToType(data['terminalPinCapability'], 'Number');
+      }
+      if (data.hasOwnProperty('pinEntrySolution')) {
+        obj['pinEntrySolution'] = ApiClient.convertToType(data['pinEntrySolution'], 'String');
       }
       if (data.hasOwnProperty('deviceId')) {
         obj['deviceId'] = ApiClient.convertToType(data['deviceId'], 'String');
@@ -256,10 +260,15 @@
    */
   exports.prototype['terminalOutputCapability'] = undefined;
   /**
-   * Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions. 
+   * Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  2: PIN Pad down -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions. 
    * @member {Number} terminalPinCapability
    */
   exports.prototype['terminalPinCapability'] = undefined;
+  /**
+   * This field will contain the type of Pin Pad the terminal has.  Possible values: -   PCI-SPoC: Where the pin is being put on screen -   PCI-PTS: Where the pin is being put on actual hardware pin pad 
+   * @member {String} pinEntrySolution
+   */
+  exports.prototype['pinEntrySolution'] = undefined;
   /**
    * Value created by the client software that uniquely identifies the POS device. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
    * @member {String} deviceId

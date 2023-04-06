@@ -56,20 +56,26 @@
       //expect(instance).to.be.a(CyberSource.Body);
     });
 
-    it('should have the property requestor (base name: "requestor")', function() {
-      // uncomment below and update the code to test the property requestor
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new CyberSource.Body();
       //expect(instance).to.be();
     });
 
-    it('should have the property parsedTagLimit (base name: "parsedTagLimit")', function() {
-      // uncomment below and update the code to test the property parsedTagLimit
+    it('should have the property included (base name: "included")', function() {
+      // uncomment below and update the code to test the property included
       //var instane = new CyberSource.Body();
       //expect(instance).to.be();
     });
 
-    it('should have the property emvDetailsList (base name: "emvDetailsList")', function() {
-      // uncomment below and update the code to test the property emvDetailsList
+    it('should have the property merchantReference (base name: "merchantReference")', function() {
+      // uncomment below and update the code to test the property merchantReference
+      //var instane = new CyberSource.Body();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property notificationEmail (base name: "notificationEmail")', function() {
+      // uncomment below and update the code to test the property notificationEmail
       //var instane = new CyberSource.Body();
       //expect(instance).to.be();
     });

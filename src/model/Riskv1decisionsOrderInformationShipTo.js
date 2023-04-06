@@ -59,6 +59,8 @@
 
 
 
+
+
   };
 
   /**
@@ -78,6 +80,9 @@
       if (data.hasOwnProperty('address2')) {
         obj['address2'] = ApiClient.convertToType(data['address2'], 'String');
       }
+      if (data.hasOwnProperty('address3')) {
+        obj['address3'] = ApiClient.convertToType(data['address3'], 'String');
+      }
       if (data.hasOwnProperty('administrativeArea')) {
         obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
       }
@@ -95,6 +100,9 @@
       }
       if (data.hasOwnProperty('lastName')) {
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+      }
+      if (data.hasOwnProperty('middleName')) {
+        obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
       }
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
@@ -123,7 +131,12 @@
    */
   exports.prototype['address2'] = undefined;
   /**
-   * State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. 
+   * Third line of the shipping address.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. 
+   * @member {String} address3
+   */
+  exports.prototype['address3'] = undefined;
+  /**
+   * State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf) (maximum length: 2)   Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
@@ -152,6 +165,11 @@
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
+  /**
+   * Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * @member {String} middleName
+   */
+  exports.prototype['middleName'] = undefined;
   /**
    * Phone number associated with the shipping address.
    * @member {String} phoneNumber

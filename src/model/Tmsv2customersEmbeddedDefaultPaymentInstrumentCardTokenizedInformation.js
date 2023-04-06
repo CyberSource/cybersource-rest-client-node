@@ -73,7 +73,7 @@
   }
 
   /**
-   * Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**. 
+   * Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only through **VisaNet** and **FDC Nashville Global**. 
    * @member {String} requestorID
    */
   exports.prototype['requestorID'] = undefined;

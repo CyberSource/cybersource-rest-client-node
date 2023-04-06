@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/PatchCustomerPaymentInstrumentRequest', 'model/PaymentInstrumentList', 'model/PostCustomerPaymentInstrumentRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrument'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchCustomerPaymentInstrumentRequest', 'model/PaymentInstrumentList', 'model/PostCustomerPaymentInstrumentRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrument'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/PatchCustomerPaymentInstrumentRequest'), require('../model/PaymentInstrumentList'), require('../model/PostCustomerPaymentInstrumentRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrument'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchCustomerPaymentInstrumentRequest'), require('../model/PaymentInstrumentList'), require('../model/PostCustomerPaymentInstrumentRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrument'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CustomerPaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.PatchCustomerPaymentInstrumentRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostCustomerPaymentInstrumentRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrument);
+    root.CyberSource.CustomerPaymentInstrumentApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchCustomerPaymentInstrumentRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostCustomerPaymentInstrumentRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrument);
   }
-}(this, function(ApiClient, InlineResponse400, PatchCustomerPaymentInstrumentRequest, PaymentInstrumentList, PostCustomerPaymentInstrumentRequest, Tmsv2customersEmbeddedDefaultPaymentInstrument) {
+}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchCustomerPaymentInstrumentRequest, PaymentInstrumentList, PostCustomerPaymentInstrumentRequest, Tmsv2customersEmbeddedDefaultPaymentInstrument) {
   'use strict';
 
   /**
@@ -59,33 +59,34 @@
 
     /**
      * Delete a Customer Payment Instrument
-     * @param {String} customerTokenId The TokenId of a customer.
-     * @param {String} paymentInstrumentTokenId The TokenId of a payment instrument.
+     * |  |  |  | | --- | --- | --- | |**Customer Payment Instrument**&lt;br&gt;A Customer Payment Instrument represents tokenized customer payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Payment Instruments](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument), with one allocated as the Customers default for use in payments.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customers Payment Instrument**&lt;br&gt;Your system can use this API to delete an existing Payment Instrument for a Customer.&lt;br&gt;Any Instrument Identifiers representing the card number will also be deleted if they are not associated with any other Payment Instruments.&lt;br&gt;If a customer has more than one Payment Instrument then the default Payment Instrument cannot be deleted without first selecting a [new default Payment Instrument](#token-management_customer-payment-instrument_update-a-customer-payment-instrument_samplerequests-dropdown_make-customer-payment-instrument-the-default_liveconsole-tab-request-body). 
+     * @param {String} customerId The Id of a Customer.
+     * @param {String} paymentInstrumentId The Id of a payment instrument.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerPaymentInstrumentApi~deleteCustomerPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCustomerPaymentInstrument = function(customerTokenId, paymentInstrumentTokenId, opts, callback) {
+    this.deleteCustomerPaymentInstrument = function(customerId, paymentInstrumentId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('DELETE' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling deleteCustomerPaymentInstrument");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling deleteCustomerPaymentInstrument");
       }
 
-      // verify the required parameter 'paymentInstrumentTokenId' is set
-      if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {
-        throw new Error("Missing the required parameter 'paymentInstrumentTokenId' when calling deleteCustomerPaymentInstrument");
+      // verify the required parameter 'paymentInstrumentId' is set
+      if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
+        throw new Error("Missing the required parameter 'paymentInstrumentId' when calling deleteCustomerPaymentInstrument");
       }
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId,
-        'paymentInstrumentTokenId': paymentInstrumentTokenId
+        'customerId': customerId,
+        'paymentInstrumentId': paymentInstrumentId
       };
       var queryParams = {
       };
@@ -101,7 +102,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/payment-instruments/{paymentInstrumentTokenId}', 'DELETE',
+        '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -117,34 +118,35 @@
 
     /**
      * Retrieve a Customer Payment Instrument
-     * @param {String} customerTokenId The TokenId of a customer.
-     * @param {String} paymentInstrumentTokenId The TokenId of a payment instrument.
+     * |  |  |  | | --- | --- | --- | |**Customer Payment Instrument**&lt;br&gt;A Customer Payment Instrument represents tokenized customer payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Payment Instruments](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument), with one allocated as the Customers default for use in payments.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Customer Payment Instrument**&lt;br&gt;Your system can use this API to retrieve an existing Payment Instrument for a Customer.&lt;br&gt;To perform a payment with a particular Payment Instrument simply specify the [Payment Instrument Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param {String} customerId The Id of a Customer.
+     * @param {String} paymentInstrumentId The Id of a payment instrument.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerPaymentInstrumentApi~getCustomerPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
      */
-    this.getCustomerPaymentInstrument = function(customerTokenId, paymentInstrumentTokenId, opts, callback) {
+    this.getCustomerPaymentInstrument = function(customerId, paymentInstrumentId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling getCustomerPaymentInstrument");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrument");
       }
 
-      // verify the required parameter 'paymentInstrumentTokenId' is set
-      if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {
-        throw new Error("Missing the required parameter 'paymentInstrumentTokenId' when calling getCustomerPaymentInstrument");
+      // verify the required parameter 'paymentInstrumentId' is set
+      if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
+        throw new Error("Missing the required parameter 'paymentInstrumentId' when calling getCustomerPaymentInstrument");
       }
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId,
-        'paymentInstrumentTokenId': paymentInstrumentTokenId
+        'customerId': customerId,
+        'paymentInstrumentId': paymentInstrumentId
       };
       var queryParams = {
       };
@@ -160,7 +162,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrument;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/payment-instruments/{paymentInstrumentTokenId}', 'GET',
+        '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -176,29 +178,30 @@
 
     /**
      * List Payment Instruments for a Customer
-     * @param {String} customerTokenId The TokenId of a customer.
+     * |  |  |  | | --- | --- | --- | |**Customer Payment Instrument**&lt;br&gt;A Customer Payment Instrument represents tokenized customer payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Payment Instruments](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument), with one allocated as the Customers default for use in payments.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving all Customer Payment Instruments**&lt;br&gt;Your system can use this API to retrieve all existing Payment Instruments for a Customer. 
+     * @param {String} customerId The Id of a Customer.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {Number} opts.offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/CustomerPaymentInstrumentApi~getCustomerPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentInstrumentList}
      */
-    this.getCustomerPaymentInstrumentsList = function(customerTokenId, opts, callback) {
+    this.getCustomerPaymentInstrumentsList = function(customerId, opts, callback) {
       opts = opts || {};
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling getCustomerPaymentInstrumentsList");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrumentsList");
       }
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId
+        'customerId': customerId
       };
       var queryParams = {
         'offset': opts['offset'],
@@ -216,7 +219,7 @@
       var returnType = PaymentInstrumentList;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/payment-instruments', 'GET',
+        '/tms/v2/customers/{customerId}/payment-instruments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -232,27 +235,28 @@
 
     /**
      * Update a Customer Payment Instrument
-     * @param {String} customerTokenId The TokenId of a customer.
-     * @param {String} paymentInstrumentTokenId The TokenId of a payment instrument.
+     * |  |  |  | | --- | --- | --- | |**Customer Payment Instrument**&lt;br&gt;A Customer Payment Instrument represents tokenized customer payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Payment Instruments](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument), with one allocated as the Customers default for use in payments.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customers Payment Instrument**&lt;br&gt;Your system can use this API to update an existing Payment Instrument for a Customer, including selecting a [default Payment Instrument](#token-management_customer-payment-instrument_update-a-customer-payment-instrument_samplerequests-dropdown_make-customer-payment-instrument-the-default_liveconsole-tab-request-body) for use in payments. 
+     * @param {String} customerId The Id of a Customer.
+     * @param {String} paymentInstrumentId The Id of a payment instrument.
      * @param {module:model/PatchCustomerPaymentInstrumentRequest} patchCustomerPaymentInstrumentRequest 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/CustomerPaymentInstrumentApi~patchCustomersPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
      */
-    this.patchCustomersPaymentInstrument = function(customerTokenId, paymentInstrumentTokenId, patchCustomerPaymentInstrumentRequest, opts, callback) {
+    this.patchCustomersPaymentInstrument = function(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, opts, callback) {
       opts = opts || {};
       var postBody = patchCustomerPaymentInstrumentRequest;
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling patchCustomersPaymentInstrument");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling patchCustomersPaymentInstrument");
       }
 
-      // verify the required parameter 'paymentInstrumentTokenId' is set
-      if (paymentInstrumentTokenId === undefined || paymentInstrumentTokenId === null) {
-        throw new Error("Missing the required parameter 'paymentInstrumentTokenId' when calling patchCustomersPaymentInstrument");
+      // verify the required parameter 'paymentInstrumentId' is set
+      if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
+        throw new Error("Missing the required parameter 'paymentInstrumentId' when calling patchCustomersPaymentInstrument");
       }
 
       // verify the required parameter 'patchCustomerPaymentInstrumentRequest' is set
@@ -262,8 +266,8 @@
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId,
-        'paymentInstrumentTokenId': paymentInstrumentTokenId
+        'customerId': customerId,
+        'paymentInstrumentId': paymentInstrumentId
       };
       var queryParams = {
       };
@@ -280,7 +284,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrument;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/payment-instruments/{paymentInstrumentTokenId}', 'PATCH',
+        '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -296,21 +300,21 @@
 
     /**
      * Create a Customer Payment Instrument
-     * Include an existing TMS Customer &amp; Instrument Identifier token id in the request. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
-     * @param {String} customerTokenId The TokenId of a customer.
+     * |  |  |  | | --- | --- | --- | |**Customer Payment Instrument**&lt;br&gt;A Customer Payment Instrument represents tokenized customer payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Payment Instruments](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument), with one allocated as the Customers default for use in payments.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;&lt;br&gt;**Creating a Customer Payment Instrument**&lt;br&gt;It is recommended you [create a Customer Payment Instrument via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Customers Payment Instrument**&lt;br&gt;To perform a payment with a particular Payment Instrument or Shipping Address specify the [Payment Instrument in the payment request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param {String} customerId The Id of a Customer.
      * @param {module:model/PostCustomerPaymentInstrumentRequest} postCustomerPaymentInstrumentRequest 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.profileId The id of a profile containing user specific TMS configuration.
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerPaymentInstrumentApi~postCustomerPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
      */
-    this.postCustomerPaymentInstrument = function(customerTokenId, postCustomerPaymentInstrumentRequest, opts, callback) {
+    this.postCustomerPaymentInstrument = function(customerId, postCustomerPaymentInstrumentRequest, opts, callback) {
       opts = opts || {};
       var postBody = postCustomerPaymentInstrumentRequest;
 
-      // verify the required parameter 'customerTokenId' is set
-      if (customerTokenId === undefined || customerTokenId === null) {
-        throw new Error("Missing the required parameter 'customerTokenId' when calling postCustomerPaymentInstrument");
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling postCustomerPaymentInstrument");
       }
 
       // verify the required parameter 'postCustomerPaymentInstrumentRequest' is set
@@ -320,7 +324,7 @@
 
 
       var pathParams = {
-        'customerTokenId': customerTokenId
+        'customerId': customerId
       };
       var queryParams = {
       };
@@ -336,7 +340,7 @@
       var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrument;
 
       return this.apiClient.callApi(
-        '/tms/v2/customers/{customerTokenId}/payment-instruments', 'POST',
+        '/tms/v2/customers/{customerId}/payment-instruments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

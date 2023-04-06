@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -88,6 +89,9 @@
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('bankAccount')) {
         obj['bankAccount'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount.constructFromObject(data['bankAccount']);
@@ -125,25 +129,30 @@
    */
   exports.prototype['_links'] = undefined;
   /**
-   * The id of the Payment Instrument Token.
+   * The Id of the Payment Instrument Token.
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * The type of token.  Valid values: - paymentInstrument 
+   * The type.  Possible Values: - paymentInstrument 
    * @member {String} object
    */
   exports.prototype['object'] = undefined;
   /**
-   * Flag that indicates whether customer payment instrument is the dafault. Valid values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default. 
+   * Flag that indicates whether customer payment instrument is the dafault. Possible Values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default. 
    * @member {Boolean} default
    */
   exports.prototype['default'] = undefined;
   /**
-   * Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed. 
+   * Issuers state for the card number. Possible Values: - ACTIVE - CLOSED : The account has been closed. 
    * @member {String} state
    */
   exports.prototype['state'] = undefined;
+  /**
+   * The type of Payment Instrument. Possible Values: - cardHash 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
   /**
    * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount} bankAccount
    */

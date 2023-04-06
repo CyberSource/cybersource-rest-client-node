@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address3 (base name: "address3")', function() {
+      // uncomment below and update the code to test the property address3
+      //var instane = new CyberSource.Riskv1authenticationsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property administrativeArea (base name: "administrativeArea")', function() {
       // uncomment below and update the code to test the property administrativeArea
       //var instane = new CyberSource.Riskv1authenticationsOrderInformationBillTo();

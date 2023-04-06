@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address3 (base name: "address3")', function() {
+      // uncomment below and update the code to test the property address3
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property administrativeArea (base name: "administrativeArea")', function() {
       // uncomment below and update the code to test the property administrativeArea
       //var instane = new CyberSource.Riskv1decisionsOrderInformationShipTo();
@@ -100,6 +106,12 @@
 
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property middleName (base name: "middleName")', function() {
+      // uncomment below and update the code to test the property middleName
       //var instane = new CyberSource.Riskv1decisionsOrderInformationShipTo();
       //expect(instance).to.be();
     });

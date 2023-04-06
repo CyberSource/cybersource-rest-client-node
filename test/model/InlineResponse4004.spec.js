@@ -56,20 +56,20 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse4004);
     });
 
-    it('should have the property correlationId (base name: "correlationId")', function() {
-      // uncomment below and update the code to test the property correlationId
+    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse4004();
       //expect(instance).to.be();
     });
 
-    it('should have the property details (base name: "details")', function() {
-      // uncomment below and update the code to test the property details
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse4004();
       //expect(instance).to.be();
     });
 
-    it('should have the property informationLink (base name: "informationLink")', function() {
-      // uncomment below and update the code to test the property informationLink
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
       //var instane = new CyberSource.InlineResponse4004();
       //expect(instance).to.be();
     });
@@ -80,8 +80,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property reason (base name: "reason")', function() {
-      // uncomment below and update the code to test the property reason
+    it('should have the property statusCode (base name: "statusCode")', function() {
+      // uncomment below and update the code to test the property statusCode
       //var instane = new CyberSource.InlineResponse4004();
       //expect(instance).to.be();
     });

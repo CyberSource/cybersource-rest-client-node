@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse4003', 'model/InlineResponse500'], factory);
+    define(['ApiClient', 'model/InlineResponse20011', 'model/InlineResponse4005', 'model/InlineResponse5001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse200'), require('../model/InlineResponse4003'), require('../model/InlineResponse500'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse20011'), require('../model/InlineResponse4005'), require('../model/InlineResponse5001'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.KeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse500);
+    root.CyberSource.KeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20011, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse5001);
   }
-}(this, function(ApiClient, InlineResponse200, InlineResponse4003, InlineResponse500) {
+}(this, function(ApiClient, InlineResponse20011, InlineResponse4005, InlineResponse5001) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the searchKeys operation.
      * @callback module:api/KeyManagementApi~searchKeysCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -70,7 +70,7 @@
      * @param {Date} opts.expirationStartDate Expiry Filter Start Date. When Expiration Date filter is provided, atleast one more filter needs to be provided
      * @param {Date} opts.expirationEndDate Expiry Filter End Date. When Expiration Date filter is provided, atleast one more filter needs to be provided
      * @param {module:api/KeyManagementApi~searchKeysCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * data is of type: {@link module:model/InlineResponse20011}
      */
     this.searchKeys = function(opts, callback) {
       opts = opts || {};
@@ -100,7 +100,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse200;
+      var returnType = InlineResponse20011;
 
       return this.apiClient.callApi(
         '/kms/v2/keys', 'GET',
