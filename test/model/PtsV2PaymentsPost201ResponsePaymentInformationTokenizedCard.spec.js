@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property assuranceMethod (base name: "assuranceMethod")', function() {
+      // uncomment below and update the code to test the property assuranceMethod
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

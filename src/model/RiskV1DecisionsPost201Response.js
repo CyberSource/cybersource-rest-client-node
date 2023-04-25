@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseRiskInformation', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation', 'model/RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation', 'model/RiskV1DecisionsPost201ResponseErrorInformation', 'model/RiskV1DecisionsPost201ResponseOrderInformation', 'model/RiskV1DecisionsPost201ResponsePaymentInformation'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseRiskInformation', 'model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformation', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation', 'model/RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation', 'model/RiskV1DecisionsPost201ResponseErrorInformation', 'model/RiskV1DecisionsPost201ResponseOrderInformation', 'model/RiskV1DecisionsPost201ResponsePaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseRiskInformation'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'), require('./RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation'), require('./RiskV1DecisionsPost201ResponseErrorInformation'), require('./RiskV1DecisionsPost201ResponseOrderInformation'), require('./RiskV1DecisionsPost201ResponsePaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseRiskInformation'), require('./PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'), require('./RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation'), require('./RiskV1DecisionsPost201ResponseErrorInformation'), require('./RiskV1DecisionsPost201ResponseOrderInformation'), require('./RiskV1DecisionsPost201ResponsePaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1DecisionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation, root.CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation, root.CyberSource.RiskV1DecisionsPost201ResponseErrorInformation, root.CyberSource.RiskV1DecisionsPost201ResponseOrderInformation, root.CyberSource.RiskV1DecisionsPost201ResponsePaymentInformation);
+    root.CyberSource.RiskV1DecisionsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation, root.CyberSource.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation, root.CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation, root.CyberSource.RiskV1DecisionsPost201ResponseErrorInformation, root.CyberSource.RiskV1DecisionsPost201ResponseOrderInformation, root.CyberSource.RiskV1DecisionsPost201ResponsePaymentInformation);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseRiskInformation, RiskV1DecisionsPost201ResponseClientReferenceInformation, RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation, RiskV1DecisionsPost201ResponseErrorInformation, RiskV1DecisionsPost201ResponseOrderInformation, RiskV1DecisionsPost201ResponsePaymentInformation) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseRiskInformation, PtsV2PaymentsPost201ResponseWatchlistScreeningInformation, RiskV1DecisionsPost201ResponseClientReferenceInformation, RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation, RiskV1DecisionsPost201ResponseErrorInformation, RiskV1DecisionsPost201ResponseOrderInformation, RiskV1DecisionsPost201ResponsePaymentInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -101,6 +102,9 @@
       if (data.hasOwnProperty('consumerAuthenticationInformation')) {
         obj['consumerAuthenticationInformation'] = RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
       }
+      if (data.hasOwnProperty('watchlistScreeningInformation')) {
+        obj['watchlistScreeningInformation'] = PtsV2PaymentsPost201ResponseWatchlistScreeningInformation.constructFromObject(data['watchlistScreeningInformation']);
+      }
       if (data.hasOwnProperty('errorInformation')) {
         obj['errorInformation'] = RiskV1DecisionsPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
       }
@@ -152,6 +156,10 @@
    * @member {module:model/RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation} consumerAuthenticationInformation
    */
   exports.prototype['consumerAuthenticationInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformation} watchlistScreeningInformation
+   */
+  exports.prototype['watchlistScreeningInformation'] = undefined;
   /**
    * @member {module:model/RiskV1DecisionsPost201ResponseErrorInformation} errorInformation
    */

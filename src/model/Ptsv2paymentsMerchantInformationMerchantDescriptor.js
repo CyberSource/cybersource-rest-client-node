@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -103,6 +104,9 @@
       }
       if (data.hasOwnProperty('countryOfOrigin')) {
         obj['countryOfOrigin'] = ApiClient.convertToType(data['countryOfOrigin'], 'String');
+      }
+      if (data.hasOwnProperty('customerServicePhoneNumber')) {
+        obj['customerServicePhoneNumber'] = ApiClient.convertToType(data['customerServicePhoneNumber'], 'String');
       }
     }
     return obj;
@@ -163,6 +167,11 @@
    * @member {String} countryOfOrigin
    */
   exports.prototype['countryOfOrigin'] = undefined;
+  /**
+   * #### Visa Platform Connect Indicates customer service phone number of Merchant. 
+   * @member {String} customerServicePhoneNumber
+   */
+  exports.prototype['customerServicePhoneNumber'] = undefined;
 
 
 

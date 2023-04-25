@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property deferredDateTime (base name: "deferredDateTime")', function() {
+      // uncomment below and update the code to test the property deferredDateTime
+      //var instane = new CyberSource.Ptsv2payoutsProcessingInformationPayoutsOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('accountFundingReferenceId')) {
         obj['accountFundingReferenceId'] = ApiClient.convertToType(data['accountFundingReferenceId'], 'String');
       }
+      if (data.hasOwnProperty('deferredDateTime')) {
+        obj['deferredDateTime'] = ApiClient.convertToType(data['deferredDateTime'], 'String');
+      }
     }
     return obj;
   }
@@ -100,6 +104,11 @@
    * @member {String} accountFundingReferenceId
    */
   exports.prototype['accountFundingReferenceId'] = undefined;
+  /**
+   * #### Visa Platform Connect  Contains date and time value indicating scheduled deferred OCT.  Format is : 'yyyyMMddHHmm', where  'YYYY' = year 'MM' = month 'DD' = day 'hh' = hour 'mm' = minutes 
+   * @member {String} deferredDateTime
+   */
+  exports.prototype['deferredDateTime'] = undefined;
 
 
 

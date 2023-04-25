@@ -69,6 +69,8 @@
 
 
 
+
+
   };
 
   /**
@@ -147,6 +149,12 @@
       }
       if (data.hasOwnProperty('verificationStatus')) {
         obj['verificationStatus'] = ApiClient.convertToType(data['verificationStatus'], 'String');
+      }
+      if (data.hasOwnProperty('alternatePhoneNumber')) {
+        obj['alternatePhoneNumber'] = ApiClient.convertToType(data['alternatePhoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('alternateEmail')) {
+        obj['alternateEmail'] = ApiClient.convertToType(data['alternateEmail'], 'String');
       }
     }
     return obj;
@@ -261,6 +269,16 @@
    * @member {String} verificationStatus
    */
   exports.prototype['verificationStatus'] = undefined;
+  /**
+   * #### Visa Platform Connect contains customer’s alternate phone number. 
+   * @member {String} alternatePhoneNumber
+   */
+  exports.prototype['alternatePhoneNumber'] = undefined;
+  /**
+   * #### Visa Platform Connect contains customer’s alternate email address. 
+   * @member {String} alternateEmail
+   */
+  exports.prototype['alternateEmail'] = undefined;
 
 
 

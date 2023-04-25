@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -104,6 +105,9 @@
       if (data.hasOwnProperty('securityCodeIndicator')) {
         obj['securityCodeIndicator'] = ApiClient.convertToType(data['securityCodeIndicator'], 'String');
       }
+      if (data.hasOwnProperty('assuranceMethod')) {
+        obj['assuranceMethod'] = ApiClient.convertToType(data['assuranceMethod'], 'String');
+      }
     }
     return obj;
   }
@@ -144,7 +148,7 @@
    */
   exports.prototype['transactionType'] = undefined;
   /**
-   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase. 
+   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.  **Note** Merchants supported for **CyberSource through VisaNet**_/_**Visa Platform Connect** are advised not to use this field. 
    * @member {String} assuranceLevel
    */
   exports.prototype['assuranceLevel'] = undefined;
@@ -163,6 +167,11 @@
    * @member {String} securityCodeIndicator
    */
   exports.prototype['securityCodeIndicator'] = undefined;
+  /**
+   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **Visa Platform Connect** 
+   * @member {String} assuranceMethod
+   */
+  exports.prototype['assuranceMethod'] = undefined;
 
 
 

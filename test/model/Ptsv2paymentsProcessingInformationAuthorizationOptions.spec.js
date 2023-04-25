@@ -170,6 +170,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property splitPaymentTransaction (base name: "splitPaymentTransaction")', function() {
+      // uncomment below and update the code to test the property splitPaymentTransaction
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

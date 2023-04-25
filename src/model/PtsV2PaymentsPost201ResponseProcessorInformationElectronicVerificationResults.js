@@ -59,6 +59,12 @@
 
 
 
+
+
+
+
+
+
   };
 
   /**
@@ -107,6 +113,24 @@
       }
       if (data.hasOwnProperty('nameRaw')) {
         obj['nameRaw'] = ApiClient.convertToType(data['nameRaw'], 'String');
+      }
+      if (data.hasOwnProperty('firstNameRaw')) {
+        obj['firstNameRaw'] = ApiClient.convertToType(data['firstNameRaw'], 'String');
+      }
+      if (data.hasOwnProperty('firstName')) {
+        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+      }
+      if (data.hasOwnProperty('middleNameRaw')) {
+        obj['middleNameRaw'] = ApiClient.convertToType(data['middleNameRaw'], 'String');
+      }
+      if (data.hasOwnProperty('middleName')) {
+        obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
+      }
+      if (data.hasOwnProperty('lastNameRaw')) {
+        obj['lastNameRaw'] = ApiClient.convertToType(data['lastNameRaw'], 'String');
+      }
+      if (data.hasOwnProperty('lastName')) {
+        obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
       }
     }
     return obj;
@@ -163,15 +187,45 @@
    */
   exports.prototype['streetRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer’s name. 
+   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customer’s name. 
+   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match 
    * @member {String} nameRaw
    */
   exports.prototype['nameRaw'] = undefined;
+  /**
+   * #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s first name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match 
+   * @member {String} firstNameRaw
+   */
+  exports.prototype['firstNameRaw'] = undefined;
+  /**
+   * #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s first name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match 
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
+  /**
+   * #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s middle name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match 
+   * @member {String} middleNameRaw
+   */
+  exports.prototype['middleNameRaw'] = undefined;
+  /**
+   * #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s middle name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match 
+   * @member {String} middleName
+   */
+  exports.prototype['middleName'] = undefined;
+  /**
+   * #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s last name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match 
+   * @member {String} lastNameRaw
+   */
+  exports.prototype['lastNameRaw'] = undefined;
+  /**
+   * #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s last name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match 
+   * @member {String} lastName
+   */
+  exports.prototype['lastName'] = undefined;
 
 
 

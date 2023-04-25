@@ -61,6 +61,8 @@
 
 
 
+
+
   };
 
   /**
@@ -115,6 +117,12 @@
       }
       if (data.hasOwnProperty('taxAmount')) {
         obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'String');
+      }
+      if (data.hasOwnProperty('allowedExportCountries')) {
+        obj['allowedExportCountries'] = ApiClient.convertToType(data['allowedExportCountries'], ['String']);
+      }
+      if (data.hasOwnProperty('restrictedExportCountries')) {
+        obj['restrictedExportCountries'] = ApiClient.convertToType(data['restrictedExportCountries'], ['String']);
       }
     }
     return obj;
@@ -189,6 +197,14 @@
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;
+  /**
+   * @member {Array.<String>} allowedExportCountries
+   */
+  exports.prototype['allowedExportCountries'] = undefined;
+  /**
+   * @member {Array.<String>} restrictedExportCountries
+   */
+  exports.prototype['restrictedExportCountries'] = undefined;
 
 
 
