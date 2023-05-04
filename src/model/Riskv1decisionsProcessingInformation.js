@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Riskv1decisionsProcessingInformation</code>.
-   * Decides whether to call Payer Authentication along with DM or not
+   * Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not
    * @alias module:model/Riskv1decisionsProcessingInformation
    * @class
    */
@@ -70,7 +70,7 @@
   }
 
   /**
-   * Use CONSUMER_AUTHENTICATION to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. 
+   * - Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service. 
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;

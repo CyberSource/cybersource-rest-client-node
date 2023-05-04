@@ -115,12 +115,12 @@
    */
   exports.prototype['emailRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer’s name. 
+   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customer’s name. 
+   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match 
    * @member {String} nameRaw
    */
   exports.prototype['nameRaw'] = undefined;

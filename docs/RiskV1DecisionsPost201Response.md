@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **clientReferenceInformation** | [**RiskV1DecisionsPost201ResponseClientReferenceInformation**](RiskV1DecisionsPost201ResponseClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**RiskV1DecisionsPost201ResponseOrderInformation**](RiskV1DecisionsPost201ResponseOrderInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation**](RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation.md) |  | [optional] 
+**watchlistScreeningInformation** | [**PtsV2PaymentsPost201ResponseWatchlistScreeningInformation**](PtsV2PaymentsPost201ResponseWatchlistScreeningInformation.md) |  | [optional] 
 **errorInformation** | [**RiskV1DecisionsPost201ResponseErrorInformation**](RiskV1DecisionsPost201ResponseErrorInformation.md) |  | [optional] 
 
 

@@ -242,6 +242,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property allowedExportCountries (base name: "allowedExportCountries")', function() {
+      // uncomment below and update the code to test the property allowedExportCountries
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property restrictedExportCountries (base name: "restrictedExportCountries")', function() {
+      // uncomment below and update the code to test the property restrictedExportCountries
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

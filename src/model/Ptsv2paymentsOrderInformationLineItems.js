@@ -78,6 +78,8 @@
 
 
 
+
+
   };
 
   /**
@@ -183,6 +185,12 @@
       }
       if (data.hasOwnProperty('passenger')) {
         obj['passenger'] = Ptsv2paymentsOrderInformationPassenger.constructFromObject(data['passenger']);
+      }
+      if (data.hasOwnProperty('allowedExportCountries')) {
+        obj['allowedExportCountries'] = ApiClient.convertToType(data['allowedExportCountries'], ['String']);
+      }
+      if (data.hasOwnProperty('restrictedExportCountries')) {
+        obj['restrictedExportCountries'] = ApiClient.convertToType(data['restrictedExportCountries'], ['String']);
       }
     }
     return obj;
@@ -341,6 +349,14 @@
    * @member {module:model/Ptsv2paymentsOrderInformationPassenger} passenger
    */
   exports.prototype['passenger'] = undefined;
+  /**
+   * @member {Array.<String>} allowedExportCountries
+   */
+  exports.prototype['allowedExportCountries'] = undefined;
+  /**
+   * @member {Array.<String>} restrictedExportCountries
+   */
+  exports.prototype['restrictedExportCountries'] = undefined;
 
 
 

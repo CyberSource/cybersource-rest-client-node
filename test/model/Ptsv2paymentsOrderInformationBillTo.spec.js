@@ -188,6 +188,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property alternatePhoneNumber (base name: "alternatePhoneNumber")', function() {
+      // uncomment below and update the code to test the property alternatePhoneNumber
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property alternateEmail (base name: "alternateEmail")', function() {
+      // uncomment below and update the code to test the property alternateEmail
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

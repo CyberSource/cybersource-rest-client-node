@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsMerchantInformationMerchantDescriptor', 'model/Ptsv2paymentsMerchantInformationServiceFeeDescriptor'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsMerchantInformationMerchantDescriptor', 'model/Ptsv2paymentsMerchantInformationServiceFeeDescriptor', 'model/Ptsv2paymentsMerchantInformationServiceLocation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsMerchantInformationMerchantDescriptor'), require('./Ptsv2paymentsMerchantInformationServiceFeeDescriptor'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsMerchantInformationMerchantDescriptor'), require('./Ptsv2paymentsMerchantInformationServiceFeeDescriptor'), require('./Ptsv2paymentsMerchantInformationServiceLocation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsMerchantInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor, root.CyberSource.Ptsv2paymentsMerchantInformationServiceFeeDescriptor);
+    root.CyberSource.Ptsv2paymentsMerchantInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor, root.CyberSource.Ptsv2paymentsMerchantInformationServiceFeeDescriptor, root.CyberSource.Ptsv2paymentsMerchantInformationServiceLocation);
   }
-}(this, function(ApiClient, Ptsv2paymentsMerchantInformationMerchantDescriptor, Ptsv2paymentsMerchantInformationServiceFeeDescriptor) {
+}(this, function(ApiClient, Ptsv2paymentsMerchantInformationMerchantDescriptor, Ptsv2paymentsMerchantInformationServiceFeeDescriptor, Ptsv2paymentsMerchantInformationServiceLocation) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -116,6 +118,12 @@
       }
       if (data.hasOwnProperty('returnUrl')) {
         obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
+      }
+      if (data.hasOwnProperty('partnerIdCode')) {
+        obj['partnerIdCode'] = ApiClient.convertToType(data['partnerIdCode'], 'String');
+      }
+      if (data.hasOwnProperty('serviceLocation')) {
+        obj['serviceLocation'] = Ptsv2paymentsMerchantInformationServiceLocation.constructFromObject(data['serviceLocation']);
       }
       if (data.hasOwnProperty('merchantName')) {
         obj['merchantName'] = ApiClient.convertToType(data['merchantName'], 'String');
@@ -192,6 +200,15 @@
    * @member {String} returnUrl
    */
   exports.prototype['returnUrl'] = undefined;
+  /**
+   * #### Visa Platform Connect This field may be used for transactions on accounts issued under co-branding agreements when one of the co-branding partners. 
+   * @member {String} partnerIdCode
+   */
+  exports.prototype['partnerIdCode'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsMerchantInformationServiceLocation} serviceLocation
+   */
+  exports.prototype['serviceLocation'] = undefined;
   /**
    * Use this field only if you are requesting payment with Payer Authentication service together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
    * @member {String} merchantName

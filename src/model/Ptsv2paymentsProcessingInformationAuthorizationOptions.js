@@ -66,6 +66,7 @@
 
 
 
+
   };
 
   /**
@@ -135,6 +136,9 @@
       }
       if (data.hasOwnProperty('cashAdvanceIndicator')) {
         obj['cashAdvanceIndicator'] = ApiClient.convertToType(data['cashAdvanceIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('splitPaymentTransaction')) {
+        obj['splitPaymentTransaction'] = ApiClient.convertToType(data['splitPaymentTransaction'], 'Boolean');
       }
     }
     return obj;
@@ -236,6 +240,11 @@
    * @member {Boolean} cashAdvanceIndicator
    */
   exports.prototype['cashAdvanceIndicator'] = undefined;
+  /**
+   * #### Visa Platform Connect Indicates split payment transaction. A split payment allows the use of two payment methods for a single transaction.  Possible values:   - `true` (split payment transaction is supported)   - `false` (default: split payment transaction is not supported) 
+   * @member {Boolean} splitPaymentTransaction
+   */
+  exports.prototype['splitPaymentTransaction'] = undefined;
 
 
 

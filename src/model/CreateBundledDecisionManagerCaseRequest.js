@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsAcquirerInformation', 'model/Ptsv2paymentsRecurringPaymentInformation', 'model/Riskv1decisionsBuyerInformation', 'model/Riskv1decisionsClientReferenceInformation', 'model/Riskv1decisionsConsumerAuthenticationInformation', 'model/Riskv1decisionsDeviceInformation', 'model/Riskv1decisionsMerchantDefinedInformation', 'model/Riskv1decisionsMerchantInformation', 'model/Riskv1decisionsOrderInformation', 'model/Riskv1decisionsPaymentInformation', 'model/Riskv1decisionsProcessingInformation', 'model/Riskv1decisionsProcessorInformation', 'model/Riskv1decisionsRiskInformation', 'model/Riskv1decisionsTravelInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsAcquirerInformation', 'model/Ptsv2paymentsRecurringPaymentInformation', 'model/Ptsv2paymentsWatchlistScreeningInformation', 'model/Riskv1decisionsBuyerInformation', 'model/Riskv1decisionsClientReferenceInformation', 'model/Riskv1decisionsConsumerAuthenticationInformation', 'model/Riskv1decisionsDeviceInformation', 'model/Riskv1decisionsMerchantDefinedInformation', 'model/Riskv1decisionsMerchantInformation', 'model/Riskv1decisionsOrderInformation', 'model/Riskv1decisionsPaymentInformation', 'model/Riskv1decisionsProcessingInformation', 'model/Riskv1decisionsProcessorInformation', 'model/Riskv1decisionsRiskInformation', 'model/Riskv1decisionsTravelInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsAcquirerInformation'), require('./Ptsv2paymentsRecurringPaymentInformation'), require('./Riskv1decisionsBuyerInformation'), require('./Riskv1decisionsClientReferenceInformation'), require('./Riskv1decisionsConsumerAuthenticationInformation'), require('./Riskv1decisionsDeviceInformation'), require('./Riskv1decisionsMerchantDefinedInformation'), require('./Riskv1decisionsMerchantInformation'), require('./Riskv1decisionsOrderInformation'), require('./Riskv1decisionsPaymentInformation'), require('./Riskv1decisionsProcessingInformation'), require('./Riskv1decisionsProcessorInformation'), require('./Riskv1decisionsRiskInformation'), require('./Riskv1decisionsTravelInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsAcquirerInformation'), require('./Ptsv2paymentsRecurringPaymentInformation'), require('./Ptsv2paymentsWatchlistScreeningInformation'), require('./Riskv1decisionsBuyerInformation'), require('./Riskv1decisionsClientReferenceInformation'), require('./Riskv1decisionsConsumerAuthenticationInformation'), require('./Riskv1decisionsDeviceInformation'), require('./Riskv1decisionsMerchantDefinedInformation'), require('./Riskv1decisionsMerchantInformation'), require('./Riskv1decisionsOrderInformation'), require('./Riskv1decisionsPaymentInformation'), require('./Riskv1decisionsProcessingInformation'), require('./Riskv1decisionsProcessorInformation'), require('./Riskv1decisionsRiskInformation'), require('./Riskv1decisionsTravelInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateBundledDecisionManagerCaseRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsAcquirerInformation, root.CyberSource.Ptsv2paymentsRecurringPaymentInformation, root.CyberSource.Riskv1decisionsBuyerInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation, root.CyberSource.Riskv1decisionsConsumerAuthenticationInformation, root.CyberSource.Riskv1decisionsDeviceInformation, root.CyberSource.Riskv1decisionsMerchantDefinedInformation, root.CyberSource.Riskv1decisionsMerchantInformation, root.CyberSource.Riskv1decisionsOrderInformation, root.CyberSource.Riskv1decisionsPaymentInformation, root.CyberSource.Riskv1decisionsProcessingInformation, root.CyberSource.Riskv1decisionsProcessorInformation, root.CyberSource.Riskv1decisionsRiskInformation, root.CyberSource.Riskv1decisionsTravelInformation);
+    root.CyberSource.CreateBundledDecisionManagerCaseRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsAcquirerInformation, root.CyberSource.Ptsv2paymentsRecurringPaymentInformation, root.CyberSource.Ptsv2paymentsWatchlistScreeningInformation, root.CyberSource.Riskv1decisionsBuyerInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation, root.CyberSource.Riskv1decisionsConsumerAuthenticationInformation, root.CyberSource.Riskv1decisionsDeviceInformation, root.CyberSource.Riskv1decisionsMerchantDefinedInformation, root.CyberSource.Riskv1decisionsMerchantInformation, root.CyberSource.Riskv1decisionsOrderInformation, root.CyberSource.Riskv1decisionsPaymentInformation, root.CyberSource.Riskv1decisionsProcessingInformation, root.CyberSource.Riskv1decisionsProcessorInformation, root.CyberSource.Riskv1decisionsRiskInformation, root.CyberSource.Riskv1decisionsTravelInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsAcquirerInformation, Ptsv2paymentsRecurringPaymentInformation, Riskv1decisionsBuyerInformation, Riskv1decisionsClientReferenceInformation, Riskv1decisionsConsumerAuthenticationInformation, Riskv1decisionsDeviceInformation, Riskv1decisionsMerchantDefinedInformation, Riskv1decisionsMerchantInformation, Riskv1decisionsOrderInformation, Riskv1decisionsPaymentInformation, Riskv1decisionsProcessingInformation, Riskv1decisionsProcessorInformation, Riskv1decisionsRiskInformation, Riskv1decisionsTravelInformation) {
+}(this, function(ApiClient, Ptsv2paymentsAcquirerInformation, Ptsv2paymentsRecurringPaymentInformation, Ptsv2paymentsWatchlistScreeningInformation, Riskv1decisionsBuyerInformation, Riskv1decisionsClientReferenceInformation, Riskv1decisionsConsumerAuthenticationInformation, Riskv1decisionsDeviceInformation, Riskv1decisionsMerchantDefinedInformation, Riskv1decisionsMerchantInformation, Riskv1decisionsOrderInformation, Riskv1decisionsPaymentInformation, Riskv1decisionsProcessingInformation, Riskv1decisionsProcessorInformation, Riskv1decisionsRiskInformation, Riskv1decisionsTravelInformation) {
   'use strict';
 
 
@@ -53,6 +53,7 @@
 
 
     _this['orderInformation'] = orderInformation;
+
 
 
 
@@ -117,6 +118,9 @@
       if (data.hasOwnProperty('consumerAuthenticationInformation')) {
         obj['consumerAuthenticationInformation'] = Riskv1decisionsConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
       }
+      if (data.hasOwnProperty('watchlistScreeningInformation')) {
+        obj['watchlistScreeningInformation'] = Ptsv2paymentsWatchlistScreeningInformation.constructFromObject(data['watchlistScreeningInformation']);
+      }
     }
     return obj;
   }
@@ -177,6 +181,10 @@
    * @member {module:model/Riskv1decisionsConsumerAuthenticationInformation} consumerAuthenticationInformation
    */
   exports.prototype['consumerAuthenticationInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsWatchlistScreeningInformation} watchlistScreeningInformation
+   */
+  exports.prototype['watchlistScreeningInformation'] = undefined;
 
 
 

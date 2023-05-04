@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customerServicePhoneNumber (base name: "customerServicePhoneNumber")', function() {
+      // uncomment below and update the code to test the property customerServicePhoneNumber
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

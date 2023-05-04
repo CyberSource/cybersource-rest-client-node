@@ -128,6 +128,42 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property firstNameRaw (base name: "firstNameRaw")', function() {
+      // uncomment below and update the code to test the property firstNameRaw
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstName (base name: "firstName")', function() {
+      // uncomment below and update the code to test the property firstName
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property middleNameRaw (base name: "middleNameRaw")', function() {
+      // uncomment below and update the code to test the property middleNameRaw
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property middleName (base name: "middleName")', function() {
+      // uncomment below and update the code to test the property middleName
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastNameRaw (base name: "lastNameRaw")', function() {
+      // uncomment below and update the code to test the property lastNameRaw
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastName (base name: "lastName")', function() {
+      // uncomment below and update the code to test the property lastName
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

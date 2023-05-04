@@ -17,5 +17,6 @@ Name | Type | Description | Notes
 **acquirerInformation** | [**Ptsv2paymentsAcquirerInformation**](Ptsv2paymentsAcquirerInformation.md) |  | [optional] 
 **recurringPaymentInformation** | [**Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**Riskv1decisionsConsumerAuthenticationInformation**](Riskv1decisionsConsumerAuthenticationInformation.md) |  | [optional] 
+**watchlistScreeningInformation** | [**Ptsv2paymentsWatchlistScreeningInformation**](Ptsv2paymentsWatchlistScreeningInformation.md) |  | [optional] 
 
 

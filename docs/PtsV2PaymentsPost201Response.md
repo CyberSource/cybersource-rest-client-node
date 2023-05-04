@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **buyerInformation** | [**PtsV2PaymentsPost201ResponseBuyerInformation**](PtsV2PaymentsPost201ResponseBuyerInformation.md) |  | [optional] 
 **riskInformation** | [**PtsV2PaymentsPost201ResponseRiskInformation**](PtsV2PaymentsPost201ResponseRiskInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation**](PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation.md) |  | [optional] 
+**watchlistScreeningInformation** | [**PtsV2PaymentsPost201ResponseWatchlistScreeningInformation**](PtsV2PaymentsPost201ResponseWatchlistScreeningInformation.md) |  | [optional] 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation', 'model/RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation', 'model/RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformation', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation', 'model/RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'), require('./RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation'), require('./RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'), require('./RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1ExportComplianceInquiriesPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation, root.CyberSource.RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation, root.CyberSource.RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation);
+    root.CyberSource.RiskV1ExportComplianceInquiriesPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation, root.CyberSource.RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, RiskV1DecisionsPost201ResponseClientReferenceInformation, RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation, RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseWatchlistScreeningInformation, RiskV1DecisionsPost201ResponseClientReferenceInformation, RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation) {
   'use strict';
 
 
@@ -91,7 +91,7 @@
         obj['clientReferenceInformation'] = RiskV1DecisionsPost201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('exportComplianceInformation')) {
-        obj['exportComplianceInformation'] = RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation.constructFromObject(data['exportComplianceInformation']);
+        obj['exportComplianceInformation'] = PtsV2PaymentsPost201ResponseWatchlistScreeningInformation.constructFromObject(data['exportComplianceInformation']);
       }
       if (data.hasOwnProperty('errorInformation')) {
         obj['errorInformation'] = RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
@@ -134,7 +134,7 @@
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * @member {module:model/RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation} exportComplianceInformation
+   * @member {module:model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformation} exportComplianceInformation
    */
   exports.prototype['exportComplianceInformation'] = undefined;
   /**
