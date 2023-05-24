@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property taxRate (base name: "taxRate")', function() {
+      // uncomment below and update the code to test the property taxRate
+      //var instane = new CyberSource.Invoicingv2invoicesOrderInformationAmountDetailsFreight();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

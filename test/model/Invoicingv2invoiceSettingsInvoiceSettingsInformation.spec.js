@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property showVatNumber (base name: "showVatNumber")', function() {
+      // uncomment below and update the code to test the property showVatNumber
+      //var instane = new CyberSource.Invoicingv2invoiceSettingsInvoiceSettingsInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vatRegistrationNumber (base name: "vatRegistrationNumber")', function() {
+      // uncomment below and update the code to test the property vatRegistrationNumber
+      //var instane = new CyberSource.Invoicingv2invoiceSettingsInvoiceSettingsInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subTypeName (base name: "subTypeName")', function() {
+      // uncomment below and update the code to test the property subTypeName
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationPaymentType();
+      //expect(instance).to.be();
+    });
+
     it('should have the property method (base name: "method")', function() {
       // uncomment below and update the code to test the property method
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformationPaymentType();

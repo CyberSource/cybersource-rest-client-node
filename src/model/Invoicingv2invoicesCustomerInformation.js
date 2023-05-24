@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Invoicingv2invoicesCustomerInformationCompany'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesCustomerInformationCompany'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Invoicingv2invoicesCustomerInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Invoicingv2invoicesCustomerInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesCustomerInformationCompany);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Invoicingv2invoicesCustomerInformationCompany) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('merchantCustomerId')) {
         obj['merchantCustomerId'] = ApiClient.convertToType(data['merchantCustomerId'], 'String');
       }
+      if (data.hasOwnProperty('company')) {
+        obj['company'] = Invoicingv2invoicesCustomerInformationCompany.constructFromObject(data['company']);
+      }
     }
     return obj;
   }
@@ -92,6 +96,10 @@
    * @member {String} merchantCustomerId
    */
   exports.prototype['merchantCustomerId'] = undefined;
+  /**
+   * @member {module:model/Invoicingv2invoicesCustomerInformationCompany} company
+   */
+  exports.prototype['company'] = undefined;
 
 
 

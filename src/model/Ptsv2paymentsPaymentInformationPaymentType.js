@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -65,6 +66,9 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('subTypeName')) {
+        obj['subTypeName'] = ApiClient.convertToType(data['subTypeName'], 'String');
+      }
       if (data.hasOwnProperty('method')) {
         obj['method'] = Ptsv2paymentsPaymentInformationPaymentTypeMethod.constructFromObject(data['method']);
       }
@@ -77,6 +81,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * Detailed information about the Payment Type. Possible values: - `DEBIT`: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. 
+   * @member {String} subTypeName
+   */
+  exports.prototype['subTypeName'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsPaymentInformationPaymentTypeMethod} method
    */

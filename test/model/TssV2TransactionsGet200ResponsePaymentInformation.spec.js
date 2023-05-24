@@ -74,8 +74,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property brands (base name: "brands")', function() {
+      // uncomment below and update the code to test the property brands
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property features (base name: "features")', function() {
+      // uncomment below and update the code to test the property features
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property invoice (base name: "invoice")', function() {
       // uncomment below and update the code to test the property invoice
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property network (base name: "network")', function() {
+      // uncomment below and update the code to test the property network
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
+      // uncomment below and update the code to test the property issuerInformation
       //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformation();
       //expect(instance).to.be();
     });

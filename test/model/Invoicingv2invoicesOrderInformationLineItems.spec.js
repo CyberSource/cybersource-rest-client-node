@@ -80,6 +80,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property discountAmount (base name: "discountAmount")', function() {
+      // uncomment below and update the code to test the property discountAmount
+      //var instane = new CyberSource.Invoicingv2invoicesOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property discountRate (base name: "discountRate")', function() {
+      // uncomment below and update the code to test the property discountRate
+      //var instane = new CyberSource.Invoicingv2invoicesOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxAmount (base name: "taxAmount")', function() {
+      // uncomment below and update the code to test the property taxAmount
+      //var instane = new CyberSource.Invoicingv2invoicesOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxRate (base name: "taxRate")', function() {
+      // uncomment below and update the code to test the property taxRate
+      //var instane = new CyberSource.Invoicingv2invoicesOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalAmount (base name: "totalAmount")', function() {
+      // uncomment below and update the code to test the property totalAmount
+      //var instane = new CyberSource.Invoicingv2invoicesOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

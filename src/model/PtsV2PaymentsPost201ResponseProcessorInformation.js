@@ -79,6 +79,7 @@
 
 
 
+
   };
 
   /**
@@ -121,6 +122,9 @@
       }
       if (data.hasOwnProperty('forwardedAcquirerCode')) {
         obj['forwardedAcquirerCode'] = ApiClient.convertToType(data['forwardedAcquirerCode'], 'String');
+      }
+      if (data.hasOwnProperty('settlementDate')) {
+        obj['settlementDate'] = ApiClient.convertToType(data['settlementDate'], 'String');
       }
       if (data.hasOwnProperty('avs')) {
         obj['avs'] = PtsV2PaymentsPost201ResponseProcessorInformationAvs.constructFromObject(data['avs']);
@@ -242,6 +246,11 @@
    * @member {String} forwardedAcquirerCode
    */
   exports.prototype['forwardedAcquirerCode'] = undefined;
+  /**
+   * Field contains a settlement date. The date is in mmdd format, where: mm = month and dd = day. 
+   * @member {String} settlementDate
+   */
+  exports.prototype['settlementDate'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationAvs} avs
    */

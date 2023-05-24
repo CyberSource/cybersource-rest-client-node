@@ -80,6 +80,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property jti (base name: "jti")', function() {
+      // uncomment below and update the code to test the property jti
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseTokenInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transientTokenJwt (base name: "transientTokenJwt")', function() {
+      // uncomment below and update the code to test the property transientTokenJwt
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseTokenInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -57,6 +57,8 @@
 
 
 
+
+
   };
 
   /**
@@ -93,6 +95,12 @@
       }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('brandName')) {
+        obj['brandName'] = ApiClient.convertToType(data['brandName'], 'String');
+      }
+      if (data.hasOwnProperty('currency')) {
+        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
       if (data.hasOwnProperty('accountEncoderId')) {
         obj['accountEncoderId'] = ApiClient.convertToType(data['accountEncoderId'], 'String');
@@ -144,6 +152,16 @@
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
+  /**
+   * This field contains the card brand name.   Some of the possible values (not an exhaustive list) are -    - VISA   - MASTERCARD   - AMERICAN EXPRESS   - DISCOVER   - DINERS CLUB   - CARTE BLANCHE   - JCB   - OPTIMA   - TWINPAY CREDIT CARD   - TWINPAY DEBIT CARD   - WALMART   - ENROUTE   - LOWES CONSUMER   - HOME DEPOT CONSUMER   - MBNA   - DICKS SPORTWEAR   - CASUAL CORNER   - SEARS   - JAL   - DISNEY CARD   - SWITCH/SOLO   - SAMS CLUB CONSUMER   - SAMS CLUB BUSINESS   - NICOS HOUSE CARD   - BEBE   - RESTORATION HARDWARE   - DELTA ONLINE   - SOLO   - VISA ELECTRON   - DANKORT   - LASER   - CARTE BANCAIRE   - CARTA SI   - ENCODED ACCOUNT   - UATP   - HOUSEHOLD   - MAESTRO   - GE CAPITAL   - KOREAN CARDS   - STYLE CARDS   - JCREW   - MEIJER   - HIPERCARD   - AURA   - REDECARD   - ORICO HOUSE CARD   - ELO   - CAPITAL ONE PRIVATE LABEL   - CARNET   - RUPAY   - CHINA UNION PAY   - FALABELLA PRIVATE LABEL   - PROMPTCARD   - KOREAN DOMESTIC   - BANRICOMPRAS 
+   * @member {String} brandName
+   */
+  exports.prototype['brandName'] = undefined;
+  /**
+   * This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency. 
+   * @member {String} currency
+   */
+  exports.prototype['currency'] = undefined;
   /**
    * Identifier for the issuing bank that provided the customer’s encoded account number. Contact your processor for the bank’s ID. 
    * @member {String} accountEncoderId
