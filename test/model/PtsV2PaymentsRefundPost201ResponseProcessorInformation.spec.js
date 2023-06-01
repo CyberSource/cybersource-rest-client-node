@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property settlementDate (base name: "settlementDate")', function() {
+      // uncomment below and update the code to test the property settlementDate
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

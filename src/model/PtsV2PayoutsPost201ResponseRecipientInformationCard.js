@@ -78,7 +78,7 @@
    */
   exports.prototype['balance'] = undefined;
   /**
-   * This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer. 
+   * This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency. 
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;

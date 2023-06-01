@@ -51,6 +51,8 @@
 
 
 
+
+
   };
 
   /**
@@ -76,6 +78,12 @@
       if (data.hasOwnProperty('instrumentIdentifier')) {
         obj['instrumentIdentifier'] = TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
       }
+      if (data.hasOwnProperty('jti')) {
+        obj['jti'] = ApiClient.convertToType(data['jti'], 'String');
+      }
+      if (data.hasOwnProperty('transientTokenJwt')) {
+        obj['transientTokenJwt'] = ApiClient.convertToType(data['transientTokenJwt'], 'String');
+      }
     }
     return obj;
   }
@@ -96,6 +104,16 @@
    * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier} instrumentIdentifier
    */
   exports.prototype['instrumentIdentifier'] = undefined;
+  /**
+   * TMS Transient Token, 64 hexadecimal id value representing captured payment credentials (including Sensitive Authentication Data, e.g. CVV). 
+   * @member {String} jti
+   */
+  exports.prototype['jti'] = undefined;
+  /**
+   * Flex API Transient Token encoded as JWT (JSON Web Token), e.g. Flex microform or Unified Payment checkout result. 
+   * @member {String} transientTokenJwt
+   */
+  exports.prototype['transientTokenJwt'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument', 'model/PtsV2PaymentsPost201ResponseTokenInformationShippingAddress', 'model/TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures', 'model/TssV2TransactionsGet200ResponsePaymentInformationBank', 'model/TssV2TransactionsGet200ResponsePaymentInformationCard', 'model/TssV2TransactionsGet200ResponsePaymentInformationCustomer', 'model/TssV2TransactionsGet200ResponsePaymentInformationFluidData', 'model/TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier', 'model/TssV2TransactionsGet200ResponsePaymentInformationInvoice', 'model/TssV2TransactionsGet200ResponsePaymentInformationPaymentType'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument', 'model/PtsV2PaymentsPost201ResponseTokenInformationShippingAddress', 'model/TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures', 'model/TssV2TransactionsGet200ResponsePaymentInformationBank', 'model/TssV2TransactionsGet200ResponsePaymentInformationBrands', 'model/TssV2TransactionsGet200ResponsePaymentInformationCard', 'model/TssV2TransactionsGet200ResponsePaymentInformationCustomer', 'model/TssV2TransactionsGet200ResponsePaymentInformationFeatures', 'model/TssV2TransactionsGet200ResponsePaymentInformationFluidData', 'model/TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier', 'model/TssV2TransactionsGet200ResponsePaymentInformationInvoice', 'model/TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation', 'model/TssV2TransactionsGet200ResponsePaymentInformationNetwork', 'model/TssV2TransactionsGet200ResponsePaymentInformationPaymentType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument'), require('./PtsV2PaymentsPost201ResponseTokenInformationShippingAddress'), require('./TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures'), require('./TssV2TransactionsGet200ResponsePaymentInformationBank'), require('./TssV2TransactionsGet200ResponsePaymentInformationCard'), require('./TssV2TransactionsGet200ResponsePaymentInformationCustomer'), require('./TssV2TransactionsGet200ResponsePaymentInformationFluidData'), require('./TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier'), require('./TssV2TransactionsGet200ResponsePaymentInformationInvoice'), require('./TssV2TransactionsGet200ResponsePaymentInformationPaymentType'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument'), require('./PtsV2PaymentsPost201ResponseTokenInformationShippingAddress'), require('./TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures'), require('./TssV2TransactionsGet200ResponsePaymentInformationBank'), require('./TssV2TransactionsGet200ResponsePaymentInformationBrands'), require('./TssV2TransactionsGet200ResponsePaymentInformationCard'), require('./TssV2TransactionsGet200ResponsePaymentInformationCustomer'), require('./TssV2TransactionsGet200ResponsePaymentInformationFeatures'), require('./TssV2TransactionsGet200ResponsePaymentInformationFluidData'), require('./TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier'), require('./TssV2TransactionsGet200ResponsePaymentInformationInvoice'), require('./TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation'), require('./TssV2TransactionsGet200ResponsePaymentInformationNetwork'), require('./TssV2TransactionsGet200ResponsePaymentInformationPaymentType'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationBank, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCard, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCustomer, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationFluidData, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationInvoice, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType);
+    root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationBank, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationBrands, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCard, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCustomer, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationFeatures, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationFluidData, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationInvoice, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationNetwork, root.CyberSource.TssV2TransactionsGet200ResponsePaymentInformationPaymentType);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, PtsV2PaymentsPost201ResponseTokenInformationShippingAddress, TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures, TssV2TransactionsGet200ResponsePaymentInformationBank, TssV2TransactionsGet200ResponsePaymentInformationCard, TssV2TransactionsGet200ResponsePaymentInformationCustomer, TssV2TransactionsGet200ResponsePaymentInformationFluidData, TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier, TssV2TransactionsGet200ResponsePaymentInformationInvoice, TssV2TransactionsGet200ResponsePaymentInformationPaymentType) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, PtsV2PaymentsPost201ResponseTokenInformationShippingAddress, TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures, TssV2TransactionsGet200ResponsePaymentInformationBank, TssV2TransactionsGet200ResponsePaymentInformationBrands, TssV2TransactionsGet200ResponsePaymentInformationCard, TssV2TransactionsGet200ResponsePaymentInformationCustomer, TssV2TransactionsGet200ResponsePaymentInformationFeatures, TssV2TransactionsGet200ResponsePaymentInformationFluidData, TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier, TssV2TransactionsGet200ResponsePaymentInformationInvoice, TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation, TssV2TransactionsGet200ResponsePaymentInformationNetwork, TssV2TransactionsGet200ResponsePaymentInformationPaymentType) {
   'use strict';
 
 
@@ -46,6 +46,10 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
 
 
 
@@ -79,8 +83,20 @@
       if (data.hasOwnProperty('card')) {
         obj['card'] = TssV2TransactionsGet200ResponsePaymentInformationCard.constructFromObject(data['card']);
       }
+      if (data.hasOwnProperty('brands')) {
+        obj['brands'] = ApiClient.convertToType(data['brands'], [TssV2TransactionsGet200ResponsePaymentInformationBrands]);
+      }
+      if (data.hasOwnProperty('features')) {
+        obj['features'] = TssV2TransactionsGet200ResponsePaymentInformationFeatures.constructFromObject(data['features']);
+      }
       if (data.hasOwnProperty('invoice')) {
         obj['invoice'] = TssV2TransactionsGet200ResponsePaymentInformationInvoice.constructFromObject(data['invoice']);
+      }
+      if (data.hasOwnProperty('network')) {
+        obj['network'] = TssV2TransactionsGet200ResponsePaymentInformationNetwork.constructFromObject(data['network']);
+      }
+      if (data.hasOwnProperty('issuerInformation')) {
+        obj['issuerInformation'] = TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation.constructFromObject(data['issuerInformation']);
       }
       if (data.hasOwnProperty('bank')) {
         obj['bank'] = TssV2TransactionsGet200ResponsePaymentInformationBank.constructFromObject(data['bank']);
@@ -117,9 +133,26 @@
    */
   exports.prototype['card'] = undefined;
   /**
+   * This array contains the supported brands. 
+   * @member {Array.<module:model/TssV2TransactionsGet200ResponsePaymentInformationBrands>} brands
+   */
+  exports.prototype['brands'] = undefined;
+  /**
+   * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationFeatures} features
+   */
+  exports.prototype['features'] = undefined;
+  /**
    * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationInvoice} invoice
    */
   exports.prototype['invoice'] = undefined;
+  /**
+   * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationNetwork} network
+   */
+  exports.prototype['network'] = undefined;
+  /**
+   * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation} issuerInformation
+   */
+  exports.prototype['issuerInformation'] = undefined;
   /**
    * @member {module:model/TssV2TransactionsGet200ResponsePaymentInformationBank} bank
    */

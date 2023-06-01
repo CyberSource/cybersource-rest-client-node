@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -69,6 +70,9 @@
       if (data.hasOwnProperty('taxable')) {
         obj['taxable'] = ApiClient.convertToType(data['taxable'], 'Boolean');
       }
+      if (data.hasOwnProperty('taxRate')) {
+        obj['taxRate'] = ApiClient.convertToType(data['taxRate'], 'String');
+      }
     }
     return obj;
   }
@@ -83,6 +87,11 @@
    * @member {Boolean} taxable
    */
   exports.prototype['taxable'] = undefined;
+  /**
+   * Shipping Tax rate applied to the freight amount.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). 
+   * @member {String} taxRate
+   */
+  exports.prototype['taxRate'] = undefined;
 
 
 

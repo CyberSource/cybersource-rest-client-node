@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property brandName (base name: "brandName")', function() {
+      // uncomment below and update the code to test the property brandName
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property currency (base name: "currency")', function() {
+      // uncomment below and update the code to test the property currency
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property accountEncoderId (base name: "accountEncoderId")', function() {
       // uncomment below and update the code to test the property accountEncoderId
       //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationCard();

@@ -55,6 +55,8 @@
 
 
 
+
+
   };
 
   /**
@@ -90,7 +92,13 @@
         obj['defaultCurrencyCode'] = ApiClient.convertToType(data['defaultCurrencyCode'], 'String');
       }
       if (data.hasOwnProperty('payerAuthentication3DSVersion')) {
-        obj['payerAuthentication3DSVersion'] = ApiClient.convertToType(data['payerAuthentication3DSVersion'], 'String');
+        obj['payerAuthentication3DSVersion'] = ApiClient.convertToType(data['payerAuthentication3DSVersion'], 'Boolean');
+      }
+      if (data.hasOwnProperty('showVatNumber')) {
+        obj['showVatNumber'] = ApiClient.convertToType(data['showVatNumber'], 'Boolean');
+      }
+      if (data.hasOwnProperty('vatRegistrationNumber')) {
+        obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
       }
     }
     return obj;
@@ -131,10 +139,22 @@
    */
   exports.prototype['defaultCurrencyCode'] = undefined;
   /**
-   * The 3D Secure payer authentication version or status for a merchant's invoice payments. Possible values are: - `1` - `2` - `None` - `Disabled` 
-   * @member {String} payerAuthentication3DSVersion
+   * The 3D Secure payer authentication status for a merchant's invoice payments.
+   * @member {Boolean} payerAuthentication3DSVersion
+   * @default false
    */
-  exports.prototype['payerAuthentication3DSVersion'] = undefined;
+  exports.prototype['payerAuthentication3DSVersion'] = false;
+  /**
+   * Display VAT number on Invoice.
+   * @member {Boolean} showVatNumber
+   * @default false
+   */
+  exports.prototype['showVatNumber'] = false;
+  /**
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.       
+   * @member {String} vatRegistrationNumber
+   */
+  exports.prototype['vatRegistrationNumber'] = undefined;
 
 
 

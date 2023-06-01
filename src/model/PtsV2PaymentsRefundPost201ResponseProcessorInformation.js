@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('networkTransactionId')) {
         obj['networkTransactionId'] = ApiClient.convertToType(data['networkTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('settlementDate')) {
+        obj['settlementDate'] = ApiClient.convertToType(data['settlementDate'], 'String');
       }
     }
     return obj;
@@ -126,6 +130,11 @@
    * @member {String} networkTransactionId
    */
   exports.prototype['networkTransactionId'] = undefined;
+  /**
+   * Field contains a settlement date. The date is in mmdd format, where: mm = month and dd = day. 
+   * @member {String} settlementDate
+   */
+  exports.prototype['settlementDate'] = undefined;
 
 
 

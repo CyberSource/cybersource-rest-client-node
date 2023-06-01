@@ -55,6 +55,8 @@
 
 
 
+
+
   };
 
   /**
@@ -91,6 +93,12 @@
       }
       if (data.hasOwnProperty('payerAuthenticationInInvoicing')) {
         obj['payerAuthenticationInInvoicing'] = ApiClient.convertToType(data['payerAuthenticationInInvoicing'], 'String');
+      }
+      if (data.hasOwnProperty('showVatNumber')) {
+        obj['showVatNumber'] = ApiClient.convertToType(data['showVatNumber'], 'Boolean');
+      }
+      if (data.hasOwnProperty('vatRegistrationNumber')) {
+        obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
       }
     }
     return obj;
@@ -135,6 +143,17 @@
    * @member {String} payerAuthenticationInInvoicing
    */
   exports.prototype['payerAuthenticationInInvoicing'] = undefined;
+  /**
+   * Display VAT number on Invoice.
+   * @member {Boolean} showVatNumber
+   * @default false
+   */
+  exports.prototype['showVatNumber'] = false;
+  /**
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes. 
+   * @member {String} vatRegistrationNumber
+   */
+  exports.prototype['vatRegistrationNumber'] = undefined;
 
 
 

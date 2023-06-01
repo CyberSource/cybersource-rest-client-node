@@ -78,6 +78,7 @@
 
 
 
+
   };
 
   /**
@@ -99,6 +100,9 @@
       }
       if (data.hasOwnProperty('actionTokenTypes')) {
         obj['actionTokenTypes'] = ApiClient.convertToType(data['actionTokenTypes'], ['String']);
+      }
+      if (data.hasOwnProperty('binSource')) {
+        obj['binSource'] = ApiClient.convertToType(data['binSource'], 'String');
       }
       if (data.hasOwnProperty('capture')) {
         obj['capture'] = ApiClient.convertToType(data['capture'], 'Boolean');
@@ -203,6 +207,11 @@
    * @member {Array.<String>} actionTokenTypes
    */
   exports.prototype['actionTokenTypes'] = undefined;
+  /**
+   * Bin Source File Identifier. Possible values: - itmx - rupay 
+   * @member {String} binSource
+   */
+  exports.prototype['binSource'] = undefined;
   /**
    * Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - `true`: Include a capture with an authorization request. - `false`: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. 
    * @member {Boolean} capture
