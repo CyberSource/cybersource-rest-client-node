@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Riskv1authenticationresultsDeviceInformation', 'model/TssV2TransactionsGet200ResponseFraudMarkingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedApplicationInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedLinks', 'model/TssV2TransactionsPost201ResponseEmbeddedMerchantInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessorInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedRiskInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Riskv1authenticationresultsDeviceInformation', 'model/TssV2TransactionsGet200ResponseFraudMarkingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedApplicationInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedErrorInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedLinks', 'model/TssV2TransactionsPost201ResponseEmbeddedMerchantInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedOrderInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPaymentInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessingInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedProcessorInformation', 'model/TssV2TransactionsPost201ResponseEmbeddedRiskInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Riskv1authenticationresultsDeviceInformation'), require('./TssV2TransactionsGet200ResponseFraudMarkingInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedApplicationInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedBuyerInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedLinks'), require('./TssV2TransactionsPost201ResponseEmbeddedMerchantInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessingInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessorInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedRiskInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Riskv1authenticationresultsDeviceInformation'), require('./TssV2TransactionsGet200ResponseFraudMarkingInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedApplicationInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedBuyerInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedErrorInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedLinks'), require('./TssV2TransactionsPost201ResponseEmbeddedMerchantInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedOrderInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPaymentInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessingInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedProcessorInformation'), require('./TssV2TransactionsPost201ResponseEmbeddedRiskInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Riskv1authenticationresultsDeviceInformation, root.CyberSource.TssV2TransactionsGet200ResponseFraudMarkingInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedLinks, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedRiskInformation);
+    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Riskv1authenticationresultsDeviceInformation, root.CyberSource.TssV2TransactionsGet200ResponseFraudMarkingInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedErrorInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedLinks, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedOrderInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedRiskInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsMerchantDefinedInformation, Riskv1authenticationresultsDeviceInformation, TssV2TransactionsGet200ResponseFraudMarkingInformation, TssV2TransactionsPost201ResponseEmbeddedApplicationInformation, TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, TssV2TransactionsPost201ResponseEmbeddedLinks, TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, TssV2TransactionsPost201ResponseEmbeddedOrderInformation, TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, TssV2TransactionsPost201ResponseEmbeddedRiskInformation) {
+}(this, function(ApiClient, Ptsv2paymentsMerchantDefinedInformation, Riskv1authenticationresultsDeviceInformation, TssV2TransactionsGet200ResponseFraudMarkingInformation, TssV2TransactionsPost201ResponseEmbeddedApplicationInformation, TssV2TransactionsPost201ResponseEmbeddedBuyerInformation, TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation, TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation, TssV2TransactionsPost201ResponseEmbeddedErrorInformation, TssV2TransactionsPost201ResponseEmbeddedLinks, TssV2TransactionsPost201ResponseEmbeddedMerchantInformation, TssV2TransactionsPost201ResponseEmbeddedOrderInformation, TssV2TransactionsPost201ResponseEmbeddedPaymentInformation, TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation, TssV2TransactionsPost201ResponseEmbeddedProcessingInformation, TssV2TransactionsPost201ResponseEmbeddedProcessorInformation, TssV2TransactionsPost201ResponseEmbeddedRiskInformation) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -87,6 +89,9 @@
       if (data.hasOwnProperty('merchantId')) {
         obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
       }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
       if (data.hasOwnProperty('applicationInformation')) {
         obj['applicationInformation'] = TssV2TransactionsPost201ResponseEmbeddedApplicationInformation.constructFromObject(data['applicationInformation']);
       }
@@ -101,6 +106,9 @@
       }
       if (data.hasOwnProperty('deviceInformation')) {
         obj['deviceInformation'] = Riskv1authenticationresultsDeviceInformation.constructFromObject(data['deviceInformation']);
+      }
+      if (data.hasOwnProperty('errorInformation')) {
+        obj['errorInformation'] = TssV2TransactionsPost201ResponseEmbeddedErrorInformation.constructFromObject(data['errorInformation']);
       }
       if (data.hasOwnProperty('fraudMarkingInformation')) {
         obj['fraudMarkingInformation'] = TssV2TransactionsGet200ResponseFraudMarkingInformation.constructFromObject(data['fraudMarkingInformation']);
@@ -152,6 +160,11 @@
    */
   exports.prototype['merchantId'] = undefined;
   /**
+   * The status of the submitted transaction. Note: This field may not be returned for all transactions. 
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
    * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedApplicationInformation} applicationInformation
    */
   exports.prototype['applicationInformation'] = undefined;
@@ -171,6 +184,10 @@
    * @member {module:model/Riskv1authenticationresultsDeviceInformation} deviceInformation
    */
   exports.prototype['deviceInformation'] = undefined;
+  /**
+   * @member {module:model/TssV2TransactionsPost201ResponseEmbeddedErrorInformation} errorInformation
+   */
+  exports.prototype['errorInformation'] = undefined;
   /**
    * @member {module:model/TssV2TransactionsGet200ResponseFraudMarkingInformation} fraudMarkingInformation
    */

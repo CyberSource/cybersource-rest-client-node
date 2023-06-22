@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="activatePlan"></a>
 # **activatePlan**
-> InlineResponse2004 activatePlan(id, opts)
+> InlineResponse2004 activatePlan(id)
 
 Activate a Plan
 
@@ -30,9 +30,6 @@ var apiInstance = new CyberSource.PlansApi();
 
 var id = "id_example"; // String | Plan Id
 
-var opts = { 
-  'activatePlanRequest': null // Object | 
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -41,7 +38,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.activatePlan(id, opts, callback);
+apiInstance.activatePlan(id, callback);
 ```
 
 ### Parameters
@@ -49,7 +46,6 @@ apiInstance.activatePlan(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Plan Id | 
- **activatePlanRequest** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -112,7 +108,7 @@ No authorization required
 
 <a name="deactivatePlan"></a>
 # **deactivatePlan**
-> InlineResponse2004 deactivatePlan(id, opts)
+> InlineResponse2004 deactivatePlan(id)
 
 Deactivate a Plan
 
@@ -126,9 +122,6 @@ var apiInstance = new CyberSource.PlansApi();
 
 var id = "id_example"; // String | Plan Id
 
-var opts = { 
-  'deactivatePlanRequest': null // Object | 
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -137,7 +130,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deactivatePlan(id, opts, callback);
+apiInstance.deactivatePlan(id, callback);
 ```
 
 ### Parameters
@@ -145,7 +138,6 @@ apiInstance.deactivatePlan(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Plan Id | 
- **deactivatePlanRequest** | **Object**|  | [optional] 
 
 ### Return type
 

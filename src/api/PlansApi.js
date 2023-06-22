@@ -61,14 +61,14 @@
      * Activate a Plan
      * Activate a Plan
      * @param {String} id Plan Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.activatePlanRequest 
      * @param {module:api/PlansApi~activatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2004}
      */
-    this.activatePlan = function(id, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['activatePlanRequest'];
+    this.activatePlan = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -155,14 +155,14 @@
      * Deactivate a Plan
      * Deactivate a Plan
      * @param {String} id Plan Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.deactivatePlanRequest 
      * @param {module:api/PlansApi~deactivatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2004}
      */
-    this.deactivatePlan = function(id, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['deactivatePlanRequest'];
+    this.deactivatePlan = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {

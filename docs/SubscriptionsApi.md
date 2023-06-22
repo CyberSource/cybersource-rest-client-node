@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="activateSubscription"></a>
 # **activateSubscription**
-> InlineResponse2009 activateSubscription(id, opts)
+> InlineResponse2009 activateSubscription(id)
 
 Activate a Subscription
 
@@ -30,9 +30,6 @@ var apiInstance = new CyberSource.SubscriptionsApi();
 
 var id = "id_example"; // String | Subscription Id
 
-var opts = { 
-  'activateSubscriptionRequest': null // Object | 
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -41,7 +38,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.activateSubscription(id, opts, callback);
+apiInstance.activateSubscription(id, callback);
 ```
 
 ### Parameters
@@ -49,7 +46,6 @@ apiInstance.activateSubscription(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id | 
- **activateSubscriptionRequest** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -66,7 +62,7 @@ No authorization required
 
 <a name="cancelSubscription"></a>
 # **cancelSubscription**
-> InlineResponse202 cancelSubscription(id, opts)
+> InlineResponse202 cancelSubscription(id)
 
 Cancel a Subscription
 
@@ -80,9 +76,6 @@ var apiInstance = new CyberSource.SubscriptionsApi();
 
 var id = "id_example"; // String | Subscription Id
 
-var opts = { 
-  'cancelSubscriptionRequest': null // Object | 
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -91,7 +84,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.cancelSubscription(id, opts, callback);
+apiInstance.cancelSubscription(id, callback);
 ```
 
 ### Parameters
@@ -99,7 +92,6 @@ apiInstance.cancelSubscription(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id | 
- **cancelSubscriptionRequest** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -301,7 +293,7 @@ No authorization required
 
 <a name="suspendSubscription"></a>
 # **suspendSubscription**
-> InlineResponse2021 suspendSubscription(id, opts)
+> InlineResponse2021 suspendSubscription(id)
 
 Suspend a Subscription
 
@@ -315,9 +307,6 @@ var apiInstance = new CyberSource.SubscriptionsApi();
 
 var id = "id_example"; // String | Subscription Id
 
-var opts = { 
-  'suspendSubscriptionRequest': null // Object | 
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -326,7 +315,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.suspendSubscription(id, opts, callback);
+apiInstance.suspendSubscription(id, callback);
 ```
 
 ### Parameters
@@ -334,7 +323,6 @@ apiInstance.suspendSubscription(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id | 
- **suspendSubscriptionRequest** | **Object**|  | [optional] 
 
 ### Return type
 
