@@ -88,7 +88,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2009;
 
       return this.apiClient.callApi(
@@ -137,7 +137,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse202;
 
       return this.apiClient.callApi(
@@ -182,7 +182,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2011;
 
       return this.apiClient.callApi(
@@ -234,7 +234,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
@@ -283,7 +283,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
@@ -325,7 +325,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse20010;
 
       return this.apiClient.callApi(
@@ -374,7 +374,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2021;
 
       return this.apiClient.callApi(
@@ -426,7 +426,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
