@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property applicationInformation (base name: "applicationInformation")', function() {
       // uncomment below and update the code to test the property applicationInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();

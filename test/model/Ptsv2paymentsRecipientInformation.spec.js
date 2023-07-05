@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
+      // uncomment below and update the code to test the property dateOfBirth
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

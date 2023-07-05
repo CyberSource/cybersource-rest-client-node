@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries();
+      //expect(instance).to.be();
+    });
+
     it('should have the property applicationInformation (base name: "applicationInformation")', function() {
       // uncomment below and update the code to test the property applicationInformation
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries();
@@ -100,6 +106,12 @@
 
     it('should have the property deviceInformation (base name: "deviceInformation")', function() {
       // uncomment below and update the code to test the property deviceInformation
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property errorInformation (base name: "errorInformation")', function() {
+      // uncomment below and update the code to test the property errorInformation
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries();
       //expect(instance).to.be();
     });

@@ -61,14 +61,14 @@
      * Activate a Plan
      * Activate a Plan
      * @param {String} id Plan Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.activatePlanRequest 
      * @param {module:api/PlansApi~activatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2004}
      */
-    this.activatePlan = function(id, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['activatePlanRequest'];
+    this.activatePlan = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -88,7 +88,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
@@ -133,7 +133,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse201;
 
       return this.apiClient.callApi(
@@ -155,14 +155,14 @@
      * Deactivate a Plan
      * Deactivate a Plan
      * @param {String} id Plan Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.deactivatePlanRequest 
      * @param {module:api/PlansApi~deactivatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2004}
      */
-    this.deactivatePlan = function(id, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['deactivatePlanRequest'];
+    this.deactivatePlan = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -182,7 +182,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
@@ -231,7 +231,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
@@ -280,7 +280,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
@@ -322,7 +322,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2005;
 
       return this.apiClient.callApi(
@@ -376,7 +376,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse200;
 
       return this.apiClient.callApi(
@@ -428,7 +428,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
