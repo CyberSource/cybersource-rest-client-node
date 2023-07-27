@@ -54,6 +54,8 @@
 
 
 
+
+
   };
 
   /**
@@ -72,6 +74,12 @@
       }
       if (data.hasOwnProperty('reasonCode')) {
         obj['reasonCode'] = ApiClient.convertToType(data['reasonCode'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('rCode')) {
         obj['rCode'] = ApiClient.convertToType(data['rCode'], 'String');
@@ -102,6 +110,16 @@
    * @member {String} reasonCode
    */
   exports.prototype['reasonCode'] = undefined;
+  /**
+   * The status of the submitted transaction. Note: This field may not be returned for all transactions. 
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * Description of why a request failed. Note: This field may not be returned for all transactions. 
+   * @member {String} reason
+   */
+  exports.prototype['reason'] = undefined;
   /**
    * Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful. 
    * @member {String} rCode

@@ -74,6 +74,7 @@
 
 
 
+
   };
 
   /**
@@ -101,6 +102,9 @@
       }
       if (data.hasOwnProperty('submitTimeUTC')) {
         obj['submitTimeUTC'] = ApiClient.convertToType(data['submitTimeUTC'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('applicationInformation')) {
         obj['applicationInformation'] = TssV2TransactionsGet200ResponseApplicationInformation.constructFromObject(data['applicationInformation']);
@@ -197,6 +201,11 @@
    * @member {String} submitTimeUTC
    */
   exports.prototype['submitTimeUTC'] = undefined;
+  /**
+   * The status of the submitted transaction.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
   /**
    * @member {module:model/TssV2TransactionsGet200ResponseApplicationInformation} applicationInformation
    */

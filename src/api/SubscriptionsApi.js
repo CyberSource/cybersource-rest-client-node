@@ -61,14 +61,14 @@
      * Activate a Subscription
      * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
      * @param {String} id Subscription Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.activateSubscriptionRequest 
      * @param {module:api/SubscriptionsApi~activateSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2009}
      */
-    this.activateSubscription = function(id, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['activateSubscriptionRequest'];
+    this.activateSubscription = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -88,7 +88,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2009;
 
       return this.apiClient.callApi(
@@ -110,14 +110,14 @@
      * Cancel a Subscription
      * Cancel a Subscription
      * @param {String} id Subscription Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.cancelSubscriptionRequest 
      * @param {module:api/SubscriptionsApi~cancelSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse202}
      */
-    this.cancelSubscription = function(id, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['cancelSubscriptionRequest'];
+    this.cancelSubscription = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -137,7 +137,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse202;
 
       return this.apiClient.callApi(
@@ -182,7 +182,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2011;
 
       return this.apiClient.callApi(
@@ -234,7 +234,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
@@ -283,7 +283,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
@@ -325,7 +325,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse20010;
 
       return this.apiClient.callApi(
@@ -347,14 +347,14 @@
      * Suspend a Subscription
      * Suspend a Subscription
      * @param {String} id Subscription Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.suspendSubscriptionRequest 
      * @param {module:api/SubscriptionsApi~suspendSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2021}
      */
-    this.suspendSubscription = function(id, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['suspendSubscriptionRequest'];
+    this.suspendSubscription = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -374,7 +374,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2021;
 
       return this.apiClient.callApi(
@@ -426,7 +426,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
