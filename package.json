@@ -22,7 +22,8 @@
     "node-forge": ">=1.0.0",
     "promise": "^8.0.1",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.1"
+    "winston-daily-rotate-file": "^4.5.1",
+    "node-jose": "^2.2.0"
   },
   "keywords": [
     "nodeJS"

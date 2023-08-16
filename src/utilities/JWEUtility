@@ -1,0 +1,6 @@
+'use strict';
+const authJWEUtlilty = require('../authentication/util/Utility.js');
+
+function decryptJWEResponse(encodedResponse, merchantConfig) {
+    return authJWEUtlilty.decryptUsingPem(merchantConfig, encodedResponse);
+}
