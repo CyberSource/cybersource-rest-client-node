@@ -5098,5 +5098,6 @@
   exports.SensitiveDataTags = require('./authentication/logging/SensitiveDataTags.js');
   exports.SensitiveDataMasker = require('./authentication/logging/SensitiveDataMasker.js');
   exports.ExternalLoggerWrapper = require('./authentication/logging/ExternalLoggerWrapper.js');
+  exports.JWEUtility = require('./utilities/JWEUtility.js');
   return exports;
 }));
