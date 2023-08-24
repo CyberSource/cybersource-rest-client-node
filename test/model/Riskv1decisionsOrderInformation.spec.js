@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cutoffDateTime (base name: "cutoffDateTime")', function() {
+      // uncomment below and update the code to test the property cutoffDateTime
+      //var instane = new CyberSource.Riskv1decisionsOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reordered (base name: "reordered")', function() {
       // uncomment below and update the code to test the property reordered
       //var instane = new CyberSource.Riskv1decisionsOrderInformation();

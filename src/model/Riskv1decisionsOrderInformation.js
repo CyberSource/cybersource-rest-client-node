@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('preOrderDate')) {
         obj['preOrderDate'] = ApiClient.convertToType(data['preOrderDate'], 'String');
+      }
+      if (data.hasOwnProperty('cutoffDateTime')) {
+        obj['cutoffDateTime'] = ApiClient.convertToType(data['cutoffDateTime'], 'String');
       }
       if (data.hasOwnProperty('reordered')) {
         obj['reordered'] = ApiClient.convertToType(data['reordered'], 'Boolean');
@@ -119,6 +123,11 @@
    * @member {String} preOrderDate
    */
   exports.prototype['preOrderDate'] = undefined;
+  /**
+   * Starting date and time for an event or a journey that is independent of which transportation mechanism, in UTC. The cutoffDateTime will supersede travelInformation.departureTime if both are supplied in the request. Format: YYYY-MM-DDThh:mm:ssZ. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} cutoffDateTime
+   */
+  exports.prototype['cutoffDateTime'] = undefined;
   /**
    * Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered 
    * @member {Boolean} reordered

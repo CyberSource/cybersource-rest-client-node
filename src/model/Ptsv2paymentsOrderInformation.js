@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('isCryptocurrencyPurchase')) {
         obj['isCryptocurrencyPurchase'] = ApiClient.convertToType(data['isCryptocurrencyPurchase'], 'String');
+      }
+      if (data.hasOwnProperty('cutoffDateTime')) {
+        obj['cutoffDateTime'] = ApiClient.convertToType(data['cutoffDateTime'], 'String');
       }
       if (data.hasOwnProperty('preOrder')) {
         obj['preOrder'] = ApiClient.convertToType(data['preOrder'], 'String');
@@ -146,6 +150,11 @@
    * @member {String} isCryptocurrencyPurchase
    */
   exports.prototype['isCryptocurrencyPurchase'] = undefined;
+  /**
+   * Starting date and time for an event or a journey that is independent of which transportation mechanism, in UTC. The cutoffDateTime will supersede travelInformation.transit.airline.legs[].departureDate and travelInformation.transit.airline.legs[].departureTime if these fields are supplied in the request. Format: YYYY-MM-DDThh:mm:ssZ. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} cutoffDateTime
+   */
+  exports.prototype['cutoffDateTime'] = undefined;
   /**
    * Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability 
    * @member {String} preOrder

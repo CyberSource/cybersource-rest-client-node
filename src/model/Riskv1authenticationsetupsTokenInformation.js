@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('transientToken')) {
         obj['transientToken'] = ApiClient.convertToType(data['transientToken'], 'String');
       }
+      if (data.hasOwnProperty('jti')) {
+        obj['jti'] = ApiClient.convertToType(data['jti'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} transientToken
    */
   exports.prototype['transientToken'] = undefined;
+  /**
+   * TMS Transient Token, 64 hexadecimal id value representing captured payment credentials (including Sensitive Authentication Data, e.g. CVV). 
+   * @member {String} jti
+   */
+  exports.prototype['jti'] = undefined;
 
 
 

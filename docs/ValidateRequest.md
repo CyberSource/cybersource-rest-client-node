@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **paymentInformation** | [**Riskv1authenticationresultsPaymentInformation**](Riskv1authenticationresultsPaymentInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**Riskv1authenticationresultsConsumerAuthenticationInformation**](Riskv1authenticationresultsConsumerAuthenticationInformation.md) |  | [optional] 
 **deviceInformation** | [**Riskv1authenticationresultsDeviceInformation**](Riskv1authenticationresultsDeviceInformation.md) |  | [optional] 
+**tokenInformation** | [**Riskv1decisionsTokenInformation**](Riskv1decisionsTokenInformation.md) |  | [optional] 
 
 

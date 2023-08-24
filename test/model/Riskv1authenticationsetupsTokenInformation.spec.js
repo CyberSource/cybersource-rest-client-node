@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property jti (base name: "jti")', function() {
+      // uncomment below and update the code to test the property jti
+      //var instane = new CyberSource.Riskv1authenticationsetupsTokenInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
