@@ -528,7 +528,7 @@
     if (httpMethod.toLowerCase() === this.constants.POST
       || httpMethod.toLowerCase() === this.constants.PATCH
       || httpMethod.toLowerCase() === this.constants.PUT) {
-      if (body !== "{}") {
+      if (bodyParam !== "{}") {
         bodyParam = JSON.stringify(bodyParam, null, 0);
       }
     }
