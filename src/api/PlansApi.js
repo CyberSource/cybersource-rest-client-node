@@ -88,7 +88,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
@@ -133,7 +133,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse201;
 
       return this.apiClient.callApi(
@@ -182,7 +182,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
@@ -231,7 +231,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
@@ -280,7 +280,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
@@ -322,7 +322,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2005;
 
       return this.apiClient.callApi(
@@ -376,7 +376,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse200;
 
       return this.apiClient.callApi(
@@ -428,7 +428,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
