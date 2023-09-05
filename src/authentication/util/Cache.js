@@ -57,3 +57,12 @@ function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
         ApiException.AuthException(error.message + ". " + Constants.INCORRECT_KEY_PASS);
     }
 }
+
+exports.fetchPEMFileForNetworkTokenization = function(merchantConfig) {
+    var pemFileData = cache.get("privateKeyFromPEMFile");
+    if (pemFileData === undefined || pemFileData === null) {
+        pemFileData = fs.readFileSync(merchantConfig.getpemFileDirectory(), 'utf8');
+        cache.put("privateKeyFromPEMFile", pemFileData);
+    }
+    return cache.get("privateKeyFromPEMFile");
+}

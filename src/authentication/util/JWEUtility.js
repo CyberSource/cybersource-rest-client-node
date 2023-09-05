@@ -2,13 +2,10 @@
 
 const fs = require('fs');
 const jose = require('node-jose');
-
-function readPemFileFromLocation(path) {
-    return fs.readFileSync(path, 'utf8');
-}
+const cache = require('./Cache.js');
 
 exports.decryptUsingPEM = function(merchantConfig, encodedData) {
-    const pemFileData = readPemFileFromLocation(merchantConfig.getpemFileDirectory());
+    const pemFileData = cache.fetchPEMFileForNetworkTokenization(merchantConfig);
     const keyPromise = jose.JWK.asKey(pemFileData, 'pem');
     const decryptedResponsePromise = keyPromise.then(key => jose.JWE.createDecrypt(key).decrypt(encodedData))
                                                .then(result => result.plaintext.toString('utf8'))
