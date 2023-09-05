@@ -146,6 +146,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenInformation (base name: "tokenInformation")', function() {
+      // uncomment below and update the code to test the property tokenInformation
+      //var instane = new CyberSource.CreateBundledDecisionManagerCaseRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

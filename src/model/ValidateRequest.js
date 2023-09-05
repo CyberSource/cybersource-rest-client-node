@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1authenticationresultsConsumerAuthenticationInformation', 'model/Riskv1authenticationresultsDeviceInformation', 'model/Riskv1authenticationresultsOrderInformation', 'model/Riskv1authenticationresultsPaymentInformation', 'model/Riskv1authenticationsetupsProcessingInformation', 'model/Riskv1decisionsClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/Riskv1authenticationresultsConsumerAuthenticationInformation', 'model/Riskv1authenticationresultsDeviceInformation', 'model/Riskv1authenticationresultsOrderInformation', 'model/Riskv1authenticationresultsPaymentInformation', 'model/Riskv1authenticationsetupsProcessingInformation', 'model/Riskv1decisionsClientReferenceInformation', 'model/Riskv1decisionsTokenInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationresultsConsumerAuthenticationInformation'), require('./Riskv1authenticationresultsDeviceInformation'), require('./Riskv1authenticationresultsOrderInformation'), require('./Riskv1authenticationresultsPaymentInformation'), require('./Riskv1authenticationsetupsProcessingInformation'), require('./Riskv1decisionsClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1authenticationresultsConsumerAuthenticationInformation'), require('./Riskv1authenticationresultsDeviceInformation'), require('./Riskv1authenticationresultsOrderInformation'), require('./Riskv1authenticationresultsPaymentInformation'), require('./Riskv1authenticationsetupsProcessingInformation'), require('./Riskv1decisionsClientReferenceInformation'), require('./Riskv1decisionsTokenInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ValidateRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation, root.CyberSource.Riskv1authenticationresultsDeviceInformation, root.CyberSource.Riskv1authenticationresultsOrderInformation, root.CyberSource.Riskv1authenticationresultsPaymentInformation, root.CyberSource.Riskv1authenticationsetupsProcessingInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation);
+    root.CyberSource.ValidateRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation, root.CyberSource.Riskv1authenticationresultsDeviceInformation, root.CyberSource.Riskv1authenticationresultsOrderInformation, root.CyberSource.Riskv1authenticationresultsPaymentInformation, root.CyberSource.Riskv1authenticationsetupsProcessingInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation, root.CyberSource.Riskv1decisionsTokenInformation);
   }
-}(this, function(ApiClient, Riskv1authenticationresultsConsumerAuthenticationInformation, Riskv1authenticationresultsDeviceInformation, Riskv1authenticationresultsOrderInformation, Riskv1authenticationresultsPaymentInformation, Riskv1authenticationsetupsProcessingInformation, Riskv1decisionsClientReferenceInformation) {
+}(this, function(ApiClient, Riskv1authenticationresultsConsumerAuthenticationInformation, Riskv1authenticationresultsDeviceInformation, Riskv1authenticationresultsOrderInformation, Riskv1authenticationresultsPaymentInformation, Riskv1authenticationsetupsProcessingInformation, Riskv1decisionsClientReferenceInformation, Riskv1decisionsTokenInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('deviceInformation')) {
         obj['deviceInformation'] = Riskv1authenticationresultsDeviceInformation.constructFromObject(data['deviceInformation']);
       }
+      if (data.hasOwnProperty('tokenInformation')) {
+        obj['tokenInformation'] = Riskv1decisionsTokenInformation.constructFromObject(data['tokenInformation']);
+      }
     }
     return obj;
   }
@@ -112,6 +116,10 @@
    * @member {module:model/Riskv1authenticationresultsDeviceInformation} deviceInformation
    */
   exports.prototype['deviceInformation'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsTokenInformation} tokenInformation
+   */
+  exports.prototype['tokenInformation'] = undefined;
 
 
 
