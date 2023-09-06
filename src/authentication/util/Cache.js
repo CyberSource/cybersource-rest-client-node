@@ -59,10 +59,17 @@ function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
 }
 
 exports.fetchPEMFileForNetworkTokenization = function(merchantConfig) {
+    var filePath = merchantConfig.getpemFileDirectory();
     var pemFileData = cache.get("privateKeyFromPEMFile");
-    if (pemFileData === undefined || pemFileData === null) {
-        pemFileData = fs.readFileSync(merchantConfig.getpemFileDirectory(), 'utf8');
-        cache.put("privateKeyFromPEMFile", pemFileData);
+    var cachedPemFileLastUpdatedTime = cache.get("cachedLastModifiedTimeOfPEMFile");
+    if (fs.existsSync(filePath)) {
+        const stats = fs.statSync(filePath);
+        const currentFileLastModifiedTime = stats.mtime;
+        if (pemFileData === undefined || pemFileData === null || cachedPemFileLastUpdatedTime < currentFileLastModifiedTime) {
+            pemFileData = fs.readFileSync(filePath, 'utf8');
+            cache.put("privateKeyFromPEMFile", pemFileData);
+            cache.put("cachedLastModifiedTimeOfPEMFile", currentFileLastModifiedTime);
+        }
     }
     return cache.get("privateKeyFromPEMFile");
 }
