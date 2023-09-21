@@ -7,7 +7,7 @@ var DigestGenerator = require('../payloadDigest/DigestGenerator');
          * SECRET KEY -
          * host: Sandbox (apitest.cybersource.com) or Production (api.cybersource.com) hostname
          * date: 'HTTP-date' format as defined by RFC7231.
-         * (request-target): Should be in format of httpMethod: path
+         * request-target: Should be in format of httpMethod: path
                              Example: 'post /pts/v2/payments'
          * Digest: Only needed for POST calls.
                     digestString = BASE64( HMAC-SHA256 ( Payload ));
@@ -20,7 +20,7 @@ exports.getSignatureParameter = function (merchantConfig, logger) {
     var signatureString = Constants.HOST + ': ' + merchantConfig.getRequestHost();
 
     signatureString += '\n' + Constants.DATE + ': ' + new Date(Date.now()).toUTCString();
-    signatureString += '\n(request-target): ';
+    signatureString += '\nrequest-target: ';
 
     var requestType = merchantConfig.getRequestType().toLowerCase();
 
