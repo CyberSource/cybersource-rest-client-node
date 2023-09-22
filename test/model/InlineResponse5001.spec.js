@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
+      //var instane = new CyberSource.InlineResponse5001();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

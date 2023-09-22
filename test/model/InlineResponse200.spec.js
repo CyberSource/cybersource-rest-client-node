@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse200);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });
@@ -68,14 +68,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property totalCount (base name: "totalCount")', function() {
-      // uncomment below and update the code to test the property totalCount
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });
 
-    it('should have the property plans (base name: "plans")', function() {
-      // uncomment below and update the code to test the property plans
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });

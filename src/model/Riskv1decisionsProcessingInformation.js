@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Riskv1decisionsProcessingInformation</code>.
-   * Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not
+   * Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not.
    * @alias module:model/Riskv1decisionsProcessingInformation
    * @class
    */

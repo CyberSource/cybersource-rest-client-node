@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4005', 'model/InlineResponse5001', 'model/UpdatePasswordKeysRequest'], factory);
+    define(['ApiClient', 'model/InlineResponse4006', 'model/InlineResponse5002', 'model/UpdatePasswordKeysRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4005'), require('../model/InlineResponse5001'), require('../model/UpdatePasswordKeysRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse4006'), require('../model/InlineResponse5002'), require('../model/UpdatePasswordKeysRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.KeyManagementPasswordApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse5001, root.CyberSource.UpdatePasswordKeysRequest);
+    root.CyberSource.KeyManagementPasswordApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse5002, root.CyberSource.UpdatePasswordKeysRequest);
   }
-}(this, function(ApiClient, InlineResponse4005, InlineResponse5001, UpdatePasswordKeysRequest) {
+}(this, function(ApiClient, InlineResponse4006, InlineResponse5002, UpdatePasswordKeysRequest) {
   'use strict';
 
   /**

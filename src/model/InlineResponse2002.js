@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/InlineResponse2002Embedded', 'model/InlineResponse2002Links'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002Embedded'), require('./InlineResponse2002Links'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002Embedded, root.CyberSource.InlineResponse2002Links);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, InlineResponse2002Embedded, InlineResponse2002Links) {
   'use strict';
 
 
@@ -49,6 +49,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -62,26 +67,59 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = ApiClient.convertToType(data['_links'], [InlineResponse2002Links]);
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('object')) {
+        obj['object'] = ApiClient.convertToType(data['object'], 'String');
+      }
+      if (data.hasOwnProperty('offset')) {
+        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
+      }
+      if (data.hasOwnProperty('limit')) {
+        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
+      }
+      if (data.hasOwnProperty('count')) {
+        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+      }
+      if (data.hasOwnProperty('total')) {
+        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
+      }
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = InlineResponse2002Embedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
-   * @member {String} submitTimeUtc
+   * @member {Array.<module:model/InlineResponse2002Links>} _links
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['_links'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - COMPLETED 
-   * @member {String} status
+   * @member {String} object
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['object'] = undefined;
+  /**
+   * @member {Number} offset
+   */
+  exports.prototype['offset'] = undefined;
+  /**
+   * @member {Number} limit
+   */
+  exports.prototype['limit'] = undefined;
+  /**
+   * @member {Number} count
+   */
+  exports.prototype['count'] = undefined;
+  /**
+   * @member {Number} total
+   */
+  exports.prototype['total'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2002Embedded} _embedded
+   */
+  exports.prototype['_embedded'] = undefined;
 
 
 

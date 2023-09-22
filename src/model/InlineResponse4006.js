@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4006Details'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4006Details'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4006 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4006Details);
+    root.CyberSource.InlineResponse4006 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
-}(this, function(ApiClient, InlineResponse4006Details) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
 
 
@@ -43,17 +43,15 @@
    * Constructs a new <code>InlineResponse4006</code>.
    * @alias module:model/InlineResponse4006
    * @class
-   * @param message {String} 
-   * @param reason {module:model/InlineResponse4006.ReasonEnum} 
    */
-  var exports = function(message, reason) {
+  var exports = function() {
     var _this = this;
 
 
 
 
-    _this['message'] = message;
-    _this['reason'] = reason;
+
+
   };
 
   /**
@@ -67,128 +65,50 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('correlationId')) {
-        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4006Details]);
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('informationLink')) {
-        obj['informationLink'] = ApiClient.convertToType(data['informationLink'], 'String');
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} correlationId
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['correlationId'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse4006Details>} details
+   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
+   * @member {String} status
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * @member {String} informationLink
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
+   * @member {String} reason
    */
-  exports.prototype['informationLink'] = undefined;
+  exports.prototype['reason'] = undefined;
   /**
+   * The detail message related to the status and reason listed above.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {module:model/InlineResponse4006.ReasonEnum} reason
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
    */
-  exports.prototype['reason'] = undefined;
+  exports.prototype['details'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "INVALID_APIKEY"
-     * @const
-     */
-    "INVALID_APIKEY": "INVALID_APIKEY",
-    /**
-     * value: "INVALID_SHIPPING_INPUT_PARAMS"
-     * @const
-     */
-    "INVALID_SHIPPING_INPUT_PARAMS": "INVALID_SHIPPING_INPUT_PARAMS",
-    /**
-     * value: "CAPTURE_CONTEXT_INVALID"
-     * @const
-     */
-    "CAPTURE_CONTEXT_INVALID": "CAPTURE_CONTEXT_INVALID",
-    /**
-     * value: "CAPTURE_CONTEXT_EXPIRED"
-     * @const
-     */
-    "CAPTURE_CONTEXT_EXPIRED": "CAPTURE_CONTEXT_EXPIRED",
-    /**
-     * value: "SDK_XHR_ERROR"
-     * @const
-     */
-    "SDK_XHR_ERROR": "SDK_XHR_ERROR",
-    /**
-     * value: "UNIFIEDPAYMENTS_VALIDATION_PARAMS"
-     * @const
-     */
-    "UNIFIEDPAYMENTS_VALIDATION_PARAMS": "UNIFIEDPAYMENTS_VALIDATION_PARAMS",
-    /**
-     * value: "UNIFIEDPAYMENTS_VALIDATION_FIELDS"
-     * @const
-     */
-    "UNIFIEDPAYMENTS_VALIDATION_FIELDS": "UNIFIEDPAYMENTS_VALIDATION_FIELDS",
-    /**
-     * value: "UNIFIEDPAYMENT_PAYMENT_PARAMITERS"
-     * @const
-     */
-    "UNIFIEDPAYMENT_PAYMENT_PARAMITERS": "UNIFIEDPAYMENT_PAYMENT_PARAMITERS",
-    /**
-     * value: "CREATE_TOKEN_TIMEOUT"
-     * @const
-     */
-    "CREATE_TOKEN_TIMEOUT": "CREATE_TOKEN_TIMEOUT",
-    /**
-     * value: "CREATE_TOKEN_XHR_ERROR"
-     * @const
-     */
-    "CREATE_TOKEN_XHR_ERROR": "CREATE_TOKEN_XHR_ERROR",
-    /**
-     * value: "SHOW_LOAD_CONTAINER_SELECTOR"
-     * @const
-     */
-    "SHOW_LOAD_CONTAINER_SELECTOR": "SHOW_LOAD_CONTAINER_SELECTOR",
-    /**
-     * value: "SHOW_LOAD_INVALID_CONTAINER"
-     * @const
-     */
-    "SHOW_LOAD_INVALID_CONTAINER": "SHOW_LOAD_INVALID_CONTAINER",
-    /**
-     * value: "SHOW_TOKEN_TIMEOUT"
-     * @const
-     */
-    "SHOW_TOKEN_TIMEOUT": "SHOW_TOKEN_TIMEOUT",
-    /**
-     * value: "SHOW_TOKEN_XHR_ERROR"
-     * @const
-     */
-    "SHOW_TOKEN_XHR_ERROR": "SHOW_TOKEN_XHR_ERROR",
-    /**
-     * value: "SHOW_PAYMENT_TIMEOUT"
-     * @const
-     */
-    "SHOW_PAYMENT_TIMEOUT": "SHOW_PAYMENT_TIMEOUT"  };
 
 
   return exports;

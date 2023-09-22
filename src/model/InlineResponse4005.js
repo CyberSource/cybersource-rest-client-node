@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4005 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
+    root.CyberSource.InlineResponse4005 = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -77,8 +77,8 @@
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
+      if (data.hasOwnProperty('statusCode')) {
+        obj['statusCode'] = ApiClient.convertToType(data['statusCode'], 'String');
       }
     }
     return obj;
@@ -95,7 +95,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
+   * The reason of the status.  Possible values:  - MISSING_FIELD 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
@@ -105,9 +105,10 @@
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
+   * HTTP status code of the submitted request.  Possible values:  - 500 
+   * @member {String} statusCode
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['statusCode'] = undefined;
 
 
 

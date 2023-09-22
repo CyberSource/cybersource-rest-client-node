@@ -223,7 +223,7 @@
         obj['directoryServerTransactionId'] = ApiClient.convertToType(data['directoryServerTransactionId'], 'String');
       }
       if (data.hasOwnProperty('acsOperatorID')) {
-        obj['acsOperatorID'] = ApiClient.convertToType(data['acsOperatorID'], 'Number');
+        obj['acsOperatorID'] = ApiClient.convertToType(data['acsOperatorID'], 'String');
       }
       if (data.hasOwnProperty('acsReferenceNumber')) {
         obj['acsReferenceNumber'] = ApiClient.convertToType(data['acsReferenceNumber'], 'String');
@@ -440,7 +440,7 @@
   exports.prototype['directoryServerTransactionId'] = undefined;
   /**
    * Directory Server assigned ACS identifier.
-   * @member {Number} acsOperatorID
+   * @member {String} acsOperatorID
    */
   exports.prototype['acsOperatorID'] = undefined;
   /**
