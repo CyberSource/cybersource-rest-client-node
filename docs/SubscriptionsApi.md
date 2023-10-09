@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="activateSubscription"></a>
 # **activateSubscription**
-> InlineResponse2009 activateSubscription(id)
+> ActivateSubscriptionResponse activateSubscription(id)
 
 Activate a Subscription
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**ActivateSubscriptionResponse**](ActivateSubscriptionResponse.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ No authorization required
 
 <a name="cancelSubscription"></a>
 # **cancelSubscription**
-> InlineResponse202 cancelSubscription(id)
+> CancelSubscriptionResponse cancelSubscription(id)
 
 Cancel a Subscription
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse202**](InlineResponse202.md)
+[**CancelSubscriptionResponse**](CancelSubscriptionResponse.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ No authorization required
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> InlineResponse2011 createSubscription(createSubscriptionRequest)
+> CreateSubscriptionResponse createSubscription(createSubscriptionRequest)
 
 Create a Subscription
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**CreateSubscriptionResponse**](CreateSubscriptionResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ No authorization required
 
 <a name="getAllSubscriptions"></a>
 # **getAllSubscriptions**
-> InlineResponse2006 getAllSubscriptions(opts)
+> GetAllSubscriptionsResponse getAllSubscriptions(opts)
 
 Get a List of Subscriptions
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**GetAllSubscriptionsResponse**](GetAllSubscriptionsResponse.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ No authorization required
 
 <a name="getSubscription"></a>
 # **getSubscription**
-> InlineResponse2007 getSubscription(id)
+> GetSubscriptionResponse getSubscription(id)
 
 Get a Subscription
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**GetSubscriptionResponse**](GetSubscriptionResponse.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ No authorization required
 
 <a name="getSubscriptionCode"></a>
 # **getSubscriptionCode**
-> InlineResponse20010 getSubscriptionCode()
+> GetSubscriptionCodeResponse getSubscriptionCode()
 
 Get a Subscription Code
 
@@ -280,7 +280,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**GetSubscriptionCodeResponse**](GetSubscriptionCodeResponse.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ No authorization required
 
 <a name="suspendSubscription"></a>
 # **suspendSubscription**
-> InlineResponse2021 suspendSubscription(id)
+> SuspendSubscriptionResponse suspendSubscription(id)
 
 Suspend a Subscription
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2021**](InlineResponse2021.md)
+[**SuspendSubscriptionResponse**](SuspendSubscriptionResponse.md)
 
 ### Authorization
 
@@ -339,7 +339,7 @@ No authorization required
 
 <a name="updateSubscription"></a>
 # **updateSubscription**
-> InlineResponse2008 updateSubscription(id, updateSubscription)
+> UpdateSubscriptionResponse updateSubscription(id, updateSubscription)
 
 Update a Subscription
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**UpdateSubscriptionResponse**](UpdateSubscriptionResponse.md)
 
 ### Authorization
 

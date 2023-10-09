@@ -57,3 +57,19 @@ function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
         ApiException.AuthException(error.message + ". " + Constants.INCORRECT_KEY_PASS);
     }
 }
+
+exports.fetchPEMFileForNetworkTokenization = function(merchantConfig) {
+    var filePath = merchantConfig.getpemFileDirectory();
+    var pemFileData = cache.get("privateKeyFromPEMFile");
+    var cachedPemFileLastUpdatedTime = cache.get("cachedLastModifiedTimeOfPEMFile");
+    if (fs.existsSync(filePath)) {
+        const stats = fs.statSync(filePath);
+        const currentFileLastModifiedTime = stats.mtime;
+        if (pemFileData === undefined || pemFileData === null || cachedPemFileLastUpdatedTime < currentFileLastModifiedTime) {
+            pemFileData = fs.readFileSync(filePath, 'utf8');
+            cache.put("privateKeyFromPEMFile", pemFileData);
+            cache.put("cachedLastModifiedTimeOfPEMFile", currentFileLastModifiedTime);
+        }
+    }
+    return cache.get("privateKeyFromPEMFile");
+}

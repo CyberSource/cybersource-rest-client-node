@@ -62,14 +62,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property batchId (base name: "batchId")', function() {
+      // uncomment below and update the code to test the property batchId
       //var instane = new CyberSource.InlineResponse2003();
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property batchCreatedDate (base name: "batchCreatedDate")', function() {
+      // uncomment below and update the code to test the property batchCreatedDate
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property batchSource (base name: "batchSource")', function() {
+      // uncomment below and update the code to test the property batchSource
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantReference (base name: "merchantReference")', function() {
+      // uncomment below and update the code to test the property merchantReference
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property batchCaEndpoints (base name: "batchCaEndpoints")', function() {
+      // uncomment below and update the code to test the property batchCaEndpoints
       //var instane = new CyberSource.InlineResponse2003();
       //expect(instance).to.be();
     });
@@ -80,8 +98,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property planInformation (base name: "planInformation")', function() {
-      // uncomment below and update the code to test the property planInformation
+    it('should have the property totals (base name: "totals")', function() {
+      // uncomment below and update the code to test the property totals
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billing (base name: "billing")', function() {
+      // uncomment below and update the code to test the property billing
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instane = new CyberSource.InlineResponse2003();
       //expect(instance).to.be();
     });

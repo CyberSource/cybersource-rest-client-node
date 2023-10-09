@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse5001 = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse5001 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
+      }
     }
     return obj;
   }
@@ -86,20 +90,24 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted request.  Possible values:  - SERVER_ERROR 
+   * The status of the submitted transaction. Possible values: - `SERVER_ERROR` 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT 
+   * The reason of the status. Possible Values: - `SYSTEM_ERROR` 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The detail message related to the status and reason listed above.
+   * Underlying service error with exception.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
+  /**
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
+   */
+  exports.prototype['details'] = undefined;
 
 
 

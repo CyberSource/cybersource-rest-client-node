@@ -67,6 +67,7 @@
 
 
 
+
   };
 
   /**
@@ -139,6 +140,9 @@
       }
       if (data.hasOwnProperty('splitPaymentTransaction')) {
         obj['splitPaymentTransaction'] = ApiClient.convertToType(data['splitPaymentTransaction'], 'Boolean');
+      }
+      if (data.hasOwnProperty('cardVerificationIndicator')) {
+        obj['cardVerificationIndicator'] = ApiClient.convertToType(data['cardVerificationIndicator'], 'Boolean');
       }
     }
     return obj;
@@ -245,6 +249,11 @@
    * @member {Boolean} splitPaymentTransaction
    */
   exports.prototype['splitPaymentTransaction'] = undefined;
+  /**
+   * This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) 
+   * @member {Boolean} cardVerificationIndicator
+   */
+  exports.prototype['cardVerificationIndicator'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200OrderInformation', 'model/Rbsv1plansidPlanInformation', 'model/Rbsv1plansidProcessingInformation'], factory);
+    define(['ApiClient', 'model/GetAllPlansResponseOrderInformation', 'model/Rbsv1plansidPlanInformation', 'model/Rbsv1plansidProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse200OrderInformation'), require('./Rbsv1plansidPlanInformation'), require('./Rbsv1plansidProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllPlansResponseOrderInformation'), require('./Rbsv1plansidPlanInformation'), require('./Rbsv1plansidProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UpdatePlanRequest = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200OrderInformation, root.CyberSource.Rbsv1plansidPlanInformation, root.CyberSource.Rbsv1plansidProcessingInformation);
+    root.CyberSource.UpdatePlanRequest = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllPlansResponseOrderInformation, root.CyberSource.Rbsv1plansidPlanInformation, root.CyberSource.Rbsv1plansidProcessingInformation);
   }
-}(this, function(ApiClient, InlineResponse200OrderInformation, Rbsv1plansidPlanInformation, Rbsv1plansidProcessingInformation) {
+}(this, function(ApiClient, GetAllPlansResponseOrderInformation, Rbsv1plansidPlanInformation, Rbsv1plansidProcessingInformation) {
   'use strict';
 
 
@@ -70,7 +70,7 @@
         obj['processingInformation'] = Rbsv1plansidProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = InlineResponse200OrderInformation.constructFromObject(data['orderInformation']);
+        obj['orderInformation'] = GetAllPlansResponseOrderInformation.constructFromObject(data['orderInformation']);
       }
     }
     return obj;
@@ -85,7 +85,7 @@
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/InlineResponse200OrderInformation} orderInformation
+   * @member {module:model/GetAllPlansResponseOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
 

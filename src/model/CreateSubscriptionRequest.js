@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200OrderInformation', 'model/Rbsv1subscriptionsClientReferenceInformation', 'model/Rbsv1subscriptionsPaymentInformation', 'model/Rbsv1subscriptionsPlanInformation', 'model/Rbsv1subscriptionsProcessingInformation', 'model/Rbsv1subscriptionsSubscriptionInformation'], factory);
+    define(['ApiClient', 'model/GetAllPlansResponseOrderInformation', 'model/Rbsv1subscriptionsClientReferenceInformation', 'model/Rbsv1subscriptionsPaymentInformation', 'model/Rbsv1subscriptionsPlanInformation', 'model/Rbsv1subscriptionsProcessingInformation', 'model/Rbsv1subscriptionsSubscriptionInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse200OrderInformation'), require('./Rbsv1subscriptionsClientReferenceInformation'), require('./Rbsv1subscriptionsPaymentInformation'), require('./Rbsv1subscriptionsPlanInformation'), require('./Rbsv1subscriptionsProcessingInformation'), require('./Rbsv1subscriptionsSubscriptionInformation'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllPlansResponseOrderInformation'), require('./Rbsv1subscriptionsClientReferenceInformation'), require('./Rbsv1subscriptionsPaymentInformation'), require('./Rbsv1subscriptionsPlanInformation'), require('./Rbsv1subscriptionsProcessingInformation'), require('./Rbsv1subscriptionsSubscriptionInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateSubscriptionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200OrderInformation, root.CyberSource.Rbsv1subscriptionsClientReferenceInformation, root.CyberSource.Rbsv1subscriptionsPaymentInformation, root.CyberSource.Rbsv1subscriptionsPlanInformation, root.CyberSource.Rbsv1subscriptionsProcessingInformation, root.CyberSource.Rbsv1subscriptionsSubscriptionInformation);
+    root.CyberSource.CreateSubscriptionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllPlansResponseOrderInformation, root.CyberSource.Rbsv1subscriptionsClientReferenceInformation, root.CyberSource.Rbsv1subscriptionsPaymentInformation, root.CyberSource.Rbsv1subscriptionsPlanInformation, root.CyberSource.Rbsv1subscriptionsProcessingInformation, root.CyberSource.Rbsv1subscriptionsSubscriptionInformation);
   }
-}(this, function(ApiClient, InlineResponse200OrderInformation, Rbsv1subscriptionsClientReferenceInformation, Rbsv1subscriptionsPaymentInformation, Rbsv1subscriptionsPlanInformation, Rbsv1subscriptionsProcessingInformation, Rbsv1subscriptionsSubscriptionInformation) {
+}(this, function(ApiClient, GetAllPlansResponseOrderInformation, Rbsv1subscriptionsClientReferenceInformation, Rbsv1subscriptionsPaymentInformation, Rbsv1subscriptionsPlanInformation, Rbsv1subscriptionsProcessingInformation, Rbsv1subscriptionsSubscriptionInformation) {
   'use strict';
 
 
@@ -82,7 +82,7 @@
         obj['paymentInformation'] = Rbsv1subscriptionsPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = InlineResponse200OrderInformation.constructFromObject(data['orderInformation']);
+        obj['orderInformation'] = GetAllPlansResponseOrderInformation.constructFromObject(data['orderInformation']);
       }
     }
     return obj;
@@ -109,7 +109,7 @@
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
-   * @member {module:model/InlineResponse200OrderInformation} orderInformation
+   * @member {module:model/GetAllPlansResponseOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
 

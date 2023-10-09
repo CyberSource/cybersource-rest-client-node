@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse201);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new CyberSource.InlineResponse201();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse201();
@@ -76,12 +70,6 @@
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CyberSource.InlineResponse201();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property planInformation (base name: "planInformation")', function() {
-      // uncomment below and update the code to test the property planInformation
       //var instane = new CyberSource.InlineResponse201();
       //expect(instance).to.be();
     });

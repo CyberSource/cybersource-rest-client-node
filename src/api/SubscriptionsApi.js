@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateSubscriptionRequest', 'model/InlineResponse20010', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/InlineResponse2011', 'model/InlineResponse202', 'model/InlineResponse2021', 'model/InlineResponse4001', 'model/InlineResponse4002', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/UpdateSubscription'], factory);
+    define(['ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/InlineResponse4002', 'model/InlineResponse4003', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateSubscriptionRequest'), require('../model/InlineResponse20010'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2009'), require('../model/InlineResponse2011'), require('../model/InlineResponse202'), require('../model/InlineResponse2021'), require('../model/InlineResponse4001'), require('../model/InlineResponse4002'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdateSubscription'));
+    module.exports = factory(require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/InlineResponse4002'), require('../model/InlineResponse4003'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.InlineResponse20010, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse2008, root.CyberSource.InlineResponse2009, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse2021, root.CyberSource.InlineResponse4001, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdateSubscription);
+    root.CyberSource.SubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
   }
-}(this, function(ApiClient, CreateSubscriptionRequest, InlineResponse20010, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, InlineResponse2011, InlineResponse202, InlineResponse2021, InlineResponse4001, InlineResponse4002, InlineResponse404, PtsV2PaymentsPost502Response, UpdateSubscription) {
+}(this, function(ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, InlineResponse4002, InlineResponse4003, InlineResponse404, PtsV2PaymentsPost502Response, SuspendSubscriptionResponse, UpdateSubscription, UpdateSubscriptionResponse) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the activateSubscription operation.
      * @callback module:api/SubscriptionsApi~activateSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2009} data The data returned by the service call.
+     * @param {module:model/ActivateSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~activateSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2009}
+     * data is of type: {@link module:model/ActivateSubscriptionResponse}
      */
     this.activateSubscription = function(id, callback) {
       var postBody = null;
@@ -89,7 +89,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2009;
+      var returnType = ActivateSubscriptionResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions/{id}/activate', 'POST',
@@ -102,7 +102,7 @@
      * Callback function to receive the result of the cancelSubscription operation.
      * @callback module:api/SubscriptionsApi~cancelSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse202} data The data returned by the service call.
+     * @param {module:model/CancelSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -111,7 +111,7 @@
      * Cancel a Subscription
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~cancelSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse202}
+     * data is of type: {@link module:model/CancelSubscriptionResponse}
      */
     this.cancelSubscription = function(id, callback) {
       var postBody = null;
@@ -138,7 +138,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse202;
+      var returnType = CancelSubscriptionResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions/{id}/cancel', 'POST',
@@ -151,7 +151,7 @@
      * Callback function to receive the result of the createSubscription operation.
      * @callback module:api/SubscriptionsApi~createSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2011} data The data returned by the service call.
+     * @param {module:model/CreateSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -160,7 +160,7 @@
      * Create a Recurring Billing Subscription
      * @param {module:model/CreateSubscriptionRequest} createSubscriptionRequest 
      * @param {module:api/SubscriptionsApi~createSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2011}
+     * data is of type: {@link module:model/CreateSubscriptionResponse}
      */
     this.createSubscription = function(createSubscriptionRequest, callback) {
       var postBody = createSubscriptionRequest;
@@ -183,7 +183,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2011;
+      var returnType = CreateSubscriptionResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions', 'POST',
@@ -196,7 +196,7 @@
      * Callback function to receive the result of the getAllSubscriptions operation.
      * @callback module:api/SubscriptionsApi~getAllSubscriptionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2006} data The data returned by the service call.
+     * @param {module:model/GetAllSubscriptionsResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -209,7 +209,7 @@
      * @param {String} opts.code Filter by Subscription Code
      * @param {String} opts.status Filter by Subscription Status
      * @param {module:api/SubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2006}
+     * data is of type: {@link module:model/GetAllSubscriptionsResponse}
      */
     this.getAllSubscriptions = function(opts, callback) {
       opts = opts || {};
@@ -235,7 +235,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2006;
+      var returnType = GetAllSubscriptionsResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions', 'GET',
@@ -248,7 +248,7 @@
      * Callback function to receive the result of the getSubscription operation.
      * @callback module:api/SubscriptionsApi~getSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
+     * @param {module:model/GetSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -257,7 +257,7 @@
      * Get a Subscription by Subscription Id
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~getSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * data is of type: {@link module:model/GetSubscriptionResponse}
      */
     this.getSubscription = function(id, callback) {
       var postBody = null;
@@ -284,7 +284,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2007;
+      var returnType = GetSubscriptionResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions/{id}', 'GET',
@@ -297,7 +297,7 @@
      * Callback function to receive the result of the getSubscriptionCode operation.
      * @callback module:api/SubscriptionsApi~getSubscriptionCodeCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20010} data The data returned by the service call.
+     * @param {module:model/GetSubscriptionCodeResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -305,7 +305,7 @@
      * Get a Subscription Code
      * Get a Unique Subscription Code
      * @param {module:api/SubscriptionsApi~getSubscriptionCodeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20010}
+     * data is of type: {@link module:model/GetSubscriptionCodeResponse}
      */
     this.getSubscriptionCode = function(callback) {
       var postBody = null;
@@ -326,7 +326,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20010;
+      var returnType = GetSubscriptionCodeResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions/code', 'GET',
@@ -339,7 +339,7 @@
      * Callback function to receive the result of the suspendSubscription operation.
      * @callback module:api/SubscriptionsApi~suspendSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2021} data The data returned by the service call.
+     * @param {module:model/SuspendSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -348,7 +348,7 @@
      * Suspend a Subscription
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~suspendSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2021}
+     * data is of type: {@link module:model/SuspendSubscriptionResponse}
      */
     this.suspendSubscription = function(id, callback) {
       var postBody = null;
@@ -375,7 +375,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2021;
+      var returnType = SuspendSubscriptionResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions/{id}/suspend', 'POST',
@@ -388,7 +388,7 @@
      * Callback function to receive the result of the updateSubscription operation.
      * @callback module:api/SubscriptionsApi~updateSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2008} data The data returned by the service call.
+     * @param {module:model/UpdateSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -398,7 +398,7 @@
      * @param {String} id Subscription Id
      * @param {module:model/UpdateSubscription} updateSubscription Update Subscription
      * @param {module:api/SubscriptionsApi~updateSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2008}
+     * data is of type: {@link module:model/UpdateSubscriptionResponse}
      */
     this.updateSubscription = function(id, updateSubscription, callback) {
       var postBody = updateSubscription;
@@ -427,7 +427,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2008;
+      var returnType = UpdateSubscriptionResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/subscriptions/{id}', 'PATCH',

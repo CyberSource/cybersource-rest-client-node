@@ -22,7 +22,8 @@
     "node-forge": ">=1.0.0",
     "promise": "^8.0.1",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.1"
+    "winston-daily-rotate-file": "^4.5.1",
+    "node-jose": "^2.2.0"
   },
   "keywords": [
     "nodeJS"
@@ -31,9 +32,9 @@
     "@sinonjs/formatio": "3.0.0",
     "expect.js": "~0.3.1",
     "jwk-to-pem": "^2.0.5",
-    "mocha": "^5.2.0",
+    "mocha": "^10.2.0",
     "mocha-sonarqube-reporter": "^1.0.1",
-    "nyc": "^12.0.2",
+    "nyc": "^15.1.0",
     "sonar-scanner": "^3.1.0"
   }
 }
