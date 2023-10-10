@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200Links', 'model/InvoicingV2InvoicesAllGet200ResponseInvoices'], factory);
+    define(['ApiClient', 'model/GetAllPlansResponseLinks', 'model/InvoicingV2InvoicesAllGet200ResponseInvoices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse200Links'), require('./InvoicingV2InvoicesAllGet200ResponseInvoices'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllPlansResponseLinks'), require('./InvoicingV2InvoicesAllGet200ResponseInvoices'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicingV2InvoicesAllGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200Links, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseInvoices);
+    root.CyberSource.InvoicingV2InvoicesAllGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllPlansResponseLinks, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseInvoices);
   }
-}(this, function(ApiClient, InlineResponse200Links, InvoicingV2InvoicesAllGet200ResponseInvoices) {
+}(this, function(ApiClient, GetAllPlansResponseLinks, InvoicingV2InvoicesAllGet200ResponseInvoices) {
   'use strict';
 
 
@@ -65,7 +65,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse200Links.constructFromObject(data['_links']);
+        obj['_links'] = GetAllPlansResponseLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('submitTimeUtc')) {
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
@@ -81,7 +81,7 @@
   }
 
   /**
-   * @member {module:model/InlineResponse200Links} _links
+   * @member {module:model/GetAllPlansResponseLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**

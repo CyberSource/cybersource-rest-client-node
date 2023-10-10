@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePlanRequest', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse201', 'model/InlineResponse4001', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest'], factory);
+    define(['ApiClient', 'model/ActivateDeactivatePlanResponse', 'model/CreatePlanRequest', 'model/CreatePlanResponse', 'model/DeletePlanResponse', 'model/GetAllPlansResponse', 'model/GetPlanCodeResponse', 'model/GetPlanResponse', 'model/InlineResponse4002', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest', 'model/UpdatePlanResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePlanRequest'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/InlineResponse2002'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/InlineResponse201'), require('../model/InlineResponse4001'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/ActivateDeactivatePlanResponse'), require('../model/CreatePlanRequest'), require('../model/CreatePlanResponse'), require('../model/DeletePlanResponse'), require('../model/GetAllPlansResponse'), require('../model/GetPlanCodeResponse'), require('../model/GetPlanResponse'), require('../model/InlineResponse4002'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'), require('../model/UpdatePlanResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PlansApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePlanRequest, root.CyberSource.InlineResponse200, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse201, root.CyberSource.InlineResponse4001, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest);
+    root.CyberSource.PlansApi = factory(root.CyberSource.ApiClient, root.CyberSource.ActivateDeactivatePlanResponse, root.CyberSource.CreatePlanRequest, root.CyberSource.CreatePlanResponse, root.CyberSource.DeletePlanResponse, root.CyberSource.GetAllPlansResponse, root.CyberSource.GetPlanCodeResponse, root.CyberSource.GetPlanResponse, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest, root.CyberSource.UpdatePlanResponse);
   }
-}(this, function(ApiClient, CreatePlanRequest, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse201, InlineResponse4001, InlineResponse404, PtsV2PaymentsPost502Response, UpdatePlanRequest) {
+}(this, function(ApiClient, ActivateDeactivatePlanResponse, CreatePlanRequest, CreatePlanResponse, DeletePlanResponse, GetAllPlansResponse, GetPlanCodeResponse, GetPlanResponse, InlineResponse4002, InlineResponse404, PtsV2PaymentsPost502Response, UpdatePlanRequest, UpdatePlanResponse) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the activatePlan operation.
      * @callback module:api/PlansApi~activatePlanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2004} data The data returned by the service call.
+     * @param {module:model/ActivateDeactivatePlanResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * Activate a Plan
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~activatePlanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2004}
+     * data is of type: {@link module:model/ActivateDeactivatePlanResponse}
      */
     this.activatePlan = function(id, callback) {
       var postBody = null;
@@ -89,7 +89,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2004;
+      var returnType = ActivateDeactivatePlanResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans/{id}/activate', 'POST',
@@ -102,7 +102,7 @@
      * Callback function to receive the result of the createPlan operation.
      * @callback module:api/PlansApi~createPlanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse201} data The data returned by the service call.
+     * @param {module:model/CreatePlanResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -111,7 +111,7 @@
      * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) 
      * @param {module:model/CreatePlanRequest} createPlanRequest 
      * @param {module:api/PlansApi~createPlanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse201}
+     * data is of type: {@link module:model/CreatePlanResponse}
      */
     this.createPlan = function(createPlanRequest, callback) {
       var postBody = createPlanRequest;
@@ -134,7 +134,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse201;
+      var returnType = CreatePlanResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans', 'POST',
@@ -147,7 +147,7 @@
      * Callback function to receive the result of the deactivatePlan operation.
      * @callback module:api/PlansApi~deactivatePlanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2004} data The data returned by the service call.
+     * @param {module:model/ActivateDeactivatePlanResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -156,7 +156,7 @@
      * Deactivate a Plan
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~deactivatePlanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2004}
+     * data is of type: {@link module:model/ActivateDeactivatePlanResponse}
      */
     this.deactivatePlan = function(id, callback) {
       var postBody = null;
@@ -183,7 +183,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2004;
+      var returnType = ActivateDeactivatePlanResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans/{id}/deactivate', 'POST',
@@ -196,7 +196,7 @@
      * Callback function to receive the result of the deletePlan operation.
      * @callback module:api/PlansApi~deletePlanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/DeletePlanResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -205,7 +205,7 @@
      * Delete a Plan is only allowed: - plan status is in &#x60;DRAFT&#x60; - plan status is in &#x60;ACTIVE&#x60;, and &#x60;INACTIVE&#x60; only allowed when no subscriptions attached to a plan in the lifetime of a plan 
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~deletePlanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/DeletePlanResponse}
      */
     this.deletePlan = function(id, callback) {
       var postBody = null;
@@ -232,7 +232,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2002;
+      var returnType = DeletePlanResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans/{id}', 'DELETE',
@@ -245,7 +245,7 @@
      * Callback function to receive the result of the getPlan operation.
      * @callback module:api/PlansApi~getPlanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/GetPlanResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -254,7 +254,7 @@
      * Retrieve a Plan details by Plan Id.
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~getPlanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/GetPlanResponse}
      */
     this.getPlan = function(id, callback) {
       var postBody = null;
@@ -281,7 +281,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2001;
+      var returnType = GetPlanResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans/{id}', 'GET',
@@ -294,7 +294,7 @@
      * Callback function to receive the result of the getPlanCode operation.
      * @callback module:api/PlansApi~getPlanCodeCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2005} data The data returned by the service call.
+     * @param {module:model/GetPlanCodeResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -302,7 +302,7 @@
      * Get a Plan Code
      * Get a Unique Plan Code
      * @param {module:api/PlansApi~getPlanCodeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2005}
+     * data is of type: {@link module:model/GetPlanCodeResponse}
      */
     this.getPlanCode = function(callback) {
       var postBody = null;
@@ -323,7 +323,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2005;
+      var returnType = GetPlanCodeResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans/code', 'GET',
@@ -336,7 +336,7 @@
      * Callback function to receive the result of the getPlans operation.
      * @callback module:api/PlansApi~getPlansCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {module:model/GetAllPlansResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -350,7 +350,7 @@
      * @param {String} opts.status Filter by Plan Status
      * @param {String} opts.name Filter by Plan Name. (First sub string or full string) **[Not Recommended]** 
      * @param {module:api/PlansApi~getPlansCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * data is of type: {@link module:model/GetAllPlansResponse}
      */
     this.getPlans = function(opts, callback) {
       opts = opts || {};
@@ -377,7 +377,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse200;
+      var returnType = GetAllPlansResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans', 'GET',
@@ -390,7 +390,7 @@
      * Callback function to receive the result of the updatePlan operation.
      * @callback module:api/PlansApi~updatePlanCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
+     * @param {module:model/UpdatePlanResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -400,7 +400,7 @@
      * @param {String} id Plan Id
      * @param {module:model/UpdatePlanRequest} updatePlanRequest 
      * @param {module:api/PlansApi~updatePlanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * data is of type: {@link module:model/UpdatePlanResponse}
      */
     this.updatePlan = function(id, updatePlanRequest, callback) {
       var postBody = updatePlanRequest;
@@ -429,7 +429,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2003;
+      var returnType = UpdatePlanResponse;
 
       return this.apiClient.callApi(
         '/rbs/v1/plans/{id}', 'PATCH',

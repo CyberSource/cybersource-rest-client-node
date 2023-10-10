@@ -62,26 +62,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property batchId (base name: "batchId")', function() {
+      // uncomment below and update the code to test the property batchId
       //var instane = new CyberSource.InlineResponse202();
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
-      //var instane = new CyberSource.InlineResponse202();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instane = new CyberSource.InlineResponse202();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property subscriptionInformation (base name: "subscriptionInformation")', function() {
-      // uncomment below and update the code to test the property subscriptionInformation
+    it('should have the property batchItemCount (base name: "batchItemCount")', function() {
+      // uncomment below and update the code to test the property batchItemCount
       //var instane = new CyberSource.InlineResponse202();
       //expect(instance).to.be();
     });

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200PlanInformationBillingPeriod', 'model/Rbsv1plansPlanInformationBillingCycles'], factory);
+    define(['ApiClient', 'model/GetAllPlansResponsePlanInformationBillingPeriod', 'model/Rbsv1plansPlanInformationBillingCycles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse200PlanInformationBillingPeriod'), require('./Rbsv1plansPlanInformationBillingCycles'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllPlansResponsePlanInformationBillingPeriod'), require('./Rbsv1plansPlanInformationBillingCycles'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Rbsv1subscriptionsPlanInformation = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200PlanInformationBillingPeriod, root.CyberSource.Rbsv1plansPlanInformationBillingCycles);
+    root.CyberSource.Rbsv1subscriptionsPlanInformation = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllPlansResponsePlanInformationBillingPeriod, root.CyberSource.Rbsv1plansPlanInformationBillingCycles);
   }
-}(this, function(ApiClient, InlineResponse200PlanInformationBillingPeriod, Rbsv1plansPlanInformationBillingCycles) {
+}(this, function(ApiClient, GetAllPlansResponsePlanInformationBillingPeriod, Rbsv1plansPlanInformationBillingCycles) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billingPeriod')) {
-        obj['billingPeriod'] = InlineResponse200PlanInformationBillingPeriod.constructFromObject(data['billingPeriod']);
+        obj['billingPeriod'] = GetAllPlansResponsePlanInformationBillingPeriod.constructFromObject(data['billingPeriod']);
       }
       if (data.hasOwnProperty('billingCycles')) {
         obj['billingCycles'] = Rbsv1plansPlanInformationBillingCycles.constructFromObject(data['billingCycles']);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/InlineResponse200PlanInformationBillingPeriod} billingPeriod
+   * @member {module:model/GetAllPlansResponsePlanInformationBillingPeriod} billingPeriod
    */
   exports.prototype['billingPeriod'] = undefined;
   /**

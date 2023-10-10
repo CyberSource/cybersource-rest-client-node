@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse4004', 'model/InlineResponse4005', 'model/InlineResponse5001', 'model/InlineResponse502', 'model/KmsV2KeysAsymDeletesPost200Response', 'model/KmsV2KeysAsymGet200Response', 'model/KmsV2KeysAsymPost201Response', 'model/UpdateAsymKeysRequest'], factory);
+    define(['ApiClient', 'model/CreateP12KeysRequest', 'model/DeleteBulkP12KeysRequest', 'model/InlineResponse4005', 'model/InlineResponse4006', 'model/InlineResponse5002', 'model/InlineResponse5021', 'model/KmsV2KeysAsymDeletesPost200Response', 'model/KmsV2KeysAsymGet200Response', 'model/KmsV2KeysAsymPost201Response', 'model/UpdateAsymKeysRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse4004'), require('../model/InlineResponse4005'), require('../model/InlineResponse5001'), require('../model/InlineResponse502'), require('../model/KmsV2KeysAsymDeletesPost200Response'), require('../model/KmsV2KeysAsymGet200Response'), require('../model/KmsV2KeysAsymPost201Response'), require('../model/UpdateAsymKeysRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateP12KeysRequest'), require('../model/DeleteBulkP12KeysRequest'), require('../model/InlineResponse4005'), require('../model/InlineResponse4006'), require('../model/InlineResponse5002'), require('../model/InlineResponse5021'), require('../model/KmsV2KeysAsymDeletesPost200Response'), require('../model/KmsV2KeysAsymGet200Response'), require('../model/KmsV2KeysAsymPost201Response'), require('../model/UpdateAsymKeysRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse5001, root.CyberSource.InlineResponse502, root.CyberSource.KmsV2KeysAsymDeletesPost200Response, root.CyberSource.KmsV2KeysAsymGet200Response, root.CyberSource.KmsV2KeysAsymPost201Response, root.CyberSource.UpdateAsymKeysRequest);
+    root.CyberSource.AsymmetricKeyManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateP12KeysRequest, root.CyberSource.DeleteBulkP12KeysRequest, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse5002, root.CyberSource.InlineResponse5021, root.CyberSource.KmsV2KeysAsymDeletesPost200Response, root.CyberSource.KmsV2KeysAsymGet200Response, root.CyberSource.KmsV2KeysAsymPost201Response, root.CyberSource.UpdateAsymKeysRequest);
   }
-}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse4004, InlineResponse4005, InlineResponse5001, InlineResponse502, KmsV2KeysAsymDeletesPost200Response, KmsV2KeysAsymGet200Response, KmsV2KeysAsymPost201Response, UpdateAsymKeysRequest) {
+}(this, function(ApiClient, CreateP12KeysRequest, DeleteBulkP12KeysRequest, InlineResponse4005, InlineResponse4006, InlineResponse5002, InlineResponse5021, KmsV2KeysAsymDeletesPost200Response, KmsV2KeysAsymGet200Response, KmsV2KeysAsymPost201Response, UpdateAsymKeysRequest) {
   'use strict';
 
   /**

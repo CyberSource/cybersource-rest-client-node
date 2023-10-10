@@ -62,6 +62,8 @@ function MerchantConfig(result) {
     /* Intermediate Host */
     this.intermediateHost = result.intermediateHost;
 
+    this.pemFileDirectory = result.pemFileDirectory;
+
     this.solutionId = result.solutionId;
 
     this.logConfiguration = new LogConfiguration(result.logConfiguration);
@@ -346,6 +348,16 @@ MerchantConfig.prototype.getDefaultHeaders = function getDefaultHeaders() {
 MerchantConfig.prototype.setDefaultHeaders = function setDefaultHeaders(defaultHeaders) {
     return this.defaultHeaders;
 }
+
+MerchantConfig.prototype.getpemFileDirectory = function getpemFileDirectory() {
+    return this.pemFileDirectory;
+}
+
+MerchantConfig.prototype.setpemFileDirectory = function getpemFileDirectory(pemFileDirectory) {
+    this.pemFileDirectory = pemFileDirectory;
+}
+
+
 
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
 

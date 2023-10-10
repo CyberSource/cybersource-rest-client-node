@@ -3,47 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**correlationId** | **String** |  | [optional] 
-**details** | [**[InlineResponse4006Details]**](InlineResponse4006Details.md) |  | [optional] 
-**informationLink** | **String** |  | [optional] 
-**message** | **String** |  | 
-**reason** | **String** |  | 
-
-
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `INVALID_APIKEY` (value: `"INVALID_APIKEY"`)
-
-* `INVALID_SHIPPING_INPUT_PARAMS` (value: `"INVALID_SHIPPING_INPUT_PARAMS"`)
-
-* `CAPTURE_CONTEXT_INVALID` (value: `"CAPTURE_CONTEXT_INVALID"`)
-
-* `CAPTURE_CONTEXT_EXPIRED` (value: `"CAPTURE_CONTEXT_EXPIRED"`)
-
-* `SDK_XHR_ERROR` (value: `"SDK_XHR_ERROR"`)
-
-* `UNIFIEDPAYMENTS_VALIDATION_PARAMS` (value: `"UNIFIEDPAYMENTS_VALIDATION_PARAMS"`)
-
-* `UNIFIEDPAYMENTS_VALIDATION_FIELDS` (value: `"UNIFIEDPAYMENTS_VALIDATION_FIELDS"`)
-
-* `UNIFIEDPAYMENT_PAYMENT_PARAMITERS` (value: `"UNIFIEDPAYMENT_PAYMENT_PARAMITERS"`)
-
-* `CREATE_TOKEN_TIMEOUT` (value: `"CREATE_TOKEN_TIMEOUT"`)
-
-* `CREATE_TOKEN_XHR_ERROR` (value: `"CREATE_TOKEN_XHR_ERROR"`)
-
-* `SHOW_LOAD_CONTAINER_SELECTOR` (value: `"SHOW_LOAD_CONTAINER_SELECTOR"`)
-
-* `SHOW_LOAD_INVALID_CONTAINER` (value: `"SHOW_LOAD_INVALID_CONTAINER"`)
-
-* `SHOW_TOKEN_TIMEOUT` (value: `"SHOW_TOKEN_TIMEOUT"`)
-
-* `SHOW_TOKEN_XHR_ERROR` (value: `"SHOW_TOKEN_XHR_ERROR"`)
-
-* `SHOW_PAYMENT_TIMEOUT` (value: `"SHOW_PAYMENT_TIMEOUT"`)
-
-
+**submitTimeUtc** | **String** | Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services.  | [optional] 
+**status** | **String** | The status of the submitted transaction.  Possible values:  - INVALID_REQUEST  | [optional] 
+**reason** | **String** | The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  | [optional] 
+**message** | **String** | The detail message related to the status and reason listed above. | [optional] 
+**details** | [**[PtsV2PaymentsPost201ResponseErrorInformationDetails]**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  | [optional] 
 
 

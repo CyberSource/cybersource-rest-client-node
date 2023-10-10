@@ -50,10 +50,30 @@
   }
 
   describe('DecisionManagerApi', function() {
+    describe('actionDecisionManagerCase', function() {
+      it('should call actionDecisionManagerCase successfully', function(done) {
+        //uncomment below and update the code to test actionDecisionManagerCase
+        //instance.actionDecisionManagerCase(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('addNegative', function() {
       it('should call addNegative successfully', function(done) {
         //uncomment below and update the code to test addNegative
         //instance.addNegative(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('commentDecisionManagerCase', function() {
+      it('should call commentDecisionManagerCase successfully', function(done) {
+        //uncomment below and update the code to test commentDecisionManagerCase
+        //instance.commentDecisionManagerCase(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
