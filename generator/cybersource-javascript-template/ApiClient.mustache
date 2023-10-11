@@ -390,12 +390,12 @@
     tester.response.req.headers = error.response.config.headers;
     tester.response.header = error.response.headers;
     tester.response.status = error.response.status;
-	
+
     try {
-	  // 404 is caused by missing resource / resource not found
+      // 404 is caused by missing resource / resource not found
       tester.response.text = JSON.stringify(error.response.data);
     } catch(err) {
-	  // 404 is caused by unexpected end of stream or stream not found
+      // 404 is caused by unexpected end of stream or stream not found
       tester.response.text = error.message;
     }
     return tester;
@@ -433,12 +433,12 @@
     tester.text = JSON.stringify(response.data);
     return tester;
   }
-  
+
     // Code added by Infosys dev team
 
   /**
    * This method will set the merchantConfig object global
-   * 
+   *
    * @param {Configuration} configObject merchantConfiguration properties.
    */
   exports.prototype.setConfiguration = function (configObject) {
@@ -446,7 +446,7 @@
     this.merchantConfig = new MerchantConfig(configObject);
     this.constants = Constants;
     if(this.merchantConfig.getIntermediateHost()) {
-      if(this.merchantConfig.getIntermediateHost().startsWith(this.constants.HTTP_URL_PREFIX) || 
+      if(this.merchantConfig.getIntermediateHost().startsWith(this.constants.HTTP_URL_PREFIX) ||
         this.merchantConfig.getIntermediateHost().startsWith('http://')) {
           this.basePath = this.merchantConfig.getIntermediateHost();
       } else {
@@ -460,17 +460,17 @@
 
   /**
    * This method is to generate headers for http and jwt authentication.
-   * 
-   * @param {String} httpMethod 
-   * @param {String} requestTarget 
-   * @param {String} requestBody 
+   *
+   * @param {String} httpMethod
+   * @param {String} requestTarget
+   * @param {String} requestBody
    */
   exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
 
     this.merchantConfig.setRequestTarget(requestTarget);
     this.merchantConfig.setRequestType(httpMethod)
     this.merchantConfig.setRequestJsonData(requestBody);
-    
+
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
@@ -479,8 +479,8 @@
     // var clientId = getClientId();
 
     // headerParams['v-c-client-id'] = clientId;
-    
-    // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {  
+
+    // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {
       // headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
     // }
 
@@ -527,7 +527,7 @@
     var packageInfo = require('./../package.json');
     return "cybs-rest-sdk-node-" + packageInfo.version;
   }
-  
+
 {{#emitJSDoc}}{{^usePromises}}  /**
    * Callback function to receive the result of the operation.
    * @callback module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient~callApiCallback
@@ -578,7 +578,7 @@
 
     if (useProxy && (proxyAddress != null && proxyAddress != '')) {
       if ((proxyUser != null && proxyUser != '') && (proxyPassword!= null && proxyPassword != '')) {
-        var proxy  = process.env.http_proxy || 'http://' + proxyUser + ':' + proxyPassword + '@' + proxyAddress + ':' + proxyPort; 
+        var proxy  = process.env.http_proxy || 'http://' + proxyUser + ':' + proxyPassword + '@' + proxyAddress + ':' + proxyPort;
       }
       else {
         var proxy  = process.env.http_proxy || 'http://' +  proxyAddress + ':' + proxyPort;
@@ -594,10 +594,16 @@
     if(enableClientCert) {
       var certFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getSSLClientCert()));
       var keyFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getPrivateKey()));
-      axiosConfig.httpsAgent = new https.Agent({
-        cert: fslib.readFileSync(certFile),
-        key: fslib.readFileSync(keyFile)
-      });
+
+      if (axiosConfig.httpsAgent) {
+        axiosConfig.httpsAgent.cert = fslib.readFileSync(certFile);
+        axiosConfig.httpsAgent.key = fslib.readFileSync(keyFile);
+      } else {
+        axiosConfig.httpsAgent = new https.Agent({
+          cert: fslib.readFileSync(certFile),
+          key: fslib.readFileSync(keyFile)
+        });
+      }
     }
 
     // apply authentications
@@ -712,8 +718,8 @@
     if (this.enableCookies){
       axiosConfig.jar = this.cookieJar;
     }
-	
-	axiosConfig.url = requestTarget;
+
+    axiosConfig.url = requestTarget;
 
 {{#usePromises}}    return axios.request(axiosConfig).then(function(response) {
       try {
@@ -722,8 +728,8 @@
 
         resolve({data: data, response: response});
       } catch(err) {
-		  reject(err);
-	  }
+          reject(err);
+      }
     }).catch(function(error, response) {
       source.cancel('Stream ended.');
       var userError = {};
@@ -761,7 +767,7 @@
 
       callback(userError, null, response);
     });
-    
+
     process.on('uncaughtException', (reason, p) => {
       // console.log('Uncaught exception at Promise :' + p + ' with Reason : ' + reason);
     });
@@ -769,8 +775,8 @@
 
   /**
    * Build request target required for the signature generation
-   * @param {String} path 
-   * @param {Object} pathParams 
+   * @param {String} path
+   * @param {Object} pathParams
    */
   exports.prototype.buildRequestTarget = function (path, pathParams, queryParams) {
     if (!path.match(/^\//)) {
@@ -805,7 +811,7 @@
     }
     return requestTarget;
   };
-  
+
 {{#emitJSDoc}}  /**
    * Parses an ISO-8601 string representation of a date value.
    * @param {String} str The date value as a string.
