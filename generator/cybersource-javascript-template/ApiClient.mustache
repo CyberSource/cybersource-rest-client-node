@@ -393,7 +393,9 @@
 
     try {
       // 404 is caused by missing resource / resource not found
-      tester.response.text = JSON.stringify(error.response.data);
+      if (error.response.config.responseType != 'stream'){
+        tester.response.text = JSON.stringify(error.response.data);
+      } else { throw "Exception during streaming"; }
     } catch(err) {
       // 404 is caused by unexpected end of stream or stream not found
       tester.response.text = error.message;
