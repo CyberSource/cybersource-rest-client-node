@@ -738,6 +738,8 @@
       } else if (error.code && error.code == "ERR_BAD_REQUEST") {
         userError = _this.translate404Error(error);
         response = userError.response;
+      } else if (error.code && error.code == "ETIMEDOUT") {
+        userError = _this.translateProxyIssue(error);
       } else {
         userError = _this.translateError(error);
         response = userError.response;
@@ -760,6 +762,8 @@
       } else if (error.code && error.code == "ERR_BAD_REQUEST") {
         userError = _this.translate404Error(error);
         response = userError.response;
+      } else if (error.code && error.code == "ETIMEDOUT") {
+        userError = _this.translateProxyIssue(error);
       } else {
         userError = _this.translateError(error);
         response = userError.response;
