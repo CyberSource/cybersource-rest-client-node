@@ -121,6 +121,10 @@
         throw new Error("Missing the required parameter 'createPlanRequest' when calling createPlan");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreatePlanRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -415,6 +419,10 @@
         throw new Error("Missing the required parameter 'updatePlanRequest' when calling updatePlan");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdatePlanRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id

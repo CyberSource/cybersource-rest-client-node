@@ -74,6 +74,10 @@
         throw new Error("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PredefinedSubscriptionRequestBean', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -122,6 +126,10 @@
         throw new Error("Missing the required parameter 'createReportSubscriptionRequest' when calling createSubscription");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateReportSubscriptionRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

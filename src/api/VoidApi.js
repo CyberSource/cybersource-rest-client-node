@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'mitVoidRequest' when calling mitVoid");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/MitVoidRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -123,6 +127,10 @@
         throw new Error("Missing the required parameter 'id' when calling voidCapture");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/VoidCaptureRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -175,6 +183,10 @@
         throw new Error("Missing the required parameter 'id' when calling voidCredit");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/VoidCreditRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -227,6 +239,10 @@
         throw new Error("Missing the required parameter 'id' when calling voidPayment");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/VoidPaymentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -279,6 +295,10 @@
         throw new Error("Missing the required parameter 'id' when calling voidRefund");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/VoidRefundRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id

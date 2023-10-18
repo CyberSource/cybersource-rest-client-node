@@ -187,6 +187,10 @@
         throw new Error("Missing the required parameter 'patchPaymentInstrumentRequest' when calling patchPaymentInstrument");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PatchPaymentInstrumentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'paymentInstrumentId': paymentInstrumentId
@@ -238,6 +242,10 @@
         throw new Error("Missing the required parameter 'postPaymentInstrumentRequest' when calling postPaymentInstrument");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentInstrumentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

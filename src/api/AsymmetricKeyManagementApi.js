@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'createP12KeysRequest' when calling createP12Keys");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateP12KeysRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -117,6 +121,10 @@
         throw new Error("Missing the required parameter 'deleteBulkP12KeysRequest' when calling deleteBulkP12Keys");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/DeleteBulkP12KeysRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -217,6 +225,10 @@
         throw new Error("Missing the required parameter 'updateAsymKeysRequest' when calling updateAsymKey");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateAsymKeysRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'keyId': keyId

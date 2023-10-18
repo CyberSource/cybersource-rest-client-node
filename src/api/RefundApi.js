@@ -78,6 +78,10 @@
         throw new Error("Missing the required parameter 'id' when calling refundCapture");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/RefundCaptureRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -130,6 +134,10 @@
         throw new Error("Missing the required parameter 'id' when calling refundPayment");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/RefundPaymentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id

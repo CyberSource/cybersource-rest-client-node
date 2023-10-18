@@ -78,6 +78,10 @@
         throw new Error("Missing the required parameter 'updatePasswordKeysRequest' when calling updatePassword");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdatePasswordKeysRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'keyId': keyId

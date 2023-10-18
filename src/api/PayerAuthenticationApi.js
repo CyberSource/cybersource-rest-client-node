@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'checkPayerAuthEnrollmentRequest' when calling checkPayerAuthEnrollment");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CheckPayerAuthEnrollmentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -117,6 +121,10 @@
         throw new Error("Missing the required parameter 'payerAuthSetupRequest' when calling payerAuthSetup");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PayerAuthSetupRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -162,6 +170,10 @@
         throw new Error("Missing the required parameter 'validateRequest' when calling validateAuthenticationResults");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ValidateRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
