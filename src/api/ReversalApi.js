@@ -78,6 +78,10 @@
         throw new Error("Missing the required parameter 'authReversalRequest' when calling authReversal");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/AuthReversalRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -124,6 +128,10 @@
         throw new Error("Missing the required parameter 'mitReversalRequest' when calling mitReversal");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/MitReversalRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

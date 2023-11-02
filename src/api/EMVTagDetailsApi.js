@@ -114,6 +114,10 @@
         throw new Error("Missing the required parameter 'body' when calling parseEmvTags");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Body', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

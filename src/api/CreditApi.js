@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'createCreditRequest' when calling createCredit");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateCreditRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

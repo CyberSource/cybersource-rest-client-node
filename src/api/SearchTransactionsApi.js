@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'createSearchRequest' when calling createSearch");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSearchRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

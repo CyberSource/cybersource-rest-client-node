@@ -170,6 +170,10 @@
         throw new Error("Missing the required parameter 'createSubscriptionRequest' when calling createSubscription");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSubscriptionRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -413,6 +417,10 @@
         throw new Error("Missing the required parameter 'updateSubscription' when calling updateSubscription");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateSubscription', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id

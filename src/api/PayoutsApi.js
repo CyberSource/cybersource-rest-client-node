@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'octCreatePaymentRequest' when calling octCreatePayment");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/OctCreatePaymentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

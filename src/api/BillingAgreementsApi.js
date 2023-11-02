@@ -78,6 +78,10 @@
         throw new Error("Missing the required parameter 'id' when calling billingAgreementsDeRegistration");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ModifyBillingAgreement', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -130,6 +134,10 @@
         throw new Error("Missing the required parameter 'id' when calling billingAgreementsIntimation");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/IntimateBillingAgreement', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -176,6 +184,10 @@
         throw new Error("Missing the required parameter 'createBillingAgreement' when calling billingAgreementsRegistration");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateBillingAgreement', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

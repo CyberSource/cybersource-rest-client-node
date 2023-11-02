@@ -78,6 +78,10 @@
         throw new Error("Missing the required parameter 'caseManagementActionsRequest' when calling actionDecisionManagerCase");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CaseManagementActionsRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -130,6 +134,10 @@
         throw new Error("Missing the required parameter 'addNegativeListRequest' when calling addNegative");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/AddNegativeListRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'type': type
@@ -182,6 +190,10 @@
         throw new Error("Missing the required parameter 'caseManagementCommentsRequest' when calling commentDecisionManagerCase");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CaseManagementCommentsRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -228,6 +240,10 @@
         throw new Error("Missing the required parameter 'createBundledDecisionManagerCaseRequest' when calling createBundledDecisionManagerCase");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateBundledDecisionManagerCaseRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -279,6 +295,10 @@
         throw new Error("Missing the required parameter 'fraudMarkingActionRequest' when calling fraudUpdate");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/FraudMarkingActionRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
