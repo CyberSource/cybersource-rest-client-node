@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -83,6 +84,9 @@
       }
       if (data.hasOwnProperty('contact')) {
         obj['contact'] = ApiClient.convertToType(data['contact'], 'String');
+      }
+      if (data.hasOwnProperty('address1')) {
+        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
       }
     }
     return obj;
@@ -118,6 +122,11 @@
    * @member {String} contact
    */
   exports.prototype['contact'] = undefined;
+  /**
+   * First line of merchant's address. For the descriptions, used-by information, data types, and lengths for these fields, see `merchant_descriptor_street` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * @member {String} address1
+   */
+  exports.prototype['address1'] = undefined;
 
 
 

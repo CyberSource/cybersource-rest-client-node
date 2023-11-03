@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**[InlineResponse2002Links]**](InlineResponse2002Links.md) |  | [optional] 
-**_object** | **String** |  | [optional] 
-**offset** | **Number** |  | [optional] 
-**limit** | **Number** |  | [optional] 
-**count** | **Number** |  | [optional] 
-**total** | **Number** |  | [optional] 
-**embedded** | [**InlineResponse2002Embedded**](InlineResponse2002Embedded.md) |  | [optional] 
+**registrationInformation** | [**Boardingv1registrationsRegistrationInformation**](Boardingv1registrationsRegistrationInformation.md) |  | [optional] 
+**integrationInformation** | [**InlineResponse2002IntegrationInformation**](InlineResponse2002IntegrationInformation.md) |  | [optional] 
+**organizationInformation** | [**Boardingv1registrationsOrganizationInformation**](Boardingv1registrationsOrganizationInformation.md) |  | [optional] 
+**productInformation** | [**Boardingv1registrationsProductInformation**](Boardingv1registrationsProductInformation.md) |  | [optional] 
+**productInformationSetups** | [**[InlineResponse2011ProductInformationSetups]**](InlineResponse2011ProductInformationSetups.md) |  | [optional] 
+**documentInformation** | [**Boardingv1registrationsDocumentInformation**](Boardingv1registrationsDocumentInformation.md) |  | [optional] 
+**details** | **{String: [Object]}** |  | [optional] 
 
 

@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>ReportingV3PurchaseRefundDetailsGet200Response</code>.
+   * PurchaseAndRefundDetails
    * @alias module:model/ReportingV3PurchaseRefundDetailsGet200Response
    * @class
    */

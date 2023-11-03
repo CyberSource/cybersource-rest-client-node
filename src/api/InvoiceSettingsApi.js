@@ -59,7 +59,7 @@
 
     /**
      * Get Invoice Settings
-     * Get the invoice settings for the invoice payment page.
+     * Allows you to retrieve the invoice settings for the payment page.
      * @param {module:api/InvoiceSettingsApi~getInvoiceSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoiceSettingsGet200Response}
      */
@@ -101,7 +101,7 @@
 
     /**
      * Update Invoice Settings
-     * Update invoice settings for the invoice payment page.
+     * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param {module:model/InvoiceSettingsRequest} invoiceSettingsRequest 
      * @param {module:api/InvoiceSettingsApi~updateInvoiceSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoiceSettingsGet200Response}

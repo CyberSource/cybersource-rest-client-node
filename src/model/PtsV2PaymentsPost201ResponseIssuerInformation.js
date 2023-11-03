@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('responseCode')) {
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
       }
+      if (data.hasOwnProperty('pinRequestIndicator')) {
+        obj['pinRequestIndicator'] = ApiClient.convertToType(data['pinRequestIndicator'], 'String');
+      }
     }
     return obj;
   }
@@ -100,6 +104,11 @@
    * @member {String} responseCode
    */
   exports.prototype['responseCode'] = undefined;
+  /**
+   * This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. 
+   * @member {String} pinRequestIndicator
+   */
+  exports.prototype['pinRequestIndicator'] = undefined;
 
 
 
