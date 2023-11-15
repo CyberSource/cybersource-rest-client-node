@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionFlowIndicator (base name: "transactionFlowIndicator")', function() {
+      // uncomment below and update the code to test the property transactionFlowIndicator
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cavvAlgorithm (base name: "cavvAlgorithm")', function() {
       // uncomment below and update the code to test the property cavvAlgorithm
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();

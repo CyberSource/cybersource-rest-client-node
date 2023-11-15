@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GenerateUnifiedCheckoutCaptureContextRequest', 'model/InlineResponse4007'], factory);
+    define(['ApiClient', 'model/GenerateUnifiedCheckoutCaptureContextRequest', 'model/InlineResponse4008'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/GenerateUnifiedCheckoutCaptureContextRequest'), require('../model/InlineResponse4007'));
+    module.exports = factory(require('../ApiClient'), require('../model/GenerateUnifiedCheckoutCaptureContextRequest'), require('../model/InlineResponse4008'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UnifiedCheckoutCaptureContextApi = factory(root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest, root.CyberSource.InlineResponse4007);
+    root.CyberSource.UnifiedCheckoutCaptureContextApi = factory(root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest, root.CyberSource.InlineResponse4008);
   }
-}(this, function(ApiClient, GenerateUnifiedCheckoutCaptureContextRequest, InlineResponse4007) {
+}(this, function(ApiClient, GenerateUnifiedCheckoutCaptureContextRequest, InlineResponse4008) {
   'use strict';
 
   /**

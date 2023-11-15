@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property vehicleData (base name: "vehicleData")', function() {
+      // uncomment below and update the code to test the property vehicleData
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -1,21 +1,21 @@
 {{>licenseInfo}}
+'use strict';
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['superagent', 'superagent-proxy', 'querystring', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest'], factory);
+    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superagent'), require('superagent-proxy'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'));
+    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'));
   } else {
     // Browser globals (root is window)
     if (!root.{{moduleName}}) {
       root.{{moduleName}} = {};
     }
-    root.{{moduleName}}.ApiClient = factory(root.superagent, root.superagent_proxy, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest);
+    root.{{moduleName}}.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest);
   }
-}(this, function(superagent, superagent_proxy, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest) {
-  'use strict';
-
+}(this, function(axios, axiosCookieJar, { HttpsProxyAgent }, https, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest) {
 {{#emitJSDoc}}  /**
    * @module {{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient
    * @version {{projectVersion}}
@@ -88,7 +88,10 @@
      * if this.enableCookies is set to true.
      */
     if (typeof window === 'undefined') {
-      this.agent = new superagent.agent();
+      const wrapper = require('axios-cookiejar-support').wrapper;
+      const toughCookieJar = require('tough-cookie').CookieJar;
+      wrapper(axios);
+      this.cookieJar = new toughCookieJar();
     }
 
     /**
@@ -128,7 +131,7 @@
     if (!path.match(/^\//)) {
       path = '/' + path;
     }
-    var url = this.basePath + path;
+    var url = path;
     var _this = this;
     url = url.replace(/\{([\w-]+)\}/g, function(fullMatch, key) {
       var value;
@@ -289,18 +292,18 @@
   };
 
 {{#emitJSDoc}}  /**
-   * Applies authentication headers to the request.
-   * @param {Object} request The request object created by a <code>superagent()</code> call.
+   * Applies authentication headers to the axiosConfig.
+   * @param {Object} axiosConfig The object to be used as configuration for <code>axios</code> API.
    * @param {Array.<String>} authNames An array of authentication method names.
    */
-{{/emitJSDoc}}  exports.prototype.applyAuthToRequest = function(request, authNames) {
+{{/emitJSDoc}}  exports.prototype.applyAuthToRequest = function(axiosConfig, authNames) {
     var _this = this;
     authNames.forEach(function(authName) {
       var auth = _this.authentications[authName];
       switch (auth.type) {
         case 'basic':
           if (auth.username || auth.password) {
-            request.auth(auth.username || '', auth.password || '');
+            axiosConfig.auth(auth.username || '', auth.password || '');
           }
           break;
         case 'apiKey':
@@ -312,15 +315,15 @@
               data[auth.name] = auth.apiKey;
             }
             if (auth['in'] === 'header') {
-              request.set(data);
+              axiosConfig.headers = data;
             } else {
-              request.query(data);
+              axiosConfig.params = data;
             }
           }
           break;
         case 'oauth2':
           if (auth.accessToken) {
-            request.set({'Authorization': 'Bearer ' + auth.accessToken});
+            axiosConfig.headers['Authorization'] = 'Bearer ' + auth.accessToken;
           }
           break;
         default:
@@ -344,19 +347,100 @@
     }
     // Rely on SuperAgent for parsing response body.
     // See http://visionmedia.github.io/superagent/#parsing-response-bodies
-    var data = response.body;
+    var data = response.data;
     if (data == null || (typeof data === 'object' && typeof data.length === 'undefined' && !Object.keys(data).length)) {
       // SuperAgent does not always produce a body; use the unparsed response as a fallback
-      data = response.text;
+      data = response.statusText;
     }
     return exports.convertToType(data, returnType);
   };
-  
+
+{{#emitJSDoc}}  /**
+   * Translates the Axios error into an error object that is backward compatible.
+   * @param {Object} error An Axios error object.
+   * @returns A backward compatible error object.
+   */
+{{/emitJSDoc}}  exports.prototype.translateError = function translateError(error) {
+    var tester = {};
+    tester.status = error.response.status;
+    tester.response = {};
+    tester.response.req = {};
+    tester.response.req.method = error.response.config.method;
+    tester.response.req.url = error.response.config.baseURL + error.response.config.url;
+    tester.response.req.data = error.response.config.data;
+    tester.response.req.headers = error.response.config.headers;
+    tester.response.header = error.response.headers;
+    tester.response.status = error.response.status;
+    tester.response.text = JSON.stringify(error.response.data);
+    return tester;
+  }
+
+{{#emitJSDoc}}  /**
+   * Translates the Axios 404 error into an error object that is backward compatible.
+   * @param {Object} error An Axios error object.
+   * @returns A backward compatible error object.
+   */
+{{/emitJSDoc}}  exports.prototype.translate404Error = function translate404Error(error) {
+    var tester = {};
+    tester.status = error.response.status;
+    tester.response = {};
+    tester.response.req = {};
+    tester.response.req.method = error.response.config.method;
+    tester.response.req.url = error.response.config.baseURL + error.response.config.url;
+    tester.response.req.headers = error.response.config.headers;
+    tester.response.header = error.response.headers;
+    tester.response.status = error.response.status;
+
+    try {
+      // 404 is caused by missing resource / resource not found
+      if (error.response.config.responseType != 'stream'){
+        tester.response.text = JSON.stringify(error.response.data);
+      } else { throw "Exception during streaming"; }
+    } catch(err) {
+      // 404 is caused by unexpected end of stream or stream not found
+      tester.response.text = error.message;
+    }
+    return tester;
+  }
+
+{{#emitJSDoc}}  /**
+   * Translates the Axios Proxy error into an error object that is backward compatible.
+   * @param {Object} error An Axios error object.
+   * @returns A backward compatible error object.
+   */
+{{/emitJSDoc}}  exports.prototype.translateProxyIssue = function translateProxyIssue(error) {
+    var tester = {};
+    tester.errno = error.errno;
+    tester.code = error.code;
+    tester.syscall = error.syscall;
+    tester.address = error.address;
+    tester.port = error.port;
+    return tester;
+  }
+
+{{#emitJSDoc}}  /**
+   * Translates the Axios response into a response object that is backward compatible.
+   * @param {Object} response An Axios response object.
+   * @returns A backward compatible response object.
+   */
+{{/emitJSDoc}}  exports.prototype.translateResponse = function translateResponse(response) {
+    var tester = {};
+    tester.req = {};
+    tester.req.method = response.config.method;
+    tester.req.url = response.config.baseURL + response.config.url;
+    tester.req.data = response.config.data;
+    tester.req.headers = response.config.headers;
+    tester.header = response.headers;
+    tester.status = response.status;
+    tester.text = JSON.stringify(response.data);
+    return tester;
+  }
+
     // Code added by Infosys dev team
 
   /**
    * This method will set the merchantConfig object global
-   * 
+   *
    * @param {Configuration} configObject merchantConfiguration properties.
    */
   exports.prototype.setConfiguration = function (configObject) {
@@ -364,7 +448,7 @@
     this.merchantConfig = new MerchantConfig(configObject);
     this.constants = Constants;
     if(this.merchantConfig.getIntermediateHost()) {
-      if(this.merchantConfig.getIntermediateHost().startsWith(this.constants.HTTP_URL_PREFIX) || 
+      if(this.merchantConfig.getIntermediateHost().startsWith(this.constants.HTTP_URL_PREFIX) ||
         this.merchantConfig.getIntermediateHost().startsWith('http://')) {
           this.basePath = this.merchantConfig.getIntermediateHost();
       } else {
@@ -378,17 +462,17 @@
 
   /**
    * This method is to generate headers for http and jwt authentication.
-   * 
-   * @param {String} httpMethod 
-   * @param {String} requestTarget 
-   * @param {String} requestBody 
+   *
+   * @param {String} httpMethod
+   * @param {String} requestTarget
+   * @param {String} requestBody
    */
   exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
 
     this.merchantConfig.setRequestTarget(requestTarget);
     this.merchantConfig.setRequestType(httpMethod)
     this.merchantConfig.setRequestJsonData(requestBody);
-    
+
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
@@ -397,8 +481,8 @@
     // var clientId = getClientId();
 
     // headerParams['v-c-client-id'] = clientId;
-    
-    // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {  
+
+    // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {
       // headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
     // }
 
@@ -445,7 +529,7 @@
     var packageInfo = require('./../package.json');
     return "cybs-rest-sdk-node-" + packageInfo.version;
   }
-  
+
 {{#emitJSDoc}}{{^usePromises}}  /**
    * Callback function to receive the result of the operation.
    * @callback module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient~callApiCallback
@@ -484,39 +568,53 @@
     var proxyPassword = this.merchantConfig.getProxyPassword();
     var enableClientCert = this.merchantConfig.getEnableClientCert();
 
-    var request = superagent(httpMethod, url);
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
+    var axiosConfig = {
+      baseURL: this.basePath,
+      method: httpMethod,
+      proxy: false,
+      headers: {}
+    };
 
     if (useProxy && (proxyAddress != null && proxyAddress != '')) {
-      require('superagent-proxy')(require('superagent'));
-      var request = superagent(httpMethod, url);
       if ((proxyUser != null && proxyUser != '') && (proxyPassword!= null && proxyPassword != '')) {
-        var proxy  = process.env.http_proxy || 'http://' + proxyUser + ':' + proxyPassword + '@' + proxyAddress + ':' + proxyPort; 
+        var proxy  = process.env.http_proxy || 'http://' + proxyUser + ':' + proxyPassword + '@' + proxyAddress + ':' + proxyPort;
       }
       else {
         var proxy  = process.env.http_proxy || 'http://' +  proxyAddress + ':' + proxyPort;
       }
-      request.proxy(proxy); 
+
+      const agent = new HttpsProxyAgent(proxy);
+      axiosConfig.httpsAgent = agent;
     }
 
     var fslib = require('fs');
     var pathlib = require('path');
 
-    if(enableClientCert)
-    {      
+    if(enableClientCert) {
       var certFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getSSLClientCert()));
       var keyFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getPrivateKey()));
-      request.cert(fslib.readFileSync(certFile));
-      request.key(fslib.readFileSync(keyFile));
+
+      if (axiosConfig.httpsAgent) {
+        axiosConfig.httpsAgent.cert = fslib.readFileSync(certFile);
+        axiosConfig.httpsAgent.key = fslib.readFileSync(keyFile);
+      } else {
+        axiosConfig.httpsAgent = new https.Agent({
+          cert: fslib.readFileSync(certFile),
+          key: fslib.readFileSync(keyFile)
+        });
+      }
     }
 
     // apply authentications
-    this.applyAuthToRequest(request, authNames);
+    this.applyAuthToRequest(axiosConfig, authNames);
 
     // set query parameters
     if (httpMethod.toLowerCase() === this.constants.GET && this.cache === false) {
         queryParams['_'] = new Date().getTime();
     }
-    request.query(this.normalizeParams(queryParams));
 
     /**
      *added by infosys team, to generate requestTarget with pathParam
@@ -543,39 +641,45 @@
     }
 
     // set header parameters
-    request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
+    for (const key in this.defaultHeaders) {
+      axiosConfig.headers[key] = this.defaultHeaders[`${key}`];
+    }
+
+    for (const key in headerParams) {
+      axiosConfig.headers[key] = headerParams[`${key}`];
+    }
 
     // set request timeout
-    request.timeout(this.timeout);
+    axiosConfig.timeout = this.timeout;
 
     var contentType = this.jsonPreferredMime(contentTypes);
+    var contentTypeHeaderValue = '';
     if (contentType) {
       // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
       if(contentType != 'multipart/form-data') {
-        request.type(contentType);
+        contentTypeHeaderValue = contentType;
       }
-    } else if (!request.header['Content-Type']) {
-      request.type('application/json');
+    } else if (!contentTypeHeaderValue) {
+      contentTypeHeaderValue = 'application/json';
     }
 
     if (contentType === 'application/x-www-form-urlencoded') {
-      request.type('form');      
-      formParams = bodyParam
-      request.send(JSON.parse(formParams));
+      contentTypeHeaderValue = 'application/x-www-form-urlencoded';
+      axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
+      formParams = bodyParam;
+      axiosConfig.data = JSON.parse(formParams);
     } else if (contentType == 'multipart/form-data') {
       var _formParams = this.normalizeParams(formParams);
+      contentTypeHeaderValue = 'multipart/form-data';
+      axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
+      const formData = new formData();
       for (var key in _formParams) {
         if (_formParams.hasOwnProperty(key)) {
-          if (this.isFileParam(_formParams[key])) {
-            // file field
-            request.attach(key, _formParams[key]);
-          } else {
-            request.field(key, _formParams[key]);
-          }
+          formData.append(key, _formParams[key]);
         }
       }
     } else if (bodyParam) {
-      request.send(bodyParam);
+      axiosConfig.data = JSON.parse(bodyParam);
     }
 
     var accept = this.jsonPreferredMime(accepts);
@@ -585,7 +689,7 @@
     }
 
     if (accept) {
-      request.accept(accept);
+      axiosConfig.headers['Accept'] = accept;
       /* Code for downloading file from stream */
       if (accept === 'application/xml' || accept === 'text/csv') {
         if (accept === 'application/xml') {
@@ -593,75 +697,92 @@
         } else {
           this.downloadFilePath = this.downloadFilePath + '.csv';
         }
+
         var fs = require('fs');
         var stream = fs.createWriteStream(this.downloadFilePath);
-        request.send().pipe(stream);
-        request._endCalled = false;
-        // to create event for callback after write stream finishes
-        stream.on('finish',function(error)
-        {
-          callback(error);
-        }); 
+        axiosConfig.method = 'GET';
+        axiosConfig.responseType = 'stream';
+        axiosConfig.url = requestTarget;
+        axiosConfig.cancelToken = source.token;
+        axios.request(axiosConfig).then(function(response) {
+          response.data.pipe(stream);
+        });
       }
     }
 
     if (returnType === 'Blob') {
-      request.responseType('blob');
+      axiosConfig.responseType = 'blob';
     } else if (returnType === 'String') {
-      request.responseType('string');
+      axiosConfig.responseType = 'string';
     }
 
     // Attach previously saved cookies, if enabled
     if (this.enableCookies){
-      if (typeof window === 'undefined') {
-        this.agent.attachCookies(request);
-      }
-      else {
-        request.withCredentials();
-      }
+      axiosConfig.jar = this.cookieJar;
     }
 
-{{#usePromises}}    return new Promise(function(resolve, reject) {
-      request.end(function(error, response) {
-        if (error) {
-          reject(error);
-        } else {
-          try {
-            var data = _this.deserialize(response, returnType);
-            if (_this.enableCookies && typeof window === 'undefined'){
-              _this.agent.saveCookies(response);
-            }
-            resolve({data: data, response: response});
-          } catch (err) {
-            reject(err);
-          }
-        }
-      });
-    });{{/usePromises}}
-{{^usePromises}}    request.end(function(error, response) {
-      if (callback) {
-        var data = null;
-        if (!error) {
-          try {
-            data = _this.deserialize(response, returnType);
-            if (_this.enableCookies && typeof window === 'undefined'){
-              _this.agent.saveCookies(response);
-            }
-          } catch (err) {
-            error = err;
-          }
-        }
-        callback(error, data, response);
+    axiosConfig.url = requestTarget;
+
+{{#usePromises}}    return axios.request(axiosConfig).then(function(response) {
+      try {
+        var data = _this.deserialize(response, returnType);
+        response = _this.translateResponse(response);
+
+        resolve({data: data, response: response});
+      } catch(err) {
+          reject(err);
       }
+    }).catch(function(error, response) {
+      source.cancel('Stream ended.');
+      var userError = {};
+      if (error.code && error.code == "ECONNREFUSED") {
+        userError = _this.translateProxyIssue(error);
+      } else if (error.code && error.code == "ERR_BAD_REQUEST") {
+        userError = _this.translate404Error(error);
+        response = userError.response;
+      } else if (error.code && error.code == "ETIMEDOUT") {
+        userError = _this.translateProxyIssue(error);
+      } else {
+        userError = _this.translateError(error);
+        response = userError.response;
+      }
+
+      reject(userError);
+    });{{/usePromises}}
+{{^usePromises}}    axios.request(axiosConfig).then(function(response) {
+      if (callback) {
+        var data = _this.deserialize(response, returnType);
+        response = _this.translateResponse(response);
+
+        callback(null, data, response);
+      }
+    }).catch(function(error, response) {
+      source.cancel('Stream ended.');
+      var userError = {};
+      if (error.code && error.code == "ECONNREFUSED") {
+        userError = _this.translateProxyIssue(error);
+      } else if (error.code && error.code == "ERR_BAD_REQUEST") {
+        userError = _this.translate404Error(error);
+        response = userError.response;
+      } else if (error.code && error.code == "ETIMEDOUT") {
+        userError = _this.translateProxyIssue(error);
+      } else {
+        userError = _this.translateError(error);
+        response = userError.response;
+      }
+
+      callback(userError, null, response);
     });
 
-    return request;
+    process.on('uncaughtException', (reason, p) => {
+      // console.log('Uncaught exception at Promise :' + p + ' with Reason : ' + reason);
+    });
 {{/usePromises}}  };
 
   /**
    * Build request target required for the signature generation
-   * @param {String} path 
-   * @param {Object} pathParams 
+   * @param {String} path
+   * @param {Object} pathParams
    */
   exports.prototype.buildRequestTarget = function (path, pathParams, queryParams) {
     if (!path.match(/^\//)) {
@@ -696,7 +817,7 @@
     }
     return requestTarget;
   };
-  
+
 {{#emitJSDoc}}  /**
    * Parses an ISO-8601 string representation of a date value.
    * @param {String} str The date value as a string.

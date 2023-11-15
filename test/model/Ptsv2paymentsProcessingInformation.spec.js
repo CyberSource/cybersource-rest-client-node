@@ -248,6 +248,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property networkPartnerId (base name: "networkPartnerId")', function() {
+      // uncomment below and update the code to test the property networkPartnerId
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

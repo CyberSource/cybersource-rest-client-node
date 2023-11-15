@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pinRequestIndicator (base name: "pinRequestIndicator")', function() {
+      // uncomment below and update the code to test the property pinRequestIndicator
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

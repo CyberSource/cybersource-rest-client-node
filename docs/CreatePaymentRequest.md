@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **consumerAuthenticationInformation** | [**Ptsv2paymentsConsumerAuthenticationInformation**](Ptsv2paymentsConsumerAuthenticationInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**Ptsv2paymentsPointOfSaleInformation**](Ptsv2paymentsPointOfSaleInformation.md) |  | [optional] 
 **merchantDefinedInformation** | [**[Ptsv2paymentsMerchantDefinedInformation]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines.  | [optional] 
+**merchantDefinedSecureInformation** | [**Ptsv2paymentsMerchantDefinedSecureInformation**](Ptsv2paymentsMerchantDefinedSecureInformation.md) |  | [optional] 
 **installmentInformation** | [**Ptsv2paymentsInstallmentInformation**](Ptsv2paymentsInstallmentInformation.md) |  | [optional] 
 **travelInformation** | [**Ptsv2paymentsTravelInformation**](Ptsv2paymentsTravelInformation.md) |  | [optional] 
 **healthCareInformation** | [**Ptsv2paymentsHealthCareInformation**](Ptsv2paymentsHealthCareInformation.md) |  | [optional] 

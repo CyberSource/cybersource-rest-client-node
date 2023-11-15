@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsTravelInformationAgency', 'model/Ptsv2paymentsTravelInformationAutoRental', 'model/Ptsv2paymentsTravelInformationLodging', 'model/Ptsv2paymentsTravelInformationTransit'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsTravelInformationAgency', 'model/Ptsv2paymentsTravelInformationAutoRental', 'model/Ptsv2paymentsTravelInformationLodging', 'model/Ptsv2paymentsTravelInformationTransit', 'model/Ptsv2paymentsTravelInformationVehicleData'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTravelInformationAgency'), require('./Ptsv2paymentsTravelInformationAutoRental'), require('./Ptsv2paymentsTravelInformationLodging'), require('./Ptsv2paymentsTravelInformationTransit'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTravelInformationAgency'), require('./Ptsv2paymentsTravelInformationAutoRental'), require('./Ptsv2paymentsTravelInformationLodging'), require('./Ptsv2paymentsTravelInformationTransit'), require('./Ptsv2paymentsTravelInformationVehicleData'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTravelInformationAgency, root.CyberSource.Ptsv2paymentsTravelInformationAutoRental, root.CyberSource.Ptsv2paymentsTravelInformationLodging, root.CyberSource.Ptsv2paymentsTravelInformationTransit);
+    root.CyberSource.Ptsv2paymentsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTravelInformationAgency, root.CyberSource.Ptsv2paymentsTravelInformationAutoRental, root.CyberSource.Ptsv2paymentsTravelInformationLodging, root.CyberSource.Ptsv2paymentsTravelInformationTransit, root.CyberSource.Ptsv2paymentsTravelInformationVehicleData);
   }
-}(this, function(ApiClient, Ptsv2paymentsTravelInformationAgency, Ptsv2paymentsTravelInformationAutoRental, Ptsv2paymentsTravelInformationLodging, Ptsv2paymentsTravelInformationTransit) {
+}(this, function(ApiClient, Ptsv2paymentsTravelInformationAgency, Ptsv2paymentsTravelInformationAutoRental, Ptsv2paymentsTravelInformationLodging, Ptsv2paymentsTravelInformationTransit, Ptsv2paymentsTravelInformationVehicleData) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('transit')) {
         obj['transit'] = Ptsv2paymentsTravelInformationTransit.constructFromObject(data['transit']);
       }
+      if (data.hasOwnProperty('vehicleData')) {
+        obj['vehicleData'] = Ptsv2paymentsTravelInformationVehicleData.constructFromObject(data['vehicleData']);
+      }
     }
     return obj;
   }
@@ -105,6 +109,10 @@
    * @member {module:model/Ptsv2paymentsTravelInformationTransit} transit
    */
   exports.prototype['transit'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsTravelInformationVehicleData} vehicleData
+   */
+  exports.prototype['vehicleData'] = undefined;
 
 
 

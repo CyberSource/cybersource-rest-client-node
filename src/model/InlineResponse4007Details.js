@@ -62,24 +62,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('location')) {
-        obj['location'] = ApiClient.convertToType(data['location'], 'String');
+      if (data.hasOwnProperty('field')) {
+        obj['field'] = ApiClient.convertToType(data['field'], 'String');
       }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} location
+   * This is the flattened JSON object field name/path that is either missing or invalid.
+   * @member {String} field
    */
-  exports.prototype['location'] = undefined;
+  exports.prototype['field'] = undefined;
   /**
-   * @member {String} message
+   * Possible reasons for the error.
+   * @member {String} reason
    */
-  exports.prototype['message'] = undefined;
+  exports.prototype['reason'] = undefined;
 
 
 

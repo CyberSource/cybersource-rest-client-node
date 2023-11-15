@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse4007Details);
     });
 
-    it('should have the property location (base name: "location")', function() {
-      // uncomment below and update the code to test the property location
+    it('should have the property field (base name: "field")', function() {
+      // uncomment below and update the code to test the property field
       //var instane = new CyberSource.InlineResponse4007Details();
       //expect(instance).to.be();
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
       //var instane = new CyberSource.InlineResponse4007Details();
       //expect(instance).to.be();
     });
