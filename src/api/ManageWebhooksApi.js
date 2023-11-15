@@ -242,6 +242,10 @@
         throw new Error("Missing the required parameter 'webhookId' when calling replayPreviousWebhook");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ReplayWebhooks', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'webhookId': webhookId
@@ -305,6 +309,10 @@
         throw new Error("Missing the required parameter 'saveAsymEgressKey' when calling saveAsymEgressKey");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/SaveAsymEgressKey', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -357,6 +365,10 @@
         throw new Error("Missing the required parameter 'webhookId' when calling updateWebhookSubscription");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateWebhook', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'webhookId': webhookId
