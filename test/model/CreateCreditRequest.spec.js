@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantDefinedSecureInformation (base name: "merchantDefinedSecureInformation")', function() {
+      // uncomment below and update the code to test the property merchantDefinedSecureInformation
+      //var instane = new CyberSource.CreateCreditRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property installmentInformation (base name: "installmentInformation")', function() {
       // uncomment below and update the code to test the property installmentInformation
       //var instane = new CyberSource.CreateCreditRequest();

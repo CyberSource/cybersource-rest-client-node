@@ -79,6 +79,7 @@
 
 
 
+
   };
 
   /**
@@ -187,6 +188,9 @@
       }
       if (data.hasOwnProperty('isReturnAuthRecordEnabled')) {
         obj['isReturnAuthRecordEnabled'] = ApiClient.convertToType(data['isReturnAuthRecordEnabled'], 'Boolean');
+      }
+      if (data.hasOwnProperty('networkPartnerId')) {
+        obj['networkPartnerId'] = ApiClient.convertToType(data['networkPartnerId'], 'String');
       }
     }
     return obj;
@@ -345,6 +349,11 @@
    * @member {Boolean} isReturnAuthRecordEnabled
    */
   exports.prototype['isReturnAuthRecordEnabled'] = undefined;
+  /**
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect. 
+   * @member {String} networkPartnerId
+   */
+  exports.prototype['networkPartnerId'] = undefined;
 
 
 

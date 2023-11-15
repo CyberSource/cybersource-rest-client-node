@@ -103,6 +103,7 @@
 
 
 
+
   };
 
   /**
@@ -118,6 +119,9 @@
 
       if (data.hasOwnProperty('cavv')) {
         obj['cavv'] = ApiClient.convertToType(data['cavv'], 'String');
+      }
+      if (data.hasOwnProperty('transactionFlowIndicator')) {
+        obj['transactionFlowIndicator'] = ApiClient.convertToType(data['transactionFlowIndicator'], 'String');
       }
       if (data.hasOwnProperty('cavvAlgorithm')) {
         obj['cavvAlgorithm'] = ApiClient.convertToType(data['cavvAlgorithm'], 'String');
@@ -293,6 +297,11 @@
    * @member {String} cavv
    */
   exports.prototype['cavv'] = undefined;
+  /**
+   * This field details out the type of transaction. Below are the possible values. 08:GC- Guest Checkout. 
+   * @member {String} transactionFlowIndicator
+   */
+  exports.prototype['transactionFlowIndicator'] = undefined;
   /**
    * Algorithm used to generate the CAVV for Visa Secure or the UCAF authentication data for Mastercard Identity Check. 
    * @member {String} cavvAlgorithm

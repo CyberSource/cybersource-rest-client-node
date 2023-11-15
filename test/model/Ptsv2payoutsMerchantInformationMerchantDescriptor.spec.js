@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address1 (base name: "address1")', function() {
+      // uncomment below and update the code to test the property address1
+      //var instane = new CyberSource.Ptsv2payoutsMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
