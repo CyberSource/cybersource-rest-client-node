@@ -128,6 +128,10 @@
         throw new Error("Missing the required parameter 'postRegistrationBody' when calling postRegistration");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostRegistrationBody', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

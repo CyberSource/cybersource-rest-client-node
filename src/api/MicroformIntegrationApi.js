@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'generateCaptureContextRequest' when calling generateCaptureContext");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/GenerateCaptureContextRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

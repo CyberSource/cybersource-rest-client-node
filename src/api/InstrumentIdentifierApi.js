@@ -244,6 +244,10 @@
         throw new Error("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PatchInstrumentIdentifierRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'instrumentIdentifierId': instrumentIdentifierId
@@ -295,6 +299,10 @@
         throw new Error("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostInstrumentIdentifierRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -349,6 +357,10 @@
         throw new Error("Missing the required parameter 'postInstrumentIdentifierEnrollmentRequest' when calling postInstrumentIdentifierEnrollment");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostInstrumentIdentifierEnrollmentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'instrumentIdentifierId': instrumentIdentifierId

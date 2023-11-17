@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'taxRequest' when calling calculateTax");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/TaxRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -123,6 +127,10 @@
         throw new Error("Missing the required parameter 'id' when calling voidTax");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/VoidTaxRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id

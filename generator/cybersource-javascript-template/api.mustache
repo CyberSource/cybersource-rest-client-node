@@ -68,6 +68,12 @@
         throw new Error("Missing the required parameter '<paramName>' when calling <operationId>");
       }
 </required></allParams>
+      <#bodyParam>
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, '<&vendorExtensions.x-jsdoc-type>', this.apiClient.merchantConfig.runEnvironment);
+      </bodyParam>
 
       var pathParams = {<#pathParams>
         '<baseName>': <#required><paramName></required><^required>opts['<paramName>']</required><#hasMore>,</hasMore></pathParams>

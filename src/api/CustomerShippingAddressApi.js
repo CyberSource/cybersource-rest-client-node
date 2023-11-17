@@ -264,6 +264,10 @@
         throw new Error("Missing the required parameter 'patchCustomerShippingAddressRequest' when calling patchCustomersShippingAddress");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PatchCustomerShippingAddressRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'customerId': customerId,
@@ -322,6 +326,10 @@
         throw new Error("Missing the required parameter 'postCustomerShippingAddressRequest' when calling postCustomerShippingAddress");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostCustomerShippingAddressRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'customerId': customerId

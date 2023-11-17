@@ -6294,5 +6294,6 @@
   exports.SensitiveDataMasker = require('./authentication/logging/SensitiveDataMasker.js');
   exports.ExternalLoggerWrapper = require('./authentication/logging/ExternalLoggerWrapper.js');
   exports.JWEUtility = require('./utilities/JWEUtility.js');
+  exports.SdkTracker = require('./utilities/tracking/SdkTracker.js')
   return exports;
 }));

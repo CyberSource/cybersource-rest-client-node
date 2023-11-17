@@ -71,6 +71,10 @@
       opts = opts || {};
       var postBody = opts['createWebhook'];
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateWebhook', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -177,6 +181,10 @@
         throw new Error("Missing the required parameter 'vCPermissions' when calling saveSymEgressKey");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/SaveSymEgressKey', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

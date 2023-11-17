@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'createPaymentRequest' when calling createPayment");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreatePaymentRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -123,6 +127,10 @@
         throw new Error("Missing the required parameter 'incrementAuthRequest' when calling incrementAuth");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/IncrementAuthRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id
@@ -175,6 +183,10 @@
         throw new Error("Missing the required parameter 'refreshPaymentStatusRequest' when calling refreshPaymentStatus");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/RefreshPaymentStatusRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id

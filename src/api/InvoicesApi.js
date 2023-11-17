@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'createInvoiceRequest' when calling createInvoice");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateInvoiceRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -330,6 +334,10 @@
         throw new Error("Missing the required parameter 'updateInvoiceRequest' when calling updateInvoice");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateInvoiceRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'id': id

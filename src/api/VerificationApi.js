@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'validateExportComplianceRequest' when calling validateExportCompliance");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ValidateExportComplianceRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -117,6 +121,10 @@
         throw new Error("Missing the required parameter 'verifyCustomerAddressRequest' when calling verifyCustomerAddress");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/VerifyCustomerAddressRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

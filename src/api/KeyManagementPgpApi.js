@@ -78,6 +78,10 @@
         throw new Error("Missing the required parameter 'updatePGPKeysRequest' when calling updatePGP");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdatePGPKeysRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'keyId': keyId

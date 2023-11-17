@@ -74,6 +74,10 @@
         throw new Error("Missing the required parameter 'createAdhocReportRequest' when calling createReport");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateAdhocReportRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };

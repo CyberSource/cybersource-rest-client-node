@@ -72,6 +72,10 @@
         throw new Error("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeys");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSharedSecretKeysRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -123,6 +127,10 @@
         throw new Error("Missing the required parameter 'createSharedSecretKeysVerifiRequest' when calling createV2SharedSecretKeysVerifi");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSharedSecretKeysVerifiRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -169,6 +177,10 @@
         throw new Error("Missing the required parameter 'deleteBulkSymmetricKeysRequest' when calling deleteBulkSymmetricKeys");
       }
 
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/DeleteBulkSymmetricKeysRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
