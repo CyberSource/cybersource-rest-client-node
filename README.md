@@ -4,7 +4,7 @@ The CyberSource Node client provides convenient access to the [CyberSource REST 
 
 ## Requirements
 
-* Node.js version 6.17.1 or higher
+* Node.js version 14.21.3 or higher
 * A CyberSource account (see _Registration & Configuration_ section below)
 
 ## Installation
