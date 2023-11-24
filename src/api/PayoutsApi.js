@@ -63,6 +63,7 @@
      * @param {module:model/OctCreatePaymentRequest} octCreatePaymentRequest 
      * @param {module:api/PayoutsApi~octCreatePaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PayoutsPost201Response}
+     * 
      */
     this.octCreatePayment = function(octCreatePaymentRequest, callback) {
       var postBody = octCreatePaymentRequest;

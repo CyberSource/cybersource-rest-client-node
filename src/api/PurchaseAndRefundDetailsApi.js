@@ -71,6 +71,7 @@
      * @param {Number} opts.limit Results count per page. Range(1-2000) (default to 2000)
      * @param {module:api/PurchaseAndRefundDetailsApi~getPurchaseAndRefundDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3PurchaseRefundDetailsGet200Response}
+     * 
      */
     this.getPurchaseAndRefundDetails = function(startTime, endTime, opts, callback) {
       opts = opts || {};

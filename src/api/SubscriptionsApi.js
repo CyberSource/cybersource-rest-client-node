@@ -63,6 +63,7 @@
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~activateSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActivateSubscriptionResponse}
+     * 
      */
     this.activateSubscription = function(id, callback) {
       var postBody = null;
@@ -112,6 +113,7 @@
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~cancelSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CancelSubscriptionResponse}
+     * 
      */
     this.cancelSubscription = function(id, callback) {
       var postBody = null;
@@ -161,6 +163,7 @@
      * @param {module:model/CreateSubscriptionRequest} createSubscriptionRequest 
      * @param {module:api/SubscriptionsApi~createSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreateSubscriptionResponse}
+     * 
      */
     this.createSubscription = function(createSubscriptionRequest, callback) {
       var postBody = createSubscriptionRequest;
@@ -214,6 +217,7 @@
      * @param {String} opts.status Filter by Subscription Status
      * @param {module:api/SubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetAllSubscriptionsResponse}
+     * 
      */
     this.getAllSubscriptions = function(opts, callback) {
       opts = opts || {};
@@ -262,6 +266,7 @@
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~getSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetSubscriptionResponse}
+     * 
      */
     this.getSubscription = function(id, callback) {
       var postBody = null;
@@ -310,6 +315,7 @@
      * Get a Unique Subscription Code
      * @param {module:api/SubscriptionsApi~getSubscriptionCodeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetSubscriptionCodeResponse}
+     * 
      */
     this.getSubscriptionCode = function(callback) {
       var postBody = null;
@@ -353,6 +359,7 @@
      * @param {String} id Subscription Id
      * @param {module:api/SubscriptionsApi~suspendSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SuspendSubscriptionResponse}
+     * 
      */
     this.suspendSubscription = function(id, callback) {
       var postBody = null;
@@ -403,6 +410,7 @@
      * @param {module:model/UpdateSubscription} updateSubscription Update Subscription
      * @param {module:api/SubscriptionsApi~updateSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UpdateSubscriptionResponse}
+     * 
      */
     this.updateSubscription = function(id, updateSubscription, callback) {
       var postBody = updateSubscription;

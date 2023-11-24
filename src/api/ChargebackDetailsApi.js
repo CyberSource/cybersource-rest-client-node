@@ -66,6 +66,7 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ChargebackDetailsApi~getChargebackDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ChargebackDetailsGet200Response}
+     * 
      */
     this.getChargebackDetails = function(startTime, endTime, opts, callback) {
       opts = opts || {};

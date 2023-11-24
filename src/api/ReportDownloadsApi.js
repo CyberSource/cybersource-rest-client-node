@@ -65,6 +65,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportDownloadsApi~downloadReportCallback} callback The callback function, accepting three arguments: error, data, response
+     * 
      */
     this.downloadReport = function(reportDate, reportName, opts, callback) {
       opts = opts || {};

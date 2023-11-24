@@ -66,6 +66,7 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ConversionDetailsApi~getConversionDetailCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ConversionDetailsGet200Response}
+     * 
      */
     this.getConversionDetail = function(startTime, endTime, opts, callback) {
       opts = opts || {};

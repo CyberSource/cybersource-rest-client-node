@@ -65,6 +65,7 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/TokenApi~postTokenPaymentCredentialsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
+     * 
      */
     this.postTokenPaymentCredentials = function(tokenId, opts, callback) {
       opts = opts || {};

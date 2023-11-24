@@ -64,6 +64,7 @@
      * @param {String} id The capture ID. This ID is returned from a previous capture request.
      * @param {module:api/RefundApi~refundCaptureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsRefundPost201Response}
+     * 
      */
     this.refundCapture = function(refundCaptureRequest, id, callback) {
       var postBody = refundCaptureRequest;
@@ -120,6 +121,7 @@
      * @param {String} id The payment ID. This ID is returned from a previous payment request.
      * @param {module:api/RefundApi~refundPaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsRefundPost201Response}
+     * 
      */
     this.refundPayment = function(refundPaymentRequest, id, callback) {
       var postBody = refundPaymentRequest;

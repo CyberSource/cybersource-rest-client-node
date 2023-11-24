@@ -64,6 +64,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~createStandardOrClassicSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
+     * 
      */
     this.createStandardOrClassicSubscription = function(predefinedSubscriptionRequestBean, opts, callback) {
       opts = opts || {};
@@ -116,6 +117,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~createSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
+     * 
      */
     this.createSubscription = function(createReportSubscriptionRequest, opts, callback) {
       opts = opts || {};
@@ -168,6 +170,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~deleteSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
+     * 
      */
     this.deleteSubscription = function(reportName, opts, callback) {
       opts = opts || {};
@@ -220,6 +223,7 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200Response}
+     * 
      */
     this.getAllSubscriptions = function(opts, callback) {
       opts = opts || {};
@@ -267,6 +271,7 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportSubscriptionsApi~getSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions}
+     * 
      */
     this.getSubscription = function(reportName, opts, callback) {
       opts = opts || {};

@@ -63,6 +63,7 @@
      * @param {module:model/CreateP12KeysRequest} createP12KeysRequest 
      * @param {module:api/AsymmetricKeyManagementApi~createP12KeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysAsymPost201Response}
+     * 
      */
     this.createP12Keys = function(createP12KeysRequest, callback) {
       var postBody = createP12KeysRequest;
@@ -112,6 +113,7 @@
      * @param {module:model/DeleteBulkP12KeysRequest} deleteBulkP12KeysRequest 
      * @param {module:api/AsymmetricKeyManagementApi~deleteBulkP12KeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysAsymDeletesPost200Response}
+     * 
      */
     this.deleteBulkP12Keys = function(deleteBulkP12KeysRequest, callback) {
       var postBody = deleteBulkP12KeysRequest;
@@ -161,6 +163,7 @@
      * @param {String} keyId Key ID. 
      * @param {module:api/AsymmetricKeyManagementApi~getP12KeyDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysAsymGet200Response}
+     * 
      */
     this.getP12KeyDetails = function(keyId, callback) {
       var postBody = null;
@@ -211,6 +214,7 @@
      * @param {module:model/UpdateAsymKeysRequest} updateAsymKeysRequest 
      * @param {module:api/AsymmetricKeyManagementApi~updateAsymKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
+     * 
      */
     this.updateAsymKey = function(keyId, updateAsymKeysRequest, callback) {
       var postBody = updateAsymKeysRequest;

@@ -63,6 +63,7 @@
      * @param {String} id Request ID. 
      * @param {module:api/TransactionDetailsApi~getTransactionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2TransactionsGet200Response}
+     * 
      */
     this.getTransaction = function(id, callback) {
       var postBody = null;

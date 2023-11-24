@@ -67,6 +67,7 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportDefinitionsApi~getResourceInfoByReportDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportDefinitionsNameGet200Response}
+     * 
      */
     this.getResourceInfoByReportDefinition = function(reportDefinitionName, opts, callback) {
       opts = opts || {};
@@ -122,6 +123,7 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportDefinitionsApi~getResourceV2InfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportDefinitionsGet200Response}
+     * 
      */
     this.getResourceV2Info = function(opts, callback) {
       opts = opts || {};

@@ -62,6 +62,7 @@
      * Allows you to retrieve the invoice settings for the payment page.
      * @param {module:api/InvoiceSettingsApi~getInvoiceSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoiceSettingsGet200Response}
+     * 
      */
     this.getInvoiceSettings = function(callback) {
       var postBody = null;
@@ -105,6 +106,7 @@
      * @param {module:model/InvoiceSettingsRequest} invoiceSettingsRequest 
      * @param {module:api/InvoiceSettingsApi~updateInvoiceSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoiceSettingsGet200Response}
+     * 
      */
     this.updateInvoiceSettings = function(invoiceSettingsRequest, callback) {
       var postBody = invoiceSettingsRequest;

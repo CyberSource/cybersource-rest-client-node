@@ -67,6 +67,7 @@
      * @param {String} opts.roleId role of the user you are trying to search on.
      * @param {module:api/UserManagementApi~getUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UmsV1UsersGet200Response}
+     * 
      */
     this.getUsers = function(opts, callback) {
       opts = opts || {};

@@ -69,6 +69,7 @@
      * @param {Number} opts.startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month
      * @param {module:api/PaymentBatchSummariesApi~getPaymentBatchSummaryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3PaymentBatchSummariesGet200Response}
+     * 
      */
     this.getPaymentBatchSummary = function(startTime, endTime, opts, callback) {
       opts = opts || {};

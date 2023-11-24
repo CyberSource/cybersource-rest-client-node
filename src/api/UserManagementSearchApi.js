@@ -63,6 +63,7 @@
      * @param {module:model/SearchRequest} searchRequest 
      * @param {module:api/UserManagementSearchApi~searchUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UmsV1UsersGet200Response}
+     * 
      */
     this.searchUsers = function(searchRequest, callback) {
       var postBody = searchRequest;

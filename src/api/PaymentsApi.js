@@ -63,6 +63,7 @@
      * @param {module:model/CreatePaymentRequest} createPaymentRequest 
      * @param {module:api/PaymentsApi~createPaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsPost201Response}
+     * 
      */
     this.createPayment = function(createPaymentRequest, callback) {
       var postBody = createPaymentRequest;
@@ -113,6 +114,7 @@
      * @param {module:model/IncrementAuthRequest} incrementAuthRequest 
      * @param {module:api/PaymentsApi~incrementAuthCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2IncrementalAuthorizationPatch201Response}
+     * 
      */
     this.incrementAuth = function(id, incrementAuthRequest, callback) {
       var postBody = incrementAuthRequest;
@@ -169,6 +171,7 @@
      * @param {module:model/RefreshPaymentStatusRequest} refreshPaymentStatusRequest 
      * @param {module:api/PaymentsApi~refreshPaymentStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsPost201Response1}
+     * 
      */
     this.refreshPaymentStatus = function(id, refreshPaymentStatusRequest, callback) {
       var postBody = refreshPaymentStatusRequest;

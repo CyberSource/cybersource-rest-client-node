@@ -64,6 +64,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportsApi~createReportCallback} callback The callback function, accepting three arguments: error, data, response
+     * 
      */
     this.createReport = function(createAdhocReportRequest, opts, callback) {
       opts = opts || {};
@@ -117,6 +118,7 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/ReportsApi~getReportByReportIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportsIdGet200Response}
+     * 
      */
     this.getReportByReportId = function(reportId, opts, callback) {
       opts = opts || {};
@@ -177,6 +179,7 @@
      * @param {String} opts.reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
      * @param {module:api/ReportsApi~searchReportsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3ReportsGet200Response}
+     * 
      */
     this.searchReports = function(startTime, endTime, timeQueryType, opts, callback) {
       opts = opts || {};
