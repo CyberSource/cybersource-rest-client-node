@@ -63,7 +63,7 @@
      * @param {module:model/ValidateExportComplianceRequest} validateExportComplianceRequest 
      * @param {module:api/VerificationApi~validateExportComplianceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1ExportComplianceInquiriesPost201Response}
-     * 
+     *
      */
     this.validateExportCompliance = function(validateExportComplianceRequest, callback) {
       var postBody = validateExportComplianceRequest;
@@ -113,7 +113,7 @@
      * @param {module:model/VerifyCustomerAddressRequest} verifyCustomerAddressRequest 
      * @param {module:api/VerificationApi~verifyCustomerAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1AddressVerificationsPost201Response}
-     * 
+     *
      */
     this.verifyCustomerAddress = function(verifyCustomerAddressRequest, callback) {
       var postBody = verifyCustomerAddressRequest;

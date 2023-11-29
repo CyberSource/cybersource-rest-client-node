@@ -65,7 +65,7 @@
      * @param {Date} opts.uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd 
      * @param {String} opts.status Allows you to filter by rejected response.  Valid values: - Rejected 
      * @param {module:api/TransactionBatchesApi~getTransactionBatchDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * 
+     *
      */
     this.getTransactionBatchDetails = function(id, opts, callback) {
       opts = opts || {};
@@ -118,7 +118,7 @@
      * @param {String} id The batch id assigned for the template.
      * @param {module:api/TransactionBatchesApi~getTransactionBatchIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV1TransactionBatchesIdGet200Response}
-     * 
+     *
      */
     this.getTransactionBatchId = function(id, callback) {
       var postBody = null;
@@ -169,7 +169,7 @@
      * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ 
      * @param {module:api/TransactionBatchesApi~getTransactionBatchesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV1TransactionBatchesGet200Response}
-     * 
+     *
      */
     this.getTransactionBatches = function(startTime, endTime, callback) {
       var postBody = null;

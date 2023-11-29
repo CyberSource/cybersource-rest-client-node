@@ -64,7 +64,7 @@
      * @param {String} id The payment ID returned from a previous payment request. This ID links the capture to the payment. 
      * @param {module:api/CaptureApi~capturePaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsCapturesPost201Response}
-     * 
+     *
      */
     this.capturePayment = function(capturePaymentRequest, id, callback) {
       var postBody = capturePaymentRequest;

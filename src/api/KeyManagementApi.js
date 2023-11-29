@@ -71,7 +71,7 @@
      * @param {Date} opts.expirationEndDate Expiry Filter End Date. When Expiration Date filter is provided, atleast one more filter needs to be provided
      * @param {module:api/KeyManagementApi~searchKeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2001}
-     * 
+     *
      */
     this.searchKeys = function(opts, callback) {
       opts = opts || {};

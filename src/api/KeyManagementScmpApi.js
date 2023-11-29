@@ -64,7 +64,7 @@
      * @param {module:model/UpdatePGPKeysRequest1} updatePGPKeysRequest 
      * @param {module:api/KeyManagementScmpApi~updateSCMPCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
-     * 
+     *
      */
     this.updateSCMP = function(keyId, updatePGPKeysRequest, callback) {
       var postBody = updatePGPKeysRequest;

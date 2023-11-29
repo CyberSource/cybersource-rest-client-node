@@ -62,7 +62,7 @@
      * Returns the entire EMV tag dictionary
      * @param {module:api/EMVTagDetailsApi~getEmvTagsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2GetEmvTags200Response}
-     * 
+     *
      */
     this.getEmvTags = function(callback) {
       var postBody = null;
@@ -106,7 +106,7 @@
      * @param {module:model/Body} body 
      * @param {module:api/EMVTagDetailsApi~parseEmvTagsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2PostEmvTags200Response}
-     * 
+     *
      */
     this.parseEmvTags = function(body, callback) {
       var postBody = body;

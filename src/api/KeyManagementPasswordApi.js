@@ -64,7 +64,7 @@
      * @param {module:model/UpdatePasswordKeysRequest} updatePasswordKeysRequest 
      * @param {module:api/KeyManagementPasswordApi~updatePasswordCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
-     * 
+     *
      */
     this.updatePassword = function(keyId, updatePasswordKeysRequest, callback) {
       var postBody = updatePasswordKeysRequest;

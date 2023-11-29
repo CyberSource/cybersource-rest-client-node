@@ -62,7 +62,7 @@
      * Used to download XSDs for reports on no-auth.
      * @param {String} reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes
      * @param {module:api/DownloadXSDApi~getXSDV2Callback} callback The callback function, accepting three arguments: error, data, response
-     * 
+     *
      */
     this.getXSDV2 = function(reportDefinitionNameVersion, callback) {
       var postBody = null;

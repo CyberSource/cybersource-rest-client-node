@@ -63,7 +63,7 @@
      * @param {module:model/MitVoidRequest} mitVoidRequest 
      * @param {module:api/VoidApi~mitVoidCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
-     * 
+     *
      */
     this.mitVoid = function(mitVoidRequest, callback) {
       var postBody = mitVoidRequest;
@@ -114,7 +114,7 @@
      * @param {String} id The capture ID returned from a previous capture request.
      * @param {module:api/VoidApi~voidCaptureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
-     * 
+     *
      */
     this.voidCapture = function(voidCaptureRequest, id, callback) {
       var postBody = voidCaptureRequest;
@@ -171,7 +171,7 @@
      * @param {String} id The credit ID returned from a previous credit request.
      * @param {module:api/VoidApi~voidCreditCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
-     * 
+     *
      */
     this.voidCredit = function(voidCreditRequest, id, callback) {
       var postBody = voidCreditRequest;
@@ -228,7 +228,7 @@
      * @param {String} id The payment ID returned from a previous payment request.
      * @param {module:api/VoidApi~voidPaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
-     * 
+     *
      */
     this.voidPayment = function(voidPaymentRequest, id, callback) {
       var postBody = voidPaymentRequest;
@@ -285,7 +285,7 @@
      * @param {String} id The refund ID returned from a previous refund request.
      * @param {module:api/VoidApi~voidRefundCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsVoidsPost201Response}
-     * 
+     *
      */
     this.voidRefund = function(voidRefundRequest, id, callback) {
       var postBody = voidRefundRequest;

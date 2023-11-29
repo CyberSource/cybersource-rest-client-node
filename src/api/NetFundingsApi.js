@@ -67,7 +67,7 @@
      * @param {String} opts.groupName Valid CyberSource Group Name.
      * @param {module:api/NetFundingsApi~getNetFundingDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3NetFundingsGet200Response}
-     * 
+     *
      */
     this.getNetFundingDetails = function(startTime, endTime, opts, callback) {
       opts = opts || {};

@@ -63,7 +63,7 @@
      * @param {module:model/CreateCreditRequest} createCreditRequest 
      * @param {module:api/CreditApi~createCreditCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2CreditsPost201Response}
-     * 
+     *
      */
     this.createCredit = function(createCreditRequest, callback) {
       var postBody = createCreditRequest;

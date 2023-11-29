@@ -63,7 +63,7 @@
      * @param {module:model/CreateInvoiceRequest} createInvoiceRequest 
      * @param {module:api/InvoicesApi~createInvoiceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
-     * 
+     *
      */
     this.createInvoice = function(createInvoiceRequest, callback) {
       var postBody = createInvoiceRequest;
@@ -116,7 +116,7 @@
      * @param {String} opts.status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED 
      * @param {module:api/InvoicesApi~getAllInvoicesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesAllGet200Response}
-     * 
+     *
      */
     this.getAllInvoices = function(offset, limit, opts, callback) {
       opts = opts || {};
@@ -174,7 +174,7 @@
      * @param {String} id The invoice number.
      * @param {module:api/InvoicesApi~getInvoiceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesGet200Response}
-     * 
+     *
      */
     this.getInvoice = function(id, callback) {
       var postBody = null;
@@ -224,7 +224,7 @@
      * @param {String} id The invoice number.
      * @param {module:api/InvoicesApi~performCancelActionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
-     * 
+     *
      */
     this.performCancelAction = function(id, callback) {
       var postBody = null;
@@ -274,7 +274,7 @@
      * @param {String} id The invoice number.
      * @param {module:api/InvoicesApi~performSendActionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
-     * 
+     *
      */
     this.performSendAction = function(id, callback) {
       var postBody = null;
@@ -325,7 +325,7 @@
      * @param {module:model/UpdateInvoiceRequest} updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately.
      * @param {module:api/InvoicesApi~updateInvoiceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
-     * 
+     *
      */
     this.updateInvoice = function(id, updateInvoiceRequest, callback) {
       var postBody = updateInvoiceRequest;

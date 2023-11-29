@@ -64,7 +64,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Cybersource Organization Id
      * @param {module:api/SecureFileShareApi~getFileCallback} callback The callback function, accepting three arguments: error, data, response
-     * 
+     *
      */
     this.getFile = function(fileId, opts, callback) {
       opts = opts || {};
@@ -120,7 +120,7 @@
      * @param {String} opts.name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml 
      * @param {module:api/SecureFileShareApi~getFileDetailCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/V1FileDetailsGet200Response}
-     * 
+     *
      */
     this.getFileDetail = function(startDate, endDate, opts, callback) {
       opts = opts || {};

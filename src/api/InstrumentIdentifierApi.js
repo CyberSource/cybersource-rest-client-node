@@ -64,7 +64,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~deleteInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
-     * 
+     *
      */
     this.deleteInstrumentIdentifier = function(instrumentIdentifierId, opts, callback) {
       opts = opts || {};
@@ -118,7 +118,7 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
-     * 
+     *
      */
     this.getInstrumentIdentifier = function(instrumentIdentifierId, opts, callback) {
       opts = opts || {};
@@ -174,7 +174,7 @@
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentInstrumentList}
-     * 
+     *
      */
     this.getInstrumentIdentifierPaymentInstrumentsList = function(instrumentIdentifierId, opts, callback) {
       opts = opts || {};
@@ -232,7 +232,7 @@
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/InstrumentIdentifierApi~patchInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
-     * 
+     *
      */
     this.patchInstrumentIdentifier = function(instrumentIdentifierId, patchInstrumentIdentifierRequest, opts, callback) {
       opts = opts || {};
@@ -293,7 +293,7 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
-     * 
+     *
      */
     this.postInstrumentIdentifier = function(postInstrumentIdentifierRequest, opts, callback) {
       opts = opts || {};
@@ -347,7 +347,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierEnrollmentCallback} callback The callback function, accepting three arguments: error, data, response
-     * 
+     *
      */
     this.postInstrumentIdentifierEnrollment = function(instrumentIdentifierId, postInstrumentIdentifierEnrollmentRequest, opts, callback) {
       opts = opts || {};

@@ -62,7 +62,7 @@
      * Used to download DTDs for reports on no-auth.
      * @param {String} reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1
      * @param {module:api/DownloadDTDApi~getDTDV2Callback} callback The callback function, accepting three arguments: error, data, response
-     * 
+     *
      */
     this.getDTDV2 = function(reportDefinitionNameVersion, callback) {
       var postBody = null;

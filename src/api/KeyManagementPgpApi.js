@@ -64,7 +64,7 @@
      * @param {module:model/UpdatePGPKeysRequest} updatePGPKeysRequest 
      * @param {module:api/KeyManagementPgpApi~updatePGPCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
-     * 
+     *
      */
     this.updatePGP = function(keyId, updatePGPKeysRequest, callback) {
       var postBody = updatePGPKeysRequest;

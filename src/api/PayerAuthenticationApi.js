@@ -63,7 +63,7 @@
      * @param {module:model/CheckPayerAuthEnrollmentRequest} checkPayerAuthEnrollmentRequest 
      * @param {module:api/PayerAuthenticationApi~checkPayerAuthEnrollmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1AuthenticationsPost201Response}
-     * 
+     *
      */
     this.checkPayerAuthEnrollment = function(checkPayerAuthEnrollmentRequest, callback) {
       var postBody = checkPayerAuthEnrollmentRequest;
@@ -113,7 +113,7 @@
      * @param {module:model/PayerAuthSetupRequest} payerAuthSetupRequest 
      * @param {module:api/PayerAuthenticationApi~payerAuthSetupCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1AuthenticationSetupsPost201Response}
-     * 
+     *
      */
     this.payerAuthSetup = function(payerAuthSetupRequest, callback) {
       var postBody = payerAuthSetupRequest;
@@ -163,7 +163,7 @@
      * @param {module:model/ValidateRequest} validateRequest 
      * @param {module:api/PayerAuthenticationApi~validateAuthenticationResultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1AuthenticationResultsPost201Response}
-     * 
+     *
      */
     this.validateAuthenticationResults = function(validateRequest, callback) {
       var postBody = validateRequest;
