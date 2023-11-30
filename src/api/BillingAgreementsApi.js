@@ -64,7 +64,6 @@
      * @param {String} id ID for de-registration or cancellation of Billing Agreement
      * @param {module:api/BillingAgreementsApi~billingAgreementsDeRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2CreditsPost201Response1}
-     *
      */
     this.billingAgreementsDeRegistration = function(modifyBillingAgreement, id, callback) {
       var postBody = modifyBillingAgreement;
@@ -121,7 +120,6 @@
      * @param {String} id ID for intimation of Billing Agreement
      * @param {module:api/BillingAgreementsApi~billingAgreementsIntimationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2CreditsPost201Response1}
-     *
      */
     this.billingAgreementsIntimation = function(intimateBillingAgreement, id, callback) {
       var postBody = intimateBillingAgreement;
@@ -177,7 +175,6 @@
      * @param {module:model/CreateBillingAgreement} createBillingAgreement 
      * @param {module:api/BillingAgreementsApi~billingAgreementsRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2CreditsPost201Response1}
-     *
      */
     this.billingAgreementsRegistration = function(createBillingAgreement, callback) {
       var postBody = createBillingAgreement;

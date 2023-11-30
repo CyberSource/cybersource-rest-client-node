@@ -65,7 +65,6 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerShippingAddressApi~deleteCustomerShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
-     *
      */
     this.deleteCustomerShippingAddress = function(customerId, shippingAddressId, opts, callback) {
       opts = opts || {};
@@ -126,7 +125,6 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerShippingAddressApi~getCustomerShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultShippingAddress}
-     *
      */
     this.getCustomerShippingAddress = function(customerId, shippingAddressId, opts, callback) {
       opts = opts || {};
@@ -188,7 +186,6 @@
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/CustomerShippingAddressApi~getCustomerShippingAddressesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ShippingAddressListForCustomer}
-     *
      */
     this.getCustomerShippingAddressesList = function(customerId, opts, callback) {
       opts = opts || {};
@@ -247,7 +244,6 @@
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/CustomerShippingAddressApi~patchCustomersShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultShippingAddress}
-     *
      */
     this.patchCustomersShippingAddress = function(customerId, shippingAddressId, patchCustomerShippingAddressRequest, opts, callback) {
       opts = opts || {};
@@ -315,7 +311,6 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerShippingAddressApi~postCustomerShippingAddressCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultShippingAddress}
-     *
      */
     this.postCustomerShippingAddress = function(customerId, postCustomerShippingAddressRequest, opts, callback) {
       opts = opts || {};

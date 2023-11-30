@@ -69,7 +69,6 @@
      * @param {String} vCOrganizationId 
      * @param {module:api/PushFundsApi~createPushFundsTransferCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PushFunds201Response}
-     *
      */
     this.createPushFundsTransfer = function(pushFundsRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, callback) {
       var postBody = pushFundsRequest;

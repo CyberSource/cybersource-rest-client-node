@@ -63,7 +63,6 @@
      * @param {module:model/GenerateUnifiedCheckoutCaptureContextRequest} generateUnifiedCheckoutCaptureContextRequest 
      * @param {module:api/UnifiedCheckoutCaptureContextApi~generateUnifiedCheckoutCaptureContextCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
-     *
      */
     this.generateUnifiedCheckoutCaptureContext = function(generateUnifiedCheckoutCaptureContextRequest, callback) {
       var postBody = generateUnifiedCheckoutCaptureContextRequest;

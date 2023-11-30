@@ -65,7 +65,6 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerPaymentInstrumentApi~deleteCustomerPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
-     *
      */
     this.deleteCustomerPaymentInstrument = function(customerId, paymentInstrumentId, opts, callback) {
       opts = opts || {};
@@ -126,7 +125,6 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerPaymentInstrumentApi~getCustomerPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
-     *
      */
     this.getCustomerPaymentInstrument = function(customerId, paymentInstrumentId, opts, callback) {
       opts = opts || {};
@@ -188,7 +186,6 @@
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/CustomerPaymentInstrumentApi~getCustomerPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentInstrumentList}
-     *
      */
     this.getCustomerPaymentInstrumentsList = function(customerId, opts, callback) {
       opts = opts || {};
@@ -247,7 +244,6 @@
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/CustomerPaymentInstrumentApi~patchCustomersPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
-     *
      */
     this.patchCustomersPaymentInstrument = function(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, opts, callback) {
       opts = opts || {};
@@ -315,7 +311,6 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerPaymentInstrumentApi~postCustomerPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument}
-     *
      */
     this.postCustomerPaymentInstrument = function(customerId, postCustomerPaymentInstrumentRequest, opts, callback) {
       opts = opts || {};

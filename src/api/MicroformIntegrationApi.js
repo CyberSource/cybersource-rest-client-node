@@ -63,7 +63,6 @@
      * @param {module:model/GenerateCaptureContextRequest} generateCaptureContextRequest 
      * @param {module:api/MicroformIntegrationApi~generateCaptureContextCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
-     *
      */
     this.generateCaptureContext = function(generateCaptureContextRequest, callback) {
       var postBody = generateCaptureContextRequest;

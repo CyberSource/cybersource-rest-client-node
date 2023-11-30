@@ -64,7 +64,6 @@
      * @param {module:model/CaseManagementActionsRequest} caseManagementActionsRequest 
      * @param {module:api/DecisionManagerApi~actionDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200}
-     *
      */
     this.actionDecisionManagerCase = function(id, caseManagementActionsRequest, callback) {
       var postBody = caseManagementActionsRequest;
@@ -121,7 +120,6 @@
      * @param {module:model/AddNegativeListRequest} addNegativeListRequest 
      * @param {module:api/DecisionManagerApi~addNegativeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1UpdatePost201Response}
-     *
      */
     this.addNegative = function(type, addNegativeListRequest, callback) {
       var postBody = addNegativeListRequest;
@@ -178,7 +176,6 @@
      * @param {module:model/CaseManagementCommentsRequest} caseManagementCommentsRequest 
      * @param {module:api/DecisionManagerApi~commentDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse201}
-     *
      */
     this.commentDecisionManagerCase = function(id, caseManagementCommentsRequest, callback) {
       var postBody = caseManagementCommentsRequest;
@@ -234,7 +231,6 @@
      * @param {module:model/CreateBundledDecisionManagerCaseRequest} createBundledDecisionManagerCaseRequest 
      * @param {module:api/DecisionManagerApi~createBundledDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1DecisionsPost201Response}
-     *
      */
     this.createBundledDecisionManagerCase = function(createBundledDecisionManagerCaseRequest, callback) {
       var postBody = createBundledDecisionManagerCaseRequest;
@@ -285,7 +281,6 @@
      * @param {module:model/FraudMarkingActionRequest} fraudMarkingActionRequest 
      * @param {module:api/DecisionManagerApi~fraudUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RiskV1UpdatePost201Response}
-     *
      */
     this.fraudUpdate = function(id, fraudMarkingActionRequest, callback) {
       var postBody = fraudMarkingActionRequest;

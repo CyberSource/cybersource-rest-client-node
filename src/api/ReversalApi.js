@@ -64,7 +64,6 @@
      * @param {module:model/AuthReversalRequest} authReversalRequest 
      * @param {module:api/ReversalApi~authReversalCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsReversalsPost201Response}
-     *
      */
     this.authReversal = function(id, authReversalRequest, callback) {
       var postBody = authReversalRequest;
@@ -120,7 +119,6 @@
      * @param {module:model/MitReversalRequest} mitReversalRequest 
      * @param {module:api/ReversalApi~mitReversalCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsReversalsPost201Response}
-     *
      */
     this.mitReversal = function(mitReversalRequest, callback) {
       var postBody = mitReversalRequest;

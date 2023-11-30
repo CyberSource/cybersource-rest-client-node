@@ -63,7 +63,6 @@
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchReportCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2007}
-     *
      */
     this.getBatchReport = function(batchId, callback) {
       var postBody = null;
@@ -113,7 +112,6 @@
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2006}
-     *
      */
     this.getBatchStatus = function(batchId, callback) {
       var postBody = null;
@@ -167,7 +165,6 @@
      * @param {String} opts.toDate ISO-8601 format: yyyyMMddTHHmmssZ
      * @param {module:api/BatchesApi~getBatchesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2005}
-     *
      */
     this.getBatchesList = function(opts, callback) {
       opts = opts || {};
@@ -216,7 +213,6 @@
      * @param {module:model/Body} body 
      * @param {module:api/BatchesApi~postBatchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse202}
-     *
      */
     this.postBatch = function(body, callback) {
       var postBody = body;

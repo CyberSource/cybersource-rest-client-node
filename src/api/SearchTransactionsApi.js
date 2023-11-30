@@ -63,7 +63,6 @@
      * @param {module:model/CreateSearchRequest} createSearchRequest 
      * @param {module:api/SearchTransactionsApi~createSearchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2TransactionsPost201Response}
-     *
      */
     this.createSearch = function(createSearchRequest, callback) {
       var postBody = createSearchRequest;
@@ -113,7 +112,6 @@
      * @param {String} searchId Search ID.
      * @param {module:api/SearchTransactionsApi~getSearchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2TransactionsPost201Response}
-     *
      */
     this.getSearch = function(searchId, callback) {
       var postBody = null;

@@ -63,7 +63,6 @@
      * @param {module:model/TaxRequest} taxRequest 
      * @param {module:api/TaxesApi~calculateTaxCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/VasV2PaymentsPost201Response}
-     *
      */
     this.calculateTax = function(taxRequest, callback) {
       var postBody = taxRequest;
@@ -114,7 +113,6 @@
      * @param {String} id The tax ID returned from a previous request.
      * @param {module:api/TaxesApi~voidTaxCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/VasV2TaxVoid200Response}
-     *
      */
     this.voidTax = function(voidTaxRequest, id, callback) {
       var postBody = voidTaxRequest;

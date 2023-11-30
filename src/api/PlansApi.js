@@ -63,7 +63,6 @@
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~activatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActivateDeactivatePlanResponse}
-     *
      */
     this.activatePlan = function(id, callback) {
       var postBody = null;
@@ -113,7 +112,6 @@
      * @param {module:model/CreatePlanRequest} createPlanRequest 
      * @param {module:api/PlansApi~createPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreatePlanResponse}
-     *
      */
     this.createPlan = function(createPlanRequest, callback) {
       var postBody = createPlanRequest;
@@ -163,7 +161,6 @@
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~deactivatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActivateDeactivatePlanResponse}
-     *
      */
     this.deactivatePlan = function(id, callback) {
       var postBody = null;
@@ -213,7 +210,6 @@
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~deletePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DeletePlanResponse}
-     *
      */
     this.deletePlan = function(id, callback) {
       var postBody = null;
@@ -263,7 +259,6 @@
      * @param {String} id Plan Id
      * @param {module:api/PlansApi~getPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPlanResponse}
-     *
      */
     this.getPlan = function(id, callback) {
       var postBody = null;
@@ -312,7 +307,6 @@
      * Get a Unique Plan Code
      * @param {module:api/PlansApi~getPlanCodeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPlanCodeResponse}
-     *
      */
     this.getPlanCode = function(callback) {
       var postBody = null;
@@ -361,7 +355,6 @@
      * @param {String} opts.name Filter by Plan Name. (First sub string or full string) **[Not Recommended]** 
      * @param {module:api/PlansApi~getPlansCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetAllPlansResponse}
-     *
      */
     this.getPlans = function(opts, callback) {
       opts = opts || {};
@@ -412,7 +405,6 @@
      * @param {module:model/UpdatePlanRequest} updatePlanRequest 
      * @param {module:api/PlansApi~updatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UpdatePlanResponse}
-     *
      */
     this.updatePlan = function(id, updatePlanRequest, callback) {
       var postBody = updatePlanRequest;

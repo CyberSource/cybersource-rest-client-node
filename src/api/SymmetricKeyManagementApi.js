@@ -63,7 +63,6 @@
      * @param {module:model/CreateSharedSecretKeysRequest} createSharedSecretKeysRequest 
      * @param {module:api/SymmetricKeyManagementApi~createV2SharedSecretKeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysSymPost201Response}
-     *
      */
     this.createV2SharedSecretKeys = function(createSharedSecretKeysRequest, callback) {
       var postBody = createSharedSecretKeysRequest;
@@ -114,7 +113,6 @@
      * @param {module:model/CreateSharedSecretKeysVerifiRequest} createSharedSecretKeysVerifiRequest 
      * @param {module:api/SymmetricKeyManagementApi~createV2SharedSecretKeysVerifiCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysSymPost201Response}
-     *
      */
     this.createV2SharedSecretKeysVerifi = function(vIcDomain, createSharedSecretKeysVerifiRequest, callback) {
       var postBody = createSharedSecretKeysVerifiRequest;
@@ -170,7 +168,6 @@
      * @param {module:model/DeleteBulkSymmetricKeysRequest} deleteBulkSymmetricKeysRequest 
      * @param {module:api/SymmetricKeyManagementApi~deleteBulkSymmetricKeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysSymDeletesPost200Response}
-     *
      */
     this.deleteBulkSymmetricKeys = function(deleteBulkSymmetricKeysRequest, callback) {
       var postBody = deleteBulkSymmetricKeysRequest;
@@ -220,7 +217,6 @@
      * @param {String} keyId Key ID. 
      * @param {module:api/SymmetricKeyManagementApi~getKeyDetailsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KmsV2KeysSymGet200Response}
-     *
      */
     this.getKeyDetails = function(keyId, callback) {
       var postBody = null;

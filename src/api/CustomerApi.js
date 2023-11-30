@@ -64,7 +64,6 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerApi~deleteCustomerCallback} callback The callback function, accepting three arguments: error, data, response
-     *
      */
     this.deleteCustomer = function(customerId, opts, callback) {
       opts = opts || {};
@@ -118,7 +117,6 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerApi~getCustomerCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV2CustomersResponse}
-     *
      */
     this.getCustomer = function(customerId, opts, callback) {
       opts = opts || {};
@@ -174,7 +172,6 @@
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/CustomerApi~patchCustomerCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV2CustomersResponse}
-     *
      */
     this.patchCustomer = function(customerId, patchCustomerRequest, opts, callback) {
       opts = opts || {};
@@ -235,7 +232,6 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/CustomerApi~postCustomerCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TmsV2CustomersResponse}
-     *
      */
     this.postCustomer = function(postCustomerRequest, opts, callback) {
       opts = opts || {};

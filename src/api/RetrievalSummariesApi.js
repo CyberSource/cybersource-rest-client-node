@@ -66,7 +66,6 @@
      * @param {String} opts.organizationId Valid Organization Id
      * @param {module:api/RetrievalSummariesApi~getRetrievalSummaryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportingV3RetrievalSummariesGet200Response}
-     *
      */
     this.getRetrievalSummary = function(startTime, endTime, opts, callback) {
       opts = opts || {};
