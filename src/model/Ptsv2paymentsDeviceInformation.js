@@ -151,12 +151,12 @@
    */
   exports.prototype['ipAddress'] = undefined;
   /**
-   * Customer’s browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser. 
+   * Customer's browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser. 
    * @member {String} userAgent
    */
   exports.prototype['userAgent'] = undefined;
   /**
-   * Field that contains the session ID that you send to Decision Manager to obtain the device fingerprint information. The string can contain uppercase and lowercase letters, digits, hyphen (-), and underscore (_). However, do not use the same uppercase and lowercase letters to indicate different session IDs.  The session ID must be unique for each merchant ID. You can use any string that you are already generating, such as an order number or web session ID.  The session ID must be unique for each page load, regardless of an individual’s web session ID. If a user navigates to a profiled page and is assigned a web session, navigates away from the profiled page, then navigates back to the profiled page, the generated session ID should be different and unique. You may use a web session ID, but it is preferable to use an application GUID (Globally Unique Identifier). This measure ensures that a unique ID is generated every time the page is loaded, even if it is the same user reloading the page. 
+   * Field that contains the session ID that you send to Decision Manager to obtain the device fingerprint information. The string can contain uppercase and lowercase letters, digits, hyphen (-), and underscore (_). However, do not use the same uppercase and lowercase letters to indicate different session IDs.  The session ID must be unique for each merchant ID. You can use any string that you are already generating, such as an order number or web session ID.  The session ID must be unique for each page load, regardless of an individual's web session ID. If a user navigates to a profiled page and is assigned a web session, navigates away from the profiled page, then navigates back to the profiled page, the generated session ID should be different and unique. You may use a web session ID, but it is preferable to use an application GUID (Globally Unique Identifier). This measure ensures that a unique ID is generated every time the page is loaded, even if it is the same user reloading the page. 
    * @member {String} fingerprintSessionId
    */
   exports.prototype['fingerprintSessionId'] = undefined;
@@ -180,7 +180,7 @@
    */
   exports.prototype['rawData'] = undefined;
   /**
-   * Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request. 
+   * Value of the Accept header sent by the customer's web browser. **Note** If the customer's browser provides a value, you must include it in your request. 
    * @member {String} httpAcceptBrowserValue
    */
   exports.prototype['httpAcceptBrowserValue'] = undefined;
@@ -190,7 +190,7 @@
    */
   exports.prototype['httpAcceptContent'] = undefined;
   /**
-   * Email address set in the customer’s browser, which may differ from customer email. 
+   * Email address set in the customer's browser, which may differ from customer email. 
    * @member {String} httpBrowserEmail
    */
   exports.prototype['httpBrowserEmail'] = undefined;
@@ -230,7 +230,7 @@
    */
   exports.prototype['httpBrowserTimeDifference'] = undefined;
   /**
-   * Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request. 
+   * Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request. 
    * @member {String} userAgentBrowserValue
    */
   exports.prototype['userAgentBrowserValue'] = undefined;

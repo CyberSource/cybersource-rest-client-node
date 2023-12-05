@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommerceSolutionsProductsTokenManagementConfigurationInformation', 'model/PaymentProductsPayerAuthenticationSubscriptionInformation'], factory);
+    define(['ApiClient', 'model/CommerceSolutionsProductsTokenManagementConfigurationInformation', 'model/PaymentsProductsPayerAuthenticationSubscriptionInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsTokenManagementConfigurationInformation'), require('./PaymentProductsPayerAuthenticationSubscriptionInformation'));
+    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsTokenManagementConfigurationInformation'), require('./PaymentsProductsPayerAuthenticationSubscriptionInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CommerceSolutionsProductsTokenManagement = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformation, root.CyberSource.PaymentProductsPayerAuthenticationSubscriptionInformation);
+    root.CyberSource.CommerceSolutionsProductsTokenManagement = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformation, root.CyberSource.PaymentsProductsPayerAuthenticationSubscriptionInformation);
   }
-}(this, function(ApiClient, CommerceSolutionsProductsTokenManagementConfigurationInformation, PaymentProductsPayerAuthenticationSubscriptionInformation) {
+}(this, function(ApiClient, CommerceSolutionsProductsTokenManagementConfigurationInformation, PaymentsProductsPayerAuthenticationSubscriptionInformation) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('subscriptionInformation')) {
-        obj['subscriptionInformation'] = PaymentProductsPayerAuthenticationSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
+        obj['subscriptionInformation'] = PaymentsProductsPayerAuthenticationSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
       }
       if (data.hasOwnProperty('configurationInformation')) {
         obj['configurationInformation'] = CommerceSolutionsProductsTokenManagementConfigurationInformation.constructFromObject(data['configurationInformation']);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/PaymentProductsPayerAuthenticationSubscriptionInformation} subscriptionInformation
+   * @member {module:model/PaymentsProductsPayerAuthenticationSubscriptionInformation} subscriptionInformation
    */
   exports.prototype['subscriptionInformation'] = undefined;
   /**

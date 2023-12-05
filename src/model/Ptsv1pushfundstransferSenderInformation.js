@@ -153,7 +153,7 @@
    */
   exports.prototype['middleName'] = undefined;
   /**
-   * Sender’s postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass. 
+   * Sender's postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass. 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
@@ -173,7 +173,7 @@
    */
   exports.prototype['locality'] = undefined;
   /**
-   * Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf 
+   * Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
@@ -188,12 +188,12 @@
    */
   exports.prototype['vatRegistrationNumber'] = undefined;
   /**
-   * Sender’s date of birth in YYYYMMDD format. 
+   * Sender's date of birth in YYYYMMDD format. 
    * @member {String} dateOfBirth
    */
   exports.prototype['dateOfBirth'] = undefined;
   /**
-   * Sender’s phone number. 
+   * Sender's phone number. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;

@@ -90,7 +90,7 @@
   }
 
   /**
-   * Payment card billing street address as it appears on the credit card issuer’s records. 
+   * Payment card billing street address as it appears on the credit card issuer's records. 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;

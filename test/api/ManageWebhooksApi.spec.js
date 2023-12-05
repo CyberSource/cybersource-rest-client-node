@@ -60,30 +60,30 @@
         done();
       });
     });
-    describe('getAllWebhooks', function() {
-      it('should call getAllWebhooks successfully', function(done) {
-        //uncomment below and update the code to test getAllWebhooks
-        //instance.getAllWebhooks(function(error) {
+    describe('getWebhookSubscriptionById', function() {
+      it('should call getWebhookSubscriptionById successfully', function(done) {
+        //uncomment below and update the code to test getWebhookSubscriptionById
+        //instance.getWebhookSubscriptionById(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getWebhookDetails', function() {
-      it('should call getWebhookDetails successfully', function(done) {
-        //uncomment below and update the code to test getWebhookDetails
-        //instance.getWebhookDetails(function(error) {
+    describe('getWebhookSubscriptionsByOrg', function() {
+      it('should call getWebhookSubscriptionsByOrg successfully', function(done) {
+        //uncomment below and update the code to test getWebhookSubscriptionsByOrg
+        //instance.getWebhookSubscriptionsByOrg(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('replayPreviousWebhook', function() {
-      it('should call replayPreviousWebhook successfully', function(done) {
-        //uncomment below and update the code to test replayPreviousWebhook
-        //instance.replayPreviousWebhook(function(error) {
+    describe('replayPreviousWebhooks', function() {
+      it('should call replayPreviousWebhooks successfully', function(done) {
+        //uncomment below and update the code to test replayPreviousWebhooks
+        //instance.replayPreviousWebhooks(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

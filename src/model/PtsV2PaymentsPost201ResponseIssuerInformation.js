@@ -105,7 +105,7 @@
    */
   exports.prototype['responseCode'] = undefined;
   /**
-   * This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. 
+   * This field contains value '1' which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. 
    * @member {String} pinRequestIndicator
    */
   exports.prototype['pinRequestIndicator'] = undefined;

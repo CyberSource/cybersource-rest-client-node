@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address1** | **String** | Payment card billing street address as it appears on the credit card issuer’s records.  | [optional] 
+**address1** | **String** | Payment card billing street address as it appears on the credit card issuer&#39;s records.  | [optional] 
 **address2** | **String** | Additional address information.  | [optional] 
 **locality** | **String** | Payment card billing city.  | [optional] 
 **administrativeArea** | **String** | State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  | [optional] 

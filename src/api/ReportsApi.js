@@ -111,7 +111,7 @@
 
     /**
      * Get Report Based on Report Id
-     * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
+     * Download a report using the reportId value. If you don&#39;t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param {String} reportId Valid Report Id
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Organization Id

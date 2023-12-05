@@ -77,7 +77,7 @@
   }
 
   /**
-   * Customer’s true IP address detected by the application.  For details, see the `true_ipaddress` field description in _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link). 
+   * Customer's true IP address detected by the application.  For details, see the `true_ipaddress` field description in _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link). 
    * @member {String} true_ipaddress
    */
   exports.prototype['true_ipaddress'] = undefined;

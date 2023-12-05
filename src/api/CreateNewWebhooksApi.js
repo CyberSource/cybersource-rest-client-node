@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateWebhook', 'model/InlineResponse2003', 'model/InlineResponse2012', 'model/InlineResponse2013', 'model/SaveSymEgressKey'], factory);
+    define(['ApiClient', 'model/CreateWebhookRequest', 'model/InlineResponse2003', 'model/InlineResponse2012', 'model/InlineResponse2013', 'model/SaveSymEgressKey'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateWebhook'), require('../model/InlineResponse2003'), require('../model/InlineResponse2012'), require('../model/InlineResponse2013'), require('../model/SaveSymEgressKey'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateWebhookRequest'), require('../model/InlineResponse2003'), require('../model/InlineResponse2012'), require('../model/InlineResponse2013'), require('../model/SaveSymEgressKey'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateNewWebhooksApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateWebhook, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse2013, root.CyberSource.SaveSymEgressKey);
+    root.CyberSource.CreateNewWebhooksApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateWebhookRequest, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse2013, root.CyberSource.SaveSymEgressKey);
   }
-}(this, function(ApiClient, CreateWebhook, InlineResponse2003, InlineResponse2012, InlineResponse2013, SaveSymEgressKey) {
+}(this, function(ApiClient, CreateWebhookRequest, InlineResponse2003, InlineResponse2012, InlineResponse2013, SaveSymEgressKey) {
   'use strict';
 
   /**
@@ -50,8 +50,8 @@
 	
 
     /**
-     * Callback function to receive the result of the createWebhook operation.
-     * @callback module:api/CreateNewWebhooksApi~createWebhookCallback
+     * Callback function to receive the result of the createWebhookSubscription operation.
+     * @callback module:api/CreateNewWebhooksApi~createWebhookSubscriptionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2013} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -61,20 +61,20 @@
      * Create a Webhook
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
      * @param {Object} opts Optional parameters
-     * @param {module:model/CreateWebhook} opts.createWebhook The webhook payload
-     * @param {module:api/CreateNewWebhooksApi~createWebhookCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:model/CreateWebhookRequest} opts.createWebhookRequest The webhook payload
+     * @param {module:api/CreateNewWebhooksApi~createWebhookSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2013}
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
-    this.createWebhook = function(opts, callback) {
+    this.createWebhookSubscription = function(opts, callback) {
       opts = opts || {};
-      var postBody = opts['createWebhook'];
+      var postBody = opts['createWebhookRequest'];
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateWebhook', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateWebhookRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
       };
@@ -87,7 +87,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2013;
 
       return this.apiClient.callApi(
@@ -98,8 +98,8 @@
     }
 
     /**
-     * Callback function to receive the result of the findProductToSubscribe operation.
-     * @callback module:api/CreateNewWebhooksApi~findProductToSubscribeCallback
+     * Callback function to receive the result of the findProductsToSubscribe operation.
+     * @callback module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2003>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -109,12 +109,12 @@
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param {String} organizationId The Organization Identifier.
-     * @param {module:api/CreateNewWebhooksApi~findProductToSubscribeCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2003>}
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
-    this.findProductToSubscribe = function(organizationId, callback) {
+    this.findProductsToSubscribe = function(organizationId, callback) {
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
@@ -122,7 +122,7 @@
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling findProductToSubscribe");
+        throw new Error("Missing the required parameter 'organizationId' when calling findProductsToSubscribe");
       }
 
 
@@ -138,7 +138,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = [InlineResponse2003];
 
       return this.apiClient.callApi(
@@ -202,7 +202,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2012;
 
       return this.apiClient.callApi(

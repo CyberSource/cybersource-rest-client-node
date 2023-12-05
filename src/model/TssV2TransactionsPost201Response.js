@@ -132,7 +132,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * Merchant’s time zone in ISO standard, using the TZ database format. For example: `America/Chicago` 
+   * Merchant's time zone in ISO standard, using the TZ database format. For example: `America/Chicago` 
    * @member {String} timezone
    */
   exports.prototype['timezone'] = undefined;

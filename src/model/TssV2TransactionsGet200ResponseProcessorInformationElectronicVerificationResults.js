@@ -105,52 +105,52 @@
   }
 
   /**
-   * Mapped Electronic Verification response code for the customer’s email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customer’s email address.
+   * Raw Electronic Verification response code from the processor for the customer's email address.
    * @member {String} emailRaw
    */
   exports.prototype['emailRaw'] = undefined;
   /**
-   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match 
+   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer's name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match 
+   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer's name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match 
    * @member {String} nameRaw
    */
   exports.prototype['nameRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer’s phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customer’s phone number.
+   * Raw Electronic Verification response code from the processor for the customer's phone number.
    * @member {String} phoneNumberRaw
    */
   exports.prototype['phoneNumberRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer’s street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} street
    */
   exports.prototype['street'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customer’s street address.
+   * Raw Electronic Verification response code from the processor for the customer's street address.
    * @member {String} streetRaw
    */
   exports.prototype['streetRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer’s postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * Raw Electronic Verification response code from the processor for the customer’s postal code.
+   * Raw Electronic Verification response code from the processor for the customer's postal code.
    * @member {String} postalCodeRaw
    */
   exports.prototype['postalCodeRaw'] = undefined;

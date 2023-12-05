@@ -73,7 +73,7 @@
   }
 
   /**
-   * Amount that was credited to the cardholder’s account.  Returned by PIN debit credit. 
+   * Amount that was credited to the cardholder's account.  Returned by PIN debit credit. 
    * @member {String} creditAmount
    */
   exports.prototype['creditAmount'] = undefined;

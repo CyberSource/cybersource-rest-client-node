@@ -92,12 +92,12 @@
    */
   exports.prototype['reason'] = undefined;
   /**
-   * Name of the customer’s record entered in the list. For the positive list, it is required if `action_ code`=`add_positive`. If absent from the request, `ics_risk_update` creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, `record_name`, `customer_firstname`, and `customer_lastname` are optional. 
+   * Name of the customer's record entered in the list. For the positive list, it is required if `action_ code`=`add_positive`. If absent from the request, `ics_risk_update` creates the value for this field by concatenating the customer's first and last names. For the negative and the review lists, `record_name`, `customer_firstname`, and `customer_lastname` are optional. 
    * @member {String} recordName
    */
   exports.prototype['recordName'] = undefined;
   /**
-   * Indicates whether to add to or remove a customer’s identity from the negative or positive list. This field can contain one of the following values: - add: Add information to the list. - convert: moves the data. - delete: deletes the data from the list. 
+   * Indicates whether to add to or remove a customer's identity from the negative or positive list. This field can contain one of the following values: - add: Add information to the list. - convert: moves the data. - delete: deletes the data from the list. 
    * @member {String} action
    */
   exports.prototype['action'] = undefined;

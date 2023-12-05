@@ -104,7 +104,7 @@
    */
   exports.prototype['approvalCode'] = undefined;
   /**
-   * System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer’s receipt. 
+   * System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer's receipt. 
    * @member {String} systemTraceAuditNumber
    */
   exports.prototype['systemTraceAuditNumber'] = undefined;

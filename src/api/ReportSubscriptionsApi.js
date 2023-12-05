@@ -261,7 +261,7 @@
 
     /**
      * Get Subscription for Report Name
-     * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
+     * View the details of a report subscription, such as the report format or report frequency, using the report&#39;s unique name. 
      * @param {String} reportName Name of the Report to Retrieve
      * @param {Object} opts Optional parameters
      * @param {String} opts.organizationId Valid Organization Id

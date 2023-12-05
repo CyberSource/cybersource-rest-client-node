@@ -326,7 +326,7 @@
    */
   exports.prototype['reservationSystemCode'] = undefined;
   /**
-   * Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets. 
+   * Airline process identifier. This value is the airline's three-digit IATA1 code which is used to process extended payment airline tickets. 
    * @member {String} processIdentifier
    */
   exports.prototype['processIdentifier'] = undefined;

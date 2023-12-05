@@ -50,20 +50,20 @@
   }
 
   describe('CreateNewWebhooksApi', function() {
-    describe('createWebhook', function() {
-      it('should call createWebhook successfully', function(done) {
-        //uncomment below and update the code to test createWebhook
-        //instance.createWebhook(function(error) {
+    describe('createWebhookSubscription', function() {
+      it('should call createWebhookSubscription successfully', function(done) {
+        //uncomment below and update the code to test createWebhookSubscription
+        //instance.createWebhookSubscription(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('findProductToSubscribe', function() {
-      it('should call findProductToSubscribe successfully', function(done) {
-        //uncomment below and update the code to test findProductToSubscribe
-        //instance.findProductToSubscribe(function(error) {
+    describe('findProductsToSubscribe', function() {
+      it('should call findProductsToSubscribe successfully', function(done) {
+        //uncomment below and update the code to test findProductsToSubscribe
+        //instance.findProductsToSubscribe(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -91,7 +91,7 @@
    */
   exports.prototype['currency'] = undefined;
   /**
-   * This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. This field is returned for OCT transactions. 
+   * This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder's account. This field is returned for OCT transactions. 
    * @member {String} settlementAmount
    */
   exports.prototype['settlementAmount'] = undefined;

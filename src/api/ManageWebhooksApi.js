@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2004', 'model/InlineResponse2014', 'model/InlineResponse4042', 'model/ReplayWebhooks', 'model/SaveAsymEgressKey', 'model/UpdateWebhook'], factory);
+    define(['ApiClient', 'model/InlineResponse2004', 'model/InlineResponse2014', 'model/InlineResponse4042', 'model/ReplayWebhooksRequest', 'model/SaveAsymEgressKey', 'model/UpdateWebhookRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse2014'), require('../model/InlineResponse4042'), require('../model/ReplayWebhooks'), require('../model/SaveAsymEgressKey'), require('../model/UpdateWebhook'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse2014'), require('../model/InlineResponse4042'), require('../model/ReplayWebhooksRequest'), require('../model/SaveAsymEgressKey'), require('../model/UpdateWebhookRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ManageWebhooksApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4042, root.CyberSource.ReplayWebhooks, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateWebhook);
+    root.CyberSource.ManageWebhooksApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4042, root.CyberSource.ReplayWebhooksRequest, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateWebhookRequest);
   }
-}(this, function(ApiClient, InlineResponse2004, InlineResponse2014, InlineResponse4042, ReplayWebhooks, SaveAsymEgressKey, UpdateWebhook) {
+}(this, function(ApiClient, InlineResponse2004, InlineResponse2014, InlineResponse4042, ReplayWebhooksRequest, SaveAsymEgressKey, UpdateWebhookRequest) {
   'use strict';
 
   /**
@@ -89,7 +89,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
       return this.apiClient.callApi(
@@ -100,8 +100,59 @@
     }
 
     /**
-     * Callback function to receive the result of the getAllWebhooks operation.
-     * @callback module:api/ManageWebhooksApi~getAllWebhooksCallback
+     * Callback function to receive the result of the getWebhookSubscriptionById operation.
+     * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2004} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Details On a Single Webhook
+     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+     * @param {String} webhookId The webhook Identifier
+     * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2004}
+     *
+     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
+     */
+    this.getWebhookSubscriptionById = function(webhookId, callback) {
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'webhookId' is set
+      if (webhookId === undefined || webhookId === null) {
+        throw new Error("Missing the required parameter 'webhookId' when calling getWebhookSubscriptionById");
+      }
+
+
+      var pathParams = {
+        'webhookId': webhookId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = InlineResponse2004;
+
+      return this.apiClient.callApi(
+        '/notification-subscriptions/v1/webhooks/{webhookId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getWebhookSubscriptionsByOrg operation.
+     * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -113,12 +164,12 @@
      * @param {String} organizationId The Organization Identifier.
      * @param {String} productId The Product Identifier.
      * @param {String} eventType The Event Type.
-     * @param {module:api/ManageWebhooksApi~getAllWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2004>}
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
-    this.getAllWebhooks = function(organizationId, productId, eventType, callback) {
+    this.getWebhookSubscriptionsByOrg = function(organizationId, productId, eventType, callback) {
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
@@ -126,17 +177,17 @@
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getAllWebhooks");
+        throw new Error("Missing the required parameter 'organizationId' when calling getWebhookSubscriptionsByOrg");
       }
 
       // verify the required parameter 'productId' is set
       if (productId === undefined || productId === null) {
-        throw new Error("Missing the required parameter 'productId' when calling getAllWebhooks");
+        throw new Error("Missing the required parameter 'productId' when calling getWebhookSubscriptionsByOrg");
       }
 
       // verify the required parameter 'eventType' is set
       if (eventType === undefined || eventType === null) {
-        throw new Error("Missing the required parameter 'eventType' when calling getAllWebhooks");
+        throw new Error("Missing the required parameter 'eventType' when calling getWebhookSubscriptionsByOrg");
       }
 
 
@@ -154,7 +205,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = [InlineResponse2004];
 
       return this.apiClient.callApi(
@@ -165,59 +216,8 @@
     }
 
     /**
-     * Callback function to receive the result of the getWebhookDetails operation.
-     * @callback module:api/ManageWebhooksApi~getWebhookDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2004} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Details On a Single Webhook
-     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
-     * @param {String} webhookId The webhook Identifier
-     * @param {module:api/ManageWebhooksApi~getWebhookDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2004}
-     *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
-     */
-    this.getWebhookDetails = function(webhookId, callback) {
-      var postBody = null;
-      if ('GET' == 'POST') {
-        postBody = '{}';
-      }
-
-      // verify the required parameter 'webhookId' is set
-      if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling getWebhookDetails");
-      }
-
-
-      var pathParams = {
-        'webhookId': webhookId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2004;
-
-      return this.apiClient.callApi(
-        '/notification-subscriptions/v1/webhooks/{webhookId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the replayPreviousWebhook operation.
-     * @callback module:api/ManageWebhooksApi~replayPreviousWebhookCallback
+     * Callback function to receive the result of the replayPreviousWebhooks operation.
+     * @callback module:api/ManageWebhooksApi~replayPreviousWebhooksCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -228,24 +228,24 @@
      * Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
      * @param {String} webhookId The webhook uuid identifier.
      * @param {Object} opts Optional parameters
-     * @param {module:model/ReplayWebhooks} opts.replayWebhooks The request query
-     * @param {module:api/ManageWebhooksApi~replayPreviousWebhookCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:model/ReplayWebhooksRequest} opts.replayWebhooksRequest The request query
+     * @param {module:api/ManageWebhooksApi~replayPreviousWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
-    this.replayPreviousWebhook = function(webhookId, opts, callback) {
+    this.replayPreviousWebhooks = function(webhookId, opts, callback) {
       opts = opts || {};
-      var postBody = opts['replayWebhooks'];
+      var postBody = opts['replayWebhooksRequest'];
 
       // verify the required parameter 'webhookId' is set
       if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling replayPreviousWebhook");
+        throw new Error("Missing the required parameter 'webhookId' when calling replayPreviousWebhooks");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ReplayWebhooks', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ReplayWebhooksRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'webhookId': webhookId
@@ -259,7 +259,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
       return this.apiClient.callApi(
@@ -328,7 +328,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2014;
 
       return this.apiClient.callApi(
@@ -351,14 +351,14 @@
      * Update the webhook subscription using PATCH.
      * @param {String} webhookId The Webhook Identifier.
      * @param {Object} opts Optional parameters
-     * @param {module:model/UpdateWebhook} opts.updateWebhook The webhook payload or changes to apply.
+     * @param {module:model/UpdateWebhookRequest} opts.updateWebhookRequest The webhook payload or changes to apply.
      * @param {module:api/ManageWebhooksApi~updateWebhookSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
     this.updateWebhookSubscription = function(webhookId, opts, callback) {
       opts = opts || {};
-      var postBody = opts['updateWebhook'];
+      var postBody = opts['updateWebhookRequest'];
 
       // verify the required parameter 'webhookId' is set
       if (webhookId === undefined || webhookId === null) {
@@ -368,7 +368,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateWebhook', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateWebhookRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'webhookId': webhookId
@@ -382,7 +382,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
       return this.apiClient.callApi(

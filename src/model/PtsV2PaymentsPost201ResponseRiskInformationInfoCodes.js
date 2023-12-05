@@ -106,7 +106,7 @@
    */
   exports.prototype['velocity'] = undefined;
   /**
-   * Indicates a mismatch between the customer’s billing and shipping addresses. 
+   * Indicates a mismatch between the customer's billing and shipping addresses. 
    * @member {Array.<String>} address
    */
   exports.prototype['address'] = undefined;
@@ -126,12 +126,12 @@
    */
   exports.prototype['identityChange'] = undefined;
   /**
-   * Indicates a problem with the customer’s email address, IP address, or billing address. 
+   * Indicates a problem with the customer's email address, IP address, or billing address. 
    * @member {Array.<String>} internet
    */
   exports.prototype['internet'] = undefined;
   /**
-   * Indicates a problem with the customer’s phone number. 
+   * Indicates a problem with the customer's phone number. 
    * @member {Array.<String>} phone
    */
   exports.prototype['phone'] = undefined;

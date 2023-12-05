@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reporting** | [**PaymentProductsTax**](PaymentProductsTax.md) |  | [optional] 
-**transactionSearch** | [**PaymentProductsTax**](PaymentProductsTax.md) |  | [optional] 
+**reporting** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
+**transactionSearch** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 
 

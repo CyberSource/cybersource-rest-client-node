@@ -4,14 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWebhook**](CreateNewWebhooksApi.md#createWebhook) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
-[**findProductToSubscribe**](CreateNewWebhooksApi.md#findProductToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
+[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
+[**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
 
-<a name="createWebhook"></a>
-# **createWebhook**
-> InlineResponse2013 createWebhook(opts)
+<a name="createWebhookSubscription"></a>
+# **createWebhookSubscription**
+> InlineResponse2013 createWebhookSubscription(opts)
 
 Create a Webhook
 
@@ -24,7 +24,7 @@ var CyberSource = require('CyberSource');
 var apiInstance = new CyberSource.CreateNewWebhooksApi();
 
 var opts = { 
-  'createWebhook': new CyberSource.CreateWebhook() // CreateWebhook | The webhook payload
+  'createWebhookRequest': new CyberSource.CreateWebhookRequest() // CreateWebhookRequest | The webhook payload
 };
 
 var callback = function(error, data, response) {
@@ -34,14 +34,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createWebhook(opts, callback);
+apiInstance.createWebhookSubscription(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createWebhook** | [**CreateWebhook**](CreateWebhook.md)| The webhook payload | [optional] 
+ **createWebhookRequest** | [**CreateWebhookRequest**](CreateWebhookRequest.md)| The webhook payload | [optional] 
 
 ### Return type
 
@@ -54,11 +54,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
-<a name="findProductToSubscribe"></a>
-# **findProductToSubscribe**
-> [InlineResponse2003] findProductToSubscribe(organizationId)
+<a name="findProductsToSubscribe"></a>
+# **findProductsToSubscribe**
+> [InlineResponse2003] findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -80,7 +80,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.findProductToSubscribe(organizationId, callback);
+apiInstance.findProductsToSubscribe(organizationId, callback);
 ```
 
 ### Parameters
@@ -100,7 +100,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
@@ -155,5 +155,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

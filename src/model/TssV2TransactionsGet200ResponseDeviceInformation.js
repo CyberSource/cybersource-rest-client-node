@@ -87,7 +87,7 @@
    */
   exports.prototype['hostName'] = undefined;
   /**
-   * Whether the customer’s browser accepts cookies. This field can contain one of the following values: - `yes`: The customer’s browser accepts cookies. - `no`: The customer’s browser does not accept cookies. 
+   * Whether the customer's browser accepts cookies. This field can contain one of the following values: - `yes`: The customer's browser accepts cookies. - `no`: The customer's browser does not accept cookies. 
    * @member {String} cookiesAccepted
    */
   exports.prototype['cookiesAccepted'] = undefined;

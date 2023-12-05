@@ -90,7 +90,7 @@
    */
   exports.prototype['ticketNumber'] = undefined;
   /**
-   * Name of the passenger. If the passenger’s name is not available, this value is the cardholder’s name. If neither the passenger’s name nor the cardholder’s name is available, this value is a description of the ancillary purchase. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF) program. Format: English characters only. Optional field for ancillary service. 
+   * Name of the passenger. If the passenger's name is not available, this value is the cardholder's name. If neither the passenger's name nor the cardholder's name is available, this value is a description of the ancillary purchase. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF) program. Format: English characters only. Optional field for ancillary service. 
    * @member {String} passengerName
    */
   exports.prototype['passengerName'] = undefined;
