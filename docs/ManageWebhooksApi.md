@@ -5,9 +5,9 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v1/webhooks/{webhookId} | Delete a Webhook Subscription
-[**getAllWebhooks**](ManageWebhooksApi.md#getAllWebhooks) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
-[**getWebhookDetails**](ManageWebhooksApi.md#getWebhookDetails) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
-[**replayPreviousWebhook**](ManageWebhooksApi.md#replayPreviousWebhook) | **POST** /nrtf/v1/webhooks/{webhookId}/replays | Replay Previous Webhooks
+[**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
+[**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
+[**replayPreviousWebhooks**](ManageWebhooksApi.md#replayPreviousWebhooks) | **POST** /nrtf/v1/webhooks/{webhookId}/replays | Replay Previous Webhooks
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
 [**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v1/webhooks/{webhookId} | Update a Webhook Subscription
 
@@ -56,11 +56,57 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
-<a name="getAllWebhooks"></a>
-# **getAllWebhooks**
-> [InlineResponse2004] getAllWebhooks(organizationId, productId, eventType)
+<a name="getWebhookSubscriptionById"></a>
+# **getWebhookSubscriptionById**
+> InlineResponse2004 getWebhookSubscriptionById(webhookId)
+
+Get Details On a Single Webhook
+
+Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.ManageWebhooksApi();
+
+var webhookId = "webhookId_example"; // String | The webhook Identifier
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWebhookSubscriptionById(webhookId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **String**| The webhook Identifier | 
+
+### Return type
+
+[**InlineResponse2004**](InlineResponse2004.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="getWebhookSubscriptionsByOrg"></a>
+# **getWebhookSubscriptionsByOrg**
+> [InlineResponse2004] getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
 
 Get Details On All Created Webhooks
 
@@ -86,7 +132,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllWebhooks(organizationId, productId, eventType, callback);
+apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType, callback);
 ```
 
 ### Parameters
@@ -108,57 +154,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
-<a name="getWebhookDetails"></a>
-# **getWebhookDetails**
-> InlineResponse2004 getWebhookDetails(webhookId)
-
-Get Details On a Single Webhook
-
-Retrieve the details of a specific webhook by supplying the webhook ID in the path.
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.ManageWebhooksApi();
-
-var webhookId = "webhookId_example"; // String | The webhook Identifier
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getWebhookDetails(webhookId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The webhook Identifier | 
-
-### Return type
-
-[**InlineResponse2004**](InlineResponse2004.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
-
-<a name="replayPreviousWebhook"></a>
-# **replayPreviousWebhook**
-> replayPreviousWebhook(webhookId, opts)
+<a name="replayPreviousWebhooks"></a>
+# **replayPreviousWebhooks**
+> replayPreviousWebhooks(webhookId, opts)
 
 Replay Previous Webhooks
 
@@ -173,7 +173,7 @@ var apiInstance = new CyberSource.ManageWebhooksApi();
 var webhookId = "webhookId_example"; // String | The webhook uuid identifier.
 
 var opts = { 
-  'replayWebhooks': new CyberSource.ReplayWebhooks() // ReplayWebhooks | The request query
+  'replayWebhooksRequest': new CyberSource.ReplayWebhooksRequest() // ReplayWebhooksRequest | The request query
 };
 
 var callback = function(error, data, response) {
@@ -183,7 +183,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.replayPreviousWebhook(webhookId, opts, callback);
+apiInstance.replayPreviousWebhooks(webhookId, opts, callback);
 ```
 
 ### Parameters
@@ -191,7 +191,7 @@ apiInstance.replayPreviousWebhook(webhookId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookId** | **String**| The webhook uuid identifier. | 
- **replayWebhooks** | [**ReplayWebhooks**](ReplayWebhooks.md)| The request query | [optional] 
+ **replayWebhooksRequest** | [**ReplayWebhooksRequest**](ReplayWebhooksRequest.md)| The request query | [optional] 
 
 ### Return type
 
@@ -204,7 +204,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
@@ -260,7 +260,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="updateWebhookSubscription"></a>
 # **updateWebhookSubscription**
@@ -279,7 +279,7 @@ var apiInstance = new CyberSource.ManageWebhooksApi();
 var webhookId = "webhookId_example"; // String | The Webhook Identifier.
 
 var opts = { 
-  'updateWebhook': new CyberSource.UpdateWebhook() // UpdateWebhook | The webhook payload or changes to apply.
+  'updateWebhookRequest': new CyberSource.UpdateWebhookRequest() // UpdateWebhookRequest | The webhook payload or changes to apply.
 };
 
 var callback = function(error, data, response) {
@@ -297,7 +297,7 @@ apiInstance.updateWebhookSubscription(webhookId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookId** | **String**| The Webhook Identifier. | 
- **updateWebhook** | [**UpdateWebhook**](UpdateWebhook.md)| The webhook payload or changes to apply. | [optional] 
+ **updateWebhookRequest** | [**UpdateWebhookRequest**](UpdateWebhookRequest.md)| The webhook payload or changes to apply. | [optional] 
 
 ### Return type
 
@@ -310,5 +310,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

@@ -93,7 +93,7 @@
   }
 
   /**
-   * Payment related information.  This information is included on the customer’s statement. 
+   * Payment related information.  This information is included on the customer's statement. 
    * @member {String} customerMemo
    */
   exports.prototype['customerMemo'] = undefined;

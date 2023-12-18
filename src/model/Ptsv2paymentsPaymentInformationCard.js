@@ -125,7 +125,7 @@
   }
 
   /**
-   * The customer’s payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers.  #### FDMS Nashville Required. String (19)  #### GPX Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### All other processors Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting. 
+   * The customer's payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers.  #### FDMS Nashville Required. String (19)  #### GPX Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### All other processors Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting. 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;
@@ -170,7 +170,7 @@
    */
   exports.prototype['securityCodeIndicator'] = undefined;
   /**
-   * Identifier for the issuing bank that provided the customer’s encoded account number. Contact your processor for the bank’s ID. 
+   * Identifier for the issuing bank that provided the customer's encoded account number. Contact your processor for the bank's ID. 
    * @member {String} accountEncoderId
    */
   exports.prototype['accountEncoderId'] = undefined;

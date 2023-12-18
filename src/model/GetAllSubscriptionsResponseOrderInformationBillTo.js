@@ -73,12 +73,12 @@
   }
 
   /**
-   * Customer’s first name. 
+   * Customer's first name. 
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
   /**
-   * Customer’s last name. 
+   * Customer's last name. 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;

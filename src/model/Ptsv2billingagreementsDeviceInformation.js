@@ -77,7 +77,7 @@
   }
 
   /**
-   * Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request. 
+   * Value of the Accept header sent by the customer's web browser. **Note** If the customer's browser provides a value, you must include it in your request. 
    * @member {String} httpAcceptBrowserValue
    */
   exports.prototype['httpAcceptBrowserValue'] = undefined;
@@ -87,7 +87,7 @@
    */
   exports.prototype['ipAddress'] = undefined;
   /**
-   * Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request. 
+   * Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request. 
    * @member {String} userAgentBrowserValue
    */
   exports.prototype['userAgentBrowserValue'] = undefined;

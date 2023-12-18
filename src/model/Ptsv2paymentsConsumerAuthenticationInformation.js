@@ -517,7 +517,7 @@
    */
   exports.prototype['productCode'] = undefined;
   /**
-   * The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant's return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call. 
+   * The URL of the merchant's return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant's return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session's transactionId. The merchant's return page should capture the transaction ID and send it in the Payer Authentication validation call. 
    * @member {String} returnUrl
    */
   exports.prototype['returnUrl'] = undefined;

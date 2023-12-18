@@ -89,7 +89,7 @@
   }
 
   /**
-   * Date the cardholder’s account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy. 
+   * Date the cardholder's account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy. 
    * @member {String} lastChangeDate
    */
   exports.prototype['lastChangeDate'] = undefined;

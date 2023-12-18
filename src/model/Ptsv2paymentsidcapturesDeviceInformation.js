@@ -87,7 +87,7 @@
    */
   exports.prototype['ipAddress'] = undefined;
   /**
-   * Customer’s browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser. 
+   * Customer's browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser. 
    * @member {String} userAgent
    */
   exports.prototype['userAgent'] = undefined;

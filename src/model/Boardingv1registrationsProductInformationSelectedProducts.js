@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommerceSolutionsProducts', 'model/PaymentProducts', 'model/RiskProducts', 'model/ValueAddedServicesProducts'], factory);
+    define(['ApiClient', 'model/CommerceSolutionsProducts', 'model/PaymentsProducts', 'model/RiskProducts', 'model/ValueAddedServicesProducts'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProducts'), require('./PaymentProducts'), require('./RiskProducts'), require('./ValueAddedServicesProducts'));
+    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProducts'), require('./PaymentsProducts'), require('./RiskProducts'), require('./ValueAddedServicesProducts'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Boardingv1registrationsProductInformationSelectedProducts = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProducts, root.CyberSource.PaymentProducts, root.CyberSource.RiskProducts, root.CyberSource.ValueAddedServicesProducts);
+    root.CyberSource.Boardingv1registrationsProductInformationSelectedProducts = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProducts, root.CyberSource.PaymentsProducts, root.CyberSource.RiskProducts, root.CyberSource.ValueAddedServicesProducts);
   }
-}(this, function(ApiClient, CommerceSolutionsProducts, PaymentProducts, RiskProducts, ValueAddedServicesProducts) {
+}(this, function(ApiClient, CommerceSolutionsProducts, PaymentsProducts, RiskProducts, ValueAddedServicesProducts) {
   'use strict';
 
 
@@ -65,7 +65,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('payments')) {
-        obj['payments'] = PaymentProducts.constructFromObject(data['payments']);
+        obj['payments'] = PaymentsProducts.constructFromObject(data['payments']);
       }
       if (data.hasOwnProperty('risk')) {
         obj['risk'] = RiskProducts.constructFromObject(data['risk']);
@@ -81,7 +81,7 @@
   }
 
   /**
-   * @member {module:model/PaymentProducts} payments
+   * @member {module:model/PaymentsProducts} payments
    */
   exports.prototype['payments'] = undefined;
   /**

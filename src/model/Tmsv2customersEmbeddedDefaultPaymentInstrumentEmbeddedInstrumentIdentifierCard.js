@@ -82,7 +82,7 @@
   }
 
   /**
-   * The customer’s payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers. 
+   * The customer's payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers. 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;

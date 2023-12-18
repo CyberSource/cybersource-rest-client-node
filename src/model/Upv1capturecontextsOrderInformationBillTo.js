@@ -141,7 +141,7 @@
   }
 
   /**
-   * Payment card billing street address as it appears on the credit card issuer’s records. 
+   * Payment card billing street address as it appears on the credit card issuer's records. 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
@@ -176,7 +176,7 @@
    */
   exports.prototype['country'] = undefined;
   /**
-   * Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
+   * Customer's neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
    * @member {String} district
    */
   exports.prototype['district'] = undefined;
@@ -200,22 +200,22 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * Customer’s first name. This name must be the same as the name on the card
+   * Customer's first name. This name must be the same as the name on the card
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
   /**
-   * Customer’s last name. This name must be the same as the name on the card. 
+   * Customer's last name. This name must be the same as the name on the card. 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * Customer’s middle name. 
+   * Customer's middle name. 
    * @member {String} middleName
    */
   exports.prototype['middleName'] = undefined;
   /**
-   * Customer’s name suffix. 
+   * Customer's name suffix. 
    * @member {String} nameSuffix
    */
   exports.prototype['nameSuffix'] = undefined;
@@ -225,7 +225,7 @@
    */
   exports.prototype['title'] = undefined;
   /**
-   * Customer’s phone number. 
+   * Customer's phone number. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;

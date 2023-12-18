@@ -73,7 +73,7 @@
   }
 
   /**
-   * Last four digits of the customer’s payment account number. 
+   * Last four digits of the customer's payment account number. 
    * @member {String} suffix
    */
   exports.prototype['suffix'] = undefined;

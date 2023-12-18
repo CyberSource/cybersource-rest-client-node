@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscriptionInformation** | [**PaymentProductsPayerAuthenticationSubscriptionInformation**](PaymentProductsPayerAuthenticationSubscriptionInformation.md) |  | [optional] 
+**subscriptionInformation** | [**PaymentsProductsPayerAuthenticationSubscriptionInformation**](PaymentsProductsPayerAuthenticationSubscriptionInformation.md) |  | [optional] 
 **configurationInformation** | [**RiskProductsFraudManagementEssentialsConfigurationInformation**](RiskProductsFraudManagementEssentialsConfigurationInformation.md) |  | [optional] 
 
 

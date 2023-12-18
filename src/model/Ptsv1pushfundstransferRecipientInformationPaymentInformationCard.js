@@ -107,7 +107,7 @@
    */
   exports.prototype['securityCode'] = undefined;
   /**
-   * The customer’s payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens. 
+   * The customer's payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens. 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;

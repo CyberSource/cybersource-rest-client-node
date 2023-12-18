@@ -109,12 +109,12 @@
   }
 
   /**
-   * Name of the customer’s company.
+   * Name of the customer's company.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Payment card billing street address as it appears on the credit card issuer’s records. 
+   * Payment card billing street address as it appears on the credit card issuer's records. 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
@@ -149,7 +149,7 @@
    */
   exports.prototype['country'] = undefined;
   /**
-   * Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
+   * Customer's neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
    * @member {String} district
    */
   exports.prototype['district'] = undefined;

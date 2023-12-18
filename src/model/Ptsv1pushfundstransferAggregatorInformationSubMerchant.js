@@ -106,42 +106,42 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Sub-merchant’s business name.  Visa Platform Connect With American Express, the maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters. The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant's business name.  Visa Platform Connect With American Express, the maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters. The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * First line of the sub-merchant’s street address.  Visa Platform Connect The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
+   * First line of the sub-merchant's street address.  Visa Platform Connect The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
   /**
-   * Sub-merchant’s city.  For processor-specific details, see submerchant_city request field description in Credit Card Services Using the SCMP API.  Visa Platform Connect The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant's city.  For processor-specific details, see submerchant_city request field description in Credit Card Services Using the SCMP API.  Visa Platform Connect The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
    * @member {String} locality
    */
   exports.prototype['locality'] = undefined;
   /**
-   * Sub-merchant’s state or province. See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Visa Platform Connect The value for this field does not map to the TC 33 capture file.  FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant's state or province. See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Visa Platform Connect The value for this field does not map to the TC 33 capture file.  FDC Compass This value must consist of uppercase characters. 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
   /**
-   * Partial postal code for the sub-merchant’s address.  For processor-specific details, see submerchant_postal_code request field description in Credit Card Services Using the SCMP API.  Visa Platform Connect The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
+   * Partial postal code for the sub-merchant's address.  For processor-specific details, see submerchant_postal_code request field description in Credit Card Services Using the SCMP API.  Visa Platform Connect The value for this field does not map to the TC 33 capture file5.  FDC Compass This value must consist of uppercase characters. 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * Sub-merchant’s country. Use the ISO Standard numeric Country Codes.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Visa Platform Connect The value for this field does not map to the TC 33 capture file.  FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant's country. Use the ISO Standard numeric Country Codes.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Visa Platform Connect The value for this field does not map to the TC 33 capture file.  FDC Compass This value must consist of uppercase characters. 
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
   /**
-   * Sub-merchant’s email address.  CyberSource through VisaNet | With American Express, the value for this field corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCRB - Position: 25-64 - Field: American Express Seller E-mail Address - Note The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. 
+   * Sub-merchant's email address.  CyberSource through VisaNet | With American Express, the value for this field corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCRB - Position: 25-64 - Field: American Express Seller E-mail Address - Note The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant's acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
   /**
-   * Sub-merchant’s telephone number.  Maximum length for procesors  Visa Platform Connect: 20 FDC Compass: 13  FDC Compass This value must consist of uppercase characters. Use one of these recommended formats: NNN-NNN-NNNN NNN-AAAAAAA 
+   * Sub-merchant's telephone number.  Maximum length for procesors  Visa Platform Connect: 20 FDC Compass: 13  FDC Compass This value must consist of uppercase characters. Use one of these recommended formats: NNN-NNN-NNNN NNN-AAAAAAA 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;

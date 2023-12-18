@@ -78,7 +78,7 @@
    */
   exports.prototype['fundsSource'] = undefined;
   /**
-   * The account number of the entity funding the transaction. It is the sender’s account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (<= 19) * Paymentech (<= 16) 
+   * The account number of the entity funding the transaction. It is the sender's account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (<= 19) * Paymentech (<= 16) 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;

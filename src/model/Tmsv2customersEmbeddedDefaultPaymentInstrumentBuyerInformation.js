@@ -81,7 +81,7 @@
   }
 
   /**
-   * Company’s tax identifier. This is only used for eCheck service. 
+   * Company's tax identifier. This is only used for eCheck service. 
    * @member {String} companyTaxID
    */
   exports.prototype['companyTaxID'] = undefined;

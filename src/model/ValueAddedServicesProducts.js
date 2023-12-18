@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentProductsTax'], factory);
+    define(['ApiClient', 'model/PaymentsProductsTax'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentProductsTax'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsTax'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ValueAddedServicesProducts = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentProductsTax);
+    root.CyberSource.ValueAddedServicesProducts = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsTax);
   }
-}(this, function(ApiClient, PaymentProductsTax) {
+}(this, function(ApiClient, PaymentsProductsTax) {
   'use strict';
 
 
@@ -63,21 +63,21 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('reporting')) {
-        obj['reporting'] = PaymentProductsTax.constructFromObject(data['reporting']);
+        obj['reporting'] = PaymentsProductsTax.constructFromObject(data['reporting']);
       }
       if (data.hasOwnProperty('transactionSearch')) {
-        obj['transactionSearch'] = PaymentProductsTax.constructFromObject(data['transactionSearch']);
+        obj['transactionSearch'] = PaymentsProductsTax.constructFromObject(data['transactionSearch']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PaymentProductsTax} reporting
+   * @member {module:model/PaymentsProductsTax} reporting
    */
   exports.prototype['reporting'] = undefined;
   /**
-   * @member {module:model/PaymentProductsTax} transactionSearch
+   * @member {module:model/PaymentsProductsTax} transactionSearch
    */
   exports.prototype['transactionSearch'] = undefined;
 

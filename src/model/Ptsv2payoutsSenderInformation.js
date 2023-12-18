@@ -156,7 +156,7 @@
    */
   exports.prototype['middleInitial'] = undefined;
   /**
-   * Sender’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * Sender's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @member {String} middleName
    */
   exports.prototype['middleName'] = undefined;
@@ -181,7 +181,7 @@
    */
   exports.prototype['locality'] = undefined;
   /**
-   * Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). 
+   * Sender's state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
@@ -191,17 +191,17 @@
    */
   exports.prototype['countryCode'] = undefined;
   /**
-   * Sender’s postal code. Required only for FDCCompass.
+   * Sender's postal code. Required only for FDCCompass.
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * Sender’s phone number. Required only for FDCCompass.
+   * Sender's phone number. Required only for FDCCompass.
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
-   * Sender’s date of birth in YYYYMMDD format. Required only for FDCCompass.
+   * Sender's date of birth in YYYYMMDD format. Required only for FDCCompass.
    * @member {String} dateOfBirth
    */
   exports.prototype['dateOfBirth'] = undefined;

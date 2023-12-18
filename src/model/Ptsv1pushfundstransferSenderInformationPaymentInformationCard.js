@@ -104,7 +104,7 @@
    */
   exports.prototype['sourceAccountType'] = undefined;
   /**
-   * The customer’s payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. 
+   * The customer's payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;

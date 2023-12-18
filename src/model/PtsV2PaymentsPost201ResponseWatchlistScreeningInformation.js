@@ -77,7 +77,7 @@
   }
 
   /**
-   * Likelihood that the country associated with the customer’s IP address was identified correctly. Returns a value from 1–100, where 100 indicates the highest likelihood. If the country cannot be determined, the value is –1. 
+   * Likelihood that the country associated with the customer's IP address was identified correctly. Returns a value from 1–100, where 100 indicates the highest likelihood. If the country cannot be determined, the value is –1. 
    * @member {Number} ipCountryConfidence
    */
   exports.prototype['ipCountryConfidence'] = undefined;

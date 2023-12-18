@@ -253,7 +253,7 @@
    */
   exports.prototype['distanceTravelled'] = undefined;
   /**
-   * Miles/Kilometers Indicator shows whether the “miles” fields are expressed in miles or kilometers.  Allowed values: - `K` - Kilometers - `M` - Miles 
+   * Miles/Kilometers Indicator shows whether the \"miles\" fields are expressed in miles or kilometers.  Allowed values: - `K` - Kilometers - `M` - Miles 
    * @member {String} distanceUnit
    */
   exports.prototype['distanceUnit'] = undefined;
@@ -278,7 +278,7 @@
    */
   exports.prototype['insuranceIndicator'] = undefined;
   /**
-   * Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \"renter” or ”show”.  This code is `2 digit` value agreed by Merchant and processor. 
+   * Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \"renter\" or \"show\".  This code is `2 digit` value agreed by Merchant and processor. 
    * @member {String} programCode
    */
   exports.prototype['programCode'] = undefined;
@@ -291,7 +291,7 @@
    */
   exports.prototype['rentalAddress'] = undefined;
   /**
-   * Auto rental agency’s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement. 
+   * Auto rental agency's agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement. 
    * @member {String} agreementNumber
    */
   exports.prototype['agreementNumber'] = undefined;
@@ -321,7 +321,7 @@
    */
   exports.prototype['driverAge'] = undefined;
   /**
-   * Program code used to identify special circumstances, such as “frequent renter” or “no show” status for the renter. Possible values: - `0`: not applicable (default) - `1`: frequent renter - `2`: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder. 
+   * Program code used to identify special circumstances, such as \"frequent renter\" or \"no show\" status for the renter. Possible values: - `0`: not applicable (default) - `1`: frequent renter - `2`: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder. 
    * @member {String} specialProgramCode
    */
   exports.prototype['specialProgramCode'] = undefined;

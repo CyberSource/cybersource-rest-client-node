@@ -109,22 +109,22 @@
   }
 
   /**
-   * Customer’s first name. This name must be the same as the name on the card. 
+   * Customer's first name. This name must be the same as the name on the card. 
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
   /**
-   * Customer’s last name. This name must be the same as the name on the card. 
+   * Customer's last name. This name must be the same as the name on the card. 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * Name of the customer’s company. 
+   * Name of the customer's company. 
    * @member {String} company
    */
   exports.prototype['company'] = undefined;
   /**
-   * Payment card billing street address as it appears on the credit card issuer’s records. 
+   * Payment card billing street address as it appears on the credit card issuer's records. 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
@@ -159,7 +159,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * Customer’s phone number. 
+   * Customer's phone number. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
