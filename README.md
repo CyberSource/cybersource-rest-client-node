@@ -43,8 +43,8 @@ The API Reference Guide provides examples of what information is needed for a pa
 
 * Add the [CyberSource REST client as a dependency](https://github.com/CyberSource/cybersource-rest-samples-node/blob/2dceb63f2fc5eb01150d1c7a9d935b291f52012f/package.json#L16C5-L16C41) in your Node.JS project.
 * Configure your credentials in a [Config Object](https://github.com/CyberSource/cybersource-rest-samples-node/blob/2dceb63f2fc5eb01150d1c7a9d935b291f52012f/Data/Configuration.js#L40C1-L70C2).
-* Create an instance of [ApiClient](https://github.com/CyberSource/cybersource-rest-samples-node/blob/2dceb63f2fc5eb01150d1c7a9d935b291f52012f/Samples/Payments/Payments/simple-authorizationinternet.js#L11) and set the required properties in it.
-* Use the created ApiClient instance to call CyberSource APIs. For example [SimpleAuthorizationInternet](https://github.com/CyberSource/cybersource-rest-samples-node/blob/2dceb63f2fc5eb01150d1c7a9d935b291f52012f/Samples/Payments/Payments/simple-authorizationinternet.js#L56)
+* Create an instance of [ApiClient](https://github.com/CyberSource/cybersource-rest-samples-node/blob/2dceb63f2fc5eb01150d1c7a9d935b291f52012f/Samples/Payments/Payments/simple-authorizationinternet.js#L11).
+* Use the created ApiClient instance to call CyberSource APIs. For example [SimpleAuthorizationInternet](https://github.com/CyberSource/cybersource-rest-samples-node/blob/2dceb63f2fc5eb01150d1c7a9d935b291f52012f/Samples/Payments/Payments/simple-authorizationinternet.js#L56C3-L71C6)
 
 For more detailed examples, refer to the [cybersource-rest-samples-node](https://github.com/CyberSource/cybersource-rest-samples-node) repository.
 
