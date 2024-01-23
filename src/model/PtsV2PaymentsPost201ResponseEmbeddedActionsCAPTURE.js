@@ -77,7 +77,7 @@
   }
 
   /**
-   * The status of the submitted transaction.  Possible values:  - PENDING 
+   * The status of the submitted transaction.  Possible values:  - PENDING  - TRANSMITTED (Only for Online Capture enabled merchants) 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

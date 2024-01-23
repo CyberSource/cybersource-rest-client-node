@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enrollmentId (base name: "enrollmentId")', function() {
+      // uncomment below and update the code to test the property enrollmentId
+      //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tokenReferenceId (base name: "tokenReferenceId")', function() {
+      // uncomment below and update the code to test the property tokenReferenceId
+      //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reason (base name: "reason")', function() {
       // uncomment below and update the code to test the property reason
       //var instane = new CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard();

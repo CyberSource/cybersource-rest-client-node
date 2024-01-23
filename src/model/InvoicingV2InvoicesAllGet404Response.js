@@ -90,7 +90,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the invoice.  Possible values:  - NOTFOUND     
+   * The status of the invoice.  Possible values:  - NOTFOUND 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

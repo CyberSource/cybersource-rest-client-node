@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acquirerMerchantId (base name: "acquirerMerchantId")', function() {
+      // uncomment below and update the code to test the property acquirerMerchantId
+      //var instane = new CyberSource.Ptsv2paymentsAcquirerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

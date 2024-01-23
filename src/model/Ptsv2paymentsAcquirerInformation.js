@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('merchantId')) {
         obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
       }
+      if (data.hasOwnProperty('acquirerMerchantId')) {
+        obj['acquirerMerchantId'] = ApiClient.convertToType(data['acquirerMerchantId'], 'String');
+      }
     }
     return obj;
   }
@@ -100,6 +104,11 @@
    * @member {String} merchantId
    */
   exports.prototype['merchantId'] = undefined;
+  /**
+   * Acquirer assigned merchant id. Check if your processor supports this field. 
+   * @member {String} acquirerMerchantId
+   */
+  exports.prototype['acquirerMerchantId'] = undefined;
 
 
 

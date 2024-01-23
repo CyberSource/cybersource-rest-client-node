@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **country** | **String** | Issuers need to be aware of the Acquirer&#39;s Country Code when the Acquirer country differs from the Merchant country and the Acquirer is in the EEA (European Economic Area).  | [optional] 
 **password** | **String** | Registered password for the Visa directory server.  | [optional] 
 **merchantId** | **String** | Username for the visa directory server that is created when your acquirer sets up your account. This ID might be the same as your merchant ID. the username can be 15 or 23 characters.  | [optional] 
+**acquirerMerchantId** | **String** | Acquirer assigned merchant id. Check if your processor supports this field.  | [optional] 
 
 
