@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500);
+    root.CyberSource.TokenApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest);
   }
-}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse410, InlineResponse424, InlineResponse500) {
+}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest) {
   'use strict';
 
   /**
@@ -61,23 +61,30 @@
      * Generate Payment Credentials for a TMS Token
      * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument or Instrument Identifier information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument or Instrument Identifier. 
      * @param {String} tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
+     * @param {module:model/PostPaymentCredentialsRequest} postPaymentCredentialsRequest 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/TokenApi~postTokenPaymentCredentialsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
      */
-    this.postTokenPaymentCredentials = function(tokenId, opts, callback) {
+    this.postTokenPaymentCredentials = function(tokenId, postPaymentCredentialsRequest, opts, callback) {
       opts = opts || {};
-      var postBody = null;
-      if ('POST' == 'POST') {
-        postBody = '{}';
-      }
+      var postBody = postPaymentCredentialsRequest;
 
       // verify the required parameter 'tokenId' is set
       if (tokenId === undefined || tokenId === null) {
         throw new Error("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentials");
       }
 
+      // verify the required parameter 'postPaymentCredentialsRequest' is set
+      if (postPaymentCredentialsRequest === undefined || postPaymentCredentialsRequest === null) {
+        throw new Error("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentials");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest', this.apiClient.merchantConfig.runEnvironment);
 
       var pathParams = {
         'tokenId': tokenId

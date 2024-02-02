@@ -62,12 +62,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property lineItems (base name: "lineItems")', function() {
-      // uncomment below and update the code to test the property lineItems
-      //var instane = new CyberSource.Riskv1authenticationresultsOrderInformation();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

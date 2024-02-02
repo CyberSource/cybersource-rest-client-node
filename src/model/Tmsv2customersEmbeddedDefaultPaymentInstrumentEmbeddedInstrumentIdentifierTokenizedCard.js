@@ -55,6 +55,8 @@
 
 
 
+
+
   };
 
   /**
@@ -73,6 +75,12 @@
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
+      if (data.hasOwnProperty('enrollmentId')) {
+        obj['enrollmentId'] = ApiClient.convertToType(data['enrollmentId'], 'String');
+      }
+      if (data.hasOwnProperty('tokenReferenceId')) {
+        obj['tokenReferenceId'] = ApiClient.convertToType(data['tokenReferenceId'], 'String');
       }
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
@@ -97,7 +105,7 @@
   }
 
   /**
-   * The network token card association brand Possible Values: - visa - mastercard 
+   * The network token card association brand Possible Values: - visa - mastercard - americanexpress 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
@@ -106,6 +114,16 @@
    * @member {String} state
    */
   exports.prototype['state'] = undefined;
+  /**
+   * Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully. 
+   * @member {String} enrollmentId
+   */
+  exports.prototype['enrollmentId'] = undefined;
+  /**
+   * Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully. 
+   * @member {String} tokenReferenceId
+   */
+  exports.prototype['tokenReferenceId'] = undefined;
   /**
    * Issuers state for the network token Possible Values: - INVALID_REQUEST : The network token provision request contained invalid data. - CARD_VERIFICATION_FAILED : The network token provision request contained data that could not be verified. - CARD_NOT_ELIGIBLE : Card can currently not be used with issuer for tokenization. - CARD_NOT_ALLOWED : Card can currently not be used with card association for tokenization. - DECLINED : Card can currently not be used with issuer for tokenization. - SERVICE_UNAVAILABLE : The network token service was unavailable or timed out. - SYSTEM_ERROR : An unexpected error occurred with network token service, check configuration. 
    * @member {String} reason

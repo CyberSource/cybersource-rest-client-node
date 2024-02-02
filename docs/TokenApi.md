@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postTokenPaymentCredentials"></a>
 # **postTokenPaymentCredentials**
-> &#39;String&#39; postTokenPaymentCredentials(tokenId, opts)
+> &#39;String&#39; postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, opts)
 
 Generate Payment Credentials for a TMS Token
 
@@ -23,6 +23,8 @@ var apiInstance = new CyberSource.TokenApi();
 
 var tokenId = "tokenId_example"; // String | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
 
+var postPaymentCredentialsRequest = new CyberSource.PostPaymentCredentialsRequest(); // PostPaymentCredentialsRequest | 
+
 var opts = { 
   'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
 };
@@ -34,7 +36,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postTokenPaymentCredentials(tokenId, opts, callback);
+apiInstance.postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, opts, callback);
 ```
 
 ### Parameters
@@ -42,6 +44,7 @@ apiInstance.postTokenPaymentCredentials(tokenId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **String**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. | 
+ **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest**](PostPaymentCredentialsRequest.md)|  | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
 
 ### Return type

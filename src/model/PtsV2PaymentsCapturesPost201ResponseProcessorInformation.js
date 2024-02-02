@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('transactionId')) {
         obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
       }
+      if (data.hasOwnProperty('networkTransactionId')) {
+        obj['networkTransactionId'] = ApiClient.convertToType(data['networkTransactionId'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} transactionId
    */
   exports.prototype['transactionId'] = undefined;
+  /**
+   * Network Transaction Identifier Applicable for online capture transactions only. 
+   * @member {String} networkTransactionId
+   */
+  exports.prototype['networkTransactionId'] = undefined;
 
 
 
