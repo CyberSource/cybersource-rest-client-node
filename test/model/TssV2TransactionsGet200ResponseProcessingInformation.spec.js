@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property captureOptions (base name: "captureOptions")', function() {
+      // uncomment below and update the code to test the property captureOptions
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reconciliationId (base name: "reconciliationId")', function() {
+      // uncomment below and update the code to test the property reconciliationId
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property japanPaymentOptions (base name: "japanPaymentOptions")', function() {
       // uncomment below and update the code to test the property japanPaymentOptions
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformation();

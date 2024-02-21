@@ -63,6 +63,7 @@
 
 
 
+
   };
 
   /**
@@ -123,6 +124,9 @@
       }
       if (data.hasOwnProperty('unifiedCheckout')) {
         obj['unifiedCheckout'] = InlineResponse2011SetupsPaymentsDigitalPayments.constructFromObject(data['unifiedCheckout']);
+      }
+      if (data.hasOwnProperty('receivablesManager')) {
+        obj['receivablesManager'] = InlineResponse2011SetupsPaymentsDigitalPayments.constructFromObject(data['receivablesManager']);
       }
     }
     return obj;
@@ -192,6 +196,10 @@
    * @member {module:model/InlineResponse2011SetupsPaymentsDigitalPayments} unifiedCheckout
    */
   exports.prototype['unifiedCheckout'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2011SetupsPaymentsDigitalPayments} receivablesManager
+   */
+  exports.prototype['receivablesManager'] = undefined;
 
 
 

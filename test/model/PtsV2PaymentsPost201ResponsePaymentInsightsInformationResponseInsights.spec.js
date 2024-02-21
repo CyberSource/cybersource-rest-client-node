@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processorRawName (base name: "processorRawName")', function() {
+      // uncomment below and update the code to test the property processorRawName
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

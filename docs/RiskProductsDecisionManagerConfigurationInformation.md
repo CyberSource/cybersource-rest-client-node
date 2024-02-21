@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **templateId** | **String** |  | [optional] 
-**configurations** | [**RiskProductsDecisionManagerConfigurationInformationConfigurations**](RiskProductsDecisionManagerConfigurationInformationConfigurations.md) |  | [optional] 
+**configurations** | [**DmConfig**](DmConfig.md) |  | [optional] 
 
 

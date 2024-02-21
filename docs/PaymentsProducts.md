@@ -20,5 +20,6 @@ Name | Type | Description | Notes
 **differentialFee** | [**PaymentsProductsDifferentialFee**](PaymentsProductsDifferentialFee.md) |  | [optional] 
 **payByLink** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 **unifiedCheckout** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
+**receivablesManager** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 
 

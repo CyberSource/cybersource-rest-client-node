@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -127,6 +128,9 @@
       }
       if (data.hasOwnProperty('unifiedCheckout')) {
         obj['unifiedCheckout'] = PaymentsProductsTax.constructFromObject(data['unifiedCheckout']);
+      }
+      if (data.hasOwnProperty('receivablesManager')) {
+        obj['receivablesManager'] = PaymentsProductsTax.constructFromObject(data['receivablesManager']);
       }
     }
     return obj;
@@ -200,6 +204,10 @@
    * @member {module:model/PaymentsProductsTax} unifiedCheckout
    */
   exports.prototype['unifiedCheckout'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} receivablesManager
+   */
+  exports.prototype['receivablesManager'] = undefined;
 
 
 

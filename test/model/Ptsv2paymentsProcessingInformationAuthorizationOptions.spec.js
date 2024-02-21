@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property extendAuthIndicator (base name: "extendAuthIndicator")', function() {
+      // uncomment below and update the code to test the property extendAuthIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property balanceInquiry (base name: "balanceInquiry")', function() {
       // uncomment below and update the code to test the property balanceInquiry
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();

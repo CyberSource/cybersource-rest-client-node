@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsCardProcessingConfigurationInformationConfigurations'], factory);
+    define(['ApiClient', 'model/CardProcessingConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsCardProcessingConfigurationInformationConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsCardProcessingConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsCardProcessingConfigurationInformationConfigurations);
+    root.CyberSource.PaymentsProductsCardProcessingConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfig);
   }
-}(this, function(ApiClient, PaymentsProductsCardProcessingConfigurationInformationConfigurations) {
+}(this, function(ApiClient, CardProcessingConfig) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = PaymentsProductsCardProcessingConfigurationInformationConfigurations.constructFromObject(data['configurations']);
+        obj['configurations'] = CardProcessingConfig.constructFromObject(data['configurations']);
       }
     }
     return obj;
@@ -77,7 +77,7 @@
    */
   exports.prototype['templateId'] = undefined;
   /**
-   * @member {module:model/PaymentsProductsCardProcessingConfigurationInformationConfigurations} configurations
+   * @member {module:model/CardProcessingConfig} configurations
    */
   exports.prototype['configurations'] = undefined;
 

@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('categoryCode')) {
         obj['categoryCode'] = ApiClient.convertToType(data['categoryCode'], 'String');
       }
+      if (data.hasOwnProperty('processorRawName')) {
+        obj['processorRawName'] = ApiClient.convertToType(data['processorRawName'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {String} categoryCode
    */
   exports.prototype['categoryCode'] = undefined;
+  /**
+   * Raw name of the processor used for the transaction processing, especially useful during acquirer swing to see which processor transaction settled with 
+   * @member {String} processorRawName
+   */
+  exports.prototype['processorRawName'] = undefined;
 
 
 

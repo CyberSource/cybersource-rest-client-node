@@ -49,6 +49,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -65,6 +68,15 @@
       if (data.hasOwnProperty('authType')) {
         obj['authType'] = ApiClient.convertToType(data['authType'], 'String');
       }
+      if (data.hasOwnProperty('authIndicator')) {
+        obj['authIndicator'] = ApiClient.convertToType(data['authIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('extendAuthIndicator')) {
+        obj['extendAuthIndicator'] = ApiClient.convertToType(data['extendAuthIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('cardVerificationIndicator')) {
+        obj['cardVerificationIndicator'] = ApiClient.convertToType(data['cardVerificationIndicator'], 'Boolean');
+      }
       if (data.hasOwnProperty('initiator')) {
         obj['initiator'] = TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator.constructFromObject(data['initiator']);
       }
@@ -77,6 +89,21 @@
    * @member {String} authType
    */
   exports.prototype['authType'] = undefined;
+  /**
+   * Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support.  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file. 
+   * @member {String} authIndicator
+   */
+  exports.prototype['authIndicator'] = undefined;
+  /**
+   * Flag that indicates whether the transaction is an extended authorization. 
+   * @member {String} extendAuthIndicator
+   */
+  exports.prototype['extendAuthIndicator'] = undefined;
+  /**
+   * This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) 
+   * @member {Boolean} cardVerificationIndicator
+   */
+  exports.prototype['cardVerificationIndicator'] = undefined;
   /**
    * @member {module:model/TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator} initiator
    */

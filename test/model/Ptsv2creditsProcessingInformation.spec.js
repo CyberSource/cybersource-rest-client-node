@@ -164,6 +164,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property refundOptions (base name: "refundOptions")', function() {
+      // uncomment below and update the code to test the property refundOptions
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
