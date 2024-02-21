@@ -25,7 +25,8 @@
     "promise": "^8.3.0",
     "winston": "^3.11.0",
     "winston-daily-rotate-file": "^4.7.1",
-    "node-jose": "^2.2.0"
+    "node-jose": "^2.2.0",
+    "jwk-to-pem": "^2.0.5"
   },
   "keywords": [
     "nodeJS"
@@ -33,7 +34,6 @@
   "devDependencies": {
     "@sinonjs/formatio": "5.0.1",
     "expect.js": "~0.3.1",
-    "jwk-to-pem": "^2.0.5",
     "mocha": "^10.2.0",
     "mocha-sonarqube-reporter": "^1.0.2",
     "nyc": "^15.1.0",
