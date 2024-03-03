@@ -68,6 +68,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInstrument (base name: "paymentInstrument")', function() {
+      // uncomment below and update the code to test the property paymentInstrument
+      //var instane = new CyberSource.Ptsv2payoutsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property instrumentIdentifier (base name: "instrumentIdentifier")', function() {
+      // uncomment below and update the code to test the property instrumentIdentifier
+      //var instane = new CyberSource.Ptsv2payoutsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tokenizedCard (base name: "tokenizedCard")', function() {
+      // uncomment below and update the code to test the property tokenizedCard
+      //var instane = new CyberSource.Ptsv2payoutsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

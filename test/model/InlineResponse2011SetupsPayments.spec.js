@@ -152,6 +152,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property receivablesManager (base name: "receivablesManager")', function() {
+      // uncomment below and update the code to test the property receivablesManager
+      //var instane = new CyberSource.InlineResponse2011SetupsPayments();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

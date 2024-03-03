@@ -68,6 +68,7 @@
 
 
 
+
   };
 
   /**
@@ -98,6 +99,9 @@
       }
       if (data.hasOwnProperty('partialAuthIndicator')) {
         obj['partialAuthIndicator'] = ApiClient.convertToType(data['partialAuthIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('extendAuthIndicator')) {
+        obj['extendAuthIndicator'] = ApiClient.convertToType(data['extendAuthIndicator'], 'String');
       }
       if (data.hasOwnProperty('balanceInquiry')) {
         obj['balanceInquiry'] = ApiClient.convertToType(data['balanceInquiry'], 'Boolean');
@@ -178,6 +182,11 @@
    * @member {Boolean} partialAuthIndicator
    */
   exports.prototype['partialAuthIndicator'] = undefined;
+  /**
+   * Flag that indicates whether the transaction is an extended authorization. 
+   * @member {String} extendAuthIndicator
+   */
+  exports.prototype['extendAuthIndicator'] = undefined;
   /**
    * Flag that indicates whether to return balance information.  Possible values: - `true`: Return balance information. - `false`: Do not return balance information.  #### Used by **Authorization** Required for a balance inquiry; otherwise, not used.  #### PIN debit Required for a balance inquiry request of a PIN debit purchase; otherwise, not used. 
    * @member {Boolean} balanceInquiry

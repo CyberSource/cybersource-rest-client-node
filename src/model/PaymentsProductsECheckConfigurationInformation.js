@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsECheckConfigurationInformationConfigurations'], factory);
+    define(['ApiClient', 'model/ECheckConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsECheckConfigurationInformationConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./ECheckConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsECheckConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsECheckConfigurationInformationConfigurations);
+    root.CyberSource.PaymentsProductsECheckConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.ECheckConfig);
   }
-}(this, function(ApiClient, PaymentsProductsECheckConfigurationInformationConfigurations) {
+}(this, function(ApiClient, ECheckConfig) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = PaymentsProductsECheckConfigurationInformationConfigurations.constructFromObject(data['configurations']);
+        obj['configurations'] = ECheckConfig.constructFromObject(data['configurations']);
       }
     }
     return obj;
@@ -77,7 +77,7 @@
    */
   exports.prototype['templateId'] = undefined;
   /**
-   * @member {module:model/PaymentsProductsECheckConfigurationInformationConfigurations} configurations
+   * @member {module:model/ECheckConfig} configurations
    */
   exports.prototype['configurations'] = undefined;
 

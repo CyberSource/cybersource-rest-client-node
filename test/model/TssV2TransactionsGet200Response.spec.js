@@ -182,6 +182,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property unscheduledPaymentInformation (base name: "unscheduledPaymentInformation")', function() {
+      // uncomment below and update the code to test the property unscheduledPaymentInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property processingInformation (base name: "processingInformation")', function() {
       // uncomment below and update the code to test the property processingInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();
@@ -190,6 +196,12 @@
 
     it('should have the property processorInformation (base name: "processorInformation")', function() {
       // uncomment below and update the code to test the property processorInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property recurringPaymentInformation (base name: "recurringPaymentInformation")', function() {
+      // uncomment below and update the code to test the property recurringPaymentInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();
       //expect(instance).to.be();
     });

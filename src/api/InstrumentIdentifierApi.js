@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentList', 'model/PostInstrumentIdentifierEnrollmentRequest', 'model/PostInstrumentIdentifierRequest', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchInstrumentIdentifierRequest', 'model/PaymentInstrumentList', 'model/PostInstrumentIdentifierEnrollmentRequest', 'model/PostInstrumentIdentifierRequest', 'model/TmsEmbeddedInstrumentIdentifier'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentList'), require('../model/PostInstrumentIdentifierEnrollmentRequest'), require('../model/PostInstrumentIdentifierRequest'), require('../model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchInstrumentIdentifierRequest'), require('../model/PaymentInstrumentList'), require('../model/PostInstrumentIdentifierEnrollmentRequest'), require('../model/PostInstrumentIdentifierRequest'), require('../model/TmsEmbeddedInstrumentIdentifier'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostInstrumentIdentifierEnrollmentRequest, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier);
+    root.CyberSource.InstrumentIdentifierApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchInstrumentIdentifierRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostInstrumentIdentifierEnrollmentRequest, root.CyberSource.PostInstrumentIdentifierRequest, root.CyberSource.TmsEmbeddedInstrumentIdentifier);
   }
-}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchInstrumentIdentifierRequest, PaymentInstrumentList, PostInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierRequest, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier) {
+}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchInstrumentIdentifierRequest, PaymentInstrumentList, PostInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierRequest, TmsEmbeddedInstrumentIdentifier) {
   'use strict';
 
   /**
@@ -105,7 +105,7 @@
      * Callback function to receive the result of the getInstrumentIdentifier operation.
      * @callback module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier} data The data returned by the service call.
+     * @param {module:model/TmsEmbeddedInstrumentIdentifier} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -116,7 +116,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
+     * data is of type: {@link module:model/TmsEmbeddedInstrumentIdentifier}
      */
     this.getInstrumentIdentifier = function(instrumentIdentifierId, opts, callback) {
       opts = opts || {};
@@ -145,7 +145,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+      var returnType = TmsEmbeddedInstrumentIdentifier;
 
       return this.apiClient.callApi(
         '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}', 'GET',
@@ -215,7 +215,7 @@
      * Callback function to receive the result of the patchInstrumentIdentifier operation.
      * @callback module:api/InstrumentIdentifierApi~patchInstrumentIdentifierCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier} data The data returned by the service call.
+     * @param {module:model/TmsEmbeddedInstrumentIdentifier} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -228,7 +228,7 @@
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/InstrumentIdentifierApi~patchInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
+     * data is of type: {@link module:model/TmsEmbeddedInstrumentIdentifier}
      */
     this.patchInstrumentIdentifier = function(instrumentIdentifierId, patchInstrumentIdentifierRequest, opts, callback) {
       opts = opts || {};
@@ -264,7 +264,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+      var returnType = TmsEmbeddedInstrumentIdentifier;
 
       return this.apiClient.callApi(
         '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}', 'PATCH',
@@ -277,7 +277,7 @@
      * Callback function to receive the result of the postInstrumentIdentifier operation.
      * @callback module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier} data The data returned by the service call.
+     * @param {module:model/TmsEmbeddedInstrumentIdentifier} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -288,7 +288,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier}
+     * data is of type: {@link module:model/TmsEmbeddedInstrumentIdentifier}
      */
     this.postInstrumentIdentifier = function(postInstrumentIdentifierRequest, opts, callback) {
       opts = opts || {};
@@ -317,7 +317,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+      var returnType = TmsEmbeddedInstrumentIdentifier;
 
       return this.apiClient.callApi(
         '/tms/v1/instrumentidentifiers', 'POST',

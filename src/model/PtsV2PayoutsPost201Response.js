@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PayoutsPost201ResponseErrorInformation', 'model/PtsV2PayoutsPost201ResponseIssuerInformation', 'model/PtsV2PayoutsPost201ResponseMerchantInformation', 'model/PtsV2PayoutsPost201ResponseOrderInformation', 'model/PtsV2PayoutsPost201ResponseProcessorInformation', 'model/PtsV2PayoutsPost201ResponseRecipientInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsPost201ResponseTokenInformation', 'model/PtsV2PayoutsPost201ResponseErrorInformation', 'model/PtsV2PayoutsPost201ResponseIssuerInformation', 'model/PtsV2PayoutsPost201ResponseMerchantInformation', 'model/PtsV2PayoutsPost201ResponseOrderInformation', 'model/PtsV2PayoutsPost201ResponseProcessorInformation', 'model/PtsV2PayoutsPost201ResponseRecipientInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PayoutsPost201ResponseErrorInformation'), require('./PtsV2PayoutsPost201ResponseIssuerInformation'), require('./PtsV2PayoutsPost201ResponseMerchantInformation'), require('./PtsV2PayoutsPost201ResponseOrderInformation'), require('./PtsV2PayoutsPost201ResponseProcessorInformation'), require('./PtsV2PayoutsPost201ResponseRecipientInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsPost201ResponseTokenInformation'), require('./PtsV2PayoutsPost201ResponseErrorInformation'), require('./PtsV2PayoutsPost201ResponseIssuerInformation'), require('./PtsV2PayoutsPost201ResponseMerchantInformation'), require('./PtsV2PayoutsPost201ResponseOrderInformation'), require('./PtsV2PayoutsPost201ResponseProcessorInformation'), require('./PtsV2PayoutsPost201ResponseRecipientInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PayoutsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PayoutsPost201ResponseErrorInformation, root.CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation, root.CyberSource.PtsV2PayoutsPost201ResponseMerchantInformation, root.CyberSource.PtsV2PayoutsPost201ResponseOrderInformation, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformation, root.CyberSource.PtsV2PayoutsPost201ResponseRecipientInformation);
+    root.CyberSource.PtsV2PayoutsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformation, root.CyberSource.PtsV2PayoutsPost201ResponseErrorInformation, root.CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation, root.CyberSource.PtsV2PayoutsPost201ResponseMerchantInformation, root.CyberSource.PtsV2PayoutsPost201ResponseOrderInformation, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformation, root.CyberSource.PtsV2PayoutsPost201ResponseRecipientInformation);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PayoutsPost201ResponseErrorInformation, PtsV2PayoutsPost201ResponseIssuerInformation, PtsV2PayoutsPost201ResponseMerchantInformation, PtsV2PayoutsPost201ResponseOrderInformation, PtsV2PayoutsPost201ResponseProcessorInformation, PtsV2PayoutsPost201ResponseRecipientInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsPost201ResponseTokenInformation, PtsV2PayoutsPost201ResponseErrorInformation, PtsV2PayoutsPost201ResponseIssuerInformation, PtsV2PayoutsPost201ResponseMerchantInformation, PtsV2PayoutsPost201ResponseOrderInformation, PtsV2PayoutsPost201ResponseProcessorInformation, PtsV2PayoutsPost201ResponseRecipientInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -108,6 +109,9 @@
       if (data.hasOwnProperty('issuerInformation')) {
         obj['issuerInformation'] = PtsV2PayoutsPost201ResponseIssuerInformation.constructFromObject(data['issuerInformation']);
       }
+      if (data.hasOwnProperty('tokenInformation')) {
+        obj['tokenInformation'] = PtsV2PaymentsPost201ResponseTokenInformation.constructFromObject(data['tokenInformation']);
+      }
     }
     return obj;
   }
@@ -164,6 +168,10 @@
    * @member {module:model/PtsV2PayoutsPost201ResponseIssuerInformation} issuerInformation
    */
   exports.prototype['issuerInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseTokenInformation} tokenInformation
+   */
+  exports.prototype['tokenInformation'] = undefined;
 
 
 

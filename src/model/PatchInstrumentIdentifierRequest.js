@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBankAccount', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillTo', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierIssuer', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformation', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard'], factory);
+    define(['ApiClient', 'model/TmsEmbeddedInstrumentIdentifierBankAccount', 'model/TmsEmbeddedInstrumentIdentifierBillTo', 'model/TmsEmbeddedInstrumentIdentifierCard', 'model/TmsEmbeddedInstrumentIdentifierIssuer', 'model/TmsEmbeddedInstrumentIdentifierLinks', 'model/TmsEmbeddedInstrumentIdentifierMetadata', 'model/TmsEmbeddedInstrumentIdentifierProcessingInformation', 'model/TmsEmbeddedInstrumentIdentifierTokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBankAccount'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillTo'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierIssuer'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformation'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./TmsEmbeddedInstrumentIdentifierBankAccount'), require('./TmsEmbeddedInstrumentIdentifierBillTo'), require('./TmsEmbeddedInstrumentIdentifierCard'), require('./TmsEmbeddedInstrumentIdentifierIssuer'), require('./TmsEmbeddedInstrumentIdentifierLinks'), require('./TmsEmbeddedInstrumentIdentifierMetadata'), require('./TmsEmbeddedInstrumentIdentifierProcessingInformation'), require('./TmsEmbeddedInstrumentIdentifierTokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PatchInstrumentIdentifierRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBankAccount, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillTo, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierIssuer, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformation, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard);
+    root.CyberSource.PatchInstrumentIdentifierRequest = factory(root.CyberSource.ApiClient, root.CyberSource.TmsEmbeddedInstrumentIdentifierBankAccount, root.CyberSource.TmsEmbeddedInstrumentIdentifierBillTo, root.CyberSource.TmsEmbeddedInstrumentIdentifierCard, root.CyberSource.TmsEmbeddedInstrumentIdentifierIssuer, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinks, root.CyberSource.TmsEmbeddedInstrumentIdentifierMetadata, root.CyberSource.TmsEmbeddedInstrumentIdentifierProcessingInformation, root.CyberSource.TmsEmbeddedInstrumentIdentifierTokenizedCard);
   }
-}(this, function(ApiClient, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBankAccount, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillTo, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierIssuer, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformation, Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard) {
+}(this, function(ApiClient, TmsEmbeddedInstrumentIdentifierBankAccount, TmsEmbeddedInstrumentIdentifierBillTo, TmsEmbeddedInstrumentIdentifierCard, TmsEmbeddedInstrumentIdentifierIssuer, TmsEmbeddedInstrumentIdentifierLinks, TmsEmbeddedInstrumentIdentifierMetadata, TmsEmbeddedInstrumentIdentifierProcessingInformation, TmsEmbeddedInstrumentIdentifierTokenizedCard) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks.constructFromObject(data['_links']);
+        obj['_links'] = TmsEmbeddedInstrumentIdentifierLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -88,32 +88,32 @@
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('card')) {
-        obj['card'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard.constructFromObject(data['card']);
+        obj['card'] = TmsEmbeddedInstrumentIdentifierCard.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('bankAccount')) {
-        obj['bankAccount'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBankAccount.constructFromObject(data['bankAccount']);
+        obj['bankAccount'] = TmsEmbeddedInstrumentIdentifierBankAccount.constructFromObject(data['bankAccount']);
       }
       if (data.hasOwnProperty('tokenizedCard')) {
-        obj['tokenizedCard'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.constructFromObject(data['tokenizedCard']);
+        obj['tokenizedCard'] = TmsEmbeddedInstrumentIdentifierTokenizedCard.constructFromObject(data['tokenizedCard']);
       }
       if (data.hasOwnProperty('issuer')) {
-        obj['issuer'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierIssuer.constructFromObject(data['issuer']);
+        obj['issuer'] = TmsEmbeddedInstrumentIdentifierIssuer.constructFromObject(data['issuer']);
       }
       if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformation.constructFromObject(data['processingInformation']);
+        obj['processingInformation'] = TmsEmbeddedInstrumentIdentifierProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('billTo')) {
-        obj['billTo'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillTo.constructFromObject(data['billTo']);
+        obj['billTo'] = TmsEmbeddedInstrumentIdentifierBillTo.constructFromObject(data['billTo']);
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata.constructFromObject(data['metadata']);
+        obj['metadata'] = TmsEmbeddedInstrumentIdentifierMetadata.constructFromObject(data['metadata']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks} _links
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -137,31 +137,31 @@
    */
   exports.prototype['type'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard} card
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierCard} card
    */
   exports.prototype['card'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBankAccount} bankAccount
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierBankAccount} bankAccount
    */
   exports.prototype['bankAccount'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard} tokenizedCard
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierTokenizedCard} tokenizedCard
    */
   exports.prototype['tokenizedCard'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierIssuer} issuer
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierIssuer} issuer
    */
   exports.prototype['issuer'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformation} processingInformation
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillTo} billTo
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata} metadata
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
 

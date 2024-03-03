@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations'], factory);
+    define(['ApiClient', 'model/SAConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./SAConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsSecureAcceptanceConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations);
+    root.CyberSource.PaymentsProductsSecureAcceptanceConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.SAConfig);
   }
-}(this, function(ApiClient, PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations) {
+}(this, function(ApiClient, SAConfig) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations.constructFromObject(data['configurations']);
+        obj['configurations'] = SAConfig.constructFromObject(data['configurations']);
       }
     }
     return obj;
@@ -77,7 +77,7 @@
    */
   exports.prototype['templateId'] = undefined;
   /**
-   * @member {module:model/PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations} configurations
+   * @member {module:model/SAConfig} configurations
    */
   exports.prototype['configurations'] = undefined;
 

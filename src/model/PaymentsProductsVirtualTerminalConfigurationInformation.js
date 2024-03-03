@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsVirtualTerminalConfigurationInformationConfigurations'], factory);
+    define(['ApiClient', 'model/VTConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsVirtualTerminalConfigurationInformationConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./VTConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsVirtualTerminalConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsVirtualTerminalConfigurationInformationConfigurations);
+    root.CyberSource.PaymentsProductsVirtualTerminalConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.VTConfig);
   }
-}(this, function(ApiClient, PaymentsProductsVirtualTerminalConfigurationInformationConfigurations) {
+}(this, function(ApiClient, VTConfig) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = PaymentsProductsVirtualTerminalConfigurationInformationConfigurations.constructFromObject(data['configurations']);
+        obj['configurations'] = VTConfig.constructFromObject(data['configurations']);
       }
     }
     return obj;
@@ -77,7 +77,7 @@
    */
   exports.prototype['templateId'] = undefined;
   /**
-   * @member {module:model/PaymentsProductsVirtualTerminalConfigurationInformationConfigurations} configurations
+   * @member {module:model/VTConfig} configurations
    */
   exports.prototype['configurations'] = undefined;
 

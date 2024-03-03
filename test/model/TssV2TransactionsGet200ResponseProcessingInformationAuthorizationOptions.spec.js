@@ -62,6 +62,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authIndicator (base name: "authIndicator")', function() {
+      // uncomment below and update the code to test the property authIndicator
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property extendAuthIndicator (base name: "extendAuthIndicator")', function() {
+      // uncomment below and update the code to test the property extendAuthIndicator
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cardVerificationIndicator (base name: "cardVerificationIndicator")', function() {
+      // uncomment below and update the code to test the property cardVerificationIndicator
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property initiator (base name: "initiator")', function() {
       // uncomment below and update the code to test the property initiator
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions();

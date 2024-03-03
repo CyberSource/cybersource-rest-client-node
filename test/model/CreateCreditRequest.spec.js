@@ -134,6 +134,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property recipientInformation (base name: "recipientInformation")', function() {
+      // uncomment below and update the code to test the property recipientInformation
+      //var instane = new CyberSource.CreateCreditRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property senderInformation (base name: "senderInformation")', function() {
+      // uncomment below and update the code to test the property senderInformation
+      //var instane = new CyberSource.CreateCreditRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property promotionInformation (base name: "promotionInformation")', function() {
       // uncomment below and update the code to test the property promotionInformation
       //var instane = new CyberSource.CreateCreditRequest();

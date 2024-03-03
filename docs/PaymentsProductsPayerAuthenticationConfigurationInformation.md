@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **templateId** | **String** |  | [optional] 
-**configurations** | [**PaymentsProductsPayerAuthenticationConfigurationInformationConfigurations**](PaymentsProductsPayerAuthenticationConfigurationInformationConfigurations.md) |  | [optional] 
+**configurations** | [**PayerAuthConfig**](PayerAuthConfig.md) |  | [optional] 
 
 

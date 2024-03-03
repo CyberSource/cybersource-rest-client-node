@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2payoutsPaymentInformationCard'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationPaymentInstrument', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2payoutsPaymentInformationCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2payoutsPaymentInformationCard'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationPaymentInstrument'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2payoutsPaymentInformationCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2payoutsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2payoutsPaymentInformationCard);
+    root.CyberSource.Ptsv2payoutsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2payoutsPaymentInformationCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, Ptsv2payoutsPaymentInformationCard) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationPaymentInstrument, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2payoutsPaymentInformationCard) {
   'use strict';
 
 
@@ -46,6 +46,9 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
 
 
 
@@ -68,6 +71,15 @@
       if (data.hasOwnProperty('customer')) {
         obj['customer'] = Ptsv2paymentsPaymentInformationCustomer.constructFromObject(data['customer']);
       }
+      if (data.hasOwnProperty('paymentInstrument')) {
+        obj['paymentInstrument'] = Ptsv2paymentsPaymentInformationPaymentInstrument.constructFromObject(data['paymentInstrument']);
+      }
+      if (data.hasOwnProperty('instrumentIdentifier')) {
+        obj['instrumentIdentifier'] = PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
+      }
+      if (data.hasOwnProperty('tokenizedCard')) {
+        obj['tokenizedCard'] = Ptsv2paymentsPaymentInformationTokenizedCard.constructFromObject(data['tokenizedCard']);
+      }
     }
     return obj;
   }
@@ -80,6 +92,18 @@
    * @member {module:model/Ptsv2paymentsPaymentInformationCustomer} customer
    */
   exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationPaymentInstrument} paymentInstrument
+   */
+  exports.prototype['paymentInstrument'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier} instrumentIdentifier
+   */
+  exports.prototype['instrumentIdentifier'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationTokenizedCard} tokenizedCard
+   */
+  exports.prototype['tokenizedCard'] = undefined;
 
 
 

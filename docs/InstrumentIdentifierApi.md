@@ -64,7 +64,7 @@ No authorization required
 
 <a name="getInstrumentIdentifier"></a>
 # **getInstrumentIdentifier**
-> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(instrumentIdentifierId, opts)
+> TmsEmbeddedInstrumentIdentifier getInstrumentIdentifier(instrumentIdentifierId, opts)
 
 Retrieve an Instrument Identifier
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ No authorization required
 
 <a name="patchInstrumentIdentifier"></a>
 # **patchInstrumentIdentifier**
-> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, opts)
+> TmsEmbeddedInstrumentIdentifier patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, opts)
 
 Update an Instrument Identifier
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ No authorization required
 
 <a name="postInstrumentIdentifier"></a>
 # **postInstrumentIdentifier**
-> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(postInstrumentIdentifierRequest, opts)
+> TmsEmbeddedInstrumentIdentifier postInstrumentIdentifier(postInstrumentIdentifierRequest, opts)
 
 Create an Instrument Identifier
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
