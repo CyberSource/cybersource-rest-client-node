@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+RPSK_01,108.00,Success
+RPSK_02,200.0,Fails
+RPSK_03,ZSD6,Fails due to invalid amount

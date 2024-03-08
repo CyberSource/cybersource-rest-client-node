@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CDC_01,2839.00,Success
+CDC_02,200.0,Fails
+CDC_03,GHTR56,Fails due to invalid amount

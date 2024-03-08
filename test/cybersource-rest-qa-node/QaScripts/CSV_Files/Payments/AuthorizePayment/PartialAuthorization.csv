@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CPA_01,7012.00,Success
+CPA_02,6500,Fails
+CPA_03,ZCD4,Fails due to invalid amount

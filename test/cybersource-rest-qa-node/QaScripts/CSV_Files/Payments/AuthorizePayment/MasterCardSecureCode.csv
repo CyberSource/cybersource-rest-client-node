@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CMSC_01,102.21,Success
+CMSC_02,200,Fails
+CMSC_03,YTR4,Fails due to invalid amount

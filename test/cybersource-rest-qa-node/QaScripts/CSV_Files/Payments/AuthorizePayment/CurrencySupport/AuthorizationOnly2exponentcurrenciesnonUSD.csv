@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAECNU_01,100.00,Success
+CAECNU_02,200.0,Fails
+CAECNU_03,LKOP59,Fails due to invalid amount

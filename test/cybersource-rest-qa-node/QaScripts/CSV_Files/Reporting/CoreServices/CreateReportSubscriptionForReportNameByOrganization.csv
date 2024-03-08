@@ -1,0 +1,3 @@
+testCaseId,reportDefName,repName,repFrequency,message
+CRSFRNO_01,TransactionRequestClass,yui,MONTHLY,Success
+CRSFRNO_02,TransactionRes,subscriptionAutomation2,DAILY,Fails due to invalid reportDefinitionName

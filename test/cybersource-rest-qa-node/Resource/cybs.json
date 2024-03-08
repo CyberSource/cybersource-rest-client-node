@@ -1,0 +1,18 @@
+{
+    "authenticationType"    : "jwt",
+    "merchantID"            : "testrest",
+    "runEnvironment"        : "CyberSource.Environment.SANDBOX",
+
+    "keyAlias"		        : "testrest",
+    "keyPass"	            : "testrest",
+    "keyFileName"           : "testrest",
+    "keysDirectory"	        : "resource",
+    
+    "merchantKeyId"         : "08c94330-f618-42a3-b09d-e1e43be5efda",
+    "merchantsecretKey"     : "yBJxy6LjM2TmcPGu+GaJrHtkke25fPpUX+UY6/L/1tE=",
+     
+    "enableLog"             : true, 
+    "logDirectory"          : "./log",
+    "logFileMaxSize"        : 50000,
+    "logFilename"           : "cybs"
+}

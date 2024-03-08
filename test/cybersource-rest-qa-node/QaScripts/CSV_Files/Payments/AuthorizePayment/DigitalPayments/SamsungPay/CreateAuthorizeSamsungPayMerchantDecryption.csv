@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CASMD_01,100.00,Success
+CASMD_02,200.0,Fails
+CASMD_03,GHJ39,Fails due to invalid amount

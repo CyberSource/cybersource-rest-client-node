@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CEMV_01,100.00,Success
+CEMV_02,300,Fails
+CEMV_03,NBM7,Fails due to invalid amount

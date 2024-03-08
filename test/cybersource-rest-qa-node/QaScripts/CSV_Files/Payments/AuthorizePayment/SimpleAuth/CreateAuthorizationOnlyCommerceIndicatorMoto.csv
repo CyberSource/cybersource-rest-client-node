@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAuthOnlyCM_01,109.00,Success
+CAuthOnlyCM_02,200.0,Fails
+CAuthOnlyCM_03,LKT2,Fails due to invalid amount

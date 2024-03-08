@@ -1,0 +1,13 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CAE_01,CreateAericanExpress,Pass,Assertion Passed-Status Code:201 created,2018-09-19T15:50:17+05:30
+CAE_02,CreateAericanExpress,Fails,Assertion Failed-Status Code:201,2018-09-19T15:50:17+05:30
+CAE_03,CreateAericanExpress,Fails,CreateAericanExpress paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:50:17+05:30
+CD_01,CreateDiscover,Pass,Assertion Passed-Status Code:201 created,2018-09-19T15:50:17+05:30
+CD_02,CreateDiscover,Fails,Assertion Failed-Status Code:201,2018-09-19T15:50:18+05:30
+CD_03,CreateDiscover,Fails,CreateDiscover paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:50:18+05:30
+CMC_01,CreateMasterCard,Pass,Assertion Passed-Status Code:201 created,2018-09-19T15:50:18+05:30
+CMC_02,CreateMasterCard,Fails,Assertion Failed-Status Code:201,2018-09-19T15:50:19+05:30
+CMC_03,CreateMasterCard,Fails,CreateMasterCard paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:50:19+05:30
+CV_01,CreateVisa,Pass,Assertion Passed-Status Code:201 created,2018-09-19T15:50:19+05:30
+CV_02,CreateVisa,Fails,Assertion Failed-Status Code:201,2018-09-19T15:50:19+05:30
+CV_03,CreateVisa,Fails,CreateVisa paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T15:50:19+05:30
