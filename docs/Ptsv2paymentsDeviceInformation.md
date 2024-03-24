@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** | Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for authorizations and credits on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX  Optional field. String (32)  | [optional] 
 **hostName** | **String** | DNS resolved hostname from &#x60;ipAddress&#x60;. | [optional] 
 **ipAddress** | **String** | IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field.  | [optional] 
 **userAgent** | **String** | Customer&#39;s browser as identified from the HTTP header data. For example, &#x60;Mozilla&#x60; is the value that identifies the Netscape browser.  | [optional] 
@@ -10,6 +11,7 @@ Name | Type | Description | Notes
 **useRawFingerprintSessionId** | **Boolean** | Boolean that indicates whether request contains the device fingerprint information. Values: - &#x60;true&#x60;: Use raw fingerprintSessionId when looking up device details. - &#x60;false&#x60; (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection.  | [optional] 
 **deviceType** | **String** | The device type at the client side. | [optional] 
 **appUrl** | **String** | This field will contain the deep link that would help the Customer App to wake up.  | [optional] 
+**metadata** | **String** | Verifies that the payment is originating from a valid, user-approved application and device. Sending this field helps reduce fraud and declined transactions. Note The length is set for a hexadecimal representation of the GUID/UUID. This field accepts a 36-character string (with hyphens) or a 32-character string (without hyphens). Example 123e4567-e89b-12d3-a456-426655440000 Example 123e4567e89b12d3a456426655440000  | [optional] 
 **rawData** | [**[Ptsv2paymentsDeviceInformationRawData]**](Ptsv2paymentsDeviceInformationRawData.md) |  | [optional] 
 **httpAcceptBrowserValue** | **String** | Value of the Accept header sent by the customer&#39;s web browser. **Note** If the customer&#39;s browser provides a value, you must include it in your request.  | [optional] 
 **httpAcceptContent** | **String** | The exact content of the HTTP accept header.  | [optional] 

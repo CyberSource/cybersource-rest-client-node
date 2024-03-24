@@ -50,6 +50,16 @@
   }
 
   describe('TransientTokenDataApi', function() {
+    describe('getPaymentCredentialsForTransientToken', function() {
+      it('should call getPaymentCredentialsForTransientToken successfully', function(done) {
+        //uncomment below and update the code to test getPaymentCredentialsForTransientToken
+        //instance.getPaymentCredentialsForTransientToken(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getTransactionForTransientToken', function() {
       it('should call getTransactionForTransientToken successfully', function(done) {
         //uncomment below and update the code to test getTransactionForTransientToken

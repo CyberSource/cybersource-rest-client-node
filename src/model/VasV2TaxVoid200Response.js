@@ -95,7 +95,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - VOIDED 
+   * The status of the submitted transaction.  Possible values:  - VOIDED  - CANCELLED  - FAILED 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

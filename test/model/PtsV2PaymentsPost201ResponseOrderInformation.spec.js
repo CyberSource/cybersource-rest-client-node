@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shipTo (base name: "shipTo")', function() {
+      // uncomment below and update the code to test the property shipTo
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

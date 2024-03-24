@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -107,6 +108,9 @@
       }
       if (data.hasOwnProperty('payByPointsIndicator')) {
         obj['payByPointsIndicator'] = ApiClient.convertToType(data['payByPointsIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('actionList')) {
+        obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
       }
     }
     return obj;
@@ -168,6 +172,11 @@
    * @member {Boolean} payByPointsIndicator
    */
   exports.prototype['payByPointsIndicator'] = undefined;
+  /**
+   * Array of actions (one or more) to be included in the capture to invoke bundled services along with capture.  Possible values :   - `AP_CAPTURE`: Use this when Alternative Payment Capture service is requested. 
+   * @member {Array.<String>} actionList
+   */
+  exports.prototype['actionList'] = undefined;
 
 
 

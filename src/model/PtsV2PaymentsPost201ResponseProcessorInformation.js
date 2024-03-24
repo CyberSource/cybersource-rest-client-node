@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PaymentsPost201ResponseProcessorInformationRouting'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PaymentsPost201ResponseProcessorInformationRouting', 'model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCustomer'), require('./PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./PtsV2PaymentsPost201ResponseProcessorInformationRouting'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCustomer'), require('./PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./PtsV2PaymentsPost201ResponseProcessorInformationRouting'), require('./PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCustomer, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationRouting);
+    root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCustomer, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationRouting, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, PtsV2PaymentsPost201ResponseProcessorInformationCustomer, PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, PtsV2PaymentsPost201ResponseProcessorInformationRouting) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, PtsV2PaymentsPost201ResponseProcessorInformationCustomer, PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, PtsV2PaymentsPost201ResponseProcessorInformationRouting, PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -191,6 +193,12 @@
       }
       if (data.hasOwnProperty('publicKey')) {
         obj['publicKey'] = ApiClient.convertToType(data['publicKey'], 'String');
+      }
+      if (data.hasOwnProperty('sellerProtection')) {
+        obj['sellerProtection'] = PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.constructFromObject(data['sellerProtection']);
+      }
+      if (data.hasOwnProperty('transactionExpiryDate')) {
+        obj['transactionExpiryDate'] = ApiClient.convertToType(data['transactionExpiryDate'], 'String');
       }
     }
     return obj;
@@ -351,6 +359,15 @@
    * @member {String} publicKey
    */
   exports.prototype['publicKey'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection} sellerProtection
+   */
+  exports.prototype['sellerProtection'] = undefined;
+  /**
+   * The date on which the transaction expires and payment cannot be made. 
+   * @member {String} transactionExpiryDate
+   */
+  exports.prototype['transactionExpiryDate'] = undefined;
 
 
 

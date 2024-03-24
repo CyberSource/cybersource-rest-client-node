@@ -48,6 +48,8 @@
     var _this = this;
 
 
+
+
   };
 
   /**
@@ -64,6 +66,12 @@
       if (data.hasOwnProperty('responseCode')) {
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
       }
+      if (data.hasOwnProperty('responseDetails')) {
+        obj['responseDetails'] = ApiClient.convertToType(data['responseDetails'], 'String');
+      }
+      if (data.hasOwnProperty('transactionId')) {
+        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +81,16 @@
    * @member {String} responseCode
    */
   exports.prototype['responseCode'] = undefined;
+  /**
+   * The reason for when the transaction status is Pending or Reversed. Possible values: - `PAYER_SHIPPING_UNCONFIRMED` - `MULTI_CURRENCY` - `RISK_REVIEW` - `REGULATORY_REVIEW` - `VERIFICATION_REQUIRED` - `ORDER` - `OTHER` 
+   * @member {String} responseDetails
+   */
+  exports.prototype['responseDetails'] = undefined;
+  /**
+   * Identifier of the order transaction. 
+   * @member {String} transactionId
+   */
+  exports.prototype['transactionId'] = undefined;
 
 
 

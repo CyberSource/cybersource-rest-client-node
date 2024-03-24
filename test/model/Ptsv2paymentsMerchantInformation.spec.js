@@ -152,6 +152,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property noteToBuyer (base name: "noteToBuyer")', function() {
+      // uncomment below and update the code to test the property noteToBuyer
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property merchantName (base name: "merchantName")', function() {
       // uncomment below and update the code to test the property merchantName
       //var instane = new CyberSource.Ptsv2paymentsMerchantInformation();

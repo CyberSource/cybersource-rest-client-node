@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseBuyerInformation', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation', 'model/PtsV2PaymentsPost201ResponseEmbeddedActions', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/PtsV2PaymentsPost201ResponseInstallmentInformation', 'model/PtsV2PaymentsPost201ResponseIssuerInformation', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseOrderInformation', 'model/PtsV2PaymentsPost201ResponsePaymentAccountInformation', 'model/PtsV2PaymentsPost201ResponsePaymentInformation', 'model/PtsV2PaymentsPost201ResponsePaymentInsightsInformation', 'model/PtsV2PaymentsPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsPost201ResponseProcessingInformation', 'model/PtsV2PaymentsPost201ResponseProcessorInformation', 'model/PtsV2PaymentsPost201ResponseRiskInformation', 'model/PtsV2PaymentsPost201ResponseTokenInformation', 'model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseBuyerInformation', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation', 'model/PtsV2PaymentsPost201ResponseEmbeddedActions', 'model/PtsV2PaymentsPost201ResponseErrorInformation', 'model/PtsV2PaymentsPost201ResponseInstallmentInformation', 'model/PtsV2PaymentsPost201ResponseIssuerInformation', 'model/PtsV2PaymentsPost201ResponseLinks', 'model/PtsV2PaymentsPost201ResponseMerchantInformation', 'model/PtsV2PaymentsPost201ResponseOrderInformation', 'model/PtsV2PaymentsPost201ResponsePaymentAccountInformation', 'model/PtsV2PaymentsPost201ResponsePaymentInformation', 'model/PtsV2PaymentsPost201ResponsePaymentInsightsInformation', 'model/PtsV2PaymentsPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsPost201ResponseProcessingInformation', 'model/PtsV2PaymentsPost201ResponseProcessorInformation', 'model/PtsV2PaymentsPost201ResponseRiskInformation', 'model/PtsV2PaymentsPost201ResponseTokenInformation', 'model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseBuyerInformation'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation'), require('./PtsV2PaymentsPost201ResponseEmbeddedActions'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./PtsV2PaymentsPost201ResponseInstallmentInformation'), require('./PtsV2PaymentsPost201ResponseIssuerInformation'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseOrderInformation'), require('./PtsV2PaymentsPost201ResponsePaymentAccountInformation'), require('./PtsV2PaymentsPost201ResponsePaymentInformation'), require('./PtsV2PaymentsPost201ResponsePaymentInsightsInformation'), require('./PtsV2PaymentsPost201ResponsePointOfSaleInformation'), require('./PtsV2PaymentsPost201ResponseProcessingInformation'), require('./PtsV2PaymentsPost201ResponseProcessorInformation'), require('./PtsV2PaymentsPost201ResponseRiskInformation'), require('./PtsV2PaymentsPost201ResponseTokenInformation'), require('./PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseBuyerInformation'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation'), require('./PtsV2PaymentsPost201ResponseEmbeddedActions'), require('./PtsV2PaymentsPost201ResponseErrorInformation'), require('./PtsV2PaymentsPost201ResponseInstallmentInformation'), require('./PtsV2PaymentsPost201ResponseIssuerInformation'), require('./PtsV2PaymentsPost201ResponseLinks'), require('./PtsV2PaymentsPost201ResponseMerchantInformation'), require('./PtsV2PaymentsPost201ResponseOrderInformation'), require('./PtsV2PaymentsPost201ResponsePaymentAccountInformation'), require('./PtsV2PaymentsPost201ResponsePaymentInformation'), require('./PtsV2PaymentsPost201ResponsePaymentInsightsInformation'), require('./PtsV2PaymentsPost201ResponsePointOfSaleInformation'), require('./PtsV2PaymentsPost201ResponseProcessingInformation'), require('./PtsV2PaymentsPost201ResponseProcessorInformation'), require('./PtsV2PaymentsPost201ResponseRiskInformation'), require('./PtsV2PaymentsPost201ResponseTokenInformation'), require('./PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseBuyerInformation, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActions, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation, root.CyberSource.PtsV2PaymentsPost201ResponseIssuerInformation, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePointOfSaleInformation, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformation, root.CyberSource.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation);
+    root.CyberSource.PtsV2PaymentsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseBuyerInformation, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActions, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation, root.CyberSource.PtsV2PaymentsPost201ResponseIssuerInformation, root.CyberSource.PtsV2PaymentsPost201ResponseLinks, root.CyberSource.PtsV2PaymentsPost201ResponseMerchantInformation, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformation, root.CyberSource.PtsV2PaymentsPost201ResponsePointOfSaleInformation, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsPost201ResponseRiskInformation, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformation, root.CyberSource.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseBuyerInformation, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation, PtsV2PaymentsPost201ResponseEmbeddedActions, PtsV2PaymentsPost201ResponseErrorInformation, PtsV2PaymentsPost201ResponseInstallmentInformation, PtsV2PaymentsPost201ResponseIssuerInformation, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseOrderInformation, PtsV2PaymentsPost201ResponsePaymentAccountInformation, PtsV2PaymentsPost201ResponsePaymentInformation, PtsV2PaymentsPost201ResponsePaymentInsightsInformation, PtsV2PaymentsPost201ResponsePointOfSaleInformation, PtsV2PaymentsPost201ResponseProcessingInformation, PtsV2PaymentsPost201ResponseProcessorInformation, PtsV2PaymentsPost201ResponseRiskInformation, PtsV2PaymentsPost201ResponseTokenInformation, PtsV2PaymentsPost201ResponseWatchlistScreeningInformation) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseBuyerInformation, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation, PtsV2PaymentsPost201ResponseEmbeddedActions, PtsV2PaymentsPost201ResponseErrorInformation, PtsV2PaymentsPost201ResponseInstallmentInformation, PtsV2PaymentsPost201ResponseIssuerInformation, PtsV2PaymentsPost201ResponseLinks, PtsV2PaymentsPost201ResponseMerchantInformation, PtsV2PaymentsPost201ResponseOrderInformation, PtsV2PaymentsPost201ResponsePaymentAccountInformation, PtsV2PaymentsPost201ResponsePaymentInformation, PtsV2PaymentsPost201ResponsePaymentInsightsInformation, PtsV2PaymentsPost201ResponsePointOfSaleInformation, PtsV2PaymentsPost201ResponseProcessingInformation, PtsV2PaymentsPost201ResponseProcessorInformation, PtsV2PaymentsPost201ResponseRiskInformation, PtsV2PaymentsPost201ResponseTokenInformation, PtsV2PaymentsPost201ResponseWatchlistScreeningInformation) {
   'use strict';
 
 
@@ -69,6 +69,8 @@
 
 
 
+
+
   };
 
   /**
@@ -87,6 +89,9 @@
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('submitTimeUtc')) {
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
@@ -136,6 +141,9 @@
       if (data.hasOwnProperty('buyerInformation')) {
         obj['buyerInformation'] = PtsV2PaymentsPost201ResponseBuyerInformation.constructFromObject(data['buyerInformation']);
       }
+      if (data.hasOwnProperty('merchantInformation')) {
+        obj['merchantInformation'] = PtsV2PaymentsPost201ResponseMerchantInformation.constructFromObject(data['merchantInformation']);
+      }
       if (data.hasOwnProperty('riskInformation')) {
         obj['riskInformation'] = PtsV2PaymentsPost201ResponseRiskInformation.constructFromObject(data['riskInformation']);
       }
@@ -161,6 +169,11 @@
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
+  /**
+   * More information about the transaction response. 
+   * @member {String} message
+   */
+  exports.prototype['message'] = undefined;
   /**
    * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
    * @member {String} submitTimeUtc
@@ -228,6 +241,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseBuyerInformation} buyerInformation
    */
   exports.prototype['buyerInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseMerchantInformation} merchantInformation
+   */
+  exports.prototype['merchantInformation'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201ResponseRiskInformation} riskInformation
    */

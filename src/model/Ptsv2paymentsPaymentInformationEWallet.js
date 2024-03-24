@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('accountId')) {
         obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
       }
+      if (data.hasOwnProperty('fundingSource')) {
+        obj['fundingSource'] = ApiClient.convertToType(data['fundingSource'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} accountId
    */
   exports.prototype['accountId'] = undefined;
+  /**
+   * Payment method for the unit purchase. Possible values: - `UNRESTRICTED (default)—this value is only available if configured by PayPal for the merchant.` - `INSTANT` 
+   * @member {String} fundingSource
+   */
+  exports.prototype['fundingSource'] = undefined;
 
 
 

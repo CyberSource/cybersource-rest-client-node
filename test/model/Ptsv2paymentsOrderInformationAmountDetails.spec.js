@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsOrderInformationAmountDetails);
     });
 
+    it('should have the property giftWrapAmount (base name: "giftWrapAmount")', function() {
+      // uncomment below and update the code to test the property giftWrapAmount
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property totalAmount (base name: "totalAmount")', function() {
       // uncomment below and update the code to test the property totalAmount
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();
@@ -208,6 +214,12 @@
 
     it('should have the property currencyConversion (base name: "currencyConversion")', function() {
       // uncomment below and update the code to test the property currencyConversion
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property order (base name: "order")', function() {
+      // uncomment below and update the code to test the property order
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();
       //expect(instance).to.be();
     });

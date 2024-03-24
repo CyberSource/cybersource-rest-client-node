@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('language')) {
         obj['language'] = ApiClient.convertToType(data['language'], 'String');
+      }
+      if (data.hasOwnProperty('noteToSeller')) {
+        obj['noteToSeller'] = ApiClient.convertToType(data['noteToSeller'], 'String');
       }
       if (data.hasOwnProperty('mobilePhone')) {
         obj['mobilePhone'] = ApiClient.convertToType(data['mobilePhone'], 'Number');
@@ -139,6 +143,11 @@
    * @member {String} language
    */
   exports.prototype['language'] = undefined;
+  /**
+   * Note to the recipient of the funds in this transaction
+   * @member {String} noteToSeller
+   */
+  exports.prototype['noteToSeller'] = undefined;
   /**
    * Cardholder's mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
    * @member {Number} mobilePhone

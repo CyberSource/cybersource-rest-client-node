@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property county (base name: "county")', function() {
+      // uncomment below and update the code to test the property county
+      //var instane = new CyberSource.Ptsv2billingagreementsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property district (base name: "district")', function() {
       // uncomment below and update the code to test the property district
       //var instane = new CyberSource.Ptsv2billingagreementsOrderInformationBillTo();
@@ -106,6 +112,12 @@
 
     it('should have the property firstName (base name: "firstName")', function() {
       // uncomment below and update the code to test the property firstName
+      //var instane = new CyberSource.Ptsv2billingagreementsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property middleName (base name: "middleName")', function() {
+      // uncomment below and update the code to test the property middleName
       //var instane = new CyberSource.Ptsv2billingagreementsOrderInformationBillTo();
       //expect(instance).to.be();
     });
@@ -130,6 +142,12 @@
 
     it('should have the property postalCode (base name: "postalCode")', function() {
       // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Ptsv2billingagreementsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
       //var instane = new CyberSource.Ptsv2billingagreementsOrderInformationBillTo();
       //expect(instance).to.be();
     });

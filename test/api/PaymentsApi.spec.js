@@ -50,10 +50,30 @@
   }
 
   describe('PaymentsApi', function() {
+    describe('createOrderRequest', function() {
+      it('should call createOrderRequest successfully', function(done) {
+        //uncomment below and update the code to test createOrderRequest
+        //instance.createOrderRequest(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPayment', function() {
       it('should call createPayment successfully', function(done) {
         //uncomment below and update the code to test createPayment
         //instance.createPayment(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createSessionRequest', function() {
+      it('should call createSessionRequest successfully', function(done) {
+        //uncomment below and update the code to test createSessionRequest
+        //instance.createSessionRequest(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -74,6 +94,16 @@
       it('should call refreshPaymentStatus successfully', function(done) {
         //uncomment below and update the code to test refreshPaymentStatus
         //instance.refreshPaymentStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateSessionReq', function() {
+      it('should call updateSessionReq successfully', function(done) {
+        //uncomment below and update the code to test updateSessionReq
+        //instance.updateSessionReq(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

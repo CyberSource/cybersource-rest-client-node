@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsDeviceInformation);
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property hostName (base name: "hostName")', function() {
       // uncomment below and update the code to test the property hostName
       //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
@@ -94,6 +100,12 @@
 
     it('should have the property appUrl (base name: "appUrl")', function() {
       // uncomment below and update the code to test the property appUrl
+      //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property metadata (base name: "metadata")', function() {
+      // uncomment below and update the code to test the property metadata
       //var instane = new CyberSource.Ptsv2paymentsDeviceInformation();
       //expect(instance).to.be();
     });

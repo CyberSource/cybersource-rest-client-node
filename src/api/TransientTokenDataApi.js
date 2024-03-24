@@ -50,6 +50,55 @@
 	
 
     /**
+     * Callback function to receive the result of the getPaymentCredentialsForTransientToken operation.
+     * @callback module:api/TransientTokenDataApi~getPaymentCredentialsForTransientTokenCallback
+     * @param {String} error Error message, if any.
+     * @param {'String'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Payment Credentials
+     * Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
+     * @param {String} jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction 
+     * @param {module:api/TransientTokenDataApi~getPaymentCredentialsForTransientTokenCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'String'}
+     */
+    this.getPaymentCredentialsForTransientToken = function(jti, callback) {
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'jti' is set
+      if (jti === undefined || jti === null) {
+        throw new Error("Missing the required parameter 'jti' when calling getPaymentCredentialsForTransientToken");
+      }
+
+
+      var pathParams = {
+        'jti': jti
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/up/v1/payment-credentials/{jti}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getTransactionForTransientToken operation.
      * @callback module:api/TransientTokenDataApi~getTransactionForTransientTokenCallback
      * @param {String} error Error message, if any.

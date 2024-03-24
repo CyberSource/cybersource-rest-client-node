@@ -74,6 +74,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processorTransactionFee (base name: "processorTransactionFee")', function() {
+      // uncomment below and update the code to test the property processorTransactionFee
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property exchangeRate (base name: "exchangeRate")', function() {
+      // uncomment below and update the code to test the property exchangeRate
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property foreignCurrency (base name: "foreignCurrency")', function() {
+      // uncomment below and update the code to test the property foreignCurrency
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property foreignAmount (base name: "foreignAmount")', function() {
+      // uncomment below and update the code to test the property foreignAmount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property discountAmount (base name: "discountAmount")', function() {
+      // uncomment below and update the code to test the property discountAmount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

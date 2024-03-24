@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **reportGroup** | **String** | Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  For details, see &#x60;report_group&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  | [optional] 
 **visaCheckoutId** | **String** | Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  | [optional] 
 **issuer** | [**Ptsv2paymentsIssuerInformation**](Ptsv2paymentsIssuerInformation.md) |  | [optional] 
+**actionList** | **[String]** | Array of actions (one or more) to be included in the reversal Possible value: - &#x60;AP_AUTH_REVERSAL&#x60;: Use this when you want to reverse an Alternative Payment Authorization.  | [optional] 
 
 

@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isFinal (base name: "isFinal")', function() {
+      // uncomment below and update the code to test the property isFinal
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationCaptureOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

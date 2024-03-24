@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('checkImageReferenceNumber')) {
         obj['checkImageReferenceNumber'] = ApiClient.convertToType(data['checkImageReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('iban')) {
+        obj['iban'] = ApiClient.convertToType(data['iban'], 'String');
       }
     }
     return obj;
@@ -109,6 +113,11 @@
    * @member {String} checkImageReferenceNumber
    */
   exports.prototype['checkImageReferenceNumber'] = undefined;
+  /**
+   * International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_iban` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @member {String} iban
+   */
+  exports.prototype['iban'] = undefined;
 
 
 

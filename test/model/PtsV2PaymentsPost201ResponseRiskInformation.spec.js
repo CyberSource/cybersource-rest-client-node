@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processorResults (base name: "processorResults")', function() {
+      // uncomment below and update the code to test the property processorResults
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseRiskInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

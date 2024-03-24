@@ -158,6 +158,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property productDescription (base name: "productDescription")', function() {
+      // uncomment below and update the code to test the property productDescription
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

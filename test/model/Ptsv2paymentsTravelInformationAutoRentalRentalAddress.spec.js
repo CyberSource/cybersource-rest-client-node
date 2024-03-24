@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property postalCode (base name: "postalCode")', function() {
+      // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationAutoRentalRentalAddress();
+      //expect(instance).to.be();
+    });
+
     it('should have the property location (base name: "location")', function() {
       // uncomment below and update the code to test the property location
       //var instane = new CyberSource.Ptsv2paymentsTravelInformationAutoRentalRentalAddress();

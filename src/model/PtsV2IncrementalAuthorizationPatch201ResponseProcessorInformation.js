@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice);
+    root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('merchantAdvice')) {
         obj['merchantAdvice'] = PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice.constructFromObject(data['merchantAdvice']);
       }
+      if (data.hasOwnProperty('sellerProtection')) {
+        obj['sellerProtection'] = PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.constructFromObject(data['sellerProtection']);
+      }
     }
     return obj;
   }
@@ -117,6 +121,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice} merchantAdvice
    */
   exports.prototype['merchantAdvice'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection} sellerProtection
+   */
+  exports.prototype['sellerProtection'] = undefined;
 
 
 

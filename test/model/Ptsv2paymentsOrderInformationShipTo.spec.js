@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property county (base name: "county")', function() {
+      // uncomment below and update the code to test the property county
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
@@ -130,6 +136,12 @@
 
     it('should have the property phoneNumber (base name: "phoneNumber")', function() {
       // uncomment below and update the code to test the property phoneNumber
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationShipTo();
       //expect(instance).to.be();
     });

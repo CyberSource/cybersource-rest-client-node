@@ -66,6 +66,8 @@
 
 
 
+
+
   };
 
   /**
@@ -79,6 +81,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
       if (data.hasOwnProperty('hostName')) {
         obj['hostName'] = ApiClient.convertToType(data['hostName'], 'String');
       }
@@ -99,6 +104,9 @@
       }
       if (data.hasOwnProperty('appUrl')) {
         obj['appUrl'] = ApiClient.convertToType(data['appUrl'], 'String');
+      }
+      if (data.hasOwnProperty('metadata')) {
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
       }
       if (data.hasOwnProperty('rawData')) {
         obj['rawData'] = ApiClient.convertToType(data['rawData'], [Ptsv2paymentsDeviceInformationRawData]);
@@ -141,6 +149,11 @@
   }
 
   /**
+   * Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for authorizations and credits on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX  Optional field. String (32) 
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
+  /**
    * DNS resolved hostname from `ipAddress`.
    * @member {String} hostName
    */
@@ -175,6 +188,11 @@
    * @member {String} appUrl
    */
   exports.prototype['appUrl'] = undefined;
+  /**
+   * Verifies that the payment is originating from a valid, user-approved application and device. Sending this field helps reduce fraud and declined transactions. Note The length is set for a hexadecimal representation of the GUID/UUID. This field accepts a 36-character string (with hyphens) or a 32-character string (without hyphens). Example 123e4567-e89b-12d3-a456-426655440000 Example 123e4567e89b12d3a456426655440000 
+   * @member {String} metadata
+   */
+  exports.prototype['metadata'] = undefined;
   /**
    * @member {Array.<module:model/Ptsv2paymentsDeviceInformationRawData>} rawData
    */
