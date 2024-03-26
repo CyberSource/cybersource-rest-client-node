@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -88,6 +89,9 @@
       if (data.hasOwnProperty('processorInformation')) {
         obj['processorInformation'] = PtsV2PaymentsVoidsPost201ResponseProcessorInformation.constructFromObject(data['processorInformation']);
       }
+      if (data.hasOwnProperty('reconciliationId')) {
+        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
+      }
     }
     return obj;
   }
@@ -107,7 +111,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - VOIDED 
+   * The status of the submitted transaction.  Possible values:  - VOIDED  - CANCELLED  - FAILED 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
@@ -123,6 +127,11 @@
    * @member {module:model/PtsV2PaymentsVoidsPost201ResponseProcessorInformation} processorInformation
    */
   exports.prototype['processorInformation'] = undefined;
+  /**
+   * Reference number that you use to reconcile CyberSource reports with your reports. 
+   * @member {String} reconciliationId
+   */
+  exports.prototype['reconciliationId'] = undefined;
 
 
 

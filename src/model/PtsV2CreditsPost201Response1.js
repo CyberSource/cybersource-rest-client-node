@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2CreditsPost201Response1InstallmentInformation', 'model/PtsV2CreditsPost201Response1ProcessorInformation'], factory);
+    define(['ApiClient', 'model/PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation', 'model/PtsV2CreditsPost201Response1ProcessorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2CreditsPost201Response1InstallmentInformation'), require('./PtsV2CreditsPost201Response1ProcessorInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation'), require('./PtsV2CreditsPost201Response1ProcessorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2CreditsPost201Response1 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2CreditsPost201Response1InstallmentInformation, root.CyberSource.PtsV2CreditsPost201Response1ProcessorInformation);
+    root.CyberSource.PtsV2CreditsPost201Response1 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation, root.CyberSource.PtsV2CreditsPost201Response1ProcessorInformation);
   }
-}(this, function(ApiClient, PtsV2CreditsPost201Response1InstallmentInformation, PtsV2CreditsPost201Response1ProcessorInformation) {
+}(this, function(ApiClient, PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation, PtsV2CreditsPost201Response1ProcessorInformation) {
   'use strict';
 
 
@@ -78,7 +78,7 @@
         obj['processorInformation'] = PtsV2CreditsPost201Response1ProcessorInformation.constructFromObject(data['processorInformation']);
       }
       if (data.hasOwnProperty('installmentInformation')) {
-        obj['installmentInformation'] = PtsV2CreditsPost201Response1InstallmentInformation.constructFromObject(data['installmentInformation']);
+        obj['installmentInformation'] = PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation.constructFromObject(data['installmentInformation']);
       }
     }
     return obj;
@@ -104,7 +104,7 @@
    */
   exports.prototype['processorInformation'] = undefined;
   /**
-   * @member {module:model/PtsV2CreditsPost201Response1InstallmentInformation} installmentInformation
+   * @member {module:model/PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation} installmentInformation
    */
   exports.prototype['installmentInformation'] = undefined;
 

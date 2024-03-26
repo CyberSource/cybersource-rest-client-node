@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loginId (base name: "loginId")', function() {
+      // uncomment below and update the code to test the property loginId
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseBuyerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

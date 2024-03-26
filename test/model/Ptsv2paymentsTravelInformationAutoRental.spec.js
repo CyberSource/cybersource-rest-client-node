@@ -308,6 +308,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property companyName (base name: "companyName")', function() {
+      // uncomment below and update the code to test the property companyName
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationAutoRental();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property affiliateName (base name: "affiliateName")', function() {
+      // uncomment below and update the code to test the property affiliateName
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationAutoRental();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

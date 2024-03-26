@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('taxId')) {
         obj['taxId'] = ApiClient.convertToType(data['taxId'], 'String');
+      }
+      if (data.hasOwnProperty('loginId')) {
+        obj['loginId'] = ApiClient.convertToType(data['loginId'], 'String');
       }
     }
     return obj;
@@ -108,6 +112,11 @@
    * @member {String} taxId
    */
   exports.prototype['taxId'] = undefined;
+  /**
+   * The buyer's Alipay login Id, the id might be an email or mobile number. The id is partially masked for privacy. cao***@126.com  or 186***22156 
+   * @member {String} loginId
+   */
+  exports.prototype['loginId'] = undefined;
 
 
 

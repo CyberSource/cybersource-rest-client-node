@@ -92,6 +92,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property responseDetails (base name: "responseDetails")', function() {
+      // uncomment below and update the code to test the property responseDetails
+      //var instane = new CyberSource.PtsV2PaymentsReversalsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property providerResponse (base name: "providerResponse")', function() {
+      // uncomment below and update the code to test the property providerResponse
+      //var instane = new CyberSource.PtsV2PaymentsReversalsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2billingagreementsPaymentInformationCard', 'model/Ptsv2billingagreementsPaymentInformationTokenizedCard'], factory);
+    define(['ApiClient', 'model/Ptsv2billingagreementsPaymentInformationBank', 'model/Ptsv2billingagreementsPaymentInformationCard', 'model/Ptsv2billingagreementsPaymentInformationPaymentType', 'model/Ptsv2billingagreementsPaymentInformationTokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsPaymentInformationCard'), require('./Ptsv2billingagreementsPaymentInformationTokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsPaymentInformationBank'), require('./Ptsv2billingagreementsPaymentInformationCard'), require('./Ptsv2billingagreementsPaymentInformationPaymentType'), require('./Ptsv2billingagreementsPaymentInformationTokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2billingagreementsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsPaymentInformationCard, root.CyberSource.Ptsv2billingagreementsPaymentInformationTokenizedCard);
+    root.CyberSource.Ptsv2billingagreementsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsPaymentInformationBank, root.CyberSource.Ptsv2billingagreementsPaymentInformationCard, root.CyberSource.Ptsv2billingagreementsPaymentInformationPaymentType, root.CyberSource.Ptsv2billingagreementsPaymentInformationTokenizedCard);
   }
-}(this, function(ApiClient, Ptsv2billingagreementsPaymentInformationCard, Ptsv2billingagreementsPaymentInformationTokenizedCard) {
+}(this, function(ApiClient, Ptsv2billingagreementsPaymentInformationBank, Ptsv2billingagreementsPaymentInformationCard, Ptsv2billingagreementsPaymentInformationPaymentType, Ptsv2billingagreementsPaymentInformationTokenizedCard) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -68,6 +70,12 @@
       if (data.hasOwnProperty('tokenizedCard')) {
         obj['tokenizedCard'] = Ptsv2billingagreementsPaymentInformationTokenizedCard.constructFromObject(data['tokenizedCard']);
       }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = Ptsv2billingagreementsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
+      }
+      if (data.hasOwnProperty('bank')) {
+        obj['bank'] = Ptsv2billingagreementsPaymentInformationBank.constructFromObject(data['bank']);
+      }
     }
     return obj;
   }
@@ -80,6 +88,14 @@
    * @member {module:model/Ptsv2billingagreementsPaymentInformationTokenizedCard} tokenizedCard
    */
   exports.prototype['tokenizedCard'] = undefined;
+  /**
+   * @member {module:model/Ptsv2billingagreementsPaymentInformationPaymentType} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
+  /**
+   * @member {module:model/Ptsv2billingagreementsPaymentInformationBank} bank
+   */
+  exports.prototype['bank'] = undefined;
 
 
 

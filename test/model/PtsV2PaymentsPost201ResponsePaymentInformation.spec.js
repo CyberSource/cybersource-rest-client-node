@@ -134,6 +134,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eWallet (base name: "eWallet")', function() {
+      // uncomment below and update the code to test the property eWallet
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -254,6 +254,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sellerProtection (base name: "sellerProtection")', function() {
+      // uncomment below and update the code to test the property sellerProtection
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionExpiryDate (base name: "transactionExpiryDate")', function() {
+      // uncomment below and update the code to test the property transactionExpiryDate
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

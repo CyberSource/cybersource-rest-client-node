@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -124,6 +125,9 @@
       }
       if (data.hasOwnProperty('serviceLocation')) {
         obj['serviceLocation'] = Ptsv2paymentsMerchantInformationServiceLocation.constructFromObject(data['serviceLocation']);
+      }
+      if (data.hasOwnProperty('noteToBuyer')) {
+        obj['noteToBuyer'] = ApiClient.convertToType(data['noteToBuyer'], 'String');
       }
       if (data.hasOwnProperty('merchantName')) {
         obj['merchantName'] = ApiClient.convertToType(data['merchantName'], 'String');
@@ -209,6 +213,11 @@
    * @member {module:model/Ptsv2paymentsMerchantInformationServiceLocation} serviceLocation
    */
   exports.prototype['serviceLocation'] = undefined;
+  /**
+   * Free-form text field. 
+   * @member {String} noteToBuyer
+   */
+  exports.prototype['noteToBuyer'] = undefined;
   /**
    * Use this field only if you are requesting payment with Payer Authentication service together.  Your company's name as you want it to appear to the customer in the issuing bank's authentication form. This value overrides the value specified by your merchant bank. 
    * @member {String} merchantName

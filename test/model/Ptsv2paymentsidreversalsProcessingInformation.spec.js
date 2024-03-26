@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property actionList (base name: "actionList")', function() {
+      // uncomment below and update the code to test the property actionList
+      //var instane = new CyberSource.Ptsv2paymentsidreversalsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

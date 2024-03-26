@@ -80,6 +80,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -131,6 +134,12 @@
       }
       if (data.hasOwnProperty('purchaseLevel')) {
         obj['purchaseLevel'] = ApiClient.convertToType(data['purchaseLevel'], 'String');
+      }
+      if (data.hasOwnProperty('transactionTimeout')) {
+        obj['transactionTimeout'] = ApiClient.convertToType(data['transactionTimeout'], 'Number');
+      }
+      if (data.hasOwnProperty('intentsId')) {
+        obj['intentsId'] = ApiClient.convertToType(data['intentsId'], 'String');
       }
       if (data.hasOwnProperty('paymentId')) {
         obj['paymentId'] = ApiClient.convertToType(data['paymentId'], 'String');
@@ -192,12 +201,15 @@
       if (data.hasOwnProperty('networkPartnerId')) {
         obj['networkPartnerId'] = ApiClient.convertToType(data['networkPartnerId'], 'String');
       }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = ApiClient.convertToType(data['paymentType'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service. 
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested. 
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
@@ -262,6 +274,16 @@
    * @member {String} purchaseLevel
    */
   exports.prototype['purchaseLevel'] = undefined;
+  /**
+   * The time-out limit in seconds for the transaction. The time-out limit starts when the customer is directed to the merchant URL that is included in the sale service response. The maximum value is 99999 (about 27 hours). When the transaction times out, the payment system changes the status to abandoned.
+   * @member {Number} transactionTimeout
+   */
+  exports.prototype['transactionTimeout'] = undefined;
+  /**
+   * Set to the value of the requestID field returned in the order service response.
+   * @member {String} intentsId
+   */
+  exports.prototype['intentsId'] = undefined;
   /**
    * This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
    * @member {String} paymentId
@@ -354,6 +376,11 @@
    * @member {String} networkPartnerId
    */
   exports.prototype['networkPartnerId'] = undefined;
+  /**
+   * Identifier for the payment type. 
+   * @member {String} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
 
 
 

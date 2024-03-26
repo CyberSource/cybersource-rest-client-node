@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -127,6 +128,9 @@
       }
       if (data.hasOwnProperty('issuerMessage')) {
         obj['issuerMessage'] = ApiClient.convertToType(data['issuerMessage'], 'String');
+      }
+      if (data.hasOwnProperty('productDescription')) {
+        obj['productDescription'] = ApiClient.convertToType(data['productDescription'], 'String');
       }
     }
     return obj;
@@ -216,6 +220,11 @@
    * @member {String} issuerMessage
    */
   exports.prototype['issuerMessage'] = undefined;
+  /**
+   * Brief description of item.
+   * @member {String} productDescription
+   */
+  exports.prototype['productDescription'] = undefined;
 
 
 

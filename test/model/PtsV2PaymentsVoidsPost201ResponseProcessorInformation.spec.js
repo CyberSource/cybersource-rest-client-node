@@ -62,6 +62,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property responseDetails (base name: "responseDetails")', function() {
+      // uncomment below and update the code to test the property responseDetails
+      //var instane = new CyberSource.PtsV2PaymentsVoidsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionId (base name: "transactionId")', function() {
+      // uncomment below and update the code to test the property transactionId
+      //var instane = new CyberSource.PtsV2PaymentsVoidsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

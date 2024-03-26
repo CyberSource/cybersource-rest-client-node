@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **url** | **String** | Address of company&#39;s website provided by merchant  | [optional] 
 **countryOfOrigin** | **String** | #### Visa Platform Connect This field will indicate merchant country of origin  | [optional] 
 **customerServicePhoneNumber** | **String** | #### Visa Platform Connect Indicates customer service phone number of Merchant.  | [optional] 
+**storeId** | **String** | The unique id of the merchant&#39;s shop which assigned by the merchant  | [optional] 
 
 

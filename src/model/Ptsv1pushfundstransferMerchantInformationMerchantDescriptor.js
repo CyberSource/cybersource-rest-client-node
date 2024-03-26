@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('storeId')) {
+        obj['storeId'] = ApiClient.convertToType(data['storeId'], 'String');
       }
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
@@ -113,6 +117,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * The unique id of the merchant's shop which assigned by the merchant. 
+   * @member {String} storeId
+   */
+  exports.prototype['storeId'] = undefined;
   /**
    * Merchant's postal code. This value might be displayed on the cardholder's statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 
    * @member {String} postalCode

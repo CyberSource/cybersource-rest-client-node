@@ -4,8 +4,55 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /up/v1/payment-credentials/{jti} | Get Payment Credentials
 [**getTransactionForTransientToken**](TransientTokenDataApi.md#getTransactionForTransientToken) | **GET** /up/v1/payment-details/{transientToken} | Get Transient Token Data
 
+
+<a name="getPaymentCredentialsForTransientToken"></a>
+# **getPaymentCredentialsForTransientToken**
+> &#39;String&#39; getPaymentCredentialsForTransientToken(jti)
+
+Get Payment Credentials
+
+Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.TransientTokenDataApi();
+
+var jti = "jti_example"; // String | The jti field contained within the Transient token returned from a successful Unified Checkout transaction 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getPaymentCredentialsForTransientToken(jti, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **jti** | **String**| The jti field contained within the Transient token returned from a successful Unified Checkout transaction  | 
+
+### Return type
+
+**&#39;String&#39;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json
 
 <a name="getTransactionForTransientToken"></a>
 # **getTransactionForTransientToken**

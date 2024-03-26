@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsidcapturesPaymentInformationCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsidcapturesPaymentInformationCard', 'model/Ptsv2paymentsidcapturesPaymentInformationPaymentType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsidcapturesPaymentInformationCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsidcapturesPaymentInformationCard'), require('./Ptsv2paymentsidcapturesPaymentInformationPaymentType'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidcapturesPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsidcapturesPaymentInformationCard);
+    root.CyberSource.Ptsv2paymentsidcapturesPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsidcapturesPaymentInformationCard, root.CyberSource.Ptsv2paymentsidcapturesPaymentInformationPaymentType);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsidcapturesPaymentInformationCard) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsidcapturesPaymentInformationCard, Ptsv2paymentsidcapturesPaymentInformationPaymentType) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('card')) {
         obj['card'] = Ptsv2paymentsidcapturesPaymentInformationCard.constructFromObject(data['card']);
       }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = Ptsv2paymentsidcapturesPaymentInformationPaymentType.constructFromObject(data['paymentType']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/Ptsv2paymentsidcapturesPaymentInformationCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsidcapturesPaymentInformationPaymentType} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
 
 
 

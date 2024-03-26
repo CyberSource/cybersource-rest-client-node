@@ -51,6 +51,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -76,6 +79,15 @@
       if (data.hasOwnProperty('transactionLocalDateTime')) {
         obj['transactionLocalDateTime'] = ApiClient.convertToType(data['transactionLocalDateTime'], 'String');
       }
+      if (data.hasOwnProperty('cancelUrl')) {
+        obj['cancelUrl'] = ApiClient.convertToType(data['cancelUrl'], 'String');
+      }
+      if (data.hasOwnProperty('successUrl')) {
+        obj['successUrl'] = ApiClient.convertToType(data['successUrl'], 'String');
+      }
+      if (data.hasOwnProperty('failureUrl')) {
+        obj['failureUrl'] = ApiClient.convertToType(data['failureUrl'], 'String');
+      }
     }
     return obj;
   }
@@ -99,6 +111,21 @@
    * @member {String} transactionLocalDateTime
    */
   exports.prototype['transactionLocalDateTime'] = undefined;
+  /**
+   * URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate 
+   * @member {String} cancelUrl
+   */
+  exports.prototype['cancelUrl'] = undefined;
+  /**
+   * URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate 
+   * @member {String} successUrl
+   */
+  exports.prototype['successUrl'] = undefined;
+  /**
+   * URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate 
+   * @member {String} failureUrl
+   */
+  exports.prototype['failureUrl'] = undefined;
 
 
 

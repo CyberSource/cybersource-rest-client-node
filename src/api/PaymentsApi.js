@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentRequest', 'model/IncrementAuthRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost201Response1', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/RefreshPaymentStatusRequest'], factory);
+    define(['ApiClient', 'model/CreatePaymentRequest', 'model/CreateSessionReq', 'model/CreateSessionRequest', 'model/IncrementAuthRequest', 'model/OrderPaymentRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsOrderPost201Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost201Response1', 'model/PtsV2PaymentsPost201Response2', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/RefreshPaymentStatusRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/IncrementAuthRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost201Response1'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RefreshPaymentStatusRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/CreateSessionReq'), require('../model/CreateSessionRequest'), require('../model/IncrementAuthRequest'), require('../model/OrderPaymentRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsOrderPost201Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost201Response1'), require('../model/PtsV2PaymentsPost201Response2'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RefreshPaymentStatusRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost201Response1, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RefreshPaymentStatusRequest);
+    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.CreateSessionReq, root.CyberSource.CreateSessionRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.OrderPaymentRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsOrderPost201Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost201Response1, root.CyberSource.PtsV2PaymentsPost201Response2, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RefreshPaymentStatusRequest);
   }
-}(this, function(ApiClient, CreatePaymentRequest, IncrementAuthRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost201Response1, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, RefreshPaymentStatusRequest) {
+}(this, function(ApiClient, CreatePaymentRequest, CreateSessionReq, CreateSessionRequest, IncrementAuthRequest, OrderPaymentRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsOrderPost201Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost201Response1, PtsV2PaymentsPost201Response2, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, RefreshPaymentStatusRequest) {
   'use strict';
 
   /**
@@ -48,6 +48,62 @@
 
 	this.apiClient.setConfiguration(configObject);
 	
+
+    /**
+     * Callback function to receive the result of the createOrderRequest operation.
+     * @callback module:api/PaymentsApi~createOrderRequestCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PtsV2PaymentsOrderPost201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a Payment Order Request
+     * Create a Payment Order Request
+     * @param {module:model/OrderPaymentRequest} orderPaymentRequest 
+     * @param {String} id Request identifier number for the order request. 
+     * @param {module:api/PaymentsApi~createOrderRequestCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PtsV2PaymentsOrderPost201Response}
+     */
+    this.createOrderRequest = function(orderPaymentRequest, id, callback) {
+      var postBody = orderPaymentRequest;
+
+      // verify the required parameter 'orderPaymentRequest' is set
+      if (orderPaymentRequest === undefined || orderPaymentRequest === null) {
+        throw new Error("Missing the required parameter 'orderPaymentRequest' when calling createOrderRequest");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling createOrderRequest");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/OrderPaymentRequest', this.apiClient.merchantConfig.runEnvironment);
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = PtsV2PaymentsOrderPost201Response;
+
+      return this.apiClient.callApi(
+        '/pts/v2/payment-references/{id}/intents', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the createPayment operation.
@@ -93,6 +149,55 @@
 
       return this.apiClient.callApi(
         '/pts/v2/payments', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createSessionRequest operation.
+     * @callback module:api/PaymentsApi~createSessionRequestCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PtsV2PaymentsPost201Response2} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create Alternative Payments Sessions Request
+     * Create Alternative Payments Sessions Request
+     * @param {module:model/CreateSessionReq} createSessionReq 
+     * @param {module:api/PaymentsApi~createSessionRequestCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PtsV2PaymentsPost201Response2}
+     */
+    this.createSessionRequest = function(createSessionReq, callback) {
+      var postBody = createSessionReq;
+
+      // verify the required parameter 'createSessionReq' is set
+      if (createSessionReq === undefined || createSessionReq === null) {
+        throw new Error("Missing the required parameter 'createSessionReq' when calling createSessionRequest");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionReq', this.apiClient.merchantConfig.runEnvironment);
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = PtsV2PaymentsPost201Response2;
+
+      return this.apiClient.callApi(
+        '/pts/v2/payment-references', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -205,6 +310,62 @@
 
       return this.apiClient.callApi(
         '/pts/v2/refresh-payment-status/{id}', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateSessionReq operation.
+     * @callback module:api/PaymentsApi~updateSessionReqCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PtsV2PaymentsPost201Response2} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update Alternative Payments Sessions Request
+     * Update Alternative Payments Sessions Request
+     * @param {module:model/CreateSessionRequest} createSessionRequest 
+     * @param {String} id The payment ID. This ID is returned from a previous payment request.
+     * @param {module:api/PaymentsApi~updateSessionReqCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PtsV2PaymentsPost201Response2}
+     */
+    this.updateSessionReq = function(createSessionRequest, id, callback) {
+      var postBody = createSessionRequest;
+
+      // verify the required parameter 'createSessionRequest' is set
+      if (createSessionRequest === undefined || createSessionRequest === null) {
+        throw new Error("Missing the required parameter 'createSessionRequest' when calling updateSessionReq");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateSessionReq");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionRequest', this.apiClient.merchantConfig.runEnvironment);
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = PtsV2PaymentsPost201Response2;
+
+      return this.apiClient.callApi(
+        '/pts/v2/payment-references/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

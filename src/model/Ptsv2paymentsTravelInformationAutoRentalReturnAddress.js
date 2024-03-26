@@ -52,6 +52,8 @@
 
 
 
+
+
   };
 
   /**
@@ -76,6 +78,12 @@
       }
       if (data.hasOwnProperty('locationId')) {
         obj['locationId'] = ApiClient.convertToType(data['locationId'], 'String');
+      }
+      if (data.hasOwnProperty('address1')) {
+        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
+      }
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
       if (data.hasOwnProperty('location')) {
         obj['location'] = ApiClient.convertToType(data['location'], 'String');
@@ -104,6 +112,16 @@
    * @member {String} locationId
    */
   exports.prototype['locationId'] = undefined;
+  /**
+   * When merchant wants to send the rental address's street address. 
+   * @member {String} address1
+   */
+  exports.prototype['address1'] = undefined;
+  /**
+   * When merchant wants to send the return address's postal code. 
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
   /**
    * This field contains the location where the taxi passenger was dropped off or where the auto rental vehicle was returned. 
    * @member {String} location

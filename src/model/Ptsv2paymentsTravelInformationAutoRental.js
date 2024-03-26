@@ -89,6 +89,8 @@
 
 
 
+
+
   };
 
   /**
@@ -227,6 +229,12 @@
       }
       if (data.hasOwnProperty('otherCharges')) {
         obj['otherCharges'] = ApiClient.convertToType(data['otherCharges'], 'String');
+      }
+      if (data.hasOwnProperty('companyName')) {
+        obj['companyName'] = ApiClient.convertToType(data['companyName'], 'String');
+      }
+      if (data.hasOwnProperty('affiliateName')) {
+        obj['affiliateName'] = ApiClient.convertToType(data['affiliateName'], 'String');
       }
     }
     return obj;
@@ -439,6 +447,16 @@
    * @member {String} otherCharges
    */
   exports.prototype['otherCharges'] = undefined;
+  /**
+   * Merchant to send their auto rental company name 
+   * @member {String} companyName
+   */
+  exports.prototype['companyName'] = undefined;
+  /**
+   * When merchant wants to send the affiliate name. 
+   * @member {String} affiliateName
+   */
+  exports.prototype['affiliateName'] = undefined;
 
 
 

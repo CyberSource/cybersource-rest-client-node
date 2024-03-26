@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **returnUrl** | **String** | URL for displaying payment results to the consumer (notifications) after the transaction is processed. Usually this URL belongs to merchant and its behavior is defined by merchant  | [optional] 
 **partnerIdCode** | **String** | #### Visa Platform Connect This field may be used for transactions on accounts issued under co-branding agreements when one of the co-branding partners.  | [optional] 
 **serviceLocation** | [**Ptsv2paymentsMerchantInformationServiceLocation**](Ptsv2paymentsMerchantInformationServiceLocation.md) |  | [optional] 
+**noteToBuyer** | **String** | Free-form text field.  | [optional] 
 **merchantName** | **String** | Use this field only if you are requesting payment with Payer Authentication service together.  Your company&#39;s name as you want it to appear to the customer in the issuing bank&#39;s authentication form. This value overrides the value specified by your merchant bank.  | [optional] 
 
 

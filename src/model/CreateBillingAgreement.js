@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2billingagreementsAggregatorInformation', 'model/Ptsv2billingagreementsConsumerAuthenticationInformation', 'model/Ptsv2billingagreementsDeviceInformation', 'model/Ptsv2billingagreementsInstallmentInformation', 'model/Ptsv2billingagreementsMerchantInformation', 'model/Ptsv2billingagreementsOrderInformation', 'model/Ptsv2billingagreementsPaymentInformation', 'model/Ptsv2billingagreementsProcessingInformation', 'model/Ptsv2paymentsClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2billingagreementsAggregatorInformation', 'model/Ptsv2billingagreementsAgreementInformation', 'model/Ptsv2billingagreementsBuyerInformation', 'model/Ptsv2billingagreementsClientReferenceInformation', 'model/Ptsv2billingagreementsConsumerAuthenticationInformation', 'model/Ptsv2billingagreementsDeviceInformation', 'model/Ptsv2billingagreementsInstallmentInformation', 'model/Ptsv2billingagreementsMerchantInformation', 'model/Ptsv2billingagreementsOrderInformation', 'model/Ptsv2billingagreementsPaymentInformation', 'model/Ptsv2billingagreementsProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsAggregatorInformation'), require('./Ptsv2billingagreementsConsumerAuthenticationInformation'), require('./Ptsv2billingagreementsDeviceInformation'), require('./Ptsv2billingagreementsInstallmentInformation'), require('./Ptsv2billingagreementsMerchantInformation'), require('./Ptsv2billingagreementsOrderInformation'), require('./Ptsv2billingagreementsPaymentInformation'), require('./Ptsv2billingagreementsProcessingInformation'), require('./Ptsv2paymentsClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsAggregatorInformation'), require('./Ptsv2billingagreementsAgreementInformation'), require('./Ptsv2billingagreementsBuyerInformation'), require('./Ptsv2billingagreementsClientReferenceInformation'), require('./Ptsv2billingagreementsConsumerAuthenticationInformation'), require('./Ptsv2billingagreementsDeviceInformation'), require('./Ptsv2billingagreementsInstallmentInformation'), require('./Ptsv2billingagreementsMerchantInformation'), require('./Ptsv2billingagreementsOrderInformation'), require('./Ptsv2billingagreementsPaymentInformation'), require('./Ptsv2billingagreementsProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateBillingAgreement = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsAggregatorInformation, root.CyberSource.Ptsv2billingagreementsConsumerAuthenticationInformation, root.CyberSource.Ptsv2billingagreementsDeviceInformation, root.CyberSource.Ptsv2billingagreementsInstallmentInformation, root.CyberSource.Ptsv2billingagreementsMerchantInformation, root.CyberSource.Ptsv2billingagreementsOrderInformation, root.CyberSource.Ptsv2billingagreementsPaymentInformation, root.CyberSource.Ptsv2billingagreementsProcessingInformation, root.CyberSource.Ptsv2paymentsClientReferenceInformation);
+    root.CyberSource.CreateBillingAgreement = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsAggregatorInformation, root.CyberSource.Ptsv2billingagreementsAgreementInformation, root.CyberSource.Ptsv2billingagreementsBuyerInformation, root.CyberSource.Ptsv2billingagreementsClientReferenceInformation, root.CyberSource.Ptsv2billingagreementsConsumerAuthenticationInformation, root.CyberSource.Ptsv2billingagreementsDeviceInformation, root.CyberSource.Ptsv2billingagreementsInstallmentInformation, root.CyberSource.Ptsv2billingagreementsMerchantInformation, root.CyberSource.Ptsv2billingagreementsOrderInformation, root.CyberSource.Ptsv2billingagreementsPaymentInformation, root.CyberSource.Ptsv2billingagreementsProcessingInformation);
   }
-}(this, function(ApiClient, Ptsv2billingagreementsAggregatorInformation, Ptsv2billingagreementsConsumerAuthenticationInformation, Ptsv2billingagreementsDeviceInformation, Ptsv2billingagreementsInstallmentInformation, Ptsv2billingagreementsMerchantInformation, Ptsv2billingagreementsOrderInformation, Ptsv2billingagreementsPaymentInformation, Ptsv2billingagreementsProcessingInformation, Ptsv2paymentsClientReferenceInformation) {
+}(this, function(ApiClient, Ptsv2billingagreementsAggregatorInformation, Ptsv2billingagreementsAgreementInformation, Ptsv2billingagreementsBuyerInformation, Ptsv2billingagreementsClientReferenceInformation, Ptsv2billingagreementsConsumerAuthenticationInformation, Ptsv2billingagreementsDeviceInformation, Ptsv2billingagreementsInstallmentInformation, Ptsv2billingagreementsMerchantInformation, Ptsv2billingagreementsOrderInformation, Ptsv2billingagreementsPaymentInformation, Ptsv2billingagreementsProcessingInformation) {
   'use strict';
 
 
@@ -56,6 +56,8 @@
 
 
 
+
+
   };
 
   /**
@@ -69,8 +71,11 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('agreementInformation')) {
+        obj['agreementInformation'] = Ptsv2billingagreementsAgreementInformation.constructFromObject(data['agreementInformation']);
+      }
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Ptsv2paymentsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Ptsv2billingagreementsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('aggregatorInformation')) {
         obj['aggregatorInformation'] = Ptsv2billingagreementsAggregatorInformation.constructFromObject(data['aggregatorInformation']);
@@ -96,12 +101,19 @@
       if (data.hasOwnProperty('processingInformation')) {
         obj['processingInformation'] = Ptsv2billingagreementsProcessingInformation.constructFromObject(data['processingInformation']);
       }
+      if (data.hasOwnProperty('buyerInformation')) {
+        obj['buyerInformation'] = Ptsv2billingagreementsBuyerInformation.constructFromObject(data['buyerInformation']);
+      }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Ptsv2paymentsClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Ptsv2billingagreementsAgreementInformation} agreementInformation
+   */
+  exports.prototype['agreementInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2billingagreementsClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
@@ -136,6 +148,10 @@
    * @member {module:model/Ptsv2billingagreementsProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2billingagreementsBuyerInformation} buyerInformation
+   */
+  exports.prototype['buyerInformation'] = undefined;
 
 
 

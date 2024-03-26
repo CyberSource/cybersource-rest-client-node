@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails', 'model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails'), require('./PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails);
+    root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseOrderInformationAmountDetails) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails, PtsV2PaymentsPost201ResponseOrderInformationAmountDetails) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('amountDetails')) {
         obj['amountDetails'] = PtsV2PaymentsPost201ResponseOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
+      if (data.hasOwnProperty('invoiceDetails')) {
+        obj['invoiceDetails'] = PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
+      }
     }
     return obj;
   }
@@ -72,6 +76,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
+  /**
+   * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails} invoiceDetails
+   */
+  exports.prototype['invoiceDetails'] = undefined;
 
 
 

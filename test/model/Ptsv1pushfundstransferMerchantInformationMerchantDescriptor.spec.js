@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storeId (base name: "storeId")', function() {
+      // uncomment below and update the code to test the property storeId
+      //var instane = new CyberSource.Ptsv1pushfundstransferMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
     it('should have the property postalCode (base name: "postalCode")', function() {
       // uncomment below and update the code to test the property postalCode
       //var instane = new CyberSource.Ptsv1pushfundstransferMerchantInformationMerchantDescriptor();

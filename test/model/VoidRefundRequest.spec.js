@@ -74,6 +74,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property agreementInformation (base name: "agreementInformation")', function() {
+      // uncomment below and update the code to test the property agreementInformation
+      //var instane = new CyberSource.VoidRefundRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
+      // uncomment below and update the code to test the property merchantInformation
+      //var instane = new CyberSource.VoidRefundRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
+      //var instane = new CyberSource.VoidRefundRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

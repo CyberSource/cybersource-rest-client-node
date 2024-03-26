@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
+      //var instane = new CyberSource.Ptsv2billingagreementsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bank (base name: "bank")', function() {
+      // uncomment below and update the code to test the property bank
+      //var instane = new CyberSource.Ptsv2billingagreementsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

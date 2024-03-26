@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBankAccount'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidrefundsPaymentInformationBankAccount'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBankAccount'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidrefundsPaymentInformationBankAccount'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationBank = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBankAccount);
+    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationBank = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationBankAccount);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBankAccount) {
+}(this, function(ApiClient, Ptsv2paymentsidrefundsPaymentInformationBankAccount) {
   'use strict';
 
 
@@ -65,7 +65,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('account')) {
-        obj['account'] = Ptsv2paymentsPaymentInformationBankAccount.constructFromObject(data['account']);
+        obj['account'] = Ptsv2paymentsidrefundsPaymentInformationBankAccount.constructFromObject(data['account']);
       }
       if (data.hasOwnProperty('routingNumber')) {
         obj['routingNumber'] = ApiClient.convertToType(data['routingNumber'], 'String');
@@ -81,7 +81,7 @@
   }
 
   /**
-   * @member {module:model/Ptsv2paymentsPaymentInformationBankAccount} account
+   * @member {module:model/Ptsv2paymentsidrefundsPaymentInformationBankAccount} account
    */
   exports.prototype['account'] = undefined;
   /**

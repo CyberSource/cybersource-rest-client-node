@@ -80,6 +80,7 @@
 
 
 
+
   };
 
   /**
@@ -170,6 +171,9 @@
       }
       if (data.hasOwnProperty('referenceDataNumber')) {
         obj['referenceDataNumber'] = ApiClient.convertToType(data['referenceDataNumber'], 'String');
+      }
+      if (data.hasOwnProperty('unitTaxAmount')) {
+        obj['unitTaxAmount'] = ApiClient.convertToType(data['unitTaxAmount'], 'String');
       }
       if (data.hasOwnProperty('productDescription')) {
         obj['productDescription'] = ApiClient.convertToType(data['productDescription'], 'String');
@@ -325,6 +329,11 @@
    * @member {String} referenceDataNumber
    */
   exports.prototype['referenceDataNumber'] = undefined;
+  /**
+   * Per-item tax amount of the product. Note The amount value must be a non-negative number containing 2 decimal places and limited to 7 digits before the decimal point. 
+   * @member {String} unitTaxAmount
+   */
+  exports.prototype['unitTaxAmount'] = undefined;
   /**
    * Brief description of item.
    * @member {String} productDescription

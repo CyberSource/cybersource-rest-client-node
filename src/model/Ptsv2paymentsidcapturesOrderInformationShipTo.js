@@ -50,6 +50,8 @@
 
 
 
+
+
   };
 
   /**
@@ -72,6 +74,12 @@
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('county')) {
+        obj['county'] = ApiClient.convertToType(data['county'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +99,16 @@
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
+  /**
+   * Email of the recipient.
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * U.S. county if available.
+   * @member {String} county
+   */
+  exports.prototype['county'] = undefined;
 
 
 

@@ -64,6 +64,8 @@
 
 
 
+
+
   };
 
   /**
@@ -104,6 +106,9 @@
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
+      if (data.hasOwnProperty('county')) {
+        obj['county'] = ApiClient.convertToType(data['county'], 'String');
+      }
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
       }
@@ -115,6 +120,9 @@
       }
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
       if (data.hasOwnProperty('company')) {
         obj['company'] = ApiClient.convertToType(data['company'], 'String');
@@ -178,6 +186,11 @@
    */
   exports.prototype['postalCode'] = undefined;
   /**
+   * U.S. county if available.
+   * @member {String} county
+   */
+  exports.prototype['county'] = undefined;
+  /**
    * Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes. Billing address objects will be used to determine the cardholder's location when shipTo objects are not present. 
    * @member {String} country
    */
@@ -197,6 +210,11 @@
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
+  /**
+   * Email of the recipient. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
   /**
    * Name of the customer's company.  For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @member {String} company

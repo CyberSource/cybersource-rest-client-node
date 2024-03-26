@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reversal (base name: "reversal")', function() {
+      // uncomment below and update the code to test the property reversal
+      //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
       }
       if (data.hasOwnProperty('address2')) {
         obj['address2'] = ApiClient.convertToType(data['address2'], 'String');
+      }
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
       if (data.hasOwnProperty('location')) {
         obj['location'] = ApiClient.convertToType(data['location'], 'String');
@@ -122,6 +126,11 @@
    * @member {String} address2
    */
   exports.prototype['address2'] = undefined;
+  /**
+   * When merchant wants to send the rental address's postal code. 
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
   /**
    * This field contains the location where a taxi passenger was picked up or where an auto rental vehicle was picked up. In most cases, this is the rental agency's business name that appears on the storefront and/or customer receipts, commonly referred to as the DBA (Doing Business As) name. However, if the vehicle was picked up at another location (e.g., a hotel,auto dealership, repair shop, etc.), the name of that location should be used. This entry must be easily recognized by the Cardmember to avoid unnecessary inquiries. If the name is more than 38  characters, use proper and meaningful abbreviation, when possible. 
    * @member {String} location

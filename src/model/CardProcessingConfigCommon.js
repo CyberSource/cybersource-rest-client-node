@@ -149,7 +149,7 @@
   }
 
   /**
-   * e.g. * amexdirect * barclays2 * CUP * EFTPOS * fdiglobal * gpx * smartfdc * tsys * vero * VPC  For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &lt;your vpc processor&gt; 
+   * e.g. * amexdirect * barclays2 * CUP * EFTPOS * fdiglobal * gpngsapv3 * gpx * smartfdc * tsys * vero * VPC  For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &lt;your vpc processor&gt; 
    * @member {Object.<String, module:model/CardProcessingConfigCommonProcessors>} processors
    */
   exports.prototype['processors'] = undefined;

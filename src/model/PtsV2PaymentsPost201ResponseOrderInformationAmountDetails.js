@@ -50,6 +50,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -72,6 +77,21 @@
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
+      if (data.hasOwnProperty('processorTransactionFee')) {
+        obj['processorTransactionFee'] = ApiClient.convertToType(data['processorTransactionFee'], 'String');
+      }
+      if (data.hasOwnProperty('exchangeRate')) {
+        obj['exchangeRate'] = ApiClient.convertToType(data['exchangeRate'], 'String');
+      }
+      if (data.hasOwnProperty('foreignCurrency')) {
+        obj['foreignCurrency'] = ApiClient.convertToType(data['foreignCurrency'], 'String');
+      }
+      if (data.hasOwnProperty('foreignAmount')) {
+        obj['foreignAmount'] = ApiClient.convertToType(data['foreignAmount'], 'String');
+      }
+      if (data.hasOwnProperty('discountAmount')) {
+        obj['discountAmount'] = ApiClient.convertToType(data['discountAmount'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +111,31 @@
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;
+  /**
+   * Amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code. 
+   * @member {String} processorTransactionFee
+   */
+  exports.prototype['processorTransactionFee'] = undefined;
+  /**
+   * The rate of conversion of the currency given in the request to CNY. The conversion happens at the time when Alipay's trade order is created 
+   * @member {String} exchangeRate
+   */
+  exports.prototype['exchangeRate'] = undefined;
+  /**
+   * Currency code for the transaction performed in cross border currency. 
+   * @member {String} foreignCurrency
+   */
+  exports.prototype['foreignCurrency'] = undefined;
+  /**
+   * The transaction amount in CNY. 
+   * @member {String} foreignAmount
+   */
+  exports.prototype['foreignAmount'] = undefined;
+  /**
+   * If coupons/vouchers are used in the transaction, the discount amount redeemed in the settlement currency will be returned. Otherwise, no return. 
+   * @member {String} discountAmount
+   */
+  exports.prototype['discountAmount'] = undefined;
 
 
 

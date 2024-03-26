@@ -134,6 +134,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionTimeout (base name: "transactionTimeout")', function() {
+      // uncomment below and update the code to test the property transactionTimeout
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property intentsId (base name: "intentsId")', function() {
+      // uncomment below and update the code to test the property intentsId
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentId (base name: "paymentId")', function() {
       // uncomment below and update the code to test the property paymentId
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
@@ -250,6 +262,12 @@
 
     it('should have the property networkPartnerId (base name: "networkPartnerId")', function() {
       // uncomment below and update the code to test the property networkPartnerId
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
       //expect(instance).to.be();
     });
