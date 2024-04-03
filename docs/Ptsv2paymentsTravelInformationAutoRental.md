@@ -45,5 +45,7 @@ Name | Type | Description | Notes
 **phoneCharge** | **String** | Additional charges incurred for phone usage included on the total bill.  | [optional] 
 **parkingViolationCharge** | **String** | Extra charges incurred due to a parking violation for the auto. This field is supported only for Visa.  | [optional] 
 **otherCharges** | **String** | Total amount charged for all other miscellaneous charges not previously defined.  | [optional] 
+**companyName** | **String** | Merchant to send their auto rental company name  | [optional] 
+**affiliateName** | **String** | When merchant wants to send the affiliate name.  | [optional] 
 
 

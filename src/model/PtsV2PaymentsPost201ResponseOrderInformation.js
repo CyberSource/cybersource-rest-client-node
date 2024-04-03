@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails', 'model/PtsV2PaymentsPost201ResponseOrderInformationBillTo', 'model/PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails', 'model/PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseOrderInformationAmountDetails', 'model/PtsV2PaymentsPost201ResponseOrderInformationBillTo', 'model/PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails', 'model/PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails', 'model/PtsV2PaymentsPost201ResponseOrderInformationShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'), require('./PtsV2PaymentsPost201ResponseOrderInformationBillTo'), require('./PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails'), require('./PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'), require('./PtsV2PaymentsPost201ResponseOrderInformationBillTo'), require('./PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails'), require('./PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails'), require('./PtsV2PaymentsPost201ResponseOrderInformationShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationBillTo, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails);
+    root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationBillTo, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails, root.CyberSource.PtsV2PaymentsPost201ResponseOrderInformationShipTo);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseOrderInformationAmountDetails, PtsV2PaymentsPost201ResponseOrderInformationBillTo, PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails, PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseOrderInformationAmountDetails, PtsV2PaymentsPost201ResponseOrderInformationBillTo, PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails, PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails, PtsV2PaymentsPost201ResponseOrderInformationShipTo) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = PtsV2PaymentsPost201ResponseOrderInformationBillTo.constructFromObject(data['billTo']);
       }
+      if (data.hasOwnProperty('shipTo')) {
+        obj['shipTo'] = PtsV2PaymentsPost201ResponseOrderInformationShipTo.constructFromObject(data['shipTo']);
+      }
     }
     return obj;
   }
@@ -96,6 +100,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseOrderInformationBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseOrderInformationShipTo} shipTo
+   */
+  exports.prototype['shipTo'] = undefined;
 
 
 

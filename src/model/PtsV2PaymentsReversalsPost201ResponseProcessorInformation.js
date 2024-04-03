@@ -53,6 +53,8 @@
 
 
 
+
+
   };
 
   /**
@@ -83,6 +85,12 @@
       }
       if (data.hasOwnProperty('masterCardServiceReplyCode')) {
         obj['masterCardServiceReplyCode'] = ApiClient.convertToType(data['masterCardServiceReplyCode'], 'String');
+      }
+      if (data.hasOwnProperty('responseDetails')) {
+        obj['responseDetails'] = ApiClient.convertToType(data['responseDetails'], 'String');
+      }
+      if (data.hasOwnProperty('providerResponse')) {
+        obj['providerResponse'] = ApiClient.convertToType(data['providerResponse'], 'String');
       }
     }
     return obj;
@@ -118,6 +126,16 @@
    * @member {String} masterCardServiceReplyCode
    */
   exports.prototype['masterCardServiceReplyCode'] = undefined;
+  /**
+   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * @member {String} responseDetails
+   */
+  exports.prototype['responseDetails'] = undefined;
+  /**
+   * Processor response to the API request. 
+   * @member {String} providerResponse
+   */
+  exports.prototype['providerResponse'] = undefined;
 
 
 

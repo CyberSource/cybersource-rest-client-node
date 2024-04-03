@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('dateToCapture')) {
         obj['dateToCapture'] = ApiClient.convertToType(data['dateToCapture'], 'String');
       }
+      if (data.hasOwnProperty('isFinal')) {
+        obj['isFinal'] = ApiClient.convertToType(data['isFinal'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +95,11 @@
    * @member {String} dateToCapture
    */
   exports.prototype['dateToCapture'] = undefined;
+  /**
+   * Indicates whether to release the authorization hold on the remaining funds.   Possible Values: - `true` - `false` 
+   * @member {String} isFinal
+   */
+  exports.prototype['isFinal'] = undefined;
 
 
 

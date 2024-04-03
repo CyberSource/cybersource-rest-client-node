@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sellerProtection (base name: "sellerProtection")', function() {
+      // uncomment below and update the code to test the property sellerProtection
+      //var instane = new CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

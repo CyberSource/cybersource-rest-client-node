@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reconciliationId (base name: "reconciliationId")', function() {
+      // uncomment below and update the code to test the property reconciliationId
+      //var instane = new CyberSource.PtsV2PaymentsVoidsPost201Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

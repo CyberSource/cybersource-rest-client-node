@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -107,6 +108,9 @@
       }
       if (data.hasOwnProperty('customerServicePhoneNumber')) {
         obj['customerServicePhoneNumber'] = ApiClient.convertToType(data['customerServicePhoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('storeId')) {
+        obj['storeId'] = ApiClient.convertToType(data['storeId'], 'String');
       }
     }
     return obj;
@@ -172,6 +176,11 @@
    * @member {String} customerServicePhoneNumber
    */
   exports.prototype['customerServicePhoneNumber'] = undefined;
+  /**
+   * The unique id of the merchant's shop which assigned by the merchant 
+   * @member {String} storeId
+   */
+  exports.prototype['storeId'] = undefined;
 
 
 

@@ -49,6 +49,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -62,16 +73,92 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('firstName')) {
+        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+      }
+      if (data.hasOwnProperty('lastName')) {
+        obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+      }
+      if (data.hasOwnProperty('address1')) {
+        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
+      }
+      if (data.hasOwnProperty('address2')) {
+        obj['address2'] = ApiClient.convertToType(data['address2'], 'String');
+      }
+      if (data.hasOwnProperty('locality')) {
+        obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
+      }
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
+      if (data.hasOwnProperty('administrativeArea')) {
+        obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
+      }
+      if (data.hasOwnProperty('country')) {
+        obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
       if (data.hasOwnProperty('alternatePhoneNumberVerificationStatus')) {
         obj['alternatePhoneNumberVerificationStatus'] = ApiClient.convertToType(data['alternatePhoneNumberVerificationStatus'], 'String');
       }
       if (data.hasOwnProperty('alternateEmailVerificationStatus')) {
         obj['alternateEmailVerificationStatus'] = ApiClient.convertToType(data['alternateEmailVerificationStatus'], 'String');
       }
+      if (data.hasOwnProperty('phoneNumber')) {
+        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('nameSuffix')) {
+        obj['nameSuffix'] = ApiClient.convertToType(data['nameSuffix'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
+  /**
+   * @member {String} lastName
+   */
+  exports.prototype['lastName'] = undefined;
+  /**
+   * First line of the billing street address. 
+   * @member {String} address1
+   */
+  exports.prototype['address1'] = undefined;
+  /**
+   * Second line of the billing street address. 
+   * @member {String} address2
+   */
+  exports.prototype['address2'] = undefined;
+  /**
+   * City of the billing address. 
+   * @member {String} locality
+   */
+  exports.prototype['locality'] = undefined;
+  /**
+   * Postal code for the billing address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789 When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
+  /**
+   * State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada. 
+   * @member {String} administrativeArea
+   */
+  exports.prototype['administrativeArea'] = undefined;
+  /**
+   * Country of the billing address. Use the two-character ISO Standard Country Codes. 
+   * @member {String} country
+   */
+  exports.prototype['country'] = undefined;
+  /**
+   * Email address of the customer. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
   /**
    * #### Visa Platform Connect Contains one of the following values that will identify the phone number result code in the account verification response message:  'VERIFIED' - Customer verified  'UNVERIFIED' - Customer not verified  'FAILED' - Customer verification failed 
    * @member {String} alternatePhoneNumberVerificationStatus
@@ -82,6 +169,16 @@
    * @member {String} alternateEmailVerificationStatus
    */
   exports.prototype['alternateEmailVerificationStatus'] = undefined;
+  /**
+   * Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S.  #### Chase Paymentech Solutions Optional field.  ####  Credit Mutuel-CIC Optional field.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  #### OmniPay Direct Optional field.  #### SIX Optional field.  #### TSYS Acquiring Solutions Optional field.  #### Worldpay VAP Optional field.  #### All other processors Not used. 
+   * @member {String} phoneNumber
+   */
+  exports.prototype['phoneNumber'] = undefined;
+  /**
+   * Customer's name suffix. 
+   * @member {String} nameSuffix
+   */
+  exports.prototype['nameSuffix'] = undefined;
 
 
 

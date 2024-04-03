@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **tradeNumber** | **String** | The description for this field is not available. | [optional] 
 **rawResponse** | **String** | This field is set to the value of failure reason returned by the processor.  | [optional] 
 **responseCode** | **String** | This field is set to the value of response code returned by the processor.  | [optional] 
-**sellerProtection** | [**PtsV2PaymentsPost201Response1ProcessorInformationSellerProtection**](PtsV2PaymentsPost201Response1ProcessorInformationSellerProtection.md) |  | [optional] 
+**sellerProtection** | [**PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection**](PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.md) |  | [optional] 
 **avs** | [**PtsV2PaymentsPost201Response1ProcessorInformationAvs**](PtsV2PaymentsPost201Response1ProcessorInformationAvs.md) |  | [optional] 
 
 

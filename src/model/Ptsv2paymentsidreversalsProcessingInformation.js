@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -83,6 +84,9 @@
       }
       if (data.hasOwnProperty('issuer')) {
         obj['issuer'] = Ptsv2paymentsIssuerInformation.constructFromObject(data['issuer']);
+      }
+      if (data.hasOwnProperty('actionList')) {
+        obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
       }
     }
     return obj;
@@ -117,6 +121,11 @@
    * @member {module:model/Ptsv2paymentsIssuerInformation} issuer
    */
   exports.prototype['issuer'] = undefined;
+  /**
+   * Array of actions (one or more) to be included in the reversal Possible value: - `AP_AUTH_REVERSAL`: Use this when you want to reverse an Alternative Payment Authorization. 
+   * @member {Array.<String>} actionList
+   */
+  exports.prototype['actionList'] = undefined;
 
 
 

@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fundingSource (base name: "fundingSource")', function() {
+      // uncomment below and update the code to test the property fundingSource
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationEWallet();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

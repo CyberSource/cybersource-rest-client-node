@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
       // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();
@@ -160,6 +166,12 @@
 
     it('should have the property buyerInformation (base name: "buyerInformation")', function() {
       // uncomment below and update the code to test the property buyerInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
+      // uncomment below and update the code to test the property merchantInformation
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();
       //expect(instance).to.be();
     });

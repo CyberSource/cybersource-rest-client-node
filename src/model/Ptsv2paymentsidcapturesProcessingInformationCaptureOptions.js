@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('totalCaptureCount')) {
         obj['totalCaptureCount'] = ApiClient.convertToType(data['totalCaptureCount'], 'Number');
       }
+      if (data.hasOwnProperty('isFinal')) {
+        obj['isFinal'] = ApiClient.convertToType(data['isFinal'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {Number} totalCaptureCount
    */
   exports.prototype['totalCaptureCount'] = undefined;
+  /**
+   * Indicates whether to release the authorization hold on the remaining funds.   Possible Values: - `true` - `false` 
+   * @member {String} isFinal
+   */
+  exports.prototype['isFinal'] = undefined;
 
 
 

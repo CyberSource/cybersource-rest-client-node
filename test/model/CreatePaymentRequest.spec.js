@@ -182,6 +182,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property agreementInformation (base name: "agreementInformation")', function() {
+      // uncomment below and update the code to test the property agreementInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property riskInformation (base name: "riskInformation")', function() {
       // uncomment below and update the code to test the property riskInformation
       //var instane = new CyberSource.CreatePaymentRequest();

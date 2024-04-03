@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property directDebit (base name: "directDebit")', function() {
+      // uncomment below and update the code to test the property directDebit
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fluidData (base name: "fluidData")', function() {
       // uncomment below and update the code to test the property fluidData
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
@@ -106,6 +112,12 @@
 
     it('should have the property bank (base name: "bank")', function() {
       // uncomment below and update the code to test the property bank
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property options (base name: "options")', function() {
+      // uncomment below and update the code to test the property options
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
       //expect(instance).to.be();
     });

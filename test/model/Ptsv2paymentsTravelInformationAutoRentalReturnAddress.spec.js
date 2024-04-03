@@ -80,6 +80,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address1 (base name: "address1")', function() {
+      // uncomment below and update the code to test the property address1
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationAutoRentalReturnAddress();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postalCode (base name: "postalCode")', function() {
+      // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationAutoRentalReturnAddress();
+      //expect(instance).to.be();
+    });
+
     it('should have the property location (base name: "location")', function() {
       // uncomment below and update the code to test the property location
       //var instane = new CyberSource.Ptsv2paymentsTravelInformationAutoRentalReturnAddress();
