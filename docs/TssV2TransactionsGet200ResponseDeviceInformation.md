@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ipAddress** | **String** | IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field.  | [optional] 
-**hostName** | **String** | DNS resolved hostname from &#x60;ipAddress&#x60;. | [optional] 
-**cookiesAccepted** | **String** | Whether the customer&#39;s browser accepts cookies. This field can contain one of the following values: - &#x60;yes&#x60;: The customer&#39;s browser accepts cookies. - &#x60;no&#x60;: The customer&#39;s browser does not accept cookies.  | [optional] 
+**hostName** | **String** | DNS resolved hostname from `ipAddress`. | [optional] 
+**cookiesAccepted** | **String** | Whether the customer's browser accepts cookies. This field can contain one of the following values: - `yes`: The customer's browser accepts cookies. - `no`: The customer's browser does not accept cookies.  | [optional] 
 
 

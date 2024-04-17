@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **firstName** | **String** |  | 
 **middleName** | **String** |  | [optional] 
 **lastName** | **String** |  | 
-**birthDate** | **Date** | &#x60;Format: YYYY-MM-DD&#x60; Example 2016-08-11 equals August 11, 2016  | 
+**birthDate** | **Date** | `Format: YYYY-MM-DD` Example 2016-08-11 equals August 11, 2016  | 
 **isPrimary** | **Boolean** | Determines whether the owner is the Primary owner of the organization | 
 **ssn** | **String** | Social Security Number | [optional] 
 **passportNumber** | **String** | Passport number | [optional] 

@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enabled** | **Boolean** |  | [optional] 
-**selfServiceability** | **String** | Indicates if the organization can enable this product using self service. | [optional] [default to &#39;NOT_SELF_SERVICEABLE&#39;]
-**features** | [**{String: PaymentsProductsCardProcessingSubscriptionInformationFeatures}**](PaymentsProductsCardProcessingSubscriptionInformationFeatures.md) | Allowed values are; &lt;table&gt;    &lt;tr&gt;       &lt;td&gt;visaCheckout&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;       &lt;td&gt;applePay&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;       &lt;td&gt;samsungPay&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;        &lt;td&gt;googlePay&lt;/td&gt;     &lt;/tr&gt; &lt;/table&gt;  | [optional] 
+**selfServiceability** | **String** | Indicates if the organization can enable this product using self service. | [optional] [default to 'NOT_SELF_SERVICEABLE']
+**features** | [**{String: PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures}**](PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures.md) | Allowed values are; <table>    <tr>       <td>visaCheckout</td>    </tr>    <tr>       <td>applePay</td>    </tr>    <tr>       <td>samsungPay</td>    </tr>    <tr>        <td>googlePay</td>     </tr> </table>  | [optional] 
 
 
 <a name="SelfServiceabilityEnum"></a>

@@ -60,7 +60,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2004 getWebhookSubscriptionById(webhookId)
+> InlineResponse2005 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

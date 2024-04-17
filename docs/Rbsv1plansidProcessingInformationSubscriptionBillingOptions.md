@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**applyTo** | **String** | Valid Values: - &#x60;ALL&#x60; - Change applied to all Subscriptions (Existing + New) - &#x60;NEW&#x60; - Change applied to New Subsciptions only  | [optional] 
+**applyTo** | **String** | Valid Values: - `ALL` - Change applied to all Subscriptions (Existing + New) - `NEW` - Change applied to New Subsciptions only  | [optional] 
 
 

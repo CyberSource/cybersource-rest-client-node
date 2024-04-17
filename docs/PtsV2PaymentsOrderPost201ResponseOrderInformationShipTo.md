@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**method** | **String** | shipping method for the product. Possible values are: - &#x60;sameday&#x60; - &#x60;oneday&#x60; - &#x60;twoday&#x60; - &#x60;threeday&#x60; - &#x60;lowcost&#x60; - &#x60;pickup&#x60; - &#x60;other&#x60; - &#x60;none&#x60;  | [optional] 
+**method** | **String** | shipping method for the product. Possible values are: - `sameday` - `oneday` - `twoday` - `threeday` - `lowcost` - `pickup` - `other` - `none`  | [optional] 
 **firstName** | **String** | First name of the recipient.  | [optional] 
 **lastName** | **String** | Last name of the recipient.  | [optional] 
 **address1** | **String** | First line of the shipping address.  | [optional] 

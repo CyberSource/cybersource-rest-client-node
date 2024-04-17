@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Activate a Subscription
 
-Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
+Activate a `CANCELLED` Or `SUSPENDED` Subscription 
 
 ### Example
 ```javascript
@@ -158,7 +158,7 @@ No authorization required
 
 Get a List of Subscriptions
 
-Retrieve Subscriptions by Subscription Code &amp; Subscription Status. 
+Retrieve Subscriptions by Subscription Code & Subscription Status. 
 
 ### Example
 ```javascript
@@ -188,7 +188,7 @@ apiInstance.getAllSubscriptions(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Number**| Page offset number. | [optional] 
- **limit** | **Number**| Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  | [optional] 
+ **limit** | **Number**| Number of items to be returned. Default - `20`, Max - `100`  | [optional] 
  **code** | **String**| Filter by Subscription Code | [optional] 
  **status** | **String**| Filter by Subscription Status | [optional] 
 

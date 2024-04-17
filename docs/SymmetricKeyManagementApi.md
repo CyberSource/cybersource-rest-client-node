@@ -111,7 +111,7 @@ No authorization required
 
 Delete one or more Symmetric keys
 
-&#39;Delete one or more Symmetric keys&#39; 
+'Delete one or more Symmetric keys' 
 
 ### Example
 ```javascript

@@ -9,11 +9,11 @@ Method | HTTP request | Description
 
 <a name="postTokenPaymentCredentials"></a>
 # **postTokenPaymentCredentials**
-> &#39;String&#39; postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, opts)
+> 'String' postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, opts)
 
 Generate Payment Credentials for a TMS Token
 
-|  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument or Instrument Identifier information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument or Instrument Identifier. 
+|  |  |  |     | --- | --- | --- |     |**Token**<br>A Token can represent your tokenized Customer, Payment Instrument or Instrument Identifier information.|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**Payment Credentials**<br>Contains payment information such as the network token, generated cryptogram for Visa & MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.<br>Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument or Instrument Identifier. 
 
 ### Example
 ```javascript
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+**'String'**
 
 ### Authorization
 

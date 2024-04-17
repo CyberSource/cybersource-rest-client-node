@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**checkInDate** | **String** | Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: &#x60;MMDDYY&#x60;. For best interchange rates, make sure it is a valid date.  | [optional] 
-**checkOutDate** | **String** | Date on which the guest checked out. Format: &#x60;MMDDYY&#x60;. For best interchange rates, make sure it is a valid date.  | [optional] 
+**checkInDate** | **String** | Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date.  | [optional] 
+**checkOutDate** | **String** | Date on which the guest checked out. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date.  | [optional] 
 **room** | [**[Ptsv2paymentsTravelInformationLodgingRoom]**](Ptsv2paymentsTravelInformationLodgingRoom.md) | The object containing the number of nights and the daily rate that applies for that no of nights.  | [optional] 
-**smokingPreference** | **String** | Smoking preference of the guest. Possible values: - &#x60;Y&#x60;: smoking room - &#x60;N&#x60;: non-smoking room  | [optional] 
+**smokingPreference** | **String** | Smoking preference of the guest. Possible values: - `Y`: smoking room - `N`: non-smoking room  | [optional] 
 **numberOfRooms** | **Number** | Number of rooms booked by the cardholder.  | [optional] 
 **numberOfGuests** | **Number** | Number of guests staying in the room.  | [optional] 
 **roomBedType** | **String** | Type of room, such as queen, king, or two doubles.  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **corporateClientCode** | **String** | Code assigned to a business. You can use this code to identify corporate rates and discounts for guests.  | [optional] 
 **additionalDiscountAmount** | **String** | Amount of an additional coupon or discount.  | [optional] 
 **roomLocation** | **String** | Location of room, such as lake view or ocean view.  | [optional] 
-**specialProgramCode** | **String** | Code that identifies special circumstances. Possible values: - &#x60;1&#x60;: lodging (default) - &#x60;2&#x60;: no show reservation - &#x60;3&#x60;: advanced deposit  | [optional] 
+**specialProgramCode** | **String** | Code that identifies special circumstances. Possible values: - `1`: lodging (default) - `2`: no show reservation - `3`: advanced deposit  | [optional] 
 **totalTaxAmount** | **String** | Total tax amount.  | [optional] 
 **prepaidCost** | **String** | Prepaid amount, such as a deposit.  | [optional] 
 **foodAndBeverageCost** | **String** | Cost for all food and beverages.  | [optional] 

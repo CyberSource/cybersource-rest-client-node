@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **organizationId** | **String** | Valid CyberSource Organization Id | [optional] 
 **reportDefinitionName** | **String** |  | [optional] 
 **reportFields** | **[String]** | List of fields which needs to get included in a report | [optional] 
-**reportMimeType** | **String** | &#39;Format of the report&#39;                  Valid values: - application/xml - text/csv  | [optional] 
+**reportMimeType** | **String** | 'Format of the report'                  Valid values: - application/xml - text/csv  | [optional] 
 **reportName** | **String** | Name of the report | [optional] 
 **timezone** | **String** | Timezone of the report | [optional] 
 **reportStartTime** | **Date** | Start time of the report | [optional] 

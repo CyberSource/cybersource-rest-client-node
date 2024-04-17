@@ -64,7 +64,7 @@ No authorization required
 
 Get List of Files
 
-Get list of files and it&#39;s information of them available inside the report directory
+Get list of files and it's information of them available inside the report directory
 
 ### Example
 ```javascript
