@@ -363,18 +363,22 @@
    * @returns A backward compatible error object.
    */
   exports.prototype.translateError = function translateError(error) {
-    var tester = {};
-    tester.status = error.response.status;
-    tester.response = {};
-    tester.response.req = {};
-    tester.response.req.method = error.response.config.method;
-    tester.response.req.url = error.response.config.baseURL + error.response.config.url;
-    tester.response.req.data = error.response.config.data;
-    tester.response.req.headers = error.response.config.headers;
-    tester.response.header = error.response.headers;
-    tester.response.status = error.response.status;
-    tester.response.text = JSON.stringify(error.response.data);
-    return tester;
+    if (typeof error.response !== 'undefined') {
+      var tester = {};
+      tester.status = error.response.status;
+      tester.response = {};
+      tester.response.req = {};
+      tester.response.req.method = error.response.config.method;
+      tester.response.req.url = error.response.config.baseURL + error.response.config.url;
+      tester.response.req.data = error.response.config.data;
+      tester.response.req.headers = error.response.config.headers;
+      tester.response.header = error.response.headers;
+      tester.response.status = error.response.status;
+      tester.response.text = JSON.stringify(error.response.data);
+      return tester;
+    }else{
+      return error;
+    }
   }
 
   /**
