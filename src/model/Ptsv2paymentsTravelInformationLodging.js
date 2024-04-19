@@ -89,6 +89,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -227,6 +231,18 @@
       }
       if (data.hasOwnProperty('internetAccessCost')) {
         obj['internetAccessCost'] = ApiClient.convertToType(data['internetAccessCost'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('hotelName')) {
+        obj['hotelName'] = ApiClient.convertToType(data['hotelName'], 'String');
+      }
+      if (data.hasOwnProperty('checkInDateTime')) {
+        obj['checkInDateTime'] = ApiClient.convertToType(data['checkInDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('checkOutDateTime')) {
+        obj['checkOutDateTime'] = ApiClient.convertToType(data['checkOutDateTime'], 'String');
       }
     }
     return obj;
@@ -442,6 +458,26 @@
    * @member {String} internetAccessCost
    */
   exports.prototype['internetAccessCost'] = undefined;
+  /**
+   * Name of the hotel for which the reservation is for. Mandatory in case the merchant's business type is Hotel. 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * The name of the hotel for which the reservation was made. 
+   * @member {String} hotelName
+   */
+  exports.prototype['hotelName'] = undefined;
+  /**
+   * The date of the check-in in GMT+8 offset. 
+   * @member {String} checkInDateTime
+   */
+  exports.prototype['checkInDateTime'] = undefined;
+  /**
+   * The date of the check-out in GMT+8 offset. 
+   * @member {String} checkOutDateTime
+   */
+  exports.prototype['checkOutDateTime'] = undefined;
 
 
 

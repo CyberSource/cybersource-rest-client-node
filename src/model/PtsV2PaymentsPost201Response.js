@@ -141,14 +141,14 @@
       if (data.hasOwnProperty('buyerInformation')) {
         obj['buyerInformation'] = PtsV2PaymentsPost201ResponseBuyerInformation.constructFromObject(data['buyerInformation']);
       }
-      if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = PtsV2PaymentsPost201ResponseMerchantInformation.constructFromObject(data['merchantInformation']);
-      }
       if (data.hasOwnProperty('riskInformation')) {
         obj['riskInformation'] = PtsV2PaymentsPost201ResponseRiskInformation.constructFromObject(data['riskInformation']);
       }
       if (data.hasOwnProperty('consumerAuthenticationInformation')) {
         obj['consumerAuthenticationInformation'] = PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
+      }
+      if (data.hasOwnProperty('merchantInformation')) {
+        obj['merchantInformation'] = PtsV2PaymentsPost201ResponseMerchantInformation.constructFromObject(data['merchantInformation']);
       }
       if (data.hasOwnProperty('embeddedActions')) {
         obj['embeddedActions'] = PtsV2PaymentsPost201ResponseEmbeddedActions.constructFromObject(data['embeddedActions']);
@@ -242,10 +242,6 @@
    */
   exports.prototype['buyerInformation'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseMerchantInformation} merchantInformation
-   */
-  exports.prototype['merchantInformation'] = undefined;
-  /**
    * @member {module:model/PtsV2PaymentsPost201ResponseRiskInformation} riskInformation
    */
   exports.prototype['riskInformation'] = undefined;
@@ -253,6 +249,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation} consumerAuthenticationInformation
    */
   exports.prototype['consumerAuthenticationInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseMerchantInformation} merchantInformation
+   */
+  exports.prototype['merchantInformation'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201ResponseEmbeddedActions} embeddedActions
    */

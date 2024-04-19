@@ -52,6 +52,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -79,6 +82,15 @@
       }
       if (data.hasOwnProperty('dateOfBirth')) {
         obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
+      }
+      if (data.hasOwnProperty('beneficiaryId')) {
+        obj['beneficiaryId'] = ApiClient.convertToType(data['beneficiaryId'], 'String');
+      }
+      if (data.hasOwnProperty('beneficiaryName')) {
+        obj['beneficiaryName'] = ApiClient.convertToType(data['beneficiaryName'], 'String');
+      }
+      if (data.hasOwnProperty('beneficiaryAddress')) {
+        obj['beneficiaryAddress'] = ApiClient.convertToType(data['beneficiaryAddress'], 'String');
       }
     }
     return obj;
@@ -109,6 +121,21 @@
    * @member {String} dateOfBirth
    */
   exports.prototype['dateOfBirth'] = undefined;
+  /**
+   * Only for e-wallets: ID, username, hash or anything uniquely identifying the ultimate beneficiary. 
+   * @member {String} beneficiaryId
+   */
+  exports.prototype['beneficiaryId'] = undefined;
+  /**
+   * Only for e-wallets: The ultimate beneficiary's full name. 
+   * @member {String} beneficiaryName
+   */
+  exports.prototype['beneficiaryName'] = undefined;
+  /**
+   * Only for e-wallets: The ultimate beneficiary's street address (street, zip code, city), excluding the country. Example: \"Main street 1, 12345, Barcelona 
+   * @member {String} beneficiaryAddress
+   */
+  exports.prototype['beneficiaryAddress'] = undefined;
 
 
 

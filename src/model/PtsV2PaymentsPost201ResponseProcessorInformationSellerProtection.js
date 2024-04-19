@@ -66,8 +66,8 @@
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
-      if (data.hasOwnProperty('eligibilty')) {
-        obj['eligibilty'] = ApiClient.convertToType(data['eligibilty'], 'String');
+      if (data.hasOwnProperty('eligibility')) {
+        obj['eligibility'] = ApiClient.convertToType(data['eligibility'], 'String');
       }
       if (data.hasOwnProperty('eligibilityType')) {
         obj['eligibilityType'] = ApiClient.convertToType(data['eligibilityType'], 'String');
@@ -83,9 +83,9 @@
   exports.prototype['type'] = undefined;
   /**
    * The level of seller protection in force for the transaction. Possible values: - `ELIGIBLE` - `PARTIALLY_ELIGIBLE` - `INELIGIBLE` 
-   * @member {String} eligibilty
+   * @member {String} eligibility
    */
-  exports.prototype['eligibilty'] = undefined;
+  exports.prototype['eligibility'] = undefined;
   /**
    * The kind of seller protection in force for the transaction. This field is returned only when the protection_eligibility property is set to ELIGIBLE or PARTIALLY_ELIGIBLE. Possible values: - `ITEM_NOT_RECEIVED_ELIGIBLE: Sellers are protected against claims for items not received.` - `UNAUTHORIZED_PAYMENT_ELIGIBLE: Sellers are protected against claims for unauthorized payments.` One or both values can be returned. 
    * @member {String} eligibilityType

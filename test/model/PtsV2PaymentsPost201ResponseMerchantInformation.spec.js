@@ -56,6 +56,18 @@
       //expect(instance).to.be.a(CyberSource.PtsV2PaymentsPost201ResponseMerchantInformation);
     });
 
+    it('should have the property merchantName (base name: "merchantName")', function() {
+      // uncomment below and update the code to test the property merchantName
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseMerchantInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantDescriptor (base name: "merchantDescriptor")', function() {
+      // uncomment below and update the code to test the property merchantDescriptor
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseMerchantInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property returnUrl (base name: "returnUrl")', function() {
       // uncomment below and update the code to test the property returnUrl
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseMerchantInformation();

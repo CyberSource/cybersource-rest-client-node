@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -99,6 +100,9 @@
       }
       if (data.hasOwnProperty('mobilePhone')) {
         obj['mobilePhone'] = ApiClient.convertToType(data['mobilePhone'], 'Number');
+      }
+      if (data.hasOwnProperty('walletId')) {
+        obj['walletId'] = ApiClient.convertToType(data['walletId'], 'String');
       }
     }
     return obj;
@@ -153,6 +157,11 @@
    * @member {Number} mobilePhone
    */
   exports.prototype['mobilePhone'] = undefined;
+  /**
+   * The one-time identification code of the Alipay wallet user.  It is scanned from the barcode that is shown by the mobile application. 
+   * @member {String} walletId
+   */
+  exports.prototype['walletId'] = undefined;
 
 
 

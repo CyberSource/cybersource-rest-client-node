@@ -85,6 +85,13 @@
 
 
 
+
+
+
+
+
+
+
   };
 
   /**
@@ -98,6 +105,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('isDomestic')) {
+        obj['isDomestic'] = ApiClient.convertToType(data['isDomestic'], 'String');
+      }
       if (data.hasOwnProperty('bookingReferenceNumber')) {
         obj['bookingReferenceNumber'] = ApiClient.convertToType(data['bookingReferenceNumber'], 'String');
       }
@@ -212,10 +222,33 @@
       if (data.hasOwnProperty('ancillaryInformation')) {
         obj['ancillaryInformation'] = Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.constructFromObject(data['ancillaryInformation']);
       }
+      if (data.hasOwnProperty('flightType')) {
+        obj['flightType'] = ApiClient.convertToType(data['flightType'], 'String');
+      }
+      if (data.hasOwnProperty('insuranceAmount')) {
+        obj['insuranceAmount'] = ApiClient.convertToType(data['insuranceAmount'], 'String');
+      }
+      if (data.hasOwnProperty('frequentFlyerNumber')) {
+        obj['frequentFlyerNumber'] = ApiClient.convertToType(data['frequentFlyerNumber'], 'String');
+      }
+      if (data.hasOwnProperty('thirdPartyStatus')) {
+        obj['thirdPartyStatus'] = ApiClient.convertToType(data['thirdPartyStatus'], 'String');
+      }
+      if (data.hasOwnProperty('passengerType')) {
+        obj['passengerType'] = ApiClient.convertToType(data['passengerType'], 'String');
+      }
+      if (data.hasOwnProperty('totalInsuranceAmount')) {
+        obj['totalInsuranceAmount'] = ApiClient.convertToType(data['totalInsuranceAmount'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * Specifies if the flight is: Domestic (01) International (02) If Y then 01 else 02 
+   * @member {String} isDomestic
+   */
+  exports.prototype['isDomestic'] = undefined;
   /**
    * Reference number for the airline booking. Required if ticket numbers are not issued. 
    * @member {String} bookingReferenceNumber
@@ -403,6 +436,36 @@
    * @member {module:model/Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation} ancillaryInformation
    */
   exports.prototype['ancillaryInformation'] = undefined;
+  /**
+   * Specifies the type of flight. One way (0) Return (1) Transit (2) Transit & Return (3) Multi-City (4) 
+   * @member {String} flightType
+   */
+  exports.prototype['flightType'] = undefined;
+  /**
+   * The total cost of the flight insurance. Example: 10000.00 
+   * @member {String} insuranceAmount
+   */
+  exports.prototype['insuranceAmount'] = undefined;
+  /**
+   * The consumer's frequent flyer number. Leave 0 if there is no frequent flyer number 
+   * @member {String} frequentFlyerNumber
+   */
+  exports.prototype['frequentFlyerNumber'] = undefined;
+  /**
+   * Specifies if the travel agent joins the flight (0) or not (1) 
+   * @member {String} thirdPartyStatus
+   */
+  exports.prototype['thirdPartyStatus'] = undefined;
+  /**
+   * List of passenger types in a booking code: A (Adult) C (Child) Comma separated values for total number of passenger 
+   * @member {String} passengerType
+   */
+  exports.prototype['passengerType'] = undefined;
+  /**
+   * Total insurance amount. We have per leg and not total 
+   * @member {String} totalInsuranceAmount
+   */
+  exports.prototype['totalInsuranceAmount'] = undefined;
 
 
 

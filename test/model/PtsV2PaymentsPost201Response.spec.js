@@ -170,12 +170,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
-      // uncomment below and update the code to test the property merchantInformation
-      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
-      //expect(instance).to.be();
-    });
-
     it('should have the property riskInformation (base name: "riskInformation")', function() {
       // uncomment below and update the code to test the property riskInformation
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();
@@ -184,6 +178,12 @@
 
     it('should have the property consumerAuthenticationInformation (base name: "consumerAuthenticationInformation")', function() {
       // uncomment below and update the code to test the property consumerAuthenticationInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
+      // uncomment below and update the code to test the property merchantInformation
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();
       //expect(instance).to.be();
     });

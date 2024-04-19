@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsTravelInformationTransitAirline);
     });
 
+    it('should have the property isDomestic (base name: "isDomestic")', function() {
+      // uncomment below and update the code to test the property isDomestic
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bookingReferenceNumber (base name: "bookingReferenceNumber")', function() {
       // uncomment below and update the code to test the property bookingReferenceNumber
       //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
@@ -280,6 +286,42 @@
 
     it('should have the property ancillaryInformation (base name: "ancillaryInformation")', function() {
       // uncomment below and update the code to test the property ancillaryInformation
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property flightType (base name: "flightType")', function() {
+      // uncomment below and update the code to test the property flightType
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property insuranceAmount (base name: "insuranceAmount")', function() {
+      // uncomment below and update the code to test the property insuranceAmount
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property frequentFlyerNumber (base name: "frequentFlyerNumber")', function() {
+      // uncomment below and update the code to test the property frequentFlyerNumber
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property thirdPartyStatus (base name: "thirdPartyStatus")', function() {
+      // uncomment below and update the code to test the property thirdPartyStatus
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property passengerType (base name: "passengerType")', function() {
+      // uncomment below and update the code to test the property passengerType
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalInsuranceAmount (base name: "totalInsuranceAmount")', function() {
+      // uncomment below and update the code to test the property totalInsuranceAmount
       //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirline();
       //expect(instance).to.be();
     });

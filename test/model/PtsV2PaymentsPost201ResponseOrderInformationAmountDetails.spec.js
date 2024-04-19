@@ -74,6 +74,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property settlementAmount (base name: "settlementAmount")', function() {
+      // uncomment below and update the code to test the property settlementAmount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property settlementCurrency (base name: "settlementCurrency")', function() {
+      // uncomment below and update the code to test the property settlementCurrency
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property originalAmount (base name: "originalAmount")', function() {
+      // uncomment below and update the code to test the property originalAmount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property originalCurrency (base name: "originalCurrency")', function() {
+      // uncomment below and update the code to test the property originalCurrency
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property processorTransactionFee (base name: "processorTransactionFee")', function() {
       // uncomment below and update the code to test the property processorTransactionFee
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();

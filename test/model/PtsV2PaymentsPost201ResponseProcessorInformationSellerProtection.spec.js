@@ -62,8 +62,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property eligibilty (base name: "eligibilty")', function() {
-      // uncomment below and update the code to test the property eligibilty
+    it('should have the property eligibility (base name: "eligibility")', function() {
+      // uncomment below and update the code to test the property eligibility
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection();
       //expect(instance).to.be();
     });

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2014', 'model/InlineResponse4042', 'model/ReplayWebhooksRequest', 'model/SaveAsymEgressKey', 'model/UpdateWebhookRequest'], factory);
+    define(['ApiClient', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2014', 'model/InlineResponse4042', 'model/SaveAsymEgressKey', 'model/UpdateWebhookRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/InlineResponse2014'), require('../model/InlineResponse4042'), require('../model/ReplayWebhooksRequest'), require('../model/SaveAsymEgressKey'), require('../model/UpdateWebhookRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/InlineResponse2014'), require('../model/InlineResponse4042'), require('../model/SaveAsymEgressKey'), require('../model/UpdateWebhookRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ManageWebhooksApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4042, root.CyberSource.ReplayWebhooksRequest, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateWebhookRequest);
+    root.CyberSource.ManageWebhooksApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4042, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateWebhookRequest);
   }
-}(this, function(ApiClient, InlineResponse2004, InlineResponse2005, InlineResponse2014, InlineResponse4042, ReplayWebhooksRequest, SaveAsymEgressKey, UpdateWebhookRequest) {
+}(this, function(ApiClient, InlineResponse2004, InlineResponse2005, InlineResponse2014, InlineResponse4042, SaveAsymEgressKey, UpdateWebhookRequest) {
   'use strict';
 
   /**
@@ -210,60 +210,6 @@
 
       return this.apiClient.callApi(
         '/notification-subscriptions/v1/webhooks', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the replayPreviousWebhooks operation.
-     * @callback module:api/ManageWebhooksApi~replayPreviousWebhooksCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Replay Previous Webhooks
-     * Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
-     * @param {String} webhookId The webhook uuid identifier.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ReplayWebhooksRequest} opts.replayWebhooksRequest The request query
-     * @param {module:api/ManageWebhooksApi~replayPreviousWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
-     *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
-     */
-    this.replayPreviousWebhooks = function(webhookId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['replayWebhooksRequest'];
-
-      // verify the required parameter 'webhookId' is set
-      if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling replayPreviousWebhooks");
-      }
-
-      var SdkTracker = require('../utilities/tracking/SdkTracker');
-
-      var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ReplayWebhooksRequest', this.apiClient.merchantConfig.runEnvironment);
-
-      var pathParams = {
-        'webhookId': webhookId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/nrtf/v1/webhooks/{webhookId}/replays', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

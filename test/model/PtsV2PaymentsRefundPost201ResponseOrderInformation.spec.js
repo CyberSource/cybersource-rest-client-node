@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation);
     });
 
+    it('should have the property amountDetails (base name: "amountDetails")', function() {
+      // uncomment below and update the code to test the property amountDetails
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property invoiceDetails (base name: "invoiceDetails")', function() {
       // uncomment below and update the code to test the property invoiceDetails
       //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation();

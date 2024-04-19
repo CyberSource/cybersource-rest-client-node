@@ -206,6 +206,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property hostedPaymentInformation (base name: "hostedPaymentInformation")', function() {
+      // uncomment below and update the code to test the property hostedPaymentInformation
+      //var instane = new CyberSource.CreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property watchlistScreeningInformation (base name: "watchlistScreeningInformation")', function() {
       // uncomment below and update the code to test the property watchlistScreeningInformation
       //var instane = new CyberSource.CreatePaymentRequest();

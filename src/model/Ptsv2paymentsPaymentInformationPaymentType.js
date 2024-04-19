@@ -82,7 +82,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * Detailed information about the Payment Type. Possible values: - `DEBIT`: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. 
+   * In case the APM supports multiple modes of initiation (e.g. Alipay via QR Code or Barcode) 
    * @member {String} subTypeName
    */
   exports.prototype['subTypeName'] = undefined;

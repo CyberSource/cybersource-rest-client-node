@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenProvisioningInformation (base name: "tokenProvisioningInformation")', function() {
+      // uncomment below and update the code to test the property tokenProvisioningInformation
+      //var instane = new CyberSource.PostInstrumentIdentifierRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property card (base name: "card")', function() {
       // uncomment below and update the code to test the property card
       //var instane = new CyberSource.PostInstrumentIdentifierRequest();

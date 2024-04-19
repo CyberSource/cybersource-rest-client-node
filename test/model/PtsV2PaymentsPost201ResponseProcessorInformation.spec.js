@@ -266,6 +266,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customUrl (base name: "customUrl")', function() {
+      // uncomment below and update the code to test the property customUrl
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property schemeAssignedId (base name: "schemeAssignedId")', function() {
+      // uncomment below and update the code to test the property schemeAssignedId
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property deviceUrl (base name: "deviceUrl")', function() {
+      // uncomment below and update the code to test the property deviceUrl
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

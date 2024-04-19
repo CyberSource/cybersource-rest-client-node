@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property walletId (base name: "walletId")', function() {
+      // uncomment below and update the code to test the property walletId
+      //var instane = new CyberSource.Ptsv2paymentsBuyerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

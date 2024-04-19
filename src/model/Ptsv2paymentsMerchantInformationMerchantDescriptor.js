@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -106,11 +107,14 @@
       if (data.hasOwnProperty('countryOfOrigin')) {
         obj['countryOfOrigin'] = ApiClient.convertToType(data['countryOfOrigin'], 'String');
       }
-      if (data.hasOwnProperty('customerServicePhoneNumber')) {
-        obj['customerServicePhoneNumber'] = ApiClient.convertToType(data['customerServicePhoneNumber'], 'String');
-      }
       if (data.hasOwnProperty('storeId')) {
         obj['storeId'] = ApiClient.convertToType(data['storeId'], 'String');
+      }
+      if (data.hasOwnProperty('storeName')) {
+        obj['storeName'] = ApiClient.convertToType(data['storeName'], 'String');
+      }
+      if (data.hasOwnProperty('customerServicePhoneNumber')) {
+        obj['customerServicePhoneNumber'] = ApiClient.convertToType(data['customerServicePhoneNumber'], 'String');
       }
     }
     return obj;
@@ -172,15 +176,20 @@
    */
   exports.prototype['countryOfOrigin'] = undefined;
   /**
+   * The identifier of the store. 
+   * @member {String} storeId
+   */
+  exports.prototype['storeId'] = undefined;
+  /**
+   * The name of the store. 
+   * @member {String} storeName
+   */
+  exports.prototype['storeName'] = undefined;
+  /**
    * #### Visa Platform Connect Indicates customer service phone number of Merchant. 
    * @member {String} customerServicePhoneNumber
    */
   exports.prototype['customerServicePhoneNumber'] = undefined;
-  /**
-   * The unique id of the merchant's shop which assigned by the merchant 
-   * @member {String} storeId
-   */
-  exports.prototype['storeId'] = undefined;
 
 
 

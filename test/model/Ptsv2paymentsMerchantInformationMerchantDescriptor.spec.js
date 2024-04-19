@@ -122,14 +122,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property customerServicePhoneNumber (base name: "customerServicePhoneNumber")', function() {
-      // uncomment below and update the code to test the property customerServicePhoneNumber
+    it('should have the property storeId (base name: "storeId")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instane = new CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor();
       //expect(instance).to.be();
     });
 
-    it('should have the property storeId (base name: "storeId")', function() {
-      // uncomment below and update the code to test the property storeId
+    it('should have the property storeName (base name: "storeName")', function() {
+      // uncomment below and update the code to test the property storeName
+      //var instane = new CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property customerServicePhoneNumber (base name: "customerServicePhoneNumber")', function() {
+      // uncomment below and update the code to test the property customerServicePhoneNumber
       //var instane = new CyberSource.Ptsv2paymentsMerchantInformationMerchantDescriptor();
       //expect(instance).to.be();
     });

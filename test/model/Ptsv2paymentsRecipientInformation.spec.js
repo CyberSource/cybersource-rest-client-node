@@ -86,6 +86,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property beneficiaryId (base name: "beneficiaryId")', function() {
+      // uncomment below and update the code to test the property beneficiaryId
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property beneficiaryName (base name: "beneficiaryName")', function() {
+      // uncomment below and update the code to test the property beneficiaryName
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property beneficiaryAddress (base name: "beneficiaryAddress")', function() {
+      // uncomment below and update the code to test the property beneficiaryAddress
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -80,16 +80,6 @@
         done();
       });
     });
-    describe('replayPreviousWebhooks', function() {
-      it('should call replayPreviousWebhooks successfully', function(done) {
-        //uncomment below and update the code to test replayPreviousWebhooks
-        //instance.replayPreviousWebhooks(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('saveAsymEgressKey', function() {
       it('should call saveAsymEgressKey successfully', function(done) {
         //uncomment below and update the code to test saveAsymEgressKey

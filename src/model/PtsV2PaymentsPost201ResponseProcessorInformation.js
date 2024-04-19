@@ -82,6 +82,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -199,6 +202,15 @@
       }
       if (data.hasOwnProperty('transactionExpiryDate')) {
         obj['transactionExpiryDate'] = ApiClient.convertToType(data['transactionExpiryDate'], 'String');
+      }
+      if (data.hasOwnProperty('customUrl')) {
+        obj['customUrl'] = ApiClient.convertToType(data['customUrl'], 'String');
+      }
+      if (data.hasOwnProperty('schemeAssignedId')) {
+        obj['schemeAssignedId'] = ApiClient.convertToType(data['schemeAssignedId'], 'String');
+      }
+      if (data.hasOwnProperty('deviceUrl')) {
+        obj['deviceUrl'] = ApiClient.convertToType(data['deviceUrl'], 'String');
       }
     }
     return obj;
@@ -368,6 +380,21 @@
    * @member {String} transactionExpiryDate
    */
   exports.prototype['transactionExpiryDate'] = undefined;
+  /**
+   * For merchants to declare customs Customs declaration service URL. 
+   * @member {String} customUrl
+   */
+  exports.prototype['customUrl'] = undefined;
+  /**
+   * Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay 
+   * @member {String} schemeAssignedId
+   */
+  exports.prototype['schemeAssignedId'] = undefined;
+  /**
+   * The QR code value. Convert this value into an image and send it to the POS terminal to be displayed. The terminal can also perform the conversion. The value is a URL like in the example below: https://qr.alipay.com/pmxabcka1ts5grar12. 
+   * @member {String} deviceUrl
+   */
+  exports.prototype['deviceUrl'] = undefined;
 
 
 

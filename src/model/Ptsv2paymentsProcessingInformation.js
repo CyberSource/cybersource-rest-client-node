@@ -83,6 +83,7 @@
 
 
 
+
   };
 
   /**
@@ -194,6 +195,9 @@
       }
       if (data.hasOwnProperty('payByPointsIndicator')) {
         obj['payByPointsIndicator'] = ApiClient.convertToType(data['payByPointsIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('timeout')) {
+        obj['timeout'] = ApiClient.convertToType(data['timeout'], 'Number');
       }
       if (data.hasOwnProperty('isReturnAuthRecordEnabled')) {
         obj['isReturnAuthRecordEnabled'] = ApiClient.convertToType(data['isReturnAuthRecordEnabled'], 'Boolean');
@@ -366,6 +370,11 @@
    * @member {Boolean} payByPointsIndicator
    */
   exports.prototype['payByPointsIndicator'] = undefined;
+  /**
+   * Minutes until a pending MyBank transaction will be timed out. Value must be between 5 and 30. Default is 5. 
+   * @member {Number} timeout
+   */
+  exports.prototype['timeout'] = undefined;
   /**
    * Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false 
    * @member {Boolean} isReturnAuthRecordEnabled

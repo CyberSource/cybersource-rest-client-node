@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**isDomestic** | **String** | Specifies if the flight is: Domestic (01) International (02) If Y then 01 else 02  | [optional] 
 **bookingReferenceNumber** | **String** | Reference number for the airline booking. Required if ticket numbers are not issued.  | [optional] 
 **carrierName** | **String** | Airline that generated the ticket. Format: English characters only. Optional request field.  | [optional] 
 **ticketIssuer** | [**Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer**](Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer.md) |  | [optional] 
@@ -41,5 +42,11 @@ Name | Type | Description | Notes
 **boardingFeeAmount** | **String** | Boarding fee.  | [optional] 
 **legs** | [**[Ptsv2paymentsTravelInformationTransitAirlineLegs]**](Ptsv2paymentsTravelInformationTransitAirlineLegs.md) |  | [optional] 
 **ancillaryInformation** | [**Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation**](Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.md) |  | [optional] 
+**flightType** | **String** | Specifies the type of flight. One way (0) Return (1) Transit (2) Transit & Return (3) Multi-City (4)  | [optional] 
+**insuranceAmount** | **String** | The total cost of the flight insurance. Example: 10000.00  | [optional] 
+**frequentFlyerNumber** | **String** | The consumer's frequent flyer number. Leave 0 if there is no frequent flyer number  | [optional] 
+**thirdPartyStatus** | **String** | Specifies if the travel agent joins the flight (0) or not (1)  | [optional] 
+**passengerType** | **String** | List of passenger types in a booking code: A (Adult) C (Child) Comma separated values for total number of passenger  | [optional] 
+**totalInsuranceAmount** | **String** | Total insurance amount. We have per leg and not total  | [optional] 
 
 

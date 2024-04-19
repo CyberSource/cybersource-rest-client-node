@@ -308,6 +308,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationLodging();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property hotelName (base name: "hotelName")', function() {
+      // uncomment below and update the code to test the property hotelName
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationLodging();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property checkInDateTime (base name: "checkInDateTime")', function() {
+      // uncomment below and update the code to test the property checkInDateTime
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationLodging();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property checkOutDateTime (base name: "checkOutDateTime")', function() {
+      // uncomment below and update the code to test the property checkOutDateTime
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationLodging();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

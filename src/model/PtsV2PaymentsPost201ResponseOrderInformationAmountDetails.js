@@ -55,6 +55,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -76,6 +80,18 @@
       }
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
+      }
+      if (data.hasOwnProperty('settlementAmount')) {
+        obj['settlementAmount'] = ApiClient.convertToType(data['settlementAmount'], 'String');
+      }
+      if (data.hasOwnProperty('settlementCurrency')) {
+        obj['settlementCurrency'] = ApiClient.convertToType(data['settlementCurrency'], 'String');
+      }
+      if (data.hasOwnProperty('originalAmount')) {
+        obj['originalAmount'] = ApiClient.convertToType(data['originalAmount'], 'String');
+      }
+      if (data.hasOwnProperty('originalCurrency')) {
+        obj['originalCurrency'] = ApiClient.convertToType(data['originalCurrency'], 'String');
       }
       if (data.hasOwnProperty('processorTransactionFee')) {
         obj['processorTransactionFee'] = ApiClient.convertToType(data['processorTransactionFee'], 'String');
@@ -111,6 +127,26 @@
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;
+  /**
+   * This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder's account. This field is returned for OCT transactions. 
+   * @member {String} settlementAmount
+   */
+  exports.prototype['settlementAmount'] = undefined;
+  /**
+   * This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account. This field is returned for OCT transactions. 
+   * @member {String} settlementCurrency
+   */
+  exports.prototype['settlementCurrency'] = undefined;
+  /**
+   * Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. 
+   * @member {String} originalAmount
+   */
+  exports.prototype['originalAmount'] = undefined;
+  /**
+   * Your local pricing currency code.  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) 
+   * @member {String} originalCurrency
+   */
+  exports.prototype['originalCurrency'] = undefined;
   /**
    * Amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code. 
    * @member {String} processorTransactionFee
