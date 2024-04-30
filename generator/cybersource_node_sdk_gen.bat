@@ -10,7 +10,7 @@ rd /s /q ..\test
 
 REM Command to generate SDK
 
-java -jar swagger-codegen-cli-2.3.0.jar generate -t cybersource-javascript-template -i cybersource-rest-spec.json -l javascript -o ../  -c cybersource-node-config.json
+java -jar swagger-codegen-cli-2.4.38.jar generate -t cybersource-javascript-template -i cybersource-rest-spec.json -l javascript -o ../  -c cybersource-node-config.json
 
 powershell -Command "(Get-Content ..\src\Api\SecureFileShareApi.js) | ForEach-Object { $_ -replace 'contentTypes = \[''\*_\/_\*;charset=utf-8', 'contentTypes = [''*/*;charset=utf-8' } | Set-Content ..\src\Api\SecureFileShareApi.js"
 

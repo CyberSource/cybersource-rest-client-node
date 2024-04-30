@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v1/webhooks/{webhookId} | Delete a Webhook Subscription
 [**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
 [**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
-[**replayPreviousWebhooks**](ManageWebhooksApi.md#replayPreviousWebhooks) | **POST** /nrtf/v1/webhooks/{webhookId}/replays | Replay Previous Webhooks
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
 [**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v1/webhooks/{webhookId} | Update a Webhook Subscription
 
@@ -60,7 +59,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2004 getWebhookSubscriptionById(webhookId)
+> InlineResponse2005 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -93,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -146,56 +145,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[InlineResponse2004]**](InlineResponse2004.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="replayPreviousWebhooks"></a>
-# **replayPreviousWebhooks**
-> replayPreviousWebhooks(webhookId, opts)
-
-Replay Previous Webhooks
-
-Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.ManageWebhooksApi();
-
-var webhookId = "webhookId_example"; // String | The webhook uuid identifier.
-
-var opts = { 
-  'replayWebhooksRequest': new CyberSource.ReplayWebhooksRequest() // ReplayWebhooksRequest | The request query
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.replayPreviousWebhooks(webhookId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The webhook uuid identifier. | 
- **replayWebhooksRequest** | [**ReplayWebhooksRequest**](ReplayWebhooksRequest.md)| The request query | [optional] 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

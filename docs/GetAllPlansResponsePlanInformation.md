@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** | Plan code  | [optional] 
-**status** | **String** | Plan Status:  - &#x60;DRAFT&#x60;  - &#x60;ACTIVE&#x60;  - &#x60;INACTIVE&#x60;  | [optional] 
+**status** | **String** | Plan Status:  - `DRAFT`  - `ACTIVE`  - `INACTIVE`  | [optional] 
 **name** | **String** | Plan name  | [optional] 
 **description** | **String** | Plan description  | [optional] 
 **billingPeriod** | [**GetAllPlansResponsePlanInformationBillingPeriod**](GetAllPlansResponsePlanInformationBillingPeriod.md) |  | [optional] 

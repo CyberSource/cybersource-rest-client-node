@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**surcharge** | [**PaymentsProductsCardProcessingSubscriptionInformationFeatures**](PaymentsProductsCardProcessingSubscriptionInformationFeatures.md) |  | [optional] 
+**surcharge** | [**PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge**](PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge.md) |  | [optional] 
 
 

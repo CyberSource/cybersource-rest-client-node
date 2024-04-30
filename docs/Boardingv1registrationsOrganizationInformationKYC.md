@@ -36,13 +36,13 @@ Name | Type | Description | Notes
 
 * `INSTANT` (value: `"INSTANT"`)
 
-* `UPTO2` (value: `"UPTO2"`)
+* `uPTO2` (value: `"UPTO2"`)
 
-* `UPTO5` (value: `"UPTO5"`)
+* `uPTO5` (value: `"UPTO5"`)
 
-* `UPTO10` (value: `"UPTO10"`)
+* `uPTO10` (value: `"UPTO10"`)
 
-* `GREATERTHAN10` (value: `"GREATERTHAN10"`)
+* `gREATERTHAN10` (value: `"GREATERTHAN10"`)
 
 
 

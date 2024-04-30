@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getPaymentCredentialsForTransientToken"></a>
 # **getPaymentCredentialsForTransientToken**
-> &#39;String&#39; getPaymentCredentialsForTransientToken(jti)
+> 'String' getPaymentCredentialsForTransientToken(jti)
 
 Get Payment Credentials
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+**'String'**
 
 ### Authorization
 

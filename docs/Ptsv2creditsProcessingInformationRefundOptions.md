@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reason** | **String** | Must be set to &#x60;pow&#x60; for Mastercard Gaming Payment of Winnings tranactions. | [optional] 
+**reason** | **String** | Must be set to `pow` for Mastercard Gaming Payment of Winnings tranactions. | [optional] 
 
 

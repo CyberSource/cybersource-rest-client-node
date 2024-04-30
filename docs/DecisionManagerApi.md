@@ -66,7 +66,7 @@ No authorization required
 
 List Management
 
-This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be &#39;postiive&#39;, &#39;negative&#39; or &#39;review&#39;. 
+This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be 'postiive', 'negative' or 'review'. 
 
 ### Example
 ```javascript
@@ -93,7 +93,7 @@ apiInstance.addNegative(type, addNegativeListRequest, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| The list to be updated. It can be &#39;positive&#39;, &#39;negative&#39; or &#39;review&#39;. | 
+ **type** | **String**| The list to be updated. It can be 'positive', 'negative' or 'review'. | 
  **addNegativeListRequest** | [**AddNegativeListRequest**](AddNegativeListRequest.md)|  | 
 
 ### Return type

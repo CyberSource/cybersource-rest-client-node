@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="generateUnifiedCheckoutCaptureContext"></a>
 # **generateUnifiedCheckoutCaptureContext**
-> &#39;String&#39; generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest)
+> 'String' generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest)
 
 Generate Unified Checkout Capture Context
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+**'String'**
 
 ### Authorization
 

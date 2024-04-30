@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create one or more PKCS12 keys
 
-&#39;Create one or more PKCS12 keys&#39; 
+'Create one or more PKCS12 keys' 
 
 ### Example
 ```javascript
@@ -62,7 +62,7 @@ No authorization required
 
 Delete one or more PKCS12 keys
 
-&#39;Delete one or more PKCS12 keys&#39; 
+'Delete one or more PKCS12 keys' 
 
 ### Example
 ```javascript

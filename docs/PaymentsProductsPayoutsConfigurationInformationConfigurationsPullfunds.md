@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acquirerOrganizationId** | **String** | Valid organization in OMS with an organizationInformation.type as \&quot;acquirer\&quot;. | [optional] 
+**acquirerOrganizationId** | **String** | Valid organization in OMS with an organizationInformation.type as \"acquirer\". | [optional] 
 **acquiringBIN** | **Number** | This code identifies the financial institution acting as the acquirer of this transaction. The acquirer is the client or system user that signed the originator or installed the unattended cardholder- activated environment. When a processing center operates for multiple acquirers, this code is for the individual client or system user, not a code for the center. | 
 **allowCryptoCurrencyPurchase** | **Boolean** | This configuration allows a transaction to be flagged for cryptocurrency funds transfer. | [optional] 
 **cardAcceptorId** | **String** | A unique identifier number for the originator of transfers that is unique to the processor or acquirer. | 

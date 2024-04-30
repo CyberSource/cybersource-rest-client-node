@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **reportDefinitionName** | **String** | Valid Report Definition Name | 
 **reportFields** | **[String]** |  | 
 **reportMimeType** | **String** | Valid values: - application/xml - text/csv  | 
-**reportFrequency** | **String** | &#39;The frequency for which subscription is created.&#39; **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values:   - &#39;DAILY&#39;   - &#39;WEEKLY&#39;   - &#39;MONTHLY&#39;   - &#39;USER_DEFINED&#39;  | 
+**reportFrequency** | **String** | 'The frequency for which subscription is created.' **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED'  | 
 **reportInterval** | **String** | If the reportFrequency is User-defined, reportInterval should be in **ISO 8601 time format** Please refer the following link to know more about ISO 8601 format.[Rfc Time Format](https://en.wikipedia.org/wiki/ISO_8601#Durations)  **Example time format for 2 hours and 30 Mins:**   - PT2H30M **NOTE: Do not document reportInterval field in developer center**  | [optional] 
 **reportName** | **String** |  | 
 **timezone** | **String** |  | 
