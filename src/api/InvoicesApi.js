@@ -112,7 +112,7 @@
      * @param {Number} offset Page offset number.
      * @param {Number} limit Maximum number of items you would like returned.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED 
+     * @param {String} opts.status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING 
      * @param {module:api/InvoicesApi~getAllInvoicesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesAllGet200Response}
      */

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**issuerInformation** | [**Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation**](Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.md) |  | [optional] 
 **lowValueExemptionIndicator** | **String** | This field will contain the low value exemption indicator with one of the following values: Possible values: - `0`  ( low value exemption does not apply to the transaction) - `1` (Transaction exempt from SCA as the merchant/acquirer has determined it to be a low value payment)  | [optional] 
 **riskAnalysisExemptionIndicator** | **String** | This field will contain the transaction risk analysis exemption indicator with one of the following values: Possible values: - `0`  (TRA exemption does not apply to the transaction) - `1` (Transaction exempt from SCA as the merchant/acquirer has determined it to be low risk in accordance with the criteria defined by PSD2/RTS)  | [optional] 
 **trustedMerchantExemptionIndicator** | **String** | Possible values: - `0`  (Trusted merchant exemption does not apply to the transaction) - `1` (Transaction exempt from SCA as it originated at a merchant trusted by the cardholder)  | [optional] 

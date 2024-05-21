@@ -4,13 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /up/v1/payment-credentials/{jti} | Get Payment Credentials
+[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /flex/v2/payment-credentials/{paymentCredentialsReference} | Get Payment Credentials
 [**getTransactionForTransientToken**](TransientTokenDataApi.md#getTransactionForTransientToken) | **GET** /up/v1/payment-details/{transientToken} | Get Transient Token Data
 
 
 <a name="getPaymentCredentialsForTransientToken"></a>
 # **getPaymentCredentialsForTransientToken**
-> 'String' getPaymentCredentialsForTransientToken(jti)
+> 'String' getPaymentCredentialsForTransientToken(paymentCredentialsReference)
 
 Get Payment Credentials
 
@@ -22,7 +22,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.TransientTokenDataApi();
 
-var jti = "jti_example"; // String | The jti field contained within the Transient token returned from a successful Unified Checkout transaction 
+var paymentCredentialsReference = "paymentCredentialsReference_example"; // String | The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction 
 
 
 var callback = function(error, data, response) {
@@ -32,14 +32,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPaymentCredentialsForTransientToken(jti, callback);
+apiInstance.getPaymentCredentialsForTransientToken(paymentCredentialsReference, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jti** | **String**| The jti field contained within the Transient token returned from a successful Unified Checkout transaction  | 
+ **paymentCredentialsReference** | **String**| The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  | 
 
 ### Return type
 

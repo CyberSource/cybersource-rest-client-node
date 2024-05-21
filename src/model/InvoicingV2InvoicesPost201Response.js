@@ -107,7 +107,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED 
+   * The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED - PENDING 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

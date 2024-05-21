@@ -77,7 +77,7 @@ var offset = 56; // Number | Page offset number.
 var limit = 56; // Number | Maximum number of items you would like returned.
 
 var opts = { 
-  'status': "status_example" // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED 
+  'status': "status_example" // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING 
 };
 
 var callback = function(error, data, response) {
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Number**| Page offset number. | 
  **limit** | **Number**| Maximum number of items you would like returned. | 
- **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  | [optional] 
+ **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  | [optional] 
 
 ### Return type
 

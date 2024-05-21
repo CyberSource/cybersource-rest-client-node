@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation) {
   'use strict';
 
 
@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -67,6 +68,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('issuerInformation')) {
+        obj['issuerInformation'] = Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.constructFromObject(data['issuerInformation']);
+      }
       if (data.hasOwnProperty('lowValueExemptionIndicator')) {
         obj['lowValueExemptionIndicator'] = ApiClient.convertToType(data['lowValueExemptionIndicator'], 'String');
       }
@@ -92,6 +96,10 @@
     return obj;
   }
 
+  /**
+   * @member {module:model/Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation} issuerInformation
+   */
+  exports.prototype['issuerInformation'] = undefined;
   /**
    * This field will contain the low value exemption indicator with one of the following values: Possible values: - `0`  ( low value exemption does not apply to the transaction) - `1` (Transaction exempt from SCA as the merchant/acquirer has determined it to be a low value payment) 
    * @member {String} lowValueExemptionIndicator

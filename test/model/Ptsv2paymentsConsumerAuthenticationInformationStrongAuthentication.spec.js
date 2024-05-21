@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication);
     });
 
+    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
+      // uncomment below and update the code to test the property issuerInformation
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lowValueExemptionIndicator (base name: "lowValueExemptionIndicator")', function() {
       // uncomment below and update the code to test the property lowValueExemptionIndicator
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication();
