@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CJCBJ_01,100.00,Success
+CJCBJ_02,125,Fails
+CJCBJ_03,ZESD3,Fails due to invalid amount

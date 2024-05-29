@@ -1,0 +1,4 @@
+testCaseId,paymentId,amount,message
+RAP_01,5445897138906960703003,102.21,Success
+RAP_02,5445896699326467103004,102,Fails due to mismatch amount
+RAP_03,1234567890123456789123,102.21,Fails due to invalid paymentId

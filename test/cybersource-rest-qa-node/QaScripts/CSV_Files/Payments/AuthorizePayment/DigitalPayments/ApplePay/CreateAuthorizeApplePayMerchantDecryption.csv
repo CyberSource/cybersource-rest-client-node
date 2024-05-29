@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAAMD_01,100.00,Success
+CAAMD_02,200.0,Fails
+CAAMD_03,GHK39,Fails due to invalid amount

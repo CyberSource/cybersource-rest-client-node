@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CCS_01,100.00,Success
+CCS_02,200,Fails
+CCS_03,LKI7,Fails due to invalid amount

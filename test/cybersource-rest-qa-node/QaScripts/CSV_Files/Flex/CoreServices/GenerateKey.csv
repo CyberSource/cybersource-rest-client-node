@@ -1,0 +1,3 @@
+testCaseId,encryptionType,message
+CKeyGen_01,RsaOaep256,Success
+CKeyGen_02,PqaPabc255,Fails due to invalid encryptionType

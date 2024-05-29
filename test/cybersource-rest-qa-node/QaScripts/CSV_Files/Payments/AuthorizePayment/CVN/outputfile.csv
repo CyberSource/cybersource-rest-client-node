@@ -1,0 +1,19 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CAC_01,CreateAmexCID,Pass,Assertion Passed-Status Code:201 created,2018-09-19T20:13:25+05:30
+CAC_02,CreateAmexCID,Fails,Assertion Failed-Status Code:201,2018-09-19T20:13:25+05:30
+CAC_03,CreateAmexCID,Fails,CreateAmexCID paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:26+05:30
+CDC_01,CreateDiscoverCID,Pass,Assertion Passed-Status Code:201 created,2018-09-19T20:13:26+05:30
+CDC_02,CreateDiscoverCID,Fails,CreateDiscoverCID paymentid is not created due to Reason: ,2018-09-19T20:13:26+05:30
+CDC_03,CreateDiscoverCID,Fails,CreateDiscoverCID paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:27+05:30
+CMIC_01,CreateMaestroInternationalCopy,Fails,CreateMaestroInternationalCopy paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:27+05:30
+CMIC_02,CreateMaestroInternationalCopy,Fails,CreateMaestroInternationalCopy paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:27+05:30
+CMIC_03,CreateMaestroInternationalCopy,Fails,CreateMaestroInternationalCopy paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:28+05:30
+CMUD_01,CreateMaestroUKDomestic,Pass,Assertion Passed-Status Code:201 created,2018-09-19T20:13:28+05:30
+CMUD_02,CreateMaestroUKDomestic,Fails,Assertion Failed-Status Code:201,2018-09-19T20:13:28+05:30
+CMUD_03,CreateMaestroUKDomestic,Fails,CreateMaestroUKDomestic paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:28+05:30
+CMC_01,CreateMasterCardCVC2,Pass,Assertion Passed-Status Code:201 created,2018-09-19T20:13:29+05:30
+CMC_02,CreateMasterCardCVC2,Fails,Assertion Failed-Status Code:201,2018-09-19T20:13:29+05:30
+CMC_03,CreateMasterCardCVC2,Fails,CreateMasterCardCVC2 paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:29+05:30
+CVC_01,CreateVisaCVV2,Pass,Assertion Passed-Status Code:201 created,2018-09-19T20:13:30+05:30
+CVC_02,CreateVisaCVV2,Pass,Assertion Passed-Status Code:201 created,2018-09-19T20:13:31+05:30
+CVC_03,CreateVisaCVV2,Fails,CreateVisaCVV2 paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-19T20:13:31+05:30

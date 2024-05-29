@@ -1,0 +1,10 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CAP_01,CreateApplePay,Fails,CreateApplePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:25:26+05:30
+CAP_02,CreateApplePay,Fails,CreateApplePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:25:26+05:30
+CAP_03,CreateApplePay,Fails,CreateApplePay paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:25:26+05:30
+CAACD_01,CreateApplePayCybsDecrp,Fails,CreateApplePayCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:25:27+05:30
+CAACD_02,CreateApplePayCybsDecrp,Fails,CreateApplePayCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:25:27+05:30
+CAACD_03,CreateApplePayCybsDecrp,Fails,CreateApplePayCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:25:27+05:30
+CAAMD_01,CreateApplePayMerctDecrp,Pass,Assertion Passed-Status Code:201 created,2018-09-18T09:25:27+05:30
+CAAMD_02,CreateApplePayMerctDecrp,Fails,Assertion Failed-Status Code:201,2018-09-18T09:25:28+05:30
+CAAMD_03,CreateApplePayMerctDecrp,Fails,CreateApplePayMerctDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:25:28+05:30
