@@ -755,9 +755,6 @@
       callback(userError, null, response);
     });
 
-    process.on('uncaughtException', (reason, p) => {
-      // console.log('Uncaught exception at Promise :' + p + ' with Reason : ' + reason);
-    });
   };
 
   /**

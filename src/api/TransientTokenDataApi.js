@@ -60,24 +60,24 @@
     /**
      * Get Payment Credentials
      * Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
-     * @param {String} jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction 
+     * @param {String} paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction 
      * @param {module:api/TransientTokenDataApi~getPaymentCredentialsForTransientTokenCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
      */
-    this.getPaymentCredentialsForTransientToken = function(jti, callback) {
+    this.getPaymentCredentialsForTransientToken = function(paymentCredentialsReference, callback) {
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
       }
 
-      // verify the required parameter 'jti' is set
-      if (jti === undefined || jti === null) {
-        throw new Error("Missing the required parameter 'jti' when calling getPaymentCredentialsForTransientToken");
+      // verify the required parameter 'paymentCredentialsReference' is set
+      if (paymentCredentialsReference === undefined || paymentCredentialsReference === null) {
+        throw new Error("Missing the required parameter 'paymentCredentialsReference' when calling getPaymentCredentialsForTransientToken");
       }
 
 
       var pathParams = {
-        'jti': jti
+        'paymentCredentialsReference': paymentCredentialsReference
       };
       var queryParams = {
       };
@@ -92,7 +92,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/up/v1/payment-credentials/{jti}', 'GET',
+        '/flex/v2/payment-credentials/{paymentCredentialsReference}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

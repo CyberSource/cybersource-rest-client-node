@@ -92,6 +92,7 @@
 
 
 
+
   };
 
   /**
@@ -170,6 +171,9 @@
       }
       if (data.hasOwnProperty('effectiveAuthenticationType')) {
         obj['effectiveAuthenticationType'] = ApiClient.convertToType(data['effectiveAuthenticationType'], 'String');
+      }
+      if (data.hasOwnProperty('exemptionDataRaw')) {
+        obj['exemptionDataRaw'] = ApiClient.convertToType(data['exemptionDataRaw'], 'String');
       }
       if (data.hasOwnProperty('ivr')) {
         obj['ivr'] = PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr.constructFromObject(data['ivr']);
@@ -354,6 +358,11 @@
    * @member {String} effectiveAuthenticationType
    */
   exports.prototype['effectiveAuthenticationType'] = undefined;
+  /**
+   * Payer authentication exemption indicator for Carte Bancaire exemptions.  This is used with unbundled authentication and authorizations calls, for example: \"low fraud merchant program\". The value returned in this field should be passed in the authorization request under the field - `consumerAuthenticationInformation.strongAuthentication.issuerInformation.exemptionDataRaw`. 
+   * @member {String} exemptionDataRaw
+   */
+  exports.prototype['exemptionDataRaw'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr} ivr
    */

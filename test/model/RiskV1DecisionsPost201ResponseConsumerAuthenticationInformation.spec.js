@@ -188,6 +188,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property exemptionDataRaw (base name: "exemptionDataRaw")', function() {
+      // uncomment below and update the code to test the property exemptionDataRaw
+      //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ivr (base name: "ivr")', function() {
       // uncomment below and update the code to test the property ivr
       //var instane = new CyberSource.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation();
