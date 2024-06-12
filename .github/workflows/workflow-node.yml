@@ -1,0 +1,35 @@
+name: Node workflow to run Node REST Samples
+on:
+  push:
+env:
+  CLIENT_FOLDER: 'cybersource-rest-client-node'
+  SAMPLE_FOLDER: 'cybersource-rest-samples-node'
+jobs:
+    complete-job:
+        defaults:
+            run:
+              shell: bash
+        strategy:
+            matrix:
+              operating-system: [ubuntu-latest,macos-latest,windows-latest]
+        runs-on: ${{matrix.operating-system}}
+        continue-on-error: true
+        steps:
+            - name: Making separate folders
+              run: |
+                rm -rf $CLIENT_FOLDER
+                rm -rf $SAMPLE_FOLDER
+                mkdir $CLIENT_FOLDER $SAMPLE_FOLDER
+            - name: Adding client
+              uses: actions/checkout@v4
+              with:
+                path: ${{env.CLIENT_FOLDER}}
+                ref: 'adding-workflows'
+            - name: Adding sample
+              uses: actions/checkout@v4
+              with:
+                repository: 'CyberSource/${{env.SAMPLE_FOLDER}}'
+                ref: 'testing-branch'
+                path: ${{env.SAMPLE_FOLDER}}
+            - name: Checkout Successful
+              run: echo "Successful Checkout"
