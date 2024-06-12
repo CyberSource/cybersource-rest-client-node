@@ -38,7 +38,10 @@ jobs:
                 cd ..
                 cd $SAMPLE_FOLDER
                 npm install
-                cd ..
-            - name: Build successful
-              run: echo "RUN SUCCESS"
-
+                source ./sample_code_runner.sh
+            - name: Upload the log files and report pdf
+              uses: actions/upload-artifact@v4
+              with:
+                name: log-files-${{matrix.operating-system}}
+                path: |
+                  ${{env.SAMPLE_FOLDER}}/output.log 
