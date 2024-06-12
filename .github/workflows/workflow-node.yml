@@ -31,5 +31,14 @@ jobs:
                 repository: 'CyberSource/${{env.SAMPLE_FOLDER}}'
                 ref: 'testing-branch'
                 path: ${{env.SAMPLE_FOLDER}}
-            - name: Checkout Successful
-              run: echo "Successful Checkout"
+            - name: Build the Project
+              run: |
+                cd $CLIENT_FOLDER
+                npm install
+                cd ..
+                cd $SAMPLE_FOLDER
+                npm install
+                cd ..
+            - name: Build successful
+              run: echo "RUN SUCCESS"
+
