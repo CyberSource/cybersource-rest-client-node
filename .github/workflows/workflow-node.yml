@@ -13,7 +13,10 @@ jobs:
         strategy:
             matrix:
               operating-system: [ubuntu-latest,macos-latest,windows-latest]
-              node-ver: [14.x,15.x,16.x,17.x,18.x,19.x,20.x,21.x,22.x]
+              node-ver: [14.x,16.x,17.x,18.x,19.x,20.x,21.x,22.x]  # Axios Doesn't support node version 15
+              exclude:
+                - operating-system: macos-latest  # No Node 14 image is there for the arm64 architecture of mac
+                  node-ver: 14.x
         runs-on: ${{matrix.operating-system}}
         continue-on-error: true
         steps:
@@ -41,44 +44,37 @@ jobs:
               run: |
                 cd $CLIENT_FOLDER
                 npm install
-                # npm pack
-                # rm -rf ../$NPM_CLIENT_FOLDER
-                # mkdir ../$NPM_CLIENT_FOLDER
-                # PACKAGE_VERSION=\$(grep '"version"' package.json | cut -d '"' -f 4 | head -n 1)
-                # tar -xvzf "cybersource-rest-client-$PACKAGE_VERSION.tgz" -C ../$NPM_CLIENT_FOLDER
-                # cd ../$NPM_CLIENT_FOLDER/package
+                npm pack
+                rm -rf ../$NPM_CLIENT_FOLDER
+                mkdir ../$NPM_CLIENT_FOLDER
+                PACKAGE_VERSION=$(grep '"version"' package.json | cut -d '"' -f 4 | head -n 1)
+                tar -xvzf "cybersource-rest-client-$PACKAGE_VERSION.tgz" -C ../$NPM_CLIENT_FOLDER
+                cd ../$NPM_CLIENT_FOLDER/package
                 npm link
                 cd ../$SAMPLE_FOLDER
                 npm link cybersource-rest-client
                 npm install
                 bash ./sample_code_runner.sh
-            # - name: Getting the Validation files
-            #   uses: actions/checkout@v4
-            #   with:
-            #     repository: 'CyberSource/cybersource-rest-samples-python'
-            #     ref: 'testing-branch'
-            #     path: ${{env.SAMPLE_FOLDER}}
-            #     sparse-checkout: |
-            #       Validation
-            # - name: Generating the Report
-            #   run:
-            #     pwd
-            #     ls
-                # cd $SAMPLE_FOLDER
-            #     pip install json2html
-            #     pip install xhtml2pdf
-            #     pip install bs4
-            #     cd Validation
-            #     python sample_code_log_processor.py -l ../../$SAMPLE_FOLDER/output.log -o ../../$SAMPLE_FOLDER/python_actual_results.json
-            #     python response_code_validator.py -e ExpectedResults/python_expected_results.json -a ../../$SAMPLE_FOLDER/python_actual_results.json -o python_validation_results.json
-            #     python json_to_prettified_html.py -i python_validation_results.json -o python_validation_results.html
-
-            # - name: Upload the log files and report pdf
-            #   uses: actions/upload-artifact@v4
-            #   with:
-            #     name: log-files-${{matrix.operating-system}}
-            #     path: |
-            #       ${{env.SAMPLE_FOLDER}}/output.log
+            - name: Set Up python to build reports
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.12'
+            - name:
+              run: |
+                cd $SAMPLE_FOLDER
+                pip install json2html
+                pip install xhtml2pdf
+                pip install bs4
+                cd Validation
+                python sample_code_log_processor.py -l ../../$SAMPLE_FOLDER/output.log -o ../../$SAMPLE_FOLDER/python_actual_results.json
+                python response_code_validator.py -e ExpectedResults/python_expected_results.json -a ../../$SAMPLE_FOLDER/python_actual_results.json -o python_validation_results.json
+                python json_to_prettified_html.py -i python_validation_results.json -o python_validation_results.html
+            - name: Upload the log files and report pdf
+              uses: actions/upload-artifact@v4
+              with:
+                name: log-files-${{matrix.operating-system}}-ver${{matrix.node-ver}}
+                path: |
+                  ${{env.SAMPLE_FOLDER}}/Validation/python_validation_results.pdf
             
 
 
