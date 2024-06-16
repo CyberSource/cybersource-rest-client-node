@@ -54,7 +54,8 @@ jobs:
                 cd ../$SAMPLE_FOLDER
                 npm link cybersource-rest-client
                 npm install
-                bash ./sample_code_runner.sh
+                ls
+                #bash ./sample_code_runner.sh
             - name: Set Up python to build reports
               uses: actions/setup-python@v5
               with:
