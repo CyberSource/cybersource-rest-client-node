@@ -51,11 +51,10 @@ jobs:
                 tar -xvzf "cybersource-rest-client-$PACKAGE_VERSION.tgz" -C ../$NPM_CLIENT_FOLDER
                 cd ../$NPM_CLIENT_FOLDER/package
                 npm link
-                cd ../$SAMPLE_FOLDER
+                cd ../../$SAMPLE_FOLDER
                 npm link cybersource-rest-client
                 npm install
-                ls
-                #bash ./sample_code_runner.sh
+                bash ./sample_code_runner.sh
             - name: Set Up python to build reports
               uses: actions/setup-python@v5
               with:
