@@ -1,4 +1,4 @@
-name: Node workflow to run Node REST Samples
+name:  workflow for cybs rest client node sdk to run samples
 on:
   push:
 env:
@@ -6,7 +6,7 @@ env:
   SAMPLE_FOLDER: 'cybersource-rest-samples-node'
   NPM_CLIENT_FOLDER : 'npm-client-sdk'
 jobs:
-    run-samples:
+    workflow-job:
         defaults:
             run:
               shell: bash
@@ -20,27 +20,27 @@ jobs:
         runs-on: ${{matrix.operating-system}}
         continue-on-error: true
         steps:
-            - name: Making separate folders
+            - name: Creating separate folders for checkout repos
               run: |
                 rm -rf $CLIENT_FOLDER
                 rm -rf $SAMPLE_FOLDER
                 mkdir $CLIENT_FOLDER $SAMPLE_FOLDER
-            - name: Adding client
+            - name: Checkout cybersource-rest-client-node repo
               uses: actions/checkout@v4
               with:
                 path: ${{env.CLIENT_FOLDER}}
                 ref: 'adding-workflows'
-            - name: Adding sample
+            - name: Checkout cybersource-rest-samples-node repo
               uses: actions/checkout@v4
               with:
                 repository: 'CyberSource/${{env.SAMPLE_FOLDER}}'
                 ref: 'testing-branch'
                 path: ${{env.SAMPLE_FOLDER}}
-            - name: Installing Required Node Version on the Machine
+            - name: Install Node
               uses: actions/setup-node@v4
               with:
                 node-version: ${{matrix.node-ver}}
-            - name: Build the Project
+            - name: Building the projects and running the Test Cases
               run: |
                 cd $CLIENT_FOLDER
                 npm install
@@ -55,11 +55,11 @@ jobs:
                 npm link cybersource-rest-client
                 npm install
                 bash ./sample_code_runner.sh
-            - name: Set Up python to build reports
+            - name: Setup Python v3.12 for report generation only
               uses: actions/setup-python@v5
               with:
                 python-version: '3.12'
-            - name:
+            - name: Installing required python libraries and running the python programs to generate pdf report
               run: |
                 cd $SAMPLE_FOLDER
                 pip install json2html
@@ -69,33 +69,9 @@ jobs:
                 python sample_code_log_processor.py -l ../../$SAMPLE_FOLDER/output.log -o ../../$SAMPLE_FOLDER/python_actual_results.json
                 python response_code_validator.py -e ExpectedResults/python_expected_results.json -a ../../$SAMPLE_FOLDER/python_actual_results.json -o python_validation_results.json
                 python json_to_prettified_html.py -i python_validation_results.json -o python_validation_results.html
-            - name: Upload the log files and report pdf
+            - name: Upload Test Reports
               uses: actions/upload-artifact@v4
               with:
                 name: log-files-${{matrix.operating-system}}-ver${{matrix.node-ver}}
                 path: |
                   ${{env.SAMPLE_FOLDER}}/Validation/python_validation_results.pdf
-            
-
-
-#                   node-sdk
-#    1. node client sdk
-#    2. sample sdk
-#    3. NpmClientSdk
-
-# go to node client folder
-# npm install
-# npm pack
-# rm -rf ../NpmClientSdk
-# mkdir ../NpmClientSdk
-# PACKAGE_VERSION=\$(grep '"version"' package.json | cut -d '"' -f 4 | head -n 1)
-# tar -xvzf "cybersource-rest-client-$PACKAGE_VERSION.tgz" -C ../NpmClientSdk
-# cd ../NpmClientSdk/package
-# npm link
-# cd ../../cybersource-rest-samples-node
-# npm link cybersource-rest-client
-# npm install
-
-
-
-
