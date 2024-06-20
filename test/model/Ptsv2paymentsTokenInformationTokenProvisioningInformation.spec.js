@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation();
+    instance = new CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation', function() {
-    it('should create an instance of TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation', function() {
-      // uncomment below and update the code to test TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
-      //var instane = new CyberSource.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation();
-      //expect(instance).to.be.a(CyberSource.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation);
+  describe('Ptsv2paymentsTokenInformationTokenProvisioningInformation', function() {
+    it('should create an instance of Ptsv2paymentsTokenInformationTokenProvisioningInformation', function() {
+      // uncomment below and update the code to test Ptsv2paymentsTokenInformationTokenProvisioningInformation
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation();
+      //expect(instance).to.be.a(CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation);
     });
 
     it('should have the property consumerConsentObtained (base name: "consumerConsentObtained")', function() {
       // uncomment below and update the code to test the property consumerConsentObtained
-      //var instane = new CyberSource.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation();
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation();
       //expect(instance).to.be();
     });
 
     it('should have the property multiFactorAuthenticated (base name: "multiFactorAuthenticated")', function() {
       // uncomment below and update the code to test the property multiFactorAuthenticated
-      //var instane = new CyberSource.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation();
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation();
       //expect(instance).to.be();
     });
 

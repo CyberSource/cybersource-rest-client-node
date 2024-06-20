@@ -74,12 +74,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property processingOptions (base name: "processingOptions")', function() {
-      // uncomment below and update the code to test the property processingOptions
-      //var instane = new CyberSource.PushFundsRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property recipientInformation (base name: "recipientInformation")', function() {
       // uncomment below and update the code to test the property recipientInformation
       //var instane = new CyberSource.PushFundsRequest();
@@ -88,30 +82,6 @@
 
     it('should have the property senderInformation (base name: "senderInformation")', function() {
       // uncomment below and update the code to test the property senderInformation
-      //var instane = new CyberSource.PushFundsRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property aggregatorInformation (base name: "aggregatorInformation")', function() {
-      // uncomment below and update the code to test the property aggregatorInformation
-      //var instane = new CyberSource.PushFundsRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property merchantDefinedInformation (base name: "merchantDefinedInformation")', function() {
-      // uncomment below and update the code to test the property merchantDefinedInformation
-      //var instane = new CyberSource.PushFundsRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
-      // uncomment below and update the code to test the property merchantInformation
-      //var instane = new CyberSource.PushFundsRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pointOfServiceInformation (base name: "pointOfServiceInformation")', function() {
-      // uncomment below and update the code to test the property pointOfServiceInformation
       //var instane = new CyberSource.PushFundsRequest();
       //expect(instance).to.be();
     });

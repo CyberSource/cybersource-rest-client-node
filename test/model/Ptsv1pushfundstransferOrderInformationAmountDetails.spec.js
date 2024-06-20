@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sourceCurrency (base name: "sourceCurrency")', function() {
+      // uncomment below and update the code to test the property sourceCurrency
+      //var instane = new CyberSource.Ptsv1pushfundstransferOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property destinationCurrency (base name: "destinationCurrency")', function() {
+      // uncomment below and update the code to test the property destinationCurrency
+      //var instane = new CyberSource.Ptsv1pushfundstransferOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

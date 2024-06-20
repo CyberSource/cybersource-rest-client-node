@@ -105,7 +105,7 @@
   }
 
   /**
-   * Mapped Electronic Verification response code for the customer's email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's email address. 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
@@ -125,7 +125,7 @@
    */
   exports.prototype['nameRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer's phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's phone number. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
@@ -135,7 +135,7 @@
    */
   exports.prototype['phoneNumberRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer's street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's street address. 
    * @member {String} street
    */
   exports.prototype['street'] = undefined;
@@ -145,7 +145,7 @@
    */
   exports.prototype['streetRaw'] = undefined;
   /**
-   * Mapped Electronic Verification response code for the customer's postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer's postal code. 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;

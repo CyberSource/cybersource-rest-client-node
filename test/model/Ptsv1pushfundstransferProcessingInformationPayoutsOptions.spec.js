@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions);
     });
 
-    it('should have the property accountFundingReferenceId (base name: "accountFundingReferenceId")', function() {
-      // uncomment below and update the code to test the property accountFundingReferenceId
+    it('should have the property sourceCurrency (base name: "sourceCurrency")', function() {
+      // uncomment below and update the code to test the property sourceCurrency
       //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions();
       //expect(instance).to.be();
     });
 
-    it('should have the property retrievalReferenceNumber (base name: "retrievalReferenceNumber")', function() {
-      // uncomment below and update the code to test the property retrievalReferenceNumber
+    it('should have the property destinationCurrency (base name: "destinationCurrency")', function() {
+      // uncomment below and update the code to test the property destinationCurrency
       //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions();
       //expect(instance).to.be();
     });

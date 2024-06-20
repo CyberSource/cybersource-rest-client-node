@@ -94,27 +94,27 @@
    */
   exports.prototype['type'] = undefined;
   /**
-   * 3-digit value that indicates the card Cvv2Value. Values can be 0-9.  This field is supported in Mastercard Send. 
+   * 3-digit value that indicates the card Cvv2Value. Values can be 0-9. 
    * @member {String} securityCode
    */
   exports.prototype['securityCode'] = undefined;
   /**
-   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  Valid values for Visa Platform Connect: - `CHECKING`: Checking account - `CREDIT`: Credit card account - `SAVING`: Saving account - `LINE_OF_CREDIT`: Line of credit or credit portion of combo card - `PREPAID`: Prepaid card account or prepaid portion of combo card - `UNIVERSAL`: Universal account  Valid values for Mastercard Send: - `00`: Other, - `01`: RTN + Bank Account, - `02`: IBAN, - `03`: Card Account, - `04`: Email, - `05`: Phone Number, - `06`: Bank account number (BAN) + Bank Identification Сode (BIC), - `07`: Wallet ID, - `08`: Social Network ID. Numeric, 2 characters.  This field is supported in Mastercard Send. 
+   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process. 
    * @member {String} sourceAccountType
    */
   exports.prototype['sourceAccountType'] = undefined;
   /**
-   * The customer's payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. 
+   * The customer's payment card number, also known as the Primary Account Number (PAN). 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;
   /**
-   * Two-digit month in which the payment card expires.  Format: MM.  Valid values: 01 through 12. Leading 0 is required.  This field is supported for Mastercard Send. 
+   * Two-digit month in which the payment card expires.  Format: MM.  Valid values: 01 through 12. Leading 0 is required. 
    * @member {String} expirationMonth
    */
   exports.prototype['expirationMonth'] = undefined;
   /**
-   * Four-digit year in which the payment card expires.  This field is supported for Mastercard Send. 
+   * Four-digit year in which the payment card expires. 
    * @member {String} expirationYear
    */
   exports.prototype['expirationYear'] = undefined;

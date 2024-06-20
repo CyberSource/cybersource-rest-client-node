@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv1pushfundstransferProcessingInformationPayoutsOptions', 'model/Ptsv1pushfundstransferProcessingInformationRecurringOptions'], factory);
+    define(['ApiClient', 'model/Ptsv1pushfundstransferProcessingInformationPayoutsOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferProcessingInformationPayoutsOptions'), require('./Ptsv1pushfundstransferProcessingInformationRecurringOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferProcessingInformationPayoutsOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv1pushfundstransferProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions, root.CyberSource.Ptsv1pushfundstransferProcessingInformationRecurringOptions);
+    root.CyberSource.Ptsv1pushfundstransferProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions);
   }
-}(this, function(ApiClient, Ptsv1pushfundstransferProcessingInformationPayoutsOptions, Ptsv1pushfundstransferProcessingInformationRecurringOptions) {
+}(this, function(ApiClient, Ptsv1pushfundstransferProcessingInformationPayoutsOptions) {
   'use strict';
 
 
@@ -43,16 +43,9 @@
    * Constructs a new <code>Ptsv1pushfundstransferProcessingInformation</code>.
    * @alias module:model/Ptsv1pushfundstransferProcessingInformation
    * @class
-   * @param commerceIndicator {String} Type of transaction.  Value for an OCT transaction: internet  For details, see the e_commerce_indicator field description in Payouts Using the SCMP API. 
    */
-  var exports = function(commerceIndicator) {
+  var exports = function() {
     var _this = this;
-
-
-    _this['commerceIndicator'] = commerceIndicator;
-
-
-
 
 
 
@@ -72,69 +65,22 @@
       if (data.hasOwnProperty('businessApplicationId')) {
         obj['businessApplicationId'] = ApiClient.convertToType(data['businessApplicationId'], 'String');
       }
-      if (data.hasOwnProperty('commerceIndicator')) {
-        obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
-      }
-      if (data.hasOwnProperty('networkRoutingOrder')) {
-        obj['networkRoutingOrder'] = ApiClient.convertToType(data['networkRoutingOrder'], 'String');
-      }
       if (data.hasOwnProperty('payoutsOptions')) {
         obj['payoutsOptions'] = Ptsv1pushfundstransferProcessingInformationPayoutsOptions.constructFromObject(data['payoutsOptions']);
-      }
-      if (data.hasOwnProperty('purposeOfPayment')) {
-        obj['purposeOfPayment'] = ApiClient.convertToType(data['purposeOfPayment'], 'String');
-      }
-      if (data.hasOwnProperty('reconciliationId')) {
-        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
-      }
-      if (data.hasOwnProperty('recurringOptions')) {
-        obj['recurringOptions'] = Ptsv1pushfundstransferProcessingInformationRecurringOptions.constructFromObject(data['recurringOptions']);
-      }
-      if (data.hasOwnProperty('transactionReason')) {
-        obj['transactionReason'] = ApiClient.convertToType(data['transactionReason'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   *  Payouts transaction type. Required for Mastercard Send.  Valid Values- Visa Platform Connect: - `AA`: Account to account. - `CP`: Card bill payment - `FD`: Funds disbursement (general) - `GD`: Government disbursement - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `PP`: Person to person. - `TU`: Top-up for enhanced prepaid loads.   Mastercard Send: - `BB`: Business to business. - `BD`: Business Disbursement - `CP`: Card bill payment - `GD`: Government disbursement - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `OG`: Online gambling payout.   Chase Paymentech Solutions: - `AA`: Account to account. - `FD`: Funds disbursement (general) - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `PP`: Person to person.   FDC Compass: - `BB`: Business to business. - `BI`: Bank-initiated money transfer. - `FD`: Funds disbursement (general) - `GD`: Government disbursement - `GP`: Gambling Payment - `LO`: Loyalty Offers - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `MI`: Merchant initated money transfer - `OG`: Online gambling payout. - `PD`: Payroll pension disbursement. - `PP`: Person to person. - `WT`: Wallet transfer. 
+   * Payouts transaction type.  Business Application ID: - `PP`: Person to person. - `FD`: Funds disbursement (general) 
    * @member {String} businessApplicationId
    */
   exports.prototype['businessApplicationId'] = undefined;
   /**
-   * Type of transaction.  Value for an OCT transaction: internet  For details, see the e_commerce_indicator field description in Payouts Using the SCMP API. 
-   * @member {String} commerceIndicator
-   */
-  exports.prototype['commerceIndicator'] = undefined;
-  /**
-   * Visa Platform Connect This field is optionally used by Push Payments Gateway participants (merchants and acquirers) to get the attributes for specified networks only. The networks specified in this field must be a subset of the information provided during program enrollment. Refer to Sharing Group Code/Network Routing Order. Note: Supported only in US for domestic transactions involving Push Payments Gateway Service.  VisaNet checks to determine if there are issuer routing preferences for any of the networks specified by the network routing order. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on the issuer's preference. If an issuer preference exists for more than one of the specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on the acquirer's routing priorities.  For details, see the network_order field description in BIN Lookup Service Using the SCMP API. 
-   * @member {String} networkRoutingOrder
-   */
-  exports.prototype['networkRoutingOrder'] = undefined;
-  /**
    * @member {module:model/Ptsv1pushfundstransferProcessingInformationPayoutsOptions} payoutsOptions
    */
   exports.prototype['payoutsOptions'] = undefined;
-  /**
-   * This will send purpose of funds code for original credit transactions (OCTs).  Visa Platform Connect (VPC) This will send purpose of transaction code for original credit transactions (OCTs). Purpose of Payment codes are defined by the recipient issuer's country and vary by country.  Mastercard Send: - `00`: Family Support - `01`: Regular Labor Transfers (expatriates), - `02`: Travel & Tourism - `03`: Education - `04`: Hospitalization & Medical Treatment, - `05`: Emergency Need - `06`: Savings - `07`: Gifts - `08`: Other - `09`: Salary - `10`: Crowd lending - `11`: Crypto currency - `12`: Refund to original card - `13`: Refund to new card 
-   * @member {String} purposeOfPayment
-   */
-  exports.prototype['purposeOfPayment'] = undefined;
-  /**
-   * Please check with Cybersource customer support to see if your merchant account is configured correctly so you can include this field in your request.  For Payouts: max length for FDCCompass is String (22). 
-   * @member {String} reconciliationId
-   */
-  exports.prototype['reconciliationId'] = undefined;
-  /**
-   * @member {module:model/Ptsv1pushfundstransferProcessingInformationRecurringOptions} recurringOptions
-   */
-  exports.prototype['recurringOptions'] = undefined;
-  /**
-   * Transaction reason code.  This field applies only to Visa Platform Connect 
-   * @member {String} transactionReason
-   */
-  exports.prototype['transactionReason'] = undefined;
 
 
 

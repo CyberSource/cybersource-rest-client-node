@@ -97,7 +97,7 @@
   }
 
   /**
-   * Three-digit value that indicates the card type. Mandatory if not present in a token.  Possible values:  Visa Platform Connect - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `033`: Visa Electron - `024`: Maestro  Mastercard Send: - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  FDC Compass: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Chase Paymentech: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. 
+   * Three-digit value that indicates the card type.  Possible values:  Visa Platform Connect - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `033`: Visa Electron - `024`: Maestro  Mastercard Send: - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  FDC Compass: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Chase Paymentech: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Yellow Pepper: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `005`: Diners Club - `033`: Visa Electron - `024`: Intl Maestro 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

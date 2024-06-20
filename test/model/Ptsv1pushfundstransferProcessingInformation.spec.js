@@ -62,44 +62,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property commerceIndicator (base name: "commerceIndicator")', function() {
-      // uncomment below and update the code to test the property commerceIndicator
-      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property networkRoutingOrder (base name: "networkRoutingOrder")', function() {
-      // uncomment below and update the code to test the property networkRoutingOrder
-      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property payoutsOptions (base name: "payoutsOptions")', function() {
       // uncomment below and update the code to test the property payoutsOptions
-      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property purposeOfPayment (base name: "purposeOfPayment")', function() {
-      // uncomment below and update the code to test the property purposeOfPayment
-      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reconciliationId (base name: "reconciliationId")', function() {
-      // uncomment below and update the code to test the property reconciliationId
-      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property recurringOptions (base name: "recurringOptions")', function() {
-      // uncomment below and update the code to test the property recurringOptions
-      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property transactionReason (base name: "transactionReason")', function() {
-      // uncomment below and update the code to test the property transactionReason
       //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
       //expect(instance).to.be();
     });

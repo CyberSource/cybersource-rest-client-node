@@ -111,7 +111,7 @@
    */
   exports.prototype['pausedRequestId'] = undefined;
   /**
-   * Comments
+   * Brief description of the order or any comment you wish to add to the order.
    * @member {String} comments
    */
   exports.prototype['comments'] = undefined;

@@ -62,18 +62,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property isCryptocurrencyPurchase (base name: "isCryptocurrencyPurchase")', function() {
-      // uncomment below and update the code to test the property isCryptocurrencyPurchase
-      //var instane = new CyberSource.Ptsv1pushfundstransferOrderInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property surcharge (base name: "surcharge")', function() {
-      // uncomment below and update the code to test the property surcharge
-      //var instane = new CyberSource.Ptsv1pushfundstransferOrderInformation();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

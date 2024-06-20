@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issuingCountry (base name: "issuingCountry")', function() {
+      // uncomment below and update the code to test the property issuingCountry
+      //var instane = new CyberSource.Ptsv1pushfundstransferSenderInformationPersonalIdentification();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
