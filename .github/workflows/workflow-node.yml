@@ -1,4 +1,4 @@
-name:  workflow for cybs rest client node sdk to run samples
+name: NODE BUILDS
 on:
   push:
   pull_request: 
@@ -34,7 +34,6 @@ jobs:
               uses: actions/checkout@v4
               with:
                 path: ${{env.CLIENT_FOLDER}}
-                ref: 'adding-workflows'
             - name: Checkout cybersource-rest-samples-node repo
               uses: actions/checkout@v4
               with:
