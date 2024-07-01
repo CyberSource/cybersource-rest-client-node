@@ -113,7 +113,7 @@
 
     /**
      * Get Individual Batch File
-     * Provide the search range
+     * This API provides details like upload date, completion date, transaction count and accepted and rejected transaction count of the individual batch file using the batch id
      * @param {String} id The batch id assigned for the template.
      * @param {module:api/TransactionBatchesApi~getTransactionBatchIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV1TransactionBatchesIdGet200Response}
@@ -162,7 +162,7 @@
 
     /**
      * Get a List of Batch Files
-     * Provide the search range
+     * Provide the date and time search range to get a list of Batch Files ready for settlement
      * @param {Date} startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZZ 
      * @param {Date} endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZZ 
      * @param {module:api/TransactionBatchesApi~getTransactionBatchesCallback} callback The callback function, accepting three arguments: error, data, response

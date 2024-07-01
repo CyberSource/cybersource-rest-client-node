@@ -110,20 +110,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property middleInitial (base name: "middleInitial")', function() {
-      // uncomment below and update the code to test the property middleInitial
-      //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
-      //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
-      // uncomment below and update the code to test the property dateOfBirth
       //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
       //expect(instance).to.be();
     });

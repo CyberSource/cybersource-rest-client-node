@@ -68,20 +68,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property approvalCode (base name: "approvalCode")', function() {
-      // uncomment below and update the code to test the property approvalCode
-      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property systemTraceAuditNumber (base name: "systemTraceAuditNumber")', function() {
       // uncomment below and update the code to test the property systemTraceAuditNumber
-      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property responseCodeSource (base name: "responseCodeSource")', function() {
-      // uncomment below and update the code to test the property responseCodeSource
       //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
       //expect(instance).to.be();
     });

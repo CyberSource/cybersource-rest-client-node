@@ -51,8 +51,6 @@
 
 
 
-
-
   };
 
   /**
@@ -72,14 +70,8 @@
       if (data.hasOwnProperty('responseCode')) {
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
       }
-      if (data.hasOwnProperty('approvalCode')) {
-        obj['approvalCode'] = ApiClient.convertToType(data['approvalCode'], 'String');
-      }
       if (data.hasOwnProperty('systemTraceAuditNumber')) {
         obj['systemTraceAuditNumber'] = ApiClient.convertToType(data['systemTraceAuditNumber'], 'String');
-      }
-      if (data.hasOwnProperty('responseCodeSource')) {
-        obj['responseCodeSource'] = ApiClient.convertToType(data['responseCodeSource'], 'String');
       }
       if (data.hasOwnProperty('retrievalReferenceNumber')) {
         obj['retrievalReferenceNumber'] = ApiClient.convertToType(data['retrievalReferenceNumber'], 'String');
@@ -99,22 +91,12 @@
    */
   exports.prototype['responseCode'] = undefined;
   /**
-   * Issuer-generated approval code for the transaction. 
-   * @member {String} approvalCode
-   */
-  exports.prototype['approvalCode'] = undefined;
-  /**
-   * System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer's receipt. 
+   * System audit number. Returned by authorization and incremental authorization services. 
    * @member {String} systemTraceAuditNumber
    */
   exports.prototype['systemTraceAuditNumber'] = undefined;
   /**
-   * Used by Visa only and contains the response source/reason code that identifies the source of the response decision. 
-   * @member {String} responseCodeSource
-   */
-  exports.prototype['responseCodeSource'] = undefined;
-  /**
-   * Unique reference number returned by the processor that identifies the transaction at the network.  Supported by Mastercard Send 
+   * Unique reference number returned by the processor that identifies the transaction at the network. 
    * @member {String} retrievalReferenceNumber
    */
   exports.prototype['retrievalReferenceNumber'] = undefined;

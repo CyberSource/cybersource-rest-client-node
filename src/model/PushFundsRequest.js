@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv1pushfundstransferAggregatorInformation', 'model/Ptsv1pushfundstransferClientReferenceInformation', 'model/Ptsv1pushfundstransferMerchantDefinedInformation', 'model/Ptsv1pushfundstransferMerchantInformation', 'model/Ptsv1pushfundstransferOrderInformation', 'model/Ptsv1pushfundstransferPointOfServiceInformation', 'model/Ptsv1pushfundstransferProcessingInformation', 'model/Ptsv1pushfundstransferProcessingOptions', 'model/Ptsv1pushfundstransferRecipientInformation', 'model/Ptsv1pushfundstransferSenderInformation'], factory);
+    define(['ApiClient', 'model/Ptsv1pushfundstransferClientReferenceInformation', 'model/Ptsv1pushfundstransferOrderInformation', 'model/Ptsv1pushfundstransferProcessingInformation', 'model/Ptsv1pushfundstransferRecipientInformation', 'model/Ptsv1pushfundstransferSenderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferAggregatorInformation'), require('./Ptsv1pushfundstransferClientReferenceInformation'), require('./Ptsv1pushfundstransferMerchantDefinedInformation'), require('./Ptsv1pushfundstransferMerchantInformation'), require('./Ptsv1pushfundstransferOrderInformation'), require('./Ptsv1pushfundstransferPointOfServiceInformation'), require('./Ptsv1pushfundstransferProcessingInformation'), require('./Ptsv1pushfundstransferProcessingOptions'), require('./Ptsv1pushfundstransferRecipientInformation'), require('./Ptsv1pushfundstransferSenderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferClientReferenceInformation'), require('./Ptsv1pushfundstransferOrderInformation'), require('./Ptsv1pushfundstransferProcessingInformation'), require('./Ptsv1pushfundstransferRecipientInformation'), require('./Ptsv1pushfundstransferSenderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PushFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferAggregatorInformation, root.CyberSource.Ptsv1pushfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pushfundstransferMerchantDefinedInformation, root.CyberSource.Ptsv1pushfundstransferMerchantInformation, root.CyberSource.Ptsv1pushfundstransferOrderInformation, root.CyberSource.Ptsv1pushfundstransferPointOfServiceInformation, root.CyberSource.Ptsv1pushfundstransferProcessingInformation, root.CyberSource.Ptsv1pushfundstransferProcessingOptions, root.CyberSource.Ptsv1pushfundstransferRecipientInformation, root.CyberSource.Ptsv1pushfundstransferSenderInformation);
+    root.CyberSource.PushFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pushfundstransferOrderInformation, root.CyberSource.Ptsv1pushfundstransferProcessingInformation, root.CyberSource.Ptsv1pushfundstransferRecipientInformation, root.CyberSource.Ptsv1pushfundstransferSenderInformation);
   }
-}(this, function(ApiClient, Ptsv1pushfundstransferAggregatorInformation, Ptsv1pushfundstransferClientReferenceInformation, Ptsv1pushfundstransferMerchantDefinedInformation, Ptsv1pushfundstransferMerchantInformation, Ptsv1pushfundstransferOrderInformation, Ptsv1pushfundstransferPointOfServiceInformation, Ptsv1pushfundstransferProcessingInformation, Ptsv1pushfundstransferProcessingOptions, Ptsv1pushfundstransferRecipientInformation, Ptsv1pushfundstransferSenderInformation) {
+}(this, function(ApiClient, Ptsv1pushfundstransferClientReferenceInformation, Ptsv1pushfundstransferOrderInformation, Ptsv1pushfundstransferProcessingInformation, Ptsv1pushfundstransferRecipientInformation, Ptsv1pushfundstransferSenderInformation) {
   'use strict';
 
 
@@ -45,19 +45,13 @@
    * @class
    * @param orderInformation {module:model/Ptsv1pushfundstransferOrderInformation} 
    * @param processingInformation {module:model/Ptsv1pushfundstransferProcessingInformation} 
-   * @param senderInformation {module:model/Ptsv1pushfundstransferSenderInformation} 
    */
-  var exports = function(orderInformation, processingInformation, senderInformation) {
+  var exports = function(orderInformation, processingInformation) {
     var _this = this;
 
 
     _this['orderInformation'] = orderInformation;
     _this['processingInformation'] = processingInformation;
-
-
-    _this['senderInformation'] = senderInformation;
-
-
 
 
   };
@@ -82,26 +76,11 @@
       if (data.hasOwnProperty('processingInformation')) {
         obj['processingInformation'] = Ptsv1pushfundstransferProcessingInformation.constructFromObject(data['processingInformation']);
       }
-      if (data.hasOwnProperty('processingOptions')) {
-        obj['processingOptions'] = Ptsv1pushfundstransferProcessingOptions.constructFromObject(data['processingOptions']);
-      }
       if (data.hasOwnProperty('recipientInformation')) {
         obj['recipientInformation'] = Ptsv1pushfundstransferRecipientInformation.constructFromObject(data['recipientInformation']);
       }
       if (data.hasOwnProperty('senderInformation')) {
         obj['senderInformation'] = Ptsv1pushfundstransferSenderInformation.constructFromObject(data['senderInformation']);
-      }
-      if (data.hasOwnProperty('aggregatorInformation')) {
-        obj['aggregatorInformation'] = Ptsv1pushfundstransferAggregatorInformation.constructFromObject(data['aggregatorInformation']);
-      }
-      if (data.hasOwnProperty('merchantDefinedInformation')) {
-        obj['merchantDefinedInformation'] = Ptsv1pushfundstransferMerchantDefinedInformation.constructFromObject(data['merchantDefinedInformation']);
-      }
-      if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = Ptsv1pushfundstransferMerchantInformation.constructFromObject(data['merchantInformation']);
-      }
-      if (data.hasOwnProperty('pointOfServiceInformation')) {
-        obj['pointOfServiceInformation'] = Ptsv1pushfundstransferPointOfServiceInformation.constructFromObject(data['pointOfServiceInformation']);
       }
     }
     return obj;
@@ -120,10 +99,6 @@
    */
   exports.prototype['processingInformation'] = undefined;
   /**
-   * @member {module:model/Ptsv1pushfundstransferProcessingOptions} processingOptions
-   */
-  exports.prototype['processingOptions'] = undefined;
-  /**
    * @member {module:model/Ptsv1pushfundstransferRecipientInformation} recipientInformation
    */
   exports.prototype['recipientInformation'] = undefined;
@@ -131,22 +106,6 @@
    * @member {module:model/Ptsv1pushfundstransferSenderInformation} senderInformation
    */
   exports.prototype['senderInformation'] = undefined;
-  /**
-   * @member {module:model/Ptsv1pushfundstransferAggregatorInformation} aggregatorInformation
-   */
-  exports.prototype['aggregatorInformation'] = undefined;
-  /**
-   * @member {module:model/Ptsv1pushfundstransferMerchantDefinedInformation} merchantDefinedInformation
-   */
-  exports.prototype['merchantDefinedInformation'] = undefined;
-  /**
-   * @member {module:model/Ptsv1pushfundstransferMerchantInformation} merchantInformation
-   */
-  exports.prototype['merchantInformation'] = undefined;
-  /**
-   * @member {module:model/Ptsv1pushfundstransferPointOfServiceInformation} pointOfServiceInformation
-   */
-  exports.prototype['pointOfServiceInformation'] = undefined;
 
 
 

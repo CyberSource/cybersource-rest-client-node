@@ -1,4 +1,4 @@
-# CyberSource.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
+# CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation
 
 ## Properties
 Name | Type | Description | Notes

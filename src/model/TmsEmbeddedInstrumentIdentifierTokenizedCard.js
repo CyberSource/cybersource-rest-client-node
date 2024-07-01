@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
 
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('source')) {
+        obj['source'] = ApiClient.convertToType(data['source'], 'String');
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -109,6 +113,11 @@
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
+  /**
+   * This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE 
+   * @member {String} source
+   */
+  exports.prototype['source'] = undefined;
   /**
    * State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. 
    * @member {String} state

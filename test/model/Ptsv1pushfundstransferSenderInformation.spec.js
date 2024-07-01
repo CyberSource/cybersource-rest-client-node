@@ -116,12 +116,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property vatRegistrationNumber (base name: "vatRegistrationNumber")', function() {
-      // uncomment below and update the code to test the property vatRegistrationNumber
-      //var instane = new CyberSource.Ptsv1pushfundstransferSenderInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
       // uncomment below and update the code to test the property dateOfBirth
       //var instane = new CyberSource.Ptsv1pushfundstransferSenderInformation();

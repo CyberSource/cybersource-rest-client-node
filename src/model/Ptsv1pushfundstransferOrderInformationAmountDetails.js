@@ -43,14 +43,16 @@
    * Constructs a new <code>Ptsv1pushfundstransferOrderInformationAmountDetails</code>.
    * @alias module:model/Ptsv1pushfundstransferOrderInformationAmountDetails
    * @class
-   * @param totalAmount {String} Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  The disbursement amount. Numeric integer, 1-999999999999. The decimal point is implied based on the relevant currency exponent. For example, a US Dollar $53 amount is a value of 5300.  Processor Amount Ranges: Visa Platform Connect: .01-9999999999.99  Mastercard Send: 1-9999999999.99  FDC Compass: .01- 9999999999.99  Chase Paymentech: .01-9999999999.99 
-   * @param currency {String} Use a 3-character alpha currency code for currency of the sender.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. 
+   * @param totalAmount {String} Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. 
+   * @param currency {String} Use a 3-character alpha currency code for currency of the funds transfer.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. 
    */
   var exports = function(totalAmount, currency) {
     var _this = this;
 
     _this['totalAmount'] = totalAmount;
     _this['currency'] = currency;
+
+
   };
 
   /**
@@ -70,20 +72,36 @@
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
+      if (data.hasOwnProperty('sourceCurrency')) {
+        obj['sourceCurrency'] = ApiClient.convertToType(data['sourceCurrency'], 'String');
+      }
+      if (data.hasOwnProperty('destinationCurrency')) {
+        obj['destinationCurrency'] = ApiClient.convertToType(data['destinationCurrency'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  The disbursement amount. Numeric integer, 1-999999999999. The decimal point is implied based on the relevant currency exponent. For example, a US Dollar $53 amount is a value of 5300.  Processor Amount Ranges: Visa Platform Connect: .01-9999999999.99  Mastercard Send: 1-9999999999.99  FDC Compass: .01- 9999999999.99  Chase Paymentech: .01-9999999999.99 
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. 
    * @member {String} totalAmount
    */
   exports.prototype['totalAmount'] = undefined;
   /**
-   * Use a 3-character alpha currency code for currency of the sender.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. 
+   * Use a 3-character alpha currency code for currency of the funds transfer.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. 
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;
+  /**
+   * Use a 3-character alpha currency code for source currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
+   * @member {String} sourceCurrency
+   */
+  exports.prototype['sourceCurrency'] = undefined;
+  /**
+   * Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect 
+   * @member {String} destinationCurrency
+   */
+  exports.prototype['destinationCurrency'] = undefined;
 
 
 
