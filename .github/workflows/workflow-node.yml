@@ -80,3 +80,5 @@ jobs:
                 name: log-files-${{matrix.operating-system}}-ver${{matrix.node-ver}}
                 path: |
                   ${{env.SAMPLE_FOLDER}}/Validation/node_validation_results.pdf
+
+#Triggering the Workflow
