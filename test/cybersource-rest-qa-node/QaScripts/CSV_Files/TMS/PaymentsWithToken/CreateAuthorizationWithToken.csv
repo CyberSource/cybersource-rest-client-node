@@ -1,0 +1,4 @@
+testCaseId,customerId,amount,message
+CAuthWT_01,7500BB199B4270EFE05340588D0AFCAD,20.00,Success
+CAuthWT_01,7500BB199B4270EFE05340588D0AFCAD,20,Fails due to mismatch amount
+CAuthWT_01,8900DD155H1270ABS03260955E0LKCSK,30.00,Fails due to invalid customerId

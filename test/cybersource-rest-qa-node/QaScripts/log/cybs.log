@@ -1,0 +1,1340 @@
+2018-12-07T07:18:52.847Z - info: START > =======================================
+2018-12-07T07:18:52.848Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T07:18:52.946Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\CSV_Files\Payments\CoreServices\CreateAuthorizationOnly.csv' date=Fri Dec 07 2018 12:48:52 GMT+0530 (India Standard Time), pid=13984, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60694528, heapTotal=34447360, heapUsed=19854672, external=383824, loadavg=[0, 0, 0], uptime=263527.4330281, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\CSV_Files\Payments\CoreServices\CreateAuthorizationOnly.csv']
+2018-12-07T07:23:22.520Z - info: START > =======================================
+2018-12-07T07:23:22.521Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T07:23:22.623Z - error: uncaughtException: CybersourceRestApi.V2paymentsClientReferenceInformation is not a constructor date=Fri Dec 07 2018 12:53:22 GMT+0530 (India Standard Time), pid=9464, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60768256, heapTotal=35495936, heapUsed=16005272, external=449360, loadavg=[0, 0, 0], uptime=263797.1100708, trace=[column=42, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\Payments\CoreServices\AuthorizationOnlyTest.js, function=null, line=67, method=null, native=false, column=13, file=events.js, function=emitOne, line=116, method=null, native=false, column=7, file=events.js, function=ParserStream.emit, line=211, method=emit, native=false, column=25, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\extended.js, function=spreadArgs, line=43, method=null, native=false, column=13, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js, function=ParserStream.emit, line=325, method=emit, native=false, column=12, file=_stream_readable.js, function=addChunk, line=263, method=null, native=false, column=11, file=_stream_readable.js, function=readableAddChunk, line=250, method=null, native=false, column=10, file=_stream_readable.js, function=ParserStream.Readable.push, line=208, method=push, native=false, column=32, file=_stream_transform.js, function=ParserStream.Transform.push, line=147, method=push, native=false, column=18, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js, function=ParserStream.__emitRecord, line=202, method=__emitRecord, native=false], stack=[TypeError: CybersourceRestApi.V2paymentsClientReferenceInformation is not a constructor,     at ParserStream.<anonymous> (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\Payments\CoreServices\AuthorizationOnlyTest.js:67:42),     at emitOne (events.js:116:13),     at ParserStream.emit (events.js:211:7),     at spreadArgs (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\extended.js:43:25),     at ParserStream.emit (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js:325:13),     at addChunk (_stream_readable.js:263:12),     at readableAddChunk (_stream_readable.js:250:11),     at ParserStream.Readable.push (_stream_readable.js:208:10),     at ParserStream.Transform.push (_stream_transform.js:147:32),     at ParserStream.__emitRecord (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js:202:18)]
+2018-12-07T07:27:19.121Z - info: START > =======================================
+2018-12-07T07:27:19.123Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T07:27:19.142Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="aj+Gmkk8+Yf5LIQU9/ziBeaS8Vvux4nYS/05VJh6pcc="
+2018-12-07T07:27:19.142Z - info: digest : SHA-256=jaIpJBJmUA17YjiolBIifvOVcibMZbCDqn1hKT4wMo4=
+2018-12-07T07:27:19.142Z - info: digest : SHA-256=jaIpJBJmUA17YjiolBIifvOVcibMZbCDqn1hKT4wMo4=
+2018-12-07T07:27:19.142Z - info: v-c-merchant-id : testrest
+2018-12-07T07:27:19.142Z - info: date : Fri, 07 Dec 2018 07:27:19 GMT
+2018-12-07T07:27:19.142Z - info: host : apitest.cybersource.com
+2018-12-07T07:27:19.142Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="aj+Gmkk8+Yf5LIQU9/ziBeaS8Vvux4nYS/05VJh6pcc="
+2018-12-07T07:27:19.142Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:27:19.142Z - info: End > ==============================
+2018-12-07T07:27:20.110Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="s5A+99Kez+eoD3cOhojtMqip/PrJO+pCXuxD0LfK8RI="
+2018-12-07T07:27:20.110Z - info: digest : SHA-256=nmU1J2vYxx5AwOPQGUjYF+5dxQ2AD4AkMK5nodjDoPU=
+2018-12-07T07:27:20.110Z - info: digest : SHA-256=nmU1J2vYxx5AwOPQGUjYF+5dxQ2AD4AkMK5nodjDoPU=
+2018-12-07T07:27:20.110Z - info: v-c-merchant-id : testrest
+2018-12-07T07:27:20.110Z - info: date : Fri, 07 Dec 2018 07:27:20 GMT
+2018-12-07T07:27:20.110Z - info: host : apitest.cybersource.com
+2018-12-07T07:27:20.110Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="s5A+99Kez+eoD3cOhojtMqip/PrJO+pCXuxD0LfK8RI="
+2018-12-07T07:27:20.110Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:27:20.110Z - info: End > ==============================
+2018-12-07T07:27:21.025Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="kVfBv2QuKfrmU34bexLt+UyXrOaWo4eW2OEhN4tiKus="
+2018-12-07T07:27:21.025Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T07:27:21.025Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T07:27:21.025Z - info: v-c-merchant-id : testrest
+2018-12-07T07:27:21.025Z - info: date : Fri, 07 Dec 2018 07:27:21 GMT
+2018-12-07T07:27:21.025Z - info: host : apitest.cybersource.com
+2018-12-07T07:27:21.025Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="kVfBv2QuKfrmU34bexLt+UyXrOaWo4eW2OEhN4tiKus="
+2018-12-07T07:27:21.025Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:27:21.025Z - info: End > ==============================
+2018-12-07T07:28:19.619Z - info: START > =======================================
+2018-12-07T07:28:19.619Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T07:28:19.632Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uFZppS64pG1wnVB0n3V7x5F/aQIRrxkspAQsQlvNXC8="
+2018-12-07T07:28:19.634Z - info: digest : SHA-256=jaIpJBJmUA17YjiolBIifvOVcibMZbCDqn1hKT4wMo4=
+2018-12-07T07:28:19.634Z - info: digest : SHA-256=jaIpJBJmUA17YjiolBIifvOVcibMZbCDqn1hKT4wMo4=
+2018-12-07T07:28:19.634Z - info: v-c-merchant-id : testrest
+2018-12-07T07:28:19.634Z - info: date : Fri, 07 Dec 2018 07:28:19 GMT
+2018-12-07T07:28:19.634Z - info: host : apitest.cybersource.com
+2018-12-07T07:28:19.634Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uFZppS64pG1wnVB0n3V7x5F/aQIRrxkspAQsQlvNXC8="
+2018-12-07T07:28:19.634Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:28:19.634Z - info: End > ==============================
+2018-12-07T07:28:20.691Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="d6+sU2tYCOFJuJA3hsfoo/mWMCZ09vDFsIPbgZrQQcw="
+2018-12-07T07:28:20.691Z - info: digest : SHA-256=KlpMvGX81wAT9VWUIbAyOZxSsmy3iJywb3DtZvADXoY=
+2018-12-07T07:28:20.691Z - info: digest : SHA-256=KlpMvGX81wAT9VWUIbAyOZxSsmy3iJywb3DtZvADXoY=
+2018-12-07T07:28:20.691Z - info: v-c-merchant-id : testrest
+2018-12-07T07:28:20.691Z - info: date : Fri, 07 Dec 2018 07:28:20 GMT
+2018-12-07T07:28:20.691Z - info: host : apitest.cybersource.com
+2018-12-07T07:28:20.691Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="d6+sU2tYCOFJuJA3hsfoo/mWMCZ09vDFsIPbgZrQQcw="
+2018-12-07T07:28:20.691Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:28:20.691Z - info: End > ==============================
+2018-12-07T07:28:21.602Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="s0Dax2EjKE/vbfn6aK4jtTUQ6pfCh2SNMokEd9liGrw="
+2018-12-07T07:28:21.602Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T07:28:21.602Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T07:28:21.602Z - info: v-c-merchant-id : testrest
+2018-12-07T07:28:21.602Z - info: date : Fri, 07 Dec 2018 07:28:21 GMT
+2018-12-07T07:28:21.602Z - info: host : apitest.cybersource.com
+2018-12-07T07:28:21.602Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="s0Dax2EjKE/vbfn6aK4jtTUQ6pfCh2SNMokEd9liGrw="
+2018-12-07T07:28:21.602Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:28:21.602Z - info: End > ==============================
+2018-12-07T07:30:52.663Z - info: START > =======================================
+2018-12-07T07:30:52.682Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="jazX9qY0kxpWxzFE/Eb89MuI5140uDwjklitO2tZD68="
+2018-12-07T07:30:52.663Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T07:30:52.682Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T07:30:52.682Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T07:30:52.682Z - info: v-c-merchant-id : testrest
+2018-12-07T07:30:52.682Z - info: date : Fri, 07 Dec 2018 07:30:52 GMT
+2018-12-07T07:30:52.682Z - info: host : apitest.cybersource.com
+2018-12-07T07:30:52.682Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="jazX9qY0kxpWxzFE/Eb89MuI5140uDwjklitO2tZD68="
+2018-12-07T07:30:52.682Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:30:52.682Z - info: End > ==============================
+2018-12-07T07:30:53.637Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="E0SCKiKjN2csVSnNqvnilHOMdEXG3vfJt9YUJeigkKY="
+2018-12-07T07:30:53.637Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T07:30:53.637Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T07:30:53.637Z - info: v-c-merchant-id : testrest
+2018-12-07T07:30:53.637Z - info: date : Fri, 07 Dec 2018 07:30:53 GMT
+2018-12-07T07:30:53.637Z - info: host : apitest.cybersource.com
+2018-12-07T07:30:53.637Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="E0SCKiKjN2csVSnNqvnilHOMdEXG3vfJt9YUJeigkKY="
+2018-12-07T07:30:53.637Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:30:53.637Z - info: End > ==============================
+2018-12-07T07:30:54.547Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="32CIOtx2kpGXquZDCsi+rGIZuW/yHYbos5S1P2eLSDA="
+2018-12-07T07:30:54.547Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T07:30:54.547Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T07:30:54.547Z - info: v-c-merchant-id : testrest
+2018-12-07T07:30:54.547Z - info: date : Fri, 07 Dec 2018 07:30:54 GMT
+2018-12-07T07:30:54.547Z - info: host : apitest.cybersource.com
+2018-12-07T07:30:54.547Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="32CIOtx2kpGXquZDCsi+rGIZuW/yHYbos5S1P2eLSDA="
+2018-12-07T07:30:54.548Z - info: User-Agent : Mozilla/5.0
+2018-12-07T07:30:54.548Z - info: End > ==============================
+2018-12-07T08:56:20.547Z - info: START > =======================================
+2018-12-07T08:56:20.547Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T08:56:20.567Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="0VfEf8Mqc7PVrfiuQR+itQCzCE+HWyac3hjv+BdIeBk="
+2018-12-07T08:56:20.567Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T08:56:20.567Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T08:56:20.567Z - info: v-c-merchant-id : testrest
+2018-12-07T08:56:20.567Z - info: date : Fri, 07 Dec 2018 08:56:20 GMT
+2018-12-07T08:56:20.567Z - info: host : apitest.cybersource.com
+2018-12-07T08:56:20.567Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="0VfEf8Mqc7PVrfiuQR+itQCzCE+HWyac3hjv+BdIeBk="
+2018-12-07T08:56:20.567Z - info: User-Agent : Mozilla/5.0
+2018-12-07T08:56:20.567Z - info: End > ==============================
+2018-12-07T08:56:21.732Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="v4azRkMuusSZDFVps0C6gZ9/36eHYwE7v/63Y5YS0Zs="
+2018-12-07T08:56:21.732Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T08:56:21.732Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T08:56:21.732Z - info: v-c-merchant-id : testrest
+2018-12-07T08:56:21.732Z - info: date : Fri, 07 Dec 2018 08:56:21 GMT
+2018-12-07T08:56:21.732Z - info: host : apitest.cybersource.com
+2018-12-07T08:56:21.732Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="v4azRkMuusSZDFVps0C6gZ9/36eHYwE7v/63Y5YS0Zs="
+2018-12-07T08:56:21.732Z - info: User-Agent : Mozilla/5.0
+2018-12-07T08:56:21.732Z - info: End > ==============================
+2018-12-07T08:56:22.753Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QSmLntp75MhPbArzu5AfXuswzbU4B7LVFBYWUpmaVhc="
+2018-12-07T08:56:22.753Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T08:56:22.753Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T08:56:22.753Z - info: v-c-merchant-id : testrest
+2018-12-07T08:56:22.753Z - info: date : Fri, 07 Dec 2018 08:56:22 GMT
+2018-12-07T08:56:22.753Z - info: host : apitest.cybersource.com
+2018-12-07T08:56:22.753Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QSmLntp75MhPbArzu5AfXuswzbU4B7LVFBYWUpmaVhc="
+2018-12-07T08:56:22.753Z - info: User-Agent : Mozilla/5.0
+2018-12-07T08:56:22.753Z - info: End > ==============================
+2018-12-07T09:08:01.690Z - info: START > =======================================
+2018-12-07T09:08:01.691Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:08:01.703Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Jw3z5L1bvmqcq7uxCsMv+FQqNp12VEIJwS56vZosKPE="
+2018-12-07T09:08:01.703Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:08:01.703Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:08:01.703Z - info: v-c-merchant-id : testrest
+2018-12-07T09:08:01.703Z - info: date : Fri, 07 Dec 2018 09:08:01 GMT
+2018-12-07T09:08:01.703Z - info: host : apitest.cybersource.com
+2018-12-07T09:08:01.703Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Jw3z5L1bvmqcq7uxCsMv+FQqNp12VEIJwS56vZosKPE="
+2018-12-07T09:08:01.703Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:08:01.703Z - info: End > ==============================
+2018-12-07T09:08:02.780Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="HBoIvc1TvDJHjOKtmH72PAHJaoy04di1HxpyhwPXPGk="
+2018-12-07T09:08:02.786Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:08:02.786Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:08:02.786Z - info: v-c-merchant-id : testrest
+2018-12-07T09:08:02.786Z - info: date : Fri, 07 Dec 2018 09:08:02 GMT
+2018-12-07T09:08:02.786Z - info: host : apitest.cybersource.com
+2018-12-07T09:08:02.786Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="HBoIvc1TvDJHjOKtmH72PAHJaoy04di1HxpyhwPXPGk="
+2018-12-07T09:08:02.786Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:08:02.786Z - info: End > ==============================
+2018-12-07T09:08:03.798Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="RkUYPwySigJewrpyJwmFZZxG7xGwHPELPY2ZMQ+ecR0="
+2018-12-07T09:08:03.798Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:08:03.798Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:08:03.798Z - info: v-c-merchant-id : testrest
+2018-12-07T09:08:03.798Z - info: date : Fri, 07 Dec 2018 09:08:03 GMT
+2018-12-07T09:08:03.798Z - info: host : apitest.cybersource.com
+2018-12-07T09:08:03.798Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="RkUYPwySigJewrpyJwmFZZxG7xGwHPELPY2ZMQ+ecR0="
+2018-12-07T09:08:03.798Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:08:03.798Z - info: End > ==============================
+2018-12-07T09:23:24.993Z - info: START > =======================================
+2018-12-07T09:23:24.994Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:23:25.006Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="rLeBVGj8lU4Tze7Xb6LazO+eInw/KZr75Bm4AEA/jQs="
+2018-12-07T09:23:25.006Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:23:25.006Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:23:25.006Z - info: v-c-merchant-id : testrest
+2018-12-07T09:23:25.006Z - info: date : Fri, 07 Dec 2018 09:23:25 GMT
+2018-12-07T09:23:25.006Z - info: host : apitest.cybersource.com
+2018-12-07T09:23:25.006Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="rLeBVGj8lU4Tze7Xb6LazO+eInw/KZr75Bm4AEA/jQs="
+2018-12-07T09:23:25.006Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:23:25.006Z - info: End > ==============================
+2018-12-07T09:23:26.064Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="YzK1QAL5vykdl3VbaetCSXTaTA7XNJmuJ03/k5QQfeo="
+2018-12-07T09:23:26.064Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:23:26.064Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:23:26.064Z - info: v-c-merchant-id : testrest
+2018-12-07T09:23:26.064Z - info: date : Fri, 07 Dec 2018 09:23:26 GMT
+2018-12-07T09:23:26.064Z - info: host : apitest.cybersource.com
+2018-12-07T09:23:26.064Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="YzK1QAL5vykdl3VbaetCSXTaTA7XNJmuJ03/k5QQfeo="
+2018-12-07T09:23:26.064Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:23:26.064Z - info: End > ==============================
+2018-12-07T09:23:27.073Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QwijDLo0wLwCp7quvSgd+BNv5AbBEC0Y3MgW3e0EWEg="
+2018-12-07T09:23:27.073Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:23:27.073Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:23:27.074Z - info: v-c-merchant-id : testrest
+2018-12-07T09:23:27.074Z - info: date : Fri, 07 Dec 2018 09:23:27 GMT
+2018-12-07T09:23:27.074Z - info: host : apitest.cybersource.com
+2018-12-07T09:23:27.074Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QwijDLo0wLwCp7quvSgd+BNv5AbBEC0Y3MgW3e0EWEg="
+2018-12-07T09:23:27.074Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:23:27.074Z - info: End > ==============================
+2018-12-07T09:29:36.807Z - info: START > =======================================
+2018-12-07T09:29:36.810Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:29:36.823Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="fKk7bfbVqEDeQrzsn4MURwA6yvTVdxbCvwut0WVxrms="
+2018-12-07T09:29:36.823Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:29:36.823Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:29:36.823Z - info: v-c-merchant-id : testrest
+2018-12-07T09:29:36.823Z - info: date : Fri, 07 Dec 2018 09:29:36 GMT
+2018-12-07T09:29:36.823Z - info: host : apitest.cybersource.com
+2018-12-07T09:29:36.823Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="fKk7bfbVqEDeQrzsn4MURwA6yvTVdxbCvwut0WVxrms="
+2018-12-07T09:29:36.823Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:29:36.823Z - info: End > ==============================
+2018-12-07T09:29:37.888Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="VWir4q/U4IRizYnChOSpUodREp+1AoVIYAKjbotzMjI="
+2018-12-07T09:29:37.888Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:29:37.888Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:29:37.888Z - info: v-c-merchant-id : testrest
+2018-12-07T09:29:37.888Z - info: date : Fri, 07 Dec 2018 09:29:37 GMT
+2018-12-07T09:29:37.888Z - info: host : apitest.cybersource.com
+2018-12-07T09:29:37.888Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="VWir4q/U4IRizYnChOSpUodREp+1AoVIYAKjbotzMjI="
+2018-12-07T09:29:37.888Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:29:37.888Z - info: End > ==============================
+2018-12-07T09:29:38.902Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="bIN8kLtRjr8+ZK10wFwkAy4GhofC5GPS9FWogj+v+MY="
+2018-12-07T09:29:38.902Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:29:38.902Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:29:38.902Z - info: v-c-merchant-id : testrest
+2018-12-07T09:29:38.902Z - info: date : Fri, 07 Dec 2018 09:29:38 GMT
+2018-12-07T09:29:38.902Z - info: host : apitest.cybersource.com
+2018-12-07T09:29:38.902Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="bIN8kLtRjr8+ZK10wFwkAy4GhofC5GPS9FWogj+v+MY="
+2018-12-07T09:29:38.902Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:29:38.902Z - info: End > ==============================
+2018-12-07T09:31:14.168Z - info: START > =======================================
+2018-12-07T09:31:14.170Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:31:14.185Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hNCHy5ZXZouCtT8Hz+XIU9QrRBkkNyiVdZF1vYRO2H0="
+2018-12-07T09:31:14.187Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:31:14.187Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:31:14.187Z - info: v-c-merchant-id : testrest
+2018-12-07T09:31:14.187Z - info: date : Fri, 07 Dec 2018 09:31:14 GMT
+2018-12-07T09:31:14.187Z - info: host : apitest.cybersource.com
+2018-12-07T09:31:14.187Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hNCHy5ZXZouCtT8Hz+XIU9QrRBkkNyiVdZF1vYRO2H0="
+2018-12-07T09:31:14.187Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:31:14.187Z - info: End > ==============================
+2018-12-07T09:31:16.378Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uz1Sut4CJN/lZ0piCxOsGtdnVCAGj/B2qffksE1GFWA="
+2018-12-07T09:31:16.378Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:31:16.378Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:31:16.378Z - info: v-c-merchant-id : testrest
+2018-12-07T09:31:16.378Z - info: date : Fri, 07 Dec 2018 09:31:16 GMT
+2018-12-07T09:31:16.378Z - info: host : apitest.cybersource.com
+2018-12-07T09:31:16.378Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uz1Sut4CJN/lZ0piCxOsGtdnVCAGj/B2qffksE1GFWA="
+2018-12-07T09:31:16.378Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:31:16.378Z - info: End > ==============================
+2018-12-07T09:31:17.290Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="rJ2aVgKSs0pok9PkFGCokm2737iNOpR0tRP2VxJlUtM="
+2018-12-07T09:31:17.290Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:31:17.290Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:31:17.290Z - info: v-c-merchant-id : testrest
+2018-12-07T09:31:17.290Z - info: date : Fri, 07 Dec 2018 09:31:17 GMT
+2018-12-07T09:31:17.290Z - info: host : apitest.cybersource.com
+2018-12-07T09:31:17.290Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="rJ2aVgKSs0pok9PkFGCokm2737iNOpR0tRP2VxJlUtM="
+2018-12-07T09:31:17.290Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:31:17.290Z - info: End > ==============================
+2018-12-07T09:33:14.062Z - info: START > =======================================
+2018-12-07T09:33:14.063Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:33:14.078Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9wukP+p9MvPOhu//uSQtXuelOoJEJBUO9eAqYXpZsek="
+2018-12-07T09:33:14.078Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:33:14.078Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:33:14.079Z - info: v-c-merchant-id : testrest
+2018-12-07T09:33:14.079Z - info: date : Fri, 07 Dec 2018 09:33:14 GMT
+2018-12-07T09:33:14.079Z - info: host : apitest.cybersource.com
+2018-12-07T09:33:14.079Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9wukP+p9MvPOhu//uSQtXuelOoJEJBUO9eAqYXpZsek="
+2018-12-07T09:33:14.079Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:33:14.079Z - info: End > ==============================
+2018-12-07T09:33:15.130Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="umyDpnd3q/C7EAM3sUKjk99DT+w1TpKY7DZ1qKF31Es="
+2018-12-07T09:33:15.130Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:33:15.130Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:33:15.130Z - info: v-c-merchant-id : testrest
+2018-12-07T09:33:15.130Z - info: date : Fri, 07 Dec 2018 09:33:15 GMT
+2018-12-07T09:33:15.130Z - info: host : apitest.cybersource.com
+2018-12-07T09:33:15.130Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="umyDpnd3q/C7EAM3sUKjk99DT+w1TpKY7DZ1qKF31Es="
+2018-12-07T09:33:15.130Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:33:15.130Z - info: End > ==============================
+2018-12-07T09:33:16.139Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="F/pZRJMX7KTNXKYONeFOwgrJoDJa/g8gpUmjQGdjnyE="
+2018-12-07T09:33:16.140Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:33:16.140Z - info: digest : SHA-256=Esnsb3kVEESr7sufL3Wt/WBOkkX4K+CrY+j4lk5jnaM=
+2018-12-07T09:33:16.140Z - info: v-c-merchant-id : testrest
+2018-12-07T09:33:16.140Z - info: date : Fri, 07 Dec 2018 09:33:16 GMT
+2018-12-07T09:33:16.140Z - info: host : apitest.cybersource.com
+2018-12-07T09:33:16.140Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="F/pZRJMX7KTNXKYONeFOwgrJoDJa/g8gpUmjQGdjnyE="
+2018-12-07T09:33:16.140Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:33:16.140Z - info: End > ==============================
+2018-12-07T09:35:18.927Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QR4yPYO8UHe18pUzEAkW8i5Ajigc5e2sJLQ9zxVAU6M="
+2018-12-07T09:35:18.929Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:35:18.929Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:35:18.929Z - info: v-c-merchant-id : testrest
+2018-12-07T09:35:18.929Z - info: date : Fri, 07 Dec 2018 09:35:18 GMT
+2018-12-07T09:35:18.929Z - info: host : apitest.cybersource.com
+2018-12-07T09:35:18.929Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QR4yPYO8UHe18pUzEAkW8i5Ajigc5e2sJLQ9zxVAU6M="
+2018-12-07T09:35:18.929Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:35:18.929Z - info: End > ==============================
+2018-12-07T09:35:18.887Z - info: START > =======================================
+2018-12-07T09:35:18.890Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:35:20.003Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="4PpblzbRMCuL4CgY6BItGmmwJzzU9N92aoHFvm5yjOI="
+2018-12-07T09:35:20.003Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:35:20.003Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:35:20.003Z - info: v-c-merchant-id : testrest
+2018-12-07T09:35:20.003Z - info: date : Fri, 07 Dec 2018 09:35:20 GMT
+2018-12-07T09:35:20.003Z - info: host : apitest.cybersource.com
+2018-12-07T09:35:20.003Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="4PpblzbRMCuL4CgY6BItGmmwJzzU9N92aoHFvm5yjOI="
+2018-12-07T09:35:20.003Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:35:20.003Z - info: End > ==============================
+2018-12-07T09:35:21.015Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="lXeSOviAaLcpgHQmzhWje+joAcIslzv1oB148eOJJqQ="
+2018-12-07T09:35:21.016Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:35:21.016Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:35:21.016Z - info: v-c-merchant-id : testrest
+2018-12-07T09:35:21.016Z - info: date : Fri, 07 Dec 2018 09:35:21 GMT
+2018-12-07T09:35:21.016Z - info: host : apitest.cybersource.com
+2018-12-07T09:35:21.016Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="lXeSOviAaLcpgHQmzhWje+joAcIslzv1oB148eOJJqQ="
+2018-12-07T09:35:21.016Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:35:21.016Z - info: End > ==============================
+2018-12-07T09:35:54.763Z - info: START > =======================================
+2018-12-07T09:35:54.763Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:35:54.805Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hz70JrTs+a6AP2Xw9zg3SsfYhvJ+NysJzioWW5YD/Rk="
+2018-12-07T09:35:54.805Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:35:54.805Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:35:54.805Z - info: v-c-merchant-id : testrest
+2018-12-07T09:35:54.805Z - info: date : Fri, 07 Dec 2018 09:35:54 GMT
+2018-12-07T09:35:54.805Z - info: host : apitest.cybersource.com
+2018-12-07T09:35:54.805Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hz70JrTs+a6AP2Xw9zg3SsfYhvJ+NysJzioWW5YD/Rk="
+2018-12-07T09:35:54.805Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:35:54.805Z - info: End > ==============================
+2018-12-07T09:35:55.890Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hHuHd2RblUyniW83mEQ48C0z6U3FjTf1pqUMYOo+g2I="
+2018-12-07T09:35:55.890Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:35:55.890Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:35:55.890Z - info: v-c-merchant-id : testrest
+2018-12-07T09:35:55.890Z - info: date : Fri, 07 Dec 2018 09:35:55 GMT
+2018-12-07T09:35:55.890Z - info: host : apitest.cybersource.com
+2018-12-07T09:35:55.890Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hHuHd2RblUyniW83mEQ48C0z6U3FjTf1pqUMYOo+g2I="
+2018-12-07T09:35:55.890Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:35:55.890Z - info: End > ==============================
+2018-12-07T09:35:56.906Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Le5jKzVdUpPP1+ClmLrVuPa917ybYj8A5QDemoky51Q="
+2018-12-07T09:35:56.906Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:35:56.906Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:35:56.907Z - info: v-c-merchant-id : testrest
+2018-12-07T09:35:56.907Z - info: date : Fri, 07 Dec 2018 09:35:56 GMT
+2018-12-07T09:35:56.907Z - info: host : apitest.cybersource.com
+2018-12-07T09:35:56.907Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Le5jKzVdUpPP1+ClmLrVuPa917ybYj8A5QDemoky51Q="
+2018-12-07T09:35:56.907Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:35:56.907Z - info: End > ==============================
+2018-12-07T09:38:49.319Z - info: START > =======================================
+2018-12-07T09:38:49.319Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:38:49.336Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="180N4dRsIs+dY+1mpr8eEtp2ajyUymqCAl8IUd0/6ZY="
+2018-12-07T09:38:49.337Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:38:49.337Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:38:49.337Z - info: v-c-merchant-id : testrest
+2018-12-07T09:38:49.337Z - info: date : Fri, 07 Dec 2018 09:38:49 GMT
+2018-12-07T09:38:49.337Z - info: host : apitest.cybersource.com
+2018-12-07T09:38:49.337Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="180N4dRsIs+dY+1mpr8eEtp2ajyUymqCAl8IUd0/6ZY="
+2018-12-07T09:38:49.337Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:38:49.337Z - info: End > ==============================
+2018-12-07T09:38:50.402Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="+PQB2JuctSWzprFvag1w99QmytOgmJFrKryplYHqFWM="
+2018-12-07T09:38:50.402Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:38:50.402Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:38:50.402Z - info: v-c-merchant-id : testrest
+2018-12-07T09:38:50.403Z - info: date : Fri, 07 Dec 2018 09:38:50 GMT
+2018-12-07T09:38:50.403Z - info: host : apitest.cybersource.com
+2018-12-07T09:38:50.403Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="+PQB2JuctSWzprFvag1w99QmytOgmJFrKryplYHqFWM="
+2018-12-07T09:38:50.403Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:38:50.403Z - info: End > ==============================
+2018-12-07T09:38:51.415Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="MhrwJSbzkTyKzwm17fnx0S1529Y/dQL76JGv7Mk9awo="
+2018-12-07T09:38:51.415Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:38:51.415Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:38:51.415Z - info: v-c-merchant-id : testrest
+2018-12-07T09:38:51.415Z - info: date : Fri, 07 Dec 2018 09:38:51 GMT
+2018-12-07T09:38:51.415Z - info: host : apitest.cybersource.com
+2018-12-07T09:38:51.415Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="MhrwJSbzkTyKzwm17fnx0S1529Y/dQL76JGv7Mk9awo="
+2018-12-07T09:38:51.415Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:38:51.415Z - info: End > ==============================
+2018-12-07T09:41:02.482Z - info: START > =======================================
+2018-12-07T09:41:02.483Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T09:41:02.504Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="BDLuW7oY9uFEc1ZoI4dj6JUSYLPrJgmN/md72qppY9c="
+2018-12-07T09:41:02.504Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:41:02.504Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T09:41:02.504Z - info: v-c-merchant-id : testrest
+2018-12-07T09:41:02.504Z - info: date : Fri, 07 Dec 2018 09:41:02 GMT
+2018-12-07T09:41:02.504Z - info: host : apitest.cybersource.com
+2018-12-07T09:41:02.504Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="BDLuW7oY9uFEc1ZoI4dj6JUSYLPrJgmN/md72qppY9c="
+2018-12-07T09:41:02.504Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:41:02.504Z - info: End > ==============================
+2018-12-07T09:41:03.664Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Fw22FxkV2szISCivx7tP/FPgyYWYV9DMyaTFSC/q5XY="
+2018-12-07T09:41:03.666Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:41:03.666Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T09:41:03.666Z - info: v-c-merchant-id : testrest
+2018-12-07T09:41:03.666Z - info: date : Fri, 07 Dec 2018 09:41:03 GMT
+2018-12-07T09:41:03.666Z - info: host : apitest.cybersource.com
+2018-12-07T09:41:03.666Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Fw22FxkV2szISCivx7tP/FPgyYWYV9DMyaTFSC/q5XY="
+2018-12-07T09:41:03.666Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:41:03.666Z - info: End > ==============================
+2018-12-07T09:41:04.680Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="G5TSX783w73MlmLBiAHWJZAib8Cu3l4f15b5NZsDIvQ="
+2018-12-07T09:41:04.680Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:41:04.680Z - info: digest : SHA-256=6omr53U9dTwDbN0UqRtP8zK7thdSRg5gagOSMfcNobw=
+2018-12-07T09:41:04.680Z - info: v-c-merchant-id : testrest
+2018-12-07T09:41:04.680Z - info: date : Fri, 07 Dec 2018 09:41:04 GMT
+2018-12-07T09:41:04.680Z - info: host : apitest.cybersource.com
+2018-12-07T09:41:04.680Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="G5TSX783w73MlmLBiAHWJZAib8Cu3l4f15b5NZsDIvQ="
+2018-12-07T09:41:04.680Z - info: User-Agent : Mozilla/5.0
+2018-12-07T09:41:04.680Z - info: End > ==============================
+2018-12-07T10:00:10.987Z - info: START > =======================================
+2018-12-07T10:00:11.007Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="YY3bxej6fiiRbW4NRwhAMrEDnWc9KwHBGufVXnYqFrM="
+2018-12-07T10:00:10.989Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T10:00:11.007Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:00:11.007Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:00:11.007Z - info: v-c-merchant-id : testrest
+2018-12-07T10:00:11.007Z - info: date : Fri, 07 Dec 2018 10:00:11 GMT
+2018-12-07T10:00:11.007Z - info: host : apitest.cybersource.com
+2018-12-07T10:00:11.007Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="YY3bxej6fiiRbW4NRwhAMrEDnWc9KwHBGufVXnYqFrM="
+2018-12-07T10:00:11.007Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:00:11.007Z - info: End > ==============================
+2018-12-07T10:00:12.065Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="2ENi+SpmP+HsYznKr5VXKvmaBppipleJq6YRJ/c+YmE="
+2018-12-07T10:00:12.065Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:00:12.066Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:00:12.066Z - info: v-c-merchant-id : testrest
+2018-12-07T10:00:12.066Z - info: date : Fri, 07 Dec 2018 10:00:12 GMT
+2018-12-07T10:00:12.066Z - info: host : apitest.cybersource.com
+2018-12-07T10:00:12.066Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="2ENi+SpmP+HsYznKr5VXKvmaBppipleJq6YRJ/c+YmE="
+2018-12-07T10:00:12.066Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:00:12.066Z - info: End > ==============================
+2018-12-07T10:00:12.979Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UeE0TgigK9KSgWNUNILOUqCwLM2d8LP4//DQhMskyHQ="
+2018-12-07T10:00:12.979Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:00:12.979Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:00:12.979Z - info: v-c-merchant-id : testrest
+2018-12-07T10:00:12.979Z - info: date : Fri, 07 Dec 2018 10:00:12 GMT
+2018-12-07T10:00:12.979Z - info: host : apitest.cybersource.com
+2018-12-07T10:00:12.979Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UeE0TgigK9KSgWNUNILOUqCwLM2d8LP4//DQhMskyHQ="
+2018-12-07T10:00:12.979Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:00:12.979Z - info: End > ==============================
+2018-12-07T10:01:13.827Z - info: START > =======================================
+2018-12-07T10:01:13.828Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T10:01:13.847Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="KsITCJz/4GQ35wh1sq+inGNc5ZNNOM245llABNzmr0M="
+2018-12-07T10:01:13.847Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:01:13.847Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:01:13.847Z - info: v-c-merchant-id : testrest
+2018-12-07T10:01:13.847Z - info: date : Fri, 07 Dec 2018 10:01:13 GMT
+2018-12-07T10:01:13.847Z - info: host : apitest.cybersource.com
+2018-12-07T10:01:13.847Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="KsITCJz/4GQ35wh1sq+inGNc5ZNNOM245llABNzmr0M="
+2018-12-07T10:01:13.847Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:01:13.847Z - info: End > ==============================
+2018-12-07T10:01:14.915Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="V09IvuHoDzKwezhDZXWFoKhryN3n4UsHLp9TVcLcXxA="
+2018-12-07T10:01:14.915Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:01:14.915Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:01:14.915Z - info: v-c-merchant-id : testrest
+2018-12-07T10:01:14.915Z - info: date : Fri, 07 Dec 2018 10:01:14 GMT
+2018-12-07T10:01:14.915Z - info: host : apitest.cybersource.com
+2018-12-07T10:01:14.915Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="V09IvuHoDzKwezhDZXWFoKhryN3n4UsHLp9TVcLcXxA="
+2018-12-07T10:01:14.915Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:01:14.915Z - info: End > ==============================
+2018-12-07T10:01:15.826Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="dlijFOi1idtyOFZlmDGjVRdVO4NvCh6n4oT0j+LNT3Y="
+2018-12-07T10:01:15.826Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:01:15.826Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:01:15.826Z - info: v-c-merchant-id : testrest
+2018-12-07T10:01:15.826Z - info: date : Fri, 07 Dec 2018 10:01:15 GMT
+2018-12-07T10:01:15.826Z - info: host : apitest.cybersource.com
+2018-12-07T10:01:15.826Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="dlijFOi1idtyOFZlmDGjVRdVO4NvCh6n4oT0j+LNT3Y="
+2018-12-07T10:01:15.826Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:01:15.826Z - info: End > ==============================
+2018-12-07T10:07:54.645Z - info: START > =======================================
+2018-12-07T10:07:54.651Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T10:07:54.675Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="7uj72cO3jx9nsN5AJsqrtZKaDbEsMM8R79mDbqsjHdY="
+2018-12-07T10:07:54.675Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:07:54.675Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:07:54.676Z - info: v-c-merchant-id : testrest
+2018-12-07T10:07:54.676Z - info: date : Fri, 07 Dec 2018 10:07:54 GMT
+2018-12-07T10:07:54.676Z - info: host : apitest.cybersource.com
+2018-12-07T10:07:54.676Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="7uj72cO3jx9nsN5AJsqrtZKaDbEsMM8R79mDbqsjHdY="
+2018-12-07T10:07:54.676Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:07:54.676Z - info: End > ==============================
+2018-12-07T10:07:55.777Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="4Alp9NLbniQDy86t3owGxMsbot3MxFw2JqGfkhvDYHM="
+2018-12-07T10:07:55.778Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:07:55.778Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:07:55.778Z - info: v-c-merchant-id : testrest
+2018-12-07T10:07:55.778Z - info: date : Fri, 07 Dec 2018 10:07:55 GMT
+2018-12-07T10:07:55.778Z - info: host : apitest.cybersource.com
+2018-12-07T10:07:55.778Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="4Alp9NLbniQDy86t3owGxMsbot3MxFw2JqGfkhvDYHM="
+2018-12-07T10:07:55.778Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:07:55.778Z - info: End > ==============================
+2018-12-07T10:07:56.788Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="DwgkSGZIkJ75D42XqAdLejAiyhnwzRaavsi4OHxBJgg="
+2018-12-07T10:07:56.788Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:07:56.788Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:07:56.788Z - info: v-c-merchant-id : testrest
+2018-12-07T10:07:56.788Z - info: date : Fri, 07 Dec 2018 10:07:56 GMT
+2018-12-07T10:07:56.788Z - info: host : apitest.cybersource.com
+2018-12-07T10:07:56.788Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="DwgkSGZIkJ75D42XqAdLejAiyhnwzRaavsi4OHxBJgg="
+2018-12-07T10:07:56.788Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:07:56.788Z - info: End > ==============================
+2018-12-07T10:08:42.627Z - info: START > =======================================
+2018-12-07T10:08:42.627Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T10:08:42.645Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="na0nPYEjwnqp2ZnkPjmK0+UIhvzAe1I/14a4e9Hqp7w="
+2018-12-07T10:08:42.645Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:08:42.645Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:08:42.645Z - info: v-c-merchant-id : testrest
+2018-12-07T10:08:42.645Z - info: date : Fri, 07 Dec 2018 10:08:42 GMT
+2018-12-07T10:08:42.645Z - info: host : apitest.cybersource.com
+2018-12-07T10:08:42.645Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="na0nPYEjwnqp2ZnkPjmK0+UIhvzAe1I/14a4e9Hqp7w="
+2018-12-07T10:08:42.645Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:08:42.645Z - info: End > ==============================
+2018-12-07T10:08:43.700Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="mH91SSPzNvJLn4CGnmRPZZLanXH4cgIki4o+84AzeZY="
+2018-12-07T10:08:43.700Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:08:43.700Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:08:43.700Z - info: v-c-merchant-id : testrest
+2018-12-07T10:08:43.700Z - info: date : Fri, 07 Dec 2018 10:08:43 GMT
+2018-12-07T10:08:43.700Z - info: host : apitest.cybersource.com
+2018-12-07T10:08:43.700Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="mH91SSPzNvJLn4CGnmRPZZLanXH4cgIki4o+84AzeZY="
+2018-12-07T10:08:43.700Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:08:43.700Z - info: End > ==============================
+2018-12-07T10:08:44.811Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9QUhiS7YJ8mSSjxp3hWJ/3JD7anUWeqCef/QrhsRsa4="
+2018-12-07T10:08:44.811Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:08:44.811Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:08:44.811Z - info: v-c-merchant-id : testrest
+2018-12-07T10:08:44.811Z - info: date : Fri, 07 Dec 2018 10:08:44 GMT
+2018-12-07T10:08:44.811Z - info: host : apitest.cybersource.com
+2018-12-07T10:08:44.811Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9QUhiS7YJ8mSSjxp3hWJ/3JD7anUWeqCef/QrhsRsa4="
+2018-12-07T10:08:44.811Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:08:44.811Z - info: End > ==============================
+2018-12-07T10:09:40.425Z - info: START > =======================================
+2018-12-07T10:09:40.425Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-07T10:09:40.441Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ydnwX8KW5AxN27uMzJydUaHOFNBzDt0EuahxkJmCGE8="
+2018-12-07T10:09:40.441Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:09:40.441Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-07T10:09:40.441Z - info: v-c-merchant-id : testrest
+2018-12-07T10:09:40.441Z - info: date : Fri, 07 Dec 2018 10:09:40 GMT
+2018-12-07T10:09:40.441Z - info: host : apitest.cybersource.com
+2018-12-07T10:09:40.441Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ydnwX8KW5AxN27uMzJydUaHOFNBzDt0EuahxkJmCGE8="
+2018-12-07T10:09:40.441Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:09:40.441Z - info: End > ==============================
+2018-12-07T10:09:41.611Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="mI9VEZpvRsDiACMY8hCBStMDwYLICq34zoO5o0XNdXE="
+2018-12-07T10:09:41.611Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:09:41.611Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-07T10:09:41.611Z - info: v-c-merchant-id : testrest
+2018-12-07T10:09:41.611Z - info: date : Fri, 07 Dec 2018 10:09:41 GMT
+2018-12-07T10:09:41.611Z - info: host : apitest.cybersource.com
+2018-12-07T10:09:41.611Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="mI9VEZpvRsDiACMY8hCBStMDwYLICq34zoO5o0XNdXE="
+2018-12-07T10:09:41.611Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:09:41.611Z - info: End > ==============================
+2018-12-07T10:09:42.619Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="a9o7bUpgrz5mh61nbcaToNhVBXnZ9ih0MK2+1fBw4wc="
+2018-12-07T10:09:42.619Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:09:42.619Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-07T10:09:42.619Z - info: v-c-merchant-id : testrest
+2018-12-07T10:09:42.619Z - info: date : Fri, 07 Dec 2018 10:09:42 GMT
+2018-12-07T10:09:42.619Z - info: host : apitest.cybersource.com
+2018-12-07T10:09:42.619Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="a9o7bUpgrz5mh61nbcaToNhVBXnZ9ih0MK2+1fBw4wc="
+2018-12-07T10:09:42.619Z - info: User-Agent : Mozilla/5.0
+2018-12-07T10:09:42.619Z - info: End > ==============================
+2018-12-10T05:40:49.950Z - info: START > =======================================
+2018-12-10T05:40:49.951Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-10T05:40:50.052Z - info: START > =======================================
+2018-12-10T05:40:50.032Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv' date=Mon Dec 10 2018 11:10:49 GMT+0530 (India Standard Time), pid=5472, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\Payments\CoreServices\ProcessCreditTest.js], rss=60563456, heapTotal=34447360, heapUsed=20567008, external=355216, loadavg=[0, 0, 0], uptime=516844.523819, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv']
+2018-12-10T05:40:50.052Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-10T05:40:50.061Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="vtOy4xcLzZGl85tzNMHcsjLxaE/oi8evFxlvqjzjErc="
+2018-12-10T05:40:50.061Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-10T05:40:50.061Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-10T05:40:50.061Z - info: v-c-merchant-id : testrest
+2018-12-10T05:40:50.061Z - info: date : Mon, 10 Dec 2018 05:40:50 GMT
+2018-12-10T05:40:50.061Z - info: host : apitest.cybersource.com
+2018-12-10T05:40:50.061Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="vtOy4xcLzZGl85tzNMHcsjLxaE/oi8evFxlvqjzjErc="
+2018-12-10T05:40:50.061Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:40:50.061Z - info: End > ==============================
+2018-12-10T05:40:51.108Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="FxFvI+u3HJEvQXfoeQ6tj6ZIarNZKcqlbpOejgSnF0c="
+2018-12-10T05:40:51.108Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-10T05:40:51.108Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-10T05:40:51.108Z - info: v-c-merchant-id : testrest
+2018-12-10T05:40:51.108Z - info: date : Mon, 10 Dec 2018 05:40:51 GMT
+2018-12-10T05:40:51.108Z - info: host : apitest.cybersource.com
+2018-12-10T05:40:51.108Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="FxFvI+u3HJEvQXfoeQ6tj6ZIarNZKcqlbpOejgSnF0c="
+2018-12-10T05:40:51.108Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:40:51.108Z - info: End > ==============================
+2018-12-10T05:40:52.221Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ipJr+qOapnud8XMtu13NKT7c8d+jU7nertARKD+sZ+Y="
+2018-12-10T05:40:52.221Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-10T05:40:52.221Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-10T05:40:52.221Z - info: v-c-merchant-id : testrest
+2018-12-10T05:40:52.221Z - info: date : Mon, 10 Dec 2018 05:40:52 GMT
+2018-12-10T05:40:52.221Z - info: host : apitest.cybersource.com
+2018-12-10T05:40:52.221Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ipJr+qOapnud8XMtu13NKT7c8d+jU7nertARKD+sZ+Y="
+2018-12-10T05:40:52.221Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:40:52.221Z - info: End > ==============================
+2018-12-10T05:42:47.637Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="3/V02G8SytUr2dqJ9nfH1Cxjdl0StlNcqE1HyBDEka0="
+2018-12-10T05:42:47.637Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-10T05:42:47.638Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-10T05:42:47.638Z - info: v-c-merchant-id : testrest
+2018-12-10T05:42:47.638Z - info: date : Mon, 10 Dec 2018 05:42:47 GMT
+2018-12-10T05:42:47.638Z - info: host : apitest.cybersource.com
+2018-12-10T05:42:47.638Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="3/V02G8SytUr2dqJ9nfH1Cxjdl0StlNcqE1HyBDEka0="
+2018-12-10T05:42:47.638Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:42:47.638Z - info: End > ==============================
+2018-12-10T05:42:47.532Z - info: START > =======================================
+2018-12-10T05:42:47.520Z - info: START > =======================================
+2018-12-10T05:42:47.522Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-10T05:42:47.532Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-10T05:42:47.617Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv' date=Mon Dec 10 2018 11:12:47 GMT+0530 (India Standard Time), pid=21160, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60641280, heapTotal=34447360, heapUsed=19977056, external=457552, loadavg=[0, 0, 0], uptime=516962.1082872, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv']
+2018-12-10T05:42:47.631Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv' date=Mon Dec 10 2018 11:12:47 GMT+0530 (India Standard Time), pid=21160, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=61911040, heapTotal=35495936, heapUsed=16307672, external=457576, loadavg=[0, 0, 0], uptime=516962.122292, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv']
+2018-12-10T05:42:48.683Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ZEo7HgW4e7+nyLq7CBo6FOWl08wunic0CSMwDLfc24E="
+2018-12-10T05:42:48.683Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-10T05:42:48.683Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-10T05:42:48.683Z - info: v-c-merchant-id : testrest
+2018-12-10T05:42:48.683Z - info: date : Mon, 10 Dec 2018 05:42:48 GMT
+2018-12-10T05:42:48.683Z - info: host : apitest.cybersource.com
+2018-12-10T05:42:48.683Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ZEo7HgW4e7+nyLq7CBo6FOWl08wunic0CSMwDLfc24E="
+2018-12-10T05:42:48.683Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:42:48.683Z - info: End > ==============================
+2018-12-10T05:42:49.696Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="eOSAFRlzzhh4vb6KuQgEt6x44VLIqjNtoFb6YmvmBK4="
+2018-12-10T05:42:49.696Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-10T05:42:49.696Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-10T05:42:49.696Z - info: v-c-merchant-id : testrest
+2018-12-10T05:42:49.696Z - info: date : Mon, 10 Dec 2018 05:42:49 GMT
+2018-12-10T05:42:49.696Z - info: host : apitest.cybersource.com
+2018-12-10T05:42:49.696Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="eOSAFRlzzhh4vb6KuQgEt6x44VLIqjNtoFb6YmvmBK4="
+2018-12-10T05:42:49.696Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:42:49.696Z - info: End > ==============================
+2018-12-10T05:43:37.255Z - info: START > =======================================
+2018-12-10T05:43:37.256Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-10T05:43:37.333Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv' date=Mon Dec 10 2018 11:13:37 GMT+0530 (India Standard Time), pid=20032, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60608512, heapTotal=34447360, heapUsed=19862328, external=383824, loadavg=[0, 0, 0], uptime=517011.826054, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv']
+2018-12-10T05:45:13.954Z - info: START > =======================================
+2018-12-10T05:45:13.954Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-10T05:45:14.023Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv' date=Mon Dec 10 2018 11:15:13 GMT+0530 (India Standard Time), pid=4108, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60882944, heapTotal=34447360, heapUsed=20096864, external=383824, loadavg=[0, 0, 0], uptime=517108.5184939, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\Test-CSV\Payments\CoreServices\ProcessCredit.csv']
+2018-12-10T05:47:41.854Z - info: START > =======================================
+2018-12-10T05:47:41.855Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-10T05:47:41.873Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ICqvw8zszCgDUT9LcasNtRCyr5toObylIJzCVwlYXO0="
+2018-12-10T05:47:41.873Z - info: digest : SHA-256=Xft5Ouy3tpSCu7QDrtIZ1HcXCMCuClh48yqxAJsgFeo=
+2018-12-10T05:47:41.873Z - info: digest : SHA-256=Xft5Ouy3tpSCu7QDrtIZ1HcXCMCuClh48yqxAJsgFeo=
+2018-12-10T05:47:41.873Z - info: v-c-merchant-id : testrest
+2018-12-10T05:47:41.873Z - info: date : Mon, 10 Dec 2018 05:47:41 GMT
+2018-12-10T05:47:41.873Z - info: host : apitest.cybersource.com
+2018-12-10T05:47:41.873Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ICqvw8zszCgDUT9LcasNtRCyr5toObylIJzCVwlYXO0="
+2018-12-10T05:47:41.873Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:47:41.873Z - info: End > ==============================
+2018-12-10T05:47:42.928Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="gknPgk4wRxsdSb2eVLcNLBhBFnqmaYV/2/ejt0wKR7o="
+2018-12-10T05:47:42.928Z - info: digest : SHA-256=QJViL4Uil16ZH0FFBPQIGW47e084+nWQazDne7BnoTc=
+2018-12-10T05:47:42.928Z - info: digest : SHA-256=QJViL4Uil16ZH0FFBPQIGW47e084+nWQazDne7BnoTc=
+2018-12-10T05:47:42.928Z - info: v-c-merchant-id : testrest
+2018-12-10T05:47:42.928Z - info: date : Mon, 10 Dec 2018 05:47:42 GMT
+2018-12-10T05:47:42.928Z - info: host : apitest.cybersource.com
+2018-12-10T05:47:42.928Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="gknPgk4wRxsdSb2eVLcNLBhBFnqmaYV/2/ejt0wKR7o="
+2018-12-10T05:47:42.928Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:47:42.928Z - info: End > ==============================
+2018-12-10T05:47:45.044Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QAlHQ77dcjMbCz/+4+GV/s4Z565Z+StiiWU3CgSZ+1g="
+2018-12-10T05:47:45.044Z - info: digest : SHA-256=k5BCwPwtpcPKukTKFgkgJn54BOIOo3xkKuCilfzblCQ=
+2018-12-10T05:47:45.044Z - info: digest : SHA-256=k5BCwPwtpcPKukTKFgkgJn54BOIOo3xkKuCilfzblCQ=
+2018-12-10T05:47:45.044Z - info: v-c-merchant-id : testrest
+2018-12-10T05:47:45.044Z - info: date : Mon, 10 Dec 2018 05:47:45 GMT
+2018-12-10T05:47:45.044Z - info: host : apitest.cybersource.com
+2018-12-10T05:47:45.044Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="QAlHQ77dcjMbCz/+4+GV/s4Z565Z+StiiWU3CgSZ+1g="
+2018-12-10T05:47:45.044Z - info: User-Agent : Mozilla/5.0
+2018-12-10T05:47:45.044Z - info: End > ==============================
+2018-12-11T06:45:12.699Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="J2DDf3QZf2efx7SkAm3GLyUmS+3q3XBx2fzHkVFCB74="
+2018-12-11T06:45:12.699Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T06:45:12.699Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T06:45:12.701Z - info: v-c-merchant-id : testrest
+2018-12-11T06:45:12.701Z - info: date : Tue, 11 Dec 2018 06:45:12 GMT
+2018-12-11T06:45:12.701Z - info: host : apitest.cybersource.com
+2018-12-11T06:45:12.701Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="J2DDf3QZf2efx7SkAm3GLyUmS+3q3XBx2fzHkVFCB74="
+2018-12-11T06:45:12.701Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:45:12.701Z - info: End > ==============================
+2018-12-11T06:45:12.574Z - info: START > =======================================
+2018-12-11T06:45:12.585Z - info: START > =======================================
+2018-12-11T06:45:12.575Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T06:45:12.587Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T06:45:12.673Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\CSV_Files\Payments\CoreServices\CreateAReversal.csv' date=Tue Dec 11 2018 12:15:12 GMT+0530 (India Standard Time), pid=19836, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60837888, heapTotal=34447360, heapUsed=19975232, external=457552, loadavg=[0, 0, 0], uptime=607107.1641357, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\CSV_Files\Payments\CoreServices\CreateAReversal.csv']
+2018-12-11T06:45:12.683Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\CSV_Files\Payments\CoreServices\CreateAReversal.csv' date=Tue Dec 11 2018 12:15:12 GMT+0530 (India Standard Time), pid=19836, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=62001152, heapTotal=34447360, heapUsed=20285912, external=457576, loadavg=[0, 0, 0], uptime=607107.1791352, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\CSV_Files\Payments\CoreServices\CreateAReversal.csv']
+2018-12-11T06:45:13.997Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="w1qdfN3abHqZXtBvcJv9RFOTmfV5cP573KmxKuIEjJo="
+2018-12-11T06:45:13.998Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T06:45:13.998Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T06:45:13.998Z - info: v-c-merchant-id : testrest
+2018-12-11T06:45:13.998Z - info: date : Tue, 11 Dec 2018 06:45:13 GMT
+2018-12-11T06:45:13.998Z - info: host : apitest.cybersource.com
+2018-12-11T06:45:13.998Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="w1qdfN3abHqZXtBvcJv9RFOTmfV5cP573KmxKuIEjJo="
+2018-12-11T06:45:13.998Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:45:13.998Z - info: End > ==============================
+2018-12-11T06:45:15.107Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="HS5WiWWfzGycJxM0D0DVYMnXjClJIb4fqattupPZILI="
+2018-12-11T06:45:15.107Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T06:45:15.107Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T06:45:15.107Z - info: v-c-merchant-id : testrest
+2018-12-11T06:45:15.107Z - info: date : Tue, 11 Dec 2018 06:45:15 GMT
+2018-12-11T06:45:15.107Z - info: host : apitest.cybersource.com
+2018-12-11T06:45:15.107Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="HS5WiWWfzGycJxM0D0DVYMnXjClJIb4fqattupPZILI="
+2018-12-11T06:45:15.107Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:45:15.107Z - info: End > ==============================
+2018-12-11T06:46:24.848Z - info: START > =======================================
+2018-12-11T06:46:24.850Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T06:46:24.954Z - error: uncaughtException: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\CSV_Files\Payments\CoreServices\CreateAReversal.csv' date=Tue Dec 11 2018 12:16:24 GMT+0530 (India Standard Time), pid=21872, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60637184, heapTotal=35495936, heapUsed=16175960, external=383824, loadavg=[0, 0, 0], uptime=607179.4382469, trace=[], stack=[Error: ENOENT: no such file or directory, open 'C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\CSV_Files\Payments\CoreServices\CreateAReversal.csv']
+2018-12-11T06:47:20.821Z - info: START > =======================================
+2018-12-11T06:47:20.822Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T06:47:20.926Z - error: uncaughtException: api is not defined date=Tue Dec 11 2018 12:17:20 GMT+0530 (India Standard Time), pid=10208, uid=null, gid=null, cwd=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\TestRun.js], rss=60678144, heapTotal=35495936, heapUsed=16005248, external=449360, loadavg=[0, 0, 0], uptime=607235.4124235, trace=[column=9, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\Payments\CoreServices\ProcessAuthorizationReversalTest.js, function=null, line=78, method=null, native=false, column=13, file=events.js, function=emitOne, line=116, method=null, native=false, column=7, file=events.js, function=ParserStream.emit, line=211, method=emit, native=false, column=25, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\extended.js, function=spreadArgs, line=43, method=null, native=false, column=13, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js, function=ParserStream.emit, line=325, method=emit, native=false, column=12, file=_stream_readable.js, function=addChunk, line=263, method=null, native=false, column=11, file=_stream_readable.js, function=readableAddChunk, line=250, method=null, native=false, column=10, file=_stream_readable.js, function=ParserStream.Readable.push, line=208, method=push, native=false, column=32, file=_stream_transform.js, function=ParserStream.Transform.push, line=147, method=push, native=false, column=18, file=C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js, function=ParserStream.__emitRecord, line=202, method=__emitRecord, native=false], stack=[ReferenceError: api is not defined,     at ParserStream.<anonymous> (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\QaScripts\Payments\CoreServices\ProcessAuthorizationReversalTest.js:78:9),     at emitOne (events.js:116:13),     at ParserStream.emit (events.js:211:7),     at spreadArgs (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\extended.js:43:25),     at ParserStream.emit (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js:325:13),     at addChunk (_stream_readable.js:263:12),     at readableAddChunk (_stream_readable.js:250:11),     at ParserStream.Readable.push (_stream_readable.js:208:10),     at ParserStream.Transform.push (_stream_transform.js:147:32),     at ParserStream.__emitRecord (C:\Users\mzaid\SDK3935DevCode\Gayathri_NodeJDSwaggerCode\QANodeJS07-12-18\cybersource-rest-qa-node\node_modules\fast-csv\lib\parser\parser_stream.js:202:18)]
+2018-12-11T06:56:59.574Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="xfLiSz7Vg5mugo1GtGCpOw85t9zI4An9D0U/TcIfn1s="
+2018-12-11T06:56:59.574Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:56:59.574Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:56:59.574Z - info: v-c-merchant-id : testrest
+2018-12-11T06:56:59.574Z - info: date : Tue, 11 Dec 2018 06:56:59 GMT
+2018-12-11T06:56:59.574Z - info: host : apitest.cybersource.com
+2018-12-11T06:56:59.574Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="xfLiSz7Vg5mugo1GtGCpOw85t9zI4An9D0U/TcIfn1s="
+2018-12-11T06:56:59.574Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:56:59.574Z - info: End > ==============================
+2018-12-11T06:56:59.541Z - info: START > =======================================
+2018-12-11T06:56:59.543Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T06:57:00.641Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UGIm6RlV1b9bPXXqJd6XuvsfWzRMFzXl/fNjbzutYsU="
+2018-12-11T06:57:00.641Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T06:57:00.642Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T06:57:00.642Z - info: v-c-merchant-id : testrest
+2018-12-11T06:57:00.642Z - info: date : Tue, 11 Dec 2018 06:57:00 GMT
+2018-12-11T06:57:00.642Z - info: host : apitest.cybersource.com
+2018-12-11T06:57:00.642Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UGIm6RlV1b9bPXXqJd6XuvsfWzRMFzXl/fNjbzutYsU="
+2018-12-11T06:57:00.642Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:57:00.642Z - info: End > ==============================
+2018-12-11T06:57:01.753Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="cfja8BcZIOsGpTlDAUNoIc/45uvx+JxgegrjjKIa9sU="
+2018-12-11T06:57:01.753Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:57:01.753Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:57:01.753Z - info: v-c-merchant-id : testrest
+2018-12-11T06:57:01.753Z - info: date : Tue, 11 Dec 2018 06:57:01 GMT
+2018-12-11T06:57:01.753Z - info: host : apitest.cybersource.com
+2018-12-11T06:57:01.753Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="cfja8BcZIOsGpTlDAUNoIc/45uvx+JxgegrjjKIa9sU="
+2018-12-11T06:57:01.753Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:57:01.753Z - info: End > ==============================
+2018-12-11T06:58:36.030Z - info: START > =======================================
+2018-12-11T06:58:36.035Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T06:58:36.057Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="l4iLFPj9wlEoDGLe5XQG35xs0bm/mI/g0YaKd87SqCQ="
+2018-12-11T06:58:36.057Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:58:36.057Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:58:36.057Z - info: v-c-merchant-id : testrest
+2018-12-11T06:58:36.057Z - info: date : Tue, 11 Dec 2018 06:58:36 GMT
+2018-12-11T06:58:36.057Z - info: host : apitest.cybersource.com
+2018-12-11T06:58:36.057Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="l4iLFPj9wlEoDGLe5XQG35xs0bm/mI/g0YaKd87SqCQ="
+2018-12-11T06:58:36.057Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:58:36.057Z - info: End > ==============================
+2018-12-11T06:58:37.214Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="TEyBzcbr0RJmyqV3SxZje/PdKFohKgDTWa6G4qEPw4Y="
+2018-12-11T06:58:37.214Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T06:58:37.214Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T06:58:37.214Z - info: v-c-merchant-id : testrest
+2018-12-11T06:58:37.214Z - info: date : Tue, 11 Dec 2018 06:58:37 GMT
+2018-12-11T06:58:37.214Z - info: host : apitest.cybersource.com
+2018-12-11T06:58:37.214Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="TEyBzcbr0RJmyqV3SxZje/PdKFohKgDTWa6G4qEPw4Y="
+2018-12-11T06:58:37.214Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:58:37.214Z - info: End > ==============================
+2018-12-11T06:58:38.329Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="fYBqGBuVLbwLv6dXFjpWVh4DHYjRCyRZoBx3sbHT04k="
+2018-12-11T06:58:38.329Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:58:38.329Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T06:58:38.329Z - info: v-c-merchant-id : testrest
+2018-12-11T06:58:38.329Z - info: date : Tue, 11 Dec 2018 06:58:38 GMT
+2018-12-11T06:58:38.329Z - info: host : apitest.cybersource.com
+2018-12-11T06:58:38.329Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="fYBqGBuVLbwLv6dXFjpWVh4DHYjRCyRZoBx3sbHT04k="
+2018-12-11T06:58:38.329Z - info: User-Agent : Mozilla/5.0
+2018-12-11T06:58:38.329Z - info: End > ==============================
+2018-12-11T07:00:48.623Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="//WTiJJnqw1Lq/8KQblXg4E8LHLwqi3O5pyv2cyHR3U="
+2018-12-11T07:00:48.624Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:00:48.624Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:00:48.624Z - info: v-c-merchant-id : testrest
+2018-12-11T07:00:48.624Z - info: date : Tue, 11 Dec 2018 07:00:48 GMT
+2018-12-11T07:00:48.624Z - info: host : apitest.cybersource.com
+2018-12-11T07:00:48.624Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="//WTiJJnqw1Lq/8KQblXg4E8LHLwqi3O5pyv2cyHR3U="
+2018-12-11T07:00:48.624Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:00:48.624Z - info: End > ==============================
+2018-12-11T07:00:49.800Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uh+g+DgZi+UZl3Xaf6u5EPik1Hue2bQ+1APuelZ+W4Y="
+2018-12-11T07:00:49.800Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:00:49.800Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:00:49.800Z - info: v-c-merchant-id : testrest
+2018-12-11T07:00:49.800Z - info: date : Tue, 11 Dec 2018 07:00:49 GMT
+2018-12-11T07:00:49.800Z - info: host : apitest.cybersource.com
+2018-12-11T07:00:49.800Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uh+g+DgZi+UZl3Xaf6u5EPik1Hue2bQ+1APuelZ+W4Y="
+2018-12-11T07:00:49.800Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:00:49.800Z - info: End > ==============================
+2018-12-11T07:00:49.795Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uMz6ZiKQySBkQhh/iSFhDq5jtPGyRfHTZfXahNKTeQk="
+2018-12-11T07:00:49.795Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:00:49.795Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:00:49.795Z - info: v-c-merchant-id : testrest
+2018-12-11T07:00:49.795Z - info: date : Tue, 11 Dec 2018 07:00:49 GMT
+2018-12-11T07:00:49.795Z - info: host : apitest.cybersource.com
+2018-12-11T07:00:49.795Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uMz6ZiKQySBkQhh/iSFhDq5jtPGyRfHTZfXahNKTeQk="
+2018-12-11T07:00:49.795Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:00:49.795Z - info: End > ==============================
+2018-12-11T07:00:50.816Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="6dl6tc7Kug0w9waSly7x0WzkO49yksRtgHfWFbGXzO4="
+2018-12-11T07:00:50.816Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:00:50.816Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:00:50.816Z - info: v-c-merchant-id : testrest
+2018-12-11T07:00:50.816Z - info: date : Tue, 11 Dec 2018 07:00:50 GMT
+2018-12-11T07:00:50.816Z - info: host : apitest.cybersource.com
+2018-12-11T07:00:50.816Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="6dl6tc7Kug0w9waSly7x0WzkO49yksRtgHfWFbGXzO4="
+2018-12-11T07:00:50.816Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:00:50.816Z - info: End > ==============================
+2018-12-11T07:00:48.601Z - info: START > =======================================
+2018-12-11T07:00:48.581Z - info: START > =======================================
+2018-12-11T07:00:48.601Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:00:48.586Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:00:51.826Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="reOElZXe9EE4CSQJLSAticJb3b7xJKQFS1B7lNhhJ84="
+2018-12-11T07:00:51.826Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T07:00:51.826Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T07:00:51.826Z - info: v-c-merchant-id : testrest
+2018-12-11T07:00:51.826Z - info: date : Tue, 11 Dec 2018 07:00:51 GMT
+2018-12-11T07:00:51.826Z - info: host : apitest.cybersource.com
+2018-12-11T07:00:51.826Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="reOElZXe9EE4CSQJLSAticJb3b7xJKQFS1B7lNhhJ84="
+2018-12-11T07:00:51.826Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:00:51.826Z - info: End > ==============================
+2018-12-11T07:00:52.735Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="/iyt9IhrhF6T0UNDBcPXXfyUqAz/cXHVN9/w7q1RhvQ="
+2018-12-11T07:00:52.735Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:00:52.735Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:00:52.735Z - info: v-c-merchant-id : testrest
+2018-12-11T07:00:52.735Z - info: date : Tue, 11 Dec 2018 07:00:52 GMT
+2018-12-11T07:00:52.735Z - info: host : apitest.cybersource.com
+2018-12-11T07:00:52.735Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="/iyt9IhrhF6T0UNDBcPXXfyUqAz/cXHVN9/w7q1RhvQ="
+2018-12-11T07:00:52.735Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:00:52.735Z - info: End > ==============================
+2018-12-11T07:02:36.640Z - info: START > =======================================
+2018-12-11T07:02:36.632Z - info: START > =======================================
+2018-12-11T07:02:36.640Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:02:36.632Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:02:36.657Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="e0LDZqZxRs/hlQZiNNvR4j9aBLOyblRQysY4rsQgPLY="
+2018-12-11T07:02:36.657Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:02:36.657Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:02:36.657Z - info: v-c-merchant-id : testrest
+2018-12-11T07:02:36.657Z - info: date : Tue, 11 Dec 2018 07:02:36 GMT
+2018-12-11T07:02:36.657Z - info: host : apitest.cybersource.com
+2018-12-11T07:02:36.657Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="e0LDZqZxRs/hlQZiNNvR4j9aBLOyblRQysY4rsQgPLY="
+2018-12-11T07:02:36.657Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:02:36.657Z - info: End > ==============================
+2018-12-11T07:02:37.812Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="A+jIcx7ZiDm/LPC+OAxxma1T/+NsLe4mgJzCCoQ3Azs="
+2018-12-11T07:02:37.812Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:02:37.812Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:02:37.812Z - info: v-c-merchant-id : testrest
+2018-12-11T07:02:37.812Z - info: date : Tue, 11 Dec 2018 07:02:37 GMT
+2018-12-11T07:02:37.812Z - info: host : apitest.cybersource.com
+2018-12-11T07:02:37.812Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="A+jIcx7ZiDm/LPC+OAxxma1T/+NsLe4mgJzCCoQ3Azs="
+2018-12-11T07:02:37.810Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="47WflE/We9hSAubbhE3EDLHfBqCVGd9h9AvTAuZ3mek="
+2018-12-11T07:02:37.812Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:02:37.812Z - info: End > ==============================
+2018-12-11T07:02:37.810Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:02:37.810Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:02:37.810Z - info: v-c-merchant-id : testrest
+2018-12-11T07:02:37.810Z - info: date : Tue, 11 Dec 2018 07:02:37 GMT
+2018-12-11T07:02:37.810Z - info: host : apitest.cybersource.com
+2018-12-11T07:02:37.810Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="47WflE/We9hSAubbhE3EDLHfBqCVGd9h9AvTAuZ3mek="
+2018-12-11T07:02:37.810Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:02:37.810Z - info: End > ==============================
+2018-12-11T07:02:38.828Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="HcPIlLEv9UURuSCdWGxTHXtCHYexcflXyn8J5O4nKUU="
+2018-12-11T07:02:38.828Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:02:38.828Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:02:38.828Z - info: v-c-merchant-id : testrest
+2018-12-11T07:02:38.828Z - info: date : Tue, 11 Dec 2018 07:02:38 GMT
+2018-12-11T07:02:38.828Z - info: host : apitest.cybersource.com
+2018-12-11T07:02:38.828Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="HcPIlLEv9UURuSCdWGxTHXtCHYexcflXyn8J5O4nKUU="
+2018-12-11T07:02:38.828Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:02:38.828Z - info: End > ==============================
+2018-12-11T07:02:39.836Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="i1tAGYqf0Zzlp/9Wexxx7RuI3P0Uc2+NyRrWphN+79Y="
+2018-12-11T07:02:39.836Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T07:02:39.836Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T07:02:39.836Z - info: v-c-merchant-id : testrest
+2018-12-11T07:02:39.836Z - info: date : Tue, 11 Dec 2018 07:02:39 GMT
+2018-12-11T07:02:39.836Z - info: host : apitest.cybersource.com
+2018-12-11T07:02:39.836Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="i1tAGYqf0Zzlp/9Wexxx7RuI3P0Uc2+NyRrWphN+79Y="
+2018-12-11T07:02:39.836Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:02:39.836Z - info: End > ==============================
+2018-12-11T07:02:40.842Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9Ox87XGWUgNFyfBznVz/XtcWxXJ6vYK0sfLF6feefxc="
+2018-12-11T07:02:40.842Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:02:40.842Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:02:40.842Z - info: v-c-merchant-id : testrest
+2018-12-11T07:02:40.842Z - info: date : Tue, 11 Dec 2018 07:02:40 GMT
+2018-12-11T07:02:40.842Z - info: host : apitest.cybersource.com
+2018-12-11T07:02:40.842Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9Ox87XGWUgNFyfBznVz/XtcWxXJ6vYK0sfLF6feefxc="
+2018-12-11T07:02:40.842Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:02:40.842Z - info: End > ==============================
+2018-12-11T07:14:45.782Z - info: START > =======================================
+2018-12-11T07:14:45.802Z - info: START > =======================================
+2018-12-11T07:14:45.783Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:14:45.813Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="gyUENcIg8PiZaLS0bnxZNDE4TnA63pShm40Q5MGk2vE="
+2018-12-11T07:14:45.802Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:14:45.813Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:14:45.813Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:14:45.813Z - info: v-c-merchant-id : testrest
+2018-12-11T07:14:45.813Z - info: date : Tue, 11 Dec 2018 07:14:45 GMT
+2018-12-11T07:14:45.813Z - info: host : apitest.cybersource.com
+2018-12-11T07:14:45.813Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="gyUENcIg8PiZaLS0bnxZNDE4TnA63pShm40Q5MGk2vE="
+2018-12-11T07:14:45.813Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:14:45.813Z - info: End > ==============================
+2018-12-11T07:14:46.892Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="2c9SgDlLLg/apoST/stQ4J15TPX/Sh5hF1gL5OG3YVU="
+2018-12-11T07:14:46.892Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:14:46.892Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:14:46.900Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="h0Drl1N6XIXn3Ag1mtatzuOoY7WyunHew37F/5faZh0="
+2018-12-11T07:14:46.892Z - info: v-c-merchant-id : testrest
+2018-12-11T07:14:46.892Z - info: date : Tue, 11 Dec 2018 07:14:46 GMT
+2018-12-11T07:14:46.900Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:14:46.892Z - info: host : apitest.cybersource.com
+2018-12-11T07:14:46.900Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:14:46.892Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="2c9SgDlLLg/apoST/stQ4J15TPX/Sh5hF1gL5OG3YVU="
+2018-12-11T07:14:46.900Z - info: v-c-merchant-id : testrest
+2018-12-11T07:14:46.892Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:14:46.900Z - info: date : Tue, 11 Dec 2018 07:14:46 GMT
+2018-12-11T07:14:46.892Z - info: End > ==============================
+2018-12-11T07:14:46.900Z - info: host : apitest.cybersource.com
+2018-12-11T07:14:46.900Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="h0Drl1N6XIXn3Ag1mtatzuOoY7WyunHew37F/5faZh0="
+2018-12-11T07:14:46.900Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:14:46.900Z - info: End > ==============================
+2018-12-11T07:14:48.008Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="TjTeWJTVBLmbOshwnvE7lT5Hgup/tWpwN/MnlbFiIDY="
+2018-12-11T07:14:48.009Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:14:48.009Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:14:48.009Z - info: v-c-merchant-id : testrest
+2018-12-11T07:14:48.009Z - info: date : Tue, 11 Dec 2018 07:14:48 GMT
+2018-12-11T07:14:48.009Z - info: host : apitest.cybersource.com
+2018-12-11T07:14:48.009Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="TjTeWJTVBLmbOshwnvE7lT5Hgup/tWpwN/MnlbFiIDY="
+2018-12-11T07:14:48.009Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:14:48.009Z - info: End > ==============================
+2018-12-11T07:14:49.018Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="W/XQ29B5jpAYR8tkAih2ocbLtF0SWgIDtua+vslpyXI="
+2018-12-11T07:14:49.018Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T07:14:49.018Z - info: digest : SHA-256=p7oz8a0MGNssztPqrbLe7zOu9j4lgmU2OcGCYIxE0ko=
+2018-12-11T07:14:49.018Z - info: v-c-merchant-id : testrest
+2018-12-11T07:14:49.018Z - info: date : Tue, 11 Dec 2018 07:14:49 GMT
+2018-12-11T07:14:49.018Z - info: host : apitest.cybersource.com
+2018-12-11T07:14:49.018Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="W/XQ29B5jpAYR8tkAih2ocbLtF0SWgIDtua+vslpyXI="
+2018-12-11T07:14:49.019Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:14:49.019Z - info: End > ==============================
+2018-12-11T07:14:49.930Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="/RgGPxN1TcKjRddh6DkCj7DmrbIJsrtnVFLT+ftBwac="
+2018-12-11T07:14:49.930Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:14:49.930Z - info: digest : SHA-256=Nr1WG5mNHE4eU7AWc5sGAWcTc5ud2IHX0l3JJ+s0VxY=
+2018-12-11T07:14:49.930Z - info: v-c-merchant-id : testrest
+2018-12-11T07:14:49.930Z - info: date : Tue, 11 Dec 2018 07:14:49 GMT
+2018-12-11T07:14:49.930Z - info: host : apitest.cybersource.com
+2018-12-11T07:14:49.930Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="/RgGPxN1TcKjRddh6DkCj7DmrbIJsrtnVFLT+ftBwac="
+2018-12-11T07:14:49.930Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:14:49.930Z - info: End > ==============================
+2018-12-11T07:41:52.193Z - info: START > =======================================
+2018-12-11T07:41:52.214Z - info: START > =======================================
+2018-12-11T07:41:52.198Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:41:52.214Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T07:41:52.231Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ehWqLzBVZ4ZND1y0dpCJ9rxwqTumsGXrpPPmLDSAmi0="
+2018-12-11T07:41:52.231Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:41:52.231Z - info: digest : SHA-256=WRrPmQgkO5nXSpOlOQqITVVsxtjMkMRrRS3E4PwEzTc=
+2018-12-11T07:41:52.231Z - info: v-c-merchant-id : testrest
+2018-12-11T07:41:52.231Z - info: date : Tue, 11 Dec 2018 07:41:52 GMT
+2018-12-11T07:41:52.231Z - info: host : apitest.cybersource.com
+2018-12-11T07:41:52.231Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ehWqLzBVZ4ZND1y0dpCJ9rxwqTumsGXrpPPmLDSAmi0="
+2018-12-11T07:41:52.231Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:41:52.231Z - info: End > ==============================
+2018-12-11T07:41:53.195Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="D5qAsz8brH9pcDslqdJKHR399ss9MJdFTHYuWuDbw3M="
+2018-12-11T07:41:53.191Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Xq1BvpYbJ4ekUGSw+XXj/h7eYVgmm2VdVUkeWWVg4J8="
+2018-12-11T07:41:53.195Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:41:53.191Z - info: digest : SHA-256=YyVNYTO7+SbfZ1G+PdZWIGVik2TN+f+rqwxcclY8Uus=
+2018-12-11T07:41:53.195Z - info: digest : SHA-256=k2rFhcoQI5oiz4EsdAO2P1biu/2iPtIs09GEHXQbOPg=
+2018-12-11T07:41:53.195Z - info: v-c-merchant-id : testrest
+2018-12-11T07:41:53.191Z - info: digest : SHA-256=YyVNYTO7+SbfZ1G+PdZWIGVik2TN+f+rqwxcclY8Uus=
+2018-12-11T07:41:53.195Z - info: date : Tue, 11 Dec 2018 07:41:53 GMT
+2018-12-11T07:41:53.191Z - info: v-c-merchant-id : testrest
+2018-12-11T07:41:53.195Z - info: host : apitest.cybersource.com
+2018-12-11T07:41:53.191Z - info: date : Tue, 11 Dec 2018 07:41:53 GMT
+2018-12-11T07:41:53.195Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="D5qAsz8brH9pcDslqdJKHR399ss9MJdFTHYuWuDbw3M="
+2018-12-11T07:41:53.191Z - info: host : apitest.cybersource.com
+2018-12-11T07:41:53.195Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:41:53.191Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Xq1BvpYbJ4ekUGSw+XXj/h7eYVgmm2VdVUkeWWVg4J8="
+2018-12-11T07:41:53.195Z - info: End > ==============================
+2018-12-11T07:41:53.191Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:41:53.191Z - info: End > ==============================
+2018-12-11T07:41:54.211Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Xa/STwawPVd6VVjvYqFNh3s1kUGziXKp37zE16Xs/mk="
+2018-12-11T07:41:54.211Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:41:54.211Z - info: digest : SHA-256=XVJReBLb0BQrQy03mZrJqnNiVqmbgKf+kXC0aKQevzw=
+2018-12-11T07:41:54.211Z - info: v-c-merchant-id : testrest
+2018-12-11T07:41:54.211Z - info: date : Tue, 11 Dec 2018 07:41:54 GMT
+2018-12-11T07:41:54.211Z - info: host : apitest.cybersource.com
+2018-12-11T07:41:54.211Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Xa/STwawPVd6VVjvYqFNh3s1kUGziXKp37zE16Xs/mk="
+2018-12-11T07:41:54.211Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:41:54.211Z - info: End > ==============================
+2018-12-11T07:41:55.122Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9gndhT95Dj+kTC7K6UTSIi41olJbXul09xrEJ9tdWw4="
+2018-12-11T07:41:55.122Z - info: digest : SHA-256=gHa/E0uOXgOSQH81RnFJfyapM3slusXrz0c5OxJHKRw=
+2018-12-11T07:41:55.122Z - info: digest : SHA-256=gHa/E0uOXgOSQH81RnFJfyapM3slusXrz0c5OxJHKRw=
+2018-12-11T07:41:55.122Z - info: v-c-merchant-id : testrest
+2018-12-11T07:41:55.122Z - info: date : Tue, 11 Dec 2018 07:41:55 GMT
+2018-12-11T07:41:55.122Z - info: host : apitest.cybersource.com
+2018-12-11T07:41:55.122Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9gndhT95Dj+kTC7K6UTSIi41olJbXul09xrEJ9tdWw4="
+2018-12-11T07:41:55.122Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:41:55.122Z - info: End > ==============================
+2018-12-11T07:41:56.231Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="JGrxo+9/OV9/nbg+XicRy6rDV7oUiOoFZUKbeLrIiGg="
+2018-12-11T07:41:56.231Z - info: digest : SHA-256=YyVNYTO7+SbfZ1G+PdZWIGVik2TN+f+rqwxcclY8Uus=
+2018-12-11T07:41:56.231Z - info: digest : SHA-256=YyVNYTO7+SbfZ1G+PdZWIGVik2TN+f+rqwxcclY8Uus=
+2018-12-11T07:41:56.231Z - info: v-c-merchant-id : testrest
+2018-12-11T07:41:56.231Z - info: date : Tue, 11 Dec 2018 07:41:56 GMT
+2018-12-11T07:41:56.231Z - info: host : apitest.cybersource.com
+2018-12-11T07:41:56.231Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="JGrxo+9/OV9/nbg+XicRy6rDV7oUiOoFZUKbeLrIiGg="
+2018-12-11T07:41:56.231Z - info: User-Agent : Mozilla/5.0
+2018-12-11T07:41:56.231Z - info: End > ==============================
+2018-12-11T09:06:26.643Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="H/pmMUfCYnzQNOrmAyiZu5xbErR2+f1JIL/iGZ7Fws4="
+2018-12-11T09:06:26.643Z - info: digest : SHA-256=6q7TcaPPadlvbvkAObR9dN3xJv0r5HXK17K6Yab+aZE=
+2018-12-11T09:06:26.643Z - info: digest : SHA-256=6q7TcaPPadlvbvkAObR9dN3xJv0r5HXK17K6Yab+aZE=
+2018-12-11T09:06:26.643Z - info: v-c-merchant-id : testrest
+2018-12-11T09:06:26.643Z - info: date : Tue, 11 Dec 2018 09:06:26 GMT
+2018-12-11T09:06:26.643Z - info: host : apitest.cybersource.com
+2018-12-11T09:06:26.643Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="H/pmMUfCYnzQNOrmAyiZu5xbErR2+f1JIL/iGZ7Fws4="
+2018-12-11T09:06:26.643Z - info: User-Agent : Mozilla/5.0
+2018-12-11T09:06:26.643Z - info: End > ==============================
+2018-12-11T09:06:26.622Z - info: START > =======================================
+2018-12-11T09:06:26.623Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-11T09:06:27.901Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ZfYGf/8vrJIhpd//jhV4+lFRNzZT+0dg2nr9BYn8KSc="
+2018-12-11T09:06:27.901Z - info: digest : SHA-256=4xAz94/LBFH1YJVzpig6pGZuddecpIR/TvtPQn/jIyY=
+2018-12-11T09:06:27.901Z - info: digest : SHA-256=4xAz94/LBFH1YJVzpig6pGZuddecpIR/TvtPQn/jIyY=
+2018-12-11T09:06:27.901Z - info: v-c-merchant-id : testrest
+2018-12-11T09:06:27.901Z - info: date : Tue, 11 Dec 2018 09:06:27 GMT
+2018-12-11T09:06:27.902Z - info: host : apitest.cybersource.com
+2018-12-11T09:06:27.902Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ZfYGf/8vrJIhpd//jhV4+lFRNzZT+0dg2nr9BYn8KSc="
+2018-12-11T09:06:27.902Z - info: User-Agent : Mozilla/5.0
+2018-12-11T09:06:27.902Z - info: End > ==============================
+2018-12-11T09:06:28.916Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Pu13XuHaj6+blaZ8a+3sqU5ahILqRx8VWPcDDxiuQXY="
+2018-12-11T09:06:28.916Z - info: digest : SHA-256=Dd0oit+2cINhyn99fVABJhw3TDAR807lrBaGrE3n9yk=
+2018-12-11T09:06:28.917Z - info: digest : SHA-256=Dd0oit+2cINhyn99fVABJhw3TDAR807lrBaGrE3n9yk=
+2018-12-11T09:06:28.917Z - info: v-c-merchant-id : testrest
+2018-12-11T09:06:28.917Z - info: date : Tue, 11 Dec 2018 09:06:28 GMT
+2018-12-11T09:06:28.917Z - info: host : apitest.cybersource.com
+2018-12-11T09:06:28.917Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Pu13XuHaj6+blaZ8a+3sqU5ahILqRx8VWPcDDxiuQXY="
+2018-12-11T09:06:28.917Z - info: User-Agent : Mozilla/5.0
+2018-12-11T09:06:28.917Z - info: End > ==============================
+2018-12-12T03:59:16.165Z - info: START > =======================================
+2018-12-12T03:59:16.167Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T03:59:16.187Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="IpFI/59thxx6MSMfRvg3O2ykxrnChlFtiVGICxdPZH4="
+2018-12-12T03:59:16.187Z - info: digest : SHA-256=6q7TcaPPadlvbvkAObR9dN3xJv0r5HXK17K6Yab+aZE=
+2018-12-12T03:59:16.187Z - info: digest : SHA-256=6q7TcaPPadlvbvkAObR9dN3xJv0r5HXK17K6Yab+aZE=
+2018-12-12T03:59:16.187Z - info: v-c-merchant-id : testrest
+2018-12-12T03:59:16.187Z - info: date : Wed, 12 Dec 2018 03:59:16 GMT
+2018-12-12T03:59:16.187Z - info: host : apitest.cybersource.com
+2018-12-12T03:59:16.187Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="IpFI/59thxx6MSMfRvg3O2ykxrnChlFtiVGICxdPZH4="
+2018-12-12T03:59:16.187Z - info: User-Agent : Mozilla/5.0
+2018-12-12T03:59:16.187Z - info: End > ==============================
+2018-12-12T03:59:17.642Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="jegNOIpOnj8/kpiacBJ9NxmCpZ0aZmqKVSu4eAp9bDA="
+2018-12-12T03:59:17.642Z - info: digest : SHA-256=4xAz94/LBFH1YJVzpig6pGZuddecpIR/TvtPQn/jIyY=
+2018-12-12T03:59:17.642Z - info: digest : SHA-256=4xAz94/LBFH1YJVzpig6pGZuddecpIR/TvtPQn/jIyY=
+2018-12-12T03:59:17.642Z - info: v-c-merchant-id : testrest
+2018-12-12T03:59:17.642Z - info: date : Wed, 12 Dec 2018 03:59:17 GMT
+2018-12-12T03:59:17.642Z - info: host : apitest.cybersource.com
+2018-12-12T03:59:17.642Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="jegNOIpOnj8/kpiacBJ9NxmCpZ0aZmqKVSu4eAp9bDA="
+2018-12-12T03:59:17.642Z - info: User-Agent : Mozilla/5.0
+2018-12-12T03:59:17.642Z - info: End > ==============================
+2018-12-12T03:59:18.553Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="8KANv8/E68Wmo6gqY1WCkCJIYp4z//MHrInGK76B6+s="
+2018-12-12T03:59:18.553Z - info: digest : SHA-256=Dd0oit+2cINhyn99fVABJhw3TDAR807lrBaGrE3n9yk=
+2018-12-12T03:59:18.553Z - info: digest : SHA-256=Dd0oit+2cINhyn99fVABJhw3TDAR807lrBaGrE3n9yk=
+2018-12-12T03:59:18.553Z - info: v-c-merchant-id : testrest
+2018-12-12T03:59:18.553Z - info: date : Wed, 12 Dec 2018 03:59:18 GMT
+2018-12-12T03:59:18.553Z - info: host : apitest.cybersource.com
+2018-12-12T03:59:18.553Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="8KANv8/E68Wmo6gqY1WCkCJIYp4z//MHrInGK76B6+s="
+2018-12-12T03:59:18.554Z - info: User-Agent : Mozilla/5.0
+2018-12-12T03:59:18.554Z - info: End > ==============================
+2018-12-12T04:00:07.585Z - info: START > =======================================
+2018-12-12T04:00:07.586Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T04:00:07.603Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="nskQafdaTtxsw9qX3bayNb8usro+EhvO2XR3JZy86YA="
+2018-12-12T04:00:07.603Z - info: digest : SHA-256=6q7TcaPPadlvbvkAObR9dN3xJv0r5HXK17K6Yab+aZE=
+2018-12-12T04:00:07.603Z - info: digest : SHA-256=6q7TcaPPadlvbvkAObR9dN3xJv0r5HXK17K6Yab+aZE=
+2018-12-12T04:00:07.603Z - info: v-c-merchant-id : testrest
+2018-12-12T04:00:07.603Z - info: date : Wed, 12 Dec 2018 04:00:07 GMT
+2018-12-12T04:00:07.603Z - info: host : apitest.cybersource.com
+2018-12-12T04:00:07.603Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="nskQafdaTtxsw9qX3bayNb8usro+EhvO2XR3JZy86YA="
+2018-12-12T04:00:07.603Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:00:07.603Z - info: End > ==============================
+2018-12-12T04:00:08.561Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9TS5INZpjz3Wiz/k6avhDZ2oW250acGFJ0ZudL/yflc="
+2018-12-12T04:00:08.561Z - info: digest : SHA-256=R+biGHY2+imDDz0R5/8qrao9OUonSvZgT7KUsk+a48s=
+2018-12-12T04:00:08.561Z - info: digest : SHA-256=R+biGHY2+imDDz0R5/8qrao9OUonSvZgT7KUsk+a48s=
+2018-12-12T04:00:08.561Z - info: v-c-merchant-id : testrest
+2018-12-12T04:00:08.561Z - info: date : Wed, 12 Dec 2018 04:00:08 GMT
+2018-12-12T04:00:08.561Z - info: host : apitest.cybersource.com
+2018-12-12T04:00:08.563Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9TS5INZpjz3Wiz/k6avhDZ2oW250acGFJ0ZudL/yflc="
+2018-12-12T04:00:08.563Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:00:08.563Z - info: End > ==============================
+2018-12-12T04:00:09.471Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ffbECeorkLI242JwrYfq5AbEBlKAppBx+ASsWqD8Rd4="
+2018-12-12T04:00:09.471Z - info: digest : SHA-256=8cvhjpS3J84HRngSnG5uxUMfVkwBdDKr7fdeMCSqzBQ=
+2018-12-12T04:00:09.471Z - info: digest : SHA-256=8cvhjpS3J84HRngSnG5uxUMfVkwBdDKr7fdeMCSqzBQ=
+2018-12-12T04:00:09.471Z - info: v-c-merchant-id : testrest
+2018-12-12T04:00:09.471Z - info: date : Wed, 12 Dec 2018 04:00:09 GMT
+2018-12-12T04:00:09.471Z - info: host : apitest.cybersource.com
+2018-12-12T04:00:09.471Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ffbECeorkLI242JwrYfq5AbEBlKAppBx+ASsWqD8Rd4="
+2018-12-12T04:00:09.471Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:00:09.471Z - info: End > ==============================
+2018-12-12T04:18:02.766Z - info: START > =======================================
+2018-12-12T04:18:02.767Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T04:18:02.789Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="OhNriKK+ZHNO3u11beldiX41popD9awV4vDLXKhtF/E="
+2018-12-12T04:18:02.789Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:18:02.789Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:18:02.789Z - info: v-c-merchant-id : testrest
+2018-12-12T04:18:02.789Z - info: date : Wed, 12 Dec 2018 04:18:02 GMT
+2018-12-12T04:18:02.789Z - info: host : apitest.cybersource.com
+2018-12-12T04:18:02.789Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="OhNriKK+ZHNO3u11beldiX41popD9awV4vDLXKhtF/E="
+2018-12-12T04:18:02.789Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:18:02.789Z - info: End > ==============================
+2018-12-12T04:18:03.467Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Lei7zLmh6qCwSGfOGceE/Ly5EJMCqYSHyjYgD7dS3fQ="
+2018-12-12T04:18:03.467Z - info: digest : SHA-256=SUcFjRw9WQ1CX+CiQATkviuPgMNbOOsTQ8A0/dFooD0=
+2018-12-12T04:18:03.467Z - info: digest : SHA-256=SUcFjRw9WQ1CX+CiQATkviuPgMNbOOsTQ8A0/dFooD0=
+2018-12-12T04:18:03.467Z - info: v-c-merchant-id : testrest
+2018-12-12T04:18:03.467Z - info: date : Wed, 12 Dec 2018 04:18:03 GMT
+2018-12-12T04:18:03.467Z - info: host : apitest.cybersource.com
+2018-12-12T04:18:03.468Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Lei7zLmh6qCwSGfOGceE/Ly5EJMCqYSHyjYgD7dS3fQ="
+2018-12-12T04:18:03.468Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:18:03.468Z - info: End > ==============================
+2018-12-12T04:18:04.079Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="GnpbncghVS7uDyzOwvNdS1vanL5CFDWD2P1GPQm3qhs="
+2018-12-12T04:18:04.079Z - info: digest : SHA-256=I+1qD0zhOoAiatjE27A6YBxkUKBTRSBoS6VKc2mS8Bc=
+2018-12-12T04:18:04.079Z - info: digest : SHA-256=I+1qD0zhOoAiatjE27A6YBxkUKBTRSBoS6VKc2mS8Bc=
+2018-12-12T04:18:04.079Z - info: v-c-merchant-id : testrest
+2018-12-12T04:18:04.079Z - info: date : Wed, 12 Dec 2018 04:18:04 GMT
+2018-12-12T04:18:04.079Z - info: host : apitest.cybersource.com
+2018-12-12T04:18:04.079Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="GnpbncghVS7uDyzOwvNdS1vanL5CFDWD2P1GPQm3qhs="
+2018-12-12T04:18:04.079Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:18:04.079Z - info: End > ==============================
+2018-12-12T04:19:43.364Z - info: START > =======================================
+2018-12-12T04:19:43.367Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T04:19:43.386Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uMJ5+d96t/z1MHVgmwxid4PH4i0YP5Y+Ugu8KA18+zU="
+2018-12-12T04:19:43.386Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:19:43.386Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:19:43.386Z - info: v-c-merchant-id : testrest
+2018-12-12T04:19:43.386Z - info: date : Wed, 12 Dec 2018 04:19:43 GMT
+2018-12-12T04:19:43.386Z - info: host : apitest.cybersource.com
+2018-12-12T04:19:43.386Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="uMJ5+d96t/z1MHVgmwxid4PH4i0YP5Y+Ugu8KA18+zU="
+2018-12-12T04:19:43.386Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:19:43.386Z - info: End > ==============================
+2018-12-12T04:19:44.141Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="PUCCt0DT8DxGtxFz5CxasRDYrzUuIhmXk/pdq/OSwAI="
+2018-12-12T04:19:44.141Z - info: digest : SHA-256=46raYT0ZI4P4HRxkJTmDcYkkHmnzysanrM7XiP+BXFw=
+2018-12-12T04:19:44.141Z - info: digest : SHA-256=46raYT0ZI4P4HRxkJTmDcYkkHmnzysanrM7XiP+BXFw=
+2018-12-12T04:19:44.141Z - info: v-c-merchant-id : testrest
+2018-12-12T04:19:44.141Z - info: date : Wed, 12 Dec 2018 04:19:44 GMT
+2018-12-12T04:19:44.141Z - info: host : apitest.cybersource.com
+2018-12-12T04:19:44.141Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="PUCCt0DT8DxGtxFz5CxasRDYrzUuIhmXk/pdq/OSwAI="
+2018-12-12T04:19:44.141Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:19:44.141Z - info: End > ==============================
+2018-12-12T04:19:44.752Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="99Jjmk0nuo4F4MYiqLdnKkT42N5Ln11zYXeh4J2kjYs="
+2018-12-12T04:19:44.752Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:19:44.752Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:19:44.752Z - info: v-c-merchant-id : testrest
+2018-12-12T04:19:44.752Z - info: date : Wed, 12 Dec 2018 04:19:44 GMT
+2018-12-12T04:19:44.752Z - info: host : apitest.cybersource.com
+2018-12-12T04:19:44.752Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="99Jjmk0nuo4F4MYiqLdnKkT42N5Ln11zYXeh4J2kjYs="
+2018-12-12T04:19:44.752Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:19:44.752Z - info: End > ==============================
+2018-12-12T04:38:05.606Z - info: START > =======================================
+2018-12-12T04:38:05.607Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T04:38:05.632Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="K9BZBEWJrHR13YYl9pRgCbF2k9Co/iaIE1Ie80AhPy8="
+2018-12-12T04:38:05.632Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:38:05.632Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:38:05.632Z - info: v-c-merchant-id : testrest
+2018-12-12T04:38:05.632Z - info: date : Wed, 12 Dec 2018 04:38:05 GMT
+2018-12-12T04:38:05.632Z - info: host : apitest.cybersource.com
+2018-12-12T04:38:05.632Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="K9BZBEWJrHR13YYl9pRgCbF2k9Co/iaIE1Ie80AhPy8="
+2018-12-12T04:38:05.632Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:38:05.632Z - info: End > ==============================
+2018-12-12T04:38:07.084Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Ej4gqk1qhwj0QM5ZuxSFhCYCXB8Hc1K85q3Uup5YXNQ="
+2018-12-12T04:38:07.084Z - info: digest : SHA-256=46raYT0ZI4P4HRxkJTmDcYkkHmnzysanrM7XiP+BXFw=
+2018-12-12T04:38:07.084Z - info: digest : SHA-256=46raYT0ZI4P4HRxkJTmDcYkkHmnzysanrM7XiP+BXFw=
+2018-12-12T04:38:07.084Z - info: v-c-merchant-id : testrest
+2018-12-12T04:38:07.084Z - info: date : Wed, 12 Dec 2018 04:38:07 GMT
+2018-12-12T04:38:07.084Z - info: host : apitest.cybersource.com
+2018-12-12T04:38:07.084Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Ej4gqk1qhwj0QM5ZuxSFhCYCXB8Hc1K85q3Uup5YXNQ="
+2018-12-12T04:38:07.084Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:38:07.084Z - info: End > ==============================
+2018-12-12T04:38:08.096Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Nc/OAN1SLqjwnefhbZMWIA+4nVGemH6m24AyflhJ+yQ="
+2018-12-12T04:38:08.096Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:38:08.096Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:38:08.096Z - info: v-c-merchant-id : testrest
+2018-12-12T04:38:08.096Z - info: date : Wed, 12 Dec 2018 04:38:08 GMT
+2018-12-12T04:38:08.096Z - info: host : apitest.cybersource.com
+2018-12-12T04:38:08.096Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="Nc/OAN1SLqjwnefhbZMWIA+4nVGemH6m24AyflhJ+yQ="
+2018-12-12T04:38:08.096Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:38:08.096Z - info: End > ==============================
+2018-12-12T04:42:20.364Z - info: START > =======================================
+2018-12-12T04:42:20.366Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T04:42:20.396Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="7f4298NKU8P2i7OpDRZPAlwpOZ7AkpCyOYS9fTBNtUo="
+2018-12-12T04:42:20.396Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:42:20.396Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:42:20.396Z - info: v-c-merchant-id : testrest
+2018-12-12T04:42:20.396Z - info: date : Wed, 12 Dec 2018 04:42:20 GMT
+2018-12-12T04:42:20.396Z - info: host : apitest.cybersource.com
+2018-12-12T04:42:20.396Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="7f4298NKU8P2i7OpDRZPAlwpOZ7AkpCyOYS9fTBNtUo="
+2018-12-12T04:42:20.396Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:42:20.396Z - info: End > ==============================
+2018-12-12T04:42:21.357Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="tkmAQv2XWa+nBM/bYHCeEQ1ffu03rRt2LRMYYDzaUsY="
+2018-12-12T04:42:21.357Z - info: digest : SHA-256=46raYT0ZI4P4HRxkJTmDcYkkHmnzysanrM7XiP+BXFw=
+2018-12-12T04:42:21.357Z - info: digest : SHA-256=46raYT0ZI4P4HRxkJTmDcYkkHmnzysanrM7XiP+BXFw=
+2018-12-12T04:42:21.357Z - info: v-c-merchant-id : testrest
+2018-12-12T04:42:21.357Z - info: date : Wed, 12 Dec 2018 04:42:21 GMT
+2018-12-12T04:42:21.357Z - info: host : apitest.cybersource.com
+2018-12-12T04:42:21.357Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="tkmAQv2XWa+nBM/bYHCeEQ1ffu03rRt2LRMYYDzaUsY="
+2018-12-12T04:42:21.357Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:42:21.357Z - info: End > ==============================
+2018-12-12T04:42:22.265Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="8trPfZQYUnasVdM25MjD4eFU4yJgDY7qjBglX61rKbc="
+2018-12-12T04:42:22.265Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:42:22.265Z - info: digest : SHA-256=3OkTv9EQccMckYHiNHUzAweMWa91L1CQXTmCvjjQHoU=
+2018-12-12T04:42:22.265Z - info: v-c-merchant-id : testrest
+2018-12-12T04:42:22.265Z - info: date : Wed, 12 Dec 2018 04:42:22 GMT
+2018-12-12T04:42:22.265Z - info: host : apitest.cybersource.com
+2018-12-12T04:42:22.265Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="8trPfZQYUnasVdM25MjD4eFU4yJgDY7qjBglX61rKbc="
+2018-12-12T04:42:22.265Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:42:22.265Z - info: End > ==============================
+2018-12-12T04:59:15.575Z - info: START > =======================================
+2018-12-12T04:59:15.575Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T04:59:15.600Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="LSajcqePFbK08N9vJ/IxiPXKpBSLMfA8GdCDYLncC58="
+2018-12-12T04:59:15.602Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T04:59:15.602Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T04:59:15.602Z - info: v-c-merchant-id : testrest
+2018-12-12T04:59:15.602Z - info: date : Wed, 12 Dec 2018 04:59:15 GMT
+2018-12-12T04:59:15.602Z - info: host : apitest.cybersource.com
+2018-12-12T04:59:15.602Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="LSajcqePFbK08N9vJ/IxiPXKpBSLMfA8GdCDYLncC58="
+2018-12-12T04:59:15.602Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:59:15.602Z - info: End > ==============================
+2018-12-12T04:59:16.554Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="WpfaGdkss2jNwn4ZryNRvq2qTkgjuzrDw4kz5Sfl19w="
+2018-12-12T04:59:16.554Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T04:59:16.554Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T04:59:16.554Z - info: v-c-merchant-id : testrest
+2018-12-12T04:59:16.554Z - info: date : Wed, 12 Dec 2018 04:59:16 GMT
+2018-12-12T04:59:16.554Z - info: host : apitest.cybersource.com
+2018-12-12T04:59:16.554Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="WpfaGdkss2jNwn4ZryNRvq2qTkgjuzrDw4kz5Sfl19w="
+2018-12-12T04:59:16.554Z - info: User-Agent : Mozilla/5.0
+2018-12-12T04:59:16.554Z - info: End > ==============================
+2018-12-12T05:00:52.780Z - info: START > =======================================
+2018-12-12T05:00:52.780Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:00:52.800Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UcdPUzBs/ix3gkg5ZSmnsKIW0VdMLrX7+en4qkSMfTI="
+2018-12-12T05:00:52.800Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T05:00:52.800Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T05:00:52.800Z - info: v-c-merchant-id : testrest
+2018-12-12T05:00:52.800Z - info: date : Wed, 12 Dec 2018 05:00:52 GMT
+2018-12-12T05:00:52.800Z - info: host : apitest.cybersource.com
+2018-12-12T05:00:52.800Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UcdPUzBs/ix3gkg5ZSmnsKIW0VdMLrX7+en4qkSMfTI="
+2018-12-12T05:00:52.801Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:00:52.801Z - info: End > ==============================
+2018-12-12T05:00:53.757Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="w6q/hs6DDTEsGu1osZd1Sd7JQizhtHKa/E1E+5iFjsk="
+2018-12-12T05:00:53.757Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T05:00:53.757Z - info: digest : SHA-256=U0jwd2a3UDVjYUD7ajGVMSvMtwzSSsRLmTqtaS984gQ=
+2018-12-12T05:00:53.757Z - info: v-c-merchant-id : testrest
+2018-12-12T05:00:53.757Z - info: date : Wed, 12 Dec 2018 05:00:53 GMT
+2018-12-12T05:00:53.757Z - info: host : apitest.cybersource.com
+2018-12-12T05:00:53.757Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="w6q/hs6DDTEsGu1osZd1Sd7JQizhtHKa/E1E+5iFjsk="
+2018-12-12T05:00:53.757Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:00:53.757Z - info: End > ==============================
+2018-12-12T05:13:31.343Z - info: START > =======================================
+2018-12-12T05:13:31.343Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:13:31.365Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="fudlZvYj5if95ZanOGTz31W/a4EDIGGidsaSnhuZcbI="
+2018-12-12T05:13:31.366Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:13:31.366Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:13:31.366Z - info: v-c-merchant-id : testrest
+2018-12-12T05:13:31.366Z - info: date : Wed, 12 Dec 2018 05:13:31 GMT
+2018-12-12T05:13:31.366Z - info: host : apitest.cybersource.com
+2018-12-12T05:13:31.366Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="fudlZvYj5if95ZanOGTz31W/a4EDIGGidsaSnhuZcbI="
+2018-12-12T05:13:31.366Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:13:31.366Z - info: End > ==============================
+2018-12-12T05:13:32.325Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="KWdNZsG7GLtxyH5T8+mfD1/bjfkb7A6Bxdrj0XnRrRU="
+2018-12-12T05:13:32.325Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:13:32.325Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:13:32.325Z - info: v-c-merchant-id : testrest
+2018-12-12T05:13:32.325Z - info: date : Wed, 12 Dec 2018 05:13:32 GMT
+2018-12-12T05:13:32.325Z - info: host : apitest.cybersource.com
+2018-12-12T05:13:32.325Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="KWdNZsG7GLtxyH5T8+mfD1/bjfkb7A6Bxdrj0XnRrRU="
+2018-12-12T05:13:32.325Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:13:32.325Z - info: End > ==============================
+2018-12-12T05:15:22.640Z - info: START > =======================================
+2018-12-12T05:15:22.665Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="b2Gzlb+pktHedMkTE5As3Or9SiN/hN+ijGHmt4uxQlQ="
+2018-12-12T05:15:22.642Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:15:22.665Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:15:22.665Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:15:22.665Z - info: v-c-merchant-id : testrest
+2018-12-12T05:15:22.665Z - info: date : Wed, 12 Dec 2018 05:15:22 GMT
+2018-12-12T05:15:22.665Z - info: host : apitest.cybersource.com
+2018-12-12T05:15:22.665Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="b2Gzlb+pktHedMkTE5As3Or9SiN/hN+ijGHmt4uxQlQ="
+2018-12-12T05:15:22.665Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:15:22.666Z - info: End > ==============================
+2018-12-12T05:15:23.616Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="xAU9ERJEi+9djwMbNMyfSFLmRYTCHFwEAZcib7CZDrA="
+2018-12-12T05:15:23.616Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:15:23.616Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:15:23.616Z - info: v-c-merchant-id : testrest
+2018-12-12T05:15:23.616Z - info: date : Wed, 12 Dec 2018 05:15:23 GMT
+2018-12-12T05:15:23.616Z - info: host : apitest.cybersource.com
+2018-12-12T05:15:23.616Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="xAU9ERJEi+9djwMbNMyfSFLmRYTCHFwEAZcib7CZDrA="
+2018-12-12T05:15:23.616Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:15:23.616Z - info: End > ==============================
+2018-12-12T05:25:06.761Z - info: START > =======================================
+2018-12-12T05:25:06.763Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:25:06.780Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="LOgINjkh3SEgZWQn52+Tb58B6P+dVVjMVAdYgpxOlR0="
+2018-12-12T05:25:06.780Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:25:06.780Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:25:06.780Z - info: v-c-merchant-id : testrest
+2018-12-12T05:25:06.780Z - info: date : Wed, 12 Dec 2018 05:25:06 GMT
+2018-12-12T05:25:06.780Z - info: host : apitest.cybersource.com
+2018-12-12T05:25:06.780Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="LOgINjkh3SEgZWQn52+Tb58B6P+dVVjMVAdYgpxOlR0="
+2018-12-12T05:25:06.780Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:25:06.780Z - info: End > ==============================
+2018-12-12T05:25:07.740Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ef1jR/urVt3PsDY61FtpxOUGRfWWWkoqPhoWzzO0w5s="
+2018-12-12T05:25:07.740Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:25:07.740Z - info: digest : SHA-256=ZdsNYSLuORFjibt/mPry0J+Mdz3HSkV2uCDxlXlyzio=
+2018-12-12T05:25:07.740Z - info: v-c-merchant-id : testrest
+2018-12-12T05:25:07.740Z - info: date : Wed, 12 Dec 2018 05:25:07 GMT
+2018-12-12T05:25:07.740Z - info: host : apitest.cybersource.com
+2018-12-12T05:25:07.740Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="ef1jR/urVt3PsDY61FtpxOUGRfWWWkoqPhoWzzO0w5s="
+2018-12-12T05:25:07.740Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:25:07.740Z - info: End > ==============================
+2018-12-12T05:26:03.884Z - info: START > =======================================
+2018-12-12T05:26:03.885Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:26:03.906Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="TyqaEXZjmypJudXp4IhLa7a/dqbtFh9UjNf9FGXoS7Q="
+2018-12-12T05:26:03.906Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:26:03.906Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:26:03.906Z - info: v-c-merchant-id : testrest
+2018-12-12T05:26:03.906Z - info: date : Wed, 12 Dec 2018 05:26:03 GMT
+2018-12-12T05:26:03.906Z - info: host : apitest.cybersource.com
+2018-12-12T05:26:03.906Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="TyqaEXZjmypJudXp4IhLa7a/dqbtFh9UjNf9FGXoS7Q="
+2018-12-12T05:26:03.906Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:26:03.906Z - info: End > ==============================
+2018-12-12T05:26:04.854Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UH8ZOE5N84QQiyht7PdFtSq9EUwHSEPkR3FLjEKA7uo="
+2018-12-12T05:26:04.854Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:26:04.854Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:26:04.854Z - info: v-c-merchant-id : testrest
+2018-12-12T05:26:04.854Z - info: date : Wed, 12 Dec 2018 05:26:04 GMT
+2018-12-12T05:26:04.854Z - info: host : apitest.cybersource.com
+2018-12-12T05:26:04.854Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="UH8ZOE5N84QQiyht7PdFtSq9EUwHSEPkR3FLjEKA7uo="
+2018-12-12T05:26:04.854Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:26:04.854Z - info: End > ==============================
+2018-12-12T05:28:05.783Z - info: START > =======================================
+2018-12-12T05:28:05.784Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:28:05.801Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="odfZ1BP/u58x/MVFo2wyeQme9qYmlP+zlXcwbq6VQf8="
+2018-12-12T05:28:05.801Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:28:05.801Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:28:05.801Z - info: v-c-merchant-id : testrest
+2018-12-12T05:28:05.801Z - info: date : Wed, 12 Dec 2018 05:28:05 GMT
+2018-12-12T05:28:05.801Z - info: host : apitest.cybersource.com
+2018-12-12T05:28:05.801Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="odfZ1BP/u58x/MVFo2wyeQme9qYmlP+zlXcwbq6VQf8="
+2018-12-12T05:28:05.801Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:28:05.801Z - info: End > ==============================
+2018-12-12T05:28:06.755Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9IvvUMuINF+hEBvyo45QudxJ8eOZPUVIwUYyS104r+g="
+2018-12-12T05:28:06.755Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:28:06.755Z - info: digest : SHA-256=L4BISIt7dBxysZg5ooB8AqLBl1pNtnFnDa6sFJG8VT4=
+2018-12-12T05:28:06.755Z - info: v-c-merchant-id : testrest
+2018-12-12T05:28:06.755Z - info: date : Wed, 12 Dec 2018 05:28:06 GMT
+2018-12-12T05:28:06.755Z - info: host : apitest.cybersource.com
+2018-12-12T05:28:06.755Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="9IvvUMuINF+hEBvyo45QudxJ8eOZPUVIwUYyS104r+g="
+2018-12-12T05:28:06.755Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:28:06.755Z - info: End > ==============================
+2018-12-12T05:37:40.570Z - info: START > =======================================
+2018-12-12T05:37:40.573Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:37:40.591Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="GKLRDRbAyIlMxe/uAcke+N9TY/AKRxpzOIRMf54W4VE="
+2018-12-12T05:37:40.591Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:37:40.591Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:37:40.591Z - info: v-c-merchant-id : testrest
+2018-12-12T05:37:40.591Z - info: date : Wed, 12 Dec 2018 05:37:40 GMT
+2018-12-12T05:37:40.591Z - info: host : apitest.cybersource.com
+2018-12-12T05:37:40.591Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="GKLRDRbAyIlMxe/uAcke+N9TY/AKRxpzOIRMf54W4VE="
+2018-12-12T05:37:40.591Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:37:40.591Z - info: End > ==============================
+2018-12-12T05:37:41.451Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="gG0M/Z+dn+KsrvyMFYmX2DZP/sq6Q0dhvsD5ZLREM+M="
+2018-12-12T05:37:41.451Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:37:41.451Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:37:41.451Z - info: v-c-merchant-id : testrest
+2018-12-12T05:37:41.451Z - info: date : Wed, 12 Dec 2018 05:37:41 GMT
+2018-12-12T05:37:41.451Z - info: host : apitest.cybersource.com
+2018-12-12T05:37:41.451Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="gG0M/Z+dn+KsrvyMFYmX2DZP/sq6Q0dhvsD5ZLREM+M="
+2018-12-12T05:37:41.451Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:37:41.451Z - info: End > ==============================
+2018-12-12T05:38:42.854Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="i2m5/6kPRHSbqMfQIn9vOBNxat6J449cbFrTb81Efog="
+2018-12-12T05:38:42.854Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:38:42.854Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:38:42.854Z - info: v-c-merchant-id : testrest
+2018-12-12T05:38:42.854Z - info: date : Wed, 12 Dec 2018 05:38:42 GMT
+2018-12-12T05:38:42.854Z - info: host : apitest.cybersource.com
+2018-12-12T05:38:42.854Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="i2m5/6kPRHSbqMfQIn9vOBNxat6J449cbFrTb81Efog="
+2018-12-12T05:38:42.854Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:38:42.854Z - info: End > ==============================
+2018-12-12T05:38:42.829Z - info: START > =======================================
+2018-12-12T05:38:42.830Z - warn: Entered log directory does not exists. Taking default log directory ./log
+2018-12-12T05:38:43.823Z - info: signatureHeader : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="OJQ8UcpQsp+wTALyrXzf36b42todaetuJRt0yRHfysU="
+2018-12-12T05:38:43.823Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:38:43.823Z - info: digest : SHA-256=5yy755U7hrW36pTXNY2OR/52yAC89MV45WJZ9PPI2Zg=
+2018-12-12T05:38:43.823Z - info: v-c-merchant-id : testrest
+2018-12-12T05:38:43.823Z - info: date : Wed, 12 Dec 2018 05:38:43 GMT
+2018-12-12T05:38:43.823Z - info: host : apitest.cybersource.com
+2018-12-12T05:38:43.823Z - info: signature : keyid="08c94330-f618-42a3-b09d-e1e43be5efda", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="OJQ8UcpQsp+wTALyrXzf36b42todaetuJRt0yRHfysU="
+2018-12-12T05:38:43.823Z - info: User-Agent : Mozilla/5.0
+2018-12-12T05:38:43.823Z - info: End > ==============================

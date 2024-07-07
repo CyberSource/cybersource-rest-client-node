@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CECIS_01,102.21,Success
+CECIS_02,100,Fails
+CECIS_03,AGH2,Fails due to invalid amount

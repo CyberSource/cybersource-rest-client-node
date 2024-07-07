@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CSREC_01,100.00,Success
+CSREC_02,200.0,Fails
+CSREC_03,GHJ34,Fails due to invalid amount

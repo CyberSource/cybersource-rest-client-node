@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CVCI_01,109.00,Success
+CVCI_02,200.0,Fails
+CVCI_03,FGH6,Fails due to invalid amount

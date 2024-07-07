@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CPAP_01,102.21,Success
+CPAP_02,102,Fails
+CPAP_03,FGH,Fails
