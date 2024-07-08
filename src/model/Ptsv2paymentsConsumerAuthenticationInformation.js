@@ -308,32 +308,32 @@
    */
   exports.prototype['cavvAlgorithm'] = undefined;
   /**
-   * Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Raw electronic commerce indicator (ECI). 
    * @member {String} eciRaw
    */
   exports.prototype['eciRaw'] = undefined;
   /**
-   * Payer authentication response status.  For details, see `pares_status` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Payer authentication response status. 
    * @member {String} paresStatus
    */
   exports.prototype['paresStatus'] = undefined;
   /**
-   * Verification response enrollment status.  For details, see `veres_enrolled` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Verification response enrollment status. 
    * @member {String} veresEnrolled
    */
   exports.prototype['veresEnrolled'] = undefined;
   /**
-   * Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Transaction identifier. 
    * @member {String} xid
    */
   exports.prototype['xid'] = undefined;
   /**
-   * Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator 
+   * Universal cardholder authentication field (UCAF) collection indicator.  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator 
    * @member {String} ucafCollectionIndicator
    */
   exports.prototype['ucafCollectionIndicator'] = undefined;
   /**
-   * Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Universal cardholder authentication field (UCAF) data. 
    * @member {String} ucafAuthenticationData
    */
   exports.prototype['ucafAuthenticationData'] = undefined;
@@ -402,7 +402,7 @@
    */
   exports.prototype['challengeCancelCode'] = undefined;
   /**
-   * Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`.  For details, see `pa_challenge_code` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html) 
+   * Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`. 
    * @member {String} challengeCode
    */
   exports.prototype['challengeCode'] = undefined;

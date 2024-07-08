@@ -67,7 +67,7 @@ No authorization required
 
 Get Individual Batch File
 
-Provide the search range
+This API provides details like upload date, completion date, transaction count and accepted and rejected transaction count of the individual batch file using the batch id
 
 ### Example
 ```javascript
@@ -113,7 +113,7 @@ No authorization required
 
 Get a List of Batch Files
 
-Provide the search range
+Provide the date and time search range to get a list of Batch Files ready for settlement
 
 ### Example
 ```javascript

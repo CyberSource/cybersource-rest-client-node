@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property source (base name: "source")', function() {
+      // uncomment below and update the code to test the property source
+      //var instane = new CyberSource.TmsEmbeddedInstrumentIdentifierTokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
       //var instane = new CyberSource.TmsEmbeddedInstrumentIdentifierTokenizedCard();

@@ -62,12 +62,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property middleInitial (base name: "middleInitial")', function() {
-      // uncomment below and update the code to test the property middleInitial
-      //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property middleName (base name: "middleName")', function() {
       // uncomment below and update the code to test the property middleName
       //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
@@ -112,12 +106,6 @@
 
     it('should have the property phoneNumber (base name: "phoneNumber")', function() {
       // uncomment below and update the code to test the property phoneNumber
-      //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
-      // uncomment below and update the code to test the property dateOfBirth
       //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
       //expect(instance).to.be();
     });

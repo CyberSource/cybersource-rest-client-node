@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv1pushfundstransferOrderInformationAmountDetails', 'model/Ptsv1pushfundstransferOrderInformationSurcharge'], factory);
+    define(['ApiClient', 'model/Ptsv1pushfundstransferOrderInformationAmountDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferOrderInformationAmountDetails'), require('./Ptsv1pushfundstransferOrderInformationSurcharge'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferOrderInformationAmountDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv1pushfundstransferOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferOrderInformationAmountDetails, root.CyberSource.Ptsv1pushfundstransferOrderInformationSurcharge);
+    root.CyberSource.Ptsv1pushfundstransferOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferOrderInformationAmountDetails);
   }
-}(this, function(ApiClient, Ptsv1pushfundstransferOrderInformationAmountDetails, Ptsv1pushfundstransferOrderInformationSurcharge) {
+}(this, function(ApiClient, Ptsv1pushfundstransferOrderInformationAmountDetails) {
   'use strict';
 
 
@@ -49,8 +49,6 @@
     var _this = this;
 
     _this['amountDetails'] = amountDetails;
-
-
   };
 
   /**
@@ -67,12 +65,6 @@
       if (data.hasOwnProperty('amountDetails')) {
         obj['amountDetails'] = Ptsv1pushfundstransferOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
-      if (data.hasOwnProperty('isCryptocurrencyPurchase')) {
-        obj['isCryptocurrencyPurchase'] = ApiClient.convertToType(data['isCryptocurrencyPurchase'], 'String');
-      }
-      if (data.hasOwnProperty('surcharge')) {
-        obj['surcharge'] = Ptsv1pushfundstransferOrderInformationSurcharge.constructFromObject(data['surcharge']);
-      }
     }
     return obj;
   }
@@ -81,15 +73,6 @@
    * @member {module:model/Ptsv1pushfundstransferOrderInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
-  /**
-   * This indicates that the funds transfer is for a crypto currency transaction. Optional Y/y, true N/n, false 
-   * @member {String} isCryptocurrencyPurchase
-   */
-  exports.prototype['isCryptocurrencyPurchase'] = undefined;
-  /**
-   * @member {module:model/Ptsv1pushfundstransferOrderInformationSurcharge} surcharge
-   */
-  exports.prototype['surcharge'] = undefined;
 
 
 

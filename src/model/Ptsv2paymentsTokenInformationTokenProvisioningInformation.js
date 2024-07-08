@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation model module.
-   * @module model/TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
+   * The Ptsv2paymentsTokenInformationTokenProvisioningInformation model module.
+   * @module model/Ptsv2paymentsTokenInformationTokenProvisioningInformation
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation</code>.
-   * @alias module:model/TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
+   * Constructs a new <code>Ptsv2paymentsTokenInformationTokenProvisioningInformation</code>.
+   * @alias module:model/Ptsv2paymentsTokenInformationTokenProvisioningInformation
    * @class
    */
   var exports = function() {
@@ -52,11 +52,11 @@
   };
 
   /**
-   * Constructs a <code>TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Ptsv2paymentsTokenInformationTokenProvisioningInformation</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation} obj Optional instance to populate.
-   * @return {module:model/TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation} The populated <code>TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation</code> instance.
+   * @param {module:model/Ptsv2paymentsTokenInformationTokenProvisioningInformation} obj Optional instance to populate.
+   * @return {module:model/Ptsv2paymentsTokenInformationTokenProvisioningInformation} The populated <code>Ptsv2paymentsTokenInformationTokenProvisioningInformation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

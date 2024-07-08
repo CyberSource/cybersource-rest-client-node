@@ -56,8 +56,6 @@
 
 
 
-
-
   };
 
   /**
@@ -73,9 +71,6 @@
 
       if (data.hasOwnProperty('firstName')) {
         obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
-      }
-      if (data.hasOwnProperty('middleInitial')) {
-        obj['middleInitial'] = ApiClient.convertToType(data['middleInitial'], 'String');
       }
       if (data.hasOwnProperty('middleName')) {
         obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
@@ -101,9 +96,6 @@
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
       }
-      if (data.hasOwnProperty('dateOfBirth')) {
-        obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
-      }
     }
     return obj;
   }
@@ -113,11 +105,6 @@
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
-  /**
-   * Middle Initial of recipient. Required only for FDCCompass. 
-   * @member {String} middleInitial
-   */
-  exports.prototype['middleInitial'] = undefined;
   /**
    * Recipient's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @member {String} middleName
@@ -158,11 +145,6 @@
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
-  /**
-   * Recipient date of birth in YYYYMMDD format. Required only for FDCCompass.
-   * @member {String} dateOfBirth
-   */
-  exports.prototype['dateOfBirth'] = undefined;
 
 
 

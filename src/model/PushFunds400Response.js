@@ -109,7 +109,7 @@
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The detail message related to the status and reason listed above.  Possible values: - Declined - One or more fields in the request contains invalid data - Declined - The request is missing one or more fields - Declined - There is a problem with your CyberSource merchant configuration. 
+   * The detail message related to the status and reason listed above.  Possible values: - One or more fields in the request contains invalid data. - The request is missing one or more required fields. - Declined - There is a problem with your CyberSource merchant configuration. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;

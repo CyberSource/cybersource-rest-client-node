@@ -59,8 +59,6 @@
 
 
 
-
-
   };
 
   /**
@@ -101,14 +99,8 @@
       if (data.hasOwnProperty('middleName')) {
         obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
       }
-      if (data.hasOwnProperty('middleInitial')) {
-        obj['middleInitial'] = ApiClient.convertToType(data['middleInitial'], 'String');
-      }
       if (data.hasOwnProperty('lastName')) {
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
-      }
-      if (data.hasOwnProperty('dateOfBirth')) {
-        obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
       }
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
@@ -125,37 +117,37 @@
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
-   * First line of the recipient's address.  Required for Mastercard Send. This field is not supported for Visa Platform Connect. 
+   * First line of the recipient's address. Required for card payments 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
   /**
-   * Second line of the recipient's address  Optional for Mastercard Send. This field is not supported for Visa Platform Connect. 
+   * Second line of the recipient's address 
    * @member {String} address2
    */
   exports.prototype['address2'] = undefined;
   /**
-   * Recipient city.  Required for Mastercard Send. 
+   * Recipient city. 
    * @member {String} locality
    */
   exports.prototype['locality'] = undefined;
   /**
-   * Recipient postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Mastercard Send: Required for recipients in Canada and Canadian issued cards. 
+   * Recipient postal code.   For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Mandatory for card payments. 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * The recipient's province, state or territory. Conditional, required if recipient's country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  Required only for FDCCompass.  This field is not supported for Visa Platform Connect. 
+   * The recipient's province, state or territory. Conditional, required if recipient's country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Required for card payments. 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
   /**
-   * Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Required for Mastercard Send. 
+   * Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf 
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
   /**
-   * First name of recipient.  Visa Platform Connect (14) Chase Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send. 
+   * First name of recipient. 
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
@@ -165,20 +157,10 @@
    */
   exports.prototype['middleName'] = undefined;
   /**
-   * Middle Initial of recipient.  This field is supported by FDC Compass. 
-   * @member {String} middleInitial
-   */
-  exports.prototype['middleInitial'] = undefined;
-  /**
-   * Last name of recipient.  Visa Platform Connect (14) Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send. 
+   * Last name of recipient. 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
-  /**
-   * Recipient date of birth in YYYYMMDD format. 
-   * @member {String} dateOfBirth
-   */
-  exports.prototype['dateOfBirth'] = undefined;
   /**
    * Recipient phone number.  This field is supported by FDC Compass.  Mastercard Send: Max length is 15 with no dashes or spaces. 
    * @member {String} phoneNumber

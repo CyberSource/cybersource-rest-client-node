@@ -63,7 +63,6 @@
 
 
 
-
   };
 
   /**
@@ -107,9 +106,6 @@
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
       }
-      if (data.hasOwnProperty('vatRegistrationNumber')) {
-        obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
-      }
       if (data.hasOwnProperty('dateOfBirth')) {
         obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
       }
@@ -138,17 +134,17 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * This field contains the first name of the entity funding the transaction. 
+   * This field contains the first name of the entity funding the transaction Mandatory for card payments 
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
   /**
-   * This field contains the last name of the entity funding the transaction. 
+   * This field contains the last name of the entity funding the transaction Mandatory for card payments 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * Supported only for Mastercard  transactions. This field contains the  middle name of the entity funding the transaction 
+   * This field contains the  middle name of the entity funding the transaction 
    * @member {String} middleName
    */
   exports.prototype['middleName'] = undefined;
@@ -158,35 +154,30 @@
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT. 
+   * Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Required for card transactions 
    * @member {String} address1
    */
   exports.prototype['address1'] = undefined;
   /**
-   * Used for additional address information. For example: Attention: Accounts Payable Optional field.  This field is supported for only Mastercard Send. 
+   * Used for additional address information. For example: Attention: Accounts Payable  Optional field. 
    * @member {String} address2
    */
   exports.prototype['address2'] = undefined;
   /**
-   * The sender's city  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT. 
+   * The sender's city Mandatory for card payments 
    * @member {String} locality
    */
   exports.prototype['locality'] = undefined;
   /**
-   * Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf 
+   * Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Mandatory for card payments 
    * @member {String} administrativeArea
    */
   exports.prototype['administrativeArea'] = undefined;
   /**
-   * Sender's country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT.  Required for Mastercard Send 
+   * Sender's country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf 
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
-  /**
-   * Customer's government-assigned tax identification number. 
-   * @member {String} vatRegistrationNumber
-   */
-  exports.prototype['vatRegistrationNumber'] = undefined;
   /**
    * Sender's date of birth in YYYYMMDD format. 
    * @member {String} dateOfBirth
