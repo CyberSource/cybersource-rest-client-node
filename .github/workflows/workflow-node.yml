@@ -16,7 +16,7 @@ jobs:
             fail-fast: false
             matrix:
               operating-system: [ubuntu-latest,macos-latest,windows-latest]
-              node-ver: [14.x,16.x,17.x,18.x,19.x,20.x,21.x,22.x]  # Axios Doesn't support node version 15
+              node-ver: [14.x,15.x,16.x,17.x,18.x,19.x,20.x,21.x,22.x]  # Axios Doesn't support node version 15
               exclude:
                 - operating-system: macos-latest  # No Node 14 image is there for the arm64 architecture of mac
                   node-ver: 14.x
@@ -72,4 +72,3 @@ jobs:
                 name: sample-run-report-${{matrix.operating-system}}-node-ver-${{matrix.node-ver}}
                 path: |
                   ${{env.SAMPLE_FOLDER}}/${{steps.report-generation.outputs.result-pdf-name}}
-
