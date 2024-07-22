@@ -62,15 +62,15 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentId')) {
-        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], 'String');
+        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], Object);
       }
     }
     return obj;
   }
 
   /**
-   * This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
-   * @member {String} paymentId
+   * This field is to accept the id of credit/capture in the body of the requests so the type of void can be identified and processed correctly.
+   * @member {Object} paymentId
    */
   exports.prototype['paymentId'] = undefined;
 

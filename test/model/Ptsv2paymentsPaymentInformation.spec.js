@@ -146,6 +146,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentAccountReference (base name: "paymentAccountReference")', function() {
+      // uncomment below and update the code to test the property paymentAccountReference
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

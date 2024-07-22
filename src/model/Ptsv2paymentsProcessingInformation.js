@@ -142,9 +142,6 @@
       if (data.hasOwnProperty('intentsId')) {
         obj['intentsId'] = ApiClient.convertToType(data['intentsId'], 'String');
       }
-      if (data.hasOwnProperty('paymentId')) {
-        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], 'String');
-      }
       if (data.hasOwnProperty('reportGroup')) {
         obj['reportGroup'] = ApiClient.convertToType(data['reportGroup'], 'String');
       }
@@ -208,6 +205,9 @@
       if (data.hasOwnProperty('paymentType')) {
         obj['paymentType'] = ApiClient.convertToType(data['paymentType'], 'String');
       }
+      if (data.hasOwnProperty('enablerId')) {
+        obj['enablerId'] = ApiClient.convertToType(data['enablerId'], 'String');
+      }
     }
     return obj;
   }
@@ -259,7 +259,7 @@
    */
   exports.prototype['commerceIndicatorLabel'] = undefined;
   /**
-   * Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `027`: Click to Pay. 
+   * Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the REST API.](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct.   - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `027`: Click to Pay. 
    * @member {String} paymentSolution
    */
   exports.prototype['paymentSolution'] = undefined;
@@ -288,11 +288,6 @@
    * @member {String} intentsId
    */
   exports.prototype['intentsId'] = undefined;
-  /**
-   * This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
-   * @member {String} paymentId
-   */
-  exports.prototype['paymentId'] = undefined;
   /**
    * Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**. 
    * @member {String} reportGroup
@@ -390,6 +385,11 @@
    * @member {String} paymentType
    */
   exports.prototype['paymentType'] = undefined;
+  /**
+   * Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. 
+   * @member {String} enablerId
+   */
+  exports.prototype['enablerId'] = undefined;
 
 
 

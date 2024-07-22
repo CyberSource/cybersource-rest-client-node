@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateSearchRequest', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response', 'model/TssV2TransactionsPost400Response'], factory);
+    define(['ApiClient', 'model/BinLookupv400Response', 'model/CreateSearchRequest', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateSearchRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'), require('../model/TssV2TransactionsPost400Response'));
+    module.exports = factory(require('../ApiClient'), require('../model/BinLookupv400Response'), require('../model/CreateSearchRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSearchRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response, root.CyberSource.TssV2TransactionsPost400Response);
+    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.BinLookupv400Response, root.CyberSource.CreateSearchRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response);
   }
-}(this, function(ApiClient, CreateSearchRequest, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response, TssV2TransactionsPost400Response) {
+}(this, function(ApiClient, BinLookupv400Response, CreateSearchRequest, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response) {
   'use strict';
 
   /**

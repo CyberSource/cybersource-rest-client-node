@@ -75,6 +75,7 @@
 
 
 
+
   };
 
   /**
@@ -171,6 +172,9 @@
       }
       if (data.hasOwnProperty('order')) {
         obj['order'] = Ptsv2paymentsOrderInformationAmountDetailsOrder.constructFromObject(data['order']);
+      }
+      if (data.hasOwnProperty('anticipatedAmount')) {
+        obj['anticipatedAmount'] = ApiClient.convertToType(data['anticipatedAmount'], 'String');
       }
     }
     return obj;
@@ -311,6 +315,11 @@
    * @member {module:model/Ptsv2paymentsOrderInformationAmountDetailsOrder} order
    */
   exports.prototype['order'] = undefined;
+  /**
+   * This API Field contains the anticipated amount details. This supports use cases where the Merchant does not wish to have funds held against the account, but needs to confirm an amount prior to authorization, such as for a trial subscription, reservation service, or loyalty program. In an account verification, the anticipated amount is used to confirm the account has availability to accept purchases. 
+   * @member {String} anticipatedAmount
+   */
+  exports.prototype['anticipatedAmount'] = undefined;
 
 
 

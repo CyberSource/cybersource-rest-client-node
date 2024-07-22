@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property orchestration (base name: "orchestration")', function() {
+      // uncomment below and update the code to test the property orchestration
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

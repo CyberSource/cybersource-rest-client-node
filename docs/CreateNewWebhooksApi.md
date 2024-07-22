@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createWebhookSubscription"></a>
 # **createWebhookSubscription**
-> InlineResponse2013 createWebhookSubscription(opts)
+> InlineResponse2014 createWebhookSubscription(opts)
 
 Create a Webhook
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2012 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts)
+> InlineResponse2013 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts)
 
 Create Webhook Security Keys
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**InlineResponse2013**](InlineResponse2013.md)
 
 ### Authorization
 
