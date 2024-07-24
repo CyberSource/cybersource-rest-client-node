@@ -1,0 +1,74 @@
+name: NODE BUILDS
+on:
+  push:
+  pull_request: 
+  workflow_dispatch:
+env:
+  CLIENT_FOLDER: 'cybersource-rest-client-node'
+  SAMPLE_FOLDER: 'cybersource-rest-samples-node'
+  NPM_CLIENT_FOLDER : 'npm-client-sdk'
+jobs:
+    workflow-job:
+        defaults:
+            run:
+              shell: bash
+        strategy:
+            fail-fast: false
+            matrix:
+              operating-system: [ubuntu-latest,macos-latest,windows-latest]
+              node-ver: [14.x,16.x,17.x,18.x,19.x,20.x,21.x,22.x]  # Axios Doesn't support node version 15
+              exclude:
+                - operating-system: macos-latest  # No Node 14 image is there for the arm64 architecture of mac
+                  node-ver: 14.x
+              include:
+                - operating-system: macos-13  # No Node 14 image is there for the arm64 architecture of mac
+                  node-ver: 14.x
+        runs-on: ${{matrix.operating-system}}
+        steps:
+            - name: Creating separate folders for checkout repos
+              run: |
+                rm -rf $CLIENT_FOLDER
+                rm -rf $SAMPLE_FOLDER
+                mkdir $CLIENT_FOLDER $SAMPLE_FOLDER
+            - name: Checkout cybersource-rest-client-node repo
+              uses: actions/checkout@v4
+              with:
+                path: ${{env.CLIENT_FOLDER}}
+            - name: Checkout cybersource-rest-samples-node repo
+              uses: actions/checkout@v4
+              with:
+                repository: 'CyberSource/${{env.SAMPLE_FOLDER}}'
+                ref: 'master'
+                path: ${{env.SAMPLE_FOLDER}}
+            - name: Install Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: ${{matrix.node-ver}}
+            - name: Building the projects and running the Test Cases
+              run: |
+                cd $CLIENT_FOLDER
+                npm install
+                npm pack
+                rm -rf ../$NPM_CLIENT_FOLDER
+                mkdir ../$NPM_CLIENT_FOLDER
+                PACKAGE_VERSION=$(grep '"version"' package.json | cut -d '"' -f 4 | head -n 1)
+                tar -xvzf "cybersource-rest-client-$PACKAGE_VERSION.tgz" -C ../$NPM_CLIENT_FOLDER
+                cd ../$NPM_CLIENT_FOLDER/package
+                npm link
+                cd ../../$SAMPLE_FOLDER
+                npm link cybersource-rest-client
+                npm install
+                bash ./sample_code_runner.sh
+            - name: Using Report Generation Action
+              id: report-generation
+              uses: ./cybersource-rest-client-node/.github/actions/generate-report
+              with:
+                lang: node
+                sample-folder-name: ${{env.SAMPLE_FOLDER}}
+                log-file-name: output.log
+            - name: Upload Test Reports
+              uses: actions/upload-artifact@v4
+              with:
+                name: sample-run-report-${{matrix.operating-system}}-node-ver-${{matrix.node-ver}}
+                path: |
+                  ${{env.SAMPLE_FOLDER}}/${{steps.report-generation.outputs.result-pdf-name}}
