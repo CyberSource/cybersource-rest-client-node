@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv1webhooksNotificationScope', 'model/Notificationsubscriptionsv1webhooksRetryPolicy', 'model/Notificationsubscriptionsv1webhooksSecurityPolicy'], factory);
+    define(['ApiClient', 'model/InlineResponse2013KeyInformation', 'model/Kmsegressv2keyssymClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv1webhooksNotificationScope'), require('./Notificationsubscriptionsv1webhooksRetryPolicy'), require('./Notificationsubscriptionsv1webhooksSecurityPolicy'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2013KeyInformation'), require('./Kmsegressv2keyssymClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2013 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv1webhooksNotificationScope, root.CyberSource.Notificationsubscriptionsv1webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv1webhooksSecurityPolicy);
+    root.CyberSource.InlineResponse2013 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013KeyInformation, root.CyberSource.Kmsegressv2keyssymClientReferenceInformation);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv1webhooksNotificationScope, Notificationsubscriptionsv1webhooksRetryPolicy, Notificationsubscriptionsv1webhooksSecurityPolicy) {
+}(this, function(ApiClient, InlineResponse2013KeyInformation, Kmsegressv2keyssymClientReferenceInformation) {
   'use strict';
 
 
@@ -41,22 +41,12 @@
 
   /**
    * Constructs a new <code>InlineResponse2013</code>.
+   * Egress Key Information Response 
    * @alias module:model/InlineResponse2013
    * @class
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -75,128 +65,40 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('webhookId')) {
-        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
-      }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
-      }
-      if (data.hasOwnProperty('productId')) {
-        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
-      }
-      if (data.hasOwnProperty('eventTypes')) {
-        obj['eventTypes'] = ApiClient.convertToType(data['eventTypes'], ['String']);
-      }
-      if (data.hasOwnProperty('webhookUrl')) {
-        obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
-      }
-      if (data.hasOwnProperty('healthCheckUrl')) {
-        obj['healthCheckUrl'] = ApiClient.convertToType(data['healthCheckUrl'], 'String');
-      }
-      if (data.hasOwnProperty('notificationScope')) {
-        obj['notificationScope'] = Notificationsubscriptionsv1webhooksNotificationScope.constructFromObject(data['notificationScope']);
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = Kmsegressv2keyssymClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('retryPolicy')) {
-        obj['retryPolicy'] = Notificationsubscriptionsv1webhooksRetryPolicy.constructFromObject(data['retryPolicy']);
-      }
-      if (data.hasOwnProperty('securityPolicy')) {
-        obj['securityPolicy'] = Notificationsubscriptionsv1webhooksSecurityPolicy.constructFromObject(data['securityPolicy']);
-      }
-      if (data.hasOwnProperty('createdOn')) {
-        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
-      }
-      if (data.hasOwnProperty('updatedOn')) {
-        obj['updatedOn'] = ApiClient.convertToType(data['updatedOn'], 'String');
-      }
-      if (data.hasOwnProperty('additionalAttributes')) {
-        obj['additionalAttributes'] = ApiClient.convertToType(data['additionalAttributes'], [{'String': 'String'}]);
+      if (data.hasOwnProperty('keyInformation')) {
+        obj['keyInformation'] = InlineResponse2013KeyInformation.constructFromObject(data['keyInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * Webhook Id. This is generated by the server.
-   * @member {String} webhookId
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['webhookId'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * Organization ID
-   * @member {String} organizationId
-   */
-  exports.prototype['organizationId'] = undefined;
-  /**
-   * The product you are receiving a webhook for.
-   * @member {String} productId
-   */
-  exports.prototype['productId'] = undefined;
-  /**
-   * Array of the different events for a given product id.
-   * @member {Array.<String>} eventTypes
-   */
-  exports.prototype['eventTypes'] = undefined;
-  /**
-   * The client's endpoint (URL) to receive webhooks.
-   * @member {String} webhookUrl
-   */
-  exports.prototype['webhookUrl'] = undefined;
-  /**
-   * The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
-   * @member {String} healthCheckUrl
-   */
-  exports.prototype['healthCheckUrl'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksNotificationScope} notificationScope
-   */
-  exports.prototype['notificationScope'] = undefined;
-  /**
-   * Webhook status.
+   * The status of the submitted transaction. Possible values:  - ACCEPTED 
    * @member {String} status
-   * @default 'INACTIVE'
    */
-  exports.prototype['status'] = 'INACTIVE';
+  exports.prototype['status'] = undefined;
   /**
-   * Client friendly webhook name.
-   * @member {String} name
+   * @member {module:model/Kmsegressv2keyssymClientReferenceInformation} clientReferenceInformation
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * Client friendly webhook description.
-   * @member {String} description
+   * @member {module:model/InlineResponse2013KeyInformation} keyInformation
    */
-  exports.prototype['description'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksRetryPolicy} retryPolicy
-   */
-  exports.prototype['retryPolicy'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksSecurityPolicy} securityPolicy
-   */
-  exports.prototype['securityPolicy'] = undefined;
-  /**
-   * Date on which webhook was created/registered.
-   * @member {String} createdOn
-   */
-  exports.prototype['createdOn'] = undefined;
-  /**
-   * Date on which webhook was most recently updated.
-   * @member {String} updatedOn
-   */
-  exports.prototype['updatedOn'] = undefined;
-  /**
-   * Additional, free form configuration data.
-   * @member {Array.<Object.<String, String>>} additionalAttributes
-   */
-  exports.prototype['additionalAttributes'] = undefined;
+  exports.prototype['keyInformation'] = undefined;
 
 
 

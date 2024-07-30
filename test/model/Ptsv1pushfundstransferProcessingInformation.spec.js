@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enablerId (base name: "enablerId")', function() {
+      // uncomment below and update the code to test the property enablerId
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

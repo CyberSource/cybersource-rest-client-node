@@ -131,7 +131,7 @@
    */
   exports.prototype['shippingDiscountAmount'] = undefined;
   /**
-   * Total tax amount. When the purchaseTotals_ taxAmount and ap_subtotalAmount fields are included in the request, do not include the tax amount as part of the subtotal amount calculation.  
+   * Total tax amount. When the purchaseTotals_ taxAmount and ap_subtotalAmount fields are included in the request, do not include the tax amount as part of the subtotal amount calculation. 
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;

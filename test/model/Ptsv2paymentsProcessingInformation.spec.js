@@ -146,12 +146,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property paymentId (base name: "paymentId")', function() {
-      // uncomment below and update the code to test the property paymentId
-      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property reportGroup (base name: "reportGroup")', function() {
       // uncomment below and update the code to test the property reportGroup
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
@@ -274,6 +268,12 @@
 
     it('should have the property paymentType (base name: "paymentType")', function() {
       // uncomment below and update the code to test the property paymentType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property enablerId (base name: "enablerId")', function() {
+      // uncomment below and update the code to test the property enablerId
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
       //expect(instance).to.be();
     });

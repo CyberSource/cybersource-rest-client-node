@@ -31,5 +31,6 @@ Name | Type | Description | Notes
 **cashbackAmount** | **String** | Cashback amount in the acquirer's currency. If a cashback amount is included in the request, it must be included in the `orderInformation.amountDetails.totalAmount` value.  This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization** Optional. **Authorization Reversal** Optional.  #### PIN debit Optional field for PIN debit purchase, PIN debit credit or PIN debit reversal.  | [optional] 
 **currencyConversion** | [**Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion**](Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion.md) |  | [optional] 
 **order** | [**Ptsv2paymentsOrderInformationAmountDetailsOrder**](Ptsv2paymentsOrderInformationAmountDetailsOrder.md) |  | [optional] 
+**anticipatedAmount** | **String** | This API Field contains the anticipated amount details. This supports use cases where the Merchant does not wish to have funds held against the account, but needs to confirm an amount prior to authorization, such as for a trial subscription, reservation service, or loyalty program. In an account verification, the anticipated amount is used to confirm the account has availability to accept purchases.  | [optional] 
 
 

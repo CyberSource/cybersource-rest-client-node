@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration', 'model/PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration'), require('./PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights);
+    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration, PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('responseInsights')) {
         obj['responseInsights'] = PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights.constructFromObject(data['responseInsights']);
       }
+      if (data.hasOwnProperty('orchestration')) {
+        obj['orchestration'] = PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration.constructFromObject(data['orchestration']);
+      }
     }
     return obj;
   }
@@ -72,6 +76,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights} responseInsights
    */
   exports.prototype['responseInsights'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration} orchestration
+   */
+  exports.prototype['orchestration'] = undefined;
 
 
 

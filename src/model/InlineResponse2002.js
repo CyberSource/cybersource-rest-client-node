@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2002IntegrationInformation', 'model/InlineResponse2011ProductInformationSetups'], factory);
+    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2002IntegrationInformation', 'model/InlineResponse2012ProductInformationSetups'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2002IntegrationInformation'), require('./InlineResponse2011ProductInformationSetups'));
+    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2002IntegrationInformation'), require('./InlineResponse2012ProductInformationSetups'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2002IntegrationInformation, root.CyberSource.InlineResponse2011ProductInformationSetups);
+    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2002IntegrationInformation, root.CyberSource.InlineResponse2012ProductInformationSetups);
   }
-}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2002IntegrationInformation, InlineResponse2011ProductInformationSetups) {
+}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2002IntegrationInformation, InlineResponse2012ProductInformationSetups) {
   'use strict';
 
 
@@ -80,7 +80,7 @@
         obj['productInformation'] = Boardingv1registrationsProductInformation.constructFromObject(data['productInformation']);
       }
       if (data.hasOwnProperty('productInformationSetups')) {
-        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2011ProductInformationSetups]);
+        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2012ProductInformationSetups]);
       }
       if (data.hasOwnProperty('documentInformation')) {
         obj['documentInformation'] = Boardingv1registrationsDocumentInformation.constructFromObject(data['documentInformation']);
@@ -109,7 +109,7 @@
    */
   exports.prototype['productInformation'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2011ProductInformationSetups>} productInformationSetups
+   * @member {Array.<module:model/InlineResponse2012ProductInformationSetups>} productInformationSetups
    */
   exports.prototype['productInformationSetups'] = undefined;
   /**
