@@ -74,12 +74,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeLocal (base name: "submitTimeLocal")', function() {
-      // uncomment below and update the code to test the property submitTimeLocal
-      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201Response();
-      //expect(instance).to.be();
-    });
-
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201Response();

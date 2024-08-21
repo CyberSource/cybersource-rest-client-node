@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2002IntegrationInformation', 'model/InlineResponse2012ProductInformationSetups'], factory);
+    define(['ApiClient', 'model/Notificationsubscriptionsv1productsorganizationIdEventTypes'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2002IntegrationInformation'), require('./InlineResponse2012ProductInformationSetups'));
+    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv1productsorganizationIdEventTypes'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2002IntegrationInformation, root.CyberSource.InlineResponse2012ProductInformationSetups);
+    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv1productsorganizationIdEventTypes);
   }
-}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2002IntegrationInformation, InlineResponse2012ProductInformationSetups) {
+}(this, function(ApiClient, Notificationsubscriptionsv1productsorganizationIdEventTypes) {
   'use strict';
 
 
@@ -50,10 +50,6 @@
 
 
 
-
-
-
-
   };
 
   /**
@@ -67,59 +63,33 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('registrationInformation')) {
-        obj['registrationInformation'] = Boardingv1registrationsRegistrationInformation.constructFromObject(data['registrationInformation']);
+      if (data.hasOwnProperty('productId')) {
+        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
       }
-      if (data.hasOwnProperty('integrationInformation')) {
-        obj['integrationInformation'] = InlineResponse2002IntegrationInformation.constructFromObject(data['integrationInformation']);
+      if (data.hasOwnProperty('productName')) {
+        obj['productName'] = ApiClient.convertToType(data['productName'], 'String');
       }
-      if (data.hasOwnProperty('organizationInformation')) {
-        obj['organizationInformation'] = Boardingv1registrationsOrganizationInformation.constructFromObject(data['organizationInformation']);
-      }
-      if (data.hasOwnProperty('productInformation')) {
-        obj['productInformation'] = Boardingv1registrationsProductInformation.constructFromObject(data['productInformation']);
-      }
-      if (data.hasOwnProperty('productInformationSetups')) {
-        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2012ProductInformationSetups]);
-      }
-      if (data.hasOwnProperty('documentInformation')) {
-        obj['documentInformation'] = Boardingv1registrationsDocumentInformation.constructFromObject(data['documentInformation']);
-      }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
+      if (data.hasOwnProperty('eventTypes')) {
+        obj['eventTypes'] = ApiClient.convertToType(data['eventTypes'], [Notificationsubscriptionsv1productsorganizationIdEventTypes]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Boardingv1registrationsRegistrationInformation} registrationInformation
+   * Product ID.
+   * @member {String} productId
    */
-  exports.prototype['registrationInformation'] = undefined;
+  exports.prototype['productId'] = undefined;
   /**
-   * @member {module:model/InlineResponse2002IntegrationInformation} integrationInformation
+   * Product Name.
+   * @member {String} productName
    */
-  exports.prototype['integrationInformation'] = undefined;
+  exports.prototype['productName'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformation} organizationInformation
+   * @member {Array.<module:model/Notificationsubscriptionsv1productsorganizationIdEventTypes>} eventTypes
    */
-  exports.prototype['organizationInformation'] = undefined;
-  /**
-   * @member {module:model/Boardingv1registrationsProductInformation} productInformation
-   */
-  exports.prototype['productInformation'] = undefined;
-  /**
-   * @member {Array.<module:model/InlineResponse2012ProductInformationSetups>} productInformationSetups
-   */
-  exports.prototype['productInformationSetups'] = undefined;
-  /**
-   * @member {module:model/Boardingv1registrationsDocumentInformation} documentInformation
-   */
-  exports.prototype['documentInformation'] = undefined;
-  /**
-   * @member {Object.<String, Array.<Object>>} details
-   */
-  exports.prototype['details'] = undefined;
+  exports.prototype['eventTypes'] = undefined;
 
 
 

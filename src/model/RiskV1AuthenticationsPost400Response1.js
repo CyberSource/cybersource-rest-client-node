@@ -90,7 +90,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status for payerAuthentication 201 enroll and validate calls. Value is: - `INVALID_REQUEST` 
+   * The status for payerAuthentication 400 enroll and validate calls. Value is: - `INVALID_REQUEST` 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

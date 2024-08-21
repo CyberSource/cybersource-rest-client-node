@@ -56,8 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2007);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property version (base name: "version")', function() {
+      // uncomment below and update the code to test the property version
+      //var instane = new CyberSource.InlineResponse2007();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reportCreatedDate (base name: "reportCreatedDate")', function() {
+      // uncomment below and update the code to test the property reportCreatedDate
       //var instane = new CyberSource.InlineResponse2007();
       //expect(instance).to.be();
     });
@@ -68,20 +74,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property batchCreatedDate (base name: "batchCreatedDate")', function() {
-      // uncomment below and update the code to test the property batchCreatedDate
-      //var instane = new CyberSource.InlineResponse2007();
-      //expect(instance).to.be();
-    });
-
     it('should have the property batchSource (base name: "batchSource")', function() {
       // uncomment below and update the code to test the property batchSource
-      //var instane = new CyberSource.InlineResponse2007();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property merchantReference (base name: "merchantReference")', function() {
-      // uncomment below and update the code to test the property merchantReference
       //var instane = new CyberSource.InlineResponse2007();
       //expect(instance).to.be();
     });
@@ -92,8 +86,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
+    it('should have the property batchCreatedDate (base name: "batchCreatedDate")', function() {
+      // uncomment below and update the code to test the property batchCreatedDate
+      //var instane = new CyberSource.InlineResponse2007();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantReference (base name: "merchantReference")', function() {
+      // uncomment below and update the code to test the property merchantReference
       //var instane = new CyberSource.InlineResponse2007();
       //expect(instance).to.be();
     });
@@ -110,8 +110,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
+    it('should have the property records (base name: "records")', function() {
+      // uncomment below and update the code to test the property records
       //var instane = new CyberSource.InlineResponse2007();
       //expect(instance).to.be();
     });

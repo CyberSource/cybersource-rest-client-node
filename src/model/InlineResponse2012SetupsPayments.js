@@ -64,6 +64,7 @@
 
 
 
+
   };
 
   /**
@@ -127,6 +128,9 @@
       }
       if (data.hasOwnProperty('receivablesManager')) {
         obj['receivablesManager'] = InlineResponse2012SetupsPaymentsDigitalPayments.constructFromObject(data['receivablesManager']);
+      }
+      if (data.hasOwnProperty('serviceFee')) {
+        obj['serviceFee'] = InlineResponse2012SetupsPaymentsCardProcessing.constructFromObject(data['serviceFee']);
       }
     }
     return obj;
@@ -200,6 +204,10 @@
    * @member {module:model/InlineResponse2012SetupsPaymentsDigitalPayments} receivablesManager
    */
   exports.prototype['receivablesManager'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2012SetupsPaymentsCardProcessing} serviceFee
+   */
+  exports.prototype['serviceFee'] = undefined;
 
 
 

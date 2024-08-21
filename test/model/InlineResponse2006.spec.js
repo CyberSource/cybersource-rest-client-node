@@ -62,38 +62,56 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property _object (base name: "object")', function() {
-      // uncomment below and update the code to test the property _object
+    it('should have the property batchId (base name: "batchId")', function() {
+      // uncomment below and update the code to test the property batchId
       //var instane = new CyberSource.InlineResponse2006();
       //expect(instance).to.be();
     });
 
-    it('should have the property offset (base name: "offset")', function() {
-      // uncomment below and update the code to test the property offset
+    it('should have the property batchCreatedDate (base name: "batchCreatedDate")', function() {
+      // uncomment below and update the code to test the property batchCreatedDate
       //var instane = new CyberSource.InlineResponse2006();
       //expect(instance).to.be();
     });
 
-    it('should have the property limit (base name: "limit")', function() {
-      // uncomment below and update the code to test the property limit
+    it('should have the property batchSource (base name: "batchSource")', function() {
+      // uncomment below and update the code to test the property batchSource
       //var instane = new CyberSource.InlineResponse2006();
       //expect(instance).to.be();
     });
 
-    it('should have the property count (base name: "count")', function() {
-      // uncomment below and update the code to test the property count
+    it('should have the property merchantReference (base name: "merchantReference")', function() {
+      // uncomment below and update the code to test the property merchantReference
       //var instane = new CyberSource.InlineResponse2006();
       //expect(instance).to.be();
     });
 
-    it('should have the property total (base name: "total")', function() {
-      // uncomment below and update the code to test the property total
+    it('should have the property batchCaEndpoints (base name: "batchCaEndpoints")', function() {
+      // uncomment below and update the code to test the property batchCaEndpoints
       //var instane = new CyberSource.InlineResponse2006();
       //expect(instance).to.be();
     });
 
-    it('should have the property embedded (base name: "_embedded")', function() {
-      // uncomment below and update the code to test the property embedded
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new CyberSource.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totals (base name: "totals")', function() {
+      // uncomment below and update the code to test the property totals
+      //var instane = new CyberSource.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billing (base name: "billing")', function() {
+      // uncomment below and update the code to test the property billing
+      //var instane = new CyberSource.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instane = new CyberSource.InlineResponse2006();
       //expect(instance).to.be();
     });

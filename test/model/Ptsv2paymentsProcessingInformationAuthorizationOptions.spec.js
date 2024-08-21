@@ -188,6 +188,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property aftIndicator (base name: "aftIndicator")', function() {
+      // uncomment below and update the code to test the property aftIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

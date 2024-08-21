@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sequenceNumber (base name: "sequenceNumber")', function() {
+      // uncomment below and update the code to test the property sequenceNumber
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property avs (base name: "avs")', function() {
       // uncomment below and update the code to test the property avs
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();

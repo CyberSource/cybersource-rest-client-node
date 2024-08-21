@@ -43,8 +43,9 @@
    * Constructs a new <code>Riskv1decisionsConsumerAuthenticationInformation</code>.
    * @alias module:model/Riskv1decisionsConsumerAuthenticationInformation
    * @class
+   * @param deviceChannel {String} Determines the channel that the transaction came through. Possible Values: SDK/Browser/3RI. 3RI - 3DS request initiated. 
    */
-  var exports = function() {
+  var exports = function(deviceChannel) {
     var _this = this;
 
 
@@ -62,8 +63,7 @@
 
 
 
-
-
+    _this['deviceChannel'] = deviceChannel;
 
 
 
@@ -104,9 +104,6 @@
 
       if (data.hasOwnProperty('strongAuthentication')) {
         obj['strongAuthentication'] = Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication.constructFromObject(data['strongAuthentication']);
-      }
-      if (data.hasOwnProperty('authenticationType')) {
-        obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
       }
       if (data.hasOwnProperty('acsWindowSize')) {
         obj['acsWindowSize'] = ApiClient.convertToType(data['acsWindowSize'], 'String');
@@ -236,11 +233,6 @@
    * @member {module:model/Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication} strongAuthentication
    */
   exports.prototype['strongAuthentication'] = undefined;
-  /**
-   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
-   * @member {String} authenticationType
-   */
-  exports.prototype['authenticationType'] = undefined;
   /**
    * An override field that a merchant can pass in to set the challenge window size to display to the end cardholder.  The ACS (Active Control Server) will reply with content that is formatted appropriately to this window size to allow for the best user experience.  The sizes are width x height in pixels of the window displayed in the cardholder browser window.  01 - 250x400  02 - 390x400  03 - 500x600  04 - 600x400  05 - Full page 
    * @member {String} acsWindowSize

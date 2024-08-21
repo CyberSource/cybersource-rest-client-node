@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv1webhooksNotificationScope', 'model/Notificationsubscriptionsv1webhooksProducts', 'model/Notificationsubscriptionsv1webhooksRetryPolicy', 'model/Notificationsubscriptionsv1webhooksSecurityPolicy'], factory);
+    define(['ApiClient', 'model/InlineResponse2005Embedded', 'model/InlineResponse2005Links'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv1webhooksNotificationScope'), require('./Notificationsubscriptionsv1webhooksProducts'), require('./Notificationsubscriptionsv1webhooksRetryPolicy'), require('./Notificationsubscriptionsv1webhooksSecurityPolicy'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2005Embedded'), require('./InlineResponse2005Links'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2005 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv1webhooksNotificationScope, root.CyberSource.Notificationsubscriptionsv1webhooksProducts, root.CyberSource.Notificationsubscriptionsv1webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv1webhooksSecurityPolicy);
+    root.CyberSource.InlineResponse2005 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2005Embedded, root.CyberSource.InlineResponse2005Links);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv1webhooksNotificationScope, Notificationsubscriptionsv1webhooksProducts, Notificationsubscriptionsv1webhooksRetryPolicy, Notificationsubscriptionsv1webhooksSecurityPolicy) {
+}(this, function(ApiClient, InlineResponse2005Embedded, InlineResponse2005Links) {
   'use strict';
 
 
@@ -54,13 +54,6 @@
 
 
 
-
-
-
-
-
-
-
   };
 
   /**
@@ -74,119 +67,59 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('webhookId')) {
-        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = ApiClient.convertToType(data['_links'], [InlineResponse2005Links]);
       }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
+      if (data.hasOwnProperty('object')) {
+        obj['object'] = ApiClient.convertToType(data['object'], 'String');
       }
-      if (data.hasOwnProperty('products')) {
-        obj['products'] = ApiClient.convertToType(data['products'], [Notificationsubscriptionsv1webhooksProducts]);
+      if (data.hasOwnProperty('offset')) {
+        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
       }
-      if (data.hasOwnProperty('webhookUrl')) {
-        obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
+      if (data.hasOwnProperty('limit')) {
+        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
       }
-      if (data.hasOwnProperty('healthCheckUrl')) {
-        obj['healthCheckUrl'] = ApiClient.convertToType(data['healthCheckUrl'], 'String');
+      if (data.hasOwnProperty('count')) {
+        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
       }
-      if (data.hasOwnProperty('notificationScope')) {
-        obj['notificationScope'] = Notificationsubscriptionsv1webhooksNotificationScope.constructFromObject(data['notificationScope']);
+      if (data.hasOwnProperty('total')) {
+        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('retryPolicy')) {
-        obj['retryPolicy'] = Notificationsubscriptionsv1webhooksRetryPolicy.constructFromObject(data['retryPolicy']);
-      }
-      if (data.hasOwnProperty('securityPolicy')) {
-        obj['securityPolicy'] = Notificationsubscriptionsv1webhooksSecurityPolicy.constructFromObject(data['securityPolicy']);
-      }
-      if (data.hasOwnProperty('createdOn')) {
-        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
-      }
-      if (data.hasOwnProperty('updatedOn')) {
-        obj['updatedOn'] = ApiClient.convertToType(data['updatedOn'], 'String');
-      }
-      if (data.hasOwnProperty('additionalAttributes')) {
-        obj['additionalAttributes'] = ApiClient.convertToType(data['additionalAttributes'], [{'String': 'String'}]);
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = InlineResponse2005Embedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * Webhook Id. This is generated by the server.
-   * @member {String} webhookId
+   * @member {Array.<module:model/InlineResponse2005Links>} _links
    */
-  exports.prototype['webhookId'] = undefined;
+  exports.prototype['_links'] = undefined;
   /**
-   * Organization ID.
-   * @member {String} organizationId
+   * @member {String} object
    */
-  exports.prototype['organizationId'] = undefined;
+  exports.prototype['object'] = undefined;
   /**
-   * @member {Array.<module:model/Notificationsubscriptionsv1webhooksProducts>} products
+   * @member {Number} offset
    */
-  exports.prototype['products'] = undefined;
+  exports.prototype['offset'] = undefined;
   /**
-   * The client's endpoint (URL) to receive webhooks.
-   * @member {String} webhookUrl
+   * @member {Number} limit
    */
-  exports.prototype['webhookUrl'] = undefined;
+  exports.prototype['limit'] = undefined;
   /**
-   * The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
-   * @member {String} healthCheckUrl
+   * @member {Number} count
    */
-  exports.prototype['healthCheckUrl'] = undefined;
+  exports.prototype['count'] = undefined;
   /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksNotificationScope} notificationScope
+   * @member {Number} total
    */
-  exports.prototype['notificationScope'] = undefined;
+  exports.prototype['total'] = undefined;
   /**
-   * Webhook status.
-   * @member {String} status
-   * @default 'INACTIVE'
+   * @member {module:model/InlineResponse2005Embedded} _embedded
    */
-  exports.prototype['status'] = 'INACTIVE';
-  /**
-   * Client friendly webhook name.
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * Client friendly webhook description.
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksRetryPolicy} retryPolicy
-   */
-  exports.prototype['retryPolicy'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksSecurityPolicy} securityPolicy
-   */
-  exports.prototype['securityPolicy'] = undefined;
-  /**
-   * Date on which webhook was created/registered.
-   * @member {String} createdOn
-   */
-  exports.prototype['createdOn'] = undefined;
-  /**
-   * Date on which webhook was most recently updated.
-   * @member {String} updatedOn
-   */
-  exports.prototype['updatedOn'] = undefined;
-  /**
-   * Additional, free form configuration data.
-   * @member {Array.<Object.<String, String>>} additionalAttributes
-   */
-  exports.prototype['additionalAttributes'] = undefined;
+  exports.prototype['_embedded'] = undefined;
 
 
 

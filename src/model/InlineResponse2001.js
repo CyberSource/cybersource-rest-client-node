@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2001Keys'], factory);
+    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2001IntegrationInformation', 'model/InlineResponse2012ProductInformationSetups'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2001Keys'));
+    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2001IntegrationInformation'), require('./InlineResponse2012ProductInformationSetups'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001Keys);
+    root.CyberSource.InlineResponse2001 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2001IntegrationInformation, root.CyberSource.InlineResponse2012ProductInformationSetups);
   }
-}(this, function(ApiClient, InlineResponse2001Keys) {
+}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2001IntegrationInformation, InlineResponse2012ProductInformationSetups) {
   'use strict';
 
 
@@ -41,12 +41,12 @@
 
   /**
    * Constructs a new <code>InlineResponse2001</code>.
-   * Successful searchKeysResponse
    * @alias module:model/InlineResponse2001
    * @class
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -67,57 +67,59 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('registrationInformation')) {
+        obj['registrationInformation'] = Boardingv1registrationsRegistrationInformation.constructFromObject(data['registrationInformation']);
       }
-      if (data.hasOwnProperty('totalCount')) {
-        obj['totalCount'] = ApiClient.convertToType(data['totalCount'], 'Number');
+      if (data.hasOwnProperty('integrationInformation')) {
+        obj['integrationInformation'] = InlineResponse2001IntegrationInformation.constructFromObject(data['integrationInformation']);
       }
-      if (data.hasOwnProperty('offset')) {
-        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
+      if (data.hasOwnProperty('organizationInformation')) {
+        obj['organizationInformation'] = Boardingv1registrationsOrganizationInformation.constructFromObject(data['organizationInformation']);
       }
-      if (data.hasOwnProperty('limit')) {
-        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
+      if (data.hasOwnProperty('productInformation')) {
+        obj['productInformation'] = Boardingv1registrationsProductInformation.constructFromObject(data['productInformation']);
       }
-      if (data.hasOwnProperty('sort')) {
-        obj['sort'] = ApiClient.convertToType(data['sort'], 'String');
+      if (data.hasOwnProperty('productInformationSetups')) {
+        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2012ProductInformationSetups]);
       }
-      if (data.hasOwnProperty('keys')) {
-        obj['keys'] = ApiClient.convertToType(data['keys'], [InlineResponse2001Keys]);
+      if (data.hasOwnProperty('documentInformation')) {
+        obj['documentInformation'] = Boardingv1registrationsDocumentInformation.constructFromObject(data['documentInformation']);
+      }
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeUtc
+   * @member {module:model/Boardingv1registrationsRegistrationInformation} registrationInformation
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['registrationInformation'] = undefined;
   /**
-   * Specifies the total number of items found based on the request
-   * @member {Number} totalCount
+   * @member {module:model/InlineResponse2001IntegrationInformation} integrationInformation
    */
-  exports.prototype['totalCount'] = undefined;
+  exports.prototype['integrationInformation'] = undefined;
   /**
-   * Specifies the record offset from the records are returned part of the response
-   * @member {Number} offset
+   * @member {module:model/Boardingv1registrationsOrganizationInformation} organizationInformation
    */
-  exports.prototype['offset'] = undefined;
+  exports.prototype['organizationInformation'] = undefined;
   /**
-   * Specifies the maximum number of records requested part of the response
-   * @member {Number} limit
+   * @member {module:model/Boardingv1registrationsProductInformation} productInformation
    */
-  exports.prototype['limit'] = undefined;
+  exports.prototype['productInformation'] = undefined;
   /**
-   * Specifies a comma separated list of field names based on which the result is sorted.
-   * @member {String} sort
+   * @member {Array.<module:model/InlineResponse2012ProductInformationSetups>} productInformationSetups
    */
-  exports.prototype['sort'] = undefined;
+  exports.prototype['productInformationSetups'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2001Keys>} keys
+   * @member {module:model/Boardingv1registrationsDocumentInformation} documentInformation
    */
-  exports.prototype['keys'] = undefined;
+  exports.prototype['documentInformation'] = undefined;
+  /**
+   * @member {Object.<String, Array.<Object>>} details
+   */
+  exports.prototype['details'] = undefined;
 
 
 
