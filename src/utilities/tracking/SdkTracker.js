@@ -1,8 +1,6 @@
 'use strict'
 
 const inclusionList = [
-    'module:model/CreateP12KeysRequest',
-    'module:model/DeleteBulkP12KeysRequest',
     'module:model/CapturePaymentRequest',
     'module:model/CreateCreditRequest',
     'module:model/AddNegativeListRequest',
@@ -20,9 +18,6 @@ const inclusionList = [
     'module:model/MitReversalRequest',
     'module:model/CreateSubscriptionRequest',
     'module:model/UpdateSubscription',
-    'module:model/CreateSharedSecretKeysRequest',
-    'module:model/CreateSharedSecretKeysVerifiRequest',
-    'module:model/DeleteBulkSymmetricKeysRequest',
     'module:model/TaxRequest',
     'module:model/VoidTaxRequest',
     'module:model/ValidateExportComplianceRequest',
