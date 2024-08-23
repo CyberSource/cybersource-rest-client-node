@@ -58,7 +58,7 @@ No authorization required
 
 <a name="findProductsToSubscribe"></a>
 # **findProductsToSubscribe**
-> [InlineResponse2003] findProductsToSubscribe(organizationId)
+> [InlineResponse2002] findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2003]**](InlineResponse2003.md)
+[**[InlineResponse2002]**](InlineResponse2002.md)
 
 ### Authorization
 

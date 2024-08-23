@@ -74,18 +74,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property authenticationType (base name: "authenticationType")', function() {
-      // uncomment below and update the code to test the property authenticationType
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property effectiveAuthenticationType (base name: "effectiveAuthenticationType")', function() {
-      // uncomment below and update the code to test the property effectiveAuthenticationType
-      //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property responseAccessToken (base name: "responseAccessToken")', function() {
       // uncomment below and update the code to test the property responseAccessToken
       //var instane = new CyberSource.Riskv1authenticationresultsConsumerAuthenticationInformation();

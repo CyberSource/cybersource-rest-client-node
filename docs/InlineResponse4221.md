@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **status** | **String** | The http status description of the submitted request. | [optional] 
 **reason** | **String** | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'  | [optional] 
 **message** | **String** | Descriptive message for the error. | [optional] 
-**details** | [**[InlineResponse4007Details]**](InlineResponse4007Details.md) |  | [optional] 
+**details** | [**[InlineResponse4005Details]**](InlineResponse4005Details.md) |  | [optional] 
 
 
 <a name="ReasonEnum"></a>

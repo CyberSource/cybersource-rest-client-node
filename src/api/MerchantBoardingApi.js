@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2012', 'model/InlineResponse4007', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5003', 'model/PostRegistrationBody'], factory);
+    define(['ApiClient', 'model/InlineResponse2001', 'model/InlineResponse2012', 'model/InlineResponse4005', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2012'), require('../model/InlineResponse4007'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5003'), require('../model/PostRegistrationBody'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse2012'), require('../model/InlineResponse4005'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantBoardingApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5003, root.CyberSource.PostRegistrationBody);
+    root.CyberSource.MerchantBoardingApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
   }
-}(this, function(ApiClient, InlineResponse2002, InlineResponse2012, InlineResponse4007, InlineResponse4041, InlineResponse4221, InlineResponse5003, PostRegistrationBody) {
+}(this, function(ApiClient, InlineResponse2001, InlineResponse2012, InlineResponse4005, InlineResponse4041, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getRegistration operation.
      * @callback module:api/MerchantBoardingApi~getRegistrationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * This end point will get all information of a boarding registration 
      * @param {String} registrationId Identifies the boarding registration to be updated
      * @param {module:api/MerchantBoardingApi~getRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/InlineResponse2001}
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2002;
+      var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
         '/boarding/v1/registrations/{registrationId}', 'GET',

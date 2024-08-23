@@ -62,6 +62,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property accountType (base name: "accountType")', function() {
+      // uncomment below and update the code to test the property accountType
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstName (base name: "firstName")', function() {
+      // uncomment below and update the code to test the property firstName
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lastName (base name: "lastName")', function() {
       // uncomment below and update the code to test the property lastName
       //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
@@ -74,8 +86,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address1 (base name: "address1")', function() {
+      // uncomment below and update the code to test the property address1
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property postalCode (base name: "postalCode")', function() {
       // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
       //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
       //expect(instance).to.be();
     });

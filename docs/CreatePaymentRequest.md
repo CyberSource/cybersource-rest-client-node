@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **paymentInformation** | [**Ptsv2paymentsPaymentInformation**](Ptsv2paymentsPaymentInformation.md) |  | [optional] 
 **orderInformation** | [**Ptsv2paymentsOrderInformation**](Ptsv2paymentsOrderInformation.md) |  | [optional] 
 **buyerInformation** | [**Ptsv2paymentsBuyerInformation**](Ptsv2paymentsBuyerInformation.md) |  | [optional] 
+**senderInformation** | [**Ptsv2paymentsSenderInformation**](Ptsv2paymentsSenderInformation.md) |  | [optional] 
 **recipientInformation** | [**Ptsv2paymentsRecipientInformation**](Ptsv2paymentsRecipientInformation.md) |  | [optional] 
 **deviceInformation** | [**Ptsv2paymentsDeviceInformation**](Ptsv2paymentsDeviceInformation.md) |  | [optional] 
 **merchantInformation** | [**Ptsv2paymentsMerchantInformation**](Ptsv2paymentsMerchantInformation.md) |  | [optional] 

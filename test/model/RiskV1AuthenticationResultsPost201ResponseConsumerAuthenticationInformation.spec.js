@@ -62,14 +62,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acsReferenceNumber (base name: "acsReferenceNumber")', function() {
+      // uncomment below and update the code to test the property acsReferenceNumber
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property acsTransactionId (base name: "acsTransactionId")', function() {
       // uncomment below and update the code to test the property acsTransactionId
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
 
+    it('should have the property acsOperatorID (base name: "acsOperatorID")', function() {
+      // uncomment below and update the code to test the property acsOperatorID
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authenticationResult (base name: "authenticationResult")', function() {
       // uncomment below and update the code to test the property authenticationResult
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authenticationType (base name: "authenticationType")', function() {
+      // uncomment below and update the code to test the property authenticationType
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });
@@ -116,6 +134,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property challengeCancelCode (base name: "challengeCancelCode")', function() {
+      // uncomment below and update the code to test the property challengeCancelCode
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property directoryServerErrorCode (base name: "directoryServerErrorCode")', function() {
       // uncomment below and update the code to test the property directoryServerErrorCode
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
@@ -124,6 +148,12 @@
 
     it('should have the property directoryServerErrorDescription (base name: "directoryServerErrorDescription")', function() {
       // uncomment below and update the code to test the property directoryServerErrorDescription
+      //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property effectiveAuthenticationType (base name: "effectiveAuthenticationType")', function() {
+      // uncomment below and update the code to test the property effectiveAuthenticationType
       //var instane = new CyberSource.RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });

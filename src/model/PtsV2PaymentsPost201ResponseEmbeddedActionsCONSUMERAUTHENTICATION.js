@@ -77,7 +77,7 @@
   }
 
   /**
-   * The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `INVALID_REQUEST` - `AUTHENTICATION_FAILED` 
+   * The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `AUTHENTICATION_FAILED` 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
