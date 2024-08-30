@@ -3,9 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | **String** | Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.  | [optional] 
-**status** | **String** | The status of the submitted request.  Possible values:  - SERVER_ERROR  | [optional] 
-**reason** | **String** | The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  | [optional] 
-**message** | **String** | The detail message related to the status and reason listed above. | [optional] 
+**submitTimeUtc** | **Date** | Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.  | [optional] 
+**status** | **String** | The http status description of the submitted request. | [optional] 
+**reason** | **String** | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'SYSTEM_ERROR'  | [optional] 
+**message** | **String** | Descriptive message for the error. | [optional] 
+
+
+<a name="ReasonEnum"></a>
+## Enum: ReasonEnum
+
+
+* `SYSTEM_ERROR` (value: `"SYSTEM_ERROR"`)
+
+
 
 

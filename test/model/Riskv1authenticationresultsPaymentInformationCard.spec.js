@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(CyberSource.Riskv1authenticationresultsPaymentInformationCard);
     });
 
-    it('should have the property bin (base name: "bin")', function() {
-      // uncomment below and update the code to test the property bin
-      //var instane = new CyberSource.Riskv1authenticationresultsPaymentInformationCard();
-      //expect(instance).to.be();
-    });
-
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instane = new CyberSource.Riskv1authenticationresultsPaymentInformationCard();

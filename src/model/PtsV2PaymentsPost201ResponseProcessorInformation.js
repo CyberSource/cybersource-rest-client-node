@@ -85,6 +85,7 @@
 
 
 
+
   };
 
   /**
@@ -130,6 +131,9 @@
       }
       if (data.hasOwnProperty('settlementDate')) {
         obj['settlementDate'] = ApiClient.convertToType(data['settlementDate'], 'String');
+      }
+      if (data.hasOwnProperty('sequenceNumber')) {
+        obj['sequenceNumber'] = ApiClient.convertToType(data['sequenceNumber'], 'String');
       }
       if (data.hasOwnProperty('avs')) {
         obj['avs'] = PtsV2PaymentsPost201ResponseProcessorInformationAvs.constructFromObject(data['avs']);
@@ -271,6 +275,11 @@
    * @member {String} settlementDate
    */
   exports.prototype['settlementDate'] = undefined;
+  /**
+   * This field serves as a unique identifier for initial and subsequent recurring transactions, specific to the payment brand, and is crucial for transaction tracking and recurrence management. Not all processors provide this value. Returned by the authorization service. 
+   * @member {String} sequenceNumber
+   */
+  exports.prototype['sequenceNumber'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationAvs} avs
    */

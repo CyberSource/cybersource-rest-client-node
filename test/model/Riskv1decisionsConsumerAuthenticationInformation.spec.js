@@ -62,12 +62,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property authenticationType (base name: "authenticationType")', function() {
-      // uncomment below and update the code to test the property authenticationType
-      //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property acsWindowSize (base name: "acsWindowSize")', function() {
       // uncomment below and update the code to test the property acsWindowSize
       //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();

@@ -73,6 +73,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -89,11 +94,20 @@
       if (data.hasOwnProperty('acsRenderingType')) {
         obj['acsRenderingType'] = ApiClient.convertToType(data['acsRenderingType'], 'String');
       }
+      if (data.hasOwnProperty('acsReferenceNumber')) {
+        obj['acsReferenceNumber'] = ApiClient.convertToType(data['acsReferenceNumber'], 'String');
+      }
       if (data.hasOwnProperty('acsTransactionId')) {
         obj['acsTransactionId'] = ApiClient.convertToType(data['acsTransactionId'], 'String');
       }
+      if (data.hasOwnProperty('acsOperatorID')) {
+        obj['acsOperatorID'] = ApiClient.convertToType(data['acsOperatorID'], 'String');
+      }
       if (data.hasOwnProperty('authenticationResult')) {
         obj['authenticationResult'] = ApiClient.convertToType(data['authenticationResult'], 'String');
+      }
+      if (data.hasOwnProperty('authenticationType')) {
+        obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
       }
       if (data.hasOwnProperty('authenticationStatusMsg')) {
         obj['authenticationStatusMsg'] = ApiClient.convertToType(data['authenticationStatusMsg'], 'String');
@@ -116,11 +130,17 @@
       if (data.hasOwnProperty('cavvAlgorithm')) {
         obj['cavvAlgorithm'] = ApiClient.convertToType(data['cavvAlgorithm'], 'String');
       }
+      if (data.hasOwnProperty('challengeCancelCode')) {
+        obj['challengeCancelCode'] = ApiClient.convertToType(data['challengeCancelCode'], 'String');
+      }
       if (data.hasOwnProperty('directoryServerErrorCode')) {
         obj['directoryServerErrorCode'] = ApiClient.convertToType(data['directoryServerErrorCode'], 'String');
       }
       if (data.hasOwnProperty('directoryServerErrorDescription')) {
         obj['directoryServerErrorDescription'] = ApiClient.convertToType(data['directoryServerErrorDescription'], 'String');
+      }
+      if (data.hasOwnProperty('effectiveAuthenticationType')) {
+        obj['effectiveAuthenticationType'] = ApiClient.convertToType(data['effectiveAuthenticationType'], 'String');
       }
       if (data.hasOwnProperty('indicator')) {
         obj['indicator'] = ApiClient.convertToType(data['indicator'], 'String');
@@ -174,15 +194,30 @@
    */
   exports.prototype['acsRenderingType'] = undefined;
   /**
+   * Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+   * @member {String} acsReferenceNumber
+   */
+  exports.prototype['acsReferenceNumber'] = undefined;
+  /**
    * Unique transaction identifier assigned by the ACS to identify a single transaction. 
    * @member {String} acsTransactionId
    */
   exports.prototype['acsTransactionId'] = undefined;
   /**
+   * Directory Server assigned ACS identifier.
+   * @member {String} acsOperatorID
+   */
+  exports.prototype['acsOperatorID'] = undefined;
+  /**
    * Raw authentication data that comes from the cardissuing bank. Primary authentication field that indicates if authentication was successful and if liability shift occurred. You should examine first the result of this field. This field contains one of these values: - `-1`: Invalid PARes. - `0`: Successful validation. - `1`: Cardholder is not participating, but the attempt to authenticate was recorded. - `6`: Issuer unable to perform authentication. - `9`: Cardholder did not complete authentication. 
    * @member {String} authenticationResult
    */
   exports.prototype['authenticationResult'] = undefined;
+  /**
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * @member {String} authenticationType
+   */
+  exports.prototype['authenticationType'] = undefined;
   /**
    * Message that explains the authenticationResult reply field. 
    * @member {String} authenticationStatusMsg
@@ -219,6 +254,11 @@
    */
   exports.prototype['cavvAlgorithm'] = undefined;
   /**
+   * An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK 
+   * @member {String} challengeCancelCode
+   */
+  exports.prototype['challengeCancelCode'] = undefined;
+  /**
    * The directory server error code indicating a problem with this transaction. Note - Max Length of this field is typically 3 characters. 
    * @member {String} directoryServerErrorCode
    */
@@ -228,6 +268,11 @@
    * @member {String} directoryServerErrorDescription
    */
   exports.prototype['directoryServerErrorDescription'] = undefined;
+  /**
+   * This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer). 
+   * @member {String} effectiveAuthenticationType
+   */
+  exports.prototype['effectiveAuthenticationType'] = undefined;
   /**
    * Indicator used to differentiate Internet transactions from other types. The authentication failed if this field is not returned. For Visa, if your payment processor is Streamline, Barclays, AIBMS, or FDC Germany, you receive the value vbv_failure instead of internet when eci is 07. The value of this field is passed automatically to the authorization service if you request the services together. This field contains one of these values: - `aesk`: American Express SafeKey authentication verified successfully. - `aesk_attempted`: Card not enrolled in American Express SafeKey, but the attempt to authenticate was recorded. - `dipb`: Discover ProtectBuy authentication verified successfully. - `dipb_attempted`: Card not enrolled in Discover ProtectBuy, but the attempt to authenticate was recorded. - `internet`: Authentication was not verified successfully. - `js`: J/Secure authentication verified successfully. - `js_attempted`: Card not enrolled in J/Secure, but the attempt to authenticate was recorded. - `moto`: Mail or telephone order. - `pb_attempted`: Card not enrolled in Diners Club ProtectBuy, but the attempt to authenticate was recorded. - `recurring`: Recurring transaction. - `spa`: Mastercard Identity Check authentication verified successfully. - `spa_failure`: Mastercard Identity Check failed authentication. - `vbv`: Visa Secure authentication verified successfully. - `vbv_attempted`: Card not enrolled in Visa Secure, but the attempt to authenticate was recorded. - `vbv_failure`: Visa Secure authentication unavailable. 
    * @member {String} indicator

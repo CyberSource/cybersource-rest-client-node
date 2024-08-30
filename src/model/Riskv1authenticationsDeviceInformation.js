@@ -43,22 +43,30 @@
    * Constructs a new <code>Riskv1authenticationsDeviceInformation</code>.
    * @alias module:model/Riskv1authenticationsDeviceInformation
    * @class
+   * @param httpAcceptContent {String} The exact content of the HTTP accept header. 
+   * @param httpBrowserLanguage {String} Value represents the browser language as defined in IETF BCP47. Example:en-US, refer  https://en.wikipedia.org/wiki/IETF_language_tag for more details. 
+   * @param httpBrowserJavaEnabled {Boolean} A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False 
+   * @param httpBrowserColorDepth {String} Value represents the bit depth of the color palette for displaying images, in bits per pixel. Example : 24, refer https://en.wikipedia.org/wiki/Color_depth for more details 
+   * @param httpBrowserScreenHeight {String} Total height of the Cardholder's scree in pixels, example: 864. 
+   * @param httpBrowserScreenWidth {String} Total width of the cardholder's screen in pixels. Example: 1536. 
+   * @param httpBrowserTimeDifference {String} Time difference between UTC time and the cardholder browser local time, in minutes, Example:300 
+   * @param userAgentBrowserValue {String} Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request. 
    */
-  var exports = function() {
+  var exports = function(httpAcceptContent, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue) {
     var _this = this;
 
 
 
 
+    _this['httpAcceptContent'] = httpAcceptContent;
+    _this['httpBrowserLanguage'] = httpBrowserLanguage;
+    _this['httpBrowserJavaEnabled'] = httpBrowserJavaEnabled;
 
-
-
-
-
-
-
-
-
+    _this['httpBrowserColorDepth'] = httpBrowserColorDepth;
+    _this['httpBrowserScreenHeight'] = httpBrowserScreenHeight;
+    _this['httpBrowserScreenWidth'] = httpBrowserScreenWidth;
+    _this['httpBrowserTimeDifference'] = httpBrowserTimeDifference;
+    _this['userAgentBrowserValue'] = userAgentBrowserValue;
   };
 
   /**

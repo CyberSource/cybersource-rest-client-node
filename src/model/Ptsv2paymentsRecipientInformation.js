@@ -55,6 +55,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -71,14 +75,26 @@
       if (data.hasOwnProperty('accountId')) {
         obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
       }
+      if (data.hasOwnProperty('accountType')) {
+        obj['accountType'] = ApiClient.convertToType(data['accountType'], 'String');
+      }
+      if (data.hasOwnProperty('firstName')) {
+        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+      }
       if (data.hasOwnProperty('lastName')) {
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
       }
       if (data.hasOwnProperty('middleName')) {
         obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
       }
+      if (data.hasOwnProperty('address1')) {
+        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
+      }
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
+      if (data.hasOwnProperty('country')) {
+        obj['country'] = ApiClient.convertToType(data['country'], 'String');
       }
       if (data.hasOwnProperty('dateOfBirth')) {
         obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
@@ -97,25 +113,45 @@
   }
 
   /**
-   * Identifier for the recipient's account. Use the first six digits and last four digits of the recipient's account number. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipientInformation.accountId` field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) 
+   * Identifier for the recipient's account.  **Applicable for Barclays AFT transactions only.** It is mandatory for both Visa and Mastercard AFT.  For Visa, the field has a maximum length of 34 character.        For Mastercard, the field has a maximum length of 50 character. 
    * @member {String} accountId
    */
   exports.prototype['accountId'] = undefined;
   /**
-   * Recipient's last name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipientInformation.lastName` field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) 
+   * Identifies the recipient's account type.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Valid values are:   - `00` for Other   - `01` for Routing Transit Number (RTN) + Bank Account Number (BAN)   - `02` for International Bank Account Number (IBAN)   - `03` for Card Account   - `06` for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code 
+   * @member {String} accountType
+   */
+  exports.prototype['accountType'] = undefined;
+  /**
+   * First name of the recipient.  **Applicable for Barclays AFT transactions only.** The field is mandatory for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.         For Mastercard, the field has a maximum length of 35 characters.  Values exceeding the above limits will be truncated. 
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
+  /**
+   * Last name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.  For Mastercard, the field has a maximum length of 35 characters.  Values exceeding these limits will be truncated. 
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * Recipient's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipientInformation.middleName` field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) 
+   * Middle name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.        For Mastercard, the field has a maximum length of 1 character.  Values exceeding these limits will be truncated. 
    * @member {String} middleName
    */
   exports.prototype['middleName'] = undefined;
+  /**
+   * The street address of the recipient    **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.    Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.             The field has a maximum length of 50 characters.  Values exceeding these limits will be truncated. 
+   * @member {String} address1
+   */
+  exports.prototype['address1'] = undefined;
   /**
    * Partial postal code for the recipient's address. For example, if the postal code is **NN5 7SG**, the value for this field should be the first part of the postal code: **NN5**. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
+  /**
+   * The country associated with the address of the recipient.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
+   * @member {String} country
+   */
+  exports.prototype['country'] = undefined;
   /**
    * Recipient's date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @member {String} dateOfBirth

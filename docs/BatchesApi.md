@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getBatchReport"></a>
 # **getBatchReport**
-> InlineResponse2008 getBatchReport(batchId)
+> InlineResponse2007 getBatchReport(batchId)
 
 Retrieve a Batch Report
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ No authorization required
 
 <a name="getBatchStatus"></a>
 # **getBatchStatus**
-> InlineResponse2007 getBatchStatus(batchId)
+> InlineResponse2006 getBatchStatus(batchId)
 
 Retrieve a Batch Status
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 <a name="getBatchesList"></a>
 # **getBatchesList**
-> InlineResponse2006 getBatchesList(opts)
+> InlineResponse2005 getBatchesList(opts)
 
 List Batches
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

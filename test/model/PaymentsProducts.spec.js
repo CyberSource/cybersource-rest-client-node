@@ -164,6 +164,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property serviceFee (base name: "serviceFee")', function() {
+      // uncomment below and update the code to test the property serviceFee
+      //var instane = new CyberSource.PaymentsProducts();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

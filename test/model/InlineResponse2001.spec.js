@@ -56,38 +56,44 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2001);
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property registrationInformation (base name: "registrationInformation")', function() {
+      // uncomment below and update the code to test the property registrationInformation
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });
 
-    it('should have the property totalCount (base name: "totalCount")', function() {
-      // uncomment below and update the code to test the property totalCount
+    it('should have the property integrationInformation (base name: "integrationInformation")', function() {
+      // uncomment below and update the code to test the property integrationInformation
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });
 
-    it('should have the property offset (base name: "offset")', function() {
-      // uncomment below and update the code to test the property offset
+    it('should have the property organizationInformation (base name: "organizationInformation")', function() {
+      // uncomment below and update the code to test the property organizationInformation
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });
 
-    it('should have the property limit (base name: "limit")', function() {
-      // uncomment below and update the code to test the property limit
+    it('should have the property productInformation (base name: "productInformation")', function() {
+      // uncomment below and update the code to test the property productInformation
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });
 
-    it('should have the property sort (base name: "sort")', function() {
-      // uncomment below and update the code to test the property sort
+    it('should have the property productInformationSetups (base name: "productInformationSetups")', function() {
+      // uncomment below and update the code to test the property productInformationSetups
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });
 
-    it('should have the property keys (base name: "keys")', function() {
-      // uncomment below and update the code to test the property keys
+    it('should have the property documentInformation (base name: "documentInformation")', function() {
+      // uncomment below and update the code to test the property documentInformation
+      //var instane = new CyberSource.InlineResponse2001();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });
