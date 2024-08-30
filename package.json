@@ -1,6 +1,6 @@
 {
   "name": "cybersource-rest-client",
-  "version": "0.0.59",
+  "version": "0.0.60",
   "description": "Node.js SDK for the CyberSource REST API",
   "author": "developer@cybersource.com",
   "license": "CyberSource",
