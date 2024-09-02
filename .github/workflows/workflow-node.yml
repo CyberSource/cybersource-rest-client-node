@@ -49,14 +49,9 @@ jobs:
                 cd $CLIENT_FOLDER
                 npm install
                 npm pack
-                rm -rf ../$NPM_CLIENT_FOLDER
-                mkdir ../$NPM_CLIENT_FOLDER
                 PACKAGE_VERSION=$(grep '"version"' package.json | cut -d '"' -f 4 | head -n 1)
-                tar -xvzf "cybersource-rest-client-$PACKAGE_VERSION.tgz" -C ../$NPM_CLIENT_FOLDER
-                cd ../$NPM_CLIENT_FOLDER/package
-                npm link
-                cd ../../$SAMPLE_FOLDER
-                npm link cybersource-rest-client
+                cd ../$SAMPLE_FOLDER
+                npm install file:../$CLIENT_FOLDER/cybersource-rest-client-$PACKAGE_VERSION.tgz
                 npm install
                 bash ./sample_code_runner.sh
             - name: Using Report Generation Action
