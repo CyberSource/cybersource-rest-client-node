@@ -1,0 +1,3 @@
+testCaseId,profileId,message
+CPIns_01,93B32398-AD51-4CC2-A682-EA3E93614EB1,Success
+CPIns_02,25C32588-CD49-6SS3-H123-WQ7T83512NMl,Fails due to invalid profileId

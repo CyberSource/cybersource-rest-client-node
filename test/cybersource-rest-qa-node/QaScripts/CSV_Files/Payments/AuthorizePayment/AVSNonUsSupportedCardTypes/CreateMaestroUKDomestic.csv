@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CMUD_01,2016.05,Success
+CMUD_02,200.0,Fails
+CMUD_03,QWERT3,Fails due to invalid amount

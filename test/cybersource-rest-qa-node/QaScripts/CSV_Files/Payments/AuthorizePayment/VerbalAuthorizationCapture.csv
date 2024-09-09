@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CVAC_01,100.00,Success
+CVAC_02,200,Fails
+CVAC_03,HGY5,Fails due to invalid amount
