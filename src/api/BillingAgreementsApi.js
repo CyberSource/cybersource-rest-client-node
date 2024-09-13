@@ -81,7 +81,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ModifyBillingAgreement', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ModifyBillingAgreement', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
         'id': id
@@ -137,7 +137,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/IntimateBillingAgreement', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/IntimateBillingAgreement', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
         'id': id
@@ -187,7 +187,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateBillingAgreement', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateBillingAgreement', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };
