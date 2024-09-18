@@ -62,7 +62,6 @@
 
 
 
-
     _this['deviceChannel'] = deviceChannel;
 
 
@@ -125,9 +124,6 @@
       }
       if (data.hasOwnProperty('transactionFlowIndicator')) {
         obj['transactionFlowIndicator'] = ApiClient.convertToType(data['transactionFlowIndicator'], 'Number');
-      }
-      if (data.hasOwnProperty('challengeCancelCode')) {
-        obj['challengeCancelCode'] = ApiClient.convertToType(data['challengeCancelCode'], 'String');
       }
       if (data.hasOwnProperty('challengeCode')) {
         obj['challengeCode'] = ApiClient.convertToType(data['challengeCode'], 'String');
@@ -268,11 +264,6 @@
    * @member {Number} transactionFlowIndicator
    */
   exports.prototype['transactionFlowIndicator'] = undefined;
-  /**
-   * An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK 
-   * @member {String} challengeCancelCode
-   */
-  exports.prototype['challengeCancelCode'] = undefined;
   /**
    * Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`. 
    * @member {String} challengeCode

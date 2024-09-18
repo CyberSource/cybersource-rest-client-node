@@ -92,6 +92,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -131,6 +134,15 @@
       }
       if (data.hasOwnProperty('currencies')) {
         obj['currencies'] = ApiClient.convertToType(data['currencies'], {'String': CardProcessingConfigCommonCurrencies1});
+      }
+      if (data.hasOwnProperty('visaAggregatorId')) {
+        obj['visaAggregatorId'] = ApiClient.convertToType(data['visaAggregatorId'], 'String');
+      }
+      if (data.hasOwnProperty('amexAggregatorId')) {
+        obj['amexAggregatorId'] = ApiClient.convertToType(data['amexAggregatorId'], 'String');
+      }
+      if (data.hasOwnProperty('masterCardAggregatorId')) {
+        obj['masterCardAggregatorId'] = ApiClient.convertToType(data['masterCardAggregatorId'], 'String');
       }
       if (data.hasOwnProperty('sicCode')) {
         obj['sicCode'] = ApiClient.convertToType(data['sicCode'], 'String');
@@ -285,6 +297,21 @@
    * @member {Object.<String, module:model/CardProcessingConfigCommonCurrencies1>} currencies
    */
   exports.prototype['currencies'] = undefined;
+  /**
+   * This field is used as aggregator Id when Visa payment type is selected
+   * @member {String} visaAggregatorId
+   */
+  exports.prototype['visaAggregatorId'] = undefined;
+  /**
+   * This field is used as aggregator Id when Amex payment type is selected
+   * @member {String} amexAggregatorId
+   */
+  exports.prototype['amexAggregatorId'] = undefined;
+  /**
+   * This field is used as aggregator Id when Master Card payment type is selected
+   * @member {String} masterCardAggregatorId
+   */
+  exports.prototype['masterCardAggregatorId'] = undefined;
   /**
    * The Standard Industrial Classification (SIC) are four-digit codes that categorize the industries that companies belong to based on their business activities. Standard Industrial Classification codes were mostly replaced by the six-digit North American Industry Classification System (NAICS). Applicable for VPC and GPX (gpx) processors.
    * @member {String} sicCode

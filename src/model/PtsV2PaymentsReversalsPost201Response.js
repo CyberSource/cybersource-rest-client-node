@@ -123,7 +123,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - REVERSED  - PARTIALLY_REVERSED 
+   * The status of the submitted transaction.  Possible values:  - REVERSED 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
