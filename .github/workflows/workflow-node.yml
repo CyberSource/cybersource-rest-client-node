@@ -53,7 +53,7 @@ jobs:
                 cd ../$SAMPLE_FOLDER
                 npm install file:../$CLIENT_FOLDER/cybersource-rest-client-$PACKAGE_VERSION.tgz
                 npm install
-                bash ./sample_code_runner.sh
+                bash ./sample_code_runner.sh > sampleConsole.log
             - name: Using Report Generation Action
               id: report-generation
               uses: ./cybersource-rest-client-node/.github/actions/generate-report
@@ -67,3 +67,4 @@ jobs:
                 name: sample-run-report-${{matrix.operating-system}}-node-ver-${{matrix.node-ver}}
                 path: |
                   ${{env.SAMPLE_FOLDER}}/${{steps.report-generation.outputs.result-pdf-name}}
+                  ${{env.SAMPLE_FOLDER}}/sampleConsole.log
