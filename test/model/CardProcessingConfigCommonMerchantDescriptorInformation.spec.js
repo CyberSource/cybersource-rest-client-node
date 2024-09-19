@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property countryOfOrigin (base name: "countryOfOrigin")', function() {
+      // uncomment below and update the code to test the property countryOfOrigin
+      //var instane = new CyberSource.CardProcessingConfigCommonMerchantDescriptorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

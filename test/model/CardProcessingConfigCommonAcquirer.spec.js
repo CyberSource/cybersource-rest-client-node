@@ -74,6 +74,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property unionPayInstitutionId (base name: "unionPayInstitutionId")', function() {
+      // uncomment below and update the code to test the property unionPayInstitutionId
+      //var instane = new CyberSource.CardProcessingConfigCommonAcquirer();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dinersClubInstitutionId (base name: "dinersClubInstitutionId")', function() {
+      // uncomment below and update the code to test the property dinersClubInstitutionId
+      //var instane = new CyberSource.CardProcessingConfigCommonAcquirer();
+      //expect(instance).to.be();
+    });
+
     it('should have the property countryCode (base name: "countryCode")', function() {
       // uncomment below and update the code to test the property countryCode
       //var instane = new CyberSource.CardProcessingConfigCommonAcquirer();

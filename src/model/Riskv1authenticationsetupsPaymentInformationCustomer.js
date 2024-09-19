@@ -43,11 +43,12 @@
    * Constructs a new <code>Riskv1authenticationsetupsPaymentInformationCustomer</code>.
    * @alias module:model/Riskv1authenticationsetupsPaymentInformationCustomer
    * @class
+   * @param customerId {String} Unique identifier for the legacy Secure Storage token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional. 
    */
-  var exports = function() {
+  var exports = function(customerId) {
     var _this = this;
 
-
+    _this['customerId'] = customerId;
   };
 
   /**
