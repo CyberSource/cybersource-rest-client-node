@@ -38,7 +38,7 @@ jobs:
               uses: actions/checkout@v4
               with:
                 repository: 'CyberSource/${{env.SAMPLE_FOLDER}}'
-                ref: 'release-aug24'
+                ref: 'master'
                 path: ${{env.SAMPLE_FOLDER}}
             - name: Install Node
               uses: actions/setup-node@v4
