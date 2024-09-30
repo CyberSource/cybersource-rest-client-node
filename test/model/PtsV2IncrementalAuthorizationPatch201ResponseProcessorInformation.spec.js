@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property networkTransactionId (base name: "networkTransactionId")', function() {
+      // uncomment below and update the code to test the property networkTransactionId
+      //var instane = new CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property responseCode (base name: "responseCode")', function() {
       // uncomment below and update the code to test the property responseCode
       //var instane = new CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation();

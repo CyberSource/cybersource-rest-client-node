@@ -68,6 +68,8 @@
 
 
 
+
+
   };
 
   /**
@@ -143,6 +145,12 @@
       }
       if (data.hasOwnProperty('merchantDescriptorInformation')) {
         obj['merchantDescriptorInformation'] = CardProcessingConfigCommonMerchantDescriptorInformation.constructFromObject(data['merchantDescriptorInformation']);
+      }
+      if (data.hasOwnProperty('governmentControlled')) {
+        obj['governmentControlled'] = ApiClient.convertToType(data['governmentControlled'], 'Boolean');
+      }
+      if (data.hasOwnProperty('dropBillingInfo')) {
+        obj['dropBillingInfo'] = ApiClient.convertToType(data['dropBillingInfo'], 'Boolean');
       }
     }
     return obj;
@@ -252,6 +260,16 @@
    * @member {module:model/CardProcessingConfigCommonMerchantDescriptorInformation} merchantDescriptorInformation
    */
   exports.prototype['merchantDescriptorInformation'] = undefined;
+  /**
+   * Indicates whether the merchant is government controlled. Applicable for VPC processors.
+   * @member {Boolean} governmentControlled
+   */
+  exports.prototype['governmentControlled'] = undefined;
+  /**
+   * This field is used to indicate whether the merchant wants to drop the billing information from the request. If this field is set to true, then the billing information will be dropped from the request. If this field is set to false, then the billing information will be sent in the request.
+   * @member {Boolean} dropBillingInfo
+   */
+  exports.prototype['dropBillingInfo'] = undefined;
 
 
   /**

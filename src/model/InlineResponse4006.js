@@ -43,17 +43,15 @@
    * Constructs a new <code>InlineResponse4006</code>.
    * @alias module:model/InlineResponse4006
    * @class
-   * @param message {String} 
-   * @param reason {module:model/InlineResponse4006.ReasonEnum} 
    */
-  var exports = function(message, reason) {
+  var exports = function() {
     var _this = this;
 
 
 
 
-    _this['message'] = message;
-    _this['reason'] = reason;
+
+
   };
 
   /**
@@ -67,45 +65,49 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('correlationId')) {
-        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4006Details]);
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('informationLink')) {
-        obj['informationLink'] = ApiClient.convertToType(data['informationLink'], 'String');
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4006Details]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} correlationId
+   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {Date} submitTimeUtc
    */
-  exports.prototype['correlationId'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse4006Details>} details
+   * The http status description of the submitted request.
+   * @member {String} status
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * @member {String} informationLink
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' 
+   * @member {module:model/InlineResponse4006.ReasonEnum} reason
    */
-  exports.prototype['informationLink'] = undefined;
+  exports.prototype['reason'] = undefined;
   /**
+   * Descriptive message for the error.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {module:model/InlineResponse4006.ReasonEnum} reason
+   * @member {Array.<module:model/InlineResponse4006Details>} details
    */
-  exports.prototype['reason'] = undefined;
+  exports.prototype['details'] = undefined;
 
 
   /**
@@ -115,80 +117,20 @@
    */
   exports.ReasonEnum = {
     /**
-     * value: "INVALID_APIKEY"
+     * value: "INVALID_DATA"
      * @const
      */
-    "INVALID_APIKEY": "INVALID_APIKEY",
+    "INVALID_DATA": "INVALID_DATA",
     /**
-     * value: "INVALID_SHIPPING_INPUT_PARAMS"
+     * value: "SYSTEM_ERROR"
      * @const
      */
-    "INVALID_SHIPPING_INPUT_PARAMS": "INVALID_SHIPPING_INPUT_PARAMS",
+    "SYSTEM_ERROR": "SYSTEM_ERROR",
     /**
-     * value: "CAPTURE_CONTEXT_INVALID"
+     * value: "RESOURCE_NOT_FOUND"
      * @const
      */
-    "CAPTURE_CONTEXT_INVALID": "CAPTURE_CONTEXT_INVALID",
-    /**
-     * value: "CAPTURE_CONTEXT_EXPIRED"
-     * @const
-     */
-    "CAPTURE_CONTEXT_EXPIRED": "CAPTURE_CONTEXT_EXPIRED",
-    /**
-     * value: "SDK_XHR_ERROR"
-     * @const
-     */
-    "SDK_XHR_ERROR": "SDK_XHR_ERROR",
-    /**
-     * value: "UNIFIEDPAYMENTS_VALIDATION_PARAMS"
-     * @const
-     */
-    "UNIFIEDPAYMENTS_VALIDATION_PARAMS": "UNIFIEDPAYMENTS_VALIDATION_PARAMS",
-    /**
-     * value: "UNIFIEDPAYMENTS_VALIDATION_FIELDS"
-     * @const
-     */
-    "UNIFIEDPAYMENTS_VALIDATION_FIELDS": "UNIFIEDPAYMENTS_VALIDATION_FIELDS",
-    /**
-     * value: "UNIFIEDPAYMENT_PAYMENT_PARAMITERS"
-     * @const
-     */
-    "UNIFIEDPAYMENT_PAYMENT_PARAMITERS": "UNIFIEDPAYMENT_PAYMENT_PARAMITERS",
-    /**
-     * value: "CREATE_TOKEN_TIMEOUT"
-     * @const
-     */
-    "CREATE_TOKEN_TIMEOUT": "CREATE_TOKEN_TIMEOUT",
-    /**
-     * value: "CREATE_TOKEN_XHR_ERROR"
-     * @const
-     */
-    "CREATE_TOKEN_XHR_ERROR": "CREATE_TOKEN_XHR_ERROR",
-    /**
-     * value: "SHOW_LOAD_CONTAINER_SELECTOR"
-     * @const
-     */
-    "SHOW_LOAD_CONTAINER_SELECTOR": "SHOW_LOAD_CONTAINER_SELECTOR",
-    /**
-     * value: "SHOW_LOAD_INVALID_CONTAINER"
-     * @const
-     */
-    "SHOW_LOAD_INVALID_CONTAINER": "SHOW_LOAD_INVALID_CONTAINER",
-    /**
-     * value: "SHOW_TOKEN_TIMEOUT"
-     * @const
-     */
-    "SHOW_TOKEN_TIMEOUT": "SHOW_TOKEN_TIMEOUT",
-    /**
-     * value: "SHOW_TOKEN_XHR_ERROR"
-     * @const
-     */
-    "SHOW_TOKEN_XHR_ERROR": "SHOW_TOKEN_XHR_ERROR",
-    /**
-     * value: "SHOW_PAYMENT_TIMEOUT"
-     * @const
-     */
-    "SHOW_PAYMENT_TIMEOUT": "SHOW_PAYMENT_TIMEOUT"  };
+    "RESOURCE_NOT_FOUND": "RESOURCE_NOT_FOUND"  };
 
   return exports;
 }));
