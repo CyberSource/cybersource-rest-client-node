@@ -97,7 +97,7 @@
 
       //check isMLE for an api method 'this.<operationId>'
       var mleUtility = new MLEUtility();
-      var isMLEForApi = mleUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, <#vendorExtensions.x-devcenter-metaData.isMLEsupported> true </vendorExtensions.x-devcenter-metaData.isMLEsupported> {{^vendorExtensions.x-devcenter-metaData.isMLEsupported}}false{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}, '<operationId>');
+      var isMLEForApi = mleUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, <#vendorExtensions.x-devcenter-metaData.isMLEsupported> true </vendorExtensions.x-devcenter-metaData.isMLEsupported> <^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>, '<operationId>');
 
       return this.apiClient.callApi(
         '<&path>', '<httpMethod>',
