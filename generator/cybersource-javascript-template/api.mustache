@@ -95,6 +95,10 @@
       var accepts = [<#produces>'<& mediaType>'<#hasMore>, </hasMore></produces>];
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 
+      //check isMLE for an api method 'this.<operationId>'
+      var mleUtility = new MLEUtility();
+      var isMLEForApi = mleUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, <#vendorExtensions.x-devcenter-metaData.isMLEsupported> true </vendorExtensions.x-devcenter-metaData.isMLEsupported> {{^vendorExtensions.x-devcenter-metaData.isMLEsupported}}false{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}, '<operationId>');
+
       return this.apiClient.callApi(
         '<&path>', '<httpMethod>',
         pathParams, queryParams, headerParams, formParams, postBody,
