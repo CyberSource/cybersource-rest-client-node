@@ -31,7 +31,7 @@ const inclusionList = [
 
 function SdkTracker() {}
 
-SdkTracker.prototype.insertDeveloperIdTracker = function insertDeveloperIdTracker(requestObj, requestClass, runEnvironment) {
+SdkTracker.prototype.insertDeveloperIdTracker = function insertDeveloperIdTracker(requestObj, requestClass, runEnvironment, defaultDeveloperId) {
     if (inclusionList.includes(requestClass)) {
         var developerIdValue = '';
 
@@ -39,6 +39,10 @@ SdkTracker.prototype.insertDeveloperIdTracker = function insertDeveloperIdTracke
             developerIdValue = 'N2RC3Q4K';
         } else {
             developerIdValue = 'FS39X8Q7';
+        }
+
+        if (defaultDeveloperId !== null && defaultDeveloperId !== undefined && defaultDeveloperId.trim() !== "") {
+            developerIdValue=defaultDeveloperId.trim();
         }
 
         if (requestObj.clientReferenceInformation == undefined) {
