@@ -71,6 +71,10 @@ function MerchantConfig(result) {
     /* Default Custom Headers */
     this.defaultHeaders = result.defaultHeaders;
 
+    /* MLE Feature */
+    this.isMLE = result.isMLE;
+    this.mapToControlMLEonAPI = result.mapToControlMLEonAPI; 
+
     /* Fallback logic*/
     this.defaultPropValues();
 
@@ -355,6 +359,22 @@ MerchantConfig.prototype.getpemFileDirectory = function getpemFileDirectory() {
 
 MerchantConfig.prototype.setpemFileDirectory = function getpemFileDirectory(pemFileDirectory) {
     this.pemFileDirectory = pemFileDirectory;
+}
+
+MerchantConfig.prototype.getIsMLE = function getIsMLE() {
+    return this.isMLE;
+}
+
+MerchantConfig.prototype.setIsMLE = function setIsMLE(isMLE) {
+    this.isMLE =isMLE;
+}
+
+MerchantConfig.prototype.getMapToControlMLEonAPI = function getMapToControlMLEonAPI() {
+    return this.mapToControlMLEonAPI;
+}
+
+MerchantConfig.prototype.setMapToControlMLEonAPI = function setMapToControlMLEonAPI(mapToControlMLEonAPI) {
+    this.mapToControlMLEonAPI =mapToControlMLEonAPI;
 }
 
 
