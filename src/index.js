@@ -6925,5 +6925,6 @@
   exports.ExternalLoggerWrapper = require('./authentication/logging/ExternalLoggerWrapper.js');
   exports.JWEUtility = require('./utilities/JWEUtility.js');
   exports.SdkTracker = require('./utilities/tracking/SdkTracker.js')
+  exports.MLEUtility = require('./utilities/mle/MLEUtility.js')
   return exports;
 }));
