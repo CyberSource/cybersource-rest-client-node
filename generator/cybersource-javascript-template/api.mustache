@@ -96,6 +96,7 @@
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 
       //check isMLE for an api method 'this.<operationId>'
+      var MLEUtility = require('../utilities/mle/MLEUtility');
       var mleUtility = new MLEUtility();
       var isMLEForApi = mleUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, <#vendorExtensions.x-devcenter-metaData.isMLEsupported> true </vendorExtensions.x-devcenter-metaData.isMLEsupported> <^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>, '<operationId>');
 
