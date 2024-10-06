@@ -553,6 +553,29 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         ApiException.ApiException(Constants.AUTH_ERROR, logger);
     }
 
+    //isMLE check for auth Type
+    if(this.isMLE===true || this.mapToControlMLEonAPI != null){
+        if(this.isMLE===true && this.authenticationType.toLowerCase() !== Constants.JWT){
+            ApiException.ApiException("MLE is only supported in JWT auth type", logger);
+        }
+
+        if(this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object"){
+            ApiException.ApiException("mapToControlMLEonAPI in mercahntConfig should be key value pair", logger);
+        }
+        if(this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0){
+            var hasTrueValue = false;
+            for (const [key, value] of Object.entries(this.mapToControlMLEonAPI)) {
+                if(value===true){
+                    hasTrueValue=true;
+                    break;
+                }
+            }
+            if(hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT){
+                ApiException.ApiException("MLE is only supported in JWT auth type", logger);
+            }
+        }
+    }
+
     /**
      * This method is to log all merchantConfic properties 
      * excluding HideMerchantConfigProperies defined in Constants
