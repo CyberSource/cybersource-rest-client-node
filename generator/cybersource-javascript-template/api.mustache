@@ -96,7 +96,7 @@
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 
       //check isMLE for an api method 'this.<operationId>'
-      var isMLESupportedByCybsForApi= <#vendorExtensions.x-devcenter-metaData.isMLEsupported>true</vendorExtensions.x-devcenter-metaData.isMLEsupported> <^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>
+      var isMLESupportedByCybsForApi= <#vendorExtensions.x-devcenter-metaData.isMLEsupported>true</vendorExtensions.x-devcenter-metaData.isMLEsupported><^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, '<operationId>');
 
       return this.apiClient.callApi(
