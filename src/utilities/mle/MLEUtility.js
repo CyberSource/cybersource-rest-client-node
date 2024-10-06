@@ -2,7 +2,7 @@
 
 function MLEUtility() {}
 
-MLE.prototype.checkIsMLEForAPI = function checkIsMLEForAPI(merchantConfig, isMLESupportedByCybsForApi, operationId) {
+MLEUtility.prototype.checkIsMLEForAPI = function checkIsMLEForAPI(merchantConfig, isMLESupportedByCybsForApi, operationId) {
     //isMLE for an api is false by default
     var isMLEForAPI=false;
 
@@ -13,7 +13,7 @@ MLE.prototype.checkIsMLEForAPI = function checkIsMLEForAPI(merchantConfig, isMLE
     }
 
     //Control the MLE only from map
-    if(operationId in merchantConfig.mapToControlMLEonAPI){
+    if(merchantConfig.mapToControlMLEonAPI !=null && operationId in merchantConfig.mapToControlMLEonAPI){
         if(merchantConfig.mapToControlMLEonAPI[operationId] === true){
           isMLEForAPI=true;
         }
