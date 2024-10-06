@@ -2,16 +2,16 @@
 {{=< >=}}(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['<#invokerPackage><&invokerPackage>/</invokerPackage>ApiClient'<#imports>, '<#invokerPackage><&invokerPackage>/</invokerPackage><#modelPackage><&modelPackage>/</modelPackage><import>'</imports>], factory);
+    define(['Authentication/MLEUtility','<#invokerPackage><&invokerPackage>/</invokerPackage>ApiClient'<#imports>, '<#invokerPackage><&invokerPackage>/</invokerPackage><#modelPackage><&modelPackage>/</modelPackage><import>'</imports>], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient')<#imports>, require('../<#modelPackage><&modelPackage>/</modelPackage><import>')</imports>);
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient')<#imports>, require('../<#modelPackage><&modelPackage>/</modelPackage><import>')</imports>);
   } else {
     // Browser globals (root is window)
     if (!root.<&moduleName>) {
       root.<&moduleName> = {};
     }
-    root.<&moduleName>.<&classname> = factory(root.<&moduleName>.ApiClient<#imports>, root.<&moduleName>.<import></imports>);
+    root.<&moduleName>.<&classname> = factory(root.Authentication.MLEUtility,root.<&moduleName>.ApiClient<#imports>, root.<&moduleName>.<import></imports>);
   }
 }(this, function(ApiClient<#imports>, <import></imports>) {
   'use strict';
@@ -96,9 +96,7 @@
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 
       //check isMLE for an api method 'this.<operationId>'
-      var MLEUtility = require('../utilities/mle/MLEUtility');
-      var mleUtility = new MLEUtility();
-      var isMLEForApi = mleUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, <#vendorExtensions.x-devcenter-metaData.isMLEsupported> true </vendorExtensions.x-devcenter-metaData.isMLEsupported> <^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>, '<operationId>');
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, <#vendorExtensions.x-devcenter-metaData.isMLEsupported> true </vendorExtensions.x-devcenter-metaData.isMLEsupported> <^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>, '<operationId>');
 
       return this.apiClient.callApi(
         '<&path>', '<httpMethod>',
