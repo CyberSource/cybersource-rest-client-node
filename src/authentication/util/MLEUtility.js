@@ -23,3 +23,12 @@ exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, 
 
     return isMLEForAPI;
 }
+
+exports.encryptRequestPayload = function(requestBody){
+    if(requestBody != null){
+        //implement here the MLE for req body
+        return requestBody;
+    }else{
+        return requestBody;
+    }
+}
