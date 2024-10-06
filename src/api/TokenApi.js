@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest);
+    root.CyberSource.TokenApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest);
   }
-}(this, function(ApiClient, InlineResponse400, InlineResponse403, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest) {
   'use strict';
 
   /**
@@ -102,6 +102,13 @@
       var accepts = ['application/jose;charset=utf-8'];
       var returnType = 'String';
 
+      //check isMLE for an api method 'this.postTokenPaymentCredentials'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'postTokenPaymentCredentials');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/tms/v2/tokens/{tokenId}/payment-credentials', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

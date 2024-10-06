@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BinLookupv400Response', 'model/CreateSearchRequest', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/BinLookupv400Response', 'model/CreateSearchRequest', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BinLookupv400Response'), require('../model/CreateSearchRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/BinLookupv400Response'), require('../model/CreateSearchRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TssV2TransactionsPost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SearchTransactionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.BinLookupv400Response, root.CyberSource.CreateSearchRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response);
+    root.CyberSource.SearchTransactionsApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.BinLookupv400Response, root.CyberSource.CreateSearchRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TssV2TransactionsPost201Response);
   }
-}(this, function(ApiClient, BinLookupv400Response, CreateSearchRequest, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response) {
+}(this, function(MLEUtility, ApiClient, BinLookupv400Response, CreateSearchRequest, PtsV2PaymentsPost502Response, TssV2TransactionsPost201Response) {
   'use strict';
 
   /**
@@ -91,6 +91,13 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = TssV2TransactionsPost201Response;
 
+      //check isMLE for an api method 'this.createSearch'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createSearch');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/tss/v2/searches', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -140,6 +147,13 @@
       var accepts = ['*/*'];
       var returnType = TssV2TransactionsPost201Response;
 
+      //check isMLE for an api method 'this.getSearch'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getSearch');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/tss/v2/searches/{searchId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

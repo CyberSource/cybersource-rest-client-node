@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3PaymentBatchSummariesGet200Response', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/ReportingV3PaymentBatchSummariesGet200Response', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3PaymentBatchSummariesGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/ReportingV3PaymentBatchSummariesGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentBatchSummariesApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3PaymentBatchSummariesGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
+    root.CyberSource.PaymentBatchSummariesApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.ReportingV3PaymentBatchSummariesGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(ApiClient, ReportingV3PaymentBatchSummariesGet200Response, Reportingv3ReportDownloadsGet400Response) {
+}(this, function(MLEUtility, ApiClient, ReportingV3PaymentBatchSummariesGet200Response, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**
@@ -108,6 +108,13 @@
       var accepts = ['application/hal+json', 'text/csv', 'application/xml'];
       var returnType = ReportingV3PaymentBatchSummariesGet200Response;
 
+      //check isMLE for an api method 'this.getPaymentBatchSummary'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getPaymentBatchSummary');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/payment-batch-summaries', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

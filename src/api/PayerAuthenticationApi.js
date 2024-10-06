@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CheckPayerAuthEnrollmentRequest', 'model/PayerAuthSetupRequest', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1AuthenticationResultsPost201Response', 'model/RiskV1AuthenticationSetupsPost201Response', 'model/RiskV1AuthenticationsPost201Response', 'model/RiskV1AuthenticationsPost400Response', 'model/RiskV1AuthenticationsPost400Response1', 'model/ValidateRequest'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/CheckPayerAuthEnrollmentRequest', 'model/PayerAuthSetupRequest', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1AuthenticationResultsPost201Response', 'model/RiskV1AuthenticationSetupsPost201Response', 'model/RiskV1AuthenticationsPost201Response', 'model/RiskV1AuthenticationsPost400Response', 'model/RiskV1AuthenticationsPost400Response1', 'model/ValidateRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CheckPayerAuthEnrollmentRequest'), require('../model/PayerAuthSetupRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1AuthenticationResultsPost201Response'), require('../model/RiskV1AuthenticationSetupsPost201Response'), require('../model/RiskV1AuthenticationsPost201Response'), require('../model/RiskV1AuthenticationsPost400Response'), require('../model/RiskV1AuthenticationsPost400Response1'), require('../model/ValidateRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/CheckPayerAuthEnrollmentRequest'), require('../model/PayerAuthSetupRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1AuthenticationResultsPost201Response'), require('../model/RiskV1AuthenticationSetupsPost201Response'), require('../model/RiskV1AuthenticationsPost201Response'), require('../model/RiskV1AuthenticationsPost400Response'), require('../model/RiskV1AuthenticationsPost400Response1'), require('../model/ValidateRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PayerAuthenticationApi = factory(root.CyberSource.ApiClient, root.CyberSource.CheckPayerAuthEnrollmentRequest, root.CyberSource.PayerAuthSetupRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1AuthenticationResultsPost201Response, root.CyberSource.RiskV1AuthenticationSetupsPost201Response, root.CyberSource.RiskV1AuthenticationsPost201Response, root.CyberSource.RiskV1AuthenticationsPost400Response, root.CyberSource.RiskV1AuthenticationsPost400Response1, root.CyberSource.ValidateRequest);
+    root.CyberSource.PayerAuthenticationApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.CheckPayerAuthEnrollmentRequest, root.CyberSource.PayerAuthSetupRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1AuthenticationResultsPost201Response, root.CyberSource.RiskV1AuthenticationSetupsPost201Response, root.CyberSource.RiskV1AuthenticationsPost201Response, root.CyberSource.RiskV1AuthenticationsPost400Response, root.CyberSource.RiskV1AuthenticationsPost400Response1, root.CyberSource.ValidateRequest);
   }
-}(this, function(ApiClient, CheckPayerAuthEnrollmentRequest, PayerAuthSetupRequest, PtsV2PaymentsPost502Response, RiskV1AuthenticationResultsPost201Response, RiskV1AuthenticationSetupsPost201Response, RiskV1AuthenticationsPost201Response, RiskV1AuthenticationsPost400Response, RiskV1AuthenticationsPost400Response1, ValidateRequest) {
+}(this, function(MLEUtility, ApiClient, CheckPayerAuthEnrollmentRequest, PayerAuthSetupRequest, PtsV2PaymentsPost502Response, RiskV1AuthenticationResultsPost201Response, RiskV1AuthenticationSetupsPost201Response, RiskV1AuthenticationsPost201Response, RiskV1AuthenticationsPost400Response, RiskV1AuthenticationsPost400Response1, ValidateRequest) {
   'use strict';
 
   /**
@@ -91,6 +91,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = RiskV1AuthenticationsPost201Response;
 
+      //check isMLE for an api method 'this.checkPayerAuthEnrollment'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'checkPayerAuthEnrollment');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/risk/v1/authentications', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -140,6 +147,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = RiskV1AuthenticationSetupsPost201Response;
 
+      //check isMLE for an api method 'this.payerAuthSetup'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'payerAuthSetup');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/risk/v1/authentication-setups', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -189,6 +203,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = RiskV1AuthenticationResultsPost201Response;
 
+      //check isMLE for an api method 'this.validateAuthenticationResults'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'validateAuthenticationResults');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/risk/v1/authentication-results', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

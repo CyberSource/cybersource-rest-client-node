@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateReportSubscriptionRequest', 'model/InlineResponse4005', 'model/PredefinedSubscriptionRequestBean', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/CreateReportSubscriptionRequest', 'model/InlineResponse4005', 'model/PredefinedSubscriptionRequestBean', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateReportSubscriptionRequest'), require('../model/InlineResponse4005'), require('../model/PredefinedSubscriptionRequestBean'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/CreateReportSubscriptionRequest'), require('../model/InlineResponse4005'), require('../model/PredefinedSubscriptionRequestBean'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportSubscriptionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateReportSubscriptionRequest, root.CyberSource.InlineResponse4005, root.CyberSource.PredefinedSubscriptionRequestBean, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
+    root.CyberSource.ReportSubscriptionsApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.CreateReportSubscriptionRequest, root.CyberSource.InlineResponse4005, root.CyberSource.PredefinedSubscriptionRequestBean, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(ApiClient, CreateReportSubscriptionRequest, InlineResponse4005, PredefinedSubscriptionRequestBean, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response) {
+}(this, function(MLEUtility, ApiClient, CreateReportSubscriptionRequest, InlineResponse4005, PredefinedSubscriptionRequestBean, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**
@@ -94,6 +94,13 @@
       var accepts = ['application/hal+json'];
       var returnType = null;
 
+      //check isMLE for an api method 'this.createStandardOrClassicSubscription'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createStandardOrClassicSubscription');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/predefined-report-subscriptions', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -146,6 +153,13 @@
       var accepts = ['application/hal+json'];
       var returnType = null;
 
+      //check isMLE for an api method 'this.createSubscription'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createSubscription');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/report-subscriptions', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -198,6 +212,13 @@
       var accepts = ['application/hal+json'];
       var returnType = null;
 
+      //check isMLE for an api method 'this.deleteSubscription'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deleteSubscription');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/report-subscriptions/{reportName}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -244,6 +265,13 @@
       var accepts = ['application/hal+json'];
       var returnType = ReportingV3ReportSubscriptionsGet200Response;
 
+      //check isMLE for an api method 'this.getAllSubscriptions'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getAllSubscriptions');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/report-subscriptions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -297,6 +325,13 @@
       var accepts = ['application/hal+json'];
       var returnType = ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 
+      //check isMLE for an api method 'this.getSubscription'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getSubscription');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/report-subscriptions/{reportName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

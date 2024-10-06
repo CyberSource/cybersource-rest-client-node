@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/MitVoidRequest', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsVoidsPost201Response', 'model/PtsV2PaymentsVoidsPost400Response', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/MitVoidRequest', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsVoidsPost201Response', 'model/PtsV2PaymentsVoidsPost400Response', 'model/VoidCaptureRequest', 'model/VoidCreditRequest', 'model/VoidPaymentRequest', 'model/VoidRefundRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/MitVoidRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsVoidsPost201Response'), require('../model/PtsV2PaymentsVoidsPost400Response'), require('../model/VoidCaptureRequest'), require('../model/VoidCreditRequest'), require('../model/VoidPaymentRequest'), require('../model/VoidRefundRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/MitVoidRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsVoidsPost201Response'), require('../model/PtsV2PaymentsVoidsPost400Response'), require('../model/VoidCaptureRequest'), require('../model/VoidCreditRequest'), require('../model/VoidPaymentRequest'), require('../model/VoidRefundRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VoidApi = factory(root.CyberSource.ApiClient, root.CyberSource.MitVoidRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsVoidsPost201Response, root.CyberSource.PtsV2PaymentsVoidsPost400Response, root.CyberSource.VoidCaptureRequest, root.CyberSource.VoidCreditRequest, root.CyberSource.VoidPaymentRequest, root.CyberSource.VoidRefundRequest);
+    root.CyberSource.VoidApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.MitVoidRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsVoidsPost201Response, root.CyberSource.PtsV2PaymentsVoidsPost400Response, root.CyberSource.VoidCaptureRequest, root.CyberSource.VoidCreditRequest, root.CyberSource.VoidPaymentRequest, root.CyberSource.VoidRefundRequest);
   }
-}(this, function(ApiClient, MitVoidRequest, PtsV2PaymentsPost502Response, PtsV2PaymentsVoidsPost201Response, PtsV2PaymentsVoidsPost400Response, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest) {
+}(this, function(MLEUtility, ApiClient, MitVoidRequest, PtsV2PaymentsPost502Response, PtsV2PaymentsVoidsPost201Response, PtsV2PaymentsVoidsPost400Response, VoidCaptureRequest, VoidCreditRequest, VoidPaymentRequest, VoidRefundRequest) {
   'use strict';
 
   /**
@@ -91,6 +91,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
+      //check isMLE for an api method 'this.mitVoid'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'mitVoid');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/voids', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -147,6 +154,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
+      //check isMLE for an api method 'this.voidCapture'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'voidCapture');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/captures/{id}/voids', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -203,6 +217,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
+      //check isMLE for an api method 'this.voidCredit'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'voidCredit');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/credits/{id}/voids', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -259,6 +280,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
+      //check isMLE for an api method 'this.voidPayment'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'voidPayment');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/payments/{id}/voids', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -315,6 +343,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
+      //check isMLE for an api method 'this.voidRefund'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'voidRefund');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/refunds/{id}/voids', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

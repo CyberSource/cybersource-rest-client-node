@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['Authentication/MLEUtility','ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DownloadDTDApi = factory(root.CyberSource.ApiClient);
+    root.CyberSource.DownloadDTDApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient) {
+}(this, function(MLEUtility, ApiClient) {
   'use strict';
 
   /**
@@ -90,6 +90,13 @@
       var accepts = ['application/xml-dtd'];
       var returnType = null;
 
+      //check isMLE for an api method 'this.getDTDV2'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getDTDV2');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/dtds/{reportDefinitionNameVersion}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

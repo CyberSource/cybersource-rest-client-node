@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response', 'model/PtsV1TransactionBatchesIdGet200Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/PtsV1TransactionBatchesGet200Response', 'model/PtsV1TransactionBatchesGet400Response', 'model/PtsV1TransactionBatchesGet500Response', 'model/PtsV1TransactionBatchesIdGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet200Response'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'), require('../model/PtsV1TransactionBatchesIdGet200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/PtsV1TransactionBatchesGet200Response'), require('../model/PtsV1TransactionBatchesGet400Response'), require('../model/PtsV1TransactionBatchesGet500Response'), require('../model/PtsV1TransactionBatchesIdGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionBatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet200Response, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response, root.CyberSource.PtsV1TransactionBatchesIdGet200Response);
+    root.CyberSource.TransactionBatchesApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.PtsV1TransactionBatchesGet200Response, root.CyberSource.PtsV1TransactionBatchesGet400Response, root.CyberSource.PtsV1TransactionBatchesGet500Response, root.CyberSource.PtsV1TransactionBatchesIdGet200Response);
   }
-}(this, function(ApiClient, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response, PtsV1TransactionBatchesIdGet200Response) {
+}(this, function(MLEUtility, ApiClient, PtsV1TransactionBatchesGet200Response, PtsV1TransactionBatchesGet400Response, PtsV1TransactionBatchesGet500Response, PtsV1TransactionBatchesIdGet200Response) {
   'use strict';
 
   /**
@@ -96,6 +96,13 @@
       var accepts = ['text/csv', 'application/xml', 'text/vnd.cybersource.map-csv'];
       var returnType = null;
 
+      //check isMLE for an api method 'this.getTransactionBatchDetails'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransactionBatchDetails');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v1/transaction-batch-details/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -145,6 +152,13 @@
       var accepts = ['application/hal+json'];
       var returnType = PtsV1TransactionBatchesIdGet200Response;
 
+      //check isMLE for an api method 'this.getTransactionBatchId'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransactionBatchId');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v1/transaction-batches/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -201,6 +215,13 @@
       var accepts = ['application/hal+json'];
       var returnType = PtsV1TransactionBatchesGet200Response;
 
+      //check isMLE for an api method 'this.getTransactionBatches'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransactionBatches');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v1/transaction-batches', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

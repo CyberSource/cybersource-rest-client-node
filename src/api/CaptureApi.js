@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CapturePaymentRequest', 'model/PtsV2PaymentsCapturesPost201Response', 'model/PtsV2PaymentsCapturesPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/CapturePaymentRequest', 'model/PtsV2PaymentsCapturesPost201Response', 'model/PtsV2PaymentsCapturesPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CapturePaymentRequest'), require('../model/PtsV2PaymentsCapturesPost201Response'), require('../model/PtsV2PaymentsCapturesPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/CapturePaymentRequest'), require('../model/PtsV2PaymentsCapturesPost201Response'), require('../model/PtsV2PaymentsCapturesPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CaptureApi = factory(root.CyberSource.ApiClient, root.CyberSource.CapturePaymentRequest, root.CyberSource.PtsV2PaymentsCapturesPost201Response, root.CyberSource.PtsV2PaymentsCapturesPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.CaptureApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.CapturePaymentRequest, root.CyberSource.PtsV2PaymentsCapturesPost201Response, root.CyberSource.PtsV2PaymentsCapturesPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(ApiClient, CapturePaymentRequest, PtsV2PaymentsCapturesPost201Response, PtsV2PaymentsCapturesPost400Response, PtsV2PaymentsPost502Response) {
+}(this, function(MLEUtility, ApiClient, CapturePaymentRequest, PtsV2PaymentsCapturesPost201Response, PtsV2PaymentsCapturesPost400Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -98,6 +98,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsCapturesPost201Response;
 
+      //check isMLE for an api method 'this.capturePayment'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'capturePayment');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/payments/{id}/captures', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

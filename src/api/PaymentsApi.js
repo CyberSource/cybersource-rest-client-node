@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreatePaymentRequest', 'model/CreateSessionReq', 'model/CreateSessionRequest', 'model/IncrementAuthRequest', 'model/OrderPaymentRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsOrderPost201Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost201Response1', 'model/PtsV2PaymentsPost201Response2', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/RefreshPaymentStatusRequest'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/CreatePaymentRequest', 'model/CreateSessionReq', 'model/CreateSessionRequest', 'model/IncrementAuthRequest', 'model/OrderPaymentRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsOrderPost201Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost201Response1', 'model/PtsV2PaymentsPost201Response2', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/RefreshPaymentStatusRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/CreateSessionReq'), require('../model/CreateSessionRequest'), require('../model/IncrementAuthRequest'), require('../model/OrderPaymentRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsOrderPost201Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost201Response1'), require('../model/PtsV2PaymentsPost201Response2'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RefreshPaymentStatusRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/CreateSessionReq'), require('../model/CreateSessionRequest'), require('../model/IncrementAuthRequest'), require('../model/OrderPaymentRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsOrderPost201Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost201Response1'), require('../model/PtsV2PaymentsPost201Response2'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RefreshPaymentStatusRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.CreateSessionReq, root.CyberSource.CreateSessionRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.OrderPaymentRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsOrderPost201Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost201Response1, root.CyberSource.PtsV2PaymentsPost201Response2, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RefreshPaymentStatusRequest);
+    root.CyberSource.PaymentsApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.CreateSessionReq, root.CyberSource.CreateSessionRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.OrderPaymentRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsOrderPost201Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost201Response1, root.CyberSource.PtsV2PaymentsPost201Response2, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RefreshPaymentStatusRequest);
   }
-}(this, function(ApiClient, CreatePaymentRequest, CreateSessionReq, CreateSessionRequest, IncrementAuthRequest, OrderPaymentRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsOrderPost201Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost201Response1, PtsV2PaymentsPost201Response2, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, RefreshPaymentStatusRequest) {
+}(this, function(MLEUtility, ApiClient, CreatePaymentRequest, CreateSessionReq, CreateSessionRequest, IncrementAuthRequest, OrderPaymentRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsOrderPost201Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost201Response1, PtsV2PaymentsPost201Response2, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, RefreshPaymentStatusRequest) {
   'use strict';
 
   /**
@@ -98,6 +98,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsOrderPost201Response;
 
+      //check isMLE for an api method 'this.createOrderRequest'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createOrderRequest');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/payment-references/{id}/intents', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -147,6 +154,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsPost201Response;
 
+      //check isMLE for an api method 'this.createPayment'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createPayment');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/payments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -196,6 +210,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsPost201Response2;
 
+      //check isMLE for an api method 'this.createSessionRequest'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createSessionRequest');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/payment-references', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -252,6 +273,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2IncrementalAuthorizationPatch201Response;
 
+      //check isMLE for an api method 'this.incrementAuth'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'incrementAuth');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/payments/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -308,6 +336,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsPost201Response1;
 
+      //check isMLE for an api method 'this.refreshPaymentStatus'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'refreshPaymentStatus');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/refresh-payment-status/{id}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -364,6 +399,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsPost201Response2;
 
+      //check isMLE for an api method 'this.updateSessionReq'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'updateSessionReq');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/payment-references/{id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,

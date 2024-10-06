@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GenerateUnifiedCheckoutCaptureContextRequest', 'model/InlineResponse4001'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/GenerateUnifiedCheckoutCaptureContextRequest', 'model/InlineResponse4001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/GenerateUnifiedCheckoutCaptureContextRequest'), require('../model/InlineResponse4001'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/GenerateUnifiedCheckoutCaptureContextRequest'), require('../model/InlineResponse4001'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UnifiedCheckoutCaptureContextApi = factory(root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest, root.CyberSource.InlineResponse4001);
+    root.CyberSource.UnifiedCheckoutCaptureContextApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest, root.CyberSource.InlineResponse4001);
   }
-}(this, function(ApiClient, GenerateUnifiedCheckoutCaptureContextRequest, InlineResponse4001) {
+}(this, function(MLEUtility, ApiClient, GenerateUnifiedCheckoutCaptureContextRequest, InlineResponse4001) {
   'use strict';
 
   /**
@@ -91,6 +91,13 @@
       var accepts = ['application/jwt'];
       var returnType = 'String';
 
+      //check isMLE for an api method 'this.generateUnifiedCheckoutCaptureContext'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'generateUnifiedCheckoutCaptureContext');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/up/v1/capture-contexts', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

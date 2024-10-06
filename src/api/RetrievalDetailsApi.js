@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3RetrievalDetailsGet200Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/ReportingV3RetrievalDetailsGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3RetrievalDetailsGet200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/ReportingV3RetrievalDetailsGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RetrievalDetailsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3RetrievalDetailsGet200Response);
+    root.CyberSource.RetrievalDetailsApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.ReportingV3RetrievalDetailsGet200Response);
   }
-}(this, function(ApiClient, ReportingV3RetrievalDetailsGet200Response) {
+}(this, function(MLEUtility, ApiClient, ReportingV3RetrievalDetailsGet200Response) {
   'use strict';
 
   /**
@@ -102,6 +102,13 @@
       var accepts = ['application/hal+json', 'application/xml'];
       var returnType = ReportingV3RetrievalDetailsGet200Response;
 
+      //check isMLE for an api method 'this.getRetrievalDetails'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getRetrievalDetails');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/reporting/v3/retrieval-details', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

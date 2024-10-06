@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateCreditRequest', 'model/PtsV2CreditsPost201Response', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsRefundPost400Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/CreateCreditRequest', 'model/PtsV2CreditsPost201Response', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsRefundPost400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateCreditRequest'), require('../model/PtsV2CreditsPost201Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsRefundPost400Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/CreateCreditRequest'), require('../model/PtsV2CreditsPost201Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsRefundPost400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreditApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateCreditRequest, root.CyberSource.PtsV2CreditsPost201Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsRefundPost400Response);
+    root.CyberSource.CreditApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.CreateCreditRequest, root.CyberSource.PtsV2CreditsPost201Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsRefundPost400Response);
   }
-}(this, function(ApiClient, CreateCreditRequest, PtsV2CreditsPost201Response, PtsV2PaymentsPost502Response, PtsV2PaymentsRefundPost400Response) {
+}(this, function(MLEUtility, ApiClient, CreateCreditRequest, PtsV2CreditsPost201Response, PtsV2PaymentsPost502Response, PtsV2PaymentsRefundPost400Response) {
   'use strict';
 
   /**
@@ -91,6 +91,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2CreditsPost201Response;
 
+      //check isMLE for an api method 'this.createCredit'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createCredit');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/pts/v2/credits', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

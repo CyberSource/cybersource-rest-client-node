@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsRefundPost400Response', 'model/UmsV1UsersGet200Response'], factory);
+    define(['Authentication/MLEUtility','ApiClient', 'model/PtsV2PaymentsRefundPost400Response', 'model/UmsV1UsersGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PtsV2PaymentsRefundPost400Response'), require('../model/UmsV1UsersGet200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/PtsV2PaymentsRefundPost400Response'), require('../model/UmsV1UsersGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UserManagementApi = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsRefundPost400Response, root.CyberSource.UmsV1UsersGet200Response);
+    root.CyberSource.UserManagementApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsRefundPost400Response, root.CyberSource.UmsV1UsersGet200Response);
   }
-}(this, function(ApiClient, PtsV2PaymentsRefundPost400Response, UmsV1UsersGet200Response) {
+}(this, function(MLEUtility, ApiClient, PtsV2PaymentsRefundPost400Response, UmsV1UsersGet200Response) {
   'use strict';
 
   /**
@@ -94,6 +94,13 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = UmsV1UsersGet200Response;
 
+      //check isMLE for an api method 'this.getUsers'
+      var isMLESupportedByCybsForApi= false
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getUsers');
+      if(isMLEForApi===true){
+        postBody= MLEUtility.encryptRequestPayload(postBody);
+      }
+      
       return this.apiClient.callApi(
         '/ums/v1/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
