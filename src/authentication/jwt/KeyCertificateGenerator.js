@@ -2,6 +2,7 @@
 var forge = require('node-forge');
 var Cache = require('../util/Cache');
 var ApiException = require('../util/ApiException');
+var Constants = require('../util/Constants');
 
 /*
 This module reads a p12 file and generate certificate, RSA private key and public key
@@ -23,7 +24,7 @@ var thisModule = module.exports = {
         }
 
         if (!cert) {
-            ApiException.ApiException(`Certificate with alias ${keyAlias} not found in p12`, logger);
+            ApiException.ApiException("Certificate with alias "+ keyAlias + " not found in "+ merchantConfig.getKeyFileName() + ".p12", logger);
         }
         var certificatePem = forge.pki.certificateToPem(cert.cert);
         var certDer = forge.pki.pemToDer(certificatePem);
@@ -44,9 +45,9 @@ var thisModule = module.exports = {
                 break;
             }
         }
-
+        //verify if cert exist for given alias
         if (!cert) {
-            ApiException.AuthException(`Certificate with alias ${keyAlias} not found in p12`);
+            ApiException.ApiException("Certificate with alias "+ keyAlias + " not found in "+ merchantConfig.getKeyFileName() + ".p12",logger);
         }
         return cert.cert;
     },
@@ -66,6 +67,27 @@ var thisModule = module.exports = {
         var privateKey = bag.key;
         var rsaPrivateKey = forge.pki.privateKeyToPem(privateKey);
         return rsaPrivateKey;
+    },
+
+    /* verify certificate expiry date */
+    verifyIsCertificateExpired: function (cert,keyAlias, logger){
+        const expiryDate = new Date(cert.validity.notAfter);
+        const currentDate = new Date();
+        const expiryWarningDaysInMilliseconds = Constants.CERTIFICATE_EXPIRY_DATE_WARNING_DAYS *24*60*60*1000;
+        const timeUntilExpiry = expiryDate - currentDate;
+
+        if (timeUntilExpiry <= 0) {
+            // Certificate has already expired
+            logger.warn("Certificate with alias "+ keyAlias + " is expired on "+ cert.validity.notAfter +" . Please update p12 file.");
+            return true;
+        } else if (timeUntilExpiry <= expiryWarningDaysInMilliseconds) {
+            // Certificate will expire in the next 30 days
+            logger.warn("Certificate with alias "+ keyAlias + " is going to expired on "+ cert.validity.notAfter +" . Please update p12 file before that.");
+            return false;
+        } else {
+            // Certificate is valid and not expiring in the next 30 days
+            return false;
+        }
     },
 
     /* This method generate public key in pem format */

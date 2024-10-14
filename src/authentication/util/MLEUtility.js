@@ -2,6 +2,8 @@
 const jose = require('node-jose');
 const KeyCertificate = require('../jwt/KeyCertificateGenerator');
 const forge = require('node-forge');
+const Logger= require('../logging/Logger');
+const ApiException= require('./ApiException');
 
 exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, operationId) {
     //isMLE for an api is false by default
@@ -28,27 +30,30 @@ exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, 
 
 exports.encryptRequestPayload = function(merchantConfig,requestBody){
     if(requestBody != null){
-        let cert = KeyCertificate.getX509CertificateInCert(merchantConfig,null,"CyberSource_SJC_US");
-        return generateJWEToken(requestBody, cert,merchantConfig).then(token => {
-          console.log("\nrequest before mle: "+ JSON.stringify(requestBody));
+        var logger = Logger.getLogger(merchantConfig, 'MLEUtility');
+        return generateJWEToken(requestBody, logger, merchantConfig).then(token => {
+          logger.info("Request before mle: "+ JSON.stringify(requestBody));
           let mleRequest= createMLEJsonRequest(token);
-          console.log("\nrequest after mle: "+ JSON.stringify(mleRequest));
+          logger.info("Request after mle: "+ JSON.stringify(mleRequest));
           return mleRequest;
-        }).catch(error => {
-              console.error(`Encryption error: ${error}`);
-              return null;
         });
     } else {
         return Promise.resolve(requestBody);
     }
 }
 
-function generateJWEToken(requestBody, cert,merchantConfig) {
+function generateJWEToken(requestBody, logger,merchantConfig) {
+  //get the MLE cert and verify the expiry of cert
+  let cert = KeyCertificate.getX509CertificateInCert(merchantConfig,logger,merchantConfig.getMleKeyAlias());
+  let isCertExpired = KeyCertificate.verifyIsCertificateExpired(cert,merchantConfig.getMleKeyAlias(),logger);
+  if(isCertExpired ===true){
+    ApiException.ApiException("Certificate for MLE with alias "+ merchantConfig.getMleKeyAlias() + " is expired in "+ merchantConfig.getKeyFileName() + ".p12",logger);
+  }
 
   const customHeaders = {
       iat: Math.floor(Date.now() / 1000) //epoch time in seconds
   };
-  const serialNumber = getSerialNumberFromCert(cert);
+  const serialNumber = getSerialNumberFromCert(cert,merchantConfig,logger);
   const headers = {
       alg: "RSA-OAEP-256",
       enc: "A256GCM",
@@ -72,10 +77,6 @@ function generateJWEToken(requestBody, cert,merchantConfig) {
         .then(result => { 
             return result;
         })
-        .catch(error => {
-            console.error(`error: ${error}`);
-            return null;
-        });
 }
 
 function toBase64Url(bi) {
@@ -91,15 +92,15 @@ function createMLEJsonRequest(jweToken) {
   return mleJson;
 }
 
-function getSerialNumberFromCert(cert) {
- if (!cert.subject || !cert.subject.attributes) {
-        throw new Error("Subject or attributes are missing");
-    }
+function getSerialNumberFromCert(cert,merchantConfig,logger) {
+  if (!cert.subject || !cert.subject.attributes) {
+      throw new Error("Subject or attributes are missing in mle cert");
+  }
 
-    const serialNumberAttr = cert.subject.attributes.find(attr => attr.name === 'serialNumber');
-    if (serialNumberAttr) {
-        return serialNumberAttr.value;
-    } else {
-        throw new Error("Serial number not found in subject attributes");
-    }
+  const serialNumberAttr = cert.subject.attributes.find(attr => attr.name === 'serialNumber');
+  if (serialNumberAttr) {
+      return serialNumberAttr.value;
+  } else {
+    ApiException.ApiException("Serial number not found in mle certificate for alias "+ merchantConfig.getMleKeyAlias() + " in "+ merchantConfig.getKeyFileName() + ".p12",logger);
+  }
 }

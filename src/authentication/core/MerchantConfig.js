@@ -74,6 +74,7 @@ function MerchantConfig(result) {
     /* MLE Feature */
     this.isMLE = result.isMLE;
     this.mapToControlMLEonAPI = result.mapToControlMLEonAPI; 
+    this.mleKeyAlias = result.mleKeyAlias; //mleKeyAlias is optional parameter, default value is "CyberSource_SJC_US".
 
     /* Fallback logic*/
     this.defaultPropValues();
@@ -377,7 +378,13 @@ MerchantConfig.prototype.setMapToControlMLEonAPI = function setMapToControlMLEon
     this.mapToControlMLEonAPI =mapToControlMLEonAPI;
 }
 
+MerchantConfig.prototype.getMleKeyAlias = function getMleKeyAlias() {
+    return this.mleKeyAlias;
+}
 
+MerchantConfig.prototype.setMleKeyAlias = function setMleKeyAlias(mleKeyAlias) {
+    this.mleKeyAlias =mleKeyAlias;
+}
 
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
 
@@ -559,8 +566,12 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             ApiException.ApiException("MLE is only supported in JWT auth type", logger);
         }
 
+        if (!this.mleKeyAlias || !this.mleKeyAlias.trim()) {
+            this.mleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
+        }
+
         if(this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object"){
-            ApiException.ApiException("mapToControlMLEonAPI in mercahntConfig should be key value pair", logger);
+            ApiException.ApiException("mapToControlMLEonAPI in merchantConfig should be key value pair", logger);
         }
         if(this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0){
             var hasTrueValue = false;
