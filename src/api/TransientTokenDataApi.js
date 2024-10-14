@@ -95,14 +95,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getPaymentCredentialsForTransientToken');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/flex/v2/payment-credentials/{paymentCredentialsReference}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/flex/v2/payment-credentials/{paymentCredentialsReference}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/flex/v2/payment-credentials/{paymentCredentialsReference}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -150,14 +157,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransactionForTransientToken');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/up/v1/payment-details/{transientToken}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/up/v1/payment-details/{transientToken}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/up/v1/payment-details/{transientToken}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
   };
 

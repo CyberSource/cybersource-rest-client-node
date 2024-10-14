@@ -102,14 +102,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'actionDecisionManagerCase');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/risk/v1/decisions/{id}/actions', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/risk/v1/decisions/{id}/actions', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/risk/v1/decisions/{id}/actions', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -165,14 +172,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'addNegative');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/risk/v1/lists/{type}/entries', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/risk/v1/lists/{type}/entries', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/risk/v1/lists/{type}/entries', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -228,14 +242,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'commentDecisionManagerCase');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/risk/v1/decisions/{id}/comments', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/risk/v1/decisions/{id}/comments', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/risk/v1/decisions/{id}/comments', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -284,14 +305,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createBundledDecisionManagerCase');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/risk/v1/decisions', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/risk/v1/decisions', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/risk/v1/decisions', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -347,14 +375,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'fraudUpdate');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/risk/v1/decisions/{id}/marking', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/risk/v1/decisions/{id}/marking', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/risk/v1/decisions/{id}/marking', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
   };
 

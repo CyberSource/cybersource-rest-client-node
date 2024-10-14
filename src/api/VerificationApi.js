@@ -95,14 +95,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'validateExportCompliance');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/risk/v1/export-compliance-inquiries', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/risk/v1/export-compliance-inquiries', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/risk/v1/export-compliance-inquiries', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -151,14 +158,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'verifyCustomerAddress');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/risk/v1/address-verifications', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/risk/v1/address-verifications', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/risk/v1/address-verifications', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
   };
 

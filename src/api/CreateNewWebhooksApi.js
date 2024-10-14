@@ -94,14 +94,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createWebhookSubscription');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v1/webhooks', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v1/webhooks', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/notification-subscriptions/v1/webhooks', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -152,14 +159,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'findProductsToSubscribe');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v1/products/{organizationId}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v1/products/{organizationId}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/notification-subscriptions/v1/products/{organizationId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
 
     /**
@@ -223,14 +237,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'saveSymEgressKey');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/kms/egress/v2/keys-sym', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/kms/egress/v2/keys-sym', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/kms/egress/v2/keys-sym', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
   };
 

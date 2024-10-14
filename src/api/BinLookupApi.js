@@ -97,14 +97,21 @@
       var isMLESupportedByCybsForApi= false
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getAccountInfo');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '/bin/v1/binlookup', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '/bin/v1/binlookup', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
       }
       
-      return this.apiClient.callApi(
-        '/bin/v1/binlookup', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
     }
   };
 
