@@ -26,7 +26,7 @@ module.exports = {
     STATUS_INFORMATION                :  "Status Information",
     DIGEST                            :  "digest",
     REQUEST_TYPE                      :  "Request Type",
-    CERTIFICATE_EXPIRY_DATE_WARNING_DAYS : "30",
+    CERTIFICATE_EXPIRY_DATE_WARNING_DAYS : "90",
     DEFAULT_MLE_ALIAS_FOR_CERT        :  "CyberSource_SJC_US",
 
     OLD_RUN_ENVIRONMENT_CONSTANTS     :  ["CYBERSOURCE.ENVIRONMENT.SANDBOX", "CYBERSOURCE.ENVIRONMENT.PRODUCTION",

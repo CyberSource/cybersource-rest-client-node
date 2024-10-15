@@ -81,11 +81,11 @@ var thisModule = module.exports = {
             logger.warn("Certificate with alias "+ keyAlias + " is expired on "+ cert.validity.notAfter +" . Please update p12 file.");
             return true;
         } else if (timeUntilExpiry <= expiryWarningDaysInMilliseconds) {
-            // Certificate will expire in the next 30 days
+            // Certificate will expire in the next 90 days
             logger.warn("Certificate with alias "+ keyAlias + " is going to expired on "+ cert.validity.notAfter +" . Please update p12 file before that.");
             return false;
         } else {
-            // Certificate is valid and not expiring in the next 30 days
+            // Certificate is valid and not expiring in the next 90 days
             return false;
         }
     },
