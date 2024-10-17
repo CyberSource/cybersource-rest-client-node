@@ -560,14 +560,15 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         ApiException.ApiException(Constants.AUTH_ERROR, logger);
     }
 
+    //set the MLE key alias either from merchant config or default value
+    if (!this.mleKeyAlias || !this.mleKeyAlias.trim()) {
+        this.mleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
+    }
+
     //isMLE check for auth Type
     if(this.isMLE===true || this.mapToControlMLEonAPI != null){
         if(this.isMLE===true && this.authenticationType.toLowerCase() !== Constants.JWT){
             ApiException.ApiException("MLE is only supported in JWT auth type", logger);
-        }
-
-        if (!this.mleKeyAlias || !this.mleKeyAlias.trim()) {
-            this.mleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
         }
 
         if(this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object"){
