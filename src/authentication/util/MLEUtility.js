@@ -101,6 +101,7 @@ function getSerialNumberFromCert(cert,merchantConfig,logger) {
   if (serialNumberAttr) {
       return serialNumberAttr.value;
   } else {
-    ApiException.ApiException("Serial number not found in mle certificate for alias "+ merchantConfig.getMleKeyAlias() + " in "+ merchantConfig.getKeyFileName() + ".p12",logger);
+    logger.warn("Serial number not found in mle certificate for alias "+ merchantConfig.getMleKeyAlias() + " in "+ merchantConfig.getKeyFileName() + ".p12");
+    return cert.serialNumber;
   }
 }
