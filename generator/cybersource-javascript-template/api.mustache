@@ -99,14 +99,21 @@
       var isMLESupportedByCybsForApi= <#vendorExtensions.x-devcenter-metaData.isMLEsupported>true</vendorExtensions.x-devcenter-metaData.isMLEsupported><^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, '<operationId>');
       if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(postBody);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+          return this.apiClient.callApi(
+            '<&path>', '<httpMethod>',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType<^usePromises>, callback</usePromises>
+          );
+        });
+      }else{
+        return this.apiClient.callApi(
+          '<&path>', '<httpMethod>',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType<^usePromises>, callback</usePromises>
+        );
       }
       
-      return this.apiClient.callApi(
-        '<&path>', '<httpMethod>',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType<^usePromises>, callback</usePromises>
-      );
     }
 <#usePromises>
     <#emitJSDoc>

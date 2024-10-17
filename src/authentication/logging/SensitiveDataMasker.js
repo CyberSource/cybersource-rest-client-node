@@ -1,9 +1,25 @@
 'use strict';
 
 const maskingTags = require('./SensitiveDataTags');
+const Utility = require('../util/Utility.js');
+const Constants = require('../util/Constants');
+
 
 function maskSensitiveData(message) {
-    var jsonMsg = JSON.parse(JSON.stringify(message));
+
+    if(typeof message === 'string' && message.startsWith(Constants.LOG_REQUEST_BEFORE_MLE)){
+        return Constants.LOG_REQUEST_BEFORE_MLE + maskSensitiveData(message.substring(Constants.LOG_REQUEST_BEFORE_MLE.length));
+    }
+    if(typeof message === 'string' && message.startsWith(Constants.LOG_REQUEST_AFTER_MLE)){
+        return Constants.LOG_REQUEST_AFTER_MLE + maskSensitiveData(message.substring(Constants.LOG_REQUEST_AFTER_MLE.length));
+    }
+
+    if(Utility.isJsonString(message)){
+        jsonMsg= JSON.parse(message)
+    }else{
+        var jsonMsg = JSON.parse(JSON.stringify(message));
+    }
+
     var sensitiveFields = maskingTags.getSensitiveDataTags();
 
     if (jsonMsg instanceof Object) {
