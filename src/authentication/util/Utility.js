@@ -43,3 +43,12 @@ exports.getResponseCodeMessage = function (responseCode) {
     }
     return tempResponseCode;
 }
+
+exports.isJsonString = function(jsonString){
+    try {
+        JSON.parse(jsonString);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}

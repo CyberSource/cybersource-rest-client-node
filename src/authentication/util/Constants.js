@@ -39,6 +39,8 @@ module.exports = {
     /* Logging Labels*/
     BEGIN_TRANSACTION                 :  "************************ LOGGING START ************************",
     END_TRANSACTION                   :  "************************  LOGGING END  ************************",
+    LOG_REQUEST_BEFORE_MLE            :  "Request before mle: ",
+    LOG_REQUEST_AFTER_MLE             :  "Request after mle: ",
     MERCHANTID                        :  "MERCHANTID",
     MERCHANT_KEY_ID                   :  "MERCHANT_KEY_ID",
     MERCHANT_SECERT_KEY               :  "MERCHANT_SECERT_KEY",

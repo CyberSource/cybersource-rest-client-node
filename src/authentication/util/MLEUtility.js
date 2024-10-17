@@ -4,6 +4,7 @@ const KeyCertificate = require('../jwt/KeyCertificateGenerator');
 const forge = require('node-forge');
 const Logger= require('../logging/Logger');
 const ApiException= require('./ApiException');
+const Constants = require('./Constants');
 
 exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, operationId) {
     //isMLE for an api is false by default
@@ -32,9 +33,9 @@ exports.encryptRequestPayload = function(merchantConfig,requestBody){
     if(requestBody != null){
         var logger = Logger.getLogger(merchantConfig, 'MLEUtility');
         return generateJWEToken(requestBody, logger, merchantConfig).then(token => {
-          logger.info("Request before mle: "+ JSON.stringify(requestBody));
+          logger.debug(Constants.LOG_REQUEST_BEFORE_MLE + JSON.stringify(requestBody));
           let mleRequest= createMLEJsonRequest(token);
-          logger.info("Request after mle: "+ JSON.stringify(mleRequest));
+          logger.debug(Constants.LOG_REQUEST_AFTER_MLE + JSON.stringify(mleRequest));
           return mleRequest;
         });
     } else {
