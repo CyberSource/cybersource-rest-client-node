@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
+      }
+      if (data.hasOwnProperty('countryOfOrigin')) {
+        obj['countryOfOrigin'] = ApiClient.convertToType(data['countryOfOrigin'], 'String');
       }
     }
     return obj;
@@ -137,6 +141,11 @@
    * @member {String} url
    */
   exports.prototype['url'] = undefined;
+  /**
+   * Country Cf Origin of merchant is applicable for VPC Processors and is dependent on governmentControlled attribute.
+   * @member {String} countryOfOrigin
+   */
+  exports.prototype['countryOfOrigin'] = undefined;
 
 
 

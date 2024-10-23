@@ -104,12 +104,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property challengeCancelCode (base name: "challengeCancelCode")', function() {
-      // uncomment below and update the code to test the property challengeCancelCode
-      //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();
-      //expect(instance).to.be();
-    });
-
     it('should have the property challengeCode (base name: "challengeCode")', function() {
       // uncomment below and update the code to test the property challengeCode
       //var instane = new CyberSource.Riskv1decisionsConsumerAuthenticationInformation();

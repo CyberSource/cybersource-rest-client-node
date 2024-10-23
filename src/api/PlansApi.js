@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActivateDeactivatePlanResponse', 'model/CreatePlanRequest', 'model/CreatePlanResponse', 'model/DeletePlanResponse', 'model/GetAllPlansResponse', 'model/GetPlanCodeResponse', 'model/GetPlanResponse', 'model/InlineResponse4002', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest', 'model/UpdatePlanResponse'], factory);
+    define(['ApiClient', 'model/ActivateDeactivatePlanResponse', 'model/CreatePlanRequest', 'model/CreatePlanResponse', 'model/DeletePlanResponse', 'model/GetAllPlansResponse', 'model/GetPlanCodeResponse', 'model/GetPlanResponse', 'model/InlineResponse4003', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest', 'model/UpdatePlanResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ActivateDeactivatePlanResponse'), require('../model/CreatePlanRequest'), require('../model/CreatePlanResponse'), require('../model/DeletePlanResponse'), require('../model/GetAllPlansResponse'), require('../model/GetPlanCodeResponse'), require('../model/GetPlanResponse'), require('../model/InlineResponse4002'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'), require('../model/UpdatePlanResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/ActivateDeactivatePlanResponse'), require('../model/CreatePlanRequest'), require('../model/CreatePlanResponse'), require('../model/DeletePlanResponse'), require('../model/GetAllPlansResponse'), require('../model/GetPlanCodeResponse'), require('../model/GetPlanResponse'), require('../model/InlineResponse4003'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'), require('../model/UpdatePlanResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PlansApi = factory(root.CyberSource.ApiClient, root.CyberSource.ActivateDeactivatePlanResponse, root.CyberSource.CreatePlanRequest, root.CyberSource.CreatePlanResponse, root.CyberSource.DeletePlanResponse, root.CyberSource.GetAllPlansResponse, root.CyberSource.GetPlanCodeResponse, root.CyberSource.GetPlanResponse, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest, root.CyberSource.UpdatePlanResponse);
+    root.CyberSource.PlansApi = factory(root.CyberSource.ApiClient, root.CyberSource.ActivateDeactivatePlanResponse, root.CyberSource.CreatePlanRequest, root.CyberSource.CreatePlanResponse, root.CyberSource.DeletePlanResponse, root.CyberSource.GetAllPlansResponse, root.CyberSource.GetPlanCodeResponse, root.CyberSource.GetPlanResponse, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest, root.CyberSource.UpdatePlanResponse);
   }
-}(this, function(ApiClient, ActivateDeactivatePlanResponse, CreatePlanRequest, CreatePlanResponse, DeletePlanResponse, GetAllPlansResponse, GetPlanCodeResponse, GetPlanResponse, InlineResponse4002, InlineResponse404, PtsV2PaymentsPost502Response, UpdatePlanRequest, UpdatePlanResponse) {
+}(this, function(ApiClient, ActivateDeactivatePlanResponse, CreatePlanRequest, CreatePlanResponse, DeletePlanResponse, GetAllPlansResponse, GetPlanCodeResponse, GetPlanResponse, InlineResponse4003, InlineResponse404, PtsV2PaymentsPost502Response, UpdatePlanRequest, UpdatePlanResponse) {
   'use strict';
 
   /**

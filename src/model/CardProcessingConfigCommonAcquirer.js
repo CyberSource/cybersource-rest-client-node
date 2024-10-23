@@ -53,6 +53,8 @@
 
 
 
+
+
   };
 
   /**
@@ -74,6 +76,12 @@
       }
       if (data.hasOwnProperty('discoverInstitutionId')) {
         obj['discoverInstitutionId'] = ApiClient.convertToType(data['discoverInstitutionId'], 'String');
+      }
+      if (data.hasOwnProperty('unionPayInstitutionId')) {
+        obj['unionPayInstitutionId'] = ApiClient.convertToType(data['unionPayInstitutionId'], 'String');
+      }
+      if (data.hasOwnProperty('dinersClubInstitutionId')) {
+        obj['dinersClubInstitutionId'] = ApiClient.convertToType(data['dinersClubInstitutionId'], 'String');
       }
       if (data.hasOwnProperty('countryCode')) {
         obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
@@ -100,6 +108,16 @@
    * @member {String} discoverInstitutionId
    */
   exports.prototype['discoverInstitutionId'] = undefined;
+  /**
+   * Assigned by China Union Pay to identify the acquirer. Applicable for VPC processors.
+   * @member {String} unionPayInstitutionId
+   */
+  exports.prototype['unionPayInstitutionId'] = undefined;
+  /**
+   * Assigned by Diners Club to identify the acquirer. Applicable for VPC processors.
+   * @member {String} dinersClubInstitutionId
+   */
+  exports.prototype['dinersClubInstitutionId'] = undefined;
   /**
    * ISO 4217 format. Applicable for VPC, GPX (gpx), EFTPOS, RUPAY, Prisma (prisma) and CUP processors.
    * @member {String} countryCode

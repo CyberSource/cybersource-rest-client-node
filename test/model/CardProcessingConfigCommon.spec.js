@@ -182,6 +182,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property governmentControlled (base name: "governmentControlled")', function() {
+      // uncomment below and update the code to test the property governmentControlled
+      //var instane = new CyberSource.CardProcessingConfigCommon();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dropBillingInfo (base name: "dropBillingInfo")', function() {
+      // uncomment below and update the code to test the property dropBillingInfo
+      //var instane = new CyberSource.CardProcessingConfigCommon();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

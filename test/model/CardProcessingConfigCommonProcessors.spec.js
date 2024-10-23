@@ -110,6 +110,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property visaAggregatorId (base name: "visaAggregatorId")', function() {
+      // uncomment below and update the code to test the property visaAggregatorId
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property amexAggregatorId (base name: "amexAggregatorId")', function() {
+      // uncomment below and update the code to test the property amexAggregatorId
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property masterCardAggregatorId (base name: "masterCardAggregatorId")', function() {
+      // uncomment below and update the code to test the property masterCardAggregatorId
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sicCode (base name: "sicCode")', function() {
       // uncomment below and update the code to test the property sicCode
       //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
