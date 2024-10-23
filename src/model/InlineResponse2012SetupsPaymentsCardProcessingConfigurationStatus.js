@@ -107,11 +107,13 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * @member {module:model/InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.StatusEnum} status
+   * Possible values: - SUCCESS - PARTIAL - PENDING - NOT_SETUP
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.ReasonEnum} reason
+   * Possible values: - PENDING_PROVISIONING_PROCESS - MISSING_DATA - INVALID_DATA - DUPLICATE_FIELD - NOT_APPLICABLE
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -124,63 +126,6 @@
   exports.prototype['message'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "SUCCESS"
-     * @const
-     */
-    "SUCCESS": "SUCCESS",
-    /**
-     * value: "PARTIAL"
-     * @const
-     */
-    "PARTIAL": "PARTIAL",
-    /**
-     * value: "PENDING"
-     * @const
-     */
-    "PENDING": "PENDING",
-    /**
-     * value: "NOT_SETUP"
-     * @const
-     */
-    "NOT_SETUP": "NOT_SETUP"  };
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "PENDING_PROVISIONING_PROCESS"
-     * @const
-     */
-    "PENDING_PROVISIONING_PROCESS": "PENDING_PROVISIONING_PROCESS",
-    /**
-     * value: "MISSING_DATA"
-     * @const
-     */
-    "MISSING_DATA": "MISSING_DATA",
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA",
-    /**
-     * value: "DUPLICATE_FIELD"
-     * @const
-     */
-    "DUPLICATE_FIELD": "DUPLICATE_FIELD",
-    /**
-     * value: "NOT_APPLICABLE"
-     * @const
-     */
-    "NOT_APPLICABLE": "NOT_APPLICABLE"  };
 
   return exports;
 }));

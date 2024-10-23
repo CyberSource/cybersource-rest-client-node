@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **processors** | [**{String: CardProcessingConfigCommonProcessors}**](CardProcessingConfigCommonProcessors.md) | e.g. * amexdirect * barclays2 * CUP * EFTPOS * fdiglobal * gpngsapv3 * gpx * smartfdc * tsys * vero * VPC  For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &lt;your vpc processor&gt;  | [optional] 
 **amexVendorCode** | **String** | Vendor code assigned by American Express. Applicable for TSYS (tsys) processor. | [optional] 
-**defaultAuthTypeCode** | **String** | Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table>  | [optional] 
+**defaultAuthTypeCode** | **String** | Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table>   Possible values: - PRE - FINAL - UNDEFINED | [optional] 
 **masterCardAssignedId** | **String** | MAID aka MasterCard assigned ID, MasterCard equivalent of Merchant Verification Value by Visa. Applicable for VPC, GPX (gpx) and FDI Global (fdiglobal) processors. | [optional] 
 **enablePartialAuth** | **Boolean** | Allow merchants to accept partial authorization approvals. Applicable for Elavon Americas (elavonamericas), VPC, GPX (gpx), FDI Global (fdiglobal), FDC Nashville (smartfdc), GPN (gpn), TSYS (tsys), American Express Direct (amexdirect), Paymentech Tampa (paymentechtampa) and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cnp, cp, hybrid</td><td>No</td><td>No</td></tr> </table>  | [optional] 
 **merchantCategoryCode** | **String** | Indicates type of business product or service of the merchant. Applicable for Chase Paymentech Salem (chasepaymentechsalem), FDI Global (fdiglobal), RUPAY, Elavon Americas (elavonamericas), American Express Direct (amexdirect), CMCIC (cmcic), GPX (gpx), VPC, TSYS (tsys), EFTPOS, CUP, Paymentech Tampa (paymentechtampa), CB2A, Barclays (barclays2), Prisma (prisma) and GPN (gpn) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Min. Length</th><th>Max. Length</th><th>Regex</th></tr></thead> <tr><td>Barclays</td><td>cnp</td><td>No</td><td>4</td><td>4</td><td>^[0-9]+$</td></tr> <tr><td>American Express Direct</td><td>cnp, cp, hybrid</td><td>Yes</td><td>4</td><td>4</td><td>^[0-9]+$</td></tr> </table>  | [optional] 
@@ -26,18 +26,5 @@ Name | Type | Description | Notes
 **merchantDescriptorInformation** | [**CardProcessingConfigCommonMerchantDescriptorInformation**](CardProcessingConfigCommonMerchantDescriptorInformation.md) |  | [optional] 
 **governmentControlled** | **Boolean** | Indicates whether the merchant is government controlled. Applicable for VPC processors. | [optional] 
 **dropBillingInfo** | **Boolean** | This field is used to indicate whether the merchant wants to drop the billing information from the request. If this field is set to true, then the billing information will be dropped from the request. If this field is set to false, then the billing information will be sent in the request. | [optional] 
-
-
-<a name="DefaultAuthTypeCodeEnum"></a>
-## Enum: DefaultAuthTypeCodeEnum
-
-
-* `PRE` (value: `"PRE"`)
-
-* `FINAL` (value: `"FINAL"`)
-
-* `UNDEFINED` (value: `"UNDEFINED"`)
-
-
 
 

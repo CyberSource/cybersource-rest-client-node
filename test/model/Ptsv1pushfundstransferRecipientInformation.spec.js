@@ -122,8 +122,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property personalIdentification (base name: "personalIdentification")', function() {
       // uncomment below and update the code to test the property personalIdentification
+      //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property buildingNumber (base name: "buildingNumber")', function() {
+      // uncomment below and update the code to test the property buildingNumber
+      //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property streetName (base name: "streetName")', function() {
+      // uncomment below and update the code to test the property streetName
+      //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformation();
       //expect(instance).to.be();
     });

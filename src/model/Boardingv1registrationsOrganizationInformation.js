@@ -116,12 +116,12 @@
   exports.prototype['childOrganizations'] = undefined;
   /**
    * Determines the type of organization in the hirarchy that this registration will use to onboard this Organization Possible Values:   - 'TRANSACTING'   - 'STRUCTURAL'   - 'MERCHANT' 
-   * @member {module:model/Boardingv1registrationsOrganizationInformation.TypeEnum} type
+   * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
    * Determines the status that the organization will be after being onboarded Possible Values:             - 'LIVE'             - 'TEST'             - 'DRAFT' 
-   * @member {module:model/Boardingv1registrationsOrganizationInformation.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -144,48 +144,6 @@
   exports.prototype['owners'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TypeEnum = {
-    /**
-     * value: "TRANSACTING"
-     * @const
-     */
-    "TRANSACTING": "TRANSACTING",
-    /**
-     * value: "STRUCTURAL"
-     * @const
-     */
-    "STRUCTURAL": "STRUCTURAL",
-    /**
-     * value: "MERCHANT"
-     * @const
-     */
-    "MERCHANT": "MERCHANT"  };
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "LIVE"
-     * @const
-     */
-    "LIVE": "LIVE",
-    /**
-     * value: "TEST"
-     * @const
-     */
-    "TEST": "TEST",
-    /**
-     * value: "DRAFT"
-     * @const
-     */
-    "DRAFT": "DRAFT"  };
 
   return exports;
 }));

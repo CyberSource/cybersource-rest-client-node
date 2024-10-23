@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.PtsV2CreateOrderPost201ResponseBuyerInformation = factory(root.CyberSource.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The TssV2TransactionsPost201ResponseEmbeddedBuyerInformation model module.
-   * @module model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+   * The PtsV2CreateOrderPost201ResponseBuyerInformation model module.
+   * @module model/PtsV2CreateOrderPost201ResponseBuyerInformation
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>TssV2TransactionsPost201ResponseEmbeddedBuyerInformation</code>.
-   * @alias module:model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+   * Constructs a new <code>PtsV2CreateOrderPost201ResponseBuyerInformation</code>.
+   * @alias module:model/PtsV2CreateOrderPost201ResponseBuyerInformation
    * @class
    */
   var exports = function() {
@@ -51,11 +51,11 @@
   };
 
   /**
-   * Constructs a <code>TssV2TransactionsPost201ResponseEmbeddedBuyerInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PtsV2CreateOrderPost201ResponseBuyerInformation</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation} obj Optional instance to populate.
-   * @return {module:model/TssV2TransactionsPost201ResponseEmbeddedBuyerInformation} The populated <code>TssV2TransactionsPost201ResponseEmbeddedBuyerInformation</code> instance.
+   * @param {module:model/PtsV2CreateOrderPost201ResponseBuyerInformation} obj Optional instance to populate.
+   * @return {module:model/PtsV2CreateOrderPost201ResponseBuyerInformation} The populated <code>PtsV2CreateOrderPost201ResponseBuyerInformation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

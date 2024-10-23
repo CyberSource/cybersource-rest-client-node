@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property personalIdType (base name: "personalIdType")', function() {
+      // uncomment below and update the code to test the property personalIdType
+      //var instane = new CyberSource.Ptsv1pushfundstransferRecipientInformationPersonalIdentification();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

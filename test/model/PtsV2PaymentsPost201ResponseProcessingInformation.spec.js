@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property captureOptions (base name: "captureOptions")', function() {
+      // uncomment below and update the code to test the property captureOptions
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

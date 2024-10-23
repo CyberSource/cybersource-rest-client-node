@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property embeddedActions (base name: "embeddedActions")', function() {
+      // uncomment below and update the code to test the property embeddedActions
+      //var instane = new CyberSource.PtsV2PaymentsCapturesPost201Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

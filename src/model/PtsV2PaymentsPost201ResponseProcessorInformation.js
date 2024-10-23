@@ -86,6 +86,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -216,6 +221,21 @@
       if (data.hasOwnProperty('deviceUrl')) {
         obj['deviceUrl'] = ApiClient.convertToType(data['deviceUrl'], 'String');
       }
+      if (data.hasOwnProperty('disbursementMode')) {
+        obj['disbursementMode'] = ApiClient.convertToType(data['disbursementMode'], 'String');
+      }
+      if (data.hasOwnProperty('updateTimeUtc')) {
+        obj['updateTimeUtc'] = ApiClient.convertToType(data['updateTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('expirationTimeUtc')) {
+        obj['expirationTimeUtc'] = ApiClient.convertToType(data['expirationTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('orderId')) {
+        obj['orderId'] = ApiClient.convertToType(data['orderId'], 'String');
+      }
+      if (data.hasOwnProperty('orderStatus')) {
+        obj['orderStatus'] = ApiClient.convertToType(data['orderStatus'], 'String');
+      }
     }
     return obj;
   }
@@ -246,7 +266,7 @@
    */
   exports.prototype['networkTransactionId'] = undefined;
   /**
-   * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3) 
+   * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)  #### paypalgateway Processor generated ID for the itemized detail. 
    * @member {String} responseCode
    */
   exports.prototype['responseCode'] = undefined;
@@ -404,6 +424,31 @@
    * @member {String} deviceUrl
    */
   exports.prototype['deviceUrl'] = undefined;
+  /**
+   * The funds are released to the merchant immediately. INSTANT The funds are released to the merchant immediately. DELAYED The funds are held for a finite number of days. The actual duration depends on the region and type of integration. You can release the funds through a referenced payout. Otherwise, the funds disbursed automatically after the specified duration. 
+   * @member {String} disbursementMode
+   */
+  exports.prototype['disbursementMode'] = undefined;
+  /**
+   * The date and time when the transaction was last updated, in Internet date and time format. 
+   * @member {String} updateTimeUtc
+   */
+  exports.prototype['updateTimeUtc'] = undefined;
+  /**
+   * The date and time when the authorized payment expires, in Internet date and time format. 
+   * @member {String} expirationTimeUtc
+   */
+  exports.prototype['expirationTimeUtc'] = undefined;
+  /**
+   * The id of the order 
+   * @member {String} orderId
+   */
+  exports.prototype['orderId'] = undefined;
+  /**
+   * The order status.  Possible values: - `CREATED` - `VOIDED` - `COMPLETED` - `PAYER_ACTION_REQUIRED` 
+   * @member {String} orderStatus
+   */
+  exports.prototype['orderStatus'] = undefined;
 
 
 

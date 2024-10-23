@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('approvalCode')) {
         obj['approvalCode'] = ApiClient.convertToType(data['approvalCode'], 'String');
       }
+      if (data.hasOwnProperty('retrievalReferenceNumber')) {
+        obj['retrievalReferenceNumber'] = ApiClient.convertToType(data['retrievalReferenceNumber'], 'String');
+      }
     }
     return obj;
   }
@@ -81,6 +85,11 @@
    * @member {String} approvalCode
    */
   exports.prototype['approvalCode'] = undefined;
+  /**
+   * #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number. 
+   * @member {String} retrievalReferenceNumber
+   */
+  exports.prototype['retrievalReferenceNumber'] = undefined;
 
 
 
