@@ -10,12 +10,3 @@ Name | Type | Description | Notes
 **details** | [**[InlineResponse4006Details]**](InlineResponse4006Details.md) |  | [optional] 
 
 
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `INVALID_DATA` (value: `"INVALID_DATA"`)
-
-
-
-

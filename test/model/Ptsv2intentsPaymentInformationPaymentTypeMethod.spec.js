@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.BinLookupv400Response();
+    instance = new CyberSource.Ptsv2intentsPaymentInformationPaymentTypeMethod();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,34 +49,16 @@
       object[property] = value;
   }
 
-  describe('BinLookupv400Response', function() {
-    it('should create an instance of BinLookupv400Response', function() {
-      // uncomment below and update the code to test BinLookupv400Response
-      //var instane = new CyberSource.BinLookupv400Response();
-      //expect(instance).to.be.a(CyberSource.BinLookupv400Response);
+  describe('Ptsv2intentsPaymentInformationPaymentTypeMethod', function() {
+    it('should create an instance of Ptsv2intentsPaymentInformationPaymentTypeMethod', function() {
+      // uncomment below and update the code to test Ptsv2intentsPaymentInformationPaymentTypeMethod
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformationPaymentTypeMethod();
+      //expect(instance).to.be.a(CyberSource.Ptsv2intentsPaymentInformationPaymentTypeMethod);
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
-      //var instane = new CyberSource.BinLookupv400Response();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instane = new CyberSource.BinLookupv400Response();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instane = new CyberSource.BinLookupv400Response();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property details (base name: "details")', function() {
-      // uncomment below and update the code to test the property details
-      //var instane = new CyberSource.BinLookupv400Response();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformationPaymentTypeMethod();
       //expect(instance).to.be();
     });
 

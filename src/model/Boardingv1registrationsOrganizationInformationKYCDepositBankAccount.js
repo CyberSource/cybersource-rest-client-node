@@ -44,7 +44,7 @@
    * @alias module:model/Boardingv1registrationsOrganizationInformationKYCDepositBankAccount
    * @class
    * @param accountHolderName {String} 
-   * @param accountType {module:model/Boardingv1registrationsOrganizationInformationKYCDepositBankAccount.AccountTypeEnum} 
+   * @param accountType {String} Possible values: - checking - savings - corporatechecking - corporatesavings
    * @param accountRoutingNumber {String} 
    * @param accountNumber {String} 
    */
@@ -89,7 +89,8 @@
    */
   exports.prototype['accountHolderName'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformationKYCDepositBankAccount.AccountTypeEnum} accountType
+   * Possible values: - checking - savings - corporatechecking - corporatesavings
+   * @member {String} accountType
    */
   exports.prototype['accountType'] = undefined;
   /**
@@ -102,32 +103,6 @@
   exports.prototype['accountNumber'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>accountType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.AccountTypeEnum = {
-    /**
-     * value: "checking"
-     * @const
-     */
-    "checking": "checking",
-    /**
-     * value: "savings"
-     * @const
-     */
-    "savings": "savings",
-    /**
-     * value: "corporatechecking"
-     * @const
-     */
-    "corporatechecking": "corporatechecking",
-    /**
-     * value: "corporatesavings"
-     * @const
-     */
-    "corporatesavings": "corporatesavings"  };
 
   return exports;
 }));

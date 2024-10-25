@@ -124,7 +124,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreatePlanRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreatePlanRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };
@@ -422,7 +422,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdatePlanRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdatePlanRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
         'id': id

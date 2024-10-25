@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('isFinal')) {
         obj['isFinal'] = ApiClient.convertToType(data['isFinal'], 'String');
       }
+      if (data.hasOwnProperty('notes')) {
+        obj['notes'] = ApiClient.convertToType(data['notes'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +95,11 @@
    * @member {String} isFinal
    */
   exports.prototype['isFinal'] = undefined;
+  /**
+   * An informational note about this settlement. Appears in both the payer's transaction history and the emails that the payer receives. 
+   * @member {String} notes
+   */
+  exports.prototype['notes'] = undefined;
 
 
 

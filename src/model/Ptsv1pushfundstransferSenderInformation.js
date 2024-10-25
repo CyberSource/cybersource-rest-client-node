@@ -63,6 +63,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -79,6 +84,9 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
       if (data.hasOwnProperty('firstName')) {
         obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
       }
@@ -90,6 +98,12 @@
       }
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
+      if (data.hasOwnProperty('buildingNumber')) {
+        obj['buildingNumber'] = ApiClient.convertToType(data['buildingNumber'], 'String');
+      }
+      if (data.hasOwnProperty('streetName')) {
+        obj['streetName'] = ApiClient.convertToType(data['streetName'], 'String');
       }
       if (data.hasOwnProperty('address1')) {
         obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
@@ -124,15 +138,26 @@
       if (data.hasOwnProperty('personalIdentification')) {
         obj['personalIdentification'] = Ptsv1pushfundstransferSenderInformationPersonalIdentification.constructFromObject(data['personalIdentification']);
       }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('vatRegistrationNumber')) {
+        obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement. 
+   * Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement.  Government entities should use this field 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * Customer's email address, including the full domain name. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
   /**
    * This field contains the first name of the entity funding the transaction Mandatory for card payments 
    * @member {String} firstName
@@ -153,6 +178,16 @@
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
+  /**
+   * Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only. 
+   * @member {String} buildingNumber
+   */
+  exports.prototype['buildingNumber'] = undefined;
+  /**
+   * This field contains the street name of the recipient's address.  Applicable to domestic Colombia transactions only. 
+   * @member {String} streetName
+   */
+  exports.prototype['streetName'] = undefined;
   /**
    * Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Required for card transactions 
    * @member {String} address1
@@ -184,7 +219,7 @@
    */
   exports.prototype['dateOfBirth'] = undefined;
   /**
-   * Sender's phone number. 
+   * Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
@@ -205,6 +240,16 @@
    * @member {module:model/Ptsv1pushfundstransferSenderInformationPersonalIdentification} personalIdentification
    */
   exports.prototype['personalIdentification'] = undefined;
+  /**
+   * `B` for Business or `I` for individual. 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * Customer's government-assigned tax identification number. 
+   * @member {String} vatRegistrationNumber
+   */
+  exports.prototype['vatRegistrationNumber'] = undefined;
 
 
 

@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property updateTimeUtc (base name: "updateTimeUtc")', function() {
+      // uncomment below and update the code to test the property updateTimeUtc
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

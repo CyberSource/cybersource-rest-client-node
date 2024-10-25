@@ -25,7 +25,7 @@
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BinLookupv400Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
+    root.CyberSource.PtsV2CreateOrderPost400Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
 }(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The BinLookupv400Response model module.
-   * @module model/BinLookupv400Response
+   * The PtsV2CreateOrderPost400Response model module.
+   * @module model/PtsV2CreateOrderPost400Response
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>BinLookupv400Response</code>.
-   * @alias module:model/BinLookupv400Response
+   * Constructs a new <code>PtsV2CreateOrderPost400Response</code>.
+   * @alias module:model/PtsV2CreateOrderPost400Response
    * @class
    */
   var exports = function() {
@@ -54,11 +54,11 @@
   };
 
   /**
-   * Constructs a <code>BinLookupv400Response</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PtsV2CreateOrderPost400Response</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/BinLookupv400Response} obj Optional instance to populate.
-   * @return {module:model/BinLookupv400Response} The populated <code>BinLookupv400Response</code> instance.
+   * @param {module:model/PtsV2CreateOrderPost400Response} obj Optional instance to populate.
+   * @return {module:model/PtsV2CreateOrderPost400Response} The populated <code>PtsV2CreateOrderPost400Response</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

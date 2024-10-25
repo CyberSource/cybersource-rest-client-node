@@ -398,8 +398,8 @@
    */
   exports.prototype['enableCreditAuth'] = undefined;
   /**
-   * Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: `0` – unknown or unsure `A` – auto rental (EMV supported) `B` – bank/financial institution (EMV supported) `D` – direct marketing `F` – food/restaurant (EMV supported) `G` – grocery store/super market (EMV supported) `H` – hotel (EMV supported) `L` – limited amount terminal (EMV supported) `O` – oil company/automated fueling system (EMV supported) `P` – passenger transport (EMV supported) `R` – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors. 
-   * @member {module:model/CardProcessingConfigCommonProcessors.IndustryCodeEnum} industryCode
+   * Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: `0` – unknown or unsure `A` – auto rental (EMV supported) `B` – bank/financial institution (EMV supported) `D` – direct marketing `F` – food/restaurant (EMV supported) `G` – grocery store/super market (EMV supported) `H` – hotel (EMV supported) `L` – limited amount terminal (EMV supported) `O` – oil company/automated fueling system (EMV supported) `P` – passenger transport (EMV supported) `R` – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors.   Possible values: - 0 - A - B - D - F - G - H - L - O - P - R
+   * @member {String} industryCode
    */
   exports.prototype['industryCode'] = undefined;
   /**
@@ -489,67 +489,6 @@
   exports.prototype['merchantTier'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>industryCode</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.IndustryCodeEnum = {
-    /**
-     * value: "0"
-     * @const
-     */
-    "_0": "0",
-    /**
-     * value: "A"
-     * @const
-     */
-    "A": "A",
-    /**
-     * value: "B"
-     * @const
-     */
-    "B": "B",
-    /**
-     * value: "D"
-     * @const
-     */
-    "D": "D",
-    /**
-     * value: "F"
-     * @const
-     */
-    "F": "F",
-    /**
-     * value: "G"
-     * @const
-     */
-    "G": "G",
-    /**
-     * value: "H"
-     * @const
-     */
-    "H": "H",
-    /**
-     * value: "L"
-     * @const
-     */
-    "L": "L",
-    /**
-     * value: "O"
-     * @const
-     */
-    "O": "O",
-    /**
-     * value: "P"
-     * @const
-     */
-    "P": "P",
-    /**
-     * value: "R"
-     * @const
-     */
-    "R": "R"  };
 
   return exports;
 }));

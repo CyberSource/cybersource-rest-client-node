@@ -167,8 +167,8 @@
    */
   exports.prototype['amexVendorCode'] = undefined;
   /**
-   * Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table> 
-   * @member {module:model/CardProcessingConfigCommon.DefaultAuthTypeCodeEnum} defaultAuthTypeCode
+   * Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table>   Possible values: - PRE - FINAL - UNDEFINED
+   * @member {String} defaultAuthTypeCode
    */
   exports.prototype['defaultAuthTypeCode'] = undefined;
   /**
@@ -272,27 +272,6 @@
   exports.prototype['dropBillingInfo'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>defaultAuthTypeCode</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.DefaultAuthTypeCodeEnum = {
-    /**
-     * value: "PRE"
-     * @const
-     */
-    "PRE": "PRE",
-    /**
-     * value: "FINAL"
-     * @const
-     */
-    "FINAL": "FINAL",
-    /**
-     * value: "UNDEFINED"
-     * @const
-     */
-    "UNDEFINED": "UNDEFINED"  };
 
   return exports;
 }));

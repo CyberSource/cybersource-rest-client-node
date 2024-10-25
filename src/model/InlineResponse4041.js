@@ -96,7 +96,7 @@
   exports.prototype['status'] = undefined;
   /**
    * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'RESOURCE_NOT_FOUND' 
-   * @member {module:model/InlineResponse4041.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -110,17 +110,6 @@
   exports.prototype['details'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "RESOURCE_NOT_FOUND"
-     * @const
-     */
-    "RESOURCE_NOT_FOUND": "RESOURCE_NOT_FOUND"  };
 
   return exports;
 }));

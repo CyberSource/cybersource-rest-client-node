@@ -278,6 +278,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processingInstruction (base name: "processingInstruction")', function() {
+      // uncomment below and update the code to test the property processingInstruction
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

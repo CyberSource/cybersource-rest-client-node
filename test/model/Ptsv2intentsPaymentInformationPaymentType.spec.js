@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation();
+    instance = new CyberSource.Ptsv2intentsPaymentInformationPaymentType();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,16 +49,22 @@
       object[property] = value;
   }
 
-  describe('TssV2TransactionsPost201ResponseEmbeddedBuyerInformation', function() {
-    it('should create an instance of TssV2TransactionsPost201ResponseEmbeddedBuyerInformation', function() {
-      // uncomment below and update the code to test TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
-      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation();
-      //expect(instance).to.be.a(CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation);
+  describe('Ptsv2intentsPaymentInformationPaymentType', function() {
+    it('should create an instance of Ptsv2intentsPaymentInformationPaymentType', function() {
+      // uncomment below and update the code to test Ptsv2intentsPaymentInformationPaymentType
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformationPaymentType();
+      //expect(instance).to.be.a(CyberSource.Ptsv2intentsPaymentInformationPaymentType);
     });
 
-    it('should have the property merchantCustomerId (base name: "merchantCustomerId")', function() {
-      // uncomment below and update the code to test the property merchantCustomerId
-      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformationPaymentType();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property method (base name: "method")', function() {
+      // uncomment below and update the code to test the property method
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformationPaymentType();
       //expect(instance).to.be();
     });
 

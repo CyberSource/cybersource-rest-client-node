@@ -95,7 +95,8 @@
    */
   exports.prototype['tenantConfigurationId'] = undefined;
   /**
-   * @member {module:model/InlineResponse2001IntegrationInformationTenantConfigurations.StatusEnum} status
+   * Possible values: - LIVE - INACTIVE - TEST
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -109,27 +110,6 @@
   exports.prototype['tenantInformation'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "LIVE"
-     * @const
-     */
-    "LIVE": "LIVE",
-    /**
-     * value: "INACTIVE"
-     * @const
-     */
-    "INACTIVE": "INACTIVE",
-    /**
-     * value: "TEST"
-     * @const
-     */
-    "TEST": "TEST"  };
 
   return exports;
 }));

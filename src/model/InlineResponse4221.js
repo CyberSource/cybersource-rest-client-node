@@ -96,7 +96,7 @@
   exports.prototype['status'] = undefined;
   /**
    * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA' 
-   * @member {module:model/InlineResponse4221.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -110,17 +110,6 @@
   exports.prototype['details'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA"  };
 
   return exports;
 }));
