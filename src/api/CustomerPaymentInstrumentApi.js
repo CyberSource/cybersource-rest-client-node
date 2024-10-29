@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchCustomerPaymentInstrumentRequest', 'model/PaymentInstrumentList', 'model/PostCustomerPaymentInstrumentRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchCustomerPaymentInstrumentRequest', 'model/PaymentInstrumentList', 'model/PostCustomerPaymentInstrumentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchCustomerPaymentInstrumentRequest'), require('../model/PaymentInstrumentList'), require('../model/PostCustomerPaymentInstrumentRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchCustomerPaymentInstrumentRequest'), require('../model/PaymentInstrumentList'), require('../model/PostCustomerPaymentInstrumentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CustomerPaymentInstrumentApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchCustomerPaymentInstrumentRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostCustomerPaymentInstrumentRequest);
+    root.CyberSource.CustomerPaymentInstrumentApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchCustomerPaymentInstrumentRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostCustomerPaymentInstrumentRequest);
   }
 }(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchCustomerPaymentInstrumentRequest, PaymentInstrumentList, PostCustomerPaymentInstrumentRequest) {
   'use strict';
@@ -102,24 +102,24 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.deleteCustomerPaymentInstrument'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deleteCustomerPaymentInstrument');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'DELETE',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'DELETE',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -176,24 +176,24 @@
       var returnType = PostCustomerPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.getCustomerPaymentInstrument'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getCustomerPaymentInstrument');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -247,24 +247,24 @@
       var returnType = PaymentInstrumentList;
 
       //check isMLE for an api method 'this.getCustomerPaymentInstrumentsList'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getCustomerPaymentInstrumentsList');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}/payment-instruments', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}/payment-instruments', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -330,24 +330,24 @@
       var returnType = PatchCustomerPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.patchCustomersPaymentInstrument'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'patchCustomersPaymentInstrument');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -404,24 +404,24 @@
       var returnType = PostCustomerPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.postCustomerPaymentInstrument'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'postCustomerPaymentInstrument');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}/payment-instruments', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}/payment-instruments', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

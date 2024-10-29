@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/TaxRequest', 'model/VasV2PaymentsPost201Response', 'model/VasV2PaymentsPost400Response', 'model/VasV2TaxVoid200Response', 'model/VasV2TaxVoidsPost400Response', 'model/VoidTaxRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/PtsV2PaymentsPost502Response', 'model/TaxRequest', 'model/VasV2PaymentsPost201Response', 'model/VasV2PaymentsPost400Response', 'model/VasV2TaxVoid200Response', 'model/VasV2TaxVoidsPost400Response', 'model/VoidTaxRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TaxRequest'), require('../model/VasV2PaymentsPost201Response'), require('../model/VasV2PaymentsPost400Response'), require('../model/VasV2TaxVoid200Response'), require('../model/VasV2TaxVoidsPost400Response'), require('../model/VoidTaxRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/PtsV2PaymentsPost502Response'), require('../model/TaxRequest'), require('../model/VasV2PaymentsPost201Response'), require('../model/VasV2PaymentsPost400Response'), require('../model/VasV2TaxVoid200Response'), require('../model/VasV2TaxVoidsPost400Response'), require('../model/VoidTaxRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TaxesApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TaxRequest, root.CyberSource.VasV2PaymentsPost201Response, root.CyberSource.VasV2PaymentsPost400Response, root.CyberSource.VasV2TaxVoid200Response, root.CyberSource.VasV2TaxVoidsPost400Response, root.CyberSource.VoidTaxRequest);
+    root.CyberSource.TaxesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.TaxRequest, root.CyberSource.VasV2PaymentsPost201Response, root.CyberSource.VasV2PaymentsPost400Response, root.CyberSource.VasV2TaxVoid200Response, root.CyberSource.VasV2TaxVoidsPost400Response, root.CyberSource.VoidTaxRequest);
   }
 }(this, function(MLEUtility, ApiClient, PtsV2PaymentsPost502Response, TaxRequest, VasV2PaymentsPost201Response, VasV2PaymentsPost400Response, VasV2TaxVoid200Response, VasV2TaxVoidsPost400Response, VoidTaxRequest) {
   'use strict';
@@ -92,24 +92,24 @@
       var returnType = VasV2PaymentsPost201Response;
 
       //check isMLE for an api method 'this.calculateTax'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'calculateTax');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/vas/v2/tax', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/vas/v2/tax', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -162,24 +162,24 @@
       var returnType = VasV2TaxVoid200Response;
 
       //check isMLE for an api method 'this.voidTax'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'voidTax');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/vas/v2/tax/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/vas/v2/tax/{id}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/ActivateDeactivatePlanResponse', 'model/CreatePlanRequest', 'model/CreatePlanResponse', 'model/DeletePlanResponse', 'model/GetAllPlansResponse', 'model/GetPlanCodeResponse', 'model/GetPlanResponse', 'model/InlineResponse4003', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest', 'model/UpdatePlanResponse'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateDeactivatePlanResponse', 'model/CreatePlanRequest', 'model/CreatePlanResponse', 'model/DeletePlanResponse', 'model/GetAllPlansResponse', 'model/GetPlanCodeResponse', 'model/GetPlanResponse', 'model/InlineResponse4003', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest', 'model/UpdatePlanResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/ActivateDeactivatePlanResponse'), require('../model/CreatePlanRequest'), require('../model/CreatePlanResponse'), require('../model/DeletePlanResponse'), require('../model/GetAllPlansResponse'), require('../model/GetPlanCodeResponse'), require('../model/GetPlanResponse'), require('../model/InlineResponse4003'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'), require('../model/UpdatePlanResponse'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateDeactivatePlanResponse'), require('../model/CreatePlanRequest'), require('../model/CreatePlanResponse'), require('../model/DeletePlanResponse'), require('../model/GetAllPlansResponse'), require('../model/GetPlanCodeResponse'), require('../model/GetPlanResponse'), require('../model/InlineResponse4003'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'), require('../model/UpdatePlanResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PlansApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.ActivateDeactivatePlanResponse, root.CyberSource.CreatePlanRequest, root.CyberSource.CreatePlanResponse, root.CyberSource.DeletePlanResponse, root.CyberSource.GetAllPlansResponse, root.CyberSource.GetPlanCodeResponse, root.CyberSource.GetPlanResponse, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest, root.CyberSource.UpdatePlanResponse);
+    root.CyberSource.PlansApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateDeactivatePlanResponse, root.CyberSource.CreatePlanRequest, root.CyberSource.CreatePlanResponse, root.CyberSource.DeletePlanResponse, root.CyberSource.GetAllPlansResponse, root.CyberSource.GetPlanCodeResponse, root.CyberSource.GetPlanResponse, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest, root.CyberSource.UpdatePlanResponse);
   }
 }(this, function(MLEUtility, ApiClient, ActivateDeactivatePlanResponse, CreatePlanRequest, CreatePlanResponse, DeletePlanResponse, GetAllPlansResponse, GetPlanCodeResponse, GetPlanResponse, InlineResponse4003, InlineResponse404, PtsV2PaymentsPost502Response, UpdatePlanRequest, UpdatePlanResponse) {
   'use strict';
@@ -92,24 +92,24 @@
       var returnType = ActivateDeactivatePlanResponse;
 
       //check isMLE for an api method 'this.activatePlan'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'activatePlan');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}/activate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}/activate', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -155,24 +155,24 @@
       var returnType = CreatePlanResponse;
 
       //check isMLE for an api method 'this.createPlan'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createPlan');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -218,24 +218,24 @@
       var returnType = ActivateDeactivatePlanResponse;
 
       //check isMLE for an api method 'this.deactivatePlan'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deactivatePlan');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}/deactivate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}/deactivate', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -281,24 +281,24 @@
       var returnType = DeletePlanResponse;
 
       //check isMLE for an api method 'this.deletePlan'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deletePlan');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}', 'DELETE',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}', 'DELETE',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -344,24 +344,24 @@
       var returnType = GetPlanResponse;
 
       //check isMLE for an api method 'this.getPlan'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getPlan');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -400,24 +400,24 @@
       var returnType = GetPlanCodeResponse;
 
       //check isMLE for an api method 'this.getPlanCode'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getPlanCode');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/code', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/code', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -468,24 +468,24 @@
       var returnType = GetAllPlansResponse;
 
       //check isMLE for an api method 'this.getPlans'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getPlans');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -538,24 +538,24 @@
       var returnType = UpdatePlanResponse;
 
       //check isMLE for an api method 'this.updatePlan'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'updatePlan');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/InlineResponse2001', 'model/InlineResponse2012', 'model/InlineResponse4006', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2001', 'model/InlineResponse2012', 'model/InlineResponse4006', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse2012'), require('../model/InlineResponse4006'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse2012'), require('../model/InlineResponse4006'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
+    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
   }
 }(this, function(MLEUtility, ApiClient, InlineResponse2001, InlineResponse2012, InlineResponse4006, InlineResponse4041, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
   'use strict';
@@ -94,24 +94,24 @@
       var returnType = InlineResponse2001;
 
       //check isMLE for an api method 'this.getRegistration'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getRegistration');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/boarding/v1/registrations/{registrationId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/boarding/v1/registrations/{registrationId}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -163,24 +163,24 @@
       var returnType = InlineResponse2012;
 
       //check isMLE for an api method 'this.postRegistration'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'postRegistration');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/boarding/v1/registrations', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/boarding/v1/registrations', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

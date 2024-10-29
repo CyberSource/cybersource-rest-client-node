@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/GenerateCaptureContextRequest', 'model/InlineResponseDefault'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/GenerateCaptureContextRequest', 'model/InlineResponseDefault'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/GenerateCaptureContextRequest'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/GenerateCaptureContextRequest'), require('../model/InlineResponseDefault'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MicroformIntegrationApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.GenerateCaptureContextRequest, root.CyberSource.InlineResponseDefault);
+    root.CyberSource.MicroformIntegrationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.GenerateCaptureContextRequest, root.CyberSource.InlineResponseDefault);
   }
 }(this, function(MLEUtility, ApiClient, GenerateCaptureContextRequest, InlineResponseDefault) {
   'use strict';
@@ -92,24 +92,24 @@
       var returnType = 'String';
 
       //check isMLE for an api method 'this.generateCaptureContext'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'generateCaptureContext');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/microform/v2/sessions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/microform/v2/sessions', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/OctCreatePaymentRequest', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PayoutsPost201Response', 'model/PtsV2PayoutsPost400Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/OctCreatePaymentRequest', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PayoutsPost201Response', 'model/PtsV2PayoutsPost400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/OctCreatePaymentRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PayoutsPost201Response'), require('../model/PtsV2PayoutsPost400Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/OctCreatePaymentRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PayoutsPost201Response'), require('../model/PtsV2PayoutsPost400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PayoutsApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.OctCreatePaymentRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PayoutsPost201Response, root.CyberSource.PtsV2PayoutsPost400Response);
+    root.CyberSource.PayoutsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.OctCreatePaymentRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PayoutsPost201Response, root.CyberSource.PtsV2PayoutsPost400Response);
   }
 }(this, function(MLEUtility, ApiClient, OctCreatePaymentRequest, PtsV2PaymentsPost502Response, PtsV2PayoutsPost201Response, PtsV2PayoutsPost400Response) {
   'use strict';
@@ -92,24 +92,24 @@
       var returnType = PtsV2PayoutsPost201Response;
 
       //check isMLE for an api method 'this.octCreatePayment'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'octCreatePayment');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payouts', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/pts/v2/payouts', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/ReplayWebhooksRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ReplayWebhooksRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/ReplayWebhooksRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ReplayWebhooksRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReplayWebhooksApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.ReplayWebhooksRequest);
+    root.CyberSource.ReplayWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ReplayWebhooksRequest);
   }
 }(this, function(MLEUtility, ApiClient, ReplayWebhooksRequest) {
   'use strict';
@@ -97,24 +97,24 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.replayPreviousWebhooks'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'replayPreviousWebhooks');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/nrtf/v1/webhooks/{webhookId}/replays', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/nrtf/v1/webhooks/{webhookId}/replays', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

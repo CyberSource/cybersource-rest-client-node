@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/AddNegativeListRequest', 'model/CaseManagementActionsRequest', 'model/CaseManagementCommentsRequest', 'model/CreateBundledDecisionManagerCaseRequest', 'model/FraudMarkingActionRequest', 'model/InlineResponse200', 'model/InlineResponse201', 'model/InlineResponse4002', 'model/InlineResponse4031', 'model/InlineResponse422', 'model/InlineResponse5001', 'model/InlineResponse502', 'model/InlineResponse503', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1DecisionsPost400Response1', 'model/RiskV1UpdatePost201Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AddNegativeListRequest', 'model/CaseManagementActionsRequest', 'model/CaseManagementCommentsRequest', 'model/CreateBundledDecisionManagerCaseRequest', 'model/FraudMarkingActionRequest', 'model/InlineResponse200', 'model/InlineResponse201', 'model/InlineResponse4002', 'model/InlineResponse4031', 'model/InlineResponse422', 'model/InlineResponse5001', 'model/InlineResponse502', 'model/InlineResponse503', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1DecisionsPost400Response1', 'model/RiskV1UpdatePost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/AddNegativeListRequest'), require('../model/CaseManagementActionsRequest'), require('../model/CaseManagementCommentsRequest'), require('../model/CreateBundledDecisionManagerCaseRequest'), require('../model/FraudMarkingActionRequest'), require('../model/InlineResponse200'), require('../model/InlineResponse201'), require('../model/InlineResponse4002'), require('../model/InlineResponse4031'), require('../model/InlineResponse422'), require('../model/InlineResponse5001'), require('../model/InlineResponse502'), require('../model/InlineResponse503'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1DecisionsPost400Response1'), require('../model/RiskV1UpdatePost201Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AddNegativeListRequest'), require('../model/CaseManagementActionsRequest'), require('../model/CaseManagementCommentsRequest'), require('../model/CreateBundledDecisionManagerCaseRequest'), require('../model/FraudMarkingActionRequest'), require('../model/InlineResponse200'), require('../model/InlineResponse201'), require('../model/InlineResponse4002'), require('../model/InlineResponse4031'), require('../model/InlineResponse422'), require('../model/InlineResponse5001'), require('../model/InlineResponse502'), require('../model/InlineResponse503'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1DecisionsPost400Response1'), require('../model/RiskV1UpdatePost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DecisionManagerApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.AddNegativeListRequest, root.CyberSource.CaseManagementActionsRequest, root.CyberSource.CaseManagementCommentsRequest, root.CyberSource.CreateBundledDecisionManagerCaseRequest, root.CyberSource.FraudMarkingActionRequest, root.CyberSource.InlineResponse200, root.CyberSource.InlineResponse201, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse4031, root.CyberSource.InlineResponse422, root.CyberSource.InlineResponse5001, root.CyberSource.InlineResponse502, root.CyberSource.InlineResponse503, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1DecisionsPost400Response1, root.CyberSource.RiskV1UpdatePost201Response);
+    root.CyberSource.DecisionManagerApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AddNegativeListRequest, root.CyberSource.CaseManagementActionsRequest, root.CyberSource.CaseManagementCommentsRequest, root.CyberSource.CreateBundledDecisionManagerCaseRequest, root.CyberSource.FraudMarkingActionRequest, root.CyberSource.InlineResponse200, root.CyberSource.InlineResponse201, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse4031, root.CyberSource.InlineResponse422, root.CyberSource.InlineResponse5001, root.CyberSource.InlineResponse502, root.CyberSource.InlineResponse503, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1DecisionsPost400Response1, root.CyberSource.RiskV1UpdatePost201Response);
   }
 }(this, function(MLEUtility, ApiClient, AddNegativeListRequest, CaseManagementActionsRequest, CaseManagementCommentsRequest, CreateBundledDecisionManagerCaseRequest, FraudMarkingActionRequest, InlineResponse200, InlineResponse201, InlineResponse4002, InlineResponse4031, InlineResponse422, InlineResponse5001, InlineResponse502, InlineResponse503, PtsV2PaymentsPost502Response, RiskV1DecisionsPost201Response, RiskV1DecisionsPost400Response, RiskV1DecisionsPost400Response1, RiskV1UpdatePost201Response) {
   'use strict';
@@ -99,24 +99,24 @@
       var returnType = InlineResponse200;
 
       //check isMLE for an api method 'this.actionDecisionManagerCase'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'actionDecisionManagerCase');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions/{id}/actions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/risk/v1/decisions/{id}/actions', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -169,24 +169,24 @@
       var returnType = RiskV1UpdatePost201Response;
 
       //check isMLE for an api method 'this.addNegative'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'addNegative');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/lists/{type}/entries', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/risk/v1/lists/{type}/entries', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -239,24 +239,24 @@
       var returnType = InlineResponse201;
 
       //check isMLE for an api method 'this.commentDecisionManagerCase'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'commentDecisionManagerCase');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions/{id}/comments', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/risk/v1/decisions/{id}/comments', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -302,24 +302,24 @@
       var returnType = RiskV1DecisionsPost201Response;
 
       //check isMLE for an api method 'this.createBundledDecisionManagerCase'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createBundledDecisionManagerCase');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/risk/v1/decisions', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -372,24 +372,24 @@
       var returnType = RiskV1UpdatePost201Response;
 
       //check isMLE for an api method 'this.fraudUpdate'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'fraudUpdate');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions/{id}/marking', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/risk/v1/decisions/{id}/marking', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

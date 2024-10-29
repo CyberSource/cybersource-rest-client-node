@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/InlineResponse4003', 'model/InlineResponse4004', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/InlineResponse4003', 'model/InlineResponse4004', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/InlineResponse4003'), require('../model/InlineResponse4004'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/InlineResponse4003'), require('../model/InlineResponse4004'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
+    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
   }
 }(this, function(MLEUtility, ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, InlineResponse4003, InlineResponse4004, InlineResponse404, PtsV2PaymentsPost502Response, SuspendSubscriptionResponse, UpdateSubscription, UpdateSubscriptionResponse) {
   'use strict';
@@ -92,24 +92,24 @@
       var returnType = ActivateSubscriptionResponse;
 
       //check isMLE for an api method 'this.activateSubscription'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'activateSubscription');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/activate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions/{id}/activate', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -155,24 +155,24 @@
       var returnType = CancelSubscriptionResponse;
 
       //check isMLE for an api method 'this.cancelSubscription'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'cancelSubscription');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/cancel', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions/{id}/cancel', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -218,24 +218,24 @@
       var returnType = CreateSubscriptionResponse;
 
       //check isMLE for an api method 'this.createSubscription'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createSubscription');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -284,24 +284,24 @@
       var returnType = GetAllSubscriptionsResponse;
 
       //check isMLE for an api method 'this.getAllSubscriptions'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getAllSubscriptions');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -347,24 +347,24 @@
       var returnType = GetSubscriptionResponse;
 
       //check isMLE for an api method 'this.getSubscription'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getSubscription');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions/{id}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -403,24 +403,24 @@
       var returnType = GetSubscriptionCodeResponse;
 
       //check isMLE for an api method 'this.getSubscriptionCode'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getSubscriptionCode');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/code', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions/code', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -466,24 +466,24 @@
       var returnType = SuspendSubscriptionResponse;
 
       //check isMLE for an api method 'this.suspendSubscription'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'suspendSubscription');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/suspend', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions/{id}/suspend', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -536,24 +536,24 @@
       var returnType = UpdateSubscriptionResponse;
 
       //check isMLE for an api method 'this.updateSubscription'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'updateSubscription');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions/{id}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/CreateWebhookRequest', 'model/InlineResponse2002', 'model/InlineResponse2013', 'model/InlineResponse2014', 'model/SaveSymEgressKey'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhookRequest', 'model/InlineResponse2002', 'model/InlineResponse2013', 'model/InlineResponse2014', 'model/SaveSymEgressKey'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/CreateWebhookRequest'), require('../model/InlineResponse2002'), require('../model/InlineResponse2013'), require('../model/InlineResponse2014'), require('../model/SaveSymEgressKey'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhookRequest'), require('../model/InlineResponse2002'), require('../model/InlineResponse2013'), require('../model/InlineResponse2014'), require('../model/SaveSymEgressKey'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.CreateWebhookRequest, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse2014, root.CyberSource.SaveSymEgressKey);
+    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhookRequest, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse2014, root.CyberSource.SaveSymEgressKey);
   }
 }(this, function(MLEUtility, ApiClient, CreateWebhookRequest, InlineResponse2002, InlineResponse2013, InlineResponse2014, SaveSymEgressKey) {
   'use strict';
@@ -91,24 +91,24 @@
       var returnType = InlineResponse2014;
 
       //check isMLE for an api method 'this.createWebhookSubscription'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createWebhookSubscription');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v1/webhooks', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v1/webhooks', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -156,24 +156,24 @@
       var returnType = [InlineResponse2002];
 
       //check isMLE for an api method 'this.findProductsToSubscribe'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'findProductsToSubscribe');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v1/products/{organizationId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v1/products/{organizationId}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -234,24 +234,24 @@
       var returnType = InlineResponse2013;
 
       //check isMLE for an api method 'this.saveSymEgressKey'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'saveSymEgressKey');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/kms/egress/v2/keys-sym', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/kms/egress/v2/keys-sym', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 

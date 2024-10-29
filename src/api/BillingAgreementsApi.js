@@ -16,16 +16,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility','ApiClient', 'model/CreateBillingAgreement', 'model/IntimateBillingAgreement', 'model/ModifyBillingAgreement', 'model/PtsV2CreateBillingAgreementPost201Response', 'model/PtsV2CreateBillingAgreementPost400Response', 'model/PtsV2CreateBillingAgreementPost502Response', 'model/PtsV2CreditsPost201Response1', 'model/PtsV2ModifyBillingAgreementPost201Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateBillingAgreement', 'model/IntimateBillingAgreement', 'model/ModifyBillingAgreement', 'model/PtsV2CreateBillingAgreementPost201Response', 'model/PtsV2CreateBillingAgreementPost400Response', 'model/PtsV2CreateBillingAgreementPost502Response', 'model/PtsV2CreditsPost201Response1', 'model/PtsV2ModifyBillingAgreementPost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'),require('../ApiClient'), require('../model/CreateBillingAgreement'), require('../model/IntimateBillingAgreement'), require('../model/ModifyBillingAgreement'), require('../model/PtsV2CreateBillingAgreementPost201Response'), require('../model/PtsV2CreateBillingAgreementPost400Response'), require('../model/PtsV2CreateBillingAgreementPost502Response'), require('../model/PtsV2CreditsPost201Response1'), require('../model/PtsV2ModifyBillingAgreementPost201Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateBillingAgreement'), require('../model/IntimateBillingAgreement'), require('../model/ModifyBillingAgreement'), require('../model/PtsV2CreateBillingAgreementPost201Response'), require('../model/PtsV2CreateBillingAgreementPost400Response'), require('../model/PtsV2CreateBillingAgreementPost502Response'), require('../model/PtsV2CreditsPost201Response1'), require('../model/PtsV2ModifyBillingAgreementPost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BillingAgreementsApi = factory(root.Authentication.MLEUtility,root.CyberSource.ApiClient, root.CyberSource.CreateBillingAgreement, root.CyberSource.IntimateBillingAgreement, root.CyberSource.ModifyBillingAgreement, root.CyberSource.PtsV2CreateBillingAgreementPost201Response, root.CyberSource.PtsV2CreateBillingAgreementPost400Response, root.CyberSource.PtsV2CreateBillingAgreementPost502Response, root.CyberSource.PtsV2CreditsPost201Response1, root.CyberSource.PtsV2ModifyBillingAgreementPost201Response);
+    root.CyberSource.BillingAgreementsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateBillingAgreement, root.CyberSource.IntimateBillingAgreement, root.CyberSource.ModifyBillingAgreement, root.CyberSource.PtsV2CreateBillingAgreementPost201Response, root.CyberSource.PtsV2CreateBillingAgreementPost400Response, root.CyberSource.PtsV2CreateBillingAgreementPost502Response, root.CyberSource.PtsV2CreditsPost201Response1, root.CyberSource.PtsV2ModifyBillingAgreementPost201Response);
   }
 }(this, function(MLEUtility, ApiClient, CreateBillingAgreement, IntimateBillingAgreement, ModifyBillingAgreement, PtsV2CreateBillingAgreementPost201Response, PtsV2CreateBillingAgreementPost400Response, PtsV2CreateBillingAgreementPost502Response, PtsV2CreditsPost201Response1, PtsV2ModifyBillingAgreementPost201Response) {
   'use strict';
@@ -99,24 +99,24 @@
       var returnType = PtsV2ModifyBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsDeRegistration'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsDeRegistration');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/billing-agreements/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/pts/v2/billing-agreements/{id}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -169,24 +169,24 @@
       var returnType = PtsV2CreditsPost201Response1;
 
       //check isMLE for an api method 'this.billingAgreementsIntimation'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsIntimation');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/billing-agreements/{id}/intimations', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/pts/v2/billing-agreements/{id}/intimations', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
 
     /**
@@ -232,24 +232,24 @@
       var returnType = PtsV2CreateBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsRegistration'
-      var isMLESupportedByCybsForApi= false
+      var isMLESupportedByCybsForApi = false;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsRegistration');
-      if(isMLEForApi===true){
-        postBody= MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig,postBody).then(postBody=> {
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/billing-agreements', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, callback
           );
         });
-      }else{
+      } else {
         return this.apiClient.callApi(
           '/pts/v2/billing-agreements', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
       }
-      
     }
   };
 
