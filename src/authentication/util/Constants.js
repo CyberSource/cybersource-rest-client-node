@@ -26,7 +26,8 @@ module.exports = {
     STATUS_INFORMATION                :  "Status Information",
     DIGEST                            :  "digest",
     REQUEST_TYPE                      :  "Request Type",
-    CERTIFICATE_EXPIRY_DATE_WARNING_DAYS : "90",
+    CERTIFICATE_EXPIRY_DATE_WARNING_DAYS : 90,
+    FACTOR_DAYS_TO_MILLISECONDS       :  24 * 60 * 60 * 1000,
     DEFAULT_MLE_ALIAS_FOR_CERT        :  "CyberSource_SJC_US",
 
     OLD_RUN_ENVIRONMENT_CONSTANTS     :  ["CYBERSOURCE.ENVIRONMENT.SANDBOX", "CYBERSOURCE.ENVIRONMENT.PRODUCTION",
@@ -39,8 +40,8 @@ module.exports = {
     /* Logging Labels*/
     BEGIN_TRANSACTION                 :  "************************ LOGGING START ************************",
     END_TRANSACTION                   :  "************************  LOGGING END  ************************",
-    LOG_REQUEST_BEFORE_MLE            :  "Request before mle: ",
-    LOG_REQUEST_AFTER_MLE             :  "Request after mle: ",
+    LOG_REQUEST_BEFORE_MLE            :  "Request before MLE: ",
+    LOG_REQUEST_AFTER_MLE             :  "Request after MLE: ",
     MERCHANTID                        :  "MERCHANTID",
     MERCHANT_KEY_ID                   :  "MERCHANT_KEY_ID",
     MERCHANT_SECERT_KEY               :  "MERCHANT_SECERT_KEY",

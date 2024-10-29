@@ -726,7 +726,6 @@
             response = userError.response;
           }
         });
-
       }
     }
 

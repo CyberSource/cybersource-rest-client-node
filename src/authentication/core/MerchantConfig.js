@@ -73,7 +73,7 @@ function MerchantConfig(result) {
 
     /* MLE Feature */
     this.isMLE = result.isMLE;
-    this.mapToControlMLEonAPI = result.mapToControlMLEonAPI; 
+    this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
     this.mleKeyAlias = result.mleKeyAlias; //mleKeyAlias is optional parameter, default value is "CyberSource_SJC_US".
 
     /* Fallback logic*/
@@ -367,7 +367,7 @@ MerchantConfig.prototype.getIsMLE = function getIsMLE() {
 }
 
 MerchantConfig.prototype.setIsMLE = function setIsMLE(isMLE) {
-    this.isMLE =isMLE;
+    this.isMLE = isMLE;
 }
 
 MerchantConfig.prototype.getMapToControlMLEonAPI = function getMapToControlMLEonAPI() {
@@ -375,7 +375,7 @@ MerchantConfig.prototype.getMapToControlMLEonAPI = function getMapToControlMLEon
 }
 
 MerchantConfig.prototype.setMapToControlMLEonAPI = function setMapToControlMLEonAPI(mapToControlMLEonAPI) {
-    this.mapToControlMLEonAPI =mapToControlMLEonAPI;
+    this.mapToControlMLEonAPI = mapToControlMLEonAPI;
 }
 
 MerchantConfig.prototype.getMleKeyAlias = function getMleKeyAlias() {
@@ -383,7 +383,7 @@ MerchantConfig.prototype.getMleKeyAlias = function getMleKeyAlias() {
 }
 
 MerchantConfig.prototype.setMleKeyAlias = function setMleKeyAlias(mleKeyAlias) {
-    this.mleKeyAlias =mleKeyAlias;
+    this.mleKeyAlias = mleKeyAlias;
 }
 
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
@@ -427,7 +427,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     if (typeof (this.useMetaKey) !== "boolean") {
         this.useMetaKey = false;
     }
-    else if(this.useMetaKey && (this.portfolioID === null || this.portfolioID === "" || this.portfolioID === undefined))
+    else if (this.useMetaKey && (this.portfolioID === null || this.portfolioID === "" || this.portfolioID === undefined))
     {
         ApiException.ApiException(Constants.PORTFOLIO_ID_REQ, logger);
     }
@@ -435,7 +435,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     if (typeof (this.enableClientCert) !== "boolean") {
         this.enableClientCert = false;
     }
-    else if(this.enableClientCert)
+    else if (this.enableClientCert)
     {
         if (this.clientCertDir === null || this.clientCertDir === "" || this.clientCertDir === undefined) {
             ApiException.ApiException(Constants.CLIENT_CERT_DIR_EMPTY, logger);
@@ -459,7 +459,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         var certFile = path.resolve(path.join(this.clientCertDir, this.sslClientCert));
         var keyFile = path.resolve(path.join(this.clientCertDir, this.privateKey));
 
-        if(!(fs.existsSync(keyFile) && fs.existsSync(certFile)))
+        if (!(fs.existsSync(keyFile) && fs.existsSync(certFile)))
         {
             ApiException.ApiException(Constants.FILE_NOT_FOUND, logger);
         }
@@ -566,23 +566,24 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     //isMLE check for auth Type
-    if(this.isMLE===true || this.mapToControlMLEonAPI != null){
-        if(this.isMLE===true && this.authenticationType.toLowerCase() !== Constants.JWT){
+    if (this.isMLE === true || this.mapToControlMLEonAPI != null) {
+        if (this.isMLE === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
             ApiException.ApiException("MLE is only supported in JWT auth type", logger);
         }
 
-        if(this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object"){
+        if (this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object") {
             ApiException.ApiException("mapToControlMLEonAPI in merchantConfig should be key value pair", logger);
         }
-        if(this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0){
+
+        if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
             var hasTrueValue = false;
-            for (const [key, value] of Object.entries(this.mapToControlMLEonAPI)) {
-                if(value===true){
-                    hasTrueValue=true;
+            for (const[key, value] of Object.entries(this.mapToControlMLEonAPI)) {
+                if (value === true) {
+                    hasTrueValue = true;
                     break;
                 }
             }
-            if(hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT){
+            if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
                 ApiException.ApiException("MLE is only supported in JWT auth type", logger);
             }
         }
@@ -595,7 +596,6 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
      * @param {*} merchantConfig 
      */
     MerchantConfig.prototype.getAllProperties = function getAllProperties(merchantConfig) {
-
         var hiddenProperties = Constants.HideMerchantConfigProps;
         var hiddenPropertiesArray = [];
         hiddenProperties.toString().split(',').forEach(function (each) {
@@ -611,7 +611,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
         return filteredMerchantConfig;
     }
-    if(!this.logConfiguration.isExternalLoggerSet){
+    if (!this.logConfiguration.isExternalLoggerSet) {
         logger.clear();
     }
 }

@@ -11,8 +11,7 @@ var thisModule = module.exports = {
 
     /* Generating certificate in base64 */
     getX509CertificateInBase64: function (merchantConfig, logger, keyAlias) {
-
-        var p12 = Cache.fetchCachedCertificate(merchantConfig, logger);        
+        var p12 = Cache.fetchCachedCertificate(merchantConfig, logger);
         var certBags = p12.getBags({ bagType: forge.pki.oids.certBag });
         let cert = null;
         // Iterate through the certBags to find the certificate with the matching alias
@@ -24,7 +23,7 @@ var thisModule = module.exports = {
         }
 
         if (!cert) {
-            ApiException.ApiException("Certificate with alias "+ keyAlias + " not found in "+ merchantConfig.getKeyFileName() + ".p12", logger);
+            ApiException.ApiException("Certificate with alias " + keyAlias + " not found in " + merchantConfig.getKeyFileName() + ".p12", logger);
         }
         var certificatePem = forge.pki.certificateToPem(cert.cert);
         var certDer = forge.pki.pemToDer(certificatePem);
@@ -34,8 +33,7 @@ var thisModule = module.exports = {
 
     /* Generating certificate in pem */
     getX509CertificateInCert: function (merchantConfig, logger, keyAlias) {
-
-        var p12 = Cache.fetchCachedCertificate(merchantConfig, logger);        
+        var p12 = Cache.fetchCachedCertificate(merchantConfig, logger);
         var certBags = p12.getBags({ bagType: forge.pki.oids.certBag });
         let cert = null;
         // Iterate through the certBags to find the certificate with the matching alias
@@ -47,7 +45,7 @@ var thisModule = module.exports = {
         }
         //verify if cert exist for given alias
         if (!cert) {
-            ApiException.ApiException("Certificate with alias "+ keyAlias + " not found in "+ merchantConfig.getKeyFileName() + ".p12",logger);
+            ApiException.ApiException("Certificate with alias " + keyAlias + " not found in " + merchantConfig.getKeyFileName() + ".p12",logger);
         }
         return cert.cert;
     },
@@ -70,19 +68,19 @@ var thisModule = module.exports = {
     },
 
     /* verify certificate expiry date */
-    verifyIsCertificateExpired: function (cert,keyAlias, logger){
+    verifyIsCertificateExpired: function (cert,keyAlias, logger) {
         const expiryDate = new Date(cert.validity.notAfter);
         const currentDate = new Date();
-        const expiryWarningDaysInMilliseconds = Constants.CERTIFICATE_EXPIRY_DATE_WARNING_DAYS *24*60*60*1000;
+        const expiryWarningDaysInMilliseconds = Constants.CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * Constants.FACTOR_DAYS_TO_MILLISECONDS;
         const timeUntilExpiry = expiryDate - currentDate;
 
         if (timeUntilExpiry <= 0) {
             // Certificate has already expired
-            logger.warn("Certificate with alias "+ keyAlias + " is expired on "+ cert.validity.notAfter +" . Please update p12 file.");
+            logger.warn("Certificate with alias " + keyAlias + " is expired as of " + cert.validity.notAfter + ". Please update p12 file.");
             return true;
         } else if (timeUntilExpiry <= expiryWarningDaysInMilliseconds) {
             // Certificate will expire in the next 90 days
-            logger.warn("Certificate with alias "+ keyAlias + " is going to expired on "+ cert.validity.notAfter +" . Please update p12 file before that.");
+            logger.warn("Certificate with alias " + keyAlias + " is going to expired on " + cert.validity.notAfter + ". Please update p12 file before that.");
             return false;
         } else {
             // Certificate is valid and not expiring in the next 90 days

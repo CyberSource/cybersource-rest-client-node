@@ -8,33 +8,34 @@ const Constants = require('./Constants');
 
 exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, operationId) {
     //isMLE for an api is false by default
-    var isMLEForAPI=false;
+    var isMLEForAPI = false;
 
     //check here isMLE True or False
     //if API is part of MLE then add the isMLE global paramter
-    if(isMLESupportedByCybsForApi === true && merchantConfig.isMLE === true){
-      isMLEForAPI=true;
+    if (isMLESupportedByCybsForApi === true && merchantConfig.isMLE === true) {
+      isMLEForAPI = true;
     }
 
     //Control the MLE only from map
-    if(merchantConfig.mapToControlMLEonAPI !=null && operationId in merchantConfig.mapToControlMLEonAPI){
-        if(merchantConfig.mapToControlMLEonAPI[operationId] === true){
-          isMLEForAPI=true;
+    if (merchantConfig.mapToControlMLEonAPI != null && operationId in merchantConfig.mapToControlMLEonAPI) {
+        if (merchantConfig.mapToControlMLEonAPI[operationId] === true) {
+          isMLEForAPI = true;
         }
-        if(merchantConfig.mapToControlMLEonAPI[operationId] === false){
-          isMLEForAPI=false;
+
+        if (merchantConfig.mapToControlMLEonAPI[operationId] === false) {
+          isMLEForAPI = false;
         }
     }
 
     return isMLEForAPI;
 }
 
-exports.encryptRequestPayload = function(merchantConfig,requestBody){
-    if(requestBody != null){
+exports.encryptRequestPayload = function(merchantConfig, requestBody) {
+    if (requestBody != null) {
         var logger = Logger.getLogger(merchantConfig, 'MLEUtility');
         return generateJWEToken(requestBody, logger, merchantConfig).then(token => {
           logger.debug(Constants.LOG_REQUEST_BEFORE_MLE + JSON.stringify(requestBody));
-          let mleRequest= createMLEJsonRequest(token);
+          let mleRequest = createMLEJsonRequest(token);
           logger.debug(Constants.LOG_REQUEST_AFTER_MLE + JSON.stringify(mleRequest));
           return mleRequest;
         });
@@ -43,18 +44,18 @@ exports.encryptRequestPayload = function(merchantConfig,requestBody){
     }
 }
 
-function generateJWEToken(requestBody, logger,merchantConfig) {
+function generateJWEToken(requestBody, logger, merchantConfig) {
   //get the MLE cert and verify the expiry of cert
-  let cert = KeyCertificate.getX509CertificateInCert(merchantConfig,logger,merchantConfig.getMleKeyAlias());
-  let isCertExpired = KeyCertificate.verifyIsCertificateExpired(cert,merchantConfig.getMleKeyAlias(),logger);
-  if(isCertExpired ===true){
-    ApiException.ApiException("Certificate for MLE with alias "+ merchantConfig.getMleKeyAlias() + " is expired in "+ merchantConfig.getKeyFileName() + ".p12",logger);
+  let cert = KeyCertificate.getX509CertificateInCert(merchantConfig, logger, merchantConfig.getMleKeyAlias());
+  let isCertExpired = KeyCertificate.verifyIsCertificateExpired(cert, merchantConfig.getMleKeyAlias(), logger);
+  if (isCertExpired === true) {
+    ApiException.ApiException("Certificate for MLE with alias " + merchantConfig.getMleKeyAlias() + " is expired in " + merchantConfig.getKeyFileName() + ".p12", logger);
   }
 
   const customHeaders = {
       iat: Math.floor(Date.now() / 1000) //epoch time in seconds
   };
-  const serialNumber = getSerialNumberFromCert(cert,merchantConfig,logger);
+  const serialNumber = getSerialNumberFromCert(cert, merchantConfig, logger);
   const headers = {
       alg: "RSA-OAEP-256",
       enc: "A256GCM",
@@ -73,11 +74,11 @@ function generateJWEToken(requestBody, logger,merchantConfig) {
   };
 
   return jose.JWE.createEncrypt({ format: 'compact', fields: headers }, { key: publicKeyInJWK, header: { kid: serialNumber } })
-        .update(payload)
-        .final()
-        .then(result => { 
-            return result;
-        })
+    .update(payload)
+    .final()
+    .then(result => {
+        return result;
+    });
 }
 
 function toBase64Url(bi) {
@@ -93,16 +94,16 @@ function createMLEJsonRequest(jweToken) {
   return mleJson;
 }
 
-function getSerialNumberFromCert(cert,merchantConfig,logger) {
+function getSerialNumberFromCert(cert, merchantConfig, logger) {
   if (!cert.subject || !cert.subject.attributes) {
-      throw new Error("Subject or attributes are missing in mle cert");
+      throw new Error("Subject or attributes are missing in MLE cert");
   }
 
   const serialNumberAttr = cert.subject.attributes.find(attr => attr.name === 'serialNumber');
   if (serialNumberAttr) {
       return serialNumberAttr.value;
   } else {
-    logger.warn("Serial number not found in mle certificate for alias "+ merchantConfig.getMleKeyAlias() + " in "+ merchantConfig.getKeyFileName() + ".p12");
+    logger.warn("Serial number not found in MLE certificate for alias " + merchantConfig.getMleKeyAlias() + " in " + merchantConfig.getKeyFileName() + ".p12");
     return cert.serialNumber;
   }
 }

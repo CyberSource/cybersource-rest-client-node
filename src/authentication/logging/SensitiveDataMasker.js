@@ -6,18 +6,18 @@ const Constants = require('../util/Constants');
 
 
 function maskSensitiveData(message) {
-
-    if(typeof message === 'string' && message.startsWith(Constants.LOG_REQUEST_BEFORE_MLE)){
+    var jsonMsg = "";
+    if (typeof message === 'string' && message.startsWith(Constants.LOG_REQUEST_BEFORE_MLE)) {
         return Constants.LOG_REQUEST_BEFORE_MLE + maskSensitiveData(message.substring(Constants.LOG_REQUEST_BEFORE_MLE.length));
     }
-    if(typeof message === 'string' && message.startsWith(Constants.LOG_REQUEST_AFTER_MLE)){
+    if (typeof message === 'string' && message.startsWith(Constants.LOG_REQUEST_AFTER_MLE)) {
         return Constants.LOG_REQUEST_AFTER_MLE + maskSensitiveData(message.substring(Constants.LOG_REQUEST_AFTER_MLE.length));
     }
 
-    if(Utility.isJsonString(message)){
-        jsonMsg= JSON.parse(message)
-    }else{
-        var jsonMsg = JSON.parse(JSON.stringify(message));
+    if (Utility.isJsonString(message)) {
+        jsonMsg = JSON.parse(message)
+    } else {
+        jsonMsg = JSON.parse(JSON.stringify(message));
     }
 
     var sensitiveFields = maskingTags.getSensitiveDataTags();
