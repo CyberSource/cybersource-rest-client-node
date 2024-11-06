@@ -6,9 +6,9 @@ This feature provides an implementation of Message Level Encryption (MLE) for AP
 
 ### Global MLE Configuration
 
-In the `merchantConfig` object, set the `isMLE` variable to enable or disable MLE for all APIs globally.
+In the `merchantConfig` object, set the `useMLEGlobally` variable to enable or disable MLE for all APIs globally.
 
-- **Variable**: `isMLE`
+- **Variable**: `useMLEGlobally`
 - **Type**: `boolean`
 - **Default**: `false`
 - **Description**: Enables MLE globally for all APIs when set to `true`. If set to `true`, it will enable MLE for all API calls that support MLE by CyberSource, unless overridden by `mapToControlMLEonAPI`.
@@ -35,7 +35,16 @@ Another optional parameter for MLE is `mleKeyAlias`, which specifies the key ali
 ```json
 {
   "merchantConfig": {
-    "isMLE": true,
+    "useMLEGlobally": true
+  }
+}
+```
+Or 
+
+```json
+{
+  "merchantConfig": {
+    "useMLEGlobally": true,
     "mapToControlMLEonAPI": {
       "apiFunctionName1": false,
       "apiFunctionName2": true
@@ -45,7 +54,7 @@ Another optional parameter for MLE is `mleKeyAlias`, which specifies the key ali
 }
 ```
 In the above example:
-- MLE is enabled globally (`isMLE` is true).
+- MLE is enabled globally (`useMLEGlobally` is true).
 - `apiFunctionName1` will have MLE disabled.
 - `apiFunctionName2` will have MLE enabled.
 - `mleKeyAlias` is set to `Custom_Key_Alias`, overriding the default value.
@@ -61,8 +70,8 @@ In the above example:
 To use the MLE feature in the SDK, configure the `merchantConfig` object as shown above and pass it to the SDK initialization.
 
 ## Notes
-- If `isMLE` is set to true, it will enable MLE for all API calls that support MLE by CyberSource, unless overridden by mapToControlMLEonAPI.
-- If `mapToControlMLEonAPI` is not provided or does not contain a specific API function name, the global isMLE setting will be applied.
+- If `useMLEGlobally` is set to true, it will enable MLE for all API calls that support MLE by CyberSource, unless overridden by mapToControlMLEonAPI.
+- If `mapToControlMLEonAPI` is not provided or does not contain a specific API function name, the global useMLEGlobally setting will be applied.
 - The `mleKeyAlias` parameter is optional and defaults to CyberSource_SJC_US if not specified by the user. Users can override this default value by setting their own key alias.
 ### Contact
 For any issues or further assistance, please open an issue on the GitHub repository or contact our support team.
