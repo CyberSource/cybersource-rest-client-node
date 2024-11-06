@@ -6,7 +6,7 @@ This feature provides an implementation of Message Level Encryption (MLE) for AP
 
 ### Global MLE Configuration
 
-In the `merchantConfig` object, set the `useMLEGlobally` variable to enable or disable MLE for all APIs globally.
+In the `merchantConfig` object, set the `useMLEGlobally` variable to enable or disable MLE for all supported APIs for the Rest SDK.
 
 - **Variable**: `useMLEGlobally`
 - **Type**: `boolean`
