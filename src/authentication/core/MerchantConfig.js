@@ -72,7 +72,7 @@ function MerchantConfig(result) {
     this.defaultHeaders = result.defaultHeaders;
 
     /* MLE Feature */
-    this.isMLE = result.isMLE;
+    this.useMLEGlobally = result.useMLEGlobally;
     this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
     this.mleKeyAlias = result.mleKeyAlias; //mleKeyAlias is optional parameter, default value is "CyberSource_SJC_US".
 
@@ -362,12 +362,12 @@ MerchantConfig.prototype.setpemFileDirectory = function getpemFileDirectory(pemF
     this.pemFileDirectory = pemFileDirectory;
 }
 
-MerchantConfig.prototype.getIsMLE = function getIsMLE() {
-    return this.isMLE;
+MerchantConfig.prototype.getUseMLEGlobally = function getUseMLEGlobally() {
+    return this.useMLEGlobally;
 }
 
-MerchantConfig.prototype.setIsMLE = function setIsMLE(isMLE) {
-    this.isMLE = isMLE;
+MerchantConfig.prototype.setUseMLEGlobally = function setUseMLEGlobally(useMLEGlobally) {
+    this.useMLEGlobally = useMLEGlobally;
 }
 
 MerchantConfig.prototype.getMapToControlMLEonAPI = function getMapToControlMLEonAPI() {
@@ -565,9 +565,9 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         this.mleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
     }
 
-    //isMLE check for auth Type
-    if (this.isMLE === true || this.mapToControlMLEonAPI != null) {
-        if (this.isMLE === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
+    //useMLEGlobally check for auth Type
+    if (this.useMLEGlobally === true || this.mapToControlMLEonAPI != null) {
+        if (this.useMLEGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
             ApiException.ApiException("MLE is only supported in JWT auth type", logger);
         }
 

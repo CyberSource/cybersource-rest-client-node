@@ -10,9 +10,9 @@ exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, 
     //isMLE for an api is false by default
     var isMLEForAPI = false;
 
-    //check here isMLE True or False
-    //if API is part of MLE then add the isMLE global paramter
-    if (isMLESupportedByCybsForApi === true && merchantConfig.isMLE === true) {
+    //check here useMLEGlobally True or False
+    //if API is part of MLE then check for useMLEGlobally global paramter
+    if (isMLESupportedByCybsForApi === true && merchantConfig.useMLEGlobally === true) {
       isMLEForAPI = true;
     }
 
