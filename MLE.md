@@ -46,8 +46,8 @@ Or
   "merchantConfig": {
     "useMLEGlobally": true,
     "mapToControlMLEonAPI": {
-      "apiFunctionName1": false,
-      "apiFunctionName2": true
+      "apiFunctionName1": false, //if want to disable the particular api from list of MLE supported APIs
+      "apiFunctionName2": true //if want to enable MLE on API which is not in the list of supported MLE APIs for used version of Rest SDK
     },
     "mleKeyAlias": "Custom_Key_Alias"
   }
