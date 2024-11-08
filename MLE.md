@@ -89,5 +89,5 @@ In the above examples:
 ### Using the SDK
 To use the MLE feature in the SDK, configure the `merchantConfig` object as shown above and pass it to the SDK initialization.
 
-### Contact
+## Contact
 For any issues or further assistance, please open an issue on the GitHub repository or contact our support team.
