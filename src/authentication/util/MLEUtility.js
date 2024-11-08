@@ -48,9 +48,9 @@ function generateJWEToken(requestBody, logger, merchantConfig) {
   //get the MLE cert and verify the expiry of cert
   let cert = KeyCertificate.getX509CertificateInCert(merchantConfig, logger, merchantConfig.getMleKeyAlias());
   let isCertExpired = KeyCertificate.verifyIsCertificateExpired(cert, merchantConfig.getMleKeyAlias(), logger);
-  if (isCertExpired === true) {
-    ApiException.ApiException("Certificate for MLE with alias " + merchantConfig.getMleKeyAlias() + " is expired in " + merchantConfig.getKeyFileName() + ".p12", logger);
-  }
+  // if (isCertExpired === true) {
+  //   ApiException.ApiException("Certificate for MLE with alias " + merchantConfig.getMleKeyAlias() + " is expired in " + merchantConfig.getKeyFileName() + ".p12", logger);
+  // }
 
   const customHeaders = {
       iat: Math.floor(Date.now() / 1000) //epoch time in seconds
