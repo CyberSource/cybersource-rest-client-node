@@ -30,12 +30,17 @@ Another optional parameter for MLE is `mleKeyAlias`, which specifies the key ali
 - **Default**: `CyberSource_SJC_US`
 - **Description**: By default, CyberSource uses the `CyberSource_SJC_US` public certificate to encrypt the payload. However, users can override this default value by setting their own key alias.
 
+## Notes
+- If `useMLEGlobally` is set to true, it will enable MLE for all API calls that support MLE by CyberSource, unless overridden by mapToControlMLEonAPI.
+- If `mapToControlMLEonAPI` is not provided or does not contain a specific API function name, the global useMLEGlobally setting will be applied.
+- The `mleKeyAlias` parameter is optional and defaults to CyberSource_SJC_US if not specified by the user. Users can override this default value by setting their own key alias.
+
 ## Example Configuration
 
 ```json
 {
   "merchantConfig": {
-    "useMLEGlobally": true
+    "useMLEGlobally": true //globally MLE will be enabled for all MLE supported APIs
   }
 }
 ```
@@ -44,18 +49,33 @@ Or
 ```json
 {
   "merchantConfig": {
-    "useMLEGlobally": true,
+    "useMLEGlobally": true, //globally MLE will be enabled for all MLE supported APIs
     "mapToControlMLEonAPI": {
       "apiFunctionName1": false, //if want to disable the particular api from list of MLE supported APIs
       "apiFunctionName2": true //if want to enable MLE on API which is not in the list of supported MLE APIs for used version of Rest SDK
     },
-    "mleKeyAlias": "Custom_Key_Alias"
+    "mleKeyAlias": "Custom_Key_Alias" //optional if any custom value provided by Cybs
   }
 }
 ```
-In the above example:
-- MLE is enabled globally (`useMLEGlobally` is true).
-- `apiFunctionName1` will have MLE disabled.
+Or
+
+```json
+{
+  "merchantConfig": {
+    "useMLEGlobally": false, //globally MLE will be disabled for all APIs
+    "mapToControlMLEonAPI": {
+      "apiFunctionName1": true, //if want to enable MLE for API1
+      "apiFunctionName2": true //if want to enable MLE for API2
+    },
+    "mleKeyAlias": "Custom_Key_Alias" //optional if any custom value provided by Cybs
+  }
+}
+```
+
+In the above examples:
+- MLE is enabled/disabled globally (`useMLEGlobally` is true/false).
+- `apiFunctionName1` will have MLE disabled/enabled based on value provided.
 - `apiFunctionName2` will have MLE enabled.
 - `mleKeyAlias` is set to `Custom_Key_Alias`, overriding the default value.
 
@@ -65,13 +85,9 @@ In the above example:
 - MLE is initially designed to support a few APIs.
 - It can be extended to support more APIs in the future based on requirements and updates.
 ### Authentication Type
-- MLE is only supported with JWT (JSON Web Token) authentication type within the SDK.
+- MLE is only supported with `JWT (JSON Web Token)` authentication type within the SDK.
 ### Using the SDK
 To use the MLE feature in the SDK, configure the `merchantConfig` object as shown above and pass it to the SDK initialization.
 
-## Notes
-- If `useMLEGlobally` is set to true, it will enable MLE for all API calls that support MLE by CyberSource, unless overridden by mapToControlMLEonAPI.
-- If `mapToControlMLEonAPI` is not provided or does not contain a specific API function name, the global useMLEGlobally setting will be applied.
-- The `mleKeyAlias` parameter is optional and defaults to CyberSource_SJC_US if not specified by the user. Users can override this default value by setting their own key alias.
 ### Contact
 For any issues or further assistance, please open an issue on the GitHub repository or contact our support team.
