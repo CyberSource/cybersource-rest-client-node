@@ -59,6 +59,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -105,8 +109,20 @@
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
       }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
       if (data.hasOwnProperty('personalIdentification')) {
         obj['personalIdentification'] = Ptsv1pushfundstransferRecipientInformationPersonalIdentification.constructFromObject(data['personalIdentification']);
+      }
+      if (data.hasOwnProperty('buildingNumber')) {
+        obj['buildingNumber'] = ApiClient.convertToType(data['buildingNumber'], 'String');
+      }
+      if (data.hasOwnProperty('streetName')) {
+        obj['streetName'] = ApiClient.convertToType(data['streetName'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
     }
     return obj;
@@ -162,14 +178,34 @@
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * Recipient phone number.  This field is supported by FDC Compass.  Mastercard Send: Max length is 15 with no dashes or spaces. 
+   * Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
+   * Customer's email address, including the full domain name. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
    * @member {module:model/Ptsv1pushfundstransferRecipientInformationPersonalIdentification} personalIdentification
    */
   exports.prototype['personalIdentification'] = undefined;
+  /**
+   * Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only. 
+   * @member {String} buildingNumber
+   */
+  exports.prototype['buildingNumber'] = undefined;
+  /**
+   * This field contains the street name of the recipient's address.  Applicable to domestic Colombia transactions only. 
+   * @member {String} streetName
+   */
+  exports.prototype['streetName'] = undefined;
+  /**
+   * `B` for Business or `I` for individual. 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
 
 
 

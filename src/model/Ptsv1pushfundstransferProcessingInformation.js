@@ -50,6 +50,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -69,15 +73,27 @@
       if (data.hasOwnProperty('payoutsOptions')) {
         obj['payoutsOptions'] = Ptsv1pushfundstransferProcessingInformationPayoutsOptions.constructFromObject(data['payoutsOptions']);
       }
-      if (data.hasOwnProperty('enablerId')) {
-        obj['enablerId'] = ApiClient.convertToType(data['enablerId'], 'String');
+      if (data.hasOwnProperty('feeProgramId')) {
+        obj['feeProgramId'] = ApiClient.convertToType(data['feeProgramId'], 'String');
+      }
+      if (data.hasOwnProperty('networkPartnerId')) {
+        obj['networkPartnerId'] = ApiClient.convertToType(data['networkPartnerId'], 'String');
+      }
+      if (data.hasOwnProperty('processingCode')) {
+        obj['processingCode'] = ApiClient.convertToType(data['processingCode'], 'String');
+      }
+      if (data.hasOwnProperty('sharingGroupCode')) {
+        obj['sharingGroupCode'] = ApiClient.convertToType(data['sharingGroupCode'], 'String');
+      }
+      if (data.hasOwnProperty('purposeOfPayment')) {
+        obj['purposeOfPayment'] = ApiClient.convertToType(data['purposeOfPayment'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Payouts transaction type.  Business Application ID: - `PP`: Person to person. - `FD`: Funds disbursement (general) 
+   * Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `TU`: Prepaid Card Loan - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer - `PP`: P2P Money Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay  - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service 
    * @member {String} businessApplicationId
    */
   exports.prototype['businessApplicationId'] = undefined;
@@ -86,10 +102,30 @@
    */
   exports.prototype['payoutsOptions'] = undefined;
   /**
-   * Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. 
-   * @member {String} enablerId
+   * Fee Program Indicator. This field identifies the interchange fee program applicable to each financial transaction. Fee program indicator (FPI) values correspond to the fee descriptor and rate for each existing fee program. 
+   * @member {String} feeProgramId
    */
-  exports.prototype['enablerId'] = undefined;
+  exports.prototype['feeProgramId'] = undefined;
+  /**
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. 
+   * @member {String} networkPartnerId
+   */
+  exports.prototype['networkPartnerId'] = undefined;
+  /**
+   * This field contains coding that identifies (1) the customer transaction type and (2) the customer account types affected by the transaction.  Default: 5402 (Original Credit Transaction)  Contains codes that combined with some other fields such as the BAI (Business Application Id) identify some unique use cases. For Sales Tax rebates this field should be populated with the value 5120 (Value-added tax/Sales Tax) along with the businessApplicationId field set to the value 'FD' which indicates this push funds transfer is being conducted in order to facilitate a sales tax refund. 
+   * @member {String} processingCode
+   */
+  exports.prototype['processingCode'] = undefined;
+  /**
+   * This U.S.-only field is optionally used by PIN Debit Gateway Service participants (merchants and acquirers) to specify the network access priority. VisaNet checks to determine if there are issuer routing preferences for a network specified by the sharing group code. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on issuer preference. If an preference exists for multiple specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on acquirer routing priorities.  Valid Values:  ACCEL_EXCHANGE_E  CU24_C  INTERLINK_G  MAESTRO_8  NYCE_Y  NYCE_F  PULSE_S  PULSE_L  PULSE_H  STAR_N  STAR_W  STAR_Z  STAR_Q  STAR_M  VISA_V 
+   * @member {String} sharingGroupCode
+   */
+  exports.prototype['sharingGroupCode'] = undefined;
+  /**
+   * This will send purpose of funds code for original credit transactions (OCTs). 
+   * @member {String} purposeOfPayment
+   */
+  exports.prototype['purposeOfPayment'] = undefined;
 
 
 

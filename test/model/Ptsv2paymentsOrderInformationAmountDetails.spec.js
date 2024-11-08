@@ -218,6 +218,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property octSurcharge (base name: "oct-surcharge")', function() {
+      // uncomment below and update the code to test the property octSurcharge
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property order (base name: "order")', function() {
       // uncomment below and update the code to test the property order
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationAmountDetails();

@@ -69,37 +69,11 @@
   }
 
   /**
-   * @member {Array.<module:model/SAConfigPaymentMethods.EnabledPaymentMethodsEnum>} enabledPaymentMethods
+   * @member {Array.<String>} enabledPaymentMethods
    */
   exports.prototype['enabledPaymentMethods'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>enabledPaymentMethods</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.EnabledPaymentMethodsEnum = {
-    /**
-     * value: "CARD"
-     * @const
-     */
-    "CARD": "CARD",
-    /**
-     * value: "ECHECK"
-     * @const
-     */
-    "ECHECK": "ECHECK",
-    /**
-     * value: "VISACHECKOUT"
-     * @const
-     */
-    "VISACHECKOUT": "VISACHECKOUT",
-    /**
-     * value: "PAYPAL"
-     * @const
-     */
-    "PAYPAL": "PAYPAL"  };
 
   return exports;
 }));

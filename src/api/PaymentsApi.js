@@ -81,7 +81,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/OrderPaymentRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/OrderPaymentRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
         'id': id
@@ -145,7 +145,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreatePaymentRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreatePaymentRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };
@@ -208,7 +208,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionReq', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionReq', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };
@@ -277,7 +277,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/IncrementAuthRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/IncrementAuthRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
         'id': id
@@ -347,7 +347,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/RefreshPaymentStatusRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/RefreshPaymentStatusRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
         'id': id
@@ -417,7 +417,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
         'id': id

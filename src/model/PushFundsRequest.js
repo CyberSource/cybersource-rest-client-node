@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv1pushfundstransferClientReferenceInformation', 'model/Ptsv1pushfundstransferOrderInformation', 'model/Ptsv1pushfundstransferProcessingInformation', 'model/Ptsv1pushfundstransferRecipientInformation', 'model/Ptsv1pushfundstransferSenderInformation'], factory);
+    define(['ApiClient', 'model/Ptsv1pushfundstransferAggregatorInformation', 'model/Ptsv1pushfundstransferClientReferenceInformation', 'model/Ptsv1pushfundstransferMerchantInformation', 'model/Ptsv1pushfundstransferOrderInformation', 'model/Ptsv1pushfundstransferPointOfServiceInformation', 'model/Ptsv1pushfundstransferProcessingInformation', 'model/Ptsv1pushfundstransferRecipientInformation', 'model/Ptsv1pushfundstransferSenderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferClientReferenceInformation'), require('./Ptsv1pushfundstransferOrderInformation'), require('./Ptsv1pushfundstransferProcessingInformation'), require('./Ptsv1pushfundstransferRecipientInformation'), require('./Ptsv1pushfundstransferSenderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferAggregatorInformation'), require('./Ptsv1pushfundstransferClientReferenceInformation'), require('./Ptsv1pushfundstransferMerchantInformation'), require('./Ptsv1pushfundstransferOrderInformation'), require('./Ptsv1pushfundstransferPointOfServiceInformation'), require('./Ptsv1pushfundstransferProcessingInformation'), require('./Ptsv1pushfundstransferRecipientInformation'), require('./Ptsv1pushfundstransferSenderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PushFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pushfundstransferOrderInformation, root.CyberSource.Ptsv1pushfundstransferProcessingInformation, root.CyberSource.Ptsv1pushfundstransferRecipientInformation, root.CyberSource.Ptsv1pushfundstransferSenderInformation);
+    root.CyberSource.PushFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferAggregatorInformation, root.CyberSource.Ptsv1pushfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pushfundstransferMerchantInformation, root.CyberSource.Ptsv1pushfundstransferOrderInformation, root.CyberSource.Ptsv1pushfundstransferPointOfServiceInformation, root.CyberSource.Ptsv1pushfundstransferProcessingInformation, root.CyberSource.Ptsv1pushfundstransferRecipientInformation, root.CyberSource.Ptsv1pushfundstransferSenderInformation);
   }
-}(this, function(ApiClient, Ptsv1pushfundstransferClientReferenceInformation, Ptsv1pushfundstransferOrderInformation, Ptsv1pushfundstransferProcessingInformation, Ptsv1pushfundstransferRecipientInformation, Ptsv1pushfundstransferSenderInformation) {
+}(this, function(ApiClient, Ptsv1pushfundstransferAggregatorInformation, Ptsv1pushfundstransferClientReferenceInformation, Ptsv1pushfundstransferMerchantInformation, Ptsv1pushfundstransferOrderInformation, Ptsv1pushfundstransferPointOfServiceInformation, Ptsv1pushfundstransferProcessingInformation, Ptsv1pushfundstransferRecipientInformation, Ptsv1pushfundstransferSenderInformation) {
   'use strict';
 
 
@@ -44,14 +44,16 @@
    * @alias module:model/PushFundsRequest
    * @class
    * @param orderInformation {module:model/Ptsv1pushfundstransferOrderInformation} 
-   * @param processingInformation {module:model/Ptsv1pushfundstransferProcessingInformation} 
    */
-  var exports = function(orderInformation, processingInformation) {
+  var exports = function(orderInformation) {
     var _this = this;
 
 
+
     _this['orderInformation'] = orderInformation;
-    _this['processingInformation'] = processingInformation;
+
+
+
 
 
   };
@@ -67,6 +69,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('aggregatorInformation')) {
+        obj['aggregatorInformation'] = Ptsv1pushfundstransferAggregatorInformation.constructFromObject(data['aggregatorInformation']);
+      }
       if (data.hasOwnProperty('clientReferenceInformation')) {
         obj['clientReferenceInformation'] = Ptsv1pushfundstransferClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
@@ -82,10 +87,20 @@
       if (data.hasOwnProperty('senderInformation')) {
         obj['senderInformation'] = Ptsv1pushfundstransferSenderInformation.constructFromObject(data['senderInformation']);
       }
+      if (data.hasOwnProperty('merchantInformation')) {
+        obj['merchantInformation'] = Ptsv1pushfundstransferMerchantInformation.constructFromObject(data['merchantInformation']);
+      }
+      if (data.hasOwnProperty('pointOfServiceInformation')) {
+        obj['pointOfServiceInformation'] = Ptsv1pushfundstransferPointOfServiceInformation.constructFromObject(data['pointOfServiceInformation']);
+      }
     }
     return obj;
   }
 
+  /**
+   * @member {module:model/Ptsv1pushfundstransferAggregatorInformation} aggregatorInformation
+   */
+  exports.prototype['aggregatorInformation'] = undefined;
   /**
    * @member {module:model/Ptsv1pushfundstransferClientReferenceInformation} clientReferenceInformation
    */
@@ -106,6 +121,14 @@
    * @member {module:model/Ptsv1pushfundstransferSenderInformation} senderInformation
    */
   exports.prototype['senderInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv1pushfundstransferMerchantInformation} merchantInformation
+   */
+  exports.prototype['merchantInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv1pushfundstransferPointOfServiceInformation} pointOfServiceInformation
+   */
+  exports.prototype['pointOfServiceInformation'] = undefined;
 
 
 

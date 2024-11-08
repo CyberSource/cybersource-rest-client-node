@@ -85,13 +85,13 @@
   }
 
   /**
-   * Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK
-   * @member {module:model/PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation.PaymentTypeEnum} paymentType
+   * Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK  Possible values: - MASTERDEBIT - MASTERCREDIT - VISACREDIT - VISADEBIT - DISCOVERCREDIT - AMEXCREDIT - ECHECK
+   * @member {String} paymentType
    */
   exports.prototype['paymentType'] = undefined;
   /**
-   * Fee type for the selected payment type. Supported values are: Flat or Percentage. 
-   * @member {module:model/PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation.FeeTypeEnum} feeType
+   * Fee type for the selected payment type. Supported values are: Flat or Percentage.   Possible values: - FLAT - PERCENTAGE
+   * @member {String} feeType
    */
   exports.prototype['feeType'] = undefined;
   /**
@@ -111,63 +111,6 @@
   exports.prototype['feeCap'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>paymentType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.PaymentTypeEnum = {
-    /**
-     * value: "MASTERDEBIT"
-     * @const
-     */
-    "MASTERDEBIT": "MASTERDEBIT",
-    /**
-     * value: "MASTERCREDIT"
-     * @const
-     */
-    "MASTERCREDIT": "MASTERCREDIT",
-    /**
-     * value: "VISACREDIT"
-     * @const
-     */
-    "VISACREDIT": "VISACREDIT",
-    /**
-     * value: "VISADEBIT"
-     * @const
-     */
-    "VISADEBIT": "VISADEBIT",
-    /**
-     * value: "DISCOVERCREDIT"
-     * @const
-     */
-    "DISCOVERCREDIT": "DISCOVERCREDIT",
-    /**
-     * value: "AMEXCREDIT"
-     * @const
-     */
-    "AMEXCREDIT": "AMEXCREDIT",
-    /**
-     * value: "ECHECK"
-     * @const
-     */
-    "ECHECK": "ECHECK"  };
-  /**
-   * Allowed values for the <code>feeType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.FeeTypeEnum = {
-    /**
-     * value: "FLAT"
-     * @const
-     */
-    "FLAT": "FLAT",
-    /**
-     * value: "PERCENTAGE"
-     * @const
-     */
-    "PERCENTAGE": "PERCENTAGE"  };
 
   return exports;
 }));

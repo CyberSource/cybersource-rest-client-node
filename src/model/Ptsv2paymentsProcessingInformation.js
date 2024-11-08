@@ -84,6 +84,7 @@
 
 
 
+
   };
 
   /**
@@ -208,12 +209,15 @@
       if (data.hasOwnProperty('enablerId')) {
         obj['enablerId'] = ApiClient.convertToType(data['enablerId'], 'String');
       }
+      if (data.hasOwnProperty('processingInstruction')) {
+        obj['processingInstruction'] = ApiClient.convertToType(data['processingInstruction'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested. 
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested.   - `AP_REAUTH` : Use this when Alternative Payment Reauthorize service is requested. 
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
@@ -390,6 +394,11 @@
    * @member {String} enablerId
    */
   exports.prototype['enablerId'] = undefined;
+  /**
+   * The instruction to process an order. - default value: 'NO_INSTRUCTION' - 'ORDER_SAVED_EXPLICITLY' 
+   * @member {String} processingInstruction
+   */
+  exports.prototype['processingInstruction'] = undefined;
 
 
 

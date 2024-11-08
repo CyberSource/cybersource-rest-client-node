@@ -49,6 +49,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -68,20 +71,44 @@
       if (data.hasOwnProperty('destinationCurrency')) {
         obj['destinationCurrency'] = ApiClient.convertToType(data['destinationCurrency'], 'String');
       }
+      if (data.hasOwnProperty('sourceAmount')) {
+        obj['sourceAmount'] = ApiClient.convertToType(data['sourceAmount'], 'String');
+      }
+      if (data.hasOwnProperty('retrievalReferenceNumber')) {
+        obj['retrievalReferenceNumber'] = ApiClient.convertToType(data['retrievalReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('accountFundingReferenceId')) {
+        obj['accountFundingReferenceId'] = ApiClient.convertToType(data['accountFundingReferenceId'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Use a 3-character alpha currency code for source currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
+   * Use a 3-character alpha currency code for source currency of the funds transfer.  Required if sending processingInformation.payoutsOptions.sourceAmount.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
    * @member {String} sourceCurrency
    */
   exports.prototype['sourceCurrency'] = undefined;
   /**
-   * Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
+   * Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper  Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
    * @member {String} destinationCurrency
    */
   exports.prototype['destinationCurrency'] = undefined;
+  /**
+   * Source Amount is required in certain markets to identify the transaction amount entered in the sender's currency code prior to FX conversion by the originating entity.  Format:  Minimum Value: 0  Maximum value: 999999999.99  Allowed fractional digits: 2 
+   * @member {String} sourceAmount
+   */
+  exports.prototype['sourceAmount'] = undefined;
+  /**
+   * Unique reference number returned by the processor that identifies the transaction at the network. 
+   * @member {String} retrievalReferenceNumber
+   */
+  exports.prototype['retrievalReferenceNumber'] = undefined;
+  /**
+   * Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. 
+   * @member {String} accountFundingReferenceId
+   */
+  exports.prototype['accountFundingReferenceId'] = undefined;
 
 
 

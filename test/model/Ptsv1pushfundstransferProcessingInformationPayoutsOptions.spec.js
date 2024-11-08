@@ -68,6 +68,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sourceAmount (base name: "sourceAmount")', function() {
+      // uncomment below and update the code to test the property sourceAmount
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property retrievalReferenceNumber (base name: "retrievalReferenceNumber")', function() {
+      // uncomment below and update the code to test the property retrievalReferenceNumber
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountFundingReferenceId (base name: "accountFundingReferenceId")', function() {
+      // uncomment below and update the code to test the property accountFundingReferenceId
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformationPayoutsOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

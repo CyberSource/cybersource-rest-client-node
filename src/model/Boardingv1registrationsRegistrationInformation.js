@@ -103,7 +103,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of Registration request Possible Values:   - 'PROCESSING': This status is for Registrations that are still in Progress, you can get the latest status by calling the GET endpoint using the Registration Id   - 'SUCCESS': This status is for Registrations that were successfull on every step of the on boarding process.   - 'FAILURE': This status is for Registrations that fail before the Organization was created; please refer to the details section in the reponse for more information.   - 'PARTIAL': This status is for Registrations that created the Organization successfully but fail in at least on step while configuring it; please refer to the details section in the response for more information. 
-   * @member {module:model/Boardingv1registrationsRegistrationInformation.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -112,12 +112,12 @@
   exports.prototype['boardingPackageId'] = undefined;
   /**
    * Determines the boarding flow for this registration. Possible Values:   - 'ENTERPRISE'   - 'SMB'   - 'ADDPRODUCT' 
-   * @member {module:model/Boardingv1registrationsRegistrationInformation.BoardingFlowEnum} boardingFlow
+   * @member {String} boardingFlow
    */
   exports.prototype['boardingFlow'] = undefined;
   /**
    * In case mode is not provided the API will use COMPLETE as default Possible Values:   - 'COMPLETE'   - 'PARTIAL' 
-   * @member {module:model/Boardingv1registrationsRegistrationInformation.ModeEnum} mode
+   * @member {String} mode
    */
   exports.prototype['mode'] = undefined;
   /**
@@ -126,69 +126,6 @@
   exports.prototype['salesRepId'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "PROCESSING"
-     * @const
-     */
-    "PROCESSING": "PROCESSING",
-    /**
-     * value: "SUCCESS"
-     * @const
-     */
-    "SUCCESS": "SUCCESS",
-    /**
-     * value: "FAILURE"
-     * @const
-     */
-    "FAILURE": "FAILURE",
-    /**
-     * value: "PARTIAL"
-     * @const
-     */
-    "PARTIAL": "PARTIAL"  };
-  /**
-   * Allowed values for the <code>boardingFlow</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.BoardingFlowEnum = {
-    /**
-     * value: "ENTERPRISE"
-     * @const
-     */
-    "ENTERPRISE": "ENTERPRISE",
-    /**
-     * value: "SMB"
-     * @const
-     */
-    "SMB": "SMB",
-    /**
-     * value: "ADDPRODUCT"
-     * @const
-     */
-    "ADDPRODUCT": "ADDPRODUCT"  };
-  /**
-   * Allowed values for the <code>mode</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ModeEnum = {
-    /**
-     * value: "COMPLETE"
-     * @const
-     */
-    "COMPLETE": "COMPLETE",
-    /**
-     * value: "PARTIAL"
-     * @const
-     */
-    "PARTIAL": "PARTIAL"  };
 
   return exports;
 }));

@@ -1,4 +1,4 @@
-# CyberSource.BinLookupv400Response
+# CyberSource.PtsV2CreateOrderPost400Response
 
 ## Properties
 Name | Type | Description | Notes

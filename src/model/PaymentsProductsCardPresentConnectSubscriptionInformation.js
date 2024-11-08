@@ -77,24 +77,13 @@
    */
   exports.prototype['enabled'] = undefined;
   /**
-   * Indicates if the organization can enable this product using self service.
-   * @member {module:model/PaymentsProductsCardPresentConnectSubscriptionInformation.SelfServiceabilityEnum} selfServiceability
+   * Indicates if the organization can enable this product using self service.  Possible values: - NOT_SELF_SERVICEABLE
+   * @member {String} selfServiceability
    * @default 'NOT_SELF_SERVICEABLE'
    */
   exports.prototype['selfServiceability'] = 'NOT_SELF_SERVICEABLE';
 
 
-  /**
-   * Allowed values for the <code>selfServiceability</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.SelfServiceabilityEnum = {
-    /**
-     * value: "NOT_SELF_SERVICEABLE"
-     * @const
-     */
-    "NOT_SELF_SERVICEABLE": "NOT_SELF_SERVICEABLE"  };
 
   return exports;
 }));

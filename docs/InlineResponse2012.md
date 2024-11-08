@@ -14,22 +14,3 @@ Name | Type | Description | Notes
 **details** | **{String: [Object]}** |  | [optional] 
 
 
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `INITIALIZED` (value: `"INITIALIZED"`)
-
-* `RECEIVED` (value: `"RECEIVED"`)
-
-* `PROCESSING` (value: `"PROCESSING"`)
-
-* `SUCCESS` (value: `"SUCCESS"`)
-
-* `FAILURE` (value: `"FAILURE"`)
-
-* `PARTIAL` (value: `"PARTIAL"`)
-
-
-
-

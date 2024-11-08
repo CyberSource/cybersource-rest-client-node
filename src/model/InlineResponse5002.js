@@ -92,7 +92,7 @@
   exports.prototype['status'] = undefined;
   /**
    * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'SYSTEM_ERROR' 
-   * @member {module:model/InlineResponse5002.ReasonEnum} reason
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -102,17 +102,6 @@
   exports.prototype['message'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "SYSTEM_ERROR"
-     * @const
-     */
-    "SYSTEM_ERROR": "SYSTEM_ERROR"  };
 
   return exports;
 }));
