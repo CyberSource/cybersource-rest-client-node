@@ -99,7 +99,7 @@
       var returnType = PtsV2PaymentsReversalsPost201Response;
 
       //check isMLE for an api method 'this.authReversal'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'authReversal');
 
       if (isMLEForApi === true) {
@@ -162,7 +162,7 @@
       var returnType = PtsV2PaymentsReversalsPost201Response;
 
       //check isMLE for an api method 'this.mitReversal'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'mitReversal');
 
       if (isMLEForApi === true) {

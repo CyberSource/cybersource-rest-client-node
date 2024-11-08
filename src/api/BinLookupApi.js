@@ -16,7 +16,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([['Authentication/MLEUtility','ApiClient', 'model/CreateBinLookupRequest', 'model/InlineResponse2011', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateBinLookupRequest', 'model/InlineResponse2011', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateBinLookupRequest'), require('../model/InlineResponse2011'), require('../model/PtsV2CreateOrderPost400Response'), require('../model/PtsV2PaymentsPost502Response'));

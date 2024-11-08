@@ -16,7 +16,6 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([
     define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateSearchRequest', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/TssV2TransactionsPost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.

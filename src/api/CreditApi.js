@@ -92,7 +92,7 @@
       var returnType = PtsV2CreditsPost201Response;
 
       //check isMLE for an api method 'this.createCredit'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createCredit');
 
       if (isMLEForApi === true) {

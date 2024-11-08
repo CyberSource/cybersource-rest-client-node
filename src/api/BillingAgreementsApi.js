@@ -99,7 +99,7 @@
       var returnType = PtsV2ModifyBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsDeRegistration'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsDeRegistration');
 
       if (isMLEForApi === true) {
@@ -169,7 +169,7 @@
       var returnType = PtsV2CreditsPost201Response1;
 
       //check isMLE for an api method 'this.billingAgreementsIntimation'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsIntimation');
 
       if (isMLEForApi === true) {
@@ -232,7 +232,7 @@
       var returnType = PtsV2CreateBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsRegistration'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsRegistration');
 
       if (isMLEForApi === true) {

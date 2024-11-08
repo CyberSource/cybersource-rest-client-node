@@ -99,7 +99,7 @@
       var returnType = PtsV2PaymentsCapturesPost201Response;
 
       //check isMLE for an api method 'this.capturePayment'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'capturePayment');
 
       if (isMLEForApi === true) {

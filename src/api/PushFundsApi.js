@@ -134,7 +134,7 @@
       var returnType = PushFunds201Response;
 
       //check isMLE for an api method 'this.createPushFundsTransfer'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createPushFundsTransfer');
 
       if (isMLEForApi === true) {

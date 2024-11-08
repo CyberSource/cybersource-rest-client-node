@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateOrderRequest', 'model/PtsV2CreateOrderPost201Response', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2UpdateOrderPatch201Response', 'model/UpdateOrderRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateOrderRequest', 'model/PtsV2CreateOrderPost201Response', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2UpdateOrderPatch201Response', 'model/UpdateOrderRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateOrderRequest'), require('../model/PtsV2CreateOrderPost201Response'), require('../model/PtsV2CreateOrderPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2UpdateOrderPatch201Response'), require('../model/UpdateOrderRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateOrderRequest'), require('../model/PtsV2CreateOrderPost201Response'), require('../model/PtsV2CreateOrderPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2UpdateOrderPatch201Response'), require('../model/UpdateOrderRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.OrdersApi = factory(root.CyberSource.ApiClient, root.CyberSource.CreateOrderRequest, root.CyberSource.PtsV2CreateOrderPost201Response, root.CyberSource.PtsV2CreateOrderPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2UpdateOrderPatch201Response, root.CyberSource.UpdateOrderRequest);
+    root.CyberSource.OrdersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateOrderRequest, root.CyberSource.PtsV2CreateOrderPost201Response, root.CyberSource.PtsV2CreateOrderPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2UpdateOrderPatch201Response, root.CyberSource.UpdateOrderRequest);
   }
-}(this, function(ApiClient, CreateOrderRequest, PtsV2CreateOrderPost201Response, PtsV2CreateOrderPost400Response, PtsV2PaymentsPost502Response, PtsV2UpdateOrderPatch201Response, UpdateOrderRequest) {
+}(this, function(MLEUtility, ApiClient, CreateOrderRequest, PtsV2CreateOrderPost201Response, PtsV2CreateOrderPost400Response, PtsV2PaymentsPost502Response, PtsV2UpdateOrderPatch201Response, UpdateOrderRequest) {
   'use strict';
 
   /**
@@ -91,11 +91,25 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2CreateOrderPost201Response;
 
-      return this.apiClient.callApi(
-        '/pts/v2/intents', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.createOrder'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createOrder');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/pts/v2/intents', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/pts/v2/intents', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -147,11 +161,25 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2UpdateOrderPatch201Response;
 
-      return this.apiClient.callApi(
-        '/pts/v2/intents/{id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.updateOrder'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'updateOrder');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/pts/v2/intents/{id}', 'PATCH',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/pts/v2/intents/{id}', 'PATCH',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 

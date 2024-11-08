@@ -92,7 +92,7 @@
       var returnType = RiskV1AuthenticationsPost201Response;
 
       //check isMLE for an api method 'this.checkPayerAuthEnrollment'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'checkPayerAuthEnrollment');
 
       if (isMLEForApi === true) {
@@ -155,7 +155,7 @@
       var returnType = RiskV1AuthenticationSetupsPost201Response;
 
       //check isMLE for an api method 'this.payerAuthSetup'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'payerAuthSetup');
 
       if (isMLEForApi === true) {
@@ -218,7 +218,7 @@
       var returnType = RiskV1AuthenticationResultsPost201Response;
 
       //check isMLE for an api method 'this.validateAuthenticationResults'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'validateAuthenticationResults');
 
       if (isMLEForApi === true) {

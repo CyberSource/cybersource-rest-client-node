@@ -92,7 +92,7 @@
       var returnType = PtsV2PayoutsPost201Response;
 
       //check isMLE for an api method 'this.octCreatePayment'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'octCreatePayment');
 
       if (isMLEForApi === true) {
