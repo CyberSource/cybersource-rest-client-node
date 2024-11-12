@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property disputeCategories (base name: "disputeCategories")', function() {
+      // uncomment below and update the code to test the property disputeCategories
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eligibilityType (base name: "eligibilityType")', function() {
       // uncomment below and update the code to test the property eligibilityType
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection();

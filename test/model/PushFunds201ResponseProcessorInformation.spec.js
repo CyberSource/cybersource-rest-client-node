@@ -80,6 +80,42 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property actionCode (base name: "actionCode")', function() {
+      // uncomment below and update the code to test the property actionCode
+      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property approvalCode (base name: "approvalCode")', function() {
+      // uncomment below and update the code to test the property approvalCode
+      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property feeProgramIndicator (base name: "feeProgramIndicator")', function() {
+      // uncomment below and update the code to test the property feeProgramIndicator
+      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property routing (base name: "routing")', function() {
+      // uncomment below and update the code to test the property routing
+      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property settlement (base name: "settlement")', function() {
+      // uncomment below and update the code to test the property settlement
+      //var instane = new CyberSource.PushFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

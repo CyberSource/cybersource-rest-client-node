@@ -116,6 +116,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInformation (base name: "paymentInformation")', function() {
+      // uncomment below and update the code to test the property paymentInformation
+      //var instane = new CyberSource.PushFunds201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
+      //var instane = new CyberSource.PushFunds201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new CyberSource.PushFunds201Response();

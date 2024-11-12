@@ -1,4 +1,4 @@
-# CyberSource.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+# CyberSource.PtsV2CreateOrderPost201ResponseBuyerInformation
 
 ## Properties
 Name | Type | Description | Notes

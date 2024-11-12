@@ -90,11 +90,13 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * @member {module:model/InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus.StatusEnum} status
+   * Possible values: - SUCCESS - FAILURE - PARTIAL - PENDING
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus.ReasonEnum} reason
+   * Possible values: - DEPENDENT_PRODUCT_NOT_CONTRACTED - DEPENDENT_FEATURE_NOT_CHOSEN - MISSING_DATA - INVALID_DATA - DUPLICATE_FIELD
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
@@ -107,63 +109,6 @@
   exports.prototype['message'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "SUCCESS"
-     * @const
-     */
-    "SUCCESS": "SUCCESS",
-    /**
-     * value: "FAILURE"
-     * @const
-     */
-    "FAILURE": "FAILURE",
-    /**
-     * value: "PARTIAL"
-     * @const
-     */
-    "PARTIAL": "PARTIAL",
-    /**
-     * value: "PENDING"
-     * @const
-     */
-    "PENDING": "PENDING"  };
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "DEPENDENT_PRODUCT_NOT_CONTRACTED"
-     * @const
-     */
-    "DEPENDENT_PRODUCT_NOT_CONTRACTED": "DEPENDENT_PRODUCT_NOT_CONTRACTED",
-    /**
-     * value: "DEPENDENT_FEATURE_NOT_CHOSEN"
-     * @const
-     */
-    "DEPENDENT_FEATURE_NOT_CHOSEN": "DEPENDENT_FEATURE_NOT_CHOSEN",
-    /**
-     * value: "MISSING_DATA"
-     * @const
-     */
-    "MISSING_DATA": "MISSING_DATA",
-    /**
-     * value: "INVALID_DATA"
-     * @const
-     */
-    "INVALID_DATA": "INVALID_DATA",
-    /**
-     * value: "DUPLICATE_FIELD"
-     * @const
-     */
-    "DUPLICATE_FIELD": "DUPLICATE_FIELD"  };
 
   return exports;
 }));

@@ -82,7 +82,7 @@
   exports.prototype['boardingPackageId'] = undefined;
   /**
    * In case mode is not provided the API will use COMPLETE as default Possible Values:   - 'COMPLETE'   - 'PARTIAL' 
-   * @member {module:model/InlineResponse2012RegistrationInformation.ModeEnum} mode
+   * @member {String} mode
    */
   exports.prototype['mode'] = undefined;
   /**
@@ -91,22 +91,6 @@
   exports.prototype['salesRepId'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>mode</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ModeEnum = {
-    /**
-     * value: "COMPLETE"
-     * @const
-     */
-    "COMPLETE": "COMPLETE",
-    /**
-     * value: "PARTIAL"
-     * @const
-     */
-    "PARTIAL": "PARTIAL"  };
 
   return exports;
 }));

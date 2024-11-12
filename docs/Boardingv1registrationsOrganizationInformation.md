@@ -14,29 +14,3 @@ Name | Type | Description | Notes
 **owners** | [**[Boardingv1registrationsOrganizationInformationOwners]**](Boardingv1registrationsOrganizationInformationOwners.md) |  | [optional] 
 
 
-<a name="TypeEnum"></a>
-## Enum: TypeEnum
-
-
-* `TRANSACTING` (value: `"TRANSACTING"`)
-
-* `STRUCTURAL` (value: `"STRUCTURAL"`)
-
-* `MERCHANT` (value: `"MERCHANT"`)
-
-
-
-
-<a name="StatusEnum"></a>
-## Enum: StatusEnum
-
-
-* `LIVE` (value: `"LIVE"`)
-
-* `TEST` (value: `"TEST"`)
-
-* `DRAFT` (value: `"DRAFT"`)
-
-
-
-

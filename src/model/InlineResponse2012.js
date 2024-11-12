@@ -111,7 +111,7 @@
   exports.prototype['submitTimeUtc'] = undefined;
   /**
    * The status of Registration request Possible Values:   - 'INITIALIZED'   - 'RECEIVED'   - 'PROCESSING'   - 'SUCCESS'   - 'FAILURE'   - 'PARTIAL' 
-   * @member {module:model/InlineResponse2012.StatusEnum} status
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -140,42 +140,6 @@
   exports.prototype['details'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "INITIALIZED"
-     * @const
-     */
-    "INITIALIZED": "INITIALIZED",
-    /**
-     * value: "RECEIVED"
-     * @const
-     */
-    "RECEIVED": "RECEIVED",
-    /**
-     * value: "PROCESSING"
-     * @const
-     */
-    "PROCESSING": "PROCESSING",
-    /**
-     * value: "SUCCESS"
-     * @const
-     */
-    "SUCCESS": "SUCCESS",
-    /**
-     * value: "FAILURE"
-     * @const
-     */
-    "FAILURE": "FAILURE",
-    /**
-     * value: "PARTIAL"
-     * @const
-     */
-    "PARTIAL": "PARTIAL"  };
 
   return exports;
 }));

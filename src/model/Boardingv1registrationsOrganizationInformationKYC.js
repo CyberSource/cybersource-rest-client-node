@@ -43,9 +43,9 @@
    * Constructs a new <code>Boardingv1registrationsOrganizationInformationKYC</code>.
    * @alias module:model/Boardingv1registrationsOrganizationInformationKYC
    * @class
-   * @param whenIsCustomerCharged {module:model/Boardingv1registrationsOrganizationInformationKYC.WhenIsCustomerChargedEnum} 
+   * @param whenIsCustomerCharged {String} Possible values: - ONETIMEBEFORE - ONETIMEAFTER - OTHER
    * @param offerSubscriptions {Boolean} 
-   * @param timeToProductDelivery {module:model/Boardingv1registrationsOrganizationInformationKYC.TimeToProductDeliveryEnum} 
+   * @param timeToProductDelivery {String} Possible values: - INSTANT - UPTO2 - UPTO5 - UPTO10 - GREATERTHAN10
    * @param estimatedMonthlySales {Number} 
    * @param averageOrderAmount {Number} 
    * @param largestExpectedOrderAmount {Number} 
@@ -119,7 +119,8 @@
   }
 
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformationKYC.WhenIsCustomerChargedEnum} whenIsCustomerCharged
+   * Possible values: - ONETIMEBEFORE - ONETIMEAFTER - OTHER
+   * @member {String} whenIsCustomerCharged
    */
   exports.prototype['whenIsCustomerCharged'] = undefined;
   /**
@@ -147,7 +148,8 @@
    */
   exports.prototype['annualSubscriptionPercent'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformationKYC.TimeToProductDeliveryEnum} timeToProductDelivery
+   * Possible values: - INSTANT - UPTO2 - UPTO5 - UPTO10 - GREATERTHAN10
+   * @member {String} timeToProductDelivery
    */
   exports.prototype['timeToProductDelivery'] = undefined;
   /**
@@ -168,58 +170,6 @@
   exports.prototype['depositBankAccount'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>whenIsCustomerCharged</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.WhenIsCustomerChargedEnum = {
-    /**
-     * value: "ONETIMEBEFORE"
-     * @const
-     */
-    "ONETIMEBEFORE": "ONETIMEBEFORE",
-    /**
-     * value: "ONETIMEAFTER"
-     * @const
-     */
-    "ONETIMEAFTER": "ONETIMEAFTER",
-    /**
-     * value: "OTHER"
-     * @const
-     */
-    "OTHER": "OTHER"  };
-  /**
-   * Allowed values for the <code>timeToProductDelivery</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.TimeToProductDeliveryEnum = {
-    /**
-     * value: "INSTANT"
-     * @const
-     */
-    "INSTANT": "INSTANT",
-    /**
-     * value: "UPTO2"
-     * @const
-     */
-    "uPTO2": "UPTO2",
-    /**
-     * value: "UPTO5"
-     * @const
-     */
-    "uPTO5": "UPTO5",
-    /**
-     * value: "UPTO10"
-     * @const
-     */
-    "uPTO10": "UPTO10",
-    /**
-     * value: "GREATERTHAN10"
-     * @const
-     */
-    "gREATERTHAN10": "GREATERTHAN10"  };
 
   return exports;
 }));

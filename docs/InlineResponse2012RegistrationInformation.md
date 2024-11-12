@@ -8,14 +8,3 @@ Name | Type | Description | Notes
 **salesRepId** | **String** |  | [optional] 
 
 
-<a name="ModeEnum"></a>
-## Enum: ModeEnum
-
-
-* `COMPLETE` (value: `"COMPLETE"`)
-
-* `PARTIAL` (value: `"PARTIAL"`)
-
-
-
-

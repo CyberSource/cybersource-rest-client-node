@@ -100,12 +100,12 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values: - SYSTEM_ERROR 
+   * The reason of the status.  Possible values: - SYSTEM_ERROR - SERVICE_TIMEOUT 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The detail message related to the status and reason listed above.  Possible values: - Error - General system failure. 
+   * The detail message related to the status and reason listed above.  Possible values: - Error - General system failure. - The request was received, but a service did not finish running in time. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;

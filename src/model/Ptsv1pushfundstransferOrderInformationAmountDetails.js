@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv1pushfundstransferOrderInformationAmountDetails = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv1pushfundstransferOrderInformationAmountDetails = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge) {
   'use strict';
 
 
@@ -51,6 +51,7 @@
 
     _this['totalAmount'] = totalAmount;
     _this['currency'] = currency;
+
 
 
   };
@@ -78,6 +79,9 @@
       if (data.hasOwnProperty('destinationCurrency')) {
         obj['destinationCurrency'] = ApiClient.convertToType(data['destinationCurrency'], 'String');
       }
+      if (data.hasOwnProperty('surcharge')) {
+        obj['surcharge'] = Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge.constructFromObject(data['surcharge']);
+      }
     }
     return obj;
   }
@@ -98,10 +102,14 @@
    */
   exports.prototype['sourceCurrency'] = undefined;
   /**
-   * Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect 
+   * Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
    * @member {String} destinationCurrency
    */
   exports.prototype['destinationCurrency'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge} surcharge
+   */
+  exports.prototype['surcharge'] = undefined;
 
 
 

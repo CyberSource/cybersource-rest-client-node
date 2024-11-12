@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('card')) {
         obj['card'] = PushFunds201ResponseRecipientInformationCard.constructFromObject(data['card']);
       }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
     }
     return obj;
   }
@@ -72,6 +76,11 @@
    * @member {module:model/PushFunds201ResponseRecipientInformationCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * Customer's email address, including the full domain name. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
 
 
 

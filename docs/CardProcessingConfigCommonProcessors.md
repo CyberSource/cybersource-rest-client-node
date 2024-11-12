@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **enableAutoAuthReversalAfterVoid** | **Boolean** | Enables to meet the Visa mandate requirements to reverse unused authorizations, benefitting the customer by releasing the hold on unused credit card funds. Applicable for CB2A, Elavon Americas (elavonamericas), Six (six), VPC and American Express Direct (amexdirect) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table>  | [optional] 
 **enableExpresspayPanTranslation** | **Boolean** | When this is enabled, authorization responses from American Express expresspay transactions include the Primary Account Number (PAN) and expiration date of the card. Applicable for American Express Direct (amexdirect) processor. | [optional] 
 **enableCreditAuth** | **Boolean** | Authorizes a credit. Reduces refund chargebacks and prevents customers from seeing the online update for credits which are otherwise offline settlements. | [optional] 
-**industryCode** | **String** | Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: `0` – unknown or unsure `A` – auto rental (EMV supported) `B` – bank/financial institution (EMV supported) `D` – direct marketing `F` – food/restaurant (EMV supported) `G` – grocery store/super market (EMV supported) `H` – hotel (EMV supported) `L` – limited amount terminal (EMV supported) `O` – oil company/automated fueling system (EMV supported) `P` – passenger transport (EMV supported) `R` – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors.  | [optional] 
+**industryCode** | **String** | Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: `0` – unknown or unsure `A` – auto rental (EMV supported) `B` – bank/financial institution (EMV supported) `D` – direct marketing `F` – food/restaurant (EMV supported) `G` – grocery store/super market (EMV supported) `H` – hotel (EMV supported) `L` – limited amount terminal (EMV supported) `O` – oil company/automated fueling system (EMV supported) `P` – passenger transport (EMV supported) `R` – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors.   Possible values: - 0 - A - B - D - F - G - H - L - O - P - R | [optional] 
 **sendAmexLevel2Data** | **Boolean** | Field that indicates whether merchant will send level 2 data for Amex cards. Applicable for TSYS (tsys) processor. | [optional] 
 **softDescriptorType** | **String** | A soft descriptor is a text, rendered on a cardholder's statement, describing a particular product or service, purchased by the cardholder. Descriptors are intended to help the cardholder identify the products or services purchased. Valid values: `1` - trans_ref_no `2` - merchant_descriptor `3` - trans_ref_no and merchant_descriptor Applicable for TSYS (tsys) processor.  | [optional] 
 **vitalNumber** | **String** | V-number provided by TSYS info. The leading `V` must be replaced by a `7`. For example, replace `V1234567` with `71234567`. Applicable for TSYS (tsys) processor. | [optional] 
@@ -50,34 +50,5 @@ Name | Type | Description | Notes
 **enablePosNetworkSwitching** | **Boolean** | 'POS Network Switching' or 'Alternate Routing' means merchant can process PIN Debit transactions without a PIN. Set the value to 'Yes' if it is supported. Applicable for FDI Global (fdiglobal) processor. | [optional] 
 **enableDynamicCurrencyConversion** | **Boolean** | Enable dynamic currency conversion for a merchant. | [optional] 
 **merchantTier** | **String** | Merchant Tier defines the type of merchant, the numeric Merchant Tier value is allocated by EFTPOS. Applicable for EFTPOS processors. | [optional] 
-
-
-<a name="IndustryCodeEnum"></a>
-## Enum: IndustryCodeEnum
-
-
-* `_0` (value: `"0"`)
-
-* `A` (value: `"A"`)
-
-* `B` (value: `"B"`)
-
-* `D` (value: `"D"`)
-
-* `F` (value: `"F"`)
-
-* `G` (value: `"G"`)
-
-* `H` (value: `"H"`)
-
-* `L` (value: `"L"`)
-
-* `O` (value: `"O"`)
-
-* `P` (value: `"P"`)
-
-* `R` (value: `"R"`)
-
-
 
 
