@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property retrievalReferenceNumber (base name: "retrievalReferenceNumber")', function() {
+      // uncomment below and update the code to test the property retrievalReferenceNumber
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

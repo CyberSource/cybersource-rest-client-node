@@ -75,7 +75,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CheckPayerAuthEnrollmentRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CheckPayerAuthEnrollmentRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };
@@ -92,7 +92,7 @@
       var returnType = RiskV1AuthenticationsPost201Response;
 
       //check isMLE for an api method 'this.checkPayerAuthEnrollment'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'checkPayerAuthEnrollment');
 
       if (isMLEForApi === true) {
@@ -138,7 +138,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PayerAuthSetupRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PayerAuthSetupRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };
@@ -155,7 +155,7 @@
       var returnType = RiskV1AuthenticationSetupsPost201Response;
 
       //check isMLE for an api method 'this.payerAuthSetup'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'payerAuthSetup');
 
       if (isMLEForApi === true) {
@@ -201,7 +201,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ValidateRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ValidateRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };
@@ -218,7 +218,7 @@
       var returnType = RiskV1AuthenticationResultsPost201Response;
 
       //check isMLE for an api method 'this.validateAuthenticationResults'
-      var isMLESupportedByCybsForApi = false;
+      var isMLESupportedByCybsForApi = true;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'validateAuthenticationResults');
 
       if (isMLEForApi === true) {

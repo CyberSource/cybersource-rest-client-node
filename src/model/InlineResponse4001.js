@@ -44,7 +44,7 @@
    * @alias module:model/InlineResponse4001
    * @class
    * @param message {String} 
-   * @param reason {module:model/InlineResponse4001.ReasonEnum} 
+   * @param reason {String} Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
    */
   var exports = function(message, reason) {
     var _this = this;
@@ -103,92 +103,12 @@
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {module:model/InlineResponse4001.ReasonEnum} reason
+   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
+   * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>reason</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.ReasonEnum = {
-    /**
-     * value: "INVALID_APIKEY"
-     * @const
-     */
-    "INVALID_APIKEY": "INVALID_APIKEY",
-    /**
-     * value: "INVALID_SHIPPING_INPUT_PARAMS"
-     * @const
-     */
-    "INVALID_SHIPPING_INPUT_PARAMS": "INVALID_SHIPPING_INPUT_PARAMS",
-    /**
-     * value: "CAPTURE_CONTEXT_INVALID"
-     * @const
-     */
-    "CAPTURE_CONTEXT_INVALID": "CAPTURE_CONTEXT_INVALID",
-    /**
-     * value: "CAPTURE_CONTEXT_EXPIRED"
-     * @const
-     */
-    "CAPTURE_CONTEXT_EXPIRED": "CAPTURE_CONTEXT_EXPIRED",
-    /**
-     * value: "SDK_XHR_ERROR"
-     * @const
-     */
-    "SDK_XHR_ERROR": "SDK_XHR_ERROR",
-    /**
-     * value: "UNIFIEDPAYMENTS_VALIDATION_PARAMS"
-     * @const
-     */
-    "UNIFIEDPAYMENTS_VALIDATION_PARAMS": "UNIFIEDPAYMENTS_VALIDATION_PARAMS",
-    /**
-     * value: "UNIFIEDPAYMENTS_VALIDATION_FIELDS"
-     * @const
-     */
-    "UNIFIEDPAYMENTS_VALIDATION_FIELDS": "UNIFIEDPAYMENTS_VALIDATION_FIELDS",
-    /**
-     * value: "UNIFIEDPAYMENT_PAYMENT_PARAMITERS"
-     * @const
-     */
-    "UNIFIEDPAYMENT_PAYMENT_PARAMITERS": "UNIFIEDPAYMENT_PAYMENT_PARAMITERS",
-    /**
-     * value: "CREATE_TOKEN_TIMEOUT"
-     * @const
-     */
-    "CREATE_TOKEN_TIMEOUT": "CREATE_TOKEN_TIMEOUT",
-    /**
-     * value: "CREATE_TOKEN_XHR_ERROR"
-     * @const
-     */
-    "CREATE_TOKEN_XHR_ERROR": "CREATE_TOKEN_XHR_ERROR",
-    /**
-     * value: "SHOW_LOAD_CONTAINER_SELECTOR"
-     * @const
-     */
-    "SHOW_LOAD_CONTAINER_SELECTOR": "SHOW_LOAD_CONTAINER_SELECTOR",
-    /**
-     * value: "SHOW_LOAD_INVALID_CONTAINER"
-     * @const
-     */
-    "SHOW_LOAD_INVALID_CONTAINER": "SHOW_LOAD_INVALID_CONTAINER",
-    /**
-     * value: "SHOW_TOKEN_TIMEOUT"
-     * @const
-     */
-    "SHOW_TOKEN_TIMEOUT": "SHOW_TOKEN_TIMEOUT",
-    /**
-     * value: "SHOW_TOKEN_XHR_ERROR"
-     * @const
-     */
-    "SHOW_TOKEN_XHR_ERROR": "SHOW_TOKEN_XHR_ERROR",
-    /**
-     * value: "SHOW_PAYMENT_TIMEOUT"
-     * @const
-     */
-    "SHOW_PAYMENT_TIMEOUT": "SHOW_PAYMENT_TIMEOUT"  };
 
   return exports;
 }));

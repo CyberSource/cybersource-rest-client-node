@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>Microformv2sessionsCheckoutApiInitialization</code>.
+   * Use the [Digital Accept Checkout API](https://developer.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Checkout_API/Secure_Acceptance_Checkout_API.pdf) in conjunction with Microform to provide a cohesive PCI SAQ A embedded payment application within your merchant e-commerce page.   The Digital Accept Checkout API provides access to payment processing and additional value-added services directly from the browser. 
    * @alias module:model/Microformv2sessionsCheckoutApiInitialization
    * @class
    */
@@ -133,6 +134,7 @@
    */
   exports.prototype['amount'] = undefined;
   /**
+   * Locale where application is being used.  This field controls aspects of the application such as the language it will be rendered in. 
    * @member {String} locale
    */
   exports.prototype['locale'] = undefined;

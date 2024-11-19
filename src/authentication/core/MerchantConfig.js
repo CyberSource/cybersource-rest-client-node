@@ -62,6 +62,8 @@ function MerchantConfig(result) {
     /* Intermediate Host */
     this.intermediateHost = result.intermediateHost;
 
+    this.defaultDeveloperId = result.defaultDeveloperId;
+
     this.pemFileDirectory = result.pemFileDirectory;
 
     this.solutionId = result.solutionId;
@@ -287,6 +289,14 @@ MerchantConfig.prototype.getIntermediateHost = function getIntermediateHost() {
 
 MerchantConfig.prototype.setIntermediateHost = function setIntermediateHost(intermediateHost) {
     this.intermediateHost = intermediateHost;
+}
+
+MerchantConfig.prototype.getDefaultDeveloperId = function getDefaultDeveloperId() {
+    return this.defaultDeveloperId;
+}
+
+MerchantConfig.prototype.setDefaultDeveloperId = function setDefaultDeveloperId(defaultDeveloperId) {
+    this.defaultDeveloperId = defaultDeveloperId;
 }
 
 MerchantConfig.prototype.getProxyAddress = function getProxyAddress() {

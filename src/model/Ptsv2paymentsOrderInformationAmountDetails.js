@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts', 'model/Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion', 'model/Ptsv2paymentsOrderInformationAmountDetailsOrder', 'model/Ptsv2paymentsOrderInformationAmountDetailsSurcharge', 'model/Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts', 'model/Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion', 'model/Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge', 'model/Ptsv2paymentsOrderInformationAmountDetailsOrder', 'model/Ptsv2paymentsOrderInformationAmountDetailsSurcharge', 'model/Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts'), require('./Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion'), require('./Ptsv2paymentsOrderInformationAmountDetailsOrder'), require('./Ptsv2paymentsOrderInformationAmountDetailsSurcharge'), require('./Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts'), require('./Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion'), require('./Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge'), require('./Ptsv2paymentsOrderInformationAmountDetailsOrder'), require('./Ptsv2paymentsOrderInformationAmountDetailsSurcharge'), require('./Ptsv2paymentsOrderInformationAmountDetailsTaxDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsOrderInformationAmountDetails = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsOrder, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsSurcharge, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails);
+    root.CyberSource.Ptsv2paymentsOrderInformationAmountDetails = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsOrder, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsSurcharge, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails);
   }
-}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts, Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion, Ptsv2paymentsOrderInformationAmountDetailsOrder, Ptsv2paymentsOrderInformationAmountDetailsSurcharge, Ptsv2paymentsOrderInformationAmountDetailsTaxDetails) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts, Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion, Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge, Ptsv2paymentsOrderInformationAmountDetailsOrder, Ptsv2paymentsOrderInformationAmountDetailsSurcharge, Ptsv2paymentsOrderInformationAmountDetailsTaxDetails) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -169,6 +170,9 @@
       }
       if (data.hasOwnProperty('currencyConversion')) {
         obj['currencyConversion'] = Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion.constructFromObject(data['currencyConversion']);
+      }
+      if (data.hasOwnProperty('oct-surcharge')) {
+        obj['oct-surcharge'] = Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge.constructFromObject(data['oct-surcharge']);
       }
       if (data.hasOwnProperty('order')) {
         obj['order'] = Ptsv2paymentsOrderInformationAmountDetailsOrder.constructFromObject(data['order']);
@@ -311,6 +315,10 @@
    * @member {module:model/Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion} currencyConversion
    */
   exports.prototype['currencyConversion'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge} oct-surcharge
+   */
+  exports.prototype['oct-surcharge'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsOrderInformationAmountDetailsOrder} order
    */

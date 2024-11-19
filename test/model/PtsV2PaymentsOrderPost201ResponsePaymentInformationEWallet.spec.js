@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property userName (base name: "userName")', function() {
+      // uncomment below and update the code to test the property userName
+      //var instane = new CyberSource.PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

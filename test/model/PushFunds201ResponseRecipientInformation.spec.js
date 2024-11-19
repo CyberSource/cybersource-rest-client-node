@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new CyberSource.PushFunds201ResponseRecipientInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

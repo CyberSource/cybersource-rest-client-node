@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions', 'model/PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions'), require('./PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions);
+    root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions, PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('enhancedDataEnabled')) {
         obj['enhancedDataEnabled'] = ApiClient.convertToType(data['enhancedDataEnabled'], 'Boolean');
       }
+      if (data.hasOwnProperty('captureOptions')) {
+        obj['captureOptions'] = PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions.constructFromObject(data['captureOptions']);
+      }
     }
     return obj;
   }
@@ -90,6 +94,10 @@
    * @member {Boolean} enhancedDataEnabled
    */
   exports.prototype['enhancedDataEnabled'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions} captureOptions
+   */
+  exports.prototype['captureOptions'] = undefined;
 
 
 

@@ -290,6 +290,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property disbursementMode (base name: "disbursementMode")', function() {
+      // uncomment below and update the code to test the property disbursementMode
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updateTimeUtc (base name: "updateTimeUtc")', function() {
+      // uncomment below and update the code to test the property updateTimeUtc
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationTimeUtc (base name: "expirationTimeUtc")', function() {
+      // uncomment below and update the code to test the property expirationTimeUtc
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderId (base name: "orderId")', function() {
+      // uncomment below and update the code to test the property orderId
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderStatus (base name: "orderStatus")', function() {
+      // uncomment below and update the code to test the property orderStatus
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

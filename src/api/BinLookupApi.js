@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/BinLookupv400Response', 'model/CreateBinLookupRequest', 'model/InlineResponse2011', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateBinLookupRequest', 'model/InlineResponse2011', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/BinLookupv400Response'), require('../model/CreateBinLookupRequest'), require('../model/InlineResponse2011'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateBinLookupRequest'), require('../model/InlineResponse2011'), require('../model/PtsV2CreateOrderPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BinLookupApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.BinLookupv400Response, root.CyberSource.CreateBinLookupRequest, root.CyberSource.InlineResponse2011, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.BinLookupApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateBinLookupRequest, root.CyberSource.InlineResponse2011, root.CyberSource.PtsV2CreateOrderPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(MLEUtility, ApiClient, BinLookupv400Response, CreateBinLookupRequest, InlineResponse2011, PtsV2PaymentsPost502Response) {
+}(this, function(MLEUtility, ApiClient, CreateBinLookupRequest, InlineResponse2011, PtsV2CreateOrderPost400Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -77,7 +77,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateBinLookupRequest', this.apiClient.merchantConfig.runEnvironment);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateBinLookupRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
       var pathParams = {
       };

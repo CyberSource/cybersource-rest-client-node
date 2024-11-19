@@ -68,8 +68,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property enablerId (base name: "enablerId")', function() {
-      // uncomment below and update the code to test the property enablerId
+    it('should have the property feeProgramId (base name: "feeProgramId")', function() {
+      // uncomment below and update the code to test the property feeProgramId
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property networkPartnerId (base name: "networkPartnerId")', function() {
+      // uncomment below and update the code to test the property networkPartnerId
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processingCode (base name: "processingCode")', function() {
+      // uncomment below and update the code to test the property processingCode
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sharingGroupCode (base name: "sharingGroupCode")', function() {
+      // uncomment below and update the code to test the property sharingGroupCode
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property purposeOfPayment (base name: "purposeOfPayment")', function() {
+      // uncomment below and update the code to test the property purposeOfPayment
       //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
       //expect(instance).to.be();
     });

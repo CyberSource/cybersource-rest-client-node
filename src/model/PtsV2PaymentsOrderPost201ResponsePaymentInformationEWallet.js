@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('fundingSourceSale')) {
         obj['fundingSourceSale'] = ApiClient.convertToType(data['fundingSourceSale'], 'String');
       }
+      if (data.hasOwnProperty('userName')) {
+        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +95,11 @@
    * @member {String} fundingSourceSale
    */
   exports.prototype['fundingSourceSale'] = undefined;
+  /**
+   * The Venmo user name chosen by the user, also know as a Venmo handle. 
+   * @member {String} userName
+   */
+  exports.prototype['userName'] = undefined;
 
 
 

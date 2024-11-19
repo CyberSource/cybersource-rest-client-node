@@ -115,11 +115,13 @@
    */
   exports.prototype['defaultCurrencyCode'] = undefined;
   /**
-   * @member {module:model/VTConfigCardNotPresentGlobalPaymentInformationBasicInformation.DefaultTransactionTypeEnum} defaultTransactionType
+   * Possible values: - AUTHORIZATION - SALE
+   * @member {String} defaultTransactionType
    */
   exports.prototype['defaultTransactionType'] = undefined;
   /**
-   * @member {module:model/VTConfigCardNotPresentGlobalPaymentInformationBasicInformation.DefaultPaymentTypeEnum} defaultPaymentType
+   * Possible values: - CREDIT_CARD - ECHECK
+   * @member {String} defaultPaymentType
    */
   exports.prototype['defaultPaymentType'] = undefined;
   /**
@@ -140,38 +142,6 @@
   exports.prototype['displayInternet'] = undefined;
 
 
-  /**
-   * Allowed values for the <code>defaultTransactionType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.DefaultTransactionTypeEnum = {
-    /**
-     * value: "AUTHORIZATION"
-     * @const
-     */
-    "AUTHORIZATION": "AUTHORIZATION",
-    /**
-     * value: "SALE"
-     * @const
-     */
-    "SALE": "SALE"  };
-  /**
-   * Allowed values for the <code>defaultPaymentType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.DefaultPaymentTypeEnum = {
-    /**
-     * value: "CREDIT_CARD"
-     * @const
-     */
-    "CREDIT_CARD": "CREDIT_CARD",
-    /**
-     * value: "ECHECK"
-     * @const
-     */
-    "ECHECK": "ECHECK"  };
 
   return exports;
 }));

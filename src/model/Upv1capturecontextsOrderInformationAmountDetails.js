@@ -73,10 +73,12 @@
   }
 
   /**
+   * This field defines the total order amount. 
    * @member {String} totalAmount
    */
   exports.prototype['totalAmount'] = undefined;
   /**
+   * This field defines the currency applicable to the order. 
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;

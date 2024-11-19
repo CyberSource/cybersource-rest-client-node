@@ -10,12 +10,3 @@ Name | Type | Description | Notes
 **details** | [**[InlineResponse4006Details]**](InlineResponse4006Details.md) |  | [optional] 
 
 
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `RESOURCE_NOT_FOUND` (value: `"RESOURCE_NOT_FOUND"`)
-
-
-
-

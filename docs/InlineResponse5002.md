@@ -9,12 +9,3 @@ Name | Type | Description | Notes
 **message** | **String** | Descriptive message for the error. | [optional] 
 
 
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-
-
-* `SYSTEM_ERROR` (value: `"SYSTEM_ERROR"`)
-
-
-
-

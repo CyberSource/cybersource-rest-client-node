@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.PushFundsRequest);
     });
 
+    it('should have the property aggregatorInformation (base name: "aggregatorInformation")', function() {
+      // uncomment below and update the code to test the property aggregatorInformation
+      //var instane = new CyberSource.PushFundsRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
       // uncomment below and update the code to test the property clientReferenceInformation
       //var instane = new CyberSource.PushFundsRequest();
@@ -82,6 +88,18 @@
 
     it('should have the property senderInformation (base name: "senderInformation")', function() {
       // uncomment below and update the code to test the property senderInformation
+      //var instane = new CyberSource.PushFundsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
+      // uncomment below and update the code to test the property merchantInformation
+      //var instane = new CyberSource.PushFundsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pointOfServiceInformation (base name: "pointOfServiceInformation")', function() {
+      // uncomment below and update the code to test the property pointOfServiceInformation
       //var instane = new CyberSource.PushFundsRequest();
       //expect(instance).to.be();
     });

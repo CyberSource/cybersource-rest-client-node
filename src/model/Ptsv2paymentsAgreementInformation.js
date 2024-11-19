@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,15 +65,23 @@
       if (data.hasOwnProperty('agreementId')) {
         obj['agreementId'] = ApiClient.convertToType(data['agreementId'], 'String');
       }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * Identifier for the mandate being signed for. This mandate id is required for all the subsequent transactions.  
+   * Identifier for the mandate being signed for. This mandate id is required for all the subsequent transactions. 
    * @member {String} agreementId
    */
   exports.prototype['agreementId'] = undefined;
+  /**
+   * The processor specific billing agreement ID. References an approved recurring payment for goods or services. This value is sent by merchant via Cybersource to processor. The value sent in this field is procured by the merchant from the processor. 
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
 
 
 
