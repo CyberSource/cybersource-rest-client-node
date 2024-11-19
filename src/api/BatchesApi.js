@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Body', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse202', 'model/InlineResponse401'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse202', 'model/InlineResponse401'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse202'), require('../model/InlineResponse401'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse202'), require('../model/InlineResponse401'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BatchesApi = factory(root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse401);
+    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse401);
   }
-}(this, function(ApiClient, Body, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse202, InlineResponse401) {
+}(this, function(MLEUtility, ApiClient, Body, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse202, InlineResponse401) {
   'use strict';
 
   /**
@@ -91,11 +91,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2007;
 
-      return this.apiClient.callApi(
-        '/accountupdater/v1/batches/{batchId}/report', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getBatchReport'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getBatchReport');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/accountupdater/v1/batches/{batchId}/report', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/accountupdater/v1/batches/{batchId}/report', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -140,11 +154,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2006;
 
-      return this.apiClient.callApi(
-        '/accountupdater/v1/batches/{batchId}/status', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getBatchStatus'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getBatchStatus');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/accountupdater/v1/batches/{batchId}/status', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/accountupdater/v1/batches/{batchId}/status', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -192,11 +220,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2005;
 
-      return this.apiClient.callApi(
-        '/accountupdater/v1/batches', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getBatchesList'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getBatchesList');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/accountupdater/v1/batches', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/accountupdater/v1/batches', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -241,11 +283,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse202;
 
-      return this.apiClient.callApi(
-        '/accountupdater/v1/batches', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.postBatch'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'postBatch');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/accountupdater/v1/batches', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/accountupdater/v1/batches', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 

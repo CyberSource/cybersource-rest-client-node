@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthReversalRequest', 'model/MitReversalRequest', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsReversalsPost201Response', 'model/PtsV2PaymentsReversalsPost400Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AuthReversalRequest', 'model/MitReversalRequest', 'model/PtsV2PaymentsPost502Response', 'model/PtsV2PaymentsReversalsPost201Response', 'model/PtsV2PaymentsReversalsPost400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AuthReversalRequest'), require('../model/MitReversalRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsReversalsPost201Response'), require('../model/PtsV2PaymentsReversalsPost400Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AuthReversalRequest'), require('../model/MitReversalRequest'), require('../model/PtsV2PaymentsPost502Response'), require('../model/PtsV2PaymentsReversalsPost201Response'), require('../model/PtsV2PaymentsReversalsPost400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReversalApi = factory(root.CyberSource.ApiClient, root.CyberSource.AuthReversalRequest, root.CyberSource.MitReversalRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsReversalsPost201Response, root.CyberSource.PtsV2PaymentsReversalsPost400Response);
+    root.CyberSource.ReversalApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AuthReversalRequest, root.CyberSource.MitReversalRequest, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.PtsV2PaymentsReversalsPost201Response, root.CyberSource.PtsV2PaymentsReversalsPost400Response);
   }
-}(this, function(ApiClient, AuthReversalRequest, MitReversalRequest, PtsV2PaymentsPost502Response, PtsV2PaymentsReversalsPost201Response, PtsV2PaymentsReversalsPost400Response) {
+}(this, function(MLEUtility, ApiClient, AuthReversalRequest, MitReversalRequest, PtsV2PaymentsPost502Response, PtsV2PaymentsReversalsPost201Response, PtsV2PaymentsReversalsPost400Response) {
   'use strict';
 
   /**
@@ -98,11 +98,25 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsReversalsPost201Response;
 
-      return this.apiClient.callApi(
-        '/pts/v2/payments/{id}/reversals', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.authReversal'
+      var isMLESupportedByCybsForApi = true;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'authReversal');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/pts/v2/payments/{id}/reversals', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/pts/v2/payments/{id}/reversals', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -147,11 +161,25 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PtsV2PaymentsReversalsPost201Response;
 
-      return this.apiClient.callApi(
-        '/pts/v2/reversals', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.mitReversal'
+      var isMLESupportedByCybsForApi = true;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'mitReversal');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/pts/v2/reversals', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/pts/v2/reversals', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 

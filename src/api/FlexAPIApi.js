@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GenerateFlexAPICaptureContextRequest', 'model/InlineResponse4001'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/GenerateFlexAPICaptureContextRequest', 'model/InlineResponse4001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/GenerateFlexAPICaptureContextRequest'), require('../model/InlineResponse4001'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/GenerateFlexAPICaptureContextRequest'), require('../model/InlineResponse4001'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.FlexAPIApi = factory(root.CyberSource.ApiClient, root.CyberSource.GenerateFlexAPICaptureContextRequest, root.CyberSource.InlineResponse4001);
+    root.CyberSource.FlexAPIApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.GenerateFlexAPICaptureContextRequest, root.CyberSource.InlineResponse4001);
   }
-}(this, function(ApiClient, GenerateFlexAPICaptureContextRequest, InlineResponse4001) {
+}(this, function(MLEUtility, ApiClient, GenerateFlexAPICaptureContextRequest, InlineResponse4001) {
   'use strict';
 
   /**
@@ -91,11 +91,25 @@
       var accepts = ['application/jwt'];
       var returnType = 'String';
 
-      return this.apiClient.callApi(
-        '/flex/v2/sessions', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.generateFlexAPICaptureContext'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'generateFlexAPICaptureContext');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/flex/v2/sessions', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/flex/v2/sessions', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 
