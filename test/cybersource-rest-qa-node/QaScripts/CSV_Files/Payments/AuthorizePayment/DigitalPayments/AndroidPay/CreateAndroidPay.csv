@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAnP_01,100.00,Success
+CAnP_02,200.0,Fails
+CAnP_03,GHP34,Fails due to invalid amount
