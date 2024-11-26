@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses) {
   'use strict';
 
 
@@ -57,10 +57,6 @@
 
 
 
-
-
-
-
   };
 
   /**
@@ -78,19 +74,7 @@
         obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
       }
       if (data.hasOwnProperty('bonuses')) {
-        obj['bonuses'] = ApiClient.convertToType(data['bonuses'], 'String');
-      }
-      if (data.hasOwnProperty('bonusMonth')) {
-        obj['bonusMonth'] = ApiClient.convertToType(data['bonusMonth'], 'String');
-      }
-      if (data.hasOwnProperty('secondBonusMonth')) {
-        obj['secondBonusMonth'] = ApiClient.convertToType(data['secondBonusMonth'], 'String');
-      }
-      if (data.hasOwnProperty('bonusAmount')) {
-        obj['bonusAmount'] = ApiClient.convertToType(data['bonusAmount'], 'String');
-      }
-      if (data.hasOwnProperty('secondBonusAmount')) {
-        obj['secondBonusAmount'] = ApiClient.convertToType(data['secondBonusAmount'], 'String');
+        obj['bonuses'] = ApiClient.convertToType(data['bonuses'], [Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses]);
       }
       if (data.hasOwnProperty('preapprovalType')) {
         obj['preapprovalType'] = ApiClient.convertToType(data['preapprovalType'], 'String');
@@ -126,30 +110,10 @@
    */
   exports.prototype['paymentMethod'] = undefined;
   /**
-   * This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6. 
-   * @member {String} bonuses
+   * An array of objects, each of which contains a bonus month and bonus amount.  Length of bonuses array is equal to the number of bonuses.  Max length = 6.  In case of bonus month and amount not specified, null objects to be returned in the array. Example: bonuses : [ {\"month\": \"1\",\"amount\": \"200\"}, {\"month\": \"3\",\"amount\": \"2500\"}, null] 
+   * @member {Array.<module:model/Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses>} bonuses
    */
   exports.prototype['bonuses'] = undefined;
-  /**
-   * This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12. 
-   * @member {String} bonusMonth
-   */
-  exports.prototype['bonusMonth'] = undefined;
-  /**
-   * This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12. 
-   * @member {String} secondBonusMonth
-   */
-  exports.prototype['secondBonusMonth'] = undefined;
-  /**
-   * This value contains the bonus amount of the first month. Maximum value without decimal 99999999. 
-   * @member {String} bonusAmount
-   */
-  exports.prototype['bonusAmount'] = undefined;
-  /**
-   * This value contains the bonus amount of the second month. Maximum value without decimal 99999999. 
-   * @member {String} secondBonusAmount
-   */
-  exports.prototype['secondBonusAmount'] = undefined;
   /**
    * This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 = Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 = Negative card authorization (authorization-only with 0 or 1 amount) - 2 = Reservation of authorization (authorization-only with amount) - 3 = Cancel transaction - 4 = Merchant-initiated reversal/refund transactions - 5 = Cancel reservation of authorization - 6 = Post authorization 
    * @member {String} preapprovalType

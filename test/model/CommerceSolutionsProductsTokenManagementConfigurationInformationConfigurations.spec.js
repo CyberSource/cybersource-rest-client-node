@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property vault (base name: "vault")', function() {
+      // uncomment below and update the code to test the property vault
+      //var instane = new CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

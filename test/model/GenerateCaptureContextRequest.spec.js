@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.GenerateCaptureContextRequest);
     });
 
+    it('should have the property clientVersion (base name: "clientVersion")', function() {
+      // uncomment below and update the code to test the property clientVersion
+      //var instane = new CyberSource.GenerateCaptureContextRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property targetOrigins (base name: "targetOrigins")', function() {
       // uncomment below and update the code to test the property targetOrigins
       //var instane = new CyberSource.GenerateCaptureContextRequest();
@@ -64,12 +70,6 @@
 
     it('should have the property allowedCardNetworks (base name: "allowedCardNetworks")', function() {
       // uncomment below and update the code to test the property allowedCardNetworks
-      //var instane = new CyberSource.GenerateCaptureContextRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property clientVersion (base name: "clientVersion")', function() {
-      // uncomment below and update the code to test the property clientVersion
       //var instane = new CyberSource.GenerateCaptureContextRequest();
       //expect(instance).to.be();
     });
