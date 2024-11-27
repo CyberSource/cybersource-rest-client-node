@@ -68,30 +68,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property bonusMonth (base name: "bonusMonth")', function() {
-      // uncomment below and update the code to test the property bonusMonth
-      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property secondBonusMonth (base name: "secondBonusMonth")', function() {
-      // uncomment below and update the code to test the property secondBonusMonth
-      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bonusAmount (base name: "bonusAmount")', function() {
-      // uncomment below and update the code to test the property bonusAmount
-      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property secondBonusAmount (base name: "secondBonusAmount")', function() {
-      // uncomment below and update the code to test the property secondBonusAmount
-      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions();
-      //expect(instance).to.be();
-    });
-
     it('should have the property preapprovalType (base name: "preapprovalType")', function() {
       // uncomment below and update the code to test the property preapprovalType
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions();

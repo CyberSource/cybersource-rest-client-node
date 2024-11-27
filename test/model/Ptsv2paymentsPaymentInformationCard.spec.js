@@ -140,6 +140,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property productSubtype (base name: "productSubtype")', function() {
+      // uncomment below and update the code to test the property productSubtype
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformationCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property typeSelectionIndicator (base name: "typeSelectionIndicator")', function() {
       // uncomment below and update the code to test the property typeSelectionIndicator
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformationCard();

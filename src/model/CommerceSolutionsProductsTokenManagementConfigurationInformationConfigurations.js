@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient);
+    root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('parentProfileId')) {
         obj['parentProfileId'] = ApiClient.convertToType(data['parentProfileId'], 'String');
       }
+      if (data.hasOwnProperty('vault')) {
+        obj['vault'] = CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault.constructFromObject(data['vault']);
+      }
     }
     return obj;
   }
@@ -73,6 +77,10 @@
    * @member {String} parentProfileId
    */
   exports.prototype['parentProfileId'] = undefined;
+  /**
+   * @member {module:model/CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault} vault
+   */
+  exports.prototype['vault'] = undefined;
 
 
 

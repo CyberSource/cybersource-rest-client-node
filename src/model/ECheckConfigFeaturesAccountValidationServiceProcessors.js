@@ -80,7 +80,7 @@
         obj['avsSignedAgreement'] = ApiClient.convertToType(data['avsSignedAgreement'], 'Boolean');
       }
       if (data.hasOwnProperty('avsCalculatedResponseBehavior')) {
-        obj['avsCalculatedResponseBehavior'] = ApiClient.convertToType(data['avsCalculatedResponseBehavior'], Object);
+        obj['avsCalculatedResponseBehavior'] = ApiClient.convertToType(data['avsCalculatedResponseBehavior'], 'String');
       }
       if (data.hasOwnProperty('avsAdditionalId')) {
         obj['avsAdditionalId'] = ApiClient.convertToType(data['avsAdditionalId'], 'String');
@@ -92,7 +92,7 @@
         obj['avsEntityId'] = ApiClient.convertToType(data['avsEntityId'], 'String');
       }
       if (data.hasOwnProperty('avsResultMode')) {
-        obj['avsResultMode'] = ApiClient.convertToType(data['avsResultMode'], Object);
+        obj['avsResultMode'] = ApiClient.convertToType(data['avsResultMode'], 'String');
       }
       if (data.hasOwnProperty('enableAvsTokenCreation')) {
         obj['enableAvsTokenCreation'] = ApiClient.convertToType(data['enableAvsTokenCreation'], 'Boolean');
@@ -117,10 +117,11 @@
    */
   exports.prototype['avsSignedAgreement'] = undefined;
   /**
-   * *NEW*
-   * @member {Object} avsCalculatedResponseBehavior
+   * *NEW*  Possible values: - continue
+   * @member {String} avsCalculatedResponseBehavior
+   * @default 'continue'
    */
-  exports.prototype['avsCalculatedResponseBehavior'] = undefined;
+  exports.prototype['avsCalculatedResponseBehavior'] = 'continue';
   /**
    * *NEW* Also known as the Additional ID. Taken from the boarding form.
    * @member {String} avsAdditionalId
@@ -138,8 +139,8 @@
    */
   exports.prototype['avsEntityId'] = undefined;
   /**
-   * *NEW*
-   * @member {Object} avsResultMode
+   * *NEW*  Possible values: - FULL_RESPONSE - LOGIC_BOX
+   * @member {String} avsResultMode
    */
   exports.prototype['avsResultMode'] = undefined;
   /**

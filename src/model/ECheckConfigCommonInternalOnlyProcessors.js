@@ -81,10 +81,10 @@
         obj['portalSupportedPaytypes'] = ApiClient.convertToType(data['portalSupportedPaytypes'], 'String');
       }
       if (data.hasOwnProperty('settlementMethod')) {
-        obj['settlementMethod'] = ApiClient.convertToType(data['settlementMethod'], Object);
+        obj['settlementMethod'] = ApiClient.convertToType(data['settlementMethod'], 'String');
       }
       if (data.hasOwnProperty('verificationLevel')) {
-        obj['verificationLevel'] = ApiClient.convertToType(data['verificationLevel'], Object);
+        obj['verificationLevel'] = ApiClient.convertToType(data['verificationLevel'], 'String');
       }
       if (data.hasOwnProperty('setCompletedState')) {
         obj['setCompletedState'] = ApiClient.convertToType(data['setCompletedState'], 'Boolean');
@@ -116,15 +116,17 @@
    */
   exports.prototype['portalSupportedPaytypes'] = 'CHECK';
   /**
-   * *NEW*
-   * @member {Object} settlementMethod
+   * *NEW*  Possible values: - BEST_GUESS
+   * @member {String} settlementMethod
+   * @default 'BEST_GUESS'
    */
-  exports.prototype['settlementMethod'] = undefined;
+  exports.prototype['settlementMethod'] = 'BEST_GUESS';
   /**
-   * *NEW*
-   * @member {Object} verificationLevel
+   * *NEW*  Possible values: - VALIDATION
+   * @member {String} verificationLevel
+   * @default 'VALIDATION'
    */
-  exports.prototype['verificationLevel'] = undefined;
+  exports.prototype['verificationLevel'] = 'VALIDATION';
   /**
    * *Moved* When set to Yes we will automatically update transactions to a completed status X-number of days after the transaction comes through; if no failure notification is received. When set to No means we will not update transaction status in this manner. For BAMS/Bank of America merchants, they should be set to No unless we are explicitly asked to set a merchant to YES.
    * @member {Boolean} setCompletedState

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TssV2TransactionsGet200Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/TssV2TransactionsGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/TssV2TransactionsGet200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/TssV2TransactionsGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionDetailsApi = factory(root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200Response);
+    root.CyberSource.TransactionDetailsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.TssV2TransactionsGet200Response);
   }
-}(this, function(ApiClient, TssV2TransactionsGet200Response) {
+}(this, function(MLEUtility, ApiClient, TssV2TransactionsGet200Response) {
   'use strict';
 
   /**
@@ -91,11 +91,25 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = TssV2TransactionsGet200Response;
 
-      return this.apiClient.callApi(
-        '/tss/v2/transactions/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getTransaction'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransaction');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/tss/v2/transactions/{id}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/tss/v2/transactions/{id}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PushFunds201Response', 'model/PushFunds400Response', 'model/PushFunds401Response', 'model/PushFunds404Response', 'model/PushFunds502Response', 'model/PushFundsRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/PushFunds201Response', 'model/PushFunds400Response', 'model/PushFunds401Response', 'model/PushFunds404Response', 'model/PushFunds502Response', 'model/PushFundsRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PushFunds201Response'), require('../model/PushFunds400Response'), require('../model/PushFunds401Response'), require('../model/PushFunds404Response'), require('../model/PushFunds502Response'), require('../model/PushFundsRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/PushFunds201Response'), require('../model/PushFunds400Response'), require('../model/PushFunds401Response'), require('../model/PushFunds404Response'), require('../model/PushFunds502Response'), require('../model/PushFundsRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PushFundsApi = factory(root.CyberSource.ApiClient, root.CyberSource.PushFunds201Response, root.CyberSource.PushFunds400Response, root.CyberSource.PushFunds401Response, root.CyberSource.PushFunds404Response, root.CyberSource.PushFunds502Response, root.CyberSource.PushFundsRequest);
+    root.CyberSource.PushFundsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.PushFunds201Response, root.CyberSource.PushFunds400Response, root.CyberSource.PushFunds401Response, root.CyberSource.PushFunds404Response, root.CyberSource.PushFunds502Response, root.CyberSource.PushFundsRequest);
   }
-}(this, function(ApiClient, PushFunds201Response, PushFunds400Response, PushFunds401Response, PushFunds404Response, PushFunds502Response, PushFundsRequest) {
+}(this, function(MLEUtility, ApiClient, PushFunds201Response, PushFunds400Response, PushFunds401Response, PushFunds404Response, PushFunds502Response, PushFundsRequest) {
   'use strict';
 
   /**
@@ -133,11 +133,25 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = PushFunds201Response;
 
-      return this.apiClient.callApi(
-        '/pts/v1/push-funds-transfer', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.createPushFundsTransfer'
+      var isMLESupportedByCybsForApi = true;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createPushFundsTransfer');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/pts/v1/push-funds-transfer', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/pts/v1/push-funds-transfer', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 

@@ -71,6 +71,13 @@ More information about this new logging framework can be found in this file : [L
 
 ## Features
 
+### Message Level Encryption (MLE) Feature
+[![Generic badge](https://img.shields.io/badge/MLE-NEW-GREEN.svg)](https://shields.io/)
+
+This feature provides an implementation of Message Level Encryption (MLE) for APIs provided by CyberSource, integrated within our SDK. This feature ensures secure communication by encrypting messages at the application level before they are sent over the network.
+
+More information about this new MLE feature can be found in this file : [MLE.md](MLE.md)
+
 ### MetaKey Support
 
 A Meta Key is a single key that can be used by one, some, or all merchants (or accounts, if created by a Portfolio user) in the portfolio.

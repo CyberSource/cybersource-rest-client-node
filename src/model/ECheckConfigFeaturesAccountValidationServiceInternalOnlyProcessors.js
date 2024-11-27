@@ -63,17 +63,18 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('avsVersion')) {
-        obj['avsVersion'] = ApiClient.convertToType(data['avsVersion'], Object);
+        obj['avsVersion'] = ApiClient.convertToType(data['avsVersion'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * *NEW*
-   * @member {Object} avsVersion
+   * *NEW*  Possible values: - 2
+   * @member {String} avsVersion
+   * @default '2'
    */
-  exports.prototype['avsVersion'] = undefined;
+  exports.prototype['avsVersion'] = '2';
 
 
 

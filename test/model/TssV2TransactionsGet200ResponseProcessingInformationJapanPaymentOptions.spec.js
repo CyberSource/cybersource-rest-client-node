@@ -80,6 +80,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property businessNameEnglish (base name: "businessNameEnglish")', function() {
+      // uncomment below and update the code to test the property businessNameEnglish
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bonuses (base name: "bonuses")', function() {
+      // uncomment below and update the code to test the property bonuses
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property firstBillingMonth (base name: "firstBillingMonth")', function() {
+      // uncomment below and update the code to test the property firstBillingMonth
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property numberOfInstallments (base name: "numberOfInstallments")', function() {
+      // uncomment below and update the code to test the property numberOfInstallments
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preApprovalType (base name: "preApprovalType")', function() {
+      // uncomment below and update the code to test the property preApprovalType
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

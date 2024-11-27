@@ -62,6 +62,7 @@
 
 
 
+
   };
 
   /**
@@ -116,6 +117,9 @@
       }
       if (data.hasOwnProperty('productName')) {
         obj['productName'] = ApiClient.convertToType(data['productName'], 'String');
+      }
+      if (data.hasOwnProperty('productSubtype')) {
+        obj['productSubtype'] = ApiClient.convertToType(data['productSubtype'], 'String');
       }
       if (data.hasOwnProperty('typeSelectionIndicator')) {
         obj['typeSelectionIndicator'] = ApiClient.convertToType(data['typeSelectionIndicator'], 'String');
@@ -194,6 +198,11 @@
    * @member {String} productName
    */
   exports.prototype['productName'] = undefined;
+  /**
+   * This field would contain the indicator for transaction type  Possible values: - AC: Agriculture Maintenance Account - AE: Agriculture Debit Account/Electron  - AG: Agriculture  - AI: Agriculture Investment Loan - CG: Brazil Cargo - CS: Construction  - DS: Distribution  - HC: Healthcare - LP: Visa Large Purchase Advantage - MA: Visa Mobile Agent - MB: Interoperable Mobile Branchless Banking - MG: Visa Mobile General - VA: Visa Vale - Supermarket - VF: Visa Vale - Fuel - VR: Visa Vale - Restaurant 
+   * @member {String} productSubtype
+   */
+  exports.prototype['productSubtype'] = undefined;
   /**
    * Flag that identifies how the card type was selected.  Possible values: - 0: Card type was selected based on default acquirer settings. - 1: Customer selected the card type. 
    * @member {String} typeSelectionIndicator
