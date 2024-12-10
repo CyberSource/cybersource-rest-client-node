@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(CyberSource.GenerateUnifiedCheckoutCaptureContextRequest);
     });
 
-    it('should have the property targetOrigins (base name: "targetOrigins")', function() {
-      // uncomment below and update the code to test the property targetOrigins
+    it('should have the property clientVersion (base name: "clientVersion")', function() {
+      // uncomment below and update the code to test the property clientVersion
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property clientVersion (base name: "clientVersion")', function() {
-      // uncomment below and update the code to test the property clientVersion
+    it('should have the property targetOrigins (base name: "targetOrigins")', function() {
+      // uncomment below and update the code to test the property targetOrigins
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
       //expect(instance).to.be();
     });

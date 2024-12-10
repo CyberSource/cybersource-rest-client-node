@@ -81,7 +81,7 @@
         obj['enableAccuityForAvs'] = ApiClient.convertToType(data['enableAccuityForAvs'], 'Boolean');
       }
       if (data.hasOwnProperty('accuityCheckType')) {
-        obj['accuityCheckType'] = ApiClient.convertToType(data['accuityCheckType'], Object);
+        obj['accuityCheckType'] = ApiClient.convertToType(data['accuityCheckType'], 'String');
       }
       if (data.hasOwnProperty('setCompletedState')) {
         obj['setCompletedState'] = ApiClient.convertToType(data['setCompletedState'], 'Boolean');
@@ -112,10 +112,11 @@
    */
   exports.prototype['enableAccuityForAvs'] = true;
   /**
-   * *NEW*
-   * @member {Object} accuityCheckType
+   * *NEW*  Possible values: - ALWAYS
+   * @member {String} accuityCheckType
+   * @default 'ALWAYS'
    */
-  exports.prototype['accuityCheckType'] = undefined;
+  exports.prototype['accuityCheckType'] = 'ALWAYS';
   /**
    * *Moved* When set to Yes we will automatically update transactions to a completed status X-number of days after the transaction comes through; if no failure notification is received. When set to No means we will not update transaction status in this manner. For BAMS/Bank of America merchants, they should be set to No unless we are explicitly asked to set a merchant to YES.
    * @member {Boolean} setCompletedState

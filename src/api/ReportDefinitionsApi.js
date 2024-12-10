@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3ReportDefinitionsGet200Response', 'model/ReportingV3ReportDefinitionsNameGet200Response', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ReportingV3ReportDefinitionsGet200Response', 'model/ReportingV3ReportDefinitionsNameGet200Response', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ReportingV3ReportDefinitionsGet200Response'), require('../model/ReportingV3ReportDefinitionsNameGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ReportingV3ReportDefinitionsGet200Response'), require('../model/ReportingV3ReportDefinitionsNameGet200Response'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportDefinitionsApi = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportDefinitionsGet200Response, root.CyberSource.ReportingV3ReportDefinitionsNameGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
+    root.CyberSource.ReportDefinitionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportDefinitionsGet200Response, root.CyberSource.ReportingV3ReportDefinitionsNameGet200Response, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(ApiClient, ReportingV3ReportDefinitionsGet200Response, ReportingV3ReportDefinitionsNameGet200Response, Reportingv3ReportDownloadsGet400Response) {
+}(this, function(MLEUtility, ApiClient, ReportingV3ReportDefinitionsGet200Response, ReportingV3ReportDefinitionsNameGet200Response, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**
@@ -99,11 +99,25 @@
       var accepts = ['application/hal+json'];
       var returnType = ReportingV3ReportDefinitionsNameGet200Response;
 
-      return this.apiClient.callApi(
-        '/reporting/v3/report-definitions/{reportDefinitionName}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getResourceInfoByReportDefinition'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getResourceInfoByReportDefinition');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/reporting/v3/report-definitions/{reportDefinitionName}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/reporting/v3/report-definitions/{reportDefinitionName}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -147,11 +161,25 @@
       var accepts = ['application/hal+json'];
       var returnType = ReportingV3ReportDefinitionsGet200Response;
 
-      return this.apiClient.callApi(
-        '/reporting/v3/report-definitions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getResourceV2Info'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getResourceV2Info');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/reporting/v3/report-definitions', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/reporting/v3/report-definitions', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 

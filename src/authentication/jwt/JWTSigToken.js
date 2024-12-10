@@ -18,7 +18,7 @@ exports.getToken = function (merchantConfig, logger) {
         // date format is 'Mon, 09 Apr 2018 10:18:57 GMT'
         var date = new Date(Date.now()).toUTCString();
         var rsaPrivateKey = KeyCertificate.getRSAPrivateKey(merchantConfig, logger);
-        var certificate = KeyCertificate.getX509CertificateInPem(merchantConfig, logger);
+        var certificate = KeyCertificate.getX509CertificateInBase64(merchantConfig, logger, merchantConfig.getKeyAlias());
         var requestType = merchantConfig.getRequestType().toLowerCase();
         if (requestType === Constants.GET || requestType === Constants.DELETE) {
             claimSet = "{\"iat\":\"" + date + "\"}";
@@ -37,7 +37,7 @@ exports.getToken = function (merchantConfig, logger) {
         var x5CList = [certificate];
         var customHeader = {
             'header': {
-                'v-c-merchant-id': merchantConfig.getKeyAlias(),
+                'v-c-merchant-id': merchantConfig.getMerchantID(),
                 'x5c': x5CList
             }
         };

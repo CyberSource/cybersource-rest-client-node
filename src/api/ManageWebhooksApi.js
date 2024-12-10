@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2015', 'model/InlineResponse4042', 'model/SaveAsymEgressKey', 'model/UpdateWebhookRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2015', 'model/InlineResponse4042', 'model/SaveAsymEgressKey', 'model/UpdateWebhookRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse2015'), require('../model/InlineResponse4042'), require('../model/SaveAsymEgressKey'), require('../model/UpdateWebhookRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse2015'), require('../model/InlineResponse4042'), require('../model/SaveAsymEgressKey'), require('../model/UpdateWebhookRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ManageWebhooksApi = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2015, root.CyberSource.InlineResponse4042, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateWebhookRequest);
+    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2015, root.CyberSource.InlineResponse4042, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateWebhookRequest);
   }
-}(this, function(ApiClient, InlineResponse2003, InlineResponse2004, InlineResponse2015, InlineResponse4042, SaveAsymEgressKey, UpdateWebhookRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2003, InlineResponse2004, InlineResponse2015, InlineResponse4042, SaveAsymEgressKey, UpdateWebhookRequest) {
   'use strict';
 
   /**
@@ -92,11 +92,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
-      return this.apiClient.callApi(
-        '/notification-subscriptions/v1/webhooks/{webhookId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.deleteWebhookSubscription'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deleteWebhookSubscription');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v1/webhooks/{webhookId}', 'DELETE',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v1/webhooks/{webhookId}', 'DELETE',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -143,11 +157,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2004;
 
-      return this.apiClient.callApi(
-        '/notification-subscriptions/v1/webhooks/{webhookId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getWebhookSubscriptionById'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getWebhookSubscriptionById');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v1/webhooks/{webhookId}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v1/webhooks/{webhookId}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -208,11 +236,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = [InlineResponse2003];
 
-      return this.apiClient.callApi(
-        '/notification-subscriptions/v1/webhooks', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.getWebhookSubscriptionsByOrg'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getWebhookSubscriptionsByOrg');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v1/webhooks', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v1/webhooks', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -277,11 +319,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2015;
 
-      return this.apiClient.callApi(
-        '/kms/egress/v2/keys-asym', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.saveAsymEgressKey'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'saveAsymEgressKey');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/kms/egress/v2/keys-asym', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/kms/egress/v2/keys-asym', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
 
     /**
@@ -331,11 +387,25 @@
       var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
-      return this.apiClient.callApi(
-        '/notification-subscriptions/v1/webhooks/{webhookId}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
+      //check isMLE for an api method 'this.updateWebhookSubscription'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'updateWebhookSubscription');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v1/webhooks/{webhookId}', 'PATCH',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v1/webhooks/{webhookId}', 'PATCH',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
     }
   };
 
