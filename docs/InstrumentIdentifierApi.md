@@ -79,7 +79,8 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 var instrumentIdentifierId = "instrumentIdentifierId_example"; // String | The Id of an Instrument Identifier.
 
 var opts = { 
-  'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
+  'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
+  'retrieveBinDetails': true // Boolean | Retrieve the Bin Details of PAN or network token
 };
 
 var callback = function(error, data, response) {
@@ -98,6 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentIdentifierId** | **String**| The Id of an Instrument Identifier. | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional] 
 
 ### Return type
 
@@ -130,6 +132,7 @@ var instrumentIdentifierId = "instrumentIdentifierId_example"; // String | The I
 
 var opts = { 
   'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
+  'retrieveBinDetails': true, // Boolean | Retrieve the Bin Details of PAN or network token
   'offset': 0, // Number | Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0.
   'limit': 20 // Number | The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 };
@@ -150,6 +153,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentIdentifierId** | **String**| The Id of an Instrument Identifier. | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional] 
  **offset** | **Number**| Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] [default to 0]
  **limit** | **Number**| The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
 
@@ -186,6 +190,7 @@ var patchInstrumentIdentifierRequest = new CyberSource.PatchInstrumentIdentifier
 
 var opts = { 
   'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
+  'retrieveBinDetails': true, // Boolean | Retrieve the Bin Details of PAN or network token
   'ifMatch': "ifMatch_example" // String | Contains an ETag value from a GET request to make the request conditional.
 };
 
@@ -206,6 +211,7 @@ Name | Type | Description  | Notes
  **instrumentIdentifierId** | **String**| The Id of an Instrument Identifier. | 
  **patchInstrumentIdentifierRequest** | [**PatchInstrumentIdentifierRequest**](PatchInstrumentIdentifierRequest.md)| Specify the previous transaction Id to update. | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional] 
  **ifMatch** | **String**| Contains an ETag value from a GET request to make the request conditional. | [optional] 
 
 ### Return type
@@ -238,7 +244,8 @@ var apiInstance = new CyberSource.InstrumentIdentifierApi();
 var postInstrumentIdentifierRequest = new CyberSource.PostInstrumentIdentifierRequest(); // PostInstrumentIdentifierRequest | Specify either a Card, Bank Account or Enrollable Card
 
 var opts = { 
-  'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
+  'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
+  'retrieveBinDetails': true // Boolean | Retrieve the Bin Details of PAN or network token
 };
 
 var callback = function(error, data, response) {
@@ -257,6 +264,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postInstrumentIdentifierRequest** | [**PostInstrumentIdentifierRequest**](PostInstrumentIdentifierRequest.md)| Specify either a Card, Bank Account or Enrollable Card | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional] 
 
 ### Return type
 

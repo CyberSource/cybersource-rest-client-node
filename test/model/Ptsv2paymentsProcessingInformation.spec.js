@@ -284,6 +284,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionTypeIndicator (base name: "transactionTypeIndicator")', function() {
+      // uncomment below and update the code to test the property transactionTypeIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property purposeOfPayment (base name: "purposeOfPayment")', function() {
+      // uncomment below and update the code to test the property purposeOfPayment
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property languageCode (base name: "languageCode")', function() {
+      // uncomment below and update the code to test the property languageCode
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property originalPaymentId (base name: "originalPaymentId")', function() {
+      // uncomment below and update the code to test the property originalPaymentId
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

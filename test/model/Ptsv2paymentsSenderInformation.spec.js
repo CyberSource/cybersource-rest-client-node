@@ -98,6 +98,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property aliasName (base name: "aliasName")', function() {
+      // uncomment below and update the code to test the property aliasName
+      //var instane = new CyberSource.Ptsv2paymentsSenderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referenceNumber (base name: "referenceNumber")', function() {
+      // uncomment below and update the code to test the property referenceNumber
+      //var instane = new CyberSource.Ptsv2paymentsSenderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property account (base name: "account")', function() {
+      // uncomment below and update the code to test the property account
+      //var instane = new CyberSource.Ptsv2paymentsSenderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postalCode (base name: "postalCode")', function() {
+      // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Ptsv2paymentsSenderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

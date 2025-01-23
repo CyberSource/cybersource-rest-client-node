@@ -77,7 +77,8 @@ var apiInstance = new CyberSource.PaymentInstrumentApi();
 var paymentInstrumentId = "paymentInstrumentId_example"; // String | The Id of a payment instrument.
 
 var opts = { 
-  'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
+  'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
+  'retrieveBinDetails': true // Boolean | Retrieve the Bin Details of PAN or network token
 };
 
 var callback = function(error, data, response) {
@@ -96,6 +97,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **paymentInstrumentId** | **String**| The Id of a payment instrument. | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional] 
 
 ### Return type
 
@@ -130,6 +132,7 @@ var patchPaymentInstrumentRequest = new CyberSource.PatchPaymentInstrumentReques
 
 var opts = { 
   'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
+  'retrieveBinDetails': true, // Boolean | Retrieve the Bin Details of PAN or network token
   'ifMatch': "ifMatch_example" // String | Contains an ETag value from a GET request to make the request conditional.
 };
 
@@ -150,6 +153,7 @@ Name | Type | Description  | Notes
  **paymentInstrumentId** | **String**| The Id of a payment instrument. | 
  **patchPaymentInstrumentRequest** | [**PatchPaymentInstrumentRequest**](PatchPaymentInstrumentRequest.md)|  | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional] 
  **ifMatch** | **String**| Contains an ETag value from a GET request to make the request conditional. | [optional] 
 
 ### Return type
@@ -182,7 +186,8 @@ var apiInstance = new CyberSource.PaymentInstrumentApi();
 var postPaymentInstrumentRequest = new CyberSource.PostPaymentInstrumentRequest(); // PostPaymentInstrumentRequest | 
 
 var opts = { 
-  'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
+  'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
+  'retrieveBinDetails': true // Boolean | Retrieve the Bin Details of PAN or network token
 };
 
 var callback = function(error, data, response) {
@@ -201,6 +206,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postPaymentInstrumentRequest** | [**PostPaymentInstrumentRequest**](PostPaymentInstrumentRequest.md)|  | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional] 
 
 ### Return type
 

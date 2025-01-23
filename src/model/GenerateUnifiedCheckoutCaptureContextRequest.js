@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Upv1capturecontextsCaptureMandate', 'model/Upv1capturecontextsCheckoutApiInitialization', 'model/Upv1capturecontextsOrderInformation'], factory);
+    define(['ApiClient', 'model/Upv1capturecontextsCaptureMandate', 'model/Upv1capturecontextsOrderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsCaptureMandate'), require('./Upv1capturecontextsCheckoutApiInitialization'), require('./Upv1capturecontextsOrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsCaptureMandate'), require('./Upv1capturecontextsOrderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsCaptureMandate, root.CyberSource.Upv1capturecontextsCheckoutApiInitialization, root.CyberSource.Upv1capturecontextsOrderInformation);
+    root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsCaptureMandate, root.CyberSource.Upv1capturecontextsOrderInformation);
   }
-}(this, function(ApiClient, Upv1capturecontextsCaptureMandate, Upv1capturecontextsCheckoutApiInitialization, Upv1capturecontextsOrderInformation) {
+}(this, function(ApiClient, Upv1capturecontextsCaptureMandate, Upv1capturecontextsOrderInformation) {
   'use strict';
 
 
@@ -46,7 +46,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
 
@@ -93,9 +92,6 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Upv1capturecontextsOrderInformation.constructFromObject(data['orderInformation']);
       }
-      if (data.hasOwnProperty('checkoutApiInitialization')) {
-        obj['checkoutApiInitialization'] = Upv1capturecontextsCheckoutApiInitialization.constructFromObject(data['checkoutApiInitialization']);
-      }
     }
     return obj;
   }
@@ -116,7 +112,7 @@
    */
   exports.prototype['allowedCardNetworks'] = undefined;
   /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - PANENTRY                 - GOOGLEPAY   - SRC   - CHECK <br><br>  Possible values when launching Unified Checkout with Checkout API: - PANENTRY               - SRC <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - SRC and CLICKTOPAY are only available for Visa, Mastercard and AMEX. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field. 
    * @member {Array.<String>} allowedPaymentTypes
    */
   exports.prototype['allowedPaymentTypes'] = undefined;
@@ -138,10 +134,6 @@
    * @member {module:model/Upv1capturecontextsOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
-  /**
-   * @member {module:model/Upv1capturecontextsCheckoutApiInitialization} checkoutApiInitialization
-   */
-  exports.prototype['checkoutApiInitialization'] = undefined;
 
 
 

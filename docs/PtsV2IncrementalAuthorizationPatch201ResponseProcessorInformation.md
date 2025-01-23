@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **systemTraceAuditNumber** | **String** | This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer's receipt.  | [optional] 
 **responseDetails** | **String** | This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**.  | [optional] 
 **merchantAdvice** | [**PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice**](PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice.md) |  | [optional] 
+**merchantRiskPrediction** | **String** | Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices.  | [optional] 
 **sellerProtection** | [**PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection**](PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.md) |  | [optional] 
 
 

@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.Tmsv2TokenizedCardCard);
     });
 
-    it('should have the property suffix (base name: "suffix")', function() {
-      // uncomment below and update the code to test the property suffix
+    it('should have the property _number (base name: "number")', function() {
+      // uncomment below and update the code to test the property _number
       //var instane = new CyberSource.Tmsv2TokenizedCardCard();
       //expect(instance).to.be();
     });
@@ -70,6 +70,18 @@
 
     it('should have the property expirationYear (base name: "expirationYear")', function() {
       // uncomment below and update the code to test the property expirationYear
+      //var instane = new CyberSource.Tmsv2TokenizedCardCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.Tmsv2TokenizedCardCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property suffix (base name: "suffix")', function() {
+      // uncomment below and update the code to test the property suffix
       //var instane = new CyberSource.Tmsv2TokenizedCardCard();
       //expect(instance).to.be();
     });

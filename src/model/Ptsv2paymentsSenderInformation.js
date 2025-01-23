@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsSenderInformationAccount'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsSenderInformationAccount'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsSenderInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv2paymentsSenderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsSenderInformationAccount);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsSenderInformationAccount) {
   'use strict';
 
 
@@ -46,6 +46,10 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
 
 
 
@@ -88,6 +92,18 @@
       if (data.hasOwnProperty('countryCode')) {
         obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
       }
+      if (data.hasOwnProperty('aliasName')) {
+        obj['aliasName'] = ApiClient.convertToType(data['aliasName'], 'String');
+      }
+      if (data.hasOwnProperty('referenceNumber')) {
+        obj['referenceNumber'] = ApiClient.convertToType(data['referenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('account')) {
+        obj['account'] = Ptsv2paymentsSenderInformationAccount.constructFromObject(data['account']);
+      }
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
     }
     return obj;
   }
@@ -127,6 +143,25 @@
    * @member {String} countryCode
    */
   exports.prototype['countryCode'] = undefined;
+  /**
+   * Sender's alias name.
+   * @member {String} aliasName
+   */
+  exports.prototype['aliasName'] = undefined;
+  /**
+   * This field is applicable for AFT transactions.   Contains a transaction reference number provided by the Merchant. Only alpha numeric values are supported. 
+   * @member {String} referenceNumber
+   */
+  exports.prototype['referenceNumber'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsSenderInformationAccount} account
+   */
+  exports.prototype['account'] = undefined;
+  /**
+   * Postal code of sender. 
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions', 'model/PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions', 'model/PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions', 'model/PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions', 'model/PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions'), require('./PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions'), require('./PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions'), require('./PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions'), require('./PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions);
+    root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions, root.CyberSource.PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions, PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions, PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions, PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions, PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -76,6 +78,12 @@
       if (data.hasOwnProperty('captureOptions')) {
         obj['captureOptions'] = PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions.constructFromObject(data['captureOptions']);
       }
+      if (data.hasOwnProperty('authorizationOptions')) {
+        obj['authorizationOptions'] = PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions.constructFromObject(data['authorizationOptions']);
+      }
+      if (data.hasOwnProperty('purchaseOptions')) {
+        obj['purchaseOptions'] = PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions.constructFromObject(data['purchaseOptions']);
+      }
     }
     return obj;
   }
@@ -98,6 +106,14 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions} captureOptions
    */
   exports.prototype['captureOptions'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions} authorizationOptions
+   */
+  exports.prototype['authorizationOptions'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions} purchaseOptions
+   */
+  exports.prototype['purchaseOptions'] = undefined;
 
 
 

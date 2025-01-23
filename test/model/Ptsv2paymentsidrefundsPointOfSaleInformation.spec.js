@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property terminalCategory (base name: "terminalCategory")', function() {
+      // uncomment below and update the code to test the property terminalCategory
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -380,6 +380,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authenticationBrand (base name: "authenticationBrand")', function() {
+      // uncomment below and update the code to test the property authenticationBrand
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property effectiveAuthenticationType (base name: "effectiveAuthenticationType")', function() {
       // uncomment below and update the code to test the property effectiveAuthenticationType
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
@@ -394,6 +400,18 @@
 
     it('should have the property signedPares (base name: "signedPares")', function() {
       // uncomment below and update the code to test the property signedPares
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property acsReferenceNumber (base name: "acsReferenceNumber")', function() {
+      // uncomment below and update the code to test the property acsReferenceNumber
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dsReferenceNumber (base name: "dsReferenceNumber")', function() {
+      // uncomment below and update the code to test the property dsReferenceNumber
       //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
       //expect(instance).to.be();
     });

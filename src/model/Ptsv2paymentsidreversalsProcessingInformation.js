@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('actionList')) {
         obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
+      }
+      if (data.hasOwnProperty('transactionTypeIndicator')) {
+        obj['transactionTypeIndicator'] = ApiClient.convertToType(data['transactionTypeIndicator'], 'String');
       }
     }
     return obj;
@@ -126,6 +130,11 @@
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
+  /**
+   * This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities 
+   * @member {String} transactionTypeIndicator
+   */
+  exports.prototype['transactionTypeIndicator'] = undefined;
 
 
 

@@ -65,6 +65,7 @@
 
 
 
+
   };
 
   /**
@@ -131,6 +132,9 @@
       }
       if (data.hasOwnProperty('regulated')) {
         obj['regulated'] = ApiClient.convertToType(data['regulated'], 'String');
+      }
+      if (data.hasOwnProperty('accountHolderType')) {
+        obj['accountHolderType'] = ApiClient.convertToType(data['accountHolderType'], 'String');
       }
     }
     return obj;
@@ -226,6 +230,11 @@
    * @member {String} regulated
    */
   exports.prototype['regulated'] = undefined;
+  /**
+   * This is the account owner information, valid values are: - `01` : primary account holder - `02` : secondary account holder This is returned in the response of an account verification transaction by the Issuer.  
+   * @member {String} accountHolderType
+   */
+  exports.prototype['accountHolderType'] = undefined;
 
 
 

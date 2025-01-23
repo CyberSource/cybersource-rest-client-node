@@ -110,6 +110,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property aliasName (base name: "aliasName")', function() {
+      // uncomment below and update the code to test the property aliasName
+      //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nationality (base name: "nationality")', function() {
+      // uncomment below and update the code to test the property nationality
+      //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property countryOfBirth (base name: "countryOfBirth")', function() {
+      // uncomment below and update the code to test the property countryOfBirth
+      //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property occupation (base name: "occupation")', function() {
+      // uncomment below and update the code to test the property occupation
+      //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new CyberSource.Ptsv2payoutsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

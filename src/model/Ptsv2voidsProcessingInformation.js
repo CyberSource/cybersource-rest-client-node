@@ -62,7 +62,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentId')) {
-        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], Object);
+        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], 'String');
       }
     }
     return obj;
@@ -70,7 +70,7 @@
 
   /**
    * This field is to accept the id of credit/capture in the body of the requests so the type of void can be identified and processed correctly.
-   * @member {Object} paymentId
+   * @member {String} paymentId
    */
   exports.prototype['paymentId'] = undefined;
 

@@ -129,6 +129,7 @@
      * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {Boolean} opts.retrieveBinDetails Retrieve the Bin Details of PAN or network token
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PostInstrumentIdentifierRequest}
      */
@@ -149,6 +150,7 @@
         'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
+        'retrieveBinDetails': opts['retrieveBinDetails']
       };
       var headerParams = {
         'profile-id': opts['profileId']
@@ -196,6 +198,7 @@
      * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {Boolean} opts.retrieveBinDetails Retrieve the Bin Details of PAN or network token
      * @param {Number} opts.offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/InstrumentIdentifierApi~getInstrumentIdentifierPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
@@ -218,6 +221,7 @@
         'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
+        'retrieveBinDetails': opts['retrieveBinDetails'],
         'offset': opts['offset'],
         'limit': opts['limit']
       };
@@ -268,6 +272,7 @@
      * @param {module:model/PatchInstrumentIdentifierRequest} patchInstrumentIdentifierRequest Specify the previous transaction Id to update.
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {Boolean} opts.retrieveBinDetails Retrieve the Bin Details of PAN or network token
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/InstrumentIdentifierApi~patchInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PatchInstrumentIdentifierRequest}
@@ -295,6 +300,7 @@
         'instrumentIdentifierId': instrumentIdentifierId
       };
       var queryParams = {
+        'retrieveBinDetails': opts['retrieveBinDetails']
       };
       var headerParams = {
         'profile-id': opts['profileId'],
@@ -343,6 +349,7 @@
      * @param {module:model/PostInstrumentIdentifierRequest} postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {Boolean} opts.retrieveBinDetails Retrieve the Bin Details of PAN or network token
      * @param {module:api/InstrumentIdentifierApi~postInstrumentIdentifierCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PostInstrumentIdentifierRequest}
      */
@@ -363,6 +370,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'retrieveBinDetails': opts['retrieveBinDetails']
       };
       var headerParams = {
         'profile-id': opts['profileId']

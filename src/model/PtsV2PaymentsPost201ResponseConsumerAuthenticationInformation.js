@@ -89,6 +89,7 @@
 
 
 
+
   };
 
   /**
@@ -212,6 +213,9 @@
       }
       if (data.hasOwnProperty('directoryServerTransactionId')) {
         obj['directoryServerTransactionId'] = ApiClient.convertToType(data['directoryServerTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('dataQualityIndicator')) {
+        obj['dataQualityIndicator'] = ApiClient.convertToType(data['dataQualityIndicator'], 'String');
       }
       if (data.hasOwnProperty('authenticationResult')) {
         obj['authenticationResult'] = ApiClient.convertToType(data['authenticationResult'], 'String');
@@ -415,6 +419,11 @@
    * @member {String} directoryServerTransactionId
    */
   exports.prototype['directoryServerTransactionId'] = undefined;
+  /**
+   * The field is used to indicate that a transaction does not meet the Visa Secure authentication data quality requirements.
+   * @member {String} dataQualityIndicator
+   */
+  exports.prototype['dataQualityIndicator'] = undefined;
   /**
    * Raw authentication data that comes from the cardissuing bank. Primary authentication field that indicates if authentication was successful and if liability shift occurred. You should examine first the result of this field. This field contains one of these values: - `-1`: Invalid PARes. - `0`: Successful validation. - `1`: Cardholder is not participating, but the attempt to authenticate was recorded. - `6`: Issuer unable to perform authentication. - `9`: Cardholder did not complete authentication. 
    * @member {String} authenticationResult

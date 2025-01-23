@@ -65,6 +65,7 @@
 
 
 
+
   };
 
   /**
@@ -131,6 +132,9 @@
       }
       if (data.hasOwnProperty('identificationNumber')) {
         obj['identificationNumber'] = ApiClient.convertToType(data['identificationNumber'], 'String');
+      }
+      if (data.hasOwnProperty('aliasName')) {
+        obj['aliasName'] = ApiClient.convertToType(data['aliasName'], 'String');
       }
     }
     return obj;
@@ -225,6 +229,11 @@
    * @member {String} identificationNumber
    */
   exports.prototype['identificationNumber'] = undefined;
+  /**
+   * Sender's alias name.
+   * @member {String} aliasName
+   */
+  exports.prototype['aliasName'] = undefined;
 
 
 

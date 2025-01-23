@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2TokenizedCardCard', 'model/Tmsv2TokenizedCardMetadata'], factory);
+    define(['ApiClient', 'model/Tmsv2TokenizedCardCard', 'model/Tmsv2TokenizedCardLinks', 'model/Tmsv2TokenizedCardMetadata', 'model/Tmsv2TokenizedCardPasscode'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2TokenizedCardCard'), require('./Tmsv2TokenizedCardMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2TokenizedCardCard'), require('./Tmsv2TokenizedCardLinks'), require('./Tmsv2TokenizedCardMetadata'), require('./Tmsv2TokenizedCardPasscode'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2TokenizedCard = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2TokenizedCardCard, root.CyberSource.Tmsv2TokenizedCardMetadata);
+    root.CyberSource.Tmsv2TokenizedCard = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2TokenizedCardCard, root.CyberSource.Tmsv2TokenizedCardLinks, root.CyberSource.Tmsv2TokenizedCardMetadata, root.CyberSource.Tmsv2TokenizedCardPasscode);
   }
-}(this, function(ApiClient, Tmsv2TokenizedCardCard, Tmsv2TokenizedCardMetadata) {
+}(this, function(ApiClient, Tmsv2TokenizedCardCard, Tmsv2TokenizedCardLinks, Tmsv2TokenizedCardMetadata, Tmsv2TokenizedCardPasscode) {
   'use strict';
 
 
@@ -59,6 +59,14 @@
 
 
 
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -72,8 +80,23 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = Tmsv2TokenizedCardLinks.constructFromObject(data['_links']);
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('object')) {
+        obj['object'] = ApiClient.convertToType(data['object'], 'String');
+      }
+      if (data.hasOwnProperty('accountReferenceId')) {
+        obj['accountReferenceId'] = ApiClient.convertToType(data['accountReferenceId'], 'String');
+      }
+      if (data.hasOwnProperty('consumerId')) {
+        obj['consumerId'] = ApiClient.convertToType(data['consumerId'], 'String');
+      }
+      if (data.hasOwnProperty('createInstrumentIdentifier')) {
+        obj['createInstrumentIdentifier'] = ApiClient.convertToType(data['createInstrumentIdentifier'], 'Boolean');
       }
       if (data.hasOwnProperty('source')) {
         obj['source'] = ApiClient.convertToType(data['source'], 'String');
@@ -81,29 +104,38 @@
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
       }
-      if (data.hasOwnProperty('enrollmentId')) {
-        obj['enrollmentId'] = ApiClient.convertToType(data['enrollmentId'], 'String');
-      }
-      if (data.hasOwnProperty('tokenReferenceId')) {
-        obj['tokenReferenceId'] = ApiClient.convertToType(data['tokenReferenceId'], 'String');
-      }
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('number')) {
         obj['number'] = ApiClient.convertToType(data['number'], 'String');
       }
-      if (data.hasOwnProperty('expirationMonth')) {
-        obj['expirationMonth'] = ApiClient.convertToType(data['expirationMonth'], 'String');
-      }
-      if (data.hasOwnProperty('expirationYear')) {
-        obj['expirationYear'] = ApiClient.convertToType(data['expirationYear'], 'String');
-      }
       if (data.hasOwnProperty('cryptogram')) {
         obj['cryptogram'] = ApiClient.convertToType(data['cryptogram'], 'String');
       }
+      if (data.hasOwnProperty('securityCode')) {
+        obj['securityCode'] = ApiClient.convertToType(data['securityCode'], 'String');
+      }
+      if (data.hasOwnProperty('eci')) {
+        obj['eci'] = ApiClient.convertToType(data['eci'], 'String');
+      }
+      if (data.hasOwnProperty('requestorId')) {
+        obj['requestorId'] = ApiClient.convertToType(data['requestorId'], 'String');
+      }
+      if (data.hasOwnProperty('enrollmentId')) {
+        obj['enrollmentId'] = ApiClient.convertToType(data['enrollmentId'], 'String');
+      }
+      if (data.hasOwnProperty('tokenReferenceId')) {
+        obj['tokenReferenceId'] = ApiClient.convertToType(data['tokenReferenceId'], 'String');
+      }
+      if (data.hasOwnProperty('paymentAccountReference')) {
+        obj['paymentAccountReference'] = ApiClient.convertToType(data['paymentAccountReference'], 'String');
+      }
       if (data.hasOwnProperty('card')) {
         obj['card'] = Tmsv2TokenizedCardCard.constructFromObject(data['card']);
+      }
+      if (data.hasOwnProperty('passcode')) {
+        obj['passcode'] = Tmsv2TokenizedCardPasscode.constructFromObject(data['passcode']);
       }
       if (data.hasOwnProperty('metadata')) {
         obj['metadata'] = Tmsv2TokenizedCardMetadata.constructFromObject(data['metadata']);
@@ -113,59 +145,97 @@
   }
 
   /**
-   * The network token card association brand Possible Values: - visa - mastercard - americanexpress 
-   * @member {String} type
+   * @member {module:model/Tmsv2TokenizedCardLinks} _links
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['_links'] = undefined;
   /**
-   * This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE 
+   * The Id of the Tokenized Card. 
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
+  /**
+   * The type. Possible Values: - tokenizedCard 
+   * @member {String} object
+   */
+  exports.prototype['object'] = undefined;
+  /**
+   * An identifier provided by the issuer for the account. 
+   * @member {String} accountReferenceId
+   */
+  exports.prototype['accountReferenceId'] = undefined;
+  /**
+   * Identifier of the consumer within the wallet. Maximum 24 characters for VTS.
+   * @member {String} consumerId
+   */
+  exports.prototype['consumerId'] = undefined;
+  /**
+   * Specifies whether the InstrumentId should be created (true) or not (false). Possible Values: - `true`: The InstrumentId should be created. - `false`: The InstrumentId should be created. 
+   * @member {Boolean} createInstrumentIdentifier
+   */
+  exports.prototype['createInstrumentIdentifier'] = undefined;
+  /**
+   * Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER 
    * @member {String} source
    */
   exports.prototype['source'] = undefined;
   /**
-   * State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. 
+   * State of the network token or network token provision. Possible Values:   ACTIVE : Network token is active.   SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   DELETED : This is a final state for a network token instance.   UNPROVISIONED : A previous network token. 
    * @member {String} state
    */
   exports.prototype['state'] = undefined;
-  /**
-   * Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully. 
-   * @member {String} enrollmentId
-   */
-  exports.prototype['enrollmentId'] = undefined;
-  /**
-   * Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully. 
-   * @member {String} tokenReferenceId
-   */
-  exports.prototype['tokenReferenceId'] = undefined;
   /**
    * Issuers state for the network token Possible Values: - INVALID_REQUEST : The network token provision request contained invalid data. - CARD_VERIFICATION_FAILED : The network token provision request contained data that could not be verified. - CARD_NOT_ELIGIBLE : Card can currently not be used with issuer for tokenization. - CARD_NOT_ALLOWED : Card can currently not be used with card association for tokenization. - DECLINED : Card can currently not be used with issuer for tokenization. - SERVICE_UNAVAILABLE : The network token service was unavailable or timed out. - SYSTEM_ERROR : An unexpected error occurred with network token service, check configuration. 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The token requestors network token 
+   * The token requestor's network token for the provided PAN and consumer Id, if available. 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;
   /**
-   * Two-digit month in which the network token expires.  Format: `MM`.  Possible Values: `01` through `12`. 
-   * @member {String} expirationMonth
-   */
-  exports.prototype['expirationMonth'] = undefined;
-  /**
-   * Four-digit year in which the network token expires.  Format: `YYYY`. 
-   * @member {String} expirationYear
-   */
-  exports.prototype['expirationYear'] = undefined;
-  /**
-   * Generated value used in conjunction with the network token for making a payment. 
+   * Value generated by the card association to be used alongside the network token for processing a payment. 
    * @member {String} cryptogram
    */
   exports.prototype['cryptogram'] = undefined;
   /**
+   * 4-digit number generated by the card association to be used alogside the network token for processing a payment. Only supported for Amex and SCOF. 
+   * @member {String} securityCode
+   */
+  exports.prototype['securityCode'] = undefined;
+  /**
+   * Raw Electronic Commerce Indicator provided by the card association with the result of the cardholder authentication. 
+   * @member {String} eci
+   */
+  exports.prototype['eci'] = undefined;
+  /**
+   * 11-digit identifier that uniquely identifies the Token Requestor. 
+   * @member {String} requestorId
+   */
+  exports.prototype['requestorId'] = undefined;
+  /**
+   * Unique id to identify this PAN/ enrollment. 
+   * @member {String} enrollmentId
+   */
+  exports.prototype['enrollmentId'] = undefined;
+  /**
+   * Unique ID for netwrok token. 
+   * @member {String} tokenReferenceId
+   */
+  exports.prototype['tokenReferenceId'] = undefined;
+  /**
+   * Payment account reference. 
+   * @member {String} paymentAccountReference
+   */
+  exports.prototype['paymentAccountReference'] = undefined;
+  /**
    * @member {module:model/Tmsv2TokenizedCardCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * @member {module:model/Tmsv2TokenizedCardPasscode} passcode
+   */
+  exports.prototype['passcode'] = undefined;
   /**
    * @member {module:model/Tmsv2TokenizedCardMetadata} metadata
    */

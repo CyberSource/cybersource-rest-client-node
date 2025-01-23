@@ -41,12 +41,14 @@
 
   /**
    * Constructs a new <code>Tmsv2TokenizedCardCard</code>.
-   * The latest card details associated with the network token
+   * Card object used to create a network token 
    * @alias module:model/Tmsv2TokenizedCardCard
    * @class
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -64,8 +66,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('suffix')) {
-        obj['suffix'] = ApiClient.convertToType(data['suffix'], 'String');
+      if (data.hasOwnProperty('number')) {
+        obj['number'] = ApiClient.convertToType(data['number'], 'String');
       }
       if (data.hasOwnProperty('expirationMonth')) {
         obj['expirationMonth'] = ApiClient.convertToType(data['expirationMonth'], 'String');
@@ -73,25 +75,41 @@
       if (data.hasOwnProperty('expirationYear')) {
         obj['expirationYear'] = ApiClient.convertToType(data['expirationYear'], 'String');
       }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('suffix')) {
+        obj['suffix'] = ApiClient.convertToType(data['suffix'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * The customer's latest payment card number suffix 
-   * @member {String} suffix
+   * The customer's payment card number, also known as the Primary Account Number (PAN). 
+   * @member {String} number
    */
-  exports.prototype['suffix'] = undefined;
+  exports.prototype['number'] = undefined;
   /**
-   *  Two-digit month in which the customer's latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. 
+   * Two-digit month in which the payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. 
    * @member {String} expirationMonth
    */
   exports.prototype['expirationMonth'] = undefined;
   /**
-   * Four-digit year in which the customer's latest payment card expires.  Format: `YYYY`. 
+   * Four-digit year in which the credit card expires.  Format: `YYYY`. 
    * @member {String} expirationYear
    */
   exports.prototype['expirationYear'] = undefined;
+  /**
+   * The type of card(Card network). Possible Values: 001: visa 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * The customer's latest payment card number suffix. 
+   * @member {String} suffix
+   */
+  exports.prototype['suffix'] = undefined;
 
 
 

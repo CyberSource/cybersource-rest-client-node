@@ -56,6 +56,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -95,6 +100,21 @@
       }
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('aliasName')) {
+        obj['aliasName'] = ApiClient.convertToType(data['aliasName'], 'String');
+      }
+      if (data.hasOwnProperty('nationality')) {
+        obj['nationality'] = ApiClient.convertToType(data['nationality'], 'String');
+      }
+      if (data.hasOwnProperty('countryOfBirth')) {
+        obj['countryOfBirth'] = ApiClient.convertToType(data['countryOfBirth'], 'String');
+      }
+      if (data.hasOwnProperty('occupation')) {
+        obj['occupation'] = ApiClient.convertToType(data['occupation'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
     }
     return obj;
@@ -145,6 +165,31 @@
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
+  /**
+   * Account owner alias name. 
+   * @member {String} aliasName
+   */
+  exports.prototype['aliasName'] = undefined;
+  /**
+   * Account Owner Nationality
+   * @member {String} nationality
+   */
+  exports.prototype['nationality'] = undefined;
+  /**
+   * Account Owner Country of Birth
+   * @member {String} countryOfBirth
+   */
+  exports.prototype['countryOfBirth'] = undefined;
+  /**
+   * Account Owner Occupation
+   * @member {String} occupation
+   */
+  exports.prototype['occupation'] = undefined;
+  /**
+   * Account Owner email address
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
 
 
 

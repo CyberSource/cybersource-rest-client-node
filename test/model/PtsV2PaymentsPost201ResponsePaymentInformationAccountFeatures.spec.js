@@ -164,6 +164,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property accountHolderType (base name: "accountHolderType")', function() {
+      // uncomment below and update the code to test the property accountHolderType
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

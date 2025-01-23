@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsTokenInformationTokenProvisioningInformation', 'model/TmsEmbeddedInstrumentIdentifierBankAccount', 'model/TmsEmbeddedInstrumentIdentifierBillTo', 'model/TmsEmbeddedInstrumentIdentifierCard', 'model/TmsEmbeddedInstrumentIdentifierIssuer', 'model/TmsEmbeddedInstrumentIdentifierLinks', 'model/TmsEmbeddedInstrumentIdentifierMetadata', 'model/TmsEmbeddedInstrumentIdentifierProcessingInformation', 'model/Tmsv2TokenizedCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsTokenInformationTokenProvisioningInformation', 'model/TmsEmbeddedInstrumentIdentifierBankAccount', 'model/TmsEmbeddedInstrumentIdentifierBillTo', 'model/TmsEmbeddedInstrumentIdentifierCard', 'model/TmsEmbeddedInstrumentIdentifierEmbedded', 'model/TmsEmbeddedInstrumentIdentifierIssuer', 'model/TmsEmbeddedInstrumentIdentifierLinks', 'model/TmsEmbeddedInstrumentIdentifierMetadata', 'model/TmsEmbeddedInstrumentIdentifierProcessingInformation', 'model/Tmsv2TokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTokenInformationTokenProvisioningInformation'), require('./TmsEmbeddedInstrumentIdentifierBankAccount'), require('./TmsEmbeddedInstrumentIdentifierBillTo'), require('./TmsEmbeddedInstrumentIdentifierCard'), require('./TmsEmbeddedInstrumentIdentifierIssuer'), require('./TmsEmbeddedInstrumentIdentifierLinks'), require('./TmsEmbeddedInstrumentIdentifierMetadata'), require('./TmsEmbeddedInstrumentIdentifierProcessingInformation'), require('./Tmsv2TokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTokenInformationTokenProvisioningInformation'), require('./TmsEmbeddedInstrumentIdentifierBankAccount'), require('./TmsEmbeddedInstrumentIdentifierBillTo'), require('./TmsEmbeddedInstrumentIdentifierCard'), require('./TmsEmbeddedInstrumentIdentifierEmbedded'), require('./TmsEmbeddedInstrumentIdentifierIssuer'), require('./TmsEmbeddedInstrumentIdentifierLinks'), require('./TmsEmbeddedInstrumentIdentifierMetadata'), require('./TmsEmbeddedInstrumentIdentifierProcessingInformation'), require('./Tmsv2TokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostInstrumentIdentifierRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation, root.CyberSource.TmsEmbeddedInstrumentIdentifierBankAccount, root.CyberSource.TmsEmbeddedInstrumentIdentifierBillTo, root.CyberSource.TmsEmbeddedInstrumentIdentifierCard, root.CyberSource.TmsEmbeddedInstrumentIdentifierIssuer, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinks, root.CyberSource.TmsEmbeddedInstrumentIdentifierMetadata, root.CyberSource.TmsEmbeddedInstrumentIdentifierProcessingInformation, root.CyberSource.Tmsv2TokenizedCard);
+    root.CyberSource.PostInstrumentIdentifierRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation, root.CyberSource.TmsEmbeddedInstrumentIdentifierBankAccount, root.CyberSource.TmsEmbeddedInstrumentIdentifierBillTo, root.CyberSource.TmsEmbeddedInstrumentIdentifierCard, root.CyberSource.TmsEmbeddedInstrumentIdentifierEmbedded, root.CyberSource.TmsEmbeddedInstrumentIdentifierIssuer, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinks, root.CyberSource.TmsEmbeddedInstrumentIdentifierMetadata, root.CyberSource.TmsEmbeddedInstrumentIdentifierProcessingInformation, root.CyberSource.Tmsv2TokenizedCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsTokenInformationTokenProvisioningInformation, TmsEmbeddedInstrumentIdentifierBankAccount, TmsEmbeddedInstrumentIdentifierBillTo, TmsEmbeddedInstrumentIdentifierCard, TmsEmbeddedInstrumentIdentifierIssuer, TmsEmbeddedInstrumentIdentifierLinks, TmsEmbeddedInstrumentIdentifierMetadata, TmsEmbeddedInstrumentIdentifierProcessingInformation, Tmsv2TokenizedCard) {
+}(this, function(ApiClient, Ptsv2paymentsTokenInformationTokenProvisioningInformation, TmsEmbeddedInstrumentIdentifierBankAccount, TmsEmbeddedInstrumentIdentifierBillTo, TmsEmbeddedInstrumentIdentifierCard, TmsEmbeddedInstrumentIdentifierEmbedded, TmsEmbeddedInstrumentIdentifierIssuer, TmsEmbeddedInstrumentIdentifierLinks, TmsEmbeddedInstrumentIdentifierMetadata, TmsEmbeddedInstrumentIdentifierProcessingInformation, Tmsv2TokenizedCard) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -112,6 +113,9 @@
       if (data.hasOwnProperty('metadata')) {
         obj['metadata'] = TmsEmbeddedInstrumentIdentifierMetadata.constructFromObject(data['metadata']);
       }
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = TmsEmbeddedInstrumentIdentifierEmbedded.constructFromObject(data['_embedded']);
+      }
     }
     return obj;
   }
@@ -172,6 +176,10 @@
    * @member {module:model/TmsEmbeddedInstrumentIdentifierMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
+  /**
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierEmbedded} _embedded
+   */
+  exports.prototype['_embedded'] = undefined;
 
 
 
