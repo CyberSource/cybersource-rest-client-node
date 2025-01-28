@@ -28,7 +28,11 @@ function maskSensitiveData(message) {
             var isFieldSensitive = (sensitiveFields.indexOf(prop) > -1);
             if (isFieldSensitive === true) {
                 if (jsonMsg[prop] != null || jsonMsg[prop] != undefined) {
-                    jsonMsg[prop] = new Array(jsonMsg[prop].length + 1).join('X');
+                    if(typeof jsonMsg[prop].length === 'number'){
+                        jsonMsg[prop] = new Array(jsonMsg[prop].length + 1).join('X');
+                    }else if (jsonMsg.hasOwnProperty(prop)) {
+                        jsonMsg[prop] = JSON.parse(maskSensitiveData(jsonMsg[prop]));
+                    }
                 }
             } else if (jsonMsg.hasOwnProperty(prop)) {
                 jsonMsg[prop] = JSON.parse(maskSensitiveData(jsonMsg[prop]));
