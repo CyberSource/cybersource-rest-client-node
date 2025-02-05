@@ -74,8 +74,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property checkoutApiInitialization (base name: "checkoutApiInitialization")', function() {
-      // uncomment below and update the code to test the property checkoutApiInitialization
+    it('should have the property allowedPaymentTypes (base name: "allowedPaymentTypes")', function() {
+      // uncomment below and update the code to test the property allowedPaymentTypes
       //var instane = new CyberSource.GenerateCaptureContextRequest();
       //expect(instance).to.be();
     });

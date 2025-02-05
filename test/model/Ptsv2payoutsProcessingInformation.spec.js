@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property languageCode (base name: "languageCode")', function() {
+      // uncomment below and update the code to test the property languageCode
+      //var instane = new CyberSource.Ptsv2payoutsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property purchaseOptions (base name: "purchaseOptions")', function() {
+      // uncomment below and update the code to test the property purchaseOptions
+      //var instane = new CyberSource.Ptsv2payoutsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

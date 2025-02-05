@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Microformv2sessionsCheckoutApiInitialization'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Microformv2sessionsCheckoutApiInitialization'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GenerateCaptureContextRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Microformv2sessionsCheckoutApiInitialization);
+    root.CyberSource.GenerateCaptureContextRequest = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, Microformv2sessionsCheckoutApiInitialization) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>GenerateCaptureContextRequest</code>.
-   * This is a server-to-server API request to generate the capture context that can be used to initiate instance of microform on a acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application. 
+   * This is a server-to-server API request to generate the capture context that can be used to initiate an instance of Microform on an acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application. 
    * @alias module:model/GenerateCaptureContextRequest
    * @class
    */
@@ -74,8 +74,8 @@
       if (data.hasOwnProperty('allowedCardNetworks')) {
         obj['allowedCardNetworks'] = ApiClient.convertToType(data['allowedCardNetworks'], ['String']);
       }
-      if (data.hasOwnProperty('checkoutApiInitialization')) {
-        obj['checkoutApiInitialization'] = Microformv2sessionsCheckoutApiInitialization.constructFromObject(data['checkoutApiInitialization']);
+      if (data.hasOwnProperty('allowedPaymentTypes')) {
+        obj['allowedPaymentTypes'] = ApiClient.convertToType(data['allowedPaymentTypes'], ['String']);
       }
     }
     return obj;
@@ -92,14 +92,15 @@
    */
   exports.prototype['targetOrigins'] = undefined;
   /**
-   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA 
+   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Accept Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (Accept Check) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Accept Card) and Microform (Accept Check) at least one card network should be specified in the allowedCardNetworks field in the capture context request. 
    * @member {Array.<String>} allowedCardNetworks
    */
   exports.prototype['allowedCardNetworks'] = undefined;
   /**
-   * @member {module:model/Microformv2sessionsCheckoutApiInitialization} checkoutApiInitialization
+   * The payment types that are allowed for the merchant.    Possible values when launching Microform: - CARD - CHECK <br><br> 
+   * @member {Array.<String>} allowedPaymentTypes
    */
-  exports.prototype['checkoutApiInitialization'] = undefined;
+  exports.prototype['allowedPaymentTypes'] = undefined;
 
 
 

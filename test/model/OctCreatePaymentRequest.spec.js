@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property aggregatorInformation (base name: "aggregatorInformation")', function() {
+      // uncomment below and update the code to test the property aggregatorInformation
+      //var instane = new CyberSource.OctCreatePaymentRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

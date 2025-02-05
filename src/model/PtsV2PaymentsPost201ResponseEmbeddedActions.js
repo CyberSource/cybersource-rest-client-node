@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE', 'model/PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE'), require('./PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActions = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING);
+    root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActions = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE, root.CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE, PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION, PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION, PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE, PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION, PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION, PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE, PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE, PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING) {
   'use strict';
 
 
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -81,6 +83,12 @@
       if (data.hasOwnProperty('WATCHLIST_SCREENING')) {
         obj['WATCHLIST_SCREENING'] = PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING.constructFromObject(data['WATCHLIST_SCREENING']);
       }
+      if (data.hasOwnProperty('TOKEN_CREATE')) {
+        obj['TOKEN_CREATE'] = PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE.constructFromObject(data['TOKEN_CREATE']);
+      }
+      if (data.hasOwnProperty('TOKEN_UPDATE')) {
+        obj['TOKEN_UPDATE'] = PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE.constructFromObject(data['TOKEN_UPDATE']);
+      }
     }
     return obj;
   }
@@ -105,6 +113,14 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING} WATCHLIST_SCREENING
    */
   exports.prototype['WATCHLIST_SCREENING'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE} TOKEN_CREATE
+   */
+  exports.prototype['TOKEN_CREATE'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE} TOKEN_UPDATE
+   */
+  exports.prototype['TOKEN_UPDATE'] = undefined;
 
 
 

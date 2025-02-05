@@ -86,6 +86,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property TOKEN_CREATE (base name: "TOKEN_CREATE")', function() {
+      // uncomment below and update the code to test the property TOKEN_CREATE
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property TOKEN_UPDATE (base name: "TOKEN_UPDATE")', function() {
+      // uncomment below and update the code to test the property TOKEN_UPDATE
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseEmbeddedActions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

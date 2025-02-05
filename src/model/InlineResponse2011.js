@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2011IssuerInformation', 'model/InlineResponse2011PaymentAccountInformation', 'model/InlineResponse2011PayoutInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2011PayoutInformation', 'model/TmsBinLookupIssuerInformation', 'model/TmsBinLookupPaymentAccountInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2011IssuerInformation'), require('./InlineResponse2011PaymentAccountInformation'), require('./InlineResponse2011PayoutInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2011PayoutInformation'), require('./TmsBinLookupIssuerInformation'), require('./TmsBinLookupPaymentAccountInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2011IssuerInformation, root.CyberSource.InlineResponse2011PaymentAccountInformation, root.CyberSource.InlineResponse2011PayoutInformation);
+    root.CyberSource.InlineResponse2011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2011PayoutInformation, root.CyberSource.TmsBinLookupIssuerInformation, root.CyberSource.TmsBinLookupPaymentAccountInformation);
   }
-}(this, function(ApiClient, InlineResponse2011IssuerInformation, InlineResponse2011PaymentAccountInformation, InlineResponse2011PayoutInformation) {
+}(this, function(ApiClient, InlineResponse2011PayoutInformation, TmsBinLookupIssuerInformation, TmsBinLookupPaymentAccountInformation) {
   'use strict';
 
 
@@ -76,10 +76,10 @@
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('paymentAccountInformation')) {
-        obj['paymentAccountInformation'] = InlineResponse2011PaymentAccountInformation.constructFromObject(data['paymentAccountInformation']);
+        obj['paymentAccountInformation'] = TmsBinLookupPaymentAccountInformation.constructFromObject(data['paymentAccountInformation']);
       }
       if (data.hasOwnProperty('issuerInformation')) {
-        obj['issuerInformation'] = InlineResponse2011IssuerInformation.constructFromObject(data['issuerInformation']);
+        obj['issuerInformation'] = TmsBinLookupIssuerInformation.constructFromObject(data['issuerInformation']);
       }
       if (data.hasOwnProperty('payoutInformation')) {
         obj['payoutInformation'] = InlineResponse2011PayoutInformation.constructFromObject(data['payoutInformation']);
@@ -104,11 +104,11 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/InlineResponse2011PaymentAccountInformation} paymentAccountInformation
+   * @member {module:model/TmsBinLookupPaymentAccountInformation} paymentAccountInformation
    */
   exports.prototype['paymentAccountInformation'] = undefined;
   /**
-   * @member {module:model/InlineResponse2011IssuerInformation} issuerInformation
+   * @member {module:model/TmsBinLookupIssuerInformation} issuerInformation
    */
   exports.prototype['issuerInformation'] = undefined;
   /**

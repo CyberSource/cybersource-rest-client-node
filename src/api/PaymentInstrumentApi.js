@@ -129,6 +129,7 @@
      * @param {String} paymentInstrumentId The Id of a payment instrument.
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {Boolean} opts.retrieveBinDetails Retrieve the Bin Details of PAN or network token
      * @param {module:api/PaymentInstrumentApi~getPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PostPaymentInstrumentRequest}
      */
@@ -149,6 +150,7 @@
         'paymentInstrumentId': paymentInstrumentId
       };
       var queryParams = {
+        'retrieveBinDetails': opts['retrieveBinDetails']
       };
       var headerParams = {
         'profile-id': opts['profileId']
@@ -197,6 +199,7 @@
      * @param {module:model/PatchPaymentInstrumentRequest} patchPaymentInstrumentRequest 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {Boolean} opts.retrieveBinDetails Retrieve the Bin Details of PAN or network token
      * @param {String} opts.ifMatch Contains an ETag value from a GET request to make the request conditional.
      * @param {module:api/PaymentInstrumentApi~patchPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PatchPaymentInstrumentRequest}
@@ -224,6 +227,7 @@
         'paymentInstrumentId': paymentInstrumentId
       };
       var queryParams = {
+        'retrieveBinDetails': opts['retrieveBinDetails']
       };
       var headerParams = {
         'profile-id': opts['profileId'],
@@ -272,6 +276,7 @@
      * @param {module:model/PostPaymentInstrumentRequest} postPaymentInstrumentRequest 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {Boolean} opts.retrieveBinDetails Retrieve the Bin Details of PAN or network token
      * @param {module:api/PaymentInstrumentApi~postPaymentInstrumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PostPaymentInstrumentRequest}
      */
@@ -292,6 +297,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'retrieveBinDetails': opts['retrieveBinDetails']
       };
       var headerParams = {
         'profile-id': opts['profileId']

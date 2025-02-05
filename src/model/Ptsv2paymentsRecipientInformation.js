@@ -59,6 +59,13 @@
 
 
 
+
+
+
+
+
+
+
   };
 
   /**
@@ -90,6 +97,9 @@
       if (data.hasOwnProperty('address1')) {
         obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
       }
+      if (data.hasOwnProperty('administrativeArea')) {
+        obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
+      }
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
@@ -107,6 +117,24 @@
       }
       if (data.hasOwnProperty('beneficiaryAddress')) {
         obj['beneficiaryAddress'] = ApiClient.convertToType(data['beneficiaryAddress'], 'String');
+      }
+      if (data.hasOwnProperty('aliasName')) {
+        obj['aliasName'] = ApiClient.convertToType(data['aliasName'], 'String');
+      }
+      if (data.hasOwnProperty('nationality')) {
+        obj['nationality'] = ApiClient.convertToType(data['nationality'], 'String');
+      }
+      if (data.hasOwnProperty('countryOfBirth')) {
+        obj['countryOfBirth'] = ApiClient.convertToType(data['countryOfBirth'], 'String');
+      }
+      if (data.hasOwnProperty('occupation')) {
+        obj['occupation'] = ApiClient.convertToType(data['occupation'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('locality')) {
+        obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
       }
     }
     return obj;
@@ -143,6 +171,11 @@
    */
   exports.prototype['address1'] = undefined;
   /**
+   * The state or province of the recipient. This field is applicable for AFT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value 
+   * @member {String} administrativeArea
+   */
+  exports.prototype['administrativeArea'] = undefined;
+  /**
    * Partial postal code for the recipient's address. For example, if the postal code is **NN5 7SG**, the value for this field should be the first part of the postal code: **NN5**. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @member {String} postalCode
    */
@@ -172,6 +205,36 @@
    * @member {String} beneficiaryAddress
    */
   exports.prototype['beneficiaryAddress'] = undefined;
+  /**
+   * Account owner alias name. 
+   * @member {String} aliasName
+   */
+  exports.prototype['aliasName'] = undefined;
+  /**
+   * Account Owner Nationality
+   * @member {String} nationality
+   */
+  exports.prototype['nationality'] = undefined;
+  /**
+   * Account Owner Country of Birth
+   * @member {String} countryOfBirth
+   */
+  exports.prototype['countryOfBirth'] = undefined;
+  /**
+   * Account Owner Occupation
+   * @member {String} occupation
+   */
+  exports.prototype['occupation'] = undefined;
+  /**
+   * Account Owner email address
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * The city of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
+   * @member {String} locality
+   */
+  exports.prototype['locality'] = undefined;
 
 
 

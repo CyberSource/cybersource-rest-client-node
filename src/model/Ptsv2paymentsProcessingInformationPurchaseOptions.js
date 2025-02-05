@@ -49,6 +49,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -68,6 +71,15 @@
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
+      if (data.hasOwnProperty('eligibilityIndicator')) {
+        obj['eligibilityIndicator'] = ApiClient.convertToType(data['eligibilityIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('benefitAmount')) {
+        obj['benefitAmount'] = ApiClient.convertToType(data['benefitAmount'], 'String');
+      }
+      if (data.hasOwnProperty('benefitType')) {
+        obj['benefitType'] = ApiClient.convertToType(data['benefitType'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +94,21 @@
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
+  /**
+   * This field contains installment data defined by MasterCard. Possible values:   - Y = eligible   - N = not eligile 
+   * @member {String} eligibilityIndicator
+   */
+  exports.prototype['eligibilityIndicator'] = undefined;
+  /**
+   * Workplace benefit amount.
+   * @member {String} benefitAmount
+   */
+  exports.prototype['benefitAmount'] = undefined;
+  /**
+   * Workplace benefit type. Possible values: - 70 = employee benefit - 4T = transportation / transit - 52 = general benefit - 53 = meal voucher - 54 = fuel - 55 = ecological / sustainability - 58 = philanthropy / patronage / consumption - 59 = gift - 5S = sport / culture - 5T = book / education 
+   * @member {String} benefitType
+   */
+  exports.prototype['benefitType'] = undefined;
 
 
 

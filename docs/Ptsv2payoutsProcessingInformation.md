@@ -11,5 +11,7 @@ Name | Type | Description | Notes
 **transactionReason** | **String** | Transaction reason code.  | [optional] 
 **purposeOfPayment** | **String** | This will send purpose of funds code for original credit transactions (OCTs).  | [optional] 
 **fundingOptions** | [**Ptsv2payoutsProcessingInformationFundingOptions**](Ptsv2payoutsProcessingInformationFundingOptions.md) |  | [optional] 
+**languageCode** | **String** | Contains the ISO 639-2 defined language Code  | [optional] 
+**purchaseOptions** | [**Ptsv2payoutsProcessingInformationPurchaseOptions**](Ptsv2payoutsProcessingInformationPurchaseOptions.md) |  | [optional] 
 
 

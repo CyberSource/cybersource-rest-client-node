@@ -134,6 +134,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property terminalCategory (base name: "terminalCategory")', function() {
+      // uncomment below and update the code to test the property terminalCategory
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property terminalInputCapability (base name: "terminalInputCapability")', function() {
       // uncomment below and update the code to test the property terminalInputCapability
       //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();

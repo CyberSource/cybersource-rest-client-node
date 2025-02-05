@@ -104,12 +104,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property checkoutApiInitialization (base name: "checkoutApiInitialization")', function() {
-      // uncomment below and update the code to test the property checkoutApiInitialization
-      //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

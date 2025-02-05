@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2payoutsClientReferenceInformation', 'model/Ptsv2payoutsMerchantInformation', 'model/Ptsv2payoutsOrderInformation', 'model/Ptsv2payoutsPaymentInformation', 'model/Ptsv2payoutsProcessingInformation', 'model/Ptsv2payoutsRecipientInformation', 'model/Ptsv2payoutsSenderInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2payoutsAggregatorInformation', 'model/Ptsv2payoutsClientReferenceInformation', 'model/Ptsv2payoutsMerchantInformation', 'model/Ptsv2payoutsOrderInformation', 'model/Ptsv2payoutsPaymentInformation', 'model/Ptsv2payoutsProcessingInformation', 'model/Ptsv2payoutsRecipientInformation', 'model/Ptsv2payoutsSenderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2payoutsClientReferenceInformation'), require('./Ptsv2payoutsMerchantInformation'), require('./Ptsv2payoutsOrderInformation'), require('./Ptsv2payoutsPaymentInformation'), require('./Ptsv2payoutsProcessingInformation'), require('./Ptsv2payoutsRecipientInformation'), require('./Ptsv2payoutsSenderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2payoutsAggregatorInformation'), require('./Ptsv2payoutsClientReferenceInformation'), require('./Ptsv2payoutsMerchantInformation'), require('./Ptsv2payoutsOrderInformation'), require('./Ptsv2payoutsPaymentInformation'), require('./Ptsv2payoutsProcessingInformation'), require('./Ptsv2payoutsRecipientInformation'), require('./Ptsv2payoutsSenderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.OctCreatePaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2payoutsClientReferenceInformation, root.CyberSource.Ptsv2payoutsMerchantInformation, root.CyberSource.Ptsv2payoutsOrderInformation, root.CyberSource.Ptsv2payoutsPaymentInformation, root.CyberSource.Ptsv2payoutsProcessingInformation, root.CyberSource.Ptsv2payoutsRecipientInformation, root.CyberSource.Ptsv2payoutsSenderInformation);
+    root.CyberSource.OctCreatePaymentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2payoutsAggregatorInformation, root.CyberSource.Ptsv2payoutsClientReferenceInformation, root.CyberSource.Ptsv2payoutsMerchantInformation, root.CyberSource.Ptsv2payoutsOrderInformation, root.CyberSource.Ptsv2payoutsPaymentInformation, root.CyberSource.Ptsv2payoutsProcessingInformation, root.CyberSource.Ptsv2payoutsRecipientInformation, root.CyberSource.Ptsv2payoutsSenderInformation);
   }
-}(this, function(ApiClient, Ptsv2payoutsClientReferenceInformation, Ptsv2payoutsMerchantInformation, Ptsv2payoutsOrderInformation, Ptsv2payoutsPaymentInformation, Ptsv2payoutsProcessingInformation, Ptsv2payoutsRecipientInformation, Ptsv2payoutsSenderInformation) {
+}(this, function(ApiClient, Ptsv2payoutsAggregatorInformation, Ptsv2payoutsClientReferenceInformation, Ptsv2payoutsMerchantInformation, Ptsv2payoutsOrderInformation, Ptsv2payoutsPaymentInformation, Ptsv2payoutsProcessingInformation, Ptsv2payoutsRecipientInformation, Ptsv2payoutsSenderInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -88,6 +89,9 @@
       if (data.hasOwnProperty('paymentInformation')) {
         obj['paymentInformation'] = Ptsv2payoutsPaymentInformation.constructFromObject(data['paymentInformation']);
       }
+      if (data.hasOwnProperty('aggregatorInformation')) {
+        obj['aggregatorInformation'] = Ptsv2payoutsAggregatorInformation.constructFromObject(data['aggregatorInformation']);
+      }
     }
     return obj;
   }
@@ -120,6 +124,10 @@
    * @member {module:model/Ptsv2payoutsPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2payoutsAggregatorInformation} aggregatorInformation
+   */
+  exports.prototype['aggregatorInformation'] = undefined;
 
 
 

@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionTypeIndicator (base name: "transactionTypeIndicator")', function() {
+      // uncomment below and update the code to test the property transactionTypeIndicator
+      //var instane = new CyberSource.Ptsv2paymentsidreversalsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

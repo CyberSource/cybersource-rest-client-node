@@ -91,6 +91,7 @@
 
 
 
+
   };
 
   /**
@@ -235,6 +236,9 @@
       }
       if (data.hasOwnProperty('orderStatus')) {
         obj['orderStatus'] = ApiClient.convertToType(data['orderStatus'], 'String');
+      }
+      if (data.hasOwnProperty('merchantRiskPrediction')) {
+        obj['merchantRiskPrediction'] = ApiClient.convertToType(data['merchantRiskPrediction'], 'String');
       }
     }
     return obj;
@@ -449,6 +453,11 @@
    * @member {String} orderStatus
    */
   exports.prototype['orderStatus'] = undefined;
+  /**
+   * Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices. 
+   * @member {String} merchantRiskPrediction
+   */
+  exports.prototype['merchantRiskPrediction'] = undefined;
 
 
 

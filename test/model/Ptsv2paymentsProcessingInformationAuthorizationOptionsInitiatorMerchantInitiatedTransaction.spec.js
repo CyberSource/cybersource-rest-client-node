@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property agreementId (base name: "agreementId")', function() {
+      // uncomment below and update the code to test the property agreementId
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

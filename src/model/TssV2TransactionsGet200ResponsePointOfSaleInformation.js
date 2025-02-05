@@ -100,7 +100,7 @@
    */
   exports.prototype['terminalCapability'] = undefined;
   /**
-   * Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM 
+   * Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM   - `4`: Biometric   - `5`: OTP 
    * @member {Number} cardholderVerificationMethodUsed
    */
   exports.prototype['cardholderVerificationMethodUsed'] = undefined;

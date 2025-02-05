@@ -278,6 +278,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dataQualityIndicator (base name: "dataQualityIndicator")', function() {
+      // uncomment below and update the code to test the property dataQualityIndicator
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authenticationResult (base name: "authenticationResult")', function() {
       // uncomment below and update the code to test the property authenticationResult
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation();

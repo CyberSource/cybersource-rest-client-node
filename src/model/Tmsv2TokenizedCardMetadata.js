@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2TokenizedCardMetadataCardArt'], factory);
+    define(['ApiClient', 'model/TmsCardArt', 'model/Tmsv2TokenizedCardMetadataIssuer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2TokenizedCardMetadataCardArt'));
+    module.exports = factory(require('../ApiClient'), require('./TmsCardArt'), require('./Tmsv2TokenizedCardMetadataIssuer'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2TokenizedCardMetadata = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2TokenizedCardMetadataCardArt);
+    root.CyberSource.Tmsv2TokenizedCardMetadata = factory(root.CyberSource.ApiClient, root.CyberSource.TmsCardArt, root.CyberSource.Tmsv2TokenizedCardMetadataIssuer);
   }
-}(this, function(ApiClient, Tmsv2TokenizedCardMetadataCardArt) {
+}(this, function(ApiClient, TmsCardArt, Tmsv2TokenizedCardMetadataIssuer) {
   'use strict';
 
 
@@ -41,11 +41,13 @@
 
   /**
    * Constructs a new <code>Tmsv2TokenizedCardMetadata</code>.
+   * Metadata associated with the tokenized card. 
    * @alias module:model/Tmsv2TokenizedCardMetadata
    * @class
    */
   var exports = function() {
     var _this = this;
+
 
 
   };
@@ -62,16 +64,23 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cardArt')) {
-        obj['cardArt'] = Tmsv2TokenizedCardMetadataCardArt.constructFromObject(data['cardArt']);
+        obj['cardArt'] = TmsCardArt.constructFromObject(data['cardArt']);
+      }
+      if (data.hasOwnProperty('issuer')) {
+        obj['issuer'] = Tmsv2TokenizedCardMetadataIssuer.constructFromObject(data['issuer']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Tmsv2TokenizedCardMetadataCardArt} cardArt
+   * @member {module:model/TmsCardArt} cardArt
    */
   exports.prototype['cardArt'] = undefined;
+  /**
+   * @member {module:model/Tmsv2TokenizedCardMetadataIssuer} issuer
+   */
+  exports.prototype['issuer'] = undefined;
 
 
 

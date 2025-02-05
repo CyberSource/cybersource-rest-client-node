@@ -164,6 +164,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property aliasName (base name: "aliasName")', function() {
+      // uncomment below and update the code to test the property aliasName
+      //var instane = new CyberSource.Ptsv2payoutsSenderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

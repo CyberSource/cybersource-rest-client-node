@@ -68,6 +68,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eligibilityIndicator (base name: "eligibilityIndicator")', function() {
+      // uncomment below and update the code to test the property eligibilityIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property benefitAmount (base name: "benefitAmount")', function() {
+      // uncomment below and update the code to test the property benefitAmount
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property benefitType (base name: "benefitType")', function() {
+      // uncomment below and update the code to test the property benefitType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -73,6 +74,9 @@
       }
       if (data.hasOwnProperty('responseCode')) {
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
+      }
+      if (data.hasOwnProperty('networkTransactionId')) {
+        obj['networkTransactionId'] = ApiClient.convertToType(data['networkTransactionId'], 'String');
       }
       if (data.hasOwnProperty('responseCategoryCode')) {
         obj['responseCategoryCode'] = ApiClient.convertToType(data['responseCategoryCode'], 'String');
@@ -106,6 +110,11 @@
    * @member {String} responseCode
    */
   exports.prototype['responseCode'] = undefined;
+  /**
+   * Same value as `processorInformation.transactionId`
+   * @member {String} networkTransactionId
+   */
+  exports.prototype['networkTransactionId'] = undefined;
   /**
    * Processor-defined response category code. The associated detail error code is in the `processorInformation.responseCode` or `issuerInformation.responseCode` field of the service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  #### Maximum length for processors   - Comercio Latino: 36  - All other processors: 3 
    * @member {String} responseCategoryCode

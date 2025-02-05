@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('emv')) {
         obj['emv'] = Ptsv2paymentsidcapturesPointOfSaleInformationEmv.constructFromObject(data['emv']);
       }
+      if (data.hasOwnProperty('terminalCategory')) {
+        obj['terminalCategory'] = ApiClient.convertToType(data['terminalCategory'], 'String');
+      }
     }
     return obj;
   }
@@ -72,6 +76,11 @@
    * @member {module:model/Ptsv2paymentsidcapturesPointOfSaleInformationEmv} emv
    */
   exports.prototype['emv'] = undefined;
+  /**
+   * Indicates the type of terminal.   Possible values: - `AFD`: Automated Fuel Dispenser 
+   * @member {String} terminalCategory
+   */
+  exports.prototype['terminalCategory'] = undefined;
 
 
 

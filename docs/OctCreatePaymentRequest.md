@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **senderInformation** | [**Ptsv2payoutsSenderInformation**](Ptsv2payoutsSenderInformation.md) |  | [optional] 
 **processingInformation** | [**Ptsv2payoutsProcessingInformation**](Ptsv2payoutsProcessingInformation.md) |  | [optional] 
 **paymentInformation** | [**Ptsv2payoutsPaymentInformation**](Ptsv2payoutsPaymentInformation.md) |  | [optional] 
+**aggregatorInformation** | [**Ptsv2payoutsAggregatorInformation**](Ptsv2payoutsAggregatorInformation.md) |  | [optional] 
 
 

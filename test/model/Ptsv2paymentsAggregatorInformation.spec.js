@@ -74,6 +74,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property streetAddress (base name: "streetAddress")', function() {
+      // uncomment below and update the code to test the property streetAddress
+      //var instane = new CyberSource.Ptsv2paymentsAggregatorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property city (base name: "city")', function() {
+      // uncomment below and update the code to test the property city
+      //var instane = new CyberSource.Ptsv2paymentsAggregatorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instane = new CyberSource.Ptsv2paymentsAggregatorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postalCode (base name: "postalCode")', function() {
+      // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Ptsv2paymentsAggregatorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
+      //var instane = new CyberSource.Ptsv2paymentsAggregatorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

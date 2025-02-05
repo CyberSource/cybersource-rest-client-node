@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('originalAuthorizedAmount')) {
         obj['originalAuthorizedAmount'] = ApiClient.convertToType(data['originalAuthorizedAmount'], 'String');
       }
+      if (data.hasOwnProperty('agreementId')) {
+        obj['agreementId'] = ApiClient.convertToType(data['agreementId'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +95,11 @@
    * @member {String} originalAuthorizedAmount
    */
   exports.prototype['originalAuthorizedAmount'] = undefined;
+  /**
+   * An API to carry the agreement ID generated for recurring and unscheduled Card on file transaction. the merchant generates this per card holder or per payment agreement and shares the generated unique ID in the subsequent transactions. This can contain foreign/arabic character set also. Cybersource forwards this value to the Saudi Payment processor. 
+   * @member {String} agreementId
+   */
+  exports.prototype['agreementId'] = undefined;
 
 
 

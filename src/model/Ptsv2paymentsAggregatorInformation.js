@@ -50,6 +50,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -72,6 +77,21 @@
       if (data.hasOwnProperty('subMerchant')) {
         obj['subMerchant'] = Ptsv2paymentsAggregatorInformationSubMerchant.constructFromObject(data['subMerchant']);
       }
+      if (data.hasOwnProperty('streetAddress')) {
+        obj['streetAddress'] = ApiClient.convertToType(data['streetAddress'], 'String');
+      }
+      if (data.hasOwnProperty('city')) {
+        obj['city'] = ApiClient.convertToType(data['city'], 'String');
+      }
+      if (data.hasOwnProperty('state')) {
+        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
+      if (data.hasOwnProperty('country')) {
+        obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
     }
     return obj;
   }
@@ -90,6 +110,31 @@
    * @member {module:model/Ptsv2paymentsAggregatorInformationSubMerchant} subMerchant
    */
   exports.prototype['subMerchant'] = undefined;
+  /**
+   * Acquirer street name.
+   * @member {String} streetAddress
+   */
+  exports.prototype['streetAddress'] = undefined;
+  /**
+   * Acquirer city.
+   * @member {String} city
+   */
+  exports.prototype['city'] = undefined;
+  /**
+   * Acquirer state.
+   * @member {String} state
+   */
+  exports.prototype['state'] = undefined;
+  /**
+   * Acquirer postal code.
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
+  /**
+   * Acquirer country.
+   * @member {String} country
+   */
+  exports.prototype['country'] = undefined;
 
 
 

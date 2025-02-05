@@ -70,6 +70,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -149,8 +153,20 @@
       if (data.hasOwnProperty('cardVerificationIndicator')) {
         obj['cardVerificationIndicator'] = ApiClient.convertToType(data['cardVerificationIndicator'], 'Boolean');
       }
+      if (data.hasOwnProperty('transactionMode')) {
+        obj['transactionMode'] = ApiClient.convertToType(data['transactionMode'], 'String');
+      }
       if (data.hasOwnProperty('aftIndicator')) {
         obj['aftIndicator'] = ApiClient.convertToType(data['aftIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('serviceType')) {
+        obj['serviceType'] = ApiClient.convertToType(data['serviceType'], 'String');
+      }
+      if (data.hasOwnProperty('balanceUpdate')) {
+        obj['balanceUpdate'] = ApiClient.convertToType(data['balanceUpdate'], 'Boolean');
+      }
+      if (data.hasOwnProperty('moneyLoad')) {
+        obj['moneyLoad'] = ApiClient.convertToType(data['moneyLoad'], 'Boolean');
       }
     }
     return obj;
@@ -187,7 +203,7 @@
    */
   exports.prototype['partialAuthIndicator'] = undefined;
   /**
-   * Flag that indicates whether the transaction is an extended authorization. 
+   * Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction. 
    * @member {String} extendAuthIndicator
    */
   exports.prototype['extendAuthIndicator'] = undefined;
@@ -223,7 +239,7 @@
    */
   exports.prototype['billPayment'] = undefined;
   /**
-   * Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet. 
+   * Reason for the payment.  Possible values: - 001: Public utilities / Utility payment - 002: Government services - 003: Cellular / Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment - 006: Billing payment - 007: Tax payment - 008: Tax payment refunds  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet. 
    * @member {String} billPaymentType
    */
   exports.prototype['billPaymentType'] = undefined;
@@ -268,10 +284,30 @@
    */
   exports.prototype['cardVerificationIndicator'] = undefined;
   /**
+   * Transaction mode identifier. Identifies the specific channel from which the transaction originates.  Possible values: - M – Mobile Order - T – Telephone Order 
+   * @member {String} transactionMode
+   */
+  exports.prototype['transactionMode'] = undefined;
+  /**
    * Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - `true` (This is an AFT transaction)   - `false` (default value) (This is not an AFT transaction) 
    * @member {Boolean} aftIndicator
    */
   exports.prototype['aftIndicator'] = undefined;
+  /**
+   * Field is used for back-to-back funding transaction and can be defined as a payment flow that automatically transfers funds through a real-time  funding or a live-load. This type of transaction can also be connected to a purchase.  In back-to-back funding of general purpose card that is used to make a purchase, two separate accounts are involved:  - account one is used to make the purchase - account two is used to automatically fund or reimburse account one  Possible values: - 0B = back to back funding transaction - 00 = normal transaction - 01 = originator hold - 02 = Visa deferred OCT hold, default interval - 03 = Visa deferred OCT hold, user-defined interval - 09 = Cancel pending deferred OCT request - 0I = Visa Direct custom program 1 - 0Q = uery the status of the deferred OCT - A0 = Alias Directory 2 
+   * @member {String} serviceType
+   */
+  exports.prototype['serviceType'] = undefined;
+  /**
+   * Merchant to inform Cybersource whether a transaction is Money load with Balance Update.  Possible values:   - `true` (This is a Money load with balance update transaction)   - `false` (default value) (This is not a Money load with balance update transaction) 
+   * @member {Boolean} balanceUpdate
+   */
+  exports.prototype['balanceUpdate'] = undefined;
+  /**
+   * Merchant to inform Cybersource whether a transaction is Money load with Money load only.  Possible values:   - `true` (This is a money load transaction)   - `false` (default value) (This is not a money load transaction) 
+   * @member {Boolean} moneyLoad
+   */
+  exports.prototype['moneyLoad'] = undefined;
 
 
 

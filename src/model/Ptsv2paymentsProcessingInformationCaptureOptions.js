@@ -52,6 +52,8 @@
 
 
 
+
+
   };
 
   /**
@@ -79,6 +81,12 @@
       }
       if (data.hasOwnProperty('notes')) {
         obj['notes'] = ApiClient.convertToType(data['notes'], 'String');
+      }
+      if (data.hasOwnProperty('reconciliationId')) {
+        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
+      }
+      if (data.hasOwnProperty('reconciliationIdAlternate')) {
+        obj['reconciliationIdAlternate'] = ApiClient.convertToType(data['reconciliationIdAlternate'], 'String');
       }
     }
     return obj;
@@ -109,6 +117,16 @@
    * @member {String} notes
    */
   exports.prototype['notes'] = undefined;
+  /**
+   * Used for authbill request when capture field equals true
+   * @member {String} reconciliationId
+   */
+  exports.prototype['reconciliationId'] = undefined;
+  /**
+   * Used by Nike merchant to send 12 digit order number
+   * @member {String} reconciliationIdAlternate
+   */
+  exports.prototype['reconciliationIdAlternate'] = undefined;
 
 
 

@@ -12,5 +12,10 @@ Name | Type | Description | Notes
 **country** | **String** | Recipient country code. Required only for FDCCompass. | [optional] 
 **postalCode** | **String** | Recipient postal code. Required only for FDCCompass. | [optional] 
 **phoneNumber** | **String** | Recipient phone number. Required only for FDCCompass. | [optional] 
+**aliasName** | **String** | Account owner alias name.  | [optional] 
+**nationality** | **String** | Account Owner Nationality | [optional] 
+**countryOfBirth** | **String** | Account Owner Country of Birth | [optional] 
+**occupation** | **String** | Account Owner Occupation | [optional] 
+**email** | **String** | Account Owner email address | [optional] 
 
 

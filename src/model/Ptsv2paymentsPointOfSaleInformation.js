@@ -76,6 +76,7 @@
 
 
 
+
   };
 
   /**
@@ -127,6 +128,9 @@
       }
       if (data.hasOwnProperty('cardholderVerificationMethod')) {
         obj['cardholderVerificationMethod'] = ApiClient.convertToType(data['cardholderVerificationMethod'], ['String']);
+      }
+      if (data.hasOwnProperty('terminalCategory')) {
+        obj['terminalCategory'] = ApiClient.convertToType(data['terminalCategory'], 'String');
       }
       if (data.hasOwnProperty('terminalInputCapability')) {
         obj['terminalInputCapability'] = ApiClient.convertToType(data['terminalInputCapability'], ['String']);
@@ -191,7 +195,7 @@
    */
   exports.prototype['terminalSerialNumber'] = undefined;
   /**
-   * Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM 
+   * Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM   - `4`: Biometric   - `5`: OTP 
    * @member {Number} cardholderVerificationMethodUsed
    */
   exports.prototype['cardholderVerificationMethodUsed'] = undefined;
@@ -244,6 +248,11 @@
    * @member {Array.<String>} cardholderVerificationMethod
    */
   exports.prototype['cardholderVerificationMethod'] = undefined;
+  /**
+   * Indicates the type of terminal.   Possible values: - `AFD`: Automated Fuel Dispenser 
+   * @member {String} terminalCategory
+   */
+  exports.prototype['terminalCategory'] = undefined;
   /**
    * Complete list of card input methods supported by the terminal.  Possible values: - `Keyed`: Terminal can accept card data that is entered manually. - `Swiped`: Terminal can accept card data from a magnetic stripe reader. - `Contact`: Terminal can accept card data in EMV contact mode (\"dipping a card\"). - `Contactless`: Terminal can accept card data in EMV contactless mode (\"tapping a card\"). - `BarCode`: Terminal can read bar codes. - `QRcode`: Terminal can read or scan QR codes. - `OCR`: Terminal can perform optical character recognition (OCT) on the card.  **EXAMPLE**: [\"Keyed\",\"Swiped\",\"Contact\",\"Contactless\"]  #### Used by **Authorization and Credit** Optional. This field is supported only by client software that is installed on your POS terminals for the following processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX 
    * @member {Array.<String>} terminalInputCapability

@@ -188,8 +188,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionMode (base name: "transactionMode")', function() {
+      // uncomment below and update the code to test the property transactionMode
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property aftIndicator (base name: "aftIndicator")', function() {
       // uncomment below and update the code to test the property aftIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property serviceType (base name: "serviceType")', function() {
+      // uncomment below and update the code to test the property serviceType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property balanceUpdate (base name: "balanceUpdate")', function() {
+      // uncomment below and update the code to test the property balanceUpdate
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property moneyLoad (base name: "moneyLoad")', function() {
+      // uncomment below and update the code to test the property moneyLoad
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions();
       //expect(instance).to.be();
     });
