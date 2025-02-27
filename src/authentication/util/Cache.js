@@ -58,6 +58,10 @@ function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
     }
 }
 
+/**
+ * @deprecated This method has been marked as Deprecated and will be removed in coming releases.
+ *
+ */
 exports.fetchPEMFileForNetworkTokenization = function(merchantConfig) {
     var filePath = merchantConfig.getpemFileDirectory();
     var pemFileData = cache.get("privateKeyFromPEMFile");
