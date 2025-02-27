@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transientTokenResponseOptions (base name: "transientTokenResponseOptions")', function() {
+      // uncomment below and update the code to test the property transientTokenResponseOptions
+      //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

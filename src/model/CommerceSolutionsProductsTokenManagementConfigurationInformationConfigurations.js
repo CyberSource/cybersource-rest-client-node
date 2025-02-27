@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault'], factory);
+    define(['ApiClient', 'model/CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault', 'model/NetworkTokenEnrollment'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault'));
+    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault'), require('./NetworkTokenEnrollment'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault);
+    root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault, root.CyberSource.NetworkTokenEnrollment);
   }
-}(this, function(ApiClient, CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault) {
+}(this, function(ApiClient, CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault, NetworkTokenEnrollment) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('vault')) {
         obj['vault'] = CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault.constructFromObject(data['vault']);
       }
+      if (data.hasOwnProperty('networkTokenEnrollment')) {
+        obj['networkTokenEnrollment'] = NetworkTokenEnrollment.constructFromObject(data['networkTokenEnrollment']);
+      }
     }
     return obj;
   }
@@ -81,6 +85,10 @@
    * @member {module:model/CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault} vault
    */
   exports.prototype['vault'] = undefined;
+  /**
+   * @member {module:model/NetworkTokenEnrollment} networkTokenEnrollment
+   */
+  exports.prototype['networkTokenEnrollment'] = undefined;
 
 
 
