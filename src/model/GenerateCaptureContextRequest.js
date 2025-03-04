@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Microformv2sessionsTransientTokenResponseOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Microformv2sessionsTransientTokenResponseOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GenerateCaptureContextRequest = factory(root.CyberSource.ApiClient);
+    root.CyberSource.GenerateCaptureContextRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Microformv2sessionsTransientTokenResponseOptions);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Microformv2sessionsTransientTokenResponseOptions) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -77,6 +78,9 @@
       if (data.hasOwnProperty('allowedPaymentTypes')) {
         obj['allowedPaymentTypes'] = ApiClient.convertToType(data['allowedPaymentTypes'], ['String']);
       }
+      if (data.hasOwnProperty('transientTokenResponseOptions')) {
+        obj['transientTokenResponseOptions'] = Microformv2sessionsTransientTokenResponseOptions.constructFromObject(data['transientTokenResponseOptions']);
+      }
     }
     return obj;
   }
@@ -92,7 +96,7 @@
    */
   exports.prototype['targetOrigins'] = undefined;
   /**
-   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Accept Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (Accept Check) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Accept Card) and Microform (Accept Check) at least one card network should be specified in the allowedCardNetworks field in the capture context request. 
+   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (ACH/Echeck) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Card) and Microform (ACH/Echeck) at least one card network should be specified in the allowedCardNetworks field in the capture context request. 
    * @member {Array.<String>} allowedCardNetworks
    */
   exports.prototype['allowedCardNetworks'] = undefined;
@@ -101,6 +105,10 @@
    * @member {Array.<String>} allowedPaymentTypes
    */
   exports.prototype['allowedPaymentTypes'] = undefined;
+  /**
+   * @member {module:model/Microformv2sessionsTransientTokenResponseOptions} transientTokenResponseOptions
+   */
+  exports.prototype['transientTokenResponseOptions'] = undefined;
 
 
 

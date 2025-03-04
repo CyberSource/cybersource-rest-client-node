@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property networkTokenEnrollment (base name: "networkTokenEnrollment")', function() {
+      // uncomment below and update the code to test the property networkTokenEnrollment
+      //var instane = new CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -53,6 +53,8 @@
 
 
 
+
+
   };
 
   /**
@@ -83,6 +85,12 @@
       }
       if (data.hasOwnProperty('showAcceptedNetworkIcons')) {
         obj['showAcceptedNetworkIcons'] = ApiClient.convertToType(data['showAcceptedNetworkIcons'], 'Boolean');
+      }
+      if (data.hasOwnProperty('requestSaveCard')) {
+        obj['requestSaveCard'] = ApiClient.convertToType(data['requestSaveCard'], 'Boolean');
+      }
+      if (data.hasOwnProperty('comboCard')) {
+        obj['comboCard'] = ApiClient.convertToType(data['comboCard'], 'Boolean');
       }
     }
     return obj;
@@ -118,6 +126,16 @@
    * @member {Boolean} showAcceptedNetworkIcons
    */
   exports.prototype['showAcceptedNetworkIcons'] = undefined;
+  /**
+   * Configure Unified Checkout to display the \"Save card for future use\" checkbox.<br>  Configurable check box that will show in a Manual card entry flow to allow a Cardholder to give consent to store their manually entered credential with the Merchant that they are paying.<br>  Applicable when manually entering the details and not enrolling in Click to Pay.  Possible values:  - True   - False<br><br>  **Use Cases:**  **Offer consumers option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to true. - When set to true, this will show a checkbox with the message 'Save card for future use' in Unified Checkout. - When selected this provides a response in both the Transient Token and Get Credentials API response.<br><br>  **Do not offer consumers the option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to false OR omit the field from the capture context request. - When set to false, the save card option is not shown to consumers when manually entering card details. 
+   * @member {Boolean} requestSaveCard
+   */
+  exports.prototype['requestSaveCard'] = undefined;
+  /**
+   * Configure Unified Checkout to display combo card at checkout.<br>  A combo debit/credit card is a single card that functions both as a Debit/Credit card.  Unified Checkout / Click to Pay Drop-in UI allows the Cardholder to choose whether they would like the transaction to be paid for using either debit or credit card. **Important:** This is applicable to Visa cards only.  Possible values: - True  - False<br><br>  **Use Cases:**  **Offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to true. - When set to true, Combo Card selection is shown at checkout <br><br>  **Do not offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to false OR omit the field from the capture context request. - The Combo Card selection is not shown at checkout. 
+   * @member {Boolean} comboCard
+   */
+  exports.prototype['comboCard'] = undefined;
 
 
 
