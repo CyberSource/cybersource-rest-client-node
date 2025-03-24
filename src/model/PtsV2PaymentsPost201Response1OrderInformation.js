@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201Response1OrderInformationBillTo', 'model/PtsV2PaymentsPost201Response1OrderInformationShipTo'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201Response1OrderInformationAmountDetails', 'model/PtsV2PaymentsPost201Response1OrderInformationBillTo', 'model/PtsV2PaymentsPost201Response1OrderInformationShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201Response1OrderInformationBillTo'), require('./PtsV2PaymentsPost201Response1OrderInformationShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201Response1OrderInformationAmountDetails'), require('./PtsV2PaymentsPost201Response1OrderInformationBillTo'), require('./PtsV2PaymentsPost201Response1OrderInformationShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201Response1OrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationBillTo, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationShipTo);
+    root.CyberSource.PtsV2PaymentsPost201Response1OrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationAmountDetails, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationBillTo, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationShipTo);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201Response1OrderInformationBillTo, PtsV2PaymentsPost201Response1OrderInformationShipTo) {
+}(this, function(ApiClient, PtsV2PaymentsPost201Response1OrderInformationAmountDetails, PtsV2PaymentsPost201Response1OrderInformationBillTo, PtsV2PaymentsPost201Response1OrderInformationShipTo) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('shipTo')) {
         obj['shipTo'] = PtsV2PaymentsPost201Response1OrderInformationShipTo.constructFromObject(data['shipTo']);
       }
+      if (data.hasOwnProperty('amountDetails')) {
+        obj['amountDetails'] = PtsV2PaymentsPost201Response1OrderInformationAmountDetails.constructFromObject(data['amountDetails']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/PtsV2PaymentsPost201Response1OrderInformationShipTo} shipTo
    */
   exports.prototype['shipTo'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201Response1OrderInformationAmountDetails} amountDetails
+   */
+  exports.prototype['amountDetails'] = undefined;
 
 
 

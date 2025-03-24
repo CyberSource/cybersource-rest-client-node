@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
       }
+      if (data.hasOwnProperty('transactionInformation')) {
+        obj['transactionInformation'] = ApiClient.convertToType(data['transactionInformation'], 'String');
+      }
     }
     return obj;
   }
@@ -100,6 +104,11 @@
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
+  /**
+   * In a Mastercard Transaction, this field contains the unique identifier (Transaction Link ID) for the first transaction in a transaction life cycle.  This ID is crucial for maintaining continuity and linking subsequent operations to the original transaction. 
+   * @member {String} transactionInformation
+   */
+  exports.prototype['transactionInformation'] = undefined;
 
 
 

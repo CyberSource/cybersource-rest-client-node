@@ -74,6 +74,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property rawResponseLocal (base name: "rawResponseLocal")', function() {
+      // uncomment below and update the code to test the property rawResponseLocal
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property responseDetails (base name: "responseDetails")', function() {
+      // uncomment below and update the code to test the property responseDetails
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property responseCode (base name: "responseCode")', function() {
       // uncomment below and update the code to test the property responseCode
       //var instane = new CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation();

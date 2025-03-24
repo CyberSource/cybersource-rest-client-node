@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
+      // uncomment below and update the code to test the property issuerInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property errorInformation (base name: "errorInformation")', function() {
+      // uncomment below and update the code to test the property errorInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

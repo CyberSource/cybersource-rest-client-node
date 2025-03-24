@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv1webhooksNotificationScope', 'model/Notificationsubscriptionsv1webhooksRetryPolicy', 'model/Notificationsubscriptionsv1webhooksSecurityPolicy'], factory);
+    define(['ApiClient', 'model/InlineResponse2014Payloads'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv1webhooksNotificationScope'), require('./Notificationsubscriptionsv1webhooksRetryPolicy'), require('./Notificationsubscriptionsv1webhooksSecurityPolicy'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014Payloads'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2014 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv1webhooksNotificationScope, root.CyberSource.Notificationsubscriptionsv1webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv1webhooksSecurityPolicy);
+    root.CyberSource.InlineResponse2014 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014Payloads);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv1webhooksNotificationScope, Notificationsubscriptionsv1webhooksRetryPolicy, Notificationsubscriptionsv1webhooksSecurityPolicy) {
+}(this, function(ApiClient, InlineResponse2014Payloads) {
   'use strict';
 
 
@@ -56,12 +56,6 @@
 
 
 
-
-
-
-
-
-
   };
 
   /**
@@ -75,128 +69,81 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('webhookId')) {
-        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
+      if (data.hasOwnProperty('eventDate')) {
+        obj['eventDate'] = ApiClient.convertToType(data['eventDate'], 'String');
+      }
+      if (data.hasOwnProperty('eventType')) {
+        obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
       }
       if (data.hasOwnProperty('organizationId')) {
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
       }
+      if (data.hasOwnProperty('payloads')) {
+        obj['payloads'] = InlineResponse2014Payloads.constructFromObject(data['payloads']);
+      }
       if (data.hasOwnProperty('productId')) {
         obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
       }
-      if (data.hasOwnProperty('eventTypes')) {
-        obj['eventTypes'] = ApiClient.convertToType(data['eventTypes'], ['String']);
+      if (data.hasOwnProperty('requestType')) {
+        obj['requestType'] = ApiClient.convertToType(data['requestType'], 'String');
       }
-      if (data.hasOwnProperty('webhookUrl')) {
-        obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
+      if (data.hasOwnProperty('retryNumber')) {
+        obj['retryNumber'] = ApiClient.convertToType(data['retryNumber'], 'Number');
       }
-      if (data.hasOwnProperty('healthCheckUrl')) {
-        obj['healthCheckUrl'] = ApiClient.convertToType(data['healthCheckUrl'], 'String');
+      if (data.hasOwnProperty('transactionTraceId')) {
+        obj['transactionTraceId'] = ApiClient.convertToType(data['transactionTraceId'], 'String');
       }
-      if (data.hasOwnProperty('notificationScope')) {
-        obj['notificationScope'] = Notificationsubscriptionsv1webhooksNotificationScope.constructFromObject(data['notificationScope']);
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('retryPolicy')) {
-        obj['retryPolicy'] = Notificationsubscriptionsv1webhooksRetryPolicy.constructFromObject(data['retryPolicy']);
-      }
-      if (data.hasOwnProperty('securityPolicy')) {
-        obj['securityPolicy'] = Notificationsubscriptionsv1webhooksSecurityPolicy.constructFromObject(data['securityPolicy']);
-      }
-      if (data.hasOwnProperty('createdOn')) {
-        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
-      }
-      if (data.hasOwnProperty('updatedOn')) {
-        obj['updatedOn'] = ApiClient.convertToType(data['updatedOn'], 'String');
-      }
-      if (data.hasOwnProperty('additionalAttributes')) {
-        obj['additionalAttributes'] = ApiClient.convertToType(data['additionalAttributes'], [{'String': 'String'}]);
+      if (data.hasOwnProperty('webhookId')) {
+        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Webhook Id. This is generated by the server.
-   * @member {String} webhookId
+   * Date that the webhook was delivered
+   * @member {String} eventDate
    */
-  exports.prototype['webhookId'] = undefined;
+  exports.prototype['eventDate'] = undefined;
   /**
-   * Organization ID
+   * The event name the webhook was delivered for
+   * @member {String} eventType
+   */
+  exports.prototype['eventType'] = undefined;
+  /**
+   * The Organization Identifier.
    * @member {String} organizationId
    */
   exports.prototype['organizationId'] = undefined;
   /**
-   * The product you are receiving a webhook for.
+   * @member {module:model/InlineResponse2014Payloads} payloads
+   */
+  exports.prototype['payloads'] = undefined;
+  /**
+   * The product the webhook was delivered for
    * @member {String} productId
    */
   exports.prototype['productId'] = undefined;
   /**
-   * Array of the different events for a given product id.
-   * @member {Array.<String>} eventTypes
+   * Identifies the the type of request
+   * @member {String} requestType
    */
-  exports.prototype['eventTypes'] = undefined;
+  exports.prototype['requestType'] = undefined;
   /**
-   * The client's endpoint (URL) to receive webhooks.
-   * @member {String} webhookUrl
+   * The number of retry attempts for a given webhook
+   * @member {Number} retryNumber
    */
-  exports.prototype['webhookUrl'] = undefined;
+  exports.prototype['retryNumber'] = undefined;
   /**
-   * The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
-   * @member {String} healthCheckUrl
+   * The identifier for the webhook
+   * @member {String} transactionTraceId
    */
-  exports.prototype['healthCheckUrl'] = undefined;
+  exports.prototype['transactionTraceId'] = undefined;
   /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksNotificationScope} notificationScope
+   * The identifier of the subscription
+   * @member {String} webhookId
    */
-  exports.prototype['notificationScope'] = undefined;
-  /**
-   * Webhook status.
-   * @member {String} status
-   * @default 'INACTIVE'
-   */
-  exports.prototype['status'] = 'INACTIVE';
-  /**
-   * Client friendly webhook name.
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * Client friendly webhook description.
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksRetryPolicy} retryPolicy
-   */
-  exports.prototype['retryPolicy'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksSecurityPolicy} securityPolicy
-   */
-  exports.prototype['securityPolicy'] = undefined;
-  /**
-   * Date on which webhook was created/registered.
-   * @member {String} createdOn
-   */
-  exports.prototype['createdOn'] = undefined;
-  /**
-   * Date on which webhook was most recently updated.
-   * @member {String} updatedOn
-   */
-  exports.prototype['updatedOn'] = undefined;
-  /**
-   * Additional, free form configuration data.
-   * @member {Array.<Object.<String, String>>} additionalAttributes
-   */
-  exports.prototype['additionalAttributes'] = undefined;
+  exports.prototype['webhookId'] = undefined;
 
 
 

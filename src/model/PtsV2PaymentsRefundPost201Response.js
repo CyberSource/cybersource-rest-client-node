@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsRefundPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsRefundPost201ResponseLinks', 'model/PtsV2PaymentsRefundPost201ResponseOrderInformation', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformation', 'model/PtsV2PaymentsRefundPost201ResponseRefundAmountDetails'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsCapturesPost201ResponseProcessingInformation', 'model/PtsV2PaymentsRefundPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsRefundPost201ResponseLinks', 'model/PtsV2PaymentsRefundPost201ResponseOrderInformation', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformation', 'model/PtsV2PaymentsRefundPost201ResponseRefundAmountDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'), require('./PtsV2PaymentsRefundPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsRefundPost201ResponseLinks'), require('./PtsV2PaymentsRefundPost201ResponseOrderInformation'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformation'), require('./PtsV2PaymentsRefundPost201ResponseRefundAmountDetails'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'), require('./PtsV2PaymentsCapturesPost201ResponseProcessingInformation'), require('./PtsV2PaymentsRefundPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsRefundPost201ResponseLinks'), require('./PtsV2PaymentsRefundPost201ResponseOrderInformation'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformation'), require('./PtsV2PaymentsRefundPost201ResponseRefundAmountDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsRefundPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseLinks, root.CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseRefundAmountDetails);
+    root.CyberSource.PtsV2PaymentsRefundPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, root.CyberSource.PtsV2PaymentsCapturesPost201ResponseProcessingInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseLinks, root.CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseRefundAmountDetails);
   }
-}(this, function(ApiClient, PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, PtsV2PaymentsRefundPost201ResponseClientReferenceInformation, PtsV2PaymentsRefundPost201ResponseLinks, PtsV2PaymentsRefundPost201ResponseOrderInformation, PtsV2PaymentsRefundPost201ResponseProcessorInformation, PtsV2PaymentsRefundPost201ResponseRefundAmountDetails) {
+}(this, function(ApiClient, PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, PtsV2PaymentsCapturesPost201ResponseProcessingInformation, PtsV2PaymentsRefundPost201ResponseClientReferenceInformation, PtsV2PaymentsRefundPost201ResponseLinks, PtsV2PaymentsRefundPost201ResponseOrderInformation, PtsV2PaymentsRefundPost201ResponseProcessorInformation, PtsV2PaymentsRefundPost201ResponseRefundAmountDetails) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -90,6 +91,9 @@
       }
       if (data.hasOwnProperty('refundAmountDetails')) {
         obj['refundAmountDetails'] = PtsV2PaymentsRefundPost201ResponseRefundAmountDetails.constructFromObject(data['refundAmountDetails']);
+      }
+      if (data.hasOwnProperty('processingInformation')) {
+        obj['processingInformation'] = PtsV2PaymentsCapturesPost201ResponseProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('processorInformation')) {
         obj['processorInformation'] = PtsV2PaymentsRefundPost201ResponseProcessorInformation.constructFromObject(data['processorInformation']);
@@ -136,6 +140,10 @@
    * @member {module:model/PtsV2PaymentsRefundPost201ResponseRefundAmountDetails} refundAmountDetails
    */
   exports.prototype['refundAmountDetails'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsCapturesPost201ResponseProcessingInformation} processingInformation
+   */
+  exports.prototype['processingInformation'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsRefundPost201ResponseProcessorInformation} processorInformation
    */

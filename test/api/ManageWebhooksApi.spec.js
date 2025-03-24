@@ -50,30 +50,10 @@
   }
 
   describe('ManageWebhooksApi', function() {
-    describe('deleteWebhookSubscription', function() {
-      it('should call deleteWebhookSubscription successfully', function(done) {
-        //uncomment below and update the code to test deleteWebhookSubscription
-        //instance.deleteWebhookSubscription(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getWebhookSubscriptionById', function() {
-      it('should call getWebhookSubscriptionById successfully', function(done) {
-        //uncomment below and update the code to test getWebhookSubscriptionById
-        //instance.getWebhookSubscriptionById(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getWebhookSubscriptionsByOrg', function() {
-      it('should call getWebhookSubscriptionsByOrg successfully', function(done) {
-        //uncomment below and update the code to test getWebhookSubscriptionsByOrg
-        //instance.getWebhookSubscriptionsByOrg(function(error) {
+    describe('notificationSubscriptionsV1WebhooksWebhookIdPost', function() {
+      it('should call notificationSubscriptionsV1WebhooksWebhookIdPost successfully', function(done) {
+        //uncomment below and update the code to test notificationSubscriptionsV1WebhooksWebhookIdPost
+        //instance.notificationSubscriptionsV1WebhooksWebhookIdPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -84,16 +64,6 @@
       it('should call saveAsymEgressKey successfully', function(done) {
         //uncomment below and update the code to test saveAsymEgressKey
         //instance.saveAsymEgressKey(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateWebhookSubscription', function() {
-      it('should call updateWebhookSubscription successfully', function(done) {
-        //uncomment below and update the code to test updateWebhookSubscription
-        //instance.updateWebhookSubscription(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

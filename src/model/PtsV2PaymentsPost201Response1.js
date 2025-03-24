@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/PtsV2PaymentsPost201Response1OrderInformation', 'model/PtsV2PaymentsPost201Response1PaymentInformation', 'model/PtsV2PaymentsPost201Response1ProcessorInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation', 'model/PtsV2PaymentsPost201Response1ErrorInformation', 'model/PtsV2PaymentsPost201Response1IssuerInformation', 'model/PtsV2PaymentsPost201Response1OrderInformation', 'model/PtsV2PaymentsPost201Response1PaymentInformation', 'model/PtsV2PaymentsPost201Response1ProcessorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./PtsV2PaymentsPost201Response1OrderInformation'), require('./PtsV2PaymentsPost201Response1PaymentInformation'), require('./PtsV2PaymentsPost201Response1ProcessorInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'), require('./PtsV2PaymentsPost201Response1ErrorInformation'), require('./PtsV2PaymentsPost201Response1IssuerInformation'), require('./PtsV2PaymentsPost201Response1OrderInformation'), require('./PtsV2PaymentsPost201Response1PaymentInformation'), require('./PtsV2PaymentsPost201Response1ProcessorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201Response1 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformation, root.CyberSource.PtsV2PaymentsPost201Response1PaymentInformation, root.CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation);
+    root.CyberSource.PtsV2PaymentsPost201Response1 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsPost201Response1ErrorInformation, root.CyberSource.PtsV2PaymentsPost201Response1IssuerInformation, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformation, root.CyberSource.PtsV2PaymentsPost201Response1PaymentInformation, root.CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, PtsV2PaymentsPost201Response1OrderInformation, PtsV2PaymentsPost201Response1PaymentInformation, PtsV2PaymentsPost201Response1ProcessorInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation, PtsV2PaymentsPost201Response1ErrorInformation, PtsV2PaymentsPost201Response1IssuerInformation, PtsV2PaymentsPost201Response1OrderInformation, PtsV2PaymentsPost201Response1PaymentInformation, PtsV2PaymentsPost201Response1ProcessorInformation) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -92,6 +94,12 @@
       if (data.hasOwnProperty('clientReferenceInformation')) {
         obj['clientReferenceInformation'] = PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
+      if (data.hasOwnProperty('issuerInformation')) {
+        obj['issuerInformation'] = PtsV2PaymentsPost201Response1IssuerInformation.constructFromObject(data['issuerInformation']);
+      }
+      if (data.hasOwnProperty('errorInformation')) {
+        obj['errorInformation'] = PtsV2PaymentsPost201Response1ErrorInformation.constructFromObject(data['errorInformation']);
+      }
     }
     return obj;
   }
@@ -132,6 +140,14 @@
    * @member {module:model/PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201Response1IssuerInformation} issuerInformation
+   */
+  exports.prototype['issuerInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201Response1ErrorInformation} errorInformation
+   */
+  exports.prototype['errorInformation'] = undefined;
 
 
 

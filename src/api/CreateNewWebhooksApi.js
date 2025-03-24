@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhookRequest', 'model/InlineResponse2002', 'model/InlineResponse2013', 'model/InlineResponse2014', 'model/SaveSymEgressKey'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2013', 'model/SaveSymEgressKey'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhookRequest'), require('../model/InlineResponse2002'), require('../model/InlineResponse2013'), require('../model/InlineResponse2014'), require('../model/SaveSymEgressKey'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2013'), require('../model/SaveSymEgressKey'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhookRequest, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse2014, root.CyberSource.SaveSymEgressKey);
+    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013, root.CyberSource.SaveSymEgressKey);
   }
-}(this, function(MLEUtility, ApiClient, CreateWebhookRequest, InlineResponse2002, InlineResponse2013, InlineResponse2014, SaveSymEgressKey) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2013, SaveSymEgressKey) {
   'use strict';
 
   /**
@@ -50,133 +50,6 @@
 	
 
     /**
-     * Callback function to receive the result of the createWebhookSubscription operation.
-     * @callback module:api/CreateNewWebhooksApi~createWebhookSubscriptionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create a Webhook
-     * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CreateWebhookRequest} opts.createWebhookRequest The webhook payload
-     * @param {module:api/CreateNewWebhooksApi~createWebhookSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2014}
-     *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
-     */
-    this.createWebhookSubscription = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['createWebhookRequest'];
-
-      var SdkTracker = require('../utilities/tracking/SdkTracker');
-
-      var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateWebhookRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2014;
-
-      //check isMLE for an api method 'this.createWebhookSubscription'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createWebhookSubscription');
-
-      if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
-          return this.apiClient.callApi(
-            '/notification-subscriptions/v1/webhooks', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
-          );
-        });
-      } else {
-        return this.apiClient.callApi(
-          '/notification-subscriptions/v1/webhooks', 'POST',
-          pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
-        );
-      }
-    }
-
-    /**
-     * Callback function to receive the result of the findProductsToSubscribe operation.
-     * @callback module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2002>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Find Products You Can Subscribe To
-     * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
-     * @param {String} organizationId The Organization Identifier.
-     * @param {module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2002>}
-     *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
-     */
-    this.findProductsToSubscribe = function(organizationId, callback) {
-      var postBody = null;
-      if ('GET' == 'POST') {
-        postBody = '{}';
-      }
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling findProductsToSubscribe");
-      }
-
-
-      var pathParams = {
-        'organizationId': organizationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = [InlineResponse2002];
-
-      //check isMLE for an api method 'this.findProductsToSubscribe'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'findProductsToSubscribe');
-
-      if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
-          return this.apiClient.callApi(
-            '/notification-subscriptions/v1/products/{organizationId}', 'GET',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
-          );
-        });
-      } else {
-        return this.apiClient.callApi(
-          '/notification-subscriptions/v1/products/{organizationId}', 'GET',
-          pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
-        );
-      }
-    }
-
-    /**
      * Callback function to receive the result of the saveSymEgressKey operation.
      * @callback module:api/CreateNewWebhooksApi~saveSymEgressKeyCallback
      * @param {String} error Error message, if any.
@@ -186,7 +59,7 @@
 
     /**
      * Create Webhook Security Keys
-     * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remeber to save the key in the API response, so that you can use it to validate messages later. 
+     * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later. 
      * @param {String} vCSenderOrganizationId Sender organization id
      * @param {String} vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
      * @param {Object} opts Optional parameters
@@ -230,7 +103,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = InlineResponse2013;
 
       //check isMLE for an api method 'this.saveSymEgressKey'

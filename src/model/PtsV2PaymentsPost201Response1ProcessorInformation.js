@@ -53,6 +53,8 @@
 
 
 
+
+
   };
 
   /**
@@ -74,6 +76,12 @@
       }
       if (data.hasOwnProperty('rawResponse')) {
         obj['rawResponse'] = ApiClient.convertToType(data['rawResponse'], 'String');
+      }
+      if (data.hasOwnProperty('rawResponseLocal')) {
+        obj['rawResponseLocal'] = ApiClient.convertToType(data['rawResponseLocal'], 'String');
+      }
+      if (data.hasOwnProperty('responseDetails')) {
+        obj['responseDetails'] = ApiClient.convertToType(data['responseDetails'], 'String');
       }
       if (data.hasOwnProperty('responseCode')) {
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
@@ -103,6 +111,16 @@
    * @member {String} rawResponse
    */
   exports.prototype['rawResponse'] = undefined;
+  /**
+   * This field is set to the value of failure reason returned by the processor in the local language of the processor. 
+   * @member {String} rawResponseLocal
+   */
+  exports.prototype['rawResponseLocal'] = undefined;
+  /**
+   * This field might contain information about a decline. 
+   * @member {String} responseDetails
+   */
+  exports.prototype['responseDetails'] = undefined;
   /**
    * This field is set to the value of response code returned by the processor. 
    * @member {String} responseCode

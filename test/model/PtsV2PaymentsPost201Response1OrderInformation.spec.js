@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property amountDetails (base name: "amountDetails")', function() {
+      // uncomment below and update the code to test the property amountDetails
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1OrderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

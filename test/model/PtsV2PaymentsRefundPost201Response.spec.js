@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property processorInformation (base name: "processorInformation")', function() {
       // uncomment below and update the code to test the property processorInformation
       //var instane = new CyberSource.PtsV2PaymentsRefundPost201Response();
