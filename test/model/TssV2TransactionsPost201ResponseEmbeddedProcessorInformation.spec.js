@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property providerTransactionId (base name: "providerTransactionId")', function() {
+      // uncomment below and update the code to test the property providerTransactionId
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property approvalCode (base name: "approvalCode")', function() {
       // uncomment below and update the code to test the property approvalCode
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedProcessorInformation();

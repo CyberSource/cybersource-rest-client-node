@@ -134,7 +134,7 @@
    */
   exports.prototype['transactionReason'] = undefined;
   /**
-   * This will send purpose of funds code for original credit transactions (OCTs). 
+   * This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. 
    * @member {String} purposeOfPayment
    */
   exports.prototype['purposeOfPayment'] = undefined;

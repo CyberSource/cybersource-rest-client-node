@@ -4,66 +4,17 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v1/webhooks/{webhookId} | Delete a Webhook Subscription
-[**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
-[**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
+[**notificationSubscriptionsV1WebhooksWebhookIdPost**](ManageWebhooksApi.md#notificationSubscriptionsV1WebhooksWebhookIdPost) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
-[**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v1/webhooks/{webhookId} | Update a Webhook Subscription
 
 
-<a name="deleteWebhookSubscription"></a>
-# **deleteWebhookSubscription**
-> deleteWebhookSubscription(webhookId)
+<a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
+# **notificationSubscriptionsV1WebhooksWebhookIdPost**
+> InlineResponse2014 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
 
-Delete a Webhook Subscription
+Test a Webhook Configuration
 
-Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.ManageWebhooksApi();
-
-var webhookId = "webhookId_example"; // String | The webhook identifier.
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteWebhookSubscription(webhookId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The webhook identifier. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="getWebhookSubscriptionById"></a>
-# **getWebhookSubscriptionById**
-> InlineResponse2004 getWebhookSubscriptionById(webhookId)
-
-Get Details On a Single Webhook
-
-Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
 
 ### Example
 ```javascript
@@ -71,7 +22,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ManageWebhooksApi();
 
-var webhookId = "webhookId_example"; // String | The webhook Identifier
+var webhookId = "webhookId_example"; // String | The Webhook Identifier.
 
 
 var callback = function(error, data, response) {
@@ -81,18 +32,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getWebhookSubscriptionById(webhookId, callback);
+apiInstance.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The webhook Identifier | 
+ **webhookId** | **String**| The Webhook Identifier. | 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 
@@ -101,59 +52,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="getWebhookSubscriptionsByOrg"></a>
-# **getWebhookSubscriptionsByOrg**
-> [InlineResponse2003] getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
-
-Get Details On All Created Webhooks
-
-Retrieve a list of all previously created webhooks.
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.ManageWebhooksApi();
-
-var organizationId = "organizationId_example"; // String | The Organization Identifier.
-
-var productId = "productId_example"; // String | The Product Identifier.
-
-var eventType = "eventType_example"; // String | The Event Type.
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| The Organization Identifier. | 
- **productId** | **String**| The Product Identifier. | 
- **eventType** | **String**| The Event Type. | 
-
-### Return type
-
-[**[InlineResponse2003]**](InlineResponse2003.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
@@ -209,55 +108,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="updateWebhookSubscription"></a>
-# **updateWebhookSubscription**
-> updateWebhookSubscription(webhookId, opts)
-
-Update a Webhook Subscription
-
-Update the webhook subscription using PATCH.
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.ManageWebhooksApi();
-
-var webhookId = "webhookId_example"; // String | The Webhook Identifier.
-
-var opts = { 
-  'updateWebhookRequest': new CyberSource.UpdateWebhookRequest() // UpdateWebhookRequest | The webhook payload or changes to apply.
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateWebhookSubscription(webhookId, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The Webhook Identifier. | 
- **updateWebhookRequest** | [**UpdateWebhookRequest**](UpdateWebhookRequest.md)| The webhook payload or changes to apply. | [optional] 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 

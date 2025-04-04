@@ -11,5 +11,7 @@ Name | Type | Description | Notes
 **paymentInformation** | [**PtsV2PaymentsPost201Response1PaymentInformation**](PtsV2PaymentsPost201Response1PaymentInformation.md) |  | [optional] 
 **orderInformation** | [**PtsV2PaymentsPost201Response1OrderInformation**](PtsV2PaymentsPost201Response1OrderInformation.md) |  | [optional] 
 **clientReferenceInformation** | [**PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation**](PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.md) |  | [optional] 
+**issuerInformation** | [**PtsV2PaymentsPost201Response1IssuerInformation**](PtsV2PaymentsPost201Response1IssuerInformation.md) |  | [optional] 
+**errorInformation** | [**PtsV2PaymentsPost201Response1ErrorInformation**](PtsV2PaymentsPost201Response1ErrorInformation.md) |  | [optional] 
 
 

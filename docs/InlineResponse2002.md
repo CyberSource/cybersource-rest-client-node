@@ -3,8 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**productId** | **String** | Product ID. | [optional] 
-**productName** | **String** | Product Name. | [optional] 
-**eventTypes** | [**[Notificationsubscriptionsv1productsorganizationIdEventTypes]**](Notificationsubscriptionsv1productsorganizationIdEventTypes.md) |  | [optional] 
+**links** | [**[InlineResponse2002Links]**](InlineResponse2002Links.md) |  | [optional] 
+**_object** | **String** |  | [optional] 
+**offset** | **Number** |  | [optional] 
+**limit** | **Number** |  | [optional] 
+**count** | **Number** |  | [optional] 
+**total** | **Number** |  | [optional] 
+**embedded** | [**InlineResponse2002Embedded**](InlineResponse2002Embedded.md) |  | [optional] 
 
 

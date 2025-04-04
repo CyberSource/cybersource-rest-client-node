@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eWallet (base name: "eWallet")', function() {
+      // uncomment below and update the code to test the property eWallet
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1PaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property customer (base name: "customer")', function() {
       // uncomment below and update the code to test the property customer
       //var instane = new CyberSource.PtsV2PaymentsPost201Response1PaymentInformation();

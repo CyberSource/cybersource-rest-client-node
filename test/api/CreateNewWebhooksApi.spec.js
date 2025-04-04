@@ -50,26 +50,6 @@
   }
 
   describe('CreateNewWebhooksApi', function() {
-    describe('createWebhookSubscription', function() {
-      it('should call createWebhookSubscription successfully', function(done) {
-        //uncomment below and update the code to test createWebhookSubscription
-        //instance.createWebhookSubscription(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('findProductsToSubscribe', function() {
-      it('should call findProductsToSubscribe successfully', function(done) {
-        //uncomment below and update the code to test findProductsToSubscribe
-        //instance.findProductsToSubscribe(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('saveSymEgressKey', function() {
       it('should call saveSymEgressKey successfully', function(done) {
         //uncomment below and update the code to test saveSymEgressKey

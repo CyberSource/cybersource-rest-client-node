@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv1webhooksNotificationScope', 'model/Notificationsubscriptionsv1webhooksProducts', 'model/Notificationsubscriptionsv1webhooksRetryPolicy', 'model/Notificationsubscriptionsv1webhooksSecurityPolicy'], factory);
+    define(['ApiClient', 'model/InlineResponse2002EmbeddedTotals', 'model/InlineResponse2003Billing', 'model/InlineResponse2004Records'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv1webhooksNotificationScope'), require('./Notificationsubscriptionsv1webhooksProducts'), require('./Notificationsubscriptionsv1webhooksRetryPolicy'), require('./Notificationsubscriptionsv1webhooksSecurityPolicy'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002EmbeddedTotals'), require('./InlineResponse2003Billing'), require('./InlineResponse2004Records'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2004 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv1webhooksNotificationScope, root.CyberSource.Notificationsubscriptionsv1webhooksProducts, root.CyberSource.Notificationsubscriptionsv1webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv1webhooksSecurityPolicy);
+    root.CyberSource.InlineResponse2004 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002EmbeddedTotals, root.CyberSource.InlineResponse2003Billing, root.CyberSource.InlineResponse2004Records);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv1webhooksNotificationScope, Notificationsubscriptionsv1webhooksProducts, Notificationsubscriptionsv1webhooksRetryPolicy, Notificationsubscriptionsv1webhooksSecurityPolicy) {
+}(this, function(ApiClient, InlineResponse2002EmbeddedTotals, InlineResponse2003Billing, InlineResponse2004Records) {
   'use strict';
 
 
@@ -57,10 +57,6 @@
 
 
 
-
-
-
-
   };
 
   /**
@@ -74,119 +70,85 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('webhookId')) {
-        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
+      if (data.hasOwnProperty('version')) {
+        obj['version'] = ApiClient.convertToType(data['version'], 'String');
       }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
+      if (data.hasOwnProperty('reportCreatedDate')) {
+        obj['reportCreatedDate'] = ApiClient.convertToType(data['reportCreatedDate'], 'String');
       }
-      if (data.hasOwnProperty('products')) {
-        obj['products'] = ApiClient.convertToType(data['products'], [Notificationsubscriptionsv1webhooksProducts]);
+      if (data.hasOwnProperty('batchId')) {
+        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
       }
-      if (data.hasOwnProperty('webhookUrl')) {
-        obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
+      if (data.hasOwnProperty('batchSource')) {
+        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
       }
-      if (data.hasOwnProperty('healthCheckUrl')) {
-        obj['healthCheckUrl'] = ApiClient.convertToType(data['healthCheckUrl'], 'String');
+      if (data.hasOwnProperty('batchCaEndpoints')) {
+        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
       }
-      if (data.hasOwnProperty('notificationScope')) {
-        obj['notificationScope'] = Notificationsubscriptionsv1webhooksNotificationScope.constructFromObject(data['notificationScope']);
+      if (data.hasOwnProperty('batchCreatedDate')) {
+        obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('merchantReference')) {
+        obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('totals')) {
+        obj['totals'] = InlineResponse2002EmbeddedTotals.constructFromObject(data['totals']);
       }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('billing')) {
+        obj['billing'] = InlineResponse2003Billing.constructFromObject(data['billing']);
       }
-      if (data.hasOwnProperty('retryPolicy')) {
-        obj['retryPolicy'] = Notificationsubscriptionsv1webhooksRetryPolicy.constructFromObject(data['retryPolicy']);
-      }
-      if (data.hasOwnProperty('securityPolicy')) {
-        obj['securityPolicy'] = Notificationsubscriptionsv1webhooksSecurityPolicy.constructFromObject(data['securityPolicy']);
-      }
-      if (data.hasOwnProperty('createdOn')) {
-        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
-      }
-      if (data.hasOwnProperty('updatedOn')) {
-        obj['updatedOn'] = ApiClient.convertToType(data['updatedOn'], 'String');
-      }
-      if (data.hasOwnProperty('additionalAttributes')) {
-        obj['additionalAttributes'] = ApiClient.convertToType(data['additionalAttributes'], [{'String': 'String'}]);
+      if (data.hasOwnProperty('records')) {
+        obj['records'] = ApiClient.convertToType(data['records'], [InlineResponse2004Records]);
       }
     }
     return obj;
   }
 
   /**
-   * Webhook Id. This is generated by the server.
-   * @member {String} webhookId
+   * @member {String} version
    */
-  exports.prototype['webhookId'] = undefined;
+  exports.prototype['version'] = undefined;
   /**
-   * Organization ID.
-   * @member {String} organizationId
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @member {String} reportCreatedDate
    */
-  exports.prototype['organizationId'] = undefined;
+  exports.prototype['reportCreatedDate'] = undefined;
   /**
-   * @member {Array.<module:model/Notificationsubscriptionsv1webhooksProducts>} products
+   * Unique identification number assigned to the submitted request.
+   * @member {String} batchId
    */
-  exports.prototype['products'] = undefined;
+  exports.prototype['batchId'] = undefined;
   /**
-   * The client's endpoint (URL) to receive webhooks.
-   * @member {String} webhookUrl
+   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
+   * @member {String} batchSource
    */
-  exports.prototype['webhookUrl'] = undefined;
+  exports.prototype['batchSource'] = undefined;
   /**
-   * The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
-   * @member {String} healthCheckUrl
+   * @member {String} batchCaEndpoints
    */
-  exports.prototype['healthCheckUrl'] = undefined;
+  exports.prototype['batchCaEndpoints'] = undefined;
   /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksNotificationScope} notificationScope
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @member {String} batchCreatedDate
    */
-  exports.prototype['notificationScope'] = undefined;
+  exports.prototype['batchCreatedDate'] = undefined;
   /**
-   * Webhook status.
-   * @member {String} status
-   * @default 'INACTIVE'
+   * Reference used by merchant to identify batch.
+   * @member {String} merchantReference
    */
-  exports.prototype['status'] = 'INACTIVE';
+  exports.prototype['merchantReference'] = undefined;
   /**
-   * Client friendly webhook name.
-   * @member {String} name
+   * @member {module:model/InlineResponse2002EmbeddedTotals} totals
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['totals'] = undefined;
   /**
-   * Client friendly webhook description.
-   * @member {String} description
+   * @member {module:model/InlineResponse2003Billing} billing
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype['billing'] = undefined;
   /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksRetryPolicy} retryPolicy
+   * @member {Array.<module:model/InlineResponse2004Records>} records
    */
-  exports.prototype['retryPolicy'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv1webhooksSecurityPolicy} securityPolicy
-   */
-  exports.prototype['securityPolicy'] = undefined;
-  /**
-   * Date on which webhook was created/registered.
-   * @member {String} createdOn
-   */
-  exports.prototype['createdOn'] = undefined;
-  /**
-   * Date on which webhook was most recently updated.
-   * @member {String} updatedOn
-   */
-  exports.prototype['updatedOn'] = undefined;
-  /**
-   * Additional, free form configuration data.
-   * @member {Array.<Object.<String, String>>} additionalAttributes
-   */
-  exports.prototype['additionalAttributes'] = undefined;
+  exports.prototype['records'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Kmsegressv2keysasymKeyInformation', 'model/Kmsegressv2keyssymClientReferenceInformation'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Kmsegressv2keysasymKeyInformation'), require('./Kmsegressv2keyssymClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient, root.CyberSource.Kmsegressv2keysasymKeyInformation, root.CyberSource.Kmsegressv2keyssymClientReferenceInformation);
+    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, Kmsegressv2keysasymKeyInformation, Kmsegressv2keyssymClientReferenceInformation) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -50,8 +50,6 @@
 
 
 
-
-
   };
 
   /**
@@ -71,12 +69,6 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Kmsegressv2keyssymClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
-      }
-      if (data.hasOwnProperty('keyInformation')) {
-        obj['keyInformation'] = Kmsegressv2keysasymKeyInformation.constructFromObject(data['keyInformation']);
-      }
     }
     return obj;
   }
@@ -91,14 +83,6 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
-  /**
-   * @member {module:model/Kmsegressv2keyssymClientReferenceInformation} clientReferenceInformation
-   */
-  exports.prototype['clientReferenceInformation'] = undefined;
-  /**
-   * @member {module:model/Kmsegressv2keysasymKeyInformation} keyInformation
-   */
-  exports.prototype['keyInformation'] = undefined;
 
 
 

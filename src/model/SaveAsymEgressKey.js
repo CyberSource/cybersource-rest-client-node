@@ -43,15 +43,13 @@
    * Constructs a new <code>SaveAsymEgressKey</code>.
    * @alias module:model/SaveAsymEgressKey
    * @class
-   * @param clientRequestAction {String} Client request action. 
-   * @param keyInformation {module:model/Kmsegressv2keysasymKeyInformation} 
    */
-  var exports = function(clientRequestAction, keyInformation) {
+  var exports = function() {
     var _this = this;
 
 
-    _this['clientRequestAction'] = clientRequestAction;
-    _this['keyInformation'] = keyInformation;
+
+
   };
 
   /**

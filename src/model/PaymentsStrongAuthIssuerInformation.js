@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('transactionRiskAnalysisExemptionResult')) {
         obj['transactionRiskAnalysisExemptionResult'] = ApiClient.convertToType(data['transactionRiskAnalysisExemptionResult'], 'String');
+      }
+      if (data.hasOwnProperty('delegatedAuthenticationResult')) {
+        obj['delegatedAuthenticationResult'] = ApiClient.convertToType(data['delegatedAuthenticationResult'], 'String');
       }
     }
     return obj;
@@ -109,6 +113,11 @@
    * @member {String} transactionRiskAnalysisExemptionResult
    */
   exports.prototype['transactionRiskAnalysisExemptionResult'] = undefined;
+  /**
+   * This will be the value returned by Visanet when delegated authentication has been requested. 
+   * @member {String} delegatedAuthenticationResult
+   */
+  exports.prototype['delegatedAuthenticationResult'] = undefined;
 
 
 

@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property delegatedAuthenticationResult (base name: "delegatedAuthenticationResult")', function() {
+      // uncomment below and update the code to test the property delegatedAuthenticationResult
+      //var instane = new CyberSource.PaymentsStrongAuthIssuerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

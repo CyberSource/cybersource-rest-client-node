@@ -80,6 +80,16 @@
         done();
       });
     });
+    describe('uploadTransactionBatch', function() {
+      it('should call uploadTransactionBatch successfully', function(done) {
+        //uncomment below and update the code to test uploadTransactionBatch
+        //instance.uploadTransactionBatch(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

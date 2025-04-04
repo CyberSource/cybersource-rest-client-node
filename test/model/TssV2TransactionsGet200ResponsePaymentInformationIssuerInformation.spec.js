@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionInformation (base name: "transactionInformation")', function() {
+      // uncomment below and update the code to test the property transactionInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
