@@ -14,6 +14,7 @@
  */
 
 'use strict';
+const FormData = require('form-data');
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -298,7 +299,9 @@
    * @param {Object} axiosConfig The object to be used as configuration for <code>axios</code> API.
    * @param {Array.<String>} authNames An array of authentication method names.
    */
-  exports.prototype.applyAuthToRequest = function(axiosConfig, authNames) {
+  exports.prototype.applyAuthToRequest = function (axiosConfig, authNames) {
+    console.log("hey2");
+
     var _this = this;
     authNames.forEach(function(authName) {
       var auth = _this.authentications[authName];
@@ -473,7 +476,7 @@
    * @param {String} requestTarget
    * @param {String} requestBody
    */
-  exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
+  exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams, formParams, contentTypes) {
 
     this.merchantConfig.setRequestTarget(requestTarget);
     this.merchantConfig.setRequestType(httpMethod)
@@ -481,6 +484,37 @@
 
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
+
+    var contentType1 = this.jsonPreferredMime(contentTypes);
+
+    if (contentType1 == 'multipart/form-data') {
+      console.log("heyme");
+
+      var _formParams1 = this.normalizeParams(formParams);
+
+      // Get the file content directly from the first file parameter
+      let fileContent = '';
+      for (var key in _formParams1) {
+        if (_formParams1.hasOwnProperty(key) && this.isFileParam(_formParams1[key])) {
+          // Use file path to read file synchronously instead of using FormData
+          try {
+            const fs = require('fs');
+            const filePath = _formParams1[key].path;
+            if (filePath) {
+              fileContent = fs.readFileSync(filePath).toString('utf8');
+              break;
+            }
+          } catch (err) {
+            console.error("Error reading file for digest:", err);
+            // If we can't read the file, use an empty string for digest
+            fileContent = '';
+          }
+        }
+      }
+
+      // Set the file content for digest generation
+      this.merchantConfig.setRequestJsonData(fileContent);
+    }
 
     var token = Authorization.getToken(this.merchantConfig, this.logger);
 
@@ -637,7 +671,8 @@
 
     if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
     {
-      headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+      console.log("hey1");
+      headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams, formParams, contentTypes);
     }
 
     if(this.merchantConfig.getDefaultHeaders()) {
@@ -674,17 +709,42 @@
       axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
       formParams = bodyParam;
       axiosConfig.data = JSON.parse(formParams);
-    } else if (contentType == 'multipart/form-data') {
-      var _formParams = this.normalizeParams(formParams);
-      contentTypeHeaderValue = 'multipart/form-data';
-      axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
-      const formData = new formData();
-      for (var key in _formParams) {
-        if (_formParams.hasOwnProperty(key)) {
-          formData.append(key, _formParams[key]);
-        }
+      // In the multipart/form-data handling section (around line 650):
+  } else if (contentType == 'multipart/form-data') {
+    console.log("hey4");
+
+    var _formParams = this.normalizeParams(formParams);
+    // Save authentication headers before they're potentially overwritten
+    const savedHeaders = { ...axiosConfig.headers };
+
+    // Create proper FormData instance
+    const formData = new FormData();
+
+    for (var key in _formParams) {
+      if (_formParams.hasOwnProperty(key)) {
+        formData.append(key, _formParams[key]);
       }
-    } else if (bodyParam) {
+    }
+
+    // Let FormData set its own headers with correct boundaries
+    // and assign the formData as the request body
+    axiosConfig.data = formData;
+
+    // Get form-data headers with boundaries
+    const formHeaders = formData.getHeaders();
+
+    // Merge headers - FormData content-type with boundary is crucial
+    Object.keys(formHeaders).forEach(key => {
+      axiosConfig.headers[key] = formHeaders[key];
+    });
+
+    // Restore authentication headers which were overwritten
+    for (const key in savedHeaders) {
+      if (key !== 'Content-Type') { // Keep the FormData content-type with boundary
+        axiosConfig.headers[key] = savedHeaders[key];
+      }
+    }
+  } else if (bodyParam) {
       axiosConfig.data = JSON.parse(bodyParam);
     }
 
@@ -743,7 +803,10 @@
 
     axiosConfig.url = requestTarget;
 
+    // Print all headers
+    // console.log("Request Headers:", axiosConfig.headers);
 
+    
     axios.request(axiosConfig).then(function(response) {
       if (callback) {
         var data = _this.deserialize(response, returnType);
@@ -777,6 +840,8 @@
    * @param {Object} pathParams
    */
   exports.prototype.buildRequestTarget = function (path, pathParams, queryParams) {
+    console.log("hey3");
+
     if (!path.match(/^\//)) {
       path = '/' + path;
     }

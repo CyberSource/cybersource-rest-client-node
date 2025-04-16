@@ -10,6 +10,7 @@ exports.generateDigest = function (merchantConfig, logger) {
 
     try {
         var data = merchantConfig.getRequestJsonData();
+        console.log("data", data);
         var buffer = Buffer.from(data, 'utf8');
         const hash = crypto.createHash('sha256');
         hash.update(buffer);
