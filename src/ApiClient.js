@@ -14,7 +14,9 @@
  */
 
 'use strict';
+
 const FormData = require('form-data');
+const crypto = require('crypto');
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -299,9 +301,7 @@ const FormData = require('form-data');
    * @param {Object} axiosConfig The object to be used as configuration for <code>axios</code> API.
    * @param {Array.<String>} authNames An array of authentication method names.
    */
-  exports.prototype.applyAuthToRequest = function (axiosConfig, authNames) {
-    console.log("hey2");
-
+  exports.prototype.applyAuthToRequest = function(axiosConfig, authNames) {
     var _this = this;
     authNames.forEach(function(authName) {
       var auth = _this.authentications[authName];
@@ -476,7 +476,7 @@ const FormData = require('form-data');
    * @param {String} requestTarget
    * @param {String} requestBody
    */
-  exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams, formParams, contentTypes) {
+  exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
 
     this.merchantConfig.setRequestTarget(requestTarget);
     this.merchantConfig.setRequestType(httpMethod)
@@ -484,37 +484,6 @@ const FormData = require('form-data');
 
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
-
-    var contentType1 = this.jsonPreferredMime(contentTypes);
-
-    if (contentType1 == 'multipart/form-data') {
-      console.log("heyme");
-
-      var _formParams1 = this.normalizeParams(formParams);
-
-      // Get the file content directly from the first file parameter
-      let fileContent = '';
-      for (var key in _formParams1) {
-        if (_formParams1.hasOwnProperty(key) && this.isFileParam(_formParams1[key])) {
-          // Use file path to read file synchronously instead of using FormData
-          try {
-            const fs = require('fs');
-            const filePath = _formParams1[key].path;
-            if (filePath) {
-              fileContent = fs.readFileSync(filePath).toString('utf8');
-              break;
-            }
-          } catch (err) {
-            console.error("Error reading file for digest:", err);
-            // If we can't read the file, use an empty string for digest
-            fileContent = '';
-          }
-        }
-      }
-
-      // Set the file content for digest generation
-      this.merchantConfig.setRequestJsonData(fileContent);
-    }
 
     var token = Authorization.getToken(this.merchantConfig, this.logger);
 
@@ -668,12 +637,67 @@ const FormData = require('form-data');
         bodyParam = JSON.stringify(bodyParam, null, 0);
       }
     }
+    var contentType = this.jsonPreferredMime(contentTypes);
+    console.log('formParams:', formParams);
+    if (contentType === 'multipart/form-data') {
+      const formData = new FormData();
+      let fileContent = null;
 
-    if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
-    {
-      console.log("hey1");
-      headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams, formParams, contentTypes);
+      //First, handle file content for digest calculation
+      for (const key in formParams) {
+        if (this.isFileParam(formParams[key])) {
+          try {
+            // Read file content for digest calculation
+            const fs = require('fs');
+            fileContent = fs.readFileSync(formParams[key].path);
+
+            // For the actual request, append the file to FormData normally
+            // formData.append(key, formParams[key], formParams[key].path ? formParams[key].path.split('\\').pop() : 'file');
+            formData.append(key, formParams[key]);
+
+          } catch (err) {
+            console.error('Error reading file for digest calculation:', err);
+            // formData.append(key, formParams[key], formParams[key].path ? formParams[key].path.split('\\').pop() : 'file');
+            formData.append(key, formParams[key]);
+          }
+        } else {
+          formData.append(key, formParams[key]);
+        }
+      }
+
+      // Use file content for digest if available, otherwise fallback to form string
+      let digestContent = fileContent ? fileContent.toString('utf8') : '';
+      if (!digestContent) {
+        // Create fallback string representation for digest calculation
+        for (const key in formParams) {
+          if (this.isFileParam(formParams[key])) {
+            const filename = formParams[key].path ? formParams[key].path.split('\\').pop() : 'file';
+            digestContent += `${key}=${filename}&`;
+          } else {
+            digestContent += `${key}=${encodeURIComponent(formParams[key])}&`;
+          }
+        }
+        if (digestContent) {
+          digestContent = digestContent.slice(0, -1); // Remove trailing &
+        }
+      }
+
+      console.log('Digest content prepared for multipart request', digestContent);
+      axiosConfig.data = formData;
+      axiosConfig.headers = { ...axiosConfig.headers, ...formData.getHeaders() };
+
+      if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH) {
+        headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, digestContent, headerParams);
+      }
+    } else{ //
+      if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH) {
+        headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+      }
     }
+    // if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
+    // {
+    //   headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+    // }
 
     if(this.merchantConfig.getDefaultHeaders()) {
       for (const [key, value] of Object.entries(this.merchantConfig.getDefaultHeaders())) {
@@ -709,42 +733,7 @@ const FormData = require('form-data');
       axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
       formParams = bodyParam;
       axiosConfig.data = JSON.parse(formParams);
-      // In the multipart/form-data handling section (around line 650):
-  } else if (contentType == 'multipart/form-data') {
-    console.log("hey4");
-
-    var _formParams = this.normalizeParams(formParams);
-    // Save authentication headers before they're potentially overwritten
-    const savedHeaders = { ...axiosConfig.headers };
-
-    // Create proper FormData instance
-    const formData = new FormData();
-
-    for (var key in _formParams) {
-      if (_formParams.hasOwnProperty(key)) {
-        formData.append(key, _formParams[key]);
-      }
-    }
-
-    // Let FormData set its own headers with correct boundaries
-    // and assign the formData as the request body
-    axiosConfig.data = formData;
-
-    // Get form-data headers with boundaries
-    const formHeaders = formData.getHeaders();
-
-    // Merge headers - FormData content-type with boundary is crucial
-    Object.keys(formHeaders).forEach(key => {
-      axiosConfig.headers[key] = formHeaders[key];
-    });
-
-    // Restore authentication headers which were overwritten
-    for (const key in savedHeaders) {
-      if (key !== 'Content-Type') { // Keep the FormData content-type with boundary
-        axiosConfig.headers[key] = savedHeaders[key];
-      }
-    }
-  } else if (bodyParam) {
+    } else if (bodyParam) {
       axiosConfig.data = JSON.parse(bodyParam);
     }
 
@@ -803,10 +792,7 @@ const FormData = require('form-data');
 
     axiosConfig.url = requestTarget;
 
-    // Print all headers
-    // console.log("Request Headers:", axiosConfig.headers);
 
-    
     axios.request(axiosConfig).then(function(response) {
       if (callback) {
         var data = _this.deserialize(response, returnType);
@@ -840,8 +826,6 @@ const FormData = require('form-data');
    * @param {Object} pathParams
    */
   exports.prototype.buildRequestTarget = function (path, pathParams, queryParams) {
-    console.log("hey3");
-
     if (!path.match(/^\//)) {
       path = '/' + path;
     }
@@ -976,3 +960,14 @@ const FormData = require('form-data');
 
   return exports;
 }));
+
+
+// req body for digets creation in java:
+// Content - Type: multipart / form - data; boundary = ----WebKitFormBoundary12345678
+
+// ------WebKitFormBoundary12345678
+// Content - Disposition: form - data; name = "file"; filename = "batchapiTest.csv"
+// Content - Type: application / octet - stream
+
+//   < contents of the file at path 'C:\\New_Software\\Repos\\cybersource-rest-samples-node\\Resource\\batchapiTest.csv' >
+//     ------WebKitFormBoundary12345678--
