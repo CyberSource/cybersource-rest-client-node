@@ -15,24 +15,21 @@
 
 'use strict';
 
-const FormData = require('form-data');
-const crypto = require('crypto');
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'));
+    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'), require('./authentication/payloadDigest/DigestGenerator'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest);
+    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest, root.Authentication.PayloadDigest.DigestGenerator);
   }
-}(this, function(axios, axiosCookieJar, { HttpsProxyAgent }, https, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest) {
+}(this, function(axios, axiosCookieJar, { HttpsProxyAgent }, https, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest, DigestGenerator) {
   /**
    * @module ApiClient
    * @version 0.0.1
@@ -470,6 +467,24 @@ const crypto = require('crypto');
   }
 
   /**
+   * 
+   */
+  exports.prototype.callAuthenticationHeaderForMultipart = function (httpMethod, requestTarget, formParams, headerParams) {
+    this.merchantConfig.setRequestTarget(requestTarget);
+    this.merchantConfig.setRequestType(httpMethod)
+    this.merchantConfig.setFormParamsData(formParams);
+    
+    this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
+    this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
+
+    var token = Authorization.getToken(this.merchantConfig, this.logger);
+    token = 'Bearer ' + token;
+    headerParams['Authorization'] = token;
+    this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
+    return headerParams;
+  }
+
+  /**
    * This method is to generate headers for http and jwt authentication.
    *
    * @param {String} httpMethod
@@ -637,67 +652,16 @@ const crypto = require('crypto');
         bodyParam = JSON.stringify(bodyParam, null, 0);
       }
     }
+
     var contentType = this.jsonPreferredMime(contentTypes);
-    console.log('formParams:', formParams);
-    if (contentType === 'multipart/form-data') {
-      const formData = new FormData();
-      let fileContent = null;
-
-      //First, handle file content for digest calculation
-      for (const key in formParams) {
-        if (this.isFileParam(formParams[key])) {
-          try {
-            // Read file content for digest calculation
-            const fs = require('fs');
-            fileContent = fs.readFileSync(formParams[key].path);
-
-            // For the actual request, append the file to FormData normally
-            // formData.append(key, formParams[key], formParams[key].path ? formParams[key].path.split('\\').pop() : 'file');
-            formData.append(key, formParams[key]);
-
-          } catch (err) {
-            console.error('Error reading file for digest calculation:', err);
-            // formData.append(key, formParams[key], formParams[key].path ? formParams[key].path.split('\\').pop() : 'file');
-            formData.append(key, formParams[key]);
-          }
-        } else {
-          formData.append(key, formParams[key]);
-        }
-      }
-
-      // Use file content for digest if available, otherwise fallback to form string
-      let digestContent = fileContent ? fileContent.toString('utf8') : '';
-      if (!digestContent) {
-        // Create fallback string representation for digest calculation
-        for (const key in formParams) {
-          if (this.isFileParam(formParams[key])) {
-            const filename = formParams[key].path ? formParams[key].path.split('\\').pop() : 'file';
-            digestContent += `${key}=${filename}&`;
-          } else {
-            digestContent += `${key}=${encodeURIComponent(formParams[key])}&`;
-          }
-        }
-        if (digestContent) {
-          digestContent = digestContent.slice(0, -1); // Remove trailing &
-        }
-      }
-
-      console.log('Digest content prepared for multipart request', digestContent);
-      axiosConfig.data = formData;
-      axiosConfig.headers = { ...axiosConfig.headers, ...formData.getHeaders() };
-
-      if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH) {
-        headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, digestContent, headerParams);
-      }
-    } else{ //
-      if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH) {
+    if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
+    {
+      if (contentType === 'multipart/form-data') {
+        headerParams = this.callAuthenticationHeaderForMultipart(httpMethod, requestTarget, formParams, headerParams);
+      } else {
         headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
       }
     }
-    // if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
-    // {
-    //   headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
-    // }
 
     if(this.merchantConfig.getDefaultHeaders()) {
       for (const [key, value] of Object.entries(this.merchantConfig.getDefaultHeaders())) {
@@ -717,7 +681,6 @@ const crypto = require('crypto');
     // set request timeout
     axiosConfig.timeout = this.timeout;
 
-    var contentType = this.jsonPreferredMime(contentTypes);
     var contentTypeHeaderValue = '';
     if (contentType) {
       // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
@@ -728,11 +691,45 @@ const crypto = require('crypto');
       contentTypeHeaderValue = 'application/json';
     }
 
+    console.log("\n\nCONTENT TYPE : " + contentType);
     if (contentType === 'application/x-www-form-urlencoded') {
       contentTypeHeaderValue = 'application/x-www-form-urlencoded';
       axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
       formParams = bodyParam;
       axiosConfig.data = JSON.parse(formParams);
+    } else if (contentType == 'multipart/form-data') {
+      contentTypeHeaderValue = 'multipart/form-data';
+      axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
+
+      // const formData = new FormData();
+      // const fs = require('fs');
+      // const path = require('path');
+
+      // // Get file information
+      // const filePath = formParams['file'];
+      // const fileName = path.basename(filePath);
+      // // Read file data
+      // const fileContent = fs.readFileSync(filePath);
+      // console.log("\n\nFile Content : " + fileContent);
+      // // Create a proper Blob-like object for FormData in Node.js
+      // const blob = new Blob([fileContent], { type: 'application/octet-stream' });
+
+      // // Append the file as a Blob with proper name
+      // formData.append('file', blob, fileName);
+
+      // // Add any other form parameters if needed
+      // for (var key in formParams) {
+      //   if (formParams.hasOwnProperty(key) && key !== 'file') {
+      //     formData.append(key, formParams[key]);
+      //   }
+      // }
+
+      // // Set the headers and use formData as the request body
+      // axiosConfig.headers = { ...axiosConfig.headers, ...formData.getHeaders() };
+
+      axiosConfig.data = DigestGenerator.fetchFileContentsAsFormParams(formParams['file']);
+
+      console.log("\n\nAxios Data : " + axiosConfig.data);
     } else if (bodyParam) {
       axiosConfig.data = JSON.parse(bodyParam);
     }
@@ -791,7 +788,6 @@ const crypto = require('crypto');
     }
 
     axiosConfig.url = requestTarget;
-
 
     axios.request(axiosConfig).then(function(response) {
       if (callback) {
@@ -960,14 +956,3 @@ const crypto = require('crypto');
 
   return exports;
 }));
-
-
-// req body for digets creation in java:
-// Content - Type: multipart / form - data; boundary = ----WebKitFormBoundary12345678
-
-// ------WebKitFormBoundary12345678
-// Content - Disposition: form - data; name = "file"; filename = "batchapiTest.csv"
-// Content - Type: application / octet - stream
-
-//   < contents of the file at path 'C:\\New_Software\\Repos\\cybersource-rest-samples-node\\Resource\\batchapiTest.csv' >
-//     ------WebKitFormBoundary12345678--

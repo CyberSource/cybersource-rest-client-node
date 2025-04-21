@@ -26,6 +26,7 @@ exports.getToken = function (merchantConfig, logger) {
         else if (requestType === Constants.POST || requestType === Constants.PUT
             || requestType === Constants.PATCH) {
             var digest = DigestGenerator.generateDigest(merchantConfig, logger);
+            console.log("Digest value : " + digest);
             claimSet = "{\"digest\":\""
                 + digest + "\",\"digestAlgorithm\":\"SHA-256\",\"iat\":\""
                 + date + "\"}";

@@ -21,6 +21,7 @@ function MerchantConfig(result) {
     this.requestType;
     this.requestTarget;
     this.requestJsonData;
+    this.formParamsData;
 
     /* JWT Parameters*/
     this.keysDirectory = result.keysDirectory;
@@ -254,6 +255,14 @@ MerchantConfig.prototype.setRequestJsonData = function setRequestJsonData(reques
 MerchantConfig.prototype.getRequestJsonData = function getRequestJsonData() {
     return this.requestJsonData;
 };
+
+MerchantConfig.prototype.setFormParamsData = function setFormParamsData(formParams) {
+    this.formParamsData = formParams;
+}
+
+MerchantConfig.prototype.getFormParamsData = function getFormParamsData() {
+    return this.formParamsData;
+}
 
 MerchantConfig.prototype.setRequestTarget = function setRequestTarget(requestTarget) {
     this.requestTarget = requestTarget;
