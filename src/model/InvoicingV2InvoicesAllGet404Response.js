@@ -95,7 +95,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE 
+   * The reason of the status.  Possible values: - NOTFOUND 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

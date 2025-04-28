@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002Embedded', 'model/InlineResponse2002Links'], factory);
+    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2002IntegrationInformation', 'model/InlineResponse2012ProductInformationSetups'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002Embedded'), require('./InlineResponse2002Links'));
+    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2002IntegrationInformation'), require('./InlineResponse2012ProductInformationSetups'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002Embedded, root.CyberSource.InlineResponse2002Links);
+    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2002IntegrationInformation, root.CyberSource.InlineResponse2012ProductInformationSetups);
   }
-}(this, function(ApiClient, InlineResponse2002Embedded, InlineResponse2002Links) {
+}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2002IntegrationInformation, InlineResponse2012ProductInformationSetups) {
   'use strict';
 
 
@@ -67,59 +67,59 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = ApiClient.convertToType(data['_links'], [InlineResponse2002Links]);
+      if (data.hasOwnProperty('registrationInformation')) {
+        obj['registrationInformation'] = Boardingv1registrationsRegistrationInformation.constructFromObject(data['registrationInformation']);
       }
-      if (data.hasOwnProperty('object')) {
-        obj['object'] = ApiClient.convertToType(data['object'], 'String');
+      if (data.hasOwnProperty('integrationInformation')) {
+        obj['integrationInformation'] = InlineResponse2002IntegrationInformation.constructFromObject(data['integrationInformation']);
       }
-      if (data.hasOwnProperty('offset')) {
-        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
+      if (data.hasOwnProperty('organizationInformation')) {
+        obj['organizationInformation'] = Boardingv1registrationsOrganizationInformation.constructFromObject(data['organizationInformation']);
       }
-      if (data.hasOwnProperty('limit')) {
-        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
+      if (data.hasOwnProperty('productInformation')) {
+        obj['productInformation'] = Boardingv1registrationsProductInformation.constructFromObject(data['productInformation']);
       }
-      if (data.hasOwnProperty('count')) {
-        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+      if (data.hasOwnProperty('productInformationSetups')) {
+        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2012ProductInformationSetups]);
       }
-      if (data.hasOwnProperty('total')) {
-        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
+      if (data.hasOwnProperty('documentInformation')) {
+        obj['documentInformation'] = Boardingv1registrationsDocumentInformation.constructFromObject(data['documentInformation']);
       }
-      if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = InlineResponse2002Embedded.constructFromObject(data['_embedded']);
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/InlineResponse2002Links>} _links
+   * @member {module:model/Boardingv1registrationsRegistrationInformation} registrationInformation
    */
-  exports.prototype['_links'] = undefined;
+  exports.prototype['registrationInformation'] = undefined;
   /**
-   * @member {String} object
+   * @member {module:model/InlineResponse2002IntegrationInformation} integrationInformation
    */
-  exports.prototype['object'] = undefined;
+  exports.prototype['integrationInformation'] = undefined;
   /**
-   * @member {Number} offset
+   * @member {module:model/Boardingv1registrationsOrganizationInformation} organizationInformation
    */
-  exports.prototype['offset'] = undefined;
+  exports.prototype['organizationInformation'] = undefined;
   /**
-   * @member {Number} limit
+   * @member {module:model/Boardingv1registrationsProductInformation} productInformation
    */
-  exports.prototype['limit'] = undefined;
+  exports.prototype['productInformation'] = undefined;
   /**
-   * @member {Number} count
+   * @member {Array.<module:model/InlineResponse2012ProductInformationSetups>} productInformationSetups
    */
-  exports.prototype['count'] = undefined;
+  exports.prototype['productInformationSetups'] = undefined;
   /**
-   * @member {Number} total
+   * @member {module:model/Boardingv1registrationsDocumentInformation} documentInformation
    */
-  exports.prototype['total'] = undefined;
+  exports.prototype['documentInformation'] = undefined;
   /**
-   * @member {module:model/InlineResponse2002Embedded} _embedded
+   * @member {Object.<String, Array.<Object>>} details
    */
-  exports.prototype['_embedded'] = undefined;
+  exports.prototype['details'] = undefined;
 
 
 

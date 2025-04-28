@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails</code>.
-   * Contains all of the tax-related fields for the invoice.
+   * Contains all of the tax-related fields for the order.
    * @alias module:model/Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails
    * @class
    */

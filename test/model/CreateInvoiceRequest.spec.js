@@ -56,8 +56,20 @@
       //expect(instance).to.be.a(CyberSource.CreateInvoiceRequest);
     });
 
+    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
+      // uncomment below and update the code to test the property clientReferenceInformation
+      //var instane = new CyberSource.CreateInvoiceRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property customerInformation (base name: "customerInformation")', function() {
       // uncomment below and update the code to test the property customerInformation
+      //var instane = new CyberSource.CreateInvoiceRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
       //var instane = new CyberSource.CreateInvoiceRequest();
       //expect(instance).to.be();
     });

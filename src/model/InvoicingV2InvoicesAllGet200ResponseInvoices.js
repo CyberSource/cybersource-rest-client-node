@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -75,6 +76,9 @@
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('createdDate')) {
+        obj['createdDate'] = ApiClient.convertToType(data['createdDate'], 'String');
       }
       if (data.hasOwnProperty('customerInformation')) {
         obj['customerInformation'] = InvoicingV2InvoicesAllGet200ResponseCustomerInformation.constructFromObject(data['customerInformation']);
@@ -103,6 +107,11 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
+  /**
+   * Date and time (UTC) the invoice was created.  Format: YYYY-MM-DDThh:mm:ssZ Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} createdDate
+   */
+  exports.prototype['createdDate'] = undefined;
   /**
    * @member {module:model/InvoicingV2InvoicesAllGet200ResponseCustomerInformation} customerInformation
    */

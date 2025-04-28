@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2013', 'model/SaveSymEgressKey'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhook', 'model/InlineResponse2003', 'model/InlineResponse2013', 'model/InlineResponse2014', 'model/SaveSymEgressKey'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2013'), require('../model/SaveSymEgressKey'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhook'), require('../model/InlineResponse2003'), require('../model/InlineResponse2013'), require('../model/InlineResponse2014'), require('../model/SaveSymEgressKey'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013, root.CyberSource.SaveSymEgressKey);
+    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhook, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse2014, root.CyberSource.SaveSymEgressKey);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2013, SaveSymEgressKey) {
+}(this, function(MLEUtility, ApiClient, CreateWebhook, InlineResponse2003, InlineResponse2013, InlineResponse2014, SaveSymEgressKey) {
   'use strict';
 
   /**
@@ -50,6 +50,129 @@
 	
 
     /**
+     * Callback function to receive the result of the findProductsToSubscribe operation.
+     * @callback module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse2003>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Find Products You Can Subscribe To
+     * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
+     * @param {String} organizationId The Organization Identifier.
+     * @param {module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InlineResponse2003>}
+     */
+    this.findProductsToSubscribe = function(organizationId, callback) {
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling findProductsToSubscribe");
+      }
+
+
+      var pathParams = {
+        'organizationId': organizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = [InlineResponse2003];
+
+      //check isMLE for an api method 'this.findProductsToSubscribe'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'findProductsToSubscribe');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/products/{organizationId}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/products/{organizationId}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the notificationSubscriptionsV2WebhooksPost operation.
+     * @callback module:api/CreateNewWebhooksApi~notificationSubscriptionsV2WebhooksPostCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2014} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a New Webhook Subscription
+     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \"Create Webhook using oAuth with Client Credentials\" - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \"Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\" to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \"Create Webhook using oAuth with JWT\" 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/CreateWebhook} opts.createWebhook The webhook payload
+     * @param {module:api/CreateNewWebhooksApi~notificationSubscriptionsV2WebhooksPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2014}
+     */
+    this.notificationSubscriptionsV2WebhooksPost = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['createWebhook'];
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateWebhook', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = InlineResponse2014;
+
+      //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksPost'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'notificationSubscriptionsV2WebhooksPost');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/webhooks', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/webhooks', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the saveSymEgressKey operation.
      * @callback module:api/CreateNewWebhooksApi~saveSymEgressKeyCallback
      * @param {String} error Error message, if any.
@@ -67,8 +190,6 @@
      * @param {module:model/SaveSymEgressKey} opts.saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh)
      * @param {module:api/CreateNewWebhooksApi~saveSymEgressKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2013}
-     *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
     this.saveSymEgressKey = function(vCSenderOrganizationId, vCPermissions, opts, callback) {
       opts = opts || {};

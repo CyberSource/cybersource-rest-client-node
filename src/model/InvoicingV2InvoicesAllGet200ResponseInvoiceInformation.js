@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('dueDate')) {
         obj['dueDate'] = ApiClient.convertToType(data['dueDate'], 'Date');
       }
+      if (data.hasOwnProperty('expirationDate')) {
+        obj['expirationDate'] = ApiClient.convertToType(data['expirationDate'], 'Date');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {Date} dueDate
    */
   exports.prototype['dueDate'] = undefined;
+  /**
+   * Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day 
+   * @member {Date} expirationDate
+   */
+  exports.prototype['expirationDate'] = undefined;
 
 
 

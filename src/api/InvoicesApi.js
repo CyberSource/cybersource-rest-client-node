@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateInvoiceRequest', 'model/InvoicingV2InvoicesAllGet200Response', 'model/InvoicingV2InvoicesAllGet400Response', 'model/InvoicingV2InvoicesAllGet404Response', 'model/InvoicingV2InvoicesAllGet502Response', 'model/InvoicingV2InvoicesGet200Response', 'model/InvoicingV2InvoicesPost201Response', 'model/InvoicingV2InvoicesPost202Response', 'model/UpdateInvoiceRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateInvoiceRequest', 'model/InvoicingV2InvoicesAllGet200Response', 'model/InvoicingV2InvoicesAllGet400Response', 'model/InvoicingV2InvoicesAllGet404Response', 'model/InvoicingV2InvoicesAllGet502Response', 'model/InvoicingV2InvoicesCancel200Response', 'model/InvoicingV2InvoicesGet200Response', 'model/InvoicingV2InvoicesPost201Response', 'model/InvoicingV2InvoicesPost202Response', 'model/InvoicingV2InvoicesPut200Response', 'model/InvoicingV2InvoicesSend200Response', 'model/UpdateInvoiceRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateInvoiceRequest'), require('../model/InvoicingV2InvoicesAllGet200Response'), require('../model/InvoicingV2InvoicesAllGet400Response'), require('../model/InvoicingV2InvoicesAllGet404Response'), require('../model/InvoicingV2InvoicesAllGet502Response'), require('../model/InvoicingV2InvoicesGet200Response'), require('../model/InvoicingV2InvoicesPost201Response'), require('../model/InvoicingV2InvoicesPost202Response'), require('../model/UpdateInvoiceRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateInvoiceRequest'), require('../model/InvoicingV2InvoicesAllGet200Response'), require('../model/InvoicingV2InvoicesAllGet400Response'), require('../model/InvoicingV2InvoicesAllGet404Response'), require('../model/InvoicingV2InvoicesAllGet502Response'), require('../model/InvoicingV2InvoicesCancel200Response'), require('../model/InvoicingV2InvoicesGet200Response'), require('../model/InvoicingV2InvoicesPost201Response'), require('../model/InvoicingV2InvoicesPost202Response'), require('../model/InvoicingV2InvoicesPut200Response'), require('../model/InvoicingV2InvoicesSend200Response'), require('../model/UpdateInvoiceRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateInvoiceRequest, root.CyberSource.InvoicingV2InvoicesAllGet200Response, root.CyberSource.InvoicingV2InvoicesAllGet400Response, root.CyberSource.InvoicingV2InvoicesAllGet404Response, root.CyberSource.InvoicingV2InvoicesAllGet502Response, root.CyberSource.InvoicingV2InvoicesGet200Response, root.CyberSource.InvoicingV2InvoicesPost201Response, root.CyberSource.InvoicingV2InvoicesPost202Response, root.CyberSource.UpdateInvoiceRequest);
+    root.CyberSource.InvoicesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateInvoiceRequest, root.CyberSource.InvoicingV2InvoicesAllGet200Response, root.CyberSource.InvoicingV2InvoicesAllGet400Response, root.CyberSource.InvoicingV2InvoicesAllGet404Response, root.CyberSource.InvoicingV2InvoicesAllGet502Response, root.CyberSource.InvoicingV2InvoicesCancel200Response, root.CyberSource.InvoicingV2InvoicesGet200Response, root.CyberSource.InvoicingV2InvoicesPost201Response, root.CyberSource.InvoicingV2InvoicesPost202Response, root.CyberSource.InvoicingV2InvoicesPut200Response, root.CyberSource.InvoicingV2InvoicesSend200Response, root.CyberSource.UpdateInvoiceRequest);
   }
-}(this, function(MLEUtility, ApiClient, CreateInvoiceRequest, InvoicingV2InvoicesAllGet200Response, InvoicingV2InvoicesAllGet400Response, InvoicingV2InvoicesAllGet404Response, InvoicingV2InvoicesAllGet502Response, InvoicingV2InvoicesGet200Response, InvoicingV2InvoicesPost201Response, InvoicingV2InvoicesPost202Response, UpdateInvoiceRequest) {
+}(this, function(MLEUtility, ApiClient, CreateInvoiceRequest, InvoicingV2InvoicesAllGet200Response, InvoicingV2InvoicesAllGet400Response, InvoicingV2InvoicesAllGet404Response, InvoicingV2InvoicesAllGet502Response, InvoicingV2InvoicesCancel200Response, InvoicingV2InvoicesGet200Response, InvoicingV2InvoicesPost201Response, InvoicingV2InvoicesPost202Response, InvoicingV2InvoicesPut200Response, InvoicingV2InvoicesSend200Response, UpdateInvoiceRequest) {
   'use strict';
 
   /**
@@ -59,7 +59,7 @@
 
     /**
      * Create a New Invoice
-     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      * @param {module:model/CreateInvoiceRequest} createInvoiceRequest 
      * @param {module:api/InvoicesApi~createInvoiceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
@@ -126,7 +126,7 @@
      * @param {Number} offset Page offset number.
      * @param {Number} limit Maximum number of items you would like returned.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING 
+     * @param {String} opts.status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED 
      * @param {module:api/InvoicesApi~getAllInvoicesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoicesAllGet200Response}
      */
@@ -253,7 +253,7 @@
      * Callback function to receive the result of the performCancelAction operation.
      * @callback module:api/InvoicesApi~performCancelActionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InvoicingV2InvoicesPost201Response} data The data returned by the service call.
+     * @param {module:model/InvoicingV2InvoicesCancel200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -262,7 +262,7 @@
      * You can cancel an invoice if no payment is made to it. You cannot cancel partially or fully paid invoices.
      * @param {String} id The invoice number.
      * @param {module:api/InvoicesApi~performCancelActionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
+     * data is of type: {@link module:model/InvoicingV2InvoicesCancel200Response}
      */
     this.performCancelAction = function(id, callback) {
       var postBody = null;
@@ -289,7 +289,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InvoicingV2InvoicesPost201Response;
+      var returnType = InvoicingV2InvoicesCancel200Response;
 
       //check isMLE for an api method 'this.performCancelAction'
       var isMLESupportedByCybsForApi = false;
@@ -316,7 +316,7 @@
      * Callback function to receive the result of the performSendAction operation.
      * @callback module:api/InvoicesApi~performSendActionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InvoicingV2InvoicesPost201Response} data The data returned by the service call.
+     * @param {module:model/InvoicingV2InvoicesSend200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -325,7 +325,7 @@
      * You can send an invoice in draft or created state or resend a sent or partially paid invoice. Fully paid or canceled invoices cannot be resent.
      * @param {String} id The invoice number.
      * @param {module:api/InvoicesApi~performSendActionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
+     * data is of type: {@link module:model/InvoicingV2InvoicesSend200Response}
      */
     this.performSendAction = function(id, callback) {
       var postBody = null;
@@ -352,7 +352,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InvoicingV2InvoicesPost201Response;
+      var returnType = InvoicingV2InvoicesSend200Response;
 
       //check isMLE for an api method 'this.performSendAction'
       var isMLESupportedByCybsForApi = false;
@@ -379,7 +379,7 @@
      * Callback function to receive the result of the updateInvoice operation.
      * @callback module:api/InvoicesApi~updateInvoiceCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InvoicingV2InvoicesPost201Response} data The data returned by the service call.
+     * @param {module:model/InvoicingV2InvoicesPut200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -389,7 +389,7 @@
      * @param {String} id The invoice number.
      * @param {module:model/UpdateInvoiceRequest} updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately.
      * @param {module:api/InvoicesApi~updateInvoiceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InvoicingV2InvoicesPost201Response}
+     * data is of type: {@link module:model/InvoicingV2InvoicesPut200Response}
      */
     this.updateInvoice = function(id, updateInvoiceRequest, callback) {
       var postBody = updateInvoiceRequest;
@@ -422,7 +422,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = InvoicingV2InvoicesPost201Response;
+      var returnType = InvoicingV2InvoicesPut200Response;
 
       //check isMLE for an api method 'this.updateInvoice'
       var isMLESupportedByCybsForApi = false;

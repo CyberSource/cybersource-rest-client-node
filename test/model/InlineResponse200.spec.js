@@ -62,20 +62,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
+    it('should have the property provider (base name: "provider")', function() {
+      // uncomment below and update the code to test the property provider
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });
 
-    it('should have the property embedded (base name: "_embedded")', function() {
-      // uncomment below and update the code to test the property embedded
+    it('should have the property content (base name: "content")', function() {
+      // uncomment below and update the code to test the property content
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesOrderInformation', 'model/Invoicingv2invoicesidInvoiceInformation'], factory);
+    define(['ApiClient', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesOrderInformation', 'model/Invoicingv2invoicesProcessingInformation', 'model/Invoicingv2invoicesidInvoiceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesOrderInformation'), require('./Invoicingv2invoicesidInvoiceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesOrderInformation'), require('./Invoicingv2invoicesProcessingInformation'), require('./Invoicingv2invoicesidInvoiceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UpdateInvoiceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesOrderInformation, root.CyberSource.Invoicingv2invoicesidInvoiceInformation);
+    root.CyberSource.UpdateInvoiceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesOrderInformation, root.CyberSource.Invoicingv2invoicesProcessingInformation, root.CyberSource.Invoicingv2invoicesidInvoiceInformation);
   }
-}(this, function(ApiClient, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesOrderInformation, Invoicingv2invoicesidInvoiceInformation) {
+}(this, function(ApiClient, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesOrderInformation, Invoicingv2invoicesProcessingInformation, Invoicingv2invoicesidInvoiceInformation) {
   'use strict';
 
 
@@ -43,13 +43,16 @@
    * Constructs a new <code>UpdateInvoiceRequest</code>.
    * @alias module:model/UpdateInvoiceRequest
    * @class
+   * @param invoiceInformation {module:model/Invoicingv2invoicesidInvoiceInformation} 
+   * @param orderInformation {module:model/Invoicingv2invoicesOrderInformation} 
    */
-  var exports = function() {
+  var exports = function(invoiceInformation, orderInformation) {
     var _this = this;
 
 
 
-
+    _this['invoiceInformation'] = invoiceInformation;
+    _this['orderInformation'] = orderInformation;
   };
 
   /**
@@ -66,6 +69,9 @@
       if (data.hasOwnProperty('customerInformation')) {
         obj['customerInformation'] = Invoicingv2invoicesCustomerInformation.constructFromObject(data['customerInformation']);
       }
+      if (data.hasOwnProperty('processingInformation')) {
+        obj['processingInformation'] = Invoicingv2invoicesProcessingInformation.constructFromObject(data['processingInformation']);
+      }
       if (data.hasOwnProperty('invoiceInformation')) {
         obj['invoiceInformation'] = Invoicingv2invoicesidInvoiceInformation.constructFromObject(data['invoiceInformation']);
       }
@@ -80,6 +86,10 @@
    * @member {module:model/Invoicingv2invoicesCustomerInformation} customerInformation
    */
   exports.prototype['customerInformation'] = undefined;
+  /**
+   * @member {module:model/Invoicingv2invoicesProcessingInformation} processingInformation
+   */
+  exports.prototype['processingInformation'] = undefined;
   /**
    * @member {module:model/Invoicingv2invoicesidInvoiceInformation} invoiceInformation
    */

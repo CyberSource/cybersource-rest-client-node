@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2014', 'model/InlineResponse2015', 'model/SaveAsymEgressKey'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2004', 'model/InlineResponse2014', 'model/InlineResponse2015', 'model/InlineResponse2016', 'model/InlineResponse4042', 'model/SaveAsymEgressKey', 'model/UpdateStatus', 'model/UpdateWebhook'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2014'), require('../model/InlineResponse2015'), require('../model/SaveAsymEgressKey'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse2014'), require('../model/InlineResponse2015'), require('../model/InlineResponse2016'), require('../model/InlineResponse4042'), require('../model/SaveAsymEgressKey'), require('../model/UpdateStatus'), require('../model/UpdateWebhook'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse2015, root.CyberSource.SaveAsymEgressKey);
+    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse2015, root.CyberSource.InlineResponse2016, root.CyberSource.InlineResponse4042, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateStatus, root.CyberSource.UpdateWebhook);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2014, InlineResponse2015, SaveAsymEgressKey) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2004, InlineResponse2014, InlineResponse2015, InlineResponse2016, InlineResponse4042, SaveAsymEgressKey, UpdateStatus, UpdateWebhook) {
   'use strict';
 
   /**
@@ -50,10 +50,204 @@
 	
 
     /**
+     * Callback function to receive the result of the deleteWebhookSubscription operation.
+     * @callback module:api/ManageWebhooksApi~deleteWebhookSubscriptionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a Webhook Subscription
+     * Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
+     * @param {String} webhookId The webhook identifier.
+     * @param {module:api/ManageWebhooksApi~deleteWebhookSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteWebhookSubscription = function(webhookId, callback) {
+      var postBody = null;
+      if ('DELETE' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'webhookId' is set
+      if (webhookId === undefined || webhookId === null) {
+        throw new Error("Missing the required parameter 'webhookId' when calling deleteWebhookSubscription");
+      }
+
+
+      var pathParams = {
+        'webhookId': webhookId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = null;
+
+      //check isMLE for an api method 'this.deleteWebhookSubscription'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deleteWebhookSubscription');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/webhooks/{webhookId}', 'DELETE',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/webhooks/{webhookId}', 'DELETE',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the getWebhookSubscriptionById operation.
+     * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2014} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Details On a Single Webhook
+     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+     * @param {String} webhookId The webhook Identifier
+     * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2014}
+     */
+    this.getWebhookSubscriptionById = function(webhookId, callback) {
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'webhookId' is set
+      if (webhookId === undefined || webhookId === null) {
+        throw new Error("Missing the required parameter 'webhookId' when calling getWebhookSubscriptionById");
+      }
+
+
+      var pathParams = {
+        'webhookId': webhookId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = InlineResponse2014;
+
+      //check isMLE for an api method 'this.getWebhookSubscriptionById'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getWebhookSubscriptionById');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/webhooks/{webhookId}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/webhooks/{webhookId}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the getWebhookSubscriptionsByOrg operation.
+     * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Details On All Created Webhooks
+     * Retrieve a list of all previously created webhooks.
+     * @param {String} organizationId The Organization Identifier.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.productId The Product Identifier.
+     * @param {String} opts.eventType The Event Type.
+     * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InlineResponse2004>}
+     */
+    this.getWebhookSubscriptionsByOrg = function(organizationId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling getWebhookSubscriptionsByOrg");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'organizationId': organizationId,
+        'productId': opts['productId'],
+        'eventType': opts['eventType']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = [InlineResponse2004];
+
+      //check isMLE for an api method 'this.getWebhookSubscriptionsByOrg'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getWebhookSubscriptionsByOrg');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/webhooks', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/webhooks', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the notificationSubscriptionsV1WebhooksWebhookIdPost operation.
      * @callback module:api/ManageWebhooksApi~notificationSubscriptionsV1WebhooksWebhookIdPostCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014} data The data returned by the service call.
+     * @param {module:model/InlineResponse2015} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,9 +256,7 @@
      * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
      * @param {String} webhookId The Webhook Identifier.
      * @param {module:api/ManageWebhooksApi~notificationSubscriptionsV1WebhooksWebhookIdPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2014}
-     *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
+     * data is of type: {@link module:model/InlineResponse2015}
      */
     this.notificationSubscriptionsV1WebhooksWebhookIdPost = function(webhookId, callback) {
       var postBody = null;
@@ -91,7 +283,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2014;
+      var returnType = InlineResponse2015;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV1WebhooksWebhookIdPost'
       var isMLESupportedByCybsForApi = false;
@@ -115,10 +307,142 @@
     }
 
     /**
+     * Callback function to receive the result of the notificationSubscriptionsV2WebhooksWebhookIdPatch operation.
+     * @callback module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdPatchCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a Webhook Subscription
+     * Update a Webhook Subscription.
+     * @param {String} webhookId The Webhook Identifier.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/UpdateWebhook} opts.updateWebhook The webhook payload or changes to apply.
+     * @param {module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.notificationSubscriptionsV2WebhooksWebhookIdPatch = function(webhookId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['updateWebhook'];
+
+      // verify the required parameter 'webhookId' is set
+      if (webhookId === undefined || webhookId === null) {
+        throw new Error("Missing the required parameter 'webhookId' when calling notificationSubscriptionsV2WebhooksWebhookIdPatch");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateWebhook', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+      var pathParams = {
+        'webhookId': webhookId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = null;
+
+      //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdPatch'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'notificationSubscriptionsV2WebhooksWebhookIdPatch');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the notificationSubscriptionsV2WebhooksWebhookIdStatusPut operation.
+     * @callback module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdStatusPutCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a Webhook Status
+     * Users can update the status of a webhook subscription by calling this endpoint.   The webhookId parameter in the URL path identifies the specific webhook subscription to be updated. The request body accepts the values ACTIVE or INACTIVE. If the subscription is set to INACTIVE, webhooks will not be delivered until the subscription is activated again. 
+     * @param {String} webhookId The Webhook Identifier.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/UpdateStatus} opts.updateStatus The status that the subscription should be updated to.
+     * @param {module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdStatusPutCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.notificationSubscriptionsV2WebhooksWebhookIdStatusPut = function(webhookId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['updateStatus'];
+
+      // verify the required parameter 'webhookId' is set
+      if (webhookId === undefined || webhookId === null) {
+        throw new Error("Missing the required parameter 'webhookId' when calling notificationSubscriptionsV2WebhooksWebhookIdStatusPut");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateStatus', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+      var pathParams = {
+        'webhookId': webhookId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = null;
+
+      //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdStatusPut'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'notificationSubscriptionsV2WebhooksWebhookIdStatusPut');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/webhooks/{webhookId}/status', 'PUT',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/webhooks/{webhookId}/status', 'PUT',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the saveAsymEgressKey operation.
      * @callback module:api/ManageWebhooksApi~saveAsymEgressKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/InlineResponse2016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -131,9 +455,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.vCCorrelationId A globally unique id associated with your request
      * @param {module:api/ManageWebhooksApi~saveAsymEgressKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
-     *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
+     * data is of type: {@link module:model/InlineResponse2016}
      */
     this.saveAsymEgressKey = function(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, opts, callback) {
       opts = opts || {};
@@ -174,7 +496,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = InlineResponse2016;
 
       //check isMLE for an api method 'this.saveAsymEgressKey'
       var isMLESupportedByCybsForApi = false;

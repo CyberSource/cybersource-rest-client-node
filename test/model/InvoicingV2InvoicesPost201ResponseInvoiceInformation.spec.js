@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property expirationDate (base name: "expirationDate")', function() {
+      // uncomment below and update the code to test the property expirationDate
+      //var instane = new CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property allowPartialPayments (base name: "allowPartialPayments")', function() {
       // uncomment below and update the code to test the property allowPartialPayments
       //var instane = new CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation();

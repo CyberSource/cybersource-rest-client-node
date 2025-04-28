@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse202', 'model/InlineResponse401'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse202', 'model/InlineResponse401'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse2002'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse202'), require('../model/InlineResponse401'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse202'), require('../model/InlineResponse401'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse401);
+    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse401);
   }
-}(this, function(MLEUtility, ApiClient, Body, InlineResponse2002, InlineResponse2003, InlineResponse2004, InlineResponse202, InlineResponse401) {
+}(this, function(MLEUtility, ApiClient, Body, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse202, InlineResponse401) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getBatchReport operation.
      * @callback module:api/BatchesApi~getBatchReportCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2004} data The data returned by the service call.
+     * @param {module:model/InlineResponse2007} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * **Get Batch Report**<br>This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates & card type. - Response record information including response code, reason, token ids, masked card number, expiration dates & card type. 
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchReportCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2004}
+     * data is of type: {@link module:model/InlineResponse2007}
      */
     this.getBatchReport = function(batchId, callback) {
       var postBody = null;
@@ -89,7 +89,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2007;
 
       //check isMLE for an api method 'this.getBatchReport'
       var isMLESupportedByCybsForApi = false;
@@ -116,7 +116,7 @@
      * Callback function to receive the result of the getBatchStatus operation.
      * @callback module:api/BatchesApi~getBatchStatusCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
+     * @param {module:model/InlineResponse2006} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -125,7 +125,7 @@
      * **Get Batch Status**<br>This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * data is of type: {@link module:model/InlineResponse2006}
      */
     this.getBatchStatus = function(batchId, callback) {
       var postBody = null;
@@ -152,7 +152,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2003;
+      var returnType = InlineResponse2006;
 
       //check isMLE for an api method 'this.getBatchStatus'
       var isMLESupportedByCybsForApi = false;
@@ -179,7 +179,7 @@
      * Callback function to receive the result of the getBatchesList operation.
      * @callback module:api/BatchesApi~getBatchesListCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/InlineResponse2005} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -192,7 +192,7 @@
      * @param {String} opts.fromDate ISO-8601 format: yyyyMMddTHHmmssZ
      * @param {String} opts.toDate ISO-8601 format: yyyyMMddTHHmmssZ
      * @param {module:api/BatchesApi~getBatchesListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/InlineResponse2005}
      */
     this.getBatchesList = function(opts, callback) {
       opts = opts || {};
@@ -218,7 +218,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2002;
+      var returnType = InlineResponse2005;
 
       //check isMLE for an api method 'this.getBatchesList'
       var isMLESupportedByCybsForApi = false;
@@ -251,7 +251,7 @@
 
     /**
      * Create a Batch
-     * **Create a Batch**<br>This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. <br> The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.<br>The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. 
+     * **Create a Batch**<br>This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. <br> The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.<br>The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param {module:model/Body} body 
      * @param {module:api/BatchesApi~postBatchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse202}

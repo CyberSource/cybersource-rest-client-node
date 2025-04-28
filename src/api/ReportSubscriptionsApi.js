@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateReportSubscriptionRequest', 'model/InlineResponse4005', 'model/PredefinedSubscriptionRequestBean', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateReportSubscriptionRequest', 'model/InlineResponse4006', 'model/PredefinedSubscriptionRequestBean', 'model/ReportingV3ReportSubscriptionsGet200Response', 'model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions', 'model/Reportingv3ReportDownloadsGet400Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateReportSubscriptionRequest'), require('../model/InlineResponse4005'), require('../model/PredefinedSubscriptionRequestBean'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateReportSubscriptionRequest'), require('../model/InlineResponse4006'), require('../model/PredefinedSubscriptionRequestBean'), require('../model/ReportingV3ReportSubscriptionsGet200Response'), require('../model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions'), require('../model/Reportingv3ReportDownloadsGet400Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportSubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateReportSubscriptionRequest, root.CyberSource.InlineResponse4005, root.CyberSource.PredefinedSubscriptionRequestBean, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
+    root.CyberSource.ReportSubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateReportSubscriptionRequest, root.CyberSource.InlineResponse4006, root.CyberSource.PredefinedSubscriptionRequestBean, root.CyberSource.ReportingV3ReportSubscriptionsGet200Response, root.CyberSource.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, root.CyberSource.Reportingv3ReportDownloadsGet400Response);
   }
-}(this, function(MLEUtility, ApiClient, CreateReportSubscriptionRequest, InlineResponse4005, PredefinedSubscriptionRequestBean, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response) {
+}(this, function(MLEUtility, ApiClient, CreateReportSubscriptionRequest, InlineResponse4006, PredefinedSubscriptionRequestBean, ReportingV3ReportSubscriptionsGet200Response, ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, Reportingv3ReportDownloadsGet400Response) {
   'use strict';
 
   /**

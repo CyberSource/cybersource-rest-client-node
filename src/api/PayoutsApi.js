@@ -59,7 +59,7 @@
 
     /**
      * Process a Payout
-     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
+     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param {module:model/OctCreatePaymentRequest} octCreatePaymentRequest 
      * @param {module:api/PayoutsApi~octCreatePaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PayoutsPost201Response}

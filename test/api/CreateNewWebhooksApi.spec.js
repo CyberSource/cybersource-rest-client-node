@@ -50,6 +50,26 @@
   }
 
   describe('CreateNewWebhooksApi', function() {
+    describe('findProductsToSubscribe', function() {
+      it('should call findProductsToSubscribe successfully', function(done) {
+        //uncomment below and update the code to test findProductsToSubscribe
+        //instance.findProductsToSubscribe(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('notificationSubscriptionsV2WebhooksPost', function() {
+      it('should call notificationSubscriptionsV2WebhooksPost successfully', function(done) {
+        //uncomment below and update the code to test notificationSubscriptionsV2WebhooksPost
+        //instance.notificationSubscriptionsV2WebhooksPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('saveSymEgressKey', function() {
       it('should call saveSymEgressKey successfully', function(done) {
         //uncomment below and update the code to test saveSymEgressKey

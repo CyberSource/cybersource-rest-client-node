@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2001', 'model/InlineResponse2012', 'model/InlineResponse4006', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2012', 'model/InlineResponse4007', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse2012'), require('../model/InlineResponse4006'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2012'), require('../model/InlineResponse4007'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
+    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2001, InlineResponse2012, InlineResponse4006, InlineResponse4041, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2002, InlineResponse2012, InlineResponse4007, InlineResponse4041, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getRegistration operation.
      * @callback module:api/MerchantBoardingApi~getRegistrationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * This end point will get all information of a boarding registration 
      * @param {String} registrationId Identifies the boarding registration to be updated
      * @param {module:api/MerchantBoardingApi~getRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/InlineResponse2002}
      */
     this.getRegistration = function(registrationId, callback) {
       var postBody = null;
@@ -89,7 +89,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2001;
+      var returnType = InlineResponse2002;
 
       //check isMLE for an api method 'this.getRegistration'
       var isMLESupportedByCybsForApi = false;
@@ -122,7 +122,7 @@
 
     /**
      * Create a boarding registration
-     * Create a registration to board merchant  If you have  Card Processing product enabled in your boarding request, select payment processor from Configuration -> Sample Request. You may unselect attributes from the Request Builder tree which you do not need in the request. For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &lt;your vpc processor&gt; 
+     * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization's information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      * @param {module:model/PostRegistrationBody} postRegistrationBody Boarding registration data
      * @param {Object} opts Optional parameters
      * @param {String} opts.vCIdempotencyId defines idempotency of the request

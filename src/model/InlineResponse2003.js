@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002EmbeddedTotals', 'model/InlineResponse2003Billing', 'model/InlineResponse2003Links'], factory);
+    define(['ApiClient', 'model/Notificationsubscriptionsv2productsorganizationIdEventTypes'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002EmbeddedTotals'), require('./InlineResponse2003Billing'), require('./InlineResponse2003Links'));
+    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv2productsorganizationIdEventTypes'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002EmbeddedTotals, root.CyberSource.InlineResponse2003Billing, root.CyberSource.InlineResponse2003Links);
+    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv2productsorganizationIdEventTypes);
   }
-}(this, function(ApiClient, InlineResponse2002EmbeddedTotals, InlineResponse2003Billing, InlineResponse2003Links) {
+}(this, function(ApiClient, Notificationsubscriptionsv2productsorganizationIdEventTypes) {
   'use strict';
 
 
@@ -50,13 +50,6 @@
 
 
 
-
-
-
-
-
-
-
   };
 
   /**
@@ -70,85 +63,33 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse2003Links.constructFromObject(data['_links']);
+      if (data.hasOwnProperty('productId')) {
+        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
       }
-      if (data.hasOwnProperty('batchId')) {
-        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      if (data.hasOwnProperty('productName')) {
+        obj['productName'] = ApiClient.convertToType(data['productName'], 'String');
       }
-      if (data.hasOwnProperty('batchCreatedDate')) {
-        obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
-      }
-      if (data.hasOwnProperty('batchSource')) {
-        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
-      }
-      if (data.hasOwnProperty('merchantReference')) {
-        obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
-      }
-      if (data.hasOwnProperty('batchCaEndpoints')) {
-        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('totals')) {
-        obj['totals'] = InlineResponse2002EmbeddedTotals.constructFromObject(data['totals']);
-      }
-      if (data.hasOwnProperty('billing')) {
-        obj['billing'] = InlineResponse2003Billing.constructFromObject(data['billing']);
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('eventTypes')) {
+        obj['eventTypes'] = ApiClient.convertToType(data['eventTypes'], [Notificationsubscriptionsv2productsorganizationIdEventTypes]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2003Links} _links
+   * Product ID.
+   * @member {String} productId
    */
-  exports.prototype['_links'] = undefined;
+  exports.prototype['productId'] = undefined;
   /**
-   * Unique identification number assigned to the submitted request.
-   * @member {String} batchId
+   * Product Name.
+   * @member {String} productName
    */
-  exports.prototype['batchId'] = undefined;
+  exports.prototype['productName'] = undefined;
   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @member {String} batchCreatedDate
+   * @member {Array.<module:model/Notificationsubscriptionsv2productsorganizationIdEventTypes>} eventTypes
    */
-  exports.prototype['batchCreatedDate'] = undefined;
-  /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @member {String} batchSource
-   */
-  exports.prototype['batchSource'] = undefined;
-  /**
-   * Reference used by merchant to identify batch.
-   * @member {String} merchantReference
-   */
-  exports.prototype['merchantReference'] = undefined;
-  /**
-   * @member {String} batchCaEndpoints
-   */
-  exports.prototype['batchCaEndpoints'] = undefined;
-  /**
-   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2002EmbeddedTotals} totals
-   */
-  exports.prototype['totals'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2003Billing} billing
-   */
-  exports.prototype['billing'] = undefined;
-  /**
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
+  exports.prototype['eventTypes'] = undefined;
 
 
 

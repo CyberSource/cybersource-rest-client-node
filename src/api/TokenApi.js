@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse200', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse200'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest);
+    root.CyberSource.TokenApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse200, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse200, InlineResponse400, InlineResponse403, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest) {
   'use strict';
 
   /**
@@ -48,6 +48,83 @@
 
 	this.apiClient.setConfiguration(configObject);
 	
+
+    /**
+     * Callback function to receive the result of the getCardArtAsset operation.
+     * @callback module:api/TokenApi~getCardArtAssetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Card Art
+     * Retrieves Card Art for a specific Instrument Identifier. The Card Art is a visual representation of the cardholder's payment card. Card Art is only available if a Network Token is successfully provisioned. 
+     * @param {String} instrumentIdentifierId The Id of an Instrument Identifier.
+     * @param {module:model/String} tokenProvider The token provider.
+     * @param {module:model/String} assetType The type of asset.
+     * @param {module:api/TokenApi~getCardArtAssetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    this.getCardArtAsset = function(instrumentIdentifierId, tokenProvider, assetType, callback) {
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'instrumentIdentifierId' is set
+      if (instrumentIdentifierId === undefined || instrumentIdentifierId === null) {
+        throw new Error("Missing the required parameter 'instrumentIdentifierId' when calling getCardArtAsset");
+      }
+
+      // verify the required parameter 'tokenProvider' is set
+      if (tokenProvider === undefined || tokenProvider === null) {
+        throw new Error("Missing the required parameter 'tokenProvider' when calling getCardArtAsset");
+      }
+
+      // verify the required parameter 'assetType' is set
+      if (assetType === undefined || assetType === null) {
+        throw new Error("Missing the required parameter 'assetType' when calling getCardArtAsset");
+      }
+
+
+      var pathParams = {
+        'instrumentIdentifierId': instrumentIdentifierId,
+        'tokenProvider': tokenProvider,
+        'assetType': assetType
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = InlineResponse200;
+
+      //check isMLE for an api method 'this.getCardArtAsset'
+      var isMLESupportedByCybsForApi = false;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getCardArtAsset');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
 
     /**
      * Callback function to receive the result of the postTokenPaymentCredentials operation.

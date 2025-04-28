@@ -57,6 +57,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -99,6 +103,18 @@
       }
       if (data.hasOwnProperty('vatRegistrationNumber')) {
         obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
+      }
+      if (data.hasOwnProperty('shipTo')) {
+        obj['shipTo'] = ApiClient.convertToType(data['shipTo'], 'Boolean');
+      }
+      if (data.hasOwnProperty('phoneNumber')) {
+        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'Boolean');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'Boolean');
+      }
+      if (data.hasOwnProperty('enableMerchantEmailNotifications')) {
+        obj['enableMerchantEmailNotifications'] = ApiClient.convertToType(data['enableMerchantEmailNotifications'], 'Boolean');
       }
     }
     return obj;
@@ -151,10 +167,34 @@
    */
   exports.prototype['showVatNumber'] = false;
   /**
-   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.       
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  
    * @member {String} vatRegistrationNumber
    */
   exports.prototype['vatRegistrationNumber'] = undefined;
+  /**
+   * Collect the payers shipping address.
+   * @member {Boolean} shipTo
+   * @default false
+   */
+  exports.prototype['shipTo'] = false;
+  /**
+   * Collect the payers phone number.
+   * @member {Boolean} phoneNumber
+   * @default false
+   */
+  exports.prototype['phoneNumber'] = false;
+  /**
+   * Collect the payers email address when the email address is not known or confirm it if it is known at the time of invoice creation.
+   * @member {Boolean} email
+   * @default false
+   */
+  exports.prototype['email'] = false;
+  /**
+   * Whether you would like to receive payment notification for successful transaction
+   * @member {Boolean} enableMerchantEmailNotifications
+   * @default false
+   */
+  exports.prototype['enableMerchantEmailNotifications'] = false;
 
 
 

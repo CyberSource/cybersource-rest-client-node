@@ -50,6 +50,16 @@
   }
 
   describe('TokenApi', function() {
+    describe('getCardArtAsset', function() {
+      it('should call getCardArtAsset successfully', function(done) {
+        //uncomment below and update the code to test getCardArtAsset
+        //instance.getCardArtAsset(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postTokenPaymentCredentials', function() {
       it('should call postTokenPaymentCredentials successfully', function(done) {
         //uncomment below and update the code to test postTokenPaymentCredentials

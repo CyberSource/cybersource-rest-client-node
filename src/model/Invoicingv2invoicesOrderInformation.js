@@ -41,14 +41,15 @@
 
   /**
    * Constructs a new <code>Invoicingv2invoicesOrderInformation</code>.
-   * Contains all of the order-related fields for the invoice, such as the amount and line item details.
+   * Contains all of the order-related fields, such as the amount and line item details.
    * @alias module:model/Invoicingv2invoicesOrderInformation
    * @class
+   * @param amountDetails {module:model/Invoicingv2invoicesOrderInformationAmountDetails} 
    */
-  var exports = function() {
+  var exports = function(amountDetails) {
     var _this = this;
 
-
+    _this['amountDetails'] = amountDetails;
 
   };
 
@@ -78,6 +79,7 @@
    */
   exports.prototype['amountDetails'] = undefined;
   /**
+   * List of the line items from the order.
    * @member {Array.<module:model/Invoicingv2invoicesOrderInformationLineItems>} lineItems
    */
   exports.prototype['lineItems'] = undefined;

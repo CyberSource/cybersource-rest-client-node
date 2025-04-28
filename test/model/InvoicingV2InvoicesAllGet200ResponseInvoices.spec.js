@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property createdDate (base name: "createdDate")', function() {
+      // uncomment below and update the code to test the property createdDate
+      //var instane = new CyberSource.InvoicingV2InvoicesAllGet200ResponseInvoices();
+      //expect(instance).to.be();
+    });
+
     it('should have the property customerInformation (base name: "customerInformation")', function() {
       // uncomment below and update the code to test the property customerInformation
       //var instane = new CyberSource.InvoicingV2InvoicesAllGet200ResponseInvoices();

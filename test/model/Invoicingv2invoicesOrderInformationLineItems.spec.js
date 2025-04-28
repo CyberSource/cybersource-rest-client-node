@@ -86,8 +86,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property discountRate (base name: "discountRate")', function() {
-      // uncomment below and update the code to test the property discountRate
+    it('should have the property discountPercent (base name: "discountPercent")', function() {
+      // uncomment below and update the code to test the property discountPercent
       //var instane = new CyberSource.Invoicingv2invoicesOrderInformationLineItems();
       //expect(instance).to.be();
     });
