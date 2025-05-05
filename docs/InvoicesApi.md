@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Create a New Invoice
 
-The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
 
 ### Example
 ```javascript
@@ -77,7 +77,7 @@ var offset = 56; // Number | Page offset number.
 var limit = 56; // Number | Maximum number of items you would like returned.
 
 var opts = { 
-  'status': "status_example" // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING 
+  'status': "status_example" // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED 
 };
 
 var callback = function(error, data, response) {
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Number**| Page offset number. | 
  **limit** | **Number**| Maximum number of items you would like returned. | 
- **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  | [optional] 
+ **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  | [optional] 
 
 ### Return type
 
@@ -159,7 +159,7 @@ No authorization required
 
 <a name="performCancelAction"></a>
 # **performCancelAction**
-> InvoicingV2InvoicesPost201Response performCancelAction(id)
+> InvoicingV2InvoicesCancel200Response performCancelAction(id)
 
 Cancel an Invoice
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoicingV2InvoicesPost201Response**](InvoicingV2InvoicesPost201Response.md)
+[**InvoicingV2InvoicesCancel200Response**](InvoicingV2InvoicesCancel200Response.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ No authorization required
 
 <a name="performSendAction"></a>
 # **performSendAction**
-> InvoicingV2InvoicesPost201Response performSendAction(id)
+> InvoicingV2InvoicesSend200Response performSendAction(id)
 
 Send an Invoice
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoicingV2InvoicesPost201Response**](InvoicingV2InvoicesPost201Response.md)
+[**InvoicingV2InvoicesSend200Response**](InvoicingV2InvoicesSend200Response.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ No authorization required
 
 <a name="updateInvoice"></a>
 # **updateInvoice**
-> InvoicingV2InvoicesPost201Response updateInvoice(id, updateInvoiceRequest)
+> InvoicingV2InvoicesPut200Response updateInvoice(id, updateInvoiceRequest)
 
 Update an Invoice
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoicingV2InvoicesPost201Response**](InvoicingV2InvoicesPost201Response.md)
+[**InvoicingV2InvoicesPut200Response**](InvoicingV2InvoicesPut200Response.md)
 
 ### Authorization
 

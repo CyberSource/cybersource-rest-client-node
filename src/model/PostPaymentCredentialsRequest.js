@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('paymentCredentialType')) {
         obj['paymentCredentialType'] = ApiClient.convertToType(data['paymentCredentialType'], 'String');
       }
+      if (data.hasOwnProperty('transactionType')) {
+        obj['transactionType'] = ApiClient.convertToType(data['transactionType'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} paymentCredentialType
    */
   exports.prototype['paymentCredentialType'] = undefined;
+  /**
+   * Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. 
+   * @member {String} transactionType
+   */
+  exports.prototype['transactionType'] = undefined;
 
 
 

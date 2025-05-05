@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200Embedded'], factory);
+    define(['ApiClient', 'model/InlineResponse200Content'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse200Embedded'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse200Content'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse200 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200Embedded);
+    root.CyberSource.InlineResponse200 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200Content);
   }
-}(this, function(ApiClient, InlineResponse200Embedded) {
+}(this, function(ApiClient, InlineResponse200Content) {
   'use strict';
 
 
@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>InlineResponse200</code>.
+   * Represents the Card Art Asset associated to the Network Token. 
    * @alias module:model/InlineResponse200
    * @class
    */
@@ -67,38 +68,39 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('provider')) {
+        obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
       }
-      if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = InlineResponse200Embedded.constructFromObject(data['_embedded']);
+      if (data.hasOwnProperty('content')) {
+        obj['content'] = ApiClient.convertToType(data['content'], [InlineResponse200Content]);
       }
     }
     return obj;
   }
 
   /**
-   * UUID uniquely generated for this comments. 
+   * Unique identifier for the Card Art Asset. 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
-   * @member {String} submitTimeUtc
+   * The type of Card Art Asset. 
+   * @member {String} type
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED` 
-   * @member {String} status
+   * The provider of the Card Art Asset. 
+   * @member {String} provider
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['provider'] = undefined;
   /**
-   * @member {module:model/InlineResponse200Embedded} _embedded
+   * Array of content objects representing the Card Art Asset. 
+   * @member {Array.<module:model/InlineResponse200Content>} content
    */
-  exports.prototype['_embedded'] = undefined;
+  exports.prototype['content'] = undefined;
 
 
 

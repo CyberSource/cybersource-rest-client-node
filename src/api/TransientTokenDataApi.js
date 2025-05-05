@@ -88,7 +88,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json'];
+      var accepts = ['application/jwt'];
       var returnType = 'String';
 
       //check isMLE for an api method 'this.getPaymentCredentialsForTransientToken'

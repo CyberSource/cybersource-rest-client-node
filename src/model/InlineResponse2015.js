@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/InlineResponse2015Payloads'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2015Payloads'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2015Payloads);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, InlineResponse2015Payloads) {
   'use strict';
 
 
@@ -41,12 +41,18 @@
 
   /**
    * Constructs a new <code>InlineResponse2015</code>.
-   * Egress Asymmetric Key Information Response. 
    * @alias module:model/InlineResponse2015
    * @class
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
+
+
 
 
 
@@ -63,26 +69,81 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('eventDate')) {
+        obj['eventDate'] = ApiClient.convertToType(data['eventDate'], 'String');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('eventType')) {
+        obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
+      }
+      if (data.hasOwnProperty('organizationId')) {
+        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
+      }
+      if (data.hasOwnProperty('payloads')) {
+        obj['payloads'] = InlineResponse2015Payloads.constructFromObject(data['payloads']);
+      }
+      if (data.hasOwnProperty('productId')) {
+        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
+      }
+      if (data.hasOwnProperty('requestType')) {
+        obj['requestType'] = ApiClient.convertToType(data['requestType'], 'String');
+      }
+      if (data.hasOwnProperty('retryNumber')) {
+        obj['retryNumber'] = ApiClient.convertToType(data['retryNumber'], 'Number');
+      }
+      if (data.hasOwnProperty('transactionTraceId')) {
+        obj['transactionTraceId'] = ApiClient.convertToType(data['transactionTraceId'], 'String');
+      }
+      if (data.hasOwnProperty('webhookId')) {
+        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
-   * @member {String} submitTimeUtc
+   * Date that the webhook was delivered
+   * @member {String} eventDate
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['eventDate'] = undefined;
   /**
-   * The status of the submitted transaction. Possible values:  - ACCEPTED 
-   * @member {String} status
+   * The event name the webhook was delivered for
+   * @member {String} eventType
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['eventType'] = undefined;
+  /**
+   * The Organization Identifier.
+   * @member {String} organizationId
+   */
+  exports.prototype['organizationId'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2015Payloads} payloads
+   */
+  exports.prototype['payloads'] = undefined;
+  /**
+   * The product the webhook was delivered for
+   * @member {String} productId
+   */
+  exports.prototype['productId'] = undefined;
+  /**
+   * Identifies the the type of request
+   * @member {String} requestType
+   */
+  exports.prototype['requestType'] = undefined;
+  /**
+   * The number of retry attempts for a given webhook
+   * @member {Number} retryNumber
+   */
+  exports.prototype['retryNumber'] = undefined;
+  /**
+   * The identifier for the webhook
+   * @member {String} transactionTraceId
+   */
+  exports.prototype['transactionTraceId'] = undefined;
+  /**
+   * The identifier of the subscription
+   * @member {String} webhookId
+   */
+  exports.prototype['webhookId'] = undefined;
 
 
 

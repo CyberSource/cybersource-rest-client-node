@@ -56,14 +56,56 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2015);
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property eventDate (base name: "eventDate")', function() {
+      // uncomment below and update the code to test the property eventDate
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
+    it('should have the property eventType (base name: "eventType")', function() {
+      // uncomment below and update the code to test the property eventType
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property organizationId (base name: "organizationId")', function() {
+      // uncomment below and update the code to test the property organizationId
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property payloads (base name: "payloads")', function() {
+      // uncomment below and update the code to test the property payloads
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productId (base name: "productId")', function() {
+      // uncomment below and update the code to test the property productId
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property requestType (base name: "requestType")', function() {
+      // uncomment below and update the code to test the property requestType
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property retryNumber (base name: "retryNumber")', function() {
+      // uncomment below and update the code to test the property retryNumber
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionTraceId (base name: "transactionTraceId")', function() {
+      // uncomment below and update the code to test the property transactionTraceId
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property webhookId (base name: "webhookId")', function() {
+      // uncomment below and update the code to test the property webhookId
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });

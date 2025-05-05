@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property CPF (base name: "CPF")', function() {
+      // uncomment below and update the code to test the property CPF
+      //var instane = new CyberSource.Upv1capturecontextsCaptureMandate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

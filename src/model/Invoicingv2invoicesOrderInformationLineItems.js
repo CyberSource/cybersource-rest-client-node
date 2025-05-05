@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Invoicingv2invoicesOrderInformationLineItems</code>.
-   * List of the line items from the order, which are included in an invoice.
+   * Line item from the order.
    * @alias module:model/Invoicingv2invoicesOrderInformationLineItems
    * @class
    */
@@ -85,8 +85,8 @@
       if (data.hasOwnProperty('discountAmount')) {
         obj['discountAmount'] = ApiClient.convertToType(data['discountAmount'], 'String');
       }
-      if (data.hasOwnProperty('discountRate')) {
-        obj['discountRate'] = ApiClient.convertToType(data['discountRate'], 'String');
+      if (data.hasOwnProperty('discountPercent')) {
+        obj['discountPercent'] = ApiClient.convertToType(data['discountPercent'], 'String');
       }
       if (data.hasOwnProperty('taxAmount')) {
         obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'String');
@@ -128,16 +128,16 @@
   exports.prototype['discountAmount'] = undefined;
   /**
    * Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%) 
-   * @member {String} discountRate
+   * @member {String} discountPercent
    */
-  exports.prototype['discountRate'] = undefined;
+  exports.prototype['discountPercent'] = undefined;
   /**
    * Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  Optional field.  #### Airlines processing Tax portion of the order amount. This value cannot exceed 99999999999999 (fourteen 9s). Format: English characters only. Optional request field for a line item.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes.  Note if you send this field in your tax request, the value in the field will override the tax engine 
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;
   /**
-   * Tax rate applied to the item.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). 
+   * Valid range: 1% to 99%, with only whole percentage values accepted; values with additional  decimal places will be truncated  For processor-specific details, see the alternate_tax_amount, vat_rate, vat_tax_rate, local_tax, national_tax, vat_tax_amount or other_tax#_rate field descriptions in the Level II and Level III Processing Using the SCMP API Guide. 
    * @member {String} taxRate
    */
   exports.prototype['taxRate'] = undefined;

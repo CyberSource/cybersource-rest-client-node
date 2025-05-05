@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2001IntegrationInformation', 'model/InlineResponse2012ProductInformationSetups'], factory);
+    define(['ApiClient', 'model/InlineResponse2001Embedded'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2001IntegrationInformation'), require('./InlineResponse2012ProductInformationSetups'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2001Embedded'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2001 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2001IntegrationInformation, root.CyberSource.InlineResponse2012ProductInformationSetups);
+    root.CyberSource.InlineResponse2001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001Embedded);
   }
-}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2001IntegrationInformation, InlineResponse2012ProductInformationSetups) {
+}(this, function(ApiClient, InlineResponse2001Embedded) {
   'use strict';
 
 
@@ -51,9 +51,6 @@
 
 
 
-
-
-
   };
 
   /**
@@ -67,59 +64,41 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('registrationInformation')) {
-        obj['registrationInformation'] = Boardingv1registrationsRegistrationInformation.constructFromObject(data['registrationInformation']);
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('integrationInformation')) {
-        obj['integrationInformation'] = InlineResponse2001IntegrationInformation.constructFromObject(data['integrationInformation']);
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
-      if (data.hasOwnProperty('organizationInformation')) {
-        obj['organizationInformation'] = Boardingv1registrationsOrganizationInformation.constructFromObject(data['organizationInformation']);
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('productInformation')) {
-        obj['productInformation'] = Boardingv1registrationsProductInformation.constructFromObject(data['productInformation']);
-      }
-      if (data.hasOwnProperty('productInformationSetups')) {
-        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2012ProductInformationSetups]);
-      }
-      if (data.hasOwnProperty('documentInformation')) {
-        obj['documentInformation'] = Boardingv1registrationsDocumentInformation.constructFromObject(data['documentInformation']);
-      }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = InlineResponse2001Embedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Boardingv1registrationsRegistrationInformation} registrationInformation
+   * UUID uniquely generated for this comments. 
+   * @member {String} id
    */
-  exports.prototype['registrationInformation'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * @member {module:model/InlineResponse2001IntegrationInformation} integrationInformation
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['integrationInformation'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformation} organizationInformation
+   * The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED` 
+   * @member {String} status
    */
-  exports.prototype['organizationInformation'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsProductInformation} productInformation
+   * @member {module:model/InlineResponse2001Embedded} _embedded
    */
-  exports.prototype['productInformation'] = undefined;
-  /**
-   * @member {Array.<module:model/InlineResponse2012ProductInformationSetups>} productInformationSetups
-   */
-  exports.prototype['productInformationSetups'] = undefined;
-  /**
-   * @member {module:model/Boardingv1registrationsDocumentInformation} documentInformation
-   */
-  exports.prototype['documentInformation'] = undefined;
-  /**
-   * @member {Object.<String, Array.<Object>>} details
-   */
-  exports.prototype['details'] = undefined;
+  exports.prototype['_embedded'] = undefined;
 
 
 

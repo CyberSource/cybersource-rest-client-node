@@ -56,8 +56,20 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse4005);
     });
 
-    it('should have the property code (base name: "code")', function() {
-      // uncomment below and update the code to test the property code
+    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeUtc
+      //var instane = new CyberSource.InlineResponse4005();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new CyberSource.InlineResponse4005();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
       //var instane = new CyberSource.InlineResponse4005();
       //expect(instance).to.be();
     });
@@ -68,26 +80,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property localizationKey (base name: "localizationKey")', function() {
-      // uncomment below and update the code to test the property localizationKey
-      //var instane = new CyberSource.InlineResponse4005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property correlationId (base name: "correlationId")', function() {
-      // uncomment below and update the code to test the property correlationId
-      //var instane = new CyberSource.InlineResponse4005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property detail (base name: "detail")', function() {
-      // uncomment below and update the code to test the property detail
-      //var instane = new CyberSource.InlineResponse4005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fields (base name: "fields")', function() {
-      // uncomment below and update the code to test the property fields
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
       //var instane = new CyberSource.InlineResponse4005();
       //expect(instance).to.be();
     });

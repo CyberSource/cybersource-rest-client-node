@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Invoicingv2invoicesOrderInformationAmountDetailsFreight</code>.
-   * Contains all of the shipping-related fields for the invoice.
+   * Contains all of the shipping-related fields for the order.
    * @alias module:model/Invoicingv2invoicesOrderInformationAmountDetailsFreight
    * @class
    */

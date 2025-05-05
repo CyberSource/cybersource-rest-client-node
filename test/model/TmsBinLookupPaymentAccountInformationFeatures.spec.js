@@ -110,6 +110,66 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sharedBIN (base name: "sharedBIN")', function() {
+      // uncomment below and update the code to test the property sharedBIN
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property posDomesticOnly (base name: "posDomesticOnly")', function() {
+      // uncomment below and update the code to test the property posDomesticOnly
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property gamblingAllowed (base name: "gamblingAllowed")', function() {
+      // uncomment below and update the code to test the property gamblingAllowed
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property commercialCardLevel2 (base name: "commercialCardLevel2")', function() {
+      // uncomment below and update the code to test the property commercialCardLevel2
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property commercialCardLevel3 (base name: "commercialCardLevel3")', function() {
+      // uncomment below and update the code to test the property commercialCardLevel3
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property exemptBIN (base name: "exemptBIN")', function() {
+      // uncomment below and update the code to test the property exemptBIN
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountLevelManagement (base name: "accountLevelManagement")', function() {
+      // uncomment below and update the code to test the property accountLevelManagement
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property onlineGamblingBlock (base name: "onlineGamblingBlock")', function() {
+      // uncomment below and update the code to test the property onlineGamblingBlock
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property autoSubstantiation (base name: "autoSubstantiation")', function() {
+      // uncomment below and update the code to test the property autoSubstantiation
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property flexCredential (base name: "flexCredential")', function() {
+      // uncomment below and update the code to test the property flexCredential
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

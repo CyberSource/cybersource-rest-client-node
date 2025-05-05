@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse4005', 'model/V1FileDetailsGet200Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse4006', 'model/V1FileDetailsGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse4005'), require('../model/V1FileDetailsGet200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse4006'), require('../model/V1FileDetailsGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SecureFileShareApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse4005, root.CyberSource.V1FileDetailsGet200Response);
+    root.CyberSource.SecureFileShareApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse4006, root.CyberSource.V1FileDetailsGet200Response);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse4005, V1FileDetailsGet200Response) {
+}(this, function(MLEUtility, ApiClient, InlineResponse4006, V1FileDetailsGet200Response) {
   'use strict';
 
   /**

@@ -56,6 +56,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -96,6 +106,36 @@
       if (data.hasOwnProperty('healthCard')) {
         obj['healthCard'] = ApiClient.convertToType(data['healthCard'], 'Boolean');
       }
+      if (data.hasOwnProperty('sharedBIN')) {
+        obj['sharedBIN'] = ApiClient.convertToType(data['sharedBIN'], 'Boolean');
+      }
+      if (data.hasOwnProperty('posDomesticOnly')) {
+        obj['posDomesticOnly'] = ApiClient.convertToType(data['posDomesticOnly'], 'Boolean');
+      }
+      if (data.hasOwnProperty('gamblingAllowed')) {
+        obj['gamblingAllowed'] = ApiClient.convertToType(data['gamblingAllowed'], 'Boolean');
+      }
+      if (data.hasOwnProperty('commercialCardLevel2')) {
+        obj['commercialCardLevel2'] = ApiClient.convertToType(data['commercialCardLevel2'], 'Boolean');
+      }
+      if (data.hasOwnProperty('commercialCardLevel3')) {
+        obj['commercialCardLevel3'] = ApiClient.convertToType(data['commercialCardLevel3'], 'Boolean');
+      }
+      if (data.hasOwnProperty('exemptBIN')) {
+        obj['exemptBIN'] = ApiClient.convertToType(data['exemptBIN'], 'Boolean');
+      }
+      if (data.hasOwnProperty('accountLevelManagement')) {
+        obj['accountLevelManagement'] = ApiClient.convertToType(data['accountLevelManagement'], 'Boolean');
+      }
+      if (data.hasOwnProperty('onlineGamblingBlock')) {
+        obj['onlineGamblingBlock'] = ApiClient.convertToType(data['onlineGamblingBlock'], 'Boolean');
+      }
+      if (data.hasOwnProperty('autoSubstantiation')) {
+        obj['autoSubstantiation'] = ApiClient.convertToType(data['autoSubstantiation'], 'Boolean');
+      }
+      if (data.hasOwnProperty('flexCredential')) {
+        obj['flexCredential'] = ApiClient.convertToType(data['flexCredential'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -126,7 +166,7 @@
    */
   exports.prototype['acceptanceLevel'] = undefined;
   /**
-   * This field contains the type of card platform. Possible values:   - `BUSINESS`   - `CONSUMER`   - `COMMERCIAL`   - `GOVERNMENT` 
+   * This field contains the type of card platform. Possible values:   - `BUSINESS`   - `CONSUMER`   - `CORPORATE`   - `COMMERCIAL`   - `GOVERNMENT` 
    * @member {String} cardPlatform
    */
   exports.prototype['cardPlatform'] = undefined;
@@ -136,15 +176,65 @@
    */
   exports.prototype['comboCard'] = undefined;
   /**
-   * This field indicates whether the card can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false` 
+   * This field indicates if the instrument can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false` 
    * @member {Boolean} corporatePurchase
    */
   exports.prototype['corporatePurchase'] = undefined;
   /**
-   * This field indicates if the entered card is a healthcare BIN. Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false`       
+   * This field indicates if the BIN is for healthcare (HSA/FSA). Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false` 
    * @member {Boolean} healthCard
    */
   exports.prototype['healthCard'] = undefined;
+  /**
+   * This field indicates if the BIN is shared by multiple issuers Possible values:     - `true`     - `false` 
+   * @member {Boolean} sharedBIN
+   */
+  exports.prototype['sharedBIN'] = undefined;
+  /**
+   * This field indicates if the BIN is valid only for POS domestic usage. Possible values:     - `true`     - `false` 
+   * @member {Boolean} posDomesticOnly
+   */
+  exports.prototype['posDomesticOnly'] = undefined;
+  /**
+   * This field indicates if gambling transactions are allowed on the BIN. Possible values:     - `true`     - `false` 
+   * @member {Boolean} gamblingAllowed
+   */
+  exports.prototype['gamblingAllowed'] = undefined;
+  /**
+   * This field indicates if a transaction on the instrument qualifies for level 2 interchange rates. Possible values:     - `true`     - `false` 
+   * @member {Boolean} commercialCardLevel2
+   */
+  exports.prototype['commercialCardLevel2'] = undefined;
+  /**
+   * This field indicates if a transaction on the instrument qualifies for level 3 interchange rates. Possible values:     - `true`     - `false` 
+   * @member {Boolean} commercialCardLevel3
+   */
+  exports.prototype['commercialCardLevel3'] = undefined;
+  /**
+   * This field indicates if a transaction on the instrument qualifies for government exempt interchange fee. Possible values:     - `true`     - `false` 
+   * @member {Boolean} exemptBIN
+   */
+  exports.prototype['exemptBIN'] = undefined;
+  /**
+   * This field indicates if the BIN participates in Account Level Management (ALM). Possible values:     - `true`     - `false` 
+   * @member {Boolean} accountLevelManagement
+   */
+  exports.prototype['accountLevelManagement'] = undefined;
+  /**
+   * This field indicates if online gambling is blocked on the BIN. Possible values:     - `true`     - `false` 
+   * @member {Boolean} onlineGamblingBlock
+   */
+  exports.prototype['onlineGamblingBlock'] = undefined;
+  /**
+   * This field indicates if auto-substantiation is enabled on the BIN. Possible values:     - `true`     - `false` 
+   * @member {Boolean} autoSubstantiation
+   */
+  exports.prototype['autoSubstantiation'] = undefined;
+  /**
+   * This field indicates if the instrument is a flex credential. Possible values:     - `true`     - `false` 
+   * @member {Boolean} flexCredential
+   */
+  exports.prototype['flexCredential'] = undefined;
 
 
 

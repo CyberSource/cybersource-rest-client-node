@@ -101,7 +101,7 @@
    */
   exports.prototype['expirationYear'] = undefined;
   /**
-   * The type of card(Card network). Possible Values: 001: visa 
+   * The type of card (Card Network). Possible Values: - 001: visa 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

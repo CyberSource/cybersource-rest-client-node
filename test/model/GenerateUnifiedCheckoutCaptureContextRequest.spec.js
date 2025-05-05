@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property completeMandate (base name: "completeMandate")', function() {
+      // uncomment below and update the code to test the property completeMandate
+      //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderInformation (base name: "orderInformation")', function() {
       // uncomment below and update the code to test the property orderInformation
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();

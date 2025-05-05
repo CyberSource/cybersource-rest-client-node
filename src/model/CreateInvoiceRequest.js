@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesInvoiceInformation', 'model/Invoicingv2invoicesOrderInformation'], factory);
+    define(['ApiClient', 'model/Invoicingv2invoicesClientReferenceInformation', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesInvoiceInformation', 'model/Invoicingv2invoicesOrderInformation', 'model/Invoicingv2invoicesProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesInvoiceInformation'), require('./Invoicingv2invoicesOrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesClientReferenceInformation'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesInvoiceInformation'), require('./Invoicingv2invoicesOrderInformation'), require('./Invoicingv2invoicesProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateInvoiceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesInvoiceInformation, root.CyberSource.Invoicingv2invoicesOrderInformation);
+    root.CyberSource.CreateInvoiceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesClientReferenceInformation, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesInvoiceInformation, root.CyberSource.Invoicingv2invoicesOrderInformation, root.CyberSource.Invoicingv2invoicesProcessingInformation);
   }
-}(this, function(ApiClient, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesInvoiceInformation, Invoicingv2invoicesOrderInformation) {
+}(this, function(ApiClient, Invoicingv2invoicesClientReferenceInformation, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesInvoiceInformation, Invoicingv2invoicesOrderInformation, Invoicingv2invoicesProcessingInformation) {
   'use strict';
 
 
@@ -43,13 +43,17 @@
    * Constructs a new <code>CreateInvoiceRequest</code>.
    * @alias module:model/CreateInvoiceRequest
    * @class
+   * @param invoiceInformation {module:model/Invoicingv2invoicesInvoiceInformation} 
+   * @param orderInformation {module:model/Invoicingv2invoicesOrderInformation} 
    */
-  var exports = function() {
+  var exports = function(invoiceInformation, orderInformation) {
     var _this = this;
 
 
 
 
+    _this['invoiceInformation'] = invoiceInformation;
+    _this['orderInformation'] = orderInformation;
   };
 
   /**
@@ -63,8 +67,14 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = Invoicingv2invoicesClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      }
       if (data.hasOwnProperty('customerInformation')) {
         obj['customerInformation'] = Invoicingv2invoicesCustomerInformation.constructFromObject(data['customerInformation']);
+      }
+      if (data.hasOwnProperty('processingInformation')) {
+        obj['processingInformation'] = Invoicingv2invoicesProcessingInformation.constructFromObject(data['processingInformation']);
       }
       if (data.hasOwnProperty('invoiceInformation')) {
         obj['invoiceInformation'] = Invoicingv2invoicesInvoiceInformation.constructFromObject(data['invoiceInformation']);
@@ -77,9 +87,17 @@
   }
 
   /**
+   * @member {module:model/Invoicingv2invoicesClientReferenceInformation} clientReferenceInformation
+   */
+  exports.prototype['clientReferenceInformation'] = undefined;
+  /**
    * @member {module:model/Invoicingv2invoicesCustomerInformation} customerInformation
    */
   exports.prototype['customerInformation'] = undefined;
+  /**
+   * @member {module:model/Invoicingv2invoicesProcessingInformation} processingInformation
+   */
+  exports.prototype['processingInformation'] = undefined;
   /**
    * @member {module:model/Invoicingv2invoicesInvoiceInformation} invoiceInformation
    */

@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails</code>.
-   * Contains all of the amount-related fields in the invoice.
+   * Contains all of the amount-related fields.
    * @alias module:model/InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails
    * @class
    */
@@ -83,13 +83,13 @@
         obj['discountAmount'] = ApiClient.convertToType(data['discountAmount'], 'String');
       }
       if (data.hasOwnProperty('discountPercent')) {
-        obj['discountPercent'] = ApiClient.convertToType(data['discountPercent'], 'Number');
+        obj['discountPercent'] = ApiClient.convertToType(data['discountPercent'], 'String');
       }
       if (data.hasOwnProperty('subAmount')) {
-        obj['subAmount'] = ApiClient.convertToType(data['subAmount'], 'Number');
+        obj['subAmount'] = ApiClient.convertToType(data['subAmount'], 'String');
       }
       if (data.hasOwnProperty('minimumPartialAmount')) {
-        obj['minimumPartialAmount'] = ApiClient.convertToType(data['minimumPartialAmount'], 'Number');
+        obj['minimumPartialAmount'] = ApiClient.convertToType(data['minimumPartialAmount'], 'String');
       }
       if (data.hasOwnProperty('taxDetails')) {
         obj['taxDetails'] = Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails.constructFromObject(data['taxDetails']);
@@ -102,7 +102,7 @@
   }
 
   /**
-   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or `orderInformation.lineItems[].unitPrice` for the order.  #### Invoicing Required for creating a new invoice.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. 
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or `orderInformation.lineItems[].unitPrice` for the order.  #### Invoicing / Pay By Link Required for creating a new invoice or payment link.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. 
    * @member {String} totalAmount
    */
   exports.prototype['totalAmount'] = undefined;
@@ -122,18 +122,18 @@
    */
   exports.prototype['discountAmount'] = undefined;
   /**
-   * The total discount percentage applied to the invoice.
-   * @member {Number} discountPercent
+   * The total discount percentage applied to the order.
+   * @member {String} discountPercent
    */
   exports.prototype['discountPercent'] = undefined;
   /**
-   * Sub-amount of the invoice.
-   * @member {Number} subAmount
+   * Sub-amount of the order.
+   * @member {String} subAmount
    */
   exports.prototype['subAmount'] = undefined;
   /**
    * The minimum partial amount required to pay the invoice.
-   * @member {Number} minimumPartialAmount
+   * @member {String} minimumPartialAmount
    */
   exports.prototype['minimumPartialAmount'] = undefined;
   /**

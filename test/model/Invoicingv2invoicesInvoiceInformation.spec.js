@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property expirationDate (base name: "expirationDate")', function() {
+      // uncomment below and update the code to test the property expirationDate
+      //var instane = new CyberSource.Invoicingv2invoicesInvoiceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sendImmediately (base name: "sendImmediately")', function() {
       // uncomment below and update the code to test the property sendImmediately
       //var instane = new CyberSource.Invoicingv2invoicesInvoiceInformation();

@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionType (base name: "transactionType")', function() {
+      // uncomment below and update the code to test the property transactionType
+      //var instane = new CyberSource.PostPaymentCredentialsRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

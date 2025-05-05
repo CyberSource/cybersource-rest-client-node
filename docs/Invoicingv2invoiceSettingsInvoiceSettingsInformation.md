@@ -13,5 +13,9 @@ Name | Type | Description | Notes
 **payerAuthenticationInInvoicing** | **String** | For a merchant's invoice payments, enable 3D Secure payer authentication version 1, update to 3D Secure version 2, or disable 3D Secure. Possible values are:  - `enable` - `update` - `disable`   | [optional] 
 **showVatNumber** | **Boolean** | Display VAT number on Invoice. | [optional] [default to false]
 **vatRegistrationNumber** | **String** | Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  | [optional] 
+**shipTo** | **Boolean** | Collect the payers shipping address. | [optional] [default to false]
+**phoneNumber** | **Boolean** | Collect the payers phone number. | [optional] [default to false]
+**email** | **Boolean** | Collect the payers email address when the email address is not known or confirm it if it is known at the time of invoice creation. | [optional] [default to false]
+**enableMerchantEmailNotifications** | **Boolean** | Whether you would like to receive payment notification for successful transaction | [optional] [default to false]
 
 

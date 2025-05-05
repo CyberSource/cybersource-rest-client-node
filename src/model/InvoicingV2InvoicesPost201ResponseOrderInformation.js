@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>InvoicingV2InvoicesPost201ResponseOrderInformation</code>.
-   * Contains all of the order-related fields for the invoice.
+   * Contains all of the order-related fields, such as the amount and line item details.
    * @alias module:model/InvoicingV2InvoicesPost201ResponseOrderInformation
    * @class
    */
@@ -78,6 +78,7 @@
    */
   exports.prototype['amountDetails'] = undefined;
   /**
+   * List of the line items from the order.
    * @member {Array.<module:model/Invoicingv2invoicesOrderInformationLineItems>} lineItems
    */
   exports.prototype['lineItems'] = undefined;

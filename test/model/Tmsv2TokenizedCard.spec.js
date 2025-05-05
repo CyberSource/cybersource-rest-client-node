@@ -116,6 +116,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property expirationMonth (base name: "expirationMonth")', function() {
+      // uncomment below and update the code to test the property expirationMonth
+      //var instane = new CyberSource.Tmsv2TokenizedCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationYear (base name: "expirationYear")', function() {
+      // uncomment below and update the code to test the property expirationYear
+      //var instane = new CyberSource.Tmsv2TokenizedCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.Tmsv2TokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cryptogram (base name: "cryptogram")', function() {
       // uncomment below and update the code to test the property cryptogram
       //var instane = new CyberSource.Tmsv2TokenizedCard();

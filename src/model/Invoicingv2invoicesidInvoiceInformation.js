@@ -44,10 +44,14 @@
    * Contains the updatable invoice information.
    * @alias module:model/Invoicingv2invoicesidInvoiceInformation
    * @class
+   * @param description {String} The description included in the invoice.
+   * @param dueDate {Date} The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day 
    */
-  var exports = function() {
+  var exports = function(description, dueDate) {
     var _this = this;
 
+    _this['description'] = description;
+    _this['dueDate'] = dueDate;
 
 
 
@@ -71,6 +75,12 @@
       if (data.hasOwnProperty('dueDate')) {
         obj['dueDate'] = ApiClient.convertToType(data['dueDate'], 'Date');
       }
+      if (data.hasOwnProperty('expirationDate')) {
+        obj['expirationDate'] = ApiClient.convertToType(data['expirationDate'], 'Date');
+      }
+      if (data.hasOwnProperty('sendImmediately')) {
+        obj['sendImmediately'] = ApiClient.convertToType(data['sendImmediately'], 'Boolean');
+      }
       if (data.hasOwnProperty('allowPartialPayments')) {
         obj['allowPartialPayments'] = ApiClient.convertToType(data['allowPartialPayments'], 'Boolean');
       }
@@ -92,12 +102,24 @@
    */
   exports.prototype['dueDate'] = undefined;
   /**
+   * Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day 
+   * @member {Date} expirationDate
+   */
+  exports.prototype['expirationDate'] = undefined;
+  /**
+   * If set to `true`, we send the invoice immediately. If set to `false`, the invoice remains in draft mode.
+   * @member {Boolean} sendImmediately
+   * @default false
+   */
+  exports.prototype['sendImmediately'] = false;
+  /**
    * If set to `true`, the payer can make a partial invoice payment.
    * @member {Boolean} allowPartialPayments
+   * @default false
    */
-  exports.prototype['allowPartialPayments'] = undefined;
+  exports.prototype['allowPartialPayments'] = false;
   /**
-   * If set to `None`, the invoice is created, and its status is set to 'CREATED', but no email is sent.    Possible values:        - `None`   - `Email`  
+   * If this field is set to 'None', an invoice will be generated with the status 'CREATED', but no email will be dispatched.    Possible values:        - `None`   - `Email`    
    * @member {String} deliveryMode
    */
   exports.prototype['deliveryMode'] = undefined;

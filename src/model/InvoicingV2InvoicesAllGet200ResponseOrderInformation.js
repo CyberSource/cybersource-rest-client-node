@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>InvoicingV2InvoicesAllGet200ResponseOrderInformation</code>.
+   * Contains all of the order-related fields, such as the amount and line item details.
    * @alias module:model/InvoicingV2InvoicesAllGet200ResponseOrderInformation
    * @class
    */

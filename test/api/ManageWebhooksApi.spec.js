@@ -50,10 +50,60 @@
   }
 
   describe('ManageWebhooksApi', function() {
+    describe('deleteWebhookSubscription', function() {
+      it('should call deleteWebhookSubscription successfully', function(done) {
+        //uncomment below and update the code to test deleteWebhookSubscription
+        //instance.deleteWebhookSubscription(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getWebhookSubscriptionById', function() {
+      it('should call getWebhookSubscriptionById successfully', function(done) {
+        //uncomment below and update the code to test getWebhookSubscriptionById
+        //instance.getWebhookSubscriptionById(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getWebhookSubscriptionsByOrg', function() {
+      it('should call getWebhookSubscriptionsByOrg successfully', function(done) {
+        //uncomment below and update the code to test getWebhookSubscriptionsByOrg
+        //instance.getWebhookSubscriptionsByOrg(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('notificationSubscriptionsV1WebhooksWebhookIdPost', function() {
       it('should call notificationSubscriptionsV1WebhooksWebhookIdPost successfully', function(done) {
         //uncomment below and update the code to test notificationSubscriptionsV1WebhooksWebhookIdPost
         //instance.notificationSubscriptionsV1WebhooksWebhookIdPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('notificationSubscriptionsV2WebhooksWebhookIdPatch', function() {
+      it('should call notificationSubscriptionsV2WebhooksWebhookIdPatch successfully', function(done) {
+        //uncomment below and update the code to test notificationSubscriptionsV2WebhooksWebhookIdPatch
+        //instance.notificationSubscriptionsV2WebhooksWebhookIdPatch(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('notificationSubscriptionsV2WebhooksWebhookIdStatusPut', function() {
+      it('should call notificationSubscriptionsV2WebhooksWebhookIdStatusPut successfully', function(done) {
+        //uncomment below and update the code to test notificationSubscriptionsV2WebhooksWebhookIdStatusPut
+        //instance.notificationSubscriptionsV2WebhooksWebhookIdStatusPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

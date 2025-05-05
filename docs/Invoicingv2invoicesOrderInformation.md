@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amountDetails** | [**Invoicingv2invoicesOrderInformationAmountDetails**](Invoicingv2invoicesOrderInformationAmountDetails.md) |  | [optional] 
-**lineItems** | [**[Invoicingv2invoicesOrderInformationLineItems]**](Invoicingv2invoicesOrderInformationLineItems.md) |  | [optional] 
+**amountDetails** | [**Invoicingv2invoicesOrderInformationAmountDetails**](Invoicingv2invoicesOrderInformationAmountDetails.md) |  | 
+**lineItems** | [**[Invoicingv2invoicesOrderInformationLineItems]**](Invoicingv2invoicesOrderInformationLineItems.md) | List of the line items from the order. | [optional] 
 
 
