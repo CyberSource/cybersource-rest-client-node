@@ -1,0 +1,54 @@
+{
+  "clientReferenceInformation": {
+    "code": "TC50171_3"
+  },
+  "processingInformation": {
+    "commerceIndicator": "internet"
+  },
+  "aggregatorInformation": {
+    "subMerchant": {
+      "cardAcceptorID": "1234567890",
+      "country": "US",
+      "phoneNumber": "4158880000",
+      "address1": "900 Metro Center",
+      "postalCode": "94105",
+      "locality": "San Francisco",
+      "name": "Visa Inc",
+      "administrativeArea": "CA",
+      "region": "PEN",
+      "email": "test@cybs.com"
+    },
+    "name": "V-Internatio",
+    "aggregatorID": "123456789"
+  },
+  "orderInformation": {
+    "billTo": {
+      "country": "US",
+      "lastName": "Deo",
+      "address2": "Address 2",
+      "address1": "201 S. Division St.",
+      "postalCode": "48104-2201",
+      "locality": "Ann Arbor",
+      "administrativeArea": "MI",
+      "firstName": "John",
+      "phoneNumber": "999999999",
+      "district": "MI",
+      "buildingNumber": "123",
+      "company": "Visa",
+      "email": "test@cybs.com"
+    },
+    "amountDetails": {
+      "totalAmount": "102.21",
+      "currency": "USD"
+    }
+  },
+  "paymentInformation": {
+    "card": {
+      "expirationYear": "2031",
+      "number": "5555555555554444",
+      "securityCode": "123",
+      "expirationMonth": "12",
+      "type": "002"
+    }
+  }
+}

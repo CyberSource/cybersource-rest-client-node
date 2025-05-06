@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CAEC_01,100.00,Success
+CAEC_02,200.0,Fails
+CAEC_03,MNBHJ6,Fails due to invalid amount

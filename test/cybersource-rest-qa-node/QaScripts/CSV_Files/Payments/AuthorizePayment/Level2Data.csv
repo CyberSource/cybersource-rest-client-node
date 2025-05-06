@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CL2D_01,100.00,Success
+CL2D_02,125,Fails
+CL2D_03,ZESD3,Fails due to invalid amount

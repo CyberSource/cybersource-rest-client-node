@@ -1,0 +1,5 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+GAP_01,Get A Payment,Pass,Payment details are fetched,2018-09-04T18:19:05+05:30
+GAP_02,Get A Payment,Fails,Payment details are not fetched due to reason:The requested resource does not exist,2018-09-04T18:19:05+05:30
+GAP_03,Get A Payment,Fails,Payment details are not fetched due to reason:The requested resource does not exist,2018-09-04T18:19:05+05:30
+GARef_01,Get A Refund,Pass,Refund details are fetched,2018-09-04T18:19:05+05:30

@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CRI_01,109.00,Success
+CRI_02,200.0,Fails
+CRI_03,PYT2,Fails due to invalid amount

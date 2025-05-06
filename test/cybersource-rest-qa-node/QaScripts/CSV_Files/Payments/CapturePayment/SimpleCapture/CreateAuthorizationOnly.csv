@@ -1,0 +1,4 @@
+TestCaseId,amount,paymentinstrument,Message
+CAO_01,100.00,V2paymentsPaymentInformationCard,Success
+CAO_02,200.0,V2paymentsPaymentInformationCard,Success
+CAO_03,GFRE2,V2paymentsPaymentInformationCard,Fails
