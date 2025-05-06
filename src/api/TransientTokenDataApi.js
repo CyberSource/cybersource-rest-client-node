@@ -76,6 +76,7 @@
       }
 
 
+
       var pathParams = {
         'paymentCredentialsReference': paymentCredentialsReference
       };
@@ -85,6 +86,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -138,6 +140,7 @@
       }
 
 
+
       var pathParams = {
         'transientToken': transientToken
       };
@@ -147,6 +150,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];

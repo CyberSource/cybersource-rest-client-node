@@ -163,6 +163,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
         'tokenId': tokenId
       };
@@ -173,6 +174,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];

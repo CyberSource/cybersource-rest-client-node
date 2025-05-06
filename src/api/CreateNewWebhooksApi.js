@@ -210,6 +210,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/SaveSymEgressKey', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -221,6 +222,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];

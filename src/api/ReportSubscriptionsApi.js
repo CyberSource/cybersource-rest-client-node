@@ -79,6 +79,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PredefinedSubscriptionRequestBean', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -88,6 +89,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -145,6 +147,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateReportSubscriptionRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -154,6 +157,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json'];
@@ -210,6 +214,7 @@
       }
 
 
+
       var pathParams = {
         'reportName': reportName
       };
@@ -220,6 +225,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -271,6 +277,7 @@
       }
 
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -280,6 +287,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -337,6 +345,7 @@
       }
 
 
+
       var pathParams = {
         'reportName': reportName
       };
@@ -347,6 +356,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];

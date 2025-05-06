@@ -77,6 +77,20 @@
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, '<&vendorExtensions.x-jsdoc-type>', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
       </bodyParam>
 
+      <#formParams>
+      const path = require('path');
+      const fs = require('fs');
+      const crypto = require('crypto');
+
+      file = path.resolve(file);
+
+      var boundary = crypto.randomBytes(16).toString('hex');
+      var delimiter = "-------------" + boundary;
+
+      var fileContents;
+      fileContents = fs.readFileSync(file, 'utf8');
+      </formParams>
+
       var pathParams = {<#pathParams>
         '<baseName>': <#required><paramName></required><^required>opts['<paramName>']</required><#hasMore>,</hasMore></pathParams>
       };
@@ -87,11 +101,16 @@
         '<baseName>': <#required><paramName></required><^required>opts['<paramName>']</required><#hasMore>,</hasMore></headerParams>
       };
       var formParams = {<#formParams>
-        '<baseName>': <#collectionFormat>this.apiClient.buildCollectionParam(<#required><paramName></required><^required>opts['<paramName>']</required>, '<collectionFormat>')</collectionFormat><^collectionFormat><#required><paramName></required><^required>opts['<paramName>']</required></collectionFormat><#hasMore>,</hasMore></formParams>
+        [path.basename(<baseName>)]: <#collectionFormat>this.apiClient.buildCollectionParam(<#required><paramName></required><^required>opts['<paramName>']</required>, '<collectionFormat>')</collectionFormat><^collectionFormat><#required>fileContents</required><^required>opts['<paramName>']</required></collectionFormat><#hasMore>,</hasMore></formParams>
       };
 
+      <#formParams>
+      const MultipartHelper = require('../utilities/multipart/MultipartHelper');
+      postBody = MultipartHelper.buildDataFiles(boundary, formParams);
+      </formParams>
+
       var authNames = [<#authMethods>'<name>'<#hasMore>, </hasMore></authMethods>];
-      var contentTypes = [<#consumes>'<& mediaType>'<#hasMore>, </hasMore></consumes>];
+      var contentTypes = <^formParams>[<#consumes>'<& mediaType>'<#hasMore>, </hasMore></consumes>]</formParams><#formParams>['multipart/form-data; boundary=' + delimiter]</formParams>;
       var accepts = [<#produces>'<& mediaType>'<#hasMore>, </hasMore></produces>];
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 

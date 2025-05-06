@@ -83,6 +83,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/OrderPaymentRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
         'id': id
       };
@@ -92,6 +93,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -147,6 +149,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreatePaymentRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -155,6 +158,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -210,6 +214,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionReq', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -218,6 +223,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -279,6 +285,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/IncrementAuthRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
         'id': id
       };
@@ -288,6 +295,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -349,6 +357,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/RefreshPaymentStatusRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
         'id': id
       };
@@ -358,6 +367,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -419,6 +429,7 @@
       var sdkTracker = new SdkTracker();
       postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSessionRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
+
       var pathParams = {
         'id': id
       };
@@ -428,6 +439,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];

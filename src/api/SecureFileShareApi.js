@@ -78,6 +78,7 @@
       }
 
 
+
       var pathParams = {
         'fileId': fileId
       };
@@ -88,6 +89,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['*/*;charset=utf-8'];
@@ -152,6 +154,7 @@
       }
 
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -164,6 +167,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['*/*;charset=utf-8'];
