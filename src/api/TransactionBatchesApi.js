@@ -79,6 +79,7 @@
       }
 
 
+
       var pathParams = {
         'id': id
       };
@@ -90,6 +91,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -144,6 +146,7 @@
       }
 
 
+
       var pathParams = {
         'id': id
       };
@@ -153,6 +156,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -213,6 +217,7 @@
       }
 
 
+
       var pathParams = {
       };
       var queryParams = {
@@ -223,6 +228,7 @@
       };
       var formParams = {
       };
+
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
@@ -276,6 +282,18 @@
       }
 
 
+      const path = require('path');
+      const fs = require('fs');
+      const crypto = require('crypto');
+
+      file = path.resolve(file);
+
+      var boundary = crypto.randomBytes(16).toString('hex');
+      var delimiter = "-------------" + boundary;
+
+      var fileContents;
+      fileContents = fs.readFileSync(file, 'utf8');
+
       var pathParams = {
       };
       var queryParams = {
@@ -283,11 +301,14 @@
       var headerParams = {
       };
       var formParams = {
-        'file': file
+        [path.basename(file)]: fileContents
       };
 
+      const MultipartHelper = require('../utilities/multipart/MultipartHelper');
+      postBody = MultipartHelper.buildDataFiles(boundary, formParams);
+
       var authNames = [];
-      var contentTypes = ['multipart/form-data'];
+      var contentTypes = ['multipart/form-data; boundary=' + delimiter];
       var accepts = ['application/json'];
       var returnType = null;
 

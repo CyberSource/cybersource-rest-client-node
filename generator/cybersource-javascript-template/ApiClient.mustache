@@ -628,7 +628,7 @@
     if (httpMethod.toLowerCase() === this.constants.POST
       || httpMethod.toLowerCase() === this.constants.PATCH
       || httpMethod.toLowerCase() === this.constants.PUT) {
-      if (bodyParam !== "{}") {
+      if (bodyParam !== "{}" && Object.keys(formParams).length <= 0) {
         bodyParam = JSON.stringify(bodyParam, null, 0);
       }
     }
@@ -672,18 +672,11 @@
       axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
       formParams = bodyParam;
       axiosConfig.data = JSON.parse(formParams);
-    } else if (contentType == 'multipart/form-data') {
-      var _formParams = this.normalizeParams(formParams);
-      contentTypeHeaderValue = 'multipart/form-data';
-      axiosConfig.headers['Content-Type'] = contentTypeHeaderValue;
-      const formData = new formData();
-      for (var key in _formParams) {
-        if (_formParams.hasOwnProperty(key)) {
-          formData.append(key, _formParams[key]);
-        }
-      }
-    } else if (bodyParam) {
+    } else if (bodyParam && Object.keys(formParams).length <= 0) {
       axiosConfig.data = JSON.parse(bodyParam);
+    } else if (bodyParam && Object.keys(formParams).length > 0) {
+      axiosConfig.data = bodyParam;
+      axiosConfig.headers['Content-Type'] = contentType;
     }
 
     var accept = this.jsonPreferredMime(accepts);
