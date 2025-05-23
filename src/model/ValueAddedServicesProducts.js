@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('transactionSearch')) {
         obj['transactionSearch'] = PaymentsProductsTax.constructFromObject(data['transactionSearch']);
       }
+      if (data.hasOwnProperty('bankAccountValidation')) {
+        obj['bankAccountValidation'] = PaymentsProductsTax.constructFromObject(data['bankAccountValidation']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/PaymentsProductsTax} transactionSearch
    */
   exports.prototype['transactionSearch'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} bankAccountValidation
+   */
+  exports.prototype['bankAccountValidation'] = undefined;
 
 
 

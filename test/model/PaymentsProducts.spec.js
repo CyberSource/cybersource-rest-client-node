@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property alternativePaymentMethods (base name: "alternativePaymentMethods")', function() {
+      // uncomment below and update the code to test the property alternativePaymentMethods
+      //var instane = new CyberSource.PaymentsProducts();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cardPresentConnect (base name: "cardPresentConnect")', function() {
       // uncomment below and update the code to test the property cardPresentConnect
       //var instane = new CyberSource.PaymentsProducts();

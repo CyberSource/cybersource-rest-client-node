@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2012SetupsPaymentsCardProcessing', 'model/InlineResponse2012SetupsPaymentsDigitalPayments'], factory);
+    define(['ApiClient', 'model/InlineResponse2012SetupsPaymentsAlternativePaymentMethods', 'model/InlineResponse2012SetupsPaymentsCardProcessing', 'model/InlineResponse2012SetupsPaymentsDigitalPayments'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2012SetupsPaymentsCardProcessing'), require('./InlineResponse2012SetupsPaymentsDigitalPayments'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2012SetupsPaymentsAlternativePaymentMethods'), require('./InlineResponse2012SetupsPaymentsCardProcessing'), require('./InlineResponse2012SetupsPaymentsDigitalPayments'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2012SetupsPayments = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2012SetupsPaymentsCardProcessing, root.CyberSource.InlineResponse2012SetupsPaymentsDigitalPayments);
+    root.CyberSource.InlineResponse2012SetupsPayments = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2012SetupsPaymentsAlternativePaymentMethods, root.CyberSource.InlineResponse2012SetupsPaymentsCardProcessing, root.CyberSource.InlineResponse2012SetupsPaymentsDigitalPayments);
   }
-}(this, function(ApiClient, InlineResponse2012SetupsPaymentsCardProcessing, InlineResponse2012SetupsPaymentsDigitalPayments) {
+}(this, function(ApiClient, InlineResponse2012SetupsPaymentsAlternativePaymentMethods, InlineResponse2012SetupsPaymentsCardProcessing, InlineResponse2012SetupsPaymentsDigitalPayments) {
   'use strict';
 
 
@@ -65,6 +65,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
 
       if (data.hasOwnProperty('cardProcessing')) {
         obj['cardProcessing'] = InlineResponse2012SetupsPaymentsCardProcessing.constructFromObject(data['cardProcessing']);
+      }
+      if (data.hasOwnProperty('alternativePaymentMethods')) {
+        obj['alternativePaymentMethods'] = InlineResponse2012SetupsPaymentsAlternativePaymentMethods.constructFromObject(data['alternativePaymentMethods']);
       }
       if (data.hasOwnProperty('cardPresentConnect')) {
         obj['cardPresentConnect'] = InlineResponse2012SetupsPaymentsCardProcessing.constructFromObject(data['cardPresentConnect']);
@@ -140,6 +144,10 @@
    * @member {module:model/InlineResponse2012SetupsPaymentsCardProcessing} cardProcessing
    */
   exports.prototype['cardProcessing'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2012SetupsPaymentsAlternativePaymentMethods} alternativePaymentMethods
+   */
+  exports.prototype['alternativePaymentMethods'] = undefined;
   /**
    * @member {module:model/InlineResponse2012SetupsPaymentsCardProcessing} cardPresentConnect
    */

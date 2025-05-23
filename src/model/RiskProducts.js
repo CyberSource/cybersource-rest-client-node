@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RiskProductsDecisionManager', 'model/RiskProductsFraudManagementEssentials'], factory);
+    define(['ApiClient', 'model/RiskProductsDecisionManager', 'model/RiskProductsFraudManagementEssentials', 'model/RiskProductsPortfolioRiskControls'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RiskProductsDecisionManager'), require('./RiskProductsFraudManagementEssentials'));
+    module.exports = factory(require('../ApiClient'), require('./RiskProductsDecisionManager'), require('./RiskProductsFraudManagementEssentials'), require('./RiskProductsPortfolioRiskControls'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskProducts = factory(root.CyberSource.ApiClient, root.CyberSource.RiskProductsDecisionManager, root.CyberSource.RiskProductsFraudManagementEssentials);
+    root.CyberSource.RiskProducts = factory(root.CyberSource.ApiClient, root.CyberSource.RiskProductsDecisionManager, root.CyberSource.RiskProductsFraudManagementEssentials, root.CyberSource.RiskProductsPortfolioRiskControls);
   }
-}(this, function(ApiClient, RiskProductsDecisionManager, RiskProductsFraudManagementEssentials) {
+}(this, function(ApiClient, RiskProductsDecisionManager, RiskProductsFraudManagementEssentials, RiskProductsPortfolioRiskControls) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('decisionManager')) {
         obj['decisionManager'] = RiskProductsDecisionManager.constructFromObject(data['decisionManager']);
       }
+      if (data.hasOwnProperty('portfolioRiskControls')) {
+        obj['portfolioRiskControls'] = RiskProductsPortfolioRiskControls.constructFromObject(data['portfolioRiskControls']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/RiskProductsDecisionManager} decisionManager
    */
   exports.prototype['decisionManager'] = undefined;
+  /**
+   * @member {module:model/RiskProductsPortfolioRiskControls} portfolioRiskControls
+   */
+  exports.prototype['portfolioRiskControls'] = undefined;
 
 
 

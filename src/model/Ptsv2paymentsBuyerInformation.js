@@ -143,7 +143,7 @@
    */
   exports.prototype['gender'] = undefined;
   /**
-   * language setting of the user
+   * language setting of the user.  Supports 2-character language codes (e.g., en, fr) and 5-character locale values (e.g., en-US, fr-CA). 
    * @member {String} language
    */
   exports.prototype['language'] = undefined;

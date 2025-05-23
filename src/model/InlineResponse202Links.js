@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse202LinksStatus', 'model/InlineResponse401LinksSelf'], factory);
+    define(['ApiClient', 'model/InlineResponse202LinksStatus', 'model/InlineResponse4011LinksSelf'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse202LinksStatus'), require('./InlineResponse401LinksSelf'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse202LinksStatus'), require('./InlineResponse4011LinksSelf'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse202Links = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse202LinksStatus, root.CyberSource.InlineResponse401LinksSelf);
+    root.CyberSource.InlineResponse202Links = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse202LinksStatus, root.CyberSource.InlineResponse4011LinksSelf);
   }
-}(this, function(ApiClient, InlineResponse202LinksStatus, InlineResponse401LinksSelf) {
+}(this, function(ApiClient, InlineResponse202LinksStatus, InlineResponse4011LinksSelf) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('self')) {
-        obj['self'] = InlineResponse401LinksSelf.constructFromObject(data['self']);
+        obj['self'] = InlineResponse4011LinksSelf.constructFromObject(data['self']);
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], [InlineResponse202LinksStatus]);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/InlineResponse401LinksSelf} self
+   * @member {module:model/InlineResponse4011LinksSelf} self
    */
   exports.prototype['self'] = undefined;
   /**

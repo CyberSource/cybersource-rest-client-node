@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsPayerAuthenticationSubscriptionInformation', 'model/RiskProductsFraudManagementEssentialsConfigurationInformation'], factory);
+    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation', 'model/RiskProductsFraudManagementEssentialsConfigurationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsPayerAuthenticationSubscriptionInformation'), require('./RiskProductsFraudManagementEssentialsConfigurationInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'), require('./RiskProductsFraudManagementEssentialsConfigurationInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskProductsFraudManagementEssentials = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsPayerAuthenticationSubscriptionInformation, root.CyberSource.RiskProductsFraudManagementEssentialsConfigurationInformation);
+    root.CyberSource.RiskProductsFraudManagementEssentials = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation, root.CyberSource.RiskProductsFraudManagementEssentialsConfigurationInformation);
   }
-}(this, function(ApiClient, PaymentsProductsPayerAuthenticationSubscriptionInformation, RiskProductsFraudManagementEssentialsConfigurationInformation) {
+}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethodsSubscriptionInformation, RiskProductsFraudManagementEssentialsConfigurationInformation) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('subscriptionInformation')) {
-        obj['subscriptionInformation'] = PaymentsProductsPayerAuthenticationSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
+        obj['subscriptionInformation'] = PaymentsProductsAlternativePaymentMethodsSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
       }
       if (data.hasOwnProperty('configurationInformation')) {
         obj['configurationInformation'] = RiskProductsFraudManagementEssentialsConfigurationInformation.constructFromObject(data['configurationInformation']);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/PaymentsProductsPayerAuthenticationSubscriptionInformation} subscriptionInformation
+   * @member {module:model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation} subscriptionInformation
    */
   exports.prototype['subscriptionInformation'] = undefined;
   /**

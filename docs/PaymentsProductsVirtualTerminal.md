@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscriptionInformation** | [**PaymentsProductsPayerAuthenticationSubscriptionInformation**](PaymentsProductsPayerAuthenticationSubscriptionInformation.md) |  | [optional] 
+**subscriptionInformation** | [**PaymentsProductsAlternativePaymentMethodsSubscriptionInformation**](PaymentsProductsAlternativePaymentMethodsSubscriptionInformation.md) |  | [optional] 
 **configurationInformation** | [**PaymentsProductsVirtualTerminalConfigurationInformation**](PaymentsProductsVirtualTerminalConfigurationInformation.md) |  | [optional] 
 
 

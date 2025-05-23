@@ -53,6 +53,8 @@
 
     _this['name'] = name;
     _this['startDate'] = startDate;
+
+
   };
 
   /**
@@ -78,6 +80,12 @@
       if (data.hasOwnProperty('startDate')) {
         obj['startDate'] = ApiClient.convertToType(data['startDate'], 'String');
       }
+      if (data.hasOwnProperty('originalTransactionId')) {
+        obj['originalTransactionId'] = ApiClient.convertToType(data['originalTransactionId'], 'String');
+      }
+      if (data.hasOwnProperty('originalTransactionAuthorizedAmount')) {
+        obj['originalTransactionAuthorizedAmount'] = ApiClient.convertToType(data['originalTransactionAuthorizedAmount'], 'String');
+      }
     }
     return obj;
   }
@@ -102,6 +110,16 @@
    * @member {String} startDate
    */
   exports.prototype['startDate'] = undefined;
+  /**
+   * Network transaction identifier that was returned in the payment response field _processorInformation.transactionId_ in the reply message for the original subscription-initializing payment. 
+   * @member {String} originalTransactionId
+   */
+  exports.prototype['originalTransactionId'] = undefined;
+  /**
+   * Amount of the original subscription-initializing payment.  *Required when using a Diners or Discover card*. 
+   * @member {String} originalTransactionAuthorizedAmount
+   */
+  exports.prototype['originalTransactionAuthorizedAmount'] = undefined;
 
 
 

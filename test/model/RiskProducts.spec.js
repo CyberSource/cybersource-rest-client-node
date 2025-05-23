@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property portfolioRiskControls (base name: "portfolioRiskControls")', function() {
+      // uncomment below and update the code to test the property portfolioRiskControls
+      //var instane = new CyberSource.RiskProducts();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
