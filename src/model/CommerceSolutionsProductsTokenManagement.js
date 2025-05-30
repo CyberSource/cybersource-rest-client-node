@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommerceSolutionsProductsTokenManagementConfigurationInformation', 'model/PaymentsProductsPayerAuthenticationSubscriptionInformation'], factory);
+    define(['ApiClient', 'model/CommerceSolutionsProductsTokenManagementConfigurationInformation', 'model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsTokenManagementConfigurationInformation'), require('./PaymentsProductsPayerAuthenticationSubscriptionInformation'));
+    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsTokenManagementConfigurationInformation'), require('./PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CommerceSolutionsProductsTokenManagement = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformation, root.CyberSource.PaymentsProductsPayerAuthenticationSubscriptionInformation);
+    root.CyberSource.CommerceSolutionsProductsTokenManagement = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsTokenManagementConfigurationInformation, root.CyberSource.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation);
   }
-}(this, function(ApiClient, CommerceSolutionsProductsTokenManagementConfigurationInformation, PaymentsProductsPayerAuthenticationSubscriptionInformation) {
+}(this, function(ApiClient, CommerceSolutionsProductsTokenManagementConfigurationInformation, PaymentsProductsAlternativePaymentMethodsSubscriptionInformation) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('subscriptionInformation')) {
-        obj['subscriptionInformation'] = PaymentsProductsPayerAuthenticationSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
+        obj['subscriptionInformation'] = PaymentsProductsAlternativePaymentMethodsSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
       }
       if (data.hasOwnProperty('configurationInformation')) {
         obj['configurationInformation'] = CommerceSolutionsProductsTokenManagementConfigurationInformation.constructFromObject(data['configurationInformation']);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/PaymentsProductsPayerAuthenticationSubscriptionInformation} subscriptionInformation
+   * @member {module:model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation} subscriptionInformation
    */
   exports.prototype['subscriptionInformation'] = undefined;
   /**

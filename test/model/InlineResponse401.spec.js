@@ -56,8 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse401);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new CyberSource.InlineResponse401();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
       //var instane = new CyberSource.InlineResponse401();
       //expect(instance).to.be();
     });
@@ -68,32 +74,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property correlationId (base name: "correlationId")', function() {
-      // uncomment below and update the code to test the property correlationId
-      //var instane = new CyberSource.InlineResponse401();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property detail (base name: "detail")', function() {
-      // uncomment below and update the code to test the property detail
-      //var instane = new CyberSource.InlineResponse401();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fields (base name: "fields")', function() {
-      // uncomment below and update the code to test the property fields
-      //var instane = new CyberSource.InlineResponse401();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property localizationKey (base name: "localizationKey")', function() {
-      // uncomment below and update the code to test the property localizationKey
-      //var instane = new CyberSource.InlineResponse401();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
+    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse401();
       //expect(instance).to.be();
     });

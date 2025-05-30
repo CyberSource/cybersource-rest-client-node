@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bankAccountValidation (base name: "bankAccountValidation")', function() {
+      // uncomment below and update the code to test the property bankAccountValidation
+      //var instane = new CyberSource.InlineResponse2012SetupsValueAddedServices();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

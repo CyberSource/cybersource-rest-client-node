@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsClientReferenceInformationPartner'], factory);
+    define(['ApiClient', 'model/Rbsv1subscriptionsClientReferenceInformationPartner'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsClientReferenceInformationPartner'));
+    module.exports = factory(require('../ApiClient'), require('./Rbsv1subscriptionsClientReferenceInformationPartner'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Rbsv1subscriptionsClientReferenceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsClientReferenceInformationPartner);
+    root.CyberSource.Rbsv1subscriptionsClientReferenceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Rbsv1subscriptionsClientReferenceInformationPartner);
   }
-}(this, function(ApiClient, Riskv1decisionsClientReferenceInformationPartner) {
+}(this, function(ApiClient, Rbsv1subscriptionsClientReferenceInformationPartner) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
         obj['comments'] = ApiClient.convertToType(data['comments'], 'String');
       }
       if (data.hasOwnProperty('partner')) {
-        obj['partner'] = Riskv1decisionsClientReferenceInformationPartner.constructFromObject(data['partner']);
+        obj['partner'] = Rbsv1subscriptionsClientReferenceInformationPartner.constructFromObject(data['partner']);
       }
       if (data.hasOwnProperty('applicationName')) {
         obj['applicationName'] = ApiClient.convertToType(data['applicationName'], 'String');
@@ -89,31 +89,31 @@
   }
 
   /**
-   * Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. 
+   * > Deprecated: This field is ignored.  Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. 
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
   /**
-   * Brief description of the order or any comment you wish to add to the order. 
+   * > Deprecated: This field is ignored.  Brief description of the order or any comment you wish to add to the order. 
    * @member {String} comments
    */
   exports.prototype['comments'] = undefined;
   /**
-   * @member {module:model/Riskv1decisionsClientReferenceInformationPartner} partner
+   * @member {module:model/Rbsv1subscriptionsClientReferenceInformationPartner} partner
    */
   exports.prototype['partner'] = undefined;
   /**
-   * The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. 
+   * > Deprecated: This field is ignored.  The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. 
    * @member {String} applicationName
    */
   exports.prototype['applicationName'] = undefined;
   /**
-   * Version of the CyberSource application or integration used for a transaction. 
+   * > Deprecated: This field is ignored.  Version of the CyberSource application or integration used for a transaction. 
    * @member {String} applicationVersion
    */
   exports.prototype['applicationVersion'] = undefined;
   /**
-   * The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. 
+   * > Deprecated: This field is ignored.  The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. 
    * @member {String} applicationUser
    */
   exports.prototype['applicationUser'] = undefined;

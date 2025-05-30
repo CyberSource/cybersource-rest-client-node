@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('transactionSearch')) {
         obj['transactionSearch'] = InlineResponse2012SetupsPaymentsDigitalPayments.constructFromObject(data['transactionSearch']);
       }
+      if (data.hasOwnProperty('bankAccountValidation')) {
+        obj['bankAccountValidation'] = InlineResponse2012SetupsPaymentsDigitalPayments.constructFromObject(data['bankAccountValidation']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/InlineResponse2012SetupsPaymentsDigitalPayments} transactionSearch
    */
   exports.prototype['transactionSearch'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2012SetupsPaymentsDigitalPayments} bankAccountValidation
+   */
+  exports.prototype['bankAccountValidation'] = undefined;
 
 
 

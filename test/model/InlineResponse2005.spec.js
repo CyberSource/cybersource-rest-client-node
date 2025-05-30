@@ -56,44 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2005);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse2005();
       //expect(instance).to.be();
     });
 
-    it('should have the property _object (base name: "object")', function() {
-      // uncomment below and update the code to test the property _object
-      //var instane = new CyberSource.InlineResponse2005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property offset (base name: "offset")', function() {
-      // uncomment below and update the code to test the property offset
-      //var instane = new CyberSource.InlineResponse2005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property limit (base name: "limit")', function() {
-      // uncomment below and update the code to test the property limit
-      //var instane = new CyberSource.InlineResponse2005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property count (base name: "count")', function() {
-      // uncomment below and update the code to test the property count
-      //var instane = new CyberSource.InlineResponse2005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property total (base name: "total")', function() {
-      // uncomment below and update the code to test the property total
-      //var instane = new CyberSource.InlineResponse2005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property embedded (base name: "_embedded")', function() {
-      // uncomment below and update the code to test the property embedded
+    it('should have the property devices (base name: "devices")', function() {
+      // uncomment below and update the code to test the property devices
       //var instane = new CyberSource.InlineResponse2005();
       //expect(instance).to.be();
     });

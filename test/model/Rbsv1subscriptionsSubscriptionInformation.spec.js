@@ -80,6 +80,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property originalTransactionId (base name: "originalTransactionId")', function() {
+      // uncomment below and update the code to test the property originalTransactionId
+      //var instane = new CyberSource.Rbsv1subscriptionsSubscriptionInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property originalTransactionAuthorizedAmount (base name: "originalTransactionAuthorizedAmount")', function() {
+      // uncomment below and update the code to test the property originalTransactionAuthorizedAmount
+      //var instane = new CyberSource.Rbsv1subscriptionsSubscriptionInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
