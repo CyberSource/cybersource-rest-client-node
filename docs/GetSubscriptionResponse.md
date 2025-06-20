@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **subscriptionInformation** | [**GetAllSubscriptionsResponseSubscriptionInformation**](GetAllSubscriptionsResponseSubscriptionInformation.md) |  | [optional] 
 **paymentInformation** | [**GetAllSubscriptionsResponsePaymentInformation**](GetAllSubscriptionsResponsePaymentInformation.md) |  | [optional] 
 **orderInformation** | [**GetAllSubscriptionsResponseOrderInformation**](GetAllSubscriptionsResponseOrderInformation.md) |  | [optional] 
+**reactivationInformation** | [**GetSubscriptionResponseReactivationInformation**](GetSubscriptionResponseReactivationInformation.md) |  | [optional] 
 
 

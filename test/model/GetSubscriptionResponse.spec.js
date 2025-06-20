@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reactivationInformation (base name: "reactivationInformation")', function() {
+      // uncomment below and update the code to test the property reactivationInformation
+      //var instane = new CyberSource.GetSubscriptionResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

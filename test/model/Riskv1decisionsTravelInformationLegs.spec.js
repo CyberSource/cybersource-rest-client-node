@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property departureTime (base name: "departureTime")', function() {
+      // uncomment below and update the code to test the property departureTime
+      //var instane = new CyberSource.Riskv1decisionsTravelInformationLegs();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

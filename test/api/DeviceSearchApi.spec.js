@@ -50,6 +50,16 @@
   }
 
   describe('DeviceSearchApi', function() {
+    describe('postSearchQuery', function() {
+      it('should call postSearchQuery successfully', function(done) {
+        //uncomment below and update the code to test postSearchQuery
+        //instance.postSearchQuery(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postSearchQueryV3', function() {
       it('should call postSearchQueryV3 successfully', function(done) {
         //uncomment below and update the code to test postSearchQueryV3

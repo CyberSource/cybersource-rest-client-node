@@ -37,6 +37,9 @@ function MerchantConfig(result) {
     this.proxyUser = result.proxyUser;
     this.proxyPassword = result.proxyPassword;
 
+    this.sslCaCert = result.sslCaCert;
+    this.disableSSLVerification = result.disableSSLVerification;
+
     /*HTTP Parameters*/
     this.merchantKeyId = result.merchantKeyId;
     this.merchantsecretKey = result.merchantsecretKey;
@@ -340,6 +343,22 @@ MerchantConfig.prototype.setProxyPassword = function setProxyPassword(proxyPassw
     this.proxyPassword = proxyPassword;
 }
 
+MerchantConfig.prototype.getSslCaCert = function getSslCaCert() {
+    return this.sslCaCert;
+}
+
+MerchantConfig.prototype.setSslCaCert = function setSslCaCert(sslCaCert) {
+    this.sslCaCert = sslCaCert;
+}
+
+MerchantConfig.prototype.getDisableSSLVerification = function getDisableSSLVerification() {
+    return this.disableSSLVerification;
+}
+
+MerchantConfig.prototype.setDisableSSLVerification = function setDisableSSLVerification(disableSSLVerification) {
+    this.disableSSLVerification = disableSSLVerification;
+}
+
 MerchantConfig.prototype.getKeyFileName = function getKeyFileName() {
     return this.keyFilename;
 }
@@ -442,6 +461,12 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         ApiException.ApiException(Constants.PORTFOLIO_ID_REQ, logger);
     }
 
+    if (typeof (this.disableSSLVerification) !== "boolean") {
+        this.disableSSLVerification = false;
+    } else if (this.disableSSLVerification) {
+        logger.warn("SSL Verification has been disabled. This is NOT advised. DO NOT USE THIS CODE IN PRODUCTION.");
+    }
+
     if (typeof (this.enableClientCert) !== "boolean") {
         this.enableClientCert = false;
     }
@@ -472,6 +497,14 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         if (!(fs.existsSync(keyFile) && fs.existsSync(certFile)))
         {
             ApiException.ApiException(Constants.FILE_NOT_FOUND, logger);
+        }
+
+        if (this.sslCaCert) {
+            var sslCaCert = path.resolve(this.sslCaCert);
+
+            if (!fs.existsSync(sslCaCert)) {
+                ApiException.ApiException(Constants.FILE_NOT_FOUND, logger);
+            }
         }
     }
 

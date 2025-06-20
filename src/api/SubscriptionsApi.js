@@ -59,12 +59,15 @@
 
     /**
      * Activate a Subscription
-     * Activate a `CANCELLED` Or `SUSPENDED` Subscription 
+     * Activate a `SUSPENDED` Subscription 
      * @param {String} id Subscription Id
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (default to true)
      * @param {module:api/SubscriptionsApi~activateSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActivateSubscriptionResponse}
      */
-    this.activateSubscription = function(id, callback) {
+    this.activateSubscription = function(id, opts, callback) {
+      opts = opts || {};
       var postBody = null;
       if ('POST' == 'POST') {
         postBody = '{}';
@@ -81,6 +84,7 @@
         'id': id
       };
       var queryParams = {
+        'processSkippedPayments': opts['processSkippedPayments']
       };
       var headerParams = {
       };

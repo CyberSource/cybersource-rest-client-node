@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2007EmbeddedTotals', 'model/InlineResponse2008Billing', 'model/InlineResponse2008Links'], factory);
+    define(['ApiClient', 'model/InlineResponse2008Embedded', 'model/InlineResponse2008Links'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2007EmbeddedTotals'), require('./InlineResponse2008Billing'), require('./InlineResponse2008Links'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2008Embedded'), require('./InlineResponse2008Links'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2008 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2007EmbeddedTotals, root.CyberSource.InlineResponse2008Billing, root.CyberSource.InlineResponse2008Links);
+    root.CyberSource.InlineResponse2008 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2008Embedded, root.CyberSource.InlineResponse2008Links);
   }
-}(this, function(ApiClient, InlineResponse2007EmbeddedTotals, InlineResponse2008Billing, InlineResponse2008Links) {
+}(this, function(ApiClient, InlineResponse2008Embedded, InlineResponse2008Links) {
   'use strict';
 
 
@@ -54,9 +54,6 @@
 
 
 
-
-
-
   };
 
   /**
@@ -71,84 +68,58 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse2008Links.constructFromObject(data['_links']);
+        obj['_links'] = ApiClient.convertToType(data['_links'], [InlineResponse2008Links]);
       }
-      if (data.hasOwnProperty('batchId')) {
-        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      if (data.hasOwnProperty('object')) {
+        obj['object'] = ApiClient.convertToType(data['object'], 'String');
       }
-      if (data.hasOwnProperty('batchCreatedDate')) {
-        obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
+      if (data.hasOwnProperty('offset')) {
+        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
       }
-      if (data.hasOwnProperty('batchSource')) {
-        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
+      if (data.hasOwnProperty('limit')) {
+        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
       }
-      if (data.hasOwnProperty('merchantReference')) {
-        obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
+      if (data.hasOwnProperty('count')) {
+        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
       }
-      if (data.hasOwnProperty('batchCaEndpoints')) {
-        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
+      if (data.hasOwnProperty('total')) {
+        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('totals')) {
-        obj['totals'] = InlineResponse2007EmbeddedTotals.constructFromObject(data['totals']);
-      }
-      if (data.hasOwnProperty('billing')) {
-        obj['billing'] = InlineResponse2008Billing.constructFromObject(data['billing']);
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = InlineResponse2008Embedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2008Links} _links
+   * @member {Array.<module:model/InlineResponse2008Links>} _links
    */
   exports.prototype['_links'] = undefined;
   /**
-   * Unique identification number assigned to the submitted request.
-   * @member {String} batchId
+   * @member {String} object
    */
-  exports.prototype['batchId'] = undefined;
+  exports.prototype['object'] = undefined;
   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @member {String} batchCreatedDate
+   * @member {Number} offset
    */
-  exports.prototype['batchCreatedDate'] = undefined;
+  exports.prototype['offset'] = undefined;
   /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @member {String} batchSource
+   * @member {Number} limit
    */
-  exports.prototype['batchSource'] = undefined;
+  exports.prototype['limit'] = undefined;
   /**
-   * Reference used by merchant to identify batch.
-   * @member {String} merchantReference
+   * @member {Number} count
    */
-  exports.prototype['merchantReference'] = undefined;
+  exports.prototype['count'] = undefined;
   /**
-   * @member {String} batchCaEndpoints
+   * @member {Number} total
    */
-  exports.prototype['batchCaEndpoints'] = undefined;
+  exports.prototype['total'] = undefined;
   /**
-   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
-   * @member {String} status
+   * @member {module:model/InlineResponse2008Embedded} _embedded
    */
-  exports.prototype['status'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2007EmbeddedTotals} totals
-   */
-  exports.prototype['totals'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2008Billing} billing
-   */
-  exports.prototype['billing'] = undefined;
-  /**
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
+  exports.prototype['_embedded'] = undefined;
 
 
 

@@ -62,6 +62,7 @@
 
 
 
+
   };
 
   /**
@@ -110,6 +111,9 @@
       }
       if (data.hasOwnProperty('electronicVerificationResults')) {
         obj['electronicVerificationResults'] = TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults.constructFromObject(data['electronicVerificationResults']);
+      }
+      if (data.hasOwnProperty('eventStatus')) {
+        obj['eventStatus'] = ApiClient.convertToType(data['eventStatus'], 'String');
       }
       if (data.hasOwnProperty('systemTraceAuditNumber')) {
         obj['systemTraceAuditNumber'] = ApiClient.convertToType(data['systemTraceAuditNumber'], 'String');
@@ -179,6 +183,11 @@
    * @member {module:model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults} electronicVerificationResults
    */
   exports.prototype['electronicVerificationResults'] = undefined;
+  /**
+   * The event status. 
+   * @member {String} eventStatus
+   */
+  exports.prototype['eventStatus'] = undefined;
   /**
    * This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer's receipt. 
    * @member {String} systemTraceAuditNumber

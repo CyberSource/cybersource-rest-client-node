@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property consumerAuthentication (base name: "consumerAuthentication")', function() {
+      // uncomment below and update the code to test the property consumerAuthentication
+      //var instane = new CyberSource.Upv1capturecontextsCompleteMandate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
