@@ -9,9 +9,6 @@ const openpgp = require('openpgp');
  */
 function handlePGPEncrypt(inputFilePath, publicKeyPath) {
     return new Promise((resolve, reject) => {
-        if (!inputFilePath || !publicKeyPath) {
-            return reject(new Error('Missing required options for encrypt operation'));
-        }
         let publicKeyArmored, fileData;
         try {
             publicKeyArmored = fs.readFileSync(publicKeyPath, 'utf8');

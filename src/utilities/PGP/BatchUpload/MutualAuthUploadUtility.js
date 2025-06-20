@@ -29,7 +29,7 @@ function handleUploadOperationUsingP12orPfx(
     form.append('file', encryptedPgpBytes, { filename: fileName });
 
     const defaultCAs = tls.rootCertificates.slice();
-
+    //Assuming serverTrustCert is a PEM encoded certificate
     if (serverTrustCert && serverTrustCert.length > 0) {
         defaultCAs.push(serverTrustCert.toString());
     }
@@ -52,12 +52,7 @@ function handleUploadOperationUsingP12orPfx(
         }
     }).then(response => {
         if (response.status === 201) {
-            return {
-                status: response.status,
-                statusText: response.statusText,
-                data: response.data,
-                message: "File uploaded successfully"
-            };
+            return normalizeResponse(response);
         } throw {
             response
         };
@@ -71,9 +66,9 @@ function handleUploadOperationUsingP12orPfx(
  * @param {Buffer} encryptedPgpBytes - The encrypted PGP file content as Buffer.
  * @param {string} environmentHostname - The environment hostname.
  * @param {string} fileName - The name of the file to be uploaded.
- * @param {Buffer|string} clientPrivateKey - The client's private key (PEM string or Buffer).
- * @param {Buffer|string} clientCert - The client's X509 certificate (PEM string or Buffer).
- * @param {Buffer|string} serverTrustCert - The server's trust X509 certificate (PEM string or Buffer).
+ * @param {Buffer|string} clientPrivateKey - The client's private key (Buffer).
+ * @param {Buffer|string} clientCert - The client's certificate (Buffer).
+ * @param {Buffer|string} serverTrustCert - The server's trust certificate (Buffer).
  * @param {string} [clientKeyPassword] - Password for the private key, if encrypted.
  * @returns {Promise<any>}
  */
@@ -91,8 +86,10 @@ function handleUploadOperationUsingPrivateKeyAndCerts(
     const form = new FormData();
     form.append('file', encryptedPgpBytes, { filename: fileName });
 
-    const defaultCAs = tls.rootCertificates.slice();
+    const correlationId = uuidv4();
 
+    const defaultCAs = tls.rootCertificates.slice();
+    //Assuming serverTrustCert is a PEM encoded certificate
     if (serverTrustCert && serverTrustCert.length > 0) {
         defaultCAs.push(serverTrustCert.toString());
     }
@@ -107,21 +104,28 @@ function handleUploadOperationUsingPrivateKeyAndCerts(
 
     return axios.post(endpointUrl, form, {
         httpsAgent,
-        headers: form.getHeaders()
+        headers: {
+            ...form.getHeaders(),
+            'v-c-correlation-id': correlationId
+        }
     }).then(response => {
         if (response.status === 201) {
-            return {
-                status: response.status,
-                statusText: response.statusText,
-                data: response.data,
-                message: "File uploaded successfully"
-            };
+            return normalizeResponse(response);
         } throw {
             response
         };
     }).catch(error => {
         return Promise.reject(normalizeError(error));
     });
+}
+
+function normalizeResponse(response) {
+    return {
+        status: response.status,
+        statusText: response.statusText,
+        data: response.data,
+        message: "File uploaded successfully"
+    };
 }
 
 function normalizeError(error) {

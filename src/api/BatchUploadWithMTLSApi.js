@@ -10,7 +10,7 @@ const BatchUploadUtility = require('../utilities/PGP/BatchUpload/BatchUploadUtil
 /**
  * BatchUploadWithMTLSApi
  * Class for uploading batch files to CyberSource using mutual TLS authentication.
- * Supports PKCS#12 client certificates, and direct private key/certificate objects.
+ * Supports PKCS#12 client certificates, and direct private key/certificate paths.
  * Handles PGP encryption of files before upload.
  */
 class BatchUploadWithMTLSApi {
@@ -30,7 +30,7 @@ class BatchUploadWithMTLSApi {
                 rejectUnauthorizedFlag = true
             } = opts;
             if (rejectUnauthorizedFlag === false) {
-                this.logger.warn('rejectUnauthorized is set to false. This is NOT recommended for production environments.');
+                this.logger.warn('rejectUnauthorized is set to false. SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!');
             }
             this.logger.info('Starting batch upload with p12/pfx for given file');
             const endpoint = '/pts/v1/transaction-batch-upload';
@@ -42,6 +42,7 @@ class BatchUploadWithMTLSApi {
             handlePGPEncrypt(inputFilePath, publicKeyFilePath)
                 .then(encryptedBuffer => {
                     const uploadFileName = path.basename(inputFilePath) + '.pgp';
+                    console.log('Encrypted file name:', uploadFileName);
                     const clientCertP12 = fs.readFileSync(clientCertP12FilePath);
                     const serverTrustCert = serverTrustCertPath ? fs.readFileSync(serverTrustCertPath) : undefined;
                     return handleUploadOperationUsingP12orPfx(
@@ -80,7 +81,7 @@ class BatchUploadWithMTLSApi {
 
             } = opts;
             if (rejectUnauthorizedFlag === false) {
-                this.logger.warn('rejectUnauthorized is set to false. This is NOT recommended for production environments.');
+                this.logger.warn('rejectUnauthorized is set to false. SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!');
             }
             this.logger.info('Starting batch upload with client private key and certs for given file');
             const endpoint = '/pts/v1/transaction-batch-upload';
