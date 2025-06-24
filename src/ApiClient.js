@@ -575,6 +575,9 @@
     var enableClientCert = this.merchantConfig.getEnableClientCert();
     var sslCaCert = this.merchantConfig.getSslCaCert();
     var isSslVerificationDisabled = this.merchantConfig.getDisableSSLVerification();
+    if(isSslVerificationDisabled == true){
+      this.logger.warn('SSL verification is disabled. This is not recommended for production environments.');
+    }
 
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
