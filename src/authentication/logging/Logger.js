@@ -14,15 +14,19 @@ const unmaskedLoggingFormat = printf(({ level, message, label, timestamp }) => {
 });
 
 exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryLogger') {
+  return exports.getLoggerFromLogConfig(merchantConfig.getLogConfiguration(), loggerCategory);
+}
 
-  if(merchantConfig.getLogConfiguration().isExternalLoggerSet() && merchantConfig.getLogConfiguration().getExternalLogger()
-      && merchantConfig.getLogConfiguration().getExternalLogger().getLogger()
-      && merchantConfig.getLogConfiguration().getExternalLogger() instanceof ExternalLoggerWrapper){
-    let logger = merchantConfig.getLogConfiguration().getExternalLogger().getLogger();
+exports.getLoggerFromLogConfig = function (logConfig, loggerCategory = 'UnknownCategoryLogger') {
+
+  if (logConfig.isExternalLoggerSet() && logConfig.getExternalLogger()
+    && logConfig.getExternalLogger().getLogger()
+    && logConfig.getExternalLogger() instanceof ExternalLoggerWrapper) {
+    let logger = logConfig.getExternalLogger().getLogger();
     return logger;
   }
-  var enableLog = merchantConfig.getLogConfiguration().isLogEnabled();
-  var enableMasking = merchantConfig.getLogConfiguration().isMaskingEnabled();
+  var enableLog = logConfig.isLogEnabled();
+  var enableMasking = logConfig.isMaskingEnabled();
   var loggerCategoryRandomiser = Math.floor(Math.random() * (1000000000 - 100 + 1)) + 100;
 
   loggerCategory = loggerCategory + loggerCategoryRandomiser;
@@ -30,16 +34,16 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
   var newLogger;
 
   if (enableLog) {
-    var appTransports = createTransportFromConfig(merchantConfig);
+    var appTransports = createTransportFromConfig(logConfig);
 
-    var loggingLevel = merchantConfig.getLogConfiguration().getLoggingLevel();
+    var loggingLevel = logConfig.getLoggingLevel();
 
     newLogger = winston.loggers.get(loggerCategory, {
       level: loggingLevel,
       format: combine(
-          label({ label: loggerCategory }),
-          timestamp(),
-          enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
+        label({ label: loggerCategory }),
+        timestamp(),
+        enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
       ),
       transports: appTransports
     });
@@ -47,9 +51,9 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
     newLogger = winston.loggers.get(loggerCategory, {
       level: loggingLevel,
       format: combine(
-          label({ label: loggerCategory }),
-          timestamp(),
-          enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
+        label({ label: loggerCategory }),
+        timestamp(),
+        enableMasking ? maskedLoggingFormat : unmaskedLoggingFormat
       ),
       transports: [new winston.transports.Console({
         silent: !enableLog
@@ -60,14 +64,15 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
   return newLogger;
 }
 
-function createTransportFromConfig(mConfig) {
+
+function createTransportFromConfig(logConfig) {
   var transports = [];
 
-  var enableLog = mConfig.getLogConfiguration().isLogEnabled();
-  var loggingLevel = mConfig.getLogConfiguration().getLoggingLevel();
-  var maxLogFiles = mConfig.getLogConfiguration().getMaxLogFiles();
-  var logFileName = mConfig.getLogConfiguration().getLogFileName();
-  var logDirectory = mConfig.getLogConfiguration().getLogDirectory();
+  var enableLog = logConfig.isLogEnabled();
+  var loggingLevel = logConfig.getLoggingLevel();
+  var maxLogFiles = logConfig.getMaxLogFiles();
+  var logFileName = logConfig.getLogFileName();
+  var logDirectory = logConfig.getLogDirectory();
 
   transports.push(new winston.transports.DailyRotateFile({
     level: loggingLevel,

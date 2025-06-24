@@ -23,10 +23,11 @@ function handleUploadOperationUsingP12orPfx(
     clientCertP12,
     clientCertP12Password,
     serverTrustCert,
-    rejectUnauthorizedFlag
+    verify_ssl
 ) {
     const form = new FormData();
-    form.append('file', encryptedPgpBytes, { filename: fileName });
+    const safeFileName = fileName && fileName.trim() ? fileName : 'file.pgp';
+    form.append('file', encryptedPgpBytes, { filename: safeFileName });
 
     const defaultCAs = tls.rootCertificates.slice();
     //Assuming serverTrustCert is a PEM encoded certificate
@@ -40,7 +41,7 @@ function handleUploadOperationUsingP12orPfx(
         pfx: clientCertP12,
         passphrase: clientCertP12Password,
         ca: defaultCAs,
-        rejectUnauthorized: rejectUnauthorizedFlag,
+        rejectUnauthorized: verify_ssl,
         servername: environmentHostname
     });
 
@@ -51,13 +52,16 @@ function handleUploadOperationUsingP12orPfx(
             'v-c-correlation-id': correlationId
         }
     }).then(response => {
-        if (response.status === 201) {
+        if (response.status >= 200 && response.status < 300) {
             return normalizeResponse(response);
         } throw {
             response
         };
     }).catch(error => {
-        return Promise.reject(normalizeError(error));
+        return Promise.reject({
+            error: normalizeErrorResponse(error),
+            response: error.response
+        });
     });
 }
 
@@ -81,10 +85,11 @@ function handleUploadOperationUsingPrivateKeyAndCerts(
     clientCert,
     serverTrustCert,
     clientKeyPassword,
-    rejectUnauthorizedFlag
+    verify_ssl
 ) {
     const form = new FormData();
-    form.append('file', encryptedPgpBytes, { filename: fileName });
+    const safeFileName = fileName && fileName.trim() ? fileName : 'file.pgp';
+    form.append('file', encryptedPgpBytes, { filename: safeFileName});
 
     const correlationId = uuidv4();
 
@@ -98,7 +103,7 @@ function handleUploadOperationUsingPrivateKeyAndCerts(
         cert: clientCert,
         ca: defaultCAs,
         passphrase: clientKeyPassword,
-        rejectUnauthorized: rejectUnauthorizedFlag,
+        rejectUnauthorized: verify_ssl,
         servername: environmentHostname
     });
 
@@ -109,13 +114,16 @@ function handleUploadOperationUsingPrivateKeyAndCerts(
             'v-c-correlation-id': correlationId
         }
     }).then(response => {
-        if (response.status === 201) {
+        if (response.status >= 200 && response.status < 300) {
             return normalizeResponse(response);
         } throw {
             response
         };
-    }).catch(error => {
-        return Promise.reject(normalizeError(error));
+    }).catch(function(error) {
+        return Promise.reject({
+            error: normalizeErrorResponse(error),
+            response: error.response
+        });
     });
 }
 
@@ -124,16 +132,31 @@ function normalizeResponse(response) {
         status: response.status,
         statusText: response.statusText,
         data: response.data,
+        header: response.headers,
         message: "File uploaded successfully"
     };
 }
 
-function normalizeError(error) {
-    return {
-        message: `File upload failed: ${error.message}`
-    };
+function normalizeErrorResponse(error) {
+    if (typeof error.response !== 'undefined') {
+        return {
+            status: error.response.status,
+            statusText: error.response.statusText,
+            data: error.response.data,
+            header: error.response.headers,
+            message: `File upload failed: ${error.message}`
+        };
+    } else {
+        var tester = {};
+        tester.errno = error.errno;
+        tester.code = error.code;
+        tester.syscall = error.syscall;
+        tester.address = error.address;
+        tester.port = error.port;
+        tester.message = error.message ? error.message : 'An unknown error occurred';
+        return tester;
+    }
 }
-
 module.exports = {
     handleUploadOperationUsingP12orPfx,
     handleUploadOperationUsingPrivateKeyAndCerts
