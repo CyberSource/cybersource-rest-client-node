@@ -25,9 +25,9 @@ class BatchUploadUtility {
      * Validates the input parameters for batch API using P12 client certificate.
      * @param {string} inputFile - Path to the input CSV file for batch upload.
      * @param {string} environmentHostname
-     * @param {string} pgpEncryptionCertPath
-     * @param {string} clientCertP12FilePath
-     * @param {string} serverTrustCertPath
+     * @param {string} pgpEncryptionCertPath - Path to the PGP public key file (.asc).
+     * @param {string} clientCertP12FilePath - Path to the client P12 certificate file.
+     * @param {string} serverTrustCertPath - Path to the server trust certificate file (PEM, optional).
      */
     static validateBatchApiP12Inputs(inputFile, environmentHostname, pgpEncryptionCertPath, clientCertP12FilePath, serverTrustCertPath) {
         this.validateInputFile(inputFile);
@@ -48,8 +48,8 @@ class BatchUploadUtility {
      * @param {string} environmentHostname
      * @param {string} pgpPublicKeyPath - Path to the PGP public key file (.asc).
      * @param {string} clientPrivateKeyPath - Path to the client private key file (PEM).
-     * @param {string} clientCertPath - Path to the client X509 certificate file (PEM).
-     * @param {string} serverTrustCertPath - Path to the server trust X509 certificate file (PEM, optional).
+     * @param {string} clientCertPath - Path to the client certificate file (PEM).
+     * @param {string} serverTrustCertPath - Path to the server trust certificate file (PEM, optional).
      */
     static validateBatchApiKeysInputs(inputFile, environmentHostname, pgpPublicKeyPath, clientPrivateKeyPath, clientCertPath, serverTrustCertPath) {
         this.validateInputFile(inputFile);

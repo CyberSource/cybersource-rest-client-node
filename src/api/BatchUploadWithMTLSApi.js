@@ -1,10 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const { handlePGPEncrypt } = require('../utilities/PGP/BatchUpload/PgpEncryptionUtility');
-const {
-    handleUploadOperationUsingP12orPfx,
-    handleUploadOperationUsingPrivateKeyAndCerts
-} = require('../utilities/PGP/BatchUpload/MutualAuthUploadUtility');
+const PgpEncryptionUtility = require('../utilities/PGP/BatchUpload/PgpEncryptionUtility');
+const MutualAuthUploadUtility = require('../utilities/PGP/BatchUpload/MutualAuthUploadUtility');
 const BatchUploadUtility = require('../utilities/PGP/BatchUpload/BatchUploadUtility');
 const LogConfiguration = require('../authentication/logging/LogConfiguration');
 const Constants = require('../authentication/util/Constants');
@@ -22,6 +19,11 @@ class BatchUploadWithMTLSApi {
      * @param {LogConfiguration} log_config - Logging configuration object.
      */
     constructor(log_config) {
+        if (!log_config) {
+            log_config = {
+                enableLog: false
+            };
+        }
         const logConfiguration = new LogConfiguration(log_config);
         //fallback for missing values
         logConfiguration.getDefaultLoggingProperties("");
@@ -44,17 +46,19 @@ class BatchUploadWithMTLSApi {
      * @param {boolean} [opts.verify_ssl=true] - Whether to reject unauthorized SSL certificates (optional).
      * @param {function(Error, any):void} callback - Callback function with (error, result).
      */
-    uploadBatchAPIWithP12(inputFilePath,
-        environmentHostname,
-        publicKeyFilePath,
-        clientCertP12FilePath,
-        clientCertP12Password,
-        serverTrustCertPath,
-        verify_ssl = true,
-        callback) {
+    uploadBatchAPIWithP12(opts, callback) {
+        const {
+            inputFilePath,
+            environmentHostname,
+            publicKeyFilePath,
+            clientCertP12FilePath,
+            clientCertP12Password,
+            serverTrustCertPath,
+            verify_ssl = true
+        } = opts;
         try {
             if (verify_ssl === false) {
-                this.logger.warn('rejectUnauthorized is set to false. SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!');
+                this.logger.warn('verify_ssl is set to false. SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!');
             }
             this.logger.info('Starting batch upload with p12/pfx for given file');
             const endpoint = '/pts/v1/transaction-batch-upload';
@@ -63,13 +67,12 @@ class BatchUploadWithMTLSApi {
                 inputFilePath, environmentHostname, publicKeyFilePath, clientCertP12FilePath, serverTrustCertPath
             );
 
-            handlePGPEncrypt(inputFilePath, publicKeyFilePath)
+            PgpEncryptionUtility.handlePGPEncrypt(inputFilePath, publicKeyFilePath)
                 .then(encryptedBuffer => {
                     const uploadFileName = path.basename(inputFilePath) + '.pgp';
-                    console.log('Encrypted file name:', uploadFileName);
                     const clientCertP12 = fs.readFileSync(clientCertP12FilePath);
                     const serverTrustCert = serverTrustCertPath ? fs.readFileSync(serverTrustCertPath) : undefined;
-                    return handleUploadOperationUsingP12orPfx(
+                    return MutualAuthUploadUtility.handleUploadOperationUsingP12orPfx(
                         encryptedBuffer,
                         endpointUrl,
                         environmentHostname,
@@ -86,7 +89,7 @@ class BatchUploadWithMTLSApi {
                 })
                 .catch(error => {
                     this.logger.error(error);
-                    callback(error, error.response);
+                    callback(error, (error && error.response) ? error.response : undefined);
                     this.logger.info(Constants.END_TRANSACTION);
                 });
         } catch (e) {
@@ -112,18 +115,20 @@ class BatchUploadWithMTLSApi {
      * @param {function(Error, any):void} callback - Callback function with (error, result).
      */
 
-    uploadBatchAPIWithKeys(inputFilePath,
-        environmentHostname,
-        publicKeyFilePath,
-        clientPrivateKeyFilePath,
-        clientCertFilePath,
-        serverTrustCertPath,
-        clientKeyPassword,
-        verify_ssl = true,
-        callback) {
+    uploadBatchAPIWithKeys(opts, callback) {
+        const {
+            inputFilePath,
+            environmentHostname,
+            publicKeyFilePath,
+            clientPrivateKeyFilePath,
+            clientCertFilePath,
+            serverTrustCertPath,
+            clientKeyPassword,
+            verify_ssl = true
+        } = opts;
         try {
             if (verify_ssl === false) {
-                this.logger.warn('rejectUnauthorized is set to false. SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!');
+                this.logger.warn('verify_ssl is set to false. SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!');
             }
             this.logger.info('Starting batch upload with client private key and certs for given file');
             const endpoint = '/pts/v1/transaction-batch-upload';
@@ -132,13 +137,13 @@ class BatchUploadWithMTLSApi {
                 inputFilePath, environmentHostname, publicKeyFilePath, clientPrivateKeyFilePath, clientCertFilePath, serverTrustCertPath
             );
 
-            handlePGPEncrypt(inputFilePath, publicKeyFilePath)
+            PgpEncryptionUtility.handlePGPEncrypt(inputFilePath, publicKeyFilePath)
                 .then(encryptedBuffer => {
                     const uploadFileName = path.basename(inputFilePath) + '.pgp';
                     const clientPrivateKey = fs.readFileSync(clientPrivateKeyFilePath);
                     const clientCert = fs.readFileSync(clientCertFilePath);
                     const serverTrustCert = serverTrustCertPath ? fs.readFileSync(serverTrustCertPath) : undefined;
-                    return handleUploadOperationUsingPrivateKeyAndCerts(
+                    return MutualAuthUploadUtility.handleUploadOperationUsingPrivateKeyAndCerts(
                         encryptedBuffer,
                         endpointUrl,
                         environmentHostname,
@@ -156,7 +161,7 @@ class BatchUploadWithMTLSApi {
                 })
                 .catch(error => {
                     this.logger.error(error);
-                    callback(error, error.response);
+                    callback(error, (error && error.response) ? error.response : undefined);
                     this.logger.info(Constants.END_TRANSACTION);
                 });
         } catch (e) {
