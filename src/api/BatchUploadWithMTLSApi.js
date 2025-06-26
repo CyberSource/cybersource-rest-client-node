@@ -16,7 +16,21 @@ const Logger = require('../authentication/logging/Logger');
 class BatchUploadWithMTLSApi {
     /**
      * Constructs a new BatchUploadWithMTLSApi instance.
-     * @param {LogConfiguration} log_config - Logging configuration object.
+     * @param {Object} [log_config] - Logging configuration object (optional).
+     * @param {boolean} [log_config.enableLog=false] - Enable or disable logging.
+     * @param {string} [log_config.logFileName='cybs-batch-upload'] - Log file name (without extension).
+     * @param {string} [log_config.logDirectory='./logs'] - Directory to store log files.
+     * @param {number} [log_config.logFileMaxSize=5242880] - Maximum log file size in bytes (default 5MB).
+     * @param {string} [log_config.loggingLevel='debug'] - Logging level ('debug', 'info', 'warn', 'error').
+     *
+     * Example:
+     *   const log_config = {
+     *     enableLog: true,
+     *     logFileName: 'cybs-batch-upload',
+     *     logDirectory: './logs',
+     *     logFileMaxSize: 5242880,
+     *     loggingLevel: 'debug'
+     *   };
      */
     constructor(log_config) {
         if (!log_config) {
@@ -75,7 +89,6 @@ class BatchUploadWithMTLSApi {
                     return MutualAuthUploadUtility.handleUploadOperationUsingP12orPfx(
                         encryptedBuffer,
                         endpointUrl,
-                        environmentHostname,
                         uploadFileName,
                         clientCertP12,
                         clientCertP12Password,
@@ -88,7 +101,8 @@ class BatchUploadWithMTLSApi {
                     this.logger.info(Constants.END_TRANSACTION);
                 })
                 .catch(error => {
-                    this.logger.error(error);
+                    const errorMsg = error?.message || error?.error?.message || error.stack;
+                    this.logger.error(errorMsg);
                     callback(error, (error && error.response) ? error.response : undefined);
                     this.logger.info(Constants.END_TRANSACTION);
                 });
@@ -146,7 +160,6 @@ class BatchUploadWithMTLSApi {
                     return MutualAuthUploadUtility.handleUploadOperationUsingPrivateKeyAndCerts(
                         encryptedBuffer,
                         endpointUrl,
-                        environmentHostname,
                         uploadFileName,
                         clientPrivateKey,
                         clientCert,
@@ -160,7 +173,8 @@ class BatchUploadWithMTLSApi {
                     this.logger.info(Constants.END_TRANSACTION);
                 })
                 .catch(error => {
-                    this.logger.error(error);
+                    const errorMsg = error?.message || error?.error?.message || error.stack;
+                    this.logger.error(errorMsg);
                     callback(error, (error && error.response) ? error.response : undefined);
                     this.logger.info(Constants.END_TRANSACTION);
                 });

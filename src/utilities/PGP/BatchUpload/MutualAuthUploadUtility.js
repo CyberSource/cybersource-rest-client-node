@@ -8,7 +8,6 @@ const { v4: uuidv4 } = require('uuid');
 /**
  * Uploads an encrypted PGP file using mTLS with PKCS#12 (.p12/.pfx) client certificate.
  * @param {Buffer} encryptedPgpBytes - The encrypted PGP file content as Buffer.
- * @param {string} environmentHostname - The environment hostname.
  * @param {string} fileName - The name of the file to be uploaded.
  * @param {Buffer} clientCertP12 - The PKCS#12 client certificate as Buffer.
  * @param {string} clientCertP12Password - Password for the PKCS#12 client certificate.
@@ -18,7 +17,6 @@ const { v4: uuidv4 } = require('uuid');
 function handleUploadOperationUsingP12orPfx(
     encryptedPgpBytes,
     endpointUrl,
-    environmentHostname,
     fileName,
     clientCertP12,
     clientCertP12Password,
@@ -37,12 +35,14 @@ function handleUploadOperationUsingP12orPfx(
 
     const correlationId = uuidv4();
 
+    const cleanServername = new URL(endpointUrl).hostname;
+
     const httpsAgent = new https.Agent({
         pfx: clientCertP12,
         passphrase: clientCertP12Password,
         ca: defaultCAs,
         rejectUnauthorized: verify_ssl,
-        servername: environmentHostname
+        servername: cleanServername
     });
 
     return axios.post(endpointUrl, form, {
@@ -68,7 +68,6 @@ function handleUploadOperationUsingP12orPfx(
 /**
  * Uploads an encrypted PGP file using mTLS with client key/cert as PEM Buffers/strings.
  * @param {Buffer} encryptedPgpBytes - The encrypted PGP file content as Buffer.
- * @param {string} environmentHostname - The environment hostname.
  * @param {string} fileName - The name of the file to be uploaded.
  * @param {Buffer|string} clientPrivateKey - The client's private key (Buffer).
  * @param {Buffer|string} clientCert - The client's certificate (Buffer).
@@ -79,7 +78,6 @@ function handleUploadOperationUsingP12orPfx(
 function handleUploadOperationUsingPrivateKeyAndCerts(
     encryptedPgpBytes,
     endpointUrl,
-    environmentHostname,
     fileName,
     clientPrivateKey,
     clientCert,
@@ -98,13 +96,16 @@ function handleUploadOperationUsingPrivateKeyAndCerts(
     if (serverTrustCert && serverTrustCert.length > 0) {
         defaultCAs.push(serverTrustCert.toString());
     }
+
+    const cleanServername = new URL(endpointUrl).hostname;
+
     const httpsAgent = new https.Agent({
         key: clientPrivateKey,
         cert: clientCert,
         ca: defaultCAs,
         passphrase: clientKeyPassword,
         rejectUnauthorized: verify_ssl,
-        servername: environmentHostname
+        servername: cleanServername
     });
 
     return axios.post(endpointUrl, form, {

@@ -96,7 +96,7 @@ class BatchUploadUtility {
         }
 
         // Normalize Windows-style paths that start with a slash before the drive letter
-        let normalizedPath = filePath;
+        let normalizedPath = filePath.trim();
         if (path.sep === '\\' && normalizedPath.match(/^\/[A-Za-z]:.*/)) {
             normalizedPath = normalizedPath.substring(1);
         }
