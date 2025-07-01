@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eventStatus (base name: "eventStatus")', function() {
+      // uncomment below and update the code to test the property eventStatus
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property systemTraceAuditNumber (base name: "systemTraceAuditNumber")', function() {
       // uncomment below and update the code to test the property systemTraceAuditNumber
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();

@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property showConfirmationStep (base name: "showConfirmationStep")', function() {
+      // uncomment below and update the code to test the property showConfirmationStep
+      //var instane = new CyberSource.Upv1capturecontextsCaptureMandate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property requestSaveCard (base name: "requestSaveCard")', function() {
       // uncomment below and update the code to test the property requestSaveCard
       //var instane = new CyberSource.Upv1capturecontextsCaptureMandate();

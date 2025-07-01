@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('departureDate')) {
         obj['departureDate'] = ApiClient.convertToType(data['departureDate'], 'String');
       }
+      if (data.hasOwnProperty('departureTime')) {
+        obj['departureTime'] = ApiClient.convertToType(data['departureTime'], 'Number');
+      }
     }
     return obj;
   }
@@ -100,6 +104,11 @@
    * @member {String} departureDate
    */
   exports.prototype['departureDate'] = undefined;
+  /**
+   * Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59`. Format: English characters only. Optional request field for travel legs. 
+   * @member {Number} departureTime
+   */
+  exports.prototype['departureTime'] = undefined;
 
 
 

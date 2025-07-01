@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -86,6 +87,9 @@
       }
       if (data.hasOwnProperty('showAcceptedNetworkIcons')) {
         obj['showAcceptedNetworkIcons'] = ApiClient.convertToType(data['showAcceptedNetworkIcons'], 'Boolean');
+      }
+      if (data.hasOwnProperty('showConfirmationStep')) {
+        obj['showConfirmationStep'] = ApiClient.convertToType(data['showConfirmationStep'], 'Boolean');
       }
       if (data.hasOwnProperty('requestSaveCard')) {
         obj['requestSaveCard'] = ApiClient.convertToType(data['requestSaveCard'], 'Boolean');
@@ -130,6 +134,11 @@
    * @member {Boolean} showAcceptedNetworkIcons
    */
   exports.prototype['showAcceptedNetworkIcons'] = undefined;
+  /**
+   * Configure Unified Checkout to display the final confirmation screen when using Click to Pay.<br> Where 'BillingType'= NONE and 'requestShipping'= FALSE and the customer is using an existing Click to Pay card as their chosen payment method, a final confirmation screen can be removed allowing the customer to check out as soon as they have selected their payment method from within their Click to Pay card tray.  Possible values: - True - False 
+   * @member {Boolean} showConfirmationStep
+   */
+  exports.prototype['showConfirmationStep'] = undefined;
   /**
    * Configure Unified Checkout to display the \"Save card for future use\" checkbox.<br>  Configurable check box that will show in a Manual card entry flow to allow a Cardholder to give consent to store their manually entered credential with the Merchant that they are paying.<br>  Applicable when manually entering the details and not enrolling in Click to Pay.  Possible values:  - True   - False<br><br>  **Use Cases:**  **Offer consumers option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to true. - When set to true, this will show a checkbox with the message 'Save card for future use' in Unified Checkout. - When selected this provides a response in both the Transient Token and Get Credentials API response.<br><br>  **Do not offer consumers the option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to false OR omit the field from the capture context request. - When set to false, the save card option is not shown to consumers when manually entering card details. 
    * @member {Boolean} requestSaveCard

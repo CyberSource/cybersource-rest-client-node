@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 <a name="activateSubscription"></a>
 # **activateSubscription**
-> ActivateSubscriptionResponse activateSubscription(id)
+> ActivateSubscriptionResponse activateSubscription(id, opts)
 
 Activate a Subscription
 
-Activate a `CANCELLED` Or `SUSPENDED` Subscription 
+Activate a `SUSPENDED` Subscription 
 
 ### Example
 ```javascript
@@ -30,6 +30,9 @@ var apiInstance = new CyberSource.SubscriptionsApi();
 
 var id = "id_example"; // String | Subscription Id
 
+var opts = { 
+  'processSkippedPayments': true // Boolean | Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true.
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -38,7 +41,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.activateSubscription(id, callback);
+apiInstance.activateSubscription(id, opts, callback);
 ```
 
 ### Parameters
@@ -46,6 +49,7 @@ apiInstance.activateSubscription(id, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id | 
+ **processSkippedPayments** | **Boolean**| Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. | [optional] [default to true]
 
 ### Return type
 

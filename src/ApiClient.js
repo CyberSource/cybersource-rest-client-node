@@ -484,9 +484,9 @@
 
     var token = Authorization.getToken(this.merchantConfig, this.logger);
 
-    // var clientId = getClientId();
+    var clientId = getClientId();
 
-    // headerParams['v-c-client-id'] = clientId;
+    headerParams['v-c-client-id'] = clientId;
 
     // if (this.merchantConfig.getSolutionId() != null && this.merchantConfig.getSolutionId() != '') {
       // headerParams['v-c-solution-id'] = this.merchantConfig.getSolutionId();
@@ -573,9 +573,17 @@
     var proxyUser = this.merchantConfig.getProxyUser();
     var proxyPassword = this.merchantConfig.getProxyPassword();
     var enableClientCert = this.merchantConfig.getEnableClientCert();
+    var sslCaCert = this.merchantConfig.getSslCaCert();
+    var isSslVerificationDisabled = this.merchantConfig.getDisableSSLVerification();
+    if(isSslVerificationDisabled == true){
+      this.logger.warn('SSL verification is disabled. This is not recommended for production environments.');
+    }
 
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
+
+    var fslib = require('fs');
+    var pathlib = require('path');
 
     var axiosConfig = {
       baseURL: this.basePath,
@@ -592,12 +600,20 @@
         var proxy  = process.env.http_proxy || 'http://' +  proxyAddress + ':' + proxyPort;
       }
 
-      const agent = new HttpsProxyAgent(proxy);
+      var agent = new HttpsProxyAgent(proxy);
       axiosConfig.httpsAgent = agent;
+    } else {
+      if (sslCaCert) {
+        axiosConfig.httpsAgent = new https.Agent({
+          rejectUnauthorized: !isSslVerificationDisabled,
+          ca: fslib.readFileSync(sslCaCert)
+        });
+      } else {
+        axiosConfig.httpsAgent = new https.Agent({
+          rejectUnauthorized: !isSslVerificationDisabled
+        });
+      }
     }
-
-    var fslib = require('fs');
-    var pathlib = require('path');
 
     if(enableClientCert) {
       var certFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getSSLClientCert()));
@@ -608,6 +624,7 @@
         axiosConfig.httpsAgent.key = fslib.readFileSync(keyFile);
       } else {
         axiosConfig.httpsAgent = new https.Agent({
+          rejectUnauthorized: !isSslVerificationDisabled,
           cert: fslib.readFileSync(certFile),
           key: fslib.readFileSync(keyFile)
         });
