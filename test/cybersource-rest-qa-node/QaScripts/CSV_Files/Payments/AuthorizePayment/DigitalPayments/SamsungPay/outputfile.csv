@@ -1,0 +1,13 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CASCD_01,CreateSamPayCybsDecrp,Fails,CreateSamPayCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:37+05:30
+CASCD_02,CreateSamPayCybsDecrp,Fails,CreateSamPayCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:37+05:30
+CASCD_03,CreateSamPayCybsDecrp,Fails,CreateSamPayCybsDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:38+05:30
+CASMD_01,CreateSamPayMerctDecrp,Pass,Assertion Passed-Status Code:201 created,2018-09-17T23:03:38+05:30
+CASMD_02,CreateSamPayMerctDecrp,Fails,Assertion Failed-Status Code:201,2018-09-17T23:03:38+05:30
+CASMD_03,CreateSamPayMerctDecrp,Fails,CreateSamPayMerctDecrp paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:39+05:30
+CSREC_01,CreateSamPayRetailEmvcontact,Fails,CreateSamPayRetailEmvcontact paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:39+05:30
+CSREC_02,CreateSamPayRetailEmvcontact,Fails,CreateSamPayRetailEmvcontact paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:39+05:30
+CSREC_03,CreateSamPayRetailEmvcontact,Fails,CreateSamPayRetailEmvcontact paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:40+05:30
+CSREM_01,CreateSamPayRetailEMVmsd,Fails,CreateSamPayRetailEMVmsd paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:40+05:30
+CSREM_02,CreateSamPayRetailEMVmsd,Fails,CreateSamPayRetailEMVmsd paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:40+05:30
+CSREM_03,CreateSamPayRetailEMVmsd,Fails,CreateSamPayRetailEMVmsd paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-17T23:03:41+05:30

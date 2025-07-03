@@ -1,0 +1,7 @@
+TestCaseID,API_Name,Result,Remarks,RunTime
+CPNT_01,CreatePaymentNetworkTokenization,Pass,Assertion Passed-Status Code:201 created,2018-09-18T09:54:30+05:30
+CPNT_02,CreatePaymentNetworkTokenization,Fails,Assertion Failed-Status Code:201,2018-09-18T09:54:30+05:30
+CPNT_03,CreatePaymentNetworkTokenization,Fails,CreatePaymentNetworkTokenization paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:54:31+05:30
+CPT_01,CreateCybsPaymentTokenization,Pass,Assertion Passed-Status Code:201 created,2018-09-18T09:54:31+05:30
+CPT_02,CreateCybsPaymentTokenization,Pass,Assertion Passed-Status Code:201 created,2018-09-18T09:54:31+05:30
+CPT_03,CreateCybsPaymentTokenization,Fails,CreateCybsPaymentTokenization paymentid is not created due to Reason: Declined - One or more fields in the request contains invalid data,2018-09-18T09:54:32+05:30

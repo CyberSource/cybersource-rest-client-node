@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CSF_01,102.21,Success
+CSF_02,300,Fails
+CSF_03,XCVD42,Fails due to invalid amount
