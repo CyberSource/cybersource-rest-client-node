@@ -83,7 +83,11 @@ class BatchUploadWithMTLSApi {
 
             PgpEncryptionUtility.handlePGPEncrypt(inputFilePath, publicKeyFilePath)
                 .then(encryptedBuffer => {
-                    const uploadFileName = path.basename(inputFilePath) + '.pgp';
+                    let uploadFileName = 'file.pgp';
+                    if (inputFilePath && inputFilePath.trim()) {
+                        const base = path.basename(inputFilePath, path.extname(inputFilePath));
+                        uploadFileName = base + '.pgp';
+                    }
                     const clientCertP12 = fs.readFileSync(clientCertP12FilePath);
                     const serverTrustCert = serverTrustCertPath ? fs.readFileSync(serverTrustCertPath) : undefined;
                     return MutualAuthUploadUtility.handleUploadOperationUsingP12orPfx(
@@ -153,7 +157,11 @@ class BatchUploadWithMTLSApi {
 
             PgpEncryptionUtility.handlePGPEncrypt(inputFilePath, publicKeyFilePath)
                 .then(encryptedBuffer => {
-                    const uploadFileName = path.basename(inputFilePath) + '.pgp';
+                    let uploadFileName = 'file.pgp';
+                    if (inputFilePath && inputFilePath.trim()) {
+                        const base = path.basename(inputFilePath, path.extname(inputFilePath));
+                        uploadFileName = base + '.pgp';
+                    }
                     const clientPrivateKey = fs.readFileSync(clientPrivateKeyFilePath);
                     const clientCert = fs.readFileSync(clientCertFilePath);
                     const serverTrustCert = serverTrustCertPath ? fs.readFileSync(serverTrustCertPath) : undefined;

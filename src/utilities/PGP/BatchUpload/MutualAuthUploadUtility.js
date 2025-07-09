@@ -24,8 +24,7 @@ function handleUploadOperationUsingP12orPfx(
     verify_ssl
 ) {
     const form = new FormData();
-    const safeFileName = fileName && fileName.trim() ? fileName : 'file.pgp';
-    form.append('file', encryptedPgpBytes, { filename: safeFileName });
+    form.append('file', encryptedPgpBytes, { filename: fileName });
 
     const defaultCAs = tls.rootCertificates.slice();
     //Assuming serverTrustCert is a PEM encoded certificate
@@ -86,8 +85,7 @@ function handleUploadOperationUsingPrivateKeyAndCerts(
     verify_ssl
 ) {
     const form = new FormData();
-    const safeFileName = fileName && fileName.trim() ? fileName : 'file.pgp';
-    form.append('file', encryptedPgpBytes, { filename: safeFileName});
+    form.append('file', encryptedPgpBytes, { filename: fileName });
 
     const correlationId = uuidv4();
 
