@@ -6,15 +6,34 @@ const Logger= require('../logging/Logger');
 const ApiException= require('./ApiException');
 const Constants = require('./Constants');
 
-exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, operationId) {
+exports.checkIsMLEForAPI = function (merchantConfig, inboundMLEStatus, operationId) {
     //isMLE for an api is false by default
     var isMLEForAPI = false;
-
-    //check here useMLEGlobally True or False
-    //if API is part of MLE then check for useMLEGlobally global paramter
-    if (isMLESupportedByCybsForApi === true && merchantConfig.useMLEGlobally === true) {
+    let isMLESupportedByCybsForApi = false;
+    var logger = Logger.getLogger(merchantConfig, 'MLEUtility');
+  
+    if (
+      typeof inboundMLEStatus === 'string' &&
+      (inboundMLEStatus.toLowerCase() === 'optional' || inboundMLEStatus.toLowerCase() === 'mandatory')
+    ) {
+      isMLESupportedByCybsForApi = true;
+    }
+  
+    if (isMLESupportedByCybsForApi === true && merchantConfig.useMLEGloballyForRequest === true) {
       isMLEForAPI = true;
     }
+
+    // If mandatory but global flag is false, force enable and warn
+    if (
+      typeof inboundMLEStatus === 'string' &&
+      inboundMLEStatus.toLowerCase() === 'mandatory' &&
+      merchantConfig.useMLEGloballyForRequest === false
+    ) {
+      isMLEForAPI = true;
+      logger.warn(
+        "MLE is required for this operation (mandatory), but the global MLE flag is disabled. Enabling MLE for this API call as required by CyberSource."
+      );
+  }
 
     //Control the MLE only from map
     if (merchantConfig.mapToControlMLEonAPI != null && operationId in merchantConfig.mapToControlMLEonAPI) {

@@ -115,8 +115,8 @@
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 
       //check isMLE for an api method 'this.<operationId>'
-      var isMLESupportedByCybsForApi = <#vendorExtensions.x-devcenter-metaData.isMLEsupported>true</vendorExtensions.x-devcenter-metaData.isMLEsupported><^vendorExtensions.x-devcenter-metaData.isMLEsupported>false</vendorExtensions.x-devcenter-metaData.isMLEsupported>;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, '<operationId>');
+      var inboundMLEStatus = <#vendorExtensions.x-devcenter-metaData.inboundMLEStatus>'<vendorExtensions.x-devcenter-metaData.inboundMLEStatus>'</vendorExtensions.x-devcenter-metaData.inboundMLEStatus><^vendorExtensions.x-devcenter-metaData.inboundMLEStatus>'false'</vendorExtensions.x-devcenter-metaData.inboundMLEStatus>;
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, '<operationId>');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
