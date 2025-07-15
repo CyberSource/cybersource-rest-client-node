@@ -613,9 +613,9 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     if (
-        result.useMLEGloballyForRequest !== undefined &&
-        result.useMLEGlobally !== undefined &&
-        result.useMLEGloballyForRequest !== result.useMLEGlobally
+        this.useMLEGloballyForRequest !== undefined &&
+        this.useMLEGlobally !== undefined &&
+        this.useMLEGloballyForRequest !== this.useMLEGlobally
     ) {
         ApiException.ApiException("useMLEGloballyForRequest and useMLEGlobally must have the same value if both are provided.");
     }
