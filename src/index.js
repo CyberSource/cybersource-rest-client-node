@@ -7703,7 +7703,7 @@
     OAuthApi: OAuthApi
   };
   
-  exports.TokenVerification = require('./utilities/flex/TokenVerification.js');
+  // exports.TokenVerification = require('./utilities/flex/TokenVerification.js');
   exports.Authorization = require('./authentication/core/Authorization.js');
   exports.MerchantConfig = require('./authentication/core/MerchantConfig.js');
   exports.Logger = require('./authentication/logging/Logger.js');
