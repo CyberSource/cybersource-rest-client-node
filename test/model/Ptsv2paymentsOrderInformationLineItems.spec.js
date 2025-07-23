@@ -218,6 +218,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property measurement (base name: "measurement")', function() {
+      // uncomment below and update the code to test the property measurement
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
     it('should have the property productDescription (base name: "productDescription")', function() {
       // uncomment below and update the code to test the property productDescription
       //var instane = new CyberSource.Ptsv2paymentsOrderInformationLineItems();

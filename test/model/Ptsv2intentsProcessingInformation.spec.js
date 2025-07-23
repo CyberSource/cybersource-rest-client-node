@@ -74,6 +74,78 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property highRiskTransactionFlag (base name: "highRiskTransactionFlag")', function() {
+      // uncomment below and update the code to test the property highRiskTransactionFlag
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionRetry (base name: "transactionRetry")', function() {
+      // uncomment below and update the code to test the property transactionRetry
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastOneHrTransactionCount (base name: "lastOneHrTransactionCount")', function() {
+      // uncomment below and update the code to test the property lastOneHrTransactionCount
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastOneDayTransactionCount (base name: "lastOneDayTransactionCount")', function() {
+      // uncomment below and update the code to test the property lastOneDayTransactionCount
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastThreeMonthsTxnCount (base name: "lastThreeMonthsTxnCount")', function() {
+      // uncomment below and update the code to test the property lastThreeMonthsTxnCount
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalTransactionCount (base name: "totalTransactionCount")', function() {
+      // uncomment below and update the code to test the property totalTransactionCount
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pinVerification (base name: "pinVerification")', function() {
+      // uncomment below and update the code to test the property pinVerification
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property faceIdVerification (base name: "faceIdVerification")', function() {
+      // uncomment below and update the code to test the property faceIdVerification
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property userPassedVerification (base name: "userPassedVerification")', function() {
+      // uncomment below and update the code to test the property userPassedVerification
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ipAddress (base name: "ipAddress")', function() {
+      // uncomment below and update the code to test the property ipAddress
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionDate (base name: "transactionDate")', function() {
+      // uncomment below and update the code to test the property transactionDate
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tangible (base name: "tangible")', function() {
+      // uncomment below and update the code to test the property tangible
+      //var instane = new CyberSource.Ptsv2intentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

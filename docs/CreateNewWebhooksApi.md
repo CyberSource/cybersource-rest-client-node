@@ -57,7 +57,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksPost"></a>
 # **notificationSubscriptionsV2WebhooksPost**
-> InlineResponse2014 notificationSubscriptionsV2WebhooksPost(opts)
+> InlineResponse2015 notificationSubscriptionsV2WebhooksPost(opts)
 
 Create a New Webhook Subscription
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2015**](InlineResponse2015.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2013 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts)
+> InlineResponse2014 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts)
 
 Create Webhook Security Keys
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 

@@ -81,6 +81,7 @@
 
 
 
+
   };
 
   /**
@@ -174,6 +175,9 @@
       }
       if (data.hasOwnProperty('unitTaxAmount')) {
         obj['unitTaxAmount'] = ApiClient.convertToType(data['unitTaxAmount'], 'String');
+      }
+      if (data.hasOwnProperty('measurement')) {
+        obj['measurement'] = ApiClient.convertToType(data['measurement'], 'String');
       }
       if (data.hasOwnProperty('productDescription')) {
         obj['productDescription'] = ApiClient.convertToType(data['productDescription'], 'String');
@@ -334,6 +338,11 @@
    * @member {String} unitTaxAmount
    */
   exports.prototype['unitTaxAmount'] = undefined;
+  /**
+   * This field would contain measurement of a line item. 
+   * @member {String} measurement
+   */
+  exports.prototype['measurement'] = undefined;
   /**
    * Brief description of item.
    * @member {String} productDescription

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateBinLookupRequest', 'model/InlineResponse2011', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateBinLookupRequest', 'model/InlineResponse2012', 'model/PtsV2CreateOrderPost400Response', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateBinLookupRequest'), require('../model/InlineResponse2011'), require('../model/PtsV2CreateOrderPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateBinLookupRequest'), require('../model/InlineResponse2012'), require('../model/PtsV2CreateOrderPost400Response'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BinLookupApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateBinLookupRequest, root.CyberSource.InlineResponse2011, root.CyberSource.PtsV2CreateOrderPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.BinLookupApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateBinLookupRequest, root.CyberSource.InlineResponse2012, root.CyberSource.PtsV2CreateOrderPost400Response, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(MLEUtility, ApiClient, CreateBinLookupRequest, InlineResponse2011, PtsV2CreateOrderPost400Response, PtsV2PaymentsPost502Response) {
+}(this, function(MLEUtility, ApiClient, CreateBinLookupRequest, InlineResponse2012, PtsV2CreateOrderPost400Response, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**
@@ -53,16 +53,16 @@
      * Callback function to receive the result of the getAccountInfo operation.
      * @callback module:api/BinLookupApi~getAccountInfoCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2011} data The data returned by the service call.
+     * @param {module:model/InlineResponse2012} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * BIN Lookup API
-     * The BIN Lookup Service is a versatile business tool that provides card network agnostic solution designed to ensure frictionless transaction experience by utilizing up-to-date Bank Identification Number (BIN) attributes sourced from multiple global and regional data sources. This service helps to improve authorization rates by helping to route transactions to the best-suited card network, minimizes fraud through card detail verification and aids in regulatory compliance by identifying card properties. The service is flexible and provides businesses with a flexible choice of inputs such as primary account number (PAN), network token from major networks which includes device PAN (DPAN), and all types of tokens generated via CyberSource Token Management Service (TMS). Currently, the range of available credentials is contingent on the networks enabled for the business entity. Therefore, the network information specified in this documentation is illustrative and subject to personalized offerings for each reseller or merchant. 
+     * The BIN Lookup Service is a versatile business tool that provides card network agnostic solution designed to ensure frictionless transaction experience by utilizing up-to-date Bank Identification Number (BIN) attributes sourced from multiple global and regional data sources. This service helps to improve authorization rates by helping to route transactions to the best-suited card network, minimizes fraud through card detail verification and aids in regulatory compliance by identifying card properties. The service is flexible and provides businesses with a flexible choice of inputs such as primary account number (PAN), network token from major networks (such as Visa, American Express, Discover and several regional networks) which includes device PAN (DPAN), and all types of tokens generated via CyberSource Token Management Service (TMS). Currently, the range of available credentials is contingent on the networks enabled for the business entity. Therefore, the network information specified in this documentation is illustrative and subject to personalized offerings for each reseller or merchant. 
      * @param {module:model/CreateBinLookupRequest} createBinLookupRequest 
      * @param {module:api/BinLookupApi~getAccountInfoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2011}
+     * data is of type: {@link module:model/InlineResponse2012}
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
@@ -93,7 +93,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2011;
+      var returnType = InlineResponse2012;
 
       //check isMLE for an api method 'this.getAccountInfo'
       var isMLESupportedByCybsForApi = false;

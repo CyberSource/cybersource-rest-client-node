@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2intentsPaymentInformationPaymentType'], factory);
+    define(['ApiClient', 'model/Ptsv2intentsPaymentInformationEWallet', 'model/Ptsv2intentsPaymentInformationPaymentType', 'model/Ptsv2intentsPaymentInformationTokenizedPaymentMethod'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsPaymentInformationPaymentType'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsPaymentInformationEWallet'), require('./Ptsv2intentsPaymentInformationPaymentType'), require('./Ptsv2intentsPaymentInformationTokenizedPaymentMethod'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2intentsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsPaymentInformationPaymentType);
+    root.CyberSource.Ptsv2intentsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsPaymentInformationEWallet, root.CyberSource.Ptsv2intentsPaymentInformationPaymentType, root.CyberSource.Ptsv2intentsPaymentInformationTokenizedPaymentMethod);
   }
-}(this, function(ApiClient, Ptsv2intentsPaymentInformationPaymentType) {
+}(this, function(ApiClient, Ptsv2intentsPaymentInformationEWallet, Ptsv2intentsPaymentInformationPaymentType, Ptsv2intentsPaymentInformationTokenizedPaymentMethod) {
   'use strict';
 
 
@@ -48,6 +48,9 @@
     var _this = this;
 
 
+
+
+
   };
 
   /**
@@ -64,6 +67,15 @@
       if (data.hasOwnProperty('paymentType')) {
         obj['paymentType'] = Ptsv2intentsPaymentInformationPaymentType.constructFromObject(data['paymentType']);
       }
+      if (data.hasOwnProperty('tokenizedPaymentMethod')) {
+        obj['tokenizedPaymentMethod'] = Ptsv2intentsPaymentInformationTokenizedPaymentMethod.constructFromObject(data['tokenizedPaymentMethod']);
+      }
+      if (data.hasOwnProperty('industryType')) {
+        obj['industryType'] = ApiClient.convertToType(data['industryType'], 'String');
+      }
+      if (data.hasOwnProperty('eWallet')) {
+        obj['eWallet'] = Ptsv2intentsPaymentInformationEWallet.constructFromObject(data['eWallet']);
+      }
     }
     return obj;
   }
@@ -72,6 +84,19 @@
    * @member {module:model/Ptsv2intentsPaymentInformationPaymentType} paymentType
    */
   exports.prototype['paymentType'] = undefined;
+  /**
+   * @member {module:model/Ptsv2intentsPaymentInformationTokenizedPaymentMethod} tokenizedPaymentMethod
+   */
+  exports.prototype['tokenizedPaymentMethod'] = undefined;
+  /**
+   * Indicates the industry type. Possible Values: - \"Events\" - \"Ticketing\" - \"Fuel\" - \"GAMING\" - \"DIGITAL GOODS\" - \"TELCO\" - \"Token Service Providers\" - \"Gambling\" - \"CFDs\" - \"car rental\" - \"hotel\" - \"transportation\" - \"travel package\" - \"Cruise Line\" - \"P2P\" - \"Retail\" - \"Food\" - \"Groceries\" - \"Ride Sharing\" - \"Taxi\" - \"Remittance\" - \"Crypto\" - \"Marketplaces\" 
+   * @member {String} industryType
+   */
+  exports.prototype['industryType'] = undefined;
+  /**
+   * @member {module:model/Ptsv2intentsPaymentInformationEWallet} eWallet
+   */
+  exports.prototype['eWallet'] = undefined;
 
 
 

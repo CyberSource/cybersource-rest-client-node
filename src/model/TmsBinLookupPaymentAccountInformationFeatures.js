@@ -171,7 +171,7 @@
    */
   exports.prototype['cardPlatform'] = undefined;
   /**
-   * This field indicates the type of combo card. Possible values:   - 0 (Not a combo card)   - 1 (Credit and Prepaid Combo card)   - 2 (Credit and Debit Combo card) 
+   * This field indicates the type of combo card. Possible values:   - 0 (Not a combo card)   - 1 (Credit and Prepaid Combo card)   - 2 (Credit and Debit Combo card)   - 3 (Prepaid Credit and Prepaid Debit combo card) 
    * @member {String} comboCard
    */
   exports.prototype['comboCard'] = undefined;

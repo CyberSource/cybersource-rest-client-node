@@ -56,14 +56,8 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2015);
     });
 
-    it('should have the property eventDate (base name: "eventDate")', function() {
-      // uncomment below and update the code to test the property eventDate
-      //var instane = new CyberSource.InlineResponse2015();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eventType (base name: "eventType")', function() {
-      // uncomment below and update the code to test the property eventType
+    it('should have the property webhookId (base name: "webhookId")', function() {
+      // uncomment below and update the code to test the property webhookId
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
@@ -74,38 +68,62 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property payloads (base name: "payloads")', function() {
-      // uncomment below and update the code to test the property payloads
+    it('should have the property products (base name: "products")', function() {
+      // uncomment below and update the code to test the property products
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
 
-    it('should have the property productId (base name: "productId")', function() {
-      // uncomment below and update the code to test the property productId
+    it('should have the property webhookUrl (base name: "webhookUrl")', function() {
+      // uncomment below and update the code to test the property webhookUrl
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
 
-    it('should have the property requestType (base name: "requestType")', function() {
-      // uncomment below and update the code to test the property requestType
+    it('should have the property healthCheckUrl (base name: "healthCheckUrl")', function() {
+      // uncomment below and update the code to test the property healthCheckUrl
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
 
-    it('should have the property retryNumber (base name: "retryNumber")', function() {
-      // uncomment below and update the code to test the property retryNumber
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
 
-    it('should have the property transactionTraceId (base name: "transactionTraceId")', function() {
-      // uncomment below and update the code to test the property transactionTraceId
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
 
-    it('should have the property webhookId (base name: "webhookId")', function() {
-      // uncomment below and update the code to test the property webhookId
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property retryPolicy (base name: "retryPolicy")', function() {
+      // uncomment below and update the code to test the property retryPolicy
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property securityPolicy (base name: "securityPolicy")', function() {
+      // uncomment below and update the code to test the property securityPolicy
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdOn (base name: "createdOn")', function() {
+      // uncomment below and update the code to test the property createdOn
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedOn (base name: "updatedOn")', function() {
+      // uncomment below and update the code to test the property updatedOn
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
