@@ -77,7 +77,7 @@ function MerchantConfig(result) {
     this.defaultHeaders = result.defaultHeaders;
 
     /* MLE Feature */
-    this.useMLEGlobally = result.useMLEGlobally !== undefined ? result.useMLEGlobally : false;
+    this.useMLEGlobally = result.useMLEGlobally;
     this.enableRequestMLEForOptionalApisGlobally = result.enableRequestMLEForOptionalApisGlobally !== undefined ? result.enableRequestMLEForOptionalApisGlobally : this.useMLEGlobally;
     this.disableRequestMLEForMandatoryApisGlobally = result.disableRequestMLEForMandatoryApisGlobally !== undefined ? result.disableRequestMLEForMandatoryApisGlobally : false;
 
@@ -624,7 +624,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         this.useMLEGlobally !== undefined &&
         this.enableRequestMLEForOptionalApisGlobally !== this.useMLEGlobally
     ) {
-        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.");
+        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
     }
 
     //useMLEGlobally check for auth Type
