@@ -94,8 +94,8 @@
       var returnType = InlineResponse2002;
 
       //check isMLE for an api method 'this.getRegistration'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getRegistration');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getRegistration');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -163,8 +163,8 @@
       var returnType = InlineResponse2012;
 
       //check isMLE for an api method 'this.postRegistration'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'postRegistration');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postRegistration');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

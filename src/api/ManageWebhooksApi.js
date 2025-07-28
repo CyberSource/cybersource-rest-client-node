@@ -93,8 +93,8 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.deleteWebhookSubscription'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deleteWebhookSubscription');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deleteWebhookSubscription');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -158,8 +158,8 @@
       var returnType = InlineResponse2014;
 
       //check isMLE for an api method 'this.getWebhookSubscriptionById'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getWebhookSubscriptionById');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getWebhookSubscriptionById');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -229,8 +229,8 @@
       var returnType = [InlineResponse2004];
 
       //check isMLE for an api method 'this.getWebhookSubscriptionsByOrg'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getWebhookSubscriptionsByOrg');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getWebhookSubscriptionsByOrg');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -294,8 +294,8 @@
       var returnType = InlineResponse2015;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV1WebhooksWebhookIdPost'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'notificationSubscriptionsV1WebhooksWebhookIdPost');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV1WebhooksWebhookIdPost');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -362,8 +362,8 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdPatch'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'notificationSubscriptionsV2WebhooksWebhookIdPatch');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV2WebhooksWebhookIdPatch');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -430,8 +430,8 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdStatusPut'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'notificationSubscriptionsV2WebhooksWebhookIdStatusPut');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV2WebhooksWebhookIdStatusPut');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -513,8 +513,8 @@
       var returnType = InlineResponse2016;
 
       //check isMLE for an api method 'this.saveAsymEgressKey'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'saveAsymEgressKey');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'saveAsymEgressKey');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

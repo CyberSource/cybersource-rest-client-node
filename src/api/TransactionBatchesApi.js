@@ -99,8 +99,8 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.getTransactionBatchDetails'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransactionBatchDetails');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getTransactionBatchDetails');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -164,8 +164,8 @@
       var returnType = PtsV1TransactionBatchesIdGet200Response;
 
       //check isMLE for an api method 'this.getTransactionBatchId'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransactionBatchId');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getTransactionBatchId');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -236,8 +236,8 @@
       var returnType = PtsV1TransactionBatchesGet200Response;
 
       //check isMLE for an api method 'this.getTransactionBatches'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getTransactionBatches');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getTransactionBatches');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -313,8 +313,8 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.uploadTransactionBatch'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'uploadTransactionBatch');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'uploadTransactionBatch');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

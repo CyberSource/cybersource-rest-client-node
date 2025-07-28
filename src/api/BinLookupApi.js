@@ -96,8 +96,8 @@
       var returnType = InlineResponse2011;
 
       //check isMLE for an api method 'this.getAccountInfo'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getAccountInfo');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getAccountInfo');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

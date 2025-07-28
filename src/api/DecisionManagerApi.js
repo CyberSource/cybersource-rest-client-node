@@ -101,8 +101,8 @@
       var returnType = InlineResponse2001;
 
       //check isMLE for an api method 'this.actionDecisionManagerCase'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'actionDecisionManagerCase');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'actionDecisionManagerCase');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -173,8 +173,8 @@
       var returnType = RiskV1UpdatePost201Response;
 
       //check isMLE for an api method 'this.addNegative'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'addNegative');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'addNegative');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -245,8 +245,8 @@
       var returnType = InlineResponse201;
 
       //check isMLE for an api method 'this.commentDecisionManagerCase'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'commentDecisionManagerCase');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'commentDecisionManagerCase');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -310,8 +310,8 @@
       var returnType = RiskV1DecisionsPost201Response;
 
       //check isMLE for an api method 'this.createBundledDecisionManagerCase'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createBundledDecisionManagerCase');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createBundledDecisionManagerCase');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -382,8 +382,8 @@
       var returnType = RiskV1UpdatePost201Response;
 
       //check isMLE for an api method 'this.fraudUpdate'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'fraudUpdate');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'fraudUpdate');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

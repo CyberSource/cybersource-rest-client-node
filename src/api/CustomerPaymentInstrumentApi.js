@@ -104,8 +104,8 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.deleteCustomerPaymentInstrument'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'deleteCustomerPaymentInstrument');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deleteCustomerPaymentInstrument');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -180,8 +180,8 @@
       var returnType = PostCustomerPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.getCustomerPaymentInstrument'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getCustomerPaymentInstrument');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getCustomerPaymentInstrument');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -253,8 +253,8 @@
       var returnType = PaymentInstrumentList;
 
       //check isMLE for an api method 'this.getCustomerPaymentInstrumentsList'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getCustomerPaymentInstrumentsList');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getCustomerPaymentInstrumentsList');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -338,8 +338,8 @@
       var returnType = PatchCustomerPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.patchCustomersPaymentInstrument'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'patchCustomersPaymentInstrument');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'patchCustomersPaymentInstrument');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -414,8 +414,8 @@
       var returnType = PostCustomerPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.postCustomerPaymentInstrument'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'postCustomerPaymentInstrument');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postCustomerPaymentInstrument');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
