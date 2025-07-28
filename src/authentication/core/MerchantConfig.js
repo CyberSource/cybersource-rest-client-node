@@ -77,11 +77,10 @@ function MerchantConfig(result) {
     this.defaultHeaders = result.defaultHeaders;
 
     /* MLE Feature */
-    this.useMLEGloballyForRequest =
-        result.useMLEGloballyForRequest !== undefined ? result.useMLEGloballyForRequest
-            : (result.useMLEGlobally !== undefined ? result.useMLEGlobally : false);
+    this.useMLEGlobally = result.useMLEGlobally !== undefined ? result.useMLEGlobally : false;
+    this.enableRequestMLEForOptionalApisGlobally = result.enableRequestMLEForOptionalApisGlobally !== undefined ? result.enableRequestMLEForOptionalApisGlobally : this.useMLEGlobally;
+    this.disableRequestMLEForMandatoryApisGlobally = result.disableRequestMLEForMandatoryApisGlobally !== undefined ? result.disableRequestMLEForMandatoryApisGlobally : false;
 
-    this.useMLEGlobally = result.useMLEGlobally;
     this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
     this.mleKeyAlias = result.mleKeyAlias; //mleKeyAlias is optional parameter, default value is "CyberSource_SJC_US".
 
@@ -395,12 +394,20 @@ MerchantConfig.prototype.setpemFileDirectory = function getpemFileDirectory(pemF
     this.pemFileDirectory = pemFileDirectory;
 }
 
-MerchantConfig.prototype.getUseMLEGloballyForRequest = function getUseMLEGloballyForRequest() {
-    return this.useMLEGloballyForRequest;
+MerchantConfig.prototype.getEnableRequestMLEForOptionalApisGlobally = function getEnableRequestMLEForOptionalApisGlobally() {
+    return this.enableRequestMLEForOptionalApisGlobally;
 }
 
-MerchantConfig.prototype.setUseMLEGloballyForRequest = function setUseMLEGloballyForRequest(useMLEGloballyForRequest) {
-    this.useMLEGloballyForRequest = useMLEGloballyForRequest;
+MerchantConfig.prototype.setEnableRequestMLEForOptionalApisGlobally = function setEnableRequestMLEForOptionalApisGlobally(enableRequestMLEForOptionalApisGlobally) {
+    this.enableRequestMLEForOptionalApisGlobally = enableRequestMLEForOptionalApisGlobally;
+}
+
+MerchantConfig.prototype.getDisableRequestMLEForMandatoryApisGlobally = function getDisableRequestMLEForMandatoryApisGlobally() {
+    return this.disableRequestMLEForMandatoryApisGlobally;
+}
+
+MerchantConfig.prototype.setDisableRequestMLEForMandatoryApisGlobally = function setDisableRequestMLEForMandatoryApisGlobally(disableRequestMLEForMandatoryApisGlobally) {
+    this.disableRequestMLEForMandatoryApisGlobally = disableRequestMLEForMandatoryApisGlobally;
 }
 
 MerchantConfig.prototype.getMapToControlMLEonAPI = function getMapToControlMLEonAPI() {
@@ -613,16 +620,16 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     if (
-        this.useMLEGloballyForRequest !== undefined &&
+        this.enableRequestMLEForOptionalApisGlobally !== undefined &&
         this.useMLEGlobally !== undefined &&
-        this.useMLEGloballyForRequest !== this.useMLEGlobally
+        this.enableRequestMLEForOptionalApisGlobally !== this.useMLEGlobally
     ) {
-        ApiException.ApiException("useMLEGloballyForRequest and useMLEGlobally must have the same value if both are provided.");
+        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.");
     }
 
     //useMLEGlobally check for auth Type
-    if (this.useMLEGloballyForRequest === true || this.mapToControlMLEonAPI != null) {
-        if (this.useMLEGloballyForRequest === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
+    if (this.enableRequestMLEForOptionalApisGlobally === true || this.mapToControlMLEonAPI != null) {
+        if (this.enableRequestMLEForOptionalApisGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
             ApiException.ApiException("MLE is only supported in JWT auth type", logger);
         }
 
