@@ -34,6 +34,7 @@ exports.getSensitiveDataTags = function () {
     tags.push("signature");
     tags.push("prefix");
     tags.push("bin");
+    tags.push("encryptedRequest");
 
     return tags;
 }

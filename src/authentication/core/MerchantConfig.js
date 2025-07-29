@@ -4,6 +4,8 @@ var Constants = require('../util/Constants');
 var Logger = require('../logging/Logger');
 var ApiException = require('../util/ApiException');
 var LogConfiguration = require('../logging/LogConfiguration');
+var path = require('path');
+var fs = require('fs');
 
 /**
  * This function has all the merchentConfig properties getters and setters methods
@@ -80,6 +82,7 @@ function MerchantConfig(result) {
     this.useMLEGlobally = result.useMLEGlobally;
     this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
     this.mleKeyAlias = result.mleKeyAlias; //mleKeyAlias is optional parameter, default value is "CyberSource_SJC_US".
+    this.mleForRequestPublicCertPath = result.mleForRequestPublicCertPath;
 
     /* Fallback logic*/
     this.defaultPropValues();
@@ -415,6 +418,14 @@ MerchantConfig.prototype.setMleKeyAlias = function setMleKeyAlias(mleKeyAlias) {
     this.mleKeyAlias = mleKeyAlias;
 }
 
+MerchantConfig.prototype.getMleForRequestPublicCertPath = function getMleForRequestPublicCertPath() {
+    return this.mleForRequestPublicCertPath;
+}
+
+MerchantConfig.prototype.setMleForRequestPublicCertPath = function setMleForRequestPublicCertPath(mleForRequestPublicCertPath) {
+    this.mleForRequestPublicCertPath = mleForRequestPublicCertPath;
+}
+
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
 
     /*url*/
@@ -610,25 +621,34 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
     //useMLEGlobally check for auth Type
     if (this.useMLEGlobally === true || this.mapToControlMLEonAPI != null) {
-        if (this.useMLEGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
-            ApiException.ApiException("MLE is only supported in JWT auth type", logger);
-        }
+        // if (this.useMLEGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
+        //     ApiException.ApiException("MLE is only supported in JWT auth type", logger);
+        // }
 
         if (this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object") {
             ApiException.ApiException("mapToControlMLEonAPI in merchantConfig should be key value pair", logger);
         }
 
-        if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
-            var hasTrueValue = false;
-            for (const[key, value] of Object.entries(this.mapToControlMLEonAPI)) {
-                if (value === true) {
-                    hasTrueValue = true;
-                    break;
-                }
-            }
-            if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
-                ApiException.ApiException("MLE is only supported in JWT auth type", logger);
-            }
+        // if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
+        //     var hasTrueValue = false;
+        //     for (const[key, value] of Object.entries(this.mapToControlMLEonAPI)) {
+        //         if (value === true) {
+        //             hasTrueValue = true;
+        //             break;
+        //         }
+        //     }
+        //     if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
+        //         ApiException.ApiException("MLE is only supported in JWT auth type", logger);
+        //     }
+        // }
+    }
+
+    if (this.mleForRequestPublicCertPath !== null && this.mleForRequestPublicCertPath !== undefined) {
+        var certFile = path.resolve(path.join(this.mleForRequestPublicCertPath));
+        try {
+            fs.accessSync(certFile, fs.constants.R_OK);
+        } catch (err) {
+            ApiException.ApiException("mleForRequestPublicCertPath file is not readable or does not exist" + ": " + certFile, logger);
         }
     }
 

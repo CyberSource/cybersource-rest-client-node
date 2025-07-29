@@ -1,5 +1,6 @@
 'use strict'
 
+var ApiException = require('./ApiException');
 var Constants = require('./Constants')
 
 exports.getResponseCodeMessage = function (responseCode) {
@@ -50,5 +51,67 @@ exports.isJsonString = function(jsonString){
         return true;
     } catch (e) {
         return false;
+    }
+}
+
+exports.loadPemCertificates = function (pemCertificatePath) {
+    if (pemCertificatePath === null || pemCertificatePath === undefined) {
+        return null;
+    }
+    const certs = pemCertificatePath.match(/-----BEGIN CERTIFICATE-----[\s\S]*?-----END CERTIFICATE-----/gm);
+    return certs;
+}
+
+
+exports.findCertificateByAlias = function (certs, keyAlias) {
+    if (certs === null || certs === undefined || keyAlias === null || keyAlias === undefined) {
+        return null;
+    }
+    
+    if (!Array.isArray(certs)) {
+        ApiException.AuthException("Invalid certificate format. Expected an array of certificates.");
+    }
+    
+    const forge = require('node-forge');
+
+    
+    try {
+        // Iterate through each certificate
+        for (const cert of certs) {
+            try {
+                // Create an X509 certificate object
+                const x509 = forge.pki.certificateFromPem(cert);
+                
+
+                
+                // Extract the Common Name (CN) from the subject
+                let commonName = null;
+                const lowerKeyAlias = keyAlias.toLowerCase();
+                
+                // In node-forge, subject is an object with attributes
+                if (x509.subject && x509.subject.attributes) {
+                    for (const attr of x509.subject.attributes) {
+                        if (attr.name === 'commonName' || attr.shortName === 'CN') {
+                            commonName = attr.value;
+                            break;
+                        }
+                    }
+                }
+                
+                if (commonName) {
+                    if (commonName.toLowerCase() === lowerKeyAlias) {
+                        return cert;
+                    }
+                }
+            } catch (e) {
+                // Skip invalid certificates
+                continue;
+            }
+        }
+        
+        // If we get here, no matching certificate was found
+        ApiException.AuthException("Certificate with alias " + keyAlias + " not found in the provided PEM certificates.");
+    } catch (e) {
+        ApiException.AuthException("Error processing certificates: " + e.message);
     }
 }
