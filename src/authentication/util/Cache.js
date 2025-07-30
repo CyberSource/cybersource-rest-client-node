@@ -9,6 +9,13 @@ var ApiException = require('./ApiException');
 var Logger = require('../logging/Logger');
 var Utility = require('./Utility');
 
+function loadP12FileToAsn1(filePath) {
+    var p12Buffer = fs.readFileSync(filePath);
+    var p12Der = forge.util.binary.raw.encode(new Uint8Array(p12Buffer));
+    var p12Asn1 = forge.asn1.fromDer(p12Der);
+    return p12Asn1;
+}
+
 
 /**
  * This module is doing Caching.
@@ -19,7 +26,7 @@ exports.fetchCachedCertificate = function (merchantConfig, logger) {
     var cachedCertificateFromP12File = cache.get("certificateFromP12File");
     var cachedLastModifiedTimeStamp = cache.get("certificateLastModifideTimeStamp");
 
-    var filePath = path.resolve(path.join(merchantConfig.getKeysDirectory(), merchantConfig.getKeyFileName() + '.p12'));
+    var filePath = merchantConfig.getP12FilePath();
     if (fs.existsSync(filePath)) {
         const stats = fs.statSync(filePath);
         const currentFileLastModifiedTime = stats.mtime;
@@ -48,9 +55,7 @@ exports.fetchCachedCertificate = function (merchantConfig, logger) {
 //Function to read the file and put values to new cache 
 function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
     try {
-        var p12Buffer = fs.readFileSync(filePath);
-        var p12Der = forge.util.binary.raw.encode(new Uint8Array(p12Buffer));
-        var p12Asn1 = forge.asn1.fromDer(p12Der);
+        var p12Asn1 = loadP12FileToAsn1(filePath);
         var certificate = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, keyPass);
         cache.put("certificateFromP12File", certificate);
         cache.put("certificateLastModifideTimeStamp", fileLastModifiedTime);
@@ -90,13 +95,7 @@ exports.getRequestMLECertFromCache = function(merchantConfig) {
         cacheKey =  merchantId + Constants.MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT;
         mleCertPath = merchantConfig.getMleForRequestPublicCertPath();
     } else if (Constants.JWT === merchantConfig.getAuthenticationType().toLowerCase()) {
-        mleCertPath = path.resolve(path.join(merchantConfig.getKeysDirectory(), merchantConfig.getKeyFileName() + '.p12'));
-        try {
-            fs.accessSync(mleCertPath, fs.constants.R_OK);
-        } catch (err) {
-            logger.warn("MLE certificate file not found or not readable: " + mleCertPath);
-            return null;
-        }
+        mleCertPath = merchantConfig.getP12FilePath();
         cacheKey =  merchantId + Constants.MLE_CACHE_IDENTIFIER_FOR_P12_CERT;
     } else {
         logger.debug("The certificate to use for MLE for requests is not provided in the merchant configuration. Please ensure that the certificate path is provided.");
@@ -138,10 +137,8 @@ function setupMLECache(merchantConfig, cacheKey, mleCertPath) {
 function loadCertificateFromP12(merchantConfig, mleCertPath) {
     const logger = Logger.getLogger(merchantConfig, 'Cache');
     try {
-        // Read the P12 file as before
-        var p12Buffer = fs.readFileSync(mleCertPath);
-        var p12Der = forge.util.binary.raw.encode(new Uint8Array(p12Buffer));
-        var p12Asn1 = forge.asn1.fromDer(p12Der);
+        // Read the P12 file and convert to ASN1
+        var p12Asn1 = loadP12FileToAsn1(mleCertPath);
         var p12Cert = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, merchantConfig.getKeyPass());
         
         // Extract the certificate from the P12 container

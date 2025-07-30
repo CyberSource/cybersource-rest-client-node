@@ -6,6 +6,8 @@ var ApiException = require('../util/ApiException');
 var LogConfiguration = require('../logging/LogConfiguration');
 var path = require('path');
 var fs = require('fs');
+var path = require('path');
+var fs = require('fs');
 
 /**
  * This function has all the merchentConfig properties getters and setters methods
@@ -426,6 +428,10 @@ MerchantConfig.prototype.setMleForRequestPublicCertPath = function setMleForRequ
     this.mleForRequestPublicCertPath = mleForRequestPublicCertPath;
 }
 
+MerchantConfig.prototype.getP12FilePath = function getP12FilePath() {
+    return path.resolve(path.join(this.getKeysDirectory(), this.getKeyFileName() + '.p12'));
+}
+
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
 
     /*url*/
@@ -575,6 +581,11 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
                 this.keyFilename = this.merchantID;
                 logger.warn(Constants.KEY_FILE_EMPTY);
             }
+            try {
+                fs.accessSync(this.getP12FilePath(), fs.constants.R_OK);
+            } catch (err) {
+                ApiException.ApiException("Merchant p12 certificate file not found or not readable: " + this.getP12FilePath());
+            }
         }
         else if (this.authenticationType.toLowerCase() === Constants.OAUTH)
         {
@@ -642,13 +653,25 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         //     }
         // }
     }
-
-    if (this.mleForRequestPublicCertPath !== null && this.mleForRequestPublicCertPath !== undefined) {
-        var certFile = path.resolve(path.join(this.mleForRequestPublicCertPath));
+    if (this.mleForRequestPublicCertPath) {
+    // First check if the file exists and is readable
         try {
-            fs.accessSync(certFile, fs.constants.R_OK);
+            fs.accessSync(this.mleForRequestPublicCertPath, fs.constants.R_OK);
         } catch (err) {
-            ApiException.ApiException("mleForRequestPublicCertPath file is not readable or does not exist" + ": " + certFile, logger);
+            const errorType = err.code === 'ENOENT' ? 'does not exist' : 'is not readable';
+            ApiException.ApiException(`mleForRequestPublicCertPath file ${errorType}: ${this.mleForRequestPublicCertPath} (${err.message})`, logger);
+        }
+
+        let stats;
+        try {
+            stats = fs.statSync(this.mleForRequestPublicCertPath);
+        } catch (err) {
+            ApiException.ApiException(`Error checking file stats for mleForRequestPublicCertPath: ${this.mleForRequestPublicCertPath} (${err.message})`, logger);
+        }
+
+        // Check if it's a file
+        if (stats.isFile() === false) {
+            ApiException.ApiException(`mleForRequestPublicCertPath is not a file: ${this.mleForRequestPublicCertPath}`, logger);
         }
     }
 
