@@ -117,14 +117,14 @@ function getMLECertBasedOnCacheKey(merchantConfig, cacheKey, mleCertPath) {
     return cache.get(cacheKey).mleCert;
 }
 
-function setupMLECache(merchantConfig, cacheKey, mleCertPath) {
-    var fileLastModifiedTime = fs.statSync(mleCertPath).mtimeMs;
+function setupMLECache(merchantConfig, cacheKey, mleCertificateSourcePath) {
+    var fileLastModifiedTime = fs.statSync(mleCertificateSourcePath).mtimeMs;
     var mleCert = null;
     if  (cacheKey.endsWith(Constants.MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT)) {
-        mleCert = loadCertificateFromPem(merchantConfig, mleCertPath);
+        mleCert = loadCertificateFromPem(merchantConfig, mleCertificateSourcePath);
     }
     else if (cacheKey.endsWith(Constants.MLE_CACHE_IDENTIFIER_FOR_P12_CERT)) {
-        mleCert = loadCertificateFromP12(merchantConfig, mleCertPath);
+        mleCert = loadCertificateFromP12(merchantConfig, mleCertificateSourcePath);
     }
     cache.put(cacheKey, {
         mleCert: mleCert,
