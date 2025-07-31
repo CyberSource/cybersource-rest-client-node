@@ -74,24 +74,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property paymentAccountInformation (base name: "paymentAccountInformation")', function() {
-      // uncomment below and update the code to test the property paymentAccountInformation
-      //var instane = new CyberSource.InlineResponse2011();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
-      // uncomment below and update the code to test the property issuerInformation
-      //var instane = new CyberSource.InlineResponse2011();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property payoutInformation (base name: "payoutInformation")', function() {
-      // uncomment below and update the code to test the property payoutInformation
-      //var instane = new CyberSource.InlineResponse2011();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

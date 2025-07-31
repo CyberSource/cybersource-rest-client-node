@@ -56,6 +56,8 @@
 
 
 
+
+
   };
 
   /**
@@ -95,6 +97,12 @@
       }
       if (data.hasOwnProperty('method')) {
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('phoneNumber')) {
+        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
       }
     }
     return obj;
@@ -145,6 +153,16 @@
    * @member {String} method
    */
   exports.prototype['method'] = undefined;
+  /**
+   * Customer's email address, including the full domain name. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * Phone number associated with the shipping address. 
+   * @member {String} phoneNumber
+   */
+  exports.prototype['phoneNumber'] = undefined;
 
 
 

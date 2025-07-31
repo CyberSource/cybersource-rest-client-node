@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **messageType** | **String** | This field contains the type of BIN based authentication. Possible values:   - `S`: Single Message   - `D`: Dual Message  | [optional] 
 **acceptanceLevel** | **String** | This field contains the acceptance level of the PAN. Possible values:   - `0` : Normal   - `1` : Monitor   - `2` : Refuse   - `3` : Not Allowed   - `4` : Private   - `5` : Test  | [optional] 
 **cardPlatform** | **String** | This field contains the type of card platform. Possible values:   - `BUSINESS`   - `CONSUMER`   - `CORPORATE`   - `COMMERCIAL`   - `GOVERNMENT`  | [optional] 
-**comboCard** | **String** | This field indicates the type of combo card. Possible values:   - 0 (Not a combo card)   - 1 (Credit and Prepaid Combo card)   - 2 (Credit and Debit Combo card)  | [optional] 
+**comboCard** | **String** | This field indicates the type of combo card. Possible values:   - 0 (Not a combo card)   - 1 (Credit and Prepaid Combo card)   - 2 (Credit and Debit Combo card)   - 3 (Prepaid Credit and Prepaid Debit combo card)  | [optional] 
 **corporatePurchase** | **Boolean** | This field indicates if the instrument can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false`  | [optional] 
 **healthCard** | **Boolean** | This field indicates if the BIN is for healthcare (HSA/FSA). Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false`  | [optional] 
 **sharedBIN** | **Boolean** | This field indicates if the BIN is shared by multiple issuers Possible values:     - `true`     - `false`  | [optional] 

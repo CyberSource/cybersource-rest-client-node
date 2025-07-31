@@ -146,6 +146,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property annualInterestRate (base name: "annualInterestRate")', function() {
+      // uncomment below and update the code to test the property annualInterestRate
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

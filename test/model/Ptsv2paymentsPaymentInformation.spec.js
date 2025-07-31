@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenizedPaymentMethod (base name: "tokenizedPaymentMethod")', function() {
+      // uncomment below and update the code to test the property tokenizedPaymentMethod
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property directDebit (base name: "directDebit")', function() {
       // uncomment below and update the code to test the property directDebit
       //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();

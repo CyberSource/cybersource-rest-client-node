@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2intentsClientReferenceInformation', 'model/Ptsv2intentsPaymentInformation', 'model/Ptsv2intentsidMerchantInformation', 'model/Ptsv2intentsidOrderInformation', 'model/Ptsv2intentsidProcessingInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2intentsClientReferenceInformation', 'model/Ptsv2intentsidMerchantInformation', 'model/Ptsv2intentsidOrderInformation', 'model/Ptsv2intentsidPaymentInformation', 'model/Ptsv2intentsidProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsClientReferenceInformation'), require('./Ptsv2intentsPaymentInformation'), require('./Ptsv2intentsidMerchantInformation'), require('./Ptsv2intentsidOrderInformation'), require('./Ptsv2intentsidProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsClientReferenceInformation'), require('./Ptsv2intentsidMerchantInformation'), require('./Ptsv2intentsidOrderInformation'), require('./Ptsv2intentsidPaymentInformation'), require('./Ptsv2intentsidProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UpdateOrderRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsClientReferenceInformation, root.CyberSource.Ptsv2intentsPaymentInformation, root.CyberSource.Ptsv2intentsidMerchantInformation, root.CyberSource.Ptsv2intentsidOrderInformation, root.CyberSource.Ptsv2intentsidProcessingInformation);
+    root.CyberSource.UpdateOrderRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsClientReferenceInformation, root.CyberSource.Ptsv2intentsidMerchantInformation, root.CyberSource.Ptsv2intentsidOrderInformation, root.CyberSource.Ptsv2intentsidPaymentInformation, root.CyberSource.Ptsv2intentsidProcessingInformation);
   }
-}(this, function(ApiClient, Ptsv2intentsClientReferenceInformation, Ptsv2intentsPaymentInformation, Ptsv2intentsidMerchantInformation, Ptsv2intentsidOrderInformation, Ptsv2intentsidProcessingInformation) {
+}(this, function(ApiClient, Ptsv2intentsClientReferenceInformation, Ptsv2intentsidMerchantInformation, Ptsv2intentsidOrderInformation, Ptsv2intentsidPaymentInformation, Ptsv2intentsidProcessingInformation) {
   'use strict';
 
 
@@ -75,7 +75,7 @@
         obj['merchantInformation'] = Ptsv2intentsidMerchantInformation.constructFromObject(data['merchantInformation']);
       }
       if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = Ptsv2intentsPaymentInformation.constructFromObject(data['paymentInformation']);
+        obj['paymentInformation'] = Ptsv2intentsidPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('processingInformation')) {
         obj['processingInformation'] = Ptsv2intentsidProcessingInformation.constructFromObject(data['processingInformation']);
@@ -97,7 +97,7 @@
    */
   exports.prototype['merchantInformation'] = undefined;
   /**
-   * @member {module:model/Ptsv2intentsPaymentInformation} paymentInformation
+   * @member {module:model/Ptsv2intentsidPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2012', 'model/InlineResponse4007', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2013', 'model/InlineResponse4007', 'model/InlineResponse4041', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2012'), require('../model/InlineResponse4007'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2013'), require('../model/InlineResponse4007'), require('../model/InlineResponse4041'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
+    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4041, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2002, InlineResponse2012, InlineResponse4007, InlineResponse4041, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2002, InlineResponse2013, InlineResponse4007, InlineResponse4041, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
   'use strict';
 
   /**
@@ -118,7 +118,7 @@
      * Callback function to receive the result of the postRegistration operation.
      * @callback module:api/MerchantBoardingApi~postRegistrationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2012} data The data returned by the service call.
+     * @param {module:model/InlineResponse2013} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -129,7 +129,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.vCIdempotencyId defines idempotency of the request
      * @param {module:api/MerchantBoardingApi~postRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2012}
+     * data is of type: {@link module:model/InlineResponse2013}
      */
     this.postRegistration = function(postRegistrationBody, opts, callback) {
       opts = opts || {};
@@ -160,7 +160,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2012;
+      var returnType = InlineResponse2013;
 
       //check isMLE for an api method 'this.postRegistration'
       var isMLESupportedByCybsForApi = false;

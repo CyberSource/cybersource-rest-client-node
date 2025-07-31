@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -96,6 +97,9 @@
       }
       if (data.hasOwnProperty('settlementCurrency')) {
         obj['settlementCurrency'] = ApiClient.convertToType(data['settlementCurrency'], 'String');
+      }
+      if (data.hasOwnProperty('invoiceAmount')) {
+        obj['invoiceAmount'] = ApiClient.convertToType(data['invoiceAmount'], 'String');
       }
       if (data.hasOwnProperty('giftwrapAmount')) {
         obj['giftwrapAmount'] = ApiClient.convertToType(data['giftwrapAmount'], 'String');
@@ -156,6 +160,11 @@
    * @member {String} settlementCurrency
    */
   exports.prototype['settlementCurrency'] = undefined;
+  /**
+   * Invoice amount.  The invoice amount issued by the Merchant to the Cardholder, which includes VAT (excluding items such as TIPS or CASHBACK). For transactions that do not have applicable Benefit Laws, the field may be entered as zeros.  This field is only applicable for Uruguay market.  Example: 100.00  Uruguay  The value for this field corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR9 - Position: 7-18 - Field: Invoice Amount 
+   * @member {String} invoiceAmount
+   */
+  exports.prototype['invoiceAmount'] = undefined;
   /**
    * giftwrap amount (RFU).
    * @member {String} giftwrapAmount

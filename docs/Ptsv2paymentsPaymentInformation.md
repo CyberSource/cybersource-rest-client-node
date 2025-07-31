@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **card** | [**Ptsv2paymentsPaymentInformationCard**](Ptsv2paymentsPaymentInformationCard.md) |  | [optional] 
 **tokenizedCard** | [**Ptsv2paymentsPaymentInformationTokenizedCard**](Ptsv2paymentsPaymentInformationTokenizedCard.md) |  | [optional] 
+**tokenizedPaymentMethod** | [**Ptsv2paymentsPaymentInformationTokenizedPaymentMethod**](Ptsv2paymentsPaymentInformationTokenizedPaymentMethod.md) |  | [optional] 
 **directDebit** | [**Ptsv2paymentsPaymentInformationDirectDebit**](Ptsv2paymentsPaymentInformationDirectDebit.md) |  | [optional] 
 **fluidData** | [**Ptsv2paymentsPaymentInformationFluidData**](Ptsv2paymentsPaymentInformationFluidData.md) |  | [optional] 
 **customer** | [**Ptsv2paymentsPaymentInformationCustomer**](Ptsv2paymentsPaymentInformationCustomer.md) |  | [optional] 

@@ -86,6 +86,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property senderInformation (base name: "senderInformation")', function() {
+      // uncomment below and update the code to test the property senderInformation
+      //var instane = new CyberSource.CreateOrderRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eventInformation (base name: "eventInformation")', function() {
+      // uncomment below and update the code to test the property eventInformation
+      //var instane = new CyberSource.CreateOrderRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property travelInformation (base name: "travelInformation")', function() {
+      // uncomment below and update the code to test the property travelInformation
+      //var instane = new CyberSource.CreateOrderRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property recipientInformation (base name: "recipientInformation")', function() {
+      // uncomment below and update the code to test the property recipientInformation
+      //var instane = new CyberSource.CreateOrderRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

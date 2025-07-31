@@ -62,6 +62,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenizedPaymentMethod (base name: "tokenizedPaymentMethod")', function() {
+      // uncomment below and update the code to test the property tokenizedPaymentMethod
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property industryType (base name: "industryType")', function() {
+      // uncomment below and update the code to test the property industryType
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eWallet (base name: "eWallet")', function() {
+      // uncomment below and update the code to test the property eWallet
+      //var instane = new CyberSource.Ptsv2intentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

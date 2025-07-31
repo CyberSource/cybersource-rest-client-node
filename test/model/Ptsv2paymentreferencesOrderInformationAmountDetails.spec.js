@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property invoiceAmount (base name: "invoiceAmount")', function() {
+      // uncomment below and update the code to test the property invoiceAmount
+      //var instane = new CyberSource.Ptsv2paymentreferencesOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property giftwrapAmount (base name: "giftwrapAmount")', function() {
       // uncomment below and update the code to test the property giftwrapAmount
       //var instane = new CyberSource.Ptsv2paymentreferencesOrderInformationAmountDetails();

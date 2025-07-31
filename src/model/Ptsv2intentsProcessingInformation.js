@@ -50,6 +50,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -72,6 +84,42 @@
       if (data.hasOwnProperty('actionList')) {
         obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
       }
+      if (data.hasOwnProperty('highRiskTransactionFlag')) {
+        obj['highRiskTransactionFlag'] = ApiClient.convertToType(data['highRiskTransactionFlag'], 'String');
+      }
+      if (data.hasOwnProperty('transactionRetry')) {
+        obj['transactionRetry'] = ApiClient.convertToType(data['transactionRetry'], 'String');
+      }
+      if (data.hasOwnProperty('lastOneHrTransactionCount')) {
+        obj['lastOneHrTransactionCount'] = ApiClient.convertToType(data['lastOneHrTransactionCount'], 'String');
+      }
+      if (data.hasOwnProperty('lastOneDayTransactionCount')) {
+        obj['lastOneDayTransactionCount'] = ApiClient.convertToType(data['lastOneDayTransactionCount'], 'String');
+      }
+      if (data.hasOwnProperty('lastThreeMonthsTxnCount')) {
+        obj['lastThreeMonthsTxnCount'] = ApiClient.convertToType(data['lastThreeMonthsTxnCount'], 'String');
+      }
+      if (data.hasOwnProperty('totalTransactionCount')) {
+        obj['totalTransactionCount'] = ApiClient.convertToType(data['totalTransactionCount'], 'String');
+      }
+      if (data.hasOwnProperty('pinVerification')) {
+        obj['pinVerification'] = ApiClient.convertToType(data['pinVerification'], 'String');
+      }
+      if (data.hasOwnProperty('faceIdVerification')) {
+        obj['faceIdVerification'] = ApiClient.convertToType(data['faceIdVerification'], 'String');
+      }
+      if (data.hasOwnProperty('userPassedVerification')) {
+        obj['userPassedVerification'] = ApiClient.convertToType(data['userPassedVerification'], 'String');
+      }
+      if (data.hasOwnProperty('ipAddress')) {
+        obj['ipAddress'] = ApiClient.convertToType(data['ipAddress'], 'String');
+      }
+      if (data.hasOwnProperty('transactionDate')) {
+        obj['transactionDate'] = ApiClient.convertToType(data['transactionDate'], 'String');
+      }
+      if (data.hasOwnProperty('tangible')) {
+        obj['tangible'] = ApiClient.convertToType(data['tangible'], 'String');
+      }
     }
     return obj;
   }
@@ -90,6 +138,66 @@
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
+  /**
+   * Indicates if the transaction is flagged as high risk. 
+   * @member {String} highRiskTransactionFlag
+   */
+  exports.prototype['highRiskTransactionFlag'] = undefined;
+  /**
+   * Indicates if the transaction is a retry. 
+   * @member {String} transactionRetry
+   */
+  exports.prototype['transactionRetry'] = undefined;
+  /**
+   * The number of transactions in the last one hour. 
+   * @member {String} lastOneHrTransactionCount
+   */
+  exports.prototype['lastOneHrTransactionCount'] = undefined;
+  /**
+   * The number of transactions in the last one day. 
+   * @member {String} lastOneDayTransactionCount
+   */
+  exports.prototype['lastOneDayTransactionCount'] = undefined;
+  /**
+   * The number of transactions in the last three months. 
+   * @member {String} lastThreeMonthsTxnCount
+   */
+  exports.prototype['lastThreeMonthsTxnCount'] = undefined;
+  /**
+   * The total number of transactions. 
+   * @member {String} totalTransactionCount
+   */
+  exports.prototype['totalTransactionCount'] = undefined;
+  /**
+   * Indicates if PIN verification is required. 
+   * @member {String} pinVerification
+   */
+  exports.prototype['pinVerification'] = undefined;
+  /**
+   * Indicates if face ID verification is required. 
+   * @member {String} faceIdVerification
+   */
+  exports.prototype['faceIdVerification'] = undefined;
+  /**
+   * Indicates if the user passed verification. 
+   * @member {String} userPassedVerification
+   */
+  exports.prototype['userPassedVerification'] = undefined;
+  /**
+   * The IP address of the user. 
+   * @member {String} ipAddress
+   */
+  exports.prototype['ipAddress'] = undefined;
+  /**
+   * The date of the transaction. 
+   * @member {String} transactionDate
+   */
+  exports.prototype['transactionDate'] = undefined;
+  /**
+   * Indicates if the transaction involves tangible goods. 
+   * @member {String} tangible
+   */
+  exports.prototype['tangible'] = undefined;
 
 
 

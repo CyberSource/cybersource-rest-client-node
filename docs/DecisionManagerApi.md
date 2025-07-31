@@ -111,7 +111,7 @@ No authorization required
 
 <a name="commentDecisionManagerCase"></a>
 # **commentDecisionManagerCase**
-> InlineResponse201 commentDecisionManagerCase(id, caseManagementCommentsRequest)
+> InlineResponse2011 commentDecisionManagerCase(id, caseManagementCommentsRequest)
 
 Add a comment to a DM post-transactional case
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**InlineResponse2011**](InlineResponse2011.md)
 
 ### Authorization
 
