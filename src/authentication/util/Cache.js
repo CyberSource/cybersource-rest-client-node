@@ -90,41 +90,41 @@ exports.getRequestMLECertFromCache = function(merchantConfig) {
     var logger = Logger.getLogger(merchantConfig, 'Cache');
     var merchantId = merchantConfig.getMerchantID();
     var cacheKey = null;
-    var mleCertPath = null;
+    var certificatePath = null;
     if (merchantConfig.getMleForRequestPublicCertPath() !== null && merchantConfig.getMleForRequestPublicCertPath() !== undefined) {
         cacheKey =  merchantId + Constants.MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT;
-        mleCertPath = merchantConfig.getMleForRequestPublicCertPath();
+        certificatePath = merchantConfig.getMleForRequestPublicCertPath();
     } else if (Constants.JWT === merchantConfig.getAuthenticationType().toLowerCase()) {
-        mleCertPath = merchantConfig.getP12FilePath();
+        certificatePath = merchantConfig.getP12FilePath();
         cacheKey =  merchantId + Constants.MLE_CACHE_IDENTIFIER_FOR_P12_CERT;
     } else {
         logger.debug("The certificate to use for MLE for requests is not provided in the merchant configuration. Please ensure that the certificate path is provided.");
         return null;
     }
-    return getMLECertBasedOnCacheKey(merchantConfig, cacheKey, mleCertPath);
+    return getMLECertBasedOnCacheKey(merchantConfig, cacheKey, certificatePath);
 
 }
 
-function getMLECertBasedOnCacheKey(merchantConfig, cacheKey, mleCertPath) {
+function getMLECertBasedOnCacheKey(merchantConfig, cacheKey, certificatePath) {
     var cachedMLECert = cache.get(cacheKey);
     var logger = Logger.getLogger(merchantConfig, 'Cache');
-    if (cachedMLECert === null || cachedMLECert === undefined || cachedMLECert.fileLastModifiedTime !== fs.statSync(mleCertPath).mtimeMs) {
-        logger.debug("MLE certificate not found in cache or has been modified. Loading from file: " + mleCertPath);
-        setupMLECache(merchantConfig, cacheKey, mleCertPath);
+    if (cachedMLECert === null || cachedMLECert === undefined || cachedMLECert.fileLastModifiedTime !== fs.statSync(certificatePath).mtimeMs) {
+        logger.debug("MLE certificate not found in cache or has been modified. Loading from file: " + certificatePath);
+        setupMLECache(merchantConfig, cacheKey, certificatePath);
     } else {
         logger.debug("MLE certificate found in cache for key: " + cacheKey);
     }
     return cache.get(cacheKey).mleCert;
 }
 
-function setupMLECache(merchantConfig, cacheKey, mleCertificateSourcePath) {
-    var fileLastModifiedTime = fs.statSync(mleCertificateSourcePath).mtimeMs;
+function setupMLECache(merchantConfig, cacheKey, certificateSourcePath) {
+    var fileLastModifiedTime = fs.statSync(certificateSourcePath).mtimeMs;
     var mleCert = null;
     if  (cacheKey.endsWith(Constants.MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT)) {
-        mleCert = loadCertificateFromPem(merchantConfig, mleCertificateSourcePath);
+        mleCert = loadCertificateFromPem(merchantConfig, certificateSourcePath);
     }
     else if (cacheKey.endsWith(Constants.MLE_CACHE_IDENTIFIER_FOR_P12_CERT)) {
-        mleCert = loadCertificateFromP12(merchantConfig, mleCertificateSourcePath);
+        mleCert = loadCertificateFromP12(merchantConfig, certificateSourcePath);
     }
     cache.put(cacheKey, {
         mleCert: mleCert,
@@ -134,11 +134,11 @@ function setupMLECache(merchantConfig, cacheKey, mleCertificateSourcePath) {
 }
 
 
-function loadCertificateFromP12(merchantConfig, mleCertPath) {
+function loadCertificateFromP12(merchantConfig, certificatePath) {
     const logger = Logger.getLogger(merchantConfig, 'Cache');
     try {
         // Read the P12 file and convert to ASN1
-        var p12Asn1 = loadP12FileToAsn1(mleCertPath);
+        var p12Asn1 = loadP12FileToAsn1(certificatePath);
         var p12Cert = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, merchantConfig.getKeyPass());
         
         // Extract the certificate from the P12 container
