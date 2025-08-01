@@ -94,8 +94,8 @@
       var returnType = 'String';
 
       //check isMLE for an api method 'this.generateUnifiedCheckoutCaptureContext'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'generateUnifiedCheckoutCaptureContext');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'generateUnifiedCheckoutCaptureContext');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

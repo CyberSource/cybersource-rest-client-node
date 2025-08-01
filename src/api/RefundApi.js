@@ -101,8 +101,8 @@
       var returnType = PtsV2PaymentsRefundPost201Response;
 
       //check isMLE for an api method 'this.refundCapture'
-      var isMLESupportedByCybsForApi = true;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'refundCapture');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'refundCapture');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -173,8 +173,8 @@
       var returnType = PtsV2PaymentsRefundPost201Response;
 
       //check isMLE for an api method 'this.refundPayment'
-      var isMLESupportedByCybsForApi = true;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'refundPayment');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'refundPayment');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

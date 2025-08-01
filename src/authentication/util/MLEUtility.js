@@ -6,15 +6,24 @@ const Logger= require('../logging/Logger');
 const ApiException= require('./ApiException');
 const Constants = require('./Constants');
 
-exports.checkIsMLEForAPI = function(merchantConfig, isMLESupportedByCybsForApi, operationId) {
+exports.checkIsMLEForAPI = function (merchantConfig, inboundMLEStatus, operationId) {
     //isMLE for an api is false by default
     var isMLEForAPI = false;
 
-    //check here useMLEGlobally True or False
-    //if API is part of MLE then check for useMLEGlobally global paramter
-    if (isMLESupportedByCybsForApi === true && merchantConfig.useMLEGlobally === true) {
+    if (
+      typeof inboundMLEStatus === "string" &&
+      inboundMLEStatus.toLowerCase() === "optional" &&
+      merchantConfig.getEnableRequestMLEForOptionalApisGlobally()
+    ) {
       isMLEForAPI = true;
     }
+
+    if (
+      typeof inboundMLEStatus === "string" &&
+      inboundMLEStatus.toLowerCase() === "mandatory"
+    ) {
+      isMLEForAPI = !merchantConfig.getDisableRequestMLEForMandatoryApisGlobally();
+    }  
 
     //Control the MLE only from map
     if (merchantConfig.mapToControlMLEonAPI != null && operationId in merchantConfig.mapToControlMLEonAPI) {
