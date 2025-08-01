@@ -62,6 +62,7 @@
 
 
 
+
   };
 
   /**
@@ -119,6 +120,9 @@
       }
       if (data.hasOwnProperty('identifier')) {
         obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
+      }
+      if (data.hasOwnProperty('annualInterestRate')) {
+        obj['annualInterestRate'] = ApiClient.convertToType(data['annualInterestRate'], 'String');
       }
     }
     return obj;
@@ -199,6 +203,11 @@
    * @member {String} identifier
    */
   exports.prototype['identifier'] = undefined;
+  /**
+   * Annual interest rate.  This field is returned only for two kinds of installment payments on Visa Platform Connect: - Crediario with Visa in Brazil: this field is included in the authorization response for the Crediario eligibility request when the issuer approves the customer's request for Crediario installment payments. - Mastercard in all countries except Brazil, Croatia, Georgia, and Greece.   Example: A value of 1.0 specifies 1%.  Example: A value of 4.0 specifies 4%.  #### Brazil The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 151-157 - Field: Annual Interest Rate   #### Other Countries The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 58-62 SCMP API Fields| 216 - Field: Mastercard Annual Percentage Rate 
+   * @member {String} annualInterestRate
+   */
+  exports.prototype['annualInterestRate'] = undefined;
 
 
 
