@@ -1,0 +1,4 @@
+dirName,fileName,Flag
+ApplePay,ApplePay,1
+ApplePay,AuthorizeApplePayCybersourceDecryption,1
+ApplePay,AuthorizeApplePayMerchantDecryption,1

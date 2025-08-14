@@ -1,0 +1,4 @@
+testCaseId,sTime,eTime,message
+GNOC_01,2018-10-01T12:00:00-05:00,2018-10-30T12:00:00-05:00,Success
+GNOC_02,2018-01T12:00-05,2018-10-30T12:00:00-05:00,Fails due to invalid startTime
+GNOC_03,2018-10-01T12:00:00-05:00,2018-30T12:00-05,Fails due to invalid endTime

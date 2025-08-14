@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CMSC_01,106.00,Success
+CMSC_02,200.0,Fails
+CMSC_03,KLM76,Fails due to invalid amount

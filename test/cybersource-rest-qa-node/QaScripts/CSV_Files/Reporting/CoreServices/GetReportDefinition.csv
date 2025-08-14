@@ -1,0 +1,3 @@
+testCaseId,reportDefName,message
+GRD_01,SubscriptionDetailClass,Success
+GRD_02,SubscDetail,Fails due to invalid reportDefinitionName

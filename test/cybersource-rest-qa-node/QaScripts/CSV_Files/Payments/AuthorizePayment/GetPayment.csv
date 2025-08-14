@@ -1,0 +1,4 @@
+testCaseId,totalamount,message
+CGPP_01,102.21,Success
+CGPP_02,109,Fails
+CGPP_03,ZXSD3,Fails due to invalid amount

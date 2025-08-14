@@ -1,0 +1,6 @@
+dirName,fileName,Flag
+AVSNonUsSupportedCardTypes,AmexOptima,0
+AVSNonUsSupportedCardTypes,MaestroInternational,0
+AVSNonUsSupportedCardTypes,MaestroUKDomestic,0
+AVSNonUsSupportedCardTypes,SoloUK,0
+AVSNonUsSupportedCardTypes,Visa,1

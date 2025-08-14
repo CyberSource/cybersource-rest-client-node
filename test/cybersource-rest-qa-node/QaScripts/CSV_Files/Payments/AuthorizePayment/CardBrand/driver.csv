@@ -1,0 +1,5 @@
+dirName,fileName,Flag
+CardBand,MaestroSecureCode,1
+CardBand,MasterCard,1
+CardBand,SoloUK,1
+CardBand,Visa,1
