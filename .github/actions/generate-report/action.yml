@@ -1,0 +1,58 @@
+name: 'Generate the Report'
+description: 'Generates the report using the log-file-name file present just inside the sample folder path provided , given Validation Folder is there inside the sample folder as well'
+inputs:
+  lang:
+    description: 'The language or framework in which SDK is written needs to be given as an input'
+    required: true
+  sample-folder-name:
+    description: 'The name of the sample folder'
+    required: true
+  log-file-name:
+    description: 'The name of the generated log file'
+    required: true
+outputs:
+  result-pdf-name:
+    description: 'the name of the final generated pdf report'
+    value: ${{steps.generate.outputs.pdfname}}
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Python v3.12 for report generation only
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+    - name: Installing required python libraries and running the python programs to generate pdf report
+      id: generate
+      run : |
+        export EXPECTED_RES_LANG=${{inputs.lang}}
+        if [[ "${{inputs.lang}}" == "dotnet" ]] || [[ "${{inputs.lang}}" == "dotnetstandard" ]]; then
+          export EXPECTED_RES_LANG=csharp
+        fi
+        echo $EXPECTED_RES_LANG
+        python --version
+        echo "Before Running Report Generation"
+        cd ${{inputs.sample-folder-name}}
+        python -m pip install --upgrade pip
+        python -m venv newve
+        if [[ "$(uname -s)" == "Linux" ]]; then
+            echo "In LINUX"
+            source newve/bin/activate
+        elif [[ "$(uname -s)" == "Darwin" ]]; then
+            echo "In MAC"
+            source newve/bin/activate
+        else
+            echo "In Windows"
+            source newve/Scripts/activate
+        fi
+        echo $VIRTUAL_ENV
+        pip install json2html
+        pip install xhtml2pdf
+        pip install bs4
+        cd Validation
+        python sample_code_log_processor.py -l ../../${{inputs.sample-folder-name}}/${{inputs.log-file-name}} -o ../../${{inputs.sample-folder-name}}/${{inputs.lang}}_actual_results.json
+        python response_code_validator.py -e ExpectedResults/${EXPECTED_RES_LANG}_expected_results.json -a ../../${{inputs.sample-folder-name}}/${{inputs.lang}}_actual_results.json -o ${{inputs.lang}}_validation_results.json
+        python json_to_prettified_html.py -i ${{inputs.lang}}_validation_results.json -o ${{inputs.lang}}_validation_results.html
+        cp ${{inputs.lang}}_validation_results.pdf ../  #copying the file to flaatten the directory of the upload artifact,Github Actions doesn't support that as of jun 2024
+        echo "pdfname=${{inputs.lang}}_validation_results.pdf" >> $GITHUB_OUTPUT
+      shell: bash
+
