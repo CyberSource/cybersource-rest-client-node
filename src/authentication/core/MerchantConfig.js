@@ -399,12 +399,34 @@ MerchantConfig.prototype.setpemFileDirectory = function getpemFileDirectory(pemF
     this.pemFileDirectory = pemFileDirectory;
 }
 
+MerchantConfig.prototype.getUseMLEGlobally = function getUseMLEGlobally() {
+    return this.useMLEGlobally;
+}
+
+MerchantConfig.prototype.setUseMLEGlobally = function setUseMLEGlobally(useMLEGlobally) {
+    this.useMLEGlobally = useMLEGlobally;
+    // If enableRequestMLEForOptionalApisGlobally is not set, set it to useMLEGlobally
+    if (this.enableRequestMLEForOptionalApisGlobally === undefined) {
+        this.enableRequestMLEForOptionalApisGlobally = useMLEGlobally;
+    }
+    // If it is set but has a different value, throw an exception
+    else if (this.enableRequestMLEForOptionalApisGlobally !== useMLEGlobally) {
+        var logger = Logger.getLogger(this, 'MerchantConfig');
+        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
+    }
+}
+
 MerchantConfig.prototype.getEnableRequestMLEForOptionalApisGlobally = function getEnableRequestMLEForOptionalApisGlobally() {
     return this.enableRequestMLEForOptionalApisGlobally;
 }
 
 MerchantConfig.prototype.setEnableRequestMLEForOptionalApisGlobally = function setEnableRequestMLEForOptionalApisGlobally(enableRequestMLEForOptionalApisGlobally) {
     this.enableRequestMLEForOptionalApisGlobally = enableRequestMLEForOptionalApisGlobally;
+    // If it is set but has a different value, throw an exception
+    if (this.useMLEGlobally !== undefined && (this.useMLEGlobally !== enableRequestMLEForOptionalApisGlobally)) {
+        var logger = Logger.getLogger(this, 'MerchantConfig');
+        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
+    }
 }
 
 MerchantConfig.prototype.getDisableRequestMLEForMandatoryApisGlobally = function getDisableRequestMLEForMandatoryApisGlobally() {

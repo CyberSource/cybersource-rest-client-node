@@ -136,8 +136,8 @@
       var returnType = PushFunds201Response;
 
       //check isMLE for an api method 'this.createPushFundsTransfer'
-      var isMLESupportedByCybsForApi = true;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createPushFundsTransfer');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPushFundsTransfer');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
