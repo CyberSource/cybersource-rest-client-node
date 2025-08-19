@@ -115,7 +115,7 @@
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 
       //check isMLE for an api method 'this.<operationId>'
-      var inboundMLEStatus = <#vendorExtensions.x-devcenter-metaData.inboundMLEStatus>'<vendorExtensions.x-devcenter-metaData.inboundMLEStatus>'</vendorExtensions.x-devcenter-metaData.inboundMLEStatus><^vendorExtensions.x-devcenter-metaData.inboundMLEStatus>'false'</vendorExtensions.x-devcenter-metaData.inboundMLEStatus>;
+      var inboundMLEStatus = <#vendorExtensions.x-devcenter-metaData.mleForRequest>'<vendorExtensions.x-devcenter-metaData.mleForRequest>'</vendorExtensions.x-devcenter-metaData.mleForRequest><^vendorExtensions.x-devcenter-metaData.mleForRequest>'false'</vendorExtensions.x-devcenter-metaData.mleForRequest>;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, '<operationId>');
 
       if (isMLEForApi === true) {
