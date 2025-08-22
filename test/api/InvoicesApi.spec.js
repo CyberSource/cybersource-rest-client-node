@@ -90,6 +90,16 @@
         done();
       });
     });
+    describe('performPublishAction', function() {
+      it('should call performPublishAction successfully', function(done) {
+        //uncomment below and update the code to test performPublishAction
+        //instance.performPublishAction(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('performSendAction', function() {
       it('should call performSendAction successfully', function(done) {
         //uncomment below and update the code to test performSendAction

@@ -94,7 +94,7 @@
       var returnType = PtsV2CreditsPost201Response;
 
       //check isMLE for an api method 'this.createCredit'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createCredit');
 
       if (isMLEForApi === true) {

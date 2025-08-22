@@ -101,7 +101,7 @@
       var returnType = PtsV2PaymentsRefundPost201Response;
 
       //check isMLE for an api method 'this.refundCapture'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'refundCapture');
 
       if (isMLEForApi === true) {
@@ -173,7 +173,7 @@
       var returnType = PtsV2PaymentsRefundPost201Response;
 
       //check isMLE for an api method 'this.refundPayment'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'refundPayment');
 
       if (isMLEForApi === true) {

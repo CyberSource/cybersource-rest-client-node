@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create a Payment Link
 
-Create a new payment link.
+Pay by Link is an easy and fast way to securely sell products or receive donations online. This solution is ideal for distributing the same payment link to multiple customers.   Links for making purchases are referred to as fixed-price links, and links for making donations are referred to as customer-set price links. 
 
 ### Example
 ```javascript
@@ -161,7 +161,7 @@ No authorization required
 
 Update a Payment Link
 
-You can update all information except the payment link number until any payment is received for a payment link.
+You can update all information except the payment link number for a payment link. Changes made to amount/price will apply to new payments made using the payment link. 
 
 ### Example
 ```javascript

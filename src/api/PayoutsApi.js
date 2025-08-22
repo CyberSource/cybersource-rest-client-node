@@ -94,7 +94,7 @@
       var returnType = PtsV2PayoutsPost201Response;
 
       //check isMLE for an api method 'this.octCreatePayment'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'octCreatePayment');
 
       if (isMLEForApi === true) {

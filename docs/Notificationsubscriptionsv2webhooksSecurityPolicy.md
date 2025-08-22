@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**securityType** | **String** | Security Policy of the client server. | [optional] 
+**securityType** | **String** | Security Policy of the client server.  Possible values: - key - oAuth - oAuth_JWT | [optional] 
 **config** | [**Notificationsubscriptionsv2webhooksSecurityPolicyConfig**](Notificationsubscriptionsv2webhooksSecurityPolicyConfig.md) |  | [optional] 
 
 

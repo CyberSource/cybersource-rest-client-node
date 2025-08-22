@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2008Embedded', 'model/InlineResponse2008Links'], factory);
+    define(['ApiClient', 'model/InlineResponse2008Devices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2008Embedded'), require('./InlineResponse2008Links'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2008Devices'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2008 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2008Embedded, root.CyberSource.InlineResponse2008Links);
+    root.CyberSource.InlineResponse2008 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2008Devices);
   }
-}(this, function(ApiClient, InlineResponse2008Embedded, InlineResponse2008Links) {
+}(this, function(ApiClient, InlineResponse2008Devices) {
   'use strict';
 
 
@@ -53,7 +53,6 @@
 
 
 
-
   };
 
   /**
@@ -67,11 +66,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = ApiClient.convertToType(data['_links'], [InlineResponse2008Links]);
-      }
-      if (data.hasOwnProperty('object')) {
-        obj['object'] = ApiClient.convertToType(data['object'], 'String');
+      if (data.hasOwnProperty('totalCount')) {
+        obj['totalCount'] = ApiClient.convertToType(data['totalCount'], 'Number');
       }
       if (data.hasOwnProperty('offset')) {
         obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
@@ -79,47 +75,49 @@
       if (data.hasOwnProperty('limit')) {
         obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
       }
+      if (data.hasOwnProperty('sort')) {
+        obj['sort'] = ApiClient.convertToType(data['sort'], 'String');
+      }
       if (data.hasOwnProperty('count')) {
         obj['count'] = ApiClient.convertToType(data['count'], 'Number');
       }
-      if (data.hasOwnProperty('total')) {
-        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
-      }
-      if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = InlineResponse2008Embedded.constructFromObject(data['_embedded']);
+      if (data.hasOwnProperty('devices')) {
+        obj['devices'] = ApiClient.convertToType(data['devices'], [InlineResponse2008Devices]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/InlineResponse2008Links>} _links
+   * Total number of results.
+   * @member {Number} totalCount
    */
-  exports.prototype['_links'] = undefined;
+  exports.prototype['totalCount'] = undefined;
   /**
-   * @member {String} object
-   */
-  exports.prototype['object'] = undefined;
-  /**
+   * Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. 
    * @member {Number} offset
    */
   exports.prototype['offset'] = undefined;
   /**
+   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. 
    * @member {Number} limit
    */
   exports.prototype['limit'] = undefined;
   /**
+   * A comma separated list of the following form:  `terminalCreationDate:desc or serialNumber or terminalUpdationDate` 
+   * @member {String} sort
+   */
+  exports.prototype['sort'] = undefined;
+  /**
+   * Results for this page, this could be below the limit.
    * @member {Number} count
    */
   exports.prototype['count'] = undefined;
   /**
-   * @member {Number} total
+   * A collection of devices
+   * @member {Array.<module:model/InlineResponse2008Devices>} devices
    */
-  exports.prototype['total'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2008Embedded} _embedded
-   */
-  exports.prototype['_embedded'] = undefined;
+  exports.prototype['devices'] = undefined;
 
 
 

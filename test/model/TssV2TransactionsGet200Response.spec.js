@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bankAccountValidation (base name: "bankAccountValidation")', function() {
+      // uncomment below and update the code to test the property bankAccountValidation
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property buyerInformation (base name: "buyerInformation")', function() {
       // uncomment below and update the code to test the property buyerInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();

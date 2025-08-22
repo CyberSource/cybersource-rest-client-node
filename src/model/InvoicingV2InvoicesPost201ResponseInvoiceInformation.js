@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -89,6 +90,9 @@
       if (data.hasOwnProperty('deliveryMode')) {
         obj['deliveryMode'] = ApiClient.convertToType(data['deliveryMode'], 'String');
       }
+      if (data.hasOwnProperty('customLabels')) {
+        obj['customLabels'] = ApiClient.convertToType(data['customLabels'], [InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels]);
+      }
     }
     return obj;
   }
@@ -129,6 +133,11 @@
    * @member {String} deliveryMode
    */
   exports.prototype['deliveryMode'] = undefined;
+  /**
+   * A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten. 
+   * @member {Array.<module:model/InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels>} customLabels
+   */
+  exports.prototype['customLabels'] = undefined;
 
 
 

@@ -94,7 +94,7 @@
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.mitVoid'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'mitVoid');
 
       if (isMLEForApi === true) {
@@ -166,7 +166,7 @@
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidCapture'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'voidCapture');
 
       if (isMLEForApi === true) {
@@ -238,7 +238,7 @@
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidCredit'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'voidCredit');
 
       if (isMLEForApi === true) {
@@ -310,7 +310,7 @@
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidPayment'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'voidPayment');
 
       if (isMLEForApi === true) {
@@ -382,7 +382,7 @@
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidRefund'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'voidRefund');
 
       if (isMLEForApi === true) {

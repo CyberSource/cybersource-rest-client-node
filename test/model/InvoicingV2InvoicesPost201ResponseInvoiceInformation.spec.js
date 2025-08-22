@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customLabels (base name: "customLabels")', function() {
+      // uncomment below and update the code to test the property customLabels
+      //var instane = new CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

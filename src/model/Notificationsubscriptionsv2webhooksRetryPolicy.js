@@ -100,8 +100,9 @@
   /**
    * This is used to calculate the Retry Sequence.  Sample calculations using firstRetry=10, interval=30, maxNumberOfRetries=3 Arithmetic = a+r(n-1) Retry 1 - 10 minutes Retry 2 - 10+30x1 = 40 minutes Retry 3 - 10+30x2 = 70 minutes  Geometric = ar^(n-1) Retry 1 - 10 minutes Retry 2 - 10x30^1 = 300 minutes Retry 3 - 10x30^2 = 9,000 minutes 
    * @member {String} algorithm
+   * @default 'ARITHMETIC'
    */
-  exports.prototype['algorithm'] = undefined;
+  exports.prototype['algorithm'] = 'ARITHMETIC';
   /**
    * When to initiate first retry, after the initial call failed. (in mins).
    * @member {Number} firstRetry

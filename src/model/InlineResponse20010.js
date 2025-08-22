@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20010Records', 'model/InlineResponse2008EmbeddedTotals', 'model/InlineResponse2009Billing'], factory);
+    define(['ApiClient', 'model/InlineResponse20010Billing', 'model/InlineResponse20010Links', 'model/InlineResponse2009EmbeddedTotals'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20010Records'), require('./InlineResponse2008EmbeddedTotals'), require('./InlineResponse2009Billing'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse20010Billing'), require('./InlineResponse20010Links'), require('./InlineResponse2009EmbeddedTotals'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20010 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20010Records, root.CyberSource.InlineResponse2008EmbeddedTotals, root.CyberSource.InlineResponse2009Billing);
+    root.CyberSource.InlineResponse20010 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20010Billing, root.CyberSource.InlineResponse20010Links, root.CyberSource.InlineResponse2009EmbeddedTotals);
   }
-}(this, function(ApiClient, InlineResponse20010Records, InlineResponse2008EmbeddedTotals, InlineResponse2009Billing) {
+}(this, function(ApiClient, InlineResponse20010Billing, InlineResponse20010Links, InlineResponse2009EmbeddedTotals) {
   'use strict';
 
 
@@ -70,85 +70,85 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('version')) {
-        obj['version'] = ApiClient.convertToType(data['version'], 'String');
-      }
-      if (data.hasOwnProperty('reportCreatedDate')) {
-        obj['reportCreatedDate'] = ApiClient.convertToType(data['reportCreatedDate'], 'String');
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = InlineResponse20010Links.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('batchId')) {
         obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
       }
-      if (data.hasOwnProperty('batchSource')) {
-        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
-      }
-      if (data.hasOwnProperty('batchCaEndpoints')) {
-        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
-      }
       if (data.hasOwnProperty('batchCreatedDate')) {
         obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
+      }
+      if (data.hasOwnProperty('batchSource')) {
+        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
       }
       if (data.hasOwnProperty('merchantReference')) {
         obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
       }
+      if (data.hasOwnProperty('batchCaEndpoints')) {
+        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
       if (data.hasOwnProperty('totals')) {
-        obj['totals'] = InlineResponse2008EmbeddedTotals.constructFromObject(data['totals']);
+        obj['totals'] = InlineResponse2009EmbeddedTotals.constructFromObject(data['totals']);
       }
       if (data.hasOwnProperty('billing')) {
-        obj['billing'] = InlineResponse2009Billing.constructFromObject(data['billing']);
+        obj['billing'] = InlineResponse20010Billing.constructFromObject(data['billing']);
       }
-      if (data.hasOwnProperty('records')) {
-        obj['records'] = ApiClient.convertToType(data['records'], [InlineResponse20010Records]);
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} version
+   * @member {module:model/InlineResponse20010Links} _links
    */
-  exports.prototype['version'] = undefined;
-  /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @member {String} reportCreatedDate
-   */
-  exports.prototype['reportCreatedDate'] = undefined;
+  exports.prototype['_links'] = undefined;
   /**
    * Unique identification number assigned to the submitted request.
    * @member {String} batchId
    */
   exports.prototype['batchId'] = undefined;
   /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @member {String} batchSource
-   */
-  exports.prototype['batchSource'] = undefined;
-  /**
-   * @member {String} batchCaEndpoints
-   */
-  exports.prototype['batchCaEndpoints'] = undefined;
-  /**
    * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
    * @member {String} batchCreatedDate
    */
   exports.prototype['batchCreatedDate'] = undefined;
+  /**
+   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
+   * @member {String} batchSource
+   */
+  exports.prototype['batchSource'] = undefined;
   /**
    * Reference used by merchant to identify batch.
    * @member {String} merchantReference
    */
   exports.prototype['merchantReference'] = undefined;
   /**
-   * @member {module:model/InlineResponse2008EmbeddedTotals} totals
+   * @member {String} batchCaEndpoints
+   */
+  exports.prototype['batchCaEndpoints'] = undefined;
+  /**
+   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2009EmbeddedTotals} totals
    */
   exports.prototype['totals'] = undefined;
   /**
-   * @member {module:model/InlineResponse2009Billing} billing
+   * @member {module:model/InlineResponse20010Billing} billing
    */
   exports.prototype['billing'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse20010Records>} records
+   * @member {String} description
    */
-  exports.prototype['records'] = undefined;
+  exports.prototype['description'] = undefined;
 
 
 

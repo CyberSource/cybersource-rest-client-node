@@ -136,7 +136,7 @@
       var returnType = PushFunds201Response;
 
       //check isMLE for an api method 'this.createPushFundsTransfer'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPushFundsTransfer');
 
       if (isMLEForApi === true) {

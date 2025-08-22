@@ -94,7 +94,7 @@
       var returnType = RiskV1AuthenticationsPost201Response;
 
       //check isMLE for an api method 'this.checkPayerAuthEnrollment'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'checkPayerAuthEnrollment');
 
       if (isMLEForApi === true) {
@@ -159,7 +159,7 @@
       var returnType = RiskV1AuthenticationSetupsPost201Response;
 
       //check isMLE for an api method 'this.payerAuthSetup'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'payerAuthSetup');
 
       if (isMLEForApi === true) {
@@ -224,7 +224,7 @@
       var returnType = RiskV1AuthenticationResultsPost201Response;
 
       //check isMLE for an api method 'this.validateAuthenticationResults'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'validateAuthenticationResults');
 
       if (isMLEForApi === true) {

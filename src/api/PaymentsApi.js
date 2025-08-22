@@ -101,7 +101,7 @@
       var returnType = PtsV2PaymentsOrderPost201Response;
 
       //check isMLE for an api method 'this.createOrderRequest'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createOrderRequest');
 
       if (isMLEForApi === true) {
@@ -166,7 +166,7 @@
       var returnType = PtsV2PaymentsPost201Response;
 
       //check isMLE for an api method 'this.createPayment'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPayment');
 
       if (isMLEForApi === true) {
@@ -231,7 +231,7 @@
       var returnType = PtsV2PaymentsPost201Response2;
 
       //check isMLE for an api method 'this.createSessionRequest'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createSessionRequest');
 
       if (isMLEForApi === true) {
@@ -303,7 +303,7 @@
       var returnType = PtsV2IncrementalAuthorizationPatch201Response;
 
       //check isMLE for an api method 'this.incrementAuth'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'incrementAuth');
 
       if (isMLEForApi === true) {
@@ -375,7 +375,7 @@
       var returnType = PtsV2PaymentsPost201Response1;
 
       //check isMLE for an api method 'this.refreshPaymentStatus'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'refreshPaymentStatus');
 
       if (isMLEForApi === true) {
@@ -447,7 +447,7 @@
       var returnType = PtsV2PaymentsPost201Response2;
 
       //check isMLE for an api method 'this.updateSessionReq'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateSessionReq');
 
       if (isMLEForApi === true) {

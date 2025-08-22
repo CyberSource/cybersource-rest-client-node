@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **allowPartialPayments** | **Boolean** | If set to `true`, the payer can make a partial invoice payment. | [optional] [default to false]
 **paymentLink** | **String** | Returns the payment link to an invoice when the invoice status is `SENT`, `CREATED`, `PARTIAL`, or `PAID`. | [optional] 
 **deliveryMode** | **String** | If this field is set to 'None', an invoice will be generated with the status 'CREATED', but no email will be dispatched.    Possible values:        - `None`   - `Email`     | [optional] 
+**customLabels** | [**[InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels]**](InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels.md) | A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten.  | [optional] 
 
 

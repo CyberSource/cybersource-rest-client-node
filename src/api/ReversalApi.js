@@ -101,7 +101,7 @@
       var returnType = PtsV2PaymentsReversalsPost201Response;
 
       //check isMLE for an api method 'this.authReversal'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'authReversal');
 
       if (isMLEForApi === true) {
@@ -166,7 +166,7 @@
       var returnType = PtsV2PaymentsReversalsPost201Response;
 
       //check isMLE for an api method 'this.mitReversal'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'mitReversal');
 
       if (isMLEForApi === true) {
