@@ -673,26 +673,26 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
     //useMLEGlobally check for auth Type
     if (this.enableRequestMLEForOptionalApisGlobally === true || this.mapToControlMLEonAPI != null) {
-        // if (this.enableRequestMLEForOptionalApisGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
-        //     ApiException.ApiException("MLE is only supported in JWT auth type", logger);
-        // }
+        if (this.enableRequestMLEForOptionalApisGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
+            ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
+        }
 
         if (this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object") {
             ApiException.ApiException("mapToControlMLEonAPI in merchantConfig should be key value pair", logger);
         }
 
-        // if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
-        //     var hasTrueValue = false;
-        //     for (const[key, value] of Object.entries(this.mapToControlMLEonAPI)) {
-        //         if (value === true) {
-        //             hasTrueValue = true;
-        //             break;
-        //         }
-        //     }
-        //     if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
-        //         ApiException.ApiException("MLE is only supported in JWT auth type", logger);
-        //     }
-        // }
+        if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
+            var hasTrueValue = false;
+            for (const[key, value] of Object.entries(this.mapToControlMLEonAPI)) {
+                if (value === true) {
+                    hasTrueValue = true;
+                    break;
+                }
+            }
+            if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
+                ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
+            }
+        }
     }
     if (this.mleForRequestPublicCertPath) {
     // First check if the file exists and is readable
