@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -103,6 +104,9 @@
       }
       if (data.hasOwnProperty('japanPaymentOptions')) {
         obj['japanPaymentOptions'] = TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions.constructFromObject(data['japanPaymentOptions']);
+      }
+      if (data.hasOwnProperty('validationLevel')) {
+        obj['validationLevel'] = ApiClient.convertToType(data['validationLevel'], 'Number');
       }
     }
     return obj;
@@ -159,6 +163,11 @@
    * @member {module:model/TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions} japanPaymentOptions
    */
   exports.prototype['japanPaymentOptions'] = undefined;
+  /**
+   * Enter 1 for routing and account number validation. 
+   * @member {Number} validationLevel
+   */
+  exports.prototype['validationLevel'] = undefined;
 
 
 

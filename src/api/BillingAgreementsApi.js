@@ -101,8 +101,8 @@
       var returnType = PtsV2ModifyBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsDeRegistration'
-      var isMLESupportedByCybsForApi = true;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsDeRegistration');
+      var inboundMLEStatus = 'optional';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'billingAgreementsDeRegistration');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -173,8 +173,8 @@
       var returnType = PtsV2CreditsPost201Response1;
 
       //check isMLE for an api method 'this.billingAgreementsIntimation'
-      var isMLESupportedByCybsForApi = true;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsIntimation');
+      var inboundMLEStatus = 'optional';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'billingAgreementsIntimation');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -238,8 +238,8 @@
       var returnType = PtsV2CreateBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsRegistration'
-      var isMLESupportedByCybsForApi = true;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'billingAgreementsRegistration');
+      var inboundMLEStatus = 'optional';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'billingAgreementsRegistration');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

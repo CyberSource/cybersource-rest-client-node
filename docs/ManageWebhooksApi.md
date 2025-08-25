@@ -205,7 +205,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, opts)
+> InlineResponse2005 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, opts)
 
 Update a Webhook Subscription
 
@@ -227,7 +227,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, opts, callback);
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2009LinksReport', 'model/InlineResponse202LinksStatus'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2009LinksReport'), require('./InlineResponse202LinksStatus'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2009Links = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2009LinksReport, root.CyberSource.InlineResponse202LinksStatus);
+    root.CyberSource.InlineResponse2009Links = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, InlineResponse2009LinksReport, InlineResponse202LinksStatus) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -62,24 +62,25 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('self')) {
-        obj['self'] = InlineResponse202LinksStatus.constructFromObject(data['self']);
+      if (data.hasOwnProperty('rel')) {
+        obj['rel'] = ApiClient.convertToType(data['rel'], 'String');
       }
-      if (data.hasOwnProperty('report')) {
-        obj['report'] = ApiClient.convertToType(data['report'], [InlineResponse2009LinksReport]);
+      if (data.hasOwnProperty('href')) {
+        obj['href'] = ApiClient.convertToType(data['href'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse202LinksStatus} self
+   * Valid Values:   * self   * first   * last   * prev   * next 
+   * @member {String} rel
    */
-  exports.prototype['self'] = undefined;
+  exports.prototype['rel'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2009LinksReport>} report
+   * @member {String} href
    */
-  exports.prototype['report'] = undefined;
+  exports.prototype['href'] = undefined;
 
 
 

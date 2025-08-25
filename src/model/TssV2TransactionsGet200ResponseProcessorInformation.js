@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/Riskv1decisionsProcessorInformationCardVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults', 'model/TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting', 'model/TssV2TransactionsGet200ResponseProcessorInformationProcessor'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/PtsV2PaymentsPost201ResponseProcessorInformationRouting', 'model/Riskv1decisionsProcessorInformationCardVerification', 'model/TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults', 'model/TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting', 'model/TssV2TransactionsGet200ResponseProcessorInformationProcessor'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./Riskv1decisionsProcessorInformationCardVerification'), require('./TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'), require('./TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting'), require('./TssV2TransactionsGet200ResponseProcessorInformationProcessor'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./PtsV2PaymentsPost201ResponseProcessorInformationRouting'), require('./Riskv1decisionsProcessorInformationCardVerification'), require('./TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'), require('./TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting'), require('./TssV2TransactionsGet200ResponseProcessorInformationProcessor'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.Riskv1decisionsProcessorInformationCardVerification, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationProcessor);
+    root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationRouting, root.CyberSource.Riskv1decisionsProcessorInformationCardVerification, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting, root.CyberSource.TssV2TransactionsGet200ResponseProcessorInformationProcessor);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, Riskv1decisionsProcessorInformationCardVerification, TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting, TssV2TransactionsGet200ResponseProcessorInformationProcessor) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, PtsV2PaymentsPost201ResponseProcessorInformationRouting, Riskv1decisionsProcessorInformationCardVerification, TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults, TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting, TssV2TransactionsGet200ResponseProcessorInformationProcessor) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -123,6 +124,9 @@
       }
       if (data.hasOwnProperty('paymentAccountReferenceNumber')) {
         obj['paymentAccountReferenceNumber'] = ApiClient.convertToType(data['paymentAccountReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('routing')) {
+        obj['routing'] = PtsV2PaymentsPost201ResponseProcessorInformationRouting.constructFromObject(data['routing']);
       }
     }
     return obj;
@@ -203,6 +207,10 @@
    * @member {String} paymentAccountReferenceNumber
    */
   exports.prototype['paymentAccountReferenceNumber'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationRouting} routing
+   */
+  exports.prototype['routing'] = undefined;
 
 
 

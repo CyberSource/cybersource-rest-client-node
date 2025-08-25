@@ -74,7 +74,7 @@
   }
 
   /**
-   * Security Policy of the client server.
+   * Security Policy of the client server.  Possible values: - key - oAuth - oAuth_JWT
    * @member {String} securityType
    */
   exports.prototype['securityType'] = undefined;

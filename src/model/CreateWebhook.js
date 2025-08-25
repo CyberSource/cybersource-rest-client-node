@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv2webhooksProducts1', 'model/Notificationsubscriptionsv2webhooksRetryPolicy', 'model/Notificationsubscriptionsv2webhooksSecurityPolicy1'], factory);
+    define(['ApiClient', 'model/Notificationsubscriptionsv2webhooksProducts1', 'model/Notificationsubscriptionsv2webhooksRetryPolicy', 'model/Notificationsubscriptionsv2webhooksSecurityPolicy'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv2webhooksProducts1'), require('./Notificationsubscriptionsv2webhooksRetryPolicy'), require('./Notificationsubscriptionsv2webhooksSecurityPolicy1'));
+    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv2webhooksProducts1'), require('./Notificationsubscriptionsv2webhooksRetryPolicy'), require('./Notificationsubscriptionsv2webhooksSecurityPolicy'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateWebhook = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv2webhooksProducts1, root.CyberSource.Notificationsubscriptionsv2webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicy1);
+    root.CyberSource.CreateWebhook = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv2webhooksProducts1, root.CyberSource.Notificationsubscriptionsv2webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicy);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv2webhooksProducts1, Notificationsubscriptionsv2webhooksRetryPolicy, Notificationsubscriptionsv2webhooksSecurityPolicy1) {
+}(this, function(ApiClient, Notificationsubscriptionsv2webhooksProducts1, Notificationsubscriptionsv2webhooksRetryPolicy, Notificationsubscriptionsv2webhooksSecurityPolicy) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -89,8 +90,11 @@
       if (data.hasOwnProperty('retryPolicy')) {
         obj['retryPolicy'] = Notificationsubscriptionsv2webhooksRetryPolicy.constructFromObject(data['retryPolicy']);
       }
+      if (data.hasOwnProperty('notificationScope')) {
+        obj['notificationScope'] = ApiClient.convertToType(data['notificationScope'], 'String');
+      }
       if (data.hasOwnProperty('securityPolicy')) {
-        obj['securityPolicy'] = Notificationsubscriptionsv2webhooksSecurityPolicy1.constructFromObject(data['securityPolicy']);
+        obj['securityPolicy'] = Notificationsubscriptionsv2webhooksSecurityPolicy.constructFromObject(data['securityPolicy']);
       }
     }
     return obj;
@@ -122,7 +126,7 @@
    */
   exports.prototype['webhookUrl'] = undefined;
   /**
-   * The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl. If the user does not provide the health check URL, it is the user's responsibility to re-activate the webhook if it is deactivated by calling the test endpoint. 
+   * The client's health check endpoint (URL). If the user does not provide the health check URL, it is the user's responsibility to re-activate the webhook if it is deactivated by calling the test endpoint. 
    * @member {String} healthCheckUrl
    */
   exports.prototype['healthCheckUrl'] = undefined;
@@ -131,7 +135,13 @@
    */
   exports.prototype['retryPolicy'] = undefined;
   /**
-   * @member {module:model/Notificationsubscriptionsv2webhooksSecurityPolicy1} securityPolicy
+   * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+   * @member {String} notificationScope
+   * @default 'DESCENDANTS'
+   */
+  exports.prototype['notificationScope'] = 'DESCENDANTS';
+  /**
+   * @member {module:model/Notificationsubscriptionsv2webhooksSecurityPolicy} securityPolicy
    */
   exports.prototype['securityPolicy'] = undefined;
 

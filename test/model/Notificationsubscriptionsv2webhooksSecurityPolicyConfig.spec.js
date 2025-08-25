@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfig);
     });
 
-    it('should have the property oAuthTokenExpiry (base name: "oAuthTokenExpiry")', function() {
-      // uncomment below and update the code to test the property oAuthTokenExpiry
-      //var instane = new CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfig();
-      //expect(instance).to.be();
-    });
-
     it('should have the property oAuthURL (base name: "oAuthURL")', function() {
       // uncomment below and update the code to test the property oAuthURL
       //var instane = new CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfig();
@@ -70,6 +64,12 @@
 
     it('should have the property oAuthTokenType (base name: "oAuthTokenType")', function() {
       // uncomment below and update the code to test the property oAuthTokenType
+      //var instane = new CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfig();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property additionalConfig (base name: "additionalConfig")', function() {
+      // uncomment below and update the code to test the property additionalConfig
       //var instane = new CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfig();
       //expect(instance).to.be();
     });

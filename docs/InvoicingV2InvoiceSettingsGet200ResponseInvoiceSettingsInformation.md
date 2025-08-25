@@ -17,5 +17,6 @@ Name | Type | Description | Notes
 **phoneNumber** | **Boolean** | Collect the payers phone number. | [optional] [default to false]
 **email** | **Boolean** | Collect the payers email address when the email address is not known or confirm it if it is known at the time of invoice creation. | [optional] [default to false]
 **enableMerchantEmailNotifications** | **Boolean** | Whether you would like to receive payment notification for successful transaction | [optional] [default to false]
+**customLabels** | [**[InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels]**](InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels.md) | A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten.  | [optional] 
 
 

@@ -115,8 +115,8 @@
       var returnType = ReportingV3PurchaseRefundDetailsGet200Response;
 
       //check isMLE for an api method 'this.getPurchaseAndRefundDetails'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getPurchaseAndRefundDetails');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getPurchaseAndRefundDetails');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

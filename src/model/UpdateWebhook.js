@@ -83,14 +83,14 @@
       if (data.hasOwnProperty('webhookUrl')) {
         obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
       }
+      if (data.hasOwnProperty('notificationScope')) {
+        obj['notificationScope'] = ApiClient.convertToType(data['notificationScope'], 'String');
+      }
       if (data.hasOwnProperty('healthCheckUrl')) {
         obj['healthCheckUrl'] = ApiClient.convertToType(data['healthCheckUrl'], 'String');
       }
       if (data.hasOwnProperty('securityPolicy')) {
         obj['securityPolicy'] = Notificationsubscriptionsv2webhooksSecurityPolicy.constructFromObject(data['securityPolicy']);
-      }
-      if (data.hasOwnProperty('additionalAttributes')) {
-        obj['additionalAttributes'] = ApiClient.convertToType(data['additionalAttributes'], [{'String': 'String'}]);
       }
     }
     return obj;
@@ -121,7 +121,13 @@
    */
   exports.prototype['webhookUrl'] = undefined;
   /**
-   * The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
+   * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+   * @member {String} notificationScope
+   * @default 'DESCENDANTS'
+   */
+  exports.prototype['notificationScope'] = 'DESCENDANTS';
+  /**
+   * The client's health check endpoint (URL).
    * @member {String} healthCheckUrl
    */
   exports.prototype['healthCheckUrl'] = undefined;
@@ -129,11 +135,6 @@
    * @member {module:model/Notificationsubscriptionsv2webhooksSecurityPolicy} securityPolicy
    */
   exports.prototype['securityPolicy'] = undefined;
-  /**
-   * Additional, free form configuration data.
-   * @member {Array.<Object.<String, String>>} additionalAttributes
-   */
-  exports.prototype['additionalAttributes'] = undefined;
 
 
 

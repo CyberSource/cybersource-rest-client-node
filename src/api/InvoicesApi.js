@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateInvoiceRequest', 'model/InvoicingV2InvoicesAllGet200Response', 'model/InvoicingV2InvoicesAllGet400Response', 'model/InvoicingV2InvoicesAllGet404Response', 'model/InvoicingV2InvoicesAllGet502Response', 'model/InvoicingV2InvoicesCancel200Response', 'model/InvoicingV2InvoicesGet200Response', 'model/InvoicingV2InvoicesPost201Response', 'model/InvoicingV2InvoicesPost202Response', 'model/InvoicingV2InvoicesPut200Response', 'model/InvoicingV2InvoicesSend200Response', 'model/UpdateInvoiceRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateInvoiceRequest', 'model/InvoicingV2InvoicesAllGet200Response', 'model/InvoicingV2InvoicesAllGet400Response', 'model/InvoicingV2InvoicesAllGet404Response', 'model/InvoicingV2InvoicesAllGet502Response', 'model/InvoicingV2InvoicesCancel200Response', 'model/InvoicingV2InvoicesGet200Response', 'model/InvoicingV2InvoicesPost201Response', 'model/InvoicingV2InvoicesPost202Response', 'model/InvoicingV2InvoicesPublish200Response', 'model/InvoicingV2InvoicesPut200Response', 'model/InvoicingV2InvoicesSend200Response', 'model/UpdateInvoiceRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateInvoiceRequest'), require('../model/InvoicingV2InvoicesAllGet200Response'), require('../model/InvoicingV2InvoicesAllGet400Response'), require('../model/InvoicingV2InvoicesAllGet404Response'), require('../model/InvoicingV2InvoicesAllGet502Response'), require('../model/InvoicingV2InvoicesCancel200Response'), require('../model/InvoicingV2InvoicesGet200Response'), require('../model/InvoicingV2InvoicesPost201Response'), require('../model/InvoicingV2InvoicesPost202Response'), require('../model/InvoicingV2InvoicesPut200Response'), require('../model/InvoicingV2InvoicesSend200Response'), require('../model/UpdateInvoiceRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateInvoiceRequest'), require('../model/InvoicingV2InvoicesAllGet200Response'), require('../model/InvoicingV2InvoicesAllGet400Response'), require('../model/InvoicingV2InvoicesAllGet404Response'), require('../model/InvoicingV2InvoicesAllGet502Response'), require('../model/InvoicingV2InvoicesCancel200Response'), require('../model/InvoicingV2InvoicesGet200Response'), require('../model/InvoicingV2InvoicesPost201Response'), require('../model/InvoicingV2InvoicesPost202Response'), require('../model/InvoicingV2InvoicesPublish200Response'), require('../model/InvoicingV2InvoicesPut200Response'), require('../model/InvoicingV2InvoicesSend200Response'), require('../model/UpdateInvoiceRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateInvoiceRequest, root.CyberSource.InvoicingV2InvoicesAllGet200Response, root.CyberSource.InvoicingV2InvoicesAllGet400Response, root.CyberSource.InvoicingV2InvoicesAllGet404Response, root.CyberSource.InvoicingV2InvoicesAllGet502Response, root.CyberSource.InvoicingV2InvoicesCancel200Response, root.CyberSource.InvoicingV2InvoicesGet200Response, root.CyberSource.InvoicingV2InvoicesPost201Response, root.CyberSource.InvoicingV2InvoicesPost202Response, root.CyberSource.InvoicingV2InvoicesPut200Response, root.CyberSource.InvoicingV2InvoicesSend200Response, root.CyberSource.UpdateInvoiceRequest);
+    root.CyberSource.InvoicesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateInvoiceRequest, root.CyberSource.InvoicingV2InvoicesAllGet200Response, root.CyberSource.InvoicingV2InvoicesAllGet400Response, root.CyberSource.InvoicingV2InvoicesAllGet404Response, root.CyberSource.InvoicingV2InvoicesAllGet502Response, root.CyberSource.InvoicingV2InvoicesCancel200Response, root.CyberSource.InvoicingV2InvoicesGet200Response, root.CyberSource.InvoicingV2InvoicesPost201Response, root.CyberSource.InvoicingV2InvoicesPost202Response, root.CyberSource.InvoicingV2InvoicesPublish200Response, root.CyberSource.InvoicingV2InvoicesPut200Response, root.CyberSource.InvoicingV2InvoicesSend200Response, root.CyberSource.UpdateInvoiceRequest);
   }
-}(this, function(MLEUtility, ApiClient, CreateInvoiceRequest, InvoicingV2InvoicesAllGet200Response, InvoicingV2InvoicesAllGet400Response, InvoicingV2InvoicesAllGet404Response, InvoicingV2InvoicesAllGet502Response, InvoicingV2InvoicesCancel200Response, InvoicingV2InvoicesGet200Response, InvoicingV2InvoicesPost201Response, InvoicingV2InvoicesPost202Response, InvoicingV2InvoicesPut200Response, InvoicingV2InvoicesSend200Response, UpdateInvoiceRequest) {
+}(this, function(MLEUtility, ApiClient, CreateInvoiceRequest, InvoicingV2InvoicesAllGet200Response, InvoicingV2InvoicesAllGet400Response, InvoicingV2InvoicesAllGet404Response, InvoicingV2InvoicesAllGet502Response, InvoicingV2InvoicesCancel200Response, InvoicingV2InvoicesGet200Response, InvoicingV2InvoicesPost201Response, InvoicingV2InvoicesPost202Response, InvoicingV2InvoicesPublish200Response, InvoicingV2InvoicesPut200Response, InvoicingV2InvoicesSend200Response, UpdateInvoiceRequest) {
   'use strict';
 
   /**
@@ -94,8 +94,8 @@
       var returnType = InvoicingV2InvoicesPost201Response;
 
       //check isMLE for an api method 'this.createInvoice'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'createInvoice');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createInvoice');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -170,8 +170,8 @@
       var returnType = InvoicingV2InvoicesAllGet200Response;
 
       //check isMLE for an api method 'this.getAllInvoices'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getAllInvoices');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getAllInvoices');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -235,8 +235,8 @@
       var returnType = InvoicingV2InvoicesGet200Response;
 
       //check isMLE for an api method 'this.getInvoice'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'getInvoice');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getInvoice');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -300,8 +300,8 @@
       var returnType = InvoicingV2InvoicesCancel200Response;
 
       //check isMLE for an api method 'this.performCancelAction'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'performCancelAction');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'performCancelAction');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -314,6 +314,71 @@
       } else {
         return this.apiClient.callApi(
           '/invoicing/v2/invoices/{id}/cancelation', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the performPublishAction operation.
+     * @callback module:api/InvoicesApi~performPublishActionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InvoicingV2InvoicesPublish200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Publish an Invoice
+     * You can publish an invoice in DRAFT status. After invoking this method, the invoice status is changed to CREATED.
+     * @param {String} id The invoice number.
+     * @param {module:api/InvoicesApi~performPublishActionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InvoicingV2InvoicesPublish200Response}
+     */
+    this.performPublishAction = function(id, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling performPublishAction");
+      }
+
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
+      var returnType = InvoicingV2InvoicesPublish200Response;
+
+      //check isMLE for an api method 'this.performPublishAction'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'performPublishAction');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/invoicing/v2/invoices/{id}/publication', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/invoicing/v2/invoices/{id}/publication', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, callback
         );
@@ -365,8 +430,8 @@
       var returnType = InvoicingV2InvoicesSend200Response;
 
       //check isMLE for an api method 'this.performSendAction'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'performSendAction');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'performSendAction');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
@@ -437,8 +502,8 @@
       var returnType = InvoicingV2InvoicesPut200Response;
 
       //check isMLE for an api method 'this.updateInvoice'
-      var isMLESupportedByCybsForApi = false;
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, isMLESupportedByCybsForApi, 'updateInvoice');
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateInvoice');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getAllInvoices**](InvoicesApi.md#getAllInvoices) | **GET** /invoicing/v2/invoices | Get a List of Invoices
 [**getInvoice**](InvoicesApi.md#getInvoice) | **GET** /invoicing/v2/invoices/{id} | Get Invoice Details
 [**performCancelAction**](InvoicesApi.md#performCancelAction) | **POST** /invoicing/v2/invoices/{id}/cancelation | Cancel an Invoice
+[**performPublishAction**](InvoicesApi.md#performPublishAction) | **POST** /invoicing/v2/invoices/{id}/publication | Publish an Invoice
 [**performSendAction**](InvoicesApi.md#performSendAction) | **POST** /invoicing/v2/invoices/{id}/delivery | Send an Invoice
 [**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** /invoicing/v2/invoices/{id} | Update an Invoice
 
@@ -193,6 +194,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InvoicingV2InvoicesCancel200Response**](InvoicingV2InvoicesCancel200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
+
+<a name="performPublishAction"></a>
+# **performPublishAction**
+> InvoicingV2InvoicesPublish200Response performPublishAction(id)
+
+Publish an Invoice
+
+You can publish an invoice in DRAFT status. After invoking this method, the invoice status is changed to CREATED.
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.InvoicesApi();
+
+var id = "id_example"; // String | The invoice number.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.performPublishAction(id, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The invoice number. | 
+
+### Return type
+
+[**InvoicingV2InvoicesPublish200Response**](InvoicingV2InvoicesPublish200Response.md)
 
 ### Authorization
 

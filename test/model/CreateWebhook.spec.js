@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property notificationScope (base name: "notificationScope")', function() {
+      // uncomment below and update the code to test the property notificationScope
+      //var instane = new CyberSource.CreateWebhook();
+      //expect(instance).to.be();
+    });
+
     it('should have the property securityPolicy (base name: "securityPolicy")', function() {
       // uncomment below and update the code to test the property securityPolicy
       //var instane = new CyberSource.CreateWebhook();
