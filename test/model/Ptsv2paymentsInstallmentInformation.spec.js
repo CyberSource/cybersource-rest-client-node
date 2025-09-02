@@ -152,6 +152,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property interestIndicator (base name: "interestIndicator")', function() {
+      // uncomment below and update the code to test the property interestIndicator
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isGovernmentPlan (base name: "isGovernmentPlan")', function() {
+      // uncomment below and update the code to test the property isGovernmentPlan
+      //var instane = new CyberSource.Ptsv2paymentsInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

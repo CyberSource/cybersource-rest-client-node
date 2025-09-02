@@ -56,8 +56,32 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2006);
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
+    it('should have the property totalCount (base name: "totalCount")', function() {
+      // uncomment below and update the code to test the property totalCount
+      //var instane = new CyberSource.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property offset (base name: "offset")', function() {
+      // uncomment below and update the code to test the property offset
+      //var instane = new CyberSource.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property limit (base name: "limit")', function() {
+      // uncomment below and update the code to test the property limit
+      //var instane = new CyberSource.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sort (base name: "sort")', function() {
+      // uncomment below and update the code to test the property sort
+      //var instane = new CyberSource.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property count (base name: "count")', function() {
+      // uncomment below and update the code to test the property count
       //var instane = new CyberSource.InlineResponse2006();
       //expect(instance).to.be();
     });

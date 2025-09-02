@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfig = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfig = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig) {
   'use strict';
 
 
@@ -64,34 +64,33 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('oAuthTokenExpiry')) {
-        obj['oAuthTokenExpiry'] = ApiClient.convertToType(data['oAuthTokenExpiry'], 'String');
-      }
       if (data.hasOwnProperty('oAuthURL')) {
         obj['oAuthURL'] = ApiClient.convertToType(data['oAuthURL'], 'String');
       }
       if (data.hasOwnProperty('oAuthTokenType')) {
         obj['oAuthTokenType'] = ApiClient.convertToType(data['oAuthTokenType'], 'String');
       }
+      if (data.hasOwnProperty('additionalConfig')) {
+        obj['additionalConfig'] = Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig.constructFromObject(data['additionalConfig']);
+      }
     }
     return obj;
   }
 
-  /**
-   * Token expiration for the oAuth server.
-   * @member {String} oAuthTokenExpiry
-   */
-  exports.prototype['oAuthTokenExpiry'] = undefined;
   /**
    * Client direct endpoint to the oAuth server.
    * @member {String} oAuthURL
    */
   exports.prototype['oAuthURL'] = undefined;
   /**
-   * Token type for the oAuth config.
+   * Token type for the oAuth config.  Possible values: - Bearer
    * @member {String} oAuthTokenType
    */
   exports.prototype['oAuthTokenType'] = undefined;
+  /**
+   * @member {module:model/Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig} additionalConfig
+   */
+  exports.prototype['additionalConfig'] = undefined;
 
 
 

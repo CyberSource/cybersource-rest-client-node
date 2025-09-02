@@ -152,6 +152,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property routing (base name: "routing")', function() {
+      // uncomment below and update the code to test the property routing
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

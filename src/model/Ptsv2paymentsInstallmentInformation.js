@@ -63,6 +63,8 @@
 
 
 
+
+
   };
 
   /**
@@ -123,6 +125,12 @@
       }
       if (data.hasOwnProperty('annualInterestRate')) {
         obj['annualInterestRate'] = ApiClient.convertToType(data['annualInterestRate'], 'String');
+      }
+      if (data.hasOwnProperty('interestIndicator')) {
+        obj['interestIndicator'] = ApiClient.convertToType(data['interestIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('isGovernmentPlan')) {
+        obj['isGovernmentPlan'] = ApiClient.convertToType(data['isGovernmentPlan'], 'Boolean');
       }
     }
     return obj;
@@ -208,6 +216,16 @@
    * @member {String} annualInterestRate
    */
   exports.prototype['annualInterestRate'] = undefined;
+  /**
+   * Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available 
+   * @member {String} interestIndicator
+   */
+  exports.prototype['interestIndicator'] = undefined;
+  /**
+   * Indicates if an installment plan is a government sponsored or part of a government program.  Possible values:  -true -false  This field defaults to false when no value is provided. 
+   * @member {Boolean} isGovernmentPlan
+   */
+  exports.prototype['isGovernmentPlan'] = undefined;
 
 
 

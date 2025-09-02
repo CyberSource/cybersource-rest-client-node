@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property validationLevel (base name: "validationLevel")', function() {
+      // uncomment below and update the code to test the property validationLevel
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

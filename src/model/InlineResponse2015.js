@@ -105,8 +105,8 @@
       if (data.hasOwnProperty('createdOn')) {
         obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
       }
-      if (data.hasOwnProperty('updatedOn')) {
-        obj['updatedOn'] = ApiClient.convertToType(data['updatedOn'], 'String');
+      if (data.hasOwnProperty('notificationScope')) {
+        obj['notificationScope'] = ApiClient.convertToType(data['notificationScope'], 'String');
       }
     }
     return obj;
@@ -132,7 +132,7 @@
    */
   exports.prototype['webhookUrl'] = undefined;
   /**
-   * The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
+   * The client's health check endpoint (URL).
    * @member {String} healthCheckUrl
    */
   exports.prototype['healthCheckUrl'] = undefined;
@@ -166,10 +166,11 @@
    */
   exports.prototype['createdOn'] = undefined;
   /**
-   * Date on which webhook was most recently updated.
-   * @member {String} updatedOn
+   * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+   * @member {String} notificationScope
+   * @default 'DESCENDANTS'
    */
-  exports.prototype['updatedOn'] = undefined;
+  exports.prototype['notificationScope'] = 'DESCENDANTS';
 
 
 
