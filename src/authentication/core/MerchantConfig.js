@@ -89,6 +89,8 @@ function MerchantConfig(result) {
     this.mleKeyAlias = result.mleKeyAlias; //mleKeyAlias is optional parameter, default value is "CyberSource_SJC_US".
     this.mleForRequestPublicCertPath = result.mleForRequestPublicCertPath;
 
+    this.maxIdleSockets = result.maxIdleSockets; // Value should be non-negative
+    this.freeSocketTimeout = result.freeSocketTimeout; // Value should be non-negative and greater than or equal to 4000
     /* Fallback logic*/
     this.defaultPropValues();
 
@@ -465,6 +467,22 @@ MerchantConfig.prototype.getP12FilePath = function getP12FilePath() {
     return path.resolve(path.join(this.getKeysDirectory(), this.getKeyFileName() + '.p12'));
 }
 
+MerchantConfig.prototype.getMaxIdleSockets = function getMaxIdleSockets() {
+    return this.maxIdleSockets;
+}
+
+MerchantConfig.prototype.setMaxIdleSockets = function setMaxIdleSockets(maxIdleSockets) {
+    this.maxIdleSockets = maxIdleSockets;
+}
+
+MerchantConfig.prototype.getFreeSocketTimeout = function getFreeSocketTimeout() {
+    return this.freeSocketTimeout;
+}
+
+MerchantConfig.prototype.setFreeSocketTimeout = function setFreeSocketTimeout(freeSocketTimeout) {
+    this.freeSocketTimeout = freeSocketTimeout;
+}
+
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
 
     /*url*/
@@ -669,6 +687,18 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         this.enableRequestMLEForOptionalApisGlobally !== this.useMLEGlobally
     ) {
         ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
+    }
+
+    // Validate maxIdleSockets is non-negative and not less than default
+    if (this.maxIdleSockets !== null && this.maxIdleSockets !== undefined && (this.maxIdleSockets <= 0 || this.maxIdleSockets < 100)) {
+        this.maxIdleSockets = 100;
+        logger.warn("maxIdleSockets cannot be non-negative or less than default. Setting to default value 100.");
+    }
+
+    // Validate userDefinedTimeout is non-negative and not less than default
+    if (this.userDefinedTimeout !== null && this.userDefinedTimeout !== undefined && (this.userDefinedTimeout <= 0 || this.userDefinedTimeout < 4000)) {
+        this.userDefinedTimeout = 4000;
+        logger.warn("userDefinedTimeout cannot be non-negative or less than default (value should be in milliseconds). Setting to default value 4000.");
     }
 
     //useMLEGlobally check for auth Type
