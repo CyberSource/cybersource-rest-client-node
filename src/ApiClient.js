@@ -56,11 +56,14 @@ const agentPool = new Map();
     const hashParts = [];
     
     // Add relevant configuration properties to the hash
-    if (config.useProxy) hashParts.push(`proxy:${config.proxyAddress}:${config.proxyPort}`);
-    if (config.proxyUser) hashParts.push(`proxyAuth:${config.proxyUser}`);
+    if (config.useProxy) {
+      hashParts.push(`proxyUrl:${config.proxyUrl}`);
+    }
     if (config.disableSSLVerification !== undefined) hashParts.push(`sslVerify:${!config.disableSSLVerification}`);
     if (config.sslCaCert) hashParts.push(`sslCaCert:${config.sslCaCert}`);
     if (config.enableClientCert) hashParts.push(`clientCert:${config.certFile}:${config.keyFile}`);
+    if (config.maxIdleSockets !== undefined) hashParts.push(`maxIdleSockets:${config.maxIdleSockets}`);
+    if (config.freeSocketTimeout !== undefined) hashParts.push(`freeSocketTimeout:${config.freeSocketTimeout}`);
     
     return hashParts.join('|');
   }
@@ -81,7 +84,7 @@ const agentPool = new Map();
     
     // Create agent options with keepAlive enabled
     const agentOptions = {
-      keepAlive: true,
+      keepAlive: true, // By default, keepAlive is true in agentkeepalive
       maxSockets: config.maxIdleSockets,
       freeSocketTimeout: config.freeSocketTimeout,
       rejectUnauthorized: !config.disableSSLVerification,
@@ -121,16 +124,20 @@ const agentPool = new Map();
     } else {
       proxyUrl = `http://${proxyAddress}:${proxyPort}`;
     }
-    
-    const configHash = `proxyAgent:${proxyUrl}`;
-    
+
+    const configHash = generateConfigHash({
+      useProxy: true,
+      proxyUrl: proxyUrl,
+      maxIdleSockets: maxIdleSockets
+    });
+
     if (agentPool.has(configHash)) {
       return agentPool.get(configHash);
     }
     
     // Apply the same connection pooling settings as the regular HTTPS agent
     const agentOptions = {
-      keepAlive: true,
+      keepAlive: true, // Keep the connection alive
       maxSockets: maxIdleSockets
     };
     
