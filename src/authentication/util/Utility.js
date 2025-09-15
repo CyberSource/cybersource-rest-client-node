@@ -115,3 +115,56 @@ exports.findCertificateByAlias = function (certs, keyAlias) {
         ApiException.AuthException("Error processing certificates: " + e.message);
     }
 }
+
+/**
+ * Parses the MLE configuration string and returns an object indicating requestMLE and responseMLE flags.
+ * @param {string} configString - The MLE configuration string in the format 'requestMLE::responseMLE' or 'requestMLE'.
+ * @param {object} logger - Logger object for logging errors.
+ * @returns {object} An object with requestMLE and optionally responseMLE boolean properties.
+ * @throws Will throw an error if the configString format is invalid.
+ */
+exports.ParseMLEConfigString = function (configString, logger) {
+    if (configString === null || configString === undefined || configString.trim() === "") {
+       ApiException.ApiException("Unsupported empty or non-string configString. Expected format: 'requestMLE::responseMLE' or 'requestMLE' as true/false.", logger);
+    } else if (configString.indexOf('::') != -1) {
+        const parts = configString.split('::');
+        if (parts.length !== 2) {
+            ApiException.ApiException("Invalid MLE control map value format. Expected format: true/false for 'requestMLE::responseMLE' but got: '" + configString + "'", logger);
+        }
+        const requestMLEPart = parts[0].trim();
+        const responseMLEPart = parts[1].trim();
+
+        if (requestMLEPart !== "" && ((requestMLEPart !== 'true' && requestMLEPart !== 'false'))) {
+            ApiException.ApiException("Invalid MLE control map value format. Expected format: true/false for 'requestMLE::responseMLE' but got: '" + configString + "'", logger);
+        }
+        if (responseMLEPart !== "" && ((responseMLEPart !== 'true' && responseMLEPart !== 'false'))) {
+            ApiException.ApiException("Invalid MLE control map value format. Expected format: true/false for 'requestMLE::responseMLE' but got: '" + configString + "'", logger);
+        }
+
+
+        // Create the result object
+        const result = {};
+        
+        // Only set requestMLE if requestMLEPart is not empty
+        if (requestMLEPart !== "") {
+            result.requestMLE = (requestMLEPart === 'true');
+        }
+        
+        // Only set responseMLE if responseMLEPart is not empty
+        if (responseMLEPart !== "") {
+            result.responseMLE = (responseMLEPart === 'true');
+        }
+        
+        return result;
+        
+    } else {
+        if (configString === 'true' || configString === 'false') {
+            const result = {
+                requestMLE: configString === 'true'
+            };
+            return result;
+        } else {
+            ApiException.ApiException("Invalid MLE control map value format for key '" + configString + "'. Expected format: true/false for 'requestMLE' but got: '" + configString + "'", logger);
+        }
+    }
+}
