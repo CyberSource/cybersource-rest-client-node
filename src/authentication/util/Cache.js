@@ -242,3 +242,42 @@ function validateCertificateExpiry(certificate, keyAlias, cacheKey, merchantConf
         }
     }
 };
+
+exports.getMleResponsePrivateKeyFromFilePath = function(merchantConfig) {
+    const logger = Logger.getLogger(merchantConfig, 'Cache');
+    const merchantId = merchantConfig.getMerchantID();
+    const cacheKey = merchantId + Constants.MLE_CACHE_KEY_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY;
+    const certificatePath = merchantConfig.getResponseMlePrivateKeyFilePath();
+
+    const cachedEntry = cache.get(cacheKey);
+
+    logger.debug("Fetching MLE response private key from cache with key: " + cacheKey);
+    if (cachedEntry == undefined || cachedEntry == null || cachedEntry.fileLastModifiedTime !== fs.statSync(certificatePath).mtimeMs) {
+        logger.debug("MLE response private key not found in cache or has been modified. Loading from file: " + certificatePath);
+        putMLEResponsePrivateKeyInCache(merchantConfig, cacheKey, certificatePath);
+    }
+    return cache.get(cacheKey).privateKey;
+}
+
+function putMLEResponsePrivateKeyInCache(merchantConfig, cacheKey, privateKeyPath) {
+    const logger = Logger.getLogger(merchantConfig, 'Cache');
+    const fileExtension = path.extname(privateKeyPath).toLowerCase();
+    const keyPass = merchantConfig.getResponseMlePrivateKeyFilePassword();
+    const fileLastModifiedTime = fs.statSync(privateKeyPath).mtimeMs;
+    var privateKey = null;
+    try {
+        if (['.p12', '.pfx'].includes(fileExtension)) {
+            privateKey = Utility.readPrivateKeyFromP12(privateKeyPath, keyPass, logger);
+        } else if (['.pem', '.key', '.p8'].includes(fileExtension)) {
+            privateKey = Utility.readPrivateKeyFromPemFile(privateKeyPath, keyPass, logger);
+        }
+    } catch (error) {
+        logger.error("Error reading private key from file: " + error.message);
+        throw error;
+    }
+    const cacheEntry = {
+        privateKey: privateKey,
+        fileLastModifiedTime: fileLastModifiedTime
+    };
+    cache.put(cacheKey, cacheEntry);
+}

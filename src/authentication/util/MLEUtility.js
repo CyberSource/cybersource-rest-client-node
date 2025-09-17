@@ -6,6 +6,7 @@ const Logger= require('../logging/Logger');
 const ApiException= require('./ApiException');
 const Constants = require('./Constants');
 const Cache = require('./Cache');
+const JWEUtility = require('./JWEUtility');
 
 exports.checkIsMLEForAPI = function (merchantConfig, inboundMLEStatus, operationId) {
     //isMLE for an api is false by default
@@ -27,17 +28,86 @@ exports.checkIsMLEForAPI = function (merchantConfig, inboundMLEStatus, operation
     }  
 
     //Control the MLE only from map
-    if (merchantConfig.mapToControlMLEonAPI != null && operationId in merchantConfig.mapToControlMLEonAPI) {
-        if (merchantConfig.mapToControlMLEonAPI[operationId] === true) {
+    if (merchantConfig.internalMapToControlRequestMLEonAPI != null && operationId in Object.keys(merchantConfig.internalMapToControlRequestMLEonAPI)) {
+        if (merchantConfig.internalMapToControlRequestMLEonAPI[operationId] === true) {
           isMLEForAPI = true;
         }
 
-        if (merchantConfig.mapToControlMLEonAPI[operationId] === false) {
+        if (merchantConfig.internalMapToControlRequestMLEonAPI[operationId] === false) {
           isMLEForAPI = false;
         }
     }
 
     return isMLEForAPI;
+}
+
+/**
+ * Determines if Message Level Encryption (MLE) should be applied to the API response.
+ * @param {Object} merchantConfig - Merchant configuration object
+ * @param {array} operationIds - Array of operation IDs
+ * @returns {boolean} Whether MLE should be applied
+ */
+exports.checkIsResponseMLEForAPI = function (merchantConfig, operationIds) {
+  let isResponseMLEForAPI = merchantConfig.getEnableResponseMleGlobally();
+  const responseMLEMap = merchantConfig.getInternalMapToControlResponseMLEonAPI();
+  
+  if (responseMLEMap && operationIds) {
+    operationIds.forEach(opId => {
+      const trimmedId = opId.trim();
+      if (trimmedId in responseMLEMap) {
+        isResponseMLEForAPI = responseMLEMap[trimmedId];
+      }
+    });
+  }
+  
+  return isResponseMLEForAPI;
+}
+
+exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfig) {
+  const logger = Logger.getLogger(merchantConfig, 'MLEUtility');
+  logger.debug('Checking if response body requires decryption');
+
+  if (
+    !responseBody ||
+    typeof responseBody !== 'object' ||
+    Object.keys(responseBody).length !== 1 ||
+    !responseBody.encryptedResponse
+  ) {
+    logger.debug('Response body is not an encrypted response, returning as is');
+    return Promise.resolve(responseBody);
+  }
+
+  logger.debug('Response body contains encrypted data, attempting to decrypt');
+  
+  try {
+    const privateKey = merchantConfig.getResponseMlePrivateKey() || 
+                       Cache.getMleResponsePrivateKeyFromFilePath(merchantConfig);
+    
+    if (!privateKey) {
+      const errorMsg = 'Failed to retrieve MLE response private key';
+      logger.error(errorMsg);
+      return Promise.reject(new Error(errorMsg));
+    }
+    
+    logger.debug('Successfully retrieved private key for decryption');
+    
+    return JWEUtility.decryptJWEUsingPrivateKey(privateKey, responseBody.encryptedResponse)
+      .then(decryptedData => {
+        logger.debug('Successfully decrypted MLE response');
+        return decryptedData;
+      })
+      .catch(error => {
+        const errorMsg = `Error decrypting MLE response: ${error.message}`;
+        logger.error(errorMsg);
+        // Create a more descriptive error
+        return Promise.reject(new Error(errorMsg));
+      });
+  } catch (error) {
+    const errorMsg = `Error preparing for MLE response decryption: ${error.message}`;
+    logger.error(errorMsg);
+    // Create a more descriptive error
+    return Promise.reject(new Error(errorMsg));
+  }
 }
 
 exports.encryptRequestPayload = function(merchantConfig, requestBody) {

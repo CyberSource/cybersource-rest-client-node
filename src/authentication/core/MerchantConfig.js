@@ -151,11 +151,11 @@ function MerchantConfig(result) {
 
     this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
     /* Fallback logic*/
-    this.defaultPropValues();
 
     if (this.mapToControlMLEonAPI != null) {
         validateAndSetMapToControlMLEonAPI.call(this, this.mapToControlMLEonAPI);
     }
+    this.defaultPropValues();
 }
 
 MerchantConfig.prototype.getAuthenticationType = function getAuthenticationType() {
@@ -525,6 +525,54 @@ MerchantConfig.prototype.setMleForRequestPublicCertPath = function setMleForRequ
     this.mleForRequestPublicCertPath = mleForRequestPublicCertPath;
 }
 
+MerchantConfig.prototype.getEnableResponseMleGlobally = function getEnableResponseMleGlobally() {
+    return this.enableResponseMleGlobally;
+}
+
+MerchantConfig.prototype.setEnableResponseMleGlobally = function setEnableResponseMleGlobally(enableResponseMleGlobally) {
+    this.enableResponseMleGlobally = enableResponseMleGlobally;
+}
+
+MerchantConfig.prototype.getResponseMleKID = function getResponseMleKID() {
+    return this.responseMleKID;
+}
+
+MerchantConfig.prototype.setResponseMleKID = function setResponseMleKID(responseMleKID) {
+    this.responseMleKID = responseMleKID;
+}
+
+MerchantConfig.prototype.getResponseMlePrivateKeyFilePath = function getResponseMlePrivateKeyFilePath() {
+    return this.responseMlePrivateKeyFilePath;
+}
+
+MerchantConfig.prototype.setResponseMlePrivateKeyFilePath = function setResponseMlePrivateKeyFilePath(responseMlePrivateKeyFilePath) {
+    this.responseMlePrivateKeyFilePath = responseMlePrivateKeyFilePath;
+}
+
+MerchantConfig.prototype.getResponseMlePrivateKeyFilePassword = function getResponseMlePrivateKeyFilePassword() {
+    return this.responseMlePrivateKeyFilePassword;
+}
+
+MerchantConfig.prototype.setResponseMlePrivateKeyFilePassword = function setResponseMlePrivateKeyFilePassword(responseMlePrivateKeyFilePassword) {
+    this.responseMlePrivateKeyFilePassword = responseMlePrivateKeyFilePassword;
+}
+
+MerchantConfig.prototype.getResponseMlePrivateKey = function getResponseMlePrivateKey() {
+    return this.responseMlePrivateKey;
+}
+
+MerchantConfig.prototype.setResponseMlePrivateKey = function setResponseMlePrivateKey(responseMlePrivateKey) {
+    this.responseMlePrivateKey = responseMlePrivateKey;
+}
+
+MerchantConfig.prototype.getInternalMapToControlResponseMLEonAPI = function getInternalMapToControlResponseMLEonAPI() {
+    return this.internalMapToControlResponseMLEonAPI;
+}
+
+MerchantConfig.prototype.getInternalMapToControlRequestMLEonAPI = function getInternalMapToControlRequestMLEonAPI() {
+    return this.internalMapToControlRequestMLEonAPI;
+}
+
 MerchantConfig.prototype.getP12FilePath = function getP12FilePath() {
     return path.resolve(path.join(this.getKeysDirectory(), this.getKeyFileName() + '.p12'));
 }
@@ -548,6 +596,8 @@ MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logg
     }
 
 }
+
+
 //This method is for fallback 
 MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
@@ -745,18 +795,18 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             ApiException.ApiException("mapToControlMLEonAPI in merchantConfig should be key value pair", logger);
         }
 
-        if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
-            var hasTrueValue = false;
-            for (const[key, value] of Object.entries(this.mapToControlMLEonAPI)) {
-                if (value === true) {
-                    hasTrueValue = true;
-                    break;
-                }
-            }
-            if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
-                ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
-            }
-        }
+        // if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
+        //     var hasTrueValue = false;
+        //     for (const[_, value] of Object.entries(this.mapToControlMLEonAPI)) {
+        //         if (value === true) {
+        //             hasTrueValue = true;
+        //             break;
+        //         }
+        //     }
+        //     if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
+        //         ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
+        //     }
+        // }
     }
     if (this.mleForRequestPublicCertPath) {
     // First check if the file exists and is readable
@@ -780,6 +830,67 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         }
     }
 
+
+    var responseMleConfigured = this.enableResponseMleGlobally;
+    if (this.internalMapToControlResponseMLEonAPI?.size > 0) {
+        responseMleConfigured = [...this.internalMapToControlResponseMLEonAPI.values()].includes(true);
+    }
+
+    /**
+     * Validates Response Message Level Encryption (MLE) configuration
+     */
+    if (responseMleConfigured) {
+        const logger = Logger.getLogger(this, 'MerchantConfig');
+        
+        // Check authentication type
+        if (this.authenticationType?.toLowerCase() !== Constants.JWT) {
+            throw new ApiException.ApiException("Response MLE is only supported in JWT auth type", logger);
+        }
+        
+        // Check if either private key or valid file path is provided
+        const hasPrivateKey = !!this.responseMlePrivateKey;
+        const hasValidFilePath = this.responseMlePrivateKeyFilePath?.trim?.() !== "";
+        
+        if (!hasPrivateKey && !hasValidFilePath) {
+            throw new ApiException.ApiException(
+                "Response MLE is enabled but no private key provided. Either set responseMlePrivateKey object or provide responseMlePrivateKeyFilePath.", 
+                logger
+            );
+        }
+        
+        // Ensure only one private key method is provided
+        if (hasPrivateKey && hasValidFilePath) {
+            throw new ApiException.ApiException(
+                "Both responseMlePrivateKey object and responseMlePrivateKeyFilePath are provided. Please provide only one of them for response mle private key.", 
+                logger
+            );
+        }
+        
+        // Validate file path accessibility if provided
+        if (hasValidFilePath) {
+            try {
+                fs.accessSync(this.responseMlePrivateKeyFilePath, fs.constants.R_OK);
+                const ext = path.extname(this.responseMlePrivateKeyFilePath).toLowerCase();
+                if (!['.p12', '.pfx', '.pem', '.key', '.p8'].includes(ext)) {
+                    throw new ApiException.ApiException(
+                        `Unsupported Response MLE Private Key file format: ${ext}. Supported extensions are: .p12, .pfx, .pem, .key, .p8`, 
+                        logger
+                    );
+                }
+            } catch (err) {
+                const errorType = err.code === 'ENOENT' ? 'does not exist' : 'is not readable';
+                throw new ApiException.ApiException(
+                    `Invalid responseMlePrivateKeyFilePath ${errorType}: ${this.responseMlePrivateKeyFilePath} (${err.message})`, 
+                    logger
+                );
+            }
+        }
+        
+        // Validate KID
+        if (typeof this.responseMleKID !== "string" || !this.responseMleKID?.trim()) {
+            throw new ApiException.ApiException("responseMleKID is required when response MLE is enabled.", logger);
+        }
+    }
     /**
      * This method is to log all merchantConfic properties 
      * excluding HideMerchantConfigProperies defined in Constants
