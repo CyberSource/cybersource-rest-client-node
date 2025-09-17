@@ -795,18 +795,18 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             ApiException.ApiException("mapToControlMLEonAPI in merchantConfig should be key value pair", logger);
         }
 
-        // if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
-        //     var hasTrueValue = false;
-        //     for (const[_, value] of Object.entries(this.mapToControlMLEonAPI)) {
-        //         if (value === true) {
-        //             hasTrueValue = true;
-        //             break;
-        //         }
-        //     }
-        //     if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
-        //         ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
-        //     }
-        // }
+        if (this.getInternalMapToControlRequestMLEonAPI() != null && Object.keys(this.this.getInternalMapToControlRequestMLEonAPI()).length !== 0) {
+            var hasTrueValue = false;
+            for (const[_, value] of Object.entries(this.this.getInternalMapToControlRequestMLEonAPI())) {
+                if (value === true) {
+                    hasTrueValue = true;
+                    break;
+                }
+            }
+            if (hasTrueValue && this.authenticationType.toLowerCase() !== Constants.JWT) {
+                ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
+            }
+        }
     }
     if (this.mleForRequestPublicCertPath) {
     // First check if the file exists and is readable
