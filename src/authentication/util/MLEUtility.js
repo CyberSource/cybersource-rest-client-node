@@ -28,14 +28,9 @@ exports.checkIsMLEForAPI = function (merchantConfig, inboundMLEStatus, operation
     }  
 
     //Control the MLE only from map
-    if (merchantConfig.internalMapToControlRequestMLEonAPI != null && operationId in Object.keys(merchantConfig.internalMapToControlRequestMLEonAPI)) {
-        if (merchantConfig.internalMapToControlRequestMLEonAPI[operationId] === true) {
-          isMLEForAPI = true;
-        }
-
-        if (merchantConfig.internalMapToControlRequestMLEonAPI[operationId] === false) {
-          isMLEForAPI = false;
-        }
+    const mleControlMap = merchantConfig.getInternalMapToControlRequestMLEonAPI();
+    if (mleControlMap && mleControlMap.has(operationId)) {
+      isMLEForAPI = mleControlMap.get(operationId);
     }
 
     return isMLEForAPI;
