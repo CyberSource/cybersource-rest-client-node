@@ -53,7 +53,7 @@ exports.getToken = function (merchantConfig, isResponseMLEForApi, logger) {
         // Add MLE key ID if MLE is enabled
         if (isResponseMLEForApi === true) {
             // Using bracket notation for property name with hyphens
-            claimSetJson["v-c-response-mle-kid"] = merchantConfig.getResponseMleKeyId();
+            claimSetJson["v-c-response-mle-kid"] = merchantConfig.getResponseMleKID();
         }
 
         const customHeader = {

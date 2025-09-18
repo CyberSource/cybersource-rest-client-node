@@ -49,8 +49,8 @@ exports.checkIsResponseMLEForAPI = function (merchantConfig, operationIds) {
   if (responseMLEMap && operationIds) {
     operationIds.forEach(opId => {
       const trimmedId = opId.trim();
-      if (trimmedId in responseMLEMap) {
-        isResponseMLEForAPI = responseMLEMap[trimmedId];
+      if (responseMLEMap.has(trimmedId)) {
+        isResponseMLEForAPI = responseMLEMap.get(trimmedId);
       }
     });
   }
@@ -73,6 +73,7 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
   }
 
   logger.debug('Response body contains encrypted data, attempting to decrypt');
+  logger.debug('LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: ' + JSON.stringify(responseBody));
   
   try {
     const privateKey = merchantConfig.getResponseMlePrivateKey() || 
@@ -88,7 +89,7 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
     
     return JWEUtility.decryptJWEUsingPrivateKey(privateKey, responseBody.encryptedResponse)
       .then(decryptedData => {
-        logger.debug('Successfully decrypted MLE response');
+        logger.debug('LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: ' + JSON.stringify(decryptedData));
         return decryptedData;
       })
       .catch(error => {
