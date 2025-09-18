@@ -831,15 +831,15 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
 
-    var responseMleConfigured = this.enableResponseMleGlobally;
-    if (this.internalMapToControlResponseMLEonAPI?.size > 0) {
-        responseMleConfigured = [...this.internalMapToControlResponseMLEonAPI.values()].includes(true);
-    }
+    const isResponseMleConfigured = this.enableResponseMleGlobally ||
+        (this.internalMapToControlResponseMLEonAPI?.size > 0 &&
+        Array.from(this.internalMapToControlResponseMLEonAPI.values()).some(value => value === true));
+
 
     /**
      * Validates Response Message Level Encryption (MLE) configuration
      */
-    if (responseMleConfigured) {
+    if (isResponseMleConfigured) {
         const logger = Logger.getLogger(this, 'MerchantConfig');
         
         // Check authentication type
