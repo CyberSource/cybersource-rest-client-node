@@ -113,7 +113,8 @@ function MerchantConfig(result) {
 	 * Optional parameter. User can pass a custom requestMleKeyAlias to fetch from the certificate.
 	 * Older flag "mleKeyAlias" is deprecated and will be used as alias/another name for requestMleKeyAlias.
 	 */
-    this.requestmleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
+    this.requestmleKeyAlias = result.requestmleKeyAlias !== undefined && typeof result.requestmleKeyAlias == "string" ? result.requestmleKeyAlias :
+                             (result.mleKeyAlias !== undefined && typeof result.mleKeyAlias == "string" ? result.mleKeyAlias : Constants.DEFAULT_MLE_ALIAS_FOR_CERT);
 
     /**
 	 * Parameter to pass the request MLE public certificate path.
@@ -509,12 +510,12 @@ MerchantConfig.prototype.setMapToControlMLEonAPI = function setMapToControlMLEon
     this.mapToControlMLEonAPI = mapToControlMLEonAPI;
 }
 
-MerchantConfig.prototype.getMleKeyAlias = function getMleKeyAlias() {
-    return this.mleKeyAlias;
+MerchantConfig.prototype.getRequestmleKeyAlias = function getRequestmleKeyAlias() {
+    return this.requestmleKeyAlias;
 }
 
-MerchantConfig.prototype.setMleKeyAlias = function setMleKeyAlias(mleKeyAlias) {
-    this.mleKeyAlias = mleKeyAlias;
+MerchantConfig.prototype.setRequestmleKeyAlias = function setRequestmleKeyAlias(requestmleKeyAlias) {
+    this.requestmleKeyAlias = requestmleKeyAlias;
 }
 
 MerchantConfig.prototype.getMleForRequestPublicCertPath = function getMleForRequestPublicCertPath() {
@@ -773,8 +774,8 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     //set the MLE key alias either from merchant config or default value
-    if (!this.mleKeyAlias || !this.mleKeyAlias.trim()) {
-        this.mleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
+    if (!this.requestmleKeyAlias || !this.requestmleKeyAlias.trim()) {
+        this.requestmleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
     }
 
     if (
@@ -849,7 +850,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         
         // Check if either private key or valid file path is provided
         const hasPrivateKey = !!this.responseMlePrivateKey;
-        const hasValidFilePath = this.responseMlePrivateKeyFilePath?.trim?.() !== "";
+        const hasValidFilePath = typeof this.responseMlePrivateKeyFilePath === "string" && this.responseMlePrivateKeyFilePath.trim() !== "";
         
         if (!hasPrivateKey && !hasValidFilePath) {
             throw new ApiException.ApiException(

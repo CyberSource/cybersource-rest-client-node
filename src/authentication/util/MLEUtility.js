@@ -120,9 +120,9 @@ exports.encryptRequestPayload = function(merchantConfig, requestBody) {
       logger.debug("Currently, MLE for requests using HTTP Signature as authentication is not supported by Cybersource. By default, the SDK will fall back to non-encrypted requests.");
       return Promise.resolve(requestBody);
     }
-    // let isCertExpired = KeyCertificate.verifyIsCertificateExpired(cert, merchantConfig.getMleKeyAlias(), logger);
+    // let isCertExpired = KeyCertificate.verifyIsCertificateExpired(cert, merchantConfig.getRequestmleKeyAlias(), logger);
     // if (isCertExpired === true) {
-    //   ApiException.ApiException("Certificate for MLE with alias " + merchantConfig.getMleKeyAlias() + " is expired in " + merchantConfig.getKeyFileName() + ".p12", logger);
+    //   ApiException.ApiException("Certificate for MLE with alias " + merchantConfig.getRequestmleKeyAlias() + " is expired in " + merchantConfig.getKeyFileName() + ".p12", logger);
     // }
 
     const customHeaders = {
@@ -176,7 +176,7 @@ function getSerialNumberFromCert(cert, merchantConfig, logger) {
   if (serialNumberAttr) {
       return serialNumberAttr.value;
   } else {
-    logger.warn("Serial number not found in MLE certificate for alias " + merchantConfig.getMleKeyAlias() + " in " + merchantConfig.getKeyFileName() + ".p12");
+    logger.warn("Serial number not found in MLE certificate for alias " + merchantConfig.getRequestmleKeyAlias() + " in " + merchantConfig.getKeyFileName() + ".p12");
     return cert.serialNumber;
   }
 }

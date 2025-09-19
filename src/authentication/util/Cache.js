@@ -130,7 +130,7 @@ function setupMLECache(merchantConfig, cacheKey, certificateSourcePath) {
         mleCert: mleCert,
         fileLastModifiedTime: fileLastModifiedTime
     });
-    validateCertificateExpiry(mleCert, merchantConfig.getMleKeyAlias(), cacheKey, merchantConfig);
+    validateCertificateExpiry(mleCert, merchantConfig.getRequestmleKeyAlias(), cacheKey, merchantConfig);
 }
 
 
@@ -153,7 +153,7 @@ function loadCertificateFromP12(merchantConfig, certificatePath) {
             }
             
             // Try to find the certificate by alias among all certificates
-            var mleCert =  Utility.findCertificateByAlias(certs, merchantConfig.getMleKeyAlias());
+            var mleCert =  Utility.findCertificateByAlias(certs, merchantConfig.getRequestmleKeyAlias());
             return forge.pki.certificateFromPem(mleCert);
         } else {
             throw new Error("No certificate found in P12 file");
@@ -173,10 +173,10 @@ function loadCertificateFromPem(merchantConfig, mleCertPath) {
             throw new Error("No valid PEM certificates found in the provided path : " + mleCertPath);
         }
         try {
-            mleCert = Utility.findCertificateByAlias(certs, merchantConfig.getMleKeyAlias());
+            mleCert = Utility.findCertificateByAlias(certs, merchantConfig.getRequestmleKeyAlias());
             
         } catch (error) {
-            logger.warn("No certificate found for the specified mleKeyAlias '" + merchantConfig.getMleKeyAlias() + "'. Using the first certificate from file " + mleCertPath + " as the MLE request certificate.");
+            logger.warn("No certificate found for the specified requestmleKeyAlias '" + merchantConfig.getRequestmleKeyAlias() + "'. Using the first certificate from file " + mleCertPath + " as the MLE request certificate.");
             mleCert = certs[0];
         }
         // Use node forge to parse the PEM certificate
