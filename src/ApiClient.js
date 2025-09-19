@@ -18,18 +18,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest'], factory);
+    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest', 'Authentication/MLEUtility'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'));
+    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'), require('./authentication/util/MLEUtility'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest);
+    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest, root.Authentication.MLEUtility);
   }
-}(this, function(axios, axiosCookieJar, { HttpsProxyAgent }, https, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest) {
+}(this, function(axios, axiosCookieJar, { HttpsProxyAgent }, https, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest, MLEUtility) {
   /**
    * @module ApiClient
    * @version 0.0.1
@@ -472,8 +472,9 @@
    * @param {String} httpMethod
    * @param {String} requestTarget
    * @param {String} requestBody
+   * @param {Boolean} isResponseMLEForApi
    */
-  exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams) {
+  exports.prototype.callAuthenticationHeader = function (httpMethod, requestTarget, requestBody, headerParams, isResponseMLEForApi) {
 
     this.merchantConfig.setRequestTarget(requestTarget);
     this.merchantConfig.setRequestType(httpMethod)
@@ -482,7 +483,7 @@
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
-    var token = Authorization.getToken(this.merchantConfig, this.logger);
+    var token = Authorization.getToken(this.merchantConfig, isResponseMLEForApi, this.logger);
 
     var clientId = getClientId();
 
@@ -557,13 +558,14 @@
    * @param {Array.<String>} contentTypes An array of request MIME types.
    * @param {Array.<String>} accepts An array of acceptable response MIME types.
    * @param {(String|Array|ObjectFunction)} returnType The required type to return; can be a string for simple types or the
+   * @param {Boolean} isResponseMLEForApi - Flag indicating if MLE is enabled for this API
    * constructor for a complex type.
    * @param {module:ApiClient~callApiCallback} callback The callback function.
    * @returns {Object} The SuperAgent request object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
       queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-      returnType, callback) {
+      returnType, isResponseMLEForApi, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
@@ -654,7 +656,7 @@
 
     if (this.merchantConfig.getAuthenticationType().toLowerCase() !== this.constants.MUTUAL_AUTH)
     {
-      headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams);
+      headerParams = this.callAuthenticationHeader(httpMethod, requestTarget, bodyParam, headerParams, isResponseMLEForApi);
     }
 
     if(this.merchantConfig.getDefaultHeaders()) {
@@ -755,12 +757,38 @@
 
 
     axios.request(axiosConfig).then(function(response) {
-      if (callback) {
-        var data = _this.deserialize(response, returnType);
-        response = _this.translateResponse(response);
+      // Properly wait for the decryption to complete before proceeding
+      return MLEUtility.checkAndDecryptEncryptedResponse(response.data, _this.merchantConfig)
+        .then(function(decryptedData) {
+          response.data = decryptedData;
+          
+          if (callback) {
+            var data = _this.deserialize(response, returnType);
+            _this.logger.debug(`Response data: ${JSON.stringify(data)}`);
 
-        callback(null, data, response);
-      }
+            response = _this.translateResponse(response);
+
+            callback(null, data, response);
+          }
+          
+          // Return data for Promise-based usage
+          return {
+            data: data,
+            response: response
+          };
+        })
+        .catch(function(error) {
+          
+          // Create a simple error object with descriptive message
+          const errorMsg = `Failed to decrypt response: ${error.message}`;
+          
+          if (callback) {
+            callback(new Error(errorMsg), null, null);
+          }
+          
+          // Reject the promise for Promise-based usage
+          return Promise.reject(new Error(errorMsg));
+        });
     }).catch(function(error, response) {
       source.cancel('Stream ended.');
       var userError = {};
