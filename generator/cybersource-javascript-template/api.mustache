@@ -117,20 +117,21 @@
       //check isMLE for an api method 'this.<operationId>'
       var inboundMLEStatus = <#vendorExtensions.x-devcenter-metaData.mleForRequest>'<vendorExtensions.x-devcenter-metaData.mleForRequest>'</vendorExtensions.x-devcenter-metaData.mleForRequest><^vendorExtensions.x-devcenter-metaData.mleForRequest>'false'</vendorExtensions.x-devcenter-metaData.mleForRequest>;
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, '<operationId>');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['<operationId>']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '<&path>', '<httpMethod>',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType<^usePromises>, callback</usePromises>
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi<^usePromises>, callback</usePromises>
           );
         });
       } else {
         return this.apiClient.callApi(
           '<&path>', '<httpMethod>',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType<^usePromises>, callback</usePromises>
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi<^usePromises>, callback</usePromises>
         );
       }
     }
