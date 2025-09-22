@@ -166,7 +166,7 @@ exports.ParseMLEConfigString = function (configString, logger) {
             };
             return result;
         } else {
-            ApiException.ApiException("Invalid MLE control map value format for key '" + configString + "'. Expected format: true/false for 'requestMLE' but got: '" + configString + "'", logger);
+            ApiException.ApiException("Invalid MLE control map value format: '" + configString + "'. Expected format: true/false for 'requestMLE' but got: '" + configString + "'", logger);
         }
     }
 }
