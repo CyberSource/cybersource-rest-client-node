@@ -952,7 +952,8 @@ function validateAndSetMapToControlMLEonAPI(mapFromConfig) {
     this.internalMapToControlRequestMLEonAPI = new Map();
     this.internalMapToControlResponseMLEonAPI = new Map();
 
-    for (const[apiFunctionName, configString] of tempMap) {
+    for (const[apiFunctionName, configValue] of tempMap) {
+        const configString = String(configValue);
         var config = Utility.ParseMLEConfigString(configString, logger);
         logger.debug(`For apiFunctionName: ${apiFunctionName}, parsed config is: `, config);
         if (config.requestMLE !== undefined) {
