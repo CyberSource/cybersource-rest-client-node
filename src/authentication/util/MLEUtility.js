@@ -93,7 +93,12 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
         return JSON.parse(decryptedData);
       })
       .catch(error => {
-        const errorMsg = `Error decrypting MLE response: ${error.message}`;
+        let errorMsg;
+        if (error.message.includes('no key found') || error.message.includes('key not found')) {
+          errorMsg = 'Decryption failed: unable to find a suitable decryption key.';
+        } else {
+          errorMsg = `Error decrypting MLE response: ${error.message}`;
+        }
         logger.error(errorMsg);
         // Create a more descriptive error
         return Promise.reject(new Error(errorMsg));
