@@ -90,7 +90,7 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
     return JWEUtility.decryptJWEUsingPrivateKey(privateKey, responseBody.encryptedResponse)
       .then(decryptedData => {
         logger.debug('LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: ' + JSON.stringify(decryptedData));
-        return decryptedData;
+        return JSON.parse(decryptedData);
       })
       .catch(error => {
         const errorMsg = `Error decrypting MLE response: ${error.message}`;
