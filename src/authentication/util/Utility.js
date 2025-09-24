@@ -212,8 +212,8 @@ exports.readPrivateKeyFromP12 = function(filePath, password, logger) {
         
         return rsaPrivateKey;
     } catch (error) {
-        logger.error(`Error reading private key from P12 file: ${error.message}`);
-        ApiException.AuthException(error.message + ". " + Constants.INCORRECT_KEY_PASS);
+        logger.error(`Error reading private key from P12 file: ${filePath}: ${error.message}`);
+        ApiException.AuthException(`Error reading private key from P12 file: ${filePath}: ${error.message}. ${Constants.INCORRECT_KEY_PASS}`);
     }
 };
 
@@ -244,8 +244,8 @@ exports.readPrivateKeyFromPemFile = function(filePath, password, logger) {
         logger.debug(`PEM file contains ${isEncrypted ? 'an encrypted' : 'an unencrypted'} private key`);
         
         if (isEncrypted && (!password || password.trim() === '')) {
-            logger.error(`Password is required for encrypted private key`);
-            ApiException.AuthException("Password is required for encrypted private key");
+            logger.error(`Password is required for encrypted private key: ${filePath}`);
+            ApiException.AuthException(`Password is required for encrypted private key: ${filePath}`);
         }
         
         try {
@@ -261,19 +261,19 @@ exports.readPrivateKeyFromPemFile = function(filePath, password, logger) {
             }
             
             if (!privateKey) {
-                logger.error(`Failed to parse private key from PEM file`);
-                ApiException.AuthException("Failed to parse private key from PEM file");
+                logger.error(`Failed to parse private key from PEM file: ${filePath}`);
+                ApiException.AuthException(`Failed to parse private key from PEM file: ${filePath}`);
             }
             
             logger.debug(`Successfully extracted private key from PEM file`);
             
             return forge.pki.privateKeyToPem(privateKey);
         } catch (error) {
-            logger.error(`Error parsing private key: ${error.message}`);
-            ApiException.AuthException("Error parsing private key: " + error.message);
+            logger.error(`Error parsing private key from ${filePath}: ${error.message}`);
+            ApiException.AuthException(`Error parsing private key from ${filePath}: ${error.message}`);
         }
     } catch (error) {
-        logger.error(`Error loading private key from PEM file: ${error.message}`);
-        ApiException.AuthException("Error loading private key from PEM file: " + error.message);
+        logger.error(`Error loading private key from PEM file: ${filePath}: ${error.message}`);
+        ApiException.AuthException(`Error loading private key from PEM file: ${filePath}: ${error.message}`);
     }
 };
