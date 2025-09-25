@@ -8,6 +8,7 @@ var path = require('path');
 var fs = require('fs');
 var path = require('path');
 var fs = require('fs');
+var Utility = require('../util/Utility');
 
 /**
  * This function has all the merchentConfig properties getters and setters methods
@@ -80,18 +81,82 @@ function MerchantConfig(result) {
     /* Default Custom Headers */
     this.defaultHeaders = result.defaultHeaders;
 
-    /* MLE Feature */
+    //MLE Params for Request Body
+	/**
+	 * Deprecated flag to enable MLE for request. This flag is now known as "enableRequestMLEForOptionalApisGlobally"
+	 */
     this.useMLEGlobally = result.useMLEGlobally;
+    
+    /**
+	 * Flag to enable MLE (Message Level Encryption) for request body to all APIs in SDK which have optional support for MLE. 
+	 * This means the API can send both non-encrypted and encrypted requests.
+	 * Older flag "useMLEGlobally" is deprecated and will be used as alias/another name for enableRequestMLEForOptionalApisGlobally.
+	 */
     this.enableRequestMLEForOptionalApisGlobally = result.enableRequestMLEForOptionalApisGlobally !== undefined ? result.enableRequestMLEForOptionalApisGlobally : this.useMLEGlobally;
+    
+    /**
+	 * Flag to disable MLE (Message Level Encryption) for request body to APIs in SDK which have mandatory MLE requirement when sending calls.
+	 */
     this.disableRequestMLEForMandatoryApisGlobally = result.disableRequestMLEForMandatoryApisGlobally !== undefined ? result.disableRequestMLEForMandatoryApisGlobally : false;
 
+    /**
+     * Assigns internal maps to control MLE for request and response per API function,
+     * based on the mapToControlMLEonAPI property.
+     */
+    //both fields used for internal purpose only not exposed for merchants to set. Both sets from mapToControlMLEonAPI internally.
+    this.internalMapToControlRequestMLEonAPI = new Map();
+    this.internalMapToControlResponseMLEonAPI = new Map();
+
     this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
-    this.mleKeyAlias = result.mleKeyAlias; //mleKeyAlias is optional parameter, default value is "CyberSource_SJC_US".
+
+    /**
+	 * Optional parameter. User can pass a custom requestMleKeyAlias to fetch from the certificate.
+	 * Older flag "mleKeyAlias" is deprecated and will be used as alias/another name for requestMleKeyAlias.
+	 */
+    this.requestmleKeyAlias = result.requestmleKeyAlias !== undefined && typeof result.requestmleKeyAlias == "string" ? result.requestmleKeyAlias :
+                             (result.mleKeyAlias !== undefined && typeof result.mleKeyAlias == "string" ? result.mleKeyAlias : Constants.DEFAULT_MLE_ALIAS_FOR_CERT);
+
+    /**
+	 * Parameter to pass the request MLE public certificate path.
+	 */
     this.mleForRequestPublicCertPath = result.mleForRequestPublicCertPath;
 
-    /* Fallback logic*/
-    this.defaultPropValues();
+    /**
+	 * Flag to enable MLE (Message Level Encryption) for response body for all APIs in SDK to get MLE Response(encrypted response) if supported by API. 
+	 */
+	this.enableResponseMleGlobally = result.enableResponseMleGlobally !== undefined ? result.enableResponseMleGlobally : false;
 
+	/**
+	 * Parameter to pass the KID value for the MLE response public certificate. This value will be provided in the merchant portal when retrieving the MLE response certificate.
+	 */
+	this.responseMleKID = result.responseMleKID;
+
+	/**
+	 * Path to the private key file used for Response MLE decryption by the SDK.
+	 * Supported formats: .p12, .key, .pem, etc.
+	 */
+	this.responseMlePrivateKeyFilePath = result.responseMlePrivateKeyFilePath;
+
+	/**
+	 * Password for the private key file used in Response MLE decryption by the SDK.
+	 * Required for .p12 files or encrypted private keys.
+	 */
+	this.responseMlePrivateKeyFilePassword = result.responseMlePrivateKeyFilePassword;
+
+	/**
+	 * PrivateKey instance used for Response MLE decryption by the SDK.
+	 * Optional — either provide this object directly or specify the private key file path via configuration.
+	 */
+	this.responseMlePrivateKey = result.responseMlePrivateKey;
+
+
+    this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
+    /* Fallback logic*/
+
+    if (this.mapToControlMLEonAPI != null) {
+        validateAndSetMapToControlMLEonAPI.call(this, this.mapToControlMLEonAPI);
+    }
+    this.defaultPropValues();
 }
 
 MerchantConfig.prototype.getAuthenticationType = function getAuthenticationType() {
@@ -445,12 +510,12 @@ MerchantConfig.prototype.setMapToControlMLEonAPI = function setMapToControlMLEon
     this.mapToControlMLEonAPI = mapToControlMLEonAPI;
 }
 
-MerchantConfig.prototype.getMleKeyAlias = function getMleKeyAlias() {
-    return this.mleKeyAlias;
+MerchantConfig.prototype.getRequestmleKeyAlias = function getRequestmleKeyAlias() {
+    return this.requestmleKeyAlias;
 }
 
-MerchantConfig.prototype.setMleKeyAlias = function setMleKeyAlias(mleKeyAlias) {
-    this.mleKeyAlias = mleKeyAlias;
+MerchantConfig.prototype.setRequestmleKeyAlias = function setRequestmleKeyAlias(requestmleKeyAlias) {
+    this.requestmleKeyAlias = requestmleKeyAlias;
 }
 
 MerchantConfig.prototype.getMleForRequestPublicCertPath = function getMleForRequestPublicCertPath() {
@@ -459,6 +524,54 @@ MerchantConfig.prototype.getMleForRequestPublicCertPath = function getMleForRequ
 
 MerchantConfig.prototype.setMleForRequestPublicCertPath = function setMleForRequestPublicCertPath(mleForRequestPublicCertPath) {
     this.mleForRequestPublicCertPath = mleForRequestPublicCertPath;
+}
+
+MerchantConfig.prototype.getEnableResponseMleGlobally = function getEnableResponseMleGlobally() {
+    return this.enableResponseMleGlobally;
+}
+
+MerchantConfig.prototype.setEnableResponseMleGlobally = function setEnableResponseMleGlobally(enableResponseMleGlobally) {
+    this.enableResponseMleGlobally = enableResponseMleGlobally;
+}
+
+MerchantConfig.prototype.getResponseMleKID = function getResponseMleKID() {
+    return this.responseMleKID;
+}
+
+MerchantConfig.prototype.setResponseMleKID = function setResponseMleKID(responseMleKID) {
+    this.responseMleKID = responseMleKID;
+}
+
+MerchantConfig.prototype.getResponseMlePrivateKeyFilePath = function getResponseMlePrivateKeyFilePath() {
+    return this.responseMlePrivateKeyFilePath;
+}
+
+MerchantConfig.prototype.setResponseMlePrivateKeyFilePath = function setResponseMlePrivateKeyFilePath(responseMlePrivateKeyFilePath) {
+    this.responseMlePrivateKeyFilePath = responseMlePrivateKeyFilePath;
+}
+
+MerchantConfig.prototype.getResponseMlePrivateKeyFilePassword = function getResponseMlePrivateKeyFilePassword() {
+    return this.responseMlePrivateKeyFilePassword;
+}
+
+MerchantConfig.prototype.setResponseMlePrivateKeyFilePassword = function setResponseMlePrivateKeyFilePassword(responseMlePrivateKeyFilePassword) {
+    this.responseMlePrivateKeyFilePassword = responseMlePrivateKeyFilePassword;
+}
+
+MerchantConfig.prototype.getResponseMlePrivateKey = function getResponseMlePrivateKey() {
+    return this.responseMlePrivateKey;
+}
+
+MerchantConfig.prototype.setResponseMlePrivateKey = function setResponseMlePrivateKey(responseMlePrivateKey) {
+    this.responseMlePrivateKey = responseMlePrivateKey;
+}
+
+MerchantConfig.prototype.getInternalMapToControlResponseMLEonAPI = function getInternalMapToControlResponseMLEonAPI() {
+    return this.internalMapToControlResponseMLEonAPI;
+}
+
+MerchantConfig.prototype.getInternalMapToControlRequestMLEonAPI = function getInternalMapToControlRequestMLEonAPI() {
+    return this.internalMapToControlRequestMLEonAPI;
 }
 
 MerchantConfig.prototype.getP12FilePath = function getP12FilePath() {
@@ -484,6 +597,8 @@ MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logg
     }
 
 }
+
+
 //This method is for fallback 
 MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
 
@@ -659,8 +774,8 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     //set the MLE key alias either from merchant config or default value
-    if (!this.mleKeyAlias || !this.mleKeyAlias.trim()) {
-        this.mleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
+    if (!this.requestmleKeyAlias || !this.requestmleKeyAlias.trim()) {
+        this.requestmleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
     }
 
     if (
@@ -672,18 +787,18 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     //useMLEGlobally check for auth Type
-    if (this.enableRequestMLEForOptionalApisGlobally === true || this.mapToControlMLEonAPI != null) {
+    if (this.enableRequestMLEForOptionalApisGlobally === true || this.internalMapToControlRequestMLEonAPI != null) {
         if (this.enableRequestMLEForOptionalApisGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
             ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
         }
 
-        if (this.mapToControlMLEonAPI != null && typeof (this.mapToControlMLEonAPI) !== "object") {
+        if (this.internalMapToControlRequestMLEonAPI != null && typeof (this.internalMapToControlRequestMLEonAPI) !== "object") {
             ApiException.ApiException("mapToControlMLEonAPI in merchantConfig should be key value pair", logger);
         }
 
-        if (this.mapToControlMLEonAPI != null && Object.keys(this.mapToControlMLEonAPI).length !== 0) {
+        if (this.internalMapToControlRequestMLEonAPI != null && Object.keys(this.internalMapToControlRequestMLEonAPI).length !== 0) {
             var hasTrueValue = false;
-            for (const[key, value] of Object.entries(this.mapToControlMLEonAPI)) {
+            for (const[_, value] of Object.entries(this.internalMapToControlRequestMLEonAPI)) {
                 if (value === true) {
                     hasTrueValue = true;
                     break;
@@ -716,6 +831,67 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         }
     }
 
+
+    const isResponseMleConfigured = this.enableResponseMleGlobally ||
+        (this.internalMapToControlResponseMLEonAPI?.size > 0 &&
+        Array.from(this.internalMapToControlResponseMLEonAPI.values()).some(value => value === true));
+
+
+    /**
+     * Validates Response Message Level Encryption (MLE) configuration
+     */
+    if (isResponseMleConfigured) {
+        const logger = Logger.getLogger(this, 'MerchantConfig');
+        
+        // Check authentication type
+        if (this.authenticationType?.toLowerCase() !== Constants.JWT) {
+            throw new ApiException.ApiException("Response MLE is only supported in JWT auth type", logger);
+        }
+        
+        // Check if either private key or valid file path is provided
+        const hasPrivateKey = !!this.responseMlePrivateKey;
+        const hasValidFilePath = typeof this.responseMlePrivateKeyFilePath === "string" && this.responseMlePrivateKeyFilePath.trim() !== "";
+        
+        if (!hasPrivateKey && !hasValidFilePath) {
+            throw new ApiException.ApiException(
+                "Response MLE is enabled but no private key provided. Either set responseMlePrivateKey object or provide responseMlePrivateKeyFilePath.", 
+                logger
+            );
+        }
+        
+        // Ensure only one private key method is provided
+        if (hasPrivateKey && hasValidFilePath) {
+            throw new ApiException.ApiException(
+                "Both responseMlePrivateKey object and responseMlePrivateKeyFilePath are provided. Please provide only one of them for response mle private key.", 
+                logger
+            );
+        }
+        
+        // Validate file path accessibility if provided
+        if (hasValidFilePath) {
+            try {
+                fs.accessSync(this.responseMlePrivateKeyFilePath, fs.constants.R_OK);
+                const ext = path.extname(this.responseMlePrivateKeyFilePath).toLowerCase();
+                if (!['.p12', '.pfx', '.pem', '.key', '.p8'].includes(ext)) {
+                    throw new ApiException.ApiException(
+                        `Unsupported Response MLE Private Key file format: ${ext}. Supported extensions are: .p12, .pfx, .pem, .key, .p8`, 
+                        logger
+                    );
+                }
+            } catch (err) {
+                const errorType = err.code === 'ENOENT' ? 'does not exist' : 'is not readable';
+                throw new ApiException.ApiException(
+                    `Invalid responseMlePrivateKeyFilePath ${errorType}: ${this.responseMlePrivateKeyFilePath} (${err.message})`, 
+                    logger
+                );
+            }
+        }
+        
+        // Validate KID
+        if (typeof this.responseMleKID !== "string" || !this.responseMleKID?.trim()) {
+            throw new ApiException.ApiException("responseMleKID is required when response MLE is enabled.", logger);
+        }
+    }
     /**
      * This method is to log all merchantConfic properties 
      * excluding HideMerchantConfigProperies defined in Constants
@@ -742,5 +918,53 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         logger.clear();
     }
 }
+
+
+function validateAndSetMapToControlMLEonAPI(mapFromConfig) {
+    let tempMap;
+    var logger = Logger.getLogger(this, 'MerchantConfig');
+
+    // Validating only type of keys and values in the map.
+    if (mapFromConfig === null) {
+        ApiException.ApiException("Unsupported null value to mapToControlMLEonAPI in merchantConfig. Expected map<String, String> which corresponds to <'apiFunctionName','flagForRequestMLE::flagForResponseMLE'> as dataType for field.", logger);
+    }
+    if (typeof (mapFromConfig) !== "map" && typeof (mapFromConfig) !== "object") {
+        ApiException.ApiException("Unsupported datatype for field mapToControlMLEonAPI. Expected Map<String, String> which corresponds to <'apiFunctionName','flagForRequestMLE::flagForResponseMLE'> as dataType for field but got: " + typeof (mapFromConfig), logger);
+    }
+    if (typeof (mapFromConfig) === "object") {
+        for (const[_, value] of Object.entries(mapFromConfig)) {
+            if ((typeof (value) !== "string" && typeof (value) !== "boolean")) {
+                ApiException.ApiException("Unsupported datatype for field mapToControlMLEonAPI. Expected Map<String, String> which corresponds to <'apiFunctionName','flagForRequestMLE::flagForResponseMLE'> as dataType for field but got: " + typeof (value), logger);
+            }
+        }
+        tempMap = new Map(Object.entries(mapFromConfig));
+    } else {
+        mapFromConfig.forEach((value, key) => {
+            if (typeof (key) !== "string" || (typeof (value) !== "string" && typeof (value) !== "boolean")) {
+                ApiException.ApiException("Unsupported datatype for field mapToControlMLEonAPI. Expected Map<String, String> which corresponds to <'apiFunctionName','flagForRequestMLE::flagForResponseMLE'> as dataType for field but got: " + typeof (value), logger);
+            }
+        });
+        tempMap = mapFromConfig;
+    }
+
+
+    // Validating actual values in the map and setting internal maps for request and response MLE control.
+    this.internalMapToControlRequestMLEonAPI = new Map();
+    this.internalMapToControlResponseMLEonAPI = new Map();
+
+    for (const[apiFunctionName, configValue] of tempMap) {
+        const configString = String(configValue);
+        var config = Utility.ParseMLEConfigString(configString, logger);
+        logger.debug(`For apiFunctionName: ${apiFunctionName}, parsed config is: `, config);
+        if (config.requestMLE !== undefined) {
+            this.internalMapToControlRequestMLEonAPI.set(apiFunctionName, config.requestMLE);
+        }
+        if (config.responseMLE !== undefined) {
+            this.internalMapToControlResponseMLEonAPI.set(apiFunctionName, config.responseMLE);
+        }
+    }
+}
+
+
 
 module.exports = MerchantConfig;

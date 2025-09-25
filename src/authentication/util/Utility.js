@@ -1,7 +1,9 @@
 'use strict'
 
 var ApiException = require('./ApiException');
-var Constants = require('./Constants')
+var Constants = require('./Constants');
+var fs = require('fs');
+var forge = require('node-forge');
 
 exports.getResponseCodeMessage = function (responseCode) {
 
@@ -115,3 +117,163 @@ exports.findCertificateByAlias = function (certs, keyAlias) {
         ApiException.AuthException("Error processing certificates: " + e.message);
     }
 }
+
+/**
+ * Parses the MLE configuration string and returns an object indicating requestMLE and responseMLE flags.
+ * @param {string} configString - The MLE configuration string in the format 'requestMLE::responseMLE' or 'requestMLE'.
+ * @param {object} logger - Logger object for logging errors.
+ * @returns {object} An object with requestMLE and optionally responseMLE boolean properties.
+ * @throws Will throw an error if the configString format is invalid.
+ */
+exports.ParseMLEConfigString = function (configString, logger) {
+    if (!configString?.trim()) {
+       ApiException.ApiException("Unsupported empty. Expected format: 'requestMLE::responseMLE' or 'requestMLE' as true/false.", logger);
+    } else if (configString.indexOf('::') != -1) {
+        const parts = configString.split('::');
+        if (parts.length !== 2) {
+            ApiException.ApiException("Invalid MLE control map value format. Expected format: true/false for 'requestMLE::responseMLE' but got: '" + configString + "'", logger);
+        }
+        const requestMLEPart = parts[0].trim();
+        const responseMLEPart = parts[1].trim();
+
+        if (requestMLEPart !== "" && ((requestMLEPart !== 'true' && requestMLEPart !== 'false'))) {
+            ApiException.ApiException("Invalid MLE control map value format. Expected format: true/false for 'requestMLE::responseMLE' but got: '" + configString + "'", logger);
+        }
+        if (responseMLEPart !== "" && ((responseMLEPart !== 'true' && responseMLEPart !== 'false'))) {
+            ApiException.ApiException("Invalid MLE control map value format. Expected format: true/false for 'requestMLE::responseMLE' but got: '" + configString + "'", logger);
+        }
+
+
+        // Create the result object
+        const result = {};
+        
+        // Only set requestMLE if requestMLEPart is not empty
+        if (requestMLEPart !== "") {
+            result.requestMLE = (requestMLEPart === 'true');
+        }
+        
+        // Only set responseMLE if responseMLEPart is not empty
+        if (responseMLEPart !== "") {
+            result.responseMLE = (responseMLEPart === 'true');
+        }
+        
+        return result;
+        
+    } else {
+        if (configString === 'true' || configString === 'false') {
+            const result = {
+                requestMLE: configString === 'true'
+            };
+            return result;
+        } else {
+            ApiException.ApiException("Invalid MLE control map value format: '" + configString + "'. Expected format: true/false for 'requestMLE' but got: '" + configString + "'", logger);
+        }
+    }
+}
+
+/**
+ * Reads a private key from a P12 file
+ * @param {string} filePath - Path to the P12 file
+ * @param {string} password - Password for the P12 file
+ * @param {object} logger - Logger object for logging messages
+ * @returns {string} - Private key in PEM format
+ */
+exports.readPrivateKeyFromP12 = function(filePath, password, logger) {
+    try {
+        logger.debug(`Reading private key from P12 file: ${filePath}`);
+        
+        if (!fs.existsSync(filePath)) {
+            logger.error(`File not found: ${filePath}`);
+            ApiException.AuthException(Constants.FILE_NOT_FOUND + filePath);
+        }
+        
+        // Read the P12 file and convert to ASN1
+        var p12Buffer = fs.readFileSync(filePath);
+        var p12Der = forge.util.binary.raw.encode(new Uint8Array(p12Buffer));
+        var p12Asn1 = forge.asn1.fromDer(p12Der);
+        var p12 = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, password);
+        
+        logger.debug(`Successfully read P12 file and converted to ASN1`);
+        
+        // Extract the private key
+        var keyBags = p12.getBags({ bagType: forge.pki.oids.keyBag });
+        var bag = keyBags[forge.pki.oids.keyBag][0];
+        
+        if (keyBags[forge.pki.oids.keyBag] === undefined || keyBags[forge.pki.oids.keyBag].length == 0) {
+            logger.debug(`No key bag found, trying pkcs8ShroudedKeyBag`);
+            keyBags = p12.getBags({ bagType: forge.pki.oids.pkcs8ShroudedKeyBag });
+            bag = keyBags[forge.pki.oids.pkcs8ShroudedKeyBag][0];
+        }
+        
+        var privateKey = bag.key;
+        var rsaPrivateKey = forge.pki.privateKeyToPem(privateKey);
+        
+        logger.debug(`Successfully extracted private key from P12 file`);
+        
+        return rsaPrivateKey;
+    } catch (error) {
+        logger.error(`Error reading private key from P12 file: ${filePath}: ${error.message}`);
+        ApiException.AuthException(`Error reading private key from P12 file: ${filePath}: ${error.message}. ${Constants.INCORRECT_KEY_PASS}`);
+    }
+};
+
+/**
+ * Loads a private key from a PEM file
+ * @param {string} filePath - Path to the PEM file
+ * @param {string} password - Password for the encrypted PEM file (optional)
+ * @param {object} logger - Logger object for logging messages
+ * @returns {string} - Private key in PEM format
+ */
+exports.readPrivateKeyFromPemFile = function(filePath, password, logger) {
+    try {
+        logger.debug(`Reading private key from PEM file: ${filePath}`);
+        
+        if (!fs.existsSync(filePath)) {
+            logger.error(`File not found: ${filePath}`);
+            ApiException.AuthException(Constants.FILE_NOT_FOUND + filePath);
+        }
+        
+        // Read the PEM file
+        var pemData = fs.readFileSync(filePath, 'utf8');
+        
+        logger.debug(`Successfully read PEM file`);
+        
+        // Check if the private key is encrypted
+        var isEncrypted = pemData.includes('ENCRYPTED');
+        
+        logger.debug(`PEM file contains ${isEncrypted ? 'an encrypted' : 'an unencrypted'} private key`);
+        
+        if (isEncrypted && (!password || password.trim() === '')) {
+            logger.error(`Password is required for encrypted private key: ${filePath}`);
+            ApiException.AuthException(`Password is required for encrypted private key: ${filePath}`);
+        }
+        
+        try {
+            var privateKey;
+            if (isEncrypted) {
+                logger.debug(`Decrypting private key using provided password`);
+                // Decrypt the private key using the provided password
+                privateKey = forge.pki.decryptRsaPrivateKey(pemData, password);
+            } else {
+                logger.debug(`Parsing unencrypted private key`);
+                // Parse the unencrypted private key
+                privateKey = forge.pki.privateKeyFromPem(pemData);
+            }
+            
+            if (!privateKey) {
+                logger.error(`Failed to parse private key from PEM file: ${filePath}`);
+                ApiException.AuthException(`Failed to parse private key from PEM file: ${filePath}`);
+            }
+            
+            logger.debug(`Successfully extracted private key from PEM file`);
+            
+            return forge.pki.privateKeyToPem(privateKey);
+        } catch (error) {
+            logger.error(`Error parsing private key from ${filePath}: ${error.message}`);
+            ApiException.AuthException(`Error parsing private key from ${filePath}: ${error.message}`);
+        }
+    } catch (error) {
+        logger.error(`Error loading private key from PEM file: ${filePath}: ${error.message}`);
+        ApiException.AuthException(`Error loading private key from PEM file: ${filePath}: ${error.message}`);
+    }
+};

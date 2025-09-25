@@ -97,6 +97,7 @@ module.exports = {
     DEFAULT_LOG_FILENAME              :  "cybs",
     DEFAULT_MAX_LOG_FILES             :  "10d",
     DEFAULT_LOGGING_LEVEL             :  "error",
+    MLE_CACHE_KEY_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY : "_mleResponsePrivateKeyFromFile",
 
     STATUS200                         :  "Transaction Successful",
     STATUS400                         :  "Bad Request",
