@@ -21,18 +21,18 @@ const agentPool = new Map();
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'agentkeepalive', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest'], factory);
+    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'agentkeepalive', 'crypto', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('agentkeepalive'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'));
+    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('agentkeepalive'), require('crypto'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.AgentKeepAlive, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest);
+    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.AgentKeepAlive, root.crypto, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest);
   }
-}(this, function(axios, axiosCookieJar, HttpsProxyAgent, https, querystring, AgentKeepAlive, MerchantConfig, Logger, Constants, Authorization, PayloadDigest) {
+}(this, function(axios, axiosCookieJar, HttpsProxyAgent, https, querystring, AgentKeepAlive, crypto, MerchantConfig, Logger, Constants, Authorization, PayloadDigest) {
   /**
    * @module ApiClient
    * @version 0.0.1
@@ -65,7 +65,8 @@ const agentPool = new Map();
     if (config.maxIdleSockets !== undefined) hashParts.push(`maxIdleSockets:${config.maxIdleSockets}`);
     if (config.freeSocketTimeout !== undefined) hashParts.push(`freeSocketTimeout:${config.freeSocketTimeout}`);
     
-    return hashParts.join('|');
+    const concatenated = hashParts.join('|');
+    return crypto.createHash('sha256').update(concatenated).digest('hex');
   }
   
   /**
