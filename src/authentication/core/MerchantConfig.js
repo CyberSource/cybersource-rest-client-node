@@ -690,15 +690,15 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
 
     // Validate maxIdleSockets is non-negative and not less than default
-    if (this.maxIdleSockets !== null && this.maxIdleSockets !== undefined && (this.maxIdleSockets <= 0 || this.maxIdleSockets < 100)) {
-        this.maxIdleSockets = 100;
-        logger.warn("maxIdleSockets cannot be non-negative or less than default. Setting to default value 100.");
+    if (this.maxIdleSockets !== null && this.maxIdleSockets !== undefined && (this.maxIdleSockets <= 0 || this.maxIdleSockets < Constants.DEFAULT_MAX_IDLE_SOCKETS)) {
+        this.maxIdleSockets = Constants.DEFAULT_MAX_IDLE_SOCKETS;
+        logger.warn("maxIdleSockets cannot be non-negative or less than default. Setting to default value " + Constants.DEFAULT_MAX_IDLE_SOCKETS + ".");
     }
 
     // Validate userDefinedTimeout is non-negative and not less than default
-    if (this.userDefinedTimeout !== null && this.userDefinedTimeout !== undefined && (this.userDefinedTimeout <= 0 || this.userDefinedTimeout < 4000)) {
-        this.userDefinedTimeout = 4000;
-        logger.warn("userDefinedTimeout cannot be non-negative or less than default (value should be in milliseconds). Setting to default value 4000.");
+    if (this.userDefinedTimeout !== null && this.userDefinedTimeout !== undefined && (this.userDefinedTimeout <= 0 || this.userDefinedTimeout < Constants.DEFAULT_USER_DEFINED_TIMEOUT)) {
+        this.userDefinedTimeout = Constants.DEFAULT_USER_DEFINED_TIMEOUT;
+        logger.warn("userDefinedTimeout cannot be non-negative or less than default (value should be in milliseconds). Setting to default value " + Constants.DEFAULT_USER_DEFINED_TIMEOUT + ".");
     }
 
     //useMLEGlobally check for auth Type

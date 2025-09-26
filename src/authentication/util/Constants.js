@@ -97,6 +97,8 @@ module.exports = {
     DEFAULT_LOG_FILENAME              :  "cybs",
     DEFAULT_MAX_LOG_FILES             :  "10d",
     DEFAULT_LOGGING_LEVEL             :  "error",
+    DEFAULT_MAX_IDLE_SOCKETS          :  100,
+    DEFAULT_USER_DEFINED_TIMEOUT      :  4000, // Value in milliseconds
 
     STATUS200                         :  "Transaction Successful",
     STATUS400                         :  "Bad Request",
