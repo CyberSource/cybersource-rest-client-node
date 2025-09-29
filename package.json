@@ -25,7 +25,8 @@
     "promise": "^8.3.0",
     "winston": "^3.11.0",
     "winston-daily-rotate-file": "^4.7.1",
-    "node-jose": "^2.2.0"
+    "node-jose": "^2.2.0",
+    "jwk-to-pem": "^2.0.7"
   },
   "keywords": [
     "nodeJS"

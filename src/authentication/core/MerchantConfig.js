@@ -147,7 +147,7 @@ function MerchantConfig(result) {
 	 * PrivateKey instance used for Response MLE decryption by the SDK.
 	 * Optional — either provide this object directly or specify the private key file path via configuration.
 	 */
-	this.responseMlePrivateKey = result.responseMlePrivateKey;
+	this.setResponseMlePrivateKey(result.responseMlePrivateKey);
 
 
     this.mapToControlMLEonAPI = result.mapToControlMLEonAPI;
@@ -563,7 +563,23 @@ MerchantConfig.prototype.getResponseMlePrivateKey = function getResponseMlePriva
 }
 
 MerchantConfig.prototype.setResponseMlePrivateKey = function setResponseMlePrivateKey(responseMlePrivateKey) {
-    this.responseMlePrivateKey = responseMlePrivateKey;
+    var logger = Logger.getLogger(this, 'MerchantConfig');
+    
+    if (responseMlePrivateKey) {
+        logger.debug('Processing response MLE private key');
+        
+        try {
+            // Use synchronous version of parseAndReturnPem
+            const pemKey = Utility.parseAndReturnPem(responseMlePrivateKey, logger);
+            logger.debug('Successfully parsed response MLE private key');
+            this.responseMlePrivateKey = pemKey;
+        } catch (error) {
+            logger.error(`Error parsing response MLE private key: ${error.message}`);
+            throw new ApiException.ApiException(`Error parsing response MLE private key: ${error.message}`, logger);
+        }
+    } else {
+        this.responseMlePrivateKey = responseMlePrivateKey;
+    }
 }
 
 MerchantConfig.prototype.getInternalMapToControlResponseMLEonAPI = function getInternalMapToControlResponseMLEonAPI() {

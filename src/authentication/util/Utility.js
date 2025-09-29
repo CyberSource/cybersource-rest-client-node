@@ -4,6 +4,7 @@ var ApiException = require('./ApiException');
 var Constants = require('./Constants');
 var fs = require('fs');
 var forge = require('node-forge');
+var jwkToPem = require('jwk-to-pem');
 
 exports.getResponseCodeMessage = function (responseCode) {
 
@@ -277,3 +278,41 @@ exports.readPrivateKeyFromPemFile = function(filePath, password, logger) {
         ApiException.AuthException(`Error loading private key from PEM file: ${filePath}: ${error.message}`);
     }
 };
+
+exports.parseAndReturnPem = function(key, logger) {
+  logger.debug(`Parsing private key to PEM format synchronously, key type: ${typeof key}`);
+  
+  if (typeof key === 'string') {
+    logger.debug('Processing string key as potential PEM private key');
+    try {
+      // Validate it's a valid private key PEM
+      forge.pki.privateKeyFromPem(key);
+      logger.debug('Successfully validated private key PEM format');
+      return key;
+    } catch (error) {
+      logger.error(`Invalid private key PEM format: ${error.message}`);
+      throw new Error('Invalid private key PEM format');
+    }
+  } else if (typeof key === 'object' && key !== null) {
+    logger.debug('Processing object key as potential JWK private key');
+    try {
+      // Check if it has the 'd' property which indicates a private key
+      if (!key.d) {
+        logger.error('JWK object is not a private key (missing d parameter)');
+        throw new Error('JWK object is not a private key');
+      }
+      
+      // Convert JWK to PEM (private key)
+      logger.debug('Converting JWK to private key PEM');
+      const pem = jwkToPem(key, { private: true });
+      logger.debug('Successfully converted JWK to private key PEM format');
+      return pem;
+    } catch (error) {
+      logger.error(`Invalid JWK private key object: ${error.message}`);
+      throw new Error('Invalid JWK private key object');
+    }
+  } else {
+    logger.error(`Unsupported key format: ${typeof key}`);
+    throw new Error('Unsupported key format');
+  }
+}
