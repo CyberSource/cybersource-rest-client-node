@@ -270,8 +270,13 @@ exports.readPrivateKeyFromPemFile = function(filePath, password, logger) {
             
             return forge.pki.privateKeyToPem(privateKey);
         } catch (error) {
-            logger.error(`Error parsing private key from ${filePath}: ${error.message}`);
-            ApiException.AuthException(`Error parsing private key from ${filePath}: ${error.message}`);
+            if (isEncrypted) {
+                logger.error(`Error decrypting private key from ${filePath}: ${error.message}. This may be due to an incorrect password.`);
+                ApiException.AuthException(`Error decrypting private key from ${filePath}: ${error.message}. ${Constants.INCORRECT_KEY_PASS}`);
+            } else {
+                logger.error(`Error parsing private key from ${filePath}: ${error.message}`);
+                ApiException.AuthException(`Error parsing private key from ${filePath}: ${error.message}`);
+            }
         }
     } catch (error) {
         logger.error(`Error loading private key from PEM file: ${filePath}: ${error.message}`);
