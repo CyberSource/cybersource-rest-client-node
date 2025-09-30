@@ -279,19 +279,53 @@ exports.readPrivateKeyFromPemFile = function(filePath, password, logger) {
     }
 };
 
-exports.parseAndReturnPem = function(key, logger) {
+exports.parseAndReturnPem = function(key, logger, password) {
   logger.debug(`Parsing private key to PEM format synchronously, key type: ${typeof key}`);
   
   if (typeof key === 'string') {
     logger.debug('Processing string key as potential PEM private key');
-    try {
-      // Validate it's a valid private key PEM
-      forge.pki.privateKeyFromPem(key);
-      logger.debug('Successfully validated private key PEM format');
-      return key;
-    } catch (error) {
-      logger.error(`Invalid private key PEM format: ${error.message}`);
-      throw new Error('Invalid private key PEM format');
+    
+    // Check if the key is encrypted
+    const isEncrypted = key.includes('ENCRYPTED');
+    
+    if (isEncrypted) {
+      logger.debug('Detected encrypted private key');
+      
+      // Check if password is provided for encrypted key
+      if (!password || password.trim() === '') {
+        logger.error('Password is required for encrypted private key');
+        throw new Error('Password is required for encrypted private key');
+      }
+      
+      try {
+        // Decrypt the private key using the provided password
+        logger.debug('Attempting to decrypt private key with provided password');
+        const privateKey = forge.pki.decryptRsaPrivateKey(key, password);
+        
+        if (!privateKey) {
+          logger.error('Failed to decrypt private key. Incorrect password or invalid key format.');
+          throw new Error('Failed to decrypt private key. Incorrect password or invalid key format.');
+        }
+        
+        // Convert the decrypted key back to PEM format
+        const pemKey = forge.pki.privateKeyToPem(privateKey);
+        logger.debug('Successfully decrypted and converted private key to PEM format');
+        return pemKey;
+      } catch (error) {
+        logger.error(`Error decrypting private key: ${error.message}`);
+        throw new Error(`Error decrypting private key: ${error.message}`);
+      }
+    } else {
+      // Not encrypted, proceed with normal validation
+      try {
+        // Validate it's a valid private key PEM
+        forge.pki.privateKeyFromPem(key);
+        logger.debug('Successfully validated private key PEM format');
+        return key;
+      } catch (error) {
+        logger.error(`Invalid private key PEM format: ${error.message}`);
+        throw new Error('Invalid private key PEM format');
+      }
     }
   } else if (typeof key === 'object' && key !== null) {
     logger.debug('Processing object key as potential JWK private key');

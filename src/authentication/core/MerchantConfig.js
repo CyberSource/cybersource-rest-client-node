@@ -569,8 +569,11 @@ MerchantConfig.prototype.setResponseMlePrivateKey = function setResponseMlePriva
         logger.debug('Processing response MLE private key');
         
         try {
-            // Use synchronous version of parseAndReturnPem
-            const pemKey = Utility.parseAndReturnPem(responseMlePrivateKey, logger);
+            const pemKey = Utility.parseAndReturnPem(
+                responseMlePrivateKey, 
+                logger, 
+                this.responseMlePrivateKeyFilePassword
+            );
             logger.debug('Successfully parsed response MLE private key');
             this.responseMlePrivateKey = pemKey;
         } catch (error) {
