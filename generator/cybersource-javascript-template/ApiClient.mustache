@@ -1,21 +1,24 @@
 {{>licenseInfo}}
 'use strict';
 
+// Module-level agent pool for connection reuse
+const agentPool = new Map();
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest', 'Authentication/MLEUtility'], factory);
+    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'agentkeepalive', 'crypto', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest', 'Authentication/MLEUtility'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'), require('./authentication/util/MLEUtility'));
+    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('agentkeepalive'), require('crypto'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'), require('./authentication/util/MLEUtility'));
   } else {
     // Browser globals (root is window)
     if (!root.{{moduleName}}) {
       root.{{moduleName}} = {};
     }
-    root.{{moduleName}}.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest, root.Authentication.MLEUtility);
+    root.{{moduleName}}.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.AgentKeepAlive, root.crypto, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest, root.Authentication.MLEUtility);
   }
-}(this, function(axios, axiosCookieJar, { HttpsProxyAgent }, https, querystring, MerchantConfig, Logger, Constants, Authorization, PayloadDigest, MLEUtility) {
+}(this, function(axios, axiosCookieJar, HttpsProxyAgent, https, querystring, AgentKeepAlive, crypto, MerchantConfig, Logger, Constants, Authorization, PayloadDigest, MLEUtility) {
 {{#emitJSDoc}}  /**
    * @module {{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient
    * @version {{projectVersion}}
@@ -440,6 +443,106 @@
     return tester;
   }
 
+  /**
+   * Generates a configuration hash for agent caching
+   * @param {Object} config - Configuration object with connection parameters
+   * @returns {String} - Hash string representing the configuration
+   */
+  function generateConfigHash(config) {
+    const hashParts = [];
+    
+    // Add relevant configuration properties to the hash
+    if (config.useProxy) {
+      hashParts.push(`proxyUrl:${config.proxyUrl}`);
+    }
+    if (config.disableSSLVerification !== undefined) hashParts.push(`sslVerify:${!config.disableSSLVerification}`);
+    if (config.sslCaCert) hashParts.push(`sslCaCert:${config.sslCaCert}`);
+    if (config.enableClientCert) hashParts.push(`clientCert:${config.certFile}:${config.keyFile}`);
+    if (config.maxIdleSockets !== undefined) hashParts.push(`maxIdleSockets:${config.maxIdleSockets}`);
+    if (config.freeSocketTimeout !== undefined) hashParts.push(`freeSocketTimeout:${config.freeSocketTimeout}`);
+    
+    const concatenated = hashParts.join('|');
+    return crypto.createHash('sha256').update(concatenated).digest('hex');
+  }
+  
+  /**
+   * Gets or creates an HTTPS agent based on configuration
+   * @param {Object} config - Configuration object with connection parameters
+   * @returns {https.Agent} - HTTPS agent instance
+   */
+  function getOrCreateAgent(config) {
+    const configHash = generateConfigHash(config);
+    
+    if (agentPool.has(configHash)) {
+      return agentPool.get(configHash);
+    }
+    
+    const fs = require('fs');
+    
+    // Create agent options with keepAlive enabled
+    const agentOptions = {
+      keepAlive: true, // By default, keepAlive is true in agentkeepalive
+      maxSockets: config.maxIdleSockets,
+      freeSocketTimeout: config.freeSocketTimeout,
+      rejectUnauthorized: !config.disableSSLVerification,
+    };
+    
+    // Add SSL certificate if provided
+    if (config.sslCaCert) {
+      agentOptions.ca = fs.readFileSync(config.sslCaCert);
+    }
+    
+    // Add client certificates if enabled
+    if (config.enableClientCert) {
+      agentOptions.cert = fs.readFileSync(config.certFile);
+      agentOptions.key = fs.readFileSync(config.keyFile);
+    }
+    
+    // Use the HttpsAgent from the agentkeepalive package
+    const agent = new AgentKeepAlive.HttpsAgent(agentOptions);
+    agentPool.set(configHash, agent);
+    return agent;
+  }
+  
+  /**
+   * Gets or creates an HTTPS proxy agent based on configuration
+   * @param {String} proxyAddress - Proxy server address
+   * @param {Number} proxyPort - Proxy server port
+   * @param {String} proxyUser - Proxy authentication username (optional)
+   * @param {String} proxyPassword - Proxy authentication password (optional)
+   * @returns {HttpsProxyAgent} - HTTPS proxy agent instance
+   */
+  function getOrCreateProxyAgent(proxyAddress, proxyPort, proxyUser, proxyPassword, maxIdleSockets) {
+    const { HttpsProxyAgent } = require('https-proxy-agent');
+    
+    let proxyUrl;
+    if (proxyUser && proxyPassword) {
+      proxyUrl = `http://${proxyUser}:${proxyPassword}@${proxyAddress}:${proxyPort}`;
+    } else {
+      proxyUrl = `http://${proxyAddress}:${proxyPort}`;
+    }
+
+    const configHash = generateConfigHash({
+      useProxy: true,
+      proxyUrl: proxyUrl,
+      maxIdleSockets: maxIdleSockets
+    });
+
+    if (agentPool.has(configHash)) {
+      return agentPool.get(configHash);
+    }
+    
+    // Apply the same connection pooling settings as the regular HTTPS agent
+    const agentOptions = {
+      keepAlive: true, // Keep the connection alive
+      maxSockets: maxIdleSockets
+    };
+    
+    const agent = new HttpsProxyAgent(proxyUrl, agentOptions);
+    agentPool.set(configHash, agent);
+    return agent;
+  }
+
     // Code added by Infosys dev team
 
   /**
@@ -592,43 +695,29 @@
       headers: {}
     };
 
+    // Use module-level connection pooling with keepAlive
     if (useProxy && (proxyAddress != null && proxyAddress != '')) {
-      if ((proxyUser != null && proxyUser != '') && (proxyPassword!= null && proxyPassword != '')) {
-        var proxy  = process.env.http_proxy || 'http://' + proxyUser + ':' + proxyPassword + '@' + proxyAddress + ':' + proxyPort;
-      }
-      else {
-        var proxy  = process.env.http_proxy || 'http://' +  proxyAddress + ':' + proxyPort;
-      }
-
-      var agent = new HttpsProxyAgent(proxy);
-      axiosConfig.httpsAgent = agent;
+      // Get or create a proxy agent from the pool
+      axiosConfig.httpsAgent = getOrCreateProxyAgent(proxyAddress, proxyPort, proxyUser, proxyPassword, this.merchantConfig.getMaxIdleSockets());
     } else {
-      if (sslCaCert) {
-        axiosConfig.httpsAgent = new https.Agent({
-          rejectUnauthorized: !isSslVerificationDisabled,
-          ca: fslib.readFileSync(sslCaCert)
-        });
-      } else {
-        axiosConfig.httpsAgent = new https.Agent({
-          rejectUnauthorized: !isSslVerificationDisabled
-        });
+      // Get or create an HTTPS agent from the pool
+      var certFile, keyFile;
+      
+      if (enableClientCert) {
+        certFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getSSLClientCert()));
+        keyFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getPrivateKey()));
       }
-    }
-
-    if(enableClientCert) {
-      var certFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getSSLClientCert()));
-      var keyFile = pathlib.resolve(pathlib.join(this.merchantConfig.getClientCertDir(), this.merchantConfig.getPrivateKey()));
-
-      if (axiosConfig.httpsAgent) {
-        axiosConfig.httpsAgent.cert = fslib.readFileSync(certFile);
-        axiosConfig.httpsAgent.key = fslib.readFileSync(keyFile);
-      } else {
-        axiosConfig.httpsAgent = new https.Agent({
-          rejectUnauthorized: !isSslVerificationDisabled,
-          cert: fslib.readFileSync(certFile),
-          key: fslib.readFileSync(keyFile)
-        });
-      }
+      
+      axiosConfig.httpsAgent = getOrCreateAgent({
+        disableSSLVerification: isSslVerificationDisabled,
+        sslCaCert: sslCaCert,
+        enableClientCert: enableClientCert,
+        certFile: certFile,
+        keyFile: keyFile,
+        useProxy: false,
+        maxIdleSockets: this.merchantConfig.getMaxIdleSockets(),
+        freeSocketTimeout: this.merchantConfig.getFreeSocketTimeout()
+      });
     }
 
     // apply authentications

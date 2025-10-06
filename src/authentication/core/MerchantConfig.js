@@ -121,6 +121,8 @@ function MerchantConfig(result) {
 	 */
     this.mleForRequestPublicCertPath = result.mleForRequestPublicCertPath;
 
+    this.maxIdleSockets = result.maxIdleSockets; // Value should be non-negative
+    this.freeSocketTimeout = result.freeSocketTimeout; // Value should be non-negative and greater than or equal to 4000
     /**
 	 * Flag to enable MLE (Message Level Encryption) for response body for all APIs in SDK to get MLE Response(encrypted response) if supported by API. 
 	 */
@@ -598,6 +600,22 @@ MerchantConfig.prototype.getP12FilePath = function getP12FilePath() {
     return path.resolve(path.join(this.getKeysDirectory(), this.getKeyFileName() + '.p12'));
 }
 
+MerchantConfig.prototype.getMaxIdleSockets = function getMaxIdleSockets() {
+    return this.maxIdleSockets;
+}
+
+MerchantConfig.prototype.setMaxIdleSockets = function setMaxIdleSockets(maxIdleSockets) {
+    this.maxIdleSockets = maxIdleSockets;
+}
+
+MerchantConfig.prototype.getFreeSocketTimeout = function getFreeSocketTimeout() {
+    return this.freeSocketTimeout;
+}
+
+MerchantConfig.prototype.setFreeSocketTimeout = function setFreeSocketTimeout(freeSocketTimeout) {
+    this.freeSocketTimeout = freeSocketTimeout;
+}
+
 MerchantConfig.prototype.runEnvironmentCheck = function runEnvironmentCheck(logger) {
 
     /*url*/
@@ -804,6 +822,18 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         this.enableRequestMLEForOptionalApisGlobally !== this.useMLEGlobally
     ) {
         ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
+    }
+
+    // Validate maxIdleSockets is non-negative and not less than default
+    if (this.maxIdleSockets !== null && this.maxIdleSockets !== undefined && (this.maxIdleSockets <= 0 || this.maxIdleSockets < Constants.DEFAULT_MAX_IDLE_SOCKETS)) {
+        this.maxIdleSockets = Constants.DEFAULT_MAX_IDLE_SOCKETS;
+        logger.warn("maxIdleSockets cannot be non-negative or less than default. Setting to default value " + Constants.DEFAULT_MAX_IDLE_SOCKETS + ".");
+    }
+
+    // Validate userDefinedTimeout is non-negative and not less than default
+    if (this.userDefinedTimeout !== null && this.userDefinedTimeout !== undefined && (this.userDefinedTimeout <= 0 || this.userDefinedTimeout < Constants.DEFAULT_USER_DEFINED_TIMEOUT)) {
+        this.userDefinedTimeout = Constants.DEFAULT_USER_DEFINED_TIMEOUT;
+        logger.warn("userDefinedTimeout cannot be non-negative or less than default (value should be in milliseconds). Setting to default value " + Constants.DEFAULT_USER_DEFINED_TIMEOUT + ".");
     }
 
     //useMLEGlobally check for auth Type
