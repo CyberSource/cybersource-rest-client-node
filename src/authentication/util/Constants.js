@@ -99,6 +99,7 @@ module.exports = {
     DEFAULT_LOGGING_LEVEL             :  "error",
     DEFAULT_MAX_IDLE_SOCKETS          :  100,
     DEFAULT_USER_DEFINED_TIMEOUT      :  4000, // Value in milliseconds
+    MLE_CACHE_KEY_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY : "_mleResponsePrivateKeyFromFile",
 
     STATUS200                         :  "Transaction Successful",
     STATUS400                         :  "Bad Request",

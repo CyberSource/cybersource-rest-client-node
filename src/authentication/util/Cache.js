@@ -130,7 +130,7 @@ function setupMLECache(merchantConfig, cacheKey, certificateSourcePath) {
         mleCert: mleCert,
         fileLastModifiedTime: fileLastModifiedTime
     });
-    validateCertificateExpiry(mleCert, merchantConfig.getMleKeyAlias(), cacheKey, merchantConfig);
+    validateCertificateExpiry(mleCert, merchantConfig.getRequestmleKeyAlias(), cacheKey, merchantConfig);
 }
 
 
@@ -153,7 +153,7 @@ function loadCertificateFromP12(merchantConfig, certificatePath) {
             }
             
             // Try to find the certificate by alias among all certificates
-            var mleCert =  Utility.findCertificateByAlias(certs, merchantConfig.getMleKeyAlias());
+            var mleCert =  Utility.findCertificateByAlias(certs, merchantConfig.getRequestmleKeyAlias());
             return forge.pki.certificateFromPem(mleCert);
         } else {
             throw new Error("No certificate found in P12 file");
@@ -173,10 +173,10 @@ function loadCertificateFromPem(merchantConfig, mleCertPath) {
             throw new Error("No valid PEM certificates found in the provided path : " + mleCertPath);
         }
         try {
-            mleCert = Utility.findCertificateByAlias(certs, merchantConfig.getMleKeyAlias());
+            mleCert = Utility.findCertificateByAlias(certs, merchantConfig.getRequestmleKeyAlias());
             
         } catch (error) {
-            logger.warn("No certificate found for the specified mleKeyAlias '" + merchantConfig.getMleKeyAlias() + "'. Using the first certificate from file " + mleCertPath + " as the MLE request certificate.");
+            logger.warn("No certificate found for the specified requestmleKeyAlias '" + merchantConfig.getRequestmleKeyAlias() + "'. Using the first certificate from file " + mleCertPath + " as the MLE request certificate.");
             mleCert = certs[0];
         }
         // Use node forge to parse the PEM certificate
@@ -242,3 +242,42 @@ function validateCertificateExpiry(certificate, keyAlias, cacheKey, merchantConf
         }
     }
 };
+
+exports.getMleResponsePrivateKeyFromFilePath = function(merchantConfig) {
+    const logger = Logger.getLogger(merchantConfig, 'Cache');
+    const merchantId = merchantConfig.getMerchantID();
+    const cacheKey = merchantId + Constants.MLE_CACHE_KEY_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY;
+    const certificatePath = merchantConfig.getResponseMlePrivateKeyFilePath();
+
+    const cachedEntry = cache.get(cacheKey);
+
+    logger.debug("Fetching MLE response private key from cache with key: " + cacheKey);
+    if (cachedEntry == undefined || cachedEntry == null || cachedEntry.fileLastModifiedTime !== fs.statSync(certificatePath).mtimeMs) {
+        logger.debug("MLE response private key not found in cache or has been modified. Loading from file: " + certificatePath);
+        putMLEResponsePrivateKeyInCache(merchantConfig, cacheKey, certificatePath);
+    }
+    return cache.get(cacheKey).privateKey;
+}
+
+function putMLEResponsePrivateKeyInCache(merchantConfig, cacheKey, privateKeyPath) {
+    const logger = Logger.getLogger(merchantConfig, 'Cache');
+    const fileExtension = path.extname(privateKeyPath).toLowerCase();
+    const keyPass = merchantConfig.getResponseMlePrivateKeyFilePassword();
+    const fileLastModifiedTime = fs.statSync(privateKeyPath).mtimeMs;
+    var privateKey = null;
+    try {
+        if (['.p12', '.pfx'].includes(fileExtension)) {
+            privateKey = Utility.readPrivateKeyFromP12(privateKeyPath, keyPass, logger);
+        } else if (['.pem', '.key', '.p8'].includes(fileExtension)) {
+            privateKey = Utility.readPrivateKeyFromPemFile(privateKeyPath, keyPass, logger);
+        }
+    } catch (error) {
+        logger.error("Error reading private key from file: " + error.message);
+        throw error;
+    }
+    const cacheEntry = {
+        privateKey: privateKey,
+        fileLastModifiedTime: fileLastModifiedTime
+    };
+    cache.put(cacheKey, cacheEntry);
+}
