@@ -97,7 +97,7 @@ Configure global settings for request MLE using these properties in your `mercha
 
 - **Variable**: `responseMlePrivateKey`
 - **Type**: `PrivateKey`
-- **Description**: Direct private key object for response decryption. **Note**: Only PEM format is supported for the private key object.
+- **Description**: Direct private key object for response decryption. **Note**: Supports both PEM format private key objects and raw JWK (JSON Web Key) objects. When using JWK format, ensure the key contains the required cryptographic parameters for RSA private keys (n, e, d, p, q, dp, dq, qi).
 
 ---
 
@@ -223,13 +223,13 @@ var merchantConfig = {
 ### (vi) Response MLE Configuration with Private Key Object
 
 ```javascript
-// Load private key programmatically (PEM format only)
+// Load private key programmatically (PEM format or JWK object)
 var privateKey = loadPrivateKeyFromSomewhere();
 
 // Create merchantConfig with private key object
 var merchantConfig = {
   enableResponseMleGlobally: true,
-  responseMlePrivateKey: privateKey,  // Must be in PEM format
+  responseMlePrivateKey: privateKey,  // Supports PEM format or JWK object
   responseMleKID: "your-key-id"
 };
 ```
@@ -374,7 +374,7 @@ For Response MLE private key files, the following formats are supported:
 
 ### (ii) Response MLE
 - Response MLE requires either `responseMlePrivateKey` object OR `responseMlePrivateKeyFilePath` (not both)
-- The `responseMlePrivateKey` object must be in PEM format
+- The `responseMlePrivateKey` object supports both PEM format and JWK (JSON Web Key) objects
 - The `responseMleKID` parameter is mandatory when response MLE is enabled
 - If an API expects a mandatory MLE response but the map specifies non-MLE response, the API might return an error
 - Both the private key object and file path approaches are mutually exclusive
