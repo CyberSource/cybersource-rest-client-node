@@ -76,6 +76,7 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
   logger.debug('LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: ' + JSON.stringify(responseBody));
   
   try {
+    // Private key from config will take precedence over file path.
     const privateKey = merchantConfig.getResponseMlePrivateKey() || 
                        Cache.getMleResponsePrivateKeyFromFilePath(merchantConfig);
     

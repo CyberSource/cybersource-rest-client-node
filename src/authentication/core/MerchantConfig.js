@@ -572,7 +572,8 @@ MerchantConfig.prototype.setResponseMlePrivateKey = function setResponseMlePriva
             const pemKey = Utility.parseAndReturnPem(
                 responseMlePrivateKey, 
                 logger, 
-                this.responseMlePrivateKeyFilePassword
+                this.responseMlePrivateKeyFilePassword,
+                'responseMlePrivateKeyFilePassword'
             );
             logger.debug('Successfully parsed response MLE private key');
             this.responseMlePrivateKey = pemKey;

@@ -129,13 +129,13 @@ Configure global settings for request MLE using these properties in your `mercha
 ### Object Configuration
 
 - **Variable**: `mapToControlMLEonAPI`
-- **Type**: `Object` or `Map` with string keys and string/boolean values
+- **Type**: `Object` or `Map` with string keys and string values
 - **Description**: Overrides global MLE settings for specific APIs. The key is the API function name, and the value controls both request and response MLE.
-- **Example**: `{ "apiFunctionName": "true::true" }` or `{ "apiFunctionName": true }`
+- **Example**: `{ "apiFunctionName": "true::true" }`
 
 #### Structure of Values in Object:
 
-(i) **String format: "requestMLE::responseMLE"** - Control both request and response MLE
+(i) **"requestMLE::responseMLE"** - Control both request and response MLE
    - `"true::true"` - Enable both request and response MLE
    - `"false::false"` - Disable both request and response MLE
    - `"true::false"` - Enable request MLE, disable response MLE
@@ -145,9 +145,10 @@ Configure global settings for request MLE using these properties in your `mercha
    - `"::false"` - Use global setting for request, disable response MLE
    - `"false::"` - Disable request MLE, use global setting for response
 
-(ii) **Boolean format** - Control request MLE only (response uses global setting)
-   - `true` - Enable request MLE
-   - `false` - Disable request MLE
+(ii) **"requestMLE"** - Control request MLE only (response uses global setting)
+   - `"true"` - Enable request MLE
+   - `"false"` - Disable request MLE
+
 
 <br/>
 
@@ -194,10 +195,10 @@ var merchantConfig = {
   mleForRequestPublicCertPath: "/path/to/public/cert.pem",
   requestMleKeyAlias: "Custom_Key_Alias",
   
-  // API-specific control with boolean values
+  // API-specific control with string values
   mapToControlMLEonAPI: {
-    "createPayment": true,     // Enable request MLE for this API
-    "capturePayment": false    // Disable request MLE for this API
+    "createPayment": "true",       // Enable request MLE for this API (simple format)
+    "capturePayment": "false::"    // Disable request MLE for this API (full format)
   }
 };
 ```
@@ -386,16 +387,17 @@ For Response MLE private key files, the following formats are supported:
 - When both new and deprecated parameters are provided, the **new parameter takes precedence**
 
 ### (iv) API-level Control Validation
-- The `mapToControlMLEonAPI` values are validated for proper format
-- Invalid formats (empty values, multiple separators, non-boolean values) will cause configuration errors
+- The `mapToControlMLEonAPI` values are validated for proper format using string format
+- Invalid formats (empty values, multiple separators) will cause configuration errors
 - Empty string after `::` separator will use global defaults
-- The object also supports backward compatibility with boolean values, which will be automatically converted to control request MLE only
+- **Note**: Boolean values are supported for backward compatibility but are deprecated. Use string format for new implementations
 
 ### (v) Configuration Validation
 - The SDK performs comprehensive validation of MLE configuration parameters
 - Conflicting values between new and deprecated parameters will result in `ConfigException`
 - File path validation is performed for certificate and private key files
-- Invalid boolean values in `mapToControlMLEonAPI` will cause parsing errors
+- Invalid string format values in `mapToControlMLEonAPI` will cause parsing errors
+- **Note**: Boolean values in `mapToControlMLEonAPI` are deprecated but still supported for backward compatibility
 
 <br/>
 

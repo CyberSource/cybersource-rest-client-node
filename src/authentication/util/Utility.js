@@ -284,7 +284,7 @@ exports.readPrivateKeyFromPemFile = function(filePath, password, logger) {
     }
 };
 
-exports.parseAndReturnPem = function(key, logger, password) {
+exports.parseAndReturnPem = function(key, logger, password, passwordPropertyName) {
   logger.debug(`Parsing private key to PEM format synchronously, key type: ${typeof key}`);
   
   if (typeof key === 'string') {
@@ -298,8 +298,10 @@ exports.parseAndReturnPem = function(key, logger, password) {
       
       // Check if password is provided for encrypted key
       if (!password || password.trim() === '') {
-        logger.error('Password is required for encrypted private key');
-        throw new Error('Password is required for encrypted private key');
+        const propertyHint = passwordPropertyName ? ` Please set the '${passwordPropertyName}' property in your configuration.` : '';
+        const errorMessage = `Password is required for encrypted private key.${propertyHint}`;
+        logger.error(errorMessage);
+        throw new Error(errorMessage);
       }
       
       try {
