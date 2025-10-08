@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property network (base name: "network")', function() {
+      // uncomment below and update the code to test the property network
+      //var instane = new CyberSource.Ptsv2paymentsidProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

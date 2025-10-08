@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhook', 'model/InlineResponse2003', 'model/InlineResponse2014', 'model/InlineResponse2015', 'model/SaveSymEgressKey'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhook', 'model/InlineResponse2004', 'model/InlineResponse2014', 'model/InlineResponse2015', 'model/SaveSymEgressKey'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhook'), require('../model/InlineResponse2003'), require('../model/InlineResponse2014'), require('../model/InlineResponse2015'), require('../model/SaveSymEgressKey'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhook'), require('../model/InlineResponse2004'), require('../model/InlineResponse2014'), require('../model/InlineResponse2015'), require('../model/SaveSymEgressKey'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhook, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse2015, root.CyberSource.SaveSymEgressKey);
+    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhook, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse2015, root.CyberSource.SaveSymEgressKey);
   }
-}(this, function(MLEUtility, ApiClient, CreateWebhook, InlineResponse2003, InlineResponse2014, InlineResponse2015, SaveSymEgressKey) {
+}(this, function(MLEUtility, ApiClient, CreateWebhook, InlineResponse2004, InlineResponse2014, InlineResponse2015, SaveSymEgressKey) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the findProductsToSubscribe operation.
      * @callback module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2003>} data The data returned by the service call.
+     * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param {String} organizationId The Organization Identifier.
      * @param {module:api/CreateNewWebhooksApi~findProductsToSubscribeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2003>}
+     * data is of type: {@link Array.<module:model/InlineResponse2004>}
      */
     this.findProductsToSubscribe = function(organizationId, callback) {
       var postBody = null;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = [InlineResponse2003];
+      var returnType = [InlineResponse2004];
 
       //check isMLE for an api method 'this.findProductsToSubscribe'
       var inboundMLEStatus = 'false';

@@ -78,7 +78,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * Unique code for card issuer provided by the processor. 
+   * Unique code for card issuer provided by the processor.
    * @member {String} code
    */
   exports.prototype['code'] = undefined;

@@ -48,7 +48,6 @@
     var _this = this;
 
 
-
   };
 
   /**
@@ -65,9 +64,6 @@
       if (data.hasOwnProperty('enabled')) {
         obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
       }
-      if (data.hasOwnProperty('selfServiceability')) {
-        obj['selfServiceability'] = ApiClient.convertToType(data['selfServiceability'], 'String');
-      }
     }
     return obj;
   }
@@ -76,12 +72,6 @@
    * @member {Boolean} enabled
    */
   exports.prototype['enabled'] = undefined;
-  /**
-   * Indicates if the organization can enable this product using self service.  Possible values: - SELF_SERVICEABLE - NOT_SELF_SERVICEABLE - SELF_SERVICE_ONLY
-   * @member {String} selfServiceability
-   * @default 'NOT_SELF_SERVICEABLE'
-   */
-  exports.prototype['selfServiceability'] = 'NOT_SELF_SERVICEABLE';
 
 
 

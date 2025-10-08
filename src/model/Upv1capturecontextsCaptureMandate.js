@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Upv1capturecontextsCaptureMandateCPF'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsCaptureMandateCPF'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Upv1capturecontextsCaptureMandate = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Upv1capturecontextsCaptureMandate = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsCaptureMandateCPF);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Upv1capturecontextsCaptureMandateCPF) {
   'use strict';
 
 
@@ -98,7 +98,7 @@
         obj['comboCard'] = ApiClient.convertToType(data['comboCard'], 'Boolean');
       }
       if (data.hasOwnProperty('CPF')) {
-        obj['CPF'] = ApiClient.convertToType(data['CPF'], 'Boolean');
+        obj['CPF'] = Upv1capturecontextsCaptureMandateCPF.constructFromObject(data['CPF']);
       }
     }
     return obj;
@@ -150,8 +150,7 @@
    */
   exports.prototype['comboCard'] = undefined;
   /**
-   * Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False<br><br>  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.<br><br>  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered. 
-   * @member {Boolean} CPF
+   * @member {module:model/Upv1capturecontextsCaptureMandateCPF} CPF
    */
   exports.prototype['CPF'] = undefined;
 

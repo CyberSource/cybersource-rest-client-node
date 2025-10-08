@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **recipientInformation** | [**Ptsv2creditsRecipientInformation**](Ptsv2creditsRecipientInformation.md) |  | [optional] 
 **senderInformation** | [**Ptsv2creditsSenderInformation**](Ptsv2creditsSenderInformation.md) |  | [optional] 
 **promotionInformation** | [**Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
+**processorInformation** | [**Ptsv2reversalsProcessorInformation**](Ptsv2reversalsProcessorInformation.md) |  | [optional] 
 
 

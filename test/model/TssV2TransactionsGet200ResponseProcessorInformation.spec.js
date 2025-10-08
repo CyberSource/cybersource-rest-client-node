@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
+      // uncomment below and update the code to test the property issuerInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eventStatus (base name: "eventStatus")', function() {
       // uncomment below and update the code to test the property eventStatus
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
@@ -148,6 +154,24 @@
 
     it('should have the property paymentAccountReferenceNumber (base name: "paymentAccountReferenceNumber")', function() {
       // uncomment below and update the code to test the property paymentAccountReferenceNumber
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property responseDetails (base name: "responseDetails")', function() {
+      // uncomment below and update the code to test the property responseDetails
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rawResponseLocal (base name: "rawResponseLocal")', function() {
+      // uncomment below and update the code to test the property rawResponseLocal
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rawResponse (base name: "rawResponse")', function() {
+      // uncomment below and update the code to test the property rawResponse
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessorInformation();
       //expect(instance).to.be();
     });

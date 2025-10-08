@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge'], factory);
+    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsDifferentialFeeSubscriptionInformationFeatures = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge);
+    root.CyberSource.PaymentsProductsDifferentialFeeSubscriptionInformationFeatures = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation);
   }
-}(this, function(ApiClient, PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge) {
+}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethodsSubscriptionInformation) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('surcharge')) {
-        obj['surcharge'] = PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge.constructFromObject(data['surcharge']);
+        obj['surcharge'] = PaymentsProductsAlternativePaymentMethodsSubscriptionInformation.constructFromObject(data['surcharge']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge} surcharge
+   * @member {module:model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation} surcharge
    */
   exports.prototype['surcharge'] = undefined;
 
