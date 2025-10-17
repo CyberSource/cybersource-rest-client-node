@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
       }
       if (data.hasOwnProperty('settlementCurrency')) {
         obj['settlementCurrency'] = ApiClient.convertToType(data['settlementCurrency'], 'String');
+      }
+      if (data.hasOwnProperty('refundBalance')) {
+        obj['refundBalance'] = ApiClient.convertToType(data['refundBalance'], 'String');
       }
       if (data.hasOwnProperty('surcharge')) {
         obj['surcharge'] = Ptsv2payoutsOrderInformationAmountDetailsSurcharge.constructFromObject(data['surcharge']);
@@ -122,6 +126,11 @@
    * @member {String} settlementCurrency
    */
   exports.prototype['settlementCurrency'] = undefined;
+  /**
+   * The remaining amount which can be refunded.
+   * @member {String} refundBalance
+   */
+  exports.prototype['refundBalance'] = undefined;
   /**
    * @member {module:model/Ptsv2payoutsOrderInformationAmountDetailsSurcharge} surcharge
    */

@@ -96,7 +96,7 @@
    */
   exports.prototype['fundingSourceSale'] = undefined;
   /**
-   * The Venmo user name chosen by the user, also know as a Venmo handle. 
+   * The Venmo user name chosen by the user, also known as a Venmo handle. 
    * @member {String} userName
    */
   exports.prototype['userName'] = undefined;

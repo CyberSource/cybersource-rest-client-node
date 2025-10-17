@@ -74,7 +74,7 @@
         obj['usageType'] = ApiClient.convertToType(data['usageType'], 'String');
       }
       if (data.hasOwnProperty('allowMultipleTokens')) {
-        obj['allowMultipleTokens'] = ApiClient.convertToType(data['allowMultipleTokens'], 'Boolean');
+        obj['allowMultipleTokens'] = ApiClient.convertToType(data['allowMultipleTokens'], 'String');
       }
     }
     return obj;
@@ -97,7 +97,7 @@
   exports.prototype['usageType'] = undefined;
   /**
    * Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account. 
-   * @member {Boolean} allowMultipleTokens
+   * @member {String} allowMultipleTokens
    */
   exports.prototype['allowMultipleTokens'] = undefined;
 

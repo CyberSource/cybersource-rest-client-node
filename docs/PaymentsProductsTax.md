@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscriptionInformation** | [**PaymentsProductsAlternativePaymentMethodsSubscriptionInformation**](PaymentsProductsAlternativePaymentMethodsSubscriptionInformation.md) |  | [optional] 
+**subscriptionInformation** | [**PaymentsProductsPayerAuthenticationSubscriptionInformation**](PaymentsProductsPayerAuthenticationSubscriptionInformation.md) |  | [optional] 
 
 

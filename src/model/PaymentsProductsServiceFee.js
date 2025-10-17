@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation', 'model/PaymentsProductsServiceFeeConfigurationInformation'], factory);
+    define(['ApiClient', 'model/PaymentsProductsPayerAuthenticationSubscriptionInformation', 'model/PaymentsProductsServiceFeeConfigurationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'), require('./PaymentsProductsServiceFeeConfigurationInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsPayerAuthenticationSubscriptionInformation'), require('./PaymentsProductsServiceFeeConfigurationInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsServiceFee = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation, root.CyberSource.PaymentsProductsServiceFeeConfigurationInformation);
+    root.CyberSource.PaymentsProductsServiceFee = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsPayerAuthenticationSubscriptionInformation, root.CyberSource.PaymentsProductsServiceFeeConfigurationInformation);
   }
-}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethodsSubscriptionInformation, PaymentsProductsServiceFeeConfigurationInformation) {
+}(this, function(ApiClient, PaymentsProductsPayerAuthenticationSubscriptionInformation, PaymentsProductsServiceFeeConfigurationInformation) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('subscriptionInformation')) {
-        obj['subscriptionInformation'] = PaymentsProductsAlternativePaymentMethodsSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
+        obj['subscriptionInformation'] = PaymentsProductsPayerAuthenticationSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
       }
       if (data.hasOwnProperty('configurationInformation')) {
         obj['configurationInformation'] = PaymentsProductsServiceFeeConfigurationInformation.constructFromObject(data['configurationInformation']);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/PaymentsProductsAlternativePaymentMethodsSubscriptionInformation} subscriptionInformation
+   * @member {module:model/PaymentsProductsPayerAuthenticationSubscriptionInformation} subscriptionInformation
    */
   exports.prototype['subscriptionInformation'] = undefined;
   /**

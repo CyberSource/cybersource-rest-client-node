@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property underwriting (base name: "underwriting")', function() {
+      // uncomment below and update the code to test the property underwriting
+      //var instane = new CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods();
+      //expect(instance).to.be();
+    });
+
     it('should have the property additionalConfigurations (base name: "additionalConfigurations")', function() {
       // uncomment below and update the code to test the property additionalConfigurations
       //var instane = new CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods();

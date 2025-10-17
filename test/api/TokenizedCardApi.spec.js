@@ -70,6 +70,16 @@
         done();
       });
     });
+    describe('postIssuerLifeCycleSimulation', function() {
+      it('should call postIssuerLifeCycleSimulation successfully', function(done) {
+        //uncomment below and update the code to test postIssuerLifeCycleSimulation
+        //instance.postIssuerLifeCycleSimulation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postTokenizedCard', function() {
       it('should call postTokenizedCard successfully', function(done) {
         //uncomment below and update the code to test postTokenizedCard
