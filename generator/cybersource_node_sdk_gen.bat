@@ -26,6 +26,7 @@ git checkout ..\src\model\CreateAccessTokenRequest.js
 git checkout ..\src\model\BadRequestError.js
 git checkout ..\src\model\ResourceNotFoundError.js
 git checkout ..\src\model\UnauthorizedClientError.js
+git checkout ..\src\api\BatchUploadWithMTLSApi.js
 
 git checkout ..\docs\OAuthApi.md
 git checkout ..\docs\AccessTokenResponse.md
