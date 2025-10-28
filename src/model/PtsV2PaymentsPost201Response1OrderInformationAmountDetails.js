@@ -69,7 +69,7 @@
   }
 
   /**
-   * This field will carry the remaning amount which can be refunded. 
+   * The remaining amount which can be refunded.
    * @member {String} refundBalance
    */
   exports.prototype['refundBalance'] = undefined;

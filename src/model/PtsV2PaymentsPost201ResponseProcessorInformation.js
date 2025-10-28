@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PaymentsPost201ResponseProcessorInformationRouting', 'model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAvs', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PaymentsPost201ResponseProcessorInformationRouting', 'model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection', 'model/Ptsv2paymentsProcessorInformationReversalNetwork'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCustomer'), require('./PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./PtsV2PaymentsPost201ResponseProcessorInformationRouting'), require('./PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAvs'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCustomer'), require('./PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./PtsV2PaymentsPost201ResponseProcessorInformationRouting'), require('./PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'), require('./Ptsv2paymentsProcessorInformationReversalNetwork'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCustomer, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationRouting, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection);
+    root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCustomer, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationRouting, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection, root.CyberSource.Ptsv2paymentsProcessorInformationReversalNetwork);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, PtsV2PaymentsPost201ResponseProcessorInformationCustomer, PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, PtsV2PaymentsPost201ResponseProcessorInformationRouting, PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsPost201ResponseProcessorInformationAvs, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse, PtsV2PaymentsPost201ResponseProcessorInformationCustomer, PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, PtsV2PaymentsPost201ResponseProcessorInformationRouting, PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection, Ptsv2paymentsProcessorInformationReversalNetwork) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -240,6 +241,9 @@
       if (data.hasOwnProperty('merchantRiskPrediction')) {
         obj['merchantRiskPrediction'] = ApiClient.convertToType(data['merchantRiskPrediction'], 'String');
       }
+      if (data.hasOwnProperty('network')) {
+        obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
+      }
     }
     return obj;
   }
@@ -280,7 +284,7 @@
    */
   exports.prototype['responseCodeSource'] = undefined;
   /**
-   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * This field might contain information about a decline. 
    * @member {String} responseDetails
    */
   exports.prototype['responseDetails'] = undefined;
@@ -458,6 +462,10 @@
    * @member {String} merchantRiskPrediction
    */
   exports.prototype['merchantRiskPrediction'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessorInformationReversalNetwork} network
+   */
+  exports.prototype['network'] = undefined;
 
 
 

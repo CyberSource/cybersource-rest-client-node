@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds', 'model/PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds'], factory);
+    define(['ApiClient', 'model/PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds'), require('./PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds, root.CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds);
+    root.CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon);
   }
-}(this, function(ApiClient, PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds, PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds) {
+}(this, function(ApiClient, PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon) {
   'use strict';
 
 
@@ -62,24 +62,24 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('pullfunds')) {
-        obj['pullfunds'] = ApiClient.convertToType(data['pullfunds'], {'String': PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds});
+      if (data.hasOwnProperty('common')) {
+        obj['common'] = PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon.constructFromObject(data['common']);
       }
-      if (data.hasOwnProperty('pushfunds')) {
-        obj['pushfunds'] = ApiClient.convertToType(data['pushfunds'], {'String': PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds});
+      if (data.hasOwnProperty('processors')) {
+        obj['processors'] = ApiClient.convertToType(data['processors'], {'String': Object});
       }
     }
     return obj;
   }
 
   /**
-   * @member {Object.<String, module:model/PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds>} pullfunds
+   * @member {module:model/PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon} common
    */
-  exports.prototype['pullfunds'] = undefined;
+  exports.prototype['common'] = undefined;
   /**
-   * @member {Object.<String, module:model/PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds>} pushfunds
+   * @member {Object.<String, Object>} processors
    */
-  exports.prototype['pushfunds'] = undefined;
+  exports.prototype['processors'] = undefined;
 
 
 

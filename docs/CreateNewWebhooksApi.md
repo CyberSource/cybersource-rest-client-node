@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="findProductsToSubscribe"></a>
 # **findProductsToSubscribe**
-> [InlineResponse2003] findProductsToSubscribe(organizationId)
+> [InlineResponse2004] findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2003]**](InlineResponse2003.md)
+[**[InlineResponse2004]**](InlineResponse2004.md)
 
 ### Authorization
 

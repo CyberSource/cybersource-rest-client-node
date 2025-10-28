@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse20010Links);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property rel (base name: "rel")', function() {
+      // uncomment below and update the code to test the property rel
       //var instane = new CyberSource.InlineResponse20010Links();
       //expect(instance).to.be();
     });
 
-    it('should have the property report (base name: "report")', function() {
-      // uncomment below and update the code to test the property report
+    it('should have the property href (base name: "href")', function() {
+      // uncomment below and update the code to test the property href
       //var instane = new CyberSource.InlineResponse20010Links();
       //expect(instance).to.be();
     });

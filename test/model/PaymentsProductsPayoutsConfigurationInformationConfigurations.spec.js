@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurations);
     });
 
-    it('should have the property pullfunds (base name: "pullfunds")', function() {
-      // uncomment below and update the code to test the property pullfunds
+    it('should have the property common (base name: "common")', function() {
+      // uncomment below and update the code to test the property common
       //var instane = new CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurations();
       //expect(instance).to.be();
     });
 
-    it('should have the property pushfunds (base name: "pushfunds")', function() {
-      // uncomment below and update the code to test the property pushfunds
+    it('should have the property processors (base name: "processors")', function() {
+      // uncomment below and update the code to test the property processors
       //var instane = new CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurations();
       //expect(instance).to.be();
     });

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations'], factory);
+    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations', 'model/UnderwritingConfiguration'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations'), require('./UnderwritingConfiguration'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations);
+    root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations, root.CyberSource.UnderwritingConfiguration);
   }
-}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations) {
+}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations, UnderwritingConfiguration) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -82,6 +83,9 @@
       if (data.hasOwnProperty('redirectFailureUrl')) {
         obj['redirectFailureUrl'] = ApiClient.convertToType(data['redirectFailureUrl'], 'String');
       }
+      if (data.hasOwnProperty('underwriting')) {
+        obj['underwriting'] = UnderwritingConfiguration.constructFromObject(data['underwriting']);
+      }
       if (data.hasOwnProperty('additionalConfigurations')) {
         obj['additionalConfigurations'] = ApiClient.convertToType(data['additionalConfigurations'], [PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations]);
       }
@@ -114,6 +118,10 @@
    * @member {String} redirectFailureUrl
    */
   exports.prototype['redirectFailureUrl'] = undefined;
+  /**
+   * @member {module:model/UnderwritingConfiguration} underwriting
+   */
+  exports.prototype['underwriting'] = undefined;
   /**
    * Additional configurations for the payment method. This can include various settings specific to the payment method. 
    * @member {Array.<module:model/PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations>} additionalConfigurations

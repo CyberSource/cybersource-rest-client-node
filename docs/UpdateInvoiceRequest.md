@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **processingInformation** | [**Invoicingv2invoicesProcessingInformation**](Invoicingv2invoicesProcessingInformation.md) |  | [optional] 
 **invoiceInformation** | [**Invoicingv2invoicesidInvoiceInformation**](Invoicingv2invoicesidInvoiceInformation.md) |  | 
 **orderInformation** | [**Invoicingv2invoicesOrderInformation**](Invoicingv2invoicesOrderInformation.md) |  | 
+**merchantDefinedFieldValues** | [**[Invoicingv2invoicesMerchantDefinedFieldValues]**](Invoicingv2invoicesMerchantDefinedFieldValues.md) |  | [optional] 
 
 

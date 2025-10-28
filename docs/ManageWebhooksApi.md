@@ -107,7 +107,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
-> [InlineResponse2004] getWebhookSubscriptionsByOrg(organizationId, opts)
+> [InlineResponse2005] getWebhookSubscriptionsByOrg(organizationId, opts)
 
 Get Details On All Created Webhooks
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[InlineResponse2005]**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> InlineResponse2005 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, opts)
+> InlineResponse2006 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, opts)
 
 Update a Webhook Subscription
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 

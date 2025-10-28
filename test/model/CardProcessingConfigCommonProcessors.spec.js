@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acquirers (base name: "acquirers")', function() {
+      // uncomment below and update the code to test the property acquirers
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
     it('should have the property merchantId (base name: "merchantId")', function() {
       // uncomment below and update the code to test the property merchantId
       //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
