@@ -1,22 +1,51 @@
 'use strict';
 
+function createCustomError(name) {
+    function CustomError(message, cause) {
+        const instance = Reflect.construct(Error, [message], this.constructor);
+        
+        Reflect.setPrototypeOf(instance, Reflect.getPrototypeOf(this));
+        
+        instance.name = name;
+        
+        Error.captureStackTrace(instance, this.constructor);
+        
+        if (cause) {
+            instance.cause = cause;
+            if (cause.stack) {
+                instance.stack = instance.stack + '\nCaused by: ' + cause.stack;
+            }
+        }
+        
+        return instance;
+    }
+    
+    CustomError.prototype = Object.create(Error.prototype, {
+        constructor: {
+            value: CustomError,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        },
+        name: {
+            value: name,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    
+    Reflect.setPrototypeOf(CustomError, Error);    
+    return CustomError;
+}
+
 /**
  * InvalidJwkException - Error class for invalid JWK (JSON Web Key)
  * @param {string} message - Error message describing the invalid JWK
  * @param {Error} [cause] - Optional underlying cause of the error
  * @constructor
  */
-exports.InvalidJwkException = function (message, cause) {
-    Error.captureStackTrace(this, this.constructor);
-    this.name = 'InvalidJwkException';
-    this.message = message;
-    if (cause) {
-        this.cause = cause;
-        this.stack = this.stack + '\nCaused by: ' + cause.stack;
-    }
-};
-exports.InvalidJwkException.prototype = Object.create(Error.prototype);
-exports.InvalidJwkException.prototype.constructor = exports.InvalidJwkException;
+exports.InvalidJwkException = createCustomError('InvalidJwkException');
 
 /**
  * InvalidJwtException - Error class for invalid JWT token
@@ -24,17 +53,7 @@ exports.InvalidJwkException.prototype.constructor = exports.InvalidJwkException;
  * @param {Error} [cause] - Optional underlying cause of the error
  * @constructor
  */
-exports.InvalidJwtException = function (message, cause) {
-    Error.captureStackTrace(this, this.constructor);
-    this.name = 'InvalidJwtException';
-    this.message = message;
-    if (cause) {
-        this.cause = cause;
-        this.stack = this.stack + '\nCaused by: ' + cause.stack;
-    }
-};
-exports.InvalidJwtException.prototype = Object.create(Error.prototype);
-exports.InvalidJwtException.prototype.constructor = exports.InvalidJwtException;
+exports.InvalidJwtException = createCustomError('InvalidJwtException');
 
 /**
  * JwtSignatureValidationException - Error class for JWT signature validation failures
@@ -42,14 +61,4 @@ exports.InvalidJwtException.prototype.constructor = exports.InvalidJwtException;
  * @param {Error} [cause] - Optional underlying cause of the error
  * @constructor
  */
-exports.JwtSignatureValidationException = function (message, cause) {
-    Error.captureStackTrace(this, this.constructor);
-    this.name = 'JwtSignatureValidationException';
-    this.message = message;
-    if (cause) {
-        this.cause = cause;
-        this.stack = this.stack + '\nCaused by: ' + cause.stack;
-    }
-};
-exports.JwtSignatureValidationException.prototype = Object.create(Error.prototype);
-exports.JwtSignatureValidationException.prototype.constructor = exports.JwtSignatureValidationException;
+exports.JwtSignatureValidationException = createCustomError('JwtSignatureValidationException');

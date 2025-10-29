@@ -172,9 +172,8 @@ exports.verifyJwt = function (jwtToken, publicKey) {
     if (!jwtToken) {
         throw new JWTExceptions.JwtSignatureValidationException('JWT token is null or undefined');
     }
-
-    const parsedJwt = exports.parse(jwtToken);
-    const { header, _, signature, rawHeader, rawPayload } = parsedJwt;
+    
+    const { header, _, signature, rawHeader, rawPayload } =  exports.parse(jwtToken);
     
     const algorithm = header.alg;
     if (!algorithm) {
