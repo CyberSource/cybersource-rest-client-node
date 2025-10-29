@@ -59,14 +59,14 @@ function parseCaptureContextResponse(jwtValue, merchantConfig, verifyJwt, callba
     }
     
     if (!isPublicKeyFromCache) {
-        return fetchPublicKeyAndVerify(jwtValue, parsedJwt, kid, runEnvironment, false, callback);
+        return fetchPublicKeyAndVerify(jwtValue, parsedJwt, kid, runEnvironment, callback);
     }
     
     try {
         JWTUtility.verifyJwt(jwtValue, publicKey);
         return callback(null, parsedJwt.payload);
     } catch (verificationError) {
-        return fetchPublicKeyAndVerify(jwtValue, parsedJwt, kid, runEnvironment, true, callback);
+        return fetchPublicKeyAndVerify(jwtValue, parsedJwt, kid, runEnvironment, callback);
     }
 }
 
