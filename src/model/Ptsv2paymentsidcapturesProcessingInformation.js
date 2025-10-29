@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsIssuerInformation', 'model/Ptsv2paymentsProcessingInformationLoanOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsIssuerInformation', 'model/Ptsv2paymentsProcessingInformationLoanOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationCaptureOptions', 'model/Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsIssuerInformation'), require('./Ptsv2paymentsProcessingInformationLoanOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsIssuerInformation'), require('./Ptsv2paymentsProcessingInformationLoanOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationCaptureOptions'), require('./Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidcapturesProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsIssuerInformation, root.CyberSource.Ptsv2paymentsProcessingInformationLoanOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationCaptureOptions);
+    root.CyberSource.Ptsv2paymentsidcapturesProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsIssuerInformation, root.CyberSource.Ptsv2paymentsProcessingInformationLoanOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationCaptureOptions, root.CyberSource.Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions);
   }
-}(this, function(ApiClient, Ptsv2paymentsIssuerInformation, Ptsv2paymentsProcessingInformationLoanOptions, Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, Ptsv2paymentsidcapturesProcessingInformationCaptureOptions) {
+}(this, function(ApiClient, Ptsv2paymentsIssuerInformation, Ptsv2paymentsProcessingInformationLoanOptions, Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions, Ptsv2paymentsidcapturesProcessingInformationCaptureOptions, Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -112,6 +113,9 @@
       if (data.hasOwnProperty('actionList')) {
         obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
       }
+      if (data.hasOwnProperty('japanPaymentOptions')) {
+        obj['japanPaymentOptions'] = Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions.constructFromObject(data['japanPaymentOptions']);
+      }
     }
     return obj;
   }
@@ -177,6 +181,10 @@
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions} japanPaymentOptions
+   */
+  exports.prototype['japanPaymentOptions'] = undefined;
 
 
 

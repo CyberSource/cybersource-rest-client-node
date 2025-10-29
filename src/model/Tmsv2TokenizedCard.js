@@ -186,7 +186,7 @@
    */
   exports.prototype['createInstrumentIdentifier'] = undefined;
   /**
-   * Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER 
+   * Source of the card details. Possible Values: - ONFILE - TOKEN - ISSUER 
    * @member {String} source
    */
   exports.prototype['source'] = undefined;

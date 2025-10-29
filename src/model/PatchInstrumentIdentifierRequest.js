@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsTokenInformationTokenProvisioningInformation', 'model/TmsEmbeddedInstrumentIdentifierBankAccount', 'model/TmsEmbeddedInstrumentIdentifierBillTo', 'model/TmsEmbeddedInstrumentIdentifierCard', 'model/TmsEmbeddedInstrumentIdentifierEmbedded', 'model/TmsEmbeddedInstrumentIdentifierIssuer', 'model/TmsEmbeddedInstrumentIdentifierLinks', 'model/TmsEmbeddedInstrumentIdentifierMetadata', 'model/TmsEmbeddedInstrumentIdentifierProcessingInformation', 'model/Tmsv2TokenizedCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsTokenInformationTokenProvisioningInformation', 'model/TmsEmbeddedInstrumentIdentifierBankAccount', 'model/TmsEmbeddedInstrumentIdentifierBillTo', 'model/TmsEmbeddedInstrumentIdentifierCard', 'model/TmsEmbeddedInstrumentIdentifierEmbedded', 'model/TmsEmbeddedInstrumentIdentifierIssuer', 'model/TmsEmbeddedInstrumentIdentifierLinks', 'model/TmsEmbeddedInstrumentIdentifierMetadata', 'model/TmsEmbeddedInstrumentIdentifierPointOfSaleInformation', 'model/TmsEmbeddedInstrumentIdentifierProcessingInformation', 'model/Tmsv2TokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTokenInformationTokenProvisioningInformation'), require('./TmsEmbeddedInstrumentIdentifierBankAccount'), require('./TmsEmbeddedInstrumentIdentifierBillTo'), require('./TmsEmbeddedInstrumentIdentifierCard'), require('./TmsEmbeddedInstrumentIdentifierEmbedded'), require('./TmsEmbeddedInstrumentIdentifierIssuer'), require('./TmsEmbeddedInstrumentIdentifierLinks'), require('./TmsEmbeddedInstrumentIdentifierMetadata'), require('./TmsEmbeddedInstrumentIdentifierProcessingInformation'), require('./Tmsv2TokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTokenInformationTokenProvisioningInformation'), require('./TmsEmbeddedInstrumentIdentifierBankAccount'), require('./TmsEmbeddedInstrumentIdentifierBillTo'), require('./TmsEmbeddedInstrumentIdentifierCard'), require('./TmsEmbeddedInstrumentIdentifierEmbedded'), require('./TmsEmbeddedInstrumentIdentifierIssuer'), require('./TmsEmbeddedInstrumentIdentifierLinks'), require('./TmsEmbeddedInstrumentIdentifierMetadata'), require('./TmsEmbeddedInstrumentIdentifierPointOfSaleInformation'), require('./TmsEmbeddedInstrumentIdentifierProcessingInformation'), require('./Tmsv2TokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PatchInstrumentIdentifierRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation, root.CyberSource.TmsEmbeddedInstrumentIdentifierBankAccount, root.CyberSource.TmsEmbeddedInstrumentIdentifierBillTo, root.CyberSource.TmsEmbeddedInstrumentIdentifierCard, root.CyberSource.TmsEmbeddedInstrumentIdentifierEmbedded, root.CyberSource.TmsEmbeddedInstrumentIdentifierIssuer, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinks, root.CyberSource.TmsEmbeddedInstrumentIdentifierMetadata, root.CyberSource.TmsEmbeddedInstrumentIdentifierProcessingInformation, root.CyberSource.Tmsv2TokenizedCard);
+    root.CyberSource.PatchInstrumentIdentifierRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation, root.CyberSource.TmsEmbeddedInstrumentIdentifierBankAccount, root.CyberSource.TmsEmbeddedInstrumentIdentifierBillTo, root.CyberSource.TmsEmbeddedInstrumentIdentifierCard, root.CyberSource.TmsEmbeddedInstrumentIdentifierEmbedded, root.CyberSource.TmsEmbeddedInstrumentIdentifierIssuer, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinks, root.CyberSource.TmsEmbeddedInstrumentIdentifierMetadata, root.CyberSource.TmsEmbeddedInstrumentIdentifierPointOfSaleInformation, root.CyberSource.TmsEmbeddedInstrumentIdentifierProcessingInformation, root.CyberSource.Tmsv2TokenizedCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsTokenInformationTokenProvisioningInformation, TmsEmbeddedInstrumentIdentifierBankAccount, TmsEmbeddedInstrumentIdentifierBillTo, TmsEmbeddedInstrumentIdentifierCard, TmsEmbeddedInstrumentIdentifierEmbedded, TmsEmbeddedInstrumentIdentifierIssuer, TmsEmbeddedInstrumentIdentifierLinks, TmsEmbeddedInstrumentIdentifierMetadata, TmsEmbeddedInstrumentIdentifierProcessingInformation, Tmsv2TokenizedCard) {
+}(this, function(ApiClient, Ptsv2paymentsTokenInformationTokenProvisioningInformation, TmsEmbeddedInstrumentIdentifierBankAccount, TmsEmbeddedInstrumentIdentifierBillTo, TmsEmbeddedInstrumentIdentifierCard, TmsEmbeddedInstrumentIdentifierEmbedded, TmsEmbeddedInstrumentIdentifierIssuer, TmsEmbeddedInstrumentIdentifierLinks, TmsEmbeddedInstrumentIdentifierMetadata, TmsEmbeddedInstrumentIdentifierPointOfSaleInformation, TmsEmbeddedInstrumentIdentifierProcessingInformation, Tmsv2TokenizedCard) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -89,11 +91,17 @@
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
+      if (data.hasOwnProperty('source')) {
+        obj['source'] = ApiClient.convertToType(data['source'], 'String');
+      }
       if (data.hasOwnProperty('tokenProvisioningInformation')) {
         obj['tokenProvisioningInformation'] = Ptsv2paymentsTokenInformationTokenProvisioningInformation.constructFromObject(data['tokenProvisioningInformation']);
       }
       if (data.hasOwnProperty('card')) {
         obj['card'] = TmsEmbeddedInstrumentIdentifierCard.constructFromObject(data['card']);
+      }
+      if (data.hasOwnProperty('pointOfSaleInformation')) {
+        obj['pointOfSaleInformation'] = TmsEmbeddedInstrumentIdentifierPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
       }
       if (data.hasOwnProperty('bankAccount')) {
         obj['bankAccount'] = TmsEmbeddedInstrumentIdentifierBankAccount.constructFromObject(data['bankAccount']);
@@ -145,6 +153,11 @@
    */
   exports.prototype['type'] = undefined;
   /**
+   * Source of the card details. Possible Values: - CONTACTLESS_TAP 
+   * @member {String} source
+   */
+  exports.prototype['source'] = undefined;
+  /**
    * @member {module:model/Ptsv2paymentsTokenInformationTokenProvisioningInformation} tokenProvisioningInformation
    */
   exports.prototype['tokenProvisioningInformation'] = undefined;
@@ -152,6 +165,10 @@
    * @member {module:model/TmsEmbeddedInstrumentIdentifierCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierPointOfSaleInformation} pointOfSaleInformation
+   */
+  exports.prototype['pointOfSaleInformation'] = undefined;
   /**
    * @member {module:model/TmsEmbeddedInstrumentIdentifierBankAccount} bankAccount
    */

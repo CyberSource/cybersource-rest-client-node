@@ -104,14 +104,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property orderInformation (base name: "orderInformation")', function() {
-      // uncomment below and update the code to test the property orderInformation
+    it('should have the property transientTokenResponseOptions (base name: "transientTokenResponseOptions")', function() {
+      // uncomment below and update the code to test the property transientTokenResponseOptions
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property transientTokenResponseOptions (base name: "transientTokenResponseOptions")', function() {
-      // uncomment below and update the code to test the property transientTokenResponseOptions
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
+      //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderInformation (base name: "orderInformation")', function() {
+      // uncomment below and update the code to test the property orderInformation
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
       //expect(instance).to.be();
     });

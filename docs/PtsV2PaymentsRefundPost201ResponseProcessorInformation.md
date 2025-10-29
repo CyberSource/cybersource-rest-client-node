@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **settlementDate** | **String** | Field contains a settlement date. The date is in mmdd format, where: mm = month and dd = day.  | [optional] 
 **updateTimeUtc** | **String** | The date and time when the transaction was last updated, in Internet date and time format.  | [optional] 
 **network** | [**Ptsv2paymentsProcessorInformationReversalNetwork**](Ptsv2paymentsProcessorInformationReversalNetwork.md) |  | [optional] 
+**merchantAdvice** | [**PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice**](PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice.md) |  | [optional] 
 
 
