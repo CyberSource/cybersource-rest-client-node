@@ -76,11 +76,10 @@ function parseCaptureContextResponse(jwtValue, merchantConfig, verifyJwt, callba
  * @param {Object} parsedJwt - The parsed JWT object
  * @param {string} kid - The key ID
  * @param {string} runEnvironment - The runtime environment
- * @param {boolean} isRetryAfterCacheFailure - Whether this is a retry after cache failure
  * @param {Function} callback - Callback function
  * @private
  */
-function fetchPublicKeyAndVerify(jwtValue, parsedJwt, kid, runEnvironment, isRetryAfterCacheFailure, callback) {
+function fetchPublicKeyAndVerify(jwtValue, parsedJwt, kid, runEnvironment, callback) {
     fetchPublicKeyFromApi(kid, runEnvironment, (fetchError, publicKey) => {
         if (fetchError) {
             return callback(fetchError);
