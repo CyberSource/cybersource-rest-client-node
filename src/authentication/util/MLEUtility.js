@@ -73,7 +73,7 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
   }
 
   logger.debug('Response body contains encrypted data, attempting to decrypt');
-  logger.debug('LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: ' + JSON.stringify(responseBody));
+  logger.debug(Constants.LOG_RESPONSE_BEFORE_MLE + JSON.stringify(responseBody));
   
   try {
     // Private key from config will take precedence over file path.
@@ -90,7 +90,7 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
     
     return JWEUtility.decryptJWEUsingPrivateKey(privateKey, responseBody.encryptedResponse)
       .then(decryptedData => {
-        logger.debug('LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: ' + JSON.stringify(decryptedData));
+        logger.debug(Constants.LOG_RESPONSE_AFTER_MLE + decryptedData);
         return JSON.parse(decryptedData);
       })
       .catch(error => {

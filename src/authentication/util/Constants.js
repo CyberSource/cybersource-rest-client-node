@@ -44,6 +44,8 @@ module.exports = {
     END_TRANSACTION                   :  "************************  LOGGING END  ************************",
     LOG_REQUEST_BEFORE_MLE            :  "Request before MLE: ",
     LOG_REQUEST_AFTER_MLE             :  "Request after MLE: ",
+    LOG_RESPONSE_BEFORE_MLE           :  "Response before MLE decryption: ",
+    LOG_RESPONSE_AFTER_MLE            :  "Response after MLE decryption: ",
     MERCHANTID                        :  "MERCHANTID",
     MERCHANT_KEY_ID                   :  "MERCHANT_KEY_ID",
     MERCHANT_SECERT_KEY               :  "MERCHANT_SECERT_KEY",
