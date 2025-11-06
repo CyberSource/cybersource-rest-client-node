@@ -954,6 +954,11 @@ const agentPool = new Map();
         } else if (Array.isArray(type)) {
           // for array type like: ['String']
           var itemType = type[0];
+          if (typeof(data) === 'string') {
+            return [data].map(function(item) {
+              return exports.convertToType(item, itemType);
+            });
+          }
           return data.map(function(item) {
             return exports.convertToType(item, itemType);
           });
