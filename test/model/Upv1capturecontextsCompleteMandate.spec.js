@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tms (base name: "tms")', function() {
+      // uncomment below and update the code to test the property tms
+      //var instane = new CyberSource.Upv1capturecontextsCompleteMandate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property decisionManager (base name: "decisionManager")', function() {
       // uncomment below and update the code to test the property decisionManager
       //var instane = new CyberSource.Upv1capturecontextsCompleteMandate();
