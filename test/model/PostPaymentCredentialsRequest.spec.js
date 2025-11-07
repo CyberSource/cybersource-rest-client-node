@@ -68,6 +68,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientCorrelationId (base name: "clientCorrelationId")', function() {
+      // uncomment below and update the code to test the property clientCorrelationId
+      //var instane = new CyberSource.PostPaymentCredentialsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderInformation (base name: "orderInformation")', function() {
+      // uncomment below and update the code to test the property orderInformation
+      //var instane = new CyberSource.PostPaymentCredentialsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
+      // uncomment below and update the code to test the property merchantInformation
+      //var instane = new CyberSource.PostPaymentCredentialsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property deviceInformation (base name: "deviceInformation")', function() {
+      // uncomment below and update the code to test the property deviceInformation
+      //var instane = new CyberSource.PostPaymentCredentialsRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authenticatedIdentities (base name: "authenticatedIdentities")', function() {
+      // uncomment below and update the code to test the property authenticatedIdentities
+      //var instane = new CyberSource.PostPaymentCredentialsRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

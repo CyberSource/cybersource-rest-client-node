@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -77,6 +78,9 @@
       if (data.hasOwnProperty('network')) {
         obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
       }
+      if (data.hasOwnProperty('responseSourceCode')) {
+        obj['responseSourceCode'] = ApiClient.convertToType(data['responseSourceCode'], 'String');
+      }
     }
     return obj;
   }
@@ -98,6 +102,11 @@
    * @member {module:model/Ptsv2paymentsProcessorInformationReversalNetwork} network
    */
   exports.prototype['network'] = undefined;
+  /**
+   * Field contains the response source code that identifies the source. 
+   * @member {String} responseSourceCode
+   */
+  exports.prototype['responseSourceCode'] = undefined;
 
 
 

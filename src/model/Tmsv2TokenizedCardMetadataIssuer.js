@@ -51,6 +51,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -73,25 +76,49 @@
       if (data.hasOwnProperty('longDescription')) {
         obj['longDescription'] = ApiClient.convertToType(data['longDescription'], 'String');
       }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('phoneNumber')) {
+        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('url')) {
+        obj['url'] = ApiClient.convertToType(data['url'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * issuer name. 
+   * Issuer name. 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * issuer short description. 
+   * Short description of the card. 
    * @member {String} shortDescription
    */
   exports.prototype['shortDescription'] = undefined;
   /**
-   * issuer long  description. 
+   * Long description of the card. 
    * @member {String} longDescription
    */
   exports.prototype['longDescription'] = undefined;
+  /**
+   * Issuer customer service email address.
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * Issuer customer service phone number.
+   * @member {String} phoneNumber
+   */
+  exports.prototype['phoneNumber'] = undefined;
+  /**
+   * Issuer customer service url.
+   * @member {String} url
+   */
+  exports.prototype['url'] = undefined;
 
 
 

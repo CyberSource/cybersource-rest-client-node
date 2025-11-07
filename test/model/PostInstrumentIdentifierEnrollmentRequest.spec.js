@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property source (base name: "source")', function() {
+      // uncomment below and update the code to test the property source
+      //var instane = new CyberSource.PostInstrumentIdentifierEnrollmentRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tokenProvisioningInformation (base name: "tokenProvisioningInformation")', function() {
       // uncomment below and update the code to test the property tokenProvisioningInformation
       //var instane = new CyberSource.PostInstrumentIdentifierEnrollmentRequest();
@@ -94,6 +100,12 @@
 
     it('should have the property card (base name: "card")', function() {
       // uncomment below and update the code to test the property card
+      //var instane = new CyberSource.PostInstrumentIdentifierEnrollmentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pointOfSaleInformation (base name: "pointOfSaleInformation")', function() {
+      // uncomment below and update the code to test the property pointOfSaleInformation
       //var instane = new CyberSource.PostInstrumentIdentifierEnrollmentRequest();
       //expect(instance).to.be();
     });

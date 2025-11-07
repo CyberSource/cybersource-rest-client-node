@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Tmsv2TokenizedCardCardTermsAndConditions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2TokenizedCardCardTermsAndConditions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2TokenizedCardCard = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Tmsv2TokenizedCardCard = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2TokenizedCardCardTermsAndConditions);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Tmsv2TokenizedCardCardTermsAndConditions) {
   'use strict';
 
 
@@ -47,6 +47,11 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
 
 
 
@@ -81,6 +86,21 @@
       if (data.hasOwnProperty('suffix')) {
         obj['suffix'] = ApiClient.convertToType(data['suffix'], 'String');
       }
+      if (data.hasOwnProperty('issueDate')) {
+        obj['issueDate'] = ApiClient.convertToType(data['issueDate'], 'Date');
+      }
+      if (data.hasOwnProperty('activationDate')) {
+        obj['activationDate'] = ApiClient.convertToType(data['activationDate'], 'Date');
+      }
+      if (data.hasOwnProperty('expirationPrinted')) {
+        obj['expirationPrinted'] = ApiClient.convertToType(data['expirationPrinted'], 'Boolean');
+      }
+      if (data.hasOwnProperty('securityCodePrinted')) {
+        obj['securityCodePrinted'] = ApiClient.convertToType(data['securityCodePrinted'], 'Boolean');
+      }
+      if (data.hasOwnProperty('termsAndConditions')) {
+        obj['termsAndConditions'] = Tmsv2TokenizedCardCardTermsAndConditions.constructFromObject(data['termsAndConditions']);
+      }
     }
     return obj;
   }
@@ -110,6 +130,30 @@
    * @member {String} suffix
    */
   exports.prototype['suffix'] = undefined;
+  /**
+   * Card issuance date. XML date format: YYYY-MM-DD.
+   * @member {Date} issueDate
+   */
+  exports.prototype['issueDate'] = undefined;
+  /**
+   * Card activation date. XML date format: YYYY-MM-DD
+   * @member {Date} activationDate
+   */
+  exports.prototype['activationDate'] = undefined;
+  /**
+   * Indicates if the expiration date is printed on the card.
+   * @member {Boolean} expirationPrinted
+   */
+  exports.prototype['expirationPrinted'] = undefined;
+  /**
+   * Indicates if the Card Verification Number is printed on the card.
+   * @member {Boolean} securityCodePrinted
+   */
+  exports.prototype['securityCodePrinted'] = undefined;
+  /**
+   * @member {module:model/Tmsv2TokenizedCardCardTermsAndConditions} termsAndConditions
+   */
+  exports.prototype['termsAndConditions'] = undefined;
 
 
 

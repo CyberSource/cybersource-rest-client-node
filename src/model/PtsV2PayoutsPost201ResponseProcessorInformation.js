@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('responseCodeSource')) {
         obj['responseCodeSource'] = ApiClient.convertToType(data['responseCodeSource'], 'String');
       }
+      if (data.hasOwnProperty('merchantAdvice')) {
+        obj['merchantAdvice'] = PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice.constructFromObject(data['merchantAdvice']);
+      }
     }
     return obj;
   }
@@ -109,6 +113,10 @@
    * @member {String} responseCodeSource
    */
   exports.prototype['responseCodeSource'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice} merchantAdvice
+   */
+  exports.prototype['merchantAdvice'] = undefined;
 
 
 

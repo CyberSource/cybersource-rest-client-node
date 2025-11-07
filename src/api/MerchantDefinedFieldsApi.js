@@ -121,6 +121,76 @@
     }
 
     /**
+     * Callback function to receive the result of the deleteMerchantDefinedFieldsDefinitions operation.
+     * @callback module:api/MerchantDefinedFieldsApi~deleteMerchantDefinedFieldsDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a MerchantDefinedField by ID
+     * @param {module:model/String} referenceType 
+     * @param {Number} id 
+     * @param {module:api/MerchantDefinedFieldsApi~deleteMerchantDefinedFieldsDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteMerchantDefinedFieldsDefinitions = function(referenceType, id, callback) {
+      var postBody = null;
+      if ('DELETE' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'referenceType' is set
+      if (referenceType === undefined || referenceType === null) {
+        throw new Error("Missing the required parameter 'referenceType' when calling deleteMerchantDefinedFieldsDefinitions");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteMerchantDefinedFieldsDefinitions");
+      }
+
+
+
+      var pathParams = {
+        'referenceType': referenceType,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = null;
+
+      //check isMLE for an api method 'this.deleteMerchantDefinedFieldsDefinitions'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deleteMerchantDefinedFieldsDefinitions');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}', 'DELETE',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}', 'DELETE',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the getMerchantDefinedFieldsDefinitions operation.
      * @callback module:api/MerchantDefinedFieldsApi~getMerchantDefinedFieldsDefinitionsCallback
      * @param {String} error Error message, if any.
@@ -185,78 +255,8 @@
     }
 
     /**
-     * Callback function to receive the result of the invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete operation.
-     * @callback module:api/MerchantDefinedFieldsApi~invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete a MerchantDefinedField by ID
-     * @param {module:model/String} referenceType 
-     * @param {Number} id 
-     * @param {module:api/MerchantDefinedFieldsApi~invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete = function(referenceType, id, callback) {
-      var postBody = null;
-      if ('DELETE' == 'POST') {
-        postBody = '{}';
-      }
-
-      // verify the required parameter 'referenceType' is set
-      if (referenceType === undefined || referenceType === null) {
-        throw new Error("Missing the required parameter 'referenceType' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete");
-      }
-
-
-
-      var pathParams = {
-        'referenceType': referenceType,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = null;
-
-      //check isMLE for an api method 'this.invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete'
-      var inboundMLEStatus = 'false';
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete');
-
-      if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
-          return this.apiClient.callApi(
-            '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}', 'DELETE',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
-          );
-        });
-      } else {
-        return this.apiClient.callApi(
-          '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}', 'DELETE',
-          pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
-        );
-      }
-    }
-
-    /**
-     * Callback function to receive the result of the invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut operation.
-     * @callback module:api/MerchantDefinedFieldsApi~invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutCallback
+     * Callback function to receive the result of the putMerchantDefinedFieldsDefinitions operation.
+     * @callback module:api/MerchantDefinedFieldsApi~putMerchantDefinedFieldsDefinitionsCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2002>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -267,25 +267,25 @@
      * @param {module:model/String} referenceType 
      * @param {Number} id 
      * @param {module:model/MerchantDefinedFieldCore} merchantDefinedFieldCore 
-     * @param {module:api/MerchantDefinedFieldsApi~invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MerchantDefinedFieldsApi~putMerchantDefinedFieldsDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2002>}
      */
-    this.invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut = function(referenceType, id, merchantDefinedFieldCore, callback) {
+    this.putMerchantDefinedFieldsDefinitions = function(referenceType, id, merchantDefinedFieldCore, callback) {
       var postBody = merchantDefinedFieldCore;
 
       // verify the required parameter 'referenceType' is set
       if (referenceType === undefined || referenceType === null) {
-        throw new Error("Missing the required parameter 'referenceType' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut");
+        throw new Error("Missing the required parameter 'referenceType' when calling putMerchantDefinedFieldsDefinitions");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut");
+        throw new Error("Missing the required parameter 'id' when calling putMerchantDefinedFieldsDefinitions");
       }
 
       // verify the required parameter 'merchantDefinedFieldCore' is set
       if (merchantDefinedFieldCore === undefined || merchantDefinedFieldCore === null) {
-        throw new Error("Missing the required parameter 'merchantDefinedFieldCore' when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut");
+        throw new Error("Missing the required parameter 'merchantDefinedFieldCore' when calling putMerchantDefinedFieldsDefinitions");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
@@ -311,9 +311,9 @@
       var accepts = ['application/hal+json;charset=utf-8'];
       var returnType = [InlineResponse2002];
 
-      //check isMLE for an api method 'this.invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut'
+      //check isMLE for an api method 'this.putMerchantDefinedFieldsDefinitions'
       var inboundMLEStatus = 'false';
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut');
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'putMerchantDefinedFieldsDefinitions');
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {

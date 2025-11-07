@@ -60,6 +60,16 @@
         done();
       });
     });
+    describe('deleteMerchantDefinedFieldsDefinitions', function() {
+      it('should call deleteMerchantDefinedFieldsDefinitions successfully', function(done) {
+        //uncomment below and update the code to test deleteMerchantDefinedFieldsDefinitions
+        //instance.deleteMerchantDefinedFieldsDefinitions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getMerchantDefinedFieldsDefinitions', function() {
       it('should call getMerchantDefinedFieldsDefinitions successfully', function(done) {
         //uncomment below and update the code to test getMerchantDefinedFieldsDefinitions
@@ -70,20 +80,10 @@
         done();
       });
     });
-    describe('invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete', function() {
-      it('should call invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete successfully', function(done) {
-        //uncomment below and update the code to test invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete
-        //instance.invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut', function() {
-      it('should call invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut successfully', function(done) {
-        //uncomment below and update the code to test invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut
-        //instance.invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut(function(error) {
+    describe('putMerchantDefinedFieldsDefinitions', function() {
+      it('should call putMerchantDefinedFieldsDefinitions successfully', function(done) {
+        //uncomment below and update the code to test putMerchantDefinedFieldsDefinitions
+        //instance.putMerchantDefinedFieldsDefinitions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
