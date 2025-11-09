@@ -108,5 +108,6 @@ module.exports = {
     STATUS500                         :  "Internal Server Error",
     STATUS502                         :  "Bad Gateway",
     STATUS503                         :  "Service Unavailable",
-    STATUS504                         :  "Gateway Timeout"
+    STATUS504                         :  "Gateway Timeout",
+    PUBLIC_KEY_CACHE_IDENTIFIER       :  "FlexV2PublicKeys"
 };
