@@ -509,21 +509,17 @@ exports.extractResponseMleKid = function(filePath, password, merchantId, logger)
             if (cn.toLowerCase() === merchantId.toLowerCase()) {
                 logger.debug(`Found certificate with matching CN: ${cn}`);
                 
-                // Extract serial number from certificate subject
-                let serialNumber = null;
-                for (const attr of cert.subject.attributes) {
-                    if (attr.name === 'serialNumber' || attr.shortName === 'serialNumber') {
-                        serialNumber = attr.value;
-                        break;
-                    }
+                const serialNumberAttr = cert.subject.attributes.find(attr => attr.name === 'serialNumber');
+                let serialNumber;
+                
+                if (serialNumberAttr) {
+                    serialNumber = serialNumberAttr.value;
+                } else {
+                    logger.warn(`Serial number not found in certificate subject for merchantId ${merchantId}, using certificate serial number as fallback`);
+                    serialNumber = cert.serialNumber;
                 }
                 
-                if (!serialNumber) {
-                    logger.debug(`Certificate with CN=${cn} has no serialNumber in subject, continuing search`);
-                    continue;
-                }
-                
-                logger.debug(`Serial number (MLE KID) extracted from certificate subject: ${serialNumber}`);
+                logger.debug(`Serial number (MLE KID) extracted: ${serialNumber}`);
                 
                 return serialNumber;
             }
