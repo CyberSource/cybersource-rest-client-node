@@ -7,6 +7,7 @@ const ApiException= require('./ApiException');
 const Constants = require('./Constants');
 const Cache = require('./Cache');
 const JWEUtility = require('./JWEUtility');
+const Utility = require('./Utility');
 
 exports.checkIsMLEForAPI = function (merchantConfig, inboundMLEStatus, operationId) {
     //isMLE for an api is false by default
@@ -134,7 +135,8 @@ exports.encryptRequestPayload = function(merchantConfig, requestBody) {
     const customHeaders = {
         iat: Math.floor(Date.now() / 1000) //epoch time in seconds
     };
-    const serialNumber = getSerialNumberFromCert(cert, merchantConfig, logger);
+    const warningMsg = `Serial number not found in request MLE certificate for alias ${merchantConfig.getRequestmleKeyAlias()} in ${merchantConfig.getKeyFileName()}.p12, using certificate serial number as fallback`;
+    const serialNumber = getSerialNumberFromCert(cert, logger, warningMsg);
     const headers = {
         alg: "RSA-OAEP-256",
         enc: "A256GCM",
@@ -173,7 +175,7 @@ function toBase64Url(bi) {
   return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
-function getSerialNumberFromCert(cert, merchantConfig, logger) {
+function getSerialNumberFromCert(cert, logger, warningMessage) {
   if (!cert.subject || !cert.subject.attributes) {
       throw new Error("Subject or attributes are missing in MLE cert");
   }
@@ -182,7 +184,176 @@ function getSerialNumberFromCert(cert, merchantConfig, logger) {
   if (serialNumberAttr) {
       return serialNumberAttr.value;
   } else {
-    logger.warn("Serial number not found in MLE certificate for alias " + merchantConfig.getRequestmleKeyAlias() + " in " + merchantConfig.getKeyFileName() + ".p12");
+    if (warningMessage) {
+      logger.warn(warningMessage);
+    }
     return cert.serialNumber;
   }
 }
+
+/**
+ * Validates and auto-extracts responseMleKID if necessary
+ * @param {object} merchantConfig - Merchant configuration object
+ * @param {object} logger - Logger object for logging messages
+ * @returns {string} - The validated or auto-extracted responseMleKID
+ * @throws Will throw an error if responseMleKID is not available and cannot be auto-extracted
+ */
+exports.validateAndAutoExtractResponseMleKid = function(merchantConfig, logger) {
+    logger.debug('Validating responseMleKID for JWT token generation');
+    
+    // Variable to store auto-extracted KID
+    let cybsKid = null;
+    
+    // First, try to auto-extract from CyberSource P12 certificate if applicable
+    const hasValidFilePath = typeof merchantConfig.getResponseMlePrivateKeyFilePath() === "string" 
+        && merchantConfig.getResponseMlePrivateKeyFilePath().trim() !== "";
+    
+    if (hasValidFilePath) {
+        const path = require('path');
+        const fileExtension = path.extname(merchantConfig.getResponseMlePrivateKeyFilePath()).toLowerCase();
+        const isP12File = fileExtension === ".p12" || fileExtension === ".pfx";
+        
+        if (isP12File) {
+            logger.debug('P12/PFX file detected, checking if it is a CyberSource certificate');
+            
+            const isCybersourceP12 = Utility.isCybersourceP12(
+                merchantConfig.getResponseMlePrivateKeyFilePath(),
+                merchantConfig.getResponseMlePrivateKeyFilePassword(),
+                logger
+            );
+            
+            if (isCybersourceP12) {
+                logger.debug('Detected CyberSource P12 file, attempting to auto-extract responseMleKID');
+                try {
+                    cybsKid = exports.extractResponseMleKid(
+                        merchantConfig.getResponseMlePrivateKeyFilePath(),
+                        merchantConfig.getResponseMlePrivateKeyFilePassword(),
+                        merchantConfig.getMerchantID(),
+                        merchantConfig,
+                        logger
+                    );
+                    
+                    logger.info('Successfully auto-extracted responseMleKID from CyberSource P12 certificate');
+                } catch (error) {
+                    logger.warn(`Failed to auto-extract responseMleKID from P12 file: ${error.message}. Will check for manually configured value.`);
+                }
+            } else {
+                logger.debug('P12 file is not a CyberSource-generated certificate, skipping auto-extraction');
+            }
+        } else {
+            logger.debug('Private key file is not a P12/PFX file, skipping auto-extraction');
+        }
+    } else {
+        logger.debug('No valid private key file path provided, skipping auto-extraction');
+    }
+    
+    // Get manually configured responseMleKID
+    let configuredKid = merchantConfig.getResponseMleKID();
+    configuredKid = (configuredKid && typeof configuredKid === "string" && configuredKid.trim()) ? configuredKid.trim() : null;
+    
+    // Determine which value to use
+    if (!cybsKid && !configuredKid) {
+        logger.error('responseMleKID is required but not available');
+        ApiException.ApiException(
+            "responseMleKID is required when response MLE is enabled. " +
+            "Could not auto-extract from certificate and no manual configuration provided. " +
+            "Please provide responseMleKID explicitly in your configuration.",
+            logger
+        );
+    }
+    
+    if (cybsKid && !configuredKid) {
+        logger.debug('Using auto-extracted responseMleKID from CyberSource P12 certificate');
+        return cybsKid;
+    }
+    
+    if (!cybsKid && configuredKid) {
+        logger.debug('Using manually configured responseMleKID');
+        return configuredKid;
+    }
+    
+    // Both exist
+    if (cybsKid !== configuredKid) {
+        logger.warn('Auto-extracted responseMleKID does not match manually configured responseMleKID. Using configured value as preference.');
+    } else {
+        logger.debug('Auto-extracted responseMleKID matches manually configured value');
+    }
+    return configuredKid;
+};
+
+/**
+ * Extracts the serial number (KID) from a certificate's subject in a P12 file where CN matches the merchantId
+ * @param {string} filePath - Path to the P12 file
+ * @param {string} password - Password for the P12 file
+ * @param {string} merchantId - The merchant ID to match against the CN in the certificate subject
+ * @param {object} merchantConfig - Merchant configuration object
+ * @param {object} logger - Logger object for logging messages
+ * @returns {string} - The serial number extracted from the certificate's subject attributes
+ * @throws Will throw an error if the certificate with matching CN is not found or serial number is missing
+ */
+exports.extractResponseMleKid = function(filePath, password, merchantId, merchantConfig, logger) {
+    try {
+        logger.debug(`Extracting MLE KID from P12 file: ${filePath} for merchantId: ${merchantId}`);
+        
+        const p12 = Utility.parseP12File(filePath, password, logger);
+        
+        // Get certificate bags from P12
+        const certBags = p12.getBags({ bagType: forge.pki.oids.certBag });
+        const certs = certBags[forge.pki.oids.certBag];
+        
+        if (!certs || certs.length === 0) {
+            logger.error(`No certificates found in P12 file: ${filePath}`);
+            ApiException.AuthException(`No certificates found in P12 file: ${filePath}`);
+        }
+        
+        logger.debug(`Found ${certs.length} certificate(s) in P12 file`);
+        
+        // Iterate through certificates to find one with matching CN
+        for (let i = 0; i < certs.length; i++) {
+            const certBag = certs[i];
+            const cert = certBag.cert;
+            
+            if (!cert || !cert.subject || !cert.subject.attributes) {
+                logger.debug(`Certificate ${i + 1} has no subject attributes, skipping`);
+                continue;
+            }
+            
+            // Extract CN from certificate subject
+            let cn = null;
+            for (const attr of cert.subject.attributes) {
+                if (attr.name === 'commonName' || attr.shortName === 'CN') {
+                    cn = attr.value;
+                    break;
+                }
+            }
+            
+            if (!cn) {
+                logger.debug(`Certificate ${i + 1} has no CN in subject, skipping`);
+                continue;
+            }
+            
+            logger.debug(`Certificate ${i + 1} CN: ${cn}`);
+            
+            // Check if CN matches merchantId (case-insensitive)
+            if (cn.toLowerCase() === merchantId.toLowerCase()) {
+                logger.debug(`Found certificate with matching CN: ${cn}`);
+                
+                // Use the shared getSerialNumberFromCert function
+                const warningMsg = `Serial number not found in response MLE certificate for merchantId ${merchantId}, using certificate serial number as fallback`;
+                const serialNumber = getSerialNumberFromCert(cert, logger, warningMsg);
+                
+                logger.debug(`Serial number (MLE KID) extracted: ${serialNumber}`);
+                
+                return serialNumber;
+            }
+        }
+        
+        // If we get here, no matching certificate was found
+        logger.error(`No certificate with CN matching merchantId (${merchantId}) and valid serialNumber found in P12 file: ${filePath}`);
+        ApiException.AuthException(`No certificate with CN matching merchantId (${merchantId}) found in P12 file: ${filePath}`);
+        
+    } catch (error) {
+        logger.error(`Error extracting MLE KID from P12 file: ${filePath}: ${error.message}`);
+        ApiException.AuthException(`Error extracting MLE KID from P12 file: ${filePath}: ${error.message}`);
+    }
+};

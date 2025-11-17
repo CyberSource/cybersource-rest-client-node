@@ -4,8 +4,7 @@ const Jwt = require('jwt-simple');
 const Constants = require('../util/Constants');
 const KeyCertificate = require('./KeyCertificateGenerator');
 const DigestGenerator = require('../payloadDigest/DigestGenerator');
-const ApiException = require('../util/ApiException');
-const Utility = require('../util/Utility');
+const MLEUtility = require('../util/MLEUtility');
 
 // Constants for algorithms
 const JWT_ALGORITHM = 'RS256';
@@ -53,7 +52,7 @@ exports.getToken = function (merchantConfig, isResponseMLEForApi, logger) {
         
         // Add MLE key ID if MLE is enabled
         if (isResponseMLEForApi === true) {
-            const responseMleKID = Utility.validateAndAutoExtractResponseMleKid(merchantConfig, logger);
+            const responseMleKID = MLEUtility.validateAndAutoExtractResponseMleKid(merchantConfig, logger);
             // Using bracket notation for property name with hyphens
             claimSetJson["v-c-response-mle-kid"] = responseMleKID;
         }
