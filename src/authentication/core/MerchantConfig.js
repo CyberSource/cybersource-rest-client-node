@@ -936,20 +936,6 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
                 );
             }
         }
-        
-        // Validate KID - Auto-extract from CyberSource P12 if applicable, then validate
-        if (!this.responseMleKID || !this.responseMleKID?.trim()) {
-            tryAutoExtractResponseMleKid.call(this, logger);
-            
-            if (typeof this.responseMleKID !== "string" || !this.responseMleKID?.trim()) {
-                throw new ApiException.ApiException(
-                    "responseMleKID is required when response MLE is enabled. " +
-                    "For CyberSource-generated P12 certificates, this will be auto-extracted. " +
-                    "For other certificate types, please provide it explicitly in your configuration.",
-                    logger
-                );
-            }
-        }
     }
     /**
      * This method is to log all merchantConfic properties 
@@ -975,48 +961,6 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     }
     if (!this.logConfiguration.isExternalLoggerSet) {
         logger.clear();
-    }
-}
-
-
-function tryAutoExtractResponseMleKid(logger) {
-    const hasValidFilePath = typeof this.responseMlePrivateKeyFilePath === "string" && this.responseMlePrivateKeyFilePath.trim() !== "";
-    
-    if (!hasValidFilePath) {
-        return;
-    }
-    
-    const fileExtension = path.extname(this.responseMlePrivateKeyFilePath).toLowerCase();
-    const isP12File = fileExtension === ".p12";
-    
-    if (!isP12File) {
-        logger.debug('Private key file is not a P12 file, skipping auto-extraction of responseMleKID');
-        return;
-    }
-    
-    const isCybersourceP12 = Utility.isCybersourceP12(
-        this.responseMlePrivateKeyFilePath,
-        this.responseMlePrivateKeyFilePassword,
-        logger
-    );
-    
-    if (!isCybersourceP12) {
-        logger.debug('P12 file is not a CyberSource-generated certificate, skipping auto-extraction of responseMleKID');
-        return;
-    }
-    
-    logger.debug('Detected CyberSource P12 file, attempting to auto-extract responseMleKID');
-    try {
-        const extractedKid = Utility.extractResponseMleKid(
-            this.responseMlePrivateKeyFilePath,
-            this.responseMlePrivateKeyFilePassword,
-            this.merchantID,
-            logger
-        );
-        this.setResponseMleKID(extractedKid);
-        logger.info('Successfully auto-extracted responseMleKID from CyberSource P12 certificate');
-    } catch (error) {
-        logger.warn(`Failed to auto-extract responseMleKID from P12 file: ${error.message}. Please provide responseMleKID manually.`);
     }
 }
 

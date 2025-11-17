@@ -281,3 +281,46 @@ function putMLEResponsePrivateKeyInCache(merchantConfig, cacheKey, privateKeyPat
     };
     cache.put(cacheKey, cacheEntry);
 }
+
+exports.fetchCachedP12FromFile = function(filePath, password, logger, cacheKey) {
+    // Use provided cache key or default to filePath + identifier
+    const finalCacheKey = cacheKey || (filePath + Constants.RESPONSE_MLE_P12_PFX_CACHE_IDENTIFIER);
+    const cachedEntry = cache.get(finalCacheKey);
+    
+    logger.debug(`Fetching P12/PFX from cache with key: ${finalCacheKey}`);
+    
+    // Check if file exists
+    if (!fs.existsSync(filePath)) {
+        logger.error(`File not found: ${filePath}`);
+        throw new Error(Constants.FILE_NOT_FOUND + filePath);
+    }
+    
+    const currentFileLastModifiedTime = fs.statSync(filePath).mtimeMs;
+    
+    // Check if cache is valid (exists and file hasn't been modified)
+    if (cachedEntry && cachedEntry.fileLastModifiedTime === currentFileLastModifiedTime) {
+        logger.debug(`P12/PFX found in cache and file not modified`);
+        return cachedEntry.p12Object;
+    }
+    
+    // Cache miss or file modified - parse and cache
+    logger.debug(`P12/PFX not in cache or file modified. Loading from file: ${filePath}`);
+    
+    try {
+        const p12Asn1 = loadP12FileToAsn1(filePath);
+        const p12Object = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, password);
+        
+        // Store in cache with file modification time
+        cache.put(finalCacheKey, {
+            p12Object: p12Object,
+            fileLastModifiedTime: currentFileLastModifiedTime
+        });
+        
+        logger.debug(`Successfully cached P12/PFX object`);
+        return p12Object;
+        
+    } catch (error) {
+        logger.error(`Error parsing P12/PFX file: ${error.message}`);
+        ApiException.AuthException(`${error.message}. ${Constants.INCORRECT_KEY_PASS}`);
+    }
+};
