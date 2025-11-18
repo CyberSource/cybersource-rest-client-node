@@ -9,14 +9,6 @@ var ApiException = require('./ApiException');
 var Logger = require('../logging/Logger');
 var Utility = require('./Utility');
 
-function loadP12FileToAsn1(filePath) {
-    var p12Buffer = fs.readFileSync(filePath);
-    var p12Der = forge.util.binary.raw.encode(new Uint8Array(p12Buffer));
-    var p12Asn1 = forge.asn1.fromDer(p12Der);
-    return p12Asn1;
-}
-
-
 /**
  * This module is doing Caching.
  * Certificate will be available in the memory cache if it has initialized once.
@@ -55,8 +47,7 @@ exports.fetchCachedCertificate = function (merchantConfig, logger) {
 //Function to read the file and put values to new cache 
 function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
     try {
-        var p12Asn1 = loadP12FileToAsn1(filePath);
-        var certificate = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, keyPass);
+        var certificate = Utility.parseP12File(filePath, keyPass, logger);
         cache.put("certificateFromP12File", certificate);
         cache.put("certificateLastModifideTimeStamp", fileLastModifiedTime);
         return certificate;
@@ -137,9 +128,8 @@ function setupMLECache(merchantConfig, cacheKey, certificateSourcePath) {
 function loadCertificateFromP12(merchantConfig, certificatePath) {
     const logger = Logger.getLogger(merchantConfig, 'Cache');
     try {
-        // Read the P12 file and convert to ASN1
-        var p12Asn1 = loadP12FileToAsn1(certificatePath);
-        var p12Cert = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, merchantConfig.getKeyPass());
+        // Read and parse the P12 file
+        var p12Cert = Utility.parseP12File(certificatePath, merchantConfig.getKeyPass(), logger);
         
         // Extract the certificate from the P12 container
         var certBags = p12Cert.getBags({ bagType: forge.pki.oids.certBag });
@@ -307,8 +297,7 @@ exports.fetchCachedP12FromFile = function(filePath, password, logger, cacheKey) 
     logger.debug(`P12/PFX not in cache or file modified. Loading from file: ${filePath}`);
     
     try {
-        const p12Asn1 = loadP12FileToAsn1(filePath);
-        const p12Object = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, password);
+        const p12Object = Utility.parseP12File(filePath, password, logger);
         
         // Store in cache with file modification time
         cache.put(finalCacheKey, {
