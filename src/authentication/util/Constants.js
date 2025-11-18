@@ -29,7 +29,6 @@ module.exports = {
     CERTIFICATE_EXPIRY_DATE_WARNING_DAYS : 90,
     FACTOR_DAYS_TO_MILLISECONDS       :  24 * 60 * 60 * 1000,
     DEFAULT_MLE_ALIAS_FOR_CERT        :  "CyberSource_SJC_US",
-    CYBERSOURCE_P12_CERT_ALIAS        :  "CyberSource_SJC_US",
     MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT : "_mleCertFromMerchantConfig",
     MLE_CACHE_IDENTIFIER_FOR_P12_CERT : "_mleCertFromP12",
 

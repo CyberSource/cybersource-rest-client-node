@@ -135,8 +135,8 @@ exports.encryptRequestPayload = function(merchantConfig, requestBody) {
     const customHeaders = {
         iat: Math.floor(Date.now() / 1000) //epoch time in seconds
     };
-    const warningMsg = `Serial number not found in request MLE certificate for alias ${merchantConfig.getRequestmleKeyAlias()} in ${merchantConfig.getKeyFileName()}.p12, using certificate serial number as fallback`;
-    const serialNumber = getSerialNumberFromCert(cert, logger, warningMsg);
+    const errorMessage = `Serial number not found in request MLE certificate for alias ${merchantConfig.getRequestmleKeyAlias()} in ${merchantConfig.getKeyFileName()}.p12, using certificate serial number as fallback`;
+    const serialNumber = getSerialNumberFromCert(cert, errorMessage);
     const headers = {
         alg: "RSA-OAEP-256",
         enc: "A256GCM",
@@ -175,7 +175,7 @@ function toBase64Url(bi) {
   return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
-function getSerialNumberFromCert(cert, logger, warningMessage) {
+function getSerialNumberFromCert(cert, errorMessage) {
   if (!cert.subject || !cert.subject.attributes) {
       throw new Error("Subject or attributes are missing in MLE cert");
   }
@@ -183,12 +183,8 @@ function getSerialNumberFromCert(cert, logger, warningMessage) {
   const serialNumberAttr = cert.subject.attributes.find(attr => attr.name === 'serialNumber');
   if (serialNumberAttr) {
       return serialNumberAttr.value;
-  } else {
-    if (warningMessage) {
-      logger.warn(warningMessage);
-    }
-    return cert.serialNumber;
   }
+  throw new Error(errorMessage || "Serial number attribute not found in cert subject");
 }
 
 /**
@@ -229,7 +225,6 @@ exports.validateAndAutoExtractResponseMleKid = function(merchantConfig, logger) 
                         merchantConfig.getResponseMlePrivateKeyFilePath(),
                         merchantConfig.getResponseMlePrivateKeyFilePassword(),
                         merchantConfig.getMerchantID(),
-                        merchantConfig,
                         logger
                     );
                     
@@ -286,16 +281,15 @@ exports.validateAndAutoExtractResponseMleKid = function(merchantConfig, logger) 
  * @param {string} filePath - Path to the P12 file
  * @param {string} password - Password for the P12 file
  * @param {string} merchantId - The merchant ID to match against the CN in the certificate subject
- * @param {object} merchantConfig - Merchant configuration object
  * @param {object} logger - Logger object for logging messages
  * @returns {string} - The serial number extracted from the certificate's subject attributes
  * @throws Will throw an error if the certificate with matching CN is not found or serial number is missing
  */
-exports.extractResponseMleKid = function(filePath, password, merchantId, merchantConfig, logger) {
+exports.extractResponseMleKid = function(filePath, password, merchantId, logger) {
     try {
         logger.debug(`Extracting MLE KID from P12 file: ${filePath} for merchantId: ${merchantId}`);
         
-        const p12 = Utility.parseP12File(filePath, password, logger);
+        const p12 = Cache.fetchCachedP12FromFile(filePath, password, logger);
         
         // Get certificate bags from P12
         const certBags = p12.getBags({ bagType: forge.pki.oids.certBag });
@@ -339,8 +333,14 @@ exports.extractResponseMleKid = function(filePath, password, merchantId, merchan
                 logger.debug(`Found certificate with matching CN: ${cn}`);
                 
                 // Use the shared getSerialNumberFromCert function
-                const warningMsg = `Serial number not found in response MLE certificate for merchantId ${merchantId}, using certificate serial number as fallback`;
-                const serialNumber = getSerialNumberFromCert(cert, logger, warningMsg);
+                let serialNumber = null;
+                try {
+                    serialNumber = getSerialNumberFromCert(cert, logger);
+                } catch (error) {
+                    logger.warn(`Failed to extract serial number from certificate subject: ${error.message}` +  `Using certificate serial number as fallback.`);
+                    serialNumber = cert.serialNumber;
+
+                }
                 
                 logger.debug(`Serial number (MLE KID) extracted: ${serialNumber}`);
                 
