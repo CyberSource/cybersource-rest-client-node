@@ -83,16 +83,20 @@ function MerchantConfig(result) {
 
     //MLE Params for Request Body
 	/**
-	 * Deprecated flag to enable MLE for request. This flag is now known as "enableRequestMLEForOptionalApisGlobally"
-	 */
-    this.useMLEGlobally = result.useMLEGlobally;
-    
-    /**
 	 * Flag to enable MLE (Message Level Encryption) for request body to all APIs in SDK which have optional support for MLE. 
 	 * This means the API can send both non-encrypted and encrypted requests.
 	 * Older flag "useMLEGlobally" is deprecated and will be used as alias/another name for enableRequestMLEForOptionalApisGlobally.
 	 */
-    this.enableRequestMLEForOptionalApisGlobally = result.enableRequestMLEForOptionalApisGlobally !== undefined ? result.enableRequestMLEForOptionalApisGlobally : this.useMLEGlobally;
+    this.enableRequestMLEForOptionalApisGlobally = result.enableRequestMLEForOptionalApisGlobally !== undefined && typeof result.enableRequestMLEForOptionalApisGlobally === "boolean" ? result.enableRequestMLEForOptionalApisGlobally :
+                                                    (result.useMLEGlobally !== undefined && typeof result.useMLEGlobally === "boolean" ? result.useMLEGlobally : false);
+    
+    // Validate that both flags are not set with different values
+    if (result.enableRequestMLEForOptionalApisGlobally !== undefined && typeof result.enableRequestMLEForOptionalApisGlobally === "boolean" &&
+        result.useMLEGlobally !== undefined && typeof result.useMLEGlobally === "boolean" &&
+        result.enableRequestMLEForOptionalApisGlobally !== result.useMLEGlobally) {
+        var logger = Logger.getLogger(this, 'MerchantConfig');
+        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
+    }
     
     /**
 	 * Flag to disable MLE (Message Level Encryption) for request body to APIs in SDK which have mandatory MLE requirement when sending calls.
@@ -466,34 +470,12 @@ MerchantConfig.prototype.setpemFileDirectory = function getpemFileDirectory(pemF
     this.pemFileDirectory = pemFileDirectory;
 }
 
-MerchantConfig.prototype.getUseMLEGlobally = function getUseMLEGlobally() {
-    return this.useMLEGlobally;
-}
-
-MerchantConfig.prototype.setUseMLEGlobally = function setUseMLEGlobally(useMLEGlobally) {
-    this.useMLEGlobally = useMLEGlobally;
-    // If enableRequestMLEForOptionalApisGlobally is not set, set it to useMLEGlobally
-    if (this.enableRequestMLEForOptionalApisGlobally === undefined) {
-        this.enableRequestMLEForOptionalApisGlobally = useMLEGlobally;
-    }
-    // If it is set but has a different value, throw an exception
-    else if (this.enableRequestMLEForOptionalApisGlobally !== useMLEGlobally) {
-        var logger = Logger.getLogger(this, 'MerchantConfig');
-        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
-    }
-}
-
 MerchantConfig.prototype.getEnableRequestMLEForOptionalApisGlobally = function getEnableRequestMLEForOptionalApisGlobally() {
     return this.enableRequestMLEForOptionalApisGlobally;
 }
 
 MerchantConfig.prototype.setEnableRequestMLEForOptionalApisGlobally = function setEnableRequestMLEForOptionalApisGlobally(enableRequestMLEForOptionalApisGlobally) {
     this.enableRequestMLEForOptionalApisGlobally = enableRequestMLEForOptionalApisGlobally;
-    // If it is set but has a different value, throw an exception
-    if (this.useMLEGlobally !== undefined && (this.useMLEGlobally !== enableRequestMLEForOptionalApisGlobally)) {
-        var logger = Logger.getLogger(this, 'MerchantConfig');
-        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
-    }
 }
 
 MerchantConfig.prototype.getDisableRequestMLEForMandatoryApisGlobally = function getDisableRequestMLEForMandatoryApisGlobally() {
@@ -816,14 +798,6 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         this.requestmleKeyAlias = Constants.DEFAULT_MLE_ALIAS_FOR_CERT;
     }
 
-    if (
-        this.enableRequestMLEForOptionalApisGlobally !== undefined &&
-        this.useMLEGlobally !== undefined &&
-        this.enableRequestMLEForOptionalApisGlobally !== this.useMLEGlobally
-    ) {
-        ApiException.ApiException("enableRequestMLEForOptionalApisGlobally and useMLEGlobally must have the same value if both are provided.", logger);
-    }
-
     // Validate maxIdleSockets is non-negative and not less than default
     if (this.maxIdleSockets !== null && this.maxIdleSockets !== undefined && (this.maxIdleSockets <= 0 || this.maxIdleSockets < Constants.DEFAULT_MAX_IDLE_SOCKETS)) {
         this.maxIdleSockets = Constants.DEFAULT_MAX_IDLE_SOCKETS;
@@ -836,7 +810,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         logger.warn("userDefinedTimeout cannot be non-negative or less than default (value should be in milliseconds). Setting to default value " + Constants.DEFAULT_USER_DEFINED_TIMEOUT + ".");
     }
 
-    //useMLEGlobally check for auth Type
+    //enableRequestMLEForOptionalApisGlobally check for auth Type
     if (this.enableRequestMLEForOptionalApisGlobally === true || this.internalMapToControlRequestMLEonAPI != null) {
         if (this.enableRequestMLEForOptionalApisGlobally === true && this.authenticationType.toLowerCase() !== Constants.JWT) {
             ApiException.ApiException("Request MLE is only supported in JWT auth type", logger);
