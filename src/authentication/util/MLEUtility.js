@@ -333,14 +333,7 @@ exports.extractResponseMleKid = function(filePath, password, merchantId, logger)
                 logger.debug(`Found certificate with matching CN: ${cn}`);
                 
                 // Use the shared getSerialNumberFromCert function
-                let serialNumber = null;
-                try {
-                    serialNumber = getSerialNumberFromCert(cert, logger);
-                } catch (error) {
-                    logger.warn(`Failed to extract serial number from certificate subject: ${error.message}` +  `Using certificate serial number as fallback.`);
-                    serialNumber = cert.serialNumber;
-
-                }
+                let serialNumber = getSerialNumberFromCert(cert, logger);
                 
                 logger.debug(`Serial number (MLE KID) extracted: ${serialNumber}`);
                 
