@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** |  | [optional] 
-**amount** | **String** |  | [optional] 
-**rate** | **String** |  | [optional] 
-**code** | **String** |  | [optional] 
-**taxId** | **String** |  | [optional] 
-**applied** | **Boolean** |  | [optional] 
-**exemptionCode** | **String** |  | [optional] 
+**type** | **String** | Type of tax | [optional] 
+**amount** | **String** | Tax amount | [optional] 
+**rate** | **String** | Tax rate | [optional] 
+**code** | **String** | Tax code | [optional] 
+**taxId** | **String** | Tax Identifier | [optional] 
+**applied** | **Boolean** | Indicates if tax applied | [optional] 
+**exemptionCode** | **String** | Tax exemption code | [optional] 
 
 

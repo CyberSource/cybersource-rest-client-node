@@ -97,34 +97,42 @@
   }
 
   /**
+   * Passenger type
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
+   * Passenger status
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
+   * Passenger phone number
    * @member {String} phone
    */
   exports.prototype['phone'] = undefined;
   /**
+   * Passenger first name
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
   /**
+   * Passenger last name
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
   /**
+   * Passenger ID
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
+   * Passenger email
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
   /**
+   * Passenger nationality
    * @member {String} nationality
    */
   exports.prototype['nationality'] = undefined;

@@ -73,6 +73,7 @@
   }
 
   /**
+   * Store the credential on file
    * @member {Boolean} credentialStoredOnFile
    */
   exports.prototype['credentialStoredOnFile'] = undefined;

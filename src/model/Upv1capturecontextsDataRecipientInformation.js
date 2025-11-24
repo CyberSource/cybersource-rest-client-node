@@ -54,6 +54,8 @@
 
 
 
+
+
   };
 
   /**
@@ -87,6 +89,12 @@
       }
       if (data.hasOwnProperty('accountType')) {
         obj['accountType'] = ApiClient.convertToType(data['accountType'], 'String');
+      }
+      if (data.hasOwnProperty('dateOfBirth')) {
+        obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
+      }
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
       }
     }
     return obj;
@@ -124,6 +132,16 @@
    * @member {String} accountType
    */
   exports.prototype['accountType'] = undefined;
+  /**
+   * The date of birth of the recipient
+   * @member {String} dateOfBirth
+   */
+  exports.prototype['dateOfBirth'] = undefined;
+  /**
+   * The postal code of the recipient
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
 
 
 

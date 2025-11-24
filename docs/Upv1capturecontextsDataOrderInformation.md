@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **billTo** | [**Upv1capturecontextsDataOrderInformationBillTo**](Upv1capturecontextsDataOrderInformationBillTo.md) |  | [optional] 
 **shipTo** | [**Upv1capturecontextsDataOrderInformationShipTo**](Upv1capturecontextsDataOrderInformationShipTo.md) |  | [optional] 
 **lineItems** | [**Upv1capturecontextsDataOrderInformationLineItems**](Upv1capturecontextsDataOrderInformationLineItems.md) |  | [optional] 
+**invoiceDetails** | [**Upv1capturecontextsDataOrderInformationInvoiceDetails**](Upv1capturecontextsDataOrderInformationInvoiceDetails.md) |  | [optional] 
 
 

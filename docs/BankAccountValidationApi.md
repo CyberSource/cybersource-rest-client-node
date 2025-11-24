@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="bankAccountValidationRequest"></a>
 # **bankAccountValidationRequest**
-> InlineResponse20013 bankAccountValidationRequest(accountValidationsRequest)
+> InlineResponse20014 bankAccountValidationRequest(accountValidationsRequest)
 
 Visa Bank Account Validation Service
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 

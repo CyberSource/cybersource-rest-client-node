@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(CyberSource.GetSubscriptionResponseReactivationInformation);
     });
 
-    it('should have the property skippedPaymentsCount (base name: "skippedPaymentsCount")', function() {
-      // uncomment below and update the code to test the property skippedPaymentsCount
+    it('should have the property missedPaymentsCount (base name: "missedPaymentsCount")', function() {
+      // uncomment below and update the code to test the property missedPaymentsCount
       //var instane = new CyberSource.GetSubscriptionResponseReactivationInformation();
       //expect(instance).to.be();
     });
 
-    it('should have the property skippedPaymentsTotalAmount (base name: "skippedPaymentsTotalAmount")', function() {
-      // uncomment below and update the code to test the property skippedPaymentsTotalAmount
+    it('should have the property missedPaymentsTotalAmount (base name: "missedPaymentsTotalAmount")', function() {
+      // uncomment below and update the code to test the property missedPaymentsTotalAmount
       //var instane = new CyberSource.GetSubscriptionResponseReactivationInformation();
       //expect(instance).to.be();
     });

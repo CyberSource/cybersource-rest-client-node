@@ -50,6 +50,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -66,28 +71,70 @@
       if (data.hasOwnProperty('aftIndicator')) {
         obj['aftIndicator'] = ApiClient.convertToType(data['aftIndicator'], 'Boolean');
       }
+      if (data.hasOwnProperty('authIndicator')) {
+        obj['authIndicator'] = ApiClient.convertToType(data['authIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('ignoreCvResult')) {
+        obj['ignoreCvResult'] = ApiClient.convertToType(data['ignoreCvResult'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ignoreAvsResult')) {
+        obj['ignoreAvsResult'] = ApiClient.convertToType(data['ignoreAvsResult'], 'Boolean');
+      }
       if (data.hasOwnProperty('initiator')) {
         obj['initiator'] = Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator.constructFromObject(data['initiator']);
       }
       if (data.hasOwnProperty('businessApplicationId')) {
         obj['businessApplicationId'] = ApiClient.convertToType(data['businessApplicationId'], 'String');
       }
+      if (data.hasOwnProperty('commerceIndicator')) {
+        obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('processingInstruction')) {
+        obj['processingInstruction'] = ApiClient.convertToType(data['processingInstruction'], 'String');
+      }
     }
     return obj;
   }
 
   /**
+   * The AFT indicator
    * @member {Boolean} aftIndicator
    */
   exports.prototype['aftIndicator'] = undefined;
+  /**
+   * The authorization indicator
+   * @member {String} authIndicator
+   */
+  exports.prototype['authIndicator'] = undefined;
+  /**
+   * Ignore the CV result
+   * @member {Boolean} ignoreCvResult
+   */
+  exports.prototype['ignoreCvResult'] = undefined;
+  /**
+   * Ignore the AVS result
+   * @member {Boolean} ignoreAvsResult
+   */
+  exports.prototype['ignoreAvsResult'] = undefined;
   /**
    * @member {module:model/Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator} initiator
    */
   exports.prototype['initiator'] = undefined;
   /**
+   * The business application Id
    * @member {String} businessApplicationId
    */
   exports.prototype['businessApplicationId'] = undefined;
+  /**
+   * The commerce indicator
+   * @member {String} commerceIndicator
+   */
+  exports.prototype['commerceIndicator'] = undefined;
+  /**
+   * The processing instruction
+   * @member {String} processingInstruction
+   */
+  exports.prototype['processingInstruction'] = undefined;
 
 
 

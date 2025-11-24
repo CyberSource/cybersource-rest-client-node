@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20010EmbeddedTotals', 'model/InlineResponse20011Billing', 'model/InlineResponse20011Links'], factory);
+    define(['ApiClient', 'model/InlineResponse20011Embedded', 'model/InlineResponse20011Links'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20010EmbeddedTotals'), require('./InlineResponse20011Billing'), require('./InlineResponse20011Links'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse20011Embedded'), require('./InlineResponse20011Links'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20010EmbeddedTotals, root.CyberSource.InlineResponse20011Billing, root.CyberSource.InlineResponse20011Links);
+    root.CyberSource.InlineResponse20011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20011Embedded, root.CyberSource.InlineResponse20011Links);
   }
-}(this, function(ApiClient, InlineResponse20010EmbeddedTotals, InlineResponse20011Billing, InlineResponse20011Links) {
+}(this, function(ApiClient, InlineResponse20011Embedded, InlineResponse20011Links) {
   'use strict';
 
 
@@ -54,9 +54,6 @@
 
 
 
-
-
-
   };
 
   /**
@@ -71,84 +68,58 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse20011Links.constructFromObject(data['_links']);
+        obj['_links'] = ApiClient.convertToType(data['_links'], [InlineResponse20011Links]);
       }
-      if (data.hasOwnProperty('batchId')) {
-        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      if (data.hasOwnProperty('object')) {
+        obj['object'] = ApiClient.convertToType(data['object'], 'String');
       }
-      if (data.hasOwnProperty('batchCreatedDate')) {
-        obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
+      if (data.hasOwnProperty('offset')) {
+        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
       }
-      if (data.hasOwnProperty('batchSource')) {
-        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
+      if (data.hasOwnProperty('limit')) {
+        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
       }
-      if (data.hasOwnProperty('merchantReference')) {
-        obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
+      if (data.hasOwnProperty('count')) {
+        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
       }
-      if (data.hasOwnProperty('batchCaEndpoints')) {
-        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
+      if (data.hasOwnProperty('total')) {
+        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('totals')) {
-        obj['totals'] = InlineResponse20010EmbeddedTotals.constructFromObject(data['totals']);
-      }
-      if (data.hasOwnProperty('billing')) {
-        obj['billing'] = InlineResponse20011Billing.constructFromObject(data['billing']);
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = InlineResponse20011Embedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse20011Links} _links
+   * @member {Array.<module:model/InlineResponse20011Links>} _links
    */
   exports.prototype['_links'] = undefined;
   /**
-   * Unique identification number assigned to the submitted request.
-   * @member {String} batchId
+   * @member {String} object
    */
-  exports.prototype['batchId'] = undefined;
+  exports.prototype['object'] = undefined;
   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @member {String} batchCreatedDate
+   * @member {Number} offset
    */
-  exports.prototype['batchCreatedDate'] = undefined;
+  exports.prototype['offset'] = undefined;
   /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @member {String} batchSource
+   * @member {Number} limit
    */
-  exports.prototype['batchSource'] = undefined;
+  exports.prototype['limit'] = undefined;
   /**
-   * Reference used by merchant to identify batch.
-   * @member {String} merchantReference
+   * @member {Number} count
    */
-  exports.prototype['merchantReference'] = undefined;
+  exports.prototype['count'] = undefined;
   /**
-   * @member {String} batchCaEndpoints
+   * @member {Number} total
    */
-  exports.prototype['batchCaEndpoints'] = undefined;
+  exports.prototype['total'] = undefined;
   /**
-   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
-   * @member {String} status
+   * @member {module:model/InlineResponse20011Embedded} _embedded
    */
-  exports.prototype['status'] = undefined;
-  /**
-   * @member {module:model/InlineResponse20010EmbeddedTotals} totals
-   */
-  exports.prototype['totals'] = undefined;
-  /**
-   * @member {module:model/InlineResponse20011Billing} billing
-   */
-  exports.prototype['billing'] = undefined;
-  /**
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
+  exports.prototype['_embedded'] = undefined;
 
 
 

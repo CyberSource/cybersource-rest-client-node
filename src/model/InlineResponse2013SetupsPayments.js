@@ -66,6 +66,7 @@
 
 
 
+
   };
 
   /**
@@ -135,6 +136,9 @@
       }
       if (data.hasOwnProperty('serviceFee')) {
         obj['serviceFee'] = InlineResponse2013SetupsPaymentsCardProcessing.constructFromObject(data['serviceFee']);
+      }
+      if (data.hasOwnProperty('batchUpload')) {
+        obj['batchUpload'] = InlineResponse2013SetupsPaymentsDigitalPayments.constructFromObject(data['batchUpload']);
       }
     }
     return obj;
@@ -216,6 +220,10 @@
    * @member {module:model/InlineResponse2013SetupsPaymentsCardProcessing} serviceFee
    */
   exports.prototype['serviceFee'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2013SetupsPaymentsDigitalPayments} batchUpload
+   */
+  exports.prototype['batchUpload'] = undefined;
 
 
 

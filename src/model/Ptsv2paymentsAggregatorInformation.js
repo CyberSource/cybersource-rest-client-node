@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -91,6 +92,9 @@
       }
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('serviceProvidername')) {
+        obj['serviceProvidername'] = ApiClient.convertToType(data['serviceProvidername'], 'String');
       }
     }
     return obj;
@@ -135,6 +139,11 @@
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
+  /**
+   * Contains transfer service provider name.
+   * @member {String} serviceProvidername
+   */
+  exports.prototype['serviceProvidername'] = undefined;
 
 
 

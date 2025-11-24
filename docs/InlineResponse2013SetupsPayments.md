@@ -22,5 +22,6 @@ Name | Type | Description | Notes
 **unifiedCheckout** | [**InlineResponse2013SetupsPaymentsDigitalPayments**](InlineResponse2013SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **receivablesManager** | [**InlineResponse2013SetupsPaymentsDigitalPayments**](InlineResponse2013SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **serviceFee** | [**InlineResponse2013SetupsPaymentsCardProcessing**](InlineResponse2013SetupsPaymentsCardProcessing.md) |  | [optional] 
+**batchUpload** | [**InlineResponse2013SetupsPaymentsDigitalPayments**](InlineResponse2013SetupsPaymentsDigitalPayments.md) |  | [optional] 
 
 

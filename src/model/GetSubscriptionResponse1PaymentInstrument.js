@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GetSubscriptionResponse1PaymentInstrumentBankAccount', 'model/GetSubscriptionResponse1PaymentInstrumentBuyerInformation', 'model/GetSubscriptionResponse1PaymentInstrumentCard', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo'], factory);
+    define(['ApiClient', 'model/GetSubscriptionResponse1PaymentInstrumentBankAccount', 'model/GetSubscriptionResponse1PaymentInstrumentBuyerInformation', 'model/GetSubscriptionResponse1PaymentInstrumentCard', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./GetSubscriptionResponse1PaymentInstrumentBankAccount'), require('./GetSubscriptionResponse1PaymentInstrumentBuyerInformation'), require('./GetSubscriptionResponse1PaymentInstrumentCard'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo'));
+    module.exports = factory(require('../ApiClient'), require('./GetSubscriptionResponse1PaymentInstrumentBankAccount'), require('./GetSubscriptionResponse1PaymentInstrumentBuyerInformation'), require('./GetSubscriptionResponse1PaymentInstrumentCard'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GetSubscriptionResponse1PaymentInstrument = factory(root.CyberSource.ApiClient, root.CyberSource.GetSubscriptionResponse1PaymentInstrumentBankAccount, root.CyberSource.GetSubscriptionResponse1PaymentInstrumentBuyerInformation, root.CyberSource.GetSubscriptionResponse1PaymentInstrumentCard, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo);
+    root.CyberSource.GetSubscriptionResponse1PaymentInstrument = factory(root.CyberSource.ApiClient, root.CyberSource.GetSubscriptionResponse1PaymentInstrumentBankAccount, root.CyberSource.GetSubscriptionResponse1PaymentInstrumentBuyerInformation, root.CyberSource.GetSubscriptionResponse1PaymentInstrumentCard, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo);
   }
-}(this, function(ApiClient, GetSubscriptionResponse1PaymentInstrumentBankAccount, GetSubscriptionResponse1PaymentInstrumentBuyerInformation, GetSubscriptionResponse1PaymentInstrumentCard, Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo) {
+}(this, function(ApiClient, GetSubscriptionResponse1PaymentInstrumentBankAccount, GetSubscriptionResponse1PaymentInstrumentBuyerInformation, GetSubscriptionResponse1PaymentInstrumentCard, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo) {
   'use strict';
 
 
@@ -76,7 +76,7 @@
         obj['card'] = GetSubscriptionResponse1PaymentInstrumentCard.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('billTo')) {
-        obj['billTo'] = Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo.constructFromObject(data['billTo']);
+        obj['billTo'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo.constructFromObject(data['billTo']);
       }
       if (data.hasOwnProperty('buyerInformation')) {
         obj['buyerInformation'] = GetSubscriptionResponse1PaymentInstrumentBuyerInformation.constructFromObject(data['buyerInformation']);
@@ -99,7 +99,7 @@
    */
   exports.prototype['card'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo} billTo
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/AccountValidationsRequest', 'model/InlineResponse20013', 'model/InlineResponse4009', 'model/InlineResponse4033', 'model/InlineResponse4045', 'model/InlineResponse4222', 'model/InlineResponse5021'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AccountValidationsRequest', 'model/InlineResponse20014', 'model/InlineResponse4009', 'model/InlineResponse4033', 'model/InlineResponse4045', 'model/InlineResponse4222', 'model/InlineResponse5021'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AccountValidationsRequest'), require('../model/InlineResponse20013'), require('../model/InlineResponse4009'), require('../model/InlineResponse4033'), require('../model/InlineResponse4045'), require('../model/InlineResponse4222'), require('../model/InlineResponse5021'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AccountValidationsRequest'), require('../model/InlineResponse20014'), require('../model/InlineResponse4009'), require('../model/InlineResponse4033'), require('../model/InlineResponse4045'), require('../model/InlineResponse4222'), require('../model/InlineResponse5021'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BankAccountValidationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AccountValidationsRequest, root.CyberSource.InlineResponse20013, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse4033, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse4222, root.CyberSource.InlineResponse5021);
+    root.CyberSource.BankAccountValidationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AccountValidationsRequest, root.CyberSource.InlineResponse20014, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse4033, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse4222, root.CyberSource.InlineResponse5021);
   }
-}(this, function(MLEUtility, ApiClient, AccountValidationsRequest, InlineResponse20013, InlineResponse4009, InlineResponse4033, InlineResponse4045, InlineResponse4222, InlineResponse5021) {
+}(this, function(MLEUtility, ApiClient, AccountValidationsRequest, InlineResponse20014, InlineResponse4009, InlineResponse4033, InlineResponse4045, InlineResponse4222, InlineResponse5021) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the bankAccountValidationRequest operation.
      * @callback module:api/BankAccountValidationApi~bankAccountValidationRequestCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20013} data The data returned by the service call.
+     * @param {module:model/InlineResponse20014} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * The Visa Bank Account Validation Service is a new standalone product designed to validate customer's routing and bank account number combination for ACH transactions. Merchant's can use this standalone product to validate their customer's account prior to processing an ACH transaction against the customer's account to comply with Nacha's account validation mandate for Web-debit transactions. 
      * @param {module:model/AccountValidationsRequest} accountValidationsRequest 
      * @param {module:api/BankAccountValidationApi~bankAccountValidationRequestCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20013}
+     * data is of type: {@link module:model/InlineResponse20014}
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
@@ -93,7 +93,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20013;
+      var returnType = InlineResponse20014;
 
       //check isMLE for an api method 'this.bankAccountValidationRequest'
       var inboundMLEStatus = 'mandatory';

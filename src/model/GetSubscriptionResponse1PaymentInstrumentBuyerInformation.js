@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification'], factory);
+    define(['ApiClient', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GetSubscriptionResponse1PaymentInstrumentBuyerInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification);
+    root.CyberSource.GetSubscriptionResponse1PaymentInstrumentBuyerInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification);
   }
-}(this, function(ApiClient, Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification) {
+}(this, function(ApiClient, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification) {
   'use strict';
 
 
@@ -74,7 +74,7 @@
         obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'Date');
       }
       if (data.hasOwnProperty('personalIdentification')) {
-        obj['personalIdentification'] = ApiClient.convertToType(data['personalIdentification'], [Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification]);
+        obj['personalIdentification'] = ApiClient.convertToType(data['personalIdentification'], [Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification]);
       }
     }
     return obj;
@@ -96,7 +96,7 @@
    */
   exports.prototype['dateOfBirth'] = undefined;
   /**
-   * @member {Array.<module:model/Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification>} personalIdentification
+   * @member {Array.<module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification>} personalIdentification
    */
   exports.prototype['personalIdentification'] = undefined;
 

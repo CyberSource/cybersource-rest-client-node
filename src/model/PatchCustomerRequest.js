@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2customersBuyerInformation', 'model/Tmsv2customersClientReferenceInformation', 'model/Tmsv2customersDefaultPaymentInstrument', 'model/Tmsv2customersDefaultShippingAddress', 'model/Tmsv2customersEmbedded', 'model/Tmsv2customersLinks', 'model/Tmsv2customersMerchantDefinedInformation', 'model/Tmsv2customersMetadata', 'model/Tmsv2customersObjectInformation'], factory);
+    define(['ApiClient', 'model/Tmsv2tokenizeTokenInformationCustomerBuyerInformation', 'model/Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation', 'model/Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument', 'model/Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress', 'model/Tmsv2tokenizeTokenInformationCustomerEmbedded', 'model/Tmsv2tokenizeTokenInformationCustomerLinks', 'model/Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation', 'model/Tmsv2tokenizeTokenInformationCustomerMetadata', 'model/Tmsv2tokenizeTokenInformationCustomerObjectInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2customersBuyerInformation'), require('./Tmsv2customersClientReferenceInformation'), require('./Tmsv2customersDefaultPaymentInstrument'), require('./Tmsv2customersDefaultShippingAddress'), require('./Tmsv2customersEmbedded'), require('./Tmsv2customersLinks'), require('./Tmsv2customersMerchantDefinedInformation'), require('./Tmsv2customersMetadata'), require('./Tmsv2customersObjectInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizeTokenInformationCustomerBuyerInformation'), require('./Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation'), require('./Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument'), require('./Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress'), require('./Tmsv2tokenizeTokenInformationCustomerEmbedded'), require('./Tmsv2tokenizeTokenInformationCustomerLinks'), require('./Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation'), require('./Tmsv2tokenizeTokenInformationCustomerMetadata'), require('./Tmsv2tokenizeTokenInformationCustomerObjectInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PatchCustomerRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2customersBuyerInformation, root.CyberSource.Tmsv2customersClientReferenceInformation, root.CyberSource.Tmsv2customersDefaultPaymentInstrument, root.CyberSource.Tmsv2customersDefaultShippingAddress, root.CyberSource.Tmsv2customersEmbedded, root.CyberSource.Tmsv2customersLinks, root.CyberSource.Tmsv2customersMerchantDefinedInformation, root.CyberSource.Tmsv2customersMetadata, root.CyberSource.Tmsv2customersObjectInformation);
+    root.CyberSource.PatchCustomerRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerBuyerInformation, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbedded, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerLinks, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerMetadata, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerObjectInformation);
   }
-}(this, function(ApiClient, Tmsv2customersBuyerInformation, Tmsv2customersClientReferenceInformation, Tmsv2customersDefaultPaymentInstrument, Tmsv2customersDefaultShippingAddress, Tmsv2customersEmbedded, Tmsv2customersLinks, Tmsv2customersMerchantDefinedInformation, Tmsv2customersMetadata, Tmsv2customersObjectInformation) {
+}(this, function(ApiClient, Tmsv2tokenizeTokenInformationCustomerBuyerInformation, Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation, Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument, Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress, Tmsv2tokenizeTokenInformationCustomerEmbedded, Tmsv2tokenizeTokenInformationCustomerLinks, Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation, Tmsv2tokenizeTokenInformationCustomerMetadata, Tmsv2tokenizeTokenInformationCustomerObjectInformation) {
   'use strict';
 
 
@@ -71,41 +71,41 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = Tmsv2customersLinks.constructFromObject(data['_links']);
+        obj['_links'] = Tmsv2tokenizeTokenInformationCustomerLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
       if (data.hasOwnProperty('objectInformation')) {
-        obj['objectInformation'] = Tmsv2customersObjectInformation.constructFromObject(data['objectInformation']);
+        obj['objectInformation'] = Tmsv2tokenizeTokenInformationCustomerObjectInformation.constructFromObject(data['objectInformation']);
       }
       if (data.hasOwnProperty('buyerInformation')) {
-        obj['buyerInformation'] = Tmsv2customersBuyerInformation.constructFromObject(data['buyerInformation']);
+        obj['buyerInformation'] = Tmsv2tokenizeTokenInformationCustomerBuyerInformation.constructFromObject(data['buyerInformation']);
       }
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Tmsv2customersClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('merchantDefinedInformation')) {
-        obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [Tmsv2customersMerchantDefinedInformation]);
+        obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation]);
       }
       if (data.hasOwnProperty('defaultPaymentInstrument')) {
-        obj['defaultPaymentInstrument'] = Tmsv2customersDefaultPaymentInstrument.constructFromObject(data['defaultPaymentInstrument']);
+        obj['defaultPaymentInstrument'] = Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument.constructFromObject(data['defaultPaymentInstrument']);
       }
       if (data.hasOwnProperty('defaultShippingAddress')) {
-        obj['defaultShippingAddress'] = Tmsv2customersDefaultShippingAddress.constructFromObject(data['defaultShippingAddress']);
+        obj['defaultShippingAddress'] = Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress.constructFromObject(data['defaultShippingAddress']);
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = Tmsv2customersMetadata.constructFromObject(data['metadata']);
+        obj['metadata'] = Tmsv2tokenizeTokenInformationCustomerMetadata.constructFromObject(data['metadata']);
       }
       if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = Tmsv2customersEmbedded.constructFromObject(data['_embedded']);
+        obj['_embedded'] = Tmsv2tokenizeTokenInformationCustomerEmbedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Tmsv2customersLinks} _links
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -114,36 +114,36 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersObjectInformation} objectInformation
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerObjectInformation} objectInformation
    */
   exports.prototype['objectInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersBuyerInformation} buyerInformation
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerBuyerInformation} buyerInformation
    */
   exports.prototype['buyerInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
    * Object containing the custom data that the merchant defines. 
-   * @member {Array.<module:model/Tmsv2customersMerchantDefinedInformation>} merchantDefinedInformation
+   * @member {Array.<module:model/Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersDefaultPaymentInstrument} defaultPaymentInstrument
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument} defaultPaymentInstrument
    */
   exports.prototype['defaultPaymentInstrument'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersDefaultShippingAddress} defaultShippingAddress
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress} defaultShippingAddress
    */
   exports.prototype['defaultShippingAddress'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersMetadata} metadata
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
   /**
-   * @member {module:model/Tmsv2customersEmbedded} _embedded
+   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbedded} _embedded
    */
   exports.prototype['_embedded'] = undefined;
 

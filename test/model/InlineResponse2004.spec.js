@@ -56,20 +56,44 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2004);
     });
 
-    it('should have the property productId (base name: "productId")', function() {
-      // uncomment below and update the code to test the property productId
+    it('should have the property registrationInformation (base name: "registrationInformation")', function() {
+      // uncomment below and update the code to test the property registrationInformation
       //var instane = new CyberSource.InlineResponse2004();
       //expect(instance).to.be();
     });
 
-    it('should have the property productName (base name: "productName")', function() {
-      // uncomment below and update the code to test the property productName
+    it('should have the property integrationInformation (base name: "integrationInformation")', function() {
+      // uncomment below and update the code to test the property integrationInformation
       //var instane = new CyberSource.InlineResponse2004();
       //expect(instance).to.be();
     });
 
-    it('should have the property eventTypes (base name: "eventTypes")', function() {
-      // uncomment below and update the code to test the property eventTypes
+    it('should have the property organizationInformation (base name: "organizationInformation")', function() {
+      // uncomment below and update the code to test the property organizationInformation
+      //var instane = new CyberSource.InlineResponse2004();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productInformation (base name: "productInformation")', function() {
+      // uncomment below and update the code to test the property productInformation
+      //var instane = new CyberSource.InlineResponse2004();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productInformationSetups (base name: "productInformationSetups")', function() {
+      // uncomment below and update the code to test the property productInformationSetups
+      //var instane = new CyberSource.InlineResponse2004();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property documentInformation (base name: "documentInformation")', function() {
+      // uncomment below and update the code to test the property documentInformation
+      //var instane = new CyberSource.InlineResponse2004();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
       //var instane = new CyberSource.InlineResponse2004();
       //expect(instance).to.be();
     });

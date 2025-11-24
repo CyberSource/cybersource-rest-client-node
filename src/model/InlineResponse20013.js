@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Bavsv1accountvalidationsClientReferenceInformation', 'model/TssV2TransactionsGet200ResponseBankAccountValidation'], factory);
+    define(['ApiClient', 'model/InlineResponse20011EmbeddedTotals', 'model/InlineResponse20012Billing', 'model/InlineResponse20013Records'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Bavsv1accountvalidationsClientReferenceInformation'), require('./TssV2TransactionsGet200ResponseBankAccountValidation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse20011EmbeddedTotals'), require('./InlineResponse20012Billing'), require('./InlineResponse20013Records'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20013 = factory(root.CyberSource.ApiClient, root.CyberSource.Bavsv1accountvalidationsClientReferenceInformation, root.CyberSource.TssV2TransactionsGet200ResponseBankAccountValidation);
+    root.CyberSource.InlineResponse20013 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20011EmbeddedTotals, root.CyberSource.InlineResponse20012Billing, root.CyberSource.InlineResponse20013Records);
   }
-}(this, function(ApiClient, Bavsv1accountvalidationsClientReferenceInformation, TssV2TransactionsGet200ResponseBankAccountValidation) {
+}(this, function(ApiClient, InlineResponse20011EmbeddedTotals, InlineResponse20012Billing, InlineResponse20013Records) {
   'use strict';
 
 
@@ -51,6 +51,12 @@
 
 
 
+
+
+
+
+
+
   };
 
   /**
@@ -64,40 +70,85 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Bavsv1accountvalidationsClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      if (data.hasOwnProperty('version')) {
+        obj['version'] = ApiClient.convertToType(data['version'], 'String');
       }
-      if (data.hasOwnProperty('requestId')) {
-        obj['requestId'] = ApiClient.convertToType(data['requestId'], 'String');
+      if (data.hasOwnProperty('reportCreatedDate')) {
+        obj['reportCreatedDate'] = ApiClient.convertToType(data['reportCreatedDate'], 'String');
       }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('batchId')) {
+        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
       }
-      if (data.hasOwnProperty('bankAccountValidation')) {
-        obj['bankAccountValidation'] = TssV2TransactionsGet200ResponseBankAccountValidation.constructFromObject(data['bankAccountValidation']);
+      if (data.hasOwnProperty('batchSource')) {
+        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
+      }
+      if (data.hasOwnProperty('batchCaEndpoints')) {
+        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
+      }
+      if (data.hasOwnProperty('batchCreatedDate')) {
+        obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
+      }
+      if (data.hasOwnProperty('merchantReference')) {
+        obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
+      }
+      if (data.hasOwnProperty('totals')) {
+        obj['totals'] = InlineResponse20011EmbeddedTotals.constructFromObject(data['totals']);
+      }
+      if (data.hasOwnProperty('billing')) {
+        obj['billing'] = InlineResponse20012Billing.constructFromObject(data['billing']);
+      }
+      if (data.hasOwnProperty('records')) {
+        obj['records'] = ApiClient.convertToType(data['records'], [InlineResponse20013Records]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Bavsv1accountvalidationsClientReferenceInformation} clientReferenceInformation
+   * @member {String} version
    */
-  exports.prototype['clientReferenceInformation'] = undefined;
+  exports.prototype['version'] = undefined;
   /**
-   * Request Id sent as part of the request.
-   * @member {String} requestId
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @member {String} reportCreatedDate
    */
-  exports.prototype['requestId'] = undefined;
+  exports.prototype['reportCreatedDate'] = undefined;
   /**
-   * Time of request in UTC.  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @member {String} submitTimeUtc
+   * Unique identification number assigned to the submitted request.
+   * @member {String} batchId
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['batchId'] = undefined;
   /**
-   * @member {module:model/TssV2TransactionsGet200ResponseBankAccountValidation} bankAccountValidation
+   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
+   * @member {String} batchSource
    */
-  exports.prototype['bankAccountValidation'] = undefined;
+  exports.prototype['batchSource'] = undefined;
+  /**
+   * @member {String} batchCaEndpoints
+   */
+  exports.prototype['batchCaEndpoints'] = undefined;
+  /**
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @member {String} batchCreatedDate
+   */
+  exports.prototype['batchCreatedDate'] = undefined;
+  /**
+   * Reference used by merchant to identify batch.
+   * @member {String} merchantReference
+   */
+  exports.prototype['merchantReference'] = undefined;
+  /**
+   * @member {module:model/InlineResponse20011EmbeddedTotals} totals
+   */
+  exports.prototype['totals'] = undefined;
+  /**
+   * @member {module:model/InlineResponse20012Billing} billing
+   */
+  exports.prototype['billing'] = undefined;
+  /**
+   * @member {Array.<module:model/InlineResponse20013Records>} records
+   */
+  exports.prototype['records'] = undefined;
 
 
 

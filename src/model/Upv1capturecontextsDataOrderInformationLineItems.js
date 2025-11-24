@@ -193,78 +193,97 @@
   }
 
   /**
+   * Code identifying the product.
    * @member {String} productCode
    */
   exports.prototype['productCode'] = undefined;
   /**
+   * Name of the product.
    * @member {String} productName
    */
   exports.prototype['productName'] = undefined;
   /**
+   * Stock Keeping Unit identifier
    * @member {String} productSku
    */
   exports.prototype['productSku'] = undefined;
   /**
+   * Quantity of the product
    * @member {Number} quantity
    */
   exports.prototype['quantity'] = undefined;
   /**
+   * Price per unit
    * @member {String} unitPrice
    */
   exports.prototype['unitPrice'] = undefined;
   /**
+   * Unit of measure (e.g. EA, KG, LB)
    * @member {String} unitOfMeasure
    */
   exports.prototype['unitOfMeasure'] = undefined;
   /**
+   * Total amount for the line item
    * @member {String} totalAmount
    */
   exports.prototype['totalAmount'] = undefined;
   /**
+   * Tax amount applied
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;
   /**
+   * Tax rate applied
    * @member {String} taxRate
    */
   exports.prototype['taxRate'] = undefined;
   /**
+   * Indicates if tax applied after discount
    * @member {String} taxAppliedAfterDiscount
    */
   exports.prototype['taxAppliedAfterDiscount'] = undefined;
   /**
+   * Tax status indicator
    * @member {String} taxStatusIndicator
    */
   exports.prototype['taxStatusIndicator'] = undefined;
   /**
+   * Tax type code
    * @member {String} taxTypeCode
    */
   exports.prototype['taxTypeCode'] = undefined;
   /**
+   * Indicates if amount includes tax
    * @member {Boolean} amountIncludesTax
    */
   exports.prototype['amountIncludesTax'] = undefined;
   /**
+   * Type of supply
    * @member {String} typeOfSupply
    */
   exports.prototype['typeOfSupply'] = undefined;
   /**
+   * Commodity code
    * @member {String} commodityCode
    */
   exports.prototype['commodityCode'] = undefined;
   /**
+   * Discount amount applied
    * @member {String} discountAmount
    */
   exports.prototype['discountAmount'] = undefined;
   /**
+   * Indicates if discount applied
    * @member {Boolean} discountApplied
    */
   exports.prototype['discountApplied'] = undefined;
   /**
+   * Discount rate applied
    * @member {String} discountRate
    */
   exports.prototype['discountRate'] = undefined;
   /**
+   * Invoice number for the line item
    * @member {String} invoiceNumber
    */
   exports.prototype['invoiceNumber'] = undefined;
@@ -273,46 +292,57 @@
    */
   exports.prototype['taxDetails'] = undefined;
   /**
+   * Fulfillment type
    * @member {String} fulfillmentType
    */
   exports.prototype['fulfillmentType'] = undefined;
   /**
+   * Weight of the product
    * @member {String} weight
    */
   exports.prototype['weight'] = undefined;
   /**
+   * Weight identifier
    * @member {String} weightIdentifier
    */
   exports.prototype['weightIdentifier'] = undefined;
   /**
+   * Unit of weight of the product
    * @member {String} weightUnit
    */
   exports.prototype['weightUnit'] = undefined;
   /**
+   * Reference data code
    * @member {String} referenceDataCode
    */
   exports.prototype['referenceDataCode'] = undefined;
   /**
+   * Reference data number
    * @member {String} referenceDataNumber
    */
   exports.prototype['referenceDataNumber'] = undefined;
   /**
+   * Unit tax amount
    * @member {String} unitTaxAmount
    */
   exports.prototype['unitTaxAmount'] = undefined;
   /**
+   * Description of the product
    * @member {String} productDescription
    */
   exports.prototype['productDescription'] = undefined;
   /**
+   * Gift card currency
    * @member {String} giftCardCurrency
    */
   exports.prototype['giftCardCurrency'] = undefined;
   /**
+   * Shipping destination types
    * @member {String} shippingDestinationTypes
    */
   exports.prototype['shippingDestinationTypes'] = undefined;
   /**
+   * Indicates if item is a gift
    * @member {Boolean} gift
    */
   exports.prototype['gift'] = undefined;

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GetAllSubscriptionsResponseLinks', 'model/GetAllSubscriptionsResponseOrderInformation', 'model/GetAllSubscriptionsResponsePaymentInformation', 'model/GetAllSubscriptionsResponsePlanInformation', 'model/GetAllSubscriptionsResponseSubscriptionInformation'], factory);
+    define(['ApiClient', 'model/GetAllSubscriptionsResponseClientReferenceInformation', 'model/GetAllSubscriptionsResponseLinks', 'model/GetAllSubscriptionsResponseOrderInformation', 'model/GetAllSubscriptionsResponsePaymentInformation', 'model/GetAllSubscriptionsResponsePlanInformation', 'model/GetAllSubscriptionsResponseSubscriptionInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./GetAllSubscriptionsResponseLinks'), require('./GetAllSubscriptionsResponseOrderInformation'), require('./GetAllSubscriptionsResponsePaymentInformation'), require('./GetAllSubscriptionsResponsePlanInformation'), require('./GetAllSubscriptionsResponseSubscriptionInformation'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllSubscriptionsResponseClientReferenceInformation'), require('./GetAllSubscriptionsResponseLinks'), require('./GetAllSubscriptionsResponseOrderInformation'), require('./GetAllSubscriptionsResponsePaymentInformation'), require('./GetAllSubscriptionsResponsePlanInformation'), require('./GetAllSubscriptionsResponseSubscriptionInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GetAllSubscriptionsResponseSubscriptions = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllSubscriptionsResponseLinks, root.CyberSource.GetAllSubscriptionsResponseOrderInformation, root.CyberSource.GetAllSubscriptionsResponsePaymentInformation, root.CyberSource.GetAllSubscriptionsResponsePlanInformation, root.CyberSource.GetAllSubscriptionsResponseSubscriptionInformation);
+    root.CyberSource.GetAllSubscriptionsResponseSubscriptions = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllSubscriptionsResponseClientReferenceInformation, root.CyberSource.GetAllSubscriptionsResponseLinks, root.CyberSource.GetAllSubscriptionsResponseOrderInformation, root.CyberSource.GetAllSubscriptionsResponsePaymentInformation, root.CyberSource.GetAllSubscriptionsResponsePlanInformation, root.CyberSource.GetAllSubscriptionsResponseSubscriptionInformation);
   }
-}(this, function(ApiClient, GetAllSubscriptionsResponseLinks, GetAllSubscriptionsResponseOrderInformation, GetAllSubscriptionsResponsePaymentInformation, GetAllSubscriptionsResponsePlanInformation, GetAllSubscriptionsResponseSubscriptionInformation) {
+}(this, function(ApiClient, GetAllSubscriptionsResponseClientReferenceInformation, GetAllSubscriptionsResponseLinks, GetAllSubscriptionsResponseOrderInformation, GetAllSubscriptionsResponsePaymentInformation, GetAllSubscriptionsResponsePlanInformation, GetAllSubscriptionsResponseSubscriptionInformation) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -79,6 +80,9 @@
       if (data.hasOwnProperty('subscriptionInformation')) {
         obj['subscriptionInformation'] = GetAllSubscriptionsResponseSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
       }
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = GetAllSubscriptionsResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      }
       if (data.hasOwnProperty('paymentInformation')) {
         obj['paymentInformation'] = GetAllSubscriptionsResponsePaymentInformation.constructFromObject(data['paymentInformation']);
       }
@@ -106,6 +110,10 @@
    * @member {module:model/GetAllSubscriptionsResponseSubscriptionInformation} subscriptionInformation
    */
   exports.prototype['subscriptionInformation'] = undefined;
+  /**
+   * @member {module:model/GetAllSubscriptionsResponseClientReferenceInformation} clientReferenceInformation
+   */
+  exports.prototype['clientReferenceInformation'] = undefined;
   /**
    * @member {module:model/GetAllSubscriptionsResponsePaymentInformation} paymentInformation
    */

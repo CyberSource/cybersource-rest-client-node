@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Rbsv1plansClientReferenceInformation', 'model/Rbsv1plansOrderInformation', 'model/Rbsv1plansPlanInformation'], factory);
+    define(['ApiClient', 'model/Rbsv1plansOrderInformation', 'model/Rbsv1plansPlanInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Rbsv1plansClientReferenceInformation'), require('./Rbsv1plansOrderInformation'), require('./Rbsv1plansPlanInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Rbsv1plansOrderInformation'), require('./Rbsv1plansPlanInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreatePlanRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Rbsv1plansClientReferenceInformation, root.CyberSource.Rbsv1plansOrderInformation, root.CyberSource.Rbsv1plansPlanInformation);
+    root.CyberSource.CreatePlanRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Rbsv1plansOrderInformation, root.CyberSource.Rbsv1plansPlanInformation);
   }
-}(this, function(ApiClient, Rbsv1plansClientReferenceInformation, Rbsv1plansOrderInformation, Rbsv1plansPlanInformation) {
+}(this, function(ApiClient, Rbsv1plansOrderInformation, Rbsv1plansPlanInformation) {
   'use strict';
 
 
@@ -49,7 +49,6 @@
 
 
 
-
   };
 
   /**
@@ -63,9 +62,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Rbsv1plansClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
-      }
       if (data.hasOwnProperty('planInformation')) {
         obj['planInformation'] = Rbsv1plansPlanInformation.constructFromObject(data['planInformation']);
       }
@@ -76,10 +72,6 @@
     return obj;
   }
 
-  /**
-   * @member {module:model/Rbsv1plansClientReferenceInformation} clientReferenceInformation
-   */
-  exports.prototype['clientReferenceInformation'] = undefined;
   /**
    * @member {module:model/Rbsv1plansPlanInformation} planInformation
    */
