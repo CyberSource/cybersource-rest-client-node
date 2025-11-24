@@ -102,6 +102,7 @@ module.exports = {
     DEFAULT_MAX_IDLE_SOCKETS          :  100,
     DEFAULT_USER_DEFINED_TIMEOUT      :  4000, // Value in milliseconds
     MLE_CACHE_KEY_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY : "_mleResponsePrivateKeyFromFile",
+    RESPONSE_MLE_P12_PFX_CACHE_IDENTIFIER : "_responseMleP12Pfx",
 
     STATUS200                         :  "Transaction Successful",
     STATUS400                         :  "Bad Request",

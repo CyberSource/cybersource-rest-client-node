@@ -9,14 +9,6 @@ var ApiException = require('./ApiException');
 var Logger = require('../logging/Logger');
 var Utility = require('./Utility');
 
-function loadP12FileToAsn1(filePath) {
-    var p12Buffer = fs.readFileSync(filePath);
-    var p12Der = forge.util.binary.raw.encode(new Uint8Array(p12Buffer));
-    var p12Asn1 = forge.asn1.fromDer(p12Der);
-    return p12Asn1;
-}
-
-
 /**
  * This module is doing Caching.
  * Certificate will be available in the memory cache if it has initialized once.
@@ -55,8 +47,7 @@ exports.fetchCachedCertificate = function (merchantConfig, logger) {
 //Function to read the file and put values to new cache 
 function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
     try {
-        var p12Asn1 = loadP12FileToAsn1(filePath);
-        var certificate = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, keyPass);
+        var certificate = Utility.parseP12File(filePath, keyPass, logger);
         cache.put("certificateFromP12File", certificate);
         cache.put("certificateLastModifideTimeStamp", fileLastModifiedTime);
         return certificate;
@@ -137,9 +128,8 @@ function setupMLECache(merchantConfig, cacheKey, certificateSourcePath) {
 function loadCertificateFromP12(merchantConfig, certificatePath) {
     const logger = Logger.getLogger(merchantConfig, 'Cache');
     try {
-        // Read the P12 file and convert to ASN1
-        var p12Asn1 = loadP12FileToAsn1(certificatePath);
-        var p12Cert = forge.pkcs12.pkcs12FromAsn1(p12Asn1, false, merchantConfig.getKeyPass());
+        // Read and parse the P12 file
+        var p12Cert = Utility.parseP12File(certificatePath, merchantConfig.getKeyPass(), logger);
         
         // Extract the certificate from the P12 container
         var certBags = p12Cert.getBags({ bagType: forge.pki.oids.certBag });
@@ -281,3 +271,45 @@ function putMLEResponsePrivateKeyInCache(merchantConfig, cacheKey, privateKeyPat
     };
     cache.put(cacheKey, cacheEntry);
 }
+
+exports.fetchCachedP12FromFile = function(filePath, password, logger, cacheKey) {
+    // Use provided cache key or default to filePath + identifier
+    const finalCacheKey = cacheKey || (filePath + Constants.RESPONSE_MLE_P12_PFX_CACHE_IDENTIFIER);
+    const cachedEntry = cache.get(finalCacheKey);
+    
+    logger.debug(`Fetching P12/PFX from cache with key: ${finalCacheKey}`);
+    
+    // Check if file exists
+    if (!fs.existsSync(filePath)) {
+        logger.error(`File not found: ${filePath}`);
+        throw new Error(Constants.FILE_NOT_FOUND + filePath);
+    }
+    
+    const currentFileLastModifiedTime = fs.statSync(filePath).mtimeMs;
+    
+    // Check if cache is valid (exists and file hasn't been modified)
+    if (cachedEntry && cachedEntry.fileLastModifiedTime === currentFileLastModifiedTime) {
+        logger.debug(`P12/PFX found in cache and file not modified`);
+        return cachedEntry.p12Object;
+    }
+    
+    // Cache miss or file modified - parse and cache
+    logger.debug(`P12/PFX not in cache or file modified. Loading from file: ${filePath}`);
+    
+    try {
+        const p12Object = Utility.parseP12File(filePath, password, logger);
+        
+        // Store in cache with file modification time
+        cache.put(finalCacheKey, {
+            p12Object: p12Object,
+            fileLastModifiedTime: currentFileLastModifiedTime
+        });
+        
+        logger.debug(`Successfully cached P12/PFX object`);
+        return p12Object;
+        
+    } catch (error) {
+        logger.error(`Error parsing P12/PFX file: ${error.message}`);
+        ApiException.AuthException(`${error.message}. ${Constants.INCORRECT_KEY_PASS}`);
+    }
+};

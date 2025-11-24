@@ -891,7 +891,8 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             );
         }
         
-        // Validate file path accessibility if provided
+        // Validate file path accessibility if provided and determine if P12/PFX
+        let isP12File = false;
         if (hasValidFilePath) {
             try {
                 fs.accessSync(this.responseMlePrivateKeyFilePath, fs.constants.R_OK);
@@ -902,6 +903,8 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
                         logger
                     );
                 }
+                // Check if it's a P12/PFX file for KID auto-extraction
+                isP12File = ext === '.p12' || ext === '.pfx';
             } catch (err) {
                 const errorType = err.code === 'ENOENT' ? 'does not exist' : 'is not readable';
                 throw new ApiException.ApiException(
@@ -911,9 +914,15 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             }
         }
         
-        // Validate KID
-        if (typeof this.responseMleKID !== "string" || !this.responseMleKID?.trim()) {
-            throw new ApiException.ApiException("responseMleKID is required when response MLE is enabled.", logger);
+        // Validate KID - only required for non-P12/PFX files
+        // P12/PFX files support auto-extraction of KID in MLEUtility.js
+        if (!isP12File) {
+            if (typeof this.responseMleKID !== "string" || !this.responseMleKID?.trim()) {
+                throw new ApiException.ApiException(
+                    "responseMleKID is required when response MLE is enabled for non-P12/PFX files.", 
+                    logger
+                );
+            }
         }
     }
     /**
@@ -942,7 +951,6 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
         logger.clear();
     }
 }
-
 
 function validateAndSetMapToControlMLEonAPI(mapFromConfig) {
     let tempMap;
