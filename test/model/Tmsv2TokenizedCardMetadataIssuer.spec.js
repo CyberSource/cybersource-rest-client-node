@@ -74,6 +74,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new CyberSource.Tmsv2TokenizedCardMetadataIssuer();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property phoneNumber (base name: "phoneNumber")', function() {
+      // uncomment below and update the code to test the property phoneNumber
+      //var instane = new CyberSource.Tmsv2TokenizedCardMetadataIssuer();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instane = new CyberSource.Tmsv2TokenizedCardMetadataIssuer();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

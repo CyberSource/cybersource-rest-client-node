@@ -86,6 +86,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issueDate (base name: "issueDate")', function() {
+      // uncomment below and update the code to test the property issueDate
+      //var instane = new CyberSource.Tmsv2TokenizedCardCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property activationDate (base name: "activationDate")', function() {
+      // uncomment below and update the code to test the property activationDate
+      //var instane = new CyberSource.Tmsv2TokenizedCardCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationPrinted (base name: "expirationPrinted")', function() {
+      // uncomment below and update the code to test the property expirationPrinted
+      //var instane = new CyberSource.Tmsv2TokenizedCardCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property securityCodePrinted (base name: "securityCodePrinted")', function() {
+      // uncomment below and update the code to test the property securityCodePrinted
+      //var instane = new CyberSource.Tmsv2TokenizedCardCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property termsAndConditions (base name: "termsAndConditions")', function() {
+      // uncomment below and update the code to test the property termsAndConditions
+      //var instane = new CyberSource.Tmsv2TokenizedCardCard();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

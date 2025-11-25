@@ -62,12 +62,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property selfServiceability (base name: "selfServiceability")', function() {
-      // uncomment below and update the code to test the property selfServiceability
-      //var instane = new CyberSource.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

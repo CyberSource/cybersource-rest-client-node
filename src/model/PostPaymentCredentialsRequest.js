@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities', 'model/Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation', 'model/Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation', 'model/Tmsv2tokenstokenIdpaymentcredentialsOrderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities'), require('./Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation'), require('./Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation'), require('./Tmsv2tokenstokenIdpaymentcredentialsOrderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostPaymentCredentialsRequest = factory(root.CyberSource.ApiClient);
+    root.CyberSource.PostPaymentCredentialsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsOrderInformation);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities, Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation, Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation, Tmsv2tokenstokenIdpaymentcredentialsOrderInformation) {
   'use strict';
 
 
@@ -46,6 +46,11 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
 
 
 
@@ -68,6 +73,21 @@
       if (data.hasOwnProperty('transactionType')) {
         obj['transactionType'] = ApiClient.convertToType(data['transactionType'], 'String');
       }
+      if (data.hasOwnProperty('clientCorrelationId')) {
+        obj['clientCorrelationId'] = ApiClient.convertToType(data['clientCorrelationId'], 'String');
+      }
+      if (data.hasOwnProperty('orderInformation')) {
+        obj['orderInformation'] = Tmsv2tokenstokenIdpaymentcredentialsOrderInformation.constructFromObject(data['orderInformation']);
+      }
+      if (data.hasOwnProperty('merchantInformation')) {
+        obj['merchantInformation'] = Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation.constructFromObject(data['merchantInformation']);
+      }
+      if (data.hasOwnProperty('deviceInformation')) {
+        obj['deviceInformation'] = Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation.constructFromObject(data['deviceInformation']);
+      }
+      if (data.hasOwnProperty('authenticatedIdentities')) {
+        obj['authenticatedIdentities'] = ApiClient.convertToType(data['authenticatedIdentities'], [Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities]);
+      }
     }
     return obj;
   }
@@ -82,6 +102,27 @@
    * @member {String} transactionType
    */
   exports.prototype['transactionType'] = undefined;
+  /**
+   * Used to correlate authentication and payment credential requests. 
+   * @member {String} clientCorrelationId
+   */
+  exports.prototype['clientCorrelationId'] = undefined;
+  /**
+   * @member {module:model/Tmsv2tokenstokenIdpaymentcredentialsOrderInformation} orderInformation
+   */
+  exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {module:model/Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation} merchantInformation
+   */
+  exports.prototype['merchantInformation'] = undefined;
+  /**
+   * @member {module:model/Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation} deviceInformation
+   */
+  exports.prototype['deviceInformation'] = undefined;
+  /**
+   * @member {Array.<module:model/Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities>} authenticatedIdentities
+   */
+  exports.prototype['authenticatedIdentities'] = undefined;
 
 
 

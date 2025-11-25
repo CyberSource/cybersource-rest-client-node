@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantDefinedFieldValuesWithDefinition (base name: "merchantDefinedFieldValuesWithDefinition")', function() {
+      // uncomment below and update the code to test the property merchantDefinedFieldValuesWithDefinition
+      //var instane = new CyberSource.InvoicingV2InvoicesGet200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property invoiceHistory (base name: "invoiceHistory")', function() {
       // uncomment below and update the code to test the property invoiceHistory
       //var instane = new CyberSource.InvoicingV2InvoicesGet200Response();

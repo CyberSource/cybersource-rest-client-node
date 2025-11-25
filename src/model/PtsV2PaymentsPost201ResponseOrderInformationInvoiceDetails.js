@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('level3TransmissionStatus')) {
-        obj['level3TransmissionStatus'] = ApiClient.convertToType(data['level3TransmissionStatus'], 'Boolean');
+        obj['level3TransmissionStatus'] = ApiClient.convertToType(data['level3TransmissionStatus'], 'String');
       }
       if (data.hasOwnProperty('salesSlipNumber')) {
         obj['salesSlipNumber'] = ApiClient.convertToType(data['salesSlipNumber'], 'Number');
@@ -73,8 +73,8 @@
   }
 
   /**
-   * Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **true** - **false** 
-   * @member {Boolean} level3TransmissionStatus
+   * Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **Y** for true - **N** for false 
+   * @member {String} level3TransmissionStatus
    */
   exports.prototype['level3TransmissionStatus'] = undefined;
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsProcessorInformationReversalNetwork'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessorInformationReversalNetwork'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsReversalsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.PtsV2PaymentsReversalsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessorInformationReversalNetwork);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv2paymentsProcessorInformationReversalNetwork) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -96,6 +97,9 @@
       if (data.hasOwnProperty('providerResponse')) {
         obj['providerResponse'] = ApiClient.convertToType(data['providerResponse'], 'String');
       }
+      if (data.hasOwnProperty('network')) {
+        obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
+      }
     }
     return obj;
   }
@@ -136,7 +140,7 @@
    */
   exports.prototype['masterCardServiceReplyCode'] = undefined;
   /**
-   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * This field might contain information about a decline. 
    * @member {String} responseDetails
    */
   exports.prototype['responseDetails'] = undefined;
@@ -145,6 +149,10 @@
    * @member {String} providerResponse
    */
   exports.prototype['providerResponse'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessorInformationReversalNetwork} network
+   */
+  exports.prototype['network'] = undefined;
 
 
 

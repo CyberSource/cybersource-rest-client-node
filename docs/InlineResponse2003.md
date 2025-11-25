@@ -3,8 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**productId** | **String** | Product ID. | [optional] 
-**productName** | **String** | Product Name. | [optional] 
-**eventTypes** | [**[Notificationsubscriptionsv2productsorganizationIdEventTypes]**](Notificationsubscriptionsv2productsorganizationIdEventTypes.md) |  | [optional] 
+**registrationInformation** | [**Boardingv1registrationsRegistrationInformation**](Boardingv1registrationsRegistrationInformation.md) |  | [optional] 
+**integrationInformation** | [**InlineResponse2003IntegrationInformation**](InlineResponse2003IntegrationInformation.md) |  | [optional] 
+**organizationInformation** | [**Boardingv1registrationsOrganizationInformation**](Boardingv1registrationsOrganizationInformation.md) |  | [optional] 
+**productInformation** | [**Boardingv1registrationsProductInformation**](Boardingv1registrationsProductInformation.md) |  | [optional] 
+**productInformationSetups** | [**[InlineResponse2013ProductInformationSetups]**](InlineResponse2013ProductInformationSetups.md) |  | [optional] 
+**documentInformation** | [**Boardingv1registrationsDocumentInformation**](Boardingv1registrationsDocumentInformation.md) |  | [optional] 
+**details** | **{String: [Object]}** |  | [optional] 
 
 

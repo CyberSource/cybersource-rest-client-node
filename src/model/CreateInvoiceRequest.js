@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Invoicingv2invoicesClientReferenceInformation', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesInvoiceInformation', 'model/Invoicingv2invoicesOrderInformation', 'model/Invoicingv2invoicesProcessingInformation'], factory);
+    define(['ApiClient', 'model/Invoicingv2invoicesClientReferenceInformation', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesInvoiceInformation', 'model/Invoicingv2invoicesMerchantDefinedFieldValues', 'model/Invoicingv2invoicesOrderInformation', 'model/Invoicingv2invoicesProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesClientReferenceInformation'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesInvoiceInformation'), require('./Invoicingv2invoicesOrderInformation'), require('./Invoicingv2invoicesProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesClientReferenceInformation'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesInvoiceInformation'), require('./Invoicingv2invoicesMerchantDefinedFieldValues'), require('./Invoicingv2invoicesOrderInformation'), require('./Invoicingv2invoicesProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateInvoiceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesClientReferenceInformation, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesInvoiceInformation, root.CyberSource.Invoicingv2invoicesOrderInformation, root.CyberSource.Invoicingv2invoicesProcessingInformation);
+    root.CyberSource.CreateInvoiceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesClientReferenceInformation, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesInvoiceInformation, root.CyberSource.Invoicingv2invoicesMerchantDefinedFieldValues, root.CyberSource.Invoicingv2invoicesOrderInformation, root.CyberSource.Invoicingv2invoicesProcessingInformation);
   }
-}(this, function(ApiClient, Invoicingv2invoicesClientReferenceInformation, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesInvoiceInformation, Invoicingv2invoicesOrderInformation, Invoicingv2invoicesProcessingInformation) {
+}(this, function(ApiClient, Invoicingv2invoicesClientReferenceInformation, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesInvoiceInformation, Invoicingv2invoicesMerchantDefinedFieldValues, Invoicingv2invoicesOrderInformation, Invoicingv2invoicesProcessingInformation) {
   'use strict';
 
 
@@ -54,6 +54,7 @@
 
     _this['invoiceInformation'] = invoiceInformation;
     _this['orderInformation'] = orderInformation;
+
   };
 
   /**
@@ -82,6 +83,9 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Invoicingv2invoicesOrderInformation.constructFromObject(data['orderInformation']);
       }
+      if (data.hasOwnProperty('merchantDefinedFieldValues')) {
+        obj['merchantDefinedFieldValues'] = ApiClient.convertToType(data['merchantDefinedFieldValues'], [Invoicingv2invoicesMerchantDefinedFieldValues]);
+      }
     }
     return obj;
   }
@@ -106,6 +110,10 @@
    * @member {module:model/Invoicingv2invoicesOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {Array.<module:model/Invoicingv2invoicesMerchantDefinedFieldValues>} merchantDefinedFieldValues
+   */
+  exports.prototype['merchantDefinedFieldValues'] = undefined;
 
 
 

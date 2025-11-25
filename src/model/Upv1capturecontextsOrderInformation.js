@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Upv1capturecontextsOrderInformationAmountDetails', 'model/Upv1capturecontextsOrderInformationBillTo', 'model/Upv1capturecontextsOrderInformationShipTo'], factory);
+    define(['ApiClient', 'model/Upv1capturecontextsDataOrderInformationBillTo', 'model/Upv1capturecontextsDataOrderInformationShipTo', 'model/Upv1capturecontextsOrderInformationAmountDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsOrderInformationAmountDetails'), require('./Upv1capturecontextsOrderInformationBillTo'), require('./Upv1capturecontextsOrderInformationShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataOrderInformationBillTo'), require('./Upv1capturecontextsDataOrderInformationShipTo'), require('./Upv1capturecontextsOrderInformationAmountDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Upv1capturecontextsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsOrderInformationAmountDetails, root.CyberSource.Upv1capturecontextsOrderInformationBillTo, root.CyberSource.Upv1capturecontextsOrderInformationShipTo);
+    root.CyberSource.Upv1capturecontextsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataOrderInformationBillTo, root.CyberSource.Upv1capturecontextsDataOrderInformationShipTo, root.CyberSource.Upv1capturecontextsOrderInformationAmountDetails);
   }
-}(this, function(ApiClient, Upv1capturecontextsOrderInformationAmountDetails, Upv1capturecontextsOrderInformationBillTo, Upv1capturecontextsOrderInformationShipTo) {
+}(this, function(ApiClient, Upv1capturecontextsDataOrderInformationBillTo, Upv1capturecontextsDataOrderInformationShipTo, Upv1capturecontextsOrderInformationAmountDetails) {
   'use strict';
 
 
@@ -67,10 +67,10 @@
         obj['amountDetails'] = Upv1capturecontextsOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
       if (data.hasOwnProperty('billTo')) {
-        obj['billTo'] = Upv1capturecontextsOrderInformationBillTo.constructFromObject(data['billTo']);
+        obj['billTo'] = Upv1capturecontextsDataOrderInformationBillTo.constructFromObject(data['billTo']);
       }
       if (data.hasOwnProperty('shipTo')) {
-        obj['shipTo'] = Upv1capturecontextsOrderInformationShipTo.constructFromObject(data['shipTo']);
+        obj['shipTo'] = Upv1capturecontextsDataOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
     }
     return obj;
@@ -81,11 +81,11 @@
    */
   exports.prototype['amountDetails'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsOrderInformationBillTo} billTo
+   * @member {module:model/Upv1capturecontextsDataOrderInformationBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsOrderInformationShipTo} shipTo
+   * @member {module:model/Upv1capturecontextsDataOrderInformationShipTo} shipTo
    */
   exports.prototype['shipTo'] = undefined;
 

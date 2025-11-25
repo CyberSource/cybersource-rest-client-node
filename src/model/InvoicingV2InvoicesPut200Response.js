@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InvoicingV2InvoicesAllGet200ResponseLinks', 'model/InvoicingV2InvoicesPost201ResponseInvoiceInformation', 'model/InvoicingV2InvoicesPost201ResponseOrderInformation', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesProcessingInformation'], factory);
+    define(['ApiClient', 'model/InvoicingV2InvoicesAllGet200ResponseLinks', 'model/InvoicingV2InvoicesPost201ResponseInvoiceInformation', 'model/InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition', 'model/InvoicingV2InvoicesPost201ResponseOrderInformation', 'model/Invoicingv2invoicesCustomerInformation', 'model/Invoicingv2invoicesProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoicesAllGet200ResponseLinks'), require('./InvoicingV2InvoicesPost201ResponseInvoiceInformation'), require('./InvoicingV2InvoicesPost201ResponseOrderInformation'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoicesAllGet200ResponseLinks'), require('./InvoicingV2InvoicesPost201ResponseInvoiceInformation'), require('./InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition'), require('./InvoicingV2InvoicesPost201ResponseOrderInformation'), require('./Invoicingv2invoicesCustomerInformation'), require('./Invoicingv2invoicesProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicingV2InvoicesPut200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks, root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation, root.CyberSource.InvoicingV2InvoicesPost201ResponseOrderInformation, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesProcessingInformation);
+    root.CyberSource.InvoicingV2InvoicesPut200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoicesAllGet200ResponseLinks, root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformation, root.CyberSource.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition, root.CyberSource.InvoicingV2InvoicesPost201ResponseOrderInformation, root.CyberSource.Invoicingv2invoicesCustomerInformation, root.CyberSource.Invoicingv2invoicesProcessingInformation);
   }
-}(this, function(ApiClient, InvoicingV2InvoicesAllGet200ResponseLinks, InvoicingV2InvoicesPost201ResponseInvoiceInformation, InvoicingV2InvoicesPost201ResponseOrderInformation, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesProcessingInformation) {
+}(this, function(ApiClient, InvoicingV2InvoicesAllGet200ResponseLinks, InvoicingV2InvoicesPost201ResponseInvoiceInformation, InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition, InvoicingV2InvoicesPost201ResponseOrderInformation, Invoicingv2invoicesCustomerInformation, Invoicingv2invoicesProcessingInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -92,6 +93,9 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = InvoicingV2InvoicesPost201ResponseOrderInformation.constructFromObject(data['orderInformation']);
       }
+      if (data.hasOwnProperty('merchantDefinedFieldValuesWithDefinition')) {
+        obj['merchantDefinedFieldValuesWithDefinition'] = ApiClient.convertToType(data['merchantDefinedFieldValuesWithDefinition'], [InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition]);
+      }
     }
     return obj;
   }
@@ -131,6 +135,10 @@
    * @member {module:model/InvoicingV2InvoicesPost201ResponseOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {Array.<module:model/InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition>} merchantDefinedFieldValuesWithDefinition
+   */
+  exports.prototype['merchantDefinedFieldValuesWithDefinition'] = undefined;
 
 
 

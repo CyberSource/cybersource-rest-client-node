@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property network (base name: "network")', function() {
+      // uncomment below and update the code to test the property network
+      //var instane = new CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -73,7 +73,7 @@
   }
 
   /**
-   * The type of error.  Possible Values:   - forbidden 
+   * The type of error.  Possible Values:   - forbidden   - declined 
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

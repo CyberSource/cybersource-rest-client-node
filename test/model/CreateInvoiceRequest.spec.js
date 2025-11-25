@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantDefinedFieldValues (base name: "merchantDefinedFieldValues")', function() {
+      // uncomment below and update the code to test the property merchantDefinedFieldValues
+      //var instane = new CyberSource.CreateInvoiceRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

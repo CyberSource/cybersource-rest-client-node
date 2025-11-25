@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation'], factory);
+    define(['ApiClient', 'model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation', 'model/InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation'), require('./InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicingV2InvoiceSettingsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation);
+    root.CyberSource.InvoicingV2InvoiceSettingsGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation, root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation);
   }
-}(this, function(ApiClient, InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation) {
+}(this, function(ApiClient, InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation, InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('invoiceSettingsInformation')) {
         obj['invoiceSettingsInformation'] = InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.constructFromObject(data['invoiceSettingsInformation']);
       }
+      if (data.hasOwnProperty('merchantInformation')) {
+        obj['merchantInformation'] = InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation.constructFromObject(data['merchantInformation']);
+      }
     }
     return obj;
   }
@@ -81,6 +85,10 @@
    * @member {module:model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation} invoiceSettingsInformation
    */
   exports.prototype['invoiceSettingsInformation'] = undefined;
+  /**
+   * @member {module:model/InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation} merchantInformation
+   */
+  exports.prototype['merchantInformation'] = undefined;
 
 
 

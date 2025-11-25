@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationAchVerification', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice', 'model/Ptsv2paymentsProcessorInformationReversalNetwork'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'), require('./Ptsv2paymentsProcessorInformationReversalNetwork'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification);
+    root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.Ptsv2paymentsProcessorInformationReversalNetwork);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationAchVerification, PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice, Ptsv2paymentsProcessorInformationReversalNetwork) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -96,6 +98,12 @@
       if (data.hasOwnProperty('updateTimeUtc')) {
         obj['updateTimeUtc'] = ApiClient.convertToType(data['updateTimeUtc'], 'String');
       }
+      if (data.hasOwnProperty('network')) {
+        obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
+      }
+      if (data.hasOwnProperty('merchantAdvice')) {
+        obj['merchantAdvice'] = PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice.constructFromObject(data['merchantAdvice']);
+      }
     }
     return obj;
   }
@@ -144,6 +152,14 @@
    * @member {String} updateTimeUtc
    */
   exports.prototype['updateTimeUtc'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessorInformationReversalNetwork} network
+   */
+  exports.prototype['network'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice} merchantAdvice
+   */
+  exports.prototype['merchantAdvice'] = undefined;
 
 
 
