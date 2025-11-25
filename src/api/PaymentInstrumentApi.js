@@ -248,7 +248,7 @@
       var returnType = PatchPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.patchPaymentInstrument'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'patchPaymentInstrument');
 
       if (isMLEForApi === true) {
@@ -319,7 +319,7 @@
       var returnType = PostPaymentInstrumentRequest;
 
       //check isMLE for an api method 'this.postPaymentInstrument'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postPaymentInstrument');
 
       if (isMLEForApi === true) {

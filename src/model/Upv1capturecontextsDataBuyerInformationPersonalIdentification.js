@@ -69,6 +69,7 @@
   }
 
   /**
+   * CPF Number (Brazil).  Must be 11 digits in length. 
    * @member {String} cpf
    */
   exports.prototype['cpf'] = undefined;

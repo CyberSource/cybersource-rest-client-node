@@ -98,6 +98,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
+      // uncomment below and update the code to test the property dateOfBirth
+      //var instane = new CyberSource.Upv1capturecontextsDataRecipientInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postalCode (base name: "postalCode")', function() {
+      // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Upv1capturecontextsDataRecipientInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

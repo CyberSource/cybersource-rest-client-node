@@ -73,6 +73,7 @@
   }
 
   /**
+   * The reconciliation ID
    * @member {String} reconciliationId
    */
   exports.prototype['reconciliationId'] = undefined;

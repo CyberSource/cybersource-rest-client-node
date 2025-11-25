@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getCardArtAsset"></a>
 # **getCardArtAsset**
-> InlineResponse200 getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType)
+> InlineResponse2001 getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType)
 
 Retrieve Card Art
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

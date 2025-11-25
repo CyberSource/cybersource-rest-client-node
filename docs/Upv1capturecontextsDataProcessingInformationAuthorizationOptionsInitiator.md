@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credentialStoredOnFile** | **Boolean** |  | [optional] 
+**credentialStoredOnFile** | **Boolean** | Store the credential on file | [optional] 
 **merchantInitiatedTransaction** | [**Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction**](Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.md) |  | [optional] 
 
 

@@ -244,7 +244,7 @@
       var returnType = PatchCustomerRequest;
 
       //check isMLE for an api method 'this.patchCustomer'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'patchCustomer');
 
       if (isMLEForApi === true) {
@@ -313,7 +313,7 @@
       var returnType = PostCustomerRequest;
 
       //check isMLE for an api method 'this.postCustomer'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postCustomer');
 
       if (isMLEForApi === true) {

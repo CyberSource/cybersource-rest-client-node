@@ -93,30 +93,37 @@
   }
 
   /**
+   * Type of tax
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**
+   * Tax amount
    * @member {String} amount
    */
   exports.prototype['amount'] = undefined;
   /**
+   * Tax rate
    * @member {String} rate
    */
   exports.prototype['rate'] = undefined;
   /**
+   * Tax code
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
   /**
+   * Tax Identifier
    * @member {String} taxId
    */
   exports.prototype['taxId'] = undefined;
   /**
+   * Indicates if tax applied
    * @member {Boolean} applied
    */
   exports.prototype['applied'] = undefined;
   /**
+   * Tax exemption code
    * @member {String} exemptionCode
    */
   exports.prototype['exemptionCode'] = undefined;

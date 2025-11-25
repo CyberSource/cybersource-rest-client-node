@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property invoiceDetails (base name: "invoiceDetails")', function() {
+      // uncomment below and update the code to test the property invoiceDetails
+      //var instane = new CyberSource.Upv1capturecontextsDataOrderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -62,11 +62,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('skippedPaymentsCount')) {
-        obj['skippedPaymentsCount'] = ApiClient.convertToType(data['skippedPaymentsCount'], 'String');
+      if (data.hasOwnProperty('missedPaymentsCount')) {
+        obj['missedPaymentsCount'] = ApiClient.convertToType(data['missedPaymentsCount'], 'String');
       }
-      if (data.hasOwnProperty('skippedPaymentsTotalAmount')) {
-        obj['skippedPaymentsTotalAmount'] = ApiClient.convertToType(data['skippedPaymentsTotalAmount'], 'String');
+      if (data.hasOwnProperty('missedPaymentsTotalAmount')) {
+        obj['missedPaymentsTotalAmount'] = ApiClient.convertToType(data['missedPaymentsTotalAmount'], 'String');
       }
     }
     return obj;
@@ -74,14 +74,14 @@
 
   /**
    * Number of payments that should have occurred while the subscription was in a suspended status. 
-   * @member {String} skippedPaymentsCount
+   * @member {String} missedPaymentsCount
    */
-  exports.prototype['skippedPaymentsCount'] = undefined;
+  exports.prototype['missedPaymentsCount'] = undefined;
   /**
-   * Total amount that will be charged upon reactivation if `processSkippedPayments` is set to `true`. 
-   * @member {String} skippedPaymentsTotalAmount
+   * Total amount that will be charged upon reactivation if `processMissedPayments` is set to `true`. 
+   * @member {String} missedPaymentsTotalAmount
    */
-  exports.prototype['skippedPaymentsTotalAmount'] = undefined;
+  exports.prototype['missedPaymentsTotalAmount'] = undefined;
 
 
 

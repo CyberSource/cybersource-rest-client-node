@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2customersEmbeddedDefaultPaymentInstrument'], factory);
+    define(['ApiClient', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2customersEmbeddedDefaultPaymentInstrument'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentInstrumentListEmbedded = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2customersEmbeddedDefaultPaymentInstrument);
+    root.CyberSource.PaymentInstrumentListEmbedded = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument);
   }
-}(this, function(ApiClient, Tmsv2customersEmbeddedDefaultPaymentInstrument) {
+}(this, function(ApiClient, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument) {
   'use strict';
 
 
@@ -63,14 +63,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentInstruments')) {
-        obj['paymentInstruments'] = ApiClient.convertToType(data['paymentInstruments'], [Tmsv2customersEmbeddedDefaultPaymentInstrument]);
+        obj['paymentInstruments'] = ApiClient.convertToType(data['paymentInstruments'], [Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/Tmsv2customersEmbeddedDefaultPaymentInstrument>} paymentInstruments
+   * @member {Array.<module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument>} paymentInstruments
    */
   exports.prototype['paymentInstruments'] = undefined;
 

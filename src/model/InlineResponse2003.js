@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2003IntegrationInformation', 'model/InlineResponse2013ProductInformationSetups'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2003IntegrationInformation'), require('./InlineResponse2013ProductInformationSetups'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2003IntegrationInformation, root.CyberSource.InlineResponse2013ProductInformationSetups);
+    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2003IntegrationInformation, InlineResponse2013ProductInformationSetups) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -54,6 +54,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -67,59 +72,94 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('registrationInformation')) {
-        obj['registrationInformation'] = Boardingv1registrationsRegistrationInformation.constructFromObject(data['registrationInformation']);
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('integrationInformation')) {
-        obj['integrationInformation'] = InlineResponse2003IntegrationInformation.constructFromObject(data['integrationInformation']);
+      if (data.hasOwnProperty('fieldType')) {
+        obj['fieldType'] = ApiClient.convertToType(data['fieldType'], 'String');
       }
-      if (data.hasOwnProperty('organizationInformation')) {
-        obj['organizationInformation'] = Boardingv1registrationsOrganizationInformation.constructFromObject(data['organizationInformation']);
+      if (data.hasOwnProperty('label')) {
+        obj['label'] = ApiClient.convertToType(data['label'], 'String');
       }
-      if (data.hasOwnProperty('productInformation')) {
-        obj['productInformation'] = Boardingv1registrationsProductInformation.constructFromObject(data['productInformation']);
+      if (data.hasOwnProperty('customerVisible')) {
+        obj['customerVisible'] = ApiClient.convertToType(data['customerVisible'], 'Boolean');
       }
-      if (data.hasOwnProperty('productInformationSetups')) {
-        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2013ProductInformationSetups]);
+      if (data.hasOwnProperty('textMinLength')) {
+        obj['textMinLength'] = ApiClient.convertToType(data['textMinLength'], 'Number');
       }
-      if (data.hasOwnProperty('documentInformation')) {
-        obj['documentInformation'] = Boardingv1registrationsDocumentInformation.constructFromObject(data['documentInformation']);
+      if (data.hasOwnProperty('textMaxLength')) {
+        obj['textMaxLength'] = ApiClient.convertToType(data['textMaxLength'], 'Number');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
+      if (data.hasOwnProperty('possibleValues')) {
+        obj['possibleValues'] = ApiClient.convertToType(data['possibleValues'], 'String');
+      }
+      if (data.hasOwnProperty('textDefaultValue')) {
+        obj['textDefaultValue'] = ApiClient.convertToType(data['textDefaultValue'], 'String');
+      }
+      if (data.hasOwnProperty('merchantId')) {
+        obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
+      }
+      if (data.hasOwnProperty('referenceType')) {
+        obj['referenceType'] = ApiClient.convertToType(data['referenceType'], 'String');
+      }
+      if (data.hasOwnProperty('readOnly')) {
+        obj['readOnly'] = ApiClient.convertToType(data['readOnly'], 'Boolean');
+      }
+      if (data.hasOwnProperty('merchantDefinedDataIndex')) {
+        obj['merchantDefinedDataIndex'] = ApiClient.convertToType(data['merchantDefinedDataIndex'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Boardingv1registrationsRegistrationInformation} registrationInformation
+   * @member {Number} id
    */
-  exports.prototype['registrationInformation'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * @member {module:model/InlineResponse2003IntegrationInformation} integrationInformation
+   * @member {String} fieldType
    */
-  exports.prototype['integrationInformation'] = undefined;
+  exports.prototype['fieldType'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformation} organizationInformation
+   * @member {String} label
    */
-  exports.prototype['organizationInformation'] = undefined;
+  exports.prototype['label'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsProductInformation} productInformation
+   * @member {Boolean} customerVisible
    */
-  exports.prototype['productInformation'] = undefined;
+  exports.prototype['customerVisible'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2013ProductInformationSetups>} productInformationSetups
+   * @member {Number} textMinLength
    */
-  exports.prototype['productInformationSetups'] = undefined;
+  exports.prototype['textMinLength'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsDocumentInformation} documentInformation
+   * @member {Number} textMaxLength
    */
-  exports.prototype['documentInformation'] = undefined;
+  exports.prototype['textMaxLength'] = undefined;
   /**
-   * @member {Object.<String, Array.<Object>>} details
+   * @member {String} possibleValues
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['possibleValues'] = undefined;
+  /**
+   * @member {String} textDefaultValue
+   */
+  exports.prototype['textDefaultValue'] = undefined;
+  /**
+   * @member {String} merchantId
+   */
+  exports.prototype['merchantId'] = undefined;
+  /**
+   * @member {String} referenceType
+   */
+  exports.prototype['referenceType'] = undefined;
+  /**
+   * @member {Boolean} readOnly
+   */
+  exports.prototype['readOnly'] = undefined;
+  /**
+   * @member {Number} merchantDefinedDataIndex
+   */
+  exports.prototype['merchantDefinedDataIndex'] = undefined;
 
 
 

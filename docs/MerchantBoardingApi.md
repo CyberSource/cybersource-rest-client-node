@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getRegistration"></a>
 # **getRegistration**
-> InlineResponse2003 getRegistration(registrationId)
+> InlineResponse2004 getRegistration(registrationId)
 
 Gets all the information on a boarding registration
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

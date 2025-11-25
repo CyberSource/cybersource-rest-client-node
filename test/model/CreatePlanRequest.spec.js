@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(CyberSource.CreatePlanRequest);
     });
 
-    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
-      // uncomment below and update the code to test the property clientReferenceInformation
-      //var instane = new CyberSource.CreatePlanRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property planInformation (base name: "planInformation")', function() {
       // uncomment below and update the code to test the property planInformation
       //var instane = new CyberSource.CreatePlanRequest();

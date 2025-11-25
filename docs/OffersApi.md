@@ -71,7 +71,7 @@ No authorization required
 
 <a name="getOffer"></a>
 # **getOffer**
-> InlineResponse20014 getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id)
+> InlineResponse20015 getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id)
 
 Retrieve an Offer
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
