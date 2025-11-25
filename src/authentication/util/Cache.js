@@ -313,3 +313,19 @@ exports.fetchCachedP12FromFile = function(filePath, password, logger, cacheKey) 
         ApiException.AuthException(`${error.message}. ${Constants.INCORRECT_KEY_PASS}`);
     }
 };
+
+exports.addPublicKeyToCache = function(runEnvironment, keyId, publicKey) {
+    const cacheKey = Constants.PUBLIC_KEY_CACHE_IDENTIFIER + "_" + runEnvironment + "_" + keyId;
+    cache.put(cacheKey, publicKey);
+};
+
+exports.getPublicKeyFromCache = function(runEnvironment, keyId) {
+    const cacheKey = Constants.PUBLIC_KEY_CACHE_IDENTIFIER + "_" + runEnvironment + "_" + keyId;
+    
+    if (cache.size() === 0 || !cache.get(cacheKey)) {
+        throw new Error("Public key not found in cache for [" + runEnvironment + ", " + keyId + "]");
+    }
+    
+    return cache.get(cacheKey);
+};
+
