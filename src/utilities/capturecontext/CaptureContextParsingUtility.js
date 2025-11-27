@@ -12,7 +12,8 @@ const PublicKeyApiController = require('./PublicKeyApiController');
  * @param {boolean} verifyJwt - Whether to verify the JWT signature
  * @param {Function} callback - Callback function (error, result)
  */
-function parseCaptureContextResponse(jwtValue, merchantConfig, verifyJwt, callback) {
+function parseCaptureContextResponse(jwtValue, merchantConfig, callback) {
+    const verifyJwt = true;
     if (typeof callback !== 'function') {
         throw new Error('callback parameter must be a function');
     }
