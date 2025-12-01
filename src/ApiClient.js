@@ -844,7 +844,6 @@ const agentPool = new Map();
 
     axiosConfig.url = requestTarget;
 
-
     axios.request(axiosConfig).then(function(response) {
       // Properly wait for the decryption to complete before proceeding
       return MLEUtility.checkAndDecryptEncryptedResponse(response.data, _this.merchantConfig)
@@ -853,47 +852,47 @@ const agentPool = new Map();
           
           if (callback) {
             var data = _this.deserialize(response, returnType);
-            _this.logger.debug(`Response data: ${JSON.stringify(data)}`);
-
             response = _this.translateResponse(response);
 
             callback(null, data, response);
           }
-          
-          // Return data for Promise-based usage
-          return {
-            data: data,
-            response: response
-          };
         })
         .catch(function(error) {
-          
           // Create a simple error object with descriptive message
           const errorMsg = `Failed to decrypt response: ${error.message}`;
           
           if (callback) {
             callback(new Error(errorMsg), null, null);
           }
-          
-          // Reject the promise for Promise-based usage
-          return Promise.reject(new Error(errorMsg));
         });
     }).catch(function(error, response) {
       source.cancel('Stream ended.');
-      var userError = {};
-      if (error.code && error.code == "ECONNREFUSED") {
-        userError = _this.translateProxyIssue(error);
-      } else if (error.code && error.code == "ERR_BAD_REQUEST") {
-        userError = _this.translate404Error(error);
-        response = userError.response;
-      } else if (error.code && error.code == "ETIMEDOUT") {
-        userError = _this.translateProxyIssue(error);
-      } else {
-        userError = _this.translateError(error);
-        response = userError.response;
-      }
+      return MLEUtility.checkAndDecryptEncryptedResponse(error.response.data, _this.merchantConfig)
+        .then(function(decryptedData) {
+          error.response.data = decryptedData;
+          var userError = {};
+          if (error.code && error.code == "ECONNREFUSED") {
+            userError = _this.translateProxyIssue(error);
+          } else if (error.code && error.code == "ERR_BAD_REQUEST") {
+            userError = _this.translate404Error(error);
+            response = userError.response;
+          } else if (error.code && error.code == "ETIMEDOUT") {
+            userError = _this.translateProxyIssue(error);
+          } else {
+            userError = _this.translateError(error);
+            response = userError.response;
+          }
 
-      callback(userError, null, response);
+          callback(userError, null, response);
+        })
+        .catch(function(error) {
+          // Create a simple error object with descriptive message in case decryption of error message has failed.
+          const errorMsg = `Failed to decrypt error response: ${error.message}`;
+          
+          if (callback) {
+            callback(new Error(errorMsg), null, null);
+          }
+        });
     });
 
   };
