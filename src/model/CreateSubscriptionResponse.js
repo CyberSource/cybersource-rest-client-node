@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateSubscriptionResponseLinks', 'model/CreateSubscriptionResponseSubscriptionInformation'], factory);
+    define(['ApiClient', 'model/CreateSubscriptionResponseLinks', 'model/CreateSubscriptionResponseSubscriptionInformation', 'model/GetAllSubscriptionsResponseClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CreateSubscriptionResponseLinks'), require('./CreateSubscriptionResponseSubscriptionInformation'));
+    module.exports = factory(require('../ApiClient'), require('./CreateSubscriptionResponseLinks'), require('./CreateSubscriptionResponseSubscriptionInformation'), require('./GetAllSubscriptionsResponseClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateSubscriptionResponse = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSubscriptionResponseLinks, root.CyberSource.CreateSubscriptionResponseSubscriptionInformation);
+    root.CyberSource.CreateSubscriptionResponse = factory(root.CyberSource.ApiClient, root.CyberSource.CreateSubscriptionResponseLinks, root.CyberSource.CreateSubscriptionResponseSubscriptionInformation, root.CyberSource.GetAllSubscriptionsResponseClientReferenceInformation);
   }
-}(this, function(ApiClient, CreateSubscriptionResponseLinks, CreateSubscriptionResponseSubscriptionInformation) {
+}(this, function(ApiClient, CreateSubscriptionResponseLinks, CreateSubscriptionResponseSubscriptionInformation, GetAllSubscriptionsResponseClientReferenceInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('subscriptionInformation')) {
         obj['subscriptionInformation'] = CreateSubscriptionResponseSubscriptionInformation.constructFromObject(data['subscriptionInformation']);
       }
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = GetAllSubscriptionsResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      }
     }
     return obj;
   }
@@ -107,6 +111,10 @@
    * @member {module:model/CreateSubscriptionResponseSubscriptionInformation} subscriptionInformation
    */
   exports.prototype['subscriptionInformation'] = undefined;
+  /**
+   * @member {module:model/GetAllSubscriptionsResponseClientReferenceInformation} clientReferenceInformation
+   */
+  exports.prototype['clientReferenceInformation'] = undefined;
 
 
 

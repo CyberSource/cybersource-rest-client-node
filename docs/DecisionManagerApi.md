@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="actionDecisionManagerCase"></a>
 # **actionDecisionManagerCase**
-> InlineResponse2001 actionDecisionManagerCase(id, caseManagementActionsRequest)
+> InlineResponse2002 actionDecisionManagerCase(id, caseManagementActionsRequest)
 
 Take action on a DM post-transactional case
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

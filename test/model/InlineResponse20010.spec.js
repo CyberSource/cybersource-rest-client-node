@@ -56,14 +56,8 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse20010);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new CyberSource.InlineResponse20010();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property _object (base name: "object")', function() {
-      // uncomment below and update the code to test the property _object
+    it('should have the property totalCount (base name: "totalCount")', function() {
+      // uncomment below and update the code to test the property totalCount
       //var instane = new CyberSource.InlineResponse20010();
       //expect(instance).to.be();
     });
@@ -80,20 +74,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sort (base name: "sort")', function() {
+      // uncomment below and update the code to test the property sort
+      //var instane = new CyberSource.InlineResponse20010();
+      //expect(instance).to.be();
+    });
+
     it('should have the property count (base name: "count")', function() {
       // uncomment below and update the code to test the property count
       //var instane = new CyberSource.InlineResponse20010();
       //expect(instance).to.be();
     });
 
-    it('should have the property total (base name: "total")', function() {
-      // uncomment below and update the code to test the property total
-      //var instane = new CyberSource.InlineResponse20010();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property embedded (base name: "_embedded")', function() {
-      // uncomment below and update the code to test the property embedded
+    it('should have the property devices (base name: "devices")', function() {
+      // uncomment below and update the code to test the property devices
       //var instane = new CyberSource.InlineResponse20010();
       //expect(instance).to.be();
     });

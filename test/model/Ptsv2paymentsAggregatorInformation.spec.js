@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property serviceProvidername (base name: "serviceProvidername")', function() {
+      // uncomment below and update the code to test the property serviceProvidername
+      //var instane = new CyberSource.Ptsv2paymentsAggregatorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,18 +69,28 @@
       if (data.hasOwnProperty('messageCategory')) {
         obj['messageCategory'] = ApiClient.convertToType(data['messageCategory'], 'String');
       }
+      if (data.hasOwnProperty('acsWindowSize')) {
+        obj['acsWindowSize'] = ApiClient.convertToType(data['acsWindowSize'], 'String');
+      }
     }
     return obj;
   }
 
   /**
+   * The challenge code 
    * @member {String} challengeCode
    */
   exports.prototype['challengeCode'] = undefined;
   /**
+   * The message category 
    * @member {String} messageCategory
    */
   exports.prototype['messageCategory'] = undefined;
+  /**
+   * The acs window size 
+   * @member {String} acsWindowSize
+   */
+  exports.prototype['acsWindowSize'] = undefined;
 
 
 

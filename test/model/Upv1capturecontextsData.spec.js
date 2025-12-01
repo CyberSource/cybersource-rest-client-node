@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property deviceInformation (base name: "deviceInformation")', function() {
+      // uncomment below and update the code to test the property deviceInformation
+      //var instane = new CyberSource.Upv1capturecontextsData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentInformation (base name: "paymentInformation")', function() {
+      // uncomment below and update the code to test the property paymentInformation
+      //var instane = new CyberSource.Upv1capturecontextsData();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

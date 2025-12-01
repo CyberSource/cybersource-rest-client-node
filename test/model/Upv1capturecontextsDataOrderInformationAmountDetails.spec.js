@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property taxDetails (base name: "taxDetails")', function() {
+      // uncomment below and update the code to test the property taxDetails
+      //var instane = new CyberSource.Upv1capturecontextsDataOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

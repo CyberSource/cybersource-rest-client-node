@@ -62,7 +62,7 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property solutionId (base name: "SolutionId")', function() {
+    it('should have the property solutionId (base name: "solutionId")', function() {
       // uncomment below and update the code to test the property solutionId
       //var instane = new CyberSource.Upv1capturecontextsDataClientReferenceInformationPartner();
       //expect(instance).to.be();

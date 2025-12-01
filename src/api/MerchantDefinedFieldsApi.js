@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2002', 'model/InlineResponse4041', 'model/MerchantDefinedFieldCore', 'model/MerchantDefinedFieldDefinitionRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2003', 'model/InlineResponse4041', 'model/MerchantDefinedFieldCore', 'model/MerchantDefinedFieldDefinitionRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse4041'), require('../model/MerchantDefinedFieldCore'), require('../model/MerchantDefinedFieldDefinitionRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2003'), require('../model/InlineResponse4041'), require('../model/MerchantDefinedFieldCore'), require('../model/MerchantDefinedFieldDefinitionRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantDefinedFieldsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse4041, root.CyberSource.MerchantDefinedFieldCore, root.CyberSource.MerchantDefinedFieldDefinitionRequest);
+    root.CyberSource.MerchantDefinedFieldsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse4041, root.CyberSource.MerchantDefinedFieldCore, root.CyberSource.MerchantDefinedFieldDefinitionRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2002, InlineResponse4041, MerchantDefinedFieldCore, MerchantDefinedFieldDefinitionRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2003, InlineResponse4041, MerchantDefinedFieldCore, MerchantDefinedFieldDefinitionRequest) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createMerchantDefinedFieldDefinition operation.
      * @callback module:api/MerchantDefinedFieldsApi~createMerchantDefinedFieldDefinitionCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2002>} data The data returned by the service call.
+     * @param {Array.<module:model/InlineResponse2003>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * @param {module:model/String} referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation
      * @param {module:model/MerchantDefinedFieldDefinitionRequest} merchantDefinedFieldDefinitionRequest 
      * @param {module:api/MerchantDefinedFieldsApi~createMerchantDefinedFieldDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2002>}
+     * data is of type: {@link Array.<module:model/InlineResponse2003>}
      */
     this.createMerchantDefinedFieldDefinition = function(referenceType, merchantDefinedFieldDefinitionRequest, callback) {
       var postBody = merchantDefinedFieldDefinitionRequest;
@@ -97,7 +97,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [InlineResponse2002];
+      var returnType = [InlineResponse2003];
 
       //check isMLE for an api method 'this.createMerchantDefinedFieldDefinition'
       var inboundMLEStatus = 'false';
@@ -194,7 +194,7 @@
      * Callback function to receive the result of the getMerchantDefinedFieldsDefinitions operation.
      * @callback module:api/MerchantDefinedFieldsApi~getMerchantDefinedFieldsDefinitionsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2002>} data The data returned by the service call.
+     * @param {Array.<module:model/InlineResponse2003>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -202,7 +202,7 @@
      * Get all merchant defined fields for a given reference type
      * @param {module:model/String} referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation
      * @param {module:api/MerchantDefinedFieldsApi~getMerchantDefinedFieldsDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2002>}
+     * data is of type: {@link Array.<module:model/InlineResponse2003>}
      */
     this.getMerchantDefinedFieldsDefinitions = function(referenceType, callback) {
       var postBody = null;
@@ -231,7 +231,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = [InlineResponse2002];
+      var returnType = [InlineResponse2003];
 
       //check isMLE for an api method 'this.getMerchantDefinedFieldsDefinitions'
       var inboundMLEStatus = 'false';
@@ -258,7 +258,7 @@
      * Callback function to receive the result of the putMerchantDefinedFieldsDefinitions operation.
      * @callback module:api/MerchantDefinedFieldsApi~putMerchantDefinedFieldsDefinitionsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2002>} data The data returned by the service call.
+     * @param {Array.<module:model/InlineResponse2003>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -268,7 +268,7 @@
      * @param {Number} id 
      * @param {module:model/MerchantDefinedFieldCore} merchantDefinedFieldCore 
      * @param {module:api/MerchantDefinedFieldsApi~putMerchantDefinedFieldsDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2002>}
+     * data is of type: {@link Array.<module:model/InlineResponse2003>}
      */
     this.putMerchantDefinedFieldsDefinitions = function(referenceType, id, merchantDefinedFieldCore, callback) {
       var postBody = merchantDefinedFieldCore;
@@ -309,7 +309,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = [InlineResponse2002];
+      var returnType = [InlineResponse2003];
 
       //check isMLE for an api method 'this.putMerchantDefinedFieldsDefinitions'
       var inboundMLEStatus = 'false';

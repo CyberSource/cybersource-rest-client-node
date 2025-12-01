@@ -62,6 +62,48 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property alternateName (base name: "alternateName")', function() {
+      // uncomment below and update the code to test the property alternateName
+      //var instane = new CyberSource.Upv1capturecontextsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property locality (base name: "locality")', function() {
+      // uncomment below and update the code to test the property locality
+      //var instane = new CyberSource.Upv1capturecontextsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property phone (base name: "phone")', function() {
+      // uncomment below and update the code to test the property phone
+      //var instane = new CyberSource.Upv1capturecontextsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
+      //var instane = new CyberSource.Upv1capturecontextsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postalCode (base name: "postalCode")', function() {
+      // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Upv1capturecontextsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property administrativeArea (base name: "administrativeArea")', function() {
+      // uncomment below and update the code to test the property administrativeArea
+      //var instane = new CyberSource.Upv1capturecontextsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property address1 (base name: "address1")', function() {
+      // uncomment below and update the code to test the property address1
+      //var instane = new CyberSource.Upv1capturecontextsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

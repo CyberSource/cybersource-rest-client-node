@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse202', 'model/InlineResponse4011'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse202', 'model/InlineResponse4011'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse20010'), require('../model/InlineResponse20011'), require('../model/InlineResponse20012'), require('../model/InlineResponse202'), require('../model/InlineResponse4011'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse20011'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse202'), require('../model/InlineResponse4011'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse20010, root.CyberSource.InlineResponse20011, root.CyberSource.InlineResponse20012, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse4011);
+    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse20011, root.CyberSource.InlineResponse20012, root.CyberSource.InlineResponse20013, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse4011);
   }
-}(this, function(MLEUtility, ApiClient, Body, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse202, InlineResponse4011) {
+}(this, function(MLEUtility, ApiClient, Body, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse202, InlineResponse4011) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getBatchReport operation.
      * @callback module:api/BatchesApi~getBatchReportCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20012} data The data returned by the service call.
+     * @param {module:model/InlineResponse20013} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * **Get Batch Report**<br>This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates & card type. - Response record information including response code, reason, token ids, masked card number, expiration dates & card type. 
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchReportCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20012}
+     * data is of type: {@link module:model/InlineResponse20013}
      */
     this.getBatchReport = function(batchId, callback) {
       var postBody = null;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20012;
+      var returnType = InlineResponse20013;
 
       //check isMLE for an api method 'this.getBatchReport'
       var inboundMLEStatus = 'false';
@@ -118,7 +118,7 @@
      * Callback function to receive the result of the getBatchStatus operation.
      * @callback module:api/BatchesApi~getBatchStatusCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20011} data The data returned by the service call.
+     * @param {module:model/InlineResponse20012} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -127,7 +127,7 @@
      * **Get Batch Status**<br>This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20011}
+     * data is of type: {@link module:model/InlineResponse20012}
      */
     this.getBatchStatus = function(batchId, callback) {
       var postBody = null;
@@ -156,7 +156,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20011;
+      var returnType = InlineResponse20012;
 
       //check isMLE for an api method 'this.getBatchStatus'
       var inboundMLEStatus = 'false';
@@ -183,7 +183,7 @@
      * Callback function to receive the result of the getBatchesList operation.
      * @callback module:api/BatchesApi~getBatchesListCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20010} data The data returned by the service call.
+     * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -196,7 +196,7 @@
      * @param {String} opts.fromDate ISO-8601 format: yyyyMMddTHHmmssZ
      * @param {String} opts.toDate ISO-8601 format: yyyyMMddTHHmmssZ
      * @param {module:api/BatchesApi~getBatchesListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20010}
+     * data is of type: {@link module:model/InlineResponse20011}
      */
     this.getBatchesList = function(opts, callback) {
       opts = opts || {};
@@ -224,7 +224,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20010;
+      var returnType = InlineResponse20011;
 
       //check isMLE for an api method 'this.getBatchesList'
       var inboundMLEStatus = 'false';

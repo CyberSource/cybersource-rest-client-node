@@ -176,6 +176,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property batchUpload (base name: "batchUpload")', function() {
+      // uncomment below and update the code to test the property batchUpload
+      //var instane = new CyberSource.PaymentsProducts();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

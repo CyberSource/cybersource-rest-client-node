@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/InlineResponse2002Embedded'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2002Embedded'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse2002 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002Embedded);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, InlineResponse2002Embedded) {
   'use strict';
 
 
@@ -51,14 +51,6 @@
 
 
 
-
-
-
-
-
-
-
-
   };
 
   /**
@@ -73,93 +65,40 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('fieldType')) {
-        obj['fieldType'] = ApiClient.convertToType(data['fieldType'], 'String');
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
-      if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('customerVisible')) {
-        obj['customerVisible'] = ApiClient.convertToType(data['customerVisible'], 'Boolean');
-      }
-      if (data.hasOwnProperty('textMinLength')) {
-        obj['textMinLength'] = ApiClient.convertToType(data['textMinLength'], 'Number');
-      }
-      if (data.hasOwnProperty('textMaxLength')) {
-        obj['textMaxLength'] = ApiClient.convertToType(data['textMaxLength'], 'Number');
-      }
-      if (data.hasOwnProperty('possibleValues')) {
-        obj['possibleValues'] = ApiClient.convertToType(data['possibleValues'], 'String');
-      }
-      if (data.hasOwnProperty('textDefaultValue')) {
-        obj['textDefaultValue'] = ApiClient.convertToType(data['textDefaultValue'], 'String');
-      }
-      if (data.hasOwnProperty('merchantId')) {
-        obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
-      }
-      if (data.hasOwnProperty('referenceType')) {
-        obj['referenceType'] = ApiClient.convertToType(data['referenceType'], 'String');
-      }
-      if (data.hasOwnProperty('readOnly')) {
-        obj['readOnly'] = ApiClient.convertToType(data['readOnly'], 'Boolean');
-      }
-      if (data.hasOwnProperty('merchantDefinedDataIndex')) {
-        obj['merchantDefinedDataIndex'] = ApiClient.convertToType(data['merchantDefinedDataIndex'], 'Number');
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = InlineResponse2002Embedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} id
+   * UUID uniquely generated for this comments. 
+   * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {String} fieldType
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['fieldType'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * @member {String} label
+   * The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED` 
+   * @member {String} status
    */
-  exports.prototype['label'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * @member {Boolean} customerVisible
+   * @member {module:model/InlineResponse2002Embedded} _embedded
    */
-  exports.prototype['customerVisible'] = undefined;
-  /**
-   * @member {Number} textMinLength
-   */
-  exports.prototype['textMinLength'] = undefined;
-  /**
-   * @member {Number} textMaxLength
-   */
-  exports.prototype['textMaxLength'] = undefined;
-  /**
-   * @member {String} possibleValues
-   */
-  exports.prototype['possibleValues'] = undefined;
-  /**
-   * @member {String} textDefaultValue
-   */
-  exports.prototype['textDefaultValue'] = undefined;
-  /**
-   * @member {String} merchantId
-   */
-  exports.prototype['merchantId'] = undefined;
-  /**
-   * @member {String} referenceType
-   */
-  exports.prototype['referenceType'] = undefined;
-  /**
-   * @member {Boolean} readOnly
-   */
-  exports.prototype['readOnly'] = undefined;
-  /**
-   * @member {Number} merchantDefinedDataIndex
-   */
-  exports.prototype['merchantDefinedDataIndex'] = undefined;
+  exports.prototype['_embedded'] = undefined;
 
 
 

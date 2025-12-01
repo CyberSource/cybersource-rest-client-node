@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acsWindowSize (base name: "acsWindowSize")', function() {
+      // uncomment below and update the code to test the property acsWindowSize
+      //var instane = new CyberSource.Upv1capturecontextsDataConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -50,6 +50,8 @@
 
 
 
+
+
   };
 
   /**
@@ -72,6 +74,12 @@
       if (data.hasOwnProperty('companyTaxId')) {
         obj['companyTaxId'] = ApiClient.convertToType(data['companyTaxId'], 'String');
       }
+      if (data.hasOwnProperty('dateOfBirth')) {
+        obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
+      }
+      if (data.hasOwnProperty('language')) {
+        obj['language'] = ApiClient.convertToType(data['language'], 'String');
+      }
     }
     return obj;
   }
@@ -81,13 +89,25 @@
    */
   exports.prototype['personalIdentification'] = undefined;
   /**
+   * The Merchant Customer ID 
    * @member {String} merchantCustomerId
    */
   exports.prototype['merchantCustomerId'] = undefined;
   /**
+   * The Company Tax ID 
    * @member {String} companyTaxId
    */
   exports.prototype['companyTaxId'] = undefined;
+  /**
+   * The date of birth 
+   * @member {String} dateOfBirth
+   */
+  exports.prototype['dateOfBirth'] = undefined;
+  /**
+   * The preferred language 
+   * @member {String} language
+   */
+  exports.prototype['language'] = undefined;
 
 
 

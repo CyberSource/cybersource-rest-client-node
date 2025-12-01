@@ -48,6 +48,13 @@
     var _this = this;
 
 
+
+
+
+
+
+
+
   };
 
   /**
@@ -64,6 +71,27 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('alternateName')) {
+        obj['alternateName'] = ApiClient.convertToType(data['alternateName'], 'String');
+      }
+      if (data.hasOwnProperty('locality')) {
+        obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
+      }
+      if (data.hasOwnProperty('phone')) {
+        obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
+      }
+      if (data.hasOwnProperty('country')) {
+        obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
+      if (data.hasOwnProperty('administrativeArea')) {
+        obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
+      }
+      if (data.hasOwnProperty('address1')) {
+        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +101,41 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * The alternate name of the merchant
+   * @member {String} alternateName
+   */
+  exports.prototype['alternateName'] = undefined;
+  /**
+   * The locality of the merchant
+   * @member {String} locality
+   */
+  exports.prototype['locality'] = undefined;
+  /**
+   * The phone number of the merchant
+   * @member {String} phone
+   */
+  exports.prototype['phone'] = undefined;
+  /**
+   * The country code of the merchant
+   * @member {String} country
+   */
+  exports.prototype['country'] = undefined;
+  /**
+   * The postal code of the merchant
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
+  /**
+   * The administrative area of the merchant
+   * @member {String} administrativeArea
+   */
+  exports.prototype['administrativeArea'] = undefined;
+  /**
+   * The first line of the merchant's address
+   * @member {String} address1
+   */
+  exports.prototype['address1'] = undefined;
 
 
 

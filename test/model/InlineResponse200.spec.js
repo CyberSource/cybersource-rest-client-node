@@ -56,26 +56,8 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse200);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new CyberSource.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new CyberSource.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property provider (base name: "provider")', function() {
-      // uncomment below and update the code to test the property provider
-      //var instane = new CyberSource.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property content (base name: "content")', function() {
-      // uncomment below and update the code to test the property content
+    it('should have the property responses (base name: "responses")', function() {
+      // uncomment below and update the code to test the property responses
       //var instane = new CyberSource.InlineResponse200();
       //expect(instance).to.be();
     });

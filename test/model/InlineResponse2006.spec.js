@@ -122,12 +122,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedOn (base name: "updatedOn")', function() {
-      // uncomment below and update the code to test the property updatedOn
-      //var instane = new CyberSource.InlineResponse2006();
-      //expect(instance).to.be();
-    });
-
     it('should have the property notificationScope (base name: "notificationScope")', function() {
       // uncomment below and update the code to test the property notificationScope
       //var instane = new CyberSource.InlineResponse2006();

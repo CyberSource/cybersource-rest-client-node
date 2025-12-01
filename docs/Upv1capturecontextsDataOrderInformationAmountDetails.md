@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **subTotalAmount** | **String** | This field defines the sub total amount applicable to the order.  | [optional] 
 **serviceFeeAmount** | **String** | This field defines the service fee amount applicable to the order.  | [optional] 
 **taxAmount** | **String** | This field defines the tax amount applicable to the order.  | [optional] 
+**taxDetails** | [**Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails**](Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails.md) |  | [optional] 
 
 

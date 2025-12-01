@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge'], factory);
+    define(['ApiClient', 'model/Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge', 'model/Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge'));
+    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge'), require('./Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Upv1capturecontextsDataOrderInformationAmountDetails = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge);
+    root.CyberSource.Upv1capturecontextsDataOrderInformationAmountDetails = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge, root.CyberSource.Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails);
   }
-}(this, function(ApiClient, Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge) {
+}(this, function(ApiClient, Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge, Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -88,6 +89,9 @@
       if (data.hasOwnProperty('taxAmount')) {
         obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'String');
       }
+      if (data.hasOwnProperty('taxDetails')) {
+        obj['taxDetails'] = Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails.constructFromObject(data['taxDetails']);
+      }
     }
     return obj;
   }
@@ -126,6 +130,10 @@
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;
+  /**
+   * @member {module:model/Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails} taxDetails
+   */
+  exports.prototype['taxDetails'] = undefined;
 
 
 
