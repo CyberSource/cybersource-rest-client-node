@@ -323,7 +323,7 @@
       var returnType = PatchInstrumentIdentifierRequest;
 
       //check isMLE for an api method 'this.patchInstrumentIdentifier'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'patchInstrumentIdentifier');
 
       if (isMLEForApi === true) {
@@ -394,7 +394,7 @@
       var returnType = PostInstrumentIdentifierRequest;
 
       //check isMLE for an api method 'this.postInstrumentIdentifier'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postInstrumentIdentifier');
 
       if (isMLEForApi === true) {
@@ -469,7 +469,7 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.postInstrumentIdentifierEnrollment'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postInstrumentIdentifierEnrollment');
 
       if (isMLEForApi === true) {

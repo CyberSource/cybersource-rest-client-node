@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="postSearchQuery"></a>
 # **postSearchQuery**
-> InlineResponse2007 postSearchQuery(postDeviceSearchRequest)
+> InlineResponse2008 postSearchQuery(postDeviceSearchRequest)
 
 Retrieve List of Devices for a given search query V2
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 
 <a name="postSearchQueryV3"></a>
 # **postSearchQueryV3**
-> InlineResponse2009 postSearchQueryV3(postDeviceSearchRequestV3)
+> InlineResponse20010 postSearchQueryV3(postDeviceSearchRequestV3)
 
 Retrieve List of Devices for a given search query
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 

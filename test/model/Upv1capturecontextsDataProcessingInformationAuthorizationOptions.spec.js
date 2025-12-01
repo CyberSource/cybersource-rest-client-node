@@ -62,6 +62,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authIndicator (base name: "authIndicator")', function() {
+      // uncomment below and update the code to test the property authIndicator
+      //var instane = new CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ignoreCvResult (base name: "ignoreCvResult")', function() {
+      // uncomment below and update the code to test the property ignoreCvResult
+      //var instane = new CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ignoreAvsResult (base name: "ignoreAvsResult")', function() {
+      // uncomment below and update the code to test the property ignoreAvsResult
+      //var instane = new CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property initiator (base name: "initiator")', function() {
       // uncomment below and update the code to test the property initiator
       //var instane = new CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptions();
@@ -70,6 +88,18 @@
 
     it('should have the property businessApplicationId (base name: "businessApplicationId")', function() {
       // uncomment below and update the code to test the property businessApplicationId
+      //var instane = new CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property commerceIndicator (base name: "commerceIndicator")', function() {
+      // uncomment below and update the code to test the property commerceIndicator
+      //var instane = new CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processingInstruction (base name: "processingInstruction")', function() {
+      // uncomment below and update the code to test the property processingInstruction
       //var instane = new CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptions();
       //expect(instance).to.be();
     });

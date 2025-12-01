@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2003', 'model/InlineResponse2013', 'model/InlineResponse4007', 'model/InlineResponse4042', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2004', 'model/InlineResponse2013', 'model/InlineResponse4007', 'model/InlineResponse4042', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2003'), require('../model/InlineResponse2013'), require('../model/InlineResponse4007'), require('../model/InlineResponse4042'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse2013'), require('../model/InlineResponse4007'), require('../model/InlineResponse4042'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4042, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
+    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4042, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2003, InlineResponse2013, InlineResponse4007, InlineResponse4042, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2004, InlineResponse2013, InlineResponse4007, InlineResponse4042, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getRegistration operation.
      * @callback module:api/MerchantBoardingApi~getRegistrationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
+     * @param {module:model/InlineResponse2004} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * This end point will get all information of a boarding registration 
      * @param {String} registrationId Identifies the boarding registration to be updated
      * @param {module:api/MerchantBoardingApi~getRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * data is of type: {@link module:model/InlineResponse2004}
      */
     this.getRegistration = function(registrationId, callback) {
       var postBody = null;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2003;
+      var returnType = InlineResponse2004;
 
       //check isMLE for an api method 'this.getRegistration'
       var inboundMLEStatus = 'false';

@@ -74,6 +74,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dateOfBirth (base name: "dateOfBirth")', function() {
+      // uncomment below and update the code to test the property dateOfBirth
+      //var instane = new CyberSource.Upv1capturecontextsDataBuyerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property language (base name: "language")', function() {
+      // uncomment below and update the code to test the property language
+      //var instane = new CyberSource.Upv1capturecontextsDataBuyerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

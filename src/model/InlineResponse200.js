@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200Content'], factory);
+    define(['ApiClient', 'model/InlineResponse200Responses'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse200Content'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse200Responses'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse200 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200Content);
+    root.CyberSource.InlineResponse200 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse200Responses);
   }
-}(this, function(ApiClient, InlineResponse200Content) {
+}(this, function(ApiClient, InlineResponse200Responses) {
   'use strict';
 
 
@@ -41,15 +41,11 @@
 
   /**
    * Constructs a new <code>InlineResponse200</code>.
-   * Represents the Card Art Asset associated to the Network Token. 
    * @alias module:model/InlineResponse200
    * @class
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };
@@ -65,42 +61,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('provider')) {
-        obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
-      }
-      if (data.hasOwnProperty('content')) {
-        obj['content'] = ApiClient.convertToType(data['content'], [InlineResponse200Content]);
+      if (data.hasOwnProperty('responses')) {
+        obj['responses'] = ApiClient.convertToType(data['responses'], [InlineResponse200Responses]);
       }
     }
     return obj;
   }
 
   /**
-   * Unique identifier for the Card Art Asset. 
-   * @member {String} id
+   * @member {Array.<module:model/InlineResponse200Responses>} responses
    */
-  exports.prototype['id'] = undefined;
-  /**
-   * The type of Card Art Asset. 
-   * @member {String} type
-   */
-  exports.prototype['type'] = undefined;
-  /**
-   * The provider of the Card Art Asset. 
-   * @member {String} provider
-   */
-  exports.prototype['provider'] = undefined;
-  /**
-   * Array of content objects representing the Card Art Asset. 
-   * @member {Array.<module:model/InlineResponse200Content>} content
-   */
-  exports.prototype['content'] = undefined;
+  exports.prototype['responses'] = undefined;
 
 
 

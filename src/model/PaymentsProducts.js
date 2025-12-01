@@ -67,6 +67,7 @@
 
 
 
+
   };
 
   /**
@@ -139,6 +140,9 @@
       }
       if (data.hasOwnProperty('serviceFee')) {
         obj['serviceFee'] = PaymentsProductsServiceFee.constructFromObject(data['serviceFee']);
+      }
+      if (data.hasOwnProperty('batchUpload')) {
+        obj['batchUpload'] = PaymentsProductsTax.constructFromObject(data['batchUpload']);
       }
     }
     return obj;
@@ -224,6 +228,10 @@
    * @member {module:model/PaymentsProductsServiceFee} serviceFee
    */
   exports.prototype['serviceFee'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} batchUpload
+   */
+  exports.prototype['batchUpload'] = undefined;
 
 
 

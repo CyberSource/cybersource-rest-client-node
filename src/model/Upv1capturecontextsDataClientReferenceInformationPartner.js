@@ -65,8 +65,8 @@
       if (data.hasOwnProperty('developerId')) {
         obj['developerId'] = ApiClient.convertToType(data['developerId'], 'String');
       }
-      if (data.hasOwnProperty('SolutionId')) {
-        obj['SolutionId'] = ApiClient.convertToType(data['SolutionId'], 'String');
+      if (data.hasOwnProperty('solutionId')) {
+        obj['solutionId'] = ApiClient.convertToType(data['solutionId'], 'String');
       }
     }
     return obj;
@@ -77,9 +77,9 @@
    */
   exports.prototype['developerId'] = undefined;
   /**
-   * @member {String} SolutionId
+   * @member {String} solutionId
    */
-  exports.prototype['SolutionId'] = undefined;
+  exports.prototype['solutionId'] = undefined;
 
 
 

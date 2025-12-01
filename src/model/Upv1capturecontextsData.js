@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Upv1capturecontextsDataBuyerInformation', 'model/Upv1capturecontextsDataClientReferenceInformation', 'model/Upv1capturecontextsDataConsumerAuthenticationInformation', 'model/Upv1capturecontextsDataMerchantDefinedInformation', 'model/Upv1capturecontextsDataMerchantInformation', 'model/Upv1capturecontextsDataOrderInformation', 'model/Upv1capturecontextsDataProcessingInformation', 'model/Upv1capturecontextsDataRecipientInformation'], factory);
+    define(['ApiClient', 'model/Upv1capturecontextsDataBuyerInformation', 'model/Upv1capturecontextsDataClientReferenceInformation', 'model/Upv1capturecontextsDataConsumerAuthenticationInformation', 'model/Upv1capturecontextsDataDeviceInformation', 'model/Upv1capturecontextsDataMerchantDefinedInformation', 'model/Upv1capturecontextsDataMerchantInformation', 'model/Upv1capturecontextsDataOrderInformation', 'model/Upv1capturecontextsDataPaymentInformation', 'model/Upv1capturecontextsDataProcessingInformation', 'model/Upv1capturecontextsDataRecipientInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataBuyerInformation'), require('./Upv1capturecontextsDataClientReferenceInformation'), require('./Upv1capturecontextsDataConsumerAuthenticationInformation'), require('./Upv1capturecontextsDataMerchantDefinedInformation'), require('./Upv1capturecontextsDataMerchantInformation'), require('./Upv1capturecontextsDataOrderInformation'), require('./Upv1capturecontextsDataProcessingInformation'), require('./Upv1capturecontextsDataRecipientInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataBuyerInformation'), require('./Upv1capturecontextsDataClientReferenceInformation'), require('./Upv1capturecontextsDataConsumerAuthenticationInformation'), require('./Upv1capturecontextsDataDeviceInformation'), require('./Upv1capturecontextsDataMerchantDefinedInformation'), require('./Upv1capturecontextsDataMerchantInformation'), require('./Upv1capturecontextsDataOrderInformation'), require('./Upv1capturecontextsDataPaymentInformation'), require('./Upv1capturecontextsDataProcessingInformation'), require('./Upv1capturecontextsDataRecipientInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Upv1capturecontextsData = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataBuyerInformation, root.CyberSource.Upv1capturecontextsDataClientReferenceInformation, root.CyberSource.Upv1capturecontextsDataConsumerAuthenticationInformation, root.CyberSource.Upv1capturecontextsDataMerchantDefinedInformation, root.CyberSource.Upv1capturecontextsDataMerchantInformation, root.CyberSource.Upv1capturecontextsDataOrderInformation, root.CyberSource.Upv1capturecontextsDataProcessingInformation, root.CyberSource.Upv1capturecontextsDataRecipientInformation);
+    root.CyberSource.Upv1capturecontextsData = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataBuyerInformation, root.CyberSource.Upv1capturecontextsDataClientReferenceInformation, root.CyberSource.Upv1capturecontextsDataConsumerAuthenticationInformation, root.CyberSource.Upv1capturecontextsDataDeviceInformation, root.CyberSource.Upv1capturecontextsDataMerchantDefinedInformation, root.CyberSource.Upv1capturecontextsDataMerchantInformation, root.CyberSource.Upv1capturecontextsDataOrderInformation, root.CyberSource.Upv1capturecontextsDataPaymentInformation, root.CyberSource.Upv1capturecontextsDataProcessingInformation, root.CyberSource.Upv1capturecontextsDataRecipientInformation);
   }
-}(this, function(ApiClient, Upv1capturecontextsDataBuyerInformation, Upv1capturecontextsDataClientReferenceInformation, Upv1capturecontextsDataConsumerAuthenticationInformation, Upv1capturecontextsDataMerchantDefinedInformation, Upv1capturecontextsDataMerchantInformation, Upv1capturecontextsDataOrderInformation, Upv1capturecontextsDataProcessingInformation, Upv1capturecontextsDataRecipientInformation) {
+}(this, function(ApiClient, Upv1capturecontextsDataBuyerInformation, Upv1capturecontextsDataClientReferenceInformation, Upv1capturecontextsDataConsumerAuthenticationInformation, Upv1capturecontextsDataDeviceInformation, Upv1capturecontextsDataMerchantDefinedInformation, Upv1capturecontextsDataMerchantInformation, Upv1capturecontextsDataOrderInformation, Upv1capturecontextsDataPaymentInformation, Upv1capturecontextsDataProcessingInformation, Upv1capturecontextsDataRecipientInformation) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -92,6 +94,12 @@
       if (data.hasOwnProperty('merchantDefinedInformation')) {
         obj['merchantDefinedInformation'] = Upv1capturecontextsDataMerchantDefinedInformation.constructFromObject(data['merchantDefinedInformation']);
       }
+      if (data.hasOwnProperty('deviceInformation')) {
+        obj['deviceInformation'] = Upv1capturecontextsDataDeviceInformation.constructFromObject(data['deviceInformation']);
+      }
+      if (data.hasOwnProperty('paymentInformation')) {
+        obj['paymentInformation'] = Upv1capturecontextsDataPaymentInformation.constructFromObject(data['paymentInformation']);
+      }
     }
     return obj;
   }
@@ -128,6 +136,14 @@
    * @member {module:model/Upv1capturecontextsDataMerchantDefinedInformation} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;
+  /**
+   * @member {module:model/Upv1capturecontextsDataDeviceInformation} deviceInformation
+   */
+  exports.prototype['deviceInformation'] = undefined;
+  /**
+   * @member {module:model/Upv1capturecontextsDataPaymentInformation} paymentInformation
+   */
+  exports.prototype['paymentInformation'] = undefined;
 
 
 

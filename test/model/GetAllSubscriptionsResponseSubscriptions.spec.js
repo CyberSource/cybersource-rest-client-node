@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
+      // uncomment below and update the code to test the property clientReferenceInformation
+      //var instane = new CyberSource.GetAllSubscriptionsResponseSubscriptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paymentInformation (base name: "paymentInformation")', function() {
       // uncomment below and update the code to test the property paymentInformation
       //var instane = new CyberSource.GetAllSubscriptionsResponseSubscriptions();
