@@ -119,8 +119,11 @@ Configure global settings for request MLE using these properties in your `mercha
 
 - **Variable**: `responseMleKID`
 - **Type**: `String`
-- **Required**: `true` (when response MLE is enabled)
-- **Description**: Key ID value for the MLE response certificate (provided in merchant portal).
+- **Optional**: `true` (when using CyberSource-generated P12 file)
+- **Required**: `true` (when using PEM files or private key object)
+- **Description**: Key ID value for the MLE response certificate (provided in merchant portal). 
+- **Note**: This parameter is optional when `responseMlePrivateKeyFilePath` points to a CyberSource-generated P12 file. If not provided, the SDK will automatically fetch the Key ID from the P12 file. If provided, the SDK will use the user-provided value instead of the auto-fetched value.
+- **Required** when using PEM format files (`.pem`, `.key`, `.p8`) or when providing `responseMlePrivateKey` object directly.
 
 <br/>
 
@@ -206,12 +209,27 @@ var merchantConfig = {
 ### (v) Response MLE Configuration with Private Key File
 
 ```javascript
-// Properties-based configuration
+// Properties-based configuration with CyberSource-generated P12 file
 var merchantConfig = {
   enableResponseMleGlobally: true,
   responseMlePrivateKeyFilePath: "/path/to/private/key.p12",
   responseMlePrivateKeyFilePassword: "password",
-  responseMleKID: "your-key-id",
+  // responseMleKID is optional for CyberSource-generated P12 files - SDK will auto-fetch if not provided
+  // responseMleKID: "your-key-id",  // Optional - overrides auto-fetched value
+  
+  // API-specific control with string values
+  mapToControlMLEonAPI: {
+    "createPayment": "::true"  // Enable response MLE only for this API
+  }
+};
+```
+
+```javascript
+// Properties-based configuration with PEM file (responseMleKID is required)
+var merchantConfig = {
+  enableResponseMleGlobally: true,
+  responseMlePrivateKeyFilePath: "/path/to/private/key.pem",
+  responseMleKID: "your-key-id",  // Required for PEM files
   
   // API-specific control with string values
   mapToControlMLEonAPI: {
@@ -226,11 +244,11 @@ var merchantConfig = {
 // Load private key programmatically (PEM format or JWK object)
 var privateKey = loadPrivateKeyFromSomewhere();
 
-// Create merchantConfig with private key object
+// Create merchantConfig with private key object (responseMleKID is required)
 var merchantConfig = {
   enableResponseMleGlobally: true,
   responseMlePrivateKey: privateKey,  // Supports PEM format or JWK object
-  responseMleKID: "your-key-id"
+  responseMleKID: "your-key-id"  // Required when using private key object
 };
 ```
 
@@ -242,11 +260,12 @@ var merchantConfig = {
   // Request MLE settings (minimal - uses defaults)
   enableRequestMLEForOptionalApisGlobally: true,
   
-  // Response MLE settings
+  // Response MLE settings (with CyberSource-generated P12 file)
   enableResponseMleGlobally: true,
   responseMlePrivateKeyFilePath: "/path/to/private/key.p12",
   responseMlePrivateKeyFilePassword: "password",
-  responseMleKID: "your-key-id",
+  // responseMleKID is optional for CyberSource-generated P12 files
+  // responseMleKID: "your-key-id",  // Optional - overrides auto-fetched value
   
   // API-specific control for both request and response
   mapToControlMLEonAPI: {
@@ -322,6 +341,21 @@ var merchantConfig = {
     "enableResponseMleGlobally": true,
     "responseMlePrivateKeyFilePath": "/path/to/private/key.p12",
     "responseMlePrivateKeyFilePassword": "password",
+    "// Note": "responseMleKID is optional for CyberSource-generated P12 files",
+    "responseMleKID": "your-key-id",
+    "mapToControlMLEonAPI": {
+      "createPayment": "::true"
+    }
+  }
+}
+```
+
+```json
+{
+  "merchantConfig": {
+    "enableResponseMleGlobally": true,
+    "responseMlePrivateKeyFilePath": "/path/to/private/key.pem",
+    "// Note": "responseMleKID is required for PEM files",
     "responseMleKID": "your-key-id",
     "mapToControlMLEonAPI": {
       "createPayment": "::true"
@@ -339,6 +373,7 @@ var merchantConfig = {
     "enableResponseMleGlobally": true,
     "responseMlePrivateKeyFilePath": "/path/to/private/key.p12",
     "responseMlePrivateKeyFilePassword": "password",
+    "// Note": "responseMleKID is optional for CyberSource-generated P12 files - SDK will auto-fetch if not provided",
     "responseMleKID": "your-key-id",
     "mapToControlMLEonAPI": {
       "createPayment": "true::true",
@@ -375,7 +410,11 @@ For Response MLE private key files, the following formats are supported:
 ### (ii) Response MLE
 - Response MLE requires either `responseMlePrivateKey` object OR `responseMlePrivateKeyFilePath` (not both)
 - The `responseMlePrivateKey` object supports both PEM format and JWK (JSON Web Key) objects
-- The `responseMleKID` parameter is mandatory when response MLE is enabled
+- The `responseMleKID` parameter behavior:
+  - **Optional** when `responseMlePrivateKeyFilePath` points to a CyberSource-generated P12 file (SDK auto-fetches from P12)
+  - **Required** when using PEM format files (`.pem`, `.key`, `.p8`)
+  - **Required** when using `responseMlePrivateKey` object directly
+  - When both auto-fetched and user-provided values exist, the user-provided value takes precedence
 - If an API expects a mandatory MLE response but the map specifies non-MLE response, the API might return an error
 - Both the private key object and file path approaches are mutually exclusive
 
