@@ -261,15 +261,15 @@ var merchantConfig = {
 ### (viii) Mixed Configuration (New and Deprecated Parameters)
 
 ```javascript
-// ⚠️ WRONG: Conflicting values between new and deprecated parameters
+// Example showing both new and deprecated parameters (deprecated will be used as aliases)
 var merchantConfig = {
-  // This will cause a ConfigException due to conflicting values
+  // If both are set with same value, it works fine
   enableRequestMLEForOptionalApisGlobally: true,
-  useMLEGlobally: false,  // Deprecated - CONFLICT! Different value will cause error
-  
-  // This will also cause a ConfigException
+  useMLEGlobally: true,  // Deprecated but same value
+
+  // Key alias - new parameter takes precedence if both are provided
   requestMleKeyAlias: "New_Alias",
-  mleKeyAlias: "Different_Alias"  // CONFLICT! Different value will cause error
+  mleKeyAlias: "Old_Alias"  // This will be ignored
 };
 ```
 
