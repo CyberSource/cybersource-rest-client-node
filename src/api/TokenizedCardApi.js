@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/TokenizedcardRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostIssuerLifeCycleSimulationRequest', 'model/TokenizedcardRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/TokenizedcardRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostIssuerLifeCycleSimulationRequest'), require('../model/TokenizedcardRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenizedCardApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.TokenizedcardRequest);
+    root.CyberSource.TokenizedCardApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostIssuerLifeCycleSimulationRequest, root.CyberSource.TokenizedcardRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, TokenizedcardRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, PostIssuerLifeCycleSimulationRequest, TokenizedcardRequest) {
   'use strict';
 
   /**
@@ -127,7 +127,7 @@
 
     /**
      * Retrieve a Tokenized Card
-     * |  |  |  | | --- | --- | --- | |**Tokenized Cards**<br>A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.  
+     * |  |  |  | | --- | --- | --- | |**Tokenized Cards**<br>A Tokenized Card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. 
      * @param {String} tokenizedCardId The Id of a tokenized card.
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
@@ -187,6 +187,84 @@
     }
 
     /**
+     * Callback function to receive the result of the postIssuerLifeCycleSimulation operation.
+     * @callback module:api/TokenizedCardApi~postIssuerLifeCycleSimulationCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Simulate Issuer Life Cycle Management Events
+     * **Lifecycle Management Events**<br>Simulates an issuer life cycle manegement event for updates on the tokenized card. The events that can be simulated are: - Token status changes (e.g. active, suspended, deleted) - Updates to the underlying card, including card art changes, expiration date changes, and card number suffix. **Note:** This is only available in CAS environment. 
+     * @param {String} profileId The Id of a profile containing user specific TMS configuration.
+     * @param {String} tokenizedCardId The Id of a tokenized card.
+     * @param {module:model/PostIssuerLifeCycleSimulationRequest} postIssuerLifeCycleSimulationRequest 
+     * @param {module:api/TokenizedCardApi~postIssuerLifeCycleSimulationCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.postIssuerLifeCycleSimulation = function(profileId, tokenizedCardId, postIssuerLifeCycleSimulationRequest, callback) {
+      var postBody = postIssuerLifeCycleSimulationRequest;
+
+      // verify the required parameter 'profileId' is set
+      if (profileId === undefined || profileId === null) {
+        throw new Error("Missing the required parameter 'profileId' when calling postIssuerLifeCycleSimulation");
+      }
+
+      // verify the required parameter 'tokenizedCardId' is set
+      if (tokenizedCardId === undefined || tokenizedCardId === null) {
+        throw new Error("Missing the required parameter 'tokenizedCardId' when calling postIssuerLifeCycleSimulation");
+      }
+
+      // verify the required parameter 'postIssuerLifeCycleSimulationRequest' is set
+      if (postIssuerLifeCycleSimulationRequest === undefined || postIssuerLifeCycleSimulationRequest === null) {
+        throw new Error("Missing the required parameter 'postIssuerLifeCycleSimulationRequest' when calling postIssuerLifeCycleSimulation");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostIssuerLifeCycleSimulationRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+        'tokenizedCardId': tokenizedCardId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'profile-id': profileId
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = null;
+
+      //check isMLE for an api method 'this.postIssuerLifeCycleSimulation'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postIssuerLifeCycleSimulation');
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/tms/v2/tokenized-cards/{tokenizedCardId}/issuer-life-cycle-event-simulations', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/tms/v2/tokenized-cards/{tokenizedCardId}/issuer-life-cycle-event-simulations', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the postTokenizedCard operation.
      * @callback module:api/TokenizedCardApi~postTokenizedCardCallback
      * @param {String} error Error message, if any.
@@ -235,7 +313,7 @@
       var returnType = TokenizedcardRequest;
 
       //check isMLE for an api method 'this.postTokenizedCard'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postTokenizedCard');
 
       if (isMLEForApi === true) {

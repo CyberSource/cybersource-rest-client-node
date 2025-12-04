@@ -74,6 +74,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property network (base name: "network")', function() {
+      // uncomment below and update the code to test the property network
+      //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property responseSourceCode (base name: "responseSourceCode")', function() {
+      // uncomment below and update the code to test the property responseSourceCode
+      //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

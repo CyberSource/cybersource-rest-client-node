@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/DeAssociationRequestBody', 'model/DeviceDeAssociateV3Request', 'model/InlineResponse2007', 'model/InlineResponse206', 'model/InlineResponse4008', 'model/InlineResponse401', 'model/InlineResponse4032', 'model/InlineResponse4043', 'model/InlineResponse5003'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/DeAssociationRequestBody', 'model/DeviceDeAssociateV3Request', 'model/InlineResponse2009', 'model/InlineResponse206', 'model/InlineResponse4008', 'model/InlineResponse401', 'model/InlineResponse4032', 'model/InlineResponse4044', 'model/InlineResponse5003'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/DeAssociationRequestBody'), require('../model/DeviceDeAssociateV3Request'), require('../model/InlineResponse2007'), require('../model/InlineResponse206'), require('../model/InlineResponse4008'), require('../model/InlineResponse401'), require('../model/InlineResponse4032'), require('../model/InlineResponse4043'), require('../model/InlineResponse5003'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/DeAssociationRequestBody'), require('../model/DeviceDeAssociateV3Request'), require('../model/InlineResponse2009'), require('../model/InlineResponse206'), require('../model/InlineResponse4008'), require('../model/InlineResponse401'), require('../model/InlineResponse4032'), require('../model/InlineResponse4044'), require('../model/InlineResponse5003'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DeviceDeAssociationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.DeAssociationRequestBody, root.CyberSource.DeviceDeAssociateV3Request, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse206, root.CyberSource.InlineResponse4008, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4043, root.CyberSource.InlineResponse5003);
+    root.CyberSource.DeviceDeAssociationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.DeAssociationRequestBody, root.CyberSource.DeviceDeAssociateV3Request, root.CyberSource.InlineResponse2009, root.CyberSource.InlineResponse206, root.CyberSource.InlineResponse4008, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4044, root.CyberSource.InlineResponse5003);
   }
-}(this, function(MLEUtility, ApiClient, DeAssociationRequestBody, DeviceDeAssociateV3Request, InlineResponse2007, InlineResponse206, InlineResponse4008, InlineResponse401, InlineResponse4032, InlineResponse4043, InlineResponse5003) {
+}(this, function(MLEUtility, ApiClient, DeAssociationRequestBody, DeviceDeAssociateV3Request, InlineResponse2009, InlineResponse206, InlineResponse4008, InlineResponse401, InlineResponse4032, InlineResponse4044, InlineResponse5003) {
   'use strict';
 
   /**
@@ -117,7 +117,7 @@
      * Callback function to receive the result of the postDeAssociateV3Terminal operation.
      * @callback module:api/DeviceDeAssociationApi~postDeAssociateV3TerminalCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2007>} data The data returned by the service call.
+     * @param {Array.<module:model/InlineResponse2009>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -126,7 +126,7 @@
      * A device will be de-associated from its current organization and moved up in the hierarchy. The device's new position will be determined by a specified destination, either an account or a portfolio. If no destination is provided, the device will default to the currently logged-in user. 
      * @param {Array.<module:model/DeviceDeAssociateV3Request>} deviceDeAssociateV3Request deviceId that has to be de-associated to the destination organizationId.
      * @param {module:api/DeviceDeAssociationApi~postDeAssociateV3TerminalCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2007>}
+     * data is of type: {@link Array.<module:model/InlineResponse2009>}
      */
     this.postDeAssociateV3Terminal = function(deviceDeAssociateV3Request, callback) {
       var postBody = deviceDeAssociateV3Request;
@@ -155,7 +155,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=UTF-8'];
       var accepts = ['application/json;charset=UTF-8'];
-      var returnType = [InlineResponse2007];
+      var returnType = [InlineResponse2009];
 
       //check isMLE for an api method 'this.postDeAssociateV3Terminal'
       var inboundMLEStatus = 'false';

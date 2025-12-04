@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **onlineGamblingFastFundsDomestic** | **String** | This field indicates if domestic gambling OCTs (fast push funds) are allowed. Possible values:   - `Y`   - `N`  | [optional] 
 **onlineGamblingCrossBorder** | **String** | This field indicates if cross-border gambling OCTs (push funds) are allowed. Possible values:   - `Y`   - `N`  | [optional] 
 **onlineGamblingDomestic** | **String** | This field indicates if domestic gambling OCTs (push funds) are allowed. Possible values:   - `Y`   - `N`  | [optional] 
-**domesticParticipant** | **String** | This field indicates if domestic OCTs (push funds) are allowed. Note: Supported only in US for domestic transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false`  | [optional] 
-**crossBorderParticipant** | **String** | This field indicates if cross-border OCTs (push funds) are allowed. Note: Supported only in US for cross-border transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false`  | [optional] 
+**domesticParticipant** | **String** | This field indicates if domestic OCTs (push funds) are allowed. Possible values:   - `true`   - `false`  | [optional] 
+**crossBorderParticipant** | **String** | This field indicates if cross-border OCTs (push funds) are allowed. Possible values:   - `true`   - `false`  | [optional] 
 
 

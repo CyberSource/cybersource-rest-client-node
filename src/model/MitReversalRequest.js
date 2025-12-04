@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsidreversalsOrderInformation', 'model/Ptsv2paymentsidreversalsPointOfSaleInformation', 'model/Ptsv2paymentsidreversalsProcessingInformation', 'model/Ptsv2paymentsidreversalsReversalInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsidreversalsOrderInformation', 'model/Ptsv2paymentsidreversalsPointOfSaleInformation', 'model/Ptsv2paymentsidreversalsProcessingInformation', 'model/Ptsv2paymentsidreversalsReversalInformation', 'model/Ptsv2reversalsProcessorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsidreversalsOrderInformation'), require('./Ptsv2paymentsidreversalsPointOfSaleInformation'), require('./Ptsv2paymentsidreversalsProcessingInformation'), require('./Ptsv2paymentsidreversalsReversalInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsidreversalsOrderInformation'), require('./Ptsv2paymentsidreversalsPointOfSaleInformation'), require('./Ptsv2paymentsidreversalsProcessingInformation'), require('./Ptsv2paymentsidreversalsReversalInformation'), require('./Ptsv2reversalsProcessorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MitReversalRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsidreversalsOrderInformation, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsidreversalsProcessingInformation, root.CyberSource.Ptsv2paymentsidreversalsReversalInformation);
+    root.CyberSource.MitReversalRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsidreversalsOrderInformation, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsidreversalsProcessingInformation, root.CyberSource.Ptsv2paymentsidreversalsReversalInformation, root.CyberSource.Ptsv2reversalsProcessorInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsidreversalsOrderInformation, Ptsv2paymentsidreversalsPointOfSaleInformation, Ptsv2paymentsidreversalsProcessingInformation, Ptsv2paymentsidreversalsReversalInformation) {
+}(this, function(ApiClient, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsidreversalsOrderInformation, Ptsv2paymentsidreversalsPointOfSaleInformation, Ptsv2paymentsidreversalsProcessingInformation, Ptsv2paymentsidreversalsReversalInformation, Ptsv2reversalsProcessorInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('pointOfSaleInformation')) {
         obj['pointOfSaleInformation'] = Ptsv2paymentsidreversalsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
       }
+      if (data.hasOwnProperty('processorInformation')) {
+        obj['processorInformation'] = Ptsv2reversalsProcessorInformation.constructFromObject(data['processorInformation']);
+      }
     }
     return obj;
   }
@@ -104,6 +108,10 @@
    * @member {module:model/Ptsv2paymentsidreversalsPointOfSaleInformation} pointOfSaleInformation
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2reversalsProcessorInformation} processorInformation
+   */
+  exports.prototype['processorInformation'] = undefined;
 
 
 

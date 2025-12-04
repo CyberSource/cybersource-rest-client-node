@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CardProcessingConfigCommonAcquirer', 'model/CardProcessingConfigCommonCurrencies1', 'model/CardProcessingConfigCommonPaymentTypes'], factory);
+    define(['ApiClient', 'model/CardProcessingConfigCommonAcquirer', 'model/CardProcessingConfigCommonAcquirers', 'model/CardProcessingConfigCommonCurrencies1', 'model/CardProcessingConfigCommonPaymentTypes'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonAcquirer'), require('./CardProcessingConfigCommonCurrencies1'), require('./CardProcessingConfigCommonPaymentTypes'));
+    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonAcquirer'), require('./CardProcessingConfigCommonAcquirers'), require('./CardProcessingConfigCommonCurrencies1'), require('./CardProcessingConfigCommonPaymentTypes'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CardProcessingConfigCommonProcessors = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonAcquirer, root.CyberSource.CardProcessingConfigCommonCurrencies1, root.CyberSource.CardProcessingConfigCommonPaymentTypes);
+    root.CyberSource.CardProcessingConfigCommonProcessors = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonAcquirer, root.CyberSource.CardProcessingConfigCommonAcquirers, root.CyberSource.CardProcessingConfigCommonCurrencies1, root.CyberSource.CardProcessingConfigCommonPaymentTypes);
   }
-}(this, function(ApiClient, CardProcessingConfigCommonAcquirer, CardProcessingConfigCommonCurrencies1, CardProcessingConfigCommonPaymentTypes) {
+}(this, function(ApiClient, CardProcessingConfigCommonAcquirer, CardProcessingConfigCommonAcquirers, CardProcessingConfigCommonCurrencies1, CardProcessingConfigCommonPaymentTypes) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function(merchantId) {
     var _this = this;
+
 
 
 
@@ -122,6 +123,9 @@
       }
       if (data.hasOwnProperty('acquirer')) {
         obj['acquirer'] = CardProcessingConfigCommonAcquirer.constructFromObject(data['acquirer']);
+      }
+      if (data.hasOwnProperty('acquirers')) {
+        obj['acquirers'] = ApiClient.convertToType(data['acquirers'], {'String': CardProcessingConfigCommonAcquirers});
       }
       if (data.hasOwnProperty('merchantId')) {
         obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
@@ -277,6 +281,11 @@
    * @member {module:model/CardProcessingConfigCommonAcquirer} acquirer
    */
   exports.prototype['acquirer'] = undefined;
+  /**
+   * Identifies the financial institution acting as the acquirer of this customer transaction. The acquirer is the member or system user that signed the merchant.
+   * @member {Object.<String, module:model/CardProcessingConfigCommonAcquirers>} acquirers
+   */
+  exports.prototype['acquirers'] = undefined;
   /**
    * Merchant ID assigned by an acquirer or a processor. Should not be overriden by any other party.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Min. Length</th><th>Max. Length</th><th>Regex</th></tr></thead> <tr><td>Barclays HISO</td><td>cp, cnp, hybrid</td><td>Yes</td><td>1</td><td>15</td><td>^[0-9a-zA-Z]+$</td></tr> <tr><td>Barclays</td><td>cp, cnp, hybrid</td><td>Yes</td><td>1</td><td>11</td><td>^[0-9a-zA-Z]+$</td></tr> </table> 
    * @member {String} merchantId

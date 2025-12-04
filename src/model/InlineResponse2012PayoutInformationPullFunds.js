@@ -73,12 +73,12 @@
   }
 
   /**
-   * This field indicates if domestic AFTs (pull funds) are allowed. Note: Supported only in US for domestic transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false` 
+   * This field indicates if domestic AFTs (pull funds) are allowed. Possible values:   - `true`   - `false` 
    * @member {String} domesticParticipant
    */
   exports.prototype['domesticParticipant'] = undefined;
   /**
-   * This field indicates if cross-border AFTs (pull funds) are allowed. Note: Supported only in US for cross-border transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false` 
+   * This field indicates if cross-border AFTs (pull funds) are allowed. Possible values:   - `true`   - `false` 
    * @member {String} crossBorderParticipant
    */
   exports.prototype['crossBorderParticipant'] = undefined;

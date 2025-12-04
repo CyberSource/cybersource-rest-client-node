@@ -140,6 +140,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processorInformation (base name: "processorInformation")', function() {
+      // uncomment below and update the code to test the property processorInformation
+      //var instane = new CyberSource.CapturePaymentRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

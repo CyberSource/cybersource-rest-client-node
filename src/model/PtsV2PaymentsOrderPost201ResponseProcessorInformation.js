@@ -94,7 +94,7 @@
    */
   exports.prototype['transactionId'] = undefined;
   /**
-   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * This field might contain information about a decline. 
    * @member {String} responseDetails
    */
   exports.prototype['responseDetails'] = undefined;

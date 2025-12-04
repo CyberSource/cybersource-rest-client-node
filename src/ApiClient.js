@@ -45,108 +45,6 @@ const agentPool = new Map();
    * @alias module:ApiClient
    * @class
    */
-
-
-  /**
-   * Generates a configuration hash for agent caching
-   * @param {Object} config - Configuration object with connection parameters
-   * @returns {String} - Hash string representing the configuration
-   */
-  function generateConfigHash(config) {
-    const hashParts = [];
-    
-    // Add relevant configuration properties to the hash
-    if (config.useProxy) {
-      hashParts.push(`proxyUrl:${config.proxyUrl}`);
-    }
-    if (config.disableSSLVerification !== undefined) hashParts.push(`sslVerify:${!config.disableSSLVerification}`);
-    if (config.sslCaCert) hashParts.push(`sslCaCert:${config.sslCaCert}`);
-    if (config.enableClientCert) hashParts.push(`clientCert:${config.certFile}:${config.keyFile}`);
-    if (config.maxIdleSockets !== undefined) hashParts.push(`maxIdleSockets:${config.maxIdleSockets}`);
-    if (config.freeSocketTimeout !== undefined) hashParts.push(`freeSocketTimeout:${config.freeSocketTimeout}`);
-    
-    const concatenated = hashParts.join('|');
-    return crypto.createHash('sha256').update(concatenated).digest('hex');
-  }
-  
-  /**
-   * Gets or creates an HTTPS agent based on configuration
-   * @param {Object} config - Configuration object with connection parameters
-   * @returns {https.Agent} - HTTPS agent instance
-   */
-  function getOrCreateAgent(config) {
-    const configHash = generateConfigHash(config);
-    
-    if (agentPool.has(configHash)) {
-      return agentPool.get(configHash);
-    }
-    
-    const fs = require('fs');
-    
-    // Create agent options with keepAlive enabled
-    const agentOptions = {
-      keepAlive: true, // By default, keepAlive is true in agentkeepalive
-      maxSockets: config.maxIdleSockets,
-      freeSocketTimeout: config.freeSocketTimeout,
-      rejectUnauthorized: !config.disableSSLVerification,
-    };
-    
-    // Add SSL certificate if provided
-    if (config.sslCaCert) {
-      agentOptions.ca = fs.readFileSync(config.sslCaCert);
-    }
-    
-    // Add client certificates if enabled
-    if (config.enableClientCert) {
-      agentOptions.cert = fs.readFileSync(config.certFile);
-      agentOptions.key = fs.readFileSync(config.keyFile);
-    }
-    
-    // Use the HttpsAgent from the agentkeepalive package
-    const agent = new AgentKeepAlive.HttpsAgent(agentOptions);
-    agentPool.set(configHash, agent);
-    return agent;
-  }
-  
-  /**
-   * Gets or creates an HTTPS proxy agent based on configuration
-   * @param {String} proxyAddress - Proxy server address
-   * @param {Number} proxyPort - Proxy server port
-   * @param {String} proxyUser - Proxy authentication username (optional)
-   * @param {String} proxyPassword - Proxy authentication password (optional)
-   * @returns {HttpsProxyAgent} - HTTPS proxy agent instance
-   */
-  function getOrCreateProxyAgent(proxyAddress, proxyPort, proxyUser, proxyPassword, maxIdleSockets) {
-    const { HttpsProxyAgent } = require('https-proxy-agent');
-    
-    let proxyUrl;
-    if (proxyUser && proxyPassword) {
-      proxyUrl = `http://${proxyUser}:${proxyPassword}@${proxyAddress}:${proxyPort}`;
-    } else {
-      proxyUrl = `http://${proxyAddress}:${proxyPort}`;
-    }
-
-    const configHash = generateConfigHash({
-      useProxy: true,
-      proxyUrl: proxyUrl,
-      maxIdleSockets: maxIdleSockets
-    });
-
-    if (agentPool.has(configHash)) {
-      return agentPool.get(configHash);
-    }
-    
-    // Apply the same connection pooling settings as the regular HTTPS agent
-    const agentOptions = {
-      keepAlive: true, // Keep the connection alive
-      maxSockets: maxIdleSockets
-    };
-    
-    const agent = new HttpsProxyAgent(proxyUrl, agentOptions);
-    agentPool.set(configHash, agent);
-    return agent;
-  }
-
   var exports = function() {
     /**
      * The base URL against which to resolve every API call's (relative) path.
@@ -545,6 +443,106 @@ const agentPool = new Map();
     tester.status = response.status;
     tester.text = JSON.stringify(response.data);
     return tester;
+  }
+
+  /**
+   * Generates a configuration hash for agent caching
+   * @param {Object} config - Configuration object with connection parameters
+   * @returns {String} - Hash string representing the configuration
+   */
+  function generateConfigHash(config) {
+    const hashParts = [];
+    
+    // Add relevant configuration properties to the hash
+    if (config.useProxy) {
+      hashParts.push(`proxyUrl:${config.proxyUrl}`);
+    }
+    if (config.disableSSLVerification !== undefined) hashParts.push(`sslVerify:${!config.disableSSLVerification}`);
+    if (config.sslCaCert) hashParts.push(`sslCaCert:${config.sslCaCert}`);
+    if (config.enableClientCert) hashParts.push(`clientCert:${config.certFile}:${config.keyFile}`);
+    if (config.maxIdleSockets !== undefined) hashParts.push(`maxIdleSockets:${config.maxIdleSockets}`);
+    if (config.freeSocketTimeout !== undefined) hashParts.push(`freeSocketTimeout:${config.freeSocketTimeout}`);
+    
+    const concatenated = hashParts.join('|');
+    return crypto.createHash('sha256').update(concatenated).digest('hex');
+  }
+  
+  /**
+   * Gets or creates an HTTPS agent based on configuration
+   * @param {Object} config - Configuration object with connection parameters
+   * @returns {https.Agent} - HTTPS agent instance
+   */
+  function getOrCreateAgent(config) {
+    const configHash = generateConfigHash(config);
+    
+    if (agentPool.has(configHash)) {
+      return agentPool.get(configHash);
+    }
+    
+    const fs = require('fs');
+    
+    // Create agent options with keepAlive enabled
+    const agentOptions = {
+      keepAlive: true, // By default, keepAlive is true in agentkeepalive
+      maxSockets: config.maxIdleSockets,
+      freeSocketTimeout: config.freeSocketTimeout,
+      rejectUnauthorized: !config.disableSSLVerification,
+    };
+    
+    // Add SSL certificate if provided
+    if (config.sslCaCert) {
+      agentOptions.ca = fs.readFileSync(config.sslCaCert);
+    }
+    
+    // Add client certificates if enabled
+    if (config.enableClientCert) {
+      agentOptions.cert = fs.readFileSync(config.certFile);
+      agentOptions.key = fs.readFileSync(config.keyFile);
+    }
+    
+    // Use the HttpsAgent from the agentkeepalive package
+    const agent = new AgentKeepAlive.HttpsAgent(agentOptions);
+    agentPool.set(configHash, agent);
+    return agent;
+  }
+  
+  /**
+   * Gets or creates an HTTPS proxy agent based on configuration
+   * @param {String} proxyAddress - Proxy server address
+   * @param {Number} proxyPort - Proxy server port
+   * @param {String} proxyUser - Proxy authentication username (optional)
+   * @param {String} proxyPassword - Proxy authentication password (optional)
+   * @returns {HttpsProxyAgent} - HTTPS proxy agent instance
+   */
+  function getOrCreateProxyAgent(proxyAddress, proxyPort, proxyUser, proxyPassword, maxIdleSockets) {
+    const { HttpsProxyAgent } = require('https-proxy-agent');
+    
+    let proxyUrl;
+    if (proxyUser && proxyPassword) {
+      proxyUrl = `http://${proxyUser}:${proxyPassword}@${proxyAddress}:${proxyPort}`;
+    } else {
+      proxyUrl = `http://${proxyAddress}:${proxyPort}`;
+    }
+
+    const configHash = generateConfigHash({
+      useProxy: true,
+      proxyUrl: proxyUrl,
+      maxIdleSockets: maxIdleSockets
+    });
+
+    if (agentPool.has(configHash)) {
+      return agentPool.get(configHash);
+    }
+    
+    // Apply the same connection pooling settings as the regular HTTPS agent
+    const agentOptions = {
+      keepAlive: true, // Keep the connection alive
+      maxSockets: maxIdleSockets
+    };
+    
+    const agent = new HttpsProxyAgent(proxyUrl, agentOptions);
+    agentPool.set(configHash, agent);
+    return agent;
   }
 
     // Code added by Infosys dev team

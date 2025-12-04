@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2008PaymentProcessorToTerminalMap'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2008PaymentProcessorToTerminalMap'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2008Devices = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2008PaymentProcessorToTerminalMap);
+    root.CyberSource.InlineResponse2008Devices = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, InlineResponse2008PaymentProcessorToTerminalMap) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -56,9 +56,6 @@
 
 
 
-
-
-
   };
 
   /**
@@ -75,8 +72,11 @@
       if (data.hasOwnProperty('readerId')) {
         obj['readerId'] = ApiClient.convertToType(data['readerId'], 'String');
       }
-      if (data.hasOwnProperty('serialNumber')) {
-        obj['serialNumber'] = ApiClient.convertToType(data['serialNumber'], 'String');
+      if (data.hasOwnProperty('terminalSerialNumber')) {
+        obj['terminalSerialNumber'] = ApiClient.convertToType(data['terminalSerialNumber'], 'String');
+      }
+      if (data.hasOwnProperty('terminalId')) {
+        obj['terminalId'] = ApiClient.convertToType(data['terminalId'], 'String');
       }
       if (data.hasOwnProperty('model')) {
         obj['model'] = ApiClient.convertToType(data['model'], 'String');
@@ -90,23 +90,11 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('statusChangeReason')) {
-        obj['statusChangeReason'] = ApiClient.convertToType(data['statusChangeReason'], 'String');
+      if (data.hasOwnProperty('creationDate')) {
+        obj['creationDate'] = ApiClient.convertToType(data['creationDate'], 'String');
       }
-      if (data.hasOwnProperty('merchantId')) {
-        obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
-      }
-      if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
-      }
-      if (data.hasOwnProperty('terminalCreationDate')) {
-        obj['terminalCreationDate'] = ApiClient.convertToType(data['terminalCreationDate'], 'Date');
-      }
-      if (data.hasOwnProperty('terminalUpdationDate')) {
-        obj['terminalUpdationDate'] = ApiClient.convertToType(data['terminalUpdationDate'], 'Date');
-      }
-      if (data.hasOwnProperty('paymentProcessorToTerminalMap')) {
-        obj['paymentProcessorToTerminalMap'] = InlineResponse2008PaymentProcessorToTerminalMap.constructFromObject(data['paymentProcessorToTerminalMap']);
+      if (data.hasOwnProperty('pin')) {
+        obj['pin'] = ApiClient.convertToType(data['pin'], 'String');
       }
     }
     return obj;
@@ -117,9 +105,13 @@
    */
   exports.prototype['readerId'] = undefined;
   /**
-   * @member {String} serialNumber
+   * @member {String} terminalSerialNumber
    */
-  exports.prototype['serialNumber'] = undefined;
+  exports.prototype['terminalSerialNumber'] = undefined;
+  /**
+   * @member {String} terminalId
+   */
+  exports.prototype['terminalId'] = undefined;
   /**
    * @member {String} model
    */
@@ -138,34 +130,13 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * Reason for change in status.
-   * @member {String} statusChangeReason
+   * @member {String} creationDate
    */
-  exports.prototype['statusChangeReason'] = undefined;
+  exports.prototype['creationDate'] = undefined;
   /**
-   * ID of the merchant to whom this device is assigned.
-   * @member {String} merchantId
+   * @member {String} pin
    */
-  exports.prototype['merchantId'] = undefined;
-  /**
-   * ID of the account to whom the device assigned.
-   * @member {String} accountId
-   */
-  exports.prototype['accountId'] = undefined;
-  /**
-   * Timestamp in which the device was created.
-   * @member {Date} terminalCreationDate
-   */
-  exports.prototype['terminalCreationDate'] = undefined;
-  /**
-   * Timestamp in which the device was updated/modified.
-   * @member {Date} terminalUpdationDate
-   */
-  exports.prototype['terminalUpdationDate'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2008PaymentProcessorToTerminalMap} paymentProcessorToTerminalMap
-   */
-  exports.prototype['paymentProcessorToTerminalMap'] = undefined;
+  exports.prototype['pin'] = undefined;
 
 
 

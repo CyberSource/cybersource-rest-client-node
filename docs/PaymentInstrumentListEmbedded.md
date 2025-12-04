@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paymentInstruments** | [**[Tmsv2customersEmbeddedDefaultPaymentInstrument]**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md) |  | [optional] 
+**paymentInstruments** | [**[Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument]**](Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument.md) |  | [optional] 
 
 

@@ -134,6 +134,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property japanPaymentOptions (base name: "japanPaymentOptions")', function() {
+      // uncomment below and update the code to test the property japanPaymentOptions
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

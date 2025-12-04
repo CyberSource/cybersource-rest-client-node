@@ -56,20 +56,74 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2003);
     });
 
-    it('should have the property productId (base name: "productId")', function() {
-      // uncomment below and update the code to test the property productId
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse2003();
       //expect(instance).to.be();
     });
 
-    it('should have the property productName (base name: "productName")', function() {
-      // uncomment below and update the code to test the property productName
+    it('should have the property fieldType (base name: "fieldType")', function() {
+      // uncomment below and update the code to test the property fieldType
       //var instane = new CyberSource.InlineResponse2003();
       //expect(instance).to.be();
     });
 
-    it('should have the property eventTypes (base name: "eventTypes")', function() {
-      // uncomment below and update the code to test the property eventTypes
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property customerVisible (base name: "customerVisible")', function() {
+      // uncomment below and update the code to test the property customerVisible
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property textMinLength (base name: "textMinLength")', function() {
+      // uncomment below and update the code to test the property textMinLength
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property textMaxLength (base name: "textMaxLength")', function() {
+      // uncomment below and update the code to test the property textMaxLength
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property possibleValues (base name: "possibleValues")', function() {
+      // uncomment below and update the code to test the property possibleValues
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property textDefaultValue (base name: "textDefaultValue")', function() {
+      // uncomment below and update the code to test the property textDefaultValue
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantId (base name: "merchantId")', function() {
+      // uncomment below and update the code to test the property merchantId
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property referenceType (base name: "referenceType")', function() {
+      // uncomment below and update the code to test the property referenceType
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property readOnly (base name: "readOnly")', function() {
+      // uncomment below and update the code to test the property readOnly
+      //var instane = new CyberSource.InlineResponse2003();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantDefinedDataIndex (base name: "merchantDefinedDataIndex")', function() {
+      // uncomment below and update the code to test the property merchantDefinedDataIndex
       //var instane = new CyberSource.InlineResponse2003();
       //expect(instance).to.be();
     });

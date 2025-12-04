@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Microformv2sessionsTransientTokenResponseOptions', 'model/Upv1capturecontextsCaptureMandate', 'model/Upv1capturecontextsCompleteMandate', 'model/Upv1capturecontextsOrderInformation'], factory);
+    define(['ApiClient', 'model/Microformv2sessionsTransientTokenResponseOptions', 'model/Upv1capturecontextsCaptureMandate', 'model/Upv1capturecontextsCompleteMandate', 'model/Upv1capturecontextsData', 'model/Upv1capturecontextsOrderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Microformv2sessionsTransientTokenResponseOptions'), require('./Upv1capturecontextsCaptureMandate'), require('./Upv1capturecontextsCompleteMandate'), require('./Upv1capturecontextsOrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Microformv2sessionsTransientTokenResponseOptions'), require('./Upv1capturecontextsCaptureMandate'), require('./Upv1capturecontextsCompleteMandate'), require('./Upv1capturecontextsData'), require('./Upv1capturecontextsOrderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Microformv2sessionsTransientTokenResponseOptions, root.CyberSource.Upv1capturecontextsCaptureMandate, root.CyberSource.Upv1capturecontextsCompleteMandate, root.CyberSource.Upv1capturecontextsOrderInformation);
+    root.CyberSource.GenerateUnifiedCheckoutCaptureContextRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Microformv2sessionsTransientTokenResponseOptions, root.CyberSource.Upv1capturecontextsCaptureMandate, root.CyberSource.Upv1capturecontextsCompleteMandate, root.CyberSource.Upv1capturecontextsData, root.CyberSource.Upv1capturecontextsOrderInformation);
   }
-}(this, function(ApiClient, Microformv2sessionsTransientTokenResponseOptions, Upv1capturecontextsCaptureMandate, Upv1capturecontextsCompleteMandate, Upv1capturecontextsOrderInformation) {
+}(this, function(ApiClient, Microformv2sessionsTransientTokenResponseOptions, Upv1capturecontextsCaptureMandate, Upv1capturecontextsCompleteMandate, Upv1capturecontextsData, Upv1capturecontextsOrderInformation) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -88,17 +90,23 @@
       if (data.hasOwnProperty('locale')) {
         obj['locale'] = ApiClient.convertToType(data['locale'], 'String');
       }
+      if (data.hasOwnProperty('buttonType')) {
+        obj['buttonType'] = ApiClient.convertToType(data['buttonType'], 'String');
+      }
       if (data.hasOwnProperty('captureMandate')) {
         obj['captureMandate'] = Upv1capturecontextsCaptureMandate.constructFromObject(data['captureMandate']);
       }
       if (data.hasOwnProperty('completeMandate')) {
         obj['completeMandate'] = Upv1capturecontextsCompleteMandate.constructFromObject(data['completeMandate']);
       }
-      if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = Upv1capturecontextsOrderInformation.constructFromObject(data['orderInformation']);
-      }
       if (data.hasOwnProperty('transientTokenResponseOptions')) {
         obj['transientTokenResponseOptions'] = Microformv2sessionsTransientTokenResponseOptions.constructFromObject(data['transientTokenResponseOptions']);
+      }
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = Upv1capturecontextsData.constructFromObject(data['data']);
+      }
+      if (data.hasOwnProperty('orderInformation')) {
+        obj['orderInformation'] = Upv1capturecontextsOrderInformation.constructFromObject(data['orderInformation']);
       }
     }
     return obj;
@@ -115,12 +123,12 @@
    */
   exports.prototype['targetOrigins'] = undefined;
   /**
-   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA     - PAYPAK 
+   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JAYWAN     - JCB     - JCREW     - KCP     - MADA     - MAESTRO     - MEEZA     - PAYPAK     - UATP 
    * @member {Array.<String>} allowedCardNetworks
    */
   exports.prototype['allowedCardNetworks'] = undefined;
   /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout also supports the following Alternative Payments:   - AFTERPAY<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)<br><br>    Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP)<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry. 
    * @member {Array.<String>} allowedPaymentTypes
    */
   exports.prototype['allowedPaymentTypes'] = undefined;
@@ -135,6 +143,11 @@
    */
   exports.prototype['locale'] = undefined;
   /**
+   * Changes the label on the payment button within Unified Checkout .<br><br>  Possible values: - ADD_CARD - CARD_PAYMENT - CHECKOUT - CHECKOUT_AND_CONTINUE - DEBIT_CREDIT - DONATE - PAY - PAY_WITH_CARD - SAVE_CARD - SUBSCRIBE_WITH_CARD<br><br>  This is an optional field, 
+   * @member {String} buttonType
+   */
+  exports.prototype['buttonType'] = undefined;
+  /**
    * @member {module:model/Upv1capturecontextsCaptureMandate} captureMandate
    */
   exports.prototype['captureMandate'] = undefined;
@@ -143,13 +156,17 @@
    */
   exports.prototype['completeMandate'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsOrderInformation} orderInformation
-   */
-  exports.prototype['orderInformation'] = undefined;
-  /**
    * @member {module:model/Microformv2sessionsTransientTokenResponseOptions} transientTokenResponseOptions
    */
   exports.prototype['transientTokenResponseOptions'] = undefined;
+  /**
+   * @member {module:model/Upv1capturecontextsData} data
+   */
+  exports.prototype['data'] = undefined;
+  /**
+   * @member {module:model/Upv1capturecontextsOrderInformation} orderInformation
+   */
+  exports.prototype['orderInformation'] = undefined;
 
 
 

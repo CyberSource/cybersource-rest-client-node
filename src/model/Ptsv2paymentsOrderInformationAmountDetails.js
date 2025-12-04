@@ -78,6 +78,7 @@
 
 
 
+
   };
 
   /**
@@ -91,6 +92,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('refundBalance')) {
+        obj['refundBalance'] = ApiClient.convertToType(data['refundBalance'], 'String');
+      }
       if (data.hasOwnProperty('giftWrapAmount')) {
         obj['giftWrapAmount'] = ApiClient.convertToType(data['giftWrapAmount'], 'String');
       }
@@ -188,6 +192,11 @@
     return obj;
   }
 
+  /**
+   * The remaining amount which can be refunded.
+   * @member {String} refundBalance
+   */
+  exports.prototype['refundBalance'] = undefined;
   /**
    * Amount being charged as gift wrap fee. 
    * @member {String} giftWrapAmount

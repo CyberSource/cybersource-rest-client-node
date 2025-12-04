@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20010Billing', 'model/InlineResponse20010Links', 'model/InlineResponse2009EmbeddedTotals'], factory);
+    define(['ApiClient', 'model/InlineResponse20010Devices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20010Billing'), require('./InlineResponse20010Links'), require('./InlineResponse2009EmbeddedTotals'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse20010Devices'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20010 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20010Billing, root.CyberSource.InlineResponse20010Links, root.CyberSource.InlineResponse2009EmbeddedTotals);
+    root.CyberSource.InlineResponse20010 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20010Devices);
   }
-}(this, function(ApiClient, InlineResponse20010Billing, InlineResponse20010Links, InlineResponse2009EmbeddedTotals) {
+}(this, function(ApiClient, InlineResponse20010Devices) {
   'use strict';
 
 
@@ -53,10 +53,6 @@
 
 
 
-
-
-
-
   };
 
   /**
@@ -70,85 +66,58 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse20010Links.constructFromObject(data['_links']);
+      if (data.hasOwnProperty('totalCount')) {
+        obj['totalCount'] = ApiClient.convertToType(data['totalCount'], 'Number');
       }
-      if (data.hasOwnProperty('batchId')) {
-        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      if (data.hasOwnProperty('offset')) {
+        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
       }
-      if (data.hasOwnProperty('batchCreatedDate')) {
-        obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
+      if (data.hasOwnProperty('limit')) {
+        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
       }
-      if (data.hasOwnProperty('batchSource')) {
-        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
+      if (data.hasOwnProperty('sort')) {
+        obj['sort'] = ApiClient.convertToType(data['sort'], 'String');
       }
-      if (data.hasOwnProperty('merchantReference')) {
-        obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
+      if (data.hasOwnProperty('count')) {
+        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
       }
-      if (data.hasOwnProperty('batchCaEndpoints')) {
-        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('totals')) {
-        obj['totals'] = InlineResponse2009EmbeddedTotals.constructFromObject(data['totals']);
-      }
-      if (data.hasOwnProperty('billing')) {
-        obj['billing'] = InlineResponse20010Billing.constructFromObject(data['billing']);
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('devices')) {
+        obj['devices'] = ApiClient.convertToType(data['devices'], [InlineResponse20010Devices]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse20010Links} _links
+   * Total number of results.
+   * @member {Number} totalCount
    */
-  exports.prototype['_links'] = undefined;
+  exports.prototype['totalCount'] = undefined;
   /**
-   * Unique identification number assigned to the submitted request.
-   * @member {String} batchId
+   * Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. 
+   * @member {Number} offset
    */
-  exports.prototype['batchId'] = undefined;
+  exports.prototype['offset'] = undefined;
   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @member {String} batchCreatedDate
+   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. 
+   * @member {Number} limit
    */
-  exports.prototype['batchCreatedDate'] = undefined;
+  exports.prototype['limit'] = undefined;
   /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @member {String} batchSource
+   * A comma separated list of the following form:  `terminalCreationDate:desc or serialNumber or terminalUpdationDate` 
+   * @member {String} sort
    */
-  exports.prototype['batchSource'] = undefined;
+  exports.prototype['sort'] = undefined;
   /**
-   * Reference used by merchant to identify batch.
-   * @member {String} merchantReference
+   * Results for this page, this could be below the limit.
+   * @member {Number} count
    */
-  exports.prototype['merchantReference'] = undefined;
+  exports.prototype['count'] = undefined;
   /**
-   * @member {String} batchCaEndpoints
+   * A collection of devices
+   * @member {Array.<module:model/InlineResponse20010Devices>} devices
    */
-  exports.prototype['batchCaEndpoints'] = undefined;
-  /**
-   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2009EmbeddedTotals} totals
-   */
-  exports.prototype['totals'] = undefined;
-  /**
-   * @member {module:model/InlineResponse20010Billing} billing
-   */
-  exports.prototype['billing'] = undefined;
-  /**
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
+  exports.prototype['devices'] = undefined;
 
 
 

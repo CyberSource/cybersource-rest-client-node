@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Upv1capturecontextsCompleteMandateTms'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsCompleteMandateTms'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Upv1capturecontextsCompleteMandate = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Upv1capturecontextsCompleteMandate = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsCompleteMandateTms);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Upv1capturecontextsCompleteMandateTms) {
   'use strict';
 
 
@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -67,6 +68,9 @@
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
+      if (data.hasOwnProperty('tms')) {
+        obj['tms'] = Upv1capturecontextsCompleteMandateTms.constructFromObject(data['tms']);
+      }
       if (data.hasOwnProperty('decisionManager')) {
         obj['decisionManager'] = ApiClient.convertToType(data['decisionManager'], 'Boolean');
       }
@@ -82,6 +86,10 @@
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
+  /**
+   * @member {module:model/Upv1capturecontextsCompleteMandateTms} tms
+   */
+  exports.prototype['tms'] = undefined;
   /**
    * Configure Unified Checkout to determine whether Decision Manager is invoked during service orchestration.  Possible values:  - True  - False<br><br>  Setting this value to True indicates that device fingerprinting will be executed to add additional information for risk service Setting this value to False (or not provided) indicates that you do not wish to run device fingerprinting and skip decision manager services. 
    * @member {Boolean} decisionManager

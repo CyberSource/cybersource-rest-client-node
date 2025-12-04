@@ -104,7 +104,7 @@
    */
   exports.prototype['limit'] = undefined;
   /**
-   * A comma separated list of the following form:  `terminalCreationDate:desc or serialNumber or terminalUpdationDate` 
+   * A comma separated list of the following form:  `submitTimeUtc:desc` 
    * @member {String} sort
    */
   exports.prototype['sort'] = undefined;

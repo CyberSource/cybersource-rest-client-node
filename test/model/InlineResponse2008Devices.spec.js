@@ -62,8 +62,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property serialNumber (base name: "serialNumber")', function() {
-      // uncomment below and update the code to test the property serialNumber
+    it('should have the property terminalSerialNumber (base name: "terminalSerialNumber")', function() {
+      // uncomment below and update the code to test the property terminalSerialNumber
+      //var instane = new CyberSource.InlineResponse2008Devices();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property terminalId (base name: "terminalId")', function() {
+      // uncomment below and update the code to test the property terminalId
       //var instane = new CyberSource.InlineResponse2008Devices();
       //expect(instance).to.be();
     });
@@ -92,38 +98,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property statusChangeReason (base name: "statusChangeReason")', function() {
-      // uncomment below and update the code to test the property statusChangeReason
+    it('should have the property creationDate (base name: "creationDate")', function() {
+      // uncomment below and update the code to test the property creationDate
       //var instane = new CyberSource.InlineResponse2008Devices();
       //expect(instance).to.be();
     });
 
-    it('should have the property merchantId (base name: "merchantId")', function() {
-      // uncomment below and update the code to test the property merchantId
-      //var instane = new CyberSource.InlineResponse2008Devices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property accountId (base name: "accountId")', function() {
-      // uncomment below and update the code to test the property accountId
-      //var instane = new CyberSource.InlineResponse2008Devices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property terminalCreationDate (base name: "terminalCreationDate")', function() {
-      // uncomment below and update the code to test the property terminalCreationDate
-      //var instane = new CyberSource.InlineResponse2008Devices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property terminalUpdationDate (base name: "terminalUpdationDate")', function() {
-      // uncomment below and update the code to test the property terminalUpdationDate
-      //var instane = new CyberSource.InlineResponse2008Devices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property paymentProcessorToTerminalMap (base name: "paymentProcessorToTerminalMap")', function() {
-      // uncomment below and update the code to test the property paymentProcessorToTerminalMap
+    it('should have the property pin (base name: "pin")', function() {
+      // uncomment below and update the code to test the property pin
       //var instane = new CyberSource.InlineResponse2008Devices();
       //expect(instance).to.be();
     });

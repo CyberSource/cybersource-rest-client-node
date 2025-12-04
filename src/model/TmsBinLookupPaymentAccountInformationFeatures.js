@@ -66,6 +66,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -135,6 +140,21 @@
       }
       if (data.hasOwnProperty('flexCredential')) {
         obj['flexCredential'] = ApiClient.convertToType(data['flexCredential'], 'Boolean');
+      }
+      if (data.hasOwnProperty('productId')) {
+        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
+      }
+      if (data.hasOwnProperty('productIdSubtype')) {
+        obj['productIdSubtype'] = ApiClient.convertToType(data['productIdSubtype'], 'String');
+      }
+      if (data.hasOwnProperty('threeDSSupport')) {
+        obj['threeDSSupport'] = ApiClient.convertToType(data['threeDSSupport'], 'Boolean');
+      }
+      if (data.hasOwnProperty('siEligible')) {
+        obj['siEligible'] = ApiClient.convertToType(data['siEligible'], 'Boolean');
+      }
+      if (data.hasOwnProperty('emiEligible')) {
+        obj['emiEligible'] = ApiClient.convertToType(data['emiEligible'], 'Boolean');
       }
     }
     return obj;
@@ -235,6 +255,31 @@
    * @member {Boolean} flexCredential
    */
   exports.prototype['flexCredential'] = undefined;
+  /**
+   * This field contains the Visa-assigned product identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - Q4   - P   - AX 
+   * @member {String} productId
+   */
+  exports.prototype['productId'] = undefined;
+  /**
+   * This field contains the Visa-assigned product subtype identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - BB   - EX   - L2   - C2 
+   * @member {String} productIdSubtype
+   */
+  exports.prototype['productIdSubtype'] = undefined;
+  /**
+   * This field indicates if the payment instrument supports 3D Secure authentication. Possible values:     - `true`     - `false` 
+   * @member {Boolean} threeDSSupport
+   */
+  exports.prototype['threeDSSupport'] = undefined;
+  /**
+   * This field indicates if the payment instrument is eligible for Standing Instructions (recurring payments). Possible values:     - `true`     - `false` 
+   * @member {Boolean} siEligible
+   */
+  exports.prototype['siEligible'] = undefined;
+  /**
+   * This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false` 
+   * @member {Boolean} emiEligible
+   */
+  exports.prototype['emiEligible'] = undefined;
 
 
 

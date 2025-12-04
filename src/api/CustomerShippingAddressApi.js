@@ -338,7 +338,7 @@
       var returnType = PatchCustomerShippingAddressRequest;
 
       //check isMLE for an api method 'this.patchCustomersShippingAddress'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'patchCustomersShippingAddress');
 
       if (isMLEForApi === true) {
@@ -414,7 +414,7 @@
       var returnType = PostCustomerShippingAddressRequest;
 
       //check isMLE for an api method 'this.postCustomerShippingAddress'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postCustomerShippingAddress');
 
       if (isMLEForApi === true) {

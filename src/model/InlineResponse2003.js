@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv2productsorganizationIdEventTypes'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv2productsorganizationIdEventTypes'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv2productsorganizationIdEventTypes);
+    root.CyberSource.InlineResponse2003 = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv2productsorganizationIdEventTypes) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -50,6 +50,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -63,33 +72,94 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('productId')) {
-        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('productName')) {
-        obj['productName'] = ApiClient.convertToType(data['productName'], 'String');
+      if (data.hasOwnProperty('fieldType')) {
+        obj['fieldType'] = ApiClient.convertToType(data['fieldType'], 'String');
       }
-      if (data.hasOwnProperty('eventTypes')) {
-        obj['eventTypes'] = ApiClient.convertToType(data['eventTypes'], [Notificationsubscriptionsv2productsorganizationIdEventTypes]);
+      if (data.hasOwnProperty('label')) {
+        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      }
+      if (data.hasOwnProperty('customerVisible')) {
+        obj['customerVisible'] = ApiClient.convertToType(data['customerVisible'], 'Boolean');
+      }
+      if (data.hasOwnProperty('textMinLength')) {
+        obj['textMinLength'] = ApiClient.convertToType(data['textMinLength'], 'Number');
+      }
+      if (data.hasOwnProperty('textMaxLength')) {
+        obj['textMaxLength'] = ApiClient.convertToType(data['textMaxLength'], 'Number');
+      }
+      if (data.hasOwnProperty('possibleValues')) {
+        obj['possibleValues'] = ApiClient.convertToType(data['possibleValues'], 'String');
+      }
+      if (data.hasOwnProperty('textDefaultValue')) {
+        obj['textDefaultValue'] = ApiClient.convertToType(data['textDefaultValue'], 'String');
+      }
+      if (data.hasOwnProperty('merchantId')) {
+        obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
+      }
+      if (data.hasOwnProperty('referenceType')) {
+        obj['referenceType'] = ApiClient.convertToType(data['referenceType'], 'String');
+      }
+      if (data.hasOwnProperty('readOnly')) {
+        obj['readOnly'] = ApiClient.convertToType(data['readOnly'], 'Boolean');
+      }
+      if (data.hasOwnProperty('merchantDefinedDataIndex')) {
+        obj['merchantDefinedDataIndex'] = ApiClient.convertToType(data['merchantDefinedDataIndex'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * Product ID.
-   * @member {String} productId
+   * @member {Number} id
    */
-  exports.prototype['productId'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * Product Name.
-   * @member {String} productName
+   * @member {String} fieldType
    */
-  exports.prototype['productName'] = undefined;
+  exports.prototype['fieldType'] = undefined;
   /**
-   * @member {Array.<module:model/Notificationsubscriptionsv2productsorganizationIdEventTypes>} eventTypes
+   * @member {String} label
    */
-  exports.prototype['eventTypes'] = undefined;
+  exports.prototype['label'] = undefined;
+  /**
+   * @member {Boolean} customerVisible
+   */
+  exports.prototype['customerVisible'] = undefined;
+  /**
+   * @member {Number} textMinLength
+   */
+  exports.prototype['textMinLength'] = undefined;
+  /**
+   * @member {Number} textMaxLength
+   */
+  exports.prototype['textMaxLength'] = undefined;
+  /**
+   * @member {String} possibleValues
+   */
+  exports.prototype['possibleValues'] = undefined;
+  /**
+   * @member {String} textDefaultValue
+   */
+  exports.prototype['textDefaultValue'] = undefined;
+  /**
+   * @member {String} merchantId
+   */
+  exports.prototype['merchantId'] = undefined;
+  /**
+   * @member {String} referenceType
+   */
+  exports.prototype['referenceType'] = undefined;
+  /**
+   * @member {Boolean} readOnly
+   */
+  exports.prototype['readOnly'] = undefined;
+  /**
+   * @member {Number} merchantDefinedDataIndex
+   */
+  exports.prototype['merchantDefinedDataIndex'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv2webhooksProducts', 'model/Notificationsubscriptionsv2webhooksRetryPolicy', 'model/Notificationsubscriptionsv2webhooksSecurityPolicy'], factory);
+    define(['ApiClient', 'model/Boardingv1registrationsDocumentInformation', 'model/Boardingv1registrationsOrganizationInformation', 'model/Boardingv1registrationsProductInformation', 'model/Boardingv1registrationsRegistrationInformation', 'model/InlineResponse2004IntegrationInformation', 'model/InlineResponse2013ProductInformationSetups'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv2webhooksProducts'), require('./Notificationsubscriptionsv2webhooksRetryPolicy'), require('./Notificationsubscriptionsv2webhooksSecurityPolicy'));
+    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsDocumentInformation'), require('./Boardingv1registrationsOrganizationInformation'), require('./Boardingv1registrationsProductInformation'), require('./Boardingv1registrationsRegistrationInformation'), require('./InlineResponse2004IntegrationInformation'), require('./InlineResponse2013ProductInformationSetups'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2004 = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv2webhooksProducts, root.CyberSource.Notificationsubscriptionsv2webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicy);
+    root.CyberSource.InlineResponse2004 = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsDocumentInformation, root.CyberSource.Boardingv1registrationsOrganizationInformation, root.CyberSource.Boardingv1registrationsProductInformation, root.CyberSource.Boardingv1registrationsRegistrationInformation, root.CyberSource.InlineResponse2004IntegrationInformation, root.CyberSource.InlineResponse2013ProductInformationSetups);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv2webhooksProducts, Notificationsubscriptionsv2webhooksRetryPolicy, Notificationsubscriptionsv2webhooksSecurityPolicy) {
+}(this, function(ApiClient, Boardingv1registrationsDocumentInformation, Boardingv1registrationsOrganizationInformation, Boardingv1registrationsProductInformation, Boardingv1registrationsRegistrationInformation, InlineResponse2004IntegrationInformation, InlineResponse2013ProductInformationSetups) {
   'use strict';
 
 
@@ -54,11 +54,6 @@
 
 
 
-
-
-
-
-
   };
 
   /**
@@ -72,105 +67,59 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('webhookId')) {
-        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
+      if (data.hasOwnProperty('registrationInformation')) {
+        obj['registrationInformation'] = Boardingv1registrationsRegistrationInformation.constructFromObject(data['registrationInformation']);
       }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
+      if (data.hasOwnProperty('integrationInformation')) {
+        obj['integrationInformation'] = InlineResponse2004IntegrationInformation.constructFromObject(data['integrationInformation']);
       }
-      if (data.hasOwnProperty('products')) {
-        obj['products'] = ApiClient.convertToType(data['products'], [Notificationsubscriptionsv2webhooksProducts]);
+      if (data.hasOwnProperty('organizationInformation')) {
+        obj['organizationInformation'] = Boardingv1registrationsOrganizationInformation.constructFromObject(data['organizationInformation']);
       }
-      if (data.hasOwnProperty('webhookUrl')) {
-        obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
+      if (data.hasOwnProperty('productInformation')) {
+        obj['productInformation'] = Boardingv1registrationsProductInformation.constructFromObject(data['productInformation']);
       }
-      if (data.hasOwnProperty('healthCheckUrl')) {
-        obj['healthCheckUrl'] = ApiClient.convertToType(data['healthCheckUrl'], 'String');
+      if (data.hasOwnProperty('productInformationSetups')) {
+        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2013ProductInformationSetups]);
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('documentInformation')) {
+        obj['documentInformation'] = Boardingv1registrationsDocumentInformation.constructFromObject(data['documentInformation']);
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('retryPolicy')) {
-        obj['retryPolicy'] = Notificationsubscriptionsv2webhooksRetryPolicy.constructFromObject(data['retryPolicy']);
-      }
-      if (data.hasOwnProperty('securityPolicy')) {
-        obj['securityPolicy'] = Notificationsubscriptionsv2webhooksSecurityPolicy.constructFromObject(data['securityPolicy']);
-      }
-      if (data.hasOwnProperty('createdOn')) {
-        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
-      }
-      if (data.hasOwnProperty('notificationScope')) {
-        obj['notificationScope'] = ApiClient.convertToType(data['notificationScope'], 'String');
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
       }
     }
     return obj;
   }
 
   /**
-   * Webhook Id. This is generated by the server.
-   * @member {String} webhookId
+   * @member {module:model/Boardingv1registrationsRegistrationInformation} registrationInformation
    */
-  exports.prototype['webhookId'] = undefined;
+  exports.prototype['registrationInformation'] = undefined;
   /**
-   * Organization ID.
-   * @member {String} organizationId
+   * @member {module:model/InlineResponse2004IntegrationInformation} integrationInformation
    */
-  exports.prototype['organizationId'] = undefined;
+  exports.prototype['integrationInformation'] = undefined;
   /**
-   * @member {Array.<module:model/Notificationsubscriptionsv2webhooksProducts>} products
+   * @member {module:model/Boardingv1registrationsOrganizationInformation} organizationInformation
    */
-  exports.prototype['products'] = undefined;
+  exports.prototype['organizationInformation'] = undefined;
   /**
-   * The client's endpoint (URL) to receive webhooks.
-   * @member {String} webhookUrl
+   * @member {module:model/Boardingv1registrationsProductInformation} productInformation
    */
-  exports.prototype['webhookUrl'] = undefined;
+  exports.prototype['productInformation'] = undefined;
   /**
-   * The client's health check endpoint (URL).
-   * @member {String} healthCheckUrl
+   * @member {Array.<module:model/InlineResponse2013ProductInformationSetups>} productInformationSetups
    */
-  exports.prototype['healthCheckUrl'] = undefined;
+  exports.prototype['productInformationSetups'] = undefined;
   /**
-   * Webhook status.
-   * @member {String} status
-   * @default 'INACTIVE'
+   * @member {module:model/Boardingv1registrationsDocumentInformation} documentInformation
    */
-  exports.prototype['status'] = 'INACTIVE';
+  exports.prototype['documentInformation'] = undefined;
   /**
-   * Client friendly webhook name.
-   * @member {String} name
+   * @member {Object.<String, Array.<Object>>} details
    */
-  exports.prototype['name'] = undefined;
-  /**
-   * Client friendly webhook description.
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv2webhooksRetryPolicy} retryPolicy
-   */
-  exports.prototype['retryPolicy'] = undefined;
-  /**
-   * @member {module:model/Notificationsubscriptionsv2webhooksSecurityPolicy} securityPolicy
-   */
-  exports.prototype['securityPolicy'] = undefined;
-  /**
-   * Date on which webhook was created/registered.
-   * @member {String} createdOn
-   */
-  exports.prototype['createdOn'] = undefined;
-  /**
-   * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
-   * @member {String} notificationScope
-   * @default 'DESCENDANTS'
-   */
-  exports.prototype['notificationScope'] = 'DESCENDANTS';
+  exports.prototype['details'] = undefined;
 
 
 

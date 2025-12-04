@@ -107,12 +107,12 @@
    */
   exports.prototype['tradeNumber'] = undefined;
   /**
-   * This field is set to the value of failure reason returned by the processor. 
+   * Failure reason returned by the processor.
    * @member {String} rawResponse
    */
   exports.prototype['rawResponse'] = undefined;
   /**
-   * This field is set to the value of failure reason returned by the processor in the local language of the processor. 
+   * Failure reason returned by the processor in the local language of the processor.
    * @member {String} rawResponseLocal
    */
   exports.prototype['rawResponseLocal'] = undefined;

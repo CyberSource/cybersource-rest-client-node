@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20010Billing', 'model/InlineResponse20011Records', 'model/InlineResponse2009EmbeddedTotals'], factory);
+    define(['ApiClient', 'model/InlineResponse20011Embedded', 'model/InlineResponse20011Links'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20010Billing'), require('./InlineResponse20011Records'), require('./InlineResponse2009EmbeddedTotals'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse20011Embedded'), require('./InlineResponse20011Links'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20010Billing, root.CyberSource.InlineResponse20011Records, root.CyberSource.InlineResponse2009EmbeddedTotals);
+    root.CyberSource.InlineResponse20011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20011Embedded, root.CyberSource.InlineResponse20011Links);
   }
-}(this, function(ApiClient, InlineResponse20010Billing, InlineResponse20011Records, InlineResponse2009EmbeddedTotals) {
+}(this, function(ApiClient, InlineResponse20011Embedded, InlineResponse20011Links) {
   'use strict';
 
 
@@ -54,9 +54,6 @@
 
 
 
-
-
-
   };
 
   /**
@@ -70,85 +67,59 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('version')) {
-        obj['version'] = ApiClient.convertToType(data['version'], 'String');
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = ApiClient.convertToType(data['_links'], [InlineResponse20011Links]);
       }
-      if (data.hasOwnProperty('reportCreatedDate')) {
-        obj['reportCreatedDate'] = ApiClient.convertToType(data['reportCreatedDate'], 'String');
+      if (data.hasOwnProperty('object')) {
+        obj['object'] = ApiClient.convertToType(data['object'], 'String');
       }
-      if (data.hasOwnProperty('batchId')) {
-        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      if (data.hasOwnProperty('offset')) {
+        obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
       }
-      if (data.hasOwnProperty('batchSource')) {
-        obj['batchSource'] = ApiClient.convertToType(data['batchSource'], 'String');
+      if (data.hasOwnProperty('limit')) {
+        obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
       }
-      if (data.hasOwnProperty('batchCaEndpoints')) {
-        obj['batchCaEndpoints'] = ApiClient.convertToType(data['batchCaEndpoints'], 'String');
+      if (data.hasOwnProperty('count')) {
+        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
       }
-      if (data.hasOwnProperty('batchCreatedDate')) {
-        obj['batchCreatedDate'] = ApiClient.convertToType(data['batchCreatedDate'], 'String');
+      if (data.hasOwnProperty('total')) {
+        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
       }
-      if (data.hasOwnProperty('merchantReference')) {
-        obj['merchantReference'] = ApiClient.convertToType(data['merchantReference'], 'String');
-      }
-      if (data.hasOwnProperty('totals')) {
-        obj['totals'] = InlineResponse2009EmbeddedTotals.constructFromObject(data['totals']);
-      }
-      if (data.hasOwnProperty('billing')) {
-        obj['billing'] = InlineResponse20010Billing.constructFromObject(data['billing']);
-      }
-      if (data.hasOwnProperty('records')) {
-        obj['records'] = ApiClient.convertToType(data['records'], [InlineResponse20011Records]);
+      if (data.hasOwnProperty('_embedded')) {
+        obj['_embedded'] = InlineResponse20011Embedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} version
+   * @member {Array.<module:model/InlineResponse20011Links>} _links
    */
-  exports.prototype['version'] = undefined;
+  exports.prototype['_links'] = undefined;
   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @member {String} reportCreatedDate
+   * @member {String} object
    */
-  exports.prototype['reportCreatedDate'] = undefined;
+  exports.prototype['object'] = undefined;
   /**
-   * Unique identification number assigned to the submitted request.
-   * @member {String} batchId
+   * @member {Number} offset
    */
-  exports.prototype['batchId'] = undefined;
+  exports.prototype['offset'] = undefined;
   /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @member {String} batchSource
+   * @member {Number} limit
    */
-  exports.prototype['batchSource'] = undefined;
+  exports.prototype['limit'] = undefined;
   /**
-   * @member {String} batchCaEndpoints
+   * @member {Number} count
    */
-  exports.prototype['batchCaEndpoints'] = undefined;
+  exports.prototype['count'] = undefined;
   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @member {String} batchCreatedDate
+   * @member {Number} total
    */
-  exports.prototype['batchCreatedDate'] = undefined;
+  exports.prototype['total'] = undefined;
   /**
-   * Reference used by merchant to identify batch.
-   * @member {String} merchantReference
+   * @member {module:model/InlineResponse20011Embedded} _embedded
    */
-  exports.prototype['merchantReference'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2009EmbeddedTotals} totals
-   */
-  exports.prototype['totals'] = undefined;
-  /**
-   * @member {module:model/InlineResponse20010Billing} billing
-   */
-  exports.prototype['billing'] = undefined;
-  /**
-   * @member {Array.<module:model/InlineResponse20011Records>} records
-   */
-  exports.prototype['records'] = undefined;
+  exports.prototype['_embedded'] = undefined;
 
 
 

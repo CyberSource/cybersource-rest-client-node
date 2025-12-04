@@ -170,6 +170,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property productId (base name: "productId")', function() {
+      // uncomment below and update the code to test the property productId
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productIdSubtype (base name: "productIdSubtype")', function() {
+      // uncomment below and update the code to test the property productIdSubtype
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property threeDSSupport (base name: "threeDSSupport")', function() {
+      // uncomment below and update the code to test the property threeDSSupport
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property siEligible (base name: "siEligible")', function() {
+      // uncomment below and update the code to test the property siEligible
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property emiEligible (base name: "emiEligible")', function() {
+      // uncomment below and update the code to test the property emiEligible
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

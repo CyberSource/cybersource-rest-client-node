@@ -110,6 +110,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property network (base name: "network")', function() {
+      // uncomment below and update the code to test the property network
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantAdvice (base name: "merchantAdvice")', function() {
+      // uncomment below and update the code to test the property merchantAdvice
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

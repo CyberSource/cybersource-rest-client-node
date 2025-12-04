@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsidProcessingInformationAuthorizationOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsProcessorInformationReversalNetwork', 'model/Ptsv2paymentsidProcessingInformationAuthorizationOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidProcessingInformationAuthorizationOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessorInformationReversalNetwork'), require('./Ptsv2paymentsidProcessingInformationAuthorizationOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidProcessingInformationAuthorizationOptions);
+    root.CyberSource.Ptsv2paymentsidProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessorInformationReversalNetwork, root.CyberSource.Ptsv2paymentsidProcessingInformationAuthorizationOptions);
   }
-}(this, function(ApiClient, Ptsv2paymentsidProcessingInformationAuthorizationOptions) {
+}(this, function(ApiClient, Ptsv2paymentsProcessorInformationReversalNetwork, Ptsv2paymentsidProcessingInformationAuthorizationOptions) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('authorizationOptions')) {
         obj['authorizationOptions'] = Ptsv2paymentsidProcessingInformationAuthorizationOptions.constructFromObject(data['authorizationOptions']);
       }
+      if (data.hasOwnProperty('network')) {
+        obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
+      }
     }
     return obj;
   }
@@ -72,6 +76,10 @@
    * @member {module:model/Ptsv2paymentsidProcessingInformationAuthorizationOptions} authorizationOptions
    */
   exports.prototype['authorizationOptions'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessorInformationReversalNetwork} network
+   */
+  exports.prototype['network'] = undefined;
 
 
 

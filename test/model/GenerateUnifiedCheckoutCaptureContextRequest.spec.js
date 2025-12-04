@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property buttonType (base name: "buttonType")', function() {
+      // uncomment below and update the code to test the property buttonType
+      //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property captureMandate (base name: "captureMandate")', function() {
       // uncomment below and update the code to test the property captureMandate
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
@@ -104,14 +110,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property orderInformation (base name: "orderInformation")', function() {
-      // uncomment below and update the code to test the property orderInformation
+    it('should have the property transientTokenResponseOptions (base name: "transientTokenResponseOptions")', function() {
+      // uncomment below and update the code to test the property transientTokenResponseOptions
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property transientTokenResponseOptions (base name: "transientTokenResponseOptions")', function() {
-      // uncomment below and update the code to test the property transientTokenResponseOptions
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
+      //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderInformation (base name: "orderInformation")', function() {
+      // uncomment below and update the code to test the property orderInformation
       //var instane = new CyberSource.GenerateUnifiedCheckoutCaptureContextRequest();
       //expect(instance).to.be();
     });

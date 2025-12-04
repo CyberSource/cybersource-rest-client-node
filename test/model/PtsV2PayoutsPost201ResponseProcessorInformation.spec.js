@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantAdvice (base name: "merchantAdvice")', function() {
+      // uncomment below and update the code to test the property merchantAdvice
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
