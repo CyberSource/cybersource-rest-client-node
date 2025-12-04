@@ -14,8 +14,15 @@ function maskSensitiveData(message) {
         return Constants.LOG_REQUEST_AFTER_MLE + maskSensitiveData(message.substring(Constants.LOG_REQUEST_AFTER_MLE.length));
     }
 
+    if (typeof message === 'string' && message.startsWith(Constants.LOG_RESPONSE_AFTER_MLE)) {
+        return Constants.LOG_RESPONSE_AFTER_MLE + maskSensitiveData(message.substring(Constants.LOG_RESPONSE_AFTER_MLE.length));
+    }
+    if (typeof message === 'string' && message.startsWith(Constants.LOG_RESPONSE_BEFORE_MLE)) {
+        return Constants.LOG_RESPONSE_BEFORE_MLE + maskSensitiveData(message.substring(Constants.LOG_RESPONSE_BEFORE_MLE.length));
+    }
+
     if (Utility.isJsonString(message)) {
-        jsonMsg = JSON.parse(message)
+        jsonMsg = JSON.parse(message);
     } else {
         jsonMsg = JSON.parse(JSON.stringify(message));
     }
