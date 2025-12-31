@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('service')) {
         obj['service'] = ApiClient.convertToType(data['service'], [Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService]);
+      }
+      if (data.hasOwnProperty('feeDescription')) {
+        obj['feeDescription'] = ApiClient.convertToType(data['feeDescription'], 'String');
       }
     }
     return obj;
@@ -108,6 +112,11 @@
    * @member {Array.<module:model/Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService>} service
    */
   exports.prototype['service'] = undefined;
+  /**
+   * This field contains the fee description for the airline ancillary service provided. Format: Alphanumeric, 100 characters maximum. Optional field for ancillary services. 
+   * @member {String} feeDescription
+   */
+  exports.prototype['feeDescription'] = undefined;
 
 
 

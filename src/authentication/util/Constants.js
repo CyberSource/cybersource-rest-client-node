@@ -44,6 +44,8 @@ module.exports = {
     END_TRANSACTION                   :  "************************  LOGGING END  ************************",
     LOG_REQUEST_BEFORE_MLE            :  "Request before MLE: ",
     LOG_REQUEST_AFTER_MLE             :  "Request after MLE: ",
+    LOG_RESPONSE_BEFORE_MLE           :  "Response before MLE decryption: ",
+    LOG_RESPONSE_AFTER_MLE            :  "Response after MLE decryption: ",
     MERCHANTID                        :  "MERCHANTID",
     MERCHANT_KEY_ID                   :  "MERCHANT_KEY_ID",
     MERCHANT_SECERT_KEY               :  "MERCHANT_SECERT_KEY",
@@ -99,6 +101,8 @@ module.exports = {
     DEFAULT_LOGGING_LEVEL             :  "error",
     DEFAULT_MAX_IDLE_SOCKETS          :  100,
     DEFAULT_USER_DEFINED_TIMEOUT      :  4000, // Value in milliseconds
+    MLE_CACHE_KEY_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY : "_mleResponsePrivateKeyFromFile",
+    RESPONSE_MLE_P12_PFX_CACHE_IDENTIFIER : "_responseMleP12Pfx",
 
     STATUS200                         :  "Transaction Successful",
     STATUS400                         :  "Bad Request",

@@ -62,6 +62,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property locale (base name: "locale")', function() {
+      // uncomment below and update the code to test the property locale
+      //var instane = new CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property localizedNames (base name: "localizedNames")', function() {
+      // uncomment below and update the code to test the property localizedNames
+      //var instane = new CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property doingBusinessAs (base name: "doingBusinessAs")', function() {
       // uncomment below and update the code to test the property doingBusinessAs
       //var instane = new CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformation();
