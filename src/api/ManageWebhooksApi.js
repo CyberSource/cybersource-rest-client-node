@@ -95,20 +95,21 @@
       //check isMLE for an api method 'this.deleteWebhookSubscription'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deleteWebhookSubscription');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deleteWebhookSubscription']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks/{webhookId}', 'DELETE',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v2/webhooks/{webhookId}', 'DELETE',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -160,20 +161,21 @@
       //check isMLE for an api method 'this.getWebhookSubscriptionById'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getWebhookSubscriptionById');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getWebhookSubscriptionById']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks/{webhookId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v2/webhooks/{webhookId}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -231,20 +233,21 @@
       //check isMLE for an api method 'this.getWebhookSubscriptionsByOrg'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getWebhookSubscriptionsByOrg');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getWebhookSubscriptionsByOrg']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v2/webhooks', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -296,20 +299,21 @@
       //check isMLE for an api method 'this.notificationSubscriptionsV1WebhooksWebhookIdPost'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV1WebhooksWebhookIdPost');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['notificationSubscriptionsV1WebhooksWebhookIdPost']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v1/webhooks/{webhookId}', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v1/webhooks/{webhookId}', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -365,20 +369,21 @@
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdPatch'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV2WebhooksWebhookIdPatch');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['notificationSubscriptionsV2WebhooksWebhookIdPatch']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -433,20 +438,21 @@
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdStatusPut'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV2WebhooksWebhookIdStatusPut');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['notificationSubscriptionsV2WebhooksWebhookIdStatusPut']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks/{webhookId}/status', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v2/webhooks/{webhookId}/status', 'PUT',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -516,20 +522,21 @@
       //check isMLE for an api method 'this.saveAsymEgressKey'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'saveAsymEgressKey');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['saveAsymEgressKey']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/kms/egress/v2/keys-asym', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/kms/egress/v2/keys-asym', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }

@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property feeAmount (base name: "feeAmount")', function() {
+      // uncomment below and update the code to test the property feeAmount
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property feeCode (base name: "feeCode")', function() {
+      // uncomment below and update the code to test the property feeCode
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

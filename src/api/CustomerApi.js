@@ -99,20 +99,21 @@
       //check isMLE for an api method 'this.deleteCustomer'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deleteCustomer');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deleteCustomer']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}', 'DELETE',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}', 'DELETE',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -168,20 +169,21 @@
       //check isMLE for an api method 'this.getCustomer'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getCustomer');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getCustomer']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -246,20 +248,21 @@
       //check isMLE for an api method 'this.patchCustomer'
       var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'patchCustomer');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['patchCustomer']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers/{customerId}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/tms/v2/customers/{customerId}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -315,20 +318,21 @@
       //check isMLE for an api method 'this.postCustomer'
       var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postCustomer');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postCustomer']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/customers', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/tms/v2/customers', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }

@@ -131,20 +131,21 @@
       //check isMLE for an api method 'this.createOffer'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createOffer');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createOffer']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/vas/v1/currencyconversion', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/vas/v1/currencyconversion', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -231,20 +232,21 @@
       //check isMLE for an api method 'this.getOffer'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getOffer');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getOffer']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/vas/v1/currencyconversion/{id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/vas/v1/currencyconversion/{id}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }

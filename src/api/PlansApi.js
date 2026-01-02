@@ -96,20 +96,21 @@
       //check isMLE for an api method 'this.activatePlan'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'activatePlan');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['activatePlan']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}/activate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}/activate', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -161,20 +162,21 @@
       //check isMLE for an api method 'this.createPlan'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPlan');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPlan']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -226,20 +228,21 @@
       //check isMLE for an api method 'this.deactivatePlan'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deactivatePlan');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deactivatePlan']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}/deactivate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}/deactivate', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -291,20 +294,21 @@
       //check isMLE for an api method 'this.deletePlan'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deletePlan');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deletePlan']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}', 'DELETE',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}', 'DELETE',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -356,20 +360,21 @@
       //check isMLE for an api method 'this.getPlan'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getPlan');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getPlan']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -414,20 +419,21 @@
       //check isMLE for an api method 'this.getPlanCode'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getPlanCode');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getPlanCode']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/code', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/code', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -484,20 +490,21 @@
       //check isMLE for an api method 'this.getPlans'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getPlans');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getPlans']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -556,20 +563,21 @@
       //check isMLE for an api method 'this.updatePlan'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updatePlan');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updatePlan']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/plans/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/plans/{id}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }

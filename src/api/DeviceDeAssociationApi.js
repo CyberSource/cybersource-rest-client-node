@@ -95,20 +95,21 @@
       //check isMLE for an api method 'this.deleteTerminalAssociation'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deleteTerminalAssociation');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deleteTerminalAssociation']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/dms/v2/devices/deassociate', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/dms/v2/devices/deassociate', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }
@@ -160,20 +161,21 @@
       //check isMLE for an api method 'this.postDeAssociateV3Terminal'
       var inboundMLEStatus = 'false';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postDeAssociateV3Terminal');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postDeAssociateV3Terminal']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
             '/dms/v3/devices/deassociate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, callback
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
           '/dms/v3/devices/deassociate', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, callback
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
       }
     }

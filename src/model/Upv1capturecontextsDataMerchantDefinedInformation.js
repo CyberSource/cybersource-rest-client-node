@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>Upv1capturecontextsDataMerchantDefinedInformation</code>.
+   * Contains merchant-defined key-value pairs
    * @alias module:model/Upv1capturecontextsDataMerchantDefinedInformation
    * @class
    */
@@ -73,12 +74,12 @@
   }
 
   /**
-   * The key or identifier for the merchant-defined data field
+   * The key or identifier for the merchant-defined data field.  Valid values are 1 to 100.
    * @member {String} key
    */
   exports.prototype['key'] = undefined;
   /**
-   * The value associated with the merchant-defined data field
+   * The value you assign for your merchant-defined data field.
    * @member {String} value
    */
   exports.prototype['value'] = undefined;

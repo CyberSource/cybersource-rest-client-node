@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property feeDescription (base name: "feeDescription")', function() {
+      // uncomment below and update the code to test the property feeDescription
+      //var instane = new CyberSource.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

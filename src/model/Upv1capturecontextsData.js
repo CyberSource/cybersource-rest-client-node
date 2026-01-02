@@ -92,7 +92,7 @@
         obj['recipientInformation'] = Upv1capturecontextsDataRecipientInformation.constructFromObject(data['recipientInformation']);
       }
       if (data.hasOwnProperty('merchantDefinedInformation')) {
-        obj['merchantDefinedInformation'] = Upv1capturecontextsDataMerchantDefinedInformation.constructFromObject(data['merchantDefinedInformation']);
+        obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [Upv1capturecontextsDataMerchantDefinedInformation]);
       }
       if (data.hasOwnProperty('deviceInformation')) {
         obj['deviceInformation'] = Upv1capturecontextsDataDeviceInformation.constructFromObject(data['deviceInformation']);
@@ -133,7 +133,7 @@
    */
   exports.prototype['recipientInformation'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsDataMerchantDefinedInformation} merchantDefinedInformation
+   * @member {Array.<module:model/Upv1capturecontextsDataMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;
   /**

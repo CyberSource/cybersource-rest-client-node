@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsOrganizationInformationBusinessInformationAddress', 'model/Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact'], factory);
+    define(['ApiClient', 'model/Boardingv1registrationsOrganizationInformationBusinessInformationAddress', 'model/Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact', 'model/Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsOrganizationInformationBusinessInformationAddress'), require('./Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact'));
+    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsOrganizationInformationBusinessInformationAddress'), require('./Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact'), require('./Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformationAddress, root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact);
+    root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformationAddress, root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact, root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames);
   }
-}(this, function(ApiClient, Boardingv1registrationsOrganizationInformationBusinessInformationAddress, Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact) {
+}(this, function(ApiClient, Boardingv1registrationsOrganizationInformationBusinessInformationAddress, Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact, Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames) {
   'use strict';
 
 
@@ -62,6 +62,8 @@
 
 
 
+
+
   };
 
   /**
@@ -77,6 +79,12 @@
 
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('locale')) {
+        obj['locale'] = ApiClient.convertToType(data['locale'], 'String');
+      }
+      if (data.hasOwnProperty('localizedNames')) {
+        obj['localizedNames'] = Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames.constructFromObject(data['localizedNames']);
       }
       if (data.hasOwnProperty('doingBusinessAs')) {
         obj['doingBusinessAs'] = ApiClient.convertToType(data['doingBusinessAs'], 'String');
@@ -125,6 +133,14 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {String} locale
+   */
+  exports.prototype['locale'] = undefined;
+  /**
+   * @member {module:model/Boardingv1registrationsOrganizationInformationBusinessInformationLocalizedNames} localizedNames
+   */
+  exports.prototype['localizedNames'] = undefined;
   /**
    * @member {String} doingBusinessAs
    */

@@ -49,6 +49,8 @@
 
 
 
+
+
   };
 
   /**
@@ -68,6 +70,12 @@
       if (data.hasOwnProperty('subCategoryCode')) {
         obj['subCategoryCode'] = ApiClient.convertToType(data['subCategoryCode'], 'String');
       }
+      if (data.hasOwnProperty('feeAmount')) {
+        obj['feeAmount'] = ApiClient.convertToType(data['feeAmount'], 'String');
+      }
+      if (data.hasOwnProperty('feeCode')) {
+        obj['feeCode'] = ApiClient.convertToType(data['feeCode'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +90,16 @@
    * @member {String} subCategoryCode
    */
   exports.prototype['subCategoryCode'] = undefined;
+  /**
+   * This field contains the fee amount. This value cannot be negative.  You can include a decimal point (.), but no other special characters. Format: String, 15 characters maximum. Optional field for ancillary services. 
+   * @member {String} feeAmount
+   */
+  exports.prototype['feeAmount'] = undefined;
+  /**
+   * This field contains the ancillary fee code. Format: Alphanumeric, 4 characters maximum. Optional field for ancillary services. 
+   * @member {String} feeCode
+   */
+  exports.prototype['feeCode'] = undefined;
 
 
 
