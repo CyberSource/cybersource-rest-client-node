@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="actionDecisionManagerCase"></a>
 # **actionDecisionManagerCase**
-> InlineResponse2002 actionDecisionManagerCase(id, caseManagementActionsRequest)
+> InlineResponse2003 actionDecisionManagerCase(id, caseManagementActionsRequest)
 
 Take action on a DM post-transactional case
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ No authorization required
 
 <a name="commentDecisionManagerCase"></a>
 # **commentDecisionManagerCase**
-> InlineResponse2011 commentDecisionManagerCase(id, caseManagementCommentsRequest)
+> InlineResponse2012 commentDecisionManagerCase(id, caseManagementCommentsRequest)
 
 Add a comment to a DM post-transactional case
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**InlineResponse2012**](InlineResponse2012.md)
 
 ### Authorization
 

@@ -200,6 +200,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fleetCard (base name: "fleetCard")', function() {
+      // uncomment below and update the code to test the property fleetCard
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

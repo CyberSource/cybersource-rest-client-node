@@ -146,6 +146,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customRedirectUrls (base name: "customRedirectUrls")', function() {
+      // uncomment below and update the code to test the property customRedirectUrls
+      //var instane = new CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -41,7 +41,6 @@
 
   /**
    * Constructs a new <code>Tmsv2TokenizedCardCard</code>.
-   * Card object used to create a network token 
    * @alias module:model/Tmsv2TokenizedCardCard
    * @class
    */
@@ -106,7 +105,7 @@
   }
 
   /**
-   * The customer's payment card number, also known as the Primary Account Number (PAN). 
+   * The latest customer's payment card number associated to the network token. 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;

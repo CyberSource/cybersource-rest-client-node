@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="findProductsToSubscribe"></a>
 # **findProductsToSubscribe**
-> [InlineResponse2005] findProductsToSubscribe(organizationId)
+> [InlineResponse2006] findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2005]**](InlineResponse2005.md)
+[**[InlineResponse2006]**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksPost"></a>
 # **notificationSubscriptionsV2WebhooksPost**
-> InlineResponse2015 notificationSubscriptionsV2WebhooksPost(opts)
+> InlineResponse2016 notificationSubscriptionsV2WebhooksPost(opts)
 
 Create a New Webhook Subscription
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2014 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts)
+> InlineResponse2015 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts)
 
 Create Webhook Security Keys
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2015**](InlineResponse2015.md)
 
 ### Authorization
 

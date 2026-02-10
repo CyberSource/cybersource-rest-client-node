@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property responseSourceCode (base name: "responseSourceCode")', function() {
+      // uncomment below and update the code to test the property responseSourceCode
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property forwardedAcquirerCode (base name: "forwardedAcquirerCode")', function() {
       // uncomment below and update the code to test the property forwardedAcquirerCode
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();

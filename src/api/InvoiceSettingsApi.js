@@ -60,10 +60,13 @@
     /**
      * Get Invoice Settings
      * Allows you to retrieve the invoice settings for the payment page.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.productType Allows you to choose which product type settings you want to update.
      * @param {module:api/InvoiceSettingsApi~getInvoiceSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoiceSettingsGet200Response}
      */
-    this.getInvoiceSettings = function(callback) {
+    this.getInvoiceSettings = function(opts, callback) {
+      opts = opts || {};
       var postBody = null;
       if ('GET' == 'POST') {
         postBody = '{}';
@@ -74,6 +77,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'productType': opts['productType']
       };
       var headerParams = {
       };
@@ -120,10 +124,13 @@
      * Update Invoice Settings
      * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param {module:model/InvoiceSettingsRequest} invoiceSettingsRequest 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.productType Allows you to choose which product type settings you want to update.
      * @param {module:api/InvoiceSettingsApi~updateInvoiceSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InvoicingV2InvoiceSettingsGet200Response}
      */
-    this.updateInvoiceSettings = function(invoiceSettingsRequest, callback) {
+    this.updateInvoiceSettings = function(invoiceSettingsRequest, opts, callback) {
+      opts = opts || {};
       var postBody = invoiceSettingsRequest;
 
       // verify the required parameter 'invoiceSettingsRequest' is set
@@ -140,6 +147,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'productType': opts['productType']
       };
       var headerParams = {
       };

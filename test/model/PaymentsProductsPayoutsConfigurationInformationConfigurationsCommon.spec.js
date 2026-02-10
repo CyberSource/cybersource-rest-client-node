@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultBusinessApplicationId (base name: "defaultBusinessApplicationId")', function() {
+      // uncomment below and update the code to test the property defaultBusinessApplicationId
+      //var instane = new CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon();
+      //expect(instance).to.be();
+    });
+
     it('should have the property aggregator (base name: "aggregator")', function() {
       // uncomment below and update the code to test the property aggregator
       //var instane = new CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon();

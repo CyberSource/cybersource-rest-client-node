@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -69,6 +70,9 @@
       if (data.hasOwnProperty('businessApplicationId')) {
         obj['businessApplicationId'] = ApiClient.convertToType(data['businessApplicationId'], ['String']);
       }
+      if (data.hasOwnProperty('defaultBusinessApplicationId')) {
+        obj['defaultBusinessApplicationId'] = ApiClient.convertToType(data['defaultBusinessApplicationId'], 'String');
+      }
       if (data.hasOwnProperty('aggregator')) {
         obj['aggregator'] = PaymentsProductsPayoutsConfigurationInformationConfigurationsCommonAggregator.constructFromObject(data['aggregator']);
       }
@@ -86,6 +90,11 @@
    * @member {Array.<String>} businessApplicationId
    */
   exports.prototype['businessApplicationId'] = undefined;
+  /**
+   * Default Business Application Indicator. Must match one of the values in businessApplicationId array.   Possible values: - AA - BB - BI - BP - CB - CD - CI - CO - CP - FD - FT - GD - GP - LA - LO - MD - MI - MP - OG - PD - PG - PP - PS - RP - TU - WT
+   * @member {String} defaultBusinessApplicationId
+   */
+  exports.prototype['defaultBusinessApplicationId'] = undefined;
   /**
    * @member {module:model/PaymentsProductsPayoutsConfigurationInformationConfigurationsCommonAggregator} aggregator
    */

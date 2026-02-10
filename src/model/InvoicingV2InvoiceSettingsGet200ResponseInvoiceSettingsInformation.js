@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle', 'model/InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels'], factory);
+    define(['ApiClient', 'model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls', 'model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle', 'model/InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle'), require('./InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels'));
+    module.exports = factory(require('../ApiClient'), require('./InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls'), require('./InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle'), require('./InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle, root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels);
+    root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation = factory(root.CyberSource.ApiClient, root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls, root.CyberSource.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle, root.CyberSource.InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels);
   }
-}(this, function(ApiClient, InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle, InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels) {
+}(this, function(ApiClient, InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls, InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle, InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -119,6 +120,9 @@
       }
       if (data.hasOwnProperty('customLabels')) {
         obj['customLabels'] = ApiClient.convertToType(data['customLabels'], [InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels]);
+      }
+      if (data.hasOwnProperty('customRedirectUrls')) {
+        obj['customRedirectUrls'] = InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls.constructFromObject(data['customRedirectUrls']);
       }
     }
     return obj;
@@ -204,6 +208,10 @@
    * @member {Array.<module:model/InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels>} customLabels
    */
   exports.prototype['customLabels'] = undefined;
+  /**
+   * @member {module:model/InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls} customRedirectUrls
+   */
+  exports.prototype['customRedirectUrls'] = undefined;
 
 
 

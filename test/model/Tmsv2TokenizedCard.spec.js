@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(CyberSource.Tmsv2TokenizedCard);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new CyberSource.Tmsv2TokenizedCard();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new CyberSource.Tmsv2TokenizedCard();
@@ -70,24 +64,6 @@
 
     it('should have the property _object (base name: "object")', function() {
       // uncomment below and update the code to test the property _object
-      //var instane = new CyberSource.Tmsv2TokenizedCard();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property accountReferenceId (base name: "accountReferenceId")', function() {
-      // uncomment below and update the code to test the property accountReferenceId
-      //var instane = new CyberSource.Tmsv2TokenizedCard();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property consumerId (base name: "consumerId")', function() {
-      // uncomment below and update the code to test the property consumerId
-      //var instane = new CyberSource.Tmsv2TokenizedCard();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createInstrumentIdentifier (base name: "createInstrumentIdentifier")', function() {
-      // uncomment below and update the code to test the property createInstrumentIdentifier
       //var instane = new CyberSource.Tmsv2TokenizedCard();
       //expect(instance).to.be();
     });
@@ -104,8 +80,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property reason (base name: "reason")', function() {
-      // uncomment below and update the code to test the property reason
+    it('should have the property enrollmentId (base name: "enrollmentId")', function() {
+      // uncomment below and update the code to test the property enrollmentId
+      //var instane = new CyberSource.Tmsv2TokenizedCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tokenReferenceId (base name: "tokenReferenceId")', function() {
+      // uncomment below and update the code to test the property tokenReferenceId
       //var instane = new CyberSource.Tmsv2TokenizedCard();
       //expect(instance).to.be();
     });
@@ -134,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
+      //var instane = new CyberSource.Tmsv2TokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cryptogram (base name: "cryptogram")', function() {
       // uncomment below and update the code to test the property cryptogram
       //var instane = new CyberSource.Tmsv2TokenizedCard();
@@ -158,18 +146,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property enrollmentId (base name: "enrollmentId")', function() {
-      // uncomment below and update the code to test the property enrollmentId
-      //var instane = new CyberSource.Tmsv2TokenizedCard();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tokenReferenceId (base name: "tokenReferenceId")', function() {
-      // uncomment below and update the code to test the property tokenReferenceId
-      //var instane = new CyberSource.Tmsv2TokenizedCard();
-      //expect(instance).to.be();
-    });
-
     it('should have the property paymentAccountReference (base name: "paymentAccountReference")', function() {
       // uncomment below and update the code to test the property paymentAccountReference
       //var instane = new CyberSource.Tmsv2TokenizedCard();
@@ -178,12 +154,6 @@
 
     it('should have the property card (base name: "card")', function() {
       // uncomment below and update the code to test the property card
-      //var instane = new CyberSource.Tmsv2TokenizedCard();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property passcode (base name: "passcode")', function() {
-      // uncomment below and update the code to test the property passcode
       //var instane = new CyberSource.Tmsv2TokenizedCard();
       //expect(instance).to.be();
     });

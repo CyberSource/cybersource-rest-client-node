@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getRegistration"></a>
 # **getRegistration**
-> InlineResponse2004 getRegistration(registrationId)
+> InlineResponse2005 getRegistration(registrationId)
 
 Gets all the information on a boarding registration
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 
 <a name="postRegistration"></a>
 # **postRegistration**
-> InlineResponse2013 postRegistration(postRegistrationBody, opts)
+> InlineResponse2014 postRegistration(postRegistrationBody, opts)
 
 Create a boarding registration
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 

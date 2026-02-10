@@ -66,6 +66,7 @@
 
 
 
+
   };
 
   /**
@@ -79,6 +80,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('actionList')) {
+        obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
+      }
       if (data.hasOwnProperty('commerceIndicator')) {
         obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
       }
@@ -140,6 +144,11 @@
     return obj;
   }
 
+  /**
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with Standalone Credit.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s). 
+   * @member {Array.<String>} actionList
+   */
+  exports.prototype['actionList'] = undefined;
   /**
    * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value   #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as \"moto\" 
    * @member {String} commerceIndicator

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getInvoiceSettings"></a>
 # **getInvoiceSettings**
-> InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings()
+> InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings(opts)
 
 Get Invoice Settings
 
@@ -22,6 +22,10 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.InvoiceSettingsApi();
 
+var opts = { 
+  'productType': "productType_example" // String | Allows you to choose which product type settings you want to update.
+};
+
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -29,11 +33,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInvoiceSettings(callback);
+apiInstance.getInvoiceSettings(opts, callback);
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productType** | **String**| Allows you to choose which product type settings you want to update. | [optional] 
 
 ### Return type
 
@@ -50,7 +57,7 @@ No authorization required
 
 <a name="updateInvoiceSettings"></a>
 # **updateInvoiceSettings**
-> InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(invoiceSettingsRequest)
+> InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(invoiceSettingsRequest, opts)
 
 Update Invoice Settings
 
@@ -64,6 +71,9 @@ var apiInstance = new CyberSource.InvoiceSettingsApi();
 
 var invoiceSettingsRequest = new CyberSource.InvoiceSettingsRequest(); // InvoiceSettingsRequest | 
 
+var opts = { 
+  'productType': "productType_example" // String | Allows you to choose which product type settings you want to update.
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -72,7 +82,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateInvoiceSettings(invoiceSettingsRequest, callback);
+apiInstance.updateInvoiceSettings(invoiceSettingsRequest, opts, callback);
 ```
 
 ### Parameters
@@ -80,6 +90,7 @@ apiInstance.updateInvoiceSettings(invoiceSettingsRequest, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoiceSettingsRequest** | [**InvoiceSettingsRequest**](InvoiceSettingsRequest.md)|  | 
+ **productType** | **String**| Allows you to choose which product type settings you want to update. | [optional] 
 
 ### Return type
 

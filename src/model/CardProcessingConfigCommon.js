@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CardProcessingConfigCommonMerchantDescriptorInformation', 'model/CardProcessingConfigCommonProcessors'], factory);
+    define(['ApiClient', 'model/CardProcessingConfigCommonAcquirerAgreement', 'model/CardProcessingConfigCommonMerchantDescriptorInformation', 'model/CardProcessingConfigCommonProcessors'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonMerchantDescriptorInformation'), require('./CardProcessingConfigCommonProcessors'));
+    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonAcquirerAgreement'), require('./CardProcessingConfigCommonMerchantDescriptorInformation'), require('./CardProcessingConfigCommonProcessors'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CardProcessingConfigCommon = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonMerchantDescriptorInformation, root.CyberSource.CardProcessingConfigCommonProcessors);
+    root.CyberSource.CardProcessingConfigCommon = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonAcquirerAgreement, root.CyberSource.CardProcessingConfigCommonMerchantDescriptorInformation, root.CyberSource.CardProcessingConfigCommonProcessors);
   }
-}(this, function(ApiClient, CardProcessingConfigCommonMerchantDescriptorInformation, CardProcessingConfigCommonProcessors) {
+}(this, function(ApiClient, CardProcessingConfigCommonAcquirerAgreement, CardProcessingConfigCommonMerchantDescriptorInformation, CardProcessingConfigCommonProcessors) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -145,6 +146,9 @@
       }
       if (data.hasOwnProperty('merchantDescriptorInformation')) {
         obj['merchantDescriptorInformation'] = CardProcessingConfigCommonMerchantDescriptorInformation.constructFromObject(data['merchantDescriptorInformation']);
+      }
+      if (data.hasOwnProperty('acquirerAgreement')) {
+        obj['acquirerAgreement'] = CardProcessingConfigCommonAcquirerAgreement.constructFromObject(data['acquirerAgreement']);
       }
       if (data.hasOwnProperty('governmentControlled')) {
         obj['governmentControlled'] = ApiClient.convertToType(data['governmentControlled'], 'Boolean');
@@ -260,6 +264,10 @@
    * @member {module:model/CardProcessingConfigCommonMerchantDescriptorInformation} merchantDescriptorInformation
    */
   exports.prototype['merchantDescriptorInformation'] = undefined;
+  /**
+   * @member {module:model/CardProcessingConfigCommonAcquirerAgreement} acquirerAgreement
+   */
+  exports.prototype['acquirerAgreement'] = undefined;
   /**
    * Indicates whether the merchant is government controlled. Applicable for VPC processors.
    * @member {Boolean} governmentControlled

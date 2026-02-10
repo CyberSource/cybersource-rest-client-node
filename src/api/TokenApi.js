@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2001', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2011', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest', 'model/PostPaymentCredentialsRequest1'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2011'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'), require('../model/PostPaymentCredentialsRequest1'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest);
+    root.CyberSource.TokenApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest, root.CyberSource.PostPaymentCredentialsRequest1);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2001, InlineResponse400, InlineResponse403, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2002, InlineResponse2011, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest, PostPaymentCredentialsRequest1) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getCardArtAsset operation.
      * @callback module:api/TokenApi~getCardArtAssetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -64,7 +64,7 @@
      * @param {module:model/String} tokenProvider The token provider.
      * @param {module:model/String} assetType The type of asset.
      * @param {module:api/TokenApi~getCardArtAssetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/InlineResponse2002}
      */
     this.getCardArtAsset = function(instrumentIdentifierId, tokenProvider, assetType, callback) {
       var postBody = null;
@@ -105,7 +105,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2001;
+      var returnType = InlineResponse2002;
 
       //check isMLE for an api method 'this.getCardArtAsset'
       var inboundMLEStatus = 'false';
@@ -138,10 +138,10 @@
      */
 
     /**
-     * Generate Payment Credentials for a TMS Token
-     * |  |  |  |     | --- | --- | --- |     |**Token**<br>A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**Payment Credentials**<br>Contains payment information such as the network token, generated cryptogram for Visa & MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.<br>Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.<br>Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * Generate Payment Credentials v2
+     * **Note**: This resource will be replace by [payment credentials version 3](#/paths/~1tms~1v3~1tokens~1{tokenId}~1payment-credentials/post). The SDK will remain available for now; however, it will no longer be documented or maintain in the Developer Centre.<br> **Token**<br>A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.<br> **Payment Credentials**<br>Contains payment information such as the network token, generated cryptogram for Visa & MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.<br>Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.<br>Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param {String} tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
-     * @param {module:model/PostPaymentCredentialsRequest} postPaymentCredentialsRequest 
+     * @param {module:model/PostPaymentCredentialsRequest1} postPaymentCredentialsRequest 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/TokenApi~postTokenPaymentCredentialsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -164,7 +164,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -200,6 +200,83 @@
       } else {
         return this.apiClient.callApi(
           '/tms/v2/tokens/{tokenId}/payment-credentials', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the postTokenPaymentCredentialsV3 operation.
+     * @callback module:api/TokenApi~postTokenPaymentCredentialsV3Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2011} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Generate Payment Credentials Latest Version v3
+     * **Payment Credentials**<br>Contains payment information such as the network token, generated TAVV cryptogram for Visa & MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. <br>Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.<br>Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
+     * @param {String} tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
+     * @param {module:model/PostPaymentCredentialsRequest} postPaymentCredentialsRequest 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
+     * @param {module:api/TokenApi~postTokenPaymentCredentialsV3Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2011}
+     */
+    this.postTokenPaymentCredentialsV3 = function(tokenId, postPaymentCredentialsRequest, opts, callback) {
+      opts = opts || {};
+      var postBody = postPaymentCredentialsRequest;
+
+      // verify the required parameter 'tokenId' is set
+      if (tokenId === undefined || tokenId === null) {
+        throw new Error("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentialsV3");
+      }
+
+      // verify the required parameter 'postPaymentCredentialsRequest' is set
+      if (postPaymentCredentialsRequest === undefined || postPaymentCredentialsRequest === null) {
+        throw new Error("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentialsV3");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+        'tokenId': tokenId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'profile-id': opts['profileId']
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/jose;charset=utf-8'];
+      var returnType = InlineResponse2011;
+
+      //check isMLE for an api method 'this.postTokenPaymentCredentialsV3'
+      var inboundMLEStatus = 'optional';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postTokenPaymentCredentialsV3');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postTokenPaymentCredentialsV3']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/tms/v3/tokens/{tokenId}/payment-credentials', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/tms/v3/tokens/{tokenId}/payment-credentials', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );

@@ -62,7 +62,7 @@ No authorization required
 
 <a name="getTokenizedCard"></a>
 # **getTokenizedCard**
-> TokenizedcardRequest getTokenizedCard(tokenizedCardId, opts)
+> InlineResponse2001 getTokenizedCard(tokenizedCardId, opts)
 
 Retrieve a Tokenized Card
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenizedcardRequest**](TokenizedcardRequest.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ No authorization required
 
 <a name="postTokenizedCard"></a>
 # **postTokenizedCard**
-> TokenizedcardRequest postTokenizedCard(tokenizedcardRequest, opts)
+> InlineResponse2001 postTokenizedCard(postTokenizedCardRequest, opts)
 
 Create a Tokenized Card
 
@@ -176,7 +176,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.TokenizedCardApi();
 
-var tokenizedcardRequest = new CyberSource.TokenizedcardRequest(); // TokenizedcardRequest | 
+var postTokenizedCardRequest = new CyberSource.PostTokenizedCardRequest(); // PostTokenizedCardRequest | 
 
 var opts = { 
   'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
@@ -189,19 +189,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postTokenizedCard(tokenizedcardRequest, opts, callback);
+apiInstance.postTokenizedCard(postTokenizedCardRequest, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenizedcardRequest** | [**TokenizedcardRequest**](TokenizedcardRequest.md)|  | 
+ **postTokenizedCardRequest** | [**PostTokenizedCardRequest**](PostTokenizedCardRequest.md)|  | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
 
 ### Return type
 
-[**TokenizedcardRequest**](TokenizedcardRequest.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

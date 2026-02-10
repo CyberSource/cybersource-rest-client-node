@@ -267,6 +267,7 @@
      * @param {Number} opts.limit Number of items to be returned. Default - `20`, Max - `100` 
      * @param {String} opts.code Filter by Subscription Code
      * @param {String} opts.status Filter by Subscription Status
+     * @param {String} opts.customerId Filter by Customer Id
      * @param {module:api/SubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetAllSubscriptionsResponse}
      */
@@ -285,7 +286,8 @@
         'offset': opts['offset'],
         'limit': opts['limit'],
         'code': opts['code'],
-        'status': opts['status']
+        'status': opts['status'],
+        'customerId': opts['customerId']
       };
       var headerParams = {
       };

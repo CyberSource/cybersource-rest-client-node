@@ -188,6 +188,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clearingInformation (base name: "clearingInformation")', function() {
+      // uncomment below and update the code to test the property clearingInformation
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property embeddedActions (base name: "embeddedActions")', function() {
       // uncomment below and update the code to test the property embeddedActions
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();

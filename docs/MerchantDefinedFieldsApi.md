@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createMerchantDefinedFieldDefinition"></a>
 # **createMerchantDefinedFieldDefinition**
-> [InlineResponse2003] createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
+> [InlineResponse2004] createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
 
 Create merchant defined field for a given reference type
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2003]**](InlineResponse2003.md)
+[**[InlineResponse2004]**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ No authorization required
 
 <a name="getMerchantDefinedFieldsDefinitions"></a>
 # **getMerchantDefinedFieldsDefinitions**
-> [InlineResponse2003] getMerchantDefinedFieldsDefinitions(referenceType)
+> [InlineResponse2004] getMerchantDefinedFieldsDefinitions(referenceType)
 
 Get all merchant defined fields for a given reference type
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2003]**](InlineResponse2003.md)
+[**[InlineResponse2004]**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 
 <a name="putMerchantDefinedFieldsDefinitions"></a>
 # **putMerchantDefinedFieldsDefinitions**
-> [InlineResponse2003] putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
+> [InlineResponse2004] putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
 
 Update a MerchantDefinedField by ID
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2003]**](InlineResponse2003.md)
+[**[InlineResponse2004]**](InlineResponse2004.md)
 
 ### Authorization
 

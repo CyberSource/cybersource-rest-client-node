@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenizedCards (base name: "tokenized-cards")', function() {
+      // uncomment below and update the code to test the property tokenizedCards
+      //var instane = new CyberSource.TmsEmbeddedInstrumentIdentifierLinks();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

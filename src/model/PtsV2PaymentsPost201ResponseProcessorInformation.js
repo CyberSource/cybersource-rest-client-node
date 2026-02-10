@@ -93,6 +93,7 @@
 
 
 
+
   };
 
   /**
@@ -132,6 +133,9 @@
       }
       if (data.hasOwnProperty('responseCategoryCode')) {
         obj['responseCategoryCode'] = ApiClient.convertToType(data['responseCategoryCode'], 'String');
+      }
+      if (data.hasOwnProperty('responseSourceCode')) {
+        obj['responseSourceCode'] = ApiClient.convertToType(data['responseSourceCode'], 'String');
       }
       if (data.hasOwnProperty('forwardedAcquirerCode')) {
         obj['forwardedAcquirerCode'] = ApiClient.convertToType(data['forwardedAcquirerCode'], 'String');
@@ -293,6 +297,11 @@
    * @member {String} responseCategoryCode
    */
   exports.prototype['responseCategoryCode'] = undefined;
+  /**
+   * This field is used by Visa only and contains the response source/reason code that identifies the source of the response decision. Use this field only for clearing with your acquirer. 
+   * @member {String} responseSourceCode
+   */
+  exports.prototype['responseSourceCode'] = undefined;
   /**
    * Name of the Japanese acquirer that processed the transaction. Returned only for JCN Gateway. Please contact the CyberSource Japan Support Group for more information. 
    * @member {String} forwardedAcquirerCode
