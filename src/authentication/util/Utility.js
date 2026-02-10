@@ -4,7 +4,29 @@ var ApiException = require('./ApiException');
 var Constants = require('./Constants');
 var fs = require('fs');
 var forge = require('node-forge');
-var jwkToPem = require('jwk-to-pem');
+
+function jwkToPem(jwk, { private: isPrivate }) {
+    const crypto = require('crypto');
+
+    try {
+        if (isPrivate) {
+            const keyObject = crypto.createPrivateKey({
+                key: jwk,
+                format: 'jwk'
+            });
+            return keyObject.export({ type: 'pkcs8', format: 'pem' }).toString();
+        } else {
+            const keyObject = crypto.createPublicKey({
+                key: jwk,
+                format: 'jwk'
+            });
+            return keyObject.export({ type: 'spki', format: 'pem' }).toString();
+        }
+    } catch (error) {
+        console.error('Error converting JWK to PEM:', error);
+        throw new Error('Failed to convert JWK to PEM');
+    }
+}
 
 exports.getResponseCodeMessage = function (responseCode) {
 

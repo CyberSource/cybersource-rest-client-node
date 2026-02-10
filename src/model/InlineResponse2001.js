@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2001Content'], factory);
+    define(['ApiClient', 'model/InlineResponse2001Links', 'model/Tmsv2TokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2001Content'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2001Links'), require('./Tmsv2TokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001Content);
+    root.CyberSource.InlineResponse2001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001Links, root.CyberSource.Tmsv2TokenizedCard);
   }
-}(this, function(ApiClient, InlineResponse2001Content) {
+}(this, function(ApiClient, InlineResponse2001Links, Tmsv2TokenizedCard) {
   'use strict';
 
 
@@ -41,14 +41,11 @@
 
   /**
    * Constructs a new <code>InlineResponse2001</code>.
-   * Represents the Card Art Asset associated to the Network Token. 
    * @alias module:model/InlineResponse2001
    * @class
    */
   var exports = function() {
     var _this = this;
-
-
 
 
 
@@ -65,42 +62,24 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = InlineResponse2001Links.constructFromObject(data['_links']);
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('provider')) {
-        obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
-      }
-      if (data.hasOwnProperty('content')) {
-        obj['content'] = ApiClient.convertToType(data['content'], [InlineResponse2001Content]);
+      if (data.hasOwnProperty('tokenizedCard')) {
+        obj['tokenizedCard'] = Tmsv2TokenizedCard.constructFromObject(data['tokenizedCard']);
       }
     }
     return obj;
   }
 
   /**
-   * Unique identifier for the Card Art Asset. 
-   * @member {String} id
+   * @member {module:model/InlineResponse2001Links} _links
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['_links'] = undefined;
   /**
-   * The type of Card Art Asset. 
-   * @member {String} type
+   * @member {module:model/Tmsv2TokenizedCard} tokenizedCard
    */
-  exports.prototype['type'] = undefined;
-  /**
-   * The provider of the Card Art Asset. 
-   * @member {String} provider
-   */
-  exports.prototype['provider'] = undefined;
-  /**
-   * Array of content objects representing the Card Art Asset. 
-   * @member {Array.<module:model/InlineResponse2001Content>} content
-   */
-  exports.prototype['content'] = undefined;
+  exports.prototype['tokenizedCard'] = undefined;
 
 
 

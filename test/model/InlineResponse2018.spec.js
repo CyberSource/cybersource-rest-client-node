@@ -56,18 +56,6 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2018);
     });
 
-    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
-      // uncomment below and update the code to test the property clientReferenceInformation
-      //var instane = new CyberSource.InlineResponse2018();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new CyberSource.InlineResponse2018();
-      //expect(instance).to.be();
-    });
-
     it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
       // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse2018();
@@ -76,24 +64,6 @@
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new CyberSource.InlineResponse2018();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property errorInformation (base name: "errorInformation")', function() {
-      // uncomment below and update the code to test the property errorInformation
-      //var instane = new CyberSource.InlineResponse2018();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property orderInformation (base name: "orderInformation")', function() {
-      // uncomment below and update the code to test the property orderInformation
-      //var instane = new CyberSource.InlineResponse2018();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property processorInformation (base name: "processorInformation")', function() {
-      // uncomment below and update the code to test the property processorInformation
       //var instane = new CyberSource.InlineResponse2018();
       //expect(instance).to.be();
     });

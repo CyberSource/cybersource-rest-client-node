@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20015', 'model/InlineResponse2018', 'model/InlineResponse40010', 'model/InlineResponse5022', 'model/OfferRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20016', 'model/InlineResponse5004'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20015'), require('../model/InlineResponse2018'), require('../model/InlineResponse40010'), require('../model/InlineResponse5022'), require('../model/OfferRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20016'), require('../model/InlineResponse5004'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20015, root.CyberSource.InlineResponse2018, root.CyberSource.InlineResponse40010, root.CyberSource.InlineResponse5022, root.CyberSource.OfferRequest);
+    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016, root.CyberSource.InlineResponse5004);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20015, InlineResponse2018, InlineResponse40010, InlineResponse5022, OfferRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse20016, InlineResponse5004) {
   'use strict';
 
   /**
@@ -50,111 +50,10 @@
 	
 
     /**
-     * Callback function to receive the result of the createOffer operation.
-     * @callback module:api/OffersApi~createOfferCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2018} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create an Offer
-     * Creates an offer record on the provider system. 
-     * @param {String} contentType 
-     * @param {String} xRequestid 
-     * @param {String} vCMerchantId 
-     * @param {String} vCCorrelationId 
-     * @param {String} vCOrganizationId 
-     * @param {module:model/OfferRequest} offerRequest 
-     * @param {module:api/OffersApi~createOfferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2018}
-     */
-    this.createOffer = function(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, callback) {
-      var postBody = offerRequest;
-
-      // verify the required parameter 'contentType' is set
-      if (contentType === undefined || contentType === null) {
-        throw new Error("Missing the required parameter 'contentType' when calling createOffer");
-      }
-
-      // verify the required parameter 'xRequestid' is set
-      if (xRequestid === undefined || xRequestid === null) {
-        throw new Error("Missing the required parameter 'xRequestid' when calling createOffer");
-      }
-
-      // verify the required parameter 'vCMerchantId' is set
-      if (vCMerchantId === undefined || vCMerchantId === null) {
-        throw new Error("Missing the required parameter 'vCMerchantId' when calling createOffer");
-      }
-
-      // verify the required parameter 'vCCorrelationId' is set
-      if (vCCorrelationId === undefined || vCCorrelationId === null) {
-        throw new Error("Missing the required parameter 'vCCorrelationId' when calling createOffer");
-      }
-
-      // verify the required parameter 'vCOrganizationId' is set
-      if (vCOrganizationId === undefined || vCOrganizationId === null) {
-        throw new Error("Missing the required parameter 'vCOrganizationId' when calling createOffer");
-      }
-
-      // verify the required parameter 'offerRequest' is set
-      if (offerRequest === undefined || offerRequest === null) {
-        throw new Error("Missing the required parameter 'offerRequest' when calling createOffer");
-      }
-
-      var SdkTracker = require('../utilities/tracking/SdkTracker');
-
-      var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/OfferRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-        'Content-Type': contentType,
-        'x-requestid': xRequestid,
-        'v-c-merchant-id': vCMerchantId,
-        'v-c-correlation-id': vCCorrelationId,
-        'v-c-organization-id': vCOrganizationId
-      };
-      var formParams = {
-      };
-
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2018;
-
-      //check isMLE for an api method 'this.createOffer'
-      var inboundMLEStatus = 'false';
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createOffer');
-      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createOffer']);
-
-      if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
-          return this.apiClient.callApi(
-            '/vas/v1/currencyconversion', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
-          );
-        });
-      } else {
-        return this.apiClient.callApi(
-          '/vas/v1/currencyconversion', 'POST',
-          pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
-        );
-      }
-    }
-
-    /**
      * Callback function to receive the result of the getOffer operation.
      * @callback module:api/OffersApi~getOfferCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20015} data The data returned by the service call.
+     * @param {module:model/InlineResponse20016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -168,7 +67,7 @@
      * @param {String} vCOrganizationId 
      * @param {String} id Request ID generated by Cybersource. This was sent in the header on the request. Echo value from v-c-request-id
      * @param {module:api/OffersApi~getOfferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20015}
+     * data is of type: {@link module:model/InlineResponse20016}
      */
     this.getOffer = function(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id, callback) {
       var postBody = null;
@@ -227,7 +126,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20015;
+      var returnType = InlineResponse20016;
 
       //check isMLE for an api method 'this.getOffer'
       var inboundMLEStatus = 'false';

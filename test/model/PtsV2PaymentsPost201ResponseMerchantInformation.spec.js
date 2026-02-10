@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property categoryCode (base name: "categoryCode")', function() {
+      // uncomment below and update the code to test the property categoryCode
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseMerchantInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property returnUrl (base name: "returnUrl")', function() {
       // uncomment below and update the code to test the property returnUrl
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseMerchantInformation();

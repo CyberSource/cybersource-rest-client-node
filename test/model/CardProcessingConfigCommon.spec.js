@@ -182,6 +182,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acquirerAgreement (base name: "acquirerAgreement")', function() {
+      // uncomment below and update the code to test the property acquirerAgreement
+      //var instane = new CyberSource.CardProcessingConfigCommon();
+      //expect(instance).to.be();
+    });
+
     it('should have the property governmentControlled (base name: "governmentControlled")', function() {
       // uncomment below and update the code to test the property governmentControlled
       //var instane = new CyberSource.CardProcessingConfigCommon();

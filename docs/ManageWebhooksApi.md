@@ -61,7 +61,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2015 getWebhookSubscriptionById(webhookId)
+> InlineResponse2016 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
-> [InlineResponse2006] getWebhookSubscriptionsByOrg(organizationId, opts)
+> [InlineResponse2007] getWebhookSubscriptionsByOrg(organizationId, opts)
 
 Get Details On All Created Webhooks
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2006]**](InlineResponse2006.md)
+[**[InlineResponse2007]**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
 # **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> InlineResponse2016 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
+> InlineResponse2017 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
 
 Test a Webhook Configuration
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**InlineResponse2017**](InlineResponse2017.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV2WebhooksWebhookIdPatch"></a>
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> InlineResponse2007 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, opts)
+> InlineResponse2008 notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, opts)
 
 Update a Webhook Subscription
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ No authorization required
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse2017 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, opts)
+> InlineResponse2018 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, opts)
 
 Message Level Encryption
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2017**](InlineResponse2017.md)
+[**InlineResponse2018**](InlineResponse2018.md)
 
 ### Authorization
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2015', 'model/InlineResponse2016', 'model/InlineResponse2017', 'model/InlineResponse4043', 'model/SaveAsymEgressKey', 'model/UpdateStatus', 'model/UpdateWebhook'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2016', 'model/InlineResponse2017', 'model/InlineResponse2018', 'model/InlineResponse4043', 'model/SaveAsymEgressKey', 'model/UpdateStatus', 'model/UpdateWebhook'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse2015'), require('../model/InlineResponse2016'), require('../model/InlineResponse2017'), require('../model/InlineResponse4043'), require('../model/SaveAsymEgressKey'), require('../model/UpdateStatus'), require('../model/UpdateWebhook'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2016'), require('../model/InlineResponse2017'), require('../model/InlineResponse2018'), require('../model/InlineResponse4043'), require('../model/SaveAsymEgressKey'), require('../model/UpdateStatus'), require('../model/UpdateWebhook'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse2015, root.CyberSource.InlineResponse2016, root.CyberSource.InlineResponse2017, root.CyberSource.InlineResponse4043, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateStatus, root.CyberSource.UpdateWebhook);
+    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse2008, root.CyberSource.InlineResponse2016, root.CyberSource.InlineResponse2017, root.CyberSource.InlineResponse2018, root.CyberSource.InlineResponse4043, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateStatus, root.CyberSource.UpdateWebhook);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2006, InlineResponse2007, InlineResponse2015, InlineResponse2016, InlineResponse2017, InlineResponse4043, SaveAsymEgressKey, UpdateStatus, UpdateWebhook) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2007, InlineResponse2008, InlineResponse2016, InlineResponse2017, InlineResponse2018, InlineResponse4043, SaveAsymEgressKey, UpdateStatus, UpdateWebhook) {
   'use strict';
 
   /**
@@ -118,7 +118,7 @@
      * Callback function to receive the result of the getWebhookSubscriptionById operation.
      * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/InlineResponse2016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -127,7 +127,7 @@
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
      * @param {String} webhookId The webhook Identifier
      * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
+     * data is of type: {@link module:model/InlineResponse2016}
      */
     this.getWebhookSubscriptionById = function(webhookId, callback) {
       var postBody = null;
@@ -156,7 +156,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = InlineResponse2016;
 
       //check isMLE for an api method 'this.getWebhookSubscriptionById'
       var inboundMLEStatus = 'false';
@@ -184,7 +184,7 @@
      * Callback function to receive the result of the getWebhookSubscriptionsByOrg operation.
      * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2006>} data The data returned by the service call.
+     * @param {Array.<module:model/InlineResponse2007>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -196,7 +196,7 @@
      * @param {String} opts.productId The Product Identifier.
      * @param {String} opts.eventType The Event Type.
      * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2006>}
+     * data is of type: {@link Array.<module:model/InlineResponse2007>}
      */
     this.getWebhookSubscriptionsByOrg = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -228,7 +228,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = [InlineResponse2006];
+      var returnType = [InlineResponse2007];
 
       //check isMLE for an api method 'this.getWebhookSubscriptionsByOrg'
       var inboundMLEStatus = 'false';
@@ -256,7 +256,7 @@
      * Callback function to receive the result of the notificationSubscriptionsV1WebhooksWebhookIdPost operation.
      * @callback module:api/ManageWebhooksApi~notificationSubscriptionsV1WebhooksWebhookIdPostCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2016} data The data returned by the service call.
+     * @param {module:model/InlineResponse2017} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -265,7 +265,7 @@
      * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
      * @param {String} webhookId The Webhook Identifier.
      * @param {module:api/ManageWebhooksApi~notificationSubscriptionsV1WebhooksWebhookIdPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2016}
+     * data is of type: {@link module:model/InlineResponse2017}
      */
     this.notificationSubscriptionsV1WebhooksWebhookIdPost = function(webhookId, callback) {
       var postBody = null;
@@ -294,7 +294,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2016;
+      var returnType = InlineResponse2017;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV1WebhooksWebhookIdPost'
       var inboundMLEStatus = 'false';
@@ -322,7 +322,7 @@
      * Callback function to receive the result of the notificationSubscriptionsV2WebhooksWebhookIdPatch operation.
      * @callback module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdPatchCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
+     * @param {module:model/InlineResponse2008} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -333,7 +333,7 @@
      * @param {Object} opts Optional parameters
      * @param {module:model/UpdateWebhook} opts.updateWebhook The webhook payload or changes to apply.
      * @param {module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * data is of type: {@link module:model/InlineResponse2008}
      */
     this.notificationSubscriptionsV2WebhooksWebhookIdPatch = function(webhookId, opts, callback) {
       opts = opts || {};
@@ -364,7 +364,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2007;
+      var returnType = InlineResponse2008;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdPatch'
       var inboundMLEStatus = 'false';
@@ -461,7 +461,7 @@
      * Callback function to receive the result of the saveAsymEgressKey operation.
      * @callback module:api/ManageWebhooksApi~saveAsymEgressKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2017} data The data returned by the service call.
+     * @param {module:model/InlineResponse2018} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -474,7 +474,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.vCCorrelationId A globally unique id associated with your request
      * @param {module:api/ManageWebhooksApi~saveAsymEgressKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2017}
+     * data is of type: {@link module:model/InlineResponse2018}
      */
     this.saveAsymEgressKey = function(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, opts, callback) {
       opts = opts || {};
@@ -517,7 +517,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2017;
+      var returnType = InlineResponse2018;
 
       //check isMLE for an api method 'this.saveAsymEgressKey'
       var inboundMLEStatus = 'false';

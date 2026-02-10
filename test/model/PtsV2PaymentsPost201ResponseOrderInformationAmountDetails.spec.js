@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cashbackAmount (base name: "cashbackAmount")', function() {
+      // uncomment below and update the code to test the property cashbackAmount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property currency (base name: "currency")', function() {
       // uncomment below and update the code to test the property currency
       //var instane = new CyberSource.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails();

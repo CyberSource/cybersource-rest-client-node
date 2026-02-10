@@ -71,6 +71,7 @@
 
 
 
+
   };
 
   /**
@@ -155,6 +156,9 @@
       }
       if (data.hasOwnProperty('emiEligible')) {
         obj['emiEligible'] = ApiClient.convertToType(data['emiEligible'], 'Boolean');
+      }
+      if (data.hasOwnProperty('fleetCard')) {
+        obj['fleetCard'] = ApiClient.convertToType(data['fleetCard'], 'Boolean');
       }
     }
     return obj;
@@ -280,6 +284,11 @@
    * @member {Boolean} emiEligible
    */
   exports.prototype['emiEligible'] = undefined;
+  /**
+   * This field indicates if the BIN is designated for fuel/fleet usage. These specialized BINs support additional Level2/Level 3 transaction data. Possible values:     - `true`     - `false` 
+   * @member {Boolean} fleetCard
+   */
+  exports.prototype['fleetCard'] = undefined;
 
 
 

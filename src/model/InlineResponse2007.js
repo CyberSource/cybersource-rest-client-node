@@ -59,7 +59,6 @@
 
 
 
-
   };
 
   /**
@@ -105,9 +104,6 @@
       }
       if (data.hasOwnProperty('createdOn')) {
         obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
-      }
-      if (data.hasOwnProperty('updatedOn')) {
-        obj['updatedOn'] = ApiClient.convertToType(data['updatedOn'], 'String');
       }
       if (data.hasOwnProperty('notificationScope')) {
         obj['notificationScope'] = ApiClient.convertToType(data['notificationScope'], 'String');
@@ -169,11 +165,6 @@
    * @member {String} createdOn
    */
   exports.prototype['createdOn'] = undefined;
-  /**
-   * Date on which webhook was most recently updated.
-   * @member {String} updatedOn
-   */
-  exports.prototype['updatedOn'] = undefined;
   /**
    * The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
    * @member {String} notificationScope

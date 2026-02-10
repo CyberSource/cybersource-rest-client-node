@@ -4,74 +4,12 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createOffer**](OffersApi.md#createOffer) | **POST** /vas/v1/currencyconversion | Create an Offer
 [**getOffer**](OffersApi.md#getOffer) | **GET** /vas/v1/currencyconversion/{id} | Retrieve an Offer
 
 
-<a name="createOffer"></a>
-# **createOffer**
-> InlineResponse2018 createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest)
-
-Create an Offer
-
-Creates an offer record on the provider system. 
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.OffersApi();
-
-var contentType = "contentType_example"; // String | 
-
-var xRequestid = "xRequestid_example"; // String | 
-
-var vCMerchantId = "vCMerchantId_example"; // String | 
-
-var vCCorrelationId = "vCCorrelationId_example"; // String | 
-
-var vCOrganizationId = "vCOrganizationId_example"; // String | 
-
-var offerRequest = new CyberSource.OfferRequest(); // OfferRequest | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **String**|  | 
- **xRequestid** | **String**|  | 
- **vCMerchantId** | **String**|  | 
- **vCCorrelationId** | **String**|  | 
- **vCOrganizationId** | **String**|  | 
- **offerRequest** | [**OfferRequest**](OfferRequest.md)|  | 
-
-### Return type
-
-[**InlineResponse2018**](InlineResponse2018.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
-
 <a name="getOffer"></a>
 # **getOffer**
-> InlineResponse20015 getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id)
+> InlineResponse20016 getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id)
 
 Retrieve an Offer
 
@@ -119,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 

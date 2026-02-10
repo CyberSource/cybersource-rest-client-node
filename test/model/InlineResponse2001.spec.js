@@ -56,26 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2001);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new CyberSource.InlineResponse2001();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property provider (base name: "provider")', function() {
-      // uncomment below and update the code to test the property provider
-      //var instane = new CyberSource.InlineResponse2001();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property content (base name: "content")', function() {
-      // uncomment below and update the code to test the property content
+    it('should have the property tokenizedCard (base name: "tokenizedCard")', function() {
+      // uncomment below and update the code to test the property tokenizedCard
       //var instane = new CyberSource.InlineResponse2001();
       //expect(instance).to.be();
     });

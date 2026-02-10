@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities', 'model/Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation', 'model/Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation', 'model/Tmsv2tokenstokenIdpaymentcredentialsOrderInformation'], factory);
+    define(['ApiClient', 'model/Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities', 'model/Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation', 'model/Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation', 'model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities'), require('./Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation'), require('./Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation'), require('./Tmsv2tokenstokenIdpaymentcredentialsOrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities'), require('./Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation'), require('./Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation'), require('./Tmsv3tokenstokenIdpaymentcredentialsOrderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostPaymentCredentialsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation, root.CyberSource.Tmsv2tokenstokenIdpaymentcredentialsOrderInformation);
+    root.CyberSource.PostPaymentCredentialsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformation);
   }
-}(this, function(ApiClient, Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities, Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation, Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation, Tmsv2tokenstokenIdpaymentcredentialsOrderInformation) {
+}(this, function(ApiClient, Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities, Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation, Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation, Tmsv3tokenstokenIdpaymentcredentialsOrderInformation) {
   'use strict';
 
 
@@ -77,16 +77,16 @@
         obj['clientCorrelationId'] = ApiClient.convertToType(data['clientCorrelationId'], 'String');
       }
       if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = Tmsv2tokenstokenIdpaymentcredentialsOrderInformation.constructFromObject(data['orderInformation']);
+        obj['orderInformation'] = Tmsv3tokenstokenIdpaymentcredentialsOrderInformation.constructFromObject(data['orderInformation']);
       }
       if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation.constructFromObject(data['merchantInformation']);
+        obj['merchantInformation'] = Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation.constructFromObject(data['merchantInformation']);
       }
       if (data.hasOwnProperty('deviceInformation')) {
-        obj['deviceInformation'] = Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation.constructFromObject(data['deviceInformation']);
+        obj['deviceInformation'] = Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation.constructFromObject(data['deviceInformation']);
       }
       if (data.hasOwnProperty('authenticatedIdentities')) {
-        obj['authenticatedIdentities'] = ApiClient.convertToType(data['authenticatedIdentities'], [Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities]);
+        obj['authenticatedIdentities'] = ApiClient.convertToType(data['authenticatedIdentities'], [Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities]);
       }
     }
     return obj;
@@ -108,19 +108,19 @@
    */
   exports.prototype['clientCorrelationId'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenstokenIdpaymentcredentialsOrderInformation} orderInformation
+   * @member {module:model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation} merchantInformation
+   * @member {module:model/Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation} merchantInformation
    */
   exports.prototype['merchantInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation} deviceInformation
+   * @member {module:model/Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation} deviceInformation
    */
   exports.prototype['deviceInformation'] = undefined;
   /**
-   * @member {Array.<module:model/Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities>} authenticatedIdentities
+   * @member {Array.<module:model/Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities>} authenticatedIdentities
    */
   exports.prototype['authenticatedIdentities'] = undefined;
 

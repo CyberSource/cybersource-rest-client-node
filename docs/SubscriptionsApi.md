@@ -174,7 +174,8 @@ var opts = {
   'offset': 56, // Number | Page offset number.
   'limit': 56, // Number | Number of items to be returned. Default - `20`, Max - `100` 
   'code': "code_example", // String | Filter by Subscription Code
-  'status': "status_example" // String | Filter by Subscription Status
+  'status': "status_example", // String | Filter by Subscription Status
+  'customerId': "customerId_example" // String | Filter by Customer Id
 };
 
 var callback = function(error, data, response) {
@@ -195,6 +196,7 @@ Name | Type | Description  | Notes
  **limit** | **Number**| Number of items to be returned. Default - `20`, Max - `100`  | [optional] 
  **code** | **String**| Filter by Subscription Code | [optional] 
  **status** | **String**| Filter by Subscription Status | [optional] 
+ **customerId** | **String**| Filter by Customer Id | [optional] 
 
 ### Return type
 

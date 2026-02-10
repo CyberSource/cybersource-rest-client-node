@@ -56,20 +56,20 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2011);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new CyberSource.InlineResponse2011();
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property card (base name: "card")', function() {
+      // uncomment below and update the code to test the property card
       //var instane = new CyberSource.InlineResponse2011();
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
+    it('should have the property tokenizedCard (base name: "tokenizedCard")', function() {
+      // uncomment below and update the code to test the property tokenizedCard
       //var instane = new CyberSource.InlineResponse2011();
       //expect(instance).to.be();
     });

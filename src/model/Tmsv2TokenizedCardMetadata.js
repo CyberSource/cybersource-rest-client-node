@@ -41,7 +41,6 @@
 
   /**
    * Constructs a new <code>Tmsv2TokenizedCardMetadata</code>.
-   * Metadata associated with the tokenized card. 
    * @alias module:model/Tmsv2TokenizedCardMetadata
    * @class
    */

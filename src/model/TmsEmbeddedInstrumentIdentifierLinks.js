@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments', 'model/TmsEmbeddedInstrumentIdentifierLinksSelf'], factory);
+    define(['ApiClient', 'model/TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments', 'model/TmsEmbeddedInstrumentIdentifierLinksSelf', 'model/TmsEmbeddedInstrumentIdentifierLinksTokenizedcards'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments'), require('./TmsEmbeddedInstrumentIdentifierLinksSelf'));
+    module.exports = factory(require('../ApiClient'), require('./TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments'), require('./TmsEmbeddedInstrumentIdentifierLinksSelf'), require('./TmsEmbeddedInstrumentIdentifierLinksTokenizedcards'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TmsEmbeddedInstrumentIdentifierLinks = factory(root.CyberSource.ApiClient, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinksSelf);
+    root.CyberSource.TmsEmbeddedInstrumentIdentifierLinks = factory(root.CyberSource.ApiClient, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinksSelf, root.CyberSource.TmsEmbeddedInstrumentIdentifierLinksTokenizedcards);
   }
-}(this, function(ApiClient, TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments, TmsEmbeddedInstrumentIdentifierLinksSelf) {
+}(this, function(ApiClient, TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments, TmsEmbeddedInstrumentIdentifierLinksSelf, TmsEmbeddedInstrumentIdentifierLinksTokenizedcards) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('paymentInstruments')) {
         obj['paymentInstruments'] = TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments.constructFromObject(data['paymentInstruments']);
       }
+      if (data.hasOwnProperty('tokenized-cards')) {
+        obj['tokenized-cards'] = TmsEmbeddedInstrumentIdentifierLinksTokenizedcards.constructFromObject(data['tokenized-cards']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments} paymentInstruments
    */
   exports.prototype['paymentInstruments'] = undefined;
+  /**
+   * @member {module:model/TmsEmbeddedInstrumentIdentifierLinksTokenizedcards} tokenized-cards
+   */
+  exports.prototype['tokenized-cards'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostIssuerLifeCycleSimulationRequest', 'model/TokenizedcardRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2001', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostIssuerLifeCycleSimulationRequest', 'model/PostTokenizedCardRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostIssuerLifeCycleSimulationRequest'), require('../model/TokenizedcardRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostIssuerLifeCycleSimulationRequest'), require('../model/PostTokenizedCardRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenizedCardApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostIssuerLifeCycleSimulationRequest, root.CyberSource.TokenizedcardRequest);
+    root.CyberSource.TokenizedCardApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostIssuerLifeCycleSimulationRequest, root.CyberSource.PostTokenizedCardRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, PostIssuerLifeCycleSimulationRequest, TokenizedcardRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2001, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, PostIssuerLifeCycleSimulationRequest, PostTokenizedCardRequest) {
   'use strict';
 
   /**
@@ -122,7 +122,7 @@
      * Callback function to receive the result of the getTokenizedCard operation.
      * @callback module:api/TokenizedCardApi~getTokenizedCardCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TokenizedcardRequest} data The data returned by the service call.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -133,7 +133,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/TokenizedCardApi~getTokenizedCardCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenizedcardRequest}
+     * data is of type: {@link module:model/InlineResponse2001}
      */
     this.getTokenizedCard = function(tokenizedCardId, opts, callback) {
       opts = opts || {};
@@ -164,7 +164,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = TokenizedcardRequest;
+      var returnType = InlineResponse2001;
 
       //check isMLE for an api method 'this.getTokenizedCard'
       var inboundMLEStatus = 'false';
@@ -271,32 +271,32 @@
      * Callback function to receive the result of the postTokenizedCard operation.
      * @callback module:api/TokenizedCardApi~postTokenizedCardCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TokenizedcardRequest} data The data returned by the service call.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Create a Tokenized Card
      * |  |  |  | | --- | --- | --- | |**Tokenized cards**<br>A Tokenized card represents a network token. Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires. 
-     * @param {module:model/TokenizedcardRequest} tokenizedcardRequest 
+     * @param {module:model/PostTokenizedCardRequest} postTokenizedCardRequest 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/TokenizedCardApi~postTokenizedCardCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenizedcardRequest}
+     * data is of type: {@link module:model/InlineResponse2001}
      */
-    this.postTokenizedCard = function(tokenizedcardRequest, opts, callback) {
+    this.postTokenizedCard = function(postTokenizedCardRequest, opts, callback) {
       opts = opts || {};
-      var postBody = tokenizedcardRequest;
+      var postBody = postTokenizedCardRequest;
 
-      // verify the required parameter 'tokenizedcardRequest' is set
-      if (tokenizedcardRequest === undefined || tokenizedcardRequest === null) {
-        throw new Error("Missing the required parameter 'tokenizedcardRequest' when calling postTokenizedCard");
+      // verify the required parameter 'postTokenizedCardRequest' is set
+      if (postTokenizedCardRequest === undefined || postTokenizedCardRequest === null) {
+        throw new Error("Missing the required parameter 'postTokenizedCardRequest' when calling postTokenizedCard");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/TokenizedcardRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostTokenizedCardRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -313,7 +313,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = TokenizedcardRequest;
+      var returnType = InlineResponse2001;
 
       //check isMLE for an api method 'this.postTokenizedCard'
       var inboundMLEStatus = 'optional';
