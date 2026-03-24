@@ -54,7 +54,7 @@ exports.getToken = function (merchantConfig, isResponseMLEForApi, logger) {
         if (isResponseMLEForApi === true) {
             const responseMleKID = MLEUtility.validateAndAutoExtractResponseMleKid(merchantConfig, logger);
             // Using bracket notation for property name with hyphens
-            claimSetJson["v-c-response-mle-kid"] = responseMleKID;
+            claimSetJson["v-c-api-response-mle-kid"] = responseMleKID;
         }
 
         const customHeader = {
