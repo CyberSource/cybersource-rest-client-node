@@ -77,7 +77,7 @@ function getPayloadClaimSet(merchantConfig, isResponseMLEForApi, logger) {
     // Optional Response MLE handling
     try {
         if (isResponseMLEForApi) {
-            payloadClaimSet["v-c-response-mle-kid"] = MLEUtility.validateAndAutoExtractResponseMleKid(merchantConfig, logger);
+            payloadClaimSet["v-c-api-response-mle-kid"] = MLEUtility.validateAndAutoExtractResponseMleKid(merchantConfig, logger);
         }
     } catch (err) {
         logger.fatal(GlobalLabelParameters.JWT_SIG_FAILED);
