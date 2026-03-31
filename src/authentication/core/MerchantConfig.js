@@ -645,6 +645,9 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
     {
         ApiException.ApiException(Constants.PORTFOLIO_ID_REQ, logger);
     }
+	else if (this.useMetaKey && typeof (this.portfolioID) !== "string") {
+		this.portfolioID = this.portfolioID.toString();
+	}
 
     if (typeof (this.disableSSLVerification) !== "boolean") {
         this.disableSSLVerification = false;
@@ -730,9 +733,12 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
                 this.keyAlias = this.merchantID;
                 logger.warn(Constants.KEY_ALIAS_NULL_EMPTY);
             }
-            else if (this.keyAlias !== this.merchantID) {
+            if (!this.useMetaKey && this.keyAlias !== this.merchantID) {
                 this.keyAlias = this.merchantID;
                 logger.warn(Constants.INCORRECT_KEY_ALIAS);
+            } else if (this.useMetaKey && this.keyAlias !== this.portfolioID) {
+                this.keyAlias = this.portfolioID;
+                logger.warn(Constants.INCORRECT_KEY_ALIAS_FOR_METAKEY);
             }
 
             if (this.keyPass === null || this.keyPass === "" || this.keyPass === undefined) {

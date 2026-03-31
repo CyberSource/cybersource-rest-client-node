@@ -26,7 +26,10 @@ Name | Type | Description | Notes
 **productIdSubtype** | **String** | This field contains the Visa-assigned product subtype identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - BB   - EX   - L2   - C2  | [optional] 
 **threeDSSupport** | **Boolean** | This field indicates if the payment instrument supports 3D Secure authentication. Possible values:     - `true`     - `false`  | [optional] 
 **siEligible** | **Boolean** | This field indicates if the payment instrument is eligible for Standing Instructions (recurring payments). Possible values:     - `true`     - `false`  | [optional] 
-**emiEligible** | **Boolean** | This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false`  | [optional] 
+**emiEligible** | **Boolean** | This field indicates if the payment instrument is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false`  | [optional] 
 **fleetCard** | **Boolean** | This field indicates if the BIN is designated for fuel/fleet usage. These specialized BINs support additional Level2/Level 3 transaction data. Possible values:     - `true`     - `false`  | [optional] 
+**atmEnabled** | **Boolean** | This field indicates if the payment instrument is enabled for ATM usage. Possible values:     - `true`     - `false`  | [optional] 
+**posEnabled** | **Boolean** | This field indicates if the payment instrument is enabled for POS usage. Possible values:     - `true`     - `false`  | [optional] 
+**ecomEnabled** | **Boolean** | This field indicates if the payment instrument is enabled for ECOM usage. Possible values:     - `true`     - `false`  | [optional] 
 
 

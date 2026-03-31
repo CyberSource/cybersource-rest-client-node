@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GetAllPlansResponseOrderInformationAmountDetails', 'model/GetAllSubscriptionsResponseOrderInformationBillTo'], factory);
+    define(['ApiClient', 'model/GetAllSubscriptionsResponseOrderInformationAmountDetails', 'model/GetAllSubscriptionsResponseOrderInformationBillTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./GetAllPlansResponseOrderInformationAmountDetails'), require('./GetAllSubscriptionsResponseOrderInformationBillTo'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllSubscriptionsResponseOrderInformationAmountDetails'), require('./GetAllSubscriptionsResponseOrderInformationBillTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GetAllSubscriptionsResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllPlansResponseOrderInformationAmountDetails, root.CyberSource.GetAllSubscriptionsResponseOrderInformationBillTo);
+    root.CyberSource.GetAllSubscriptionsResponseOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllSubscriptionsResponseOrderInformationAmountDetails, root.CyberSource.GetAllSubscriptionsResponseOrderInformationBillTo);
   }
-}(this, function(ApiClient, GetAllPlansResponseOrderInformationAmountDetails, GetAllSubscriptionsResponseOrderInformationBillTo) {
+}(this, function(ApiClient, GetAllSubscriptionsResponseOrderInformationAmountDetails, GetAllSubscriptionsResponseOrderInformationBillTo) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amountDetails')) {
-        obj['amountDetails'] = GetAllPlansResponseOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
+        obj['amountDetails'] = GetAllSubscriptionsResponseOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = GetAllSubscriptionsResponseOrderInformationBillTo.constructFromObject(data['billTo']);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/GetAllPlansResponseOrderInformationAmountDetails} amountDetails
+   * @member {module:model/GetAllSubscriptionsResponseOrderInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
   /**

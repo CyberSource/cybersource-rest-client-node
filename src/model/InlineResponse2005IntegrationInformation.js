@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsIntegrationInformationOauth2', 'model/InlineResponse2005IntegrationInformationTenantConfigurations'], factory);
+    define(['ApiClient', 'model/Boardingv1registrationsIntegrationInformationMsd', 'model/Boardingv1registrationsIntegrationInformationOauth2', 'model/InlineResponse2005IntegrationInformationTenantConfigurations'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsIntegrationInformationOauth2'), require('./InlineResponse2005IntegrationInformationTenantConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsIntegrationInformationMsd'), require('./Boardingv1registrationsIntegrationInformationOauth2'), require('./InlineResponse2005IntegrationInformationTenantConfigurations'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2005IntegrationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsIntegrationInformationOauth2, root.CyberSource.InlineResponse2005IntegrationInformationTenantConfigurations);
+    root.CyberSource.InlineResponse2005IntegrationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsIntegrationInformationMsd, root.CyberSource.Boardingv1registrationsIntegrationInformationOauth2, root.CyberSource.InlineResponse2005IntegrationInformationTenantConfigurations);
   }
-}(this, function(ApiClient, Boardingv1registrationsIntegrationInformationOauth2, InlineResponse2005IntegrationInformationTenantConfigurations) {
+}(this, function(ApiClient, Boardingv1registrationsIntegrationInformationMsd, Boardingv1registrationsIntegrationInformationOauth2, InlineResponse2005IntegrationInformationTenantConfigurations) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('tenantConfigurations')) {
         obj['tenantConfigurations'] = ApiClient.convertToType(data['tenantConfigurations'], [InlineResponse2005IntegrationInformationTenantConfigurations]);
       }
+      if (data.hasOwnProperty('msd')) {
+        obj['msd'] = Boardingv1registrationsIntegrationInformationMsd.constructFromObject(data['msd']);
+      }
     }
     return obj;
   }
@@ -81,6 +85,10 @@
    * @member {Array.<module:model/InlineResponse2005IntegrationInformationTenantConfigurations>} tenantConfigurations
    */
   exports.prototype['tenantConfigurations'] = undefined;
+  /**
+   * @member {module:model/Boardingv1registrationsIntegrationInformationMsd} msd
+   */
+  exports.prototype['msd'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv1pushfundstransferClientReferenceInformation', 'model/Ptsv1pushfundstransferMerchantInformation', 'model/Ptsv1pushfundstransferOrderInformation', 'model/Ptsv1pushfundstransferPointOfServiceInformation', 'model/Ptsv1pushfundstransferProcessingInformation', 'model/Ptsv1pushfundstransferRecipientInformation', 'model/Ptsv1pushfundstransferSenderInformation', 'model/Ptsv2payoutsAggregatorInformation'], factory);
+    define(['ApiClient', 'model/Ptsv1pushfundstransferClientReferenceInformation', 'model/Ptsv1pushfundstransferMerchantInformation', 'model/Ptsv1pushfundstransferOrderInformation', 'model/Ptsv1pushfundstransferPaymentInformation', 'model/Ptsv1pushfundstransferPointOfServiceInformation', 'model/Ptsv1pushfundstransferProcessingInformation', 'model/Ptsv1pushfundstransferRecipientInformation', 'model/Ptsv1pushfundstransferSenderInformation', 'model/Ptsv2payoutsAggregatorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferClientReferenceInformation'), require('./Ptsv1pushfundstransferMerchantInformation'), require('./Ptsv1pushfundstransferOrderInformation'), require('./Ptsv1pushfundstransferPointOfServiceInformation'), require('./Ptsv1pushfundstransferProcessingInformation'), require('./Ptsv1pushfundstransferRecipientInformation'), require('./Ptsv1pushfundstransferSenderInformation'), require('./Ptsv2payoutsAggregatorInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferClientReferenceInformation'), require('./Ptsv1pushfundstransferMerchantInformation'), require('./Ptsv1pushfundstransferOrderInformation'), require('./Ptsv1pushfundstransferPaymentInformation'), require('./Ptsv1pushfundstransferPointOfServiceInformation'), require('./Ptsv1pushfundstransferProcessingInformation'), require('./Ptsv1pushfundstransferRecipientInformation'), require('./Ptsv1pushfundstransferSenderInformation'), require('./Ptsv2payoutsAggregatorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PushFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pushfundstransferMerchantInformation, root.CyberSource.Ptsv1pushfundstransferOrderInformation, root.CyberSource.Ptsv1pushfundstransferPointOfServiceInformation, root.CyberSource.Ptsv1pushfundstransferProcessingInformation, root.CyberSource.Ptsv1pushfundstransferRecipientInformation, root.CyberSource.Ptsv1pushfundstransferSenderInformation, root.CyberSource.Ptsv2payoutsAggregatorInformation);
+    root.CyberSource.PushFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pushfundstransferMerchantInformation, root.CyberSource.Ptsv1pushfundstransferOrderInformation, root.CyberSource.Ptsv1pushfundstransferPaymentInformation, root.CyberSource.Ptsv1pushfundstransferPointOfServiceInformation, root.CyberSource.Ptsv1pushfundstransferProcessingInformation, root.CyberSource.Ptsv1pushfundstransferRecipientInformation, root.CyberSource.Ptsv1pushfundstransferSenderInformation, root.CyberSource.Ptsv2payoutsAggregatorInformation);
   }
-}(this, function(ApiClient, Ptsv1pushfundstransferClientReferenceInformation, Ptsv1pushfundstransferMerchantInformation, Ptsv1pushfundstransferOrderInformation, Ptsv1pushfundstransferPointOfServiceInformation, Ptsv1pushfundstransferProcessingInformation, Ptsv1pushfundstransferRecipientInformation, Ptsv1pushfundstransferSenderInformation, Ptsv2payoutsAggregatorInformation) {
+}(this, function(ApiClient, Ptsv1pushfundstransferClientReferenceInformation, Ptsv1pushfundstransferMerchantInformation, Ptsv1pushfundstransferOrderInformation, Ptsv1pushfundstransferPaymentInformation, Ptsv1pushfundstransferPointOfServiceInformation, Ptsv1pushfundstransferProcessingInformation, Ptsv1pushfundstransferRecipientInformation, Ptsv1pushfundstransferSenderInformation, Ptsv2payoutsAggregatorInformation) {
   'use strict';
 
 
@@ -51,6 +51,7 @@
 
 
     _this['orderInformation'] = orderInformation;
+
 
 
 
@@ -90,6 +91,9 @@
       if (data.hasOwnProperty('merchantInformation')) {
         obj['merchantInformation'] = Ptsv1pushfundstransferMerchantInformation.constructFromObject(data['merchantInformation']);
       }
+      if (data.hasOwnProperty('paymentInformation')) {
+        obj['paymentInformation'] = Ptsv1pushfundstransferPaymentInformation.constructFromObject(data['paymentInformation']);
+      }
       if (data.hasOwnProperty('pointOfServiceInformation')) {
         obj['pointOfServiceInformation'] = Ptsv1pushfundstransferPointOfServiceInformation.constructFromObject(data['pointOfServiceInformation']);
       }
@@ -125,6 +129,10 @@
    * @member {module:model/Ptsv1pushfundstransferMerchantInformation} merchantInformation
    */
   exports.prototype['merchantInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv1pushfundstransferPaymentInformation} paymentInformation
+   */
+  exports.prototype['paymentInformation'] = undefined;
   /**
    * @member {module:model/Ptsv1pushfundstransferPointOfServiceInformation} pointOfServiceInformation
    */

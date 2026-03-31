@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateSubscriptionRequest1', 'model/CreateSubscriptionResponse', 'model/GetSubscriptionResponse1', 'model/InlineResponse4005', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateSubscriptionRequest1', 'model/CreateSubscriptionResponse', 'model/GetSubscriptionResponse1', 'model/InlineResponse4005', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateSubscriptionRequest1'), require('../model/CreateSubscriptionResponse'), require('../model/GetSubscriptionResponse1'), require('../model/InlineResponse4005'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateSubscriptionRequest1'), require('../model/CreateSubscriptionResponse'), require('../model/GetSubscriptionResponse1'), require('../model/InlineResponse4005'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SubscriptionsFollowOnsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateSubscriptionRequest1, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetSubscriptionResponse1, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.SubscriptionsFollowOnsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateSubscriptionRequest1, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetSubscriptionResponse1, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response);
   }
-}(this, function(MLEUtility, ApiClient, CreateSubscriptionRequest1, CreateSubscriptionResponse, GetSubscriptionResponse1, InlineResponse4005, InlineResponse404, PtsV2PaymentsPost502Response) {
+}(this, function(MLEUtility, ApiClient, CreateSubscriptionRequest1, CreateSubscriptionResponse, GetSubscriptionResponse1, InlineResponse4005, InlineResponse4041, PtsV2PaymentsPost502Response) {
   'use strict';
 
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/AccountValidationsRequest', 'model/InlineResponse20015', 'model/InlineResponse4009', 'model/InlineResponse4033', 'model/InlineResponse4045', 'model/InlineResponse4222', 'model/InlineResponse5021'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AccountValidationsRequest', 'model/InlineResponse20015', 'model/InlineResponse4009', 'model/InlineResponse4033', 'model/InlineResponse4046', 'model/InlineResponse4222', 'model/InlineResponse5021'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AccountValidationsRequest'), require('../model/InlineResponse20015'), require('../model/InlineResponse4009'), require('../model/InlineResponse4033'), require('../model/InlineResponse4045'), require('../model/InlineResponse4222'), require('../model/InlineResponse5021'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AccountValidationsRequest'), require('../model/InlineResponse20015'), require('../model/InlineResponse4009'), require('../model/InlineResponse4033'), require('../model/InlineResponse4046'), require('../model/InlineResponse4222'), require('../model/InlineResponse5021'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BankAccountValidationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AccountValidationsRequest, root.CyberSource.InlineResponse20015, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse4033, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse4222, root.CyberSource.InlineResponse5021);
+    root.CyberSource.BankAccountValidationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AccountValidationsRequest, root.CyberSource.InlineResponse20015, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse4033, root.CyberSource.InlineResponse4046, root.CyberSource.InlineResponse4222, root.CyberSource.InlineResponse5021);
   }
-}(this, function(MLEUtility, ApiClient, AccountValidationsRequest, InlineResponse20015, InlineResponse4009, InlineResponse4033, InlineResponse4045, InlineResponse4222, InlineResponse5021) {
+}(this, function(MLEUtility, ApiClient, AccountValidationsRequest, InlineResponse20015, InlineResponse4009, InlineResponse4033, InlineResponse4046, InlineResponse4222, InlineResponse5021) {
   'use strict';
 
   /**

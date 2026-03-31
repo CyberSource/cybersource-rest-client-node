@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **loanOptions** | [**Ptsv2paymentsProcessingInformationLoanOptions**](Ptsv2paymentsProcessingInformationLoanOptions.md) |  | [optional] 
 **japanPaymentOptions** | [**Ptsv2creditsProcessingInformationJapanPaymentOptions**](Ptsv2creditsProcessingInformationJapanPaymentOptions.md) |  | [optional] 
 **refundOptions** | [**Ptsv2creditsProcessingInformationRefundOptions**](Ptsv2creditsProcessingInformationRefundOptions.md) |  | [optional] 
+**merchantVerificationValue** | **String** | The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: `101010`  | [optional] 
 
 

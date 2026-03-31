@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **processorInformation** | [**PtsV2PaymentsRefundPost201ResponseProcessorInformation**](PtsV2PaymentsRefundPost201ResponseProcessorInformation.md) |  | [optional] 
 **orderInformation** | [**PtsV2PaymentsRefundPost201ResponseOrderInformation**](PtsV2PaymentsRefundPost201ResponseOrderInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation**](PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.md) |  | [optional] 
+**errorInformation** | [**PtsV2PaymentsRefundPost201ResponseErrorInformation**](PtsV2PaymentsRefundPost201ResponseErrorInformation.md) |  | [optional] 
 
 

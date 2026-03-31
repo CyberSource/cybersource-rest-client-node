@@ -92,14 +92,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property buildingNumber (base name: "buildingNumber")', function() {
-      // uncomment below and update the code to test the property buildingNumber
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
       //var instane = new CyberSource.Upv1capturecontextsDataOrderInformationBillToCompany();
       //expect(instance).to.be();
     });
 
-    it('should have the property country (base name: "country")', function() {
-      // uncomment below and update the code to test the property country
+    it('should have the property buildingNumber (base name: "buildingNumber")', function() {
+      // uncomment below and update the code to test the property buildingNumber
       //var instane = new CyberSource.Upv1capturecontextsDataOrderInformationBillToCompany();
       //expect(instance).to.be();
     });

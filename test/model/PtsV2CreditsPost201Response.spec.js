@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property errorInformation (base name: "errorInformation")', function() {
+      // uncomment below and update the code to test the property errorInformation
+      //var instane = new CyberSource.PtsV2CreditsPost201Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1addressverificationsBuyerInformation', 'model/Riskv1exportcomplianceinquiriesDeviceInformation', 'model/Riskv1exportcomplianceinquiriesExportComplianceInformation', 'model/Riskv1exportcomplianceinquiriesOrderInformation', 'model/Riskv1liststypeentriesClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation', 'model/Riskv1addressverificationsBuyerInformation', 'model/Riskv1exportcomplianceinquiriesDeviceInformation', 'model/Riskv1exportcomplianceinquiriesExportComplianceInformation', 'model/Riskv1exportcomplianceinquiriesOrderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1addressverificationsBuyerInformation'), require('./Riskv1exportcomplianceinquiriesDeviceInformation'), require('./Riskv1exportcomplianceinquiriesExportComplianceInformation'), require('./Riskv1exportcomplianceinquiriesOrderInformation'), require('./Riskv1liststypeentriesClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'), require('./Riskv1addressverificationsBuyerInformation'), require('./Riskv1exportcomplianceinquiriesDeviceInformation'), require('./Riskv1exportcomplianceinquiriesExportComplianceInformation'), require('./Riskv1exportcomplianceinquiriesOrderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ValidateExportComplianceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1addressverificationsBuyerInformation, root.CyberSource.Riskv1exportcomplianceinquiriesDeviceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesExportComplianceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesOrderInformation, root.CyberSource.Riskv1liststypeentriesClientReferenceInformation);
+    root.CyberSource.ValidateExportComplianceRequest = factory(root.CyberSource.ApiClient, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation, root.CyberSource.Riskv1addressverificationsBuyerInformation, root.CyberSource.Riskv1exportcomplianceinquiriesDeviceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesExportComplianceInformation, root.CyberSource.Riskv1exportcomplianceinquiriesOrderInformation);
   }
-}(this, function(ApiClient, Riskv1addressverificationsBuyerInformation, Riskv1exportcomplianceinquiriesDeviceInformation, Riskv1exportcomplianceinquiriesExportComplianceInformation, Riskv1exportcomplianceinquiriesOrderInformation, Riskv1liststypeentriesClientReferenceInformation) {
+}(this, function(ApiClient, RiskV1DecisionsPost201ResponseClientReferenceInformation, Riskv1addressverificationsBuyerInformation, Riskv1exportcomplianceinquiriesDeviceInformation, Riskv1exportcomplianceinquiriesExportComplianceInformation, Riskv1exportcomplianceinquiriesOrderInformation) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Riskv1liststypeentriesClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = RiskV1DecisionsPost201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Riskv1exportcomplianceinquiriesOrderInformation.constructFromObject(data['orderInformation']);
@@ -85,7 +85,7 @@
   }
 
   /**
-   * @member {module:model/Riskv1liststypeentriesClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/RiskV1DecisionsPost201ResponseClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**

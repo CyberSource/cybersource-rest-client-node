@@ -62,6 +62,126 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenManagement (base name: "tokenManagement")', function() {
+      // uncomment below and update the code to test the property tokenManagement
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property payPal (base name: "payPal")', function() {
+      // uncomment below and update the code to test the property payPal
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property venmo (base name: "venmo")', function() {
+      // uncomment below and update the code to test the property venmo
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property applePay (base name: "applePay")', function() {
+      // uncomment below and update the code to test the property applePay
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property googlePay (base name: "googlePay")', function() {
+      // uncomment below and update the code to test the property googlePay
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tinkPayByBank (base name: "tinkPayByBank")', function() {
+      // uncomment below and update the code to test the property tinkPayByBank
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eCheck (base name: "eCheck")', function() {
+      // uncomment below and update the code to test the property eCheck
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property p24 (base name: "p24")', function() {
+      // uncomment below and update the code to test the property p24
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property myBank (base name: "myBank")', function() {
+      // uncomment below and update the code to test the property myBank
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property konbini (base name: "konbini")', function() {
+      // uncomment below and update the code to test the property konbini
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dragonPay (base name: "dragonPay")', function() {
+      // uncomment below and update the code to test the property dragonPay
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property decisionManager (base name: "decisionManager")', function() {
+      // uncomment below and update the code to test the property decisionManager
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property payerAuthentication (base name: "payerAuthentication")', function() {
+      // uncomment below and update the code to test the property payerAuthentication
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property afterPay (base name: "afterPay")', function() {
+      // uncomment below and update the code to test the property afterPay
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ideal (base name: "ideal")', function() {
+      // uncomment below and update the code to test the property ideal
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property multibanco (base name: "multibanco")', function() {
+      // uncomment below and update the code to test the property multibanco
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bancontact (base name: "bancontact")', function() {
+      // uncomment below and update the code to test the property bancontact
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property clickToPay (base name: "clickToPay")', function() {
+      // uncomment below and update the code to test the property clickToPay
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property unifiedClickToPaySDK (base name: "unifiedClickToPaySDK")', function() {
+      // uncomment below and update the code to test the property unifiedClickToPaySDK
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property portfolioAccessofSensitiveData (base name: "portfolioAccessofSensitiveData")', function() {
+      // uncomment below and update the code to test the property portfolioAccessofSensitiveData
+      //var instane = new CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2011', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest', 'model/PostPaymentCredentialsRequest1'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2011', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse404', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse500', 'model/PostPaymentCredentialsRequest', 'model/PostPaymentCredentialsRequest1'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2011'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'), require('../model/PostPaymentCredentialsRequest1'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2011'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse404'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse500'), require('../model/PostPaymentCredentialsRequest'), require('../model/PostPaymentCredentialsRequest1'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest, root.CyberSource.PostPaymentCredentialsRequest1);
+    root.CyberSource.TokenApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse404, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse500, root.CyberSource.PostPaymentCredentialsRequest, root.CyberSource.PostPaymentCredentialsRequest1);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2002, InlineResponse2011, InlineResponse400, InlineResponse403, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, PostPaymentCredentialsRequest, PostPaymentCredentialsRequest1) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2002, InlineResponse2011, InlineResponse400, InlineResponse403, InlineResponse404, InlineResponse409, InlineResponse410, InlineResponse500, PostPaymentCredentialsRequest, PostPaymentCredentialsRequest1) {
   'use strict';
 
   /**

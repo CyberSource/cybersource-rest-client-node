@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20016', 'model/InlineResponse5004'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20016', 'model/InlineResponse2019', 'model/InlineResponse40010', 'model/InlineResponse5022', 'model/OfferRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20016'), require('../model/InlineResponse5004'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20016'), require('../model/InlineResponse2019'), require('../model/InlineResponse40010'), require('../model/InlineResponse5022'), require('../model/OfferRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016, root.CyberSource.InlineResponse5004);
+    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016, root.CyberSource.InlineResponse2019, root.CyberSource.InlineResponse40010, root.CyberSource.InlineResponse5022, root.CyberSource.OfferRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20016, InlineResponse5004) {
+}(this, function(MLEUtility, ApiClient, InlineResponse20016, InlineResponse2019, InlineResponse40010, InlineResponse5022, OfferRequest) {
   'use strict';
 
   /**
@@ -48,6 +48,109 @@
 
 	this.apiClient.setConfiguration(configObject);
 	
+
+    /**
+     * Callback function to receive the result of the createOffer operation.
+     * @callback module:api/OffersApi~createOfferCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2019} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create an Offer
+     * Empower global transactions with transparency and choice. Our Dynamic Currency Conversion API lets merchants offer customers the option to pay in their home currency at checkout, delivering real-time exchange rates.  <div style=\"display: flex; gap: 2rem;\"> <div style=\"flex: 1;\">  **Key Benefits:** - **Enhanced Customer Experience:** Provide clarity and convenience for international shoppers. - **Real-Time Rates:** Accurate currency conversion with all the data required for acquirers and their merchants to maintain compliance with card network rules. - **Seamless Integration:** Flexible API endpoints for rate lookup, authorization, and capture. - **Regulatory Compliance:** Provides the data required for acquirers and merchants to meet and maintain card scheme requirements for disclosure and consent.  <br>  Ideal for merchants and payment partners seeking to boost trust and conversion in cross-border commerce.  <br>  **Key Features:** - **Rate Lookup:** Retrieves the most up-to-date exchange rate for eligible cards before authorization. - **Currency Choice:** Enables the merchant to offer customers the option to select between the merchant's local currency and their card's billing currency. - **Compliance:** Ensures merchants have the data required to adhere to card network regulations; exchange rates, markups, etc.  <div style=\"margin-top: 1.5rem;\">  **Supported Scenarios:** - Dynamic Currency Conversion when cardholder's billing currency differs from merchant's pricing currency. - Merchant and acquirer must support the cardholder's billing currency. </div>  <div style=\"margin-top: 1.5rem;\">  **Supported Processors:** - VPC - FDI Global </div>  <div style=\"margin-top: 1.5rem;\">  **Compliance & Disclosure:**  Merchants must: - Adhere to card network rules for Dynamic Currency Conversion (DCC) transactions. - Display the converted amount, exchange rate, and markup percentage and other required disclosures. - Obtain explicit cardholder consent before applying DCC. - Work with your acquirer to obtain full set of compliance requirements. </div>  </div> <div style=\"flex: 1;\">  **Core API Endpoints:**  **Currency Conversion API**  Returns eligibility and exchange rate details, including: - exchangeRate - marginRate - reconciliationId and Id (for subsequent payment requests)  <div style=\"margin-top: 1.5rem;\">  **Payment Authorization with DCC***  POST /pts/v2/payments  Required fields include: - orderInformation.amountDetails.currency - orderInformation.amountDetails.originalCurrency - orderInformation.amountDetails.originalAmount - orderInformation.amountDetails.exchangeRate - currencyConversion.indicator (e.g., 1 = Converted, 2 = Nonconvertible, 3 = Declined) </div>  <div style=\"margin-top: 1.5rem;\">  **Capture with DCC***  POST /pts/v2/payments/{id}/captures  Maps from original authorization and includes original and converted amounts. </div>  <div style=\"margin-top: 1.5rem;\">  **Refund with DCC***  POST /pts/v2/captures/{id}/refunds  Maps from original authorization and includes original and converted amounts.  *Note: DCC is only supported on select processors. Contact your acquirer or account manager for more information.* </div>  </div> </div>  <br>  For more information, see the [Currency Conversion Developer Guide](https://developer.cybersource.com/docs/cybs/en-us/currency-conversion/developer/all/rest/currency-conversion/cc-intro.html). 
+     * @param {String} contentType 
+     * @param {String} xRequestid 
+     * @param {String} vCMerchantId 
+     * @param {String} vCCorrelationId 
+     * @param {String} vCOrganizationId 
+     * @param {module:model/OfferRequest} offerRequest 
+     * @param {module:api/OffersApi~createOfferCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2019}
+     *
+     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
+     */
+    this.createOffer = function(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest, callback) {
+      var postBody = offerRequest;
+
+      // verify the required parameter 'contentType' is set
+      if (contentType === undefined || contentType === null) {
+        throw new Error("Missing the required parameter 'contentType' when calling createOffer");
+      }
+
+      // verify the required parameter 'xRequestid' is set
+      if (xRequestid === undefined || xRequestid === null) {
+        throw new Error("Missing the required parameter 'xRequestid' when calling createOffer");
+      }
+
+      // verify the required parameter 'vCMerchantId' is set
+      if (vCMerchantId === undefined || vCMerchantId === null) {
+        throw new Error("Missing the required parameter 'vCMerchantId' when calling createOffer");
+      }
+
+      // verify the required parameter 'vCCorrelationId' is set
+      if (vCCorrelationId === undefined || vCCorrelationId === null) {
+        throw new Error("Missing the required parameter 'vCCorrelationId' when calling createOffer");
+      }
+
+      // verify the required parameter 'vCOrganizationId' is set
+      if (vCOrganizationId === undefined || vCOrganizationId === null) {
+        throw new Error("Missing the required parameter 'vCOrganizationId' when calling createOffer");
+      }
+
+      // verify the required parameter 'offerRequest' is set
+      if (offerRequest === undefined || offerRequest === null) {
+        throw new Error("Missing the required parameter 'offerRequest' when calling createOffer");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/OfferRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'Content-Type': contentType,
+        'x-requestid': xRequestid,
+        'v-c-merchant-id': vCMerchantId,
+        'v-c-correlation-id': vCCorrelationId,
+        'v-c-organization-id': vCOrganizationId
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = InlineResponse2019;
+
+      //check isMLE for an api method 'this.createOffer'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createOffer');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createOffer']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/vas/v1/currencyconversion', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/vas/v1/currencyconversion', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
 
     /**
      * Callback function to receive the result of the getOffer operation.

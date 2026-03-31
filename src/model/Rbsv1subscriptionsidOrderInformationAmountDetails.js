@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Rbsv1subscriptionsidOrderInformationAmountDetails = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Rbsv1subscriptionsidOrderInformationAmountDetails = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('setupFee')) {
         obj['setupFee'] = ApiClient.convertToType(data['setupFee'], 'String');
       }
+      if (data.hasOwnProperty('surcharge')) {
+        obj['surcharge'] = GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge.constructFromObject(data['surcharge']);
+      }
     }
     return obj;
   }
@@ -82,6 +86,10 @@
    * @member {String} setupFee
    */
   exports.prototype['setupFee'] = undefined;
+  /**
+   * @member {module:model/GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge} surcharge
+   */
+  exports.prototype['surcharge'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PushFunds201ResponseProcessorInformationRouting', 'model/PushFunds201ResponseProcessorInformationSettlement'], factory);
+    define(['ApiClient', 'model/PushFunds201ResponseProcessorInformationMerchantAdvice', 'model/PushFunds201ResponseProcessorInformationRouting', 'model/PushFunds201ResponseProcessorInformationSettlement'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PushFunds201ResponseProcessorInformationRouting'), require('./PushFunds201ResponseProcessorInformationSettlement'));
+    module.exports = factory(require('../ApiClient'), require('./PushFunds201ResponseProcessorInformationMerchantAdvice'), require('./PushFunds201ResponseProcessorInformationRouting'), require('./PushFunds201ResponseProcessorInformationSettlement'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PushFunds201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PushFunds201ResponseProcessorInformationRouting, root.CyberSource.PushFunds201ResponseProcessorInformationSettlement);
+    root.CyberSource.PushFunds201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PushFunds201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PushFunds201ResponseProcessorInformationRouting, root.CyberSource.PushFunds201ResponseProcessorInformationSettlement);
   }
-}(this, function(ApiClient, PushFunds201ResponseProcessorInformationRouting, PushFunds201ResponseProcessorInformationSettlement) {
+}(this, function(ApiClient, PushFunds201ResponseProcessorInformationMerchantAdvice, PushFunds201ResponseProcessorInformationRouting, PushFunds201ResponseProcessorInformationSettlement) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -100,6 +101,9 @@
       if (data.hasOwnProperty('settlement')) {
         obj['settlement'] = PushFunds201ResponseProcessorInformationSettlement.constructFromObject(data['settlement']);
       }
+      if (data.hasOwnProperty('merchantAdvice')) {
+        obj['merchantAdvice'] = PushFunds201ResponseProcessorInformationMerchantAdvice.constructFromObject(data['merchantAdvice']);
+      }
     }
     return obj;
   }
@@ -152,6 +156,10 @@
    * @member {module:model/PushFunds201ResponseProcessorInformationSettlement} settlement
    */
   exports.prototype['settlement'] = undefined;
+  /**
+   * @member {module:model/PushFunds201ResponseProcessorInformationMerchantAdvice} merchantAdvice
+   */
+  exports.prototype['merchantAdvice'] = undefined;
 
 
 

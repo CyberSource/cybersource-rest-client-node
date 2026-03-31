@@ -72,6 +72,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -159,6 +162,15 @@
       }
       if (data.hasOwnProperty('fleetCard')) {
         obj['fleetCard'] = ApiClient.convertToType(data['fleetCard'], 'Boolean');
+      }
+      if (data.hasOwnProperty('atmEnabled')) {
+        obj['atmEnabled'] = ApiClient.convertToType(data['atmEnabled'], 'Boolean');
+      }
+      if (data.hasOwnProperty('posEnabled')) {
+        obj['posEnabled'] = ApiClient.convertToType(data['posEnabled'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ecomEnabled')) {
+        obj['ecomEnabled'] = ApiClient.convertToType(data['ecomEnabled'], 'Boolean');
       }
     }
     return obj;
@@ -280,7 +292,7 @@
    */
   exports.prototype['siEligible'] = undefined;
   /**
-   * This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false` 
+   * This field indicates if the payment instrument is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false` 
    * @member {Boolean} emiEligible
    */
   exports.prototype['emiEligible'] = undefined;
@@ -289,6 +301,21 @@
    * @member {Boolean} fleetCard
    */
   exports.prototype['fleetCard'] = undefined;
+  /**
+   * This field indicates if the payment instrument is enabled for ATM usage. Possible values:     - `true`     - `false` 
+   * @member {Boolean} atmEnabled
+   */
+  exports.prototype['atmEnabled'] = undefined;
+  /**
+   * This field indicates if the payment instrument is enabled for POS usage. Possible values:     - `true`     - `false` 
+   * @member {Boolean} posEnabled
+   */
+  exports.prototype['posEnabled'] = undefined;
+  /**
+   * This field indicates if the payment instrument is enabled for ECOM usage. Possible values:     - `true`     - `false` 
+   * @member {Boolean} ecomEnabled
+   */
+  exports.prototype['ecomEnabled'] = undefined;
 
 
 

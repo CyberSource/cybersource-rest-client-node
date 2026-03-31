@@ -102,7 +102,7 @@
    */
   exports.prototype['type'] = undefined;
   /**
-   * 3-digit value that indicates the cardCvv2Value. Values can be 0-9. 
+   * 4-digit value that indicates the cardCvv2Value. Values can be 0-9. 
    * @member {String} securityCode
    */
   exports.prototype['securityCode'] = undefined;

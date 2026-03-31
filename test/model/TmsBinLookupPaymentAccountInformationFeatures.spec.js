@@ -206,6 +206,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property atmEnabled (base name: "atmEnabled")', function() {
+      // uncomment below and update the code to test the property atmEnabled
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property posEnabled (base name: "posEnabled")', function() {
+      // uncomment below and update the code to test the property posEnabled
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ecomEnabled (base name: "ecomEnabled")', function() {
+      // uncomment below and update the code to test the property ecomEnabled
+      //var instane = new CyberSource.TmsBinLookupPaymentAccountInformationFeatures();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

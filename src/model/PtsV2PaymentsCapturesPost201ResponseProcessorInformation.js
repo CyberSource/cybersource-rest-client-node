@@ -98,7 +98,7 @@
    */
   exports.prototype['transactionId'] = undefined;
   /**
-   * Network Transaction Identifier Applicable for online capture transactions only. 
+   * Same value as `processorInformation.transactionId`
    * @member {String} networkTransactionId
    */
   exports.prototype['networkTransactionId'] = undefined;

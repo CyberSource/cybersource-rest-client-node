@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20016ClientReferenceInformation', 'model/InlineResponse20016ErrorInformation', 'model/InlineResponse20016OrderInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse20016ClientReferenceInformation', 'model/InlineResponse2019ErrorInformation', 'model/InlineResponse2019OrderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20016ClientReferenceInformation'), require('./InlineResponse20016ErrorInformation'), require('./InlineResponse20016OrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse20016ClientReferenceInformation'), require('./InlineResponse2019ErrorInformation'), require('./InlineResponse2019OrderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20016 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016ClientReferenceInformation, root.CyberSource.InlineResponse20016ErrorInformation, root.CyberSource.InlineResponse20016OrderInformation);
+    root.CyberSource.InlineResponse20016 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016ClientReferenceInformation, root.CyberSource.InlineResponse2019ErrorInformation, root.CyberSource.InlineResponse2019OrderInformation);
   }
-}(this, function(ApiClient, InlineResponse20016ClientReferenceInformation, InlineResponse20016ErrorInformation, InlineResponse20016OrderInformation) {
+}(this, function(ApiClient, InlineResponse20016ClientReferenceInformation, InlineResponse2019ErrorInformation, InlineResponse2019OrderInformation) {
   'use strict';
 
 
@@ -82,10 +82,10 @@
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('errorInformation')) {
-        obj['errorInformation'] = InlineResponse20016ErrorInformation.constructFromObject(data['errorInformation']);
+        obj['errorInformation'] = InlineResponse2019ErrorInformation.constructFromObject(data['errorInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = InlineResponse20016OrderInformation.constructFromObject(data['orderInformation']);
+        obj['orderInformation'] = InlineResponse2019OrderInformation.constructFromObject(data['orderInformation']);
       }
     }
     return obj;
@@ -111,11 +111,11 @@
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/InlineResponse20016ErrorInformation} errorInformation
+   * @member {module:model/InlineResponse2019ErrorInformation} errorInformation
    */
   exports.prototype['errorInformation'] = undefined;
   /**
-   * @member {module:model/InlineResponse20016OrderInformation} orderInformation
+   * @member {module:model/InlineResponse2019OrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
 

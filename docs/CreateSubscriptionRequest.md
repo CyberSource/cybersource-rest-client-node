@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **planInformation** | [**Rbsv1subscriptionsPlanInformation**](Rbsv1subscriptionsPlanInformation.md) |  | [optional] 
 **subscriptionInformation** | [**Rbsv1subscriptionsSubscriptionInformation**](Rbsv1subscriptionsSubscriptionInformation.md) |  | [optional] 
 **paymentInformation** | [**Rbsv1subscriptionsPaymentInformation**](Rbsv1subscriptionsPaymentInformation.md) |  | [optional] 
-**orderInformation** | [**GetAllPlansResponseOrderInformation**](GetAllPlansResponseOrderInformation.md) |  | [optional] 
+**orderInformation** | [**Rbsv1subscriptionsOrderInformation**](Rbsv1subscriptionsOrderInformation.md) |  | [optional] 
 
 

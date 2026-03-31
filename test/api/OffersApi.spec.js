@@ -50,6 +50,16 @@
   }
 
   describe('OffersApi', function() {
+    describe('createOffer', function() {
+      it('should call createOffer successfully', function(done) {
+        //uncomment below and update the code to test createOffer
+        //instance.createOffer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getOffer', function() {
       it('should call getOffer successfully', function(done) {
         //uncomment below and update the code to test getOffer
