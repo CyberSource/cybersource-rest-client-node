@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property msd (base name: "msd")', function() {
+      // uncomment below and update the code to test the property msd
+      //var instane = new CyberSource.Boardingv1registrationsIntegrationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

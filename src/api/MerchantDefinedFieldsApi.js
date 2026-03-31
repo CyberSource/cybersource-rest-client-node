@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2004', 'model/InlineResponse4041', 'model/MerchantDefinedFieldCore', 'model/MerchantDefinedFieldDefinitionRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2004', 'model/InlineResponse4042', 'model/MerchantDefinedFieldCore', 'model/MerchantDefinedFieldDefinitionRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse4041'), require('../model/MerchantDefinedFieldCore'), require('../model/MerchantDefinedFieldDefinitionRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse4042'), require('../model/MerchantDefinedFieldCore'), require('../model/MerchantDefinedFieldDefinitionRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantDefinedFieldsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse4041, root.CyberSource.MerchantDefinedFieldCore, root.CyberSource.MerchantDefinedFieldDefinitionRequest);
+    root.CyberSource.MerchantDefinedFieldsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse4042, root.CyberSource.MerchantDefinedFieldCore, root.CyberSource.MerchantDefinedFieldDefinitionRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2004, InlineResponse4041, MerchantDefinedFieldCore, MerchantDefinedFieldDefinitionRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2004, InlineResponse4042, MerchantDefinedFieldCore, MerchantDefinedFieldDefinitionRequest) {
   'use strict';
 
   /**

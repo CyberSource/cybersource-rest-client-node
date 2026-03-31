@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2016', 'model/InlineResponse2017', 'model/InlineResponse2018', 'model/InlineResponse4043', 'model/SaveAsymEgressKey', 'model/UpdateStatus', 'model/UpdateWebhook'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2016', 'model/InlineResponse2017', 'model/InlineResponse2018', 'model/InlineResponse4044', 'model/SaveAsymEgressKey', 'model/UpdateStatus', 'model/UpdateWebhook'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2016'), require('../model/InlineResponse2017'), require('../model/InlineResponse2018'), require('../model/InlineResponse4043'), require('../model/SaveAsymEgressKey'), require('../model/UpdateStatus'), require('../model/UpdateWebhook'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2016'), require('../model/InlineResponse2017'), require('../model/InlineResponse2018'), require('../model/InlineResponse4044'), require('../model/SaveAsymEgressKey'), require('../model/UpdateStatus'), require('../model/UpdateWebhook'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse2008, root.CyberSource.InlineResponse2016, root.CyberSource.InlineResponse2017, root.CyberSource.InlineResponse2018, root.CyberSource.InlineResponse4043, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateStatus, root.CyberSource.UpdateWebhook);
+    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse2008, root.CyberSource.InlineResponse2016, root.CyberSource.InlineResponse2017, root.CyberSource.InlineResponse2018, root.CyberSource.InlineResponse4044, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateStatus, root.CyberSource.UpdateWebhook);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2007, InlineResponse2008, InlineResponse2016, InlineResponse2017, InlineResponse2018, InlineResponse4043, SaveAsymEgressKey, UpdateStatus, UpdateWebhook) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2007, InlineResponse2008, InlineResponse2016, InlineResponse2017, InlineResponse2018, InlineResponse4044, SaveAsymEgressKey, UpdateStatus, UpdateWebhook) {
   'use strict';
 
   /**

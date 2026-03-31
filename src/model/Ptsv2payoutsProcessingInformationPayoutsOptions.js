@@ -100,7 +100,7 @@
    */
   exports.prototype['retrievalReferenceNumber'] = undefined;
   /**
-   * Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. * Applicable only for CTV for Payouts. 
+   * Visa (maxLength of 15) or MasterCard (maxLength of 40) generated transaction identifier (TID) that is unique for each original authorization and financial request. * Applicable only for CTV for Payouts. 
    * @member {String} accountFundingReferenceId
    */
   exports.prototype['accountFundingReferenceId'] = undefined;

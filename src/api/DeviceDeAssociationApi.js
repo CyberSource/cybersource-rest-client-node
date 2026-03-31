@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/DeAssociationRequestBody', 'model/DeviceDeAssociateV3Request', 'model/InlineResponse20010', 'model/InlineResponse206', 'model/InlineResponse4008', 'model/InlineResponse401', 'model/InlineResponse4032', 'model/InlineResponse4044', 'model/InlineResponse5003'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/DeAssociationRequestBody', 'model/DeviceDeAssociateV3Request', 'model/InlineResponse20010', 'model/InlineResponse206', 'model/InlineResponse4008', 'model/InlineResponse401', 'model/InlineResponse4032', 'model/InlineResponse4045', 'model/InlineResponse5003'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/DeAssociationRequestBody'), require('../model/DeviceDeAssociateV3Request'), require('../model/InlineResponse20010'), require('../model/InlineResponse206'), require('../model/InlineResponse4008'), require('../model/InlineResponse401'), require('../model/InlineResponse4032'), require('../model/InlineResponse4044'), require('../model/InlineResponse5003'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/DeAssociationRequestBody'), require('../model/DeviceDeAssociateV3Request'), require('../model/InlineResponse20010'), require('../model/InlineResponse206'), require('../model/InlineResponse4008'), require('../model/InlineResponse401'), require('../model/InlineResponse4032'), require('../model/InlineResponse4045'), require('../model/InlineResponse5003'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DeviceDeAssociationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.DeAssociationRequestBody, root.CyberSource.DeviceDeAssociateV3Request, root.CyberSource.InlineResponse20010, root.CyberSource.InlineResponse206, root.CyberSource.InlineResponse4008, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4044, root.CyberSource.InlineResponse5003);
+    root.CyberSource.DeviceDeAssociationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.DeAssociationRequestBody, root.CyberSource.DeviceDeAssociateV3Request, root.CyberSource.InlineResponse20010, root.CyberSource.InlineResponse206, root.CyberSource.InlineResponse4008, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse5003);
   }
-}(this, function(MLEUtility, ApiClient, DeAssociationRequestBody, DeviceDeAssociateV3Request, InlineResponse20010, InlineResponse206, InlineResponse4008, InlineResponse401, InlineResponse4032, InlineResponse4044, InlineResponse5003) {
+}(this, function(MLEUtility, ApiClient, DeAssociationRequestBody, DeviceDeAssociateV3Request, InlineResponse20010, InlineResponse206, InlineResponse4008, InlineResponse401, InlineResponse4032, InlineResponse4045, InlineResponse5003) {
   'use strict';
 
   /**

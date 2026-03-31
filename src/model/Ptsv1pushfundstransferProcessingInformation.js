@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('purposeOfPayment')) {
         obj['purposeOfPayment'] = ApiClient.convertToType(data['purposeOfPayment'], 'String');
+      }
+      if (data.hasOwnProperty('reconciliationId')) {
+        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
       }
     }
     return obj;
@@ -126,6 +130,11 @@
    * @member {String} purposeOfPayment
    */
   exports.prototype['purposeOfPayment'] = undefined;
+  /**
+   * Transaction's reference number.
+   * @member {String} reconciliationId
+   */
+  exports.prototype['reconciliationId'] = undefined;
 
 
 

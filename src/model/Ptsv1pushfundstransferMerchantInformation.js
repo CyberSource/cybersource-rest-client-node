@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Ptsv1pushfundstransferMerchantInformationMerchantDescriptor'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv1pushfundstransferMerchantInformationMerchantDescriptor'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv1pushfundstransferMerchantInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Ptsv1pushfundstransferMerchantInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pushfundstransferMerchantInformationMerchantDescriptor);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Ptsv1pushfundstransferMerchantInformationMerchantDescriptor) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -62,7 +63,10 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('categoryCode')) {
-        obj['categoryCode'] = ApiClient.convertToType(data['categoryCode'], 'String');
+        obj['categoryCode'] = ApiClient.convertToType(data['categoryCode'], 'Number');
+      }
+      if (data.hasOwnProperty('merchantDescriptor')) {
+        obj['merchantDescriptor'] = Ptsv1pushfundstransferMerchantInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
       }
     }
     return obj;
@@ -70,9 +74,13 @@
 
   /**
    * The value for this field is a four-digit number that the payment card industry uses to  classify merchants into market segments. A payment card company assigned one or more of  these values to your business when you started accepting the payment card company's cards.  When you do not include this field in your request, CyberSource uses the value in your CyberSource account. 
-   * @member {String} categoryCode
+   * @member {Number} categoryCode
    */
   exports.prototype['categoryCode'] = undefined;
+  /**
+   * @member {module:model/Ptsv1pushfundstransferMerchantInformationMerchantDescriptor} merchantDescriptor
+   */
+  exports.prototype['merchantDescriptor'] = undefined;
 
 
 

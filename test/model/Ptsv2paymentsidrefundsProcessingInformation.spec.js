@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantVerificationValue (base name: "merchantVerificationValue")', function() {
+      // uncomment below and update the code to test the property merchantVerificationValue
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

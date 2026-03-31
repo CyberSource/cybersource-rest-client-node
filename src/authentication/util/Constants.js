@@ -68,6 +68,7 @@ module.exports = {
     REFER_LOG                         :  "Please refer Log for details",
     MERCHANTID_REQ                    :  "MerchantID is mandatory",
     INCORRECT_KEY_ALIAS               :  "The Entered key_alias is Incorrect, Assigining merchantID value",
+    INCORRECT_KEY_ALIAS_FOR_METAKEY   :  "The Entered key_alias is Incorrect for MetaKey, Assigining portfolioID value",
     INCORRECT_KEY_PASS                :  "The Entered keyPass is Incorrect",
     AUTHENTICATION_REQ                :  "AuthenticationType is Mandatory",
     MERCHANT_KEY_ID_REQ               :  "MerchantKeyId is Mandatory",

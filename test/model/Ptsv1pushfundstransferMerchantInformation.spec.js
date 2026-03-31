@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantDescriptor (base name: "merchantDescriptor")', function() {
+      // uncomment below and update the code to test the property merchantDescriptor
+      //var instane = new CyberSource.Ptsv1pushfundstransferMerchantInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

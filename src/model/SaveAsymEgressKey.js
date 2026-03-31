@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Kmsegressv2keysasymClientReferenceInformation', 'model/Kmsegressv2keysasymKeyInformation'], factory);
+    define(['ApiClient', 'model/Kmsegressv2keysasymKeyInformation', 'model/Kmsegressv2keyssymClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Kmsegressv2keysasymClientReferenceInformation'), require('./Kmsegressv2keysasymKeyInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Kmsegressv2keysasymKeyInformation'), require('./Kmsegressv2keyssymClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SaveAsymEgressKey = factory(root.CyberSource.ApiClient, root.CyberSource.Kmsegressv2keysasymClientReferenceInformation, root.CyberSource.Kmsegressv2keysasymKeyInformation);
+    root.CyberSource.SaveAsymEgressKey = factory(root.CyberSource.ApiClient, root.CyberSource.Kmsegressv2keysasymKeyInformation, root.CyberSource.Kmsegressv2keyssymClientReferenceInformation);
   }
-}(this, function(ApiClient, Kmsegressv2keysasymClientReferenceInformation, Kmsegressv2keysasymKeyInformation) {
+}(this, function(ApiClient, Kmsegressv2keysasymKeyInformation, Kmsegressv2keyssymClientReferenceInformation) {
   'use strict';
 
 
@@ -64,7 +64,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Kmsegressv2keysasymClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = Kmsegressv2keyssymClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('clientRequestAction')) {
         obj['clientRequestAction'] = ApiClient.convertToType(data['clientRequestAction'], 'String');
@@ -77,7 +77,7 @@
   }
 
   /**
-   * @member {module:model/Kmsegressv2keysasymClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/Kmsegressv2keyssymClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**

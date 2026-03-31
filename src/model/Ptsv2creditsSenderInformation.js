@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('countryCode')) {
         obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
+      }
+      if (data.hasOwnProperty('administrativeArea')) {
+        obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
       }
       if (data.hasOwnProperty('account')) {
         obj['account'] = Ptsv2creditsSenderInformationAccount.constructFromObject(data['account']);
@@ -113,6 +117,11 @@
    * @member {String} countryCode
    */
   exports.prototype['countryCode'] = undefined;
+  /**
+   * The state or province of the sender. This field is applicable for AFT transactions when the sender country is US or CA. Else it is optional.  Must be a two character value 
+   * @member {String} administrativeArea
+   */
+  exports.prototype['administrativeArea'] = undefined;
   /**
    * @member {module:model/Ptsv2creditsSenderInformationAccount} account
    */

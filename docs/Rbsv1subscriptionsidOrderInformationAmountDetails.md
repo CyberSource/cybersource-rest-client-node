@@ -5,5 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billingAmount** | **String** | Billing amount for the billing period.  | [optional] 
 **setupFee** | **String** | Subscription setup fee  | [optional] 
+**surcharge** | [**GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge**](GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge.md) |  | [optional] 
 
 

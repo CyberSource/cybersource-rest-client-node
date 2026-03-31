@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **name** | **String** | Name of the processor.  | [optional] 
 **routing** | [**PushFunds201ResponseProcessorInformationRouting**](PushFunds201ResponseProcessorInformationRouting.md) |  | [optional] 
 **settlement** | [**PushFunds201ResponseProcessorInformationSettlement**](PushFunds201ResponseProcessorInformationSettlement.md) |  | [optional] 
+**merchantAdvice** | [**PushFunds201ResponseProcessorInformationMerchantAdvice**](PushFunds201ResponseProcessorInformationMerchantAdvice.md) |  | [optional] 
 
 

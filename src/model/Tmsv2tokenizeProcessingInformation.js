@@ -73,7 +73,7 @@
   }
 
   /**
-   * Array of actions (one or more) to be included in the tokenize request.  Possible Values:   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your tokenize request. 
+   * Array of actions (one or more) to be included in the tokenize request.  Possible Values:  - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your tokenize request. 
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsidmarkingRiskInformation', 'model/Riskv1liststypeentriesClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation', 'model/Riskv1decisionsidmarkingRiskInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsidmarkingRiskInformation'), require('./Riskv1liststypeentriesClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'), require('./Riskv1decisionsidmarkingRiskInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.FraudMarkingActionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsidmarkingRiskInformation, root.CyberSource.Riskv1liststypeentriesClientReferenceInformation);
+    root.CyberSource.FraudMarkingActionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation, root.CyberSource.Riskv1decisionsidmarkingRiskInformation);
   }
-}(this, function(ApiClient, Riskv1decisionsidmarkingRiskInformation, Riskv1liststypeentriesClientReferenceInformation) {
+}(this, function(ApiClient, RiskV1DecisionsPost201ResponseClientReferenceInformation, Riskv1decisionsidmarkingRiskInformation) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['riskInformation'] = Riskv1decisionsidmarkingRiskInformation.constructFromObject(data['riskInformation']);
       }
       if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Riskv1liststypeentriesClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+        obj['clientReferenceInformation'] = RiskV1DecisionsPost201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
     }
     return obj;
@@ -78,7 +78,7 @@
    */
   exports.prototype['riskInformation'] = undefined;
   /**
-   * @member {module:model/Riskv1liststypeentriesClientReferenceInformation} clientReferenceInformation
+   * @member {module:model/RiskV1DecisionsPost201ResponseClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
 

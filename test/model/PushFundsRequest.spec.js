@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentInformation (base name: "paymentInformation")', function() {
+      // uncomment below and update the code to test the property paymentInformation
+      //var instane = new CyberSource.PushFundsRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pointOfServiceInformation (base name: "pointOfServiceInformation")', function() {
       // uncomment below and update the code to test the property pointOfServiceInformation
       //var instane = new CyberSource.PushFundsRequest();

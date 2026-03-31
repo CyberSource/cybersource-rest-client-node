@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -107,6 +108,9 @@
       }
       if (data.hasOwnProperty('transactionTypeIndicator')) {
         obj['transactionTypeIndicator'] = ApiClient.convertToType(data['transactionTypeIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('merchantVerificationValue')) {
+        obj['merchantVerificationValue'] = ApiClient.convertToType(data['merchantVerificationValue'], 'String');
       }
     }
     return obj;
@@ -170,6 +174,11 @@
    * @member {String} transactionTypeIndicator
    */
   exports.prototype['transactionTypeIndicator'] = undefined;
+  /**
+   * The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: `101010` 
+   * @member {String} merchantVerificationValue
+   */
+  exports.prototype['merchantVerificationValue'] = undefined;
 
 
 

@@ -89,11 +89,11 @@
       if (data.hasOwnProperty('administrativeArea')) {
         obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
       }
-      if (data.hasOwnProperty('buildingNumber')) {
-        obj['buildingNumber'] = ApiClient.convertToType(data['buildingNumber'], 'String');
-      }
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('buildingNumber')) {
+        obj['buildingNumber'] = ApiClient.convertToType(data['buildingNumber'], 'String');
       }
       if (data.hasOwnProperty('district')) {
         obj['district'] = ApiClient.convertToType(data['district'], 'String');
@@ -124,12 +124,12 @@
    */
   exports.prototype['address2'] = undefined;
   /**
-   * Additional address information (third line of the billing address)
+   * Additional address information (third line of the billing address) Optional field. 
    * @member {String} address3
    */
   exports.prototype['address3'] = undefined;
   /**
-   * Additional address information (fourth line of the billing address) 
+   * Additional address information (fourth line of the billing address) Optional field 
    * @member {String} address4
    */
   exports.prototype['address4'] = undefined;
@@ -139,15 +139,15 @@
    */
   exports.prototype['administrativeArea'] = undefined;
   /**
-   * Building number in the street address. 
-   * @member {String} buildingNumber
-   */
-  exports.prototype['buildingNumber'] = undefined;
-  /**
    * Payment card billing country. Use the two-character [ISO Standard Country Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). 
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
+  /**
+   * Building number in the street address. 
+   * @member {String} buildingNumber
+   */
+  exports.prototype['buildingNumber'] = undefined;
   /**
    * Customer's neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
    * @member {String} district

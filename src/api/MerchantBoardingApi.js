@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2005', 'model/InlineResponse2014', 'model/InlineResponse4007', 'model/InlineResponse4042', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2005', 'model/InlineResponse2014', 'model/InlineResponse4007', 'model/InlineResponse4043', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2005'), require('../model/InlineResponse2014'), require('../model/InlineResponse4007'), require('../model/InlineResponse4042'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2005'), require('../model/InlineResponse2014'), require('../model/InlineResponse4007'), require('../model/InlineResponse4043'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4042, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
+    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4043, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2005, InlineResponse2014, InlineResponse4007, InlineResponse4042, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2005, InlineResponse2014, InlineResponse4007, InlineResponse4043, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
   'use strict';
 
   /**

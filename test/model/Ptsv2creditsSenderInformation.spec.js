@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property administrativeArea (base name: "administrativeArea")', function() {
+      // uncomment below and update the code to test the property administrativeArea
+      //var instane = new CyberSource.Ptsv2creditsSenderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property account (base name: "account")', function() {
       // uncomment below and update the code to test the property account
       //var instane = new CyberSource.Ptsv2creditsSenderInformation();

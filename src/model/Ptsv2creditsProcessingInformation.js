@@ -67,6 +67,7 @@
 
 
 
+
   };
 
   /**
@@ -139,6 +140,9 @@
       }
       if (data.hasOwnProperty('refundOptions')) {
         obj['refundOptions'] = Ptsv2creditsProcessingInformationRefundOptions.constructFromObject(data['refundOptions']);
+      }
+      if (data.hasOwnProperty('merchantVerificationValue')) {
+        obj['merchantVerificationValue'] = ApiClient.convertToType(data['merchantVerificationValue'], 'String');
       }
     }
     return obj;
@@ -237,6 +241,11 @@
    * @member {module:model/Ptsv2creditsProcessingInformationRefundOptions} refundOptions
    */
   exports.prototype['refundOptions'] = undefined;
+  /**
+   * The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: `101010` 
+   * @member {String} merchantVerificationValue
+   */
+  exports.prototype['merchantVerificationValue'] = undefined;
 
 
 

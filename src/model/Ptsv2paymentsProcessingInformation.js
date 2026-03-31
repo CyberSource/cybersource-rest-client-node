@@ -89,6 +89,7 @@
 
 
 
+
   };
 
   /**
@@ -182,6 +183,9 @@
       }
       if (data.hasOwnProperty('nationalNetDomesticData')) {
         obj['nationalNetDomesticData'] = ApiClient.convertToType(data['nationalNetDomesticData'], 'String');
+      }
+      if (data.hasOwnProperty('merchantVerificationValue')) {
+        obj['merchantVerificationValue'] = ApiClient.convertToType(data['merchantVerificationValue'], 'String');
       }
       if (data.hasOwnProperty('japanPaymentOptions')) {
         obj['japanPaymentOptions'] = Ptsv2paymentsProcessingInformationJapanPaymentOptions.constructFromObject(data['japanPaymentOptions']);
@@ -361,6 +365,11 @@
    * @member {String} nationalNetDomesticData
    */
   exports.prototype['nationalNetDomesticData'] = undefined;
+  /**
+   * The override value of the Merchant Verification Value (MVV) received by various card brands. MVV refers to the value assigned by the card brand/network to identify participation in select merchant programs.  Sample value for Visa: `101010` 
+   * @member {String} merchantVerificationValue
+   */
+  exports.prototype['merchantVerificationValue'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsProcessingInformationJapanPaymentOptions} japanPaymentOptions
    */
