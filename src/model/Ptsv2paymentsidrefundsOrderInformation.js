@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsidcapturesOrderInformationAmountDetails', 'model/Ptsv2paymentsidcapturesOrderInformationBillTo', 'model/Ptsv2paymentsidcapturesOrderInformationInvoiceDetails', 'model/Ptsv2paymentsidcapturesOrderInformationShipTo', 'model/Ptsv2paymentsidcapturesOrderInformationShippingDetails', 'model/Ptsv2paymentsidrefundsOrderInformationLineItems'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationDigitalCurrency', 'model/Ptsv2paymentsidcapturesOrderInformationAmountDetails', 'model/Ptsv2paymentsidcapturesOrderInformationBillTo', 'model/Ptsv2paymentsidcapturesOrderInformationInvoiceDetails', 'model/Ptsv2paymentsidcapturesOrderInformationShipTo', 'model/Ptsv2paymentsidrefundsOrderInformationLineItems', 'model/Ptsv2paymentsidrefundsOrderInformationShippingDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidcapturesOrderInformationAmountDetails'), require('./Ptsv2paymentsidcapturesOrderInformationBillTo'), require('./Ptsv2paymentsidcapturesOrderInformationInvoiceDetails'), require('./Ptsv2paymentsidcapturesOrderInformationShipTo'), require('./Ptsv2paymentsidcapturesOrderInformationShippingDetails'), require('./Ptsv2paymentsidrefundsOrderInformationLineItems'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationDigitalCurrency'), require('./Ptsv2paymentsidcapturesOrderInformationAmountDetails'), require('./Ptsv2paymentsidcapturesOrderInformationBillTo'), require('./Ptsv2paymentsidcapturesOrderInformationInvoiceDetails'), require('./Ptsv2paymentsidcapturesOrderInformationShipTo'), require('./Ptsv2paymentsidrefundsOrderInformationLineItems'), require('./Ptsv2paymentsidrefundsOrderInformationShippingDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationAmountDetails, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationBillTo, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationInvoiceDetails, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationShipTo, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationShippingDetails, root.CyberSource.Ptsv2paymentsidrefundsOrderInformationLineItems);
+    root.CyberSource.Ptsv2paymentsidrefundsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationDigitalCurrency, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationAmountDetails, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationBillTo, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationInvoiceDetails, root.CyberSource.Ptsv2paymentsidcapturesOrderInformationShipTo, root.CyberSource.Ptsv2paymentsidrefundsOrderInformationLineItems, root.CyberSource.Ptsv2paymentsidrefundsOrderInformationShippingDetails);
   }
-}(this, function(ApiClient, Ptsv2paymentsidcapturesOrderInformationAmountDetails, Ptsv2paymentsidcapturesOrderInformationBillTo, Ptsv2paymentsidcapturesOrderInformationInvoiceDetails, Ptsv2paymentsidcapturesOrderInformationShipTo, Ptsv2paymentsidcapturesOrderInformationShippingDetails, Ptsv2paymentsidrefundsOrderInformationLineItems) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationDigitalCurrency, Ptsv2paymentsidcapturesOrderInformationAmountDetails, Ptsv2paymentsidcapturesOrderInformationBillTo, Ptsv2paymentsidcapturesOrderInformationInvoiceDetails, Ptsv2paymentsidcapturesOrderInformationShipTo, Ptsv2paymentsidrefundsOrderInformationLineItems, Ptsv2paymentsidrefundsOrderInformationShippingDetails) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -82,7 +83,10 @@
         obj['invoiceDetails'] = Ptsv2paymentsidcapturesOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
       }
       if (data.hasOwnProperty('shippingDetails')) {
-        obj['shippingDetails'] = Ptsv2paymentsidcapturesOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
+        obj['shippingDetails'] = Ptsv2paymentsidrefundsOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
+      }
+      if (data.hasOwnProperty('digitalCurrency')) {
+        obj['digitalCurrency'] = Ptsv2paymentsOrderInformationDigitalCurrency.constructFromObject(data['digitalCurrency']);
       }
     }
     return obj;
@@ -109,9 +113,13 @@
    */
   exports.prototype['invoiceDetails'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsidcapturesOrderInformationShippingDetails} shippingDetails
+   * @member {module:model/Ptsv2paymentsidrefundsOrderInformationShippingDetails} shippingDetails
    */
   exports.prototype['shippingDetails'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsOrderInformationDigitalCurrency} digitalCurrency
+   */
+  exports.prototype['digitalCurrency'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsTokenInformationPaymentInstrument', 'model/Ptsv2paymentsTokenInformationShippingAddress', 'model/Ptsv2paymentsTokenInformationTokenProvisioningInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsTokenInformationPaymentInstrument', 'model/Ptsv2paymentsTokenInformationShippingAddress', 'model/Ptsv2paymentsTokenInformationTokenAuthenticationInformation', 'model/Ptsv2paymentsTokenInformationTokenProvisioningInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTokenInformationPaymentInstrument'), require('./Ptsv2paymentsTokenInformationShippingAddress'), require('./Ptsv2paymentsTokenInformationTokenProvisioningInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTokenInformationPaymentInstrument'), require('./Ptsv2paymentsTokenInformationShippingAddress'), require('./Ptsv2paymentsTokenInformationTokenAuthenticationInformation'), require('./Ptsv2paymentsTokenInformationTokenProvisioningInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsTokenInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTokenInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsTokenInformationShippingAddress, root.CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation);
+    root.CyberSource.Ptsv2paymentsTokenInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTokenInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsTokenInformationShippingAddress, root.CyberSource.Ptsv2paymentsTokenInformationTokenAuthenticationInformation, root.CyberSource.Ptsv2paymentsTokenInformationTokenProvisioningInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsTokenInformationPaymentInstrument, Ptsv2paymentsTokenInformationShippingAddress, Ptsv2paymentsTokenInformationTokenProvisioningInformation) {
+}(this, function(ApiClient, Ptsv2paymentsTokenInformationPaymentInstrument, Ptsv2paymentsTokenInformationShippingAddress, Ptsv2paymentsTokenInformationTokenAuthenticationInformation, Ptsv2paymentsTokenInformationTokenProvisioningInformation) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -84,6 +86,12 @@
       if (data.hasOwnProperty('tokenProvisioningInformation')) {
         obj['tokenProvisioningInformation'] = Ptsv2paymentsTokenInformationTokenProvisioningInformation.constructFromObject(data['tokenProvisioningInformation']);
       }
+      if (data.hasOwnProperty('clientCorrelationId')) {
+        obj['clientCorrelationId'] = ApiClient.convertToType(data['clientCorrelationId'], 'String');
+      }
+      if (data.hasOwnProperty('tokenAuthenticationInformation')) {
+        obj['tokenAuthenticationInformation'] = Ptsv2paymentsTokenInformationTokenAuthenticationInformation.constructFromObject(data['tokenAuthenticationInformation']);
+      }
     }
     return obj;
   }
@@ -115,6 +123,15 @@
    * @member {module:model/Ptsv2paymentsTokenInformationTokenProvisioningInformation} tokenProvisioningInformation
    */
   exports.prototype['tokenProvisioningInformation'] = undefined;
+  /**
+   * Client-generated unique identifier for correlating token operations across API calls. This value helps track and associate token-related transactions. 
+   * @member {String} clientCorrelationId
+   */
+  exports.prototype['clientCorrelationId'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsTokenInformationTokenAuthenticationInformation} tokenAuthenticationInformation
+   */
+  exports.prototype['tokenAuthenticationInformation'] = undefined;
 
 
 

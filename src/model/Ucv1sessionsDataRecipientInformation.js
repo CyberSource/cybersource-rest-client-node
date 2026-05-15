@@ -56,6 +56,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -69,6 +72,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accountId')) {
+        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
+      }
+      if (data.hasOwnProperty('accountType')) {
+        obj['accountType'] = ApiClient.convertToType(data['accountType'], 'String');
+      }
       if (data.hasOwnProperty('firstName')) {
         obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
       }
@@ -78,70 +87,91 @@
       if (data.hasOwnProperty('lastName')) {
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
       }
-      if (data.hasOwnProperty('country')) {
-        obj['country'] = ApiClient.convertToType(data['country'], 'String');
-      }
-      if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
+      if (data.hasOwnProperty('address1')) {
+        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
       }
       if (data.hasOwnProperty('administrativeArea')) {
         obj['administrativeArea'] = ApiClient.convertToType(data['administrativeArea'], 'String');
       }
-      if (data.hasOwnProperty('accountType')) {
-        obj['accountType'] = ApiClient.convertToType(data['accountType'], 'String');
+      if (data.hasOwnProperty('postalCode')) {
+        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
+      if (data.hasOwnProperty('country')) {
+        obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('phoneNumber')) {
+        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
       }
       if (data.hasOwnProperty('dateOfBirth')) {
         obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
       }
-      if (data.hasOwnProperty('postalCode')) {
-        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      if (data.hasOwnProperty('locality')) {
+        obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} firstName
-   */
-  exports.prototype['firstName'] = undefined;
-  /**
-   * @member {String} middleName
-   */
-  exports.prototype['middleName'] = undefined;
-  /**
-   * @member {String} lastName
-   */
-  exports.prototype['lastName'] = undefined;
-  /**
-   * The country code of the recipient's country<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
-   * @member {String} country
-   */
-  exports.prototype['country'] = undefined;
-  /**
-   * The account ID of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
+   * Identifier for the recipient's account. This field is applicable for AFT transactions. 
    * @member {String} accountId
    */
   exports.prototype['accountId'] = undefined;
   /**
-   * The administrative area of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
-   * @member {String} administrativeArea
-   */
-  exports.prototype['administrativeArea'] = undefined;
-  /**
-   * The account type of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
+   * Identifies the recipient's account type. This field is applicable for AFT transactions.  Valid values are:   - `00` for Other   - `01` for Routing Transit Number (RTN) + Bank Account Number (BAN)   - `02` for International Bank Account Number (IBAN)   - `03` for Card Account   - `06` for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code 
    * @member {String} accountType
    */
   exports.prototype['accountType'] = undefined;
   /**
-   * The date of birth of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
+   * First name of the recipient. This field is applicable for AFT transactions.    Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
+  /**
+   * Middle name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
+   * @member {String} middleName
+   */
+  exports.prototype['middleName'] = undefined;
+  /**
+   * Last name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
+   * @member {String} lastName
+   */
+  exports.prototype['lastName'] = undefined;
+  /**
+   * The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
+   * @member {String} address1
+   */
+  exports.prototype['address1'] = undefined;
+  /**
+   * The state or province of the recipient. This field is applicable for AFT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value 
+   * @member {String} administrativeArea
+   */
+  exports.prototype['administrativeArea'] = undefined;
+  /**
+   * Partial postal code for the recipient's address. For example, if the postal code is **NN5 7SG**, the value for this field should be the first part of the postal code: **NN5**. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * @member {String} postalCode
+   */
+  exports.prototype['postalCode'] = undefined;
+  /**
+   * The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
+   * @member {String} country
+   */
+  exports.prototype['country'] = undefined;
+  /**
+   * Account Owner phone number
+   * @member {String} phoneNumber
+   */
+  exports.prototype['phoneNumber'] = undefined;
+  /**
+   * Recipient's date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @member {String} dateOfBirth
    */
   exports.prototype['dateOfBirth'] = undefined;
   /**
-   * The postal code of the recipient<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
-   * @member {String} postalCode
+   * The city of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
+   * @member {String} locality
    */
-  exports.prototype['postalCode'] = undefined;
+  exports.prototype['locality'] = undefined;
 
 
 

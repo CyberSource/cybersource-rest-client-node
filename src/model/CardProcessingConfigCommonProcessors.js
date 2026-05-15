@@ -96,6 +96,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -243,6 +247,18 @@
       }
       if (data.hasOwnProperty('enableMultiCurrencyProcessing')) {
         obj['enableMultiCurrencyProcessing'] = ApiClient.convertToType(data['enableMultiCurrencyProcessing'], 'String');
+      }
+      if (data.hasOwnProperty('transactionTypeIdentifier')) {
+        obj['transactionTypeIdentifier'] = ApiClient.convertToType(data['transactionTypeIdentifier'], 'String');
+      }
+      if (data.hasOwnProperty('subMerchantId')) {
+        obj['subMerchantId'] = ApiClient.convertToType(data['subMerchantId'], 'String');
+      }
+      if (data.hasOwnProperty('subMerchantEmail')) {
+        obj['subMerchantEmail'] = ApiClient.convertToType(data['subMerchantEmail'], 'String');
+      }
+      if (data.hasOwnProperty('subMerchantPhoneNumber')) {
+        obj['subMerchantPhoneNumber'] = ApiClient.convertToType(data['subMerchantPhoneNumber'], 'String');
       }
       if (data.hasOwnProperty('enablePosNetworkSwitching')) {
         obj['enablePosNetworkSwitching'] = ApiClient.convertToType(data['enablePosNetworkSwitching'], 'Boolean');
@@ -481,6 +497,26 @@
    * @member {String} enableMultiCurrencyProcessing
    */
   exports.prototype['enableMultiCurrencyProcessing'] = undefined;
+  /**
+   * Transaction Type Identifier (TTI) field for Mastercard AFT transactions. Maps to ISO field F104.65.32. Used to ensure compliance with Mastercard's requirements for money send transactions when wallet classifications differ between Visa and Mastercard schemes. Takes priority over BAI values for Mastercard AFT transactions when present.
+   * @member {String} transactionTypeIdentifier
+   */
+  exports.prototype['transactionTypeIdentifier'] = undefined;
+  /**
+   * The Sub merchant ID, sometimes referred to as the 'Seller ID' is generally used and *required for Aggregators and OptBlue participants. The 'Sub Merchant' is the Merchant whose transactions are submitted by a payment aggregator.
+   * @member {String} subMerchantId
+   */
+  exports.prototype['subMerchantId'] = undefined;
+  /**
+   * Sub Merchant Email of the Payment Facilitator's, OptBlue Participant
+   * @member {String} subMerchantEmail
+   */
+  exports.prototype['subMerchantEmail'] = undefined;
+  /**
+   * Sub Merchant Phone Number of the Payment Facilitator's, OptBlue Participant's
+   * @member {String} subMerchantPhoneNumber
+   */
+  exports.prototype['subMerchantPhoneNumber'] = undefined;
   /**
    * 'POS Network Switching' or 'Alternate Routing' means merchant can process PIN Debit transactions without a PIN. Set the value to 'Yes' if it is supported. Applicable for FDI Global (fdiglobal) processor.
    * @member {Boolean} enablePosNetworkSwitching

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PullFunds201ResponseProcessorInformationAvs', 'model/PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PayoutsPost201ResponseProcessorInformationAvs', 'model/PtsV2PayoutsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults', 'model/PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PullFunds201ResponseProcessorInformationAvs'), require('./PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./PtsV2PayoutsPost201ResponseProcessorInformationAvs'), require('./PtsV2PayoutsPost201ResponseProcessorInformationCustomer'), require('./PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults'), require('./PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PullFunds201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PullFunds201ResponseProcessorInformationAvs, root.CyberSource.PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse);
+    root.CyberSource.PullFunds201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationCustomer, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse);
   }
-}(this, function(ApiClient, PullFunds201ResponseProcessorInformationAvs, PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PayoutsPost201ResponseProcessorInformationAvs, PtsV2PayoutsPost201ResponseProcessorInformationCustomer, PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults, PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse) {
   'use strict';
 
 
@@ -46,6 +46,9 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
 
 
 
@@ -87,10 +90,19 @@
         obj['retrievalReferenceNumber'] = ApiClient.convertToType(data['retrievalReferenceNumber'], 'String');
       }
       if (data.hasOwnProperty('avs')) {
-        obj['avs'] = PullFunds201ResponseProcessorInformationAvs.constructFromObject(data['avs']);
+        obj['avs'] = PtsV2PayoutsPost201ResponseProcessorInformationAvs.constructFromObject(data['avs']);
       }
       if (data.hasOwnProperty('responseDetails')) {
         obj['responseDetails'] = ApiClient.convertToType(data['responseDetails'], 'String');
+      }
+      if (data.hasOwnProperty('customer')) {
+        obj['customer'] = PtsV2PayoutsPost201ResponseProcessorInformationCustomer.constructFromObject(data['customer']);
+      }
+      if (data.hasOwnProperty('electronicVerificationResults')) {
+        obj['electronicVerificationResults'] = PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults.constructFromObject(data['electronicVerificationResults']);
+      }
+      if (data.hasOwnProperty('cardVerification')) {
+        obj['cardVerification'] = PtsV2PaymentsPost201ResponseProcessorInformationCardVerification.constructFromObject(data['cardVerification']);
       }
     }
     return obj;
@@ -126,7 +138,7 @@
    */
   exports.prototype['retrievalReferenceNumber'] = undefined;
   /**
-   * @member {module:model/PullFunds201ResponseProcessorInformationAvs} avs
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationAvs} avs
    */
   exports.prototype['avs'] = undefined;
   /**
@@ -134,6 +146,18 @@
    * @member {String} responseDetails
    */
   exports.prototype['responseDetails'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationCustomer} customer
+   */
+  exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults} electronicVerificationResults
+   */
+  exports.prototype['electronicVerificationResults'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification} cardVerification
+   */
+  exports.prototype['cardVerification'] = undefined;
 
 
 

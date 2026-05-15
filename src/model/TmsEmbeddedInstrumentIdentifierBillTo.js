@@ -54,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
       }
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
     }
     return obj;
@@ -119,6 +123,11 @@
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
+  /**
+   * Customer's email address, including the full domain name. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
 
 
 

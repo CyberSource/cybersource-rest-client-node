@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property accountFeatures (base name: "accountFeatures")', function() {
+      // uncomment below and update the code to test the property accountFeatures
+      //var instane = new CyberSource.PtsV2CreditsPost201ResponsePaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

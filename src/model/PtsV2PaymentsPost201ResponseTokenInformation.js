@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseTokenInformationCustomer', 'model/PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier', 'model/PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument', 'model/PtsV2PaymentsPost201ResponseTokenInformationShippingAddress'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseTokenInformationCustomer', 'model/PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier', 'model/PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument', 'model/PtsV2PaymentsPost201ResponseTokenInformationShippingAddress', 'model/PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseTokenInformationCustomer'), require('./PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier'), require('./PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument'), require('./PtsV2PaymentsPost201ResponseTokenInformationShippingAddress'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseTokenInformationCustomer'), require('./PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier'), require('./PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument'), require('./PtsV2PaymentsPost201ResponseTokenInformationShippingAddress'), require('./PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationCustomer, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress);
+    root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationCustomer, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress, root.CyberSource.PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseTokenInformationCustomer, PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier, PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, PtsV2PaymentsPost201ResponseTokenInformationShippingAddress) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseTokenInformationCustomer, PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier, PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument, PtsV2PaymentsPost201ResponseTokenInformationShippingAddress, PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('instrumentIdentifier')) {
         obj['instrumentIdentifier'] = PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
       }
+      if (data.hasOwnProperty('thirdPartyToken')) {
+        obj['thirdPartyToken'] = PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken.constructFromObject(data['thirdPartyToken']);
+      }
     }
     return obj;
   }
@@ -105,6 +109,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier} instrumentIdentifier
    */
   exports.prototype['instrumentIdentifier'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken} thirdPartyToken
+   */
+  exports.prototype['thirdPartyToken'] = undefined;
 
 
 

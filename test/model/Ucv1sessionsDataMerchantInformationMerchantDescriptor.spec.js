@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property contact (base name: "contact")', function() {
+      // uncomment below and update the code to test the property contact
+      //var instane = new CyberSource.Ucv1sessionsDataMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
     it('should have the property locality (base name: "locality")', function() {
       // uncomment below and update the code to test the property locality
       //var instane = new CyberSource.Ucv1sessionsDataMerchantInformationMerchantDescriptor();

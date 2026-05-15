@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **processingInformation** | [**Ptsv1pullfundstransferProcessingInformation**](Ptsv1pullfundstransferProcessingInformation.md) |  | [optional] 
 **recipientInformation** | [**Ptsv1pullfundstransferRecipientInformation**](Ptsv1pullfundstransferRecipientInformation.md) |  | [optional] 
 **senderInformation** | [**Ptsv1pullfundstransferSenderInformation**](Ptsv1pullfundstransferSenderInformation.md) |  | [optional] 
+**buyerInformation** | [**Ptsv1pullfundstransferBuyerInformation**](Ptsv1pullfundstransferBuyerInformation.md) |  | [optional] 
 **aggregatorInformation** | [**Ptsv1pullfundstransferAggregatorInformation**](Ptsv1pullfundstransferAggregatorInformation.md) |  | [optional] 
 **merchantInformation** | [**Ptsv1pullfundstransferMerchantInformation**](Ptsv1pullfundstransferMerchantInformation.md) |  | [optional] 
 

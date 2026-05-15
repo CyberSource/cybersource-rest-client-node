@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentInstrumentList1EmbeddedPaymentInstruments'], factory);
+    define(['ApiClient', 'model/PatchPaymentInstrumentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentInstrumentList1EmbeddedPaymentInstruments'));
+    module.exports = factory(require('../ApiClient'), require('./PatchPaymentInstrumentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentInstrumentList1Embedded = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentInstrumentList1EmbeddedPaymentInstruments);
+    root.CyberSource.PaymentInstrumentList1Embedded = factory(root.CyberSource.ApiClient, root.CyberSource.PatchPaymentInstrumentRequest);
   }
-}(this, function(ApiClient, PaymentInstrumentList1EmbeddedPaymentInstruments) {
+}(this, function(ApiClient, PatchPaymentInstrumentRequest) {
   'use strict';
 
 
@@ -63,14 +63,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentInstruments')) {
-        obj['paymentInstruments'] = ApiClient.convertToType(data['paymentInstruments'], [PaymentInstrumentList1EmbeddedPaymentInstruments]);
+        obj['paymentInstruments'] = ApiClient.convertToType(data['paymentInstruments'], [PatchPaymentInstrumentRequest]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/PaymentInstrumentList1EmbeddedPaymentInstruments>} paymentInstruments
+   * @member {Array.<module:model/PatchPaymentInstrumentRequest>} paymentInstruments
    */
   exports.prototype['paymentInstruments'] = undefined;
 

@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1instructionsMandates</code>.
-   * Mandate data.
+   * Mandate data. Defines the consumer's spending authorization for a purchase intent, including merchant preferences, amount limits, and product details.
    * @alias module:model/Acpv1instructionsMandates
    * @class
    * @param mandateId {String} Unique identifier with in the context of a purchase-intent for the mandate.   Assigned by Partner. Id shall not be reused when a mandate is updated/deleted. 

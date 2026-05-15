@@ -77,6 +77,7 @@
 
 
 
+
   };
 
   /**
@@ -158,6 +159,9 @@
       }
       if (data.hasOwnProperty('encryptedKeySerialNumber')) {
         obj['encryptedKeySerialNumber'] = ApiClient.convertToType(data['encryptedKeySerialNumber'], 'String');
+      }
+      if (data.hasOwnProperty('encryptedKeyId')) {
+        obj['encryptedKeyId'] = ApiClient.convertToType(data['encryptedKeyId'], 'String');
       }
       if (data.hasOwnProperty('partnerSdkVersion')) {
         obj['partnerSdkVersion'] = ApiClient.convertToType(data['partnerSdkVersion'], 'String');
@@ -298,6 +302,11 @@
    * @member {String} encryptedKeySerialNumber
    */
   exports.prototype['encryptedKeySerialNumber'] = undefined;
+  /**
+   * Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. 
+   * @member {String} encryptedKeyId
+   */
+  exports.prototype['encryptedKeyId'] = undefined;
   /**
    * Version of the software installed on the POS terminal. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.  For authorizations and credits, this field is supported only on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX 
    * @member {String} partnerSdkVersion

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Iplv2paymentlinksProcessingInformation', 'model/PblPaymentLinksPost201ResponseLinks', 'model/PblPaymentLinksPost201ResponseOrderInformation', 'model/PblPaymentLinksPost201ResponsePurchaseInformation'], factory);
+    define(['ApiClient', 'model/GetSubscriptionsPaymentsResponse1Links', 'model/Iplv2paymentlinksProcessingInformation', 'model/PblPaymentLinksPost201ResponseOrderInformation', 'model/PblPaymentLinksPost201ResponsePurchaseInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Iplv2paymentlinksProcessingInformation'), require('./PblPaymentLinksPost201ResponseLinks'), require('./PblPaymentLinksPost201ResponseOrderInformation'), require('./PblPaymentLinksPost201ResponsePurchaseInformation'));
+    module.exports = factory(require('../ApiClient'), require('./GetSubscriptionsPaymentsResponse1Links'), require('./Iplv2paymentlinksProcessingInformation'), require('./PblPaymentLinksPost201ResponseOrderInformation'), require('./PblPaymentLinksPost201ResponsePurchaseInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PblPaymentLinksPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.Iplv2paymentlinksProcessingInformation, root.CyberSource.PblPaymentLinksPost201ResponseLinks, root.CyberSource.PblPaymentLinksPost201ResponseOrderInformation, root.CyberSource.PblPaymentLinksPost201ResponsePurchaseInformation);
+    root.CyberSource.PblPaymentLinksPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.GetSubscriptionsPaymentsResponse1Links, root.CyberSource.Iplv2paymentlinksProcessingInformation, root.CyberSource.PblPaymentLinksPost201ResponseOrderInformation, root.CyberSource.PblPaymentLinksPost201ResponsePurchaseInformation);
   }
-}(this, function(ApiClient, Iplv2paymentlinksProcessingInformation, PblPaymentLinksPost201ResponseLinks, PblPaymentLinksPost201ResponseOrderInformation, PblPaymentLinksPost201ResponsePurchaseInformation) {
+}(this, function(ApiClient, GetSubscriptionsPaymentsResponse1Links, Iplv2paymentlinksProcessingInformation, PblPaymentLinksPost201ResponseOrderInformation, PblPaymentLinksPost201ResponsePurchaseInformation) {
   'use strict';
 
 
@@ -68,7 +68,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = PblPaymentLinksPost201ResponseLinks.constructFromObject(data['_links']);
+        obj['_links'] = GetSubscriptionsPaymentsResponse1Links.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -93,7 +93,7 @@
   }
 
   /**
-   * @member {module:model/PblPaymentLinksPost201ResponseLinks} _links
+   * @member {module:model/GetSubscriptionsPaymentsResponse1Links} _links
    */
   exports.prototype['_links'] = undefined;
   /**

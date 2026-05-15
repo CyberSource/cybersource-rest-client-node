@@ -43,7 +43,7 @@
    * Constructs a new <code>Bavsv1accountvalidationsPaymentInformationBank</code>.
    * @alias module:model/Bavsv1accountvalidationsPaymentInformationBank
    * @class
-   * @param routingNumber {String} Bank routing number. This is also called the transit number.  Non-Negative Integer 
+   * @param routingNumber {String} Bank routing number. This is also called the transit number.  Non-Negative String, containing only digits. 
    * @param account {module:model/Bavsv1accountvalidationsPaymentInformationBankAccount} 
    */
   var exports = function(routingNumber, account) {
@@ -75,7 +75,7 @@
   }
 
   /**
-   * Bank routing number. This is also called the transit number.  Non-Negative Integer 
+   * Bank routing number. This is also called the transit number.  Non-Negative String, containing only digits. 
    * @member {String} routingNumber
    */
   exports.prototype['routingNumber'] = undefined;

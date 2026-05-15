@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4007Details'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4007Details'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4007 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4007Details);
+    root.CyberSource.InlineResponse4007 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
-}(this, function(ApiClient, InlineResponse4007Details) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -78,34 +78,34 @@
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4007Details]);
+        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {Date} submitTimeUtc
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
+   * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The http status description of the submitted request.
+   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * Descriptive message for the error.
+   * The detail message related to the status and reason listed above.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse4007Details>} details
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
    */
   exports.prototype['details'] = undefined;
 

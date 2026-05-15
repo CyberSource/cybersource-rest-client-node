@@ -55,6 +55,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -71,14 +75,26 @@
       if (data.hasOwnProperty('totalAmount')) {
         obj['totalAmount'] = ApiClient.convertToType(data['totalAmount'], 'String');
       }
+      if (data.hasOwnProperty('freightAmount')) {
+        obj['freightAmount'] = ApiClient.convertToType(data['freightAmount'], 'String');
+      }
+      if (data.hasOwnProperty('dutyAmount')) {
+        obj['dutyAmount'] = ApiClient.convertToType(data['dutyAmount'], 'String');
+      }
+      if (data.hasOwnProperty('discountAmount')) {
+        obj['discountAmount'] = ApiClient.convertToType(data['discountAmount'], 'String');
+      }
+      if (data.hasOwnProperty('taxAppliedAfterDiscount')) {
+        obj['taxAppliedAfterDiscount'] = ApiClient.convertToType(data['taxAppliedAfterDiscount'], 'String');
+      }
+      if (data.hasOwnProperty('taxAppliedLevel')) {
+        obj['taxAppliedLevel'] = ApiClient.convertToType(data['taxAppliedLevel'], 'String');
+      }
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
       if (data.hasOwnProperty('surcharge')) {
         obj['surcharge'] = Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge.constructFromObject(data['surcharge']);
-      }
-      if (data.hasOwnProperty('discountAmount')) {
-        obj['discountAmount'] = ApiClient.convertToType(data['discountAmount'], 'String');
       }
       if (data.hasOwnProperty('subTotalAmount')) {
         obj['subTotalAmount'] = ApiClient.convertToType(data['subTotalAmount'], 'String');
@@ -102,6 +118,31 @@
    */
   exports.prototype['totalAmount'] = undefined;
   /**
+   * Total freight or shipping and handling charges for the order.  When you include this field in your request, you must also include the **totalAmount** field. 
+   * @member {String} freightAmount
+   */
+  exports.prototype['freightAmount'] = undefined;
+  /**
+   * Total charges for any import or export duties included in the order. 
+   * @member {String} dutyAmount
+   */
+  exports.prototype['dutyAmount'] = undefined;
+  /**
+   * Total discount amount applied to the order. 
+   * @member {String} discountAmount
+   */
+  exports.prototype['discountAmount'] = undefined;
+  /**
+   * Flag that indicates how the merchant manages discounts.  Possible values:   - **0**: no invoice level discount included  - **1**: tax calculated on the postdiscount invoice total  - **2**: tax calculated on the prediscount invoice total 
+   * @member {String} taxAppliedAfterDiscount
+   */
+  exports.prototype['taxAppliedAfterDiscount'] = undefined;
+  /**
+   * Flag that indicates how you calculate tax.  Possible values:   - **0**: net prices with tax calculated at line item level  - **1**: net prices with tax calculated at invoice level  - **2**: gross prices with tax provided at line item level  - **3**: gross prices with tax provided at invoice level  - **4**: no tax applies on the invoice for the transaction 
+   * @member {String} taxAppliedLevel
+   */
+  exports.prototype['taxAppliedLevel'] = undefined;
+  /**
    * This field defines the currency applicable to the order. 
    * @member {String} currency
    */
@@ -110,11 +151,6 @@
    * @member {module:model/Upv1capturecontextsDataOrderInformationAmountDetailsSurcharge} surcharge
    */
   exports.prototype['surcharge'] = undefined;
-  /**
-   * This field defines the discount amount applicable to the order. 
-   * @member {String} discountAmount
-   */
-  exports.prototype['discountAmount'] = undefined;
   /**
    * This field defines the sub total amount applicable to the order. 
    * @member {String} subTotalAmount

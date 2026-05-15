@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('amount')) {
         obj['amount'] = ApiClient.convertToType(data['amount'], 'String');
       }
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} amount
    */
   exports.prototype['amount'] = undefined;
+  /**
+   * Description of the surcharge. 
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
 
 
 

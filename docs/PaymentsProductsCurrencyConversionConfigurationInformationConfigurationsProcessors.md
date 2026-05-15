@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**merchantId** | **String** | The merchant identifier for the Currency Conversion service. Check with your Currency Conversion Provider for details. | [optional] 
-**acquirerId** | **String** |  | [optional] 
+**provider** | **String** | The name of the provider. | [optional] 
+**merchantId** | **String** | A unique identifier value assigned to each merchant. Assigned by the provider. | [optional] 
+**acquirerId** | **String** | This code identifies the financial institution acting as the acquirer. | [optional] 
 
 

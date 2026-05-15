@@ -1,5 +1,5 @@
 'use strict'
-const jose = require('node-jose');
+const { CompactEncrypt } = require('jose');
 const KeyCertificate = require('../jwt/KeyCertificateGenerator');
 const forge = require('node-forge');
 const Logger= require('../logging/Logger');
@@ -8,6 +8,7 @@ const Constants = require('./Constants');
 const Cache = require('./Cache');
 const JWEUtility = require('./JWEUtility');
 const Utility = require('./Utility');
+const crypto = require("crypto");
 
 exports.checkIsMLEForAPI = function (merchantConfig, inboundMLEStatus, operationId) {
     //isMLE for an api is false by default
@@ -127,6 +128,15 @@ exports.encryptRequestPayload = function(merchantConfig, requestBody) {
       logger.debug("Currently, MLE for requests using HTTP Signature as authentication is not supported by Cybersource. By default, the SDK will fall back to non-encrypted requests.");
       return Promise.resolve(requestBody);
     }
+    
+    // Check if using shared secret JWT without explicit MLE certificate path
+    if ((cert === null || cert === undefined) && 
+        Constants.JWT == merchantConfig.getAuthenticationType() && 
+        merchantConfig.isSharedSecretKeyType()) {
+      logger.debug("MLE for requests with JWT shared secret authentication requires mleForRequestPublicCertPath to be explicitly provided in merchant configuration.");
+      logger.debug("Please set mleForRequestPublicCertPath to the path of your MLE public certificate file.");
+      ApiException.AuthException("Missing MLE certificate for JWT shared secret authentication. Please provide the MLE public certificate path in the configuration.", logger);
+    }
     // let isCertExpired = KeyCertificate.verifyIsCertificateExpired(cert, merchantConfig.getRequestmleKeyAlias(), logger);
     // if (isCertExpired === true) {
     //   ApiException.ApiException("Certificate for MLE with alias " + merchantConfig.getRequestmleKeyAlias() + " is expired in " + merchantConfig.getKeyFileName() + ".p12", logger);
@@ -150,15 +160,15 @@ exports.encryptRequestPayload = function(merchantConfig, requestBody) {
       requestBodyStr = JSON.stringify(requestBody, null, 0);
     }
     const payload = Buffer.from(requestBodyStr);
-    const publicKeyInJWK = {
-      kty: 'RSA',
-      n: toBase64Url(cert.publicKey.n),
-      e: toBase64Url(cert.publicKey.e),
-    };
 
-    return jose.JWE.createEncrypt({ format: 'compact', fields: headers }, { key: publicKeyInJWK, header: { kid: serialNumber } })
-      .update(payload)
-      .final()
+    // cert is a forge.pki.Certificate
+    const certPem = forge.pki.certificateToPem(cert);
+    // Node parses the certificate and extracts a proper RSA public KeyObject.
+    var publicKey = crypto.createPublicKey(certPem);
+
+      return new CompactEncrypt(payload)
+      .setProtectedHeader(headers)
+      .encrypt(publicKey)
       .then(token => {
           logger.debug(Constants.LOG_REQUEST_BEFORE_MLE + JSON.stringify(requestBody));
           const mleRequest = {
@@ -167,12 +177,6 @@ exports.encryptRequestPayload = function(merchantConfig, requestBody) {
           logger.debug(Constants.LOG_REQUEST_AFTER_MLE + JSON.stringify(mleRequest));
           return mleRequest;
       });
-}
-
-function toBase64Url(bi) {
-  const hex = bi.toString(16);
-  const base64 = forge.util.encode64(forge.util.hexToBytes(hex));
-  return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
 function getSerialNumberFromCert(cert, errorMessage) {
@@ -221,10 +225,15 @@ exports.validateAndAutoExtractResponseMleKid = function(merchantConfig, logger) 
             if (isCybersourceP12) {
                 logger.debug('Detected CyberSource P12 file, attempting to auto-extract responseMleKID');
                 try {
+                    // Use correct alias for MetaKey mode
+                    const responseMleKeyAlias = merchantConfig.getUseMetaKey() 
+                        ? merchantConfig.getPortfolioID() 
+                        : merchantConfig.getMerchantID();
+                    
                     cybsKid = exports.extractResponseMleKid(
                         merchantConfig.getResponseMlePrivateKeyFilePath(),
                         merchantConfig.getResponseMlePrivateKeyFilePassword(),
-                        merchantConfig.getMerchantID(),
+                        responseMleKeyAlias,
                         logger
                     );
                     

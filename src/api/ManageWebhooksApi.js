@@ -89,7 +89,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
       //check isMLE for an api method 'this.deleteWebhookSubscription'
@@ -155,7 +155,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2016;
 
       //check isMLE for an api method 'this.getWebhookSubscriptionById'
@@ -227,7 +227,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = [InlineResponse2007];
 
       //check isMLE for an api method 'this.getWebhookSubscriptionsByOrg'
@@ -293,7 +293,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2017;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV1WebhooksWebhookIdPost'
@@ -363,7 +363,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2008;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdPatch'
@@ -432,7 +432,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = null;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdStatusPut'
@@ -468,27 +468,17 @@
     /**
      * Message Level Encryption
      * Store and manage certificates that will be used to preform Message Level Encryption (MLE). Each new webhook will need its own unique asymmetric certificate. You can either use a digital certificate issued/signed by a CA or self-sign your own using the documentation available on the Developer Guide. 
-     * @param {String} vCSenderOrganizationId Sender organization id
-     * @param {String} vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
      * @param {module:model/SaveAsymEgressKey} saveAsymEgressKey Provide egress Asymmetric key information to save (create or store)
      * @param {Object} opts Optional parameters
      * @param {String} opts.vCCorrelationId A globally unique id associated with your request
+     * @param {String} opts.vCSenderOrganizationId Sender organization id
+     * @param {String} opts.vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
      * @param {module:api/ManageWebhooksApi~saveAsymEgressKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2018}
      */
-    this.saveAsymEgressKey = function(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, opts, callback) {
+    this.saveAsymEgressKey = function(saveAsymEgressKey, opts, callback) {
       opts = opts || {};
       var postBody = saveAsymEgressKey;
-
-      // verify the required parameter 'vCSenderOrganizationId' is set
-      if (vCSenderOrganizationId === undefined || vCSenderOrganizationId === null) {
-        throw new Error("Missing the required parameter 'vCSenderOrganizationId' when calling saveAsymEgressKey");
-      }
-
-      // verify the required parameter 'vCPermissions' is set
-      if (vCPermissions === undefined || vCPermissions === null) {
-        throw new Error("Missing the required parameter 'vCPermissions' when calling saveAsymEgressKey");
-      }
 
       // verify the required parameter 'saveAsymEgressKey' is set
       if (saveAsymEgressKey === undefined || saveAsymEgressKey === null) {
@@ -507,8 +497,8 @@
       };
       var headerParams = {
         'v-c-correlation-id': opts['vCCorrelationId'],
-        'v-c-sender-organization-id': vCSenderOrganizationId,
-        'v-c-permissions': vCPermissions
+        'v-c-sender-organization-id': opts['vCSenderOrganizationId'],
+        'v-c-permissions': opts['vCPermissions']
       };
       var formParams = {
       };
@@ -516,7 +506,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2018;
 
       //check isMLE for an api method 'this.saveAsymEgressKey'

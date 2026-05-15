@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('issuer')) {
         obj['issuer'] = Tmsv2TokenizedCardMetadataIssuer.constructFromObject(data['issuer']);
       }
+      if (data.hasOwnProperty('creator')) {
+        obj['creator'] = ApiClient.convertToType(data['creator'], 'String');
+      }
     }
     return obj;
   }
@@ -80,6 +84,11 @@
    * @member {module:model/Tmsv2TokenizedCardMetadataIssuer} issuer
    */
   exports.prototype['issuer'] = undefined;
+  /**
+   * The creator of the Tokenized Card.
+   * @member {String} creator
+   */
+  exports.prototype['creator'] = undefined;
 
 
 

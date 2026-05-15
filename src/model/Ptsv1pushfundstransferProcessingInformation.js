@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       if (data.hasOwnProperty('reconciliationId')) {
         obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
       }
+      if (data.hasOwnProperty('accountVerificationCode')) {
+        obj['accountVerificationCode'] = ApiClient.convertToType(data['accountVerificationCode'], ['String']);
+      }
     }
     return obj;
   }
@@ -111,7 +115,7 @@
    */
   exports.prototype['feeProgramId'] = undefined;
   /**
-   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. 
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect, Chase Paymentech Salem. 
    * @member {String} networkPartnerId
    */
   exports.prototype['networkPartnerId'] = undefined;
@@ -135,6 +139,11 @@
    * @member {String} reconciliationId
    */
   exports.prototype['reconciliationId'] = undefined;
+  /**
+   * Account verification code will inform what Payment Account Verification should be performed. With this array of codes, a merchant can choose à la carte what verifications to run. This field is optional, and the default is 1 if it is not passed in. This means that a full validation of the fields will be performed. Valid verification codes: - `1` = Full Account Verification (Card Account, CVN, CAVV, TAVV, Address, Name, eMail, Phone, Identity) - `2` = Card Account Verification - `3` = Address Verification - `4` = Card Authentication Method (CAM) (Cryptogram) - `5` = Cardholder Authentication Verification (CAVV) - `6` = Cardholder Identity Verification - `7` = CVV2 Verification - `8` = eMail Verification - `9` = Name Verification - `10` = Phone Verification 
+   * @member {Array.<String>} accountVerificationCode
+   */
+  exports.prototype['accountVerificationCode'] = undefined;
 
 
 

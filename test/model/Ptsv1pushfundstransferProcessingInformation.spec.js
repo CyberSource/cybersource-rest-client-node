@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property accountVerificationCode (base name: "accountVerificationCode")', function() {
+      // uncomment below and update the code to test the property accountVerificationCode
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

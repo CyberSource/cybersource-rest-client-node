@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property billTo (base name: "billTo")', function() {
+      // uncomment below and update the code to test the property billTo
+      //var instane = new CyberSource.PostTokenizedCardRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

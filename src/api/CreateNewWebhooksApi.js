@@ -153,7 +153,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
       var returnType = InlineResponse2016;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksPost'
@@ -189,27 +189,17 @@
     /**
      * Create Webhook Security Keys
      * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later. 
-     * @param {String} vCSenderOrganizationId Sender organization id
-     * @param {String} vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
      * @param {Object} opts Optional parameters
      * @param {String} opts.vCCorrelationId A globally unique id associated with your request
+     * @param {String} opts.vCSenderOrganizationId Sender organization id
+     * @param {String} opts.vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
      * @param {module:model/SaveSymEgressKey} opts.saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh)
      * @param {module:api/CreateNewWebhooksApi~saveSymEgressKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2015}
      */
-    this.saveSymEgressKey = function(vCSenderOrganizationId, vCPermissions, opts, callback) {
+    this.saveSymEgressKey = function(opts, callback) {
       opts = opts || {};
       var postBody = opts['saveSymEgressKey'];
-
-      // verify the required parameter 'vCSenderOrganizationId' is set
-      if (vCSenderOrganizationId === undefined || vCSenderOrganizationId === null) {
-        throw new Error("Missing the required parameter 'vCSenderOrganizationId' when calling saveSymEgressKey");
-      }
-
-      // verify the required parameter 'vCPermissions' is set
-      if (vCPermissions === undefined || vCPermissions === null) {
-        throw new Error("Missing the required parameter 'vCPermissions' when calling saveSymEgressKey");
-      }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
@@ -223,8 +213,8 @@
       };
       var headerParams = {
         'v-c-correlation-id': opts['vCCorrelationId'],
-        'v-c-sender-organization-id': vCSenderOrganizationId,
-        'v-c-permissions': vCPermissions
+        'v-c-sender-organization-id': opts['vCSenderOrganizationId'],
+        'v-c-permissions': opts['vCPermissions']
       };
       var formParams = {
       };

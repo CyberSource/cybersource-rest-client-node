@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethods', 'model/PaymentsProductsCardPresentConnect', 'model/PaymentsProductsCardProcessing', 'model/PaymentsProductsCurrencyConversion', 'model/PaymentsProductsCybsReadyTerminal', 'model/PaymentsProductsDifferentialFee', 'model/PaymentsProductsDigitalPayments', 'model/PaymentsProductsECheck', 'model/PaymentsProductsPayerAuthentication', 'model/PaymentsProductsPayouts', 'model/PaymentsProductsSecureAcceptance', 'model/PaymentsProductsServiceFee', 'model/PaymentsProductsTax', 'model/PaymentsProductsUnifiedCheckout', 'model/PaymentsProductsVirtualTerminal'], factory);
+    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethods', 'model/PaymentsProductsCardPresentConnect', 'model/PaymentsProductsCardProcessing', 'model/PaymentsProductsCurrencyConversion', 'model/PaymentsProductsCybsReadyTerminal', 'model/PaymentsProductsDifferentialFee', 'model/PaymentsProductsDigitalPayments', 'model/PaymentsProductsECheck', 'model/PaymentsProductsMicroform', 'model/PaymentsProductsPayerAuthentication', 'model/PaymentsProductsPayouts', 'model/PaymentsProductsSecureAcceptance', 'model/PaymentsProductsServiceFee', 'model/PaymentsProductsTax', 'model/PaymentsProductsUnifiedCheckout', 'model/PaymentsProductsVirtualTerminal'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethods'), require('./PaymentsProductsCardPresentConnect'), require('./PaymentsProductsCardProcessing'), require('./PaymentsProductsCurrencyConversion'), require('./PaymentsProductsCybsReadyTerminal'), require('./PaymentsProductsDifferentialFee'), require('./PaymentsProductsDigitalPayments'), require('./PaymentsProductsECheck'), require('./PaymentsProductsPayerAuthentication'), require('./PaymentsProductsPayouts'), require('./PaymentsProductsSecureAcceptance'), require('./PaymentsProductsServiceFee'), require('./PaymentsProductsTax'), require('./PaymentsProductsUnifiedCheckout'), require('./PaymentsProductsVirtualTerminal'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethods'), require('./PaymentsProductsCardPresentConnect'), require('./PaymentsProductsCardProcessing'), require('./PaymentsProductsCurrencyConversion'), require('./PaymentsProductsCybsReadyTerminal'), require('./PaymentsProductsDifferentialFee'), require('./PaymentsProductsDigitalPayments'), require('./PaymentsProductsECheck'), require('./PaymentsProductsMicroform'), require('./PaymentsProductsPayerAuthentication'), require('./PaymentsProductsPayouts'), require('./PaymentsProductsSecureAcceptance'), require('./PaymentsProductsServiceFee'), require('./PaymentsProductsTax'), require('./PaymentsProductsUnifiedCheckout'), require('./PaymentsProductsVirtualTerminal'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProducts = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethods, root.CyberSource.PaymentsProductsCardPresentConnect, root.CyberSource.PaymentsProductsCardProcessing, root.CyberSource.PaymentsProductsCurrencyConversion, root.CyberSource.PaymentsProductsCybsReadyTerminal, root.CyberSource.PaymentsProductsDifferentialFee, root.CyberSource.PaymentsProductsDigitalPayments, root.CyberSource.PaymentsProductsECheck, root.CyberSource.PaymentsProductsPayerAuthentication, root.CyberSource.PaymentsProductsPayouts, root.CyberSource.PaymentsProductsSecureAcceptance, root.CyberSource.PaymentsProductsServiceFee, root.CyberSource.PaymentsProductsTax, root.CyberSource.PaymentsProductsUnifiedCheckout, root.CyberSource.PaymentsProductsVirtualTerminal);
+    root.CyberSource.PaymentsProducts = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethods, root.CyberSource.PaymentsProductsCardPresentConnect, root.CyberSource.PaymentsProductsCardProcessing, root.CyberSource.PaymentsProductsCurrencyConversion, root.CyberSource.PaymentsProductsCybsReadyTerminal, root.CyberSource.PaymentsProductsDifferentialFee, root.CyberSource.PaymentsProductsDigitalPayments, root.CyberSource.PaymentsProductsECheck, root.CyberSource.PaymentsProductsMicroform, root.CyberSource.PaymentsProductsPayerAuthentication, root.CyberSource.PaymentsProductsPayouts, root.CyberSource.PaymentsProductsSecureAcceptance, root.CyberSource.PaymentsProductsServiceFee, root.CyberSource.PaymentsProductsTax, root.CyberSource.PaymentsProductsUnifiedCheckout, root.CyberSource.PaymentsProductsVirtualTerminal);
   }
-}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethods, PaymentsProductsCardPresentConnect, PaymentsProductsCardProcessing, PaymentsProductsCurrencyConversion, PaymentsProductsCybsReadyTerminal, PaymentsProductsDifferentialFee, PaymentsProductsDigitalPayments, PaymentsProductsECheck, PaymentsProductsPayerAuthentication, PaymentsProductsPayouts, PaymentsProductsSecureAcceptance, PaymentsProductsServiceFee, PaymentsProductsTax, PaymentsProductsUnifiedCheckout, PaymentsProductsVirtualTerminal) {
+}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethods, PaymentsProductsCardPresentConnect, PaymentsProductsCardProcessing, PaymentsProductsCurrencyConversion, PaymentsProductsCybsReadyTerminal, PaymentsProductsDifferentialFee, PaymentsProductsDigitalPayments, PaymentsProductsECheck, PaymentsProductsMicroform, PaymentsProductsPayerAuthentication, PaymentsProductsPayouts, PaymentsProductsSecureAcceptance, PaymentsProductsServiceFee, PaymentsProductsTax, PaymentsProductsUnifiedCheckout, PaymentsProductsVirtualTerminal) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -144,6 +146,12 @@
       if (data.hasOwnProperty('batchUpload')) {
         obj['batchUpload'] = PaymentsProductsTax.constructFromObject(data['batchUpload']);
       }
+      if (data.hasOwnProperty('transactGuard')) {
+        obj['transactGuard'] = PaymentsProductsTax.constructFromObject(data['transactGuard']);
+      }
+      if (data.hasOwnProperty('microform')) {
+        obj['microform'] = PaymentsProductsMicroform.constructFromObject(data['microform']);
+      }
     }
     return obj;
   }
@@ -232,6 +240,14 @@
    * @member {module:model/PaymentsProductsTax} batchUpload
    */
   exports.prototype['batchUpload'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} transactGuard
+   */
+  exports.prototype['transactGuard'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsMicroform} microform
+   */
+  exports.prototype['microform'] = undefined;
 
 
 

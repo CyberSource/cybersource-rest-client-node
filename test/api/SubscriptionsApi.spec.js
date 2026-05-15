@@ -110,6 +110,26 @@
         done();
       });
     });
+    describe('subscriptionsIdPaymentsGet', function() {
+      it('should call subscriptionsIdPaymentsGet successfully', function(done) {
+        //uncomment below and update the code to test subscriptionsIdPaymentsGet
+        //instance.subscriptionsIdPaymentsGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('subscriptionsIdPaymentsPut', function() {
+      it('should call subscriptionsIdPaymentsPut successfully', function(done) {
+        //uncomment below and update the code to test subscriptionsIdPaymentsPut
+        //instance.subscriptionsIdPaymentsPut(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('suspendSubscription', function() {
       it('should call suspendSubscription successfully', function(done) {
         //uncomment below and update the code to test suspendSubscription

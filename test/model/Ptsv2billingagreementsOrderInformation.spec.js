@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property invoiceDetails (base name: "invoiceDetails")', function() {
+      // uncomment below and update the code to test the property invoiceDetails
+      //var instane = new CyberSource.Ptsv2billingagreementsOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property billTo (base name: "billTo")', function() {
       // uncomment below and update the code to test the property billTo
       //var instane = new CyberSource.Ptsv2billingagreementsOrderInformation();

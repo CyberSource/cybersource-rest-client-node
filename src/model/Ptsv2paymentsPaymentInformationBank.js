@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBankAccount'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBankAccount', 'model/Ptsv2paymentsPaymentInformationBankAccountAlias'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBankAccount'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBankAccount'), require('./Ptsv2paymentsPaymentInformationBankAccountAlias'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsPaymentInformationBank = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBankAccount);
+    root.CyberSource.Ptsv2paymentsPaymentInformationBank = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBankAccount, root.CyberSource.Ptsv2paymentsPaymentInformationBankAccountAlias);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBankAccount) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBankAccount, Ptsv2paymentsPaymentInformationBankAccountAlias) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
+      if (data.hasOwnProperty('accountAlias')) {
+        obj['accountAlias'] = Ptsv2paymentsPaymentInformationBankAccountAlias.constructFromObject(data['accountAlias']);
+      }
     }
     return obj;
   }
@@ -108,6 +112,10 @@
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationBankAccountAlias} accountAlias
+   */
+  exports.prototype['accountAlias'] = undefined;
 
 
 

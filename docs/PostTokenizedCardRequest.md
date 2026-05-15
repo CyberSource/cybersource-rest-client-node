@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **source** | **String** | Source of the card details. Possible Values: - ONFILE - TOKEN - ISSUER  | 
 **card** | [**Tmsv2tokenizedcardsCard**](Tmsv2tokenizedcardsCard.md) |  | [optional] 
 **passcode** | [**Tmsv2tokenizedcardsPasscode**](Tmsv2tokenizedcardsPasscode.md) |  | [optional] 
+**billTo** | [**Tmsv2tokenizedcardsBillTo**](Tmsv2tokenizedcardsBillTo.md) |  | [optional] 
 
 

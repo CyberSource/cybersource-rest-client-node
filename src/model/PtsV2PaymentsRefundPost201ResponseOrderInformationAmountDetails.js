@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -65,6 +66,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('cashbackAmount')) {
+        obj['cashbackAmount'] = ApiClient.convertToType(data['cashbackAmount'], 'String');
+      }
       if (data.hasOwnProperty('settlementAmount')) {
         obj['settlementAmount'] = ApiClient.convertToType(data['settlementAmount'], 'String');
       }
@@ -84,6 +88,11 @@
     return obj;
   }
 
+  /**
+   * This field contains the purchase cashback amount expressed in the acquirer transaction currency.  Use this field only for clearing with your acquirer. 
+   * @member {String} cashbackAmount
+   */
+  exports.prototype['cashbackAmount'] = undefined;
   /**
    * This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder's account. This field is returned for OCT transactions. 
    * @member {String} settlementAmount

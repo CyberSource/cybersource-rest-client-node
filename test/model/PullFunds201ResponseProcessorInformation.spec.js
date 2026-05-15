@@ -104,6 +104,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customer (base name: "customer")', function() {
+      // uncomment below and update the code to test the property customer
+      //var instane = new CyberSource.PullFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property electronicVerificationResults (base name: "electronicVerificationResults")', function() {
+      // uncomment below and update the code to test the property electronicVerificationResults
+      //var instane = new CyberSource.PullFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cardVerification (base name: "cardVerification")', function() {
+      // uncomment below and update the code to test the property cardVerification
+      //var instane = new CyberSource.PullFunds201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

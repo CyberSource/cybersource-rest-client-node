@@ -49,6 +49,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -68,6 +71,15 @@
       if (data.hasOwnProperty('eSignIndicator')) {
         obj['eSignIndicator'] = ApiClient.convertToType(data['eSignIndicator'], 'String');
       }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('frequency')) {
+        obj['frequency'] = ApiClient.convertToType(data['frequency'], 'String');
+      }
+      if (data.hasOwnProperty('dateRevoked')) {
+        obj['dateRevoked'] = ApiClient.convertToType(data['dateRevoked'], 'String');
+      }
     }
     return obj;
   }
@@ -81,6 +93,21 @@
    * @member {String} eSignIndicator
    */
   exports.prototype['eSignIndicator'] = undefined;
+  /**
+   * Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly
+   * @member {String} frequency
+   */
+  exports.prototype['frequency'] = undefined;
+  /**
+   * Date the agreement was revoked (YYYYMMDD) 
+   * @member {String} dateRevoked
+   */
+  exports.prototype['dateRevoked'] = undefined;
 
 
 

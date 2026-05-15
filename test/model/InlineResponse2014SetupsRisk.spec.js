@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property enhancedAuthentication (base name: "enhancedAuthentication")', function() {
+      // uncomment below and update the code to test the property enhancedAuthentication
+      //var instane = new CyberSource.InlineResponse2014SetupsRisk();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

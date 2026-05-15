@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('merchantCategoryCode')) {
+        obj['merchantCategoryCode'] = ApiClient.convertToType(data['merchantCategoryCode'], 'Number');
       }
     }
     return obj;
@@ -145,6 +149,10 @@
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
+  /**
+   * @member {Number} merchantCategoryCode
+   */
+  exports.prototype['merchantCategoryCode'] = undefined;
 
 
 

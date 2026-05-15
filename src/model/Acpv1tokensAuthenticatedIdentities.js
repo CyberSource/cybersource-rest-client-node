@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensAuthenticatedIdentities</code>.
-   * Authenticated Identities data.
+   * Authenticated Identities data. Contains the identity assertion from the authentication provider.
    * @alias module:model/Acpv1tokensAuthenticatedIdentities
    * @class
    * @param id {String} This is a distinctive and non-transparent identifier provided by VISA for correlation purposes in the previous, related API.   Field Mapping when authenticationMethodType is 'FIDO2':     - On Success: FidoResponse.identifier   - On Error: AuthContext.identifier 

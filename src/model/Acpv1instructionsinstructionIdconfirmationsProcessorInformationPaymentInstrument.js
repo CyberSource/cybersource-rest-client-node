@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1instructionsinstructionIdconfirmationsProcessorInformationPaymentInstrument</code>.
-   * Details of the PAN associated with the enrolled card
+   * Details of the PAN associated with the enrolled card. Contains processor verification results.
    * @alias module:model/Acpv1instructionsinstructionIdconfirmationsProcessorInformationPaymentInstrument
    * @class
    */

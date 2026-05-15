@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property thirdPartyToken (base name: "thirdPartyToken")', function() {
+      // uncomment below and update the code to test the property thirdPartyToken
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseTokenInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

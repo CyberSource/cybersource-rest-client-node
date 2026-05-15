@@ -194,6 +194,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property encryptedKeyId (base name: "encryptedKeyId")', function() {
+      // uncomment below and update the code to test the property encryptedKeyId
+      //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property partnerSdkVersion (base name: "partnerSdkVersion")', function() {
       // uncomment below and update the code to test the property partnerSdkVersion
       //var instane = new CyberSource.Ptsv2paymentsPointOfSaleInformation();

@@ -14,7 +14,11 @@ Name | Type | Description | Notes
 **processorInformation** | [**PtsV2PaymentsRefundPost201ResponseProcessorInformation**](PtsV2PaymentsRefundPost201ResponseProcessorInformation.md) |  | [optional] 
 **paymentInformation** | [**PtsV2CreditsPost201ResponsePaymentInformation**](PtsV2CreditsPost201ResponsePaymentInformation.md) |  | [optional] 
 **orderInformation** | [**PtsV2PaymentsRefundPost201ResponseOrderInformation**](PtsV2PaymentsRefundPost201ResponseOrderInformation.md) |  | [optional] 
+**merchantInformation** | [**PtsV2CreditsPost201ResponseMerchantInformation**](PtsV2CreditsPost201ResponseMerchantInformation.md) |  | [optional] 
+**clearingInformation** | [**PtsV2PaymentsPost201ResponseClearingInformation**](PtsV2PaymentsPost201ResponseClearingInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation**](PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.md) |  | [optional] 
+**tokenInformation** | [**PtsV2CreditsPost201ResponseTokenInformation**](PtsV2CreditsPost201ResponseTokenInformation.md) |  | [optional] 
+**paymentAccountInformation** | [**PtsV2CreditsPost201ResponsePaymentAccountInformation**](PtsV2CreditsPost201ResponsePaymentAccountInformation.md) |  | [optional] 
 **errorInformation** | [**PtsV2PaymentsRefundPost201ResponseErrorInformation**](PtsV2PaymentsRefundPost201ResponseErrorInformation.md) |  | [optional] 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationInstrumentIdentifier', 'model/Ptsv2paymentsPaymentInformationLegacyToken', 'model/Ptsv2paymentsPaymentInformationPaymentAccountReference', 'model/Ptsv2paymentsPaymentInformationPaymentInstrument', 'model/Ptsv2paymentsPaymentInformationShippingAddress', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsidrefundsPaymentInformationBank', 'model/Ptsv2paymentsidrefundsPaymentInformationCard', 'model/Ptsv2paymentsidrefundsPaymentInformationEWallet', 'model/Ptsv2paymentsidrefundsPaymentInformationPaymentType'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationInstrumentIdentifier', 'model/Ptsv2paymentsPaymentInformationLegacyToken', 'model/Ptsv2paymentsPaymentInformationPaymentAccountReference', 'model/Ptsv2paymentsPaymentInformationPaymentInstrument', 'model/Ptsv2paymentsPaymentInformationShippingAddress', 'model/Ptsv2paymentsPaymentInformationThirdPartyToken', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsidrefundsPaymentInformationBank', 'model/Ptsv2paymentsidrefundsPaymentInformationCard', 'model/Ptsv2paymentsidrefundsPaymentInformationEWallet', 'model/Ptsv2paymentsidrefundsPaymentInformationPaymentType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationInstrumentIdentifier'), require('./Ptsv2paymentsPaymentInformationLegacyToken'), require('./Ptsv2paymentsPaymentInformationPaymentAccountReference'), require('./Ptsv2paymentsPaymentInformationPaymentInstrument'), require('./Ptsv2paymentsPaymentInformationShippingAddress'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsidrefundsPaymentInformationBank'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'), require('./Ptsv2paymentsidrefundsPaymentInformationEWallet'), require('./Ptsv2paymentsidrefundsPaymentInformationPaymentType'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationInstrumentIdentifier'), require('./Ptsv2paymentsPaymentInformationLegacyToken'), require('./Ptsv2paymentsPaymentInformationPaymentAccountReference'), require('./Ptsv2paymentsPaymentInformationPaymentInstrument'), require('./Ptsv2paymentsPaymentInformationShippingAddress'), require('./Ptsv2paymentsPaymentInformationThirdPartyToken'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsidrefundsPaymentInformationBank'), require('./Ptsv2paymentsidrefundsPaymentInformationCard'), require('./Ptsv2paymentsidrefundsPaymentInformationEWallet'), require('./Ptsv2paymentsidrefundsPaymentInformationPaymentType'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationInstrumentIdentifier, root.CyberSource.Ptsv2paymentsPaymentInformationLegacyToken, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentAccountReference, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsPaymentInformationShippingAddress, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationBank, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationEWallet, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationPaymentType);
+    root.CyberSource.Ptsv2paymentsidrefundsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationInstrumentIdentifier, root.CyberSource.Ptsv2paymentsPaymentInformationLegacyToken, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentAccountReference, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsPaymentInformationShippingAddress, root.CyberSource.Ptsv2paymentsPaymentInformationThirdPartyToken, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationBank, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationCard, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationEWallet, root.CyberSource.Ptsv2paymentsidrefundsPaymentInformationPaymentType);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationInstrumentIdentifier, Ptsv2paymentsPaymentInformationLegacyToken, Ptsv2paymentsPaymentInformationPaymentAccountReference, Ptsv2paymentsPaymentInformationPaymentInstrument, Ptsv2paymentsPaymentInformationShippingAddress, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsidrefundsPaymentInformationBank, Ptsv2paymentsidrefundsPaymentInformationCard, Ptsv2paymentsidrefundsPaymentInformationEWallet, Ptsv2paymentsidrefundsPaymentInformationPaymentType) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationInstrumentIdentifier, Ptsv2paymentsPaymentInformationLegacyToken, Ptsv2paymentsPaymentInformationPaymentAccountReference, Ptsv2paymentsPaymentInformationPaymentInstrument, Ptsv2paymentsPaymentInformationShippingAddress, Ptsv2paymentsPaymentInformationThirdPartyToken, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsidrefundsPaymentInformationBank, Ptsv2paymentsidrefundsPaymentInformationCard, Ptsv2paymentsidrefundsPaymentInformationEWallet, Ptsv2paymentsidrefundsPaymentInformationPaymentType) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -108,6 +110,12 @@
       if (data.hasOwnProperty('paymentAccountReference')) {
         obj['paymentAccountReference'] = Ptsv2paymentsPaymentInformationPaymentAccountReference.constructFromObject(data['paymentAccountReference']);
       }
+      if (data.hasOwnProperty('thirdPartyToken')) {
+        obj['thirdPartyToken'] = Ptsv2paymentsPaymentInformationThirdPartyToken.constructFromObject(data['thirdPartyToken']);
+      }
+      if (data.hasOwnProperty('initiationChannel')) {
+        obj['initiationChannel'] = ApiClient.convertToType(data['initiationChannel'], 'String');
+      }
     }
     return obj;
   }
@@ -160,6 +168,15 @@
    * @member {module:model/Ptsv2paymentsPaymentInformationPaymentAccountReference} paymentAccountReference
    */
   exports.prototype['paymentAccountReference'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationThirdPartyToken} thirdPartyToken
+   */
+  exports.prototype['thirdPartyToken'] = undefined;
+  /**
+   * Mastercard-defined code that indicates how the account information was obtained for credit authorization transactions.  Possible values: - `00`: Card (default) - `01`: Mobile network operator (MNO) controlled removable secure element (SIM or UICC) personalized for use with a mobile phone or smartphone - `02`: Key fob - `03`: Watch - `04`: Mobile tag - `05`: Wristband - `06`: Mobile phone case or sleeve - `07`: Mobile phone or smartphone with fixed (nonremovable) secure element controlled by the MNO (for example, code division multiple access (CDMA)) - `08`: Removable secure element not controlled by the MNO (for example, memory card personalized for use with a mobile phone or smartphone) - `09`: Mobile phone or smartphone with a fixed (nonremovable) secure element not controlled by the MNO - `10`: MNO-controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - `11`: Tablet or e-book with a fixed (nonremovable) secure element controlled by the MNO - `12`: Removable secure element not controlled by the MNO (for example, memory card personalized for use with a tablet or e-book) - `13`: Tablet or e-book with fixed (nonremovable) secure element not controlled by the MNO - `14` - `99`: Reserved for future use  This field flows in ISO Field 104 DSID 65 Tag 04.  This field is supported for Mastercard credit authorization transactions.  #### Used by **Credit Authorization (Standalone)** Optional field. 
+   * @member {String} initiationChannel
+   */
+  exports.prototype['initiationChannel'] = undefined;
 
 
 

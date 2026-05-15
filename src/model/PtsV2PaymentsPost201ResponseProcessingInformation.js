@@ -53,6 +53,7 @@
 
 
 
+
   };
 
   /**
@@ -74,6 +75,9 @@
       }
       if (data.hasOwnProperty('enhancedDataEnabled')) {
         obj['enhancedDataEnabled'] = ApiClient.convertToType(data['enhancedDataEnabled'], 'Boolean');
+      }
+      if (data.hasOwnProperty('digitalServiceIndicator')) {
+        obj['digitalServiceIndicator'] = ApiClient.convertToType(data['digitalServiceIndicator'], 'String');
       }
       if (data.hasOwnProperty('captureOptions')) {
         obj['captureOptions'] = PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions.constructFromObject(data['captureOptions']);
@@ -102,6 +106,11 @@
    * @member {Boolean} enhancedDataEnabled
    */
   exports.prototype['enhancedDataEnabled'] = undefined;
+  /**
+   * Mastercard Digital Enablement Service (MDES) digital service indicators received in the authorization response message for MDES transactions.   This data is provided in the 0110 response in the Field 34—Acceptance Environment Data (TLV Format), Dataset ID 04—Additional Service Result Data, Tag DF1F—Mastercard Digital Enablement Service Indicator for Acquirer to acquirers.  This field is in ANS, EBCDIC format and flows in Field 34, DSID 04 Tag DF1F, mapped to Mastercard Data Element DE119, Sub-element 004.  This field is supported for all flavors of Authorization response only.  #### Used by **Authorization Response** Response field only. 
+   * @member {String} digitalServiceIndicator
+   */
+  exports.prototype['digitalServiceIndicator'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions} captureOptions
    */

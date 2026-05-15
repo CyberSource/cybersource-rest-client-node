@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property outageExemptionIndicator (base name: "outageExemptionIndicator")', function() {
+      // uncomment below and update the code to test the property outageExemptionIndicator
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

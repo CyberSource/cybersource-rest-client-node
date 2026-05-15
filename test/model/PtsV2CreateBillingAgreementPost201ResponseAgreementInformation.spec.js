@@ -74,6 +74,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.PtsV2CreateBillingAgreementPost201ResponseAgreementInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property frequency (base name: "frequency")', function() {
+      // uncomment below and update the code to test the property frequency
+      //var instane = new CyberSource.PtsV2CreateBillingAgreementPost201ResponseAgreementInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property occurrencesPerPeriod (base name: "occurrencesPerPeriod")', function() {
+      // uncomment below and update the code to test the property occurrencesPerPeriod
+      //var instane = new CyberSource.PtsV2CreateBillingAgreementPost201ResponseAgreementInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property startDate (base name: "startDate")', function() {
+      // uncomment below and update the code to test the property startDate
+      //var instane = new CyberSource.PtsV2CreateBillingAgreementPost201ResponseAgreementInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property endDate (base name: "endDate")', function() {
+      // uncomment below and update the code to test the property endDate
+      //var instane = new CyberSource.PtsV2CreateBillingAgreementPost201ResponseAgreementInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property encodedHtml (base name: "encodedHtml")', function() {
       // uncomment below and update the code to test the property encodedHtml
       //var instane = new CyberSource.PtsV2CreateBillingAgreementPost201ResponseAgreementInformation();

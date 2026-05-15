@@ -127,7 +127,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - PENDING 
+   * The status of the submitted transaction.  Possible values:  - PENDING  - DECLINED  - INVALID_REQUEST 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

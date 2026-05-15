@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tokenizedCard (base name: "tokenizedCard")', function() {
+      // uncomment below and update the code to test the property tokenizedCard
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

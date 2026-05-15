@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,6 +69,9 @@
       if (data.hasOwnProperty('decisionManager')) {
         obj['decisionManager'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['decisionManager']);
       }
+      if (data.hasOwnProperty('enhancedAuthentication')) {
+        obj['enhancedAuthentication'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['enhancedAuthentication']);
+      }
     }
     return obj;
   }
@@ -80,6 +84,10 @@
    * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} decisionManager
    */
   exports.prototype['decisionManager'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} enhancedAuthentication
+   */
+  exports.prototype['enhancedAuthentication'] = undefined;
 
 
 

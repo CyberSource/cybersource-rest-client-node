@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('acsWindowSize')) {
         obj['acsWindowSize'] = ApiClient.convertToType(data['acsWindowSize'], 'String');
       }
+      if (data.hasOwnProperty('productCode')) {
+        obj['productCode'] = ApiClient.convertToType(data['productCode'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +95,11 @@
    * @member {String} acsWindowSize
    */
   exports.prototype['acsWindowSize'] = undefined;
+  /**
+   * Specifies the product code, which designates the type of transaction.<br><br>  Specify one of the following values for this field:  - AIR: Airline purchase  Important Required for American Express SafeKey (U.S.).  - ACC: Accommodation Rental  - ACF: Account funding  - CHA: Check acceptance  - DIG: Digital Goods  - DSP: Cash Dispensing  - GAS: Fuel  - GEN: General Retail  - LUX: Luxury Retail  - PAL: Prepaid activation and load  - PHY: Goods or services purchase  - QCT: Quasi-cash transaction  - REN: Car Rental  - RES: Restaurant  - SVC: Services  - TBD: Other  - TRA: Travel<br>  **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
+   * @member {String} productCode
+   */
+  exports.prototype['productCode'] = undefined;
 
 
 

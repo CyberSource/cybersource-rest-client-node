@@ -170,6 +170,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property taxIdNumber (base name: "taxIdNumber")', function() {
+      // uncomment below and update the code to test the property taxIdNumber
+      //var instane = new CyberSource.Ptsv2paymentsRecipientInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

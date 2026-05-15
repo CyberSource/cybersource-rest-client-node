@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shippingDetails (base name: "shippingDetails")', function() {
+      // uncomment below and update the code to test the property shippingDetails
+      //var instane = new CyberSource.Ucv1sessionsDataOrderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

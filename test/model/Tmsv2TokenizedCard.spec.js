@@ -152,8 +152,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property applicationTransactionCounter (base name: "applicationTransactionCounter")', function() {
+      // uncomment below and update the code to test the property applicationTransactionCounter
+      //var instane = new CyberSource.Tmsv2TokenizedCard();
+      //expect(instance).to.be();
+    });
+
     it('should have the property card (base name: "card")', function() {
       // uncomment below and update the code to test the property card
+      //var instane = new CyberSource.Tmsv2TokenizedCard();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property verificationResults (base name: "verificationResults")', function() {
+      // uncomment below and update the code to test the property verificationResults
       //var instane = new CyberSource.Tmsv2TokenizedCard();
       //expect(instance).to.be();
     });

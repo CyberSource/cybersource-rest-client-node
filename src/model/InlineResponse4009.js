@@ -66,16 +66,16 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
-      }
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      }
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
         obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4009Details]);
@@ -85,25 +85,25 @@
   }
 
   /**
-   * Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @member {String} submitTimeUtc
+   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {Date} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * Possible values:   - `INVALID_REQUEST` 
+   * The http status description of the submitted request.
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The detail message related to the status and reason
-   * @member {String} message
-   */
-  exports.prototype['message'] = undefined;
-  /**
-   * The reason of the status.  Possible values:   - `INVALID_REQUEST` 
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
+  /**
+   * Descriptive message for the error.
+   * @member {String} message
+   */
+  exports.prototype['message'] = undefined;
   /**
    * @member {Array.<module:model/InlineResponse4009Details>} details
    */

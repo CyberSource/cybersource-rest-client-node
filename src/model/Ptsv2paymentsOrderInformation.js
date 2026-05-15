@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetails', 'model/Ptsv2paymentsOrderInformationBillTo', 'model/Ptsv2paymentsOrderInformationInvoiceDetails', 'model/Ptsv2paymentsOrderInformationLineItems', 'model/Ptsv2paymentsOrderInformationShipTo', 'model/Ptsv2paymentsOrderInformationShippingDetails'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetails', 'model/Ptsv2paymentsOrderInformationBillTo', 'model/Ptsv2paymentsOrderInformationDigitalCurrency', 'model/Ptsv2paymentsOrderInformationInvoiceDetails', 'model/Ptsv2paymentsOrderInformationLineItems', 'model/Ptsv2paymentsOrderInformationShipTo', 'model/Ptsv2paymentsOrderInformationShippingDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetails'), require('./Ptsv2paymentsOrderInformationBillTo'), require('./Ptsv2paymentsOrderInformationInvoiceDetails'), require('./Ptsv2paymentsOrderInformationLineItems'), require('./Ptsv2paymentsOrderInformationShipTo'), require('./Ptsv2paymentsOrderInformationShippingDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetails'), require('./Ptsv2paymentsOrderInformationBillTo'), require('./Ptsv2paymentsOrderInformationDigitalCurrency'), require('./Ptsv2paymentsOrderInformationInvoiceDetails'), require('./Ptsv2paymentsOrderInformationLineItems'), require('./Ptsv2paymentsOrderInformationShipTo'), require('./Ptsv2paymentsOrderInformationShippingDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetails, root.CyberSource.Ptsv2paymentsOrderInformationBillTo, root.CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails, root.CyberSource.Ptsv2paymentsOrderInformationLineItems, root.CyberSource.Ptsv2paymentsOrderInformationShipTo, root.CyberSource.Ptsv2paymentsOrderInformationShippingDetails);
+    root.CyberSource.Ptsv2paymentsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetails, root.CyberSource.Ptsv2paymentsOrderInformationBillTo, root.CyberSource.Ptsv2paymentsOrderInformationDigitalCurrency, root.CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails, root.CyberSource.Ptsv2paymentsOrderInformationLineItems, root.CyberSource.Ptsv2paymentsOrderInformationShipTo, root.CyberSource.Ptsv2paymentsOrderInformationShippingDetails);
   }
-}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetails, Ptsv2paymentsOrderInformationBillTo, Ptsv2paymentsOrderInformationInvoiceDetails, Ptsv2paymentsOrderInformationLineItems, Ptsv2paymentsOrderInformationShipTo, Ptsv2paymentsOrderInformationShippingDetails) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetails, Ptsv2paymentsOrderInformationBillTo, Ptsv2paymentsOrderInformationDigitalCurrency, Ptsv2paymentsOrderInformationInvoiceDetails, Ptsv2paymentsOrderInformationLineItems, Ptsv2paymentsOrderInformationShipTo, Ptsv2paymentsOrderInformationShippingDetails) {
   'use strict';
 
 
@@ -60,6 +60,8 @@
 
 
 
+
+
   };
 
   /**
@@ -73,6 +75,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('extensionDays')) {
+        obj['extensionDays'] = ApiClient.convertToType(data['extensionDays'], 'String');
+      }
       if (data.hasOwnProperty('amountDetails')) {
         obj['amountDetails'] = Ptsv2paymentsOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
@@ -90,6 +95,9 @@
       }
       if (data.hasOwnProperty('shippingDetails')) {
         obj['shippingDetails'] = Ptsv2paymentsOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
+      }
+      if (data.hasOwnProperty('digitalCurrency')) {
+        obj['digitalCurrency'] = Ptsv2paymentsOrderInformationDigitalCurrency.constructFromObject(data['digitalCurrency']);
       }
       if (data.hasOwnProperty('returnsAccepted')) {
         obj['returnsAccepted'] = ApiClient.convertToType(data['returnsAccepted'], 'Boolean');
@@ -117,6 +125,11 @@
   }
 
   /**
+   * Request field for merchant to increase the AUTH expiry days for Klarna Advantage Plus. Applicable for Re-Authorization (AP_REAUTH) service. 
+   * @member {String} extensionDays
+   */
+  exports.prototype['extensionDays'] = undefined;
+  /**
    * @member {module:model/Ptsv2paymentsOrderInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
@@ -140,6 +153,10 @@
    * @member {module:model/Ptsv2paymentsOrderInformationShippingDetails} shippingDetails
    */
   exports.prototype['shippingDetails'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsOrderInformationDigitalCurrency} digitalCurrency
+   */
+  exports.prototype['digitalCurrency'] = undefined;
   /**
    * This is only needed when you are requesting both payment and DM service at same time.  Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. 
    * @member {Boolean} returnsAccepted

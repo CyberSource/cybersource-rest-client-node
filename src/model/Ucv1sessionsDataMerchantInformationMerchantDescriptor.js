@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -73,6 +74,9 @@
       }
       if (data.hasOwnProperty('alternateName')) {
         obj['alternateName'] = ApiClient.convertToType(data['alternateName'], 'String');
+      }
+      if (data.hasOwnProperty('contact')) {
+        obj['contact'] = ApiClient.convertToType(data['contact'], 'String');
       }
       if (data.hasOwnProperty('locality')) {
         obj['locality'] = ApiClient.convertToType(data['locality'], 'String');
@@ -106,6 +110,11 @@
    * @member {String} alternateName
    */
   exports.prototype['alternateName'] = undefined;
+  /**
+   * Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13) 
+   * @member {String} contact
+   */
+  exports.prototype['contact'] = undefined;
   /**
    * The locality of the merchant<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
    * @member {String} locality

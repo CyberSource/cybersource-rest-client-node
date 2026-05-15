@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ucv1sessionsDataProcessingInformationAuthorizationOptions'], factory);
+    define(['ApiClient', 'model/Ucv1sessionsDataProcessingInformationAuthorizationOptions', 'model/Ucv1sessionsDataProcessingInformationBankTransferOptions', 'model/Ucv1sessionsDataProcessingInformationRecurringOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataProcessingInformationAuthorizationOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataProcessingInformationAuthorizationOptions'), require('./Ucv1sessionsDataProcessingInformationBankTransferOptions'), require('./Ucv1sessionsDataProcessingInformationRecurringOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ucv1sessionsDataProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataProcessingInformationAuthorizationOptions);
+    root.CyberSource.Ucv1sessionsDataProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataProcessingInformationAuthorizationOptions, root.CyberSource.Ucv1sessionsDataProcessingInformationBankTransferOptions, root.CyberSource.Ucv1sessionsDataProcessingInformationRecurringOptions);
   }
-}(this, function(ApiClient, Ucv1sessionsDataProcessingInformationAuthorizationOptions) {
+}(this, function(ApiClient, Ucv1sessionsDataProcessingInformationAuthorizationOptions, Ucv1sessionsDataProcessingInformationBankTransferOptions, Ucv1sessionsDataProcessingInformationRecurringOptions) {
   'use strict';
 
 
@@ -52,6 +52,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -68,8 +71,17 @@
       if (data.hasOwnProperty('reconciliationId')) {
         obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
       }
+      if (data.hasOwnProperty('purposeOfPayment')) {
+        obj['purposeOfPayment'] = ApiClient.convertToType(data['purposeOfPayment'], 'String');
+      }
       if (data.hasOwnProperty('authorizationOptions')) {
         obj['authorizationOptions'] = Ucv1sessionsDataProcessingInformationAuthorizationOptions.constructFromObject(data['authorizationOptions']);
+      }
+      if (data.hasOwnProperty('recurringOptions')) {
+        obj['recurringOptions'] = Ucv1sessionsDataProcessingInformationRecurringOptions.constructFromObject(data['recurringOptions']);
+      }
+      if (data.hasOwnProperty('bankTransferOptions')) {
+        obj['bankTransferOptions'] = Ucv1sessionsDataProcessingInformationBankTransferOptions.constructFromObject(data['bankTransferOptions']);
       }
       if (data.hasOwnProperty('businessApplicationId')) {
         obj['businessApplicationId'] = ApiClient.convertToType(data['businessApplicationId'], 'String');
@@ -90,9 +102,22 @@
    */
   exports.prototype['reconciliationId'] = undefined;
   /**
+   * This field is applicable for AFT and OCT transactions.  For list of supported values, please refer to Developer Guide. 
+   * @member {String} purposeOfPayment
+   */
+  exports.prototype['purposeOfPayment'] = undefined;
+  /**
    * @member {module:model/Ucv1sessionsDataProcessingInformationAuthorizationOptions} authorizationOptions
    */
   exports.prototype['authorizationOptions'] = undefined;
+  /**
+   * @member {module:model/Ucv1sessionsDataProcessingInformationRecurringOptions} recurringOptions
+   */
+  exports.prototype['recurringOptions'] = undefined;
+  /**
+   * @member {module:model/Ucv1sessionsDataProcessingInformationBankTransferOptions} bankTransferOptions
+   */
+  exports.prototype['bankTransferOptions'] = undefined;
   /**
    * The business application Id<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center, but if required should be provided on a per‑transaction basis in the uc/v1/sessions API request. 
    * @member {String} businessApplicationId

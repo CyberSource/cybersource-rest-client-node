@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -65,6 +66,9 @@
       if (data.hasOwnProperty('commerceIndicator')) {
         obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
       }
+      if (data.hasOwnProperty('paymentCompletionTimeout')) {
+        obj['paymentCompletionTimeout'] = ApiClient.convertToType(data['paymentCompletionTimeout'], 'String');
+      }
       if (data.hasOwnProperty('actionList')) {
         obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
       }
@@ -77,6 +81,11 @@
    * @member {String} commerceIndicator
    */
   exports.prototype['commerceIndicator'] = undefined;
+  /**
+   * Period after which an authorization request to the consumer expires due to inactivity. Value in seconds (e.g., 86400 for one day). 
+   * @member {String} paymentCompletionTimeout
+   */
+  exports.prototype['paymentCompletionTimeout'] = undefined;
   /**
    * - Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service. - Use `BILLING_AGREEMENT_CREATE` when Paypal billing agreements service is requested. - Use `UPDATE_AGREEMENT` - Use `CANCEL_AGREEMENT` - Use `AP_UPDATE_AGREEMENT` when Alternative Payment update mandate service is requested. - Use `AP_CANCEL_AGREEMENT` when Alternative Payment revoke mandate service is requested. - Use `AP_REFRESH_AGREEMENT_STATUS` when Alternative Payment mandate status service is requested. 
    * @member {Array.<String>} actionList

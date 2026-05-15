@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensBuyerInformation</code>.
-   * Buyer Information data.
+   * Buyer Information data. Contains consumer identification and preference details.
    * @alias module:model/Acpv1tokensBuyerInformation
    * @class
    */

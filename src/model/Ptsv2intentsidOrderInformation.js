@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2intentsOrderInformationAmountDetails', 'model/Ptsv2intentsOrderInformationInvoiceDetails', 'model/Ptsv2intentsOrderInformationLineItems', 'model/Ptsv2intentsOrderInformationShipTo'], factory);
+    define(['ApiClient', 'model/Ptsv2billingagreementsOrderInformationInvoiceDetails', 'model/Ptsv2intentsOrderInformationAmountDetails', 'model/Ptsv2intentsOrderInformationLineItems', 'model/Ptsv2intentsOrderInformationShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsOrderInformationAmountDetails'), require('./Ptsv2intentsOrderInformationInvoiceDetails'), require('./Ptsv2intentsOrderInformationLineItems'), require('./Ptsv2intentsOrderInformationShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsOrderInformationInvoiceDetails'), require('./Ptsv2intentsOrderInformationAmountDetails'), require('./Ptsv2intentsOrderInformationLineItems'), require('./Ptsv2intentsOrderInformationShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2intentsidOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsOrderInformationAmountDetails, root.CyberSource.Ptsv2intentsOrderInformationInvoiceDetails, root.CyberSource.Ptsv2intentsOrderInformationLineItems, root.CyberSource.Ptsv2intentsOrderInformationShipTo);
+    root.CyberSource.Ptsv2intentsidOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsOrderInformationInvoiceDetails, root.CyberSource.Ptsv2intentsOrderInformationAmountDetails, root.CyberSource.Ptsv2intentsOrderInformationLineItems, root.CyberSource.Ptsv2intentsOrderInformationShipTo);
   }
-}(this, function(ApiClient, Ptsv2intentsOrderInformationAmountDetails, Ptsv2intentsOrderInformationInvoiceDetails, Ptsv2intentsOrderInformationLineItems, Ptsv2intentsOrderInformationShipTo) {
+}(this, function(ApiClient, Ptsv2billingagreementsOrderInformationInvoiceDetails, Ptsv2intentsOrderInformationAmountDetails, Ptsv2intentsOrderInformationLineItems, Ptsv2intentsOrderInformationShipTo) {
   'use strict';
 
 
@@ -74,7 +74,7 @@
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Ptsv2intentsOrderInformationLineItems]);
       }
       if (data.hasOwnProperty('invoiceDetails')) {
-        obj['invoiceDetails'] = Ptsv2intentsOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
+        obj['invoiceDetails'] = Ptsv2billingagreementsOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
       }
     }
     return obj;
@@ -93,7 +93,7 @@
    */
   exports.prototype['lineItems'] = undefined;
   /**
-   * @member {module:model/Ptsv2intentsOrderInformationInvoiceDetails} invoiceDetails
+   * @member {module:model/Ptsv2billingagreementsOrderInformationInvoiceDetails} invoiceDetails
    */
   exports.prototype['invoiceDetails'] = undefined;
 

@@ -326,6 +326,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionTypeIdentifier (base name: "transactionTypeIdentifier")', function() {
+      // uncomment below and update the code to test the property transactionTypeIdentifier
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subMerchantId (base name: "subMerchantId")', function() {
+      // uncomment below and update the code to test the property subMerchantId
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subMerchantEmail (base name: "subMerchantEmail")', function() {
+      // uncomment below and update the code to test the property subMerchantEmail
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subMerchantPhoneNumber (base name: "subMerchantPhoneNumber")', function() {
+      // uncomment below and update the code to test the property subMerchantPhoneNumber
+      //var instane = new CyberSource.CardProcessingConfigCommonProcessors();
+      //expect(instance).to.be();
+    });
+
     it('should have the property enablePosNetworkSwitching (base name: "enablePosNetworkSwitching")', function() {
       // uncomment below and update the code to test the property enablePosNetworkSwitching
       //var instane = new CyberSource.CardProcessingConfigCommonProcessors();

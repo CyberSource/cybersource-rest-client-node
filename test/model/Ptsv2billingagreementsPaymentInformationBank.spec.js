@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property accountAlias (base name: "accountAlias")', function() {
+      // uncomment below and update the code to test the property accountAlias
+      //var instane = new CyberSource.Ptsv2billingagreementsPaymentInformationBank();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

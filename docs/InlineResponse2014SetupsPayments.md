@@ -23,5 +23,7 @@ Name | Type | Description | Notes
 **receivablesManager** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **serviceFee** | [**InlineResponse2014SetupsPaymentsCardProcessing**](InlineResponse2014SetupsPaymentsCardProcessing.md) |  | [optional] 
 **batchUpload** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
+**transactGuard** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
+**microform** | [**InlineResponse2014SetupsPaymentsCardProcessing**](InlineResponse2014SetupsPaymentsCardProcessing.md) |  | [optional] 
 
 

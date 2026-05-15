@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails', 'model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo'], factory);
+    define(['ApiClient', 'model/Tmsv2tokenizedcardsBillTo', 'model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails'), require('./Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizedcardsBillTo'), require('./Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo);
+    root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizedcardsBillTo, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails);
   }
-}(this, function(ApiClient, Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails, Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo) {
+}(this, function(ApiClient, Tmsv2tokenizedcardsBillTo, Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['amountDetails'] = Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
       }
       if (data.hasOwnProperty('billTo')) {
-        obj['billTo'] = Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo.constructFromObject(data['billTo']);
+        obj['billTo'] = Tmsv2tokenizedcardsBillTo.constructFromObject(data['billTo']);
       }
     }
     return obj;
@@ -77,7 +77,7 @@
    */
   exports.prototype['amountDetails'] = undefined;
   /**
-   * @member {module:model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformationBillTo} billTo
+   * @member {module:model/Tmsv2tokenizedcardsBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
 

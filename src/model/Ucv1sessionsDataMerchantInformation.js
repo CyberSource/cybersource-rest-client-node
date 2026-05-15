@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('merchantDescriptor')) {
         obj['merchantDescriptor'] = Ucv1sessionsDataMerchantInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
       }
+      if (data.hasOwnProperty('vatRegistrationNumber')) {
+        obj['vatRegistrationNumber'] = ApiClient.convertToType(data['vatRegistrationNumber'], 'String');
+      }
     }
     return obj;
   }
@@ -72,6 +76,11 @@
    * @member {module:model/Ucv1sessionsDataMerchantInformationMerchantDescriptor} merchantDescriptor
    */
   exports.prototype['merchantDescriptor'] = undefined;
+  /**
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  #### CyberSource through VisaNet For CtV processors, the maximum length is 20. 
+   * @member {String} vatRegistrationNumber
+   */
+  exports.prototype['vatRegistrationNumber'] = undefined;
 
 
 

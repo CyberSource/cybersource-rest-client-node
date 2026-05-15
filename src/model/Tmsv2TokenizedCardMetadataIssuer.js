@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Tmsv2TokenizedCardMetadataIssuerBankApplications', 'model/Tmsv2TokenizedCardMetadataIssuerCapabilities'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2TokenizedCardMetadataIssuerBankApplications'), require('./Tmsv2TokenizedCardMetadataIssuerCapabilities'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2TokenizedCardMetadataIssuer = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Tmsv2TokenizedCardMetadataIssuer = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2TokenizedCardMetadataIssuerBankApplications, root.CyberSource.Tmsv2TokenizedCardMetadataIssuerCapabilities);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Tmsv2TokenizedCardMetadataIssuerBankApplications, Tmsv2TokenizedCardMetadataIssuerCapabilities) {
   'use strict';
 
 
@@ -47,6 +47,9 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
 
 
 
@@ -85,6 +88,15 @@
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
+      if (data.hasOwnProperty('privacyPolicyUrl')) {
+        obj['privacyPolicyUrl'] = ApiClient.convertToType(data['privacyPolicyUrl'], 'String');
+      }
+      if (data.hasOwnProperty('capabilities')) {
+        obj['capabilities'] = Tmsv2TokenizedCardMetadataIssuerCapabilities.constructFromObject(data['capabilities']);
+      }
+      if (data.hasOwnProperty('bankApplications')) {
+        obj['bankApplications'] = ApiClient.convertToType(data['bankApplications'], [Tmsv2TokenizedCardMetadataIssuerBankApplications]);
+      }
     }
     return obj;
   }
@@ -105,20 +117,33 @@
    */
   exports.prototype['longDescription'] = undefined;
   /**
-   * Issuer customer service email address.
+   * Issuer customer service email address. 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
   /**
-   * Issuer customer service phone number.
+   * Issuer customer service phone number. 
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
-   * Issuer customer service url.
+   * Issuer customer service url. 
    * @member {String} url
    */
   exports.prototype['url'] = undefined;
+  /**
+   * Issuer privacy policy url. 
+   * @member {String} privacyPolicyUrl
+   */
+  exports.prototype['privacyPolicyUrl'] = undefined;
+  /**
+   * @member {module:model/Tmsv2TokenizedCardMetadataIssuerCapabilities} capabilities
+   */
+  exports.prototype['capabilities'] = undefined;
+  /**
+   * @member {Array.<module:model/Tmsv2TokenizedCardMetadataIssuerBankApplications>} bankApplications
+   */
+  exports.prototype['bankApplications'] = undefined;
 
 
 

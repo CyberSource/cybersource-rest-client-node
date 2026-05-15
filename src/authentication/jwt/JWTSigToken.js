@@ -1,12 +1,14 @@
 'use strict';
 
 const Jwt = require('jwt-simple');
+const crypto = require('crypto');
 const Constants = require('../util/Constants');
 const KeyCertificate = require('./KeyCertificateGenerator');
 const MLEUtility = require('../util/MLEUtility');
 
 // Constants for algorithms
-const JWT_ALGORITHM = 'RS256';
+const JWT_ALGORITHM_RSA = 'RS256';
+const JWT_ALGORITHM_HMAC = 'HS256';
 const DIGEST_ALGORITHM = 'SHA-256';
 
 /**
@@ -80,27 +82,42 @@ function getPayloadClaimSet(merchantConfig, isResponseMLEForApi, logger) {
             payloadClaimSet["v-c-response-mle-kid"] = MLEUtility.validateAndAutoExtractResponseMleKid(merchantConfig, logger);
         }
     } catch (err) {
-        logger.fatal(GlobalLabelParameters.JWT_SIG_FAILED);
+        logger.error('JWT signature generation failed due to MLE KID validation error');
         logger.error(err);
-        throw new Error(`${GlobalLabelParameters.JWT_SIG_FAILED} ${err.message}`);
+        throw new Error(`JWT signature generation failed: ${err.message}`);
     }
 
     return payloadClaimSet;
 }
 
+
 /**
- * Returns the header claim set as a JavaScript object.
- * @private
- * @returns {Object} The header claimset object.
+ * Generates a JWT header claim set with a key ID.
+ * 
+ * @param {Object} options - The options object
+ * @param {string} [options.merchantKeyId=''] - The merchant key ID to use for the 'kid' claim
+ * @param {Object} [options.certificate=null] - The certificate object to extract the serial number from certificate
+ * @returns {Object} An object containing the JWT header with the 'kid' (key ID) claim set
+ * @example
+ * // Returns { header: { kid: '1234567890' } }
+ * getHeaderClaimSet({ merchantKeyId: '1234567890' });
  */
-function getHeaderClaimSet(certificate) {
+function getHeaderClaimSet({ merchantKeyId = '', certificate = null}) {
+    let kidValue = '';
+    if(certificate != null){
+        kidValue = getSerialNumberFromCert(certificate);
+    }
+    else if(merchantKeyId){
+        kidValue = merchantKeyId;
+    }
     const headerClaimSet = {
         'header': {
-            'kid': getSerialNumberFromCert(certificate)
+            'kid': kidValue
         }
     };
     return headerClaimSet;
 }
+
 
 /**
  * Gets the serial number from the certificate's subject attributes.
@@ -131,15 +148,39 @@ function getSerialNumberFromCert(cert) {
  */
 exports.getToken = function (merchantConfig, isResponseMLEForApi, logger) {
     try {
-        const rsaPrivateKey = KeyCertificate.getRSAPrivateKey(merchantConfig, logger);
-        const certificate = KeyCertificate.getX509CertificateInCert(merchantConfig, logger, merchantConfig.getKeyAlias());
-
         const claimSetJson = getPayloadClaimSet(merchantConfig, isResponseMLEForApi, logger);
-        const customHeader = getHeaderClaimSet(certificate);
+        let jwtToken;
+        if (merchantConfig.isSharedSecretKeyType()) {
+            // Shared Secret (HMAC-SHA256) signing
+            logger.debug('Generating JWT token using shared secret (HS256)');
+            
+            // Base64 decode the merchant secret key
+            const secretKey = merchantConfig.getMerchantsecretKey();
+            if (!secretKey) {
+                throw new Error('Merchant secret key is not configured');
+            }
+            
+            const secretKeyBuffer = Buffer.from(secretKey, 'base64');
+            if (secretKeyBuffer.length === 0 || secretKeyBuffer.toString('base64') !== secretKey) {
+                throw new Error('Invalid base64 encoded merchant secret key');
+            }
 
-        // Generating JWToken using the claimSetJson object directly
-        const jwtToken = Jwt.encode(claimSetJson, rsaPrivateKey, JWT_ALGORITHM, customHeader);
+            const customHeader = getHeaderClaimSet({ merchantKeyId: merchantConfig.getMerchantKeyID() });
+            
+            // Generate JWT token using HMAC-SHA256
+            jwtToken = Jwt.encode(claimSetJson, secretKeyBuffer, JWT_ALGORITHM_HMAC, customHeader);
+        } else {
+            // P12 Certificate (RSA-SHA256) signing - existing behavior
+            logger.debug('Generating JWT token using P12 certificate (RS256)');
+            
+            const rsaPrivateKey = KeyCertificate.getRSAPrivateKey(merchantConfig, logger);
+            const certificate = KeyCertificate.getX509CertificateInCert(merchantConfig, logger, merchantConfig.getKeyAlias());
 
+            const customHeader = getHeaderClaimSet({ certificate: certificate });
+
+            // Generate JWT token using RSA-SHA256
+            jwtToken = Jwt.encode(claimSetJson, rsaPrivateKey, JWT_ALGORITHM_RSA, customHeader);
+        }
         return jwtToken;
     } catch (err) {
         logger.error(`JWT token generation failed: ${err.message}`);

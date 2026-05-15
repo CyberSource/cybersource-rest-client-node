@@ -41,12 +41,12 @@
 
   /**
    * Constructs a new <code>Acpv1tokensAssuranceData</code>.
-   * Assurance data.
+   * Assurance data. Contains identity verification details that prove the consumer or device has been authenticated before the payment operation.
    * @alias module:model/Acpv1tokensAssuranceData
    * @class
-   * @param verificationMethod {String} Method of the verification.   Possible values:     - `02` - App-based authentication   - `04` - One-time passcode   - `21` - Visa Token Service step-up: Device binding   - `22` - Visa Token Service step-up: Cardholder verification   - `23` - FIDO2 
-   * @param verificationResults {String} Result of the verification.   Possible values:     - `01` - Verified   - `02` - Not Verified   - `03` - Not performed   - `04` - Not required   - `21` - Not allowed 
-   * @param verificationTimestamp {String} Date and time the verification occurred. UTC time in Unix epoch format.
+   * @param verificationMethod {String} Required. Method of the verification.   Possible values:     - `02` - App-based authentication   - `04` - One-time passcode   - `21` - Visa Token Service step-up: Device binding   - `22` - Visa Token Service step-up: Cardholder verification   - `23` - FIDO2 
+   * @param verificationResults {String} Required. Result of the verification.   Possible values:     - `01` - Verified   - `02` - Not Verified   - `03` - Not performed   - `04` - Not required   - `21` - Not allowed 
+   * @param verificationTimestamp {String} Required. Date and time the verification occurred. UTC time in Unix epoch format.
    */
   var exports = function(verificationMethod, verificationResults, verificationTimestamp) {
     var _this = this;
@@ -105,32 +105,32 @@
   }
 
   /**
-   * Type of the verification data.   Possible values:   - `CARDHOLDER` (Default)   - `DEVICE` 
+   * Optional. Type of the verification data.   Possible values:   - `CARDHOLDER` (Default)   - `DEVICE` 
    * @member {String} verificationType
    */
   exports.prototype['verificationType'] = undefined;
   /**
-   * Entity performing the verification.   Possible value:     - `10` - VISA (Default) 
+   * Optional. Entity performing the verification.   Possible value:     - `10` - VISA (Default) 
    * @member {String} verificationEntity
    */
   exports.prototype['verificationEntity'] = undefined;
   /**
-   * Event where the verification occurred.   Possible values:     - `01` - Payment transaction   - `02` - Add card/Card enrollment   - `03` - Profile access   - `04` - Account verification 
+   * Optional. Event where the verification occurred.   Possible values:     - `01` - Payment transaction   - `02` - Add card/Card enrollment   - `03` - Profile access   - `04` - Account verification 
    * @member {Array.<String>} verificationEvents
    */
   exports.prototype['verificationEvents'] = undefined;
   /**
-   * Method of the verification.   Possible values:     - `02` - App-based authentication   - `04` - One-time passcode   - `21` - Visa Token Service step-up: Device binding   - `22` - Visa Token Service step-up: Cardholder verification   - `23` - FIDO2 
+   * Required. Method of the verification.   Possible values:     - `02` - App-based authentication   - `04` - One-time passcode   - `21` - Visa Token Service step-up: Device binding   - `22` - Visa Token Service step-up: Cardholder verification   - `23` - FIDO2 
    * @member {String} verificationMethod
    */
   exports.prototype['verificationMethod'] = undefined;
   /**
-   * Result of the verification.   Possible values:     - `01` - Verified   - `02` - Not Verified   - `03` - Not performed   - `04` - Not required   - `21` - Not allowed 
+   * Required. Result of the verification.   Possible values:     - `01` - Verified   - `02` - Not Verified   - `03` - Not performed   - `04` - Not required   - `21` - Not allowed 
    * @member {String} verificationResults
    */
   exports.prototype['verificationResults'] = undefined;
   /**
-   * Date and time the verification occurred. UTC time in Unix epoch format.
+   * Required. Date and time the verification occurred. UTC time in Unix epoch format.
    * @member {String} verificationTimestamp
    */
   exports.prototype['verificationTimestamp'] = undefined;

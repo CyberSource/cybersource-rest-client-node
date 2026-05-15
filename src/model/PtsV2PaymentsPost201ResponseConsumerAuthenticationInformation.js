@@ -90,6 +90,13 @@
 
 
 
+
+
+
+
+
+
+
   };
 
   /**
@@ -231,6 +238,27 @@
       }
       if (data.hasOwnProperty('whiteListStatus')) {
         obj['whiteListStatus'] = ApiClient.convertToType(data['whiteListStatus'], 'String');
+      }
+      if (data.hasOwnProperty('token')) {
+        obj['token'] = ApiClient.convertToType(data['token'], 'String');
+      }
+      if (data.hasOwnProperty('acsReferenceNumber')) {
+        obj['acsReferenceNumber'] = ApiClient.convertToType(data['acsReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('acsOperatorID')) {
+        obj['acsOperatorID'] = ApiClient.convertToType(data['acsOperatorID'], 'String');
+      }
+      if (data.hasOwnProperty('idciScore')) {
+        obj['idciScore'] = ApiClient.convertToType(data['idciScore'], 'Number');
+      }
+      if (data.hasOwnProperty('idciDecision')) {
+        obj['idciDecision'] = ApiClient.convertToType(data['idciDecision'], 'String');
+      }
+      if (data.hasOwnProperty('idciReasonCode1')) {
+        obj['idciReasonCode1'] = ApiClient.convertToType(data['idciReasonCode1'], 'String');
+      }
+      if (data.hasOwnProperty('idciReasonCode2')) {
+        obj['idciReasonCode2'] = ApiClient.convertToType(data['idciReasonCode2'], 'String');
       }
     }
     return obj;
@@ -449,6 +477,41 @@
    * @member {String} whiteListStatus
    */
   exports.prototype['whiteListStatus'] = undefined;
+  /**
+   * 
+   * @member {String} token
+   */
+  exports.prototype['token'] = undefined;
+  /**
+   * Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+   * @member {String} acsReferenceNumber
+   */
+  exports.prototype['acsReferenceNumber'] = undefined;
+  /**
+   * Directory Server assigned ACS identifier.
+   * @member {String} acsOperatorID
+   */
+  exports.prototype['acsOperatorID'] = undefined;
+  /**
+   * Risk Assessment from Mastercard
+   * @member {Number} idciScore
+   */
+  exports.prototype['idciScore'] = undefined;
+  /**
+   * Decision on the Risk Assessment from Mastercard.
+   * @member {String} idciDecision
+   */
+  exports.prototype['idciDecision'] = undefined;
+  /**
+   * ReasonCode from Mastercard
+   * @member {String} idciReasonCode1
+   */
+  exports.prototype['idciReasonCode1'] = undefined;
+  /**
+   * ReasonCode from Mastercard
+   * @member {String} idciReasonCode2
+   */
+  exports.prototype['idciReasonCode2'] = undefined;
 
 
 

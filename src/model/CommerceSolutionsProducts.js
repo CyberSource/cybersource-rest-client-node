@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommerceSolutionsProductsAccountUpdater', 'model/CommerceSolutionsProductsBinLookup', 'model/CommerceSolutionsProductsTokenManagement'], factory);
+    define(['ApiClient', 'model/CommerceSolutionsProductsAccountUpdater', 'model/CommerceSolutionsProductsBinLookup', 'model/CommerceSolutionsProductsTokenManagement', 'model/PaymentsProductsTax'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsAccountUpdater'), require('./CommerceSolutionsProductsBinLookup'), require('./CommerceSolutionsProductsTokenManagement'));
+    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsAccountUpdater'), require('./CommerceSolutionsProductsBinLookup'), require('./CommerceSolutionsProductsTokenManagement'), require('./PaymentsProductsTax'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CommerceSolutionsProducts = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsAccountUpdater, root.CyberSource.CommerceSolutionsProductsBinLookup, root.CyberSource.CommerceSolutionsProductsTokenManagement);
+    root.CyberSource.CommerceSolutionsProducts = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsAccountUpdater, root.CyberSource.CommerceSolutionsProductsBinLookup, root.CyberSource.CommerceSolutionsProductsTokenManagement, root.CyberSource.PaymentsProductsTax);
   }
-}(this, function(ApiClient, CommerceSolutionsProductsAccountUpdater, CommerceSolutionsProductsBinLookup, CommerceSolutionsProductsTokenManagement) {
+}(this, function(ApiClient, CommerceSolutionsProductsAccountUpdater, CommerceSolutionsProductsBinLookup, CommerceSolutionsProductsTokenManagement, PaymentsProductsTax) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('binLookup')) {
         obj['binLookup'] = CommerceSolutionsProductsBinLookup.constructFromObject(data['binLookup']);
       }
+      if (data.hasOwnProperty('agenticCommerce')) {
+        obj['agenticCommerce'] = PaymentsProductsTax.constructFromObject(data['agenticCommerce']);
+      }
     }
     return obj;
   }
@@ -88,6 +92,10 @@
    * @member {module:model/CommerceSolutionsProductsBinLookup} binLookup
    */
   exports.prototype['binLookup'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} agenticCommerce
+   */
+  exports.prototype['agenticCommerce'] = undefined;
 
 
 

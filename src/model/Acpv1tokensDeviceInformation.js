@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensDeviceInformation</code>.
-   * Device and Application instance data.
+   * Device and Application instance data. Identifies the device and application from which the consumer is making the payment request.
    * @alias module:model/Acpv1tokensDeviceInformation
    * @class
    * @param applicationName {String} Name of the connecting client application.

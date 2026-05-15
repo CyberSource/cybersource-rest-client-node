@@ -62,6 +62,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property backgroundColor (base name: "backgroundColor")', function() {
+      // uncomment below and update the code to test the property backgroundColor
+      //var instane = new CyberSource.TmsCardArt();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property labelColor (base name: "labelColor")', function() {
+      // uncomment below and update the code to test the property labelColor
+      //var instane = new CyberSource.TmsCardArt();
+      //expect(instance).to.be();
+    });
+
     it('should have the property combinedAsset (base name: "combinedAsset")', function() {
       // uncomment below and update the code to test the property combinedAsset
       //var instane = new CyberSource.TmsCardArt();

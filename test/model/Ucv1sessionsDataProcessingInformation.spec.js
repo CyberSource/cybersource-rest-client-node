@@ -62,8 +62,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property purposeOfPayment (base name: "purposeOfPayment")', function() {
+      // uncomment below and update the code to test the property purposeOfPayment
+      //var instane = new CyberSource.Ucv1sessionsDataProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property authorizationOptions (base name: "authorizationOptions")', function() {
       // uncomment below and update the code to test the property authorizationOptions
+      //var instane = new CyberSource.Ucv1sessionsDataProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property recurringOptions (base name: "recurringOptions")', function() {
+      // uncomment below and update the code to test the property recurringOptions
+      //var instane = new CyberSource.Ucv1sessionsDataProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bankTransferOptions (base name: "bankTransferOptions")', function() {
+      // uncomment below and update the code to test the property bankTransferOptions
       //var instane = new CyberSource.Ucv1sessionsDataProcessingInformation();
       //expect(instance).to.be();
     });

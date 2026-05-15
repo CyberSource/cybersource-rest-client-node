@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property encryptedKeyId (base name: "encryptedKeyId")', function() {
+      // uncomment below and update the code to test the property encryptedKeyId
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesPointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

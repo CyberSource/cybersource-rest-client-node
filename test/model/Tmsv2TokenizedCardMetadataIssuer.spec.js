@@ -92,6 +92,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property privacyPolicyUrl (base name: "privacyPolicyUrl")', function() {
+      // uncomment below and update the code to test the property privacyPolicyUrl
+      //var instane = new CyberSource.Tmsv2TokenizedCardMetadataIssuer();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property capabilities (base name: "capabilities")', function() {
+      // uncomment below and update the code to test the property capabilities
+      //var instane = new CyberSource.Tmsv2TokenizedCardMetadataIssuer();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bankApplications (base name: "bankApplications")', function() {
+      // uncomment below and update the code to test the property bankApplications
+      //var instane = new CyberSource.Tmsv2TokenizedCardMetadataIssuer();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

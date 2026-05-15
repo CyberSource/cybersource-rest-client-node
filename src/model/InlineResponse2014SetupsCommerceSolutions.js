@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('binLookup')) {
         obj['binLookup'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['binLookup']);
       }
+      if (data.hasOwnProperty('agenticCommerce')) {
+        obj['agenticCommerce'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['agenticCommerce']);
+      }
     }
     return obj;
   }
@@ -88,6 +92,10 @@
    * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} binLookup
    */
   exports.prototype['binLookup'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} agenticCommerce
+   */
+  exports.prototype['agenticCommerce'] = undefined;
 
 
 

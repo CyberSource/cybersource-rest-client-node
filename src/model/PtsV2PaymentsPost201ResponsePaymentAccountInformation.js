@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponsePaymentAccountInformationCard'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponsePaymentAccountInformationCard', 'model/PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponsePaymentAccountInformationCard'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponsePaymentAccountInformationCard'), require('./PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard);
+    root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard, root.CyberSource.PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponsePaymentAccountInformationCard) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponsePaymentAccountInformationCard, PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('card')) {
         obj['card'] = PtsV2PaymentsPost201ResponsePaymentAccountInformationCard.constructFromObject(data['card']);
       }
+      if (data.hasOwnProperty('tokenizedCard')) {
+        obj['tokenizedCard'] = PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard.constructFromObject(data['tokenizedCard']);
+      }
     }
     return obj;
   }
@@ -72,6 +76,10 @@
    * @member {module:model/PtsV2PaymentsPost201ResponsePaymentAccountInformationCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard} tokenizedCard
+   */
+  exports.prototype['tokenizedCard'] = undefined;
 
 
 

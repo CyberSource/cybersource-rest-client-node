@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('issuerInformation')) {
         obj['issuerInformation'] = PaymentsStrongAuthIssuerInformation.constructFromObject(data['issuerInformation']);
       }
+      if (data.hasOwnProperty('outageExemptionIndicator')) {
+        obj['outageExemptionIndicator'] = ApiClient.convertToType(data['outageExemptionIndicator'], 'String');
+      }
     }
     return obj;
   }
@@ -72,6 +76,11 @@
    * @member {module:model/PaymentsStrongAuthIssuerInformation} issuerInformation
    */
   exports.prototype['issuerInformation'] = undefined;
+  /**
+   * This field will contain the outage exemption indicator with one of the following values: Possible values: - `0`  (Outage Authentication exemption does not apply to the transaction) - `1` (Outage exempt from SCA as authentication could not be done due to outage) 
+   * @member {String} outageExemptionIndicator
+   */
+  exports.prototype['outageExemptionIndicator'] = undefined;
 
 
 

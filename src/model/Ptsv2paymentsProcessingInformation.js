@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsProcessingInformationBankTransferOptions', 'model/Ptsv2paymentsProcessingInformationCaptureOptions', 'model/Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer', 'model/Ptsv2paymentsProcessingInformationJapanPaymentOptions', 'model/Ptsv2paymentsProcessingInformationLoanOptions', 'model/Ptsv2paymentsProcessingInformationPurchaseOptions', 'model/Ptsv2paymentsProcessingInformationRecurringOptions'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsProcessingInformationBankTransferOptions', 'model/Ptsv2paymentsProcessingInformationCaptureOptions', 'model/Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer', 'model/Ptsv2paymentsProcessingInformationJapanPaymentOptions', 'model/Ptsv2paymentsProcessingInformationLoanOptions', 'model/Ptsv2paymentsProcessingInformationProgramIndicators', 'model/Ptsv2paymentsProcessingInformationPurchaseOptions', 'model/Ptsv2paymentsProcessingInformationRecurringOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsProcessingInformationBankTransferOptions'), require('./Ptsv2paymentsProcessingInformationCaptureOptions'), require('./Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer'), require('./Ptsv2paymentsProcessingInformationJapanPaymentOptions'), require('./Ptsv2paymentsProcessingInformationLoanOptions'), require('./Ptsv2paymentsProcessingInformationPurchaseOptions'), require('./Ptsv2paymentsProcessingInformationRecurringOptions'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsProcessingInformationBankTransferOptions'), require('./Ptsv2paymentsProcessingInformationCaptureOptions'), require('./Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer'), require('./Ptsv2paymentsProcessingInformationJapanPaymentOptions'), require('./Ptsv2paymentsProcessingInformationLoanOptions'), require('./Ptsv2paymentsProcessingInformationProgramIndicators'), require('./Ptsv2paymentsProcessingInformationPurchaseOptions'), require('./Ptsv2paymentsProcessingInformationRecurringOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2paymentsProcessingInformationCaptureOptions, root.CyberSource.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, root.CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions, root.CyberSource.Ptsv2paymentsProcessingInformationLoanOptions, root.CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions, root.CyberSource.Ptsv2paymentsProcessingInformationRecurringOptions);
+    root.CyberSource.Ptsv2paymentsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2paymentsProcessingInformationCaptureOptions, root.CyberSource.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, root.CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions, root.CyberSource.Ptsv2paymentsProcessingInformationLoanOptions, root.CyberSource.Ptsv2paymentsProcessingInformationProgramIndicators, root.CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions, root.CyberSource.Ptsv2paymentsProcessingInformationRecurringOptions);
   }
-}(this, function(ApiClient, Ptsv2paymentsProcessingInformationAuthorizationOptions, Ptsv2paymentsProcessingInformationBankTransferOptions, Ptsv2paymentsProcessingInformationCaptureOptions, Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, Ptsv2paymentsProcessingInformationJapanPaymentOptions, Ptsv2paymentsProcessingInformationLoanOptions, Ptsv2paymentsProcessingInformationPurchaseOptions, Ptsv2paymentsProcessingInformationRecurringOptions) {
+}(this, function(ApiClient, Ptsv2paymentsProcessingInformationAuthorizationOptions, Ptsv2paymentsProcessingInformationBankTransferOptions, Ptsv2paymentsProcessingInformationCaptureOptions, Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, Ptsv2paymentsProcessingInformationJapanPaymentOptions, Ptsv2paymentsProcessingInformationLoanOptions, Ptsv2paymentsProcessingInformationProgramIndicators, Ptsv2paymentsProcessingInformationPurchaseOptions, Ptsv2paymentsProcessingInformationRecurringOptions) {
   'use strict';
 
 
@@ -46,6 +46,11 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
 
 
 
@@ -232,6 +237,21 @@
       if (data.hasOwnProperty('originalPaymentId')) {
         obj['originalPaymentId'] = ApiClient.convertToType(data['originalPaymentId'], 'String');
       }
+      if (data.hasOwnProperty('amexIndirectModelType')) {
+        obj['amexIndirectModelType'] = ApiClient.convertToType(data['amexIndirectModelType'], 'String');
+      }
+      if (data.hasOwnProperty('walletTransactionIntent')) {
+        obj['walletTransactionIntent'] = ApiClient.convertToType(data['walletTransactionIntent'], 'Number');
+      }
+      if (data.hasOwnProperty('destinationType')) {
+        obj['destinationType'] = ApiClient.convertToType(data['destinationType'], 'Number');
+      }
+      if (data.hasOwnProperty('programIndicators')) {
+        obj['programIndicators'] = Ptsv2paymentsProcessingInformationProgramIndicators.constructFromObject(data['programIndicators']);
+      }
+      if (data.hasOwnProperty('inquiryType')) {
+        obj['inquiryType'] = ApiClient.convertToType(data['inquiryType'], 'String');
+      }
     }
     return obj;
   }
@@ -405,7 +425,7 @@
    */
   exports.prototype['isReturnAuthRecordEnabled'] = undefined;
   /**
-   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect. 
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. This field is supported for Visa Platform Connect, Chase Paymentech Salem. 
    * @member {String} networkPartnerId
    */
   exports.prototype['networkPartnerId'] = undefined;
@@ -444,6 +464,30 @@
    * @member {String} originalPaymentId
    */
   exports.prototype['originalPaymentId'] = undefined;
+  /**
+   * Effective with the April 2025 release, American Express is introducing the following new Indirect Acceptor models : - Digital Wallet Operator   - Staged back to back transaction   - Peer to peer (P2P) transaction   - Stored value transaction - Marketplace  Each model must have a separate American Express Merchant Account number and will be assigned a unique Indirect Model Type value.  Valid/Sample Values : - `1`: Bill payment provider - `2`: Installment payment transaction - `3`: Marketplace - `4`: Peer to peer transaction - `5`: Staged back to back transaction - `6`: Stored value transaction 
+   * @member {String} amexIndirectModelType
+   */
+  exports.prototype['amexIndirectModelType'] = undefined;
+  /**
+   * Identifies the type of operation being performed by the staged digital wallet operator. The value distinguishes between a Cash-in transaction (coded as \"02\"), where funds are loaded into the digital wallet from a registered payment card, and a Purchase transaction (coded as \"01\"), where the wallet is used to make a payment to a merchant or transfer funds between wallets. This distinction is essential for transaction processing, reporting, and ensuring compliance with the specific rules and requirements associated with each card brand and transaction type. 
+   * @member {Number} walletTransactionIntent
+   */
+  exports.prototype['walletTransactionIntent'] = undefined;
+  /**
+   * Identifies the destination/purpose of the cash-in:  • 04: M2M (Same ownership, same portfolio/arrangement) • 05: P2P (For another holder, same wallet/arrangement) • 06: Transfer to another arrangement (same ownership) • 07: Transfer to another arrangement (other ownership) • 08: Transfer to stored value digital wallet. 
+   * @member {Number} destinationType
+   */
+  exports.prototype['destinationType'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsProcessingInformationProgramIndicators} programIndicators
+   */
+  exports.prototype['programIndicators'] = undefined;
+  /**
+   * Type of inquiry for Zero dollar transactions. Mastercard is introducing Mastercard One Credential, a single, digitally connected credential that offers cardholders the ability to access multiple payment methods.   This field is used for Product Status Inquiry (PSI), Account Status Inquiry with Product Status Inquiry (ASI with PSI), and Account Status Inquiry with Product Status Inquiry and Probability Indicator.  This field is supported for Zero dollar transactions only.  Possible values: - `01`: Product status inquiry - `02`: Account status inquiry with product status inquiry - `03`: Account status Inquiry with Product Status Inquiry and Probability Indicator  #### Used by **Authorization (Zero dollar transactions)** Optional field. 
+   * @member {String} inquiryType
+   */
+  exports.prototype['inquiryType'] = undefined;
 
 
 

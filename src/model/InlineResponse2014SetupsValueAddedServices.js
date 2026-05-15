@@ -50,6 +50,8 @@
 
 
 
+
+
   };
 
   /**
@@ -72,6 +74,12 @@
       if (data.hasOwnProperty('bankAccountValidation')) {
         obj['bankAccountValidation'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['bankAccountValidation']);
       }
+      if (data.hasOwnProperty('flexapi')) {
+        obj['flexapi'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['flexapi']);
+      }
+      if (data.hasOwnProperty('webhooks')) {
+        obj['webhooks'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['webhooks']);
+      }
     }
     return obj;
   }
@@ -88,6 +96,14 @@
    * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} bankAccountValidation
    */
   exports.prototype['bankAccountValidation'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} flexapi
+   */
+  exports.prototype['flexapi'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} webhooks
+   */
+  exports.prototype['webhooks'] = undefined;
 
 
 

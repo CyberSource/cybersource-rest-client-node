@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantLimitedAcceptanceIndicator (base name: "merchantLimitedAcceptanceIndicator")', function() {
+      // uncomment below and update the code to test the property merchantLimitedAcceptanceIndicator
+      //var instane = new CyberSource.Ptsv2paymentsidreversalsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

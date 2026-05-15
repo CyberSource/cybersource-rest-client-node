@@ -55,6 +55,8 @@
 
 
 
+
+
   };
 
   /**
@@ -79,6 +81,12 @@
       }
       if (data.hasOwnProperty('dateRevoked')) {
         obj['dateRevoked'] = ApiClient.convertToType(data['dateRevoked'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('frequency')) {
+        obj['frequency'] = ApiClient.convertToType(data['frequency'], 'String');
       }
       if (data.hasOwnProperty('encodedHtml')) {
         obj['encodedHtml'] = ApiClient.convertToType(data['encodedHtml'], 'String');
@@ -116,6 +124,16 @@
    * @member {String} dateRevoked
    */
   exports.prototype['dateRevoked'] = undefined;
+  /**
+   * Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly
+   * @member {String} frequency
+   */
+  exports.prototype['frequency'] = undefined;
   /**
    * Base64 encoded html string
    * @member {String} encodedHtml
