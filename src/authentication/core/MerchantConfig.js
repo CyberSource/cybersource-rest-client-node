@@ -33,6 +33,7 @@ function MerchantConfig(result) {
     this.keyPass = result.keyPass;
     this.keyType;
     this.keyFilename = result.keyFileName;
+    this.jwtKeyType = (result.jwtKeyType && result.jwtKeyType.toUpperCase()) || Constants.JWT_KEY_TYPE_P12;
     this.useHttpClient;
 
     /* proxy Parameters*/
@@ -75,6 +76,8 @@ function MerchantConfig(result) {
     this.pemFileDirectory = result.pemFileDirectory;
 
     this.solutionId = result.solutionId;
+
+    this._isSDK = (result.isSDK === true || (typeof result.isSDK === "string" && result.isSDK.trim().toLowerCase() === "true"));
 
     this.logConfiguration = new LogConfiguration(result.logConfiguration);
 
@@ -243,6 +246,14 @@ MerchantConfig.prototype.setRefreshToken = function setRefreshToken(refreshToken
 
 MerchantConfig.prototype.setSolutionId = function setSolutionId(solutionId) {
     this.solutionId = solutionId;
+};
+
+MerchantConfig.prototype.isSDK = function isSDK() {
+    return this._isSDK;
+};
+
+MerchantConfig.prototype.setSDK = function setSDK(isSDK) {
+    this._isSDK = (isSDK === true || (typeof isSDK === "string" && isSDK.trim().toLowerCase() === "true"));
 };
 
 MerchantConfig.prototype.setURL = function setURL(url) {
@@ -444,6 +455,25 @@ MerchantConfig.prototype.getKeyFileName = function getKeyFileName() {
 
 MerchantConfig.prototype.setKeyFileName = function setKeyFileName(keyFilename) {
     this.keyFilename = keyFilename;
+}
+
+MerchantConfig.prototype.getJwtKeyType = function getJwtKeyType() {
+    return this.jwtKeyType;
+}
+
+MerchantConfig.prototype.setJwtKeyType = function setJwtKeyType(jwtKeyType) {
+    jwtKeyType = String(jwtKeyType).toUpperCase();
+    this.jwtKeyType = jwtKeyType;
+}
+
+MerchantConfig.prototype.isSharedSecretKeyType = function isSharedSecretKeyType() {
+    return this.jwtKeyType.toUpperCase() === Constants.JWT_KEY_TYPE_SHARED_SECRET.toUpperCase();
+}
+
+MerchantConfig.prototype.checkJwtKeyType = function checkJwtKeyType(logger) {
+    if (this.jwtKeyType !== Constants.JWT_KEY_TYPE_P12 && this.jwtKeyType !== Constants.JWT_KEY_TYPE_SHARED_SECRET) {
+        ApiException.ApiException(Constants.INVALID_JWT_KEY_TYPE, logger);
+    }
 }
 
 MerchantConfig.prototype.getLogConfiguration = function getLogConfiguration() {
@@ -729,36 +759,58 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
             else if (typeof (this.merchantID) !== "string") {
                 this.merchantID = this.merchantID.toString();
             }
-            if (this.keyAlias === null || this.keyAlias === "" || this.keyAlias === undefined) {
-                this.keyAlias = this.merchantID;
-                logger.warn(Constants.KEY_ALIAS_NULL_EMPTY);
-            }
-            if (!this.useMetaKey && this.keyAlias !== this.merchantID) {
-                this.keyAlias = this.merchantID;
-                logger.warn(Constants.INCORRECT_KEY_ALIAS);
-            } else if (this.useMetaKey && this.keyAlias !== this.portfolioID) {
-                this.keyAlias = this.portfolioID;
-                logger.warn(Constants.INCORRECT_KEY_ALIAS_FOR_METAKEY);
-            }
 
-            if (this.keyPass === null || this.keyPass === "" || this.keyPass === undefined) {
-                this.keyPass = this.merchantID;
-                logger.warn(Constants.KEY_PASS_EMPTY);
-            }
+            // Validate jwtKeyType
+            this.checkJwtKeyType(logger);
 
-            if (this.keysDirectory === null || this.keysDirectory === "" || this.keysDirectory === undefined) {
-                this.keysDirectory = Constants.DEFAULT_KEYS_DIRECTORY;
-                logger.warn(Constants.KEY_DIRECTORY_EMPTY);
-            }
+            if (this.isSharedSecretKeyType()) {
+                // Shared Secret validation
+                if (this.merchantKeyId === null || this.merchantKeyId === "" || this.merchantKeyId === undefined) {
+                    ApiException.ApiException(Constants.MERCHANT_KEY_ID_REQ, logger);
+                }
+                else if (typeof (this.merchantKeyId) !== "string") {
+                    this.merchantKeyId = this.merchantKeyId.toString();
+                }
 
-            if (this.keyFilename === null || this.keyFilename === "" || this.keyFilename === undefined) {
-                this.keyFilename = this.merchantID;
-                logger.warn(Constants.KEY_FILE_EMPTY);
-            }
-            try {
-                fs.accessSync(this.getP12FilePath(), fs.constants.R_OK);
-            } catch (err) {
-                ApiException.ApiException("Merchant p12 certificate file not found or not readable: " + this.getP12FilePath());
+                if (this.merchantsecretKey === null || this.merchantsecretKey === "" || this.merchantsecretKey === undefined) {
+                    ApiException.ApiException(Constants.MERCHANT_SECRET_KEY_REQ, logger);
+                }
+                else if (typeof (this.merchantsecretKey) !== "string") {
+                    this.merchantsecretKey = this.merchantsecretKey.toString();
+                }
+            } else {
+                // P12 validation (existing behavior)
+                if (this.keyAlias === null || this.keyAlias === "" || this.keyAlias === undefined) {
+                    this.keyAlias = this.merchantID;
+                    logger.warn(Constants.KEY_ALIAS_NULL_EMPTY);
+                }
+                if (!this.useMetaKey && this.keyAlias !== this.merchantID) {
+                    this.keyAlias = this.merchantID;
+                    logger.warn(Constants.INCORRECT_KEY_ALIAS);
+                } else if (this.useMetaKey && this.keyAlias !== this.portfolioID) {
+                    this.keyAlias = this.portfolioID;
+                    logger.warn(Constants.INCORRECT_KEY_ALIAS_FOR_METAKEY);
+                }
+
+                if (this.keyPass === null || this.keyPass === "" || this.keyPass === undefined) {
+                    this.keyPass = this.merchantID;
+                    logger.warn(Constants.KEY_PASS_EMPTY);
+                }
+
+                if (this.keysDirectory === null || this.keysDirectory === "" || this.keysDirectory === undefined) {
+                    this.keysDirectory = Constants.DEFAULT_KEYS_DIRECTORY;
+                    logger.warn(Constants.KEY_DIRECTORY_EMPTY);
+                }
+
+                if (this.keyFilename === null || this.keyFilename === "" || this.keyFilename === undefined) {
+                    this.keyFilename = this.merchantID;
+                    logger.warn(Constants.KEY_FILE_EMPTY);
+                }
+                try {
+                    fs.accessSync(this.getP12FilePath(), fs.constants.R_OK);
+                } catch (err) {
+                    ApiException.ApiException("Merchant p12 certificate file not found or not readable: " + this.getP12FilePath());
+                }
             }
         }
         else if (this.authenticationType.toLowerCase() === Constants.OAUTH)

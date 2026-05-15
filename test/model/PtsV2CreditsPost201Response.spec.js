@@ -122,8 +122,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantInformation (base name: "merchantInformation")', function() {
+      // uncomment below and update the code to test the property merchantInformation
+      //var instane = new CyberSource.PtsV2CreditsPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property clearingInformation (base name: "clearingInformation")', function() {
+      // uncomment below and update the code to test the property clearingInformation
+      //var instane = new CyberSource.PtsV2CreditsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pointOfSaleInformation (base name: "pointOfSaleInformation")', function() {
       // uncomment below and update the code to test the property pointOfSaleInformation
+      //var instane = new CyberSource.PtsV2CreditsPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tokenInformation (base name: "tokenInformation")', function() {
+      // uncomment below and update the code to test the property tokenInformation
+      //var instane = new CyberSource.PtsV2CreditsPost201Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentAccountInformation (base name: "paymentAccountInformation")', function() {
+      // uncomment below and update the code to test the property paymentAccountInformation
       //var instane = new CyberSource.PtsV2CreditsPost201Response();
       //expect(instance).to.be();
     });

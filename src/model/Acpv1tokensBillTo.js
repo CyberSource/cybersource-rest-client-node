@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensBillTo</code>.
-   * Consumer billing information.
+   * Consumer billing information.  Required during card enrollment to identify the cardholder.
    * @alias module:model/Acpv1tokensBillTo
    * @class
    * @param countryCallingCode {String} Phone number country code as defined by the International Telecommunication Union.

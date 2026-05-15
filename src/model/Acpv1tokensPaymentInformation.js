@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensPaymentInformation</code>.
-   * Payment Information data.
+   * Payment Information data. References the tokenized payment card to use for this transaction. At least one of customer, paymentInstrument, or instrumentIdentifier must be provided. The instrumentIdentifier is the most commonly used reference. If you have a TMS instrument identifier, provide it in instrumentIdentifier.id.
    * @alias module:model/Acpv1tokensPaymentInformation
    * @class
    * @param instrumentIdentifier {module:model/Acpv1tokensPaymentInformationInstrumentIdentifier} 

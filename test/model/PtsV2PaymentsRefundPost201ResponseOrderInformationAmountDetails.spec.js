@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails);
     });
 
+    it('should have the property cashbackAmount (base name: "cashbackAmount")', function() {
+      // uncomment below and update the code to test the property cashbackAmount
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property settlementAmount (base name: "settlementAmount")', function() {
       // uncomment below and update the code to test the property settlementAmount
       //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails();

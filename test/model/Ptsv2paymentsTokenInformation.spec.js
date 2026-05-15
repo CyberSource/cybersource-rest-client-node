@@ -92,6 +92,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientCorrelationId (base name: "clientCorrelationId")', function() {
+      // uncomment below and update the code to test the property clientCorrelationId
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tokenAuthenticationInformation (base name: "tokenAuthenticationInformation")', function() {
+      // uncomment below and update the code to test the property tokenAuthenticationInformation
+      //var instane = new CyberSource.Ptsv2paymentsTokenInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

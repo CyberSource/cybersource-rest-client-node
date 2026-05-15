@@ -6,5 +6,6 @@ Name | Type | Description | Notes
 **clientReferenceInformation** | [**Bavsv1accountvalidationsClientReferenceInformation**](Bavsv1accountvalidationsClientReferenceInformation.md) |  | [optional] 
 **processingInformation** | [**Bavsv1accountvalidationsProcessingInformation**](Bavsv1accountvalidationsProcessingInformation.md) |  | 
 **paymentInformation** | [**Bavsv1accountvalidationsPaymentInformation**](Bavsv1accountvalidationsPaymentInformation.md) |  | 
+**tokenInformation** | [**Bavsv1accountvalidationsTokenInformation**](Bavsv1accountvalidationsTokenInformation.md) |  | [optional] 
 
 

@@ -49,6 +49,8 @@
 
 
 
+
+
   };
 
   /**
@@ -68,6 +70,12 @@
       if (data.hasOwnProperty('responseSourceCode')) {
         obj['responseSourceCode'] = ApiClient.convertToType(data['responseSourceCode'], 'String');
       }
+      if (data.hasOwnProperty('supplementaryTransactionData')) {
+        obj['supplementaryTransactionData'] = ApiClient.convertToType(data['supplementaryTransactionData'], 'String');
+      }
+      if (data.hasOwnProperty('cedpVerifiedIndicator')) {
+        obj['cedpVerifiedIndicator'] = ApiClient.convertToType(data['cedpVerifiedIndicator'], 'String');
+      }
     }
     return obj;
   }
@@ -81,6 +89,16 @@
    * @member {String} responseSourceCode
    */
   exports.prototype['responseSourceCode'] = undefined;
+  /**
+   * Supplementary transaction data for Klarna Advantage Plus. Fields to capture Interoperability Data from Merchant and transfer to Klarna for Authorization/Sale/Re-Auth/Capture APIs. 
+   * @member {String} supplementaryTransactionData
+   */
+  exports.prototype['supplementaryTransactionData'] = undefined;
+  /**
+   * Merchant Commercial Enhanced Data Program (CEDP) verified indicator for capture/bill requests.  This field is used when the client is doing authorization with a different gateway and capture/settlement with CyberSource.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - `Y`: Merchant CEDP verified  #### Used by **Capture Request** Request field for force capture/bill support when auth is done with a different gateway. 
+   * @member {String} cedpVerifiedIndicator
+   */
+  exports.prototype['cedpVerifiedIndicator'] = undefined;
 
 
 

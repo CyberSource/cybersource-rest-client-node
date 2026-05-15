@@ -80,6 +80,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property frequency (base name: "frequency")', function() {
+      // uncomment below and update the code to test the property frequency
+      //var instane = new CyberSource.PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property encodedHtml (base name: "encodedHtml")', function() {
       // uncomment below and update the code to test the property encodedHtml
       //var instane = new CyberSource.PtsV2ModifyBillingAgreementPost201ResponseAgreementInformation();

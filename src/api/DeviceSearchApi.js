@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20011', 'model/InlineResponse2009', 'model/InlineResponse4008', 'model/InlineResponse401', 'model/InlineResponse4032', 'model/InlineResponse4045', 'model/InlineResponse5003', 'model/PostDeviceSearchRequest', 'model/PostDeviceSearchRequestV3'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20011', 'model/InlineResponse2009', 'model/InlineResponse40010', 'model/InlineResponse401', 'model/InlineResponse4032', 'model/InlineResponse4045', 'model/InlineResponse5003', 'model/PostDeviceSearchRequest', 'model/PostDeviceSearchRequestV3'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20011'), require('../model/InlineResponse2009'), require('../model/InlineResponse4008'), require('../model/InlineResponse401'), require('../model/InlineResponse4032'), require('../model/InlineResponse4045'), require('../model/InlineResponse5003'), require('../model/PostDeviceSearchRequest'), require('../model/PostDeviceSearchRequestV3'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20011'), require('../model/InlineResponse2009'), require('../model/InlineResponse40010'), require('../model/InlineResponse401'), require('../model/InlineResponse4032'), require('../model/InlineResponse4045'), require('../model/InlineResponse5003'), require('../model/PostDeviceSearchRequest'), require('../model/PostDeviceSearchRequestV3'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DeviceSearchApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20011, root.CyberSource.InlineResponse2009, root.CyberSource.InlineResponse4008, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse5003, root.CyberSource.PostDeviceSearchRequest, root.CyberSource.PostDeviceSearchRequestV3);
+    root.CyberSource.DeviceSearchApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20011, root.CyberSource.InlineResponse2009, root.CyberSource.InlineResponse40010, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse5003, root.CyberSource.PostDeviceSearchRequest, root.CyberSource.PostDeviceSearchRequestV3);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20011, InlineResponse2009, InlineResponse4008, InlineResponse401, InlineResponse4032, InlineResponse4045, InlineResponse5003, PostDeviceSearchRequest, PostDeviceSearchRequestV3) {
+}(this, function(MLEUtility, ApiClient, InlineResponse20011, InlineResponse2009, InlineResponse40010, InlineResponse401, InlineResponse4032, InlineResponse4045, InlineResponse5003, PostDeviceSearchRequest, PostDeviceSearchRequestV3) {
   'use strict';
 
   /**

@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensAuthenticationContext</code>.
-   * Authentication Context data.
+   * Authentication Context data. Describes the authentication action performed.
    * @alias module:model/Acpv1tokensAuthenticationContext
    * @class
    */

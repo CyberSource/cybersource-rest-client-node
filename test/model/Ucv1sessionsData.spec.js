@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ucv1sessionsData);
     });
 
+    it('should have the property aggregatorInformation (base name: "aggregatorInformation")', function() {
+      // uncomment below and update the code to test the property aggregatorInformation
+      //var instane = new CyberSource.Ucv1sessionsData();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderInformation (base name: "orderInformation")', function() {
       // uncomment below and update the code to test the property orderInformation
       //var instane = new CyberSource.Ucv1sessionsData();
@@ -98,8 +104,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property merchantDefinedInformation (base name: "merchantDefinedInformation")', function() {
-      // uncomment below and update the code to test the property merchantDefinedInformation
+    it('should have the property senderInformation (base name: "senderInformation")', function() {
+      // uncomment below and update the code to test the property senderInformation
       //var instane = new CyberSource.Ucv1sessionsData();
       //expect(instance).to.be();
     });
@@ -112,6 +118,18 @@
 
     it('should have the property paymentInformation (base name: "paymentInformation")', function() {
       // uncomment below and update the code to test the property paymentInformation
+      //var instane = new CyberSource.Ucv1sessionsData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property installmentInformation (base name: "installmentInformation")', function() {
+      // uncomment below and update the code to test the property installmentInformation
+      //var instane = new CyberSource.Ucv1sessionsData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantDefinedInformation (base name: "merchantDefinedInformation")', function() {
+      // uncomment below and update the code to test the property merchantDefinedInformation
       //var instane = new CyberSource.Ucv1sessionsData();
       //expect(instance).to.be();
     });

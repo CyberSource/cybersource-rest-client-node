@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2tokenizedcardsCard', 'model/Tmsv2tokenizedcardsPasscode'], factory);
+    define(['ApiClient', 'model/Tmsv2tokenizedcardsBillTo', 'model/Tmsv2tokenizedcardsCard', 'model/Tmsv2tokenizedcardsPasscode'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizedcardsCard'), require('./Tmsv2tokenizedcardsPasscode'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizedcardsBillTo'), require('./Tmsv2tokenizedcardsCard'), require('./Tmsv2tokenizedcardsPasscode'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostTokenizedCardRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizedcardsCard, root.CyberSource.Tmsv2tokenizedcardsPasscode);
+    root.CyberSource.PostTokenizedCardRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizedcardsBillTo, root.CyberSource.Tmsv2tokenizedcardsCard, root.CyberSource.Tmsv2tokenizedcardsPasscode);
   }
-}(this, function(ApiClient, Tmsv2tokenizedcardsCard, Tmsv2tokenizedcardsPasscode) {
+}(this, function(ApiClient, Tmsv2tokenizedcardsBillTo, Tmsv2tokenizedcardsCard, Tmsv2tokenizedcardsPasscode) {
   'use strict';
 
 
@@ -52,6 +52,7 @@
 
 
     _this['source'] = source;
+
 
 
   };
@@ -85,6 +86,9 @@
       if (data.hasOwnProperty('passcode')) {
         obj['passcode'] = Tmsv2tokenizedcardsPasscode.constructFromObject(data['passcode']);
       }
+      if (data.hasOwnProperty('billTo')) {
+        obj['billTo'] = Tmsv2tokenizedcardsBillTo.constructFromObject(data['billTo']);
+      }
     }
     return obj;
   }
@@ -117,6 +121,10 @@
    * @member {module:model/Tmsv2tokenizedcardsPasscode} passcode
    */
   exports.prototype['passcode'] = undefined;
+  /**
+   * @member {module:model/Tmsv2tokenizedcardsBillTo} billTo
+   */
+  exports.prototype['billTo'] = undefined;
 
 
 

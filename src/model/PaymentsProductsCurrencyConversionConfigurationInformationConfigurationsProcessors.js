@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -62,6 +63,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('provider')) {
+        obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
+      }
       if (data.hasOwnProperty('merchantId')) {
         obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
       }
@@ -73,11 +77,17 @@
   }
 
   /**
-   * The merchant identifier for the Currency Conversion service. Check with your Currency Conversion Provider for details.
+   * The name of the provider.
+   * @member {String} provider
+   */
+  exports.prototype['provider'] = undefined;
+  /**
+   * A unique identifier value assigned to each merchant. Assigned by the provider.
    * @member {String} merchantId
    */
   exports.prototype['merchantId'] = undefined;
   /**
+   * This code identifies the financial institution acting as the acquirer.
    * @member {String} acquirerId
    */
   exports.prototype['acquirerId'] = undefined;

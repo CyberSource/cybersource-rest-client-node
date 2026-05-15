@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -94,6 +95,9 @@
       }
       if (data.hasOwnProperty('industryDataType')) {
         obj['industryDataType'] = ApiClient.convertToType(data['industryDataType'], 'String');
+      }
+      if (data.hasOwnProperty('digitalServiceIndicator')) {
+        obj['digitalServiceIndicator'] = ApiClient.convertToType(data['digitalServiceIndicator'], 'String');
       }
       if (data.hasOwnProperty('issuer')) {
         obj['issuer'] = Ptsv2paymentsIssuerInformation.constructFromObject(data['issuer']);
@@ -155,6 +159,11 @@
    * @member {String} industryDataType
    */
   exports.prototype['industryDataType'] = undefined;
+  /**
+   * Mastercard Digital Enablement Service (MDES) digital service indicators for force capture scenarios.   This field is used when the client is doing authorization with a different gateway and capture with CyberSource.   This field is in ANS, EBCDIC format and flows in Field 34, DSID 04 Tag DF1F, mapped to Mastercard Data Element DE119, Sub-element 004.  #### Used by **Capture Request** Request field for force capture support when auth is done with a different gateway. 
+   * @member {String} digitalServiceIndicator
+   */
+  exports.prototype['digitalServiceIndicator'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsIssuerInformation} issuer
    */

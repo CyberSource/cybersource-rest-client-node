@@ -61,6 +61,8 @@
 
 
 
+
+
   };
 
   /**
@@ -115,6 +117,12 @@
       }
       if (data.hasOwnProperty('method')) {
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('company')) {
+        obj['company'] = ApiClient.convertToType(data['company'], 'String');
       }
     }
     return obj;
@@ -190,6 +198,16 @@
    * @member {String} method
    */
   exports.prototype['method'] = undefined;
+  /**
+   * Email of the recipient. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * Name of the customer's company. 
+   * @member {String} company
+   */
+  exports.prototype['company'] = undefined;
 
 
 

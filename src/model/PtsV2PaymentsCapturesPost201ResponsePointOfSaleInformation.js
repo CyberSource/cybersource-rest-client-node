@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('terminalId')) {
         obj['terminalId'] = ApiClient.convertToType(data['terminalId'], 'String');
       }
+      if (data.hasOwnProperty('encryptedKeyId')) {
+        obj['encryptedKeyId'] = ApiClient.convertToType(data['encryptedKeyId'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} terminalId
    */
   exports.prototype['terminalId'] = undefined;
+  /**
+   * Identifies the Zone PIN Key (ZPK) used for Online PIN processing by providing the 10‑digit Key Set Identifier (KSI). This value indicates that the PIN block is encrypted under a ZPK and enables the Payment Security Service (PSS) to perform  the correct ZPK→ZPK PIN translation during card‑present EMV PIN transactions. 
+   * @member {String} encryptedKeyId
+   */
+  exports.prototype['encryptedKeyId'] = undefined;
 
 
 

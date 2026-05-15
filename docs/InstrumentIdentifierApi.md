@@ -116,7 +116,7 @@ No authorization required
 
 <a name="getInstrumentIdentifierPaymentInstrumentsList"></a>
 # **getInstrumentIdentifierPaymentInstrumentsList**
-> PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, opts)
+> PaymentInstrumentList getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, opts)
 
 List Payment Instruments for an Instrument Identifier
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentInstrumentList1**](PaymentInstrumentList1.md)
+[**PaymentInstrumentList**](PaymentInstrumentList.md)
 
 ### Authorization
 

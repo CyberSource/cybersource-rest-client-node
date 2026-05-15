@@ -6,5 +6,6 @@ Name | Type | Description | Notes
 **tokenManagement** | [**InlineResponse2014SetupsPaymentsCardProcessing**](InlineResponse2014SetupsPaymentsCardProcessing.md) |  | [optional] 
 **accountUpdater** | [**InlineResponse2014SetupsPaymentsCardProcessing**](InlineResponse2014SetupsPaymentsCardProcessing.md) |  | [optional] 
 **binLookup** | [**InlineResponse2014SetupsPaymentsCardProcessing**](InlineResponse2014SetupsPaymentsCardProcessing.md) |  | [optional] 
+**agenticCommerce** | [**InlineResponse2014SetupsPaymentsCardProcessing**](InlineResponse2014SetupsPaymentsCardProcessing.md) |  | [optional] 
 
 

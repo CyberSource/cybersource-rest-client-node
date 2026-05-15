@@ -74,6 +74,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property flexapi (base name: "flexapi")', function() {
+      // uncomment below and update the code to test the property flexapi
+      //var instane = new CyberSource.InlineResponse2014SetupsValueAddedServices();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property webhooks (base name: "webhooks")', function() {
+      // uncomment below and update the code to test the property webhooks
+      //var instane = new CyberSource.InlineResponse2014SetupsValueAddedServices();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

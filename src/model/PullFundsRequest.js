@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv1pullfundstransferAggregatorInformation', 'model/Ptsv1pullfundstransferClientReferenceInformation', 'model/Ptsv1pullfundstransferMerchantInformation', 'model/Ptsv1pullfundstransferOrderInformation', 'model/Ptsv1pullfundstransferProcessingInformation', 'model/Ptsv1pullfundstransferRecipientInformation', 'model/Ptsv1pullfundstransferSenderInformation'], factory);
+    define(['ApiClient', 'model/Ptsv1pullfundstransferAggregatorInformation', 'model/Ptsv1pullfundstransferBuyerInformation', 'model/Ptsv1pullfundstransferClientReferenceInformation', 'model/Ptsv1pullfundstransferMerchantInformation', 'model/Ptsv1pullfundstransferOrderInformation', 'model/Ptsv1pullfundstransferProcessingInformation', 'model/Ptsv1pullfundstransferRecipientInformation', 'model/Ptsv1pullfundstransferSenderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv1pullfundstransferAggregatorInformation'), require('./Ptsv1pullfundstransferClientReferenceInformation'), require('./Ptsv1pullfundstransferMerchantInformation'), require('./Ptsv1pullfundstransferOrderInformation'), require('./Ptsv1pullfundstransferProcessingInformation'), require('./Ptsv1pullfundstransferRecipientInformation'), require('./Ptsv1pullfundstransferSenderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv1pullfundstransferAggregatorInformation'), require('./Ptsv1pullfundstransferBuyerInformation'), require('./Ptsv1pullfundstransferClientReferenceInformation'), require('./Ptsv1pullfundstransferMerchantInformation'), require('./Ptsv1pullfundstransferOrderInformation'), require('./Ptsv1pullfundstransferProcessingInformation'), require('./Ptsv1pullfundstransferRecipientInformation'), require('./Ptsv1pullfundstransferSenderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PullFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pullfundstransferAggregatorInformation, root.CyberSource.Ptsv1pullfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pullfundstransferMerchantInformation, root.CyberSource.Ptsv1pullfundstransferOrderInformation, root.CyberSource.Ptsv1pullfundstransferProcessingInformation, root.CyberSource.Ptsv1pullfundstransferRecipientInformation, root.CyberSource.Ptsv1pullfundstransferSenderInformation);
+    root.CyberSource.PullFundsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pullfundstransferAggregatorInformation, root.CyberSource.Ptsv1pullfundstransferBuyerInformation, root.CyberSource.Ptsv1pullfundstransferClientReferenceInformation, root.CyberSource.Ptsv1pullfundstransferMerchantInformation, root.CyberSource.Ptsv1pullfundstransferOrderInformation, root.CyberSource.Ptsv1pullfundstransferProcessingInformation, root.CyberSource.Ptsv1pullfundstransferRecipientInformation, root.CyberSource.Ptsv1pullfundstransferSenderInformation);
   }
-}(this, function(ApiClient, Ptsv1pullfundstransferAggregatorInformation, Ptsv1pullfundstransferClientReferenceInformation, Ptsv1pullfundstransferMerchantInformation, Ptsv1pullfundstransferOrderInformation, Ptsv1pullfundstransferProcessingInformation, Ptsv1pullfundstransferRecipientInformation, Ptsv1pullfundstransferSenderInformation) {
+}(this, function(ApiClient, Ptsv1pullfundstransferAggregatorInformation, Ptsv1pullfundstransferBuyerInformation, Ptsv1pullfundstransferClientReferenceInformation, Ptsv1pullfundstransferMerchantInformation, Ptsv1pullfundstransferOrderInformation, Ptsv1pullfundstransferProcessingInformation, Ptsv1pullfundstransferRecipientInformation, Ptsv1pullfundstransferSenderInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -82,6 +83,9 @@
       if (data.hasOwnProperty('senderInformation')) {
         obj['senderInformation'] = Ptsv1pullfundstransferSenderInformation.constructFromObject(data['senderInformation']);
       }
+      if (data.hasOwnProperty('buyerInformation')) {
+        obj['buyerInformation'] = Ptsv1pullfundstransferBuyerInformation.constructFromObject(data['buyerInformation']);
+      }
       if (data.hasOwnProperty('aggregatorInformation')) {
         obj['aggregatorInformation'] = Ptsv1pullfundstransferAggregatorInformation.constructFromObject(data['aggregatorInformation']);
       }
@@ -112,6 +116,10 @@
    * @member {module:model/Ptsv1pullfundstransferSenderInformation} senderInformation
    */
   exports.prototype['senderInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv1pullfundstransferBuyerInformation} buyerInformation
+   */
+  exports.prototype['buyerInformation'] = undefined;
   /**
    * @member {module:model/Ptsv1pullfundstransferAggregatorInformation} aggregatorInformation
    */

@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -103,6 +104,9 @@
       }
       if (data.hasOwnProperty('postalCode')) {
         obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      }
+      if (data.hasOwnProperty('taxIdNumber')) {
+        obj['taxIdNumber'] = ApiClient.convertToType(data['taxIdNumber'], 'Number');
       }
     }
     return obj;
@@ -162,6 +166,11 @@
    * @member {String} postalCode
    */
   exports.prototype['postalCode'] = undefined;
+  /**
+   * CPF or CNPJ of the cash-in recipient. \"Cadastro de Pessoas Físicas\", which translates to the \"Natural Persons Register.\" It is the individual taxpayer registry identification number in Brazil, similar to a Social Security Number (SSN) in the United States or a National Insurance Number in the UK. 
+   * @member {Number} taxIdNumber
+   */
+  exports.prototype['taxIdNumber'] = undefined;
 
 
 

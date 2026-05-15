@@ -62,6 +62,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property trackingNumber (base name: "trackingNumber")', function() {
+      // uncomment below and update the code to test the property trackingNumber
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesOrderInformationShippingDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property trackingUrl (base name: "trackingUrl")', function() {
+      // uncomment below and update the code to test the property trackingUrl
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesOrderInformationShippingDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingCarrier (base name: "shippingCarrier")', function() {
+      // uncomment below and update the code to test the property shippingCarrier
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesOrderInformationShippingDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property estimatedDeliveryDate (base name: "estimatedDeliveryDate")', function() {
+      // uncomment below and update the code to test the property estimatedDeliveryDate
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesOrderInformationShippingDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingMethod (base name: "shippingMethod")', function() {
+      // uncomment below and update the code to test the property shippingMethod
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesOrderInformationShippingDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

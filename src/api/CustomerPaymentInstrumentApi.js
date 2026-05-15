@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse404', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchCustomerPaymentInstrumentRequest', 'model/PaymentInstrumentList', 'model/PostCustomerPaymentInstrumentRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse404', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchCustomerPaymentInstrumentRequest', 'model/PaymentInstrumentList1', 'model/PostCustomerPaymentInstrumentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse404'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchCustomerPaymentInstrumentRequest'), require('../model/PaymentInstrumentList'), require('../model/PostCustomerPaymentInstrumentRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse404'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchCustomerPaymentInstrumentRequest'), require('../model/PaymentInstrumentList1'), require('../model/PostCustomerPaymentInstrumentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CustomerPaymentInstrumentApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse404, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchCustomerPaymentInstrumentRequest, root.CyberSource.PaymentInstrumentList, root.CyberSource.PostCustomerPaymentInstrumentRequest);
+    root.CyberSource.CustomerPaymentInstrumentApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse404, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchCustomerPaymentInstrumentRequest, root.CyberSource.PaymentInstrumentList1, root.CyberSource.PostCustomerPaymentInstrumentRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse404, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchCustomerPaymentInstrumentRequest, PaymentInstrumentList, PostCustomerPaymentInstrumentRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse404, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchCustomerPaymentInstrumentRequest, PaymentInstrumentList1, PostCustomerPaymentInstrumentRequest) {
   'use strict';
 
   /**
@@ -206,7 +206,7 @@
      * Callback function to receive the result of the getCustomerPaymentInstrumentsList operation.
      * @callback module:api/CustomerPaymentInstrumentApi~getCustomerPaymentInstrumentsListCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PaymentInstrumentList} data The data returned by the service call.
+     * @param {module:model/PaymentInstrumentList1} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -219,7 +219,7 @@
      * @param {Number} opts.offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (default to 0)
      * @param {Number} opts.limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (default to 20)
      * @param {module:api/CustomerPaymentInstrumentApi~getCustomerPaymentInstrumentsListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaymentInstrumentList}
+     * data is of type: {@link module:model/PaymentInstrumentList1}
      */
     this.getCustomerPaymentInstrumentsList = function(customerId, opts, callback) {
       opts = opts || {};
@@ -252,7 +252,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = PaymentInstrumentList;
+      var returnType = PaymentInstrumentList1;
 
       //check isMLE for an api method 'this.getCustomerPaymentInstrumentsList'
       var inboundMLEStatus = 'false';

@@ -43,7 +43,7 @@
    * Constructs a new <code>Bavsv1accountvalidationsPaymentInformationBankAccount</code>.
    * @alias module:model/Bavsv1accountvalidationsPaymentInformationBankAccount
    * @class
-   * @param _number {String} Account Number.  Non-Negative Integer. example: 12345678901234577 
+   * @param _number {String} Account Number.  Non-Negative String, containing only digits. 
    */
   var exports = function(_number) {
     var _this = this;
@@ -70,7 +70,7 @@
   }
 
   /**
-   * Account Number.  Non-Negative Integer. example: 12345678901234577 
+   * Account Number.  Non-Negative String, containing only digits. 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;

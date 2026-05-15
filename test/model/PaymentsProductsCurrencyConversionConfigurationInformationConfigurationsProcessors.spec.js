@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors);
     });
 
+    it('should have the property provider (base name: "provider")', function() {
+      // uncomment below and update the code to test the property provider
+      //var instane = new CyberSource.PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors();
+      //expect(instance).to.be();
+    });
+
     it('should have the property merchantId (base name: "merchantId")', function() {
       // uncomment below and update the code to test the property merchantId
       //var instane = new CyberSource.PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors();

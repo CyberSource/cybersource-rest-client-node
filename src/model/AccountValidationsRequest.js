@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Bavsv1accountvalidationsClientReferenceInformation', 'model/Bavsv1accountvalidationsPaymentInformation', 'model/Bavsv1accountvalidationsProcessingInformation'], factory);
+    define(['ApiClient', 'model/Bavsv1accountvalidationsClientReferenceInformation', 'model/Bavsv1accountvalidationsPaymentInformation', 'model/Bavsv1accountvalidationsProcessingInformation', 'model/Bavsv1accountvalidationsTokenInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Bavsv1accountvalidationsClientReferenceInformation'), require('./Bavsv1accountvalidationsPaymentInformation'), require('./Bavsv1accountvalidationsProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Bavsv1accountvalidationsClientReferenceInformation'), require('./Bavsv1accountvalidationsPaymentInformation'), require('./Bavsv1accountvalidationsProcessingInformation'), require('./Bavsv1accountvalidationsTokenInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AccountValidationsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Bavsv1accountvalidationsClientReferenceInformation, root.CyberSource.Bavsv1accountvalidationsPaymentInformation, root.CyberSource.Bavsv1accountvalidationsProcessingInformation);
+    root.CyberSource.AccountValidationsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Bavsv1accountvalidationsClientReferenceInformation, root.CyberSource.Bavsv1accountvalidationsPaymentInformation, root.CyberSource.Bavsv1accountvalidationsProcessingInformation, root.CyberSource.Bavsv1accountvalidationsTokenInformation);
   }
-}(this, function(ApiClient, Bavsv1accountvalidationsClientReferenceInformation, Bavsv1accountvalidationsPaymentInformation, Bavsv1accountvalidationsProcessingInformation) {
+}(this, function(ApiClient, Bavsv1accountvalidationsClientReferenceInformation, Bavsv1accountvalidationsPaymentInformation, Bavsv1accountvalidationsProcessingInformation, Bavsv1accountvalidationsTokenInformation) {
   'use strict';
 
 
@@ -52,6 +52,7 @@
 
     _this['processingInformation'] = processingInformation;
     _this['paymentInformation'] = paymentInformation;
+
   };
 
   /**
@@ -74,6 +75,9 @@
       if (data.hasOwnProperty('paymentInformation')) {
         obj['paymentInformation'] = Bavsv1accountvalidationsPaymentInformation.constructFromObject(data['paymentInformation']);
       }
+      if (data.hasOwnProperty('tokenInformation')) {
+        obj['tokenInformation'] = Bavsv1accountvalidationsTokenInformation.constructFromObject(data['tokenInformation']);
+      }
     }
     return obj;
   }
@@ -90,6 +94,10 @@
    * @member {module:model/Bavsv1accountvalidationsPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
+  /**
+   * @member {module:model/Bavsv1accountvalidationsTokenInformation} tokenInformation
+   */
+  exports.prototype['tokenInformation'] = undefined;
 
 
 

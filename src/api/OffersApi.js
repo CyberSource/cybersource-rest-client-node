@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20016', 'model/InlineResponse2019', 'model/InlineResponse40010', 'model/InlineResponse5022', 'model/OfferRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20016', 'model/InlineResponse2019', 'model/InlineResponse40012', 'model/InlineResponse5022', 'model/OfferRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20016'), require('../model/InlineResponse2019'), require('../model/InlineResponse40010'), require('../model/InlineResponse5022'), require('../model/OfferRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20016'), require('../model/InlineResponse2019'), require('../model/InlineResponse40012'), require('../model/InlineResponse5022'), require('../model/OfferRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016, root.CyberSource.InlineResponse2019, root.CyberSource.InlineResponse40010, root.CyberSource.InlineResponse5022, root.CyberSource.OfferRequest);
+    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016, root.CyberSource.InlineResponse2019, root.CyberSource.InlineResponse40012, root.CyberSource.InlineResponse5022, root.CyberSource.OfferRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20016, InlineResponse2019, InlineResponse40010, InlineResponse5022, OfferRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse20016, InlineResponse2019, InlineResponse40012, InlineResponse5022, OfferRequest) {
   'use strict';
 
   /**

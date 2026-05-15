@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1instructionsRecurringPaymentInformation</code>.
-   * Frequency of the transaction.   Specifies how often the transaction occurs. If the mandate contains a recurring instruction, a recurring frequency must be provided and the request.isRecurring flag should be set to true. 
+   * Frequency of the transaction. Specifies how often the transaction occurs. If the mandate contains a recurring instruction, a recurring frequency must be provided and the request.isRecurring flag should be set to true. 
    * @alias module:model/Acpv1instructionsRecurringPaymentInformation
    * @class
    */

@@ -225,7 +225,7 @@
 
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
+      var accepts = ['application/json', 'application/json;charset=utf-8'];
       var returnType = InlineResponse20012;
 
       //check isMLE for an api method 'this.getBatchesList'

@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **paymentInstrument** | [**PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument**](PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument.md) |  | [optional] 
 **shippingAddress** | [**PtsV2PaymentsPost201ResponseTokenInformationShippingAddress**](PtsV2PaymentsPost201ResponseTokenInformationShippingAddress.md) |  | [optional] 
 **instrumentIdentifier** | [**PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier**](PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier.md) |  | [optional] 
+**thirdPartyToken** | [**PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken**](PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken.md) |  | [optional] 
 
 

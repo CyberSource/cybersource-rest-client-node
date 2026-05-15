@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shippingCarrier (base name: "shippingCarrier")', function() {
+      // uncomment below and update the code to test the property shippingCarrier
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformationShippingDetails();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

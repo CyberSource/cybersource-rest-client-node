@@ -86,6 +86,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property discountAmount (base name: "discountAmount")', function() {
+      // uncomment below and update the code to test the property discountAmount
+      //var instane = new CyberSource.Iplv2paymentlinksOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property discountPercent (base name: "discountPercent")', function() {
+      // uncomment below and update the code to test the property discountPercent
+      //var instane = new CyberSource.Iplv2paymentlinksOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxAmount (base name: "taxAmount")', function() {
+      // uncomment below and update the code to test the property taxAmount
+      //var instane = new CyberSource.Iplv2paymentlinksOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxRate (base name: "taxRate")', function() {
+      // uncomment below and update the code to test the property taxRate
+      //var instane = new CyberSource.Iplv2paymentlinksOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

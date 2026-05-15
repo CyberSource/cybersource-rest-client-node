@@ -41,11 +41,17 @@
 
   /**
    * Constructs a new <code>Ptsv2paymentsidcapturesOrderInformationShippingDetails</code>.
+   * Contains shipping details information for Klarna Advantage Plus Capture transactions. 
    * @alias module:model/Ptsv2paymentsidcapturesOrderInformationShippingDetails
    * @class
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
 
 
   };
@@ -64,6 +70,21 @@
       if (data.hasOwnProperty('shipFromPostalCode')) {
         obj['shipFromPostalCode'] = ApiClient.convertToType(data['shipFromPostalCode'], 'String');
       }
+      if (data.hasOwnProperty('trackingNumber')) {
+        obj['trackingNumber'] = ApiClient.convertToType(data['trackingNumber'], 'String');
+      }
+      if (data.hasOwnProperty('trackingUrl')) {
+        obj['trackingUrl'] = ApiClient.convertToType(data['trackingUrl'], 'String');
+      }
+      if (data.hasOwnProperty('shippingCarrier')) {
+        obj['shippingCarrier'] = ApiClient.convertToType(data['shippingCarrier'], 'String');
+      }
+      if (data.hasOwnProperty('estimatedDeliveryDate')) {
+        obj['estimatedDeliveryDate'] = ApiClient.convertToType(data['estimatedDeliveryDate'], 'String');
+      }
+      if (data.hasOwnProperty('shippingMethod')) {
+        obj['shippingMethod'] = ApiClient.convertToType(data['shippingMethod'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +94,31 @@
    * @member {String} shipFromPostalCode
    */
   exports.prototype['shipFromPostalCode'] = undefined;
+  /**
+   * Shipment tracking number provided by the merchant. Used to track the shipment of goods to the customer. 
+   * @member {String} trackingNumber
+   */
+  exports.prototype['trackingNumber'] = undefined;
+  /**
+   * URL where the customer can track their shipment. Provides real-time tracking information for the delivery. 
+   * @member {String} trackingUrl
+   */
+  exports.prototype['trackingUrl'] = undefined;
+  /**
+   * Name of the shipping carrier/company handling the delivery. 
+   * @member {String} shippingCarrier
+   */
+  exports.prototype['shippingCarrier'] = undefined;
+  /**
+   * Estimated delivery date for the shipment provided by Merchant. Format: YYYYMMDD (e.g., 20251115 for November 15, 2025) 
+   * @member {String} estimatedDeliveryDate
+   */
+  exports.prototype['estimatedDeliveryDate'] = undefined;
+  /**
+   * Shipping method for the product. Possible values:   - `lowcost`: Lowest-cost service  - `sameday`: Courier or same-day service  - `oneday`: Next-day or overnight service  - `twoday`: Two-day service  - `threeday`: Three-day service  - `pickup`: Store pick-up  - `other`: Other shipping method  - `none`: No shipping method because product is a service or subscription  Klarna Advantage Plus additional values:  - `TO_DOOR`: Delivery to door  - `TO_CURB`: Delivery to curb  - `TO_MAILBOX`: Delivery to mailbox  - `PICKUP_BOX`: Pickup from box  - `PICKUP_POINT`: Pickup from point  - `PICKUP_STORE`: Pickup from store  - `PICKUP_WAREHOUSE`: Pickup from warehouse  - `DIGITAL_EMAIL`: Digital delivery via email  - `DIGITAL_DOWNLOAD`: Digital download  - `DIGITAL_OTHER`: Other digital delivery  - `PHYSICAL_OTHER`: Other physical delivery 
+   * @member {String} shippingMethod
+   */
+  exports.prototype['shippingMethod'] = undefined;
 
 
 

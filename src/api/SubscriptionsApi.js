@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/InlineResponse4003', 'model/InlineResponse4004', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/GetSubscriptionsPaymentsResponse', 'model/GetSubscriptionsPaymentsResponse1', 'model/InlineResponse4003', 'model/InlineResponse4004', 'model/InlineResponse4006', 'model/InlineResponse4007', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdatePayments', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/InlineResponse4003'), require('../model/InlineResponse4004'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/GetSubscriptionsPaymentsResponse'), require('../model/GetSubscriptionsPaymentsResponse1'), require('../model/InlineResponse4003'), require('../model/InlineResponse4004'), require('../model/InlineResponse4006'), require('../model/InlineResponse4007'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdatePayments'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
+    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.GetSubscriptionsPaymentsResponse, root.CyberSource.GetSubscriptionsPaymentsResponse1, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdatePayments, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
   }
-}(this, function(MLEUtility, ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, InlineResponse4003, InlineResponse4004, InlineResponse4041, PtsV2PaymentsPost502Response, SuspendSubscriptionResponse, UpdateSubscription, UpdateSubscriptionResponse) {
+}(this, function(MLEUtility, ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, GetSubscriptionsPaymentsResponse, GetSubscriptionsPaymentsResponse1, InlineResponse4003, InlineResponse4004, InlineResponse4006, InlineResponse4007, InlineResponse4041, PtsV2PaymentsPost502Response, SuspendSubscriptionResponse, UpdatePayments, UpdateSubscription, UpdateSubscriptionResponse) {
   'use strict';
 
   /**
@@ -230,7 +230,7 @@
       var returnType = CreateSubscriptionResponse;
 
       //check isMLE for an api method 'this.createSubscription'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createSubscription');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createSubscription']);
 
@@ -268,6 +268,7 @@
      * @param {String} opts.code Filter by Subscription Code
      * @param {String} opts.status Filter by Subscription Status
      * @param {String} opts.customerId Filter by Customer Id
+     * @param {String} opts.clientReferenceInformationCode Filter by Client Reference Information Code / Merchant Reference Number
      * @param {module:api/SubscriptionsApi~getAllSubscriptionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetAllSubscriptionsResponse}
      */
@@ -287,7 +288,8 @@
         'limit': opts['limit'],
         'code': opts['code'],
         'status': opts['status'],
-        'customerId': opts['customerId']
+        'customerId': opts['customerId'],
+        'clientReferenceInformationCode': opts['clientReferenceInformationCode']
       };
       var headerParams = {
       };
@@ -441,6 +443,153 @@
       } else {
         return this.apiClient.callApi(
           '/rbs/v1/subscriptions/code', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the subscriptionsIdPaymentsGet operation.
+     * @callback module:api/SubscriptionsApi~subscriptionsIdPaymentsGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetSubscriptionsPaymentsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Payments for a Subscription
+     * Retrieve a list of payments for a specific subscription by its ID. 
+     * @param {String} id Subscription Id
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.offset Page offset number.
+     * @param {Number} opts.limit Number of items to be returned. Default - `20`, Max - `100` 
+     * @param {Number} opts.scheduledPaymentsCount Number of existing scheduled payments to be returned. Default - `5`, Max - `9999` 
+     * @param {module:api/SubscriptionsApi~subscriptionsIdPaymentsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetSubscriptionsPaymentsResponse}
+     */
+    this.subscriptionsIdPaymentsGet = function(id, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling subscriptionsIdPaymentsGet");
+      }
+
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+        'offset': opts['offset'],
+        'limit': opts['limit'],
+        'scheduledPaymentsCount': opts['scheduledPaymentsCount']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = GetSubscriptionsPaymentsResponse;
+
+      //check isMLE for an api method 'this.subscriptionsIdPaymentsGet'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'subscriptionsIdPaymentsGet');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['subscriptionsIdPaymentsGet']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/rbs/v1/subscriptions/{id}/payments', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/rbs/v1/subscriptions/{id}/payments', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the subscriptionsIdPaymentsPut operation.
+     * @callback module:api/SubscriptionsApi~subscriptionsIdPaymentsPutCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetSubscriptionsPaymentsResponse1} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update Payments for a subscription
+     * Modifies the state of a subscription's payments. Currently, the only possible modifications are \"skipping\" and \"restoring\" payments.  Marking a payment as \"skipped\" means it will not be processed when its scheduled time arrives. \"Restoring\" a payment removes it from the list of payments to be skipped. 
+     * @param {String} id Subscription Id
+     * @param {module:model/UpdatePayments} updatePayments Modify payments of a subscription
+     * @param {module:api/SubscriptionsApi~subscriptionsIdPaymentsPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetSubscriptionsPaymentsResponse1}
+     */
+    this.subscriptionsIdPaymentsPut = function(id, updatePayments, callback) {
+      var postBody = updatePayments;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling subscriptionsIdPaymentsPut");
+      }
+
+      // verify the required parameter 'updatePayments' is set
+      if (updatePayments === undefined || updatePayments === null) {
+        throw new Error("Missing the required parameter 'updatePayments' when calling subscriptionsIdPaymentsPut");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdatePayments', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = GetSubscriptionsPaymentsResponse1;
+
+      //check isMLE for an api method 'this.subscriptionsIdPaymentsPut'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'subscriptionsIdPaymentsPut');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['subscriptionsIdPaymentsPut']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/rbs/v1/subscriptions/{id}/payments', 'PUT',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/rbs/v1/subscriptions/{id}/payments', 'PUT',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );

@@ -140,6 +140,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property company (base name: "company")', function() {
+      // uncomment below and update the code to test the property company
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationShipTo();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -158,6 +158,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property thirdPartyToken (base name: "thirdPartyToken")', function() {
+      // uncomment below and update the code to test the property thirdPartyToken
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantLimitedAcceptanceIndicator (base name: "merchantLimitedAcceptanceIndicator")', function() {
+      // uncomment below and update the code to test the property merchantLimitedAcceptanceIndicator
+      //var instane = new CyberSource.Ptsv2paymentsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

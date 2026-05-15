@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2paymentsOrderInformation);
     });
 
+    it('should have the property extensionDays (base name: "extensionDays")', function() {
+      // uncomment below and update the code to test the property extensionDays
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property amountDetails (base name: "amountDetails")', function() {
       // uncomment below and update the code to test the property amountDetails
       //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
@@ -88,6 +94,12 @@
 
     it('should have the property shippingDetails (base name: "shippingDetails")', function() {
       // uncomment below and update the code to test the property shippingDetails
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property digitalCurrency (base name: "digitalCurrency")', function() {
+      // uncomment below and update the code to test the property digitalCurrency
       //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
       //expect(instance).to.be();
     });

@@ -416,6 +416,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property scoreRequest (base name: "scoreRequest")', function() {
+      // uncomment below and update the code to test the property scoreRequest
+      //var instane = new CyberSource.Ptsv2paymentsConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

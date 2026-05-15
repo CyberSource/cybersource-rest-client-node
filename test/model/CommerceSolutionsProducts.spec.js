@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property agenticCommerce (base name: "agenticCommerce")', function() {
+      // uncomment below and update the code to test the property agenticCommerce
+      //var instane = new CyberSource.CommerceSolutionsProducts();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

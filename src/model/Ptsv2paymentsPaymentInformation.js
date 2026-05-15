@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCard', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationDirectDebit', 'model/Ptsv2paymentsPaymentInformationEWallet', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationInstrumentIdentifier', 'model/Ptsv2paymentsPaymentInformationLegacyToken', 'model/Ptsv2paymentsPaymentInformationOptions', 'model/Ptsv2paymentsPaymentInformationPaymentAccountReference', 'model/Ptsv2paymentsPaymentInformationPaymentInstrument', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsPaymentInformationSepa', 'model/Ptsv2paymentsPaymentInformationShippingAddress', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsPaymentInformationTokenizedPaymentMethod'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCard', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2paymentsPaymentInformationDirectDebit', 'model/Ptsv2paymentsPaymentInformationEWallet', 'model/Ptsv2paymentsPaymentInformationFluidData', 'model/Ptsv2paymentsPaymentInformationInstrumentIdentifier', 'model/Ptsv2paymentsPaymentInformationLegacyToken', 'model/Ptsv2paymentsPaymentInformationOptions', 'model/Ptsv2paymentsPaymentInformationPaymentAccountReference', 'model/Ptsv2paymentsPaymentInformationPaymentInstrument', 'model/Ptsv2paymentsPaymentInformationPaymentType', 'model/Ptsv2paymentsPaymentInformationSepa', 'model/Ptsv2paymentsPaymentInformationShippingAddress', 'model/Ptsv2paymentsPaymentInformationThirdPartyToken', 'model/Ptsv2paymentsPaymentInformationTokenizedCard', 'model/Ptsv2paymentsPaymentInformationTokenizedPaymentMethod'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCard'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationDirectDebit'), require('./Ptsv2paymentsPaymentInformationEWallet'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationInstrumentIdentifier'), require('./Ptsv2paymentsPaymentInformationLegacyToken'), require('./Ptsv2paymentsPaymentInformationOptions'), require('./Ptsv2paymentsPaymentInformationPaymentAccountReference'), require('./Ptsv2paymentsPaymentInformationPaymentInstrument'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsPaymentInformationSepa'), require('./Ptsv2paymentsPaymentInformationShippingAddress'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsPaymentInformationTokenizedPaymentMethod'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCard'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2paymentsPaymentInformationDirectDebit'), require('./Ptsv2paymentsPaymentInformationEWallet'), require('./Ptsv2paymentsPaymentInformationFluidData'), require('./Ptsv2paymentsPaymentInformationInstrumentIdentifier'), require('./Ptsv2paymentsPaymentInformationLegacyToken'), require('./Ptsv2paymentsPaymentInformationOptions'), require('./Ptsv2paymentsPaymentInformationPaymentAccountReference'), require('./Ptsv2paymentsPaymentInformationPaymentInstrument'), require('./Ptsv2paymentsPaymentInformationPaymentType'), require('./Ptsv2paymentsPaymentInformationSepa'), require('./Ptsv2paymentsPaymentInformationShippingAddress'), require('./Ptsv2paymentsPaymentInformationThirdPartyToken'), require('./Ptsv2paymentsPaymentInformationTokenizedCard'), require('./Ptsv2paymentsPaymentInformationTokenizedPaymentMethod'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCard, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationDirectDebit, root.CyberSource.Ptsv2paymentsPaymentInformationEWallet, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationInstrumentIdentifier, root.CyberSource.Ptsv2paymentsPaymentInformationLegacyToken, root.CyberSource.Ptsv2paymentsPaymentInformationOptions, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentAccountReference, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsPaymentInformationSepa, root.CyberSource.Ptsv2paymentsPaymentInformationShippingAddress, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedPaymentMethod);
+    root.CyberSource.Ptsv2paymentsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCard, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2paymentsPaymentInformationDirectDebit, root.CyberSource.Ptsv2paymentsPaymentInformationEWallet, root.CyberSource.Ptsv2paymentsPaymentInformationFluidData, root.CyberSource.Ptsv2paymentsPaymentInformationInstrumentIdentifier, root.CyberSource.Ptsv2paymentsPaymentInformationLegacyToken, root.CyberSource.Ptsv2paymentsPaymentInformationOptions, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentAccountReference, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentInstrument, root.CyberSource.Ptsv2paymentsPaymentInformationPaymentType, root.CyberSource.Ptsv2paymentsPaymentInformationSepa, root.CyberSource.Ptsv2paymentsPaymentInformationShippingAddress, root.CyberSource.Ptsv2paymentsPaymentInformationThirdPartyToken, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedCard, root.CyberSource.Ptsv2paymentsPaymentInformationTokenizedPaymentMethod);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCard, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationDirectDebit, Ptsv2paymentsPaymentInformationEWallet, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationInstrumentIdentifier, Ptsv2paymentsPaymentInformationLegacyToken, Ptsv2paymentsPaymentInformationOptions, Ptsv2paymentsPaymentInformationPaymentAccountReference, Ptsv2paymentsPaymentInformationPaymentInstrument, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsPaymentInformationSepa, Ptsv2paymentsPaymentInformationShippingAddress, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsPaymentInformationTokenizedPaymentMethod) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCard, Ptsv2paymentsPaymentInformationCustomer, Ptsv2paymentsPaymentInformationDirectDebit, Ptsv2paymentsPaymentInformationEWallet, Ptsv2paymentsPaymentInformationFluidData, Ptsv2paymentsPaymentInformationInstrumentIdentifier, Ptsv2paymentsPaymentInformationLegacyToken, Ptsv2paymentsPaymentInformationOptions, Ptsv2paymentsPaymentInformationPaymentAccountReference, Ptsv2paymentsPaymentInformationPaymentInstrument, Ptsv2paymentsPaymentInformationPaymentType, Ptsv2paymentsPaymentInformationSepa, Ptsv2paymentsPaymentInformationShippingAddress, Ptsv2paymentsPaymentInformationThirdPartyToken, Ptsv2paymentsPaymentInformationTokenizedCard, Ptsv2paymentsPaymentInformationTokenizedPaymentMethod) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -128,6 +130,12 @@
       if (data.hasOwnProperty('paymentAccountReference')) {
         obj['paymentAccountReference'] = Ptsv2paymentsPaymentInformationPaymentAccountReference.constructFromObject(data['paymentAccountReference']);
       }
+      if (data.hasOwnProperty('thirdPartyToken')) {
+        obj['thirdPartyToken'] = Ptsv2paymentsPaymentInformationThirdPartyToken.constructFromObject(data['thirdPartyToken']);
+      }
+      if (data.hasOwnProperty('merchantLimitedAcceptanceIndicator')) {
+        obj['merchantLimitedAcceptanceIndicator'] = ApiClient.convertToType(data['merchantLimitedAcceptanceIndicator'], 'String');
+      }
     }
     return obj;
   }
@@ -201,6 +209,15 @@
    * @member {module:model/Ptsv2paymentsPaymentInformationPaymentAccountReference} paymentAccountReference
    */
   exports.prototype['paymentAccountReference'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPaymentInformationThirdPartyToken} thirdPartyToken
+   */
+  exports.prototype['thirdPartyToken'] = undefined;
+  /**
+   * Mastercard One Credential merchant limited acceptance indicator. Mastercard One Credential connects multiple Mastercard payment methods and allows cardhollers to access various options and set payment preferences.  This field indicates which Mastercard One Credential funding PAN acceptance brands should NOT be assigned for this transaction.  This field flows in ISO field 34, DSID 02 tag DB, mapped to Mastercard Data Element (DE) 48, Sub element 02, Subfield 01.  Possible values: - `C`: Do not assign a Mastercard One Credential funding PAN containing the Mastercard Credit Acceptance Brand for this transaction - `D`: Do not assign a Mastercard One Credential funding PAN containing the Debit Mastercard Acceptance Brand for this transaction - `M`: Do not assign a Mastercard One Credential funding PAN containing the Maestro Acceptance Brand for this transaction  This field is supported for all flavors of Authorization request only. Will not be received in response.  #### Used by **Authorization Request** Optional field. 
+   * @member {String} merchantLimitedAcceptanceIndicator
+   */
+  exports.prototype['merchantLimitedAcceptanceIndicator'] = undefined;
 
 
 

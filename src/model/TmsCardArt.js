@@ -53,6 +53,8 @@
 
 
 
+
+
   };
 
   /**
@@ -68,6 +70,12 @@
 
       if (data.hasOwnProperty('foregroundColor')) {
         obj['foregroundColor'] = ApiClient.convertToType(data['foregroundColor'], 'String');
+      }
+      if (data.hasOwnProperty('backgroundColor')) {
+        obj['backgroundColor'] = ApiClient.convertToType(data['backgroundColor'], 'String');
+      }
+      if (data.hasOwnProperty('labelColor')) {
+        obj['labelColor'] = ApiClient.convertToType(data['labelColor'], 'String');
       }
       if (data.hasOwnProperty('combinedAsset')) {
         obj['combinedAsset'] = TmsCardArtCombinedAsset.constructFromObject(data['combinedAsset']);
@@ -90,6 +98,16 @@
    * @member {String} foregroundColor
    */
   exports.prototype['foregroundColor'] = undefined;
+  /**
+   * Card background color. 
+   * @member {String} backgroundColor
+   */
+  exports.prototype['backgroundColor'] = undefined;
+  /**
+   * Card label color. 
+   * @member {String} labelColor
+   */
+  exports.prototype['labelColor'] = undefined;
   /**
    * @member {module:model/TmsCardArtCombinedAsset} combinedAsset
    */

@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property deviceInformation (base name: "deviceInformation")', function() {
+      // uncomment below and update the code to test the property deviceInformation
+      //var instane = new CyberSource.AuthReversalRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property processorInformation (base name: "processorInformation")', function() {
       // uncomment below and update the code to test the property processorInformation
       //var instane = new CyberSource.AuthReversalRequest();

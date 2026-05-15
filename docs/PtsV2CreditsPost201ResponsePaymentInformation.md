@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **paymentInstrument** | [**Ptsv2paymentsPaymentInformationPaymentInstrument**](Ptsv2paymentsPaymentInformationPaymentInstrument.md) |  | [optional] 
 **instrumentIdentifier** | [**PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier**](PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier.md) |  | [optional] 
 **shippingAddress** | [**Ptsv2paymentsPaymentInformationShippingAddress**](Ptsv2paymentsPaymentInformationShippingAddress.md) |  | [optional] 
+**accountFeatures** | [**PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures**](PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures.md) |  | [optional] 
 
 

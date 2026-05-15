@@ -167,7 +167,7 @@
       var returnType = GetSubscriptionResponse1;
 
       //check isMLE for an api method 'this.getFollowOnSubscription'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getFollowOnSubscription');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getFollowOnSubscription']);
 

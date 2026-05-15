@@ -68,6 +68,8 @@
 
 
 
+
+
   };
 
   /**
@@ -83,6 +85,9 @@
 
       if (data.hasOwnProperty('actionList')) {
         obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
+      }
+      if (data.hasOwnProperty('actionTokenTypes')) {
+        obj['actionTokenTypes'] = ApiClient.convertToType(data['actionTokenTypes'], ['String']);
       }
       if (data.hasOwnProperty('commerceIndicator')) {
         obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
@@ -144,6 +149,9 @@
       if (data.hasOwnProperty('merchantVerificationValue')) {
         obj['merchantVerificationValue'] = ApiClient.convertToType(data['merchantVerificationValue'], 'String');
       }
+      if (data.hasOwnProperty('transactionTypeIndicator')) {
+        obj['transactionTypeIndicator'] = ApiClient.convertToType(data['transactionTypeIndicator'], 'String');
+      }
     }
     return obj;
   }
@@ -153,6 +161,11 @@
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
+  /**
+   * CyberSource tokens types you are performing a create on. If not supplied the default token type for the merchants token vault will be used.  Valid values: - customer - paymentInstrument - instrumentIdentifier - shippingAddress 
+   * @member {Array.<String>} actionTokenTypes
+   */
+  exports.prototype['actionTokenTypes'] = undefined;
   /**
    * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value   #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as \"moto\" 
    * @member {String} commerceIndicator
@@ -246,6 +259,11 @@
    * @member {String} merchantVerificationValue
    */
   exports.prototype['merchantVerificationValue'] = undefined;
+  /**
+   * This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities 
+   * @member {String} transactionTypeIndicator
+   */
+  exports.prototype['transactionTypeIndicator'] = undefined;
 
 
 

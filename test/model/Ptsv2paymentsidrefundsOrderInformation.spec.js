@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property digitalCurrency (base name: "digitalCurrency")', function() {
+      // uncomment below and update the code to test the property digitalCurrency
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsOrderInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

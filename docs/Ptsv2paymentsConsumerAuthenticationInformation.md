@@ -63,5 +63,6 @@ Name | Type | Description | Notes
 **signedPares** | **String** | Payer authentication result (PARes) message returned by the card-issuing bank. If you need to show proof of enrollment checking, you may need to decrypt and parse the string for the information required by the payment card company. For more information, see \"Storing Payer Authentication Data,\" page 160. Important The value is in base64. You must remove all carriage returns and line feeds before adding the PARes to the request.  | [optional] 
 **acsReferenceNumber** | **String** | Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval. | [optional] 
 **dsReferenceNumber** | **String** | EMVCo-assigned unique identifier. This field is required in Cardholder Initiated 3DS fully authenticated mada transactions. When you request the payer authentication and authorization services separately, get the value for this field from the payerAuthEnrollReply_dsReferenceNumber or payerAuthValidateReply_dsReferenceNumber response field.  | [optional] 
+**scoreRequest** | **Number** | Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score | [optional] 
 
 

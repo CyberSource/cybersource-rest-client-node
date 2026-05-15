@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property supplementaryTransactionData (base name: "supplementaryTransactionData")', function() {
+      // uncomment below and update the code to test the property supplementaryTransactionData
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cedpVerifiedIndicator (base name: "cedpVerifiedIndicator")', function() {
+      // uncomment below and update the code to test the property cedpVerifiedIndicator
+      //var instane = new CyberSource.Ptsv2paymentsidcapturesProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

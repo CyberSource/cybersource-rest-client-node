@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property actionTokenTypes (base name: "actionTokenTypes")', function() {
+      // uncomment below and update the code to test the property actionTokenTypes
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property commerceIndicator (base name: "commerceIndicator")', function() {
       // uncomment below and update the code to test the property commerceIndicator
       //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
@@ -178,6 +184,12 @@
 
     it('should have the property merchantVerificationValue (base name: "merchantVerificationValue")', function() {
       // uncomment below and update the code to test the property merchantVerificationValue
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionTypeIndicator (base name: "transactionTypeIndicator")', function() {
+      // uncomment below and update the code to test the property transactionTypeIndicator
       //var instane = new CyberSource.Ptsv2creditsProcessingInformation();
       //expect(instance).to.be();
     });

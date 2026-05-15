@@ -100,11 +100,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2015 saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts)
+> InlineResponse2015 saveSymEgressKey(opts)
 
 Create Webhook Security Keys
 
@@ -116,12 +116,10 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.CreateNewWebhooksApi();
 
-var vCSenderOrganizationId = "vCSenderOrganizationId_example"; // String | Sender organization id
-
-var vCPermissions = "vCPermissions_example"; // String | Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
-
 var opts = { 
   'vCCorrelationId': "vCCorrelationId_example", // String | A globally unique id associated with your request
+  'vCSenderOrganizationId': "vCSenderOrganizationId_example", // String | Sender organization id
+  'vCPermissions': "vCPermissions_example", // String | Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
   'saveSymEgressKey': new CyberSource.SaveSymEgressKey() // SaveSymEgressKey | Provide egress Symmetric key information to save (create or store or refresh)
 };
 
@@ -132,16 +130,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.saveSymEgressKey(vCSenderOrganizationId, vCPermissions, opts, callback);
+apiInstance.saveSymEgressKey(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vCSenderOrganizationId** | **String**| Sender organization id | 
- **vCPermissions** | **String**| Encoded user permissions returned by the CGK, for the entity user who initiated the boarding | 
  **vCCorrelationId** | **String**| A globally unique id associated with your request | [optional] 
+ **vCSenderOrganizationId** | **String**| Sender organization id | [optional] 
+ **vCPermissions** | **String**| Encoded user permissions returned by the CGK, for the entity user who initiated the boarding | [optional] 
  **saveSymEgressKey** | [**SaveSymEgressKey**](SaveSymEgressKey.md)| Provide egress Symmetric key information to save (create or store or refresh) | [optional] 
 
 ### Return type

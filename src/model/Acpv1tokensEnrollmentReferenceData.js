@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensEnrollmentReferenceData</code>.
-   * Enrollment Reference Data.
+   * Enrollment Reference Data. Links the enrollment to an existing token reference.
    * @alias module:model/Acpv1tokensEnrollmentReferenceData
    * @class
    * @param enrollmentReferenceType {String} Type of Enrollment Reference Data.

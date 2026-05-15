@@ -631,6 +631,12 @@ const agentPool = new Map();
       headerParams['Authorization'] = token;
       // this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
     }
+    headerParams['v-c-sdk-telemetry-merchant-id'] = this.merchantConfig.getMerchantID();
+    this.logger.info('v-c-sdk-telemetry-merchant-id : ' + this.merchantConfig.getMerchantID());
+    if(this.merchantConfig.isSDK()) {
+      headerParams['v-c-sdk-telemetry-mcp'] = true;
+      this.logger.info('v-c-sdk-telemetry-mcp : ' + true);
+    }
 
     return headerParams;
   }

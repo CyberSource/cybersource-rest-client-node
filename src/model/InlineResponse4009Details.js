@@ -73,12 +73,12 @@
   }
 
   /**
-   * This is the flattened JSON object field name/path that is either missing or invalid. 
+   * This is the flattened JSON object field name/path that is either missing or invalid.
    * @member {String} field
    */
   exports.prototype['field'] = undefined;
   /**
-   * Possible reasons for the error.  Possible values:   - `MISSING_FIELD`   - `INVALID_DATA` 
+   * Possible reasons for the error.
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

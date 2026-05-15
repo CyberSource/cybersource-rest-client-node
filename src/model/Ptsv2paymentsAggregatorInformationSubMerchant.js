@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -103,6 +104,9 @@
       }
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('merchantCategoryCode')) {
+        obj['merchantCategoryCode'] = ApiClient.convertToType(data['merchantCategoryCode'], 'Number');
       }
     }
     return obj;
@@ -163,6 +167,10 @@
    * @member {String} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
+  /**
+   * @member {Number} merchantCategoryCode
+   */
+  exports.prototype['merchantCategoryCode'] = undefined;
 
 
 

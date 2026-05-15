@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **eci** | **String** | Raw Electronic Commerce Indicator provided by the card association with the result of the cardholder authentication.  | [optional] 
 **requestorId** | **String** | 11-digit identifier that uniquely identifies the Token Requestor.  | [optional] 
 **paymentAccountReference** | **String** | Payment account reference.  | [optional] 
+**applicationTransactionCounter** | **String** | A sequence counter used as part of the input to the TAVV cryptogram and it is incremented for each cryptogram generation. This field is only returned for Visa network tokens.  | [optional] 
 **card** | [**Tmsv2TokenizedCardCard**](Tmsv2TokenizedCardCard.md) |  | [optional] 
+**verificationResults** | [**Tmsv2TokenizedCardVerificationResults**](Tmsv2TokenizedCardVerificationResults.md) |  | [optional] 
 
 

@@ -94,6 +94,7 @@
 
 
 
+
   };
 
   /**
@@ -247,6 +248,9 @@
       }
       if (data.hasOwnProperty('network')) {
         obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
+      }
+      if (data.hasOwnProperty('cedpVerifiedIndicator')) {
+        obj['cedpVerifiedIndicator'] = ApiClient.convertToType(data['cedpVerifiedIndicator'], 'String');
       }
     }
     return obj;
@@ -462,7 +466,7 @@
    */
   exports.prototype['orderId'] = undefined;
   /**
-   * The order status.  Possible values: - `CREATED` - `VOIDED` - `COMPLETED` - `PAYER_ACTION_REQUIRED` 
+   * The order status.  Possible values: - `CREATED` - `VOIDED` - `COMPLETED` - `PAYER_ACTION_REQUIRED` - `STEP_UP_REQUIRED` 
    * @member {String} orderStatus
    */
   exports.prototype['orderStatus'] = undefined;
@@ -475,6 +479,11 @@
    * @member {module:model/Ptsv2paymentsProcessorInformationReversalNetwork} network
    */
   exports.prototype['network'] = undefined;
+  /**
+   * Merchant Commercial Enhanced Data Program (CEDP) verified indicator received in authorization response messages for U.S. domestic transactions containing a credential for the commercial credit products.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - `Y`: Merchant CEDP verified  This field is for internal processing only (TC33A usage) and is not sent back to the merchant.  #### Used by **Authorization Response** Response field only. 
+   * @member {String} cedpVerifiedIndicator
+   */
+  exports.prototype['cedpVerifiedIndicator'] = undefined;
 
 
 

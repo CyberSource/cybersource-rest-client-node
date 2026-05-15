@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2TokenizedCardCard', 'model/Tmsv2TokenizedCardMetadata'], factory);
+    define(['ApiClient', 'model/Tmsv2TokenizedCardCard', 'model/Tmsv2TokenizedCardMetadata', 'model/Tmsv2TokenizedCardVerificationResults'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2TokenizedCardCard'), require('./Tmsv2TokenizedCardMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./Tmsv2TokenizedCardCard'), require('./Tmsv2TokenizedCardMetadata'), require('./Tmsv2TokenizedCardVerificationResults'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2TokenizedCard = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2TokenizedCardCard, root.CyberSource.Tmsv2TokenizedCardMetadata);
+    root.CyberSource.Tmsv2TokenizedCard = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2TokenizedCardCard, root.CyberSource.Tmsv2TokenizedCardMetadata, root.CyberSource.Tmsv2TokenizedCardVerificationResults);
   }
-}(this, function(ApiClient, Tmsv2TokenizedCardCard, Tmsv2TokenizedCardMetadata) {
+}(this, function(ApiClient, Tmsv2TokenizedCardCard, Tmsv2TokenizedCardMetadata, Tmsv2TokenizedCardVerificationResults) {
   'use strict';
 
 
@@ -46,6 +46,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -126,8 +128,14 @@
       if (data.hasOwnProperty('paymentAccountReference')) {
         obj['paymentAccountReference'] = ApiClient.convertToType(data['paymentAccountReference'], 'String');
       }
+      if (data.hasOwnProperty('applicationTransactionCounter')) {
+        obj['applicationTransactionCounter'] = ApiClient.convertToType(data['applicationTransactionCounter'], 'String');
+      }
       if (data.hasOwnProperty('card')) {
         obj['card'] = Tmsv2TokenizedCardCard.constructFromObject(data['card']);
+      }
+      if (data.hasOwnProperty('verificationResults')) {
+        obj['verificationResults'] = Tmsv2TokenizedCardVerificationResults.constructFromObject(data['verificationResults']);
       }
       if (data.hasOwnProperty('metadata')) {
         obj['metadata'] = Tmsv2TokenizedCardMetadata.constructFromObject(data['metadata']);
@@ -217,9 +225,18 @@
    */
   exports.prototype['paymentAccountReference'] = undefined;
   /**
+   * A sequence counter used as part of the input to the TAVV cryptogram and it is incremented for each cryptogram generation. This field is only returned for Visa network tokens. 
+   * @member {String} applicationTransactionCounter
+   */
+  exports.prototype['applicationTransactionCounter'] = undefined;
+  /**
    * @member {module:model/Tmsv2TokenizedCardCard} card
    */
   exports.prototype['card'] = undefined;
+  /**
+   * @member {module:model/Tmsv2TokenizedCardVerificationResults} verificationResults
+   */
+  exports.prototype['verificationResults'] = undefined;
   /**
    * @member {module:model/Tmsv2TokenizedCardMetadata} metadata
    */

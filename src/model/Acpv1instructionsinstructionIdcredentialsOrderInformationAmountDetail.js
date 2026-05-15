@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1instructionsinstructionIdcredentialsOrderInformationAmountDetail</code>.
-   * Amount Detail data.
+   * Amount Detail data. Breaks down the total transaction amount into components.
    * @alias module:model/Acpv1instructionsinstructionIdcredentialsOrderInformationAmountDetail
    * @class
    * @param totalAmount {String} The final amount that the customer needs to pay or paid.

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Bavsv1accountvalidationsPaymentInformationBank'], factory);
+    define(['ApiClient', 'model/Bavsv1accountvalidationsPaymentInformationBank', 'model/Bavsv1accountvalidationsPaymentInformationCustomer', 'model/Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier', 'model/Bavsv1accountvalidationsPaymentInformationPaymentInstrument'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Bavsv1accountvalidationsPaymentInformationBank'));
+    module.exports = factory(require('../ApiClient'), require('./Bavsv1accountvalidationsPaymentInformationBank'), require('./Bavsv1accountvalidationsPaymentInformationCustomer'), require('./Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier'), require('./Bavsv1accountvalidationsPaymentInformationPaymentInstrument'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Bavsv1accountvalidationsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Bavsv1accountvalidationsPaymentInformationBank);
+    root.CyberSource.Bavsv1accountvalidationsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Bavsv1accountvalidationsPaymentInformationBank, root.CyberSource.Bavsv1accountvalidationsPaymentInformationCustomer, root.CyberSource.Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier, root.CyberSource.Bavsv1accountvalidationsPaymentInformationPaymentInstrument);
   }
-}(this, function(ApiClient, Bavsv1accountvalidationsPaymentInformationBank) {
+}(this, function(ApiClient, Bavsv1accountvalidationsPaymentInformationBank, Bavsv1accountvalidationsPaymentInformationCustomer, Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier, Bavsv1accountvalidationsPaymentInformationPaymentInstrument) {
   'use strict';
 
 
@@ -41,14 +41,17 @@
 
   /**
    * Constructs a new <code>Bavsv1accountvalidationsPaymentInformation</code>.
+   * Payment information for account validation. Either tokenized payment data or bank account details must be provided, but not both. When token information is provided, the bank object becomes optional. Only one token type may be included per request. 
    * @alias module:model/Bavsv1accountvalidationsPaymentInformation
    * @class
-   * @param bank {module:model/Bavsv1accountvalidationsPaymentInformationBank} 
    */
-  var exports = function(bank) {
+  var exports = function() {
     var _this = this;
 
-    _this['bank'] = bank;
+
+
+
+
   };
 
   /**
@@ -62,6 +65,15 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('customer')) {
+        obj['customer'] = Bavsv1accountvalidationsPaymentInformationCustomer.constructFromObject(data['customer']);
+      }
+      if (data.hasOwnProperty('paymentInstrument')) {
+        obj['paymentInstrument'] = Bavsv1accountvalidationsPaymentInformationPaymentInstrument.constructFromObject(data['paymentInstrument']);
+      }
+      if (data.hasOwnProperty('instrumentIdentifier')) {
+        obj['instrumentIdentifier'] = Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
+      }
       if (data.hasOwnProperty('bank')) {
         obj['bank'] = Bavsv1accountvalidationsPaymentInformationBank.constructFromObject(data['bank']);
       }
@@ -69,6 +81,18 @@
     return obj;
   }
 
+  /**
+   * @member {module:model/Bavsv1accountvalidationsPaymentInformationCustomer} customer
+   */
+  exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/Bavsv1accountvalidationsPaymentInformationPaymentInstrument} paymentInstrument
+   */
+  exports.prototype['paymentInstrument'] = undefined;
+  /**
+   * @member {module:model/Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier} instrumentIdentifier
+   */
+  exports.prototype['instrumentIdentifier'] = undefined;
   /**
    * @member {module:model/Bavsv1accountvalidationsPaymentInformationBank} bank
    */

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2billingagreementsOrderInformationBillTo', 'model/Ptsv2paymentsidreversalsReversalInformationAmountDetails'], factory);
+    define(['ApiClient', 'model/Ptsv2billingagreementsOrderInformationAmountDetails', 'model/Ptsv2billingagreementsOrderInformationBillTo', 'model/Ptsv2billingagreementsOrderInformationInvoiceDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsOrderInformationBillTo'), require('./Ptsv2paymentsidreversalsReversalInformationAmountDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsOrderInformationAmountDetails'), require('./Ptsv2billingagreementsOrderInformationBillTo'), require('./Ptsv2billingagreementsOrderInformationInvoiceDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2billingagreementsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsOrderInformationBillTo, root.CyberSource.Ptsv2paymentsidreversalsReversalInformationAmountDetails);
+    root.CyberSource.Ptsv2billingagreementsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsOrderInformationAmountDetails, root.CyberSource.Ptsv2billingagreementsOrderInformationBillTo, root.CyberSource.Ptsv2billingagreementsOrderInformationInvoiceDetails);
   }
-}(this, function(ApiClient, Ptsv2billingagreementsOrderInformationBillTo, Ptsv2paymentsidreversalsReversalInformationAmountDetails) {
+}(this, function(ApiClient, Ptsv2billingagreementsOrderInformationAmountDetails, Ptsv2billingagreementsOrderInformationBillTo, Ptsv2billingagreementsOrderInformationInvoiceDetails) {
   'use strict';
 
 
@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -63,7 +64,10 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amountDetails')) {
-        obj['amountDetails'] = Ptsv2paymentsidreversalsReversalInformationAmountDetails.constructFromObject(data['amountDetails']);
+        obj['amountDetails'] = Ptsv2billingagreementsOrderInformationAmountDetails.constructFromObject(data['amountDetails']);
+      }
+      if (data.hasOwnProperty('invoiceDetails')) {
+        obj['invoiceDetails'] = Ptsv2billingagreementsOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
       }
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = Ptsv2billingagreementsOrderInformationBillTo.constructFromObject(data['billTo']);
@@ -73,9 +77,13 @@
   }
 
   /**
-   * @member {module:model/Ptsv2paymentsidreversalsReversalInformationAmountDetails} amountDetails
+   * @member {module:model/Ptsv2billingagreementsOrderInformationAmountDetails} amountDetails
    */
   exports.prototype['amountDetails'] = undefined;
+  /**
+   * @member {module:model/Ptsv2billingagreementsOrderInformationInvoiceDetails} invoiceDetails
+   */
+  exports.prototype['invoiceDetails'] = undefined;
   /**
    * @member {module:model/Ptsv2billingagreementsOrderInformationBillTo} billTo
    */

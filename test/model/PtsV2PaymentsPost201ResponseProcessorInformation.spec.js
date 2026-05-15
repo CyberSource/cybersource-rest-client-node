@@ -338,6 +338,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cedpVerifiedIndicator (base name: "cedpVerifiedIndicator")', function() {
+      // uncomment below and update the code to test the property cedpVerifiedIndicator
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

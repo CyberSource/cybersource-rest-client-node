@@ -62,6 +62,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property freightAmount (base name: "freightAmount")', function() {
+      // uncomment below and update the code to test the property freightAmount
+      //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dutyAmount (base name: "dutyAmount")', function() {
+      // uncomment below and update the code to test the property dutyAmount
+      //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property discountAmount (base name: "discountAmount")', function() {
+      // uncomment below and update the code to test the property discountAmount
+      //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxAppliedAfterDiscount (base name: "taxAppliedAfterDiscount")', function() {
+      // uncomment below and update the code to test the property taxAppliedAfterDiscount
+      //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxAppliedLevel (base name: "taxAppliedLevel")', function() {
+      // uncomment below and update the code to test the property taxAppliedLevel
+      //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property currency (base name: "currency")', function() {
       // uncomment below and update the code to test the property currency
       //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
@@ -70,12 +100,6 @@
 
     it('should have the property surcharge (base name: "surcharge")', function() {
       // uncomment below and update the code to test the property surcharge
-      //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property discountAmount (base name: "discountAmount")', function() {
-      // uncomment below and update the code to test the property discountAmount
       //var instane = new CyberSource.Ucv1sessionsDataOrderInformationAmountDetails();
       //expect(instance).to.be();
     });

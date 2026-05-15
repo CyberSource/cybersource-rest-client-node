@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsMerchantInformation', 'model/TmsPaymentInstrumentProcessingInfo', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata'], factory);
+    define(['ApiClient', 'model/TmsMerchantInformation', 'model/TmsPaymentInstrumentProcessingInfo', 'model/Tmsv1paymentinstrumentsEmbedded', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsMerchantInformation'), require('./TmsPaymentInstrumentProcessingInfo'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./TmsMerchantInformation'), require('./TmsPaymentInstrumentProcessingInfo'), require('./Tmsv1paymentinstrumentsEmbedded'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostCustomerPaymentInstrumentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.TmsMerchantInformation, root.CyberSource.TmsPaymentInstrumentProcessingInfo, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata);
+    root.CyberSource.PostCustomerPaymentInstrumentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.TmsMerchantInformation, root.CyberSource.TmsPaymentInstrumentProcessingInfo, root.CyberSource.Tmsv1paymentinstrumentsEmbedded, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata);
   }
-}(this, function(ApiClient, TmsMerchantInformation, TmsPaymentInstrumentProcessingInfo, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata) {
+}(this, function(ApiClient, TmsMerchantInformation, TmsPaymentInstrumentProcessingInfo, Tmsv1paymentinstrumentsEmbedded, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata) {
   'use strict';
 
 
@@ -118,7 +118,7 @@
         obj['metadata'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata.constructFromObject(data['metadata']);
       }
       if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded.constructFromObject(data['_embedded']);
+        obj['_embedded'] = Tmsv1paymentinstrumentsEmbedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
@@ -186,7 +186,7 @@
    */
   exports.prototype['metadata'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded} _embedded
+   * @member {module:model/Tmsv1paymentinstrumentsEmbedded} _embedded
    */
   exports.prototype['_embedded'] = undefined;
 

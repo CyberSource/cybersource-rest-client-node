@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2billingagreementsPaymentInformationBankAccount'], factory);
+    define(['ApiClient', 'model/Ptsv2billingagreementsPaymentInformationBankAccount', 'model/Ptsv2billingagreementsPaymentInformationBankAccountAlias'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsPaymentInformationBankAccount'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2billingagreementsPaymentInformationBankAccount'), require('./Ptsv2billingagreementsPaymentInformationBankAccountAlias'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2billingagreementsPaymentInformationBank = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsPaymentInformationBankAccount);
+    root.CyberSource.Ptsv2billingagreementsPaymentInformationBank = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2billingagreementsPaymentInformationBankAccount, root.CyberSource.Ptsv2billingagreementsPaymentInformationBankAccountAlias);
   }
-}(this, function(ApiClient, Ptsv2billingagreementsPaymentInformationBankAccount) {
+}(this, function(ApiClient, Ptsv2billingagreementsPaymentInformationBankAccount, Ptsv2billingagreementsPaymentInformationBankAccountAlias) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('scheme')) {
         obj['scheme'] = ApiClient.convertToType(data['scheme'], 'String');
       }
+      if (data.hasOwnProperty('accountAlias')) {
+        obj['accountAlias'] = Ptsv2billingagreementsPaymentInformationBankAccountAlias.constructFromObject(data['accountAlias']);
+      }
     }
     return obj;
   }
@@ -99,6 +103,10 @@
    * @member {String} scheme
    */
   exports.prototype['scheme'] = undefined;
+  /**
+   * @member {module:model/Ptsv2billingagreementsPaymentInformationBankAccountAlias} accountAlias
+   */
+  exports.prototype['accountAlias'] = undefined;
 
 
 

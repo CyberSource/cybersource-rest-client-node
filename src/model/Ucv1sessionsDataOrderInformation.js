@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ucv1sessionsDataOrderInformationAmountDetails', 'model/Ucv1sessionsDataOrderInformationBillTo', 'model/Upv1capturecontextsDataOrderInformationInvoiceDetails', 'model/Upv1capturecontextsDataOrderInformationLineItems', 'model/Upv1capturecontextsDataOrderInformationShipTo'], factory);
+    define(['ApiClient', 'model/Ucv1sessionsDataOrderInformationAmountDetails', 'model/Ucv1sessionsDataOrderInformationBillTo', 'model/Ucv1sessionsDataOrderInformationInvoiceDetails', 'model/Ucv1sessionsDataOrderInformationLineItems', 'model/Ucv1sessionsDataOrderInformationShippingDetails', 'model/Upv1capturecontextsDataOrderInformationShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataOrderInformationAmountDetails'), require('./Ucv1sessionsDataOrderInformationBillTo'), require('./Upv1capturecontextsDataOrderInformationInvoiceDetails'), require('./Upv1capturecontextsDataOrderInformationLineItems'), require('./Upv1capturecontextsDataOrderInformationShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataOrderInformationAmountDetails'), require('./Ucv1sessionsDataOrderInformationBillTo'), require('./Ucv1sessionsDataOrderInformationInvoiceDetails'), require('./Ucv1sessionsDataOrderInformationLineItems'), require('./Ucv1sessionsDataOrderInformationShippingDetails'), require('./Upv1capturecontextsDataOrderInformationShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ucv1sessionsDataOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataOrderInformationAmountDetails, root.CyberSource.Ucv1sessionsDataOrderInformationBillTo, root.CyberSource.Upv1capturecontextsDataOrderInformationInvoiceDetails, root.CyberSource.Upv1capturecontextsDataOrderInformationLineItems, root.CyberSource.Upv1capturecontextsDataOrderInformationShipTo);
+    root.CyberSource.Ucv1sessionsDataOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataOrderInformationAmountDetails, root.CyberSource.Ucv1sessionsDataOrderInformationBillTo, root.CyberSource.Ucv1sessionsDataOrderInformationInvoiceDetails, root.CyberSource.Ucv1sessionsDataOrderInformationLineItems, root.CyberSource.Ucv1sessionsDataOrderInformationShippingDetails, root.CyberSource.Upv1capturecontextsDataOrderInformationShipTo);
   }
-}(this, function(ApiClient, Ucv1sessionsDataOrderInformationAmountDetails, Ucv1sessionsDataOrderInformationBillTo, Upv1capturecontextsDataOrderInformationInvoiceDetails, Upv1capturecontextsDataOrderInformationLineItems, Upv1capturecontextsDataOrderInformationShipTo) {
+}(this, function(ApiClient, Ucv1sessionsDataOrderInformationAmountDetails, Ucv1sessionsDataOrderInformationBillTo, Ucv1sessionsDataOrderInformationInvoiceDetails, Ucv1sessionsDataOrderInformationLineItems, Ucv1sessionsDataOrderInformationShippingDetails, Upv1capturecontextsDataOrderInformationShipTo) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -75,10 +76,13 @@
         obj['shipTo'] = Upv1capturecontextsDataOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('lineItems')) {
-        obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Upv1capturecontextsDataOrderInformationLineItems]);
+        obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Ucv1sessionsDataOrderInformationLineItems]);
       }
       if (data.hasOwnProperty('invoiceDetails')) {
-        obj['invoiceDetails'] = Upv1capturecontextsDataOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
+        obj['invoiceDetails'] = Ucv1sessionsDataOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
+      }
+      if (data.hasOwnProperty('shippingDetails')) {
+        obj['shippingDetails'] = Ucv1sessionsDataOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
       }
     }
     return obj;
@@ -97,13 +101,17 @@
    */
   exports.prototype['shipTo'] = undefined;
   /**
-   * @member {Array.<module:model/Upv1capturecontextsDataOrderInformationLineItems>} lineItems
+   * @member {Array.<module:model/Ucv1sessionsDataOrderInformationLineItems>} lineItems
    */
   exports.prototype['lineItems'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsDataOrderInformationInvoiceDetails} invoiceDetails
+   * @member {module:model/Ucv1sessionsDataOrderInformationInvoiceDetails} invoiceDetails
    */
   exports.prototype['invoiceDetails'] = undefined;
+  /**
+   * @member {module:model/Ucv1sessionsDataOrderInformationShippingDetails} shippingDetails
+   */
+  exports.prototype['shippingDetails'] = undefined;
 
 
 

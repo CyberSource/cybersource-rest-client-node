@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1tokensConsumerIdentity</code>.
-   * Consumer Identity data.
+   * Consumer Identity data. Identifies the consumer using an email address or phone number.
    * @alias module:model/Acpv1tokensConsumerIdentity
    * @class
    * @param identityType {String} Type of Consumer Identity transmitted or collected.   Possible values:     - `EMAIL_ADDRESS`   - `MOBILE_PHONE_NUMBER` 

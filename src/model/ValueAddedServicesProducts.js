@@ -50,6 +50,8 @@
 
 
 
+
+
   };
 
   /**
@@ -72,6 +74,12 @@
       if (data.hasOwnProperty('bankAccountValidation')) {
         obj['bankAccountValidation'] = PaymentsProductsTax.constructFromObject(data['bankAccountValidation']);
       }
+      if (data.hasOwnProperty('flexapi')) {
+        obj['flexapi'] = PaymentsProductsTax.constructFromObject(data['flexapi']);
+      }
+      if (data.hasOwnProperty('webhooks')) {
+        obj['webhooks'] = PaymentsProductsTax.constructFromObject(data['webhooks']);
+      }
     }
     return obj;
   }
@@ -88,6 +96,14 @@
    * @member {module:model/PaymentsProductsTax} bankAccountValidation
    */
   exports.prototype['bankAccountValidation'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} flexapi
+   */
+  exports.prototype['flexapi'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} webhooks
+   */
+  exports.prototype['webhooks'] = undefined;
 
 
 

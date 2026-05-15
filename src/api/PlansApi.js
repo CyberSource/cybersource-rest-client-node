@@ -160,7 +160,7 @@
       var returnType = CreatePlanResponse;
 
       //check isMLE for an api method 'this.createPlan'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPlan');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPlan']);
 

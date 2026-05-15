@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property buyerInformation (base name: "buyerInformation")', function() {
+      // uncomment below and update the code to test the property buyerInformation
+      //var instane = new CyberSource.PullFundsRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property aggregatorInformation (base name: "aggregatorInformation")', function() {
       // uncomment below and update the code to test the property aggregatorInformation
       //var instane = new CyberSource.PullFundsRequest();

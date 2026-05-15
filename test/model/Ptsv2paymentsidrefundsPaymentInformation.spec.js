@@ -128,6 +128,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property thirdPartyToken (base name: "thirdPartyToken")', function() {
+      // uncomment below and update the code to test the property thirdPartyToken
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property initiationChannel (base name: "initiationChannel")', function() {
+      // uncomment below and update the code to test the property initiationChannel
+      //var instane = new CyberSource.Ptsv2paymentsidrefundsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

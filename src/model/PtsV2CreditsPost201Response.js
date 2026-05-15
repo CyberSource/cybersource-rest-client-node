@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2CreditsPost201ResponseCreditAmountDetails', 'model/PtsV2CreditsPost201ResponsePaymentInformation', 'model/PtsV2CreditsPost201ResponseProcessingInformation', 'model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsRefundPost201ResponseErrorInformation', 'model/PtsV2PaymentsRefundPost201ResponseLinks', 'model/PtsV2PaymentsRefundPost201ResponseOrderInformation', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformation'], factory);
+    define(['ApiClient', 'model/PtsV2CreditsPost201ResponseCreditAmountDetails', 'model/PtsV2CreditsPost201ResponseMerchantInformation', 'model/PtsV2CreditsPost201ResponsePaymentAccountInformation', 'model/PtsV2CreditsPost201ResponsePaymentInformation', 'model/PtsV2CreditsPost201ResponseProcessingInformation', 'model/PtsV2CreditsPost201ResponseTokenInformation', 'model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation', 'model/PtsV2PaymentsPost201ResponseClearingInformation', 'model/PtsV2PaymentsPost201ResponseClientReferenceInformation', 'model/PtsV2PaymentsRefundPost201ResponseErrorInformation', 'model/PtsV2PaymentsRefundPost201ResponseLinks', 'model/PtsV2PaymentsRefundPost201ResponseOrderInformation', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2CreditsPost201ResponseCreditAmountDetails'), require('./PtsV2CreditsPost201ResponsePaymentInformation'), require('./PtsV2CreditsPost201ResponseProcessingInformation'), require('./PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsRefundPost201ResponseErrorInformation'), require('./PtsV2PaymentsRefundPost201ResponseLinks'), require('./PtsV2PaymentsRefundPost201ResponseOrderInformation'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2CreditsPost201ResponseCreditAmountDetails'), require('./PtsV2CreditsPost201ResponseMerchantInformation'), require('./PtsV2CreditsPost201ResponsePaymentAccountInformation'), require('./PtsV2CreditsPost201ResponsePaymentInformation'), require('./PtsV2CreditsPost201ResponseProcessingInformation'), require('./PtsV2CreditsPost201ResponseTokenInformation'), require('./PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'), require('./PtsV2PaymentsPost201ResponseClearingInformation'), require('./PtsV2PaymentsPost201ResponseClientReferenceInformation'), require('./PtsV2PaymentsRefundPost201ResponseErrorInformation'), require('./PtsV2PaymentsRefundPost201ResponseLinks'), require('./PtsV2PaymentsRefundPost201ResponseOrderInformation'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2CreditsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2CreditsPost201ResponseCreditAmountDetails, root.CyberSource.PtsV2CreditsPost201ResponsePaymentInformation, root.CyberSource.PtsV2CreditsPost201ResponseProcessingInformation, root.CyberSource.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseLinks, root.CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation);
+    root.CyberSource.PtsV2CreditsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2CreditsPost201ResponseCreditAmountDetails, root.CyberSource.PtsV2CreditsPost201ResponseMerchantInformation, root.CyberSource.PtsV2CreditsPost201ResponsePaymentAccountInformation, root.CyberSource.PtsV2CreditsPost201ResponsePaymentInformation, root.CyberSource.PtsV2CreditsPost201ResponseProcessingInformation, root.CyberSource.PtsV2CreditsPost201ResponseTokenInformation, root.CyberSource.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, root.CyberSource.PtsV2PaymentsPost201ResponseClearingInformation, root.CyberSource.PtsV2PaymentsPost201ResponseClientReferenceInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseErrorInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseLinks, root.CyberSource.PtsV2PaymentsRefundPost201ResponseOrderInformation, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation);
   }
-}(this, function(ApiClient, PtsV2CreditsPost201ResponseCreditAmountDetails, PtsV2CreditsPost201ResponsePaymentInformation, PtsV2CreditsPost201ResponseProcessingInformation, PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsRefundPost201ResponseErrorInformation, PtsV2PaymentsRefundPost201ResponseLinks, PtsV2PaymentsRefundPost201ResponseOrderInformation, PtsV2PaymentsRefundPost201ResponseProcessorInformation) {
+}(this, function(ApiClient, PtsV2CreditsPost201ResponseCreditAmountDetails, PtsV2CreditsPost201ResponseMerchantInformation, PtsV2CreditsPost201ResponsePaymentAccountInformation, PtsV2CreditsPost201ResponsePaymentInformation, PtsV2CreditsPost201ResponseProcessingInformation, PtsV2CreditsPost201ResponseTokenInformation, PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation, PtsV2PaymentsPost201ResponseClearingInformation, PtsV2PaymentsPost201ResponseClientReferenceInformation, PtsV2PaymentsRefundPost201ResponseErrorInformation, PtsV2PaymentsRefundPost201ResponseLinks, PtsV2PaymentsRefundPost201ResponseOrderInformation, PtsV2PaymentsRefundPost201ResponseProcessorInformation) {
   'use strict';
 
 
@@ -46,6 +46,10 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
 
 
 
@@ -106,8 +110,20 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = PtsV2PaymentsRefundPost201ResponseOrderInformation.constructFromObject(data['orderInformation']);
       }
+      if (data.hasOwnProperty('merchantInformation')) {
+        obj['merchantInformation'] = PtsV2CreditsPost201ResponseMerchantInformation.constructFromObject(data['merchantInformation']);
+      }
+      if (data.hasOwnProperty('clearingInformation')) {
+        obj['clearingInformation'] = PtsV2PaymentsPost201ResponseClearingInformation.constructFromObject(data['clearingInformation']);
+      }
       if (data.hasOwnProperty('pointOfSaleInformation')) {
         obj['pointOfSaleInformation'] = PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+      }
+      if (data.hasOwnProperty('tokenInformation')) {
+        obj['tokenInformation'] = PtsV2CreditsPost201ResponseTokenInformation.constructFromObject(data['tokenInformation']);
+      }
+      if (data.hasOwnProperty('paymentAccountInformation')) {
+        obj['paymentAccountInformation'] = PtsV2CreditsPost201ResponsePaymentAccountInformation.constructFromObject(data['paymentAccountInformation']);
       }
       if (data.hasOwnProperty('errorInformation')) {
         obj['errorInformation'] = PtsV2PaymentsRefundPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
@@ -165,9 +181,25 @@
    */
   exports.prototype['orderInformation'] = undefined;
   /**
+   * @member {module:model/PtsV2CreditsPost201ResponseMerchantInformation} merchantInformation
+   */
+  exports.prototype['merchantInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseClearingInformation} clearingInformation
+   */
+  exports.prototype['clearingInformation'] = undefined;
+  /**
    * @member {module:model/PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation} pointOfSaleInformation
    */
   exports.prototype['pointOfSaleInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2CreditsPost201ResponseTokenInformation} tokenInformation
+   */
+  exports.prototype['tokenInformation'] = undefined;
+  /**
+   * @member {module:model/PtsV2CreditsPost201ResponsePaymentAccountInformation} paymentAccountInformation
+   */
+  exports.prototype['paymentAccountInformation'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsRefundPost201ResponseErrorInformation} errorInformation
    */

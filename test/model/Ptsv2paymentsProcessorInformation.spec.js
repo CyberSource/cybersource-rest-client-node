@@ -80,8 +80,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property authApprovalToken (base name: "authApprovalToken")', function() {
+      // uncomment below and update the code to test the property authApprovalToken
+      //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property supplementaryTransactionData (base name: "supplementaryTransactionData")', function() {
+      // uncomment below and update the code to test the property supplementaryTransactionData
+      //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property responseSourceCode (base name: "responseSourceCode")', function() {
       // uncomment below and update the code to test the property responseSourceCode
+      //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cedpVerifiedIndicator (base name: "cedpVerifiedIndicator")', function() {
+      // uncomment below and update the code to test the property cedpVerifiedIndicator
       //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
       //expect(instance).to.be();
     });

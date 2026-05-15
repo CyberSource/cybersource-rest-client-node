@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1instructionsinstructionIdconfirmationsProcessorInformation</code>.
-   * Payment/Transaction Confirmation Data provided by the payment processor/acquirer
+   * Payment/Transaction Confirmation Data provided by the payment processor/acquirer.
    * @alias module:model/Acpv1instructionsinstructionIdconfirmationsProcessorInformation
    * @class
    * @param transactionType {String} Type of payment transaction Possible values:   - 'PURCHASE'   - 'AUTHORIZATION'   - 'CAPTURE'   - 'REFUND'   - 'REVERSAL'   - 'VERIFICATION'   - 'CHARGEBACK'   - 'FRAUD' 

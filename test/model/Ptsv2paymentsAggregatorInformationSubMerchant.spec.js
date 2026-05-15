@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantCategoryCode (base name: "merchantCategoryCode")', function() {
+      // uncomment below and update the code to test the property merchantCategoryCode
+      //var instane = new CyberSource.Ptsv2paymentsAggregatorInformationSubMerchant();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

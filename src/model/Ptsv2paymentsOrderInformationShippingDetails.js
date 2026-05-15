@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('shipFromPostalCode')) {
         obj['shipFromPostalCode'] = ApiClient.convertToType(data['shipFromPostalCode'], 'String');
       }
+      if (data.hasOwnProperty('shippingCarrier')) {
+        obj['shippingCarrier'] = ApiClient.convertToType(data['shippingCarrier'], 'String');
+      }
     }
     return obj;
   }
@@ -83,7 +87,7 @@
    */
   exports.prototype['giftWrap'] = undefined;
   /**
-   * Shipping method for the product. Possible values:   - `lowcost`: Lowest-cost service  - `sameday`: Courier or same-day service  - `oneday`: Next-day or overnight service  - `twoday`: Two-day service  - `threeday`: Three-day service  - `pickup`: Store pick-up  - `other`: Other shipping method  - `none`: No shipping method because product is a service or subscription 
+   * Shipping method for the product. Possible values:   - `lowcost`: Lowest-cost service  - `sameday`: Courier or same-day service  - `oneday`: Next-day or overnight service  - `twoday`: Two-day service  - `threeday`: Three-day service  - `pickup`: Store pick-up  - `other`: Other shipping method  - `none`: No shipping method because product is a service or subscription  Klarna Advantage Plus additional values:  - `TO_DOOR`: Delivery to door  - `TO_CURB`: Delivery to curb  - `TO_MAILBOX`: Delivery to mailbox  - `PICKUP_BOX`: Pickup from box  - `PICKUP_POINT`: Pickup from point  - `PICKUP_STORE`: Pickup from store  - `PICKUP_WAREHOUSE`: Pickup from warehouse  - `DIGITAL_EMAIL`: Digital delivery via email  - `DIGITAL_DOWNLOAD`: Digital download  - `DIGITAL_OTHER`: Other digital delivery  - `PHYSICAL_OTHER`: Other physical delivery 
    * @member {String} shippingMethod
    */
   exports.prototype['shippingMethod'] = undefined;
@@ -92,6 +96,11 @@
    * @member {String} shipFromPostalCode
    */
   exports.prototype['shipFromPostalCode'] = undefined;
+  /**
+   * Name of the shipping carrier/company handling the delivery. 
+   * @member {String} shippingCarrier
+   */
+  exports.prototype['shippingCarrier'] = undefined;
 
 
 

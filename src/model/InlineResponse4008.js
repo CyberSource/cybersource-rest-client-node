@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4008Details'], factory);
+    define(['ApiClient', 'model/InlineResponse4008Fields'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4008Details'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse4008Fields'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4008 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4008Details);
+    root.CyberSource.InlineResponse4008 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4008Fields);
   }
-}(this, function(ApiClient, InlineResponse4008Details) {
+}(this, function(ApiClient, InlineResponse4008Fields) {
   'use strict';
 
 
@@ -41,13 +41,17 @@
 
   /**
    * Constructs a new <code>InlineResponse4008</code>.
+   * Error Bean
    * @alias module:model/InlineResponse4008
    * @class
+   * @param code {String} Error code
+   * @param message {String} Error message
    */
-  var exports = function() {
+  var exports = function(code, message) {
     var _this = this;
 
-
+    _this['code'] = code;
+    _this['message'] = message;
 
 
 
@@ -65,50 +69,58 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('code')) {
+        obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('code')) {
-        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+      if (data.hasOwnProperty('localizationKey')) {
+        obj['localizationKey'] = ApiClient.convertToType(data['localizationKey'], 'String');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4008Details]);
+      if (data.hasOwnProperty('correlationId')) {
+        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
       }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('detail')) {
+        obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
+      }
+      if (data.hasOwnProperty('fields')) {
+        obj['fields'] = ApiClient.convertToType(data['fields'], [InlineResponse4008Fields]);
       }
     }
     return obj;
   }
 
   /**
-   * The status of the submitted request.  Possible values: - BAD_REQUEST
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * The detail message related to the status and reason listed above.
-   * @member {String} message
-   */
-  exports.prototype['message'] = undefined;
-  /**
-   * An optional short string which identifies the exact error.
+   * Error code
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
   /**
-   * An optional array which provides more details of the error.
-   * @member {Array.<module:model/InlineResponse4008Details>} details
+   * Error message
+   * @member {String} message
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['message'] = undefined;
   /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeUtc
+   * Localization Key Name
+   * @member {String} localizationKey
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['localizationKey'] = undefined;
+  /**
+   * Correlation Id
+   * @member {String} correlationId
+   */
+  exports.prototype['correlationId'] = undefined;
+  /**
+   * Error Detail
+   * @member {String} detail
+   */
+  exports.prototype['detail'] = undefined;
+  /**
+   * Error fields List
+   * @member {Array.<module:model/InlineResponse4008Fields>} fields
+   */
+  exports.prototype['fields'] = undefined;
 
 
 

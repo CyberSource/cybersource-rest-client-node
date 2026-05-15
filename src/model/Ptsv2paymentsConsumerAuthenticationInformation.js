@@ -107,6 +107,7 @@
 
 
 
+
   };
 
   /**
@@ -299,6 +300,9 @@
       }
       if (data.hasOwnProperty('dsReferenceNumber')) {
         obj['dsReferenceNumber'] = ApiClient.convertToType(data['dsReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('scoreRequest')) {
+        obj['scoreRequest'] = ApiClient.convertToType(data['scoreRequest'], 'Number');
       }
     }
     return obj;
@@ -603,6 +607,11 @@
    * @member {String} dsReferenceNumber
    */
   exports.prototype['dsReferenceNumber'] = undefined;
+  /**
+   * Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score
+   * @member {Number} scoreRequest
+   */
+  exports.prototype['scoreRequest'] = undefined;
 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PushFunds201ResponseProcessorInformationMerchantAdvice', 'model/PushFunds201ResponseProcessorInformationRouting', 'model/PushFunds201ResponseProcessorInformationSettlement'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PayoutsPost201ResponseProcessorInformationAvs', 'model/PtsV2PayoutsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults', 'model/PushFunds201ResponseProcessorInformationMerchantAdvice', 'model/PushFunds201ResponseProcessorInformationRouting', 'model/PushFunds201ResponseProcessorInformationSettlement'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PushFunds201ResponseProcessorInformationMerchantAdvice'), require('./PushFunds201ResponseProcessorInformationRouting'), require('./PushFunds201ResponseProcessorInformationSettlement'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./PtsV2PayoutsPost201ResponseProcessorInformationAvs'), require('./PtsV2PayoutsPost201ResponseProcessorInformationCustomer'), require('./PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults'), require('./PushFunds201ResponseProcessorInformationMerchantAdvice'), require('./PushFunds201ResponseProcessorInformationRouting'), require('./PushFunds201ResponseProcessorInformationSettlement'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PushFunds201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PushFunds201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PushFunds201ResponseProcessorInformationRouting, root.CyberSource.PushFunds201ResponseProcessorInformationSettlement);
+    root.CyberSource.PushFunds201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationCustomer, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults, root.CyberSource.PushFunds201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PushFunds201ResponseProcessorInformationRouting, root.CyberSource.PushFunds201ResponseProcessorInformationSettlement);
   }
-}(this, function(ApiClient, PushFunds201ResponseProcessorInformationMerchantAdvice, PushFunds201ResponseProcessorInformationRouting, PushFunds201ResponseProcessorInformationSettlement) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PayoutsPost201ResponseProcessorInformationAvs, PtsV2PayoutsPost201ResponseProcessorInformationCustomer, PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults, PushFunds201ResponseProcessorInformationMerchantAdvice, PushFunds201ResponseProcessorInformationRouting, PushFunds201ResponseProcessorInformationSettlement) {
   'use strict';
 
 
@@ -46,6 +46,10 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
 
 
 
@@ -104,6 +108,18 @@
       if (data.hasOwnProperty('merchantAdvice')) {
         obj['merchantAdvice'] = PushFunds201ResponseProcessorInformationMerchantAdvice.constructFromObject(data['merchantAdvice']);
       }
+      if (data.hasOwnProperty('avs')) {
+        obj['avs'] = PtsV2PayoutsPost201ResponseProcessorInformationAvs.constructFromObject(data['avs']);
+      }
+      if (data.hasOwnProperty('customer')) {
+        obj['customer'] = PtsV2PayoutsPost201ResponseProcessorInformationCustomer.constructFromObject(data['customer']);
+      }
+      if (data.hasOwnProperty('electronicVerificationResults')) {
+        obj['electronicVerificationResults'] = PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults.constructFromObject(data['electronicVerificationResults']);
+      }
+      if (data.hasOwnProperty('cardVerification')) {
+        obj['cardVerification'] = PtsV2PaymentsPost201ResponseProcessorInformationCardVerification.constructFromObject(data['cardVerification']);
+      }
     }
     return obj;
   }
@@ -160,6 +176,22 @@
    * @member {module:model/PushFunds201ResponseProcessorInformationMerchantAdvice} merchantAdvice
    */
   exports.prototype['merchantAdvice'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationAvs} avs
+   */
+  exports.prototype['avs'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationCustomer} customer
+   */
+  exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults} electronicVerificationResults
+   */
+  exports.prototype['electronicVerificationResults'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification} cardVerification
+   */
+  exports.prototype['cardVerification'] = undefined;
 
 
 

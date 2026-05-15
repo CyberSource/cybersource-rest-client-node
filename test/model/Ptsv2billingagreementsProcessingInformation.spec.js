@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentCompletionTimeout (base name: "paymentCompletionTimeout")', function() {
+      // uncomment below and update the code to test the property paymentCompletionTimeout
+      //var instane = new CyberSource.Ptsv2billingagreementsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property actionList (base name: "actionList")', function() {
       // uncomment below and update the code to test the property actionList
       //var instane = new CyberSource.Ptsv2billingagreementsProcessingInformation();

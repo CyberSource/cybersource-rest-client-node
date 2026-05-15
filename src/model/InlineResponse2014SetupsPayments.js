@@ -67,6 +67,8 @@
 
 
 
+
+
   };
 
   /**
@@ -139,6 +141,12 @@
       }
       if (data.hasOwnProperty('batchUpload')) {
         obj['batchUpload'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['batchUpload']);
+      }
+      if (data.hasOwnProperty('transactGuard')) {
+        obj['transactGuard'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['transactGuard']);
+      }
+      if (data.hasOwnProperty('microform')) {
+        obj['microform'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['microform']);
       }
     }
     return obj;
@@ -224,6 +232,14 @@
    * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} batchUpload
    */
   exports.prototype['batchUpload'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} transactGuard
+   */
+  exports.prototype['transactGuard'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} microform
+   */
+  exports.prototype['microform'] = undefined;
 
 
 

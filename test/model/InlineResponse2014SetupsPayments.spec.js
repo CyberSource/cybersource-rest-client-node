@@ -176,6 +176,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactGuard (base name: "transactGuard")', function() {
+      // uncomment below and update the code to test the property transactGuard
+      //var instane = new CyberSource.InlineResponse2014SetupsPayments();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property microform (base name: "microform")', function() {
+      // uncomment below and update the code to test the property microform
+      //var instane = new CyberSource.InlineResponse2014SetupsPayments();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

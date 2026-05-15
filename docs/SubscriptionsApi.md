@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**getAllSubscriptions**](SubscriptionsApi.md#getAllSubscriptions) | **GET** /rbs/v1/subscriptions | Get a List of Subscriptions
 [**getSubscription**](SubscriptionsApi.md#getSubscription) | **GET** /rbs/v1/subscriptions/{id} | Get a Subscription
 [**getSubscriptionCode**](SubscriptionsApi.md#getSubscriptionCode) | **GET** /rbs/v1/subscriptions/code | Get a Subscription Code
+[**subscriptionsIdPaymentsGet**](SubscriptionsApi.md#subscriptionsIdPaymentsGet) | **GET** /rbs/v1/subscriptions/{id}/payments | Get Payments for a Subscription
+[**subscriptionsIdPaymentsPut**](SubscriptionsApi.md#subscriptionsIdPaymentsPut) | **PUT** /rbs/v1/subscriptions/{id}/payments | Update Payments for a subscription
 [**suspendSubscription**](SubscriptionsApi.md#suspendSubscription) | **POST** /rbs/v1/subscriptions/{id}/suspend | Suspend a Subscription
 [**updateSubscription**](SubscriptionsApi.md#updateSubscription) | **PATCH** /rbs/v1/subscriptions/{id} | Update a Subscription
 
@@ -175,7 +177,8 @@ var opts = {
   'limit': 56, // Number | Number of items to be returned. Default - `20`, Max - `100` 
   'code': "code_example", // String | Filter by Subscription Code
   'status': "status_example", // String | Filter by Subscription Status
-  'customerId': "customerId_example" // String | Filter by Customer Id
+  'customerId': "customerId_example", // String | Filter by Customer Id
+  'clientReferenceInformationCode': "clientReferenceInformationCode_example" // String | Filter by Client Reference Information Code / Merchant Reference Number
 };
 
 var callback = function(error, data, response) {
@@ -197,6 +200,7 @@ Name | Type | Description  | Notes
  **code** | **String**| Filter by Subscription Code | [optional] 
  **status** | **String**| Filter by Subscription Status | [optional] 
  **customerId** | **String**| Filter by Customer Id | [optional] 
+ **clientReferenceInformationCode** | **String**| Filter by Client Reference Information Code / Merchant Reference Number | [optional] 
 
 ### Return type
 
@@ -296,6 +300,109 @@ No authorization required
 
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
+
+<a name="subscriptionsIdPaymentsGet"></a>
+# **subscriptionsIdPaymentsGet**
+> GetSubscriptionsPaymentsResponse subscriptionsIdPaymentsGet(id, opts)
+
+Get Payments for a Subscription
+
+Retrieve a list of payments for a specific subscription by its ID. 
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.SubscriptionsApi();
+
+var id = "id_example"; // String | Subscription Id
+
+var opts = { 
+  'offset': 56, // Number | Page offset number.
+  'limit': 56, // Number | Number of items to be returned. Default - `20`, Max - `100` 
+  'scheduledPaymentsCount': 56 // Number | Number of existing scheduled payments to be returned. Default - `5`, Max - `9999` 
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.subscriptionsIdPaymentsGet(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Subscription Id | 
+ **offset** | **Number**| Page offset number. | [optional] 
+ **limit** | **Number**| Number of items to be returned. Default - `20`, Max - `100`  | [optional] 
+ **scheduledPaymentsCount** | **Number**| Number of existing scheduled payments to be returned. Default - `5`, Max - `9999`  | [optional] 
+
+### Return type
+
+[**GetSubscriptionsPaymentsResponse**](GetSubscriptionsPaymentsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="subscriptionsIdPaymentsPut"></a>
+# **subscriptionsIdPaymentsPut**
+> GetSubscriptionsPaymentsResponse1 subscriptionsIdPaymentsPut(id, updatePayments)
+
+Update Payments for a subscription
+
+Modifies the state of a subscription's payments. Currently, the only possible modifications are \"skipping\" and \"restoring\" payments.  Marking a payment as \"skipped\" means it will not be processed when its scheduled time arrives. \"Restoring\" a payment removes it from the list of payments to be skipped. 
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.SubscriptionsApi();
+
+var id = "id_example"; // String | Subscription Id
+
+var updatePayments = new CyberSource.UpdatePayments(); // UpdatePayments | Modify payments of a subscription
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.subscriptionsIdPaymentsPut(id, updatePayments, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Subscription Id | 
+ **updatePayments** | [**UpdatePayments**](UpdatePayments.md)| Modify payments of a subscription | 
+
+### Return type
+
+[**GetSubscriptionsPaymentsResponse1**](GetSubscriptionsPaymentsResponse1.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="suspendSubscription"></a>
 # **suspendSubscription**

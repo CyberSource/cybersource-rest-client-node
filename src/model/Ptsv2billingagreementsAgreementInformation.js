@@ -49,6 +49,11 @@
 
 
 
+
+
+
+
+
   };
 
   /**
@@ -68,6 +73,21 @@
       if (data.hasOwnProperty('dateSigned')) {
         obj['dateSigned'] = ApiClient.convertToType(data['dateSigned'], 'String');
       }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('frequency')) {
+        obj['frequency'] = ApiClient.convertToType(data['frequency'], 'String');
+      }
+      if (data.hasOwnProperty('occurrencesPerPeriod')) {
+        obj['occurrencesPerPeriod'] = ApiClient.convertToType(data['occurrencesPerPeriod'], 'Number');
+      }
+      if (data.hasOwnProperty('startDate')) {
+        obj['startDate'] = ApiClient.convertToType(data['startDate'], 'String');
+      }
+      if (data.hasOwnProperty('endDate')) {
+        obj['endDate'] = ApiClient.convertToType(data['endDate'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +102,31 @@
    * @member {String} dateSigned
    */
   exports.prototype['dateSigned'] = undefined;
+  /**
+   * Identifies the type of schedule as either recurring, one-off, split or usage.  Possible values: - recurring - oneoff - split - usage
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * Regularity with which the event occurs.  Possible values: - annual - monthly - quarterly - semiannual - weekly - daily - adhoc - intraday - fortnightly
+   * @member {String} frequency
+   */
+  exports.prototype['frequency'] = undefined;
+  /**
+   * Number of occurrences during the specified period.
+   * @member {Number} occurrencesPerPeriod
+   */
+  exports.prototype['occurrencesPerPeriod'] = undefined;
+  /**
+   * Start date of the schedule.  Format YYYYMMdd
+   * @member {String} startDate
+   */
+  exports.prototype['startDate'] = undefined;
+  /**
+   * End date of the schedule.  Format YYYYMMdd
+   * @member {String} endDate
+   */
+  exports.prototype['endDate'] = undefined;
 
 
 

@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Acpv1instructionsDeclineThreshold</code>.
-   * Decline Threshold data.
+   * Decline Threshold data. Defines the maximum transaction amount the consumer is willing to authorize under this mandate.
    * @alias module:model/Acpv1instructionsDeclineThreshold
    * @class
    */

@@ -314,6 +314,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property amexIndirectModelType (base name: "amexIndirectModelType")', function() {
+      // uncomment below and update the code to test the property amexIndirectModelType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property walletTransactionIntent (base name: "walletTransactionIntent")', function() {
+      // uncomment below and update the code to test the property walletTransactionIntent
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property destinationType (base name: "destinationType")', function() {
+      // uncomment below and update the code to test the property destinationType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property programIndicators (base name: "programIndicators")', function() {
+      // uncomment below and update the code to test the property programIndicators
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property inquiryType (base name: "inquiryType")', function() {
+      // uncomment below and update the code to test the property inquiryType
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

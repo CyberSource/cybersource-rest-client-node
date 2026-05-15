@@ -85,7 +85,7 @@ exports.getRequestMLECertFromCache = function(merchantConfig) {
     if (merchantConfig.getMleForRequestPublicCertPath() !== null && merchantConfig.getMleForRequestPublicCertPath() !== undefined) {
         cacheKey =  merchantId + Constants.MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT;
         certificatePath = merchantConfig.getMleForRequestPublicCertPath();
-    } else if (Constants.JWT === merchantConfig.getAuthenticationType().toLowerCase()) {
+    } else if (Constants.JWT === merchantConfig.getAuthenticationType().toLowerCase() && !merchantConfig.isSharedSecretKeyType()) {
         certificatePath = merchantConfig.getP12FilePath();
         cacheKey =  merchantId + Constants.MLE_CACHE_IDENTIFIER_FOR_P12_CERT;
     } else {

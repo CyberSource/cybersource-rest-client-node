@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification', 'model/PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PayoutsPost201ResponseProcessorInformationAvs', 'model/PtsV2PayoutsPost201ResponseProcessorInformationCustomer', 'model/PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationCardVerification'), require('./PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'), require('./PtsV2PayoutsPost201ResponseProcessorInformationAvs'), require('./PtsV2PayoutsPost201ResponseProcessorInformationCustomer'), require('./PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice);
+    root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, root.CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationAvs, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationCustomer, root.CyberSource.PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults);
   }
-}(this, function(ApiClient, PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationCardVerification, PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice, PtsV2PayoutsPost201ResponseProcessorInformationAvs, PtsV2PayoutsPost201ResponseProcessorInformationCustomer, PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults) {
   'use strict';
 
 
@@ -46,6 +46,10 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
 
 
 
@@ -84,6 +88,18 @@
       if (data.hasOwnProperty('merchantAdvice')) {
         obj['merchantAdvice'] = PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice.constructFromObject(data['merchantAdvice']);
       }
+      if (data.hasOwnProperty('avs')) {
+        obj['avs'] = PtsV2PayoutsPost201ResponseProcessorInformationAvs.constructFromObject(data['avs']);
+      }
+      if (data.hasOwnProperty('customer')) {
+        obj['customer'] = PtsV2PayoutsPost201ResponseProcessorInformationCustomer.constructFromObject(data['customer']);
+      }
+      if (data.hasOwnProperty('electronicVerificationResults')) {
+        obj['electronicVerificationResults'] = PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults.constructFromObject(data['electronicVerificationResults']);
+      }
+      if (data.hasOwnProperty('cardVerification')) {
+        obj['cardVerification'] = PtsV2PaymentsPost201ResponseProcessorInformationCardVerification.constructFromObject(data['cardVerification']);
+      }
     }
     return obj;
   }
@@ -117,6 +133,22 @@
    * @member {module:model/PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice} merchantAdvice
    */
   exports.prototype['merchantAdvice'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationAvs} avs
+   */
+  exports.prototype['avs'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationCustomer} customer
+   */
+  exports.prototype['customer'] = undefined;
+  /**
+   * @member {module:model/PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults} electronicVerificationResults
+   */
+  exports.prototype['electronicVerificationResults'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationCardVerification} cardVerification
+   */
+  exports.prototype['cardVerification'] = undefined;
 
 
 

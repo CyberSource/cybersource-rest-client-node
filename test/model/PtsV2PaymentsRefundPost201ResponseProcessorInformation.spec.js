@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property responseSourceCode (base name: "responseSourceCode")', function() {
+      // uncomment below and update the code to test the property responseSourceCode
+      //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property achVerification (base name: "achVerification")', function() {
       // uncomment below and update the code to test the property achVerification
       //var instane = new CyberSource.PtsV2PaymentsRefundPost201ResponseProcessorInformation();

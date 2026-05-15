@@ -53,6 +53,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -78,8 +81,17 @@
       if (data.hasOwnProperty('network')) {
         obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
       }
+      if (data.hasOwnProperty('authApprovalToken')) {
+        obj['authApprovalToken'] = ApiClient.convertToType(data['authApprovalToken'], 'String');
+      }
+      if (data.hasOwnProperty('supplementaryTransactionData')) {
+        obj['supplementaryTransactionData'] = ApiClient.convertToType(data['supplementaryTransactionData'], 'String');
+      }
       if (data.hasOwnProperty('responseSourceCode')) {
         obj['responseSourceCode'] = ApiClient.convertToType(data['responseSourceCode'], 'String');
+      }
+      if (data.hasOwnProperty('cedpVerifiedIndicator')) {
+        obj['cedpVerifiedIndicator'] = ApiClient.convertToType(data['cedpVerifiedIndicator'], 'String');
       }
     }
     return obj;
@@ -103,10 +115,25 @@
    */
   exports.prototype['network'] = undefined;
   /**
+   * Interoperability Token received by merchant for Authorization API. Field for merchant to send Klarna Advantage Plus authorization approval token for Auth API call. 
+   * @member {String} authApprovalToken
+   */
+  exports.prototype['authApprovalToken'] = undefined;
+  /**
+   * Supplementary transaction data for Klarna Advantage Plus. Fields to capture Interoperability Data from Merchant and transfer to Klarna for Authorization/Sale/Re-Auth/Capture APIs. 
+   * @member {String} supplementaryTransactionData
+   */
+  exports.prototype['supplementaryTransactionData'] = undefined;
+  /**
    * Field contains the response source code that identifies the source. 
    * @member {String} responseSourceCode
    */
   exports.prototype['responseSourceCode'] = undefined;
+  /**
+   * Merchant Commercial Enhanced Data Program (CEDP) verified indicator for capture/bill requests.  This field is used when the client is doing authorization with a different gateway and capture/settlement with CyberSource.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - `Y`: Merchant CEDP verified  #### Used by **Capture Request** Request field for force capture/bill support when auth is done with a different gateway. 
+   * @member {String} cedpVerifiedIndicator
+   */
+  exports.prototype['cedpVerifiedIndicator'] = undefined;
 
 
 

@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **referenceNumber** | **String** | This field is applicable for AFT transactions.   Contains a transaction reference number provided by the Merchant. Only alpha numeric values are supported.  | [optional] 
 **account** | [**Ptsv2paymentsSenderInformationAccount**](Ptsv2paymentsSenderInformationAccount.md) |  | [optional] 
 **postalCode** | **String** | Postal code of sender.  | [optional] 
+**taxIdNumber** | **Number** | CPF or CNPJ of the cash-in recipient. \"Cadastro de Pessoas Físicas\", which translates to the \"Natural Persons Register.\" It is the individual taxpayer registry identification number in Brazil, similar to a Social Security Number (SSN) in the United States or a National Insurance Number in the UK.  | [optional] 
 
 
