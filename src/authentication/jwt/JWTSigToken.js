@@ -53,17 +53,9 @@ function getPayloadClaimSet(merchantConfig, isResponseMLEForApi, logger) {
     payloadClaimSet["iat"] = nowEpochSeconds;
     payloadClaimSet["exp"] = nowEpochSeconds + 120; // +2 minutes
 
-    let requestTarget;
-
-    if (merchantConfig.requestTarget.includes("?")) {
-        requestTarget = merchantConfig.requestTarget.substring(0, merchantConfig.requestTarget.indexOf("?"));
-    } else {
-        requestTarget = merchantConfig.requestTarget;
-    }
-
     // Request metadata
     payloadClaimSet["request-host"] = merchantConfig.getRunEnvironment();
-    payloadClaimSet["request-resource-path"] = requestTarget;
+    payloadClaimSet["request-resource-path"] = merchantConfig.requestTarget;
     payloadClaimSet["request-method"] = requestVerb;
 
     // Standard JWT claims
