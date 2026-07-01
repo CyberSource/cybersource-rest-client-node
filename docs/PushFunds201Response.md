@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **orderInformation** | [**PushFunds201ResponseOrderInformation**](PushFunds201ResponseOrderInformation.md) |  | [optional] 
 **paymentInformation** | [**PushFunds201ResponsePaymentInformation**](PushFunds201ResponsePaymentInformation.md) |  | [optional] 
 **processingInformation** | [**PushFunds201ResponseProcessingInformation**](PushFunds201ResponseProcessingInformation.md) |  | [optional] 
+**issuerInformation** | [**PushFunds201ResponseIssuerInformation**](PushFunds201ResponseIssuerInformation.md) |  | [optional] 
 **links** | [**PushFunds201ResponseLinks**](PushFunds201ResponseLinks.md) |  | [optional] 
 
 

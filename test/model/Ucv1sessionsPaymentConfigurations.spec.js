@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property PAYPAL (base name: "PAYPAL")', function() {
+      // uncomment below and update the code to test the property PAYPAL
+      //var instane = new CyberSource.Ucv1sessionsPaymentConfigurations();
+      //expect(instance).to.be();
+    });
+
     it('should have the property TMS_TOKEN (base name: "TMS_TOKEN")', function() {
       // uncomment below and update the code to test the property TMS_TOKEN
       //var instane = new CyberSource.Ucv1sessionsPaymentConfigurations();

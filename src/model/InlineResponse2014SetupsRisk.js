@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2014SetupsPaymentsCardProcessing'], factory);
+    define(['ApiClient', 'model/PaymentsConfigurationSetupCardProcessing'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014SetupsPaymentsCardProcessing'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsConfigurationSetupCardProcessing'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2014SetupsRisk = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014SetupsPaymentsCardProcessing);
+    root.CyberSource.InlineResponse2014SetupsRisk = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsConfigurationSetupCardProcessing);
   }
-}(this, function(ApiClient, InlineResponse2014SetupsPaymentsCardProcessing) {
+}(this, function(ApiClient, PaymentsConfigurationSetupCardProcessing) {
   'use strict';
 
 
@@ -64,28 +64,28 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('fraudManagementEssentials')) {
-        obj['fraudManagementEssentials'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['fraudManagementEssentials']);
+        obj['fraudManagementEssentials'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['fraudManagementEssentials']);
       }
       if (data.hasOwnProperty('decisionManager')) {
-        obj['decisionManager'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['decisionManager']);
+        obj['decisionManager'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['decisionManager']);
       }
       if (data.hasOwnProperty('enhancedAuthentication')) {
-        obj['enhancedAuthentication'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['enhancedAuthentication']);
+        obj['enhancedAuthentication'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['enhancedAuthentication']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} fraudManagementEssentials
+   * @member {module:model/PaymentsConfigurationSetupCardProcessing} fraudManagementEssentials
    */
   exports.prototype['fraudManagementEssentials'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} decisionManager
+   * @member {module:model/PaymentsConfigurationSetupCardProcessing} decisionManager
    */
   exports.prototype['decisionManager'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} enhancedAuthentication
+   * @member {module:model/PaymentsConfigurationSetupCardProcessing} enhancedAuthentication
    */
   exports.prototype['enhancedAuthentication'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Acpv1instructionsMandates', 'model/Acpv1tokensAssuranceData', 'model/Acpv1tokensBuyerInformation', 'model/Acpv1tokensDeviceInformation', 'model/Acpv1tokensPaymentInformation'], factory);
+    define(['ApiClient', 'model/Iccv1instructionsMandates', 'model/Iccv1tokensAssuranceData', 'model/Iccv1tokensBuyerInformation', 'model/Iccv1tokensDeviceInformation', 'model/Iccv1tokensPaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Acpv1instructionsMandates'), require('./Acpv1tokensAssuranceData'), require('./Acpv1tokensBuyerInformation'), require('./Acpv1tokensDeviceInformation'), require('./Acpv1tokensPaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1instructionsMandates'), require('./Iccv1tokensAssuranceData'), require('./Iccv1tokensBuyerInformation'), require('./Iccv1tokensDeviceInformation'), require('./Iccv1tokensPaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgenticCreatePurchaseIntentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Acpv1instructionsMandates, root.CyberSource.Acpv1tokensAssuranceData, root.CyberSource.Acpv1tokensBuyerInformation, root.CyberSource.Acpv1tokensDeviceInformation, root.CyberSource.Acpv1tokensPaymentInformation);
+    root.CyberSource.AgenticCreatePurchaseIntentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1instructionsMandates, root.CyberSource.Iccv1tokensAssuranceData, root.CyberSource.Iccv1tokensBuyerInformation, root.CyberSource.Iccv1tokensDeviceInformation, root.CyberSource.Iccv1tokensPaymentInformation);
   }
-}(this, function(ApiClient, Acpv1instructionsMandates, Acpv1tokensAssuranceData, Acpv1tokensBuyerInformation, Acpv1tokensDeviceInformation, Acpv1tokensPaymentInformation) {
+}(this, function(ApiClient, Iccv1instructionsMandates, Iccv1tokensAssuranceData, Iccv1tokensBuyerInformation, Iccv1tokensDeviceInformation, Iccv1tokensPaymentInformation) {
   'use strict';
 
 
@@ -44,10 +44,10 @@
    * @alias module:model/AgenticCreatePurchaseIntentRequest
    * @class
    * @param clientCorrelationId {String} Client Correlation Id used during the tokenization or during FIDO assertion.
-   * @param paymentInformation {module:model/Acpv1tokensPaymentInformation} 
-   * @param deviceInformation {module:model/Acpv1tokensDeviceInformation} 
-   * @param assuranceData {Array.<module:model/Acpv1tokensAssuranceData>} Assurance data.
-   * @param mandates {Array.<module:model/Acpv1instructionsMandates>} Mandate data.
+   * @param paymentInformation {module:model/Iccv1tokensPaymentInformation} 
+   * @param deviceInformation {module:model/Iccv1tokensDeviceInformation} 
+   * @param assuranceData {Array.<module:model/Iccv1tokensAssuranceData>} Assurance data.
+   * @param mandates {Array.<module:model/Iccv1instructionsMandates>} Mandate data.
    */
   var exports = function(clientCorrelationId, paymentInformation, deviceInformation, assuranceData, mandates) {
     var _this = this;
@@ -77,19 +77,19 @@
         obj['clientCorrelationId'] = ApiClient.convertToType(data['clientCorrelationId'], 'String');
       }
       if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = Acpv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
+        obj['paymentInformation'] = Iccv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('deviceInformation')) {
-        obj['deviceInformation'] = Acpv1tokensDeviceInformation.constructFromObject(data['deviceInformation']);
+        obj['deviceInformation'] = Iccv1tokensDeviceInformation.constructFromObject(data['deviceInformation']);
       }
       if (data.hasOwnProperty('assuranceData')) {
-        obj['assuranceData'] = ApiClient.convertToType(data['assuranceData'], [Acpv1tokensAssuranceData]);
+        obj['assuranceData'] = ApiClient.convertToType(data['assuranceData'], [Iccv1tokensAssuranceData]);
       }
       if (data.hasOwnProperty('mandates')) {
-        obj['mandates'] = ApiClient.convertToType(data['mandates'], [Acpv1instructionsMandates]);
+        obj['mandates'] = ApiClient.convertToType(data['mandates'], [Iccv1instructionsMandates]);
       }
       if (data.hasOwnProperty('buyerInformation')) {
-        obj['buyerInformation'] = Acpv1tokensBuyerInformation.constructFromObject(data['buyerInformation']);
+        obj['buyerInformation'] = Iccv1tokensBuyerInformation.constructFromObject(data['buyerInformation']);
       }
       if (data.hasOwnProperty('isRecurring')) {
         obj['isRecurring'] = ApiClient.convertToType(data['isRecurring'], 'Boolean');
@@ -107,25 +107,25 @@
    */
   exports.prototype['clientCorrelationId'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensPaymentInformation} paymentInformation
+   * @member {module:model/Iccv1tokensPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensDeviceInformation} deviceInformation
+   * @member {module:model/Iccv1tokensDeviceInformation} deviceInformation
    */
   exports.prototype['deviceInformation'] = undefined;
   /**
    * Assurance data.
-   * @member {Array.<module:model/Acpv1tokensAssuranceData>} assuranceData
+   * @member {Array.<module:model/Iccv1tokensAssuranceData>} assuranceData
    */
   exports.prototype['assuranceData'] = undefined;
   /**
    * Mandate data.
-   * @member {Array.<module:model/Acpv1instructionsMandates>} mandates
+   * @member {Array.<module:model/Iccv1instructionsMandates>} mandates
    */
   exports.prototype['mandates'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensBuyerInformation} buyerInformation
+   * @member {module:model/Iccv1tokensBuyerInformation} buyerInformation
    */
   exports.prototype['buyerInformation'] = undefined;
   /**

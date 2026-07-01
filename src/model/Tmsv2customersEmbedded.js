@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PatchPaymentInstrumentRequest', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress'], factory);
+    define(['ApiClient', 'model/DefaultShippingAddress', 'model/PatchPaymentInstrumentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PatchPaymentInstrumentRequest'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress'));
+    module.exports = factory(require('../ApiClient'), require('./DefaultShippingAddress'), require('./PatchPaymentInstrumentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2customersEmbedded = factory(root.CyberSource.ApiClient, root.CyberSource.PatchPaymentInstrumentRequest, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress);
+    root.CyberSource.Tmsv2customersEmbedded = factory(root.CyberSource.ApiClient, root.CyberSource.DefaultShippingAddress, root.CyberSource.PatchPaymentInstrumentRequest);
   }
-}(this, function(ApiClient, PatchPaymentInstrumentRequest, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress) {
+}(this, function(ApiClient, DefaultShippingAddress, PatchPaymentInstrumentRequest) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['defaultPaymentInstrument'] = PatchPaymentInstrumentRequest.constructFromObject(data['defaultPaymentInstrument']);
       }
       if (data.hasOwnProperty('defaultShippingAddress')) {
-        obj['defaultShippingAddress'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress.constructFromObject(data['defaultShippingAddress']);
+        obj['defaultShippingAddress'] = DefaultShippingAddress.constructFromObject(data['defaultShippingAddress']);
       }
     }
     return obj;
@@ -78,7 +78,7 @@
    */
   exports.prototype['defaultPaymentInstrument'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress} defaultShippingAddress
+   * @member {module:model/DefaultShippingAddress} defaultShippingAddress
    */
   exports.prototype['defaultShippingAddress'] = undefined;
 

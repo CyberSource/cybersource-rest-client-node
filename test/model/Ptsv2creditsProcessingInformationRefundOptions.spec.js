@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reconciliationIdAlternate (base name: "reconciliationIdAlternate")', function() {
+      // uncomment below and update the code to test the property reconciliationIdAlternate
+      //var instane = new CyberSource.Ptsv2creditsProcessingInformationRefundOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress'], factory);
+    define(['ApiClient', 'model/DefaultPaymentInstrument', 'model/DefaultShippingAddress'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress'));
+    module.exports = factory(require('../ApiClient'), require('./DefaultPaymentInstrument'), require('./DefaultShippingAddress'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbedded = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress);
+    root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbedded = factory(root.CyberSource.ApiClient, root.CyberSource.DefaultPaymentInstrument, root.CyberSource.DefaultShippingAddress);
   }
-}(this, function(ApiClient, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress) {
+}(this, function(ApiClient, DefaultPaymentInstrument, DefaultShippingAddress) {
   'use strict';
 
 
@@ -64,21 +64,21 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('defaultPaymentInstrument')) {
-        obj['defaultPaymentInstrument'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument.constructFromObject(data['defaultPaymentInstrument']);
+        obj['defaultPaymentInstrument'] = DefaultPaymentInstrument.constructFromObject(data['defaultPaymentInstrument']);
       }
       if (data.hasOwnProperty('defaultShippingAddress')) {
-        obj['defaultShippingAddress'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress.constructFromObject(data['defaultShippingAddress']);
+        obj['defaultShippingAddress'] = DefaultShippingAddress.constructFromObject(data['defaultShippingAddress']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument} defaultPaymentInstrument
+   * @member {module:model/DefaultPaymentInstrument} defaultPaymentInstrument
    */
   exports.prototype['defaultPaymentInstrument'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress} defaultShippingAddress
+   * @member {module:model/DefaultShippingAddress} defaultShippingAddress
    */
   exports.prototype['defaultShippingAddress'] = undefined;
 

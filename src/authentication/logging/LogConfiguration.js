@@ -46,7 +46,11 @@ class LogConfiguration {
      * @param {any} enableMaskingValue
      */
     setMaskingEnabled(enableMaskingValue) {
-        this.enableMasking = enableMaskingValue;
+        if (enableMaskingValue === null || enableMaskingValue === undefined || enableMaskingValue === "") {
+            this.enableMasking = true;
+        } else {
+            this.enableMasking = enableMaskingValue;
+        }
     }
 
     setHasExternalLogger(hasExternalLogger){
@@ -140,7 +144,9 @@ class LogConfiguration {
             this.enableLog = false;
         }
 
-        if (typeof (this.enableMasking) === "boolean" && this.enableMasking === true) {
+        if (this.enableMasking === null || this.enableMasking === undefined || this.enableMasking === "") {
+            this.enableMasking = true;
+        } else if (typeof (this.enableMasking) === "boolean" && this.enableMasking === true) {
             this.enableMasking = true;
         } else {
             this.enableMasking = false;

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation', 'model/RiskV1AddressVerificationsPost201ResponseErrorInformation', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/PtsV2IncrementalAuthorizationPatch201ResponseLinks', 'model/RiskAddressVerificationInformation', 'model/RiskV1AddressVerificationsPost201ResponseErrorInformation', 'model/RiskV1DecisionsPost201ResponseClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation'), require('./RiskV1AddressVerificationsPost201ResponseErrorInformation'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2IncrementalAuthorizationPatch201ResponseLinks'), require('./RiskAddressVerificationInformation'), require('./RiskV1AddressVerificationsPost201ResponseErrorInformation'), require('./RiskV1DecisionsPost201ResponseClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskV1AddressVerificationsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation, root.CyberSource.RiskV1AddressVerificationsPost201ResponseErrorInformation, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation);
+    root.CyberSource.RiskV1AddressVerificationsPost201Response = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseLinks, root.CyberSource.RiskAddressVerificationInformation, root.CyberSource.RiskV1AddressVerificationsPost201ResponseErrorInformation, root.CyberSource.RiskV1DecisionsPost201ResponseClientReferenceInformation);
   }
-}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation, RiskV1AddressVerificationsPost201ResponseErrorInformation, RiskV1DecisionsPost201ResponseClientReferenceInformation) {
+}(this, function(ApiClient, PtsV2IncrementalAuthorizationPatch201ResponseLinks, RiskAddressVerificationInformation, RiskV1AddressVerificationsPost201ResponseErrorInformation, RiskV1DecisionsPost201ResponseClientReferenceInformation) {
   'use strict';
 
 
@@ -91,7 +91,7 @@
         obj['clientReferenceInformation'] = RiskV1DecisionsPost201ResponseClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('addressVerificationInformation')) {
-        obj['addressVerificationInformation'] = RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation.constructFromObject(data['addressVerificationInformation']);
+        obj['addressVerificationInformation'] = RiskAddressVerificationInformation.constructFromObject(data['addressVerificationInformation']);
       }
       if (data.hasOwnProperty('errorInformation')) {
         obj['errorInformation'] = RiskV1AddressVerificationsPost201ResponseErrorInformation.constructFromObject(data['errorInformation']);
@@ -134,7 +134,7 @@
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * @member {module:model/RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation} addressVerificationInformation
+   * @member {module:model/RiskAddressVerificationInformation} addressVerificationInformation
    */
   exports.prototype['addressVerificationInformation'] = undefined;
   /**

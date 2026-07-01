@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Upv1capturecontextsDataOrderInformationLineItemsPassenger', 'model/Upv1capturecontextsDataOrderInformationLineItemsTaxDetails'], factory);
+    define(['ApiClient', 'model/Upv1capturecontextsDataOrderInformationPassenger', 'model/Upv1capturecontextsDataOrderInformationTaxDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataOrderInformationLineItemsPassenger'), require('./Upv1capturecontextsDataOrderInformationLineItemsTaxDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataOrderInformationPassenger'), require('./Upv1capturecontextsDataOrderInformationTaxDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ucv1sessionsDataOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataOrderInformationLineItemsPassenger, root.CyberSource.Upv1capturecontextsDataOrderInformationLineItemsTaxDetails);
+    root.CyberSource.Ucv1sessionsDataOrderInformationLineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataOrderInformationPassenger, root.CyberSource.Upv1capturecontextsDataOrderInformationTaxDetails);
   }
-}(this, function(ApiClient, Upv1capturecontextsDataOrderInformationLineItemsPassenger, Upv1capturecontextsDataOrderInformationLineItemsTaxDetails) {
+}(this, function(ApiClient, Upv1capturecontextsDataOrderInformationPassenger, Upv1capturecontextsDataOrderInformationTaxDetails) {
   'use strict';
 
 
@@ -154,7 +154,7 @@
         obj['invoiceNumber'] = ApiClient.convertToType(data['invoiceNumber'], 'String');
       }
       if (data.hasOwnProperty('taxDetails')) {
-        obj['taxDetails'] = Upv1capturecontextsDataOrderInformationLineItemsTaxDetails.constructFromObject(data['taxDetails']);
+        obj['taxDetails'] = Upv1capturecontextsDataOrderInformationTaxDetails.constructFromObject(data['taxDetails']);
       }
       if (data.hasOwnProperty('fulfillmentType')) {
         obj['fulfillmentType'] = ApiClient.convertToType(data['fulfillmentType'], 'String');
@@ -190,7 +190,7 @@
         obj['gift'] = ApiClient.convertToType(data['gift'], 'Boolean');
       }
       if (data.hasOwnProperty('passenger')) {
-        obj['passenger'] = Upv1capturecontextsDataOrderInformationLineItemsPassenger.constructFromObject(data['passenger']);
+        obj['passenger'] = Upv1capturecontextsDataOrderInformationPassenger.constructFromObject(data['passenger']);
       }
     }
     return obj;
@@ -297,7 +297,7 @@
    */
   exports.prototype['invoiceNumber'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsDataOrderInformationLineItemsTaxDetails} taxDetails
+   * @member {module:model/Upv1capturecontextsDataOrderInformationTaxDetails} taxDetails
    */
   exports.prototype['taxDetails'] = undefined;
   /**
@@ -356,7 +356,7 @@
    */
   exports.prototype['gift'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsDataOrderInformationLineItemsPassenger} passenger
+   * @member {module:model/Upv1capturecontextsDataOrderInformationPassenger} passenger
    */
   exports.prototype['passenger'] = undefined;
 

@@ -1,0 +1,22 @@
+# CyberSource.PushFunds201ResponseIssuerInformation
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**octDomesticParticipantIndicator** | **Boolean** | Domestic indicator for Push funds (OCT). If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octCrossBorderParticipantIndicator** | **Boolean** | Cross-border indicator for push funds (OCT). If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octMoneyTransferDomesticIndicator** | **Boolean** | Indicates whether domestic money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.        Supported for Visa Direct.  | [optional] 
+**octMoneyTransferCrossBorderIndicator** | **Boolean** | Indicates whether cross-border money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octMoneyTransferFastFundsDomesticIndicator** | **Boolean** | Indicates whether domestic money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octMoneyTransferFastFundsCrossBorderIndicator** | **Boolean** | Indicates whether cross-border money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octMoneyTransferMerchantCountryRestricted** | **Boolean** | This field indicates if the recipient issuer can accept push funds (OCT) transactions from the merchant country.  If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octNonMoneyTransferDomesticIndicator** | **Boolean** | Indicates whether domestic non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octNonMoneyTransferCrossBorderIndicator** | **Boolean** | Indicates whether cross-border non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octNonMoneyTransferFastFundsDomesticIndicator** | **Boolean** | Indicates whether domestic non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octNonMoneyTransferFastFundsCrossBorderIndicator** | **Boolean** | Indicates whether cross-border non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octOnlineGamblingDomesticIndicator** | **Boolean** | Indicates whether domestic gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octOnlineGamblingCrossBorderIndicator** | **Boolean** | Indicates whether cross-border gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octOnlineGamblingFastFundsDomesticIndicator** | **Boolean** | Indicates whether domestic gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+**octOnlineGamblingFastFundsCrossBorderIndicator** | **Boolean** | Indicates whether cross-border gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct.  | [optional] 
+
+

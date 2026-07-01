@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2014SetupsCommerceSolutions', 'model/InlineResponse2014SetupsPayments', 'model/InlineResponse2014SetupsRisk', 'model/InlineResponse2014SetupsValueAddedServices'], factory);
+    define(['ApiClient', 'model/InlineResponse2014SetupsCommerceSolutions', 'model/InlineResponse2014SetupsRisk', 'model/InlineResponse2014SetupsValueAddedServices', 'model/PaymentsConfigurationSetup'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014SetupsCommerceSolutions'), require('./InlineResponse2014SetupsPayments'), require('./InlineResponse2014SetupsRisk'), require('./InlineResponse2014SetupsValueAddedServices'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014SetupsCommerceSolutions'), require('./InlineResponse2014SetupsRisk'), require('./InlineResponse2014SetupsValueAddedServices'), require('./PaymentsConfigurationSetup'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2014Setups = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014SetupsCommerceSolutions, root.CyberSource.InlineResponse2014SetupsPayments, root.CyberSource.InlineResponse2014SetupsRisk, root.CyberSource.InlineResponse2014SetupsValueAddedServices);
+    root.CyberSource.InlineResponse2014Setups = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014SetupsCommerceSolutions, root.CyberSource.InlineResponse2014SetupsRisk, root.CyberSource.InlineResponse2014SetupsValueAddedServices, root.CyberSource.PaymentsConfigurationSetup);
   }
-}(this, function(ApiClient, InlineResponse2014SetupsCommerceSolutions, InlineResponse2014SetupsPayments, InlineResponse2014SetupsRisk, InlineResponse2014SetupsValueAddedServices) {
+}(this, function(ApiClient, InlineResponse2014SetupsCommerceSolutions, InlineResponse2014SetupsRisk, InlineResponse2014SetupsValueAddedServices, PaymentsConfigurationSetup) {
   'use strict';
 
 
@@ -65,7 +65,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('payments')) {
-        obj['payments'] = InlineResponse2014SetupsPayments.constructFromObject(data['payments']);
+        obj['payments'] = PaymentsConfigurationSetup.constructFromObject(data['payments']);
       }
       if (data.hasOwnProperty('risk')) {
         obj['risk'] = InlineResponse2014SetupsRisk.constructFromObject(data['risk']);
@@ -81,7 +81,7 @@
   }
 
   /**
-   * @member {module:model/InlineResponse2014SetupsPayments} payments
+   * @member {module:model/PaymentsConfigurationSetup} payments
    */
   exports.prototype['payments'] = undefined;
   /**

@@ -48,6 +48,21 @@
     var _this = this;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -61,6 +76,51 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('octDomesticParticipantIndicator')) {
+        obj['octDomesticParticipantIndicator'] = ApiClient.convertToType(data['octDomesticParticipantIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octCrossBorderParticipantIndicator')) {
+        obj['octCrossBorderParticipantIndicator'] = ApiClient.convertToType(data['octCrossBorderParticipantIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octMoneyTransferDomesticIndicator')) {
+        obj['octMoneyTransferDomesticIndicator'] = ApiClient.convertToType(data['octMoneyTransferDomesticIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octMoneyTransferCrossBorderIndicator')) {
+        obj['octMoneyTransferCrossBorderIndicator'] = ApiClient.convertToType(data['octMoneyTransferCrossBorderIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octMoneyTransferFastFundsDomesticIndicator')) {
+        obj['octMoneyTransferFastFundsDomesticIndicator'] = ApiClient.convertToType(data['octMoneyTransferFastFundsDomesticIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octMoneyTransferFastFundsCrossBorderIndicator')) {
+        obj['octMoneyTransferFastFundsCrossBorderIndicator'] = ApiClient.convertToType(data['octMoneyTransferFastFundsCrossBorderIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octMoneyTransferMerchantCountryRestricted')) {
+        obj['octMoneyTransferMerchantCountryRestricted'] = ApiClient.convertToType(data['octMoneyTransferMerchantCountryRestricted'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octNonMoneyTransferDomesticIndicator')) {
+        obj['octNonMoneyTransferDomesticIndicator'] = ApiClient.convertToType(data['octNonMoneyTransferDomesticIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octNonMoneyTransferCrossBorderIndicator')) {
+        obj['octNonMoneyTransferCrossBorderIndicator'] = ApiClient.convertToType(data['octNonMoneyTransferCrossBorderIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octNonMoneyTransferFastFundsDomesticIndicator')) {
+        obj['octNonMoneyTransferFastFundsDomesticIndicator'] = ApiClient.convertToType(data['octNonMoneyTransferFastFundsDomesticIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octNonMoneyTransferFastFundsCrossBorderIndicator')) {
+        obj['octNonMoneyTransferFastFundsCrossBorderIndicator'] = ApiClient.convertToType(data['octNonMoneyTransferFastFundsCrossBorderIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octOnlineGamblingDomesticIndicator')) {
+        obj['octOnlineGamblingDomesticIndicator'] = ApiClient.convertToType(data['octOnlineGamblingDomesticIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octOnlineGamblingCrossBorderIndicator')) {
+        obj['octOnlineGamblingCrossBorderIndicator'] = ApiClient.convertToType(data['octOnlineGamblingCrossBorderIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octOnlineGamblingFastFundsDomesticIndicator')) {
+        obj['octOnlineGamblingFastFundsDomesticIndicator'] = ApiClient.convertToType(data['octOnlineGamblingFastFundsDomesticIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('octOnlineGamblingFastFundsCrossBorderIndicator')) {
+        obj['octOnlineGamblingFastFundsCrossBorderIndicator'] = ApiClient.convertToType(data['octOnlineGamblingFastFundsCrossBorderIndicator'], 'Boolean');
+      }
       if (data.hasOwnProperty('serviceProcessingType')) {
         obj['serviceProcessingType'] = ApiClient.convertToType(data['serviceProcessingType'], 'String');
       }
@@ -68,6 +128,81 @@
     return obj;
   }
 
+  /**
+   * Domestic indicator for Push funds (OCT). If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octDomesticParticipantIndicator
+   */
+  exports.prototype['octDomesticParticipantIndicator'] = undefined;
+  /**
+   * Cross-border indicator for push funds (OCT). If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octCrossBorderParticipantIndicator
+   */
+  exports.prototype['octCrossBorderParticipantIndicator'] = undefined;
+  /**
+   * Indicates whether domestic money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.        Supported for Visa Direct. 
+   * @member {Boolean} octMoneyTransferDomesticIndicator
+   */
+  exports.prototype['octMoneyTransferDomesticIndicator'] = undefined;
+  /**
+   * Indicates whether cross-border money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octMoneyTransferCrossBorderIndicator
+   */
+  exports.prototype['octMoneyTransferCrossBorderIndicator'] = undefined;
+  /**
+   * Indicates whether domestic money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octMoneyTransferFastFundsDomesticIndicator
+   */
+  exports.prototype['octMoneyTransferFastFundsDomesticIndicator'] = undefined;
+  /**
+   * Indicates whether cross-border money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octMoneyTransferFastFundsCrossBorderIndicator
+   */
+  exports.prototype['octMoneyTransferFastFundsCrossBorderIndicator'] = undefined;
+  /**
+   * This field indicates if the recipient issuer can accept push funds (OCT) transactions from the merchant country.  If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octMoneyTransferMerchantCountryRestricted
+   */
+  exports.prototype['octMoneyTransferMerchantCountryRestricted'] = undefined;
+  /**
+   * Indicates whether domestic non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octNonMoneyTransferDomesticIndicator
+   */
+  exports.prototype['octNonMoneyTransferDomesticIndicator'] = undefined;
+  /**
+   * Indicates whether cross-border non-money transfer OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octNonMoneyTransferCrossBorderIndicator
+   */
+  exports.prototype['octNonMoneyTransferCrossBorderIndicator'] = undefined;
+  /**
+   * Indicates whether domestic non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octNonMoneyTransferFastFundsDomesticIndicator
+   */
+  exports.prototype['octNonMoneyTransferFastFundsDomesticIndicator'] = undefined;
+  /**
+   * Indicates whether cross-border non-money transfer OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octNonMoneyTransferFastFundsCrossBorderIndicator
+   */
+  exports.prototype['octNonMoneyTransferFastFundsCrossBorderIndicator'] = undefined;
+  /**
+   * Indicates whether domestic gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octOnlineGamblingDomesticIndicator
+   */
+  exports.prototype['octOnlineGamblingDomesticIndicator'] = undefined;
+  /**
+   * Indicates whether cross-border gambling OCTs (push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octOnlineGamblingCrossBorderIndicator
+   */
+  exports.prototype['octOnlineGamblingCrossBorderIndicator'] = undefined;
+  /**
+   * Indicates whether domestic gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octOnlineGamblingFastFundsDomesticIndicator
+   */
+  exports.prototype['octOnlineGamblingFastFundsDomesticIndicator'] = undefined;
+  /**
+   * Indicates whether cross-border gambling OCTs (fast push funds) are allowed. If no Funds Transfer Attributes Inquiry data is available for this card account, the field is omitted.   Supported for Visa Direct. 
+   * @member {Boolean} octOnlineGamblingFastFundsCrossBorderIndicator
+   */
+  exports.prototype['octOnlineGamblingFastFundsCrossBorderIndicator'] = undefined;
   /**
    * This field contains values that identify the service type under which the transaction should be processed. The valid value for the Visa Alias Directory Service is A0 (Alias) and 00 (normal transaction). 
    * @member {String} serviceProcessingType

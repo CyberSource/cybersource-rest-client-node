@@ -100,10 +100,10 @@
         done();
       });
     });
-    describe('updateSessionReq', function() {
-      it('should call updateSessionReq successfully', function(done) {
-        //uncomment below and update the code to test updateSessionReq
-        //instance.updateSessionReq(function(error) {
+    describe('updateSessionRequest', function() {
+      it('should call updateSessionRequest successfully', function(done) {
+        //uncomment below and update the code to test updateSessionRequest
+        //instance.updateSessionRequest(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

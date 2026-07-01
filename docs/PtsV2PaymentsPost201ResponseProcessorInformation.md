@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **completeUrl** | **String** | The redirect URL for forwarding the consumer to complete page.  This redirect needed by PSP to track browser information of consumer. PSP then redirect consumer to merchant success URL.  | [optional] 
 **signature** | **String** |  | [optional] 
 **publicKey** | **String** |  | [optional] 
-**sellerProtection** | [**PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection**](PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.md) |  | [optional] 
+**sellerProtection** | [**ProcessorInformationSellerProtection**](ProcessorInformationSellerProtection.md) |  | [optional] 
 **transactionExpiryDate** | **String** | The date on which the transaction expires and payment cannot be made.  | [optional] 
 **customUrl** | **String** | For merchants to declare customs Customs declaration service URL.  | [optional] 
 **schemeAssignedId** | **String** | Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay  | [optional] 

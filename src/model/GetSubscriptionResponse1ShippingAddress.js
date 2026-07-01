@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo'], factory);
+    define(['ApiClient', 'model/DefaultShippingAddressShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./DefaultShippingAddressShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.GetSubscriptionResponse1ShippingAddress = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo);
+    root.CyberSource.GetSubscriptionResponse1ShippingAddress = factory(root.CyberSource.ApiClient, root.CyberSource.DefaultShippingAddressShipTo);
   }
-}(this, function(ApiClient, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo) {
+}(this, function(ApiClient, DefaultShippingAddressShipTo) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
       if (data.hasOwnProperty('shipTo')) {
-        obj['shipTo'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo.constructFromObject(data['shipTo']);
+        obj['shipTo'] = DefaultShippingAddressShipTo.constructFromObject(data['shipTo']);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo} shipTo
+   * @member {module:model/DefaultShippingAddressShipTo} shipTo
    */
   exports.prototype['shipTo'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList'], factory);
+    define(['ApiClient', 'model/ExportComplianceWatchList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList'));
+    module.exports = factory(require('../ApiClient'), require('./ExportComplianceWatchList'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList);
+    root.CyberSource.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation = factory(root.CyberSource.ApiClient, root.CyberSource.ExportComplianceWatchList);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList) {
+}(this, function(ApiClient, ExportComplianceWatchList) {
   'use strict';
 
 
@@ -70,7 +70,7 @@
         obj['infoCodes'] = ApiClient.convertToType(data['infoCodes'], ['String']);
       }
       if (data.hasOwnProperty('watchList')) {
-        obj['watchList'] = PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList.constructFromObject(data['watchList']);
+        obj['watchList'] = ExportComplianceWatchList.constructFromObject(data['watchList']);
       }
     }
     return obj;
@@ -87,7 +87,7 @@
    */
   exports.prototype['infoCodes'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchList} watchList
+   * @member {module:model/ExportComplianceWatchList} watchList
    */
   exports.prototype['watchList'] = undefined;
 

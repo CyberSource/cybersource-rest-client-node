@@ -17,6 +17,9 @@ exports.decryptUsingPEM = function(merchantConfig, encodedData) {
 
 exports.decryptJWEUsingPrivateKey = async function(privateKey, encodedData) {
     const privateKeyObject = crypto.createPrivateKey(privateKey);
-    const { plaintext } = await compactDecrypt(encodedData, privateKeyObject);
+    const { plaintext } = await compactDecrypt(encodedData, privateKeyObject, {
+        keyManagementAlgorithms: ['RSA-OAEP-256', 'RSA-OAEP'],
+        contentEncryptionAlgorithms: ['A256GCM', 'A128GCM'],
+    });
     return new TextDecoder().decode(plaintext);
 }

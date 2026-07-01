@@ -94,7 +94,7 @@
       var returnType = InvoicingV2InvoicesPost201Response;
 
       //check isMLE for an api method 'this.createInvoice'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createInvoice');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createInvoice']);
 
@@ -171,7 +171,7 @@
       var returnType = InvoicingV2InvoicesAllGet200Response;
 
       //check isMLE for an api method 'this.getAllInvoices'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getAllInvoices');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getAllInvoices']);
 
@@ -237,7 +237,7 @@
       var returnType = InvoicingV2InvoicesGet200Response;
 
       //check isMLE for an api method 'this.getInvoice'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getInvoice');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getInvoice']);
 
@@ -303,7 +303,7 @@
       var returnType = InvoicingV2InvoicesCancel200Response;
 
       //check isMLE for an api method 'this.performCancelAction'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'performCancelAction');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['performCancelAction']);
 
@@ -435,7 +435,7 @@
       var returnType = InvoicingV2InvoicesSend200Response;
 
       //check isMLE for an api method 'this.performSendAction'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'performSendAction');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['performSendAction']);
 
@@ -508,7 +508,7 @@
       var returnType = InvoicingV2InvoicesPut200Response;
 
       //check isMLE for an api method 'this.updateInvoice'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateInvoice');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateInvoice']);
 

@@ -11,6 +11,9 @@ const SUPPORTED_ALGORITHMS = {
     'RS512': 'sha512'
 };
 
+// Minimum RSA key size in bytes (2048 bits = 256 bytes)
+const MIN_RSA_KEY_SIZE_BYTES = 256;
+
 // Error messages constants
 const ERROR_MESSAGES = {
     UNSUPPORTED_ALGORITHM: (algorithm) =>
@@ -19,7 +22,8 @@ const ERROR_MESSAGES = {
     NO_PUBLIC_KEY: 'No public key found',
     INVALID_PUBLIC_KEY_FORMAT: 'Invalid public key format. Expected JWK object or JSON string.',
     INVALID_RSA_KEY: 'Public key must be an RSA key (kty: RSA)',
-    MISSING_RSA_PARAMS: 'Invalid RSA JWK: missing required parameters (n, e)'
+    MISSING_RSA_PARAMS: 'Invalid RSA JWK: missing required parameters (n, e)',
+    RSA_KEY_TOO_SMALL: `RSA key too small: minimum ${MIN_RSA_KEY_SIZE_BYTES * 8} bits required`
 };
 
 /**
@@ -90,6 +94,18 @@ function convertJwkToPem(jwkKey) {
     } catch (decodeErr) {
        
         throw new JWTExceptions.InvalidJwkException('Invalid base64url encoding in JWK parameters', decodeErr);
+    }
+
+    // Strip leading zero bytes to get the effective modulus size
+    // This prevents bypass via zero-padded small keys
+    let effectiveModulus = n;
+    while (effectiveModulus.length > 0 && effectiveModulus[0] === 0) {
+        effectiveModulus = effectiveModulus.slice(1);
+    }
+
+    // Enforce minimum RSA key size to prevent weak key attacks
+    if (effectiveModulus.length < MIN_RSA_KEY_SIZE_BYTES) {
+        throw new JWTExceptions.InvalidJwkException(ERROR_MESSAGES.RSA_KEY_TOO_SMALL);
     }
 
     let publicKeyForge;

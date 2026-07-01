@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations'], factory);
+    define(['ApiClient', 'model/AccountUpdaterConfigurations'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./AccountUpdaterConfigurations'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CommerceSolutionsProductsAccountUpdaterConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations);
+    root.CyberSource.CommerceSolutionsProductsAccountUpdaterConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.AccountUpdaterConfigurations);
   }
-}(this, function(ApiClient, CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations) {
+}(this, function(ApiClient, AccountUpdaterConfigurations) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations.constructFromObject(data['configurations']);
+        obj['configurations'] = AccountUpdaterConfigurations.constructFromObject(data['configurations']);
       }
     }
     return obj;
@@ -77,7 +77,7 @@
    */
   exports.prototype['templateId'] = undefined;
   /**
-   * @member {module:model/CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurations} configurations
+   * @member {module:model/AccountUpdaterConfigurations} configurations
    */
   exports.prototype['configurations'] = undefined;
 

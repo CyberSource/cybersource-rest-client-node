@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reporting** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
-**transactionSearch** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
-**bankAccountValidation** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
-**flexapi** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
-**webhooks** | [**InlineResponse2014SetupsPaymentsDigitalPayments**](InlineResponse2014SetupsPaymentsDigitalPayments.md) |  | [optional] 
+**reporting** | [**PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
+**transactionSearch** | [**PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
+**bankAccountValidation** | [**PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
+**flexapi** | [**PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
+**webhooks** | [**PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Acpv1instructionsinstructionIdconfirmationsConfirmationData', 'model/Acpv1tokensPaymentInformation'], factory);
+    define(['ApiClient', 'model/Iccv1instructionsinstructionIdconfirmationsConfirmationData', 'model/Iccv1tokensPaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Acpv1instructionsinstructionIdconfirmationsConfirmationData'), require('./Acpv1tokensPaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1instructionsinstructionIdconfirmationsConfirmationData'), require('./Iccv1tokensPaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgenticConfirmTransactionEventsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Acpv1instructionsinstructionIdconfirmationsConfirmationData, root.CyberSource.Acpv1tokensPaymentInformation);
+    root.CyberSource.AgenticConfirmTransactionEventsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1instructionsinstructionIdconfirmationsConfirmationData, root.CyberSource.Iccv1tokensPaymentInformation);
   }
-}(this, function(ApiClient, Acpv1instructionsinstructionIdconfirmationsConfirmationData, Acpv1tokensPaymentInformation) {
+}(this, function(ApiClient, Iccv1instructionsinstructionIdconfirmationsConfirmationData, Iccv1tokensPaymentInformation) {
   'use strict';
 
 
@@ -44,8 +44,8 @@
    * @alias module:model/AgenticConfirmTransactionEventsRequest
    * @class
    * @param clientCorrelationId {String} Client Correlation Id used during the tokenization or during FIDO assertion.
-   * @param paymentInformation {module:model/Acpv1tokensPaymentInformation} 
-   * @param confirmationData {Array.<module:model/Acpv1instructionsinstructionIdconfirmationsConfirmationData>} (Required) Contains Transaction, Order and Payment Confirmation Events.
+   * @param paymentInformation {module:model/Iccv1tokensPaymentInformation} 
+   * @param confirmationData {Array.<module:model/Iccv1instructionsinstructionIdconfirmationsConfirmationData>} (Required) Contains Transaction, Order and Payment Confirmation Events.
    */
   var exports = function(clientCorrelationId, paymentInformation, confirmationData) {
     var _this = this;
@@ -70,10 +70,10 @@
         obj['clientCorrelationId'] = ApiClient.convertToType(data['clientCorrelationId'], 'String');
       }
       if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = Acpv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
+        obj['paymentInformation'] = Iccv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('confirmationData')) {
-        obj['confirmationData'] = ApiClient.convertToType(data['confirmationData'], [Acpv1instructionsinstructionIdconfirmationsConfirmationData]);
+        obj['confirmationData'] = ApiClient.convertToType(data['confirmationData'], [Iccv1instructionsinstructionIdconfirmationsConfirmationData]);
       }
     }
     return obj;
@@ -85,12 +85,12 @@
    */
   exports.prototype['clientCorrelationId'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensPaymentInformation} paymentInformation
+   * @member {module:model/Iccv1tokensPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
    * (Required) Contains Transaction, Order and Payment Confirmation Events.
-   * @member {Array.<module:model/Acpv1instructionsinstructionIdconfirmationsConfirmationData>} confirmationData
+   * @member {Array.<module:model/Iccv1instructionsinstructionIdconfirmationsConfirmationData>} confirmationData
    */
   exports.prototype['confirmationData'] = undefined;
 

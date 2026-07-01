@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures'], factory);
+    define(['ApiClient', 'model/MicroformConfigFeatures'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures'));
+    module.exports = factory(require('../ApiClient'), require('./MicroformConfigFeatures'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsMicroformConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures);
+    root.CyberSource.PaymentsProductsMicroformConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.MicroformConfigFeatures);
   }
-}(this, function(ApiClient, PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures) {
+}(this, function(ApiClient, MicroformConfigFeatures) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('features')) {
-        obj['features'] = PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures.constructFromObject(data['features']);
+        obj['features'] = MicroformConfigFeatures.constructFromObject(data['features']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PaymentsProductsMicroformConfigurationInformationConfigurationsFeatures} features
+   * @member {module:model/MicroformConfigFeatures} features
    */
   exports.prototype['features'] = undefined;
 

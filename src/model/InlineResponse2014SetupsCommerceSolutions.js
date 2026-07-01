@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2014SetupsPaymentsCardProcessing'], factory);
+    define(['ApiClient', 'model/PaymentsConfigurationSetupCardProcessing'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014SetupsPaymentsCardProcessing'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsConfigurationSetupCardProcessing'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2014SetupsCommerceSolutions = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014SetupsPaymentsCardProcessing);
+    root.CyberSource.InlineResponse2014SetupsCommerceSolutions = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsConfigurationSetupCardProcessing);
   }
-}(this, function(ApiClient, InlineResponse2014SetupsPaymentsCardProcessing) {
+}(this, function(ApiClient, PaymentsConfigurationSetupCardProcessing) {
   'use strict';
 
 
@@ -65,35 +65,35 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('tokenManagement')) {
-        obj['tokenManagement'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['tokenManagement']);
+        obj['tokenManagement'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['tokenManagement']);
       }
       if (data.hasOwnProperty('accountUpdater')) {
-        obj['accountUpdater'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['accountUpdater']);
+        obj['accountUpdater'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['accountUpdater']);
       }
       if (data.hasOwnProperty('binLookup')) {
-        obj['binLookup'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['binLookup']);
+        obj['binLookup'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['binLookup']);
       }
       if (data.hasOwnProperty('agenticCommerce')) {
-        obj['agenticCommerce'] = InlineResponse2014SetupsPaymentsCardProcessing.constructFromObject(data['agenticCommerce']);
+        obj['agenticCommerce'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['agenticCommerce']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} tokenManagement
+   * @member {module:model/PaymentsConfigurationSetupCardProcessing} tokenManagement
    */
   exports.prototype['tokenManagement'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} accountUpdater
+   * @member {module:model/PaymentsConfigurationSetupCardProcessing} accountUpdater
    */
   exports.prototype['accountUpdater'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} binLookup
+   * @member {module:model/PaymentsConfigurationSetupCardProcessing} binLookup
    */
   exports.prototype['binLookup'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsCardProcessing} agenticCommerce
+   * @member {module:model/PaymentsConfigurationSetupCardProcessing} agenticCommerce
    */
   exports.prototype['agenticCommerce'] = undefined;
 

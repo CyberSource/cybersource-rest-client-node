@@ -94,7 +94,7 @@
       var returnType = InlineResponse2005;
 
       //check isMLE for an api method 'this.getRegistration'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'mandatory';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getRegistration');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getRegistration']);
 
@@ -164,7 +164,7 @@
       var returnType = InlineResponse2014;
 
       //check isMLE for an api method 'this.postRegistration'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'mandatory';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postRegistration');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postRegistration']);
 

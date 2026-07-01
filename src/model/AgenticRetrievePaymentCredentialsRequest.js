@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Acpv1instructionsinstructionIdcredentialsTransactionData', 'model/Acpv1tokensPaymentInformation'], factory);
+    define(['ApiClient', 'model/Iccv1instructionsinstructionIdcredentialsTransactionData', 'model/Iccv1tokensPaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Acpv1instructionsinstructionIdcredentialsTransactionData'), require('./Acpv1tokensPaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1instructionsinstructionIdcredentialsTransactionData'), require('./Iccv1tokensPaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgenticRetrievePaymentCredentialsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Acpv1instructionsinstructionIdcredentialsTransactionData, root.CyberSource.Acpv1tokensPaymentInformation);
+    root.CyberSource.AgenticRetrievePaymentCredentialsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1instructionsinstructionIdcredentialsTransactionData, root.CyberSource.Iccv1tokensPaymentInformation);
   }
-}(this, function(ApiClient, Acpv1instructionsinstructionIdcredentialsTransactionData, Acpv1tokensPaymentInformation) {
+}(this, function(ApiClient, Iccv1instructionsinstructionIdcredentialsTransactionData, Iccv1tokensPaymentInformation) {
   'use strict';
 
 
@@ -44,8 +44,8 @@
    * @alias module:model/AgenticRetrievePaymentCredentialsRequest
    * @class
    * @param clientCorrelationId {String} Client Correlation Id used during the tokenization or during FIDO assertion.
-   * @param paymentInformation {module:model/Acpv1tokensPaymentInformation} 
-   * @param transactionData {Array.<module:model/Acpv1instructionsinstructionIdcredentialsTransactionData>} List of transaction data.
+   * @param paymentInformation {module:model/Iccv1tokensPaymentInformation} 
+   * @param transactionData {Array.<module:model/Iccv1instructionsinstructionIdcredentialsTransactionData>} List of transaction data.
    */
   var exports = function(clientCorrelationId, paymentInformation, transactionData) {
     var _this = this;
@@ -70,10 +70,10 @@
         obj['clientCorrelationId'] = ApiClient.convertToType(data['clientCorrelationId'], 'String');
       }
       if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = Acpv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
+        obj['paymentInformation'] = Iccv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('transactionData')) {
-        obj['transactionData'] = ApiClient.convertToType(data['transactionData'], [Acpv1instructionsinstructionIdcredentialsTransactionData]);
+        obj['transactionData'] = ApiClient.convertToType(data['transactionData'], [Iccv1instructionsinstructionIdcredentialsTransactionData]);
       }
     }
     return obj;
@@ -85,12 +85,12 @@
    */
   exports.prototype['clientCorrelationId'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensPaymentInformation} paymentInformation
+   * @member {module:model/Iccv1tokensPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
    * List of transaction data.
-   * @member {Array.<module:model/Acpv1instructionsinstructionIdcredentialsTransactionData>} transactionData
+   * @member {Array.<module:model/Iccv1instructionsinstructionIdcredentialsTransactionData>} transactionData
    */
   exports.prototype['transactionData'] = undefined;
 

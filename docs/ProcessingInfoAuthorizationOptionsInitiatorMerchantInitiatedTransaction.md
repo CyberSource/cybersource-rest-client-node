@@ -1,0 +1,11 @@
+# CyberSource.ProcessingInfoAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**reason** | **String** | Reason for the transaction. Possible values: - `1`: Resubmission - `2`: Delayed charge - `3`: Reauthorization for split shipment - `4`: No show - `5`: Account top up or Incremental authorization - `6`: Partial shipment - `7`: Fixed amount recurring (subscription) - `8`: Variable amount recurring (standing order) - `9`: Installment - `10`: Unscheduled Card-on-File   This field should be used to identify the kind of merchant-initiated transaction. Values 7 and 8 should be used on customer-initiated transactions that are establishing the relationship for Mastercard subscriptions or standing orders.  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 160-163 - Field: Message Reason Code  | [optional] 
+**previousTransactionId** | **String** | Network transaction identifier that was returned in the payment response field _processorInformation.transactionID_ in the reply message for the original customer-initiated payment in the series.  If the current payment request includes a token instead of an account number, the following time limits apply for the value of this field: - For a **resubmission**, the transaction ID must be less than 14 days old. - For a **delayed charge** or **reauthorization**, the transaction ID must be less than 30 days old.  **NOTE**: The value for this field does not correspond to any data in the TC 33 capture file5.  | [optional] 
+**originalAuthorizedAmount** | **String** | Amount of the original authorization in the series. This field is only needed for merchant-initiated transactions with Discover or Diners cards.  | [optional] 
+**agreementId** | **String** | An API to carry the agreement ID generated for recurring and unscheduled Card on file transaction. the merchant generates this per card holder or per payment agreement and shares the generated unique ID in the subsequent transactions. This can contain foreign/arabic character set also. Cybersource forwards this value to the Saudi Payment processor.  | [optional] 
+
+

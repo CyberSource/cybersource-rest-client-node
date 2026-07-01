@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2014SetupsPaymentsDigitalPayments'], factory);
+    define(['ApiClient', 'model/PaymentsConfigurationSetupDigitalPayments'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014SetupsPaymentsDigitalPayments'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsConfigurationSetupDigitalPayments'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2014SetupsValueAddedServices = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014SetupsPaymentsDigitalPayments);
+    root.CyberSource.InlineResponse2014SetupsValueAddedServices = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsConfigurationSetupDigitalPayments);
   }
-}(this, function(ApiClient, InlineResponse2014SetupsPaymentsDigitalPayments) {
+}(this, function(ApiClient, PaymentsConfigurationSetupDigitalPayments) {
   'use strict';
 
 
@@ -66,42 +66,42 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('reporting')) {
-        obj['reporting'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['reporting']);
+        obj['reporting'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['reporting']);
       }
       if (data.hasOwnProperty('transactionSearch')) {
-        obj['transactionSearch'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['transactionSearch']);
+        obj['transactionSearch'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['transactionSearch']);
       }
       if (data.hasOwnProperty('bankAccountValidation')) {
-        obj['bankAccountValidation'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['bankAccountValidation']);
+        obj['bankAccountValidation'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['bankAccountValidation']);
       }
       if (data.hasOwnProperty('flexapi')) {
-        obj['flexapi'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['flexapi']);
+        obj['flexapi'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['flexapi']);
       }
       if (data.hasOwnProperty('webhooks')) {
-        obj['webhooks'] = InlineResponse2014SetupsPaymentsDigitalPayments.constructFromObject(data['webhooks']);
+        obj['webhooks'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['webhooks']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} reporting
+   * @member {module:model/PaymentsConfigurationSetupDigitalPayments} reporting
    */
   exports.prototype['reporting'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} transactionSearch
+   * @member {module:model/PaymentsConfigurationSetupDigitalPayments} transactionSearch
    */
   exports.prototype['transactionSearch'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} bankAccountValidation
+   * @member {module:model/PaymentsConfigurationSetupDigitalPayments} bankAccountValidation
    */
   exports.prototype['bankAccountValidation'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} flexapi
+   * @member {module:model/PaymentsConfigurationSetupDigitalPayments} flexapi
    */
   exports.prototype['flexapi'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014SetupsPaymentsDigitalPayments} webhooks
+   * @member {module:model/PaymentsConfigurationSetupDigitalPayments} webhooks
    */
   exports.prototype['webhooks'] = undefined;
 

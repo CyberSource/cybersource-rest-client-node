@@ -89,8 +89,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.mitVoid'
@@ -162,8 +162,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidCapture'
@@ -235,8 +235,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidCredit'
@@ -308,8 +308,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidPayment'
@@ -381,8 +381,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsVoidsPost201Response;
 
       //check isMLE for an api method 'this.voidRefund'

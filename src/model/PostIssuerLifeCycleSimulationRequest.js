@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard', 'model/Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata'], factory);
+    define(['ApiClient', 'model/TmsIssuerLifeCycleEventSimulationMetadata', 'model/Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard'), require('./Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./TmsIssuerLifeCycleEventSimulationMetadata'), require('./Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostIssuerLifeCycleSimulationRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard, root.CyberSource.Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata);
+    root.CyberSource.PostIssuerLifeCycleSimulationRequest = factory(root.CyberSource.ApiClient, root.CyberSource.TmsIssuerLifeCycleEventSimulationMetadata, root.CyberSource.Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard);
   }
-}(this, function(ApiClient, Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard, Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata) {
+}(this, function(ApiClient, TmsIssuerLifeCycleEventSimulationMetadata, Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard) {
   'use strict';
 
 
@@ -71,7 +71,7 @@
         obj['card'] = Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard.constructFromObject(data['card']);
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata.constructFromObject(data['metadata']);
+        obj['metadata'] = TmsIssuerLifeCycleEventSimulationMetadata.constructFromObject(data['metadata']);
       }
     }
     return obj;
@@ -87,7 +87,7 @@
    */
   exports.prototype['card'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsMetadata} metadata
+   * @member {module:model/TmsIssuerLifeCycleEventSimulationMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
 

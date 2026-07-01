@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings'], factory);
+    define(['ApiClient', 'model/ReportDefinitionDefaultSettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings'));
+    module.exports = factory(require('../ApiClient'), require('./ReportDefinitionDefaultSettings'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ReportingV3ReportDefinitionsGet200ResponseReportDefinitions = factory(root.CyberSource.ApiClient, root.CyberSource.ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings);
+    root.CyberSource.ReportingV3ReportDefinitionsGet200ResponseReportDefinitions = factory(root.CyberSource.ApiClient, root.CyberSource.ReportDefinitionDefaultSettings);
   }
-}(this, function(ApiClient, ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings) {
+}(this, function(ApiClient, ReportDefinitionDefaultSettings) {
   'use strict';
 
 
@@ -83,7 +83,7 @@
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
       if (data.hasOwnProperty('defaultSettings')) {
-        obj['defaultSettings'] = ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings.constructFromObject(data['defaultSettings']);
+        obj['defaultSettings'] = ReportDefinitionDefaultSettings.constructFromObject(data['defaultSettings']);
       }
       if (data.hasOwnProperty('subscriptionType')) {
         obj['subscriptionType'] = ApiClient.convertToType(data['subscriptionType'], 'String');
@@ -114,7 +114,7 @@
    */
   exports.prototype['description'] = undefined;
   /**
-   * @member {module:model/ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings} defaultSettings
+   * @member {module:model/ReportDefinitionDefaultSettings} defaultSettings
    */
   exports.prototype['defaultSettings'] = undefined;
   /**

@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **ownershipPercentage** | **Number** | Determines the percentage of ownership this owner has. For the primary owner the percentage can be from 0-100; for other owners the percentage can be from 25-100 and the sum of ownership accross owners cannot exceed 100 | 
 **phoneNumber** | **String** |  | 
 **email** | **String** |  | 
-**address** | [**Boardingv1registrationsOrganizationInformationBusinessInformationAddress**](Boardingv1registrationsOrganizationInformationBusinessInformationAddress.md) |  | 
+**address** | [**BoardingBusinessInformationAddress**](BoardingBusinessInformationAddress.md) |  | 
 
 

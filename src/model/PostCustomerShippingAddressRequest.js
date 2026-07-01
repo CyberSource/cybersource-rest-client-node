@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo'], factory);
+    define(['ApiClient', 'model/DefaultShippingAddressLinks', 'model/DefaultShippingAddressMetadata', 'model/DefaultShippingAddressShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./DefaultShippingAddressLinks'), require('./DefaultShippingAddressMetadata'), require('./DefaultShippingAddressShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostCustomerShippingAddressRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo);
+    root.CyberSource.PostCustomerShippingAddressRequest = factory(root.CyberSource.ApiClient, root.CyberSource.DefaultShippingAddressLinks, root.CyberSource.DefaultShippingAddressMetadata, root.CyberSource.DefaultShippingAddressShipTo);
   }
-}(this, function(ApiClient, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo) {
+}(this, function(ApiClient, DefaultShippingAddressLinks, DefaultShippingAddressMetadata, DefaultShippingAddressShipTo) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks.constructFromObject(data['_links']);
+        obj['_links'] = DefaultShippingAddressLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -75,17 +75,17 @@
         obj['default'] = ApiClient.convertToType(data['default'], 'Boolean');
       }
       if (data.hasOwnProperty('shipTo')) {
-        obj['shipTo'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo.constructFromObject(data['shipTo']);
+        obj['shipTo'] = DefaultShippingAddressShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata.constructFromObject(data['metadata']);
+        obj['metadata'] = DefaultShippingAddressMetadata.constructFromObject(data['metadata']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks} _links
+   * @member {module:model/DefaultShippingAddressLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -99,11 +99,11 @@
    */
   exports.prototype['default'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo} shipTo
+   * @member {module:model/DefaultShippingAddressShipTo} shipTo
    */
   exports.prototype['shipTo'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata} metadata
+   * @member {module:model/DefaultShippingAddressMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsPayoutsConfigurationInformationConfigurations'], factory);
+    define(['ApiClient', 'model/BoardingPayoutsConfigurations'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsPayoutsConfigurationInformationConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./BoardingPayoutsConfigurations'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsPayoutsConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsPayoutsConfigurationInformationConfigurations);
+    root.CyberSource.PaymentsProductsPayoutsConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.BoardingPayoutsConfigurations);
   }
-}(this, function(ApiClient, PaymentsProductsPayoutsConfigurationInformationConfigurations) {
+}(this, function(ApiClient, BoardingPayoutsConfigurations) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = PaymentsProductsPayoutsConfigurationInformationConfigurations.constructFromObject(data['configurations']);
+        obj['configurations'] = BoardingPayoutsConfigurations.constructFromObject(data['configurations']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PaymentsProductsPayoutsConfigurationInformationConfigurations} configurations
+   * @member {module:model/BoardingPayoutsConfigurations} configurations
    */
   exports.prototype['configurations'] = undefined;
 

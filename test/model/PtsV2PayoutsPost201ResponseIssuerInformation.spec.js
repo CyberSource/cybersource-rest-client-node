@@ -56,6 +56,96 @@
       //expect(instance).to.be.a(CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation);
     });
 
+    it('should have the property octDomesticParticipantIndicator (base name: "octDomesticParticipantIndicator")', function() {
+      // uncomment below and update the code to test the property octDomesticParticipantIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octCrossBorderParticipantIndicator (base name: "octCrossBorderParticipantIndicator")', function() {
+      // uncomment below and update the code to test the property octCrossBorderParticipantIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octMoneyTransferDomesticIndicator (base name: "octMoneyTransferDomesticIndicator")', function() {
+      // uncomment below and update the code to test the property octMoneyTransferDomesticIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octMoneyTransferCrossBorderIndicator (base name: "octMoneyTransferCrossBorderIndicator")', function() {
+      // uncomment below and update the code to test the property octMoneyTransferCrossBorderIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octMoneyTransferFastFundsDomesticIndicator (base name: "octMoneyTransferFastFundsDomesticIndicator")', function() {
+      // uncomment below and update the code to test the property octMoneyTransferFastFundsDomesticIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octMoneyTransferFastFundsCrossBorderIndicator (base name: "octMoneyTransferFastFundsCrossBorderIndicator")', function() {
+      // uncomment below and update the code to test the property octMoneyTransferFastFundsCrossBorderIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octMoneyTransferMerchantCountryRestricted (base name: "octMoneyTransferMerchantCountryRestricted")', function() {
+      // uncomment below and update the code to test the property octMoneyTransferMerchantCountryRestricted
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octNonMoneyTransferDomesticIndicator (base name: "octNonMoneyTransferDomesticIndicator")', function() {
+      // uncomment below and update the code to test the property octNonMoneyTransferDomesticIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octNonMoneyTransferCrossBorderIndicator (base name: "octNonMoneyTransferCrossBorderIndicator")', function() {
+      // uncomment below and update the code to test the property octNonMoneyTransferCrossBorderIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octNonMoneyTransferFastFundsDomesticIndicator (base name: "octNonMoneyTransferFastFundsDomesticIndicator")', function() {
+      // uncomment below and update the code to test the property octNonMoneyTransferFastFundsDomesticIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octNonMoneyTransferFastFundsCrossBorderIndicator (base name: "octNonMoneyTransferFastFundsCrossBorderIndicator")', function() {
+      // uncomment below and update the code to test the property octNonMoneyTransferFastFundsCrossBorderIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octOnlineGamblingDomesticIndicator (base name: "octOnlineGamblingDomesticIndicator")', function() {
+      // uncomment below and update the code to test the property octOnlineGamblingDomesticIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octOnlineGamblingCrossBorderIndicator (base name: "octOnlineGamblingCrossBorderIndicator")', function() {
+      // uncomment below and update the code to test the property octOnlineGamblingCrossBorderIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octOnlineGamblingFastFundsDomesticIndicator (base name: "octOnlineGamblingFastFundsDomesticIndicator")', function() {
+      // uncomment below and update the code to test the property octOnlineGamblingFastFundsDomesticIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property octOnlineGamblingFastFundsCrossBorderIndicator (base name: "octOnlineGamblingFastFundsCrossBorderIndicator")', function() {
+      // uncomment below and update the code to test the property octOnlineGamblingFastFundsCrossBorderIndicator
+      //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property serviceProcessingType (base name: "serviceProcessingType")', function() {
       // uncomment below and update the code to test the property serviceProcessingType
       //var instane = new CyberSource.PtsV2PayoutsPost201ResponseIssuerInformation();

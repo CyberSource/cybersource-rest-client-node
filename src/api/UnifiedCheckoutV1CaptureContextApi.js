@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/GenerateUnifiedCheckoutV1CaptureContextRequest', 'model/InlineResponse4001'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/GenerateUnifiedCheckoutV1CaptureContextRequest', 'model/InlineResponse40011'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/GenerateUnifiedCheckoutV1CaptureContextRequest'), require('../model/InlineResponse4001'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/GenerateUnifiedCheckoutV1CaptureContextRequest'), require('../model/InlineResponse40011'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UnifiedCheckoutV1CaptureContextApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutV1CaptureContextRequest, root.CyberSource.InlineResponse4001);
+    root.CyberSource.UnifiedCheckoutV1CaptureContextApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutV1CaptureContextRequest, root.CyberSource.InlineResponse40011);
   }
-}(this, function(MLEUtility, ApiClient, GenerateUnifiedCheckoutV1CaptureContextRequest, InlineResponse4001) {
+}(this, function(MLEUtility, ApiClient, GenerateUnifiedCheckoutV1CaptureContextRequest, InlineResponse40011) {
   'use strict';
 
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsOrganizationInformationBusinessInformation', 'model/Boardingv1registrationsOrganizationInformationKYC', 'model/Boardingv1registrationsOrganizationInformationOwners'], factory);
+    define(['ApiClient', 'model/BoardingBusinessInformation', 'model/Boardingv1registrationsOrganizationInformationKYC', 'model/Boardingv1registrationsOrganizationInformationOwners'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsOrganizationInformationBusinessInformation'), require('./Boardingv1registrationsOrganizationInformationKYC'), require('./Boardingv1registrationsOrganizationInformationOwners'));
+    module.exports = factory(require('../ApiClient'), require('./BoardingBusinessInformation'), require('./Boardingv1registrationsOrganizationInformationKYC'), require('./Boardingv1registrationsOrganizationInformationOwners'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Boardingv1registrationsOrganizationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformation, root.CyberSource.Boardingv1registrationsOrganizationInformationKYC, root.CyberSource.Boardingv1registrationsOrganizationInformationOwners);
+    root.CyberSource.Boardingv1registrationsOrganizationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.BoardingBusinessInformation, root.CyberSource.Boardingv1registrationsOrganizationInformationKYC, root.CyberSource.Boardingv1registrationsOrganizationInformationOwners);
   }
-}(this, function(ApiClient, Boardingv1registrationsOrganizationInformationBusinessInformation, Boardingv1registrationsOrganizationInformationKYC, Boardingv1registrationsOrganizationInformationOwners) {
+}(this, function(ApiClient, BoardingBusinessInformation, Boardingv1registrationsOrganizationInformationKYC, Boardingv1registrationsOrganizationInformationOwners) {
   'use strict';
 
 
@@ -43,7 +43,7 @@
    * Constructs a new <code>Boardingv1registrationsOrganizationInformation</code>.
    * @alias module:model/Boardingv1registrationsOrganizationInformation
    * @class
-   * @param businessInformation {module:model/Boardingv1registrationsOrganizationInformationBusinessInformation} 
+   * @param businessInformation {module:model/BoardingBusinessInformation} 
    */
   var exports = function(businessInformation) {
     var _this = this;
@@ -89,7 +89,7 @@
         obj['configurable'] = ApiClient.convertToType(data['configurable'], 'Boolean');
       }
       if (data.hasOwnProperty('businessInformation')) {
-        obj['businessInformation'] = Boardingv1registrationsOrganizationInformationBusinessInformation.constructFromObject(data['businessInformation']);
+        obj['businessInformation'] = BoardingBusinessInformation.constructFromObject(data['businessInformation']);
       }
       if (data.hasOwnProperty('KYC')) {
         obj['KYC'] = Boardingv1registrationsOrganizationInformationKYC.constructFromObject(data['KYC']);
@@ -131,7 +131,7 @@
    */
   exports.prototype['configurable'] = false;
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformationBusinessInformation} businessInformation
+   * @member {module:model/BoardingBusinessInformation} businessInformation
    */
   exports.prototype['businessInformation'] = undefined;
   /**

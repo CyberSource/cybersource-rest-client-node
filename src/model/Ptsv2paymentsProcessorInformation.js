@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('cedpVerifiedIndicator')) {
         obj['cedpVerifiedIndicator'] = ApiClient.convertToType(data['cedpVerifiedIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('feeProgramIndicator')) {
+        obj['feeProgramIndicator'] = ApiClient.convertToType(data['feeProgramIndicator'], 'String');
       }
     }
     return obj;
@@ -134,6 +138,11 @@
    * @member {String} cedpVerifiedIndicator
    */
   exports.prototype['cedpVerifiedIndicator'] = undefined;
+  /**
+   * Interchange reimbursement fee program indicator (FPI), which is used when assessing the fee applied to a cross-border or domestic Asia Pacific financial transaction. Acquirers and issues retain and return the FPI value in chargeback and representments.
+   * @member {String} feeProgramIndicator
+   */
+  exports.prototype['feeProgramIndicator'] = undefined;
 
 
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **responseDetails** | **String** | This field might contain information about a decline.  | [optional] 
 **merchantAdvice** | [**PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice**](PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice.md) |  | [optional] 
 **merchantRiskPrediction** | **String** | Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices.  | [optional] 
-**sellerProtection** | [**PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection**](PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.md) |  | [optional] 
+**sellerProtection** | [**ProcessorInformationSellerProtection**](ProcessorInformationSellerProtection.md) |  | [optional] 
 **network** | [**Ptsv2paymentsProcessorInformationReversalNetwork**](Ptsv2paymentsProcessorInformationReversalNetwork.md) |  | [optional] 
 
 

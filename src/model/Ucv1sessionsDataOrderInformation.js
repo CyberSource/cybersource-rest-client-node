@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ucv1sessionsDataOrderInformationAmountDetails', 'model/Ucv1sessionsDataOrderInformationBillTo', 'model/Ucv1sessionsDataOrderInformationInvoiceDetails', 'model/Ucv1sessionsDataOrderInformationLineItems', 'model/Ucv1sessionsDataOrderInformationShippingDetails', 'model/Upv1capturecontextsDataOrderInformationShipTo'], factory);
+    define(['ApiClient', 'model/Ucv1sessionsDataOrderInformationAmountDetails', 'model/Ucv1sessionsDataOrderInformationBillTo', 'model/Ucv1sessionsDataOrderInformationInvoiceDetails', 'model/Ucv1sessionsDataOrderInformationLineItems', 'model/Ucv1sessionsDataOrderInformationShipTo', 'model/Ucv1sessionsDataOrderInformationShippingDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataOrderInformationAmountDetails'), require('./Ucv1sessionsDataOrderInformationBillTo'), require('./Ucv1sessionsDataOrderInformationInvoiceDetails'), require('./Ucv1sessionsDataOrderInformationLineItems'), require('./Ucv1sessionsDataOrderInformationShippingDetails'), require('./Upv1capturecontextsDataOrderInformationShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataOrderInformationAmountDetails'), require('./Ucv1sessionsDataOrderInformationBillTo'), require('./Ucv1sessionsDataOrderInformationInvoiceDetails'), require('./Ucv1sessionsDataOrderInformationLineItems'), require('./Ucv1sessionsDataOrderInformationShipTo'), require('./Ucv1sessionsDataOrderInformationShippingDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ucv1sessionsDataOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataOrderInformationAmountDetails, root.CyberSource.Ucv1sessionsDataOrderInformationBillTo, root.CyberSource.Ucv1sessionsDataOrderInformationInvoiceDetails, root.CyberSource.Ucv1sessionsDataOrderInformationLineItems, root.CyberSource.Ucv1sessionsDataOrderInformationShippingDetails, root.CyberSource.Upv1capturecontextsDataOrderInformationShipTo);
+    root.CyberSource.Ucv1sessionsDataOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataOrderInformationAmountDetails, root.CyberSource.Ucv1sessionsDataOrderInformationBillTo, root.CyberSource.Ucv1sessionsDataOrderInformationInvoiceDetails, root.CyberSource.Ucv1sessionsDataOrderInformationLineItems, root.CyberSource.Ucv1sessionsDataOrderInformationShipTo, root.CyberSource.Ucv1sessionsDataOrderInformationShippingDetails);
   }
-}(this, function(ApiClient, Ucv1sessionsDataOrderInformationAmountDetails, Ucv1sessionsDataOrderInformationBillTo, Ucv1sessionsDataOrderInformationInvoiceDetails, Ucv1sessionsDataOrderInformationLineItems, Ucv1sessionsDataOrderInformationShippingDetails, Upv1capturecontextsDataOrderInformationShipTo) {
+}(this, function(ApiClient, Ucv1sessionsDataOrderInformationAmountDetails, Ucv1sessionsDataOrderInformationBillTo, Ucv1sessionsDataOrderInformationInvoiceDetails, Ucv1sessionsDataOrderInformationLineItems, Ucv1sessionsDataOrderInformationShipTo, Ucv1sessionsDataOrderInformationShippingDetails) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
         obj['billTo'] = Ucv1sessionsDataOrderInformationBillTo.constructFromObject(data['billTo']);
       }
       if (data.hasOwnProperty('shipTo')) {
-        obj['shipTo'] = Upv1capturecontextsDataOrderInformationShipTo.constructFromObject(data['shipTo']);
+        obj['shipTo'] = Ucv1sessionsDataOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Ucv1sessionsDataOrderInformationLineItems]);
@@ -97,7 +97,7 @@
    */
   exports.prototype['billTo'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsDataOrderInformationShipTo} shipTo
+   * @member {module:model/Ucv1sessionsDataOrderInformationShipTo} shipTo
    */
   exports.prototype['shipTo'] = undefined;
   /**

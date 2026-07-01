@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection', 'model/Ptsv2paymentsProcessorInformationReversalNetwork'], factory);
+    define(['ApiClient', 'model/ProcessorInformationSellerProtection', 'model/PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice', 'model/Ptsv2paymentsProcessorInformationReversalNetwork'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'), require('./Ptsv2paymentsProcessorInformationReversalNetwork'));
+    module.exports = factory(require('../ApiClient'), require('./ProcessorInformationSellerProtection'), require('./PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'), require('./Ptsv2paymentsProcessorInformationReversalNetwork'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection, root.CyberSource.Ptsv2paymentsProcessorInformationReversalNetwork);
+    root.CyberSource.PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.ProcessorInformationSellerProtection, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, root.CyberSource.Ptsv2paymentsProcessorInformationReversalNetwork);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection, Ptsv2paymentsProcessorInformationReversalNetwork) {
+}(this, function(ApiClient, ProcessorInformationSellerProtection, PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice, Ptsv2paymentsProcessorInformationReversalNetwork) {
   'use strict';
 
 
@@ -95,7 +95,7 @@
         obj['merchantRiskPrediction'] = ApiClient.convertToType(data['merchantRiskPrediction'], 'String');
       }
       if (data.hasOwnProperty('sellerProtection')) {
-        obj['sellerProtection'] = PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.constructFromObject(data['sellerProtection']);
+        obj['sellerProtection'] = ProcessorInformationSellerProtection.constructFromObject(data['sellerProtection']);
       }
       if (data.hasOwnProperty('network')) {
         obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
@@ -144,7 +144,7 @@
    */
   exports.prototype['merchantRiskPrediction'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection} sellerProtection
+   * @member {module:model/ProcessorInformationSellerProtection} sellerProtection
    */
   exports.prototype['sellerProtection'] = undefined;
   /**

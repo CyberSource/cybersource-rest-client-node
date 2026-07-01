@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **discountApplied** | **Boolean** | Indicates if discount applied | [optional] 
 **discountRate** | **String** | Discount rate applied | [optional] 
 **invoiceNumber** | **String** | Invoice number for the line item | [optional] 
-**taxDetails** | [**Upv1capturecontextsDataOrderInformationLineItemsTaxDetails**](Upv1capturecontextsDataOrderInformationLineItemsTaxDetails.md) |  | [optional] 
+**taxDetails** | [**Upv1capturecontextsDataOrderInformationTaxDetails**](Upv1capturecontextsDataOrderInformationTaxDetails.md) |  | [optional] 
 **fulfillmentType** | **String** | Fulfillment type | [optional] 
 **weight** | **String** | Weight of the product | [optional] 
 **weightIdentifier** | **String** | Weight identifier | [optional] 
@@ -35,6 +35,6 @@ Name | Type | Description | Notes
 **giftCardCurrency** | **String** | Gift card currency | [optional] 
 **shippingDestinationTypes** | **String** | Shipping destination types | [optional] 
 **gift** | **Boolean** | Indicates if item is a gift | [optional] 
-**passenger** | [**Upv1capturecontextsDataOrderInformationLineItemsPassenger**](Upv1capturecontextsDataOrderInformationLineItemsPassenger.md) |  | [optional] 
+**passenger** | [**Upv1capturecontextsDataOrderInformationPassenger**](Upv1capturecontextsDataOrderInformationPassenger.md) |  | [optional] 
 
 

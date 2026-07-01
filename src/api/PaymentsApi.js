@@ -96,8 +96,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsOrderPost201Response;
 
       //check isMLE for an api method 'this.createOrderRequest'
@@ -162,8 +162,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsPost201Response;
 
       //check isMLE for an api method 'this.createPayment'
@@ -228,8 +228,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsPost201Response2;
 
       //check isMLE for an api method 'this.createSessionRequest'
@@ -301,8 +301,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2IncrementalAuthorizationPatch201Response;
 
       //check isMLE for an api method 'this.incrementAuth'
@@ -374,8 +374,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsPost201Response1;
 
       //check isMLE for an api method 'this.refreshPaymentStatus'
@@ -401,8 +401,8 @@
     }
 
     /**
-     * Callback function to receive the result of the updateSessionReq operation.
-     * @callback module:api/PaymentsApi~updateSessionReqCallback
+     * Callback function to receive the result of the updateSessionRequest operation.
+     * @callback module:api/PaymentsApi~updateSessionRequestCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PtsV2PaymentsPost201Response2} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -413,20 +413,20 @@
      * Update Alternative Payments Sessions Request
      * @param {module:model/CreateSessionRequest} createSessionRequest 
      * @param {String} id The payment ID. This ID is returned from a previous payment request.
-     * @param {module:api/PaymentsApi~updateSessionReqCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PaymentsApi~updateSessionRequestCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PtsV2PaymentsPost201Response2}
      */
-    this.updateSessionReq = function(createSessionRequest, id, callback) {
+    this.updateSessionRequest = function(createSessionRequest, id, callback) {
       var postBody = createSessionRequest;
 
       // verify the required parameter 'createSessionRequest' is set
       if (createSessionRequest === undefined || createSessionRequest === null) {
-        throw new Error("Missing the required parameter 'createSessionRequest' when calling updateSessionReq");
+        throw new Error("Missing the required parameter 'createSessionRequest' when calling updateSessionRequest");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling updateSessionReq");
+        throw new Error("Missing the required parameter 'id' when calling updateSessionRequest");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
@@ -447,14 +447,14 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsPost201Response2;
 
-      //check isMLE for an api method 'this.updateSessionReq'
+      //check isMLE for an api method 'this.updateSessionRequest'
       var inboundMLEStatus = 'optional';
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateSessionReq');
-      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateSessionReq']);
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateSessionRequest');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateSessionRequest']);
 
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
