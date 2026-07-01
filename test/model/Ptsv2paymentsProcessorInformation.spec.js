@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property feeProgramIndicator (base name: "feeProgramIndicator")', function() {
+      // uncomment below and update the code to test the property feeProgramIndicator
+      //var instane = new CyberSource.Ptsv2paymentsProcessorInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

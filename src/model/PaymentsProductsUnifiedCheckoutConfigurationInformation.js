@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations'], factory);
+    define(['ApiClient', 'model/UcConfigurations'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations'));
+    module.exports = factory(require('../ApiClient'), require('./UcConfigurations'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsUnifiedCheckoutConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations);
+    root.CyberSource.PaymentsProductsUnifiedCheckoutConfigurationInformation = factory(root.CyberSource.ApiClient, root.CyberSource.UcConfigurations);
   }
-}(this, function(ApiClient, PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations) {
+}(this, function(ApiClient, UcConfigurations) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations.constructFromObject(data['configurations']);
+        obj['configurations'] = UcConfigurations.constructFromObject(data['configurations']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PaymentsProductsUnifiedCheckoutConfigurationInformationConfigurations} configurations
+   * @member {module:model/UcConfigurations} configurations
    */
   exports.prototype['configurations'] = undefined;
 

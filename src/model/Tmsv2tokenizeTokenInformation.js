@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TmsEmbeddedInstrumentIdentifier', 'model/Tmsv2tokenizeTokenInformationCustomer', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument', 'model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress'], factory);
+    define(['ApiClient', 'model/DefaultPaymentInstrument', 'model/DefaultShippingAddress', 'model/TmsEmbeddedInstrumentIdentifier', 'model/Tmsv2tokenizeTokenInformationCustomer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TmsEmbeddedInstrumentIdentifier'), require('./Tmsv2tokenizeTokenInformationCustomer'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument'), require('./Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress'));
+    module.exports = factory(require('../ApiClient'), require('./DefaultPaymentInstrument'), require('./DefaultShippingAddress'), require('./TmsEmbeddedInstrumentIdentifier'), require('./Tmsv2tokenizeTokenInformationCustomer'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Tmsv2tokenizeTokenInformation = factory(root.CyberSource.ApiClient, root.CyberSource.TmsEmbeddedInstrumentIdentifier, root.CyberSource.Tmsv2tokenizeTokenInformationCustomer, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument, root.CyberSource.Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress);
+    root.CyberSource.Tmsv2tokenizeTokenInformation = factory(root.CyberSource.ApiClient, root.CyberSource.DefaultPaymentInstrument, root.CyberSource.DefaultShippingAddress, root.CyberSource.TmsEmbeddedInstrumentIdentifier, root.CyberSource.Tmsv2tokenizeTokenInformationCustomer);
   }
-}(this, function(ApiClient, TmsEmbeddedInstrumentIdentifier, Tmsv2tokenizeTokenInformationCustomer, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument, Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress) {
+}(this, function(ApiClient, DefaultPaymentInstrument, DefaultShippingAddress, TmsEmbeddedInstrumentIdentifier, Tmsv2tokenizeTokenInformationCustomer) {
   'use strict';
 
 
@@ -76,10 +76,10 @@
         obj['customer'] = Tmsv2tokenizeTokenInformationCustomer.constructFromObject(data['customer']);
       }
       if (data.hasOwnProperty('shippingAddress')) {
-        obj['shippingAddress'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress.constructFromObject(data['shippingAddress']);
+        obj['shippingAddress'] = DefaultShippingAddress.constructFromObject(data['shippingAddress']);
       }
       if (data.hasOwnProperty('paymentInstrument')) {
-        obj['paymentInstrument'] = Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument.constructFromObject(data['paymentInstrument']);
+        obj['paymentInstrument'] = DefaultPaymentInstrument.constructFromObject(data['paymentInstrument']);
       }
       if (data.hasOwnProperty('instrumentIdentifier')) {
         obj['instrumentIdentifier'] = TmsEmbeddedInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
@@ -103,11 +103,11 @@
    */
   exports.prototype['customer'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress} shippingAddress
+   * @member {module:model/DefaultShippingAddress} shippingAddress
    */
   exports.prototype['shippingAddress'] = undefined;
   /**
-   * @member {module:model/Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument} paymentInstrument
+   * @member {module:model/DefaultPaymentInstrument} paymentInstrument
    */
   exports.prototype['paymentInstrument'] = undefined;
   /**

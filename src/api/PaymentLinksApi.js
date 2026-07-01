@@ -94,7 +94,7 @@
       var returnType = PblPaymentLinksPost201Response;
 
       //check isMLE for an api method 'this.createPaymentLink'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPaymentLink');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPaymentLink']);
 
@@ -171,7 +171,7 @@
       var returnType = PblPaymentLinksAllGet200Response;
 
       //check isMLE for an api method 'this.getAllPaymentLinks'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getAllPaymentLinks');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getAllPaymentLinks']);
 
@@ -237,7 +237,7 @@
       var returnType = PblPaymentLinksGet200Response;
 
       //check isMLE for an api method 'this.getPaymentLink'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getPaymentLink');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getPaymentLink']);
 
@@ -310,7 +310,7 @@
       var returnType = PblPaymentLinksPost201Response;
 
       //check isMLE for an api method 'this.updatePaymentLink'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updatePaymentLink');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updatePaymentLink']);
 

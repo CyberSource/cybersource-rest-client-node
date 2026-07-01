@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**globalPaymentInformation** | [**VTConfigCardNotPresentGlobalPaymentInformation**](VTConfigCardNotPresentGlobalPaymentInformation.md) |  | [optional] 
+**globalPaymentInformation** | [**VirtualTerminalGlobalPaymentSettings**](VirtualTerminalGlobalPaymentSettings.md) |  | [optional] 
 **receiptInformation** | [**VTConfigCardNotPresentReceiptInformation**](VTConfigCardNotPresentReceiptInformation.md) |  | [optional] 
 
 

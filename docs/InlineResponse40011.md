@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | **String** | Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.)  | [optional] 
-**status** | **String** | Possible values:   - `INVALID_REQUEST`  | [optional] 
-**message** | **String** | The detail message related to the status and reason | [optional] 
-**reason** | **String** | The reason of the status.  Possible values:   - `INVALID_REQUEST`  | [optional] 
-**details** | [**[InlineResponse40011Details]**](InlineResponse40011Details.md) |  | [optional] 
+**correlationId** | **String** |  | [optional] 
+**details** | [**[InlineResponse4001Details]**](InlineResponse4001Details.md) |  | [optional] 
+**informationLink** | **String** |  | [optional] 
+**message** | **String** |  | 
+**reason** | **String** | Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT | 
 
 

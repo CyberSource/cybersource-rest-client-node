@@ -91,7 +91,7 @@
       var returnType = InvoicingV2InvoiceSettingsGet200Response;
 
       //check isMLE for an api method 'this.getInvoiceSettings'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getInvoiceSettings');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getInvoiceSettings']);
 
@@ -161,7 +161,7 @@
       var returnType = InvoicingV2InvoiceSettingsGet200Response;
 
       //check isMLE for an api method 'this.updateInvoiceSettings'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateInvoiceSettings');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateInvoiceSettings']);
 

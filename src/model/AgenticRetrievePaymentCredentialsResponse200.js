@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete', 'model/AgenticRetrievePaymentCredentialsResponse200TransactionResponseWithPendingEvents'], factory);
+    define(['ApiClient', 'model/AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete', 'model/IccTransactionResponsePendingEvents'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete'), require('./AgenticRetrievePaymentCredentialsResponse200TransactionResponseWithPendingEvents'));
+    module.exports = factory(require('../ApiClient'), require('./AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete'), require('./IccTransactionResponsePendingEvents'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgenticRetrievePaymentCredentialsResponse200 = factory(root.CyberSource.ApiClient, root.CyberSource.AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete, root.CyberSource.AgenticRetrievePaymentCredentialsResponse200TransactionResponseWithPendingEvents);
+    root.CyberSource.AgenticRetrievePaymentCredentialsResponse200 = factory(root.CyberSource.ApiClient, root.CyberSource.AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete, root.CyberSource.IccTransactionResponsePendingEvents);
   }
-}(this, function(ApiClient, AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete, AgenticRetrievePaymentCredentialsResponse200TransactionResponseWithPendingEvents) {
+}(this, function(ApiClient, AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete, IccTransactionResponsePendingEvents) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['TransactionResponseComplete'] = AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete.constructFromObject(data['TransactionResponseComplete']);
       }
       if (data.hasOwnProperty('TransactionResponseWithPendingEvents')) {
-        obj['TransactionResponseWithPendingEvents'] = AgenticRetrievePaymentCredentialsResponse200TransactionResponseWithPendingEvents.constructFromObject(data['TransactionResponseWithPendingEvents']);
+        obj['TransactionResponseWithPendingEvents'] = IccTransactionResponsePendingEvents.constructFromObject(data['TransactionResponseWithPendingEvents']);
       }
     }
     return obj;
@@ -78,7 +78,7 @@
    */
   exports.prototype['TransactionResponseComplete'] = undefined;
   /**
-   * @member {module:model/AgenticRetrievePaymentCredentialsResponse200TransactionResponseWithPendingEvents} TransactionResponseWithPendingEvents
+   * @member {module:model/IccTransactionResponsePendingEvents} TransactionResponseWithPendingEvents
    */
   exports.prototype['TransactionResponseWithPendingEvents'] = undefined;
 

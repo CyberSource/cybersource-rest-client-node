@@ -21,18 +21,18 @@ const agentPool = new Map();
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'agentkeepalive', 'crypto', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest', 'Authentication/MLEUtility'], factory);
+    define(['axios', 'axios-cookiejar-support', 'https-proxy-agent', 'https', 'querystring', 'agentkeepalive', 'crypto', 'Authentication/MerchantConfig', 'Authentication/Logger', 'Authentication/Constants', 'Authentication/Authorization', 'Authentication/PayloadDigest', 'Authentication/MLEUtility', 'Authentication/LoggingUtilities'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('agentkeepalive'), require('crypto'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'), require('./authentication/util/MLEUtility'));
+    module.exports = factory(require('axios'), require('axios-cookiejar-support'), require('https-proxy-agent'), require('https'), require('querystring'), require('agentkeepalive'), require('crypto'), require('./authentication/core/MerchantConfig'), require('./authentication/logging/Logger'), require('./authentication/util/Constants'), require('./authentication/core/Authorization'), require('./authentication/payloadDigest/DigestGenerator'), require('./authentication/util/MLEUtility'), require('./authentication/logging/LoggingUtilities'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.AgentKeepAlive, root.crypto, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest, root.Authentication.MLEUtility);
+    root.CyberSource.ApiClient = factory(root.axios, root.axiosCookieJar, root.httpsProxyAgent, root.https, root.querystring, root.AgentKeepAlive, root.crypto, root.Authentication.MerchantConfig, root.Authentication.Logger, root.Authentication.Constants, root.Authentication.Authorization, root.Authentication.PayloadDigest, root.Authentication.MLEUtility, root.Authentication.LoggingUtilities);
   }
-}(this, function(axios, axiosCookieJar, HttpsProxyAgent, https, querystring, AgentKeepAlive, crypto, MerchantConfig, Logger, Constants, Authorization, PayloadDigest, MLEUtility) {
+}(this, function(axios, axiosCookieJar, HttpsProxyAgent, https, querystring, AgentKeepAlive, crypto, MerchantConfig, Logger, Constants, Authorization, PayloadDigest, MLEUtility, LoggingUtilities) {
   /**
    * @module ApiClient
    * @version 0.0.1
@@ -599,7 +599,7 @@ const agentPool = new Map();
     if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.JWT) {
       token = 'Bearer ' + token;
       headerParams['Authorization'] = token;
-      this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
+      this.logger.info(this.constants.AUTHORIZATION + ' : ' + LoggingUtilities.redactJwt(token));
     }
     else if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.HTTP) {
       var date = new Date(Date.now()).toUTCString();
@@ -622,14 +622,13 @@ const agentPool = new Map();
       this.logger.info('v-c-merchant-id : ' + this.merchantConfig.getMerchantID());
       this.logger.info('date : ' + date);
       this.logger.info('host : ' + this.merchantConfig.getRequestHost());
-      this.logger.info('signature : ' + token);
+      this.logger.info('signature : ' + LoggingUtilities.redactSignature(token));
       this.logger.info('User-Agent : ' + headerParams['User-Agent']);
       this.logger.info(this.constants.END_TRANSACTION);
     }
     else if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.OAUTH) {
       token = 'Bearer ' + token;
       headerParams['Authorization'] = token;
-      // this.logger.info(this.constants.AUTHORIZATION + ' : ' + token);
     }
     headerParams['v-c-sdk-telemetry-merchant-id'] = this.merchantConfig.getMerchantID();
     this.logger.info('v-c-sdk-telemetry-merchant-id : ' + this.merchantConfig.getMerchantID());
@@ -858,7 +857,7 @@ const agentPool = new Map();
           
           if (callback) {
             var data = _this.deserialize(response, returnType);
-            _this.logger.debug(`Response data: ${JSON.stringify(data)}`);
+            _this.logger.debug(`${Constants.RESPONSE_DATA_MESSAGE} ${JSON.stringify(data)}`);
             response = _this.translateResponse(response);
 
             callback(null, data, response);

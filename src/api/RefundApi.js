@@ -96,8 +96,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsRefundPost201Response;
 
       //check isMLE for an api method 'this.refundCapture'
@@ -169,8 +169,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2PaymentsRefundPost201Response;
 
       //check isMLE for an api method 'this.refundPayment'

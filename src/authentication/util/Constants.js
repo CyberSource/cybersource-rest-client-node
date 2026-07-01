@@ -48,6 +48,7 @@ module.exports = {
     LOG_REQUEST_AFTER_MLE             :  "Request after MLE: ",
     LOG_RESPONSE_BEFORE_MLE           :  "Response before MLE decryption: ",
     LOG_RESPONSE_AFTER_MLE            :  "Response after MLE decryption: ",
+    RESPONSE_DATA_MESSAGE             :  "Response Data : ",
     MERCHANTID                        :  "MERCHANTID",
     MERCHANT_KEY_ID                   :  "MERCHANT_KEY_ID",
     MERCHANT_SECERT_KEY               :  "MERCHANT_SECERT_KEY",

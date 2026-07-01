@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsOrganizationInformationBusinessInformationAddress'], factory);
+    define(['ApiClient', 'model/BoardingBusinessInformationAddress'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsOrganizationInformationBusinessInformationAddress'));
+    module.exports = factory(require('../ApiClient'), require('./BoardingBusinessInformationAddress'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Boardingv1registrationsOrganizationInformationOwners = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsOrganizationInformationBusinessInformationAddress);
+    root.CyberSource.Boardingv1registrationsOrganizationInformationOwners = factory(root.CyberSource.ApiClient, root.CyberSource.BoardingBusinessInformationAddress);
   }
-}(this, function(ApiClient, Boardingv1registrationsOrganizationInformationBusinessInformationAddress) {
+}(this, function(ApiClient, BoardingBusinessInformationAddress) {
   'use strict';
 
 
@@ -52,7 +52,7 @@
    * @param ownershipPercentage {Number} Determines the percentage of ownership this owner has. For the primary owner the percentage can be from 0-100; for other owners the percentage can be from 25-100 and the sum of ownership accross owners cannot exceed 100
    * @param phoneNumber {String} 
    * @param email {String} 
-   * @param address {module:model/Boardingv1registrationsOrganizationInformationBusinessInformationAddress} 
+   * @param address {module:model/BoardingBusinessInformationAddress} 
    */
   var exports = function(firstName, lastName, birthDate, isPrimary, jobTitle, hasSignificantResponsability, ownershipPercentage, phoneNumber, email, address) {
     var _this = this;
@@ -124,7 +124,7 @@
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
       if (data.hasOwnProperty('address')) {
-        obj['address'] = Boardingv1registrationsOrganizationInformationBusinessInformationAddress.constructFromObject(data['address']);
+        obj['address'] = BoardingBusinessInformationAddress.constructFromObject(data['address']);
       }
     }
     return obj;
@@ -189,7 +189,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsOrganizationInformationBusinessInformationAddress} address
+   * @member {module:model/BoardingBusinessInformationAddress} address
    */
   exports.prototype['address'] = undefined;
 

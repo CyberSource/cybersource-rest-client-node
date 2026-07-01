@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property userAuthenticationMethod (base name: "userAuthenticationMethod")', function() {
+      // uncomment below and update the code to test the property userAuthenticationMethod
+      //var instane = new CyberSource.Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

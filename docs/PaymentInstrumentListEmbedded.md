@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paymentInstruments** | [**[PaymentInstrumentListEmbeddedPaymentInstruments]**](PaymentInstrumentListEmbeddedPaymentInstruments.md) |  | [optional] 
+**paymentInstruments** | [**[PaymentInstrument]**](PaymentInstrument.md) |  | [optional] 
 
 

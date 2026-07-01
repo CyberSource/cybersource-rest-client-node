@@ -107,7 +107,7 @@
    */
   exports.prototype['reconciliationId'] = undefined;
   /**
-   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments 
+   * Value that links the current authorization request to the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions . Set this value to the ID that was returned in the reply message from the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions.  This value is used for:  - Partial authorizations - Split shipments - Merchant Initiated Debt Recovery Transactions for Visa Platform Connect and China Union Pay merchants 
    * @member {String} linkId
    */
   exports.prototype['linkId'] = undefined;

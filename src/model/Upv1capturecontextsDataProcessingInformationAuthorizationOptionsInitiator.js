@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'], factory);
+    define(['ApiClient', 'model/UnifiedCheckoutMerchantInitiatedTransaction'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'));
+    module.exports = factory(require('../ApiClient'), require('./UnifiedCheckoutMerchantInitiatedTransaction'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator = factory(root.CyberSource.ApiClient, root.CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction);
+    root.CyberSource.Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator = factory(root.CyberSource.ApiClient, root.CyberSource.UnifiedCheckoutMerchantInitiatedTransaction);
   }
-}(this, function(ApiClient, Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction) {
+}(this, function(ApiClient, UnifiedCheckoutMerchantInitiatedTransaction) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['credentialStoredOnFile'] = ApiClient.convertToType(data['credentialStoredOnFile'], 'Boolean');
       }
       if (data.hasOwnProperty('merchantInitiatedTransaction')) {
-        obj['merchantInitiatedTransaction'] = Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.constructFromObject(data['merchantInitiatedTransaction']);
+        obj['merchantInitiatedTransaction'] = UnifiedCheckoutMerchantInitiatedTransaction.constructFromObject(data['merchantInitiatedTransaction']);
       }
     }
     return obj;
@@ -78,7 +78,7 @@
    */
   exports.prototype['credentialStoredOnFile'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction} merchantInitiatedTransaction
+   * @member {module:model/UnifiedCheckoutMerchantInitiatedTransaction} merchantInitiatedTransaction
    */
   exports.prototype['merchantInitiatedTransaction'] = undefined;
 

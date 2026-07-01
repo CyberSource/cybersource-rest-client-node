@@ -75,7 +75,7 @@
         obj['shipTo'] = Upv1capturecontextsDataOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('lineItems')) {
-        obj['lineItems'] = Upv1capturecontextsDataOrderInformationLineItems.constructFromObject(data['lineItems']);
+        obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Upv1capturecontextsDataOrderInformationLineItems]);
       }
       if (data.hasOwnProperty('invoiceDetails')) {
         obj['invoiceDetails'] = Upv1capturecontextsDataOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
@@ -97,7 +97,7 @@
    */
   exports.prototype['shipTo'] = undefined;
   /**
-   * @member {module:model/Upv1capturecontextsDataOrderInformationLineItems} lineItems
+   * @member {Array.<module:model/Upv1capturecontextsDataOrderInformationLineItems>} lineItems
    */
   exports.prototype['lineItems'] = undefined;
   /**

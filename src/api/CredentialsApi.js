@@ -101,14 +101,14 @@
       if (isMLEForApi === true) {
         MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
           return this.apiClient.callApi(
-            '/acp/v1/mpp/credentials', 'POST',
+            '/icc/v1/mpp/credentials', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
             authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
           );
         });
       } else {
         return this.apiClient.callApi(
-          '/acp/v1/mpp/credentials', 'POST',
+          '/icc/v1/mpp/credentials', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ucv1sessionsPaymentConfigurationsCLICKTOPAY', 'model/Ucv1sessionsPaymentConfigurationsGOOGLEPAY', 'model/Ucv1sessionsPaymentConfigurationsTMSTOKEN'], factory);
+    define(['ApiClient', 'model/Ucv1sessionsPaymentConfigurationsCLICKTOPAY', 'model/Ucv1sessionsPaymentConfigurationsGOOGLEPAY', 'model/Ucv1sessionsPaymentConfigurationsPAYPAL', 'model/Ucv1sessionsPaymentConfigurationsTMSTOKEN'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsPaymentConfigurationsCLICKTOPAY'), require('./Ucv1sessionsPaymentConfigurationsGOOGLEPAY'), require('./Ucv1sessionsPaymentConfigurationsTMSTOKEN'));
+    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsPaymentConfigurationsCLICKTOPAY'), require('./Ucv1sessionsPaymentConfigurationsGOOGLEPAY'), require('./Ucv1sessionsPaymentConfigurationsPAYPAL'), require('./Ucv1sessionsPaymentConfigurationsTMSTOKEN'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ucv1sessionsPaymentConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsPaymentConfigurationsCLICKTOPAY, root.CyberSource.Ucv1sessionsPaymentConfigurationsGOOGLEPAY, root.CyberSource.Ucv1sessionsPaymentConfigurationsTMSTOKEN);
+    root.CyberSource.Ucv1sessionsPaymentConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsPaymentConfigurationsCLICKTOPAY, root.CyberSource.Ucv1sessionsPaymentConfigurationsGOOGLEPAY, root.CyberSource.Ucv1sessionsPaymentConfigurationsPAYPAL, root.CyberSource.Ucv1sessionsPaymentConfigurationsTMSTOKEN);
   }
-}(this, function(ApiClient, Ucv1sessionsPaymentConfigurationsCLICKTOPAY, Ucv1sessionsPaymentConfigurationsGOOGLEPAY, Ucv1sessionsPaymentConfigurationsTMSTOKEN) {
+}(this, function(ApiClient, Ucv1sessionsPaymentConfigurationsCLICKTOPAY, Ucv1sessionsPaymentConfigurationsGOOGLEPAY, Ucv1sessionsPaymentConfigurationsPAYPAL, Ucv1sessionsPaymentConfigurationsTMSTOKEN) {
   'use strict';
 
 
@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -70,6 +71,9 @@
       if (data.hasOwnProperty('CLICKTOPAY')) {
         obj['CLICKTOPAY'] = Ucv1sessionsPaymentConfigurationsCLICKTOPAY.constructFromObject(data['CLICKTOPAY']);
       }
+      if (data.hasOwnProperty('PAYPAL')) {
+        obj['PAYPAL'] = Ucv1sessionsPaymentConfigurationsPAYPAL.constructFromObject(data['PAYPAL']);
+      }
       if (data.hasOwnProperty('TMS_TOKEN')) {
         obj['TMS_TOKEN'] = Ucv1sessionsPaymentConfigurationsTMSTOKEN.constructFromObject(data['TMS_TOKEN']);
       }
@@ -85,6 +89,10 @@
    * @member {module:model/Ucv1sessionsPaymentConfigurationsCLICKTOPAY} CLICKTOPAY
    */
   exports.prototype['CLICKTOPAY'] = undefined;
+  /**
+   * @member {module:model/Ucv1sessionsPaymentConfigurationsPAYPAL} PAYPAL
+   */
+  exports.prototype['PAYPAL'] = undefined;
   /**
    * @member {module:model/Ucv1sessionsPaymentConfigurationsTMSTOKEN} TMS_TOKEN
    */

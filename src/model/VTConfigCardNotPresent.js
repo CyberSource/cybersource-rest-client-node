@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VTConfigCardNotPresentGlobalPaymentInformation', 'model/VTConfigCardNotPresentReceiptInformation'], factory);
+    define(['ApiClient', 'model/VTConfigCardNotPresentReceiptInformation', 'model/VirtualTerminalGlobalPaymentSettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./VTConfigCardNotPresentGlobalPaymentInformation'), require('./VTConfigCardNotPresentReceiptInformation'));
+    module.exports = factory(require('../ApiClient'), require('./VTConfigCardNotPresentReceiptInformation'), require('./VirtualTerminalGlobalPaymentSettings'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VTConfigCardNotPresent = factory(root.CyberSource.ApiClient, root.CyberSource.VTConfigCardNotPresentGlobalPaymentInformation, root.CyberSource.VTConfigCardNotPresentReceiptInformation);
+    root.CyberSource.VTConfigCardNotPresent = factory(root.CyberSource.ApiClient, root.CyberSource.VTConfigCardNotPresentReceiptInformation, root.CyberSource.VirtualTerminalGlobalPaymentSettings);
   }
-}(this, function(ApiClient, VTConfigCardNotPresentGlobalPaymentInformation, VTConfigCardNotPresentReceiptInformation) {
+}(this, function(ApiClient, VTConfigCardNotPresentReceiptInformation, VirtualTerminalGlobalPaymentSettings) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('globalPaymentInformation')) {
-        obj['globalPaymentInformation'] = VTConfigCardNotPresentGlobalPaymentInformation.constructFromObject(data['globalPaymentInformation']);
+        obj['globalPaymentInformation'] = VirtualTerminalGlobalPaymentSettings.constructFromObject(data['globalPaymentInformation']);
       }
       if (data.hasOwnProperty('receiptInformation')) {
         obj['receiptInformation'] = VTConfigCardNotPresentReceiptInformation.constructFromObject(data['receiptInformation']);
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/VTConfigCardNotPresentGlobalPaymentInformation} globalPaymentInformation
+   * @member {module:model/VirtualTerminalGlobalPaymentSettings} globalPaymentInformation
    */
   exports.prototype['globalPaymentInformation'] = undefined;
   /**

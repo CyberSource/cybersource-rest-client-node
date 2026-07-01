@@ -14,11 +14,11 @@ var Utility = require('./Utility');
  * Certificate will be available in the memory cache if it has initialized once.
  */
 exports.fetchCachedCertificate = function (merchantConfig, logger) {
-
-    var cachedCertificateFromP12File = cache.get("certificateFromP12File");
-    var cachedLastModifiedTimeStamp = cache.get("certificateLastModifideTimeStamp");
-
     var filePath = merchantConfig.getP12FilePath();
+    var cacheKey = path.resolve(filePath);
+    var cachedCertificateFromP12File = cache.get(cacheKey);
+    var cachedLastModifiedTimeStamp = cache.get(cacheKey + "LastModifiedTimeStamp");
+
     if (fs.existsSync(filePath)) {
         const stats = fs.statSync(filePath);
         const currentFileLastModifiedTime = stats.mtime;
@@ -48,8 +48,9 @@ exports.fetchCachedCertificate = function (merchantConfig, logger) {
 function getCertificate(keyPass, filePath, fileLastModifiedTime, logger) {
     try {
         var certificate = Utility.parseP12File(filePath, keyPass, logger);
-        cache.put("certificateFromP12File", certificate);
-        cache.put("certificateLastModifideTimeStamp", fileLastModifiedTime);
+        var cacheKey = path.resolve(filePath);
+        cache.put(cacheKey, certificate);
+        cache.put(cacheKey + "LastModifiedTimeStamp", fileLastModifiedTime);
         return certificate;
     } catch (error) {
         ApiException.AuthException(error.message + ". " + Constants.INCORRECT_KEY_PASS);

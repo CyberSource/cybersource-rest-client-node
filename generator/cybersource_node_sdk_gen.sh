@@ -86,3 +86,6 @@ git checkout ../test/model/CreateAccessTokenRequest.spec.js 2>/dev/null || echo 
 git checkout ../test/model/BadRequestError.spec.js 2>/dev/null || echo "Warning: Could not restore BadRequestError.spec.js"
 git checkout ../test/model/ResourceNotFoundError.spec.js 2>/dev/null || echo "Warning: Could not restore ResourceNotFoundError.spec.js"
 git checkout ../test/model/UnauthorizedClientError.spec.js 2>/dev/null || echo "Warning: Could not restore UnauthorizedClientError.spec.js"
+
+# Restore new test files
+git checkout ../test/authentication/LoggingUtilities.spec.js 2>/dev/null || echo "Warning: Could not restore LoggingUtilities.spec.js"

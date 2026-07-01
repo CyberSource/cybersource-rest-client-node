@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities', 'model/Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation', 'model/Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation', 'model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformation'], factory);
+    define(['ApiClient', 'model/TmsMerchantInformation', 'model/Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities', 'model/Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation', 'model/Tmsv3tokenstokenIdpaymentcredentialsOrderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities'), require('./Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation'), require('./Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation'), require('./Tmsv3tokenstokenIdpaymentcredentialsOrderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./TmsMerchantInformation'), require('./Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities'), require('./Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation'), require('./Tmsv3tokenstokenIdpaymentcredentialsOrderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostPaymentCredentialsRequest1 = factory(root.CyberSource.ApiClient, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformation);
+    root.CyberSource.PostPaymentCredentialsRequest1 = factory(root.CyberSource.ApiClient, root.CyberSource.TmsMerchantInformation, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation, root.CyberSource.Tmsv3tokenstokenIdpaymentcredentialsOrderInformation);
   }
-}(this, function(ApiClient, Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities, Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation, Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation, Tmsv3tokenstokenIdpaymentcredentialsOrderInformation) {
+}(this, function(ApiClient, TmsMerchantInformation, Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities, Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation, Tmsv3tokenstokenIdpaymentcredentialsOrderInformation) {
   'use strict';
 
 
@@ -80,7 +80,7 @@
         obj['orderInformation'] = Tmsv3tokenstokenIdpaymentcredentialsOrderInformation.constructFromObject(data['orderInformation']);
       }
       if (data.hasOwnProperty('merchantInformation')) {
-        obj['merchantInformation'] = Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation.constructFromObject(data['merchantInformation']);
+        obj['merchantInformation'] = TmsMerchantInformation.constructFromObject(data['merchantInformation']);
       }
       if (data.hasOwnProperty('deviceInformation')) {
         obj['deviceInformation'] = Tmsv3tokenstokenIdpaymentcredentialsDeviceInformation.constructFromObject(data['deviceInformation']);
@@ -112,7 +112,7 @@
    */
   exports.prototype['orderInformation'] = undefined;
   /**
-   * @member {module:model/Tmsv3tokenstokenIdpaymentcredentialsMerchantInformation} merchantInformation
+   * @member {module:model/TmsMerchantInformation} merchantInformation
    */
   exports.prototype['merchantInformation'] = undefined;
   /**

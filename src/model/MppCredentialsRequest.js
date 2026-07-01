@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Acpv1mppcredentialsChallenge'], factory);
+    define(['ApiClient', 'model/Iccv1mppcredentialsChallenge'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Acpv1mppcredentialsChallenge'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1mppcredentialsChallenge'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MppCredentialsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Acpv1mppcredentialsChallenge);
+    root.CyberSource.MppCredentialsRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1mppcredentialsChallenge);
   }
-}(this, function(ApiClient, Acpv1mppcredentialsChallenge) {
+}(this, function(ApiClient, Iccv1mppcredentialsChallenge) {
   'use strict';
 
 
@@ -45,7 +45,7 @@
    * @alias module:model/MppCredentialsRequest
    * @class
    * @param instrumentId {String} TMS instrument identifier referencing the stored card.
-   * @param challenge {module:model/Acpv1mppcredentialsChallenge} 
+   * @param challenge {module:model/Iccv1mppcredentialsChallenge} 
    */
   var exports = function(instrumentId, challenge) {
     var _this = this;
@@ -69,7 +69,7 @@
         obj['instrumentId'] = ApiClient.convertToType(data['instrumentId'], 'String');
       }
       if (data.hasOwnProperty('challenge')) {
-        obj['challenge'] = Acpv1mppcredentialsChallenge.constructFromObject(data['challenge']);
+        obj['challenge'] = Iccv1mppcredentialsChallenge.constructFromObject(data['challenge']);
       }
     }
     return obj;
@@ -81,7 +81,7 @@
    */
   exports.prototype['instrumentId'] = undefined;
   /**
-   * @member {module:model/Acpv1mppcredentialsChallenge} challenge
+   * @member {module:model/Iccv1mppcredentialsChallenge} challenge
    */
   exports.prototype['challenge'] = undefined;
 

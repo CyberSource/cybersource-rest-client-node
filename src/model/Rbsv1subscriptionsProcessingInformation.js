@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Rbsv1subscriptionsProcessingInformationAuthorizationOptions'], factory);
+    define(['ApiClient', 'model/RbsAuthorizationOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Rbsv1subscriptionsProcessingInformationAuthorizationOptions'));
+    module.exports = factory(require('../ApiClient'), require('./RbsAuthorizationOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Rbsv1subscriptionsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Rbsv1subscriptionsProcessingInformationAuthorizationOptions);
+    root.CyberSource.Rbsv1subscriptionsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.RbsAuthorizationOptions);
   }
-}(this, function(ApiClient, Rbsv1subscriptionsProcessingInformationAuthorizationOptions) {
+}(this, function(ApiClient, RbsAuthorizationOptions) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
       }
       if (data.hasOwnProperty('authorizationOptions')) {
-        obj['authorizationOptions'] = Rbsv1subscriptionsProcessingInformationAuthorizationOptions.constructFromObject(data['authorizationOptions']);
+        obj['authorizationOptions'] = RbsAuthorizationOptions.constructFromObject(data['authorizationOptions']);
       }
     }
     return obj;
@@ -78,7 +78,7 @@
    */
   exports.prototype['commerceIndicator'] = undefined;
   /**
-   * @member {module:model/Rbsv1subscriptionsProcessingInformationAuthorizationOptions} authorizationOptions
+   * @member {module:model/RbsAuthorizationOptions} authorizationOptions
    */
   exports.prototype['authorizationOptions'] = undefined;
 

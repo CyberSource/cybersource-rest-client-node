@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsProcessingInformationAuthorizationOptions', 'model/Ptsv2paymentsProcessingInformationBankTransferOptions', 'model/Ptsv2paymentsProcessingInformationCaptureOptions', 'model/Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer', 'model/Ptsv2paymentsProcessingInformationJapanPaymentOptions', 'model/Ptsv2paymentsProcessingInformationLoanOptions', 'model/Ptsv2paymentsProcessingInformationProgramIndicators', 'model/Ptsv2paymentsProcessingInformationPurchaseOptions', 'model/Ptsv2paymentsProcessingInformationRecurringOptions'], factory);
+    define(['ApiClient', 'model/ProcessingInfoAuthorizationOptions', 'model/Ptsv2paymentsProcessingInformationBankTransferOptions', 'model/Ptsv2paymentsProcessingInformationCaptureOptions', 'model/Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer', 'model/Ptsv2paymentsProcessingInformationJapanPaymentOptions', 'model/Ptsv2paymentsProcessingInformationLoanOptions', 'model/Ptsv2paymentsProcessingInformationProgramIndicators', 'model/Ptsv2paymentsProcessingInformationPurchaseOptions', 'model/Ptsv2paymentsProcessingInformationRecurringOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsProcessingInformationAuthorizationOptions'), require('./Ptsv2paymentsProcessingInformationBankTransferOptions'), require('./Ptsv2paymentsProcessingInformationCaptureOptions'), require('./Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer'), require('./Ptsv2paymentsProcessingInformationJapanPaymentOptions'), require('./Ptsv2paymentsProcessingInformationLoanOptions'), require('./Ptsv2paymentsProcessingInformationProgramIndicators'), require('./Ptsv2paymentsProcessingInformationPurchaseOptions'), require('./Ptsv2paymentsProcessingInformationRecurringOptions'));
+    module.exports = factory(require('../ApiClient'), require('./ProcessingInfoAuthorizationOptions'), require('./Ptsv2paymentsProcessingInformationBankTransferOptions'), require('./Ptsv2paymentsProcessingInformationCaptureOptions'), require('./Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer'), require('./Ptsv2paymentsProcessingInformationJapanPaymentOptions'), require('./Ptsv2paymentsProcessingInformationLoanOptions'), require('./Ptsv2paymentsProcessingInformationProgramIndicators'), require('./Ptsv2paymentsProcessingInformationPurchaseOptions'), require('./Ptsv2paymentsProcessingInformationRecurringOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsProcessingInformationAuthorizationOptions, root.CyberSource.Ptsv2paymentsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2paymentsProcessingInformationCaptureOptions, root.CyberSource.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, root.CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions, root.CyberSource.Ptsv2paymentsProcessingInformationLoanOptions, root.CyberSource.Ptsv2paymentsProcessingInformationProgramIndicators, root.CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions, root.CyberSource.Ptsv2paymentsProcessingInformationRecurringOptions);
+    root.CyberSource.Ptsv2paymentsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.ProcessingInfoAuthorizationOptions, root.CyberSource.Ptsv2paymentsProcessingInformationBankTransferOptions, root.CyberSource.Ptsv2paymentsProcessingInformationCaptureOptions, root.CyberSource.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, root.CyberSource.Ptsv2paymentsProcessingInformationJapanPaymentOptions, root.CyberSource.Ptsv2paymentsProcessingInformationLoanOptions, root.CyberSource.Ptsv2paymentsProcessingInformationProgramIndicators, root.CyberSource.Ptsv2paymentsProcessingInformationPurchaseOptions, root.CyberSource.Ptsv2paymentsProcessingInformationRecurringOptions);
   }
-}(this, function(ApiClient, Ptsv2paymentsProcessingInformationAuthorizationOptions, Ptsv2paymentsProcessingInformationBankTransferOptions, Ptsv2paymentsProcessingInformationCaptureOptions, Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, Ptsv2paymentsProcessingInformationJapanPaymentOptions, Ptsv2paymentsProcessingInformationLoanOptions, Ptsv2paymentsProcessingInformationProgramIndicators, Ptsv2paymentsProcessingInformationPurchaseOptions, Ptsv2paymentsProcessingInformationRecurringOptions) {
+}(this, function(ApiClient, ProcessingInfoAuthorizationOptions, Ptsv2paymentsProcessingInformationBankTransferOptions, Ptsv2paymentsProcessingInformationCaptureOptions, Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer, Ptsv2paymentsProcessingInformationJapanPaymentOptions, Ptsv2paymentsProcessingInformationLoanOptions, Ptsv2paymentsProcessingInformationProgramIndicators, Ptsv2paymentsProcessingInformationPurchaseOptions, Ptsv2paymentsProcessingInformationRecurringOptions) {
   'use strict';
 
 
@@ -163,7 +163,7 @@
         obj['industryDataType'] = ApiClient.convertToType(data['industryDataType'], 'String');
       }
       if (data.hasOwnProperty('authorizationOptions')) {
-        obj['authorizationOptions'] = Ptsv2paymentsProcessingInformationAuthorizationOptions.constructFromObject(data['authorizationOptions']);
+        obj['authorizationOptions'] = ProcessingInfoAuthorizationOptions.constructFromObject(data['authorizationOptions']);
       }
       if (data.hasOwnProperty('captureOptions')) {
         obj['captureOptions'] = Ptsv2paymentsProcessingInformationCaptureOptions.constructFromObject(data['captureOptions']);
@@ -313,7 +313,7 @@
    */
   exports.prototype['reconciliationId'] = undefined;
   /**
-   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments 
+   * Value that links the current authorization request to the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions . Set this value to the ID that was returned in the reply message from the original authorization request or previous declined Merchant Initiated Debt Recovery Transactions.  This value is used for:  - Partial authorizations - Split shipments - Merchant Initiated Debt Recovery Transactions for Visa Platform Connect and China Union Pay merchants 
    * @member {String} linkId
    */
   exports.prototype['linkId'] = undefined;
@@ -348,7 +348,7 @@
    */
   exports.prototype['industryDataType'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsProcessingInformationAuthorizationOptions} authorizationOptions
+   * @member {module:model/ProcessingInfoAuthorizationOptions} authorizationOptions
    */
   exports.prototype['authorizationOptions'] = undefined;
   /**

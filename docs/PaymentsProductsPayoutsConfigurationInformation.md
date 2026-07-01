@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**configurations** | [**PaymentsProductsPayoutsConfigurationInformationConfigurations**](PaymentsProductsPayoutsConfigurationInformationConfigurations.md) |  | [optional] 
+**configurations** | [**BoardingPayoutsConfigurations**](BoardingPayoutsConfigurations.md) |  | [optional] 
 
 

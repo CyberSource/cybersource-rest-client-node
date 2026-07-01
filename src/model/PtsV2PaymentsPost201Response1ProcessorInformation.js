@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201Response1ProcessorInformationAvs', 'model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'], factory);
+    define(['ApiClient', 'model/ProcessorInformationSellerProtection', 'model/PtsV2PaymentsPost201Response1ProcessorInformationAvs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201Response1ProcessorInformationAvs'), require('./PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'));
+    module.exports = factory(require('../ApiClient'), require('./ProcessorInformationSellerProtection'), require('./PtsV2PaymentsPost201Response1ProcessorInformationAvs'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201Response1ProcessorInformationAvs, root.CyberSource.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection);
+    root.CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation = factory(root.CyberSource.ApiClient, root.CyberSource.ProcessorInformationSellerProtection, root.CyberSource.PtsV2PaymentsPost201Response1ProcessorInformationAvs);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201Response1ProcessorInformationAvs, PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection) {
+}(this, function(ApiClient, ProcessorInformationSellerProtection, PtsV2PaymentsPost201Response1ProcessorInformationAvs) {
   'use strict';
 
 
@@ -87,7 +87,7 @@
         obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'String');
       }
       if (data.hasOwnProperty('sellerProtection')) {
-        obj['sellerProtection'] = PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection.constructFromObject(data['sellerProtection']);
+        obj['sellerProtection'] = ProcessorInformationSellerProtection.constructFromObject(data['sellerProtection']);
       }
       if (data.hasOwnProperty('avs')) {
         obj['avs'] = PtsV2PaymentsPost201Response1ProcessorInformationAvs.constructFromObject(data['avs']);
@@ -127,7 +127,7 @@
    */
   exports.prototype['responseCode'] = undefined;
   /**
-   * @member {module:model/PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection} sellerProtection
+   * @member {module:model/ProcessorInformationSellerProtection} sellerProtection
    */
   exports.prototype['sellerProtection'] = undefined;
   /**

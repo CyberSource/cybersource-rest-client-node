@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
+      if (data.hasOwnProperty('reconciliationIdAlternate')) {
+        obj['reconciliationIdAlternate'] = ApiClient.convertToType(data['reconciliationIdAlternate'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
+  /**
+   * Alternative reference number that can be up to 12 characters in length. If this field is used, it overrides any data added to the ccCaptureService_reconciliationID field. You can use this value to reconcile Cybersource reports with processor reports.
+   * @member {String} reconciliationIdAlternate
+   */
+  exports.prototype['reconciliationIdAlternate'] = undefined;
 
 
 

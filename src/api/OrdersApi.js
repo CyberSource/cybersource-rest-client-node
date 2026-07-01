@@ -89,8 +89,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2CreateOrderPost201Response;
 
       //check isMLE for an api method 'this.createOrder'
@@ -162,8 +162,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2UpdateOrderPatch201Response;
 
       //check isMLE for an api method 'this.updateOrder'

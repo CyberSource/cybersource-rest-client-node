@@ -3,6 +3,7 @@
 var Constants = require('../util/Constants');
 var SignatureParameterGenerator = require('./SignatureParameterGenerator');
 var ApiException = require('../util/ApiException');
+var LoggingUtilities = require('../logging/LoggingUtilities');
 
 /* HttpSigToken return SignatureHeader Value that contains following paramters
  * keyid     -- Merchant ID obtained from EBC portal
@@ -47,7 +48,7 @@ exports.getToken = function (merchantConfig, logger) {
         /* Get Value for paramter 'Signature' to be passed to Signature Header */
         signatureValue = SignatureParameterGenerator.getSignatureParameter(merchantConfig, logger);
         signatureHeader += ", signature=\"" + signatureValue + "\"";
-        logger.info("signatureHeader : " + signatureHeader);
+        logger.info("signatureHeader : " + LoggingUtilities.redactSignature(signatureHeader));
         return signatureHeader;
     } catch (err) {
         logger.error(err.stack);

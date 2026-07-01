@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
+      // uncomment below and update the code to test the property issuerInformation
+      //var instane = new CyberSource.PushFunds201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new CyberSource.PushFunds201Response();

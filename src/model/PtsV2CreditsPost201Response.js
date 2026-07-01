@@ -147,7 +147,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - PENDING  - COMPLETED (as in the case of PIN Debit Full Financial Credit) 
+   * The status of the submitted transaction.  Possible values:  - PENDING  - AUTHORIZED  - DECLINED  - INVALID_REQUEST  - COMPLETED (as in the case of PIN Debit Full Financial Credit) 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;

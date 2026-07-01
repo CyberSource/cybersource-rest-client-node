@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Acpv1tokensAssuranceData', 'model/Acpv1tokensBillTo', 'model/Acpv1tokensBuyerInformation', 'model/Acpv1tokensConsentData', 'model/Acpv1tokensConsumerIdentity', 'model/Acpv1tokensDeviceInformation', 'model/Acpv1tokensEnrollmentReferenceData', 'model/Acpv1tokensPaymentInformation'], factory);
+    define(['ApiClient', 'model/Iccv1tokensAssuranceData', 'model/Iccv1tokensBillTo', 'model/Iccv1tokensBuyerInformation', 'model/Iccv1tokensConsentData', 'model/Iccv1tokensConsumerIdentity', 'model/Iccv1tokensDeviceInformation', 'model/Iccv1tokensEnrollmentReferenceData', 'model/Iccv1tokensPaymentInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Acpv1tokensAssuranceData'), require('./Acpv1tokensBillTo'), require('./Acpv1tokensBuyerInformation'), require('./Acpv1tokensConsentData'), require('./Acpv1tokensConsumerIdentity'), require('./Acpv1tokensDeviceInformation'), require('./Acpv1tokensEnrollmentReferenceData'), require('./Acpv1tokensPaymentInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1tokensAssuranceData'), require('./Iccv1tokensBillTo'), require('./Iccv1tokensBuyerInformation'), require('./Iccv1tokensConsentData'), require('./Iccv1tokensConsumerIdentity'), require('./Iccv1tokensDeviceInformation'), require('./Iccv1tokensEnrollmentReferenceData'), require('./Iccv1tokensPaymentInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgenticCardEnrollmentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Acpv1tokensAssuranceData, root.CyberSource.Acpv1tokensBillTo, root.CyberSource.Acpv1tokensBuyerInformation, root.CyberSource.Acpv1tokensConsentData, root.CyberSource.Acpv1tokensConsumerIdentity, root.CyberSource.Acpv1tokensDeviceInformation, root.CyberSource.Acpv1tokensEnrollmentReferenceData, root.CyberSource.Acpv1tokensPaymentInformation);
+    root.CyberSource.AgenticCardEnrollmentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1tokensAssuranceData, root.CyberSource.Iccv1tokensBillTo, root.CyberSource.Iccv1tokensBuyerInformation, root.CyberSource.Iccv1tokensConsentData, root.CyberSource.Iccv1tokensConsumerIdentity, root.CyberSource.Iccv1tokensDeviceInformation, root.CyberSource.Iccv1tokensEnrollmentReferenceData, root.CyberSource.Iccv1tokensPaymentInformation);
   }
-}(this, function(ApiClient, Acpv1tokensAssuranceData, Acpv1tokensBillTo, Acpv1tokensBuyerInformation, Acpv1tokensConsentData, Acpv1tokensConsumerIdentity, Acpv1tokensDeviceInformation, Acpv1tokensEnrollmentReferenceData, Acpv1tokensPaymentInformation) {
+}(this, function(ApiClient, Iccv1tokensAssuranceData, Iccv1tokensBillTo, Iccv1tokensBuyerInformation, Iccv1tokensConsentData, Iccv1tokensConsumerIdentity, Iccv1tokensDeviceInformation, Iccv1tokensEnrollmentReferenceData, Iccv1tokensPaymentInformation) {
   'use strict';
 
 
@@ -44,11 +44,11 @@
    * @alias module:model/AgenticCardEnrollmentRequest
    * @class
    * @param clientCorrelationId {String} Client Correlation Id used during the tokenization or during FIDO assertion.
-   * @param deviceInformation {module:model/Acpv1tokensDeviceInformation} 
-   * @param buyerInformation {module:model/Acpv1tokensBuyerInformation} 
-   * @param billTo {module:model/Acpv1tokensBillTo} 
-   * @param consumerIdentity {module:model/Acpv1tokensConsumerIdentity} 
-   * @param paymentInformation {module:model/Acpv1tokensPaymentInformation} 
+   * @param deviceInformation {module:model/Iccv1tokensDeviceInformation} 
+   * @param buyerInformation {module:model/Iccv1tokensBuyerInformation} 
+   * @param billTo {module:model/Iccv1tokensBillTo} 
+   * @param consumerIdentity {module:model/Iccv1tokensConsumerIdentity} 
+   * @param paymentInformation {module:model/Iccv1tokensPaymentInformation} 
    */
   var exports = function(clientCorrelationId, deviceInformation, buyerInformation, billTo, consumerIdentity, paymentInformation) {
     var _this = this;
@@ -79,28 +79,28 @@
         obj['clientCorrelationId'] = ApiClient.convertToType(data['clientCorrelationId'], 'String');
       }
       if (data.hasOwnProperty('deviceInformation')) {
-        obj['deviceInformation'] = Acpv1tokensDeviceInformation.constructFromObject(data['deviceInformation']);
+        obj['deviceInformation'] = Iccv1tokensDeviceInformation.constructFromObject(data['deviceInformation']);
       }
       if (data.hasOwnProperty('buyerInformation')) {
-        obj['buyerInformation'] = Acpv1tokensBuyerInformation.constructFromObject(data['buyerInformation']);
+        obj['buyerInformation'] = Iccv1tokensBuyerInformation.constructFromObject(data['buyerInformation']);
       }
       if (data.hasOwnProperty('billTo')) {
-        obj['billTo'] = Acpv1tokensBillTo.constructFromObject(data['billTo']);
+        obj['billTo'] = Iccv1tokensBillTo.constructFromObject(data['billTo']);
       }
       if (data.hasOwnProperty('consumerIdentity')) {
-        obj['consumerIdentity'] = Acpv1tokensConsumerIdentity.constructFromObject(data['consumerIdentity']);
+        obj['consumerIdentity'] = Iccv1tokensConsumerIdentity.constructFromObject(data['consumerIdentity']);
       }
       if (data.hasOwnProperty('paymentInformation')) {
-        obj['paymentInformation'] = Acpv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
+        obj['paymentInformation'] = Iccv1tokensPaymentInformation.constructFromObject(data['paymentInformation']);
       }
       if (data.hasOwnProperty('enrollmentReferenceData')) {
-        obj['enrollmentReferenceData'] = Acpv1tokensEnrollmentReferenceData.constructFromObject(data['enrollmentReferenceData']);
+        obj['enrollmentReferenceData'] = Iccv1tokensEnrollmentReferenceData.constructFromObject(data['enrollmentReferenceData']);
       }
       if (data.hasOwnProperty('assuranceData')) {
-        obj['assuranceData'] = ApiClient.convertToType(data['assuranceData'], [Acpv1tokensAssuranceData]);
+        obj['assuranceData'] = ApiClient.convertToType(data['assuranceData'], [Iccv1tokensAssuranceData]);
       }
       if (data.hasOwnProperty('consentData')) {
-        obj['consentData'] = ApiClient.convertToType(data['consentData'], [Acpv1tokensConsentData]);
+        obj['consentData'] = ApiClient.convertToType(data['consentData'], [Iccv1tokensConsentData]);
       }
     }
     return obj;
@@ -112,37 +112,37 @@
    */
   exports.prototype['clientCorrelationId'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensDeviceInformation} deviceInformation
+   * @member {module:model/Iccv1tokensDeviceInformation} deviceInformation
    */
   exports.prototype['deviceInformation'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensBuyerInformation} buyerInformation
+   * @member {module:model/Iccv1tokensBuyerInformation} buyerInformation
    */
   exports.prototype['buyerInformation'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensBillTo} billTo
+   * @member {module:model/Iccv1tokensBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensConsumerIdentity} consumerIdentity
+   * @member {module:model/Iccv1tokensConsumerIdentity} consumerIdentity
    */
   exports.prototype['consumerIdentity'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensPaymentInformation} paymentInformation
+   * @member {module:model/Iccv1tokensPaymentInformation} paymentInformation
    */
   exports.prototype['paymentInformation'] = undefined;
   /**
-   * @member {module:model/Acpv1tokensEnrollmentReferenceData} enrollmentReferenceData
+   * @member {module:model/Iccv1tokensEnrollmentReferenceData} enrollmentReferenceData
    */
   exports.prototype['enrollmentReferenceData'] = undefined;
   /**
    * Assurance data.
-   * @member {Array.<module:model/Acpv1tokensAssuranceData>} assuranceData
+   * @member {Array.<module:model/Iccv1tokensAssuranceData>} assuranceData
    */
   exports.prototype['assuranceData'] = undefined;
   /**
    * Consent data.
-   * @member {Array.<module:model/Acpv1tokensConsentData>} consentData
+   * @member {Array.<module:model/Iccv1tokensConsentData>} consentData
    */
   exports.prototype['consentData'] = undefined;
 

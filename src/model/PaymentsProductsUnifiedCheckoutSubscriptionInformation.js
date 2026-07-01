@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures'], factory);
+    define(['ApiClient', 'model/UcFeatureSubscription'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures'));
+    module.exports = factory(require('../ApiClient'), require('./UcFeatureSubscription'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures);
+    root.CyberSource.PaymentsProductsUnifiedCheckoutSubscriptionInformation = factory(root.CyberSource.ApiClient, root.CyberSource.UcFeatureSubscription);
   }
-}(this, function(ApiClient, PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures) {
+}(this, function(ApiClient, UcFeatureSubscription) {
   'use strict';
 
 
@@ -74,7 +74,7 @@
         obj['selfServiceability'] = ApiClient.convertToType(data['selfServiceability'], 'String');
       }
       if (data.hasOwnProperty('features')) {
-        obj['features'] = PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures.constructFromObject(data['features']);
+        obj['features'] = UcFeatureSubscription.constructFromObject(data['features']);
       }
     }
     return obj;
@@ -97,7 +97,7 @@
    */
   exports.prototype['selfServiceability'] = 'NOT_SELF_SERVICEABLE';
   /**
-   * @member {module:model/PaymentsProductsUnifiedCheckoutSubscriptionInformationFeatures} features
+   * @member {module:model/UcFeatureSubscription} features
    */
   exports.prototype['features'] = undefined;
 

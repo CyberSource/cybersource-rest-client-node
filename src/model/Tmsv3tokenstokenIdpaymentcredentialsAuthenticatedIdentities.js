@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('relyingPartyId')) {
         obj['relyingPartyId'] = ApiClient.convertToType(data['relyingPartyId'], 'String');
       }
+      if (data.hasOwnProperty('userAuthenticationMethod')) {
+        obj['userAuthenticationMethod'] = ApiClient.convertToType(data['userAuthenticationMethod'], 'String');
+      }
     }
     return obj;
   }
@@ -86,20 +90,25 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * The provider of the authenticated identity.  Possible Values:   - VISA_PAYMENT_PASSKEY 
+   * The provider of the authenticated identity.  Possible Values:   - VISA_PAYMENT_PASSKEY   - CLIENT_DEVICE_CERT_JWS 
    * @member {String} provider
    */
   exports.prototype['provider'] = undefined;
   /**
-   * The data from the authenticated identity, for FIDO this could be the Attestation. Base64URL encoded string (RFC4648).  The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. 
+   * The data from the authenticated identity. For Passkey this could be the FIDO Attestation. For Classic Cloud Token Framework (CTF) this could be a JWS containing device authentication information signed by a devices private key. Base64URL encoded string (RFC4648). The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. 
    * @member {String} data
    */
   exports.prototype['data'] = undefined;
   /**
-   * The id of the Relying Party.  Base64URL encoded string (RFC4648).   The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. 
+   * The id of the Relying Party.  Base64URL encoded string (RFC4648).  The encoding is the same as Base64, but uses '-' characters instead of '+' and '_' characters instead of '/'. 
    * @member {String} relyingPartyId
    */
   exports.prototype['relyingPartyId'] = undefined;
+  /**
+   * The method used to authenticate the user.  Possible Values:   - USERNAME_PASSWORD   - PASSCODE_PASSWORD   - PASSCODE   - PASSWORD   - PATTERN   - BIOMETRIC_FINGERPRINT   - BIOMETRIC_FACIAL   - BIOMETRIC_IRIS   - BIOMETRIC_VOICE   - BIOMETRIC_BEHAVIORAL   - DEVICE_UNLOCKED_METHOD_UNKNOWN   - OTP_SMS   - OTP_EMAIL   - OTP_SMS_KNOWLEDGE   - KNOWLEDGE_BASED_AUTHENTICATION   - USER_UNVERIFIED   - BIOMETRIC 
+   * @member {String} userAuthenticationMethod
+   */
+  exports.prototype['userAuthenticationMethod'] = undefined;
 
 
 

@@ -96,8 +96,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2ModifyBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsDeRegistration'
@@ -169,8 +169,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2CreditsPost201Response1;
 
       //check isMLE for an api method 'this.billingAgreementsIntimation'
@@ -235,8 +235,8 @@
 
 
       var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/hal+json;charset=utf-8'];
+      var contentTypes = ['application/json', 'application/json; charset=utf-8'];
+      var accepts = ['application/hal+json'];
       var returnType = PtsV2CreateBillingAgreementPost201Response;
 
       //check isMLE for an api method 'this.billingAgreementsRegistration'

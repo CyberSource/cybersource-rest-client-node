@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **supplementaryTransactionData** | **String** | Supplementary transaction data for Klarna Advantage Plus. Fields to capture Interoperability Data from Merchant and transfer to Klarna for Authorization/Sale/Re-Auth/Capture APIs.  | [optional] 
 **responseSourceCode** | **String** | Field contains the response source code that identifies the source.  | [optional] 
 **cedpVerifiedIndicator** | **String** | Merchant Commercial Enhanced Data Program (CEDP) verified indicator for capture/bill requests.  This field is used when the client is doing authorization with a different gateway and capture/settlement with CyberSource.  This field flows in ISO field 34, DSID 02 tag DA, in AN, EBCDIC format.  Possible values: - `Y`: Merchant CEDP verified  #### Used by **Capture Request** Request field for force capture/bill support when auth is done with a different gateway.  | [optional] 
+**feeProgramIndicator** | **String** | Interchange reimbursement fee program indicator (FPI), which is used when assessing the fee applied to a cross-border or domestic Asia Pacific financial transaction. Acquirers and issues retain and return the FPI value in chargeback and representments. | [optional] 
 
 

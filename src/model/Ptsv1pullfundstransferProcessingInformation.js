@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv1pullfundstransferProcessingInformationFundingOptions', 'model/Ptsv1pullfundstransferProcessingInformationPayoutsOptions', 'model/Ptsv1pullfundstransferProcessingInformationRecurringOptions'], factory);
+    define(['ApiClient', 'model/AftFundingOptions', 'model/Ptsv1pullfundstransferProcessingInformationPayoutsOptions', 'model/Ptsv1pullfundstransferProcessingInformationRecurringOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv1pullfundstransferProcessingInformationFundingOptions'), require('./Ptsv1pullfundstransferProcessingInformationPayoutsOptions'), require('./Ptsv1pullfundstransferProcessingInformationRecurringOptions'));
+    module.exports = factory(require('../ApiClient'), require('./AftFundingOptions'), require('./Ptsv1pullfundstransferProcessingInformationPayoutsOptions'), require('./Ptsv1pullfundstransferProcessingInformationRecurringOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv1pullfundstransferProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv1pullfundstransferProcessingInformationFundingOptions, root.CyberSource.Ptsv1pullfundstransferProcessingInformationPayoutsOptions, root.CyberSource.Ptsv1pullfundstransferProcessingInformationRecurringOptions);
+    root.CyberSource.Ptsv1pullfundstransferProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.AftFundingOptions, root.CyberSource.Ptsv1pullfundstransferProcessingInformationPayoutsOptions, root.CyberSource.Ptsv1pullfundstransferProcessingInformationRecurringOptions);
   }
-}(this, function(ApiClient, Ptsv1pullfundstransferProcessingInformationFundingOptions, Ptsv1pullfundstransferProcessingInformationPayoutsOptions, Ptsv1pullfundstransferProcessingInformationRecurringOptions) {
+}(this, function(ApiClient, AftFundingOptions, Ptsv1pullfundstransferProcessingInformationPayoutsOptions, Ptsv1pullfundstransferProcessingInformationRecurringOptions) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
         obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
       }
       if (data.hasOwnProperty('fundingOptions')) {
-        obj['fundingOptions'] = Ptsv1pullfundstransferProcessingInformationFundingOptions.constructFromObject(data['fundingOptions']);
+        obj['fundingOptions'] = AftFundingOptions.constructFromObject(data['fundingOptions']);
       }
       if (data.hasOwnProperty('recurringOptions')) {
         obj['recurringOptions'] = Ptsv1pullfundstransferProcessingInformationRecurringOptions.constructFromObject(data['recurringOptions']);
@@ -103,7 +103,7 @@
    */
   exports.prototype['commerceIndicator'] = undefined;
   /**
-   * @member {module:model/Ptsv1pullfundstransferProcessingInformationFundingOptions} fundingOptions
+   * @member {module:model/AftFundingOptions} fundingOptions
    */
   exports.prototype['fundingOptions'] = undefined;
   /**

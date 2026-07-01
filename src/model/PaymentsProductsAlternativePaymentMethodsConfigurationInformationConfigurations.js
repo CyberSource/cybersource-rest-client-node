@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors'], factory);
+    define(['ApiClient', 'model/AlternativePaymentsProcessorConfiguration'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors'));
+    module.exports = factory(require('../ApiClient'), require('./AlternativePaymentsProcessorConfiguration'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors);
+    root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.AlternativePaymentsProcessorConfiguration);
   }
-}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors) {
+}(this, function(ApiClient, AlternativePaymentsProcessorConfiguration) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['merchantCategoryCode'] = ApiClient.convertToType(data['merchantCategoryCode'], 'String');
       }
       if (data.hasOwnProperty('processors')) {
-        obj['processors'] = ApiClient.convertToType(data['processors'], {'String': PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors});
+        obj['processors'] = ApiClient.convertToType(data['processors'], {'String': AlternativePaymentsProcessorConfiguration});
       }
     }
     return obj;
@@ -79,7 +79,7 @@
   exports.prototype['merchantCategoryCode'] = undefined;
   /**
    * This is a map. The allowed keys are below. Value should be an object containing a sole boolean property - enabled. <table>   <tr>     <td>klarna</td>   </tr>   <tr>     <td>payPal</td>   </tr>   <tr>     <td>alipay</td>   </tr>   <tr>     <td>bancontact</td>   </tr>   <tr>     <td>giropay</td>   </tr>   <tr>     <td>ideal</td>   </tr> </table> 
-   * @member {Object.<String, module:model/PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsProcessors>} processors
+   * @member {Object.<String, module:model/AlternativePaymentsProcessorConfiguration>} processors
    */
   exports.prototype['processors'] = undefined;
 
