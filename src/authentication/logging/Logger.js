@@ -23,9 +23,6 @@ exports.getLogger = function (merchantConfig, loggerCategory = 'UnknownCategoryL
   }
   var enableLog = merchantConfig.getLogConfiguration().isLogEnabled();
   var enableMasking = merchantConfig.getLogConfiguration().isMaskingEnabled();
-  var loggerCategoryRandomiser = Math.floor(Math.random() * (1000000000 - 100 + 1)) + 100;
-
-  loggerCategory = loggerCategory + loggerCategoryRandomiser;
 
   var newLogger;
 
