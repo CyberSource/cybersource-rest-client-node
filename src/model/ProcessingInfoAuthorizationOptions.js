@@ -74,6 +74,7 @@
 
 
 
+
   };
 
   /**
@@ -116,6 +117,9 @@
       }
       if (data.hasOwnProperty('declineAvsFlags')) {
         obj['declineAvsFlags'] = ApiClient.convertToType(data['declineAvsFlags'], ['String']);
+      }
+      if (data.hasOwnProperty('declineAniFlags')) {
+        obj['declineAniFlags'] = ApiClient.convertToType(data['declineAniFlags'], ['String']);
       }
       if (data.hasOwnProperty('ignoreCvResult')) {
         obj['ignoreCvResult'] = ApiClient.convertToType(data['ignoreCvResult'], 'Boolean');
@@ -223,6 +227,11 @@
    * @member {Array.<String>} declineAvsFlags
    */
   exports.prototype['declineAvsFlags'] = undefined;
+  /**
+   * User-defined list of ANI (Address Name Inquiry) codes that will cause the system to decline a transaction.  Address Name Inquiry is a Verification suite product which checks whether the name shared in the  transaction matches with the one stored at the issuing bank. This field replicates the same behavior  as AVS (which uses DAVSNO flag), but for ANI verification using the DANINO flag.  **Important**:  - By default, no ANI codes cause declines (empty/null) - Merchant specifies which ANI codes should trigger declines - When triggered, returns reason code 217 with reply flag `DANINO` - Use space to separate values in the list - To receive declines for the ANI code N, include the value N in the list  ### ANI Result Codes  |ANI Code|Description| |--- |--- | |Y|Match: Full name match with issuing bank records| |O|Partial match: Partial name match with issuing bank records| |N|No match: Name does not match issuing bank records| |U|Unverified: ANI verification not performed or not supported| |R|Retry: System should retry the ANI check|  ### Reply Flag When Triggered  When a transaction's ANI result matches one of the codes in this list, the system returns: - **Reason Code**: 217 - **Reply Flag**: `DANINO` - **Description**: Decline. The authorization request was approved by the issuing bank but was    flagged because it did not pass the Address Name Inquiry (ANI) check. - **Possible Action**: Review the order for the possibility of fraud.  #### Used by **Authorization** Optional field for controlling ANI-based declines.  #### API Ticket ACCAPI-2138 
+   * @member {Array.<String>} declineAniFlags
+   */
+  exports.prototype['declineAniFlags'] = undefined;
   /**
    * Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives a CVN decline, as indicated by an `processorInformation.cardVerification.resultCode` value of `D` or `N`. Possible values: - `true`: Ignore the results of CVN checking and run the capture service. - `false` (default): If the authorization receives a CVN decline, do not run the capture service.  #### Used by **Authorization** Optional field. 
    * @member {Boolean} ignoreCvResult

@@ -56,26 +56,26 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse401);
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new CyberSource.InlineResponse401();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property submitTimeStampUtc (base name: "submitTimeStampUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeStampUtc
+      //var instane = new CyberSource.InlineResponse401();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
       //var instane = new CyberSource.InlineResponse401();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new CyberSource.InlineResponse401();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property code (base name: "code")', function() {
-      // uncomment below and update the code to test the property code
-      //var instane = new CyberSource.InlineResponse401();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse401();
       //expect(instance).to.be();
     });

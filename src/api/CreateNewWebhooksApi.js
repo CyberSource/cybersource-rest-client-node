@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhook', 'model/InlineResponse2006', 'model/InlineResponse2015', 'model/InlineResponse2016', 'model/SaveSymEgressKey'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhook', 'model/InlineResponse2006', 'model/InlineResponse2018', 'model/InlineResponse2019', 'model/SaveSymEgressKey'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhook'), require('../model/InlineResponse2006'), require('../model/InlineResponse2015'), require('../model/InlineResponse2016'), require('../model/SaveSymEgressKey'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhook'), require('../model/InlineResponse2006'), require('../model/InlineResponse2018'), require('../model/InlineResponse2019'), require('../model/SaveSymEgressKey'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhook, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2015, root.CyberSource.InlineResponse2016, root.CyberSource.SaveSymEgressKey);
+    root.CyberSource.CreateNewWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhook, root.CyberSource.InlineResponse2006, root.CyberSource.InlineResponse2018, root.CyberSource.InlineResponse2019, root.CyberSource.SaveSymEgressKey);
   }
-}(this, function(MLEUtility, ApiClient, CreateWebhook, InlineResponse2006, InlineResponse2015, InlineResponse2016, SaveSymEgressKey) {
+}(this, function(MLEUtility, ApiClient, CreateWebhook, InlineResponse2006, InlineResponse2018, InlineResponse2019, SaveSymEgressKey) {
   'use strict';
 
   /**
@@ -119,7 +119,7 @@
      * Callback function to receive the result of the notificationSubscriptionsV2WebhooksPost operation.
      * @callback module:api/CreateNewWebhooksApi~notificationSubscriptionsV2WebhooksPostCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2016} data The data returned by the service call.
+     * @param {module:model/InlineResponse2019} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -129,7 +129,7 @@
      * @param {Object} opts Optional parameters
      * @param {module:model/CreateWebhook} opts.createWebhook The webhook payload
      * @param {module:api/CreateNewWebhooksApi~notificationSubscriptionsV2WebhooksPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2016}
+     * data is of type: {@link module:model/InlineResponse2019}
      */
     this.notificationSubscriptionsV2WebhooksPost = function(opts, callback) {
       opts = opts || {};
@@ -154,7 +154,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2016;
+      var returnType = InlineResponse2019;
 
       //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksPost'
       var inboundMLEStatus = 'false';
@@ -182,7 +182,7 @@
      * Callback function to receive the result of the saveSymEgressKey operation.
      * @callback module:api/CreateNewWebhooksApi~saveSymEgressKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/InlineResponse2018} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -195,7 +195,7 @@
      * @param {String} opts.vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
      * @param {module:model/SaveSymEgressKey} opts.saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh)
      * @param {module:api/CreateNewWebhooksApi~saveSymEgressKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
+     * data is of type: {@link module:model/InlineResponse2018}
      */
     this.saveSymEgressKey = function(opts, callback) {
       opts = opts || {};
@@ -223,7 +223,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = InlineResponse2018;
 
       //check isMLE for an api method 'this.saveSymEgressKey'
       var inboundMLEStatus = 'false';

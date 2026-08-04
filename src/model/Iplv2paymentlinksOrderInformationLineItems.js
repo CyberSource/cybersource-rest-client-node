@@ -58,6 +58,7 @@
 
 
 
+
   };
 
   /**
@@ -98,6 +99,9 @@
       if (data.hasOwnProperty('taxRate')) {
         obj['taxRate'] = ApiClient.convertToType(data['taxRate'], 'String');
       }
+      if (data.hasOwnProperty('totalAmount')) {
+        obj['totalAmount'] = ApiClient.convertToType(data['totalAmount'], 'String');
+      }
     }
     return obj;
   }
@@ -128,25 +132,30 @@
    */
   exports.prototype['productDescription'] = undefined;
   /**
-   * Discount amount applied to the item. Maximum of 2 decimal places. You may provide either discountAmount or discountPercent (not both). If both are present, their values must be consistent. Otherwise, a validation error will be returned. 
+   * Discount amount applied to the item. Maximum of 2 decimal places. You may provide either discountAmount or discountPercent (not both). Example: 0.60 
    * @member {String} discountAmount
    */
   exports.prototype['discountAmount'] = undefined;
   /**
-   * Discount rate applied to the item. Maximum of 3 decimal places. You may provide either discountAmount or discountPercent (not both). If both are present, their values must be consistent; otherwise, a validation error will be returned. Example: 5.25 (=5.25%) 
+   * Discount rate applied to the item. Maximum of 3 decimal places. You may provide either discountAmount or discountPercent (not both). If you add discountPercent, a discountAmount will be calculated automatically. Example: 5.00 (=5.00%) 
    * @member {String} discountPercent
    */
   exports.prototype['discountPercent'] = undefined;
   /**
-   * Tax amount applied to the item. This value cannot be negative. Maximum of 2 decimal places. The tax amount and the offer amount must be in the same currency. The tax amount field is additive. If taxAmount is provided but taxRate is not, the taxRate will be calculated. 
+   * Tax amount applied to the item. This value cannot be negative. Maximum of 2 decimal places. The tax amount and the offer amount must be in the same currency. The tax amount field is additive. If taxAmount is provided but taxRate is not, the taxRate will be calculated. Example: 2.86 
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;
   /**
-   * Tax rate applied to the item. Valid range: 1.001% to 99.999%. Maximum of 3 decimal places. If a taxRate is provided but taxAmount is missing or incorrect, the taxAmount based on the given taxRate will be overwritten. Example: 21.00 (=21.00%) 
+   * Tax rate applied to the item. Valid range: 1.001% to 99.999%. Maximum of 3 decimal places. If a taxRate is provided but taxAmount is missing or incorrect, the taxAmount based on the given taxRate will be overwritten. Example: 25.00 (=25.00%) 
    * @member {String} taxRate
    */
   exports.prototype['taxRate'] = undefined;
+  /**
+   * Total amount for the line item after discount and tax, calculated per single unit. Formula: (unitPrice - discountAmount) + taxAmount. This field is calculated automatically and does not need to be provided in the request. Example: 14.31 
+   * @member {String} totalAmount
+   */
+  exports.prototype['totalAmount'] = undefined;
 
 
 

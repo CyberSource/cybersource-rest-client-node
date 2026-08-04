@@ -62,7 +62,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.EMVTagDetailsApi();
 
-var body = new CyberSource.Body(); // Body | 
+var body = new CyberSource.Body2(); // Body2 | 
 
 
 var callback = function(error, data, response) {
@@ -79,7 +79,7 @@ apiInstance.parseEmvTags(body, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)|  | 
+ **body** | [**Body2**](Body2.md)|  | 
 
 ### Return type
 

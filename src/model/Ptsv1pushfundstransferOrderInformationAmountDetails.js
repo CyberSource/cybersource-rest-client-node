@@ -43,7 +43,7 @@
    * Constructs a new <code>Ptsv1pushfundstransferOrderInformationAmountDetails</code>.
    * @alias module:model/Ptsv1pushfundstransferOrderInformationAmountDetails
    * @class
-   * @param totalAmount {String} Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. 
+   * @param totalAmount {String} Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  Note For VPC, FDCCompass, Paymentech, Visa Direct, and Mastercard Send processors, the maximum supported numeric characters is 12.  Important Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  For zero dollar authorizations, this field may set to 0.00. Zero dollar authorizations are used for account validation only and do not place a hold or move funds. 
    * @param currency {String} Use a 3-character alpha currency code for currency of the funds transfer.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. 
    */
   var exports = function(totalAmount, currency) {
@@ -87,7 +87,7 @@
   }
 
   /**
-   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. 
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  Note For VPC, FDCCompass, Paymentech, Visa Direct, and Mastercard Send processors, the maximum supported numeric characters is 12.  Important Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  For zero dollar authorizations, this field may set to 0.00. Zero dollar authorizations are used for account validation only and do not place a hold or move funds. 
    * @member {String} totalAmount
    */
   exports.prototype['totalAmount'] = undefined;

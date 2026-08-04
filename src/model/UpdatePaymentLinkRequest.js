@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Invoicingv2invoicesClientReferenceInformation', 'model/Iplv2paymentlinksidOrderInformation', 'model/Iplv2paymentlinksidProcessingInformation', 'model/Iplv2paymentlinksidPurchaseInformation'], factory);
+    define(['ApiClient', 'model/Invoicingv2invoicesClientReferenceInformation', 'model/Invoicingv2invoicesMerchantDefinedFieldValues', 'model/Iplv2paymentlinksidOrderInformation', 'model/Iplv2paymentlinksidProcessingInformation', 'model/Iplv2paymentlinksidPurchaseInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesClientReferenceInformation'), require('./Iplv2paymentlinksidOrderInformation'), require('./Iplv2paymentlinksidProcessingInformation'), require('./Iplv2paymentlinksidPurchaseInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Invoicingv2invoicesClientReferenceInformation'), require('./Invoicingv2invoicesMerchantDefinedFieldValues'), require('./Iplv2paymentlinksidOrderInformation'), require('./Iplv2paymentlinksidProcessingInformation'), require('./Iplv2paymentlinksidPurchaseInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UpdatePaymentLinkRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesClientReferenceInformation, root.CyberSource.Iplv2paymentlinksidOrderInformation, root.CyberSource.Iplv2paymentlinksidProcessingInformation, root.CyberSource.Iplv2paymentlinksidPurchaseInformation);
+    root.CyberSource.UpdatePaymentLinkRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Invoicingv2invoicesClientReferenceInformation, root.CyberSource.Invoicingv2invoicesMerchantDefinedFieldValues, root.CyberSource.Iplv2paymentlinksidOrderInformation, root.CyberSource.Iplv2paymentlinksidProcessingInformation, root.CyberSource.Iplv2paymentlinksidPurchaseInformation);
   }
-}(this, function(ApiClient, Invoicingv2invoicesClientReferenceInformation, Iplv2paymentlinksidOrderInformation, Iplv2paymentlinksidProcessingInformation, Iplv2paymentlinksidPurchaseInformation) {
+}(this, function(ApiClient, Invoicingv2invoicesClientReferenceInformation, Invoicingv2invoicesMerchantDefinedFieldValues, Iplv2paymentlinksidOrderInformation, Iplv2paymentlinksidProcessingInformation, Iplv2paymentlinksidPurchaseInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Iplv2paymentlinksidOrderInformation.constructFromObject(data['orderInformation']);
       }
+      if (data.hasOwnProperty('merchantDefinedFieldValues')) {
+        obj['merchantDefinedFieldValues'] = ApiClient.convertToType(data['merchantDefinedFieldValues'], [Invoicingv2invoicesMerchantDefinedFieldValues]);
+      }
     }
     return obj;
   }
@@ -105,6 +109,10 @@
    * @member {module:model/Iplv2paymentlinksidOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {Array.<module:model/Invoicingv2invoicesMerchantDefinedFieldValues>} merchantDefinedFieldValues
+   */
+  exports.prototype['merchantDefinedFieldValues'] = undefined;
 
 
 

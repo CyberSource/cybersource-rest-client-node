@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2015KeyInformation', 'model/Kmsegressv2keyssymClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2015ClientReferenceInformation', 'model/InlineResponse2015ErrorInformation', 'model/InlineResponse2015Links', 'model/InlineResponse2015Transactions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2015KeyInformation'), require('./Kmsegressv2keyssymClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2015ClientReferenceInformation'), require('./InlineResponse2015ErrorInformation'), require('./InlineResponse2015Links'), require('./InlineResponse2015Transactions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2015KeyInformation, root.CyberSource.Kmsegressv2keyssymClientReferenceInformation);
+    root.CyberSource.InlineResponse2015 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2015ClientReferenceInformation, root.CyberSource.InlineResponse2015ErrorInformation, root.CyberSource.InlineResponse2015Links, root.CyberSource.InlineResponse2015Transactions);
   }
-}(this, function(ApiClient, InlineResponse2015KeyInformation, Kmsegressv2keyssymClientReferenceInformation) {
+}(this, function(ApiClient, InlineResponse2015ClientReferenceInformation, InlineResponse2015ErrorInformation, InlineResponse2015Links, InlineResponse2015Transactions) {
   'use strict';
 
 
@@ -41,12 +41,15 @@
 
   /**
    * Constructs a new <code>InlineResponse2015</code>.
-   * Egress Key Information Response 
    * @alias module:model/InlineResponse2015
    * @class
+   * @param status {String} The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED` 
    */
-  var exports = function() {
+  var exports = function(status) {
     var _this = this;
+
+
+    _this['status'] = status;
 
 
 
@@ -65,40 +68,62 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('clientReferenceInformation')) {
-        obj['clientReferenceInformation'] = Kmsegressv2keyssymClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      if (data.hasOwnProperty('submitTimeStampUtc')) {
+        obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
       }
-      if (data.hasOwnProperty('keyInformation')) {
-        obj['keyInformation'] = InlineResponse2015KeyInformation.constructFromObject(data['keyInformation']);
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = InlineResponse2015Links.constructFromObject(data['_links']);
+      }
+      if (data.hasOwnProperty('transactions')) {
+        obj['transactions'] = ApiClient.convertToType(data['transactions'], [InlineResponse2015Transactions]);
+      }
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = InlineResponse2015ClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      }
+      if (data.hasOwnProperty('errorInformation')) {
+        obj['errorInformation'] = InlineResponse2015ErrorInformation.constructFromObject(data['errorInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
-   * @member {String} submitTimeUtc
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @member {String} id
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * The status of the submitted transaction. Possible values:  - ACCEPTED 
+   * The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED` 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/Kmsegressv2keyssymClientReferenceInformation} clientReferenceInformation
+   * Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeStampUtc
+   */
+  exports.prototype['submitTimeStampUtc'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2015Links} _links
+   */
+  exports.prototype['_links'] = undefined;
+  /**
+   * @member {Array.<module:model/InlineResponse2015Transactions>} transactions
+   */
+  exports.prototype['transactions'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2015ClientReferenceInformation} clientReferenceInformation
    */
   exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * @member {module:model/InlineResponse2015KeyInformation} keyInformation
+   * @member {module:model/InlineResponse2015ErrorInformation} errorInformation
    */
-  exports.prototype['keyInformation'] = undefined;
+  exports.prototype['errorInformation'] = undefined;
 
 
 

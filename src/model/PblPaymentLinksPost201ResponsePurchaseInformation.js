@@ -51,6 +51,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -67,6 +71,18 @@
       if (data.hasOwnProperty('purchaseNumber')) {
         obj['purchaseNumber'] = ApiClient.convertToType(data['purchaseNumber'], 'String');
       }
+      if (data.hasOwnProperty('transactionReferenceNumber')) {
+        obj['transactionReferenceNumber'] = ApiClient.convertToType(data['transactionReferenceNumber'], 'String');
+      }
+      if (data.hasOwnProperty('expirationDate')) {
+        obj['expirationDate'] = ApiClient.convertToType(data['expirationDate'], 'Date');
+      }
+      if (data.hasOwnProperty('expirationAmount')) {
+        obj['expirationAmount'] = ApiClient.convertToType(data['expirationAmount'], 'String');
+      }
+      if (data.hasOwnProperty('expirationQuantity')) {
+        obj['expirationQuantity'] = ApiClient.convertToType(data['expirationQuantity'], 'String');
+      }
       if (data.hasOwnProperty('createdDate')) {
         obj['createdDate'] = ApiClient.convertToType(data['createdDate'], 'String');
       }
@@ -82,6 +98,26 @@
    * @member {String} purchaseNumber
    */
   exports.prototype['purchaseNumber'] = undefined;
+  /**
+   * The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. 
+   * @member {String} transactionReferenceNumber
+   */
+  exports.prototype['transactionReferenceNumber'] = undefined;
+  /**
+   * Define an expiration date for the link.  The date must be today or in the future.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. 
+   * @member {Date} expirationDate
+   */
+  exports.prototype['expirationDate'] = undefined;
+  /**
+   * Define an expiry amount for the link.  Must be null or greater than 0.  If the total price of all transactions for this link exceeds the expiry amount, the link will expire. 
+   * @member {String} expirationAmount
+   */
+  exports.prototype['expirationAmount'] = undefined;
+  /**
+   * Define an expiration quantity for the link.  Must be null or greater than 0.  If the total quantity of items sold exceeds the expiration quantity, the link is expired. 
+   * @member {String} expirationQuantity
+   */
+  exports.prototype['expirationQuantity'] = undefined;
   /**
    * Date and time (UTC) the invoice was created.  Format: YYYY-MM-DDThh:mm:ssZ Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @member {String} createdDate

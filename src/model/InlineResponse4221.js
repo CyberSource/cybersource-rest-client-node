@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4009Details'], factory);
+    define(['ApiClient', 'model/InlineResponse40011Details'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4009Details'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse40011Details'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4221 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4009Details);
+    root.CyberSource.InlineResponse4221 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse40011Details);
   }
-}(this, function(ApiClient, InlineResponse4009Details) {
+}(this, function(ApiClient, InlineResponse40011Details) {
   'use strict';
 
 
@@ -78,7 +78,7 @@
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4009Details]);
+        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse40011Details]);
       }
     }
     return obj;
@@ -105,7 +105,7 @@
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse4009Details>} details
+   * @member {Array.<module:model/InlineResponse40011Details>} details
    */
   exports.prototype['details'] = undefined;
 

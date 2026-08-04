@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property declineAniFlags (base name: "declineAniFlags")', function() {
+      // uncomment below and update the code to test the property declineAniFlags
+      //var instane = new CyberSource.ProcessingInfoAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ignoreCvResult (base name: "ignoreCvResult")', function() {
       // uncomment below and update the code to test the property ignoreCvResult
       //var instane = new CyberSource.ProcessingInfoAuthorizationOptions();

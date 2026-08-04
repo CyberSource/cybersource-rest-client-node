@@ -56,32 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2016);
     });
 
-    it('should have the property webhookId (base name: "webhookId")', function() {
-      // uncomment below and update the code to test the property webhookId
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse2016();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
-      //var instane = new CyberSource.InlineResponse2016();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property products (base name: "products")', function() {
-      // uncomment below and update the code to test the property products
-      //var instane = new CyberSource.InlineResponse2016();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property webhookUrl (base name: "webhookUrl")', function() {
-      // uncomment below and update the code to test the property webhookUrl
-      //var instane = new CyberSource.InlineResponse2016();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property healthCheckUrl (base name: "healthCheckUrl")', function() {
-      // uncomment below and update the code to test the property healthCheckUrl
+    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse2016();
       //expect(instance).to.be();
     });
@@ -92,38 +74,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property paymentAccountInformation (base name: "paymentAccountInformation")', function() {
+      // uncomment below and update the code to test the property paymentAccountInformation
       //var instane = new CyberSource.InlineResponse2016();
       //expect(instance).to.be();
     });
 
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
+    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
+      // uncomment below and update the code to test the property issuerInformation
       //var instane = new CyberSource.InlineResponse2016();
       //expect(instance).to.be();
     });
 
-    it('should have the property retryPolicy (base name: "retryPolicy")', function() {
-      // uncomment below and update the code to test the property retryPolicy
-      //var instane = new CyberSource.InlineResponse2016();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property securityPolicy (base name: "securityPolicy")', function() {
-      // uncomment below and update the code to test the property securityPolicy
-      //var instane = new CyberSource.InlineResponse2016();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdOn (base name: "createdOn")', function() {
-      // uncomment below and update the code to test the property createdOn
-      //var instane = new CyberSource.InlineResponse2016();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property notificationScope (base name: "notificationScope")', function() {
-      // uncomment below and update the code to test the property notificationScope
+    it('should have the property payoutInformation (base name: "payoutInformation")', function() {
+      // uncomment below and update the code to test the property payoutInformation
       //var instane = new CyberSource.InlineResponse2016();
       //expect(instance).to.be();
     });

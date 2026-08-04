@@ -80,6 +80,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionTypeIndicator (base name: "transactionTypeIndicator")', function() {
+      // uncomment below and update the code to test the property transactionTypeIndicator
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property interchangeRateDesignator (base name: "interchangeRateDesignator")', function() {
+      // uncomment below and update the code to test the property interchangeRateDesignator
+      //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property processingCode (base name: "processingCode")', function() {
       // uncomment below and update the code to test the property processingCode
       //var instane = new CyberSource.Ptsv1pushfundstransferProcessingInformation();

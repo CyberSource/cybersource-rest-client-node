@@ -94,7 +94,7 @@
       var returnType = InlineResponse201;
 
       //check isMLE for an api method 'this.retrieveOrDeletePaymentToken'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'retrieveOrDeletePaymentToken');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['retrieveOrDeletePaymentToken']);
 

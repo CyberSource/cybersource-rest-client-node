@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/InlineResponse2018KeyInformation', 'model/Kmsegressv2keyssymClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2018KeyInformation'), require('./Kmsegressv2keyssymClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2018 = factory(root.CyberSource.ApiClient);
+    root.CyberSource.InlineResponse2018 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2018KeyInformation, root.CyberSource.Kmsegressv2keyssymClientReferenceInformation);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, InlineResponse2018KeyInformation, Kmsegressv2keyssymClientReferenceInformation) {
   'use strict';
 
 
@@ -41,12 +41,14 @@
 
   /**
    * Constructs a new <code>InlineResponse2018</code>.
-   * Egress Asymmetric Key Information Response. 
+   * Egress Key Information Response 
    * @alias module:model/InlineResponse2018
    * @class
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -69,6 +71,12 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = Kmsegressv2keyssymClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
+      }
+      if (data.hasOwnProperty('keyInformation')) {
+        obj['keyInformation'] = InlineResponse2018KeyInformation.constructFromObject(data['keyInformation']);
+      }
     }
     return obj;
   }
@@ -83,6 +91,14 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
+  /**
+   * @member {module:model/Kmsegressv2keyssymClientReferenceInformation} clientReferenceInformation
+   */
+  exports.prototype['clientReferenceInformation'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2018KeyInformation} keyInformation
+   */
+  exports.prototype['keyInformation'] = undefined;
 
 
 

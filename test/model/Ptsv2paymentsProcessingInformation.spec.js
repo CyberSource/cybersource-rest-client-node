@@ -170,6 +170,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cardVerification (base name: "cardVerification")', function() {
+      // uncomment below and update the code to test the property cardVerification
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property captureOptions (base name: "captureOptions")', function() {
       // uncomment below and update the code to test the property captureOptions
       //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();

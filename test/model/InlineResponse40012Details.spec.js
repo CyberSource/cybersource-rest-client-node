@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property code (base name: "code")', function() {
+      // uncomment below and update the code to test the property code
+      //var instane = new CyberSource.InlineResponse40012Details();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

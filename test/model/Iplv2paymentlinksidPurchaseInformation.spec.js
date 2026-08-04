@@ -62,6 +62,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionReferenceNumber (base name: "transactionReferenceNumber")', function() {
+      // uncomment below and update the code to test the property transactionReferenceNumber
+      //var instane = new CyberSource.Iplv2paymentlinksidPurchaseInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationDate (base name: "expirationDate")', function() {
+      // uncomment below and update the code to test the property expirationDate
+      //var instane = new CyberSource.Iplv2paymentlinksidPurchaseInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationAmount (base name: "expirationAmount")', function() {
+      // uncomment below and update the code to test the property expirationAmount
+      //var instane = new CyberSource.Iplv2paymentlinksidPurchaseInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expirationQuantity (base name: "expirationQuantity")', function() {
+      // uncomment below and update the code to test the property expirationQuantity
+      //var instane = new CyberSource.Iplv2paymentlinksidPurchaseInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

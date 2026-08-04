@@ -56,56 +56,56 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2017);
     });
 
-    it('should have the property eventDate (base name: "eventDate")', function() {
-      // uncomment below and update the code to test the property eventDate
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property eventType (base name: "eventType")', function() {
-      // uncomment below and update the code to test the property eventType
+    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationId (base name: "organizationId")', function() {
-      // uncomment below and update the code to test the property organizationId
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property payloads (base name: "payloads")', function() {
-      // uncomment below and update the code to test the property payloads
+    it('should have the property registrationInformation (base name: "registrationInformation")', function() {
+      // uncomment below and update the code to test the property registrationInformation
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property productId (base name: "productId")', function() {
-      // uncomment below and update the code to test the property productId
+    it('should have the property integrationInformation (base name: "integrationInformation")', function() {
+      // uncomment below and update the code to test the property integrationInformation
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property requestType (base name: "requestType")', function() {
-      // uncomment below and update the code to test the property requestType
+    it('should have the property organizationInformation (base name: "organizationInformation")', function() {
+      // uncomment below and update the code to test the property organizationInformation
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property retryNumber (base name: "retryNumber")', function() {
-      // uncomment below and update the code to test the property retryNumber
+    it('should have the property productInformationSetups (base name: "productInformationSetups")', function() {
+      // uncomment below and update the code to test the property productInformationSetups
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property transactionTraceId (base name: "transactionTraceId")', function() {
-      // uncomment below and update the code to test the property transactionTraceId
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property webhookId (base name: "webhookId")', function() {
-      // uncomment below and update the code to test the property webhookId
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });

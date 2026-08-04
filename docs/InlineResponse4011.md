@@ -3,12 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**InlineResponse4011Links**](InlineResponse4011Links.md) |  | [optional] 
-**code** | **String** | Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR  | [optional] 
-**correlationId** | **String** |  | [optional] 
-**detail** | **String** |  | [optional] 
-**fields** | [**[InlineResponse4011Fields]**](InlineResponse4011Fields.md) |  | [optional] 
-**localizationKey** | **String** | Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported  | [optional] 
-**message** | **String** |  | [optional] 
+**id** | **String** | A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  | [optional] 
+**submitTimeStampUtc** | **String** | Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.  | [optional] 
+**reason** | **String** | The reason of the status.  Possible values: - UNAUTHORIZED  | [optional] 
+**message** | **String** | The detail message related to the status and reason listed above.  | [optional] 
 
 

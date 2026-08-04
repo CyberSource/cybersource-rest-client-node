@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2017Payloads'], factory);
+    define(['ApiClient', 'model/InlineResponse2017IntegrationInformation', 'model/InlineResponse2017OrganizationInformation', 'model/InlineResponse2017ProductInformationSetups', 'model/InlineResponse2017RegistrationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2017Payloads'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2017IntegrationInformation'), require('./InlineResponse2017OrganizationInformation'), require('./InlineResponse2017ProductInformationSetups'), require('./InlineResponse2017RegistrationInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2017 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2017Payloads);
+    root.CyberSource.InlineResponse2017 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2017IntegrationInformation, root.CyberSource.InlineResponse2017OrganizationInformation, root.CyberSource.InlineResponse2017ProductInformationSetups, root.CyberSource.InlineResponse2017RegistrationInformation);
   }
-}(this, function(ApiClient, InlineResponse2017Payloads) {
+}(this, function(ApiClient, InlineResponse2017IntegrationInformation, InlineResponse2017OrganizationInformation, InlineResponse2017ProductInformationSetups, InlineResponse2017RegistrationInformation) {
   'use strict';
 
 
@@ -69,81 +69,75 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('eventDate')) {
-        obj['eventDate'] = ApiClient.convertToType(data['eventDate'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('eventType')) {
-        obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
       }
-      if (data.hasOwnProperty('organizationId')) {
-        obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('payloads')) {
-        obj['payloads'] = InlineResponse2017Payloads.constructFromObject(data['payloads']);
+      if (data.hasOwnProperty('registrationInformation')) {
+        obj['registrationInformation'] = InlineResponse2017RegistrationInformation.constructFromObject(data['registrationInformation']);
       }
-      if (data.hasOwnProperty('productId')) {
-        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
+      if (data.hasOwnProperty('integrationInformation')) {
+        obj['integrationInformation'] = InlineResponse2017IntegrationInformation.constructFromObject(data['integrationInformation']);
       }
-      if (data.hasOwnProperty('requestType')) {
-        obj['requestType'] = ApiClient.convertToType(data['requestType'], 'String');
+      if (data.hasOwnProperty('organizationInformation')) {
+        obj['organizationInformation'] = InlineResponse2017OrganizationInformation.constructFromObject(data['organizationInformation']);
       }
-      if (data.hasOwnProperty('retryNumber')) {
-        obj['retryNumber'] = ApiClient.convertToType(data['retryNumber'], 'Number');
+      if (data.hasOwnProperty('productInformationSetups')) {
+        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2017ProductInformationSetups]);
       }
-      if (data.hasOwnProperty('transactionTraceId')) {
-        obj['transactionTraceId'] = ApiClient.convertToType(data['transactionTraceId'], 'String');
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('webhookId')) {
-        obj['webhookId'] = ApiClient.convertToType(data['webhookId'], 'String');
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
       }
     }
     return obj;
   }
 
   /**
-   * Date that the webhook was delivered
-   * @member {String} eventDate
+   * @member {String} id
    */
-  exports.prototype['eventDate'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * The event name the webhook was delivered for
-   * @member {String} eventType
+   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {Date} submitTimeUtc
    */
-  exports.prototype['eventType'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The Organization Identifier.
-   * @member {String} organizationId
+   * The status of Registration request Possible Values:   - 'INITIALIZED'   - 'RECEIVED'   - 'PROCESSING'   - 'SUCCESS'   - 'FAILURE'   - 'PARTIAL' 
+   * @member {String} status
    */
-  exports.prototype['organizationId'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/InlineResponse2017Payloads} payloads
+   * @member {module:model/InlineResponse2017RegistrationInformation} registrationInformation
    */
-  exports.prototype['payloads'] = undefined;
+  exports.prototype['registrationInformation'] = undefined;
   /**
-   * The product the webhook was delivered for
-   * @member {String} productId
+   * @member {module:model/InlineResponse2017IntegrationInformation} integrationInformation
    */
-  exports.prototype['productId'] = undefined;
+  exports.prototype['integrationInformation'] = undefined;
   /**
-   * Identifies the the type of request
-   * @member {String} requestType
+   * @member {module:model/InlineResponse2017OrganizationInformation} organizationInformation
    */
-  exports.prototype['requestType'] = undefined;
+  exports.prototype['organizationInformation'] = undefined;
   /**
-   * The number of retry attempts for a given webhook
-   * @member {Number} retryNumber
+   * @member {Array.<module:model/InlineResponse2017ProductInformationSetups>} productInformationSetups
    */
-  exports.prototype['retryNumber'] = undefined;
+  exports.prototype['productInformationSetups'] = undefined;
   /**
-   * The identifier for the webhook
-   * @member {String} transactionTraceId
+   * @member {String} message
    */
-  exports.prototype['transactionTraceId'] = undefined;
+  exports.prototype['message'] = undefined;
   /**
-   * The identifier of the subscription
-   * @member {String} webhookId
+   * @member {Object.<String, Array.<Object>>} details
    */
-  exports.prototype['webhookId'] = undefined;
+  exports.prototype['details'] = undefined;
 
 
 

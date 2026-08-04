@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Boardingv1registrationsIntegrationInformationTenantInformation'], factory);
+    define(['ApiClient', 'model/TenantInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Boardingv1registrationsIntegrationInformationTenantInformation'));
+    module.exports = factory(require('../ApiClient'), require('./TenantInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2005IntegrationInformationTenantConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.Boardingv1registrationsIntegrationInformationTenantInformation);
+    root.CyberSource.InlineResponse2005IntegrationInformationTenantConfigurations = factory(root.CyberSource.ApiClient, root.CyberSource.TenantInformation);
   }
-}(this, function(ApiClient, Boardingv1registrationsIntegrationInformationTenantInformation) {
+}(this, function(ApiClient, TenantInformation) {
   'use strict';
 
 
@@ -78,7 +78,7 @@
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
       }
       if (data.hasOwnProperty('tenantInformation')) {
-        obj['tenantInformation'] = Boardingv1registrationsIntegrationInformationTenantInformation.constructFromObject(data['tenantInformation']);
+        obj['tenantInformation'] = TenantInformation.constructFromObject(data['tenantInformation']);
       }
     }
     return obj;
@@ -105,7 +105,7 @@
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * @member {module:model/Boardingv1registrationsIntegrationInformationTenantInformation} tenantInformation
+   * @member {module:model/TenantInformation} tenantInformation
    */
   exports.prototype['tenantInformation'] = undefined;
 

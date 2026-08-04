@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -64,42 +65,50 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('submitTimeStampUtc')) {
+        obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
-      }
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      }
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @member {String} submitTimeUtc
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @member {String} id
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * The status of the submitted transaction. Possible values:   - `SERVER_ERROR` 
+   * Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeStampUtc
+   */
+  exports.prototype['submitTimeStampUtc'] = undefined;
+  /**
+   * Possible values: - SERVER_ERROR 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The detail message related to the status and reason
-   * @member {String} message
-   */
-  exports.prototype['message'] = undefined;
-  /**
-   * The reason of the status.  Possible values:   - `SYSTEM_ERROR`   - `SERVER_TIMEOUT`   - `SERVICE_TIMEOUT` 
+   * The reason of the status.  Possible values: - SYSTEM_ERROR 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
+  /**
+   * The detail message related to the status and reason listed above. 
+   * @member {String} message
+   */
+  exports.prototype['message'] = undefined;
 
 
 

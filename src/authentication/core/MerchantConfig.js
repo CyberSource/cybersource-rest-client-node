@@ -809,7 +809,7 @@ MerchantConfig.prototype.defaultPropValues = function defaultPropValues() {
                 try {
                     fs.accessSync(this.getP12FilePath(), fs.constants.R_OK);
                 } catch (err) {
-                    ApiException.ApiException("Merchant p12 certificate file not found or not readable: " + this.getP12FilePath());
+                    ApiException.ApiException("Merchant p12 certificate file not found or not readable: " + this.getP12FilePath(), logger);
                 }
             }
         }

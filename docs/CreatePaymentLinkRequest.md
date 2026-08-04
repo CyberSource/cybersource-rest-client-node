@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **processingInformation** | [**Iplv2paymentlinksProcessingInformation**](Iplv2paymentlinksProcessingInformation.md) |  | 
 **purchaseInformation** | [**Iplv2paymentlinksPurchaseInformation**](Iplv2paymentlinksPurchaseInformation.md) |  | 
 **orderInformation** | [**Iplv2paymentlinksOrderInformation**](Iplv2paymentlinksOrderInformation.md) |  | 
+**merchantDefinedFieldValues** | [**[Invoicingv2invoicesMerchantDefinedFieldValues]**](Invoicingv2invoicesMerchantDefinedFieldValues.md) |  | [optional] 
 
 

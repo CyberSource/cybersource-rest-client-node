@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property merchantDefinedFieldValuesWithDefinition (base name: "merchantDefinedFieldValuesWithDefinition")', function() {
+      // uncomment below and update the code to test the property merchantDefinedFieldValuesWithDefinition
+      //var instane = new CyberSource.PblPaymentLinksGet200Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -60,10 +60,30 @@
         done();
       });
     });
+    describe('createPblMerchantDefinedFieldDefinition', function() {
+      it('should call createPblMerchantDefinedFieldDefinition successfully', function(done) {
+        //uncomment below and update the code to test createPblMerchantDefinedFieldDefinition
+        //instance.createPblMerchantDefinedFieldDefinition(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteMerchantDefinedFieldsDefinitions', function() {
       it('should call deleteMerchantDefinedFieldsDefinitions successfully', function(done) {
         //uncomment below and update the code to test deleteMerchantDefinedFieldsDefinitions
         //instance.deleteMerchantDefinedFieldsDefinitions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deletePblMerchantDefinedFieldsDefinitions', function() {
+      it('should call deletePblMerchantDefinedFieldsDefinitions successfully', function(done) {
+        //uncomment below and update the code to test deletePblMerchantDefinedFieldsDefinitions
+        //instance.deletePblMerchantDefinedFieldsDefinitions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -80,10 +100,30 @@
         done();
       });
     });
+    describe('getPblMerchantDefinedFieldsDefinitions', function() {
+      it('should call getPblMerchantDefinedFieldsDefinitions successfully', function(done) {
+        //uncomment below and update the code to test getPblMerchantDefinedFieldsDefinitions
+        //instance.getPblMerchantDefinedFieldsDefinitions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('putMerchantDefinedFieldsDefinitions', function() {
       it('should call putMerchantDefinedFieldsDefinitions successfully', function(done) {
         //uncomment below and update the code to test putMerchantDefinedFieldsDefinitions
         //instance.putMerchantDefinedFieldsDefinitions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('putPblMerchantDefinedFieldsDefinitions', function() {
+      it('should call putPblMerchantDefinedFieldsDefinitions successfully', function(done) {
+        //uncomment below and update the code to test putPblMerchantDefinedFieldsDefinitions
+        //instance.putPblMerchantDefinedFieldsDefinitions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

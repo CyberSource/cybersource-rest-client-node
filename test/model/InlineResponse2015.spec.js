@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2015);
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
@@ -68,14 +68,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property submitTimeStampUtc (base name: "submitTimeStampUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeStampUtc
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactions (base name: "transactions")', function() {
+      // uncomment below and update the code to test the property transactions
+      //var instane = new CyberSource.InlineResponse2015();
+      //expect(instance).to.be();
+    });
+
     it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
       // uncomment below and update the code to test the property clientReferenceInformation
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });
 
-    it('should have the property keyInformation (base name: "keyInformation")', function() {
-      // uncomment below and update the code to test the property keyInformation
+    it('should have the property errorInformation (base name: "errorInformation")', function() {
+      // uncomment below and update the code to test the property errorInformation
       //var instane = new CyberSource.InlineResponse2015();
       //expect(instance).to.be();
     });

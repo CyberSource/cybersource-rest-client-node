@@ -341,7 +341,7 @@ var tokenizedCardId = "tokenizedCardId_example"; // String | The Id of a tokeniz
 
 var opts = { 
   'profileId': "profileId_example", // String | The Id of a profile containing user specific TMS configuration.
-  'postTokenizedCardDeleteRequest': new CyberSource.TmsTokenizedCardDeleteRequest() // TmsTokenizedCardDeleteRequest | 
+  'postTokenizedCardDeleteRequest': new CyberSource.PostTokenizedCardDeleteRequest() // PostTokenizedCardDeleteRequest | 
 };
 
 var callback = function(error, data, response) {
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenizedCardId** | **String**| The Id of a tokenized card. | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
- **postTokenizedCardDeleteRequest** | [**TmsTokenizedCardDeleteRequest**](TmsTokenizedCardDeleteRequest.md)|  | [optional] 
+ **postTokenizedCardDeleteRequest** | [**PostTokenizedCardDeleteRequest**](PostTokenizedCardDeleteRequest.md)|  | [optional] 
 
 ### Return type
 

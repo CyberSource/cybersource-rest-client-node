@@ -63,6 +63,7 @@
 
 
 
+
   };
 
   /**
@@ -117,6 +118,9 @@
       }
       if (data.hasOwnProperty('enableMerchantEmailNotifications')) {
         obj['enableMerchantEmailNotifications'] = ApiClient.convertToType(data['enableMerchantEmailNotifications'], 'Boolean');
+      }
+      if (data.hasOwnProperty('merchantEmail')) {
+        obj['merchantEmail'] = ApiClient.convertToType(data['merchantEmail'], 'String');
       }
       if (data.hasOwnProperty('customLabels')) {
         obj['customLabels'] = ApiClient.convertToType(data['customLabels'], [InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels]);
@@ -202,6 +206,11 @@
    * @default false
    */
   exports.prototype['enableMerchantEmailNotifications'] = false;
+  /**
+   * The merchant's email address for receiving payment notifications.
+   * @member {String} merchantEmail
+   */
+  exports.prototype['merchantEmail'] = undefined;
   /**
    * A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten. 
    * @member {Array.<module:model/InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels>} customLabels
