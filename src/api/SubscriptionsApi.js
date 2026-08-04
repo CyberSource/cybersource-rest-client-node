@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/GetSubscriptionsPaymentsResponse', 'model/GetSubscriptionsPaymentsResponse1', 'model/InlineResponse4003', 'model/InlineResponse4004', 'model/InlineResponse4006', 'model/InlineResponse4007', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdatePayments', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/GetSubscriptionsPaymentsResponse', 'model/GetSubscriptionsPaymentsResponse1', 'model/InlineResponse4005', 'model/InlineResponse4006', 'model/InlineResponse4008', 'model/InlineResponse4009', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdatePayments', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/GetSubscriptionsPaymentsResponse'), require('../model/GetSubscriptionsPaymentsResponse1'), require('../model/InlineResponse4003'), require('../model/InlineResponse4004'), require('../model/InlineResponse4006'), require('../model/InlineResponse4007'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdatePayments'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/GetSubscriptionsPaymentsResponse'), require('../model/GetSubscriptionsPaymentsResponse1'), require('../model/InlineResponse4005'), require('../model/InlineResponse4006'), require('../model/InlineResponse4008'), require('../model/InlineResponse4009'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdatePayments'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.GetSubscriptionsPaymentsResponse, root.CyberSource.GetSubscriptionsPaymentsResponse1, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdatePayments, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
+    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.GetSubscriptionsPaymentsResponse, root.CyberSource.GetSubscriptionsPaymentsResponse1, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse4008, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdatePayments, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
   }
-}(this, function(MLEUtility, ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, GetSubscriptionsPaymentsResponse, GetSubscriptionsPaymentsResponse1, InlineResponse4003, InlineResponse4004, InlineResponse4006, InlineResponse4007, InlineResponse4041, PtsV2PaymentsPost502Response, SuspendSubscriptionResponse, UpdatePayments, UpdateSubscription, UpdateSubscriptionResponse) {
+}(this, function(MLEUtility, ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, GetSubscriptionsPaymentsResponse, GetSubscriptionsPaymentsResponse1, InlineResponse4005, InlineResponse4006, InlineResponse4008, InlineResponse4009, InlineResponse4041, PtsV2PaymentsPost502Response, SuspendSubscriptionResponse, UpdatePayments, UpdateSubscription, UpdateSubscriptionResponse) {
   'use strict';
 
   /**
@@ -575,7 +575,7 @@
       var returnType = GetSubscriptionsPaymentsResponse1;
 
       //check isMLE for an api method 'this.subscriptionsIdPaymentsPut'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'subscriptionsIdPaymentsPut');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['subscriptionsIdPaymentsPut']);
 
@@ -714,7 +714,7 @@
       var returnType = UpdateSubscriptionResponse;
 
       //check isMLE for an api method 'this.updateSubscription'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateSubscription');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateSubscription']);
 

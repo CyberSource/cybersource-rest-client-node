@@ -109,7 +109,7 @@
   }
 
   /**
-   * Payouts transaction type.  Applicable Processors: FDC Compass, Paymentech, CtV  Possible values:  **Credit Card Bill Payment**   - **CP**: credit card bill payment  **Funds Disbursement**   - **FD**: funds disbursement  - **GD**: government disbursement  - **MD**: merchant disbursement  **Money Transfer**   - **AA**: account to account. Sender and receiver are same person.  - **PP**: person to person. Sender and receiver are different.  **Prepaid Load**   - **TU**: top up 
+   * Payouts transaction type.  Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `LA`: Liquid Assets - `PP`: P2P Money Transfer - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service - `TU`: Prepaid Card Load  Supported BAIs vary by payment gateway and configuration. Clients are responsible for confirming gateway specific BAI availability. Conditional - If not provided in payload, the value is picked from Merchant Configuration. 
    * @member {String} businessApplicationId
    */
   exports.prototype['businessApplicationId'] = undefined;

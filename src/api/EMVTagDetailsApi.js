@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/TssV2GetEmvTags200Response', 'model/TssV2PostEmvTags200Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body2', 'model/TssV2GetEmvTags200Response', 'model/TssV2PostEmvTags200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/TssV2GetEmvTags200Response'), require('../model/TssV2PostEmvTags200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body2'), require('../model/TssV2GetEmvTags200Response'), require('../model/TssV2PostEmvTags200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.EMVTagDetailsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.TssV2GetEmvTags200Response, root.CyberSource.TssV2PostEmvTags200Response);
+    root.CyberSource.EMVTagDetailsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body2, root.CyberSource.TssV2GetEmvTags200Response, root.CyberSource.TssV2PostEmvTags200Response);
   }
-}(this, function(MLEUtility, ApiClient, Body, TssV2GetEmvTags200Response, TssV2PostEmvTags200Response) {
+}(this, function(MLEUtility, ApiClient, Body2, TssV2GetEmvTags200Response, TssV2PostEmvTags200Response) {
   'use strict';
 
   /**
@@ -119,7 +119,7 @@
     /**
      * Parse an EMV String
      * Pass an EMV Tag-Length-Value (TLV) string for parsing.
-     * @param {module:model/Body} body 
+     * @param {module:model/Body2} body 
      * @param {module:api/EMVTagDetailsApi~parseEmvTagsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2PostEmvTags200Response}
      */
@@ -134,7 +134,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Body', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Body2', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {

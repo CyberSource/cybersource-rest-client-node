@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateDeactivatePlanResponse', 'model/CreatePlanRequest', 'model/CreatePlanResponse', 'model/DeletePlanResponse', 'model/GetAllPlansResponse', 'model/GetPlanCodeResponse', 'model/GetPlanResponse', 'model/InlineResponse4003', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest', 'model/UpdatePlanResponse'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateDeactivatePlanResponse', 'model/CreatePlanRequest', 'model/CreatePlanResponse', 'model/DeletePlanResponse', 'model/GetAllPlansResponse', 'model/GetPlanCodeResponse', 'model/GetPlanResponse', 'model/InlineResponse4005', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response', 'model/UpdatePlanRequest', 'model/UpdatePlanResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateDeactivatePlanResponse'), require('../model/CreatePlanRequest'), require('../model/CreatePlanResponse'), require('../model/DeletePlanResponse'), require('../model/GetAllPlansResponse'), require('../model/GetPlanCodeResponse'), require('../model/GetPlanResponse'), require('../model/InlineResponse4003'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'), require('../model/UpdatePlanResponse'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateDeactivatePlanResponse'), require('../model/CreatePlanRequest'), require('../model/CreatePlanResponse'), require('../model/DeletePlanResponse'), require('../model/GetAllPlansResponse'), require('../model/GetPlanCodeResponse'), require('../model/GetPlanResponse'), require('../model/InlineResponse4005'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'), require('../model/UpdatePlanRequest'), require('../model/UpdatePlanResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PlansApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateDeactivatePlanResponse, root.CyberSource.CreatePlanRequest, root.CyberSource.CreatePlanResponse, root.CyberSource.DeletePlanResponse, root.CyberSource.GetAllPlansResponse, root.CyberSource.GetPlanCodeResponse, root.CyberSource.GetPlanResponse, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest, root.CyberSource.UpdatePlanResponse);
+    root.CyberSource.PlansApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateDeactivatePlanResponse, root.CyberSource.CreatePlanRequest, root.CyberSource.CreatePlanResponse, root.CyberSource.DeletePlanResponse, root.CyberSource.GetAllPlansResponse, root.CyberSource.GetPlanCodeResponse, root.CyberSource.GetPlanResponse, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.UpdatePlanRequest, root.CyberSource.UpdatePlanResponse);
   }
-}(this, function(MLEUtility, ApiClient, ActivateDeactivatePlanResponse, CreatePlanRequest, CreatePlanResponse, DeletePlanResponse, GetAllPlansResponse, GetPlanCodeResponse, GetPlanResponse, InlineResponse4003, InlineResponse4041, PtsV2PaymentsPost502Response, UpdatePlanRequest, UpdatePlanResponse) {
+}(this, function(MLEUtility, ApiClient, ActivateDeactivatePlanResponse, CreatePlanRequest, CreatePlanResponse, DeletePlanResponse, GetAllPlansResponse, GetPlanCodeResponse, GetPlanResponse, InlineResponse4005, InlineResponse4041, PtsV2PaymentsPost502Response, UpdatePlanRequest, UpdatePlanResponse) {
   'use strict';
 
   /**
@@ -561,7 +561,7 @@
       var returnType = UpdatePlanResponse;
 
       //check isMLE for an api method 'this.updatePlan'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updatePlan');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updatePlan']);
 

@@ -94,7 +94,7 @@
       var returnType = PtsV2CreateOrderPost201Response;
 
       //check isMLE for an api method 'this.createOrder'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createOrder');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createOrder']);
 
@@ -167,7 +167,7 @@
       var returnType = PtsV2UpdateOrderPatch201Response;
 
       //check isMLE for an api method 'this.updateOrder'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateOrder');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateOrder']);
 

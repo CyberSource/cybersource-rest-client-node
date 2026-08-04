@@ -56,6 +56,8 @@
 
 
 
+
+
   };
 
   /**
@@ -81,6 +83,12 @@
       if (data.hasOwnProperty('networkPartnerId')) {
         obj['networkPartnerId'] = ApiClient.convertToType(data['networkPartnerId'], 'String');
       }
+      if (data.hasOwnProperty('transactionTypeIndicator')) {
+        obj['transactionTypeIndicator'] = ApiClient.convertToType(data['transactionTypeIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('interchangeRateDesignator')) {
+        obj['interchangeRateDesignator'] = ApiClient.convertToType(data['interchangeRateDesignator'], 'String');
+      }
       if (data.hasOwnProperty('processingCode')) {
         obj['processingCode'] = ApiClient.convertToType(data['processingCode'], 'String');
       }
@@ -101,7 +109,7 @@
   }
 
   /**
-   * Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `TU`: Prepaid Card Loan - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer - `PP`: P2P Money Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay  - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service 
+   * Payouts transaction type.  Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `LA`: Liquid Assets - `PP`: P2P Money Transfer - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service - `TU`: Prepaid Card Load  Supported BAIs vary by payment gateway and configuration. Clients are responsible for confirming gateway specific BAI availability. Conditional - If not provided in payload, the value is picked from Merchant Configuration. 
    * @member {String} businessApplicationId
    */
   exports.prototype['businessApplicationId'] = undefined;
@@ -115,10 +123,20 @@
    */
   exports.prototype['feeProgramId'] = undefined;
   /**
-   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect, Chase Paymentech Salem. 
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. 
    * @member {String} networkPartnerId
    */
   exports.prototype['networkPartnerId'] = undefined;
+  /**
+   * Transaction Type Identifier for Mastercard Send. 3-character code that identifies the transaction type on the Mastercard network. When provided, this value takes priority over businessApplicationId for determining the payment type. 
+   * @member {String} transactionTypeIndicator
+   */
+  exports.prototype['transactionTypeIndicator'] = undefined;
+  /**
+   * The IRD used for clearing the transaction on the Mastercard network. Details - Alphanumeric, length 2 characters.  This field is supported for Visa Platform Connect, Chase Paymentech Salem. 
+   * @member {String} interchangeRateDesignator
+   */
+  exports.prototype['interchangeRateDesignator'] = undefined;
   /**
    * This field contains coding that identifies (1) the customer transaction type and (2) the customer account types affected by the transaction.  Default: 5402 (Original Credit Transaction)  Contains codes that combined with some other fields such as the BAI (Business Application Id) identify some unique use cases. For Sales Tax rebates this field should be populated with the value 5120 (Value-added tax/Sales Tax) along with the businessApplicationId field set to the value 'FD' which indicates this push funds transfer is being conducted in order to facilitate a sales tax refund. 
    * @member {String} processingCode

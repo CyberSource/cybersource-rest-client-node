@@ -64,42 +64,42 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('submitTimeStampUtc')) {
+        obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
+      }
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
-      }
-      if (data.hasOwnProperty('code')) {
-        obj['code'] = ApiClient.convertToType(data['code'], 'String');
-      }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The status of the submitted request.   Possible values: - UNAUTHORIZED
-   * @member {String} status
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @member {String} id
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * The detail message related to the status and reason listed above.
+   * Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeStampUtc
+   */
+  exports.prototype['submitTimeStampUtc'] = undefined;
+  /**
+   * The reason of the status.  Possible values: - UNAUTHORIZED 
+   * @member {String} reason
+   */
+  exports.prototype['reason'] = undefined;
+  /**
+   * The detail message related to the status and reason listed above. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
-  /**
-   * An optional short string which identifies the exact error.
-   * @member {String} code
-   */
-  exports.prototype['code'] = undefined;
-  /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeUtc
-   */
-  exports.prototype['submitTimeUtc'] = undefined;
 
 
 

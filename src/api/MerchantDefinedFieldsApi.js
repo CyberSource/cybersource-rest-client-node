@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2004', 'model/InlineResponse4042', 'model/MerchantDefinedFieldCore', 'model/MerchantDefinedFieldDefinitionRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2004', 'model/InlineResponse4042', 'model/MerchantDefinedFieldCore', 'model/MerchantDefinedFieldCore1', 'model/MerchantDefinedFieldDefinitionRequest', 'model/MerchantDefinedFieldDefinitionRequest1'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse4042'), require('../model/MerchantDefinedFieldCore'), require('../model/MerchantDefinedFieldDefinitionRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2004'), require('../model/InlineResponse4042'), require('../model/MerchantDefinedFieldCore'), require('../model/MerchantDefinedFieldCore1'), require('../model/MerchantDefinedFieldDefinitionRequest'), require('../model/MerchantDefinedFieldDefinitionRequest1'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantDefinedFieldsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse4042, root.CyberSource.MerchantDefinedFieldCore, root.CyberSource.MerchantDefinedFieldDefinitionRequest);
+    root.CyberSource.MerchantDefinedFieldsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2004, root.CyberSource.InlineResponse4042, root.CyberSource.MerchantDefinedFieldCore, root.CyberSource.MerchantDefinedFieldCore1, root.CyberSource.MerchantDefinedFieldDefinitionRequest, root.CyberSource.MerchantDefinedFieldDefinitionRequest1);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2004, InlineResponse4042, MerchantDefinedFieldCore, MerchantDefinedFieldDefinitionRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2004, InlineResponse4042, MerchantDefinedFieldCore, MerchantDefinedFieldCore1, MerchantDefinedFieldDefinitionRequest, MerchantDefinedFieldDefinitionRequest1) {
   'use strict';
 
   /**
@@ -122,6 +122,79 @@
     }
 
     /**
+     * Callback function to receive the result of the createPblMerchantDefinedFieldDefinition operation.
+     * @callback module:api/MerchantDefinedFieldsApi~createPblMerchantDefinedFieldDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a PayByLink merchant defined field for a given reference type
+     * Creates a merchant defined field for the given reference type (`Purchase` or `Donation`). The field type is independent of the reference type: both `Purchase` and `Donation` support both `Text` and `Select` fields. Set `fieldType` to `Text` or `Select` accordingly. 
+     * @param {module:model/String} referenceType The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation
+     * @param {module:model/MerchantDefinedFieldDefinitionRequest1} merchantDefinedFieldDefinitionRequest 
+     * @param {module:api/MerchantDefinedFieldsApi~createPblMerchantDefinedFieldDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InlineResponse2004>}
+     */
+    this.createPblMerchantDefinedFieldDefinition = function(referenceType, merchantDefinedFieldDefinitionRequest, callback) {
+      var postBody = merchantDefinedFieldDefinitionRequest;
+
+      // verify the required parameter 'referenceType' is set
+      if (referenceType === undefined || referenceType === null) {
+        throw new Error("Missing the required parameter 'referenceType' when calling createPblMerchantDefinedFieldDefinition");
+      }
+
+      // verify the required parameter 'merchantDefinedFieldDefinitionRequest' is set
+      if (merchantDefinedFieldDefinitionRequest === undefined || merchantDefinedFieldDefinitionRequest === null) {
+        throw new Error("Missing the required parameter 'merchantDefinedFieldDefinitionRequest' when calling createPblMerchantDefinedFieldDefinition");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/MerchantDefinedFieldDefinitionRequest1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+        'referenceType': referenceType
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [InlineResponse2004];
+
+      //check isMLE for an api method 'this.createPblMerchantDefinedFieldDefinition'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPblMerchantDefinedFieldDefinition');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPblMerchantDefinedFieldDefinition']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/ipl/v2/{referenceType}/merchantDefinedFields', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/ipl/v2/{referenceType}/merchantDefinedFields', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the deleteMerchantDefinedFieldsDefinitions operation.
      * @callback module:api/MerchantDefinedFieldsApi~deleteMerchantDefinedFieldsDefinitionsCallback
      * @param {String} error Error message, if any.
@@ -193,6 +266,77 @@
     }
 
     /**
+     * Callback function to receive the result of the deletePblMerchantDefinedFieldsDefinitions operation.
+     * @callback module:api/MerchantDefinedFieldsApi~deletePblMerchantDefinedFieldsDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a PayByLink MerchantDefinedField by ID
+     * @param {module:model/String} referenceType 
+     * @param {Number} id 
+     * @param {module:api/MerchantDefinedFieldsApi~deletePblMerchantDefinedFieldsDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deletePblMerchantDefinedFieldsDefinitions = function(referenceType, id, callback) {
+      var postBody = null;
+      if ('DELETE' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'referenceType' is set
+      if (referenceType === undefined || referenceType === null) {
+        throw new Error("Missing the required parameter 'referenceType' when calling deletePblMerchantDefinedFieldsDefinitions");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deletePblMerchantDefinedFieldsDefinitions");
+      }
+
+
+
+      var pathParams = {
+        'referenceType': referenceType,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = null;
+
+      //check isMLE for an api method 'this.deletePblMerchantDefinedFieldsDefinitions'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'deletePblMerchantDefinedFieldsDefinitions');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deletePblMerchantDefinedFieldsDefinitions']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/ipl/v2/{referenceType}/merchantDefinedFields/{id}', 'DELETE',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/ipl/v2/{referenceType}/merchantDefinedFields/{id}', 'DELETE',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the getMerchantDefinedFieldsDefinitions operation.
      * @callback module:api/MerchantDefinedFieldsApi~getMerchantDefinedFieldsDefinitionsCallback
      * @param {String} error Error message, if any.
@@ -251,6 +395,71 @@
       } else {
         return this.apiClient.callApi(
           '/invoicing/v2/{referenceType}/merchantDefinedFields', 'GET',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the getPblMerchantDefinedFieldsDefinitions operation.
+     * @callback module:api/MerchantDefinedFieldsApi~getPblMerchantDefinedFieldsDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get all PayByLink merchant defined fields for a given reference type
+     * @param {module:model/String} referenceType The reference type for which merchant defined fields are to be fetched. Available values are Purchase, Donation and PayByLink. PayByLink returns the merchant defined fields for both Purchase and Donation combined.
+     * @param {module:api/MerchantDefinedFieldsApi~getPblMerchantDefinedFieldsDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InlineResponse2004>}
+     */
+    this.getPblMerchantDefinedFieldsDefinitions = function(referenceType, callback) {
+      var postBody = null;
+      if ('GET' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'referenceType' is set
+      if (referenceType === undefined || referenceType === null) {
+        throw new Error("Missing the required parameter 'referenceType' when calling getPblMerchantDefinedFieldsDefinitions");
+      }
+
+
+
+      var pathParams = {
+        'referenceType': referenceType
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [InlineResponse2004];
+
+      //check isMLE for an api method 'this.getPblMerchantDefinedFieldsDefinitions'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getPblMerchantDefinedFieldsDefinitions');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getPblMerchantDefinedFieldsDefinitions']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/ipl/v2/{referenceType}/merchantDefinedFields', 'GET',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/ipl/v2/{referenceType}/merchantDefinedFields', 'GET',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
@@ -330,6 +539,85 @@
       } else {
         return this.apiClient.callApi(
           '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}', 'PUT',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the putPblMerchantDefinedFieldsDefinitions operation.
+     * @callback module:api/MerchantDefinedFieldsApi~putPblMerchantDefinedFieldsDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a PayByLink MerchantDefinedField by ID
+     * @param {module:model/String} referenceType 
+     * @param {Number} id 
+     * @param {module:model/MerchantDefinedFieldCore1} merchantDefinedFieldCore 
+     * @param {module:api/MerchantDefinedFieldsApi~putPblMerchantDefinedFieldsDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InlineResponse2004>}
+     */
+    this.putPblMerchantDefinedFieldsDefinitions = function(referenceType, id, merchantDefinedFieldCore, callback) {
+      var postBody = merchantDefinedFieldCore;
+
+      // verify the required parameter 'referenceType' is set
+      if (referenceType === undefined || referenceType === null) {
+        throw new Error("Missing the required parameter 'referenceType' when calling putPblMerchantDefinedFieldsDefinitions");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling putPblMerchantDefinedFieldsDefinitions");
+      }
+
+      // verify the required parameter 'merchantDefinedFieldCore' is set
+      if (merchantDefinedFieldCore === undefined || merchantDefinedFieldCore === null) {
+        throw new Error("Missing the required parameter 'merchantDefinedFieldCore' when calling putPblMerchantDefinedFieldsDefinitions");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/MerchantDefinedFieldCore1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+        'referenceType': referenceType,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/hal+json;charset=utf-8'];
+      var returnType = [InlineResponse2004];
+
+      //check isMLE for an api method 'this.putPblMerchantDefinedFieldsDefinitions'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'putPblMerchantDefinedFieldsDefinitions');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['putPblMerchantDefinedFieldsDefinitions']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/ipl/v2/{referenceType}/merchantDefinedFields/{id}', 'PUT',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/ipl/v2/{referenceType}/merchantDefinedFields/{id}', 'PUT',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );

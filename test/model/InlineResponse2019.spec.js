@@ -56,20 +56,32 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2019);
     });
 
-    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
-      // uncomment below and update the code to test the property clientReferenceInformation
+    it('should have the property webhookId (base name: "webhookId")', function() {
+      // uncomment below and update the code to test the property webhookId
       //var instane = new CyberSource.InlineResponse2019();
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property organizationId (base name: "organizationId")', function() {
+      // uncomment below and update the code to test the property organizationId
       //var instane = new CyberSource.InlineResponse2019();
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property products (base name: "products")', function() {
+      // uncomment below and update the code to test the property products
+      //var instane = new CyberSource.InlineResponse2019();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property webhookUrl (base name: "webhookUrl")', function() {
+      // uncomment below and update the code to test the property webhookUrl
+      //var instane = new CyberSource.InlineResponse2019();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property healthCheckUrl (base name: "healthCheckUrl")', function() {
+      // uncomment below and update the code to test the property healthCheckUrl
       //var instane = new CyberSource.InlineResponse2019();
       //expect(instance).to.be();
     });
@@ -80,20 +92,38 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property errorInformation (base name: "errorInformation")', function() {
-      // uncomment below and update the code to test the property errorInformation
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new CyberSource.InlineResponse2019();
       //expect(instance).to.be();
     });
 
-    it('should have the property orderInformation (base name: "orderInformation")', function() {
-      // uncomment below and update the code to test the property orderInformation
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instane = new CyberSource.InlineResponse2019();
       //expect(instance).to.be();
     });
 
-    it('should have the property processorInformation (base name: "processorInformation")', function() {
-      // uncomment below and update the code to test the property processorInformation
+    it('should have the property retryPolicy (base name: "retryPolicy")', function() {
+      // uncomment below and update the code to test the property retryPolicy
+      //var instane = new CyberSource.InlineResponse2019();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property securityPolicy (base name: "securityPolicy")', function() {
+      // uncomment below and update the code to test the property securityPolicy
+      //var instane = new CyberSource.InlineResponse2019();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdOn (base name: "createdOn")', function() {
+      // uncomment below and update the code to test the property createdOn
+      //var instane = new CyberSource.InlineResponse2019();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property notificationScope (base name: "notificationScope")', function() {
+      // uncomment below and update the code to test the property notificationScope
       //var instane = new CyberSource.InlineResponse2019();
       //expect(instance).to.be();
     });

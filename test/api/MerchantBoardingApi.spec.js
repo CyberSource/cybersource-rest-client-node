@@ -60,6 +60,16 @@
         done();
       });
     });
+    describe('patchRegistration', function() {
+      it('should call patchRegistration successfully', function(done) {
+        //uncomment below and update the code to test patchRegistration
+        //instance.patchRegistration(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postRegistration', function() {
       it('should call postRegistration successfully', function(done) {
         //uncomment below and update the code to test postRegistration

@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Invoicingv2invoicesidInvoiceInformation);
     });
 
+    it('should have the property transactionReferenceNumber (base name: "transactionReferenceNumber")', function() {
+      // uncomment below and update the code to test the property transactionReferenceNumber
+      //var instane = new CyberSource.Invoicingv2invoicesidInvoiceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instane = new CyberSource.Invoicingv2invoicesidInvoiceInformation();

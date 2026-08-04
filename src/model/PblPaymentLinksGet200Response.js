@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GetSubscriptionsPaymentsResponse1Links', 'model/Iplv2paymentlinksProcessingInformation', 'model/PblPaymentLinksPost201ResponseOrderInformation', 'model/PblPaymentLinksPost201ResponsePurchaseInformation'], factory);
+    define(['ApiClient', 'model/GetSubscriptionsPaymentsResponse1Links', 'model/InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition', 'model/Iplv2paymentlinksProcessingInformation', 'model/PblPaymentLinksPost201ResponseOrderInformation', 'model/PblPaymentLinksPost201ResponsePurchaseInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./GetSubscriptionsPaymentsResponse1Links'), require('./Iplv2paymentlinksProcessingInformation'), require('./PblPaymentLinksPost201ResponseOrderInformation'), require('./PblPaymentLinksPost201ResponsePurchaseInformation'));
+    module.exports = factory(require('../ApiClient'), require('./GetSubscriptionsPaymentsResponse1Links'), require('./InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition'), require('./Iplv2paymentlinksProcessingInformation'), require('./PblPaymentLinksPost201ResponseOrderInformation'), require('./PblPaymentLinksPost201ResponsePurchaseInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PblPaymentLinksGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.GetSubscriptionsPaymentsResponse1Links, root.CyberSource.Iplv2paymentlinksProcessingInformation, root.CyberSource.PblPaymentLinksPost201ResponseOrderInformation, root.CyberSource.PblPaymentLinksPost201ResponsePurchaseInformation);
+    root.CyberSource.PblPaymentLinksGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.GetSubscriptionsPaymentsResponse1Links, root.CyberSource.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition, root.CyberSource.Iplv2paymentlinksProcessingInformation, root.CyberSource.PblPaymentLinksPost201ResponseOrderInformation, root.CyberSource.PblPaymentLinksPost201ResponsePurchaseInformation);
   }
-}(this, function(ApiClient, GetSubscriptionsPaymentsResponse1Links, Iplv2paymentlinksProcessingInformation, PblPaymentLinksPost201ResponseOrderInformation, PblPaymentLinksPost201ResponsePurchaseInformation) {
+}(this, function(ApiClient, GetSubscriptionsPaymentsResponse1Links, InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition, Iplv2paymentlinksProcessingInformation, PblPaymentLinksPost201ResponseOrderInformation, PblPaymentLinksPost201ResponsePurchaseInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -88,6 +89,9 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = PblPaymentLinksPost201ResponseOrderInformation.constructFromObject(data['orderInformation']);
       }
+      if (data.hasOwnProperty('merchantDefinedFieldValuesWithDefinition')) {
+        obj['merchantDefinedFieldValuesWithDefinition'] = ApiClient.convertToType(data['merchantDefinedFieldValuesWithDefinition'], [InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition]);
+      }
     }
     return obj;
   }
@@ -123,6 +127,10 @@
    * @member {module:model/PblPaymentLinksPost201ResponseOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {Array.<module:model/InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition>} merchantDefinedFieldValuesWithDefinition
+   */
+  exports.prototype['merchantDefinedFieldValuesWithDefinition'] = undefined;
 
 
 

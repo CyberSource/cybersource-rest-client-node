@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse202', 'model/InlineResponse4011'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse202', 'model/InlineResponse4013'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponse202'), require('../model/InlineResponse4011'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponse202'), require('../model/InlineResponse4013'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse20012, root.CyberSource.InlineResponse20013, root.CyberSource.InlineResponse20014, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse4011);
+    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse20012, root.CyberSource.InlineResponse20013, root.CyberSource.InlineResponse20014, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse4013);
   }
-}(this, function(MLEUtility, ApiClient, Body, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse202, InlineResponse4011) {
+}(this, function(MLEUtility, ApiClient, Body, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse202, InlineResponse4013) {
   'use strict';
 
   /**

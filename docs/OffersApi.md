@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createOffer"></a>
 # **createOffer**
-> InlineResponse2019 createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest)
+> InlineResponse20112 createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest)
 
 Create an Offer
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2019**](InlineResponse2019.md)
+[**InlineResponse20112**](InlineResponse20112.md)
 
 ### Authorization
 

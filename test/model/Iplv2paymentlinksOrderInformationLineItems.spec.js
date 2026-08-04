@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property totalAmount (base name: "totalAmount")', function() {
+      // uncomment below and update the code to test the property totalAmount
+      //var instane = new CyberSource.Iplv2paymentlinksOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

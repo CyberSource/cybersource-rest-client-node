@@ -143,7 +143,7 @@
       var returnType = PullFundsRefund201Response;
 
       //check isMLE for an api method 'this.createPullFundsRefund'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPullFundsRefund');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPullFundsRefund']);
 
@@ -258,7 +258,7 @@
       var returnType = PullFundsReversal201Response;
 
       //check isMLE for an api method 'this.createPullFundsReversal'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPullFundsReversal');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPullFundsReversal']);
 
@@ -366,7 +366,7 @@
       var returnType = PullFunds201Response;
 
       //check isMLE for an api method 'this.createPullFundsTransfer'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createPullFundsTransfer');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPullFundsTransfer']);
 

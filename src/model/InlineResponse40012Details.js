@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -68,20 +69,28 @@
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
+      if (data.hasOwnProperty('code')) {
+        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * This is the flattened JSON object field name/path that is either missing or invalid. 
+   * This is the flattened JSON object field name/path that is either missing or invalid.
    * @member {String} field
    */
   exports.prototype['field'] = undefined;
   /**
-   * Possible reasons for the error.  Possible values:   - `MISSING_FIELD`   - `INVALID_DATA` 
+   * Possible reasons for the error. 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
+  /**
+   * An optional short string which identifies the exact field error.
+   * @member {String} code
+   */
+  exports.prototype['code'] = undefined;
 
 
 

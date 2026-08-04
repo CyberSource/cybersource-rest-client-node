@@ -65,49 +65,50 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
-      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      if (data.hasOwnProperty('code')) {
+        obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
       if (data.hasOwnProperty('details')) {
         obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse40012Details]);
+      }
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.) 
-   * @member {String} submitTimeUtc
-   */
-  exports.prototype['submitTimeUtc'] = undefined;
-  /**
-   * Possible values:   - `INVALID_REQUEST` 
+   * The status of the submitted request.  Possible values: - BAD_REQUEST
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The detail message related to the status and reason
+   * The detail message related to the status and reason listed above.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * The reason of the status.  Possible values:   - `INVALID_REQUEST` 
-   * @member {String} reason
+   * An optional short string which identifies the exact error.
+   * @member {String} code
    */
-  exports.prototype['reason'] = undefined;
+  exports.prototype['code'] = undefined;
   /**
+   * An optional array which provides more details of the error.
    * @member {Array.<module:model/InlineResponse40012Details>} details
    */
   exports.prototype['details'] = undefined;
+  /**
+   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeUtc
+   */
+  exports.prototype['submitTimeUtc'] = undefined;
 
 
 

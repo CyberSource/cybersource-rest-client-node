@@ -62,50 +62,38 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
-      //var instane = new CyberSource.InlineResponse2014();
-      //expect(instance).to.be();
-    });
-
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse2014();
       //expect(instance).to.be();
     });
 
-    it('should have the property registrationInformation (base name: "registrationInformation")', function() {
-      // uncomment below and update the code to test the property registrationInformation
+    it('should have the property submitTimeStampUtc (base name: "submitTimeStampUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeStampUtc
       //var instane = new CyberSource.InlineResponse2014();
       //expect(instance).to.be();
     });
 
-    it('should have the property integrationInformation (base name: "integrationInformation")', function() {
-      // uncomment below and update the code to test the property integrationInformation
+    it('should have the property orderInformation (base name: "orderInformation")', function() {
+      // uncomment below and update the code to test the property orderInformation
       //var instane = new CyberSource.InlineResponse2014();
       //expect(instance).to.be();
     });
 
-    it('should have the property organizationInformation (base name: "organizationInformation")', function() {
-      // uncomment below and update the code to test the property organizationInformation
+    it('should have the property errorInformation (base name: "errorInformation")', function() {
+      // uncomment below and update the code to test the property errorInformation
       //var instane = new CyberSource.InlineResponse2014();
       //expect(instance).to.be();
     });
 
-    it('should have the property productInformationSetups (base name: "productInformationSetups")', function() {
-      // uncomment below and update the code to test the property productInformationSetups
+    it('should have the property processorInformation (base name: "processorInformation")', function() {
+      // uncomment below and update the code to test the property processorInformation
       //var instane = new CyberSource.InlineResponse2014();
       //expect(instance).to.be();
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instane = new CyberSource.InlineResponse2014();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property details (base name: "details")', function() {
-      // uncomment below and update the code to test the property details
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
       //var instane = new CyberSource.InlineResponse2014();
       //expect(instance).to.be();
     });

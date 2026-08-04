@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4011Fields', 'model/InlineResponse4011Links'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4011Fields'), require('./InlineResponse4011Links'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4011 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4011Fields, root.CyberSource.InlineResponse4011Links);
+    root.CyberSource.InlineResponse4011 = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, InlineResponse4011Fields, InlineResponse4011Links) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -51,9 +51,6 @@
 
 
 
-
-
-
   };
 
   /**
@@ -67,23 +64,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('_links')) {
-        obj['_links'] = InlineResponse4011Links.constructFromObject(data['_links']);
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('code')) {
-        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+      if (data.hasOwnProperty('submitTimeStampUtc')) {
+        obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
       }
-      if (data.hasOwnProperty('correlationId')) {
-        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
-      }
-      if (data.hasOwnProperty('detail')) {
-        obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
-      }
-      if (data.hasOwnProperty('fields')) {
-        obj['fields'] = ApiClient.convertToType(data['fields'], [InlineResponse4011Fields]);
-      }
-      if (data.hasOwnProperty('localizationKey')) {
-        obj['localizationKey'] = ApiClient.convertToType(data['localizationKey'], 'String');
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -93,32 +81,22 @@
   }
 
   /**
-   * @member {module:model/InlineResponse4011Links} _links
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @member {String} id
    */
-  exports.prototype['_links'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR 
-   * @member {String} code
+   * Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeStampUtc
    */
-  exports.prototype['code'] = undefined;
+  exports.prototype['submitTimeStampUtc'] = undefined;
   /**
-   * @member {String} correlationId
+   * The reason of the status.  Possible values: - UNAUTHORIZED 
+   * @member {String} reason
    */
-  exports.prototype['correlationId'] = undefined;
+  exports.prototype['reason'] = undefined;
   /**
-   * @member {String} detail
-   */
-  exports.prototype['detail'] = undefined;
-  /**
-   * @member {Array.<module:model/InlineResponse4011Fields>} fields
-   */
-  exports.prototype['fields'] = undefined;
-  /**
-   * Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported 
-   * @member {String} localizationKey
-   */
-  exports.prototype['localizationKey'] = undefined;
-  /**
+   * The detail message related to the status and reason listed above. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;

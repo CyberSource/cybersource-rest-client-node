@@ -45,10 +45,11 @@
    * @alias module:model/Invoicingv2invoicesidInvoiceInformation
    * @class
    * @param description {String} The description included in the invoice.
-   * @param dueDate {Date} The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day 
+   * @param dueDate {Date} The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. 
    */
   var exports = function(description, dueDate) {
     var _this = this;
+
 
     _this['description'] = description;
     _this['dueDate'] = dueDate;
@@ -69,6 +70,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('transactionReferenceNumber')) {
+        obj['transactionReferenceNumber'] = ApiClient.convertToType(data['transactionReferenceNumber'], 'String');
+      }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
@@ -92,17 +96,22 @@
   }
 
   /**
+   * The transaction reference number (TRN) is a identifier assigned to each payment transaction that allows merchants, customers, and payment processors to track and reference specific transactions throughout their lifecycle.  When provided, this value is passed to the payment processor as the reconciliation ID for the payment. For invoices this is typically the invoice number, and for purchase or donation links it is typically the link identifier.  Only letters and numbers are allowed; spaces and other special characters are not permitted. 
+   * @member {String} transactionReferenceNumber
+   */
+  exports.prototype['transactionReferenceNumber'] = undefined;
+  /**
    * The description included in the invoice.
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
   /**
-   * The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day 
+   * The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. 
    * @member {Date} dueDate
    */
   exports.prototype['dueDate'] = undefined;
   /**
-   * Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day 
+   * Define an expiration date for the link.  The date must be today or in the future.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day.  The invoice link automatically expires 12 months after the due date. 
    * @member {Date} expirationDate
    */
   exports.prototype['expirationDate'] = undefined;

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2011', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse404', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/InlineResponse502', 'model/PostIssuerLifeCycleSimulationRequest', 'model/PostPaymentCredentialsRequest', 'model/PostPaymentCredentialsRequest1', 'model/PostTokenizedCardRequest', 'model/TmsTokenizedCardDeleteRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2011', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse404', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/InlineResponse502', 'model/PostIssuerLifeCycleSimulationRequest', 'model/PostPaymentCredentialsRequest', 'model/PostPaymentCredentialsRequest1', 'model/PostTokenizedCardDeleteRequest', 'model/PostTokenizedCardRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse2002'), require('../model/InlineResponse2011'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse404'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/InlineResponse502'), require('../model/PostIssuerLifeCycleSimulationRequest'), require('../model/PostPaymentCredentialsRequest'), require('../model/PostPaymentCredentialsRequest1'), require('../model/PostTokenizedCardRequest'), require('../model/TmsTokenizedCardDeleteRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse2002'), require('../model/InlineResponse2011'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse404'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/InlineResponse502'), require('../model/PostIssuerLifeCycleSimulationRequest'), require('../model/PostPaymentCredentialsRequest'), require('../model/PostPaymentCredentialsRequest1'), require('../model/PostTokenizedCardDeleteRequest'), require('../model/PostTokenizedCardRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.NetworkTokensApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse404, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.InlineResponse502, root.CyberSource.PostIssuerLifeCycleSimulationRequest, root.CyberSource.PostPaymentCredentialsRequest, root.CyberSource.PostPaymentCredentialsRequest1, root.CyberSource.PostTokenizedCardRequest, root.CyberSource.TmsTokenizedCardDeleteRequest);
+    root.CyberSource.NetworkTokensApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse404, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.InlineResponse502, root.CyberSource.PostIssuerLifeCycleSimulationRequest, root.CyberSource.PostPaymentCredentialsRequest, root.CyberSource.PostPaymentCredentialsRequest1, root.CyberSource.PostTokenizedCardDeleteRequest, root.CyberSource.PostTokenizedCardRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2001, InlineResponse2002, InlineResponse2011, InlineResponse400, InlineResponse403, InlineResponse404, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, InlineResponse502, PostIssuerLifeCycleSimulationRequest, PostPaymentCredentialsRequest, PostPaymentCredentialsRequest1, PostTokenizedCardRequest, TmsTokenizedCardDeleteRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2001, InlineResponse2002, InlineResponse2011, InlineResponse400, InlineResponse403, InlineResponse404, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, InlineResponse502, PostIssuerLifeCycleSimulationRequest, PostPaymentCredentialsRequest, PostPaymentCredentialsRequest1, PostTokenizedCardDeleteRequest, PostTokenizedCardRequest) {
   'use strict';
 
   /**
@@ -257,7 +257,7 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.postIssuerLifeCycleSimulation'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postIssuerLifeCycleSimulation');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postIssuerLifeCycleSimulation']);
 
@@ -516,7 +516,7 @@
      * @param {String} tokenizedCardId The Id of a tokenized card.
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
-     * @param {module:model/TmsTokenizedCardDeleteRequest} opts.postTokenizedCardDeleteRequest 
+     * @param {module:model/PostTokenizedCardDeleteRequest} opts.postTokenizedCardDeleteRequest 
      * @param {module:api/NetworkTokensApi~postTokenizedCardDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.postTokenizedCardDelete = function(tokenizedCardId, opts, callback) {
@@ -531,7 +531,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/TmsTokenizedCardDeleteRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostTokenizedCardDeleteRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {

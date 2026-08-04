@@ -56,38 +56,20 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse4011);
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse4011();
       //expect(instance).to.be();
     });
 
-    it('should have the property code (base name: "code")', function() {
-      // uncomment below and update the code to test the property code
+    it('should have the property submitTimeStampUtc (base name: "submitTimeStampUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeStampUtc
       //var instane = new CyberSource.InlineResponse4011();
       //expect(instance).to.be();
     });
 
-    it('should have the property correlationId (base name: "correlationId")', function() {
-      // uncomment below and update the code to test the property correlationId
-      //var instane = new CyberSource.InlineResponse4011();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property detail (base name: "detail")', function() {
-      // uncomment below and update the code to test the property detail
-      //var instane = new CyberSource.InlineResponse4011();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fields (base name: "fields")', function() {
-      // uncomment below and update the code to test the property fields
-      //var instane = new CyberSource.InlineResponse4011();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property localizationKey (base name: "localizationKey")', function() {
-      // uncomment below and update the code to test the property localizationKey
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
       //var instane = new CyberSource.InlineResponse4011();
       //expect(instance).to.be();
     });

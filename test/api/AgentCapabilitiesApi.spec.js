@@ -50,10 +50,50 @@
   }
 
   describe('AgentCapabilitiesApi', function() {
+    describe('activateAgentKey', function() {
+      it('should call activateAgentKey successfully', function(done) {
+        //uncomment below and update the code to test activateAgentKey
+        //instance.activateAgentKey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('addAgentKey', function() {
+      it('should call addAgentKey successfully', function(done) {
+        //uncomment below and update the code to test addAgentKey
+        //instance.addAgentKey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cancelCheckout', function() {
+      it('should call cancelCheckout successfully', function(done) {
+        //uncomment below and update the code to test cancelCheckout
+        //instance.cancelCheckout(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cancelPurchaseIntent', function() {
       it('should call cancelPurchaseIntent successfully', function(done) {
         //uncomment below and update the code to test cancelPurchaseIntent
         //instance.cancelPurchaseIntent(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('completeCheckout', function() {
+      it('should call completeCheckout successfully', function(done) {
+        //uncomment below and update the code to test completeCheckout
+        //instance.completeCheckout(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -70,10 +110,60 @@
         done();
       });
     });
+    describe('createCheckoutSession', function() {
+      it('should call createCheckoutSession successfully', function(done) {
+        //uncomment below and update the code to test createCheckoutSession
+        //instance.createCheckoutSession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deactivateAgentKey', function() {
+      it('should call deactivateAgentKey successfully', function(done) {
+        //uncomment below and update the code to test deactivateAgentKey
+        //instance.deactivateAgentKey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('enrollCard', function() {
       it('should call enrollCard successfully', function(done) {
         //uncomment below and update the code to test enrollCard
         //instance.enrollCard(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAgent', function() {
+      it('should call getAgent successfully', function(done) {
+        //uncomment below and update the code to test getAgent
+        //instance.getAgent(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAgentKey', function() {
+      it('should call getAgentKey successfully', function(done) {
+        //uncomment below and update the code to test getAgentKey
+        //instance.getAgentKey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCheckoutSession', function() {
+      it('should call getCheckoutSession successfully', function(done) {
+        //uncomment below and update the code to test getCheckoutSession
+        //instance.getCheckoutSession(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -90,10 +180,110 @@
         done();
       });
     });
+    describe('listAgentKeys', function() {
+      it('should call listAgentKeys successfully', function(done) {
+        //uncomment below and update the code to test listAgentKeys
+        //instance.listAgentKeys(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('registerAgent', function() {
+      it('should call registerAgent successfully', function(done) {
+        //uncomment below and update the code to test registerAgent
+        //instance.registerAgent(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('retrievePaymentCredentials', function() {
       it('should call retrievePaymentCredentials successfully', function(done) {
         //uncomment below and update the code to test retrievePaymentCredentials
         //instance.retrievePaymentCredentials(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ucpCancelCheckout', function() {
+      it('should call ucpCancelCheckout successfully', function(done) {
+        //uncomment below and update the code to test ucpCancelCheckout
+        //instance.ucpCancelCheckout(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ucpCompleteCheckout', function() {
+      it('should call ucpCompleteCheckout successfully', function(done) {
+        //uncomment below and update the code to test ucpCompleteCheckout
+        //instance.ucpCompleteCheckout(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ucpCreateCheckoutSession', function() {
+      it('should call ucpCreateCheckoutSession successfully', function(done) {
+        //uncomment below and update the code to test ucpCreateCheckoutSession
+        //instance.ucpCreateCheckoutSession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ucpGetCheckoutSession', function() {
+      it('should call ucpGetCheckoutSession successfully', function(done) {
+        //uncomment below and update the code to test ucpGetCheckoutSession
+        //instance.ucpGetCheckoutSession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ucpUpdateCheckoutSession', function() {
+      it('should call ucpUpdateCheckoutSession successfully', function(done) {
+        //uncomment below and update the code to test ucpUpdateCheckoutSession
+        //instance.ucpUpdateCheckoutSession(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateAgent', function() {
+      it('should call updateAgent successfully', function(done) {
+        //uncomment below and update the code to test updateAgent
+        //instance.updateAgent(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateAgentKey', function() {
+      it('should call updateAgentKey successfully', function(done) {
+        //uncomment below and update the code to test updateAgentKey
+        //instance.updateAgentKey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateCheckoutSession', function() {
+      it('should call updateCheckoutSession successfully', function(done) {
+        //uncomment below and update the code to test updateCheckoutSession
+        //instance.updateCheckoutSession(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

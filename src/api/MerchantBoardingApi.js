@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2005', 'model/InlineResponse2014', 'model/InlineResponse4009', 'model/InlineResponse4043', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PostRegistrationBody'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2005', 'model/InlineResponse2017', 'model/InlineResponse40011', 'model/InlineResponse4043', 'model/InlineResponse4221', 'model/InlineResponse5002', 'model/PatchRegistrationBody', 'model/PostRegistrationBody'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2005'), require('../model/InlineResponse2014'), require('../model/InlineResponse4009'), require('../model/InlineResponse4043'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PostRegistrationBody'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2005'), require('../model/InlineResponse2017'), require('../model/InlineResponse40011'), require('../model/InlineResponse4043'), require('../model/InlineResponse4221'), require('../model/InlineResponse5002'), require('../model/PatchRegistrationBody'), require('../model/PostRegistrationBody'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse4043, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PostRegistrationBody);
+    root.CyberSource.MerchantBoardingApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2005, root.CyberSource.InlineResponse2017, root.CyberSource.InlineResponse40011, root.CyberSource.InlineResponse4043, root.CyberSource.InlineResponse4221, root.CyberSource.InlineResponse5002, root.CyberSource.PatchRegistrationBody, root.CyberSource.PostRegistrationBody);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2005, InlineResponse2014, InlineResponse4009, InlineResponse4043, InlineResponse4221, InlineResponse5002, PostRegistrationBody) {
+}(this, function(MLEUtility, ApiClient, InlineResponse2005, InlineResponse2017, InlineResponse40011, InlineResponse4043, InlineResponse4221, InlineResponse5002, PatchRegistrationBody, PostRegistrationBody) {
   'use strict';
 
   /**
@@ -116,10 +116,87 @@
     }
 
     /**
+     * Callback function to receive the result of the patchRegistration operation.
+     * @callback module:api/MerchantBoardingApi~patchRegistrationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2005} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates the information on a boarding registration
+     * This end point will partially update a boarding registration 
+     * @param {String} registrationId Identifies the boarding registration to be updated
+     * @param {module:model/PatchRegistrationBody} patchRegistrationBody Boarding registration data to be patched
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.vCIdempotencyId defines idempotency of the request
+     * @param {module:api/MerchantBoardingApi~patchRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2005}
+     */
+    this.patchRegistration = function(registrationId, patchRegistrationBody, opts, callback) {
+      opts = opts || {};
+      var postBody = patchRegistrationBody;
+
+      // verify the required parameter 'registrationId' is set
+      if (registrationId === undefined || registrationId === null) {
+        throw new Error("Missing the required parameter 'registrationId' when calling patchRegistration");
+      }
+
+      // verify the required parameter 'patchRegistrationBody' is set
+      if (patchRegistrationBody === undefined || patchRegistrationBody === null) {
+        throw new Error("Missing the required parameter 'patchRegistrationBody' when calling patchRegistration");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PatchRegistrationBody', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+        'registrationId': registrationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+        'v-c-idempotency-id': opts['vCIdempotencyId']
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse2005;
+
+      //check isMLE for an api method 'this.patchRegistration'
+      var inboundMLEStatus = 'optional';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'patchRegistration');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['patchRegistration']);
+
+      if (isMLEForApi === true) {
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+          return this.apiClient.callApi(
+            '/boarding/v1/registrations/{registrationId}', 'PATCH',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/boarding/v1/registrations/{registrationId}', 'PATCH',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
      * Callback function to receive the result of the postRegistration operation.
      * @callback module:api/MerchantBoardingApi~postRegistrationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014} data The data returned by the service call.
+     * @param {module:model/InlineResponse2017} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -130,7 +207,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.vCIdempotencyId defines idempotency of the request
      * @param {module:api/MerchantBoardingApi~postRegistrationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2014}
+     * data is of type: {@link module:model/InlineResponse2017}
      */
     this.postRegistration = function(postRegistrationBody, opts, callback) {
       opts = opts || {};
@@ -161,10 +238,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2014;
+      var returnType = InlineResponse2017;
 
       //check isMLE for an api method 'this.postRegistration'
-      var inboundMLEStatus = 'mandatory';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'postRegistration');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postRegistration']);
 

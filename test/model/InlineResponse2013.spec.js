@@ -56,8 +56,8 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2013);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property requestId (base name: "requestId")', function() {
+      // uncomment below and update the code to test the property requestId
       //var instane = new CyberSource.InlineResponse2013();
       //expect(instance).to.be();
     });
@@ -68,26 +68,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instane = new CyberSource.InlineResponse2013();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property paymentAccountInformation (base name: "paymentAccountInformation")', function() {
-      // uncomment below and update the code to test the property paymentAccountInformation
-      //var instane = new CyberSource.InlineResponse2013();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property issuerInformation (base name: "issuerInformation")', function() {
-      // uncomment below and update the code to test the property issuerInformation
-      //var instane = new CyberSource.InlineResponse2013();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property payoutInformation (base name: "payoutInformation")', function() {
-      // uncomment below and update the code to test the property payoutInformation
+    it('should have the property results (base name: "results")', function() {
+      // uncomment below and update the code to test the property results
       //var instane = new CyberSource.InlineResponse2013();
       //expect(instance).to.be();
     });

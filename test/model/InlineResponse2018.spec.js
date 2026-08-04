@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
+      // uncomment below and update the code to test the property clientReferenceInformation
+      //var instane = new CyberSource.InlineResponse2018();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property keyInformation (base name: "keyInformation")', function() {
+      // uncomment below and update the code to test the property keyInformation
+      //var instane = new CyberSource.InlineResponse2018();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

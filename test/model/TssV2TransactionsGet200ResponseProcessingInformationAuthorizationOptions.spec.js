@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property aftIndicator (base name: "aftIndicator")', function() {
+      // uncomment below and update the code to test the property aftIndicator
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions();
+      //expect(instance).to.be();
+    });
+
     it('should have the property initiator (base name: "initiator")', function() {
       // uncomment below and update the code to test the property initiator
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions();

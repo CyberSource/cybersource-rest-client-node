@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       }
       if (data.hasOwnProperty('cardVerificationIndicator')) {
         obj['cardVerificationIndicator'] = ApiClient.convertToType(data['cardVerificationIndicator'], 'Boolean');
+      }
+      if (data.hasOwnProperty('aftIndicator')) {
+        obj['aftIndicator'] = ApiClient.convertToType(data['aftIndicator'], 'Boolean');
       }
       if (data.hasOwnProperty('initiator')) {
         obj['initiator'] = TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator.constructFromObject(data['initiator']);
@@ -104,6 +108,11 @@
    * @member {Boolean} cardVerificationIndicator
    */
   exports.prototype['cardVerificationIndicator'] = undefined;
+  /**
+   * Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - `true` (This is an AFT transaction)   - `false` (default value) (This is not an AFT transaction) 
+   * @member {Boolean} aftIndicator
+   */
+  exports.prototype['aftIndicator'] = undefined;
   /**
    * @member {module:model/TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator} initiator
    */
