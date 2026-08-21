@@ -10,7 +10,7 @@ var ApiException = require('../util/ApiException');
  * This function calls for the generation of Signature message depending on the authentication type.
  * 
  */
-exports.getToken = function(merchantConfig, isResponseMLEForApi, logger){
+exports.getToken = function(merchantConfig, isResponseMLEForApi, logger, date){
 
     var authenticationType = merchantConfig.getAuthenticationType().toLowerCase();
     var httpSigToken;
@@ -18,7 +18,7 @@ exports.getToken = function(merchantConfig, isResponseMLEForApi, logger){
     var oauthToken;
 
     if(authenticationType === Constants.HTTP) {
-        httpSigToken = HttpSingToken.getToken(merchantConfig, logger);
+        httpSigToken = HttpSingToken.getToken(merchantConfig, logger, date);
         return httpSigToken;
     }
     else if(authenticationType === Constants.JWT) {

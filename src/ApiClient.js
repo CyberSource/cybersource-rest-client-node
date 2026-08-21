@@ -586,7 +586,9 @@ const agentPool = new Map();
     this.logger.info('Authentication Type : ' + this.merchantConfig.getAuthenticationType());
     this.logger.info(this.constants.REQUEST_TYPE + ' : ' + httpMethod.toUpperCase());
 
-    var token = Authorization.getToken(this.merchantConfig, isResponseMLEForApi, this.logger);
+    var date = new Date(Date.now()).toUTCString();
+
+    var token = Authorization.getToken(this.merchantConfig, isResponseMLEForApi, this.logger, date);
 
     var clientId = getClientId();
 
@@ -602,7 +604,6 @@ const agentPool = new Map();
       this.logger.info(this.constants.AUTHORIZATION + ' : ' + LoggingUtilities.redactJwt(token));
     }
     else if (this.merchantConfig.getAuthenticationType().toLowerCase() === this.constants.HTTP) {
-      var date = new Date(Date.now()).toUTCString();
 
       if (httpMethod.toLowerCase() === this.constants.POST
         || httpMethod.toLowerCase() === this.constants.PATCH
@@ -873,32 +874,45 @@ const agentPool = new Map();
         });
     }).catch(function(error, response) {
       source.cancel('Stream ended.');
-      MLEUtility.checkAndDecryptEncryptedResponse(error.response.data, _this.merchantConfig)
-        .then(function(decryptedData) {
-          error.response.data = decryptedData;
-          var userError = {};
-          if (error.code && error.code == "ECONNREFUSED") {
-            userError = _this.translateProxyIssue(error);
-          } else if (error.code && error.code == "ERR_BAD_REQUEST") {
-            userError = _this.translate404Error(error);
-            response = userError.response;
-          } else if (error.code && error.code == "ETIMEDOUT") {
-            userError = _this.translateProxyIssue(error);
-          } else {
-            userError = _this.translateError(error);
-            response = userError.response;
-          }
 
-          callback(userError, null, response);
-        })
-        .catch(function(error) {
-          // Create a simple error object with descriptive message in case decryption of error message has failed.
-          const errorMsg = `Failed to decrypt error response: ${error.message}`;
-          
-          if (callback) {
-            callback(new Error(errorMsg), null, null);
-          }
-        });
+      
+      var handleError = function() {
+        var userError = {};
+        if (error.code && error.code == "ECONNREFUSED") {
+          userError = _this.translateProxyIssue(error);
+        } else if (error.code && error.code == "ERR_BAD_REQUEST") {
+          userError = _this.translate404Error(error);
+          response = userError.response;
+        } else if (error.code && error.code == "ETIMEDOUT") {
+          userError = _this.translateProxyIssue(error);
+        } else {
+          userError = _this.translateError(error);
+          response = userError.response;
+        }
+
+        callback(userError, null, response);
+      };
+
+      // Connection/network errors (e.g. ECONNREFUSED, ETIMEDOUT, ENOTFOUND) never receive an
+      // HTTP response, so error.response is undefined. Only attempt to decrypt when a response
+      // is actually present to avoid "Cannot read properties of undefined (reading 'data')".
+      if (error.response) {
+        MLEUtility.checkAndDecryptEncryptedResponse(error.response.data, _this.merchantConfig)
+          .then(function(decryptedData) {
+            error.response.data = decryptedData;
+            handleError();
+          })
+          .catch(function(decryptError) {
+            // Create a simple error object with descriptive message in case decryption of error message has failed.
+            const errorMsg = `Failed to decrypt error response: ${decryptError.message}`;
+
+            if (callback) {
+              callback(new Error(errorMsg), null, null);
+            }
+          });
+      } else {
+        handleError();
+      }
     });
 
   };

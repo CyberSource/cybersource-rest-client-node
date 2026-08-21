@@ -14,12 +14,12 @@ var DigestGenerator = require('../payloadDigest/DigestGenerator');
                     Digest: “SHA-256=“ + digestString;
          * v-c-merchant-id: set value to Cybersource Merchant ID
                              This ID can be found on EBC portal*/
-exports.getSignatureParameter = function (merchantConfig, logger) {
+exports.getSignatureParameter = function (merchantConfig, logger, date) {
 
 
     var signatureString = Constants.HOST + ': ' + merchantConfig.getRequestHost();
 
-    signatureString += '\n' + Constants.DATE + ': ' + new Date(Date.now()).toUTCString();
+    signatureString += '\n' + Constants.DATE + ': ' + date;
     signatureString += '\nrequest-target: ';
 
     var requestType = merchantConfig.getRequestType().toLowerCase();

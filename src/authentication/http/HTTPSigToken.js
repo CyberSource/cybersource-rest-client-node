@@ -15,7 +15,7 @@ var LoggingUtilities = require('../logging/LoggingUtilities');
  * signature -- Signature header has paramter called signature
                 Paramter 'Signature' must contain all the paramters mentioned in header above in given order  */
 
-exports.getToken = function (merchantConfig, logger) {
+exports.getToken = function (merchantConfig, logger, date) {
     var signatureHeader = "";
     var signatureValue = "";
     var requestType = merchantConfig.getRequestType().toLowerCase();
@@ -46,7 +46,7 @@ exports.getToken = function (merchantConfig, logger) {
         }
 
         /* Get Value for paramter 'Signature' to be passed to Signature Header */
-        signatureValue = SignatureParameterGenerator.getSignatureParameter(merchantConfig, logger);
+        signatureValue = SignatureParameterGenerator.getSignatureParameter(merchantConfig, logger, date);
         signatureHeader += ", signature=\"" + signatureValue + "\"";
         logger.info("signatureHeader : " + LoggingUtilities.redactSignature(signatureHeader));
         return signatureHeader;
