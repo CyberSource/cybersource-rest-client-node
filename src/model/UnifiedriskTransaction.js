@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/UnifiedriskTransactionAdditionalFees', 'model/UnifiedriskTransactionAmount', 'model/UnifiedriskTransactionBatchDetails', 'model/UnifiedriskTransactionCheckDetails', 'model/UnifiedriskTransactionRecurringDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./UnifiedriskTransactionAdditionalFees'), require('./UnifiedriskTransactionAmount'), require('./UnifiedriskTransactionBatchDetails'), require('./UnifiedriskTransactionCheckDetails'), require('./UnifiedriskTransactionRecurringDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UnifiedriskTransaction = factory(root.CyberSource.ApiClient);
+    root.CyberSource.UnifiedriskTransaction = factory(root.CyberSource.ApiClient, root.CyberSource.UnifiedriskTransactionAdditionalFees, root.CyberSource.UnifiedriskTransactionAmount, root.CyberSource.UnifiedriskTransactionBatchDetails, root.CyberSource.UnifiedriskTransactionCheckDetails, root.CyberSource.UnifiedriskTransactionRecurringDetails);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, UnifiedriskTransactionAdditionalFees, UnifiedriskTransactionAmount, UnifiedriskTransactionBatchDetails, UnifiedriskTransactionCheckDetails, UnifiedriskTransactionRecurringDetails) {
   'use strict';
 
 
@@ -41,15 +41,41 @@
 
   /**
    * Constructs a new <code>UnifiedriskTransaction</code>.
-   * Transaction reference identifying which previously assessed transaction this label applies to
+   * Financial transaction metadata including amounts, status, type, channel, and recurring payment details
    * @alias module:model/UnifiedriskTransaction
    * @class
-   * @param transactionId {String} The transaction identifier correlating this label to the original risk assessment request
    */
-  var exports = function(transactionId) {
+  var exports = function() {
     var _this = this;
 
-    _this['transactionId'] = transactionId;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
 
   /**
@@ -66,15 +92,226 @@
       if (data.hasOwnProperty('transactionId')) {
         obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
       }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('statusReason')) {
+        obj['statusReason'] = ApiClient.convertToType(data['statusReason'], 'String');
+      }
+      if (data.hasOwnProperty('messageType')) {
+        obj['messageType'] = ApiClient.convertToType(data['messageType'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('attribute')) {
+        obj['attribute'] = ApiClient.convertToType(data['attribute'], 'String');
+      }
+      if (data.hasOwnProperty('initiator')) {
+        obj['initiator'] = ApiClient.convertToType(data['initiator'], 'String');
+      }
+      if (data.hasOwnProperty('channel')) {
+        obj['channel'] = ApiClient.convertToType(data['channel'], 'String');
+      }
+      if (data.hasOwnProperty('timestamp')) {
+        obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Date');
+      }
+      if (data.hasOwnProperty('cutoffDateTime')) {
+        obj['cutoffDateTime'] = ApiClient.convertToType(data['cutoffDateTime'], 'Date');
+      }
+      if (data.hasOwnProperty('isRecurring')) {
+        obj['isRecurring'] = ApiClient.convertToType(data['isRecurring'], 'Boolean');
+      }
+      if (data.hasOwnProperty('preOrder')) {
+        obj['preOrder'] = ApiClient.convertToType(data['preOrder'], 'Boolean');
+      }
+      if (data.hasOwnProperty('preOrderDate')) {
+        obj['preOrderDate'] = ApiClient.convertToType(data['preOrderDate'], 'Date');
+      }
+      if (data.hasOwnProperty('reordered')) {
+        obj['reordered'] = ApiClient.convertToType(data['reordered'], 'Boolean');
+      }
+      if (data.hasOwnProperty('destinationCountry')) {
+        obj['destinationCountry'] = ApiClient.convertToType(data['destinationCountry'], 'String');
+      }
+      if (data.hasOwnProperty('declinePhase')) {
+        obj['declinePhase'] = ApiClient.convertToType(data['declinePhase'], 'String');
+      }
+      if (data.hasOwnProperty('trustedMerchant')) {
+        obj['trustedMerchant'] = ApiClient.convertToType(data['trustedMerchant'], 'Boolean');
+      }
+      if (data.hasOwnProperty('additionalFees')) {
+        obj['additionalFees'] = UnifiedriskTransactionAdditionalFees.constructFromObject(data['additionalFees']);
+      }
+      if (data.hasOwnProperty('amount')) {
+        obj['amount'] = UnifiedriskTransactionAmount.constructFromObject(data['amount']);
+      }
+      if (data.hasOwnProperty('recurringDetails')) {
+        obj['recurringDetails'] = UnifiedriskTransactionRecurringDetails.constructFromObject(data['recurringDetails']);
+      }
+      if (data.hasOwnProperty('direction')) {
+        obj['direction'] = ApiClient.convertToType(data['direction'], 'String');
+      }
+      if (data.hasOwnProperty('isChargeback')) {
+        obj['isChargeback'] = ApiClient.convertToType(data['isChargeback'], 'Boolean');
+      }
+      if (data.hasOwnProperty('fraudLiability')) {
+        obj['fraudLiability'] = ApiClient.convertToType(data['fraudLiability'], 'String');
+      }
+      if (data.hasOwnProperty('onUsFlag')) {
+        obj['onUsFlag'] = ApiClient.convertToType(data['onUsFlag'], 'Boolean');
+      }
+      if (data.hasOwnProperty('numberOfTransactions')) {
+        obj['numberOfTransactions'] = ApiClient.convertToType(data['numberOfTransactions'], 'Number');
+      }
+      if (data.hasOwnProperty('batchDetails')) {
+        obj['batchDetails'] = UnifiedriskTransactionBatchDetails.constructFromObject(data['batchDetails']);
+      }
+      if (data.hasOwnProperty('checkDetails')) {
+        obj['checkDetails'] = UnifiedriskTransactionCheckDetails.constructFromObject(data['checkDetails']);
+      }
+      if (data.hasOwnProperty('purpose')) {
+        obj['purpose'] = ApiClient.convertToType(data['purpose'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * The transaction identifier correlating this label to the original risk assessment request
+   * Unique identifier for the transaction being assessed
    * @member {String} transactionId
    */
   exports.prototype['transactionId'] = undefined;
+  /**
+   * Transaction status: NEW, APPROVED, DECLINED, REVERSED, FRAUD
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * Reason code for the transaction status
+   * @member {String} statusReason
+   */
+  exports.prototype['statusReason'] = undefined;
+  /**
+   * Message type: AUTHORIZATION, INQUIRY, ADVICE, REVERSAL
+   * @member {String} messageType
+   */
+  exports.prototype['messageType'] = undefined;
+  /**
+   * The type of transaction being processed
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * Transaction attribute: AGGREGATION, CARDLESS_ATM, etc
+   * @member {String} attribute
+   */
+  exports.prototype['attribute'] = undefined;
+  /**
+   * Who initiated transaction: MERCHANT, CUSTOMER
+   * @member {String} initiator
+   */
+  exports.prototype['initiator'] = undefined;
+  /**
+   * Channel used: ONLINE, MOBILE, ATM, BRANCH, etc
+   * @member {String} channel
+   */
+  exports.prototype['channel'] = undefined;
+  /**
+   * Local transaction timestamp without timezone
+   * @member {Date} timestamp
+   */
+  exports.prototype['timestamp'] = undefined;
+  /**
+   * Cutoff date/time for event or journey
+   * @member {Date} cutoffDateTime
+   */
+  exports.prototype['cutoffDateTime'] = undefined;
+  /**
+   * Indicates if this is a recurring transaction
+   * @member {Boolean} isRecurring
+   */
+  exports.prototype['isRecurring'] = undefined;
+  /**
+   * Indicates if this is a pre-order
+   * @member {Boolean} preOrder
+   */
+  exports.prototype['preOrder'] = undefined;
+  /**
+   * Expected availability date for pre-order
+   * @member {Date} preOrderDate
+   */
+  exports.prototype['preOrderDate'] = undefined;
+  /**
+   * Indicates if customer is reordering
+   * @member {Boolean} reordered
+   */
+  exports.prototype['reordered'] = undefined;
+  /**
+   * Destination country for funds
+   * @member {String} destinationCountry
+   */
+  exports.prototype['destinationCountry'] = undefined;
+  /**
+   * Phase where transaction was declined
+   * @member {String} declinePhase
+   */
+  exports.prototype['declinePhase'] = undefined;
+  /**
+   * Indicates if merchant is on trusted list
+   * @member {Boolean} trustedMerchant
+   */
+  exports.prototype['trustedMerchant'] = undefined;
+  /**
+   * @member {module:model/UnifiedriskTransactionAdditionalFees} additionalFees
+   */
+  exports.prototype['additionalFees'] = undefined;
+  /**
+   * @member {module:model/UnifiedriskTransactionAmount} amount
+   */
+  exports.prototype['amount'] = undefined;
+  /**
+   * @member {module:model/UnifiedriskTransactionRecurringDetails} recurringDetails
+   */
+  exports.prototype['recurringDetails'] = undefined;
+  /**
+   * Direction of the transaction flow relative to the customer's account (e.g., CREDIT for incoming funds, DEBIT for outgoing funds). Determines risk model orientation and velocity tracking
+   * @member {String} direction
+   */
+  exports.prototype['direction'] = undefined;
+  /**
+   * Indicates whether this transaction represents a chargeback or dispute reversal. True signals a disputed transaction requiring fraud investigation and issuer liability assessment
+   * @member {Boolean} isChargeback
+   */
+  exports.prototype['isChargeback'] = undefined;
+  /**
+   * Indicates which party bears fraud liability for this transaction (e.g., ISSUER, MERCHANT, ACQUIRER). Liability shifts apply in 3DS-authenticated or EMV chip transactions
+   * @member {String} fraudLiability
+   */
+  exports.prototype['fraudLiability'] = undefined;
+  /**
+   * Indicates whether the transaction is an on-us transaction where the issuing and acquiring institutions are the same entity. On-us transactions may follow different risk rules and processing paths
+   * @member {Boolean} onUsFlag
+   */
+  exports.prototype['onUsFlag'] = undefined;
+  /**
+   * Total count of transactions associated with this batch, order, or session. Used for velocity-based risk rules and aggregated fraud monitoring
+   * @member {Number} numberOfTransactions
+   */
+  exports.prototype['numberOfTransactions'] = undefined;
+  /**
+   * @member {module:model/UnifiedriskTransactionBatchDetails} batchDetails
+   */
+  exports.prototype['batchDetails'] = undefined;
+  /**
+   * @member {module:model/UnifiedriskTransactionCheckDetails} checkDetails
+   */
+  exports.prototype['checkDetails'] = undefined;
+  /**
+   * Business purpose or reason code for this transaction (e.g., PURCH for purchase, SALA for salary, REFND for refund). Used for transaction classification and AML monitoring
+   * @member {String} purpose
+   */
+  exports.prototype['purpose'] = undefined;
 
 
 

@@ -52,9 +52,6 @@
 
 
 
-
-
-
   };
 
   /**
@@ -68,74 +65,50 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('markupRate')) {
-        obj['markupRate'] = ApiClient.convertToType(data['markupRate'], 'String');
+      if (data.hasOwnProperty('authorizedAmount')) {
+        obj['authorizedAmount'] = ApiClient.convertToType(data['authorizedAmount'], 'String');
+      }
+      if (data.hasOwnProperty('currency')) {
+        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
       if (data.hasOwnProperty('exchangeRate')) {
         obj['exchangeRate'] = ApiClient.convertToType(data['exchangeRate'], 'String');
       }
-      if (data.hasOwnProperty('originalAmount')) {
-        obj['originalAmount'] = ApiClient.convertToType(data['originalAmount'], 'String');
-      }
-      if (data.hasOwnProperty('destinationAmount')) {
-        obj['destinationAmount'] = ApiClient.convertToType(data['destinationAmount'], 'String');
-      }
-      if (data.hasOwnProperty('originalAmountWithoutMarkup')) {
-        obj['originalAmountWithoutMarkup'] = ApiClient.convertToType(data['originalAmountWithoutMarkup'], 'String');
+      if (data.hasOwnProperty('totalAmount')) {
+        obj['totalAmount'] = ApiClient.convertToType(data['totalAmount'], 'String');
       }
       if (data.hasOwnProperty('settlementAmount')) {
         obj['settlementAmount'] = ApiClient.convertToType(data['settlementAmount'], 'String');
-      }
-      if (data.hasOwnProperty('settlementCurrency')) {
-        obj['settlementCurrency'] = ApiClient.convertToType(data['settlementCurrency'], 'String');
-      }
-      if (data.hasOwnProperty('settlementExchangeRate')) {
-        obj['settlementExchangeRate'] = ApiClient.convertToType(data['settlementExchangeRate'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The markup between the offer exchange rate and wholesale rates, i.e. the mark up. Expressed as a percentage of 100, e.g. 3.75.  If the markup value is not supplied in the API, and the Acquiring BIN is provided, the markup configured during onboarding will be picked up and applied to the transaction. To override any markup defaults set up on the account, always send a markup value of 0.00 to indicate 0% markup.   Supported by Visa Direct. 
-   * @member {String} markupRate
+   * Amount that was authorized. 
+   * @member {String} authorizedAmount
    */
-  exports.prototype['markupRate'] = undefined;
+  exports.prototype['authorizedAmount'] = undefined;
   /**
-   * Exchange rate returned by the card network.
+   * Currency used for the order. Use the three-character ISO Standard Currency Codes. 
+   * @member {String} currency
+   */
+  exports.prototype['currency'] = undefined;
+  /**
+   * The rate of conversion of the currency given in the request. 
    * @member {String} exchangeRate
    */
   exports.prototype['exchangeRate'] = undefined;
   /**
-   * Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. 
-   * @member {String} originalAmount
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. 
+   * @member {String} totalAmount
    */
-  exports.prototype['originalAmount'] = undefined;
+  exports.prototype['totalAmount'] = undefined;
   /**
-   * Amount in your destination's local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. 
-   * @member {String} destinationAmount
-   */
-  exports.prototype['destinationAmount'] = undefined;
-  /**
-   * Original Transaction Amount excluding markup in source currency. This field will be returned in a source-to-destination inquiry response when markup is applicable.  Supported by Visa Direct 
-   * @member {String} originalAmountWithoutMarkup
-   */
-  exports.prototype['originalAmountWithoutMarkup'] = undefined;
-  /**
-   * The transaction amount in settlement currency.
+   * This is a multicurrency field. It contains the transaction amount, converted to the currency used to bill the cardholder's account. 
    * @member {String} settlementAmount
    */
   exports.prototype['settlementAmount'] = undefined;
-  /**
-   * The currency in which Visa or Mastercard settles with the acquirer/acquirer.  Use [ISO 4217 3-Alpha Currency Codes](https://developer.cybersource.com/content/dam/docs/cybs/en-us/currency-codes/reference/all/na/currency-codes.pdf). 
-   * @member {String} settlementCurrency
-   */
-  exports.prototype['settlementCurrency'] = undefined;
-  /**
-   * Exchange rate returned by the card network for settlement.
-   * @member {String} settlementExchangeRate
-   */
-  exports.prototype['settlementExchangeRate'] = undefined;
 
 
 

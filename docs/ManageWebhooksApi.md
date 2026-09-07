@@ -61,7 +61,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2019 getWebhookSubscriptionById(webhookId)
+> InlineResponse2018 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2019**](InlineResponse2019.md)
+[**InlineResponse2018**](InlineResponse2018.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ No authorization required
 
 <a name="notificationSubscriptionsV1WebhooksWebhookIdPost"></a>
 # **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> InlineResponse20110 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
+> InlineResponse2019 notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId)
 
 Test a Webhook Configuration
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20110**](InlineResponse20110.md)
+[**InlineResponse2019**](InlineResponse2019.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ No authorization required
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse20111 saveAsymEgressKey(saveAsymEgressKey, opts)
+> InlineResponse20110 saveAsymEgressKey(saveAsymEgressKey, opts)
 
 Message Level Encryption
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20111**](InlineResponse20111.md)
+[**InlineResponse20110**](InlineResponse20110.md)
 
 ### Authorization
 

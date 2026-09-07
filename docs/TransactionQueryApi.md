@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createQueryApi"></a>
 # **createQueryApi**
-> InlineResponse2015 createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts)
+> InlineResponse2014 createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts)
 
 Query Transaction Details
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 

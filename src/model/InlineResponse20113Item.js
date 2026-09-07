@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>InlineResponse20113Item</code>.
-   * Item detail within an ACP line item response.
+   * Product details for this line item.
    * @alias module:model/InlineResponse20113Item
    * @class
    */
@@ -67,31 +67,31 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
       }
-      if (data.hasOwnProperty('quantity')) {
-        obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
+      if (data.hasOwnProperty('price')) {
+        obj['price'] = ApiClient.convertToType(data['price'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * Product identifier.
+   * The merchant's product ID or SKU.
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Product display name.
-   * @member {String} name
+   * Human-readable product name.
+   * @member {String} title
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['title'] = undefined;
   /**
-   * Number of units.
-   * @member {Number} quantity
+   * Unit price in cents. Example: 2999 = $29.99 USD.
+   * @member {Number} price
    */
-  exports.prototype['quantity'] = undefined;
+  exports.prototype['price'] = undefined;
 
 
 

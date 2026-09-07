@@ -56,12 +56,6 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2017);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new CyberSource.InlineResponse2017();
-      //expect(instance).to.be();
-    });
-
     it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
       // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse2017();
@@ -74,38 +68,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property registrationInformation (base name: "registrationInformation")', function() {
-      // uncomment below and update the code to test the property registrationInformation
+    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
+      // uncomment below and update the code to test the property clientReferenceInformation
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });
 
-    it('should have the property integrationInformation (base name: "integrationInformation")', function() {
-      // uncomment below and update the code to test the property integrationInformation
-      //var instane = new CyberSource.InlineResponse2017();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property organizationInformation (base name: "organizationInformation")', function() {
-      // uncomment below and update the code to test the property organizationInformation
-      //var instane = new CyberSource.InlineResponse2017();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productInformationSetups (base name: "productInformationSetups")', function() {
-      // uncomment below and update the code to test the property productInformationSetups
-      //var instane = new CyberSource.InlineResponse2017();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instane = new CyberSource.InlineResponse2017();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property details (base name: "details")', function() {
-      // uncomment below and update the code to test the property details
+    it('should have the property keyInformation (base name: "keyInformation")', function() {
+      // uncomment below and update the code to test the property keyInformation
       //var instane = new CyberSource.InlineResponse2017();
       //expect(instance).to.be();
     });

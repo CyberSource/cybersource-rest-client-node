@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **status** | **String** | Possible values: - INVALID_REQUEST  | 
 **reason** | **String** | The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD  | [optional] 
 **message** | **String** | The detail message related to the status and reason listed above.  | [optional] 
-**details** | [**[InlineResponse2014ErrorInformationDetails]**](InlineResponse2014ErrorInformationDetails.md) |  | [optional] 
+**details** | [**[InlineResponse2013ErrorInformationDetails]**](InlineResponse2013ErrorInformationDetails.md) |  | [optional] 
 
 

@@ -68,32 +68,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property baseAmount (base name: "base_amount")', function() {
-      // uncomment below and update the code to test the property baseAmount
+    it('should have the property quantity (base name: "quantity")', function() {
+      // uncomment below and update the code to test the property quantity
       //var instane = new CyberSource.InlineResponse20113LineItems();
       //expect(instance).to.be();
     });
 
-    it('should have the property discount (base name: "discount")', function() {
-      // uncomment below and update the code to test the property discount
-      //var instane = new CyberSource.InlineResponse20113LineItems();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property subtotal (base name: "subtotal")', function() {
-      // uncomment below and update the code to test the property subtotal
-      //var instane = new CyberSource.InlineResponse20113LineItems();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tax (base name: "tax")', function() {
-      // uncomment below and update the code to test the property tax
-      //var instane = new CyberSource.InlineResponse20113LineItems();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property total (base name: "total")', function() {
-      // uncomment below and update the code to test the property total
+    it('should have the property totals (base name: "totals")', function() {
+      // uncomment below and update the code to test the property totals
       //var instane = new CyberSource.InlineResponse20113LineItems();
       //expect(instance).to.be();
     });

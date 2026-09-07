@@ -110,7 +110,7 @@ No authorization required
 
 <a name="postRegistration"></a>
 # **postRegistration**
-> InlineResponse2017 postRegistration(postRegistrationBody, opts)
+> InlineResponse2016 postRegistration(postRegistrationBody, opts)
 
 Create a boarding registration
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2017**](InlineResponse2017.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 

@@ -3,17 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Unique identifier for this checkout session. Required for all subsequent calls (update, complete, cancel).  | [optional] 
-**status** | **String** | Current lifecycle state of the session per ACP spec: - `not_ready_for_payment` — session is open but not yet ready - `ready_for_payment` — session is ready to be completed - `completed` — order has been placed; session is immutable - `canceled` — session was abandoned; no charge was made   Possible values: - not_ready_for_payment - ready_for_payment - completed - canceled | [optional] 
-**currency** | **String** | ISO 4217 lowercase currency code for this session. | [optional] 
-**lineItems** | [**[InlineResponse20113LineItems]**](InlineResponse20113LineItems.md) | Line items with merchant-confirmed pricing. | [optional] 
-**fulfillmentAddress** | [**InlineResponse20113FulfillmentAddress**](InlineResponse20113FulfillmentAddress.md) |  | [optional] 
-**fulfillmentOptions** | [**[InlineResponse20113FulfillmentOptions]**](InlineResponse20113FulfillmentOptions.md) | Available fulfillment methods with pricing. | [optional] 
-**fulfillmentOptionId** | **String** | ID of the currently selected fulfillment option. | [optional] 
-**totals** | [**[InlineResponse20113Totals]**](InlineResponse20113Totals.md) | Order cost breakdown as an array of typed total lines. All amounts in minor units (cents). | [optional] 
-**buyer** | [**AcpCheckoutSessionResponseBuyer**](AcpCheckoutSessionResponseBuyer.md) |  | [optional] 
-**paymentProvider** | [**InlineResponse20113PaymentProvider**](InlineResponse20113PaymentProvider.md) |  | [optional] 
-**messages** | [**[InlineResponse20113Messages]**](InlineResponse20113Messages.md) | Informational or error messages from the merchant backend. | [optional] 
-**links** | [**[InlineResponse20113Links]**](InlineResponse20113Links.md) | Related resource links from the merchant (e.g. terms of use, privacy policy, seller shop policies).  | [optional] 
+**ucp** | [**InlineResponse20113Ucp**](InlineResponse20113Ucp.md) |  | [optional] 
+**id** | **String** | Unique UCP session identifier. Required for all subsequent UCP calls (update, complete, cancel).  | [optional] 
+**status** | **String** | Current lifecycle state of the session. - `active` — open and modifiable - `completed` — order placed, immutable - `cancelled` — abandoned, no charge made   Possible values: - active - completed - cancelled | [optional] 
+**currency** | **String** | ISO 4217 currency code for this session (e.g. `USD`, `EUR`). | [optional] 
+**buyer** | [**UcpCheckoutSessionResponseBuyer**](UcpCheckoutSessionResponseBuyer.md) |  | [optional] 
+**lineItems** | [**[InlineResponse20113LineItems]**](InlineResponse20113LineItems.md) | Cart line items with merchant-confirmed pricing. | [optional] 
+**totals** | [**[Iccv1checkoutsessionsFulfillmentTotals]**](Iccv1checkoutsessionsFulfillmentTotals.md) | Order cost breakdown. Each entry represents one total type (subtotal, tax, shipping, discount, or grand total). Amounts are in **cents** (not micros).  | [optional] 
+**fulfillment** | [**InlineResponse20113Fulfillment**](InlineResponse20113Fulfillment.md) |  | [optional] 
+**payment** | [**InlineResponse20113Payment**](InlineResponse20113Payment.md) |  | [optional] 
+**discounts** | [**InlineResponse20113Discounts**](InlineResponse20113Discounts.md) |  | [optional] 
+**order** | [**InlineResponse20113Order**](InlineResponse20113Order.md) |  | [optional] 
+**links** | [**[InlineResponse20112Links]**](InlineResponse20112Links.md) | Related resource links (e.g. terms of use, privacy policy). | [optional] 
 
 

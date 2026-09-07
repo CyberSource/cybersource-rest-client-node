@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AcpCheckoutSessionResponseBuyer', 'model/InlineResponse20113FulfillmentAddress', 'model/InlineResponse20113FulfillmentOptions', 'model/InlineResponse20113LineItems', 'model/InlineResponse20113Links', 'model/InlineResponse20113Messages', 'model/InlineResponse20113PaymentProvider', 'model/InlineResponse20113Totals'], factory);
+    define(['ApiClient', 'model/Iccv1checkoutsessionsFulfillmentTotals', 'model/InlineResponse20112Links', 'model/InlineResponse20113Discounts', 'model/InlineResponse20113Fulfillment', 'model/InlineResponse20113LineItems', 'model/InlineResponse20113Order', 'model/InlineResponse20113Payment', 'model/InlineResponse20113Ucp', 'model/UcpCheckoutSessionResponseBuyer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AcpCheckoutSessionResponseBuyer'), require('./InlineResponse20113FulfillmentAddress'), require('./InlineResponse20113FulfillmentOptions'), require('./InlineResponse20113LineItems'), require('./InlineResponse20113Links'), require('./InlineResponse20113Messages'), require('./InlineResponse20113PaymentProvider'), require('./InlineResponse20113Totals'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1checkoutsessionsFulfillmentTotals'), require('./InlineResponse20112Links'), require('./InlineResponse20113Discounts'), require('./InlineResponse20113Fulfillment'), require('./InlineResponse20113LineItems'), require('./InlineResponse20113Order'), require('./InlineResponse20113Payment'), require('./InlineResponse20113Ucp'), require('./UcpCheckoutSessionResponseBuyer'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20113 = factory(root.CyberSource.ApiClient, root.CyberSource.AcpCheckoutSessionResponseBuyer, root.CyberSource.InlineResponse20113FulfillmentAddress, root.CyberSource.InlineResponse20113FulfillmentOptions, root.CyberSource.InlineResponse20113LineItems, root.CyberSource.InlineResponse20113Links, root.CyberSource.InlineResponse20113Messages, root.CyberSource.InlineResponse20113PaymentProvider, root.CyberSource.InlineResponse20113Totals);
+    root.CyberSource.InlineResponse20113 = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1checkoutsessionsFulfillmentTotals, root.CyberSource.InlineResponse20112Links, root.CyberSource.InlineResponse20113Discounts, root.CyberSource.InlineResponse20113Fulfillment, root.CyberSource.InlineResponse20113LineItems, root.CyberSource.InlineResponse20113Order, root.CyberSource.InlineResponse20113Payment, root.CyberSource.InlineResponse20113Ucp, root.CyberSource.UcpCheckoutSessionResponseBuyer);
   }
-}(this, function(ApiClient, AcpCheckoutSessionResponseBuyer, InlineResponse20113FulfillmentAddress, InlineResponse20113FulfillmentOptions, InlineResponse20113LineItems, InlineResponse20113Links, InlineResponse20113Messages, InlineResponse20113PaymentProvider, InlineResponse20113Totals) {
+}(this, function(ApiClient, Iccv1checkoutsessionsFulfillmentTotals, InlineResponse20112Links, InlineResponse20113Discounts, InlineResponse20113Fulfillment, InlineResponse20113LineItems, InlineResponse20113Order, InlineResponse20113Payment, InlineResponse20113Ucp, UcpCheckoutSessionResponseBuyer) {
   'use strict';
 
 
@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>InlineResponse20113</code>.
+   * UCP checkout session state. Total amounts are expressed in cents (not micros).
    * @alias module:model/InlineResponse20113
    * @class
    */
@@ -72,6 +73,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('ucp')) {
+        obj['ucp'] = InlineResponse20113Ucp.constructFromObject(data['ucp']);
+      }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
@@ -81,92 +85,86 @@
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
+      if (data.hasOwnProperty('buyer')) {
+        obj['buyer'] = UcpCheckoutSessionResponseBuyer.constructFromObject(data['buyer']);
+      }
       if (data.hasOwnProperty('line_items')) {
         obj['line_items'] = ApiClient.convertToType(data['line_items'], [InlineResponse20113LineItems]);
       }
-      if (data.hasOwnProperty('fulfillment_address')) {
-        obj['fulfillment_address'] = InlineResponse20113FulfillmentAddress.constructFromObject(data['fulfillment_address']);
-      }
-      if (data.hasOwnProperty('fulfillment_options')) {
-        obj['fulfillment_options'] = ApiClient.convertToType(data['fulfillment_options'], [InlineResponse20113FulfillmentOptions]);
-      }
-      if (data.hasOwnProperty('fulfillment_option_id')) {
-        obj['fulfillment_option_id'] = ApiClient.convertToType(data['fulfillment_option_id'], 'String');
-      }
       if (data.hasOwnProperty('totals')) {
-        obj['totals'] = ApiClient.convertToType(data['totals'], [InlineResponse20113Totals]);
+        obj['totals'] = ApiClient.convertToType(data['totals'], [Iccv1checkoutsessionsFulfillmentTotals]);
       }
-      if (data.hasOwnProperty('buyer')) {
-        obj['buyer'] = AcpCheckoutSessionResponseBuyer.constructFromObject(data['buyer']);
+      if (data.hasOwnProperty('fulfillment')) {
+        obj['fulfillment'] = InlineResponse20113Fulfillment.constructFromObject(data['fulfillment']);
       }
-      if (data.hasOwnProperty('payment_provider')) {
-        obj['payment_provider'] = InlineResponse20113PaymentProvider.constructFromObject(data['payment_provider']);
+      if (data.hasOwnProperty('payment')) {
+        obj['payment'] = InlineResponse20113Payment.constructFromObject(data['payment']);
       }
-      if (data.hasOwnProperty('messages')) {
-        obj['messages'] = ApiClient.convertToType(data['messages'], [InlineResponse20113Messages]);
+      if (data.hasOwnProperty('discounts')) {
+        obj['discounts'] = InlineResponse20113Discounts.constructFromObject(data['discounts']);
+      }
+      if (data.hasOwnProperty('order')) {
+        obj['order'] = InlineResponse20113Order.constructFromObject(data['order']);
       }
       if (data.hasOwnProperty('links')) {
-        obj['links'] = ApiClient.convertToType(data['links'], [InlineResponse20113Links]);
+        obj['links'] = ApiClient.convertToType(data['links'], [InlineResponse20112Links]);
       }
     }
     return obj;
   }
 
   /**
-   * Unique identifier for this checkout session. Required for all subsequent calls (update, complete, cancel). 
+   * @member {module:model/InlineResponse20113Ucp} ucp
+   */
+  exports.prototype['ucp'] = undefined;
+  /**
+   * Unique UCP session identifier. Required for all subsequent UCP calls (update, complete, cancel). 
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Current lifecycle state of the session per ACP spec: - `not_ready_for_payment` — session is open but not yet ready - `ready_for_payment` — session is ready to be completed - `completed` — order has been placed; session is immutable - `canceled` — session was abandoned; no charge was made   Possible values: - not_ready_for_payment - ready_for_payment - completed - canceled
+   * Current lifecycle state of the session. - `active` — open and modifiable - `completed` — order placed, immutable - `cancelled` — abandoned, no charge made   Possible values: - active - completed - cancelled
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * ISO 4217 lowercase currency code for this session.
+   * ISO 4217 currency code for this session (e.g. `USD`, `EUR`).
    * @member {String} currency
    */
   exports.prototype['currency'] = undefined;
   /**
-   * Line items with merchant-confirmed pricing.
+   * @member {module:model/UcpCheckoutSessionResponseBuyer} buyer
+   */
+  exports.prototype['buyer'] = undefined;
+  /**
+   * Cart line items with merchant-confirmed pricing.
    * @member {Array.<module:model/InlineResponse20113LineItems>} line_items
    */
   exports.prototype['line_items'] = undefined;
   /**
-   * @member {module:model/InlineResponse20113FulfillmentAddress} fulfillment_address
-   */
-  exports.prototype['fulfillment_address'] = undefined;
-  /**
-   * Available fulfillment methods with pricing.
-   * @member {Array.<module:model/InlineResponse20113FulfillmentOptions>} fulfillment_options
-   */
-  exports.prototype['fulfillment_options'] = undefined;
-  /**
-   * ID of the currently selected fulfillment option.
-   * @member {String} fulfillment_option_id
-   */
-  exports.prototype['fulfillment_option_id'] = undefined;
-  /**
-   * Order cost breakdown as an array of typed total lines. All amounts in minor units (cents).
-   * @member {Array.<module:model/InlineResponse20113Totals>} totals
+   * Order cost breakdown. Each entry represents one total type (subtotal, tax, shipping, discount, or grand total). Amounts are in **cents** (not micros). 
+   * @member {Array.<module:model/Iccv1checkoutsessionsFulfillmentTotals>} totals
    */
   exports.prototype['totals'] = undefined;
   /**
-   * @member {module:model/AcpCheckoutSessionResponseBuyer} buyer
+   * @member {module:model/InlineResponse20113Fulfillment} fulfillment
    */
-  exports.prototype['buyer'] = undefined;
+  exports.prototype['fulfillment'] = undefined;
   /**
-   * @member {module:model/InlineResponse20113PaymentProvider} payment_provider
+   * @member {module:model/InlineResponse20113Payment} payment
    */
-  exports.prototype['payment_provider'] = undefined;
+  exports.prototype['payment'] = undefined;
   /**
-   * Informational or error messages from the merchant backend.
-   * @member {Array.<module:model/InlineResponse20113Messages>} messages
+   * @member {module:model/InlineResponse20113Discounts} discounts
    */
-  exports.prototype['messages'] = undefined;
+  exports.prototype['discounts'] = undefined;
   /**
-   * Related resource links from the merchant (e.g. terms of use, privacy policy, seller shop policies). 
-   * @member {Array.<module:model/InlineResponse20113Links>} links
+   * @member {module:model/InlineResponse20113Order} order
+   */
+  exports.prototype['order'] = undefined;
+  /**
+   * Related resource links (e.g. terms of use, privacy policy).
+   * @member {Array.<module:model/InlineResponse20112Links>} links
    */
   exports.prototype['links'] = undefined;
 

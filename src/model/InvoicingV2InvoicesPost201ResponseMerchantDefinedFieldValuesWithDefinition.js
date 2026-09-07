@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -73,6 +74,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('mdfValueId')) {
+        obj['mdfValueId'] = ApiClient.convertToType(data['mdfValueId'], 'String');
+      }
       if (data.hasOwnProperty('referenceType')) {
         obj['referenceType'] = ApiClient.convertToType(data['referenceType'], 'String');
       }
@@ -116,6 +120,10 @@
     return obj;
   }
 
+  /**
+   * @member {String} mdfValueId
+   */
+  exports.prototype['mdfValueId'] = undefined;
   /**
    * @member {String} referenceType
    */

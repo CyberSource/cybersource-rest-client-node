@@ -78,7 +78,7 @@
    */
   exports.prototype['field'] = undefined;
   /**
-   * Possible reasons for the error.  Possible values: - `MISSING_FIELD` - `INVALID_DATA` 
+   * Possible reasons for the error.  Possible values: - `INVALID_DATA` - `SYSTEM_ERROR` - `NOT_FOUND` - `UNAUTHORIZED` - `SYSTEM_TIMEOUT` - `PROCESSOR_ERROR` 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

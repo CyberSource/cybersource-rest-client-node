@@ -62,14 +62,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
       //var instane = new CyberSource.InlineResponse20113Item();
       //expect(instance).to.be();
     });
 
-    it('should have the property quantity (base name: "quantity")', function() {
-      // uncomment below and update the code to test the property quantity
+    it('should have the property price (base name: "price")', function() {
+      // uncomment below and update the code to test the property price
       //var instane = new CyberSource.InlineResponse20113Item();
       //expect(instance).to.be();
     });

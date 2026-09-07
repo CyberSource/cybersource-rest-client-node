@@ -86,7 +86,7 @@
    */
   exports.prototype['message'] = undefined;
   /**
-   * The reason of the status.  Possible values: - `INVALID_DATA` - `INVALID_MERCHANT_CONFIGURATION` - `SYSTEM_ERROR` 
+   * Possible reasons for the error.  Possible values: - `INVALID_DATA` - `SYSTEM_ERROR` - `NOT_FOUND` - `UNAUTHORIZED` - `SYSTEM_TIMEOUT` - `PROCESSOR_ERROR` 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;

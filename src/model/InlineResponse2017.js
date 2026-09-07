@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2017IntegrationInformation', 'model/InlineResponse2017OrganizationInformation', 'model/InlineResponse2017ProductInformationSetups', 'model/InlineResponse2017RegistrationInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2017KeyInformation', 'model/Kmsegressv2keyssymClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2017IntegrationInformation'), require('./InlineResponse2017OrganizationInformation'), require('./InlineResponse2017ProductInformationSetups'), require('./InlineResponse2017RegistrationInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2017KeyInformation'), require('./Kmsegressv2keyssymClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2017 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2017IntegrationInformation, root.CyberSource.InlineResponse2017OrganizationInformation, root.CyberSource.InlineResponse2017ProductInformationSetups, root.CyberSource.InlineResponse2017RegistrationInformation);
+    root.CyberSource.InlineResponse2017 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2017KeyInformation, root.CyberSource.Kmsegressv2keyssymClientReferenceInformation);
   }
-}(this, function(ApiClient, InlineResponse2017IntegrationInformation, InlineResponse2017OrganizationInformation, InlineResponse2017ProductInformationSetups, InlineResponse2017RegistrationInformation) {
+}(this, function(ApiClient, InlineResponse2017KeyInformation, Kmsegressv2keyssymClientReferenceInformation) {
   'use strict';
 
 
@@ -41,16 +41,12 @@
 
   /**
    * Constructs a new <code>InlineResponse2017</code>.
+   * Egress Key Information Response 
    * @alias module:model/InlineResponse2017
    * @class
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
 
 
 
@@ -69,75 +65,40 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
       if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('registrationInformation')) {
-        obj['registrationInformation'] = InlineResponse2017RegistrationInformation.constructFromObject(data['registrationInformation']);
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = Kmsegressv2keyssymClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
-      if (data.hasOwnProperty('integrationInformation')) {
-        obj['integrationInformation'] = InlineResponse2017IntegrationInformation.constructFromObject(data['integrationInformation']);
-      }
-      if (data.hasOwnProperty('organizationInformation')) {
-        obj['organizationInformation'] = InlineResponse2017OrganizationInformation.constructFromObject(data['organizationInformation']);
-      }
-      if (data.hasOwnProperty('productInformationSetups')) {
-        obj['productInformationSetups'] = ApiClient.convertToType(data['productInformationSetups'], [InlineResponse2017ProductInformationSetups]);
-      }
-      if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
-      }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], {'String': [Object]});
+      if (data.hasOwnProperty('keyInformation')) {
+        obj['keyInformation'] = InlineResponse2017KeyInformation.constructFromObject(data['keyInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {Date} submitTimeUtc
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. 
+   * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status of Registration request Possible Values:   - 'INITIALIZED'   - 'RECEIVED'   - 'PROCESSING'   - 'SUCCESS'   - 'FAILURE'   - 'PARTIAL' 
+   * The status of the submitted transaction. Possible values:  - ACCEPTED 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/InlineResponse2017RegistrationInformation} registrationInformation
+   * @member {module:model/Kmsegressv2keyssymClientReferenceInformation} clientReferenceInformation
    */
-  exports.prototype['registrationInformation'] = undefined;
+  exports.prototype['clientReferenceInformation'] = undefined;
   /**
-   * @member {module:model/InlineResponse2017IntegrationInformation} integrationInformation
+   * @member {module:model/InlineResponse2017KeyInformation} keyInformation
    */
-  exports.prototype['integrationInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2017OrganizationInformation} organizationInformation
-   */
-  exports.prototype['organizationInformation'] = undefined;
-  /**
-   * @member {Array.<module:model/InlineResponse2017ProductInformationSetups>} productInformationSetups
-   */
-  exports.prototype['productInformationSetups'] = undefined;
-  /**
-   * @member {String} message
-   */
-  exports.prototype['message'] = undefined;
-  /**
-   * @member {Object.<String, Array.<Object>>} details
-   */
-  exports.prototype['details'] = undefined;
+  exports.prototype['keyInformation'] = undefined;
 
 
 

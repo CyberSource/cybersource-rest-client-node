@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AcpCompleteCheckoutResponseBuyer', 'model/InlineResponse20017FulfillmentAddress', 'model/InlineResponse20017Order', 'model/InlineResponse20113FulfillmentOptions', 'model/InlineResponse20113LineItems', 'model/InlineResponse20113Links', 'model/InlineResponse20113Messages', 'model/InlineResponse20113Totals'], factory);
+    define(['ApiClient', 'model/AcpCompleteCheckoutResponseBuyer', 'model/InlineResponse20017FulfillmentAddress', 'model/InlineResponse20017Order', 'model/InlineResponse20112FulfillmentOptions', 'model/InlineResponse20112LineItems', 'model/InlineResponse20112Links', 'model/InlineResponse20112Messages', 'model/InlineResponse20112Totals'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AcpCompleteCheckoutResponseBuyer'), require('./InlineResponse20017FulfillmentAddress'), require('./InlineResponse20017Order'), require('./InlineResponse20113FulfillmentOptions'), require('./InlineResponse20113LineItems'), require('./InlineResponse20113Links'), require('./InlineResponse20113Messages'), require('./InlineResponse20113Totals'));
+    module.exports = factory(require('../ApiClient'), require('./AcpCompleteCheckoutResponseBuyer'), require('./InlineResponse20017FulfillmentAddress'), require('./InlineResponse20017Order'), require('./InlineResponse20112FulfillmentOptions'), require('./InlineResponse20112LineItems'), require('./InlineResponse20112Links'), require('./InlineResponse20112Messages'), require('./InlineResponse20112Totals'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20017 = factory(root.CyberSource.ApiClient, root.CyberSource.AcpCompleteCheckoutResponseBuyer, root.CyberSource.InlineResponse20017FulfillmentAddress, root.CyberSource.InlineResponse20017Order, root.CyberSource.InlineResponse20113FulfillmentOptions, root.CyberSource.InlineResponse20113LineItems, root.CyberSource.InlineResponse20113Links, root.CyberSource.InlineResponse20113Messages, root.CyberSource.InlineResponse20113Totals);
+    root.CyberSource.InlineResponse20017 = factory(root.CyberSource.ApiClient, root.CyberSource.AcpCompleteCheckoutResponseBuyer, root.CyberSource.InlineResponse20017FulfillmentAddress, root.CyberSource.InlineResponse20017Order, root.CyberSource.InlineResponse20112FulfillmentOptions, root.CyberSource.InlineResponse20112LineItems, root.CyberSource.InlineResponse20112Links, root.CyberSource.InlineResponse20112Messages, root.CyberSource.InlineResponse20112Totals);
   }
-}(this, function(ApiClient, AcpCompleteCheckoutResponseBuyer, InlineResponse20017FulfillmentAddress, InlineResponse20017Order, InlineResponse20113FulfillmentOptions, InlineResponse20113LineItems, InlineResponse20113Links, InlineResponse20113Messages, InlineResponse20113Totals) {
+}(this, function(ApiClient, AcpCompleteCheckoutResponseBuyer, InlineResponse20017FulfillmentAddress, InlineResponse20017Order, InlineResponse20112FulfillmentOptions, InlineResponse20112LineItems, InlineResponse20112Links, InlineResponse20112Messages, InlineResponse20112Totals) {
   'use strict';
 
 
@@ -85,28 +85,28 @@
         obj['buyer'] = AcpCompleteCheckoutResponseBuyer.constructFromObject(data['buyer']);
       }
       if (data.hasOwnProperty('line_items')) {
-        obj['line_items'] = ApiClient.convertToType(data['line_items'], [InlineResponse20113LineItems]);
+        obj['line_items'] = ApiClient.convertToType(data['line_items'], [InlineResponse20112LineItems]);
       }
       if (data.hasOwnProperty('fulfillment_address')) {
         obj['fulfillment_address'] = InlineResponse20017FulfillmentAddress.constructFromObject(data['fulfillment_address']);
       }
       if (data.hasOwnProperty('fulfillment_options')) {
-        obj['fulfillment_options'] = ApiClient.convertToType(data['fulfillment_options'], [InlineResponse20113FulfillmentOptions]);
+        obj['fulfillment_options'] = ApiClient.convertToType(data['fulfillment_options'], [InlineResponse20112FulfillmentOptions]);
       }
       if (data.hasOwnProperty('fulfillment_option_id')) {
         obj['fulfillment_option_id'] = ApiClient.convertToType(data['fulfillment_option_id'], 'String');
       }
       if (data.hasOwnProperty('totals')) {
-        obj['totals'] = ApiClient.convertToType(data['totals'], [InlineResponse20113Totals]);
+        obj['totals'] = ApiClient.convertToType(data['totals'], [InlineResponse20112Totals]);
       }
       if (data.hasOwnProperty('order')) {
         obj['order'] = InlineResponse20017Order.constructFromObject(data['order']);
       }
       if (data.hasOwnProperty('messages')) {
-        obj['messages'] = ApiClient.convertToType(data['messages'], [InlineResponse20113Messages]);
+        obj['messages'] = ApiClient.convertToType(data['messages'], [InlineResponse20112Messages]);
       }
       if (data.hasOwnProperty('links')) {
-        obj['links'] = ApiClient.convertToType(data['links'], [InlineResponse20113Links]);
+        obj['links'] = ApiClient.convertToType(data['links'], [InlineResponse20112Links]);
       }
     }
     return obj;
@@ -133,7 +133,7 @@
   exports.prototype['buyer'] = undefined;
   /**
    * Final line items with confirmed pricing.
-   * @member {Array.<module:model/InlineResponse20113LineItems>} line_items
+   * @member {Array.<module:model/InlineResponse20112LineItems>} line_items
    */
   exports.prototype['line_items'] = undefined;
   /**
@@ -141,7 +141,7 @@
    */
   exports.prototype['fulfillment_address'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse20113FulfillmentOptions>} fulfillment_options
+   * @member {Array.<module:model/InlineResponse20112FulfillmentOptions>} fulfillment_options
    */
   exports.prototype['fulfillment_options'] = undefined;
   /**
@@ -151,7 +151,7 @@
   exports.prototype['fulfillment_option_id'] = undefined;
   /**
    * Final order totals as typed total lines. All amounts in minor units (cents).
-   * @member {Array.<module:model/InlineResponse20113Totals>} totals
+   * @member {Array.<module:model/InlineResponse20112Totals>} totals
    */
   exports.prototype['totals'] = undefined;
   /**
@@ -160,12 +160,12 @@
   exports.prototype['order'] = undefined;
   /**
    * Informational or error messages from the merchant backend.
-   * @member {Array.<module:model/InlineResponse20113Messages>} messages
+   * @member {Array.<module:model/InlineResponse20112Messages>} messages
    */
   exports.prototype['messages'] = undefined;
   /**
    * Related resource links from the merchant (e.g. terms of use, privacy policy).
-   * @member {Array.<module:model/InlineResponse20113Links>} links
+   * @member {Array.<module:model/InlineResponse20112Links>} links
    */
   exports.prototype['links'] = undefined;
 

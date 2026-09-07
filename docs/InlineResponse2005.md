@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **integrationInformation** | [**InlineResponse2005IntegrationInformation**](InlineResponse2005IntegrationInformation.md) |  | [optional] 
 **organizationInformation** | [**Boardingv1registrationsOrganizationInformation**](Boardingv1registrationsOrganizationInformation.md) |  | [optional] 
 **productInformation** | [**Boardingv1registrationsProductInformation**](Boardingv1registrationsProductInformation.md) |  | [optional] 
-**productInformationSetups** | [**[InlineResponse2017ProductInformationSetups]**](InlineResponse2017ProductInformationSetups.md) |  | [optional] 
+**productInformationSetups** | [**[InlineResponse2016ProductInformationSetups]**](InlineResponse2016ProductInformationSetups.md) |  | [optional] 
 **documentInformation** | [**Boardingv1registrationsDocumentInformation**](Boardingv1registrationsDocumentInformation.md) |  | [optional] 
 **details** | **{String: [Object]}** |  | [optional] 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2013Results'], factory);
+    define(['ApiClient', 'model/InlineResponse2013ErrorInformation', 'model/InlineResponse2013OrderInformation', 'model/InlineResponse2013ProcessingInformation', 'model/InlineResponse2013ProcessorInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2013Results'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2013ErrorInformation'), require('./InlineResponse2013OrderInformation'), require('./InlineResponse2013ProcessingInformation'), require('./InlineResponse2013ProcessorInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2013 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013Results);
+    root.CyberSource.InlineResponse2013 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013ErrorInformation, root.CyberSource.InlineResponse2013OrderInformation, root.CyberSource.InlineResponse2013ProcessingInformation, root.CyberSource.InlineResponse2013ProcessorInformation);
   }
-}(this, function(ApiClient, InlineResponse2013Results) {
+}(this, function(ApiClient, InlineResponse2013ErrorInformation, InlineResponse2013OrderInformation, InlineResponse2013ProcessingInformation, InlineResponse2013ProcessorInformation) {
   'use strict';
 
 
@@ -41,19 +41,19 @@
 
   /**
    * Constructs a new <code>InlineResponse2013</code>.
-   * Successful label submission response envelope returned for HTTP 201
    * @alias module:model/InlineResponse2013
    * @class
-   * @param requestId {String} Echoes the unique request identifier submitted in the original label request, enabling end-to-end correlation between request and response.
-   * @param submitTimeUtc {Date} UTC timestamp indicating when the label submission request was received and processed.
-   * @param results {module:model/InlineResponse2013Results} 
    */
-  var exports = function(requestId, submitTimeUtc, results) {
+  var exports = function() {
     var _this = this;
 
-    _this['requestId'] = requestId;
-    _this['submitTimeUtc'] = submitTimeUtc;
-    _this['results'] = results;
+
+
+
+
+
+
+
   };
 
   /**
@@ -67,33 +67,62 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('requestId')) {
-        obj['requestId'] = ApiClient.convertToType(data['requestId'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('results')) {
-        obj['results'] = InlineResponse2013Results.constructFromObject(data['results']);
+      if (data.hasOwnProperty('submitTimeStampUtc')) {
+        obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
+      }
+      if (data.hasOwnProperty('orderInformation')) {
+        obj['orderInformation'] = InlineResponse2013OrderInformation.constructFromObject(data['orderInformation']);
+      }
+      if (data.hasOwnProperty('errorInformation')) {
+        obj['errorInformation'] = InlineResponse2013ErrorInformation.constructFromObject(data['errorInformation']);
+      }
+      if (data.hasOwnProperty('processorInformation')) {
+        obj['processorInformation'] = InlineResponse2013ProcessorInformation.constructFromObject(data['processorInformation']);
+      }
+      if (data.hasOwnProperty('processingInformation')) {
+        obj['processingInformation'] = InlineResponse2013ProcessingInformation.constructFromObject(data['processingInformation']);
       }
     }
     return obj;
   }
 
   /**
-   * Echoes the unique request identifier submitted in the original label request, enabling end-to-end correlation between request and response.
-   * @member {String} requestId
+   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
+   * @member {String} id
    */
-  exports.prototype['requestId'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * UTC timestamp indicating when the label submission request was received and processed.
-   * @member {Date} submitTimeUtc
+   * The status of the submitted transaction.  Possible values: - `COMPLETED` - `INVALID_REQUEST` - `SERVER_ERROR` 
+   * @member {String} status
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/InlineResponse2013Results} results
+   * Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeStampUtc
    */
-  exports.prototype['results'] = undefined;
+  exports.prototype['submitTimeStampUtc'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2013OrderInformation} orderInformation
+   */
+  exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2013ErrorInformation} errorInformation
+   */
+  exports.prototype['errorInformation'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2013ProcessorInformation} processorInformation
+   */
+  exports.prototype['processorInformation'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2013ProcessingInformation} processingInformation
+   */
+  exports.prototype['processingInformation'] = undefined;
 
 
 

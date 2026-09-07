@@ -56,20 +56,8 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse20112);
     });
 
-    it('should have the property clientReferenceInformation (base name: "clientReferenceInformation")', function() {
-      // uncomment below and update the code to test the property clientReferenceInformation
-      //var instane = new CyberSource.InlineResponse20112();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new CyberSource.InlineResponse20112();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse20112();
       //expect(instance).to.be();
     });
@@ -80,20 +68,62 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property errorInformation (base name: "errorInformation")', function() {
-      // uncomment below and update the code to test the property errorInformation
+    it('should have the property currency (base name: "currency")', function() {
+      // uncomment below and update the code to test the property currency
       //var instane = new CyberSource.InlineResponse20112();
       //expect(instance).to.be();
     });
 
-    it('should have the property orderInformation (base name: "orderInformation")', function() {
-      // uncomment below and update the code to test the property orderInformation
+    it('should have the property lineItems (base name: "line_items")', function() {
+      // uncomment below and update the code to test the property lineItems
       //var instane = new CyberSource.InlineResponse20112();
       //expect(instance).to.be();
     });
 
-    it('should have the property processorInformation (base name: "processorInformation")', function() {
-      // uncomment below and update the code to test the property processorInformation
+    it('should have the property fulfillmentAddress (base name: "fulfillment_address")', function() {
+      // uncomment below and update the code to test the property fulfillmentAddress
+      //var instane = new CyberSource.InlineResponse20112();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fulfillmentOptions (base name: "fulfillment_options")', function() {
+      // uncomment below and update the code to test the property fulfillmentOptions
+      //var instane = new CyberSource.InlineResponse20112();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fulfillmentOptionId (base name: "fulfillment_option_id")', function() {
+      // uncomment below and update the code to test the property fulfillmentOptionId
+      //var instane = new CyberSource.InlineResponse20112();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totals (base name: "totals")', function() {
+      // uncomment below and update the code to test the property totals
+      //var instane = new CyberSource.InlineResponse20112();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property buyer (base name: "buyer")', function() {
+      // uncomment below and update the code to test the property buyer
+      //var instane = new CyberSource.InlineResponse20112();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentProvider (base name: "payment_provider")', function() {
+      // uncomment below and update the code to test the property paymentProvider
+      //var instane = new CyberSource.InlineResponse20112();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property messages (base name: "messages")', function() {
+      // uncomment below and update the code to test the property messages
+      //var instane = new CyberSource.InlineResponse20112();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property links (base name: "links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new CyberSource.InlineResponse20112();
       //expect(instance).to.be();
     });

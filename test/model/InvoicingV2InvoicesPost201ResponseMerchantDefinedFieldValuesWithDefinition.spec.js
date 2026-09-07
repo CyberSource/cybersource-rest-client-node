@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition);
     });
 
+    it('should have the property mdfValueId (base name: "mdfValueId")', function() {
+      // uncomment below and update the code to test the property mdfValueId
+      //var instane = new CyberSource.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition();
+      //expect(instance).to.be();
+    });
+
     it('should have the property referenceType (base name: "referenceType")', function() {
       // uncomment below and update the code to test the property referenceType
       //var instane = new CyberSource.InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition();

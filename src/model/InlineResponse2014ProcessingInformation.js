@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2014ProcessingInformationRouting'], factory);
+    define(['ApiClient', 'model/InlineResponse2014ProcessingInformationPayoutsOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014ProcessingInformationRouting'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014ProcessingInformationPayoutsOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2014ProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014ProcessingInformationRouting);
+    root.CyberSource.InlineResponse2014ProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014ProcessingInformationPayoutsOptions);
   }
-}(this, function(ApiClient, InlineResponse2014ProcessingInformationRouting) {
+}(this, function(ApiClient, InlineResponse2014ProcessingInformationPayoutsOptions) {
   'use strict';
 
 
@@ -48,6 +48,9 @@
     var _this = this;
 
 
+
+
+
   };
 
   /**
@@ -61,17 +64,41 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('routing')) {
-        obj['routing'] = InlineResponse2014ProcessingInformationRouting.constructFromObject(data['routing']);
+      if (data.hasOwnProperty('businessApplicationId')) {
+        obj['businessApplicationId'] = ApiClient.convertToType(data['businessApplicationId'], 'String');
+      }
+      if (data.hasOwnProperty('commerceIndicator')) {
+        obj['commerceIndicator'] = ApiClient.convertToType(data['commerceIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('payoutsOptions')) {
+        obj['payoutsOptions'] = InlineResponse2014ProcessingInformationPayoutsOptions.constructFromObject(data['payoutsOptions']);
+      }
+      if (data.hasOwnProperty('reconciliationId')) {
+        obj['reconciliationId'] = ApiClient.convertToType(data['reconciliationId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/InlineResponse2014ProcessingInformationRouting} routing
+   * Payouts transaction type.  Possible Values: - `AA` - Account to account - `AB` - Business to Business - `PP` - Person to person - `TU` - Top-up for enhanced prepaid loads - `WT` - Wallet transfer - `BI` - Bank Initiated - `FT` - Funds Transfer - `FD` - Funds Disbursement - `GD` - Government Disbursement - `PD` - Payroll Disbursement - `LA` - Liquid Assets - `CP` - Card Bill Payment - `MP` - Non-card Bill Payment - `CD` - Cash Deposit - `CI` - Cash in - `CO` - Cash out - `GP` - Gambling Payment - `LO` - Loyalty and Offers - `MD` - Merchant Disbursement - `MI` - Merchant Initiated OCT for Faster Refund - `OG` - Online Gambling - `OT` - Own Account Transfer - `PS` - Payment for goods and services - `RP` - Request-To-Pay Service 
+   * @member {String} businessApplicationId
    */
-  exports.prototype['routing'] = undefined;
+  exports.prototype['businessApplicationId'] = undefined;
+  /**
+   * Type of transaction. 
+   * @member {String} commerceIndicator
+   */
+  exports.prototype['commerceIndicator'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014ProcessingInformationPayoutsOptions} payoutsOptions
+   */
+  exports.prototype['payoutsOptions'] = undefined;
+  /**
+   * CyberSource or merchant generated transaction reference number. This is sent to the processor and is echoed back in the response to the merchant. This is This value is used for reconciliation purposes. 
+   * @member {String} reconciliationId
+   */
+  exports.prototype['reconciliationId'] = undefined;
 
 
 

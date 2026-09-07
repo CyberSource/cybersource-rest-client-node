@@ -56,8 +56,26 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2014ProcessingInformation);
     });
 
-    it('should have the property routing (base name: "routing")', function() {
-      // uncomment below and update the code to test the property routing
+    it('should have the property businessApplicationId (base name: "businessApplicationId")', function() {
+      // uncomment below and update the code to test the property businessApplicationId
+      //var instane = new CyberSource.InlineResponse2014ProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property commerceIndicator (base name: "commerceIndicator")', function() {
+      // uncomment below and update the code to test the property commerceIndicator
+      //var instane = new CyberSource.InlineResponse2014ProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property payoutsOptions (base name: "payoutsOptions")', function() {
+      // uncomment below and update the code to test the property payoutsOptions
+      //var instane = new CyberSource.InlineResponse2014ProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reconciliationId (base name: "reconciliationId")', function() {
+      // uncomment below and update the code to test the property reconciliationId
       //var instane = new CyberSource.InlineResponse2014ProcessingInformation();
       //expect(instance).to.be();
     });

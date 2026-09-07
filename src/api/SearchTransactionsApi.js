@@ -94,7 +94,7 @@
       var returnType = TssV2TransactionsPost201Response;
 
       //check isMLE for an api method 'this.createSearch'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'createSearch');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createSearch']);
 
@@ -160,7 +160,7 @@
       var returnType = TssV2TransactionsPost201Response;
 
       //check isMLE for an api method 'this.getSearch'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getSearch');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getSearch']);
 

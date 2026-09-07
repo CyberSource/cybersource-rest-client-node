@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ucv1sessionsDataAggregatorInformation', 'model/Ucv1sessionsDataBuyerInformation', 'model/Ucv1sessionsDataClientReferenceInformation', 'model/Ucv1sessionsDataConsumerAuthenticationInformation', 'model/Ucv1sessionsDataDeviceInformation', 'model/Ucv1sessionsDataInstallmentInformation', 'model/Ucv1sessionsDataMerchantDefinedInformation', 'model/Ucv1sessionsDataMerchantInformation', 'model/Ucv1sessionsDataOrderInformation', 'model/Ucv1sessionsDataPaymentInformation', 'model/Ucv1sessionsDataProcessingInformation', 'model/Ucv1sessionsDataRecipientInformation', 'model/Ucv1sessionsDataSenderInformation'], factory);
+    define(['ApiClient', 'model/Ucv1sessionsDataAcquirerInformation', 'model/Ucv1sessionsDataAggregatorInformation', 'model/Ucv1sessionsDataBuyerInformation', 'model/Ucv1sessionsDataClientReferenceInformation', 'model/Ucv1sessionsDataConsumerAuthenticationInformation', 'model/Ucv1sessionsDataDeviceInformation', 'model/Ucv1sessionsDataInstallmentInformation', 'model/Ucv1sessionsDataMerchantDefinedInformation', 'model/Ucv1sessionsDataMerchantInformation', 'model/Ucv1sessionsDataOrderInformation', 'model/Ucv1sessionsDataPaymentInformation', 'model/Ucv1sessionsDataProcessingInformation', 'model/Ucv1sessionsDataRecipientInformation', 'model/Ucv1sessionsDataSenderInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataAggregatorInformation'), require('./Ucv1sessionsDataBuyerInformation'), require('./Ucv1sessionsDataClientReferenceInformation'), require('./Ucv1sessionsDataConsumerAuthenticationInformation'), require('./Ucv1sessionsDataDeviceInformation'), require('./Ucv1sessionsDataInstallmentInformation'), require('./Ucv1sessionsDataMerchantDefinedInformation'), require('./Ucv1sessionsDataMerchantInformation'), require('./Ucv1sessionsDataOrderInformation'), require('./Ucv1sessionsDataPaymentInformation'), require('./Ucv1sessionsDataProcessingInformation'), require('./Ucv1sessionsDataRecipientInformation'), require('./Ucv1sessionsDataSenderInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ucv1sessionsDataAcquirerInformation'), require('./Ucv1sessionsDataAggregatorInformation'), require('./Ucv1sessionsDataBuyerInformation'), require('./Ucv1sessionsDataClientReferenceInformation'), require('./Ucv1sessionsDataConsumerAuthenticationInformation'), require('./Ucv1sessionsDataDeviceInformation'), require('./Ucv1sessionsDataInstallmentInformation'), require('./Ucv1sessionsDataMerchantDefinedInformation'), require('./Ucv1sessionsDataMerchantInformation'), require('./Ucv1sessionsDataOrderInformation'), require('./Ucv1sessionsDataPaymentInformation'), require('./Ucv1sessionsDataProcessingInformation'), require('./Ucv1sessionsDataRecipientInformation'), require('./Ucv1sessionsDataSenderInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ucv1sessionsData = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataAggregatorInformation, root.CyberSource.Ucv1sessionsDataBuyerInformation, root.CyberSource.Ucv1sessionsDataClientReferenceInformation, root.CyberSource.Ucv1sessionsDataConsumerAuthenticationInformation, root.CyberSource.Ucv1sessionsDataDeviceInformation, root.CyberSource.Ucv1sessionsDataInstallmentInformation, root.CyberSource.Ucv1sessionsDataMerchantDefinedInformation, root.CyberSource.Ucv1sessionsDataMerchantInformation, root.CyberSource.Ucv1sessionsDataOrderInformation, root.CyberSource.Ucv1sessionsDataPaymentInformation, root.CyberSource.Ucv1sessionsDataProcessingInformation, root.CyberSource.Ucv1sessionsDataRecipientInformation, root.CyberSource.Ucv1sessionsDataSenderInformation);
+    root.CyberSource.Ucv1sessionsData = factory(root.CyberSource.ApiClient, root.CyberSource.Ucv1sessionsDataAcquirerInformation, root.CyberSource.Ucv1sessionsDataAggregatorInformation, root.CyberSource.Ucv1sessionsDataBuyerInformation, root.CyberSource.Ucv1sessionsDataClientReferenceInformation, root.CyberSource.Ucv1sessionsDataConsumerAuthenticationInformation, root.CyberSource.Ucv1sessionsDataDeviceInformation, root.CyberSource.Ucv1sessionsDataInstallmentInformation, root.CyberSource.Ucv1sessionsDataMerchantDefinedInformation, root.CyberSource.Ucv1sessionsDataMerchantInformation, root.CyberSource.Ucv1sessionsDataOrderInformation, root.CyberSource.Ucv1sessionsDataPaymentInformation, root.CyberSource.Ucv1sessionsDataProcessingInformation, root.CyberSource.Ucv1sessionsDataRecipientInformation, root.CyberSource.Ucv1sessionsDataSenderInformation);
   }
-}(this, function(ApiClient, Ucv1sessionsDataAggregatorInformation, Ucv1sessionsDataBuyerInformation, Ucv1sessionsDataClientReferenceInformation, Ucv1sessionsDataConsumerAuthenticationInformation, Ucv1sessionsDataDeviceInformation, Ucv1sessionsDataInstallmentInformation, Ucv1sessionsDataMerchantDefinedInformation, Ucv1sessionsDataMerchantInformation, Ucv1sessionsDataOrderInformation, Ucv1sessionsDataPaymentInformation, Ucv1sessionsDataProcessingInformation, Ucv1sessionsDataRecipientInformation, Ucv1sessionsDataSenderInformation) {
+}(this, function(ApiClient, Ucv1sessionsDataAcquirerInformation, Ucv1sessionsDataAggregatorInformation, Ucv1sessionsDataBuyerInformation, Ucv1sessionsDataClientReferenceInformation, Ucv1sessionsDataConsumerAuthenticationInformation, Ucv1sessionsDataDeviceInformation, Ucv1sessionsDataInstallmentInformation, Ucv1sessionsDataMerchantDefinedInformation, Ucv1sessionsDataMerchantInformation, Ucv1sessionsDataOrderInformation, Ucv1sessionsDataPaymentInformation, Ucv1sessionsDataProcessingInformation, Ucv1sessionsDataRecipientInformation, Ucv1sessionsDataSenderInformation) {
   'use strict';
 
 
@@ -60,6 +60,7 @@
 
 
 
+
   };
 
   /**
@@ -75,6 +76,9 @@
 
       if (data.hasOwnProperty('aggregatorInformation')) {
         obj['aggregatorInformation'] = Ucv1sessionsDataAggregatorInformation.constructFromObject(data['aggregatorInformation']);
+      }
+      if (data.hasOwnProperty('acquirerInformation')) {
+        obj['acquirerInformation'] = Ucv1sessionsDataAcquirerInformation.constructFromObject(data['acquirerInformation']);
       }
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Ucv1sessionsDataOrderInformation.constructFromObject(data['orderInformation']);
@@ -120,6 +124,10 @@
    * @member {module:model/Ucv1sessionsDataAggregatorInformation} aggregatorInformation
    */
   exports.prototype['aggregatorInformation'] = undefined;
+  /**
+   * @member {module:model/Ucv1sessionsDataAcquirerInformation} acquirerInformation
+   */
+  exports.prototype['acquirerInformation'] = undefined;
   /**
    * @member {module:model/Ucv1sessionsDataOrderInformation} orderInformation
    */
