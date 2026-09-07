@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse2014', 'model/InlineResponse4003', 'model/InlineResponse401', 'model/InlineResponse5022'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse2013', 'model/InlineResponse4003', 'model/InlineResponse401', 'model/InlineResponse5022'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse2014'), require('../model/InlineResponse4003'), require('../model/InlineResponse401'), require('../model/InlineResponse5022'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse2013'), require('../model/InlineResponse4003'), require('../model/InlineResponse401'), require('../model/InlineResponse5022'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ForeignExchangeRatesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse5022);
+    root.CyberSource.ForeignExchangeRatesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse5022);
   }
-}(this, function(MLEUtility, ApiClient, Body, InlineResponse2014, InlineResponse4003, InlineResponse401, InlineResponse5022) {
+}(this, function(MLEUtility, ApiClient, Body, InlineResponse2013, InlineResponse4003, InlineResponse401, InlineResponse5022) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createFxRates operation.
      * @callback module:api/ForeignExchangeRatesApi~createFxRatesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014} data The data returned by the service call.
+     * @param {module:model/InlineResponse2013} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -68,7 +68,7 @@
      * @param {String} vCCorrelationId 
      * @param {String} vCOrganizationId 
      * @param {module:api/ForeignExchangeRatesApi~createFxRatesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2014}
+     * data is of type: {@link module:model/InlineResponse2013}
      */
     this.createFxRates = function(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, callback) {
       var postBody = body;
@@ -133,7 +133,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2014;
+      var returnType = InlineResponse2013;
 
       //check isMLE for an api method 'this.createFxRates'
       var inboundMLEStatus = 'mandatory';

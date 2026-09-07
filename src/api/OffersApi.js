@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20016', 'model/InlineResponse20112', 'model/InlineResponse40015', 'model/InlineResponse5025', 'model/OfferRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20016', 'model/InlineResponse20111', 'model/InlineResponse40015', 'model/InlineResponse5025', 'model/OfferRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20016'), require('../model/InlineResponse20112'), require('../model/InlineResponse40015'), require('../model/InlineResponse5025'), require('../model/OfferRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20016'), require('../model/InlineResponse20111'), require('../model/InlineResponse40015'), require('../model/InlineResponse5025'), require('../model/OfferRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016, root.CyberSource.InlineResponse20112, root.CyberSource.InlineResponse40015, root.CyberSource.InlineResponse5025, root.CyberSource.OfferRequest);
+    root.CyberSource.OffersApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20016, root.CyberSource.InlineResponse20111, root.CyberSource.InlineResponse40015, root.CyberSource.InlineResponse5025, root.CyberSource.OfferRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20016, InlineResponse20112, InlineResponse40015, InlineResponse5025, OfferRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse20016, InlineResponse20111, InlineResponse40015, InlineResponse5025, OfferRequest) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createOffer operation.
      * @callback module:api/OffersApi~createOfferCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20112} data The data returned by the service call.
+     * @param {module:model/InlineResponse20111} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -67,7 +67,7 @@
      * @param {String} vCOrganizationId 
      * @param {module:model/OfferRequest} offerRequest 
      * @param {module:api/OffersApi~createOfferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20112}
+     * data is of type: {@link module:model/InlineResponse20111}
      *
      * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      */
@@ -128,7 +128,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20112;
+      var returnType = InlineResponse20111;
 
       //check isMLE for an api method 'this.createOffer'
       var inboundMLEStatus = 'false';

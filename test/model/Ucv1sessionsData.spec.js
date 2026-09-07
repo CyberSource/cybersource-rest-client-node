@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property acquirerInformation (base name: "acquirerInformation")', function() {
+      // uncomment below and update the code to test the property acquirerInformation
+      //var instane = new CyberSource.Ucv1sessionsData();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderInformation (base name: "orderInformation")', function() {
       // uncomment below and update the code to test the property orderInformation
       //var instane = new CyberSource.Ucv1sessionsData();

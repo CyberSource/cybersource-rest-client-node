@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body1', 'model/InlineResponse2015', 'model/InlineResponse4004', 'model/InlineResponse4011', 'model/InlineResponse5023'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body1', 'model/InlineResponse2014', 'model/InlineResponse4004', 'model/InlineResponse4011', 'model/InlineResponse5023'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body1'), require('../model/InlineResponse2015'), require('../model/InlineResponse4004'), require('../model/InlineResponse4011'), require('../model/InlineResponse5023'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body1'), require('../model/InlineResponse2014'), require('../model/InlineResponse4004'), require('../model/InlineResponse4011'), require('../model/InlineResponse5023'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionQueryApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body1, root.CyberSource.InlineResponse2015, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse4011, root.CyberSource.InlineResponse5023);
+    root.CyberSource.TransactionQueryApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body1, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse4011, root.CyberSource.InlineResponse5023);
   }
-}(this, function(MLEUtility, ApiClient, Body1, InlineResponse2015, InlineResponse4004, InlineResponse4011, InlineResponse5023) {
+}(this, function(MLEUtility, ApiClient, Body1, InlineResponse2014, InlineResponse4004, InlineResponse4011, InlineResponse5023) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createQueryApi operation.
      * @callback module:api/TransactionQueryApi~createQueryApiCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2015} data The data returned by the service call.
+     * @param {module:model/InlineResponse2014} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -72,7 +72,7 @@
      * @param {Number} opts.limit The maximum number of options to be retrieved from the processor and displayed to the consumer. 
      * @param {Number} opts.offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list. 
      * @param {module:api/TransactionQueryApi~createQueryApiCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2015}
+     * data is of type: {@link module:model/InlineResponse2014}
      */
     this.createQueryApi = function(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts, callback) {
       opts = opts || {};
@@ -146,7 +146,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2015;
+      var returnType = InlineResponse2014;
 
       //check isMLE for an api method 'this.createQueryApi'
       var inboundMLEStatus = 'mandatory';

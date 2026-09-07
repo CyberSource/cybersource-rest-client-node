@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -77,6 +78,9 @@
       if (data.hasOwnProperty('consumerAuthentication')) {
         obj['consumerAuthentication'] = ApiClient.convertToType(data['consumerAuthentication'], 'String');
       }
+      if (data.hasOwnProperty('suppress')) {
+        obj['suppress'] = ApiClient.convertToType(data['suppress'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -100,6 +104,11 @@
    * @member {String} consumerAuthentication
    */
   exports.prototype['consumerAuthentication'] = undefined;
+  /**
+   * Controls whether the Complete Mandate experience or related processing is suppressed. 
+   * @member {Boolean} suppress
+   */
+  exports.prototype['suppress'] = undefined;
 
 
 

@@ -56,8 +56,14 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2014OrderInformationAmountDetails);
     });
 
-    it('should have the property markupRate (base name: "markupRate")', function() {
-      // uncomment below and update the code to test the property markupRate
+    it('should have the property authorizedAmount (base name: "authorizedAmount")', function() {
+      // uncomment below and update the code to test the property authorizedAmount
+      //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property currency (base name: "currency")', function() {
+      // uncomment below and update the code to test the property currency
       //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
       //expect(instance).to.be();
     });
@@ -68,38 +74,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property originalAmount (base name: "originalAmount")', function() {
-      // uncomment below and update the code to test the property originalAmount
-      //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property destinationAmount (base name: "destinationAmount")', function() {
-      // uncomment below and update the code to test the property destinationAmount
-      //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property originalAmountWithoutMarkup (base name: "originalAmountWithoutMarkup")', function() {
-      // uncomment below and update the code to test the property originalAmountWithoutMarkup
+    it('should have the property totalAmount (base name: "totalAmount")', function() {
+      // uncomment below and update the code to test the property totalAmount
       //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
       //expect(instance).to.be();
     });
 
     it('should have the property settlementAmount (base name: "settlementAmount")', function() {
       // uncomment below and update the code to test the property settlementAmount
-      //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property settlementCurrency (base name: "settlementCurrency")', function() {
-      // uncomment below and update the code to test the property settlementCurrency
-      //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property settlementExchangeRate (base name: "settlementExchangeRate")', function() {
-      // uncomment below and update the code to test the property settlementExchangeRate
       //var instane = new CyberSource.InlineResponse2014OrderInformationAmountDetails();
       //expect(instance).to.be();
     });

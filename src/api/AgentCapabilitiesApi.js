@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/AcpCompleteCheckoutRequest', 'model/AcpCreateCheckoutSessionRequest', 'model/AcpUpdateCheckoutSessionRequest', 'model/AddAgentKeyResponse201', 'model/AgentRegistrationConflictResponse409', 'model/AgentRegistrationResponse201', 'model/AgentRegistrationValidationErrorResponse422', 'model/AgentRequest', 'model/AgentUpdate', 'model/AgenticCancelPurchaseIntentRequest', 'model/AgenticCardEnrollmentBadRequestResponse400', 'model/AgenticCardEnrollmentRequest', 'model/AgenticCardEnrollmentResponse200', 'model/AgenticCardEnrollmentResponse202', 'model/AgenticConfirmTransactionEventsRequest', 'model/AgenticConfirmTransactionEventsResponse202', 'model/AgenticCreatePurchaseIntentRequest', 'model/AgenticCreatePurchaseIntentResponse200', 'model/AgenticPendingPurchaseIntentResponse202', 'model/AgenticRetrievePaymentCredentialsRequest', 'model/AgenticRetrievePaymentCredentialsResponse200', 'model/AgenticUpdatePurchaseIntentRequest', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20113', 'model/InlineResponse20114', 'model/InlineResponse40016', 'model/KeyRequest', 'model/KeyUpdate', 'model/ListAgentKeysResponse200', 'model/UcpCompleteCheckoutRequest', 'model/UcpCreateCheckoutSessionRequest', 'model/UcpUpdateCheckoutSessionRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AcpCompleteCheckoutRequest', 'model/AcpCreateCheckoutSessionRequest', 'model/AcpUpdateCheckoutSessionRequest', 'model/AddAgentKeyResponse201', 'model/AgentRegistrationConflictResponse409', 'model/AgentRegistrationResponse201', 'model/AgentRegistrationValidationErrorResponse422', 'model/AgentRequest', 'model/AgentUpdate', 'model/AgenticCancelPurchaseIntentRequest', 'model/AgenticCardEnrollmentBadRequestResponse400', 'model/AgenticCardEnrollmentRequest', 'model/AgenticCardEnrollmentResponse200', 'model/AgenticCardEnrollmentResponse202', 'model/AgenticConfirmTransactionEventsRequest', 'model/AgenticConfirmTransactionEventsResponse202', 'model/AgenticCreatePurchaseIntentRequest', 'model/AgenticCreatePurchaseIntentResponse200', 'model/AgenticPendingPurchaseIntentResponse202', 'model/AgenticRetrievePaymentCredentialsRequest', 'model/AgenticRetrievePaymentCredentialsResponse200', 'model/AgenticUpdatePurchaseIntentRequest', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20112', 'model/InlineResponse20113', 'model/InlineResponse40016', 'model/KeyRequest', 'model/KeyUpdate', 'model/ListAgentKeysResponse200', 'model/UcpCompleteCheckoutRequest', 'model/UcpCreateCheckoutSessionRequest', 'model/UcpUpdateCheckoutSessionRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AcpCompleteCheckoutRequest'), require('../model/AcpCreateCheckoutSessionRequest'), require('../model/AcpUpdateCheckoutSessionRequest'), require('../model/AddAgentKeyResponse201'), require('../model/AgentRegistrationConflictResponse409'), require('../model/AgentRegistrationResponse201'), require('../model/AgentRegistrationValidationErrorResponse422'), require('../model/AgentRequest'), require('../model/AgentUpdate'), require('../model/AgenticCancelPurchaseIntentRequest'), require('../model/AgenticCardEnrollmentBadRequestResponse400'), require('../model/AgenticCardEnrollmentRequest'), require('../model/AgenticCardEnrollmentResponse200'), require('../model/AgenticCardEnrollmentResponse202'), require('../model/AgenticConfirmTransactionEventsRequest'), require('../model/AgenticConfirmTransactionEventsResponse202'), require('../model/AgenticCreatePurchaseIntentRequest'), require('../model/AgenticCreatePurchaseIntentResponse200'), require('../model/AgenticPendingPurchaseIntentResponse202'), require('../model/AgenticRetrievePaymentCredentialsRequest'), require('../model/AgenticRetrievePaymentCredentialsResponse200'), require('../model/AgenticUpdatePurchaseIntentRequest'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponse20113'), require('../model/InlineResponse20114'), require('../model/InlineResponse40016'), require('../model/KeyRequest'), require('../model/KeyUpdate'), require('../model/ListAgentKeysResponse200'), require('../model/UcpCompleteCheckoutRequest'), require('../model/UcpCreateCheckoutSessionRequest'), require('../model/UcpUpdateCheckoutSessionRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AcpCompleteCheckoutRequest'), require('../model/AcpCreateCheckoutSessionRequest'), require('../model/AcpUpdateCheckoutSessionRequest'), require('../model/AddAgentKeyResponse201'), require('../model/AgentRegistrationConflictResponse409'), require('../model/AgentRegistrationResponse201'), require('../model/AgentRegistrationValidationErrorResponse422'), require('../model/AgentRequest'), require('../model/AgentUpdate'), require('../model/AgenticCancelPurchaseIntentRequest'), require('../model/AgenticCardEnrollmentBadRequestResponse400'), require('../model/AgenticCardEnrollmentRequest'), require('../model/AgenticCardEnrollmentResponse200'), require('../model/AgenticCardEnrollmentResponse202'), require('../model/AgenticConfirmTransactionEventsRequest'), require('../model/AgenticConfirmTransactionEventsResponse202'), require('../model/AgenticCreatePurchaseIntentRequest'), require('../model/AgenticCreatePurchaseIntentResponse200'), require('../model/AgenticPendingPurchaseIntentResponse202'), require('../model/AgenticRetrievePaymentCredentialsRequest'), require('../model/AgenticRetrievePaymentCredentialsResponse200'), require('../model/AgenticUpdatePurchaseIntentRequest'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponse20112'), require('../model/InlineResponse20113'), require('../model/InlineResponse40016'), require('../model/KeyRequest'), require('../model/KeyUpdate'), require('../model/ListAgentKeysResponse200'), require('../model/UcpCompleteCheckoutRequest'), require('../model/UcpCreateCheckoutSessionRequest'), require('../model/UcpUpdateCheckoutSessionRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgentCapabilitiesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AcpCompleteCheckoutRequest, root.CyberSource.AcpCreateCheckoutSessionRequest, root.CyberSource.AcpUpdateCheckoutSessionRequest, root.CyberSource.AddAgentKeyResponse201, root.CyberSource.AgentRegistrationConflictResponse409, root.CyberSource.AgentRegistrationResponse201, root.CyberSource.AgentRegistrationValidationErrorResponse422, root.CyberSource.AgentRequest, root.CyberSource.AgentUpdate, root.CyberSource.AgenticCancelPurchaseIntentRequest, root.CyberSource.AgenticCardEnrollmentBadRequestResponse400, root.CyberSource.AgenticCardEnrollmentRequest, root.CyberSource.AgenticCardEnrollmentResponse200, root.CyberSource.AgenticCardEnrollmentResponse202, root.CyberSource.AgenticConfirmTransactionEventsRequest, root.CyberSource.AgenticConfirmTransactionEventsResponse202, root.CyberSource.AgenticCreatePurchaseIntentRequest, root.CyberSource.AgenticCreatePurchaseIntentResponse200, root.CyberSource.AgenticPendingPurchaseIntentResponse202, root.CyberSource.AgenticRetrievePaymentCredentialsRequest, root.CyberSource.AgenticRetrievePaymentCredentialsResponse200, root.CyberSource.AgenticUpdatePurchaseIntentRequest, root.CyberSource.InlineResponse20017, root.CyberSource.InlineResponse20018, root.CyberSource.InlineResponse20113, root.CyberSource.InlineResponse20114, root.CyberSource.InlineResponse40016, root.CyberSource.KeyRequest, root.CyberSource.KeyUpdate, root.CyberSource.ListAgentKeysResponse200, root.CyberSource.UcpCompleteCheckoutRequest, root.CyberSource.UcpCreateCheckoutSessionRequest, root.CyberSource.UcpUpdateCheckoutSessionRequest);
+    root.CyberSource.AgentCapabilitiesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AcpCompleteCheckoutRequest, root.CyberSource.AcpCreateCheckoutSessionRequest, root.CyberSource.AcpUpdateCheckoutSessionRequest, root.CyberSource.AddAgentKeyResponse201, root.CyberSource.AgentRegistrationConflictResponse409, root.CyberSource.AgentRegistrationResponse201, root.CyberSource.AgentRegistrationValidationErrorResponse422, root.CyberSource.AgentRequest, root.CyberSource.AgentUpdate, root.CyberSource.AgenticCancelPurchaseIntentRequest, root.CyberSource.AgenticCardEnrollmentBadRequestResponse400, root.CyberSource.AgenticCardEnrollmentRequest, root.CyberSource.AgenticCardEnrollmentResponse200, root.CyberSource.AgenticCardEnrollmentResponse202, root.CyberSource.AgenticConfirmTransactionEventsRequest, root.CyberSource.AgenticConfirmTransactionEventsResponse202, root.CyberSource.AgenticCreatePurchaseIntentRequest, root.CyberSource.AgenticCreatePurchaseIntentResponse200, root.CyberSource.AgenticPendingPurchaseIntentResponse202, root.CyberSource.AgenticRetrievePaymentCredentialsRequest, root.CyberSource.AgenticRetrievePaymentCredentialsResponse200, root.CyberSource.AgenticUpdatePurchaseIntentRequest, root.CyberSource.InlineResponse20017, root.CyberSource.InlineResponse20018, root.CyberSource.InlineResponse20112, root.CyberSource.InlineResponse20113, root.CyberSource.InlineResponse40016, root.CyberSource.KeyRequest, root.CyberSource.KeyUpdate, root.CyberSource.ListAgentKeysResponse200, root.CyberSource.UcpCompleteCheckoutRequest, root.CyberSource.UcpCreateCheckoutSessionRequest, root.CyberSource.UcpUpdateCheckoutSessionRequest);
   }
-}(this, function(MLEUtility, ApiClient, AcpCompleteCheckoutRequest, AcpCreateCheckoutSessionRequest, AcpUpdateCheckoutSessionRequest, AddAgentKeyResponse201, AgentRegistrationConflictResponse409, AgentRegistrationResponse201, AgentRegistrationValidationErrorResponse422, AgentRequest, AgentUpdate, AgenticCancelPurchaseIntentRequest, AgenticCardEnrollmentBadRequestResponse400, AgenticCardEnrollmentRequest, AgenticCardEnrollmentResponse200, AgenticCardEnrollmentResponse202, AgenticConfirmTransactionEventsRequest, AgenticConfirmTransactionEventsResponse202, AgenticCreatePurchaseIntentRequest, AgenticCreatePurchaseIntentResponse200, AgenticPendingPurchaseIntentResponse202, AgenticRetrievePaymentCredentialsRequest, AgenticRetrievePaymentCredentialsResponse200, AgenticUpdatePurchaseIntentRequest, InlineResponse20017, InlineResponse20018, InlineResponse20113, InlineResponse20114, InlineResponse40016, KeyRequest, KeyUpdate, ListAgentKeysResponse200, UcpCompleteCheckoutRequest, UcpCreateCheckoutSessionRequest, UcpUpdateCheckoutSessionRequest) {
+}(this, function(MLEUtility, ApiClient, AcpCompleteCheckoutRequest, AcpCreateCheckoutSessionRequest, AcpUpdateCheckoutSessionRequest, AddAgentKeyResponse201, AgentRegistrationConflictResponse409, AgentRegistrationResponse201, AgentRegistrationValidationErrorResponse422, AgentRequest, AgentUpdate, AgenticCancelPurchaseIntentRequest, AgenticCardEnrollmentBadRequestResponse400, AgenticCardEnrollmentRequest, AgenticCardEnrollmentResponse200, AgenticCardEnrollmentResponse202, AgenticConfirmTransactionEventsRequest, AgenticConfirmTransactionEventsResponse202, AgenticCreatePurchaseIntentRequest, AgenticCreatePurchaseIntentResponse200, AgenticPendingPurchaseIntentResponse202, AgenticRetrievePaymentCredentialsRequest, AgenticRetrievePaymentCredentialsResponse200, AgenticUpdatePurchaseIntentRequest, InlineResponse20017, InlineResponse20018, InlineResponse20112, InlineResponse20113, InlineResponse40016, KeyRequest, KeyUpdate, ListAgentKeysResponse200, UcpCompleteCheckoutRequest, UcpCreateCheckoutSessionRequest, UcpUpdateCheckoutSessionRequest) {
   'use strict';
 
   /**
@@ -516,7 +516,7 @@
      * Callback function to receive the result of the createCheckoutSession operation.
      * @callback module:api/AgentCapabilitiesApi~createCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -533,7 +533,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/AgentCapabilitiesApi~createCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/InlineResponse20112}
      */
     this.createCheckoutSession = function(acpCreateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -570,7 +570,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = InlineResponse20112;
 
       //check isMLE for an api method 'this.createCheckoutSession'
       var inboundMLEStatus = 'mandatory';
@@ -875,7 +875,7 @@
      * Callback function to receive the result of the getCheckoutSession operation.
      * @callback module:api/AgentCapabilitiesApi~getCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -893,7 +893,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/AgentCapabilitiesApi~getCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/InlineResponse20112}
      */
     this.getCheckoutSession = function(sessionId, acpGetCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -936,7 +936,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = InlineResponse20112;
 
       //check isMLE for an api method 'this.getCheckoutSession'
       var inboundMLEStatus = 'false';
@@ -1241,7 +1241,7 @@
      * Callback function to receive the result of the ucpCancelCheckout operation.
      * @callback module:api/AgentCapabilitiesApi~ucpCancelCheckoutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20114} data The data returned by the service call.
+     * @param {module:model/InlineResponse20113} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1250,7 +1250,7 @@
      * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
      * @param {String} sessionId The unique identifier of the UCP checkout session to cancel.
      * @param {module:api/AgentCapabilitiesApi~ucpCancelCheckoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20114}
+     * data is of type: {@link module:model/InlineResponse20113}
      */
     this.ucpCancelCheckout = function(sessionId, callback) {
       var postBody = null;
@@ -1279,7 +1279,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20114;
+      var returnType = InlineResponse20113;
 
       //check isMLE for an api method 'this.ucpCancelCheckout'
       var inboundMLEStatus = 'mandatory';
@@ -1307,7 +1307,7 @@
      * Callback function to receive the result of the ucpCompleteCheckout operation.
      * @callback module:api/AgentCapabilitiesApi~ucpCompleteCheckoutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20114} data The data returned by the service call.
+     * @param {module:model/InlineResponse20113} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1319,7 +1319,7 @@
      * @param {String} opts.idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec. 
      * @param {module:model/UcpCompleteCheckoutRequest} opts.ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant. 
      * @param {module:api/AgentCapabilitiesApi~ucpCompleteCheckoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20114}
+     * data is of type: {@link module:model/InlineResponse20113}
      */
     this.ucpCompleteCheckout = function(sessionId, opts, callback) {
       opts = opts || {};
@@ -1351,7 +1351,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20114;
+      var returnType = InlineResponse20113;
 
       //check isMLE for an api method 'this.ucpCompleteCheckout'
       var inboundMLEStatus = 'mandatory';
@@ -1379,7 +1379,7 @@
      * Callback function to receive the result of the ucpCreateCheckoutSession operation.
      * @callback module:api/AgentCapabilitiesApi~ucpCreateCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20114} data The data returned by the service call.
+     * @param {module:model/InlineResponse20113} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1390,7 +1390,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification. 
      * @param {module:api/AgentCapabilitiesApi~ucpCreateCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20114}
+     * data is of type: {@link module:model/InlineResponse20113}
      */
     this.ucpCreateCheckoutSession = function(ucpCreateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -1421,7 +1421,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20114;
+      var returnType = InlineResponse20113;
 
       //check isMLE for an api method 'this.ucpCreateCheckoutSession'
       var inboundMLEStatus = 'mandatory';
@@ -1449,7 +1449,7 @@
      * Callback function to receive the result of the ucpGetCheckoutSession operation.
      * @callback module:api/AgentCapabilitiesApi~ucpGetCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20114} data The data returned by the service call.
+     * @param {module:model/InlineResponse20113} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1459,7 +1459,7 @@
      * @param {String} sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the `id` field in the Create Session response. 
      * @param {Object} ucpGetCheckoutSessionRequest Empty request body.
      * @param {module:api/AgentCapabilitiesApi~ucpGetCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20114}
+     * data is of type: {@link module:model/InlineResponse20113}
      */
     this.ucpGetCheckoutSession = function(sessionId, ucpGetCheckoutSessionRequest, callback) {
       var postBody = ucpGetCheckoutSessionRequest;
@@ -1494,7 +1494,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20114;
+      var returnType = InlineResponse20113;
 
       //check isMLE for an api method 'this.ucpGetCheckoutSession'
       var inboundMLEStatus = 'false';
@@ -1522,7 +1522,7 @@
      * Callback function to receive the result of the ucpUpdateCheckoutSession operation.
      * @callback module:api/AgentCapabilitiesApi~ucpUpdateCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20114} data The data returned by the service call.
+     * @param {module:model/InlineResponse20113} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1534,7 +1534,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec.
      * @param {module:api/AgentCapabilitiesApi~ucpUpdateCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20114}
+     * data is of type: {@link module:model/InlineResponse20113}
      */
     this.ucpUpdateCheckoutSession = function(sessionId, ucpUpdateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -1571,7 +1571,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20114;
+      var returnType = InlineResponse20113;
 
       //check isMLE for an api method 'this.ucpUpdateCheckoutSession'
       var inboundMLEStatus = 'mandatory';
@@ -1752,7 +1752,7 @@
      * Callback function to receive the result of the updateCheckoutSession operation.
      * @callback module:api/AgentCapabilitiesApi~updateCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1770,7 +1770,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/AgentCapabilitiesApi~updateCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/InlineResponse20112}
      */
     this.updateCheckoutSession = function(sessionId, acpUpdateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -1813,7 +1813,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = InlineResponse20112;
 
       //check isMLE for an api method 'this.updateCheckoutSession'
       var inboundMLEStatus = 'mandatory';

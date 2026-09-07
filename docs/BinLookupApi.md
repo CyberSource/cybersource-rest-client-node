@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getAccountInfo"></a>
 # **getAccountInfo**
-> InlineResponse2016 getAccountInfo(createBinLookupRequest)
+> InlineResponse2015 getAccountInfo(createBinLookupRequest)
 
 BIN Lookup API
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**InlineResponse2015**](InlineResponse2015.md)
 
 ### Authorization
 

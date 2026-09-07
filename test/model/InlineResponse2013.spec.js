@@ -56,20 +56,44 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2013);
     });
 
-    it('should have the property requestId (base name: "requestId")', function() {
-      // uncomment below and update the code to test the property requestId
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse2013();
       //expect(instance).to.be();
     });
 
-    it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
-      // uncomment below and update the code to test the property submitTimeUtc
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse2013();
       //expect(instance).to.be();
     });
 
-    it('should have the property results (base name: "results")', function() {
-      // uncomment below and update the code to test the property results
+    it('should have the property submitTimeStampUtc (base name: "submitTimeStampUtc")', function() {
+      // uncomment below and update the code to test the property submitTimeStampUtc
+      //var instane = new CyberSource.InlineResponse2013();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderInformation (base name: "orderInformation")', function() {
+      // uncomment below and update the code to test the property orderInformation
+      //var instane = new CyberSource.InlineResponse2013();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property errorInformation (base name: "errorInformation")', function() {
+      // uncomment below and update the code to test the property errorInformation
+      //var instane = new CyberSource.InlineResponse2013();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processorInformation (base name: "processorInformation")', function() {
+      // uncomment below and update the code to test the property processorInformation
+      //var instane = new CyberSource.InlineResponse2013();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processingInformation (base name: "processingInformation")', function() {
+      // uncomment below and update the code to test the property processingInformation
       //var instane = new CyberSource.InlineResponse2013();
       //expect(instance).to.be();
     });

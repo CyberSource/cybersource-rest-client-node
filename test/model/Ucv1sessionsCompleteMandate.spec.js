@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property suppress (base name: "suppress")', function() {
+      // uncomment below and update the code to test the property suppress
+      //var instane = new CyberSource.Ucv1sessionsCompleteMandate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

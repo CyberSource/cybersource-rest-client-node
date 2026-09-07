@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20113Item'], factory);
+    define(['ApiClient', 'model/Iccv1checkoutsessionsFulfillmentTotals', 'model/InlineResponse20113Item'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20113Item'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1checkoutsessionsFulfillmentTotals'), require('./InlineResponse20113Item'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20113LineItems = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20113Item);
+    root.CyberSource.InlineResponse20113LineItems = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1checkoutsessionsFulfillmentTotals, root.CyberSource.InlineResponse20113Item);
   }
-}(this, function(ApiClient, InlineResponse20113Item) {
+}(this, function(ApiClient, Iccv1checkoutsessionsFulfillmentTotals, InlineResponse20113Item) {
   'use strict';
 
 
@@ -41,15 +41,12 @@
 
   /**
    * Constructs a new <code>InlineResponse20113LineItems</code>.
-   * A single line item in an ACP session response. All amounts in minor units (cents).
+   * A single product line item in a UCP session response.
    * @alias module:model/InlineResponse20113LineItems
    * @class
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
 
@@ -74,20 +71,11 @@
       if (data.hasOwnProperty('item')) {
         obj['item'] = InlineResponse20113Item.constructFromObject(data['item']);
       }
-      if (data.hasOwnProperty('base_amount')) {
-        obj['base_amount'] = ApiClient.convertToType(data['base_amount'], 'Number');
+      if (data.hasOwnProperty('quantity')) {
+        obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
       }
-      if (data.hasOwnProperty('discount')) {
-        obj['discount'] = ApiClient.convertToType(data['discount'], 'Number');
-      }
-      if (data.hasOwnProperty('subtotal')) {
-        obj['subtotal'] = ApiClient.convertToType(data['subtotal'], 'Number');
-      }
-      if (data.hasOwnProperty('tax')) {
-        obj['tax'] = ApiClient.convertToType(data['tax'], 'Number');
-      }
-      if (data.hasOwnProperty('total')) {
-        obj['total'] = ApiClient.convertToType(data['total'], 'Number');
+      if (data.hasOwnProperty('totals')) {
+        obj['totals'] = ApiClient.convertToType(data['totals'], [Iccv1checkoutsessionsFulfillmentTotals]);
       }
     }
     return obj;
@@ -103,30 +91,15 @@
    */
   exports.prototype['item'] = undefined;
   /**
-   * Unit price × quantity before discounts, in minor units.
-   * @member {Number} base_amount
+   * Number of units in this line item. Minimum 1.
+   * @member {Number} quantity
    */
-  exports.prototype['base_amount'] = undefined;
+  exports.prototype['quantity'] = undefined;
   /**
-   * Discount amount for this line item, in minor units.
-   * @member {Number} discount
+   * Per-line-item cost breakdown (subtotal, tax, etc.). Amounts in cents.
+   * @member {Array.<module:model/Iccv1checkoutsessionsFulfillmentTotals>} totals
    */
-  exports.prototype['discount'] = undefined;
-  /**
-   * base_amount minus discount, in minor units.
-   * @member {Number} subtotal
-   */
-  exports.prototype['subtotal'] = undefined;
-  /**
-   * Tax on this line item, in minor units.
-   * @member {Number} tax
-   */
-  exports.prototype['tax'] = undefined;
-  /**
-   * subtotal plus tax, in minor units.
-   * @member {Number} total
-   */
-  exports.prototype['total'] = undefined;
+  exports.prototype['totals'] = undefined;
 
 
 

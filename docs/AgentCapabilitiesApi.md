@@ -356,7 +356,7 @@ No authorization required
 
 <a name="createCheckoutSession"></a>
 # **createCheckoutSession**
-> InlineResponse20113 createCheckoutSession(acpCreateCheckoutSessionRequest, opts)
+> InlineResponse20112 createCheckoutSession(acpCreateCheckoutSessionRequest, opts)
 
 Create Checkout Session ACP
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**InlineResponse20112**](InlineResponse20112.md)
 
 ### Authorization
 
@@ -608,7 +608,7 @@ No authorization required
 
 <a name="getCheckoutSession"></a>
 # **getCheckoutSession**
-> InlineResponse20113 getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, opts)
+> InlineResponse20112 getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, opts)
 
 Get Checkout Session ACP
 
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**InlineResponse20112**](InlineResponse20112.md)
 
 ### Authorization
 
@@ -866,7 +866,7 @@ No authorization required
 
 <a name="ucpCancelCheckout"></a>
 # **ucpCancelCheckout**
-> InlineResponse20114 ucpCancelCheckout(sessionId)
+> InlineResponse20113 ucpCancelCheckout(sessionId)
 
 Cancel Checkout UCP
 
@@ -899,7 +899,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -912,7 +912,7 @@ No authorization required
 
 <a name="ucpCompleteCheckout"></a>
 # **ucpCompleteCheckout**
-> InlineResponse20114 ucpCompleteCheckout(sessionId, opts)
+> InlineResponse20113 ucpCompleteCheckout(sessionId, opts)
 
 Complete Checkout UCP
 
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -964,7 +964,7 @@ No authorization required
 
 <a name="ucpCreateCheckoutSession"></a>
 # **ucpCreateCheckoutSession**
-> InlineResponse20114 ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, opts)
+> InlineResponse20113 ucpCreateCheckoutSession(ucpCreateCheckoutSessionRequest, opts)
 
 Create Checkout Session UCP
 
@@ -1001,7 +1001,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -1014,7 +1014,7 @@ No authorization required
 
 <a name="ucpGetCheckoutSession"></a>
 # **ucpGetCheckoutSession**
-> InlineResponse20114 ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest)
+> InlineResponse20113 ucpGetCheckoutSession(sessionId, ucpGetCheckoutSessionRequest)
 
 Get Checkout Session UCP
 
@@ -1050,7 +1050,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -1063,7 +1063,7 @@ No authorization required
 
 <a name="ucpUpdateCheckoutSession"></a>
 # **ucpUpdateCheckoutSession**
-> InlineResponse20114 ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, opts)
+> InlineResponse20113 ucpUpdateCheckoutSession(sessionId, ucpUpdateCheckoutSessionRequest, opts)
 
 Update Checkout Session UCP
 
@@ -1103,7 +1103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20114**](InlineResponse20114.md)
+[**InlineResponse20113**](InlineResponse20113.md)
 
 ### Authorization
 
@@ -1217,7 +1217,7 @@ No authorization required
 
 <a name="updateCheckoutSession"></a>
 # **updateCheckoutSession**
-> InlineResponse20113 updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, opts)
+> InlineResponse20112 updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, opts)
 
 Update Checkout Session ACP
 
@@ -1269,7 +1269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20113**](InlineResponse20113.md)
+[**InlineResponse20112**](InlineResponse20112.md)
 
 ### Authorization
 

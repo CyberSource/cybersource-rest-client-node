@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **city** | **String** | Acquirer city. | [optional] 
 **state** | **String** | Acquirer state. | [optional] 
 **postalCode** | **String** | Acquirer postal code. | [optional] 
-**country** | **String** | Acquirer country. | [optional] 
+**country** | **String** | Acquirer country used for Payment Facilitator scenarios. | [optional] 
 **serviceProvidername** | **String** | Contains transfer service provider name. | [optional] 
 
 

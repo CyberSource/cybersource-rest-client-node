@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property languagePreference (base name: "languagePreference")', function() {
+      // uncomment below and update the code to test the property languagePreference
+      //var instane = new CyberSource.Ucv1sessionsDataConsumerAuthenticationInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

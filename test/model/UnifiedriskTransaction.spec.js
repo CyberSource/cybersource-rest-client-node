@@ -62,6 +62,168 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property statusReason (base name: "statusReason")', function() {
+      // uncomment below and update the code to test the property statusReason
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property messageType (base name: "messageType")', function() {
+      // uncomment below and update the code to test the property messageType
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property attribute (base name: "attribute")', function() {
+      // uncomment below and update the code to test the property attribute
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property initiator (base name: "initiator")', function() {
+      // uncomment below and update the code to test the property initiator
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property channel (base name: "channel")', function() {
+      // uncomment below and update the code to test the property channel
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property timestamp (base name: "timestamp")', function() {
+      // uncomment below and update the code to test the property timestamp
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cutoffDateTime (base name: "cutoffDateTime")', function() {
+      // uncomment below and update the code to test the property cutoffDateTime
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isRecurring (base name: "isRecurring")', function() {
+      // uncomment below and update the code to test the property isRecurring
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preOrder (base name: "preOrder")', function() {
+      // uncomment below and update the code to test the property preOrder
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preOrderDate (base name: "preOrderDate")', function() {
+      // uncomment below and update the code to test the property preOrderDate
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reordered (base name: "reordered")', function() {
+      // uncomment below and update the code to test the property reordered
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property destinationCountry (base name: "destinationCountry")', function() {
+      // uncomment below and update the code to test the property destinationCountry
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property declinePhase (base name: "declinePhase")', function() {
+      // uncomment below and update the code to test the property declinePhase
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property trustedMerchant (base name: "trustedMerchant")', function() {
+      // uncomment below and update the code to test the property trustedMerchant
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property additionalFees (base name: "additionalFees")', function() {
+      // uncomment below and update the code to test the property additionalFees
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property amount (base name: "amount")', function() {
+      // uncomment below and update the code to test the property amount
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property recurringDetails (base name: "recurringDetails")', function() {
+      // uncomment below and update the code to test the property recurringDetails
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property direction (base name: "direction")', function() {
+      // uncomment below and update the code to test the property direction
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isChargeback (base name: "isChargeback")', function() {
+      // uncomment below and update the code to test the property isChargeback
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fraudLiability (base name: "fraudLiability")', function() {
+      // uncomment below and update the code to test the property fraudLiability
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property onUsFlag (base name: "onUsFlag")', function() {
+      // uncomment below and update the code to test the property onUsFlag
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property numberOfTransactions (base name: "numberOfTransactions")', function() {
+      // uncomment below and update the code to test the property numberOfTransactions
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property batchDetails (base name: "batchDetails")', function() {
+      // uncomment below and update the code to test the property batchDetails
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property checkDetails (base name: "checkDetails")', function() {
+      // uncomment below and update the code to test the property checkDetails
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property purpose (base name: "purpose")', function() {
+      // uncomment below and update the code to test the property purpose
+      //var instane = new CyberSource.UnifiedriskTransaction();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

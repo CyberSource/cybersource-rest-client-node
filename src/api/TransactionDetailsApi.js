@@ -94,7 +94,7 @@
       var returnType = TssV2TransactionsGet200Response;
 
       //check isMLE for an api method 'this.getTransaction'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getTransaction');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getTransaction']);
 

@@ -56,6 +56,78 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse2014ProcessorInformation);
     });
 
+    it('should have the property rejectReasonCode (base name: "rejectReasonCode")', function() {
+      // uncomment below and update the code to test the property rejectReasonCode
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rejectReasonText (base name: "rejectReasonText")', function() {
+      // uncomment below and update the code to test the property rejectReasonText
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property approvalCode (base name: "approvalCode")', function() {
+      // uncomment below and update the code to test the property approvalCode
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cardVerification (base name: "cardVerification")', function() {
+      // uncomment below and update the code to test the property cardVerification
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property consumerAuthenticationResponse (base name: "consumerAuthenticationResponse")', function() {
+      // uncomment below and update the code to test the property consumerAuthenticationResponse
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property feeProgramDescription (base name: "feeProgramDescription")', function() {
+      // uncomment below and update the code to test the property feeProgramDescription
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property feeProgramId (base name: "feeProgramId")', function() {
+      // uncomment below and update the code to test the property feeProgramId
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property network (base name: "network")', function() {
+      // uncomment below and update the code to test the property network
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processingDate (base name: "processingDate")', function() {
+      // uncomment below and update the code to test the property processingDate
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property processor (base name: "processor")', function() {
+      // uncomment below and update the code to test the property processor
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reasonCodeDetails (base name: "reasonCodeDetails")', function() {
+      // uncomment below and update the code to test the property reasonCodeDetails
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reasonCodeValue (base name: "reasonCodeValue")', function() {
+      // uncomment below and update the code to test the property reasonCodeValue
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property responseCode (base name: "responseCode")', function() {
       // uncomment below and update the code to test the property responseCode
       //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
@@ -64,6 +136,54 @@
 
     it('should have the property responseDetails (base name: "responseDetails")', function() {
       // uncomment below and update the code to test the property responseDetails
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property responseDetailsOriginal (base name: "responseDetailsOriginal")', function() {
+      // uncomment below and update the code to test the property responseDetailsOriginal
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property retrievalReferenceNumber (base name: "retrievalReferenceNumber")', function() {
+      // uncomment below and update the code to test the property retrievalReferenceNumber
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property settlementDateTime (base name: "settlementDateTime")', function() {
+      // uncomment below and update the code to test the property settlementDateTime
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property statusCode (base name: "statusCode")', function() {
+      // uncomment below and update the code to test the property statusCode
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property systemTraceAuditNumber (base name: "systemTraceAuditNumber")', function() {
+      // uncomment below and update the code to test the property systemTraceAuditNumber
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionDateTime (base name: "transactionDateTime")', function() {
+      // uncomment below and update the code to test the property transactionDateTime
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionId (base name: "transactionId")', function() {
+      // uncomment below and update the code to test the property transactionId
+      //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transactionType (base name: "transactionType")', function() {
+      // uncomment below and update the code to test the property transactionType
       //var instane = new CyberSource.InlineResponse2014ProcessorInformation();
       //expect(instance).to.be();
     });

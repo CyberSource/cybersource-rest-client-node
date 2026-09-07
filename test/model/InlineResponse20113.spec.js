@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse20113);
     });
 
+    it('should have the property ucp (base name: "ucp")', function() {
+      // uncomment below and update the code to test the property ucp
+      //var instane = new CyberSource.InlineResponse20113();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new CyberSource.InlineResponse20113();
@@ -74,26 +80,14 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property buyer (base name: "buyer")', function() {
+      // uncomment below and update the code to test the property buyer
+      //var instane = new CyberSource.InlineResponse20113();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lineItems (base name: "line_items")', function() {
       // uncomment below and update the code to test the property lineItems
-      //var instane = new CyberSource.InlineResponse20113();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fulfillmentAddress (base name: "fulfillment_address")', function() {
-      // uncomment below and update the code to test the property fulfillmentAddress
-      //var instane = new CyberSource.InlineResponse20113();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fulfillmentOptions (base name: "fulfillment_options")', function() {
-      // uncomment below and update the code to test the property fulfillmentOptions
-      //var instane = new CyberSource.InlineResponse20113();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fulfillmentOptionId (base name: "fulfillment_option_id")', function() {
-      // uncomment below and update the code to test the property fulfillmentOptionId
       //var instane = new CyberSource.InlineResponse20113();
       //expect(instance).to.be();
     });
@@ -104,20 +98,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property buyer (base name: "buyer")', function() {
-      // uncomment below and update the code to test the property buyer
+    it('should have the property fulfillment (base name: "fulfillment")', function() {
+      // uncomment below and update the code to test the property fulfillment
       //var instane = new CyberSource.InlineResponse20113();
       //expect(instance).to.be();
     });
 
-    it('should have the property paymentProvider (base name: "payment_provider")', function() {
-      // uncomment below and update the code to test the property paymentProvider
+    it('should have the property payment (base name: "payment")', function() {
+      // uncomment below and update the code to test the property payment
       //var instane = new CyberSource.InlineResponse20113();
       //expect(instance).to.be();
     });
 
-    it('should have the property messages (base name: "messages")', function() {
-      // uncomment below and update the code to test the property messages
+    it('should have the property discounts (base name: "discounts")', function() {
+      // uncomment below and update the code to test the property discounts
+      //var instane = new CyberSource.InlineResponse20113();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property order (base name: "order")', function() {
+      // uncomment below and update the code to test the property order
       //var instane = new CyberSource.InlineResponse20113();
       //expect(instance).to.be();
     });

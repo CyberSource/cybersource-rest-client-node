@@ -135,7 +135,7 @@
    */
   exports.prototype['postalCode'] = undefined;
   /**
-   * Acquirer country.
+   * Acquirer country used for Payment Facilitator scenarios.
    * @member {String} country
    */
   exports.prototype['country'] = undefined;

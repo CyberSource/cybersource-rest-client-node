@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2014ErrorInformation', 'model/InlineResponse2014OrderInformation', 'model/InlineResponse2014ProcessingInformation', 'model/InlineResponse2014ProcessorInformation'], factory);
+    define(['ApiClient', 'model/InlineResponse2014ClientReferenceInformation', 'model/InlineResponse2014ErrorInformation', 'model/InlineResponse2014Links', 'model/InlineResponse2014Transactions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014ErrorInformation'), require('./InlineResponse2014OrderInformation'), require('./InlineResponse2014ProcessingInformation'), require('./InlineResponse2014ProcessorInformation'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse2014ClientReferenceInformation'), require('./InlineResponse2014ErrorInformation'), require('./InlineResponse2014Links'), require('./InlineResponse2014Transactions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2014 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014ErrorInformation, root.CyberSource.InlineResponse2014OrderInformation, root.CyberSource.InlineResponse2014ProcessingInformation, root.CyberSource.InlineResponse2014ProcessorInformation);
+    root.CyberSource.InlineResponse2014 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2014ClientReferenceInformation, root.CyberSource.InlineResponse2014ErrorInformation, root.CyberSource.InlineResponse2014Links, root.CyberSource.InlineResponse2014Transactions);
   }
-}(this, function(ApiClient, InlineResponse2014ErrorInformation, InlineResponse2014OrderInformation, InlineResponse2014ProcessingInformation, InlineResponse2014ProcessorInformation) {
+}(this, function(ApiClient, InlineResponse2014ClientReferenceInformation, InlineResponse2014ErrorInformation, InlineResponse2014Links, InlineResponse2014Transactions) {
   'use strict';
 
 
@@ -43,12 +43,13 @@
    * Constructs a new <code>InlineResponse2014</code>.
    * @alias module:model/InlineResponse2014
    * @class
+   * @param status {String} The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED` 
    */
-  var exports = function() {
+  var exports = function(status) {
     var _this = this;
 
 
-
+    _this['status'] = status;
 
 
 
@@ -76,17 +77,17 @@
       if (data.hasOwnProperty('submitTimeStampUtc')) {
         obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
       }
-      if (data.hasOwnProperty('orderInformation')) {
-        obj['orderInformation'] = InlineResponse2014OrderInformation.constructFromObject(data['orderInformation']);
+      if (data.hasOwnProperty('_links')) {
+        obj['_links'] = InlineResponse2014Links.constructFromObject(data['_links']);
+      }
+      if (data.hasOwnProperty('transactions')) {
+        obj['transactions'] = ApiClient.convertToType(data['transactions'], [InlineResponse2014Transactions]);
+      }
+      if (data.hasOwnProperty('clientReferenceInformation')) {
+        obj['clientReferenceInformation'] = InlineResponse2014ClientReferenceInformation.constructFromObject(data['clientReferenceInformation']);
       }
       if (data.hasOwnProperty('errorInformation')) {
         obj['errorInformation'] = InlineResponse2014ErrorInformation.constructFromObject(data['errorInformation']);
-      }
-      if (data.hasOwnProperty('processorInformation')) {
-        obj['processorInformation'] = InlineResponse2014ProcessorInformation.constructFromObject(data['processorInformation']);
-      }
-      if (data.hasOwnProperty('processingInformation')) {
-        obj['processingInformation'] = InlineResponse2014ProcessingInformation.constructFromObject(data['processingInformation']);
       }
     }
     return obj;
@@ -98,7 +99,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values: - `COMPLETED` - `INVALID_REQUEST` - `SERVER_ERROR` 
+   * The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED` 
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
@@ -108,21 +109,21 @@
    */
   exports.prototype['submitTimeStampUtc'] = undefined;
   /**
-   * @member {module:model/InlineResponse2014OrderInformation} orderInformation
+   * @member {module:model/InlineResponse2014Links} _links
    */
-  exports.prototype['orderInformation'] = undefined;
+  exports.prototype['_links'] = undefined;
+  /**
+   * @member {Array.<module:model/InlineResponse2014Transactions>} transactions
+   */
+  exports.prototype['transactions'] = undefined;
+  /**
+   * @member {module:model/InlineResponse2014ClientReferenceInformation} clientReferenceInformation
+   */
+  exports.prototype['clientReferenceInformation'] = undefined;
   /**
    * @member {module:model/InlineResponse2014ErrorInformation} errorInformation
    */
   exports.prototype['errorInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2014ProcessorInformation} processorInformation
-   */
-  exports.prototype['processorInformation'] = undefined;
-  /**
-   * @member {module:model/InlineResponse2014ProcessingInformation} processingInformation
-   */
-  exports.prototype['processingInformation'] = undefined;
 
 
 

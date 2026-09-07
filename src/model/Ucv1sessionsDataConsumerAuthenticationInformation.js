@@ -51,6 +51,7 @@
 
 
 
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('productCode')) {
         obj['productCode'] = ApiClient.convertToType(data['productCode'], 'String');
       }
+      if (data.hasOwnProperty('languagePreference')) {
+        obj['languagePreference'] = ApiClient.convertToType(data['languagePreference'], 'String');
+      }
     }
     return obj;
   }
@@ -100,6 +104,11 @@
    * @member {String} productCode
    */
   exports.prototype['productCode'] = undefined;
+  /**
+   * Preferred language to be used for cardholder authentication and challenge experiences (subject to issuer/ACS support). 
+   * @member {String} languagePreference
+   */
+  exports.prototype['languagePreference'] = undefined;
 
 
 
