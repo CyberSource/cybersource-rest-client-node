@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -99,6 +100,9 @@
       }
       if (data.hasOwnProperty('network')) {
         obj['network'] = Ptsv2paymentsProcessorInformationReversalNetwork.constructFromObject(data['network']);
+      }
+      if (data.hasOwnProperty('transactionLinkIdentifier')) {
+        obj['transactionLinkIdentifier'] = ApiClient.convertToType(data['transactionLinkIdentifier'], 'String');
       }
     }
     return obj;
@@ -153,6 +157,11 @@
    * @member {module:model/Ptsv2paymentsProcessorInformationReversalNetwork} network
    */
   exports.prototype['network'] = undefined;
+  /**
+   * Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0). 
+   * @member {String} transactionLinkIdentifier
+   */
+  exports.prototype['transactionLinkIdentifier'] = undefined;
 
 
 

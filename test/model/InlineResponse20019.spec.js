@@ -56,68 +56,26 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse20019);
     });
 
+    it('should have the property jobId (base name: "jobId")', function() {
+      // uncomment below and update the code to test the property jobId
+      //var instane = new CyberSource.InlineResponse20019();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new CyberSource.InlineResponse20019();
       //expect(instance).to.be();
     });
 
-    it('should have the property feedId (base name: "feed_id")', function() {
-      // uncomment below and update the code to test the property feedId
+    it('should have the property processing (base name: "processing")', function() {
+      // uncomment below and update the code to test the property processing
       //var instane = new CyberSource.InlineResponse20019();
       //expect(instance).to.be();
     });
 
-    it('should have the property totalSubmitted (base name: "total_submitted")', function() {
-      // uncomment below and update the code to test the property totalSubmitted
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property successCount (base name: "success_count")', function() {
-      // uncomment below and update the code to test the property successCount
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property failedCount (base name: "failed_count")', function() {
-      // uncomment below and update the code to test the property failedCount
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property errors (base name: "errors")', function() {
-      // uncomment below and update the code to test the property errors
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ingestedAt (base name: "ingested_at")', function() {
-      // uncomment below and update the code to test the property ingestedAt
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property forwardedToAgent (base name: "forwarded_to_agent")', function() {
-      // uncomment below and update the code to test the property forwardedToAgent
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property agentEndpoint (base name: "agent_endpoint")', function() {
-      // uncomment below and update the code to test the property agentEndpoint
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property forwardedToUcpAgent (base name: "forwarded_to_ucp_agent")', function() {
-      // uncomment below and update the code to test the property forwardedToUcpAgent
-      //var instane = new CyberSource.InlineResponse20019();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property googleMerchant (base name: "google_merchant")', function() {
-      // uncomment below and update the code to test the property googleMerchant
+    it('should have the property syndication (base name: "syndication")', function() {
+      // uncomment below and update the code to test the property syndication
       //var instane = new CyberSource.InlineResponse20019();
       //expect(instance).to.be();
     });

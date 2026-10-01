@@ -73,6 +73,12 @@
 
 
 
+
+
+
+
+
+
   };
 
   /**
@@ -163,6 +169,24 @@
       }
       if (data.hasOwnProperty('firstInstallmentDate')) {
         obj['firstInstallmentDate'] = ApiClient.convertToType(data['firstInstallmentDate'], 'String');
+      }
+      if (data.hasOwnProperty('gracePeriodDuration')) {
+        obj['gracePeriodDuration'] = ApiClient.convertToType(data['gracePeriodDuration'], 'String');
+      }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = ApiClient.convertToType(data['paymentType'], 'String');
+      }
+      if (data.hasOwnProperty('amountType')) {
+        obj['amountType'] = ApiClient.convertToType(data['amountType'], 'String');
+      }
+      if (data.hasOwnProperty('percentageDiscount')) {
+        obj['percentageDiscount'] = ApiClient.convertToType(data['percentageDiscount'], 'String');
+      }
+      if (data.hasOwnProperty('interestIndicator')) {
+        obj['interestIndicator'] = ApiClient.convertToType(data['interestIndicator'], 'String');
+      }
+      if (data.hasOwnProperty('financingCurrency')) {
+        obj['financingCurrency'] = ApiClient.convertToType(data['financingCurrency'], 'String');
       }
     }
     return obj;
@@ -298,6 +322,36 @@
    * @member {String} firstInstallmentDate
    */
   exports.prototype['firstInstallmentDate'] = undefined;
+  /**
+   * Grace period requested by the customer before the first installment payment is due.  When you include this field in a request, you must also include the grace period duration type field.  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 100-101, Field: Mastercard Grace Period Details.  This field is supported only for Mastercard installment payments in Brazil and Greece. 
+   * @member {String} gracePeriodDuration
+   */
+  exports.prototype['gracePeriodDuration'] = undefined;
+  /**
+   * Payment plan for the installments. This field is supported only for installment payments on Visa Platform Connect, RuPay and SPG-KSA seamless flow.  Possible values for a standing-instruction (SI) merchant-initiated transaction (MIT) with Diners Club or Mastercard in India or with an India-issued card: - 1: SI with a fixed amount. - 2: SI with a maximum amount. - 3: Other kind of SI.  Possible values for a type of Installment transaction for on-soil transaction in Kingdom of Saudi Arabia - 1: Registration or first transaction. - 2: Subsequent transaction.  Possible values for other kinds of installment payments: - 0 (default): Regular installment. This value is not allowed for airline transactions. - 1: Installment payment with down payment. - 2: Installment payment without down payment. This value is supported only for airline transactions. - 3: Installment payment; down payment and boarding fee will follow. This value is supported only for airline transactions. - 4: Down payment only; regular installment payment will follow. - 5: Boarding fee only. This value is supported only for airline transactions. - 6: SI de-registration on RuPay for the payer authentication seamless flow. 
+   * @member {String} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
+  /**
+   * Valid Values from Issuer - Percentage = 999v99 Example P123.12 - Amount = 9(10)v99 Example A123.12 
+   * @member {String} amountType
+   */
+  exports.prototype['amountType'] = undefined;
+  /**
+   * Valid Values from Issuer 
+   * @member {String} percentageDiscount
+   */
+  exports.prototype['percentageDiscount'] = undefined;
+  /**
+   * Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available 
+   * @member {String} interestIndicator
+   */
+  exports.prototype['interestIndicator'] = undefined;
+  /**
+   * Valid Values from Issuer 
+   * @member {String} financingCurrency
+   */
+  exports.prototype['financingCurrency'] = undefined;
 
 
 

@@ -44,11 +44,11 @@
    * Request object for registering a new AI agent in the VARS.
    * @alias module:model/AgentRequest
    * @class
-   * @param name {String} Agent name
-   * @param domain {String} Agent domain URL
-   * @param description {String} Agent description
-   * @param contactEmail {String} Contact email
-   * @param tokenRequestorId {String} Unique token requestor identifier
+   * @param name {String} Display name for the agent
+   * @param domain {String} Fully-qualified HTTPS URL of the agent's home domain. Must be unique — registration raises 409 if it already exists.
+   * @param description {String} Description of the agent's purpose or capabilities
+   * @param contactEmail {String} Contact email for the team or individual responsible for this agent
+   * @param tokenRequestorId {String} Token Requestor ID (TRID) assigned by Visa
    */
   var exports = function(name, domain, description, contactEmail, tokenRequestorId) {
     var _this = this;
@@ -89,7 +89,7 @@
         obj['tokenRequestorId'] = ApiClient.convertToType(data['tokenRequestorId'], 'String');
       }
       if (data.hasOwnProperty('agentMetadata')) {
-        obj['agentMetadata'] = ApiClient.convertToType(data['agentMetadata'], {'String': 'String'});
+        obj['agentMetadata'] = ApiClient.convertToType(data['agentMetadata'], Object);
       }
       if (data.hasOwnProperty('keys')) {
         obj['keys'] = ApiClient.convertToType(data['keys'], [Iccv1agentsKeys]);
@@ -99,37 +99,37 @@
   }
 
   /**
-   * Agent name
+   * Display name for the agent
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Agent domain URL
+   * Fully-qualified HTTPS URL of the agent's home domain. Must be unique — registration raises 409 if it already exists.
    * @member {String} domain
    */
   exports.prototype['domain'] = undefined;
   /**
-   * Agent description
+   * Description of the agent's purpose or capabilities
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
   /**
-   * Contact email
+   * Contact email for the team or individual responsible for this agent
    * @member {String} contactEmail
    */
   exports.prototype['contactEmail'] = undefined;
   /**
-   * Unique token requestor identifier
+   * Token Requestor ID (TRID) assigned by Visa
    * @member {String} tokenRequestorId
    */
   exports.prototype['tokenRequestorId'] = undefined;
   /**
-   * Optional metadata (e.g., framework, version)
-   * @member {Object.<String, String>} agentMetadata
+   * Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
+   * @member {Object} agentMetadata
    */
   exports.prototype['agentMetadata'] = undefined;
   /**
-   * Optional list of keys to create with the agent
+   * Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate. 
    * @member {Array.<module:model/Iccv1agentsKeys>} keys
    */
   exports.prototype['keys'] = undefined;

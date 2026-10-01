@@ -43,22 +43,30 @@
    * Constructs a new <code>InlineResponse20112</code>.
    * @alias module:model/InlineResponse20112
    * @class
+   * @param id {String} Unique identifier for this checkout session. Required for all subsequent calls (update, complete, cancel). 
+   * @param status {String} Current lifecycle state of the session per ACP spec: - `not_ready_for_payment` — session is open but not yet ready - `ready_for_payment` — session is ready to be completed - `completed` — order has been placed; session is immutable - `canceled` — session was abandoned; no charge was made   Possible values: - not_ready_for_payment - ready_for_payment - completed - canceled
+   * @param currency {String} ISO 4217 lowercase currency code for this session.
+   * @param lineItems {Array.<module:model/InlineResponse20112LineItems>} Line items with merchant-confirmed pricing.
+   * @param fulfillmentOptions {Array.<module:model/InlineResponse20112FulfillmentOptions>} Available fulfillment methods with pricing.
+   * @param totals {Array.<module:model/InlineResponse20112Totals>} Order cost breakdown as an array of typed total lines. All amounts in minor units (cents).
+   * @param messages {Array.<module:model/InlineResponse20112Messages>} Informational or error messages from the merchant backend.
+   * @param links {Array.<module:model/InlineResponse20112Links>} Related resource links from the merchant (e.g. terms of use, privacy policy, seller shop policies). 
    */
-  var exports = function() {
+  var exports = function(id, status, currency, lineItems, fulfillmentOptions, totals, messages, links) {
     var _this = this;
 
+    _this['id'] = id;
+    _this['status'] = status;
+    _this['currency'] = currency;
+    _this['line_items'] = lineItems;
+
+    _this['fulfillment_options'] = fulfillmentOptions;
+
+    _this['totals'] = totals;
 
 
-
-
-
-
-
-
-
-
-
-
+    _this['messages'] = messages;
+    _this['links'] = links;
   };
 
   /**

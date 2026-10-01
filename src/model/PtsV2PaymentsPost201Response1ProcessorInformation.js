@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -88,6 +89,9 @@
       }
       if (data.hasOwnProperty('sellerProtection')) {
         obj['sellerProtection'] = ProcessorInformationSellerProtection.constructFromObject(data['sellerProtection']);
+      }
+      if (data.hasOwnProperty('paymentUrl')) {
+        obj['paymentUrl'] = ApiClient.convertToType(data['paymentUrl'], 'String');
       }
       if (data.hasOwnProperty('avs')) {
         obj['avs'] = PtsV2PaymentsPost201Response1ProcessorInformationAvs.constructFromObject(data['avs']);
@@ -130,6 +134,11 @@
    * @member {module:model/ProcessorInformationSellerProtection} sellerProtection
    */
   exports.prototype['sellerProtection'] = undefined;
+  /**
+   * Direct the customer to this URL to complete the payment.
+   * @member {String} paymentUrl
+   */
+  exports.prototype['paymentUrl'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201Response1ProcessorInformationAvs} avs
    */

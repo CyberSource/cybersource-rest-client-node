@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property value (base name: "value")', function() {
+      // uncomment below and update the code to test the property value
+      //var instane = new CyberSource.Ptsv2intentsMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
       //var instane = new CyberSource.Ptsv2intentsMerchantInformationMerchantDescriptor();

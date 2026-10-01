@@ -72,6 +72,7 @@
 
 
 
+
   };
 
   /**
@@ -96,6 +97,9 @@
       }
       if (data.hasOwnProperty('submitTimeUtc')) {
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('createTimeUtc')) {
+        obj['createTimeUtc'] = ApiClient.convertToType(data['createTimeUtc'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -183,6 +187,11 @@
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
+  /**
+   * Time when the authorization was created, in UTC. 
+   * @member {String} createTimeUtc
+   */
+  exports.prototype['createTimeUtc'] = undefined;
   /**
    * The status of the submitted transaction.  Possible values:  - AUTHORIZED  - PARTIAL_AUTHORIZED  - AUTHORIZED_PENDING_REVIEW  - AUTHORIZED_RISK_DECLINED  - PENDING_AUTHENTICATION  - PENDING_REVIEW  - DECLINED  - INVALID_REQUEST 
    * @member {String} status

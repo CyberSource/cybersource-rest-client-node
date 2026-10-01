@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property updateTimeUtc (base name: "updateTimeUtc")', function() {
+      // uncomment below and update the code to test the property updateTimeUtc
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1();
+      //expect(instance).to.be();
+    });
+
     it('should have the property processorInformation (base name: "processorInformation")', function() {
       // uncomment below and update the code to test the property processorInformation
       //var instane = new CyberSource.PtsV2PaymentsPost201Response1();

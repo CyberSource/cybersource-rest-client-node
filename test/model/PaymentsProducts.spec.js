@@ -182,6 +182,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentEvents (base name: "paymentEvents")', function() {
+      // uncomment below and update the code to test the property paymentEvents
+      //var instane = new CyberSource.PaymentsProducts();
+      //expect(instance).to.be();
+    });
+
     it('should have the property transactGuard (base name: "transactGuard")', function() {
       // uncomment below and update the code to test the property transactGuard
       //var instane = new CyberSource.PaymentsProducts();

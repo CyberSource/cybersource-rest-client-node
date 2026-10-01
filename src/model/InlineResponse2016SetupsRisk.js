@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsConfigurationSetupCardProcessing'], factory);
+    define(['ApiClient', 'model/PaymentsConfigurationSetupCardProcessing', 'model/PaymentsConfigurationSetupDigitalPayments'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsConfigurationSetupCardProcessing'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsConfigurationSetupCardProcessing'), require('./PaymentsConfigurationSetupDigitalPayments'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse2016SetupsRisk = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsConfigurationSetupCardProcessing);
+    root.CyberSource.InlineResponse2016SetupsRisk = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsConfigurationSetupCardProcessing, root.CyberSource.PaymentsConfigurationSetupDigitalPayments);
   }
-}(this, function(ApiClient, PaymentsConfigurationSetupCardProcessing) {
+}(this, function(ApiClient, PaymentsConfigurationSetupCardProcessing, PaymentsConfigurationSetupDigitalPayments) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('enhancedAuthentication')) {
         obj['enhancedAuthentication'] = PaymentsConfigurationSetupCardProcessing.constructFromObject(data['enhancedAuthentication']);
       }
+      if (data.hasOwnProperty('vpri')) {
+        obj['vpri'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['vpri']);
+      }
     }
     return obj;
   }
@@ -88,6 +92,10 @@
    * @member {module:model/PaymentsConfigurationSetupCardProcessing} enhancedAuthentication
    */
   exports.prototype['enhancedAuthentication'] = undefined;
+  /**
+   * @member {module:model/PaymentsConfigurationSetupDigitalPayments} vpri
+   */
+  exports.prototype['vpri'] = undefined;
 
 
 

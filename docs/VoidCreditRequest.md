@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **agreementInformation** | [**Ptsv2paymentsidvoidsAgreementInformation**](Ptsv2paymentsidvoidsAgreementInformation.md) |  | [optional] 
 **merchantInformation** | [**Ptsv2paymentsidvoidsMerchantInformation**](Ptsv2paymentsidvoidsMerchantInformation.md) |  | [optional] 
 **processingInformation** | [**Ptsv2paymentsidvoidsProcessingInformation**](Ptsv2paymentsidvoidsProcessingInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**Ptsv2paymentsPointOfSaleInformation**](Ptsv2paymentsPointOfSaleInformation.md) |  | [optional] 
 
 

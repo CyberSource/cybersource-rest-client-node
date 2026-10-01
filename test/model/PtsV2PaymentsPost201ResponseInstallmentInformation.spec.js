@@ -212,6 +212,42 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property gracePeriodDuration (base name: "gracePeriodDuration")', function() {
+      // uncomment below and update the code to test the property gracePeriodDuration
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property amountType (base name: "amountType")', function() {
+      // uncomment below and update the code to test the property amountType
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property percentageDiscount (base name: "percentageDiscount")', function() {
+      // uncomment below and update the code to test the property percentageDiscount
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property interestIndicator (base name: "interestIndicator")', function() {
+      // uncomment below and update the code to test the property interestIndicator
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property financingCurrency (base name: "financingCurrency")', function() {
+      // uncomment below and update the code to test the property financingCurrency
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponseInstallmentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

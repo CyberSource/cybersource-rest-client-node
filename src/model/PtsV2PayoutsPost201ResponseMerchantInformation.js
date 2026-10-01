@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PayoutsPost201ResponseMerchantInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor);
+    root.CyberSource.PtsV2PayoutsPost201ResponseMerchantInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor);
   }
-}(this, function(ApiClient, PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor) {
+}(this, function(ApiClient, PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('merchantDescriptor')) {
-        obj['merchantDescriptor'] = PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
+        obj['merchantDescriptor'] = PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor} merchantDescriptor
+   * @member {module:model/PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor} merchantDescriptor
    */
   exports.prototype['merchantDescriptor'] = undefined;
 

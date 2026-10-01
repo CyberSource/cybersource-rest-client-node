@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -78,6 +79,9 @@
       }
       if (data.hasOwnProperty('submitTimeUtc')) {
         obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('updateTimeUtc')) {
+        obj['updateTimeUtc'] = ApiClient.convertToType(data['updateTimeUtc'], 'String');
       }
       if (data.hasOwnProperty('processorInformation')) {
         obj['processorInformation'] = PtsV2PaymentsPost201Response1ProcessorInformation.constructFromObject(data['processorInformation']);
@@ -119,6 +123,11 @@
    * @member {String} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
+  /**
+   * The date and time when the request was last updated. **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). 
+   * @member {String} updateTimeUtc
+   */
+  exports.prototype['updateTimeUtc'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201Response1ProcessorInformation} processorInformation
    */

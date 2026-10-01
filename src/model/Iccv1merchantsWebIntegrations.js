@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>Iccv1merchantsWebIntegrations</code>.
-   * Web-based integration configuration for a merchant checkout flow.
+   * Web-based checkout integration configuration for browser or app-based agent interactions.
    * @alias module:model/Iccv1merchantsWebIntegrations
    * @class
    * @param integrationSpec {String} URL for integration specification
@@ -73,7 +73,7 @@
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': 'String'});
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': Object});
       }
     }
     return obj;
@@ -91,7 +91,7 @@
   exports.prototype['url'] = undefined;
   /**
    * Optional metadata (max 10KB)
-   * @member {Object.<String, String>} metadata
+   * @member {Object.<String, Object>} metadata
    */
   exports.prototype['metadata'] = undefined;
 

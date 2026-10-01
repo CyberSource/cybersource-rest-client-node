@@ -41,7 +41,7 @@
 
   /**
    * Constructs a new <code>KeyUpdate</code>.
-   * Request object for updating an existing agent key. All fields are optional.
+   * All fields are optional. publicKey and algorithm must be provided together when either is updated.
    * @alias module:model/KeyUpdate
    * @class
    */
@@ -82,22 +82,22 @@
   }
 
   /**
-   * Unique identifier for the key
+   * Unique  name for this key within the agent. Must be unique per agent.
    * @member {String} keyName
    */
   exports.prototype['keyName'] = undefined;
   /**
-   * Base64-encoded public key. Supports PEM (PKCS#8, PKCS#1), JWK, DER, and OpenSSH formats. Max 10000 characters.
+   * Base64-encoded public key. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK. Must be provided together with `algorithm`.
    * @member {String} publicKey
    */
   exports.prototype['publicKey'] = undefined;
   /**
-   * Signing algorithm. Must match the key type (e.g., an RSA key requires RSA-SHA256 or RSA-SHA512).  Possible values: - RSA-SHA256 - RSA-SHA512 - ECDSA-SHA256 - ECDSA-SHA512 - EdDSA
+   * HTTP Signature signing algorithm (RFC 9421 §3.3 registry). Must be provided together with `publicKey`:  - ***rsa-pss-sha256*** — RSA-PSS with SHA-256  - ***rsa-pss-sha512*** — RSA-PSS with SHA-512  - ***ecdsa-p256-sha256*** — ECDSA on P-256 curve with SHA-256  - ***ecdsa-p384-sha384*** — ECDSA on P-384 curve with SHA-384  - ***ed25519*** — EdDSA on Curve25519   Possible values: - rsa-pss-sha256 - rsa-pss-sha512 - ecdsa-p256-sha256 - ecdsa-p384-sha384 - ed25519
    * @member {String} algorithm
    */
   exports.prototype['algorithm'] = undefined;
   /**
-   * Key expiration date in UTC
+   * Key expiration date-time in UTC.
    * @member {Date} expirationDate
    */
   exports.prototype['expirationDate'] = undefined;

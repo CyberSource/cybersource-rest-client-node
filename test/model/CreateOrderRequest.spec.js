@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property buyerInformation (base name: "buyerInformation")', function() {
+      // uncomment below and update the code to test the property buyerInformation
+      //var instane = new CyberSource.CreateOrderRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property senderInformation (base name: "senderInformation")', function() {
       // uncomment below and update the code to test the property senderInformation
       //var instane = new CyberSource.CreateOrderRequest();

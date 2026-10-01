@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **common** | [**BoardingPayoutsConfigurationsCommon**](BoardingPayoutsConfigurationsCommon.md) |  | [optional] 
-**processors** | **{String: Object}** |  | [optional] 
+**processors** | [**{String: BoardingPayoutsConfigurationsProcessors}**](BoardingPayoutsConfigurationsProcessors.md) |  | [optional] 
 
 

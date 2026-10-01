@@ -77,7 +77,7 @@
         obj['documentationUrl'] = ApiClient.convertToType(data['documentationUrl'], 'String');
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': 'String'});
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': Object});
       }
     }
     return obj;
@@ -100,7 +100,7 @@
   exports.prototype['documentationUrl'] = undefined;
   /**
    * Optional metadata (max 10KB)
-   * @member {Object.<String, String>} metadata
+   * @member {Object.<String, Object>} metadata
    */
   exports.prototype['metadata'] = undefined;
 

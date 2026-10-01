@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse20019Errors', 'model/InlineResponse20019GoogleMerchant'], factory);
+    define(['ApiClient', 'model/InlineResponse20019Processing', 'model/InlineResponse20019Syndication'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse20019Errors'), require('./InlineResponse20019GoogleMerchant'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse20019Processing'), require('./InlineResponse20019Syndication'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse20019 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20019Errors, root.CyberSource.InlineResponse20019GoogleMerchant);
+    root.CyberSource.InlineResponse20019 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse20019Processing, root.CyberSource.InlineResponse20019Syndication);
   }
-}(this, function(ApiClient, InlineResponse20019Errors, InlineResponse20019GoogleMerchant) {
+}(this, function(ApiClient, InlineResponse20019Processing, InlineResponse20019Syndication) {
   'use strict';
 
 
@@ -41,19 +41,12 @@
 
   /**
    * Constructs a new <code>InlineResponse20019</code>.
-   * Result of a product feed ingestion request.
+   * Processing and syndication status of a product feed job.
    * @alias module:model/InlineResponse20019
    * @class
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
 
 
 
@@ -72,97 +65,41 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('jobId')) {
+        obj['jobId'] = ApiClient.convertToType(data['jobId'], 'String');
+      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('feed_id')) {
-        obj['feed_id'] = ApiClient.convertToType(data['feed_id'], 'String');
+      if (data.hasOwnProperty('processing')) {
+        obj['processing'] = InlineResponse20019Processing.constructFromObject(data['processing']);
       }
-      if (data.hasOwnProperty('total_submitted')) {
-        obj['total_submitted'] = ApiClient.convertToType(data['total_submitted'], 'Number');
-      }
-      if (data.hasOwnProperty('success_count')) {
-        obj['success_count'] = ApiClient.convertToType(data['success_count'], 'Number');
-      }
-      if (data.hasOwnProperty('failed_count')) {
-        obj['failed_count'] = ApiClient.convertToType(data['failed_count'], 'Number');
-      }
-      if (data.hasOwnProperty('errors')) {
-        obj['errors'] = ApiClient.convertToType(data['errors'], [InlineResponse20019Errors]);
-      }
-      if (data.hasOwnProperty('ingested_at')) {
-        obj['ingested_at'] = ApiClient.convertToType(data['ingested_at'], 'Date');
-      }
-      if (data.hasOwnProperty('forwarded_to_agent')) {
-        obj['forwarded_to_agent'] = ApiClient.convertToType(data['forwarded_to_agent'], 'Boolean');
-      }
-      if (data.hasOwnProperty('agent_endpoint')) {
-        obj['agent_endpoint'] = ApiClient.convertToType(data['agent_endpoint'], 'String');
-      }
-      if (data.hasOwnProperty('forwarded_to_ucp_agent')) {
-        obj['forwarded_to_ucp_agent'] = ApiClient.convertToType(data['forwarded_to_ucp_agent'], 'Boolean');
-      }
-      if (data.hasOwnProperty('google_merchant')) {
-        obj['google_merchant'] = InlineResponse20019GoogleMerchant.constructFromObject(data['google_merchant']);
+      if (data.hasOwnProperty('syndication')) {
+        obj['syndication'] = ApiClient.convertToType(data['syndication'], {'String': InlineResponse20019Syndication});
       }
     }
     return obj;
   }
 
   /**
-   * Overall ingestion result: - `success` — all products were validated and saved - `partial_success` — some products failed validation; `errors` lists the failures - `failed` — no products were saved; check `errors` for details   Possible values: - success - partial_success - failed
+   * Unique identifier of the feed submission job.
+   * @member {String} jobId
+   */
+  exports.prototype['jobId'] = undefined;
+  /**
+   * Overall status of the feed job.  Possible values: - PENDING - PROCESSING - COMPLETED - FAILED
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * Unique identifier for this feed ingestion job. Use this with the Syndication Status endpoint to monitor the asynchronous protocol sync progress (e.g. to Google Merchant Center). 
-   * @member {String} feed_id
+   * @member {module:model/InlineResponse20019Processing} processing
    */
-  exports.prototype['feed_id'] = undefined;
+  exports.prototype['processing'] = undefined;
   /**
-   * Total number of product records in the submitted feed.
-   * @member {Number} total_submitted
+   * Per-protocol syndication status, keyed by lowercase protocol name (e.g. `acp`, `ucp`). 
+   * @member {Object.<String, module:model/InlineResponse20019Syndication>} syndication
    */
-  exports.prototype['total_submitted'] = undefined;
-  /**
-   * Number of products that passed validation and were saved to the catalog.
-   * @member {Number} success_count
-   */
-  exports.prototype['success_count'] = undefined;
-  /**
-   * Number of products that failed validation and were not saved.
-   * @member {Number} failed_count
-   */
-  exports.prototype['failed_count'] = undefined;
-  /**
-   * Per-product validation errors for products that failed ingestion. Each entry identifies the product, the specific field that failed, and the reason. `null` when `failed_count` is zero. 
-   * @member {Array.<module:model/InlineResponse20019Errors>} errors
-   */
-  exports.prototype['errors'] = undefined;
-  /**
-   * ISO 8601 timestamp when the ingestion completed.
-   * @member {Date} ingested_at
-   */
-  exports.prototype['ingested_at'] = undefined;
-  /**
-   * Indicates whether the ingested products were scheduled for syndication to the configured AI agent endpoint. Set to `true` when at least one product was successfully saved. Note: syndication is asynchronous — this field confirms the dispatch was initiated, not that the agent received the data. 
-   * @member {Boolean} forwarded_to_agent
-   */
-  exports.prototype['forwarded_to_agent'] = undefined;
-  /**
-   * The AI agent endpoint URL that the products were forwarded to. Present when `forwarded_to_agent` is `true`. 
-   * @member {String} agent_endpoint
-   */
-  exports.prototype['agent_endpoint'] = undefined;
-  /**
-   * Indicates whether the ingested products were scheduled for syndication to the UCP (Unified Commerce Platform) agent. Set to `true` when UCP syndication is enabled and at least one product was successfully saved. 
-   * @member {Boolean} forwarded_to_ucp_agent
-   */
-  exports.prototype['forwarded_to_ucp_agent'] = undefined;
-  /**
-   * @member {module:model/InlineResponse20019GoogleMerchant} google_merchant
-   */
-  exports.prototype['google_merchant'] = undefined;
+  exports.prototype['syndication'] = undefined;
 
 
 

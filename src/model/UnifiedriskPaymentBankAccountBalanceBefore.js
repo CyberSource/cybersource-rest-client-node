@@ -67,7 +67,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'Number');
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
@@ -76,7 +76,7 @@
         obj['baseCurrency'] = ApiClient.convertToType(data['baseCurrency'], 'String');
       }
       if (data.hasOwnProperty('baseValue')) {
-        obj['baseValue'] = ApiClient.convertToType(data['baseValue'], 'Number');
+        obj['baseValue'] = ApiClient.convertToType(data['baseValue'], 'String');
       }
       if (data.hasOwnProperty('merchantCurrency')) {
         obj['merchantCurrency'] = ApiClient.convertToType(data['merchantCurrency'], 'String');
@@ -90,7 +90,7 @@
 
   /**
    * Account balance before transaction    
-   * @member {Number} value
+   * @member {String} value
    */
   exports.prototype['value'] = undefined;
   /**
@@ -105,7 +105,7 @@
   exports.prototype['baseCurrency'] = undefined;
   /**
    * Balance in base currency    
-   * @member {Number} baseValue
+   * @member {String} baseValue
    */
   exports.prototype['baseValue'] = undefined;
   /**

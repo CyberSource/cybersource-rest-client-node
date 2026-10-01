@@ -45,13 +45,13 @@
    * @alias module:model/AgentRegistrationResponse201
    * @class
    * @param id {String} Unique agent identifier (64-char SHA-256 hash of domain + email + tokenRequestorId)
-   * @param name {String} Agent name
-   * @param domain {String} Agent domain URL
-   * @param tokenRequestorId {String} Unique token requestor identifier
-   * @param agentType {String} Agent classification: 'trusted' (commercially onboarded) or 'known' (open-source/unverified)  Possible values: - trusted - known
-   * @param isActive {Boolean} Whether the agent is active
-   * @param createdAt {Date} Creation timestamp
-   * @param updatedAt {Date} Last update timestamp
+   * @param name {String} Display name for the agent
+   * @param domain {String} Fully-qualified HTTPS URL of the agent's home domain
+   * @param tokenRequestorId {String} Token Requestor ID (TRID) assigned by Visa, shared with the parent trusted agent for OSAs
+   * @param agentType {String} Agent classification: 'trusted' (commercially onboarded via Visa) or 'known' (open-source/community agent, unverified)  Possible values: - trusted - known
+   * @param isActive {Boolean} Whether the agent is currently active. Deactivated agents cannot add or activate keys.
+   * @param createdAt {Date} ISO 8601 UTC timestamp when the agent was registered
+   * @param updatedAt {Date} ISO 8601 UTC timestamp when the agent was last updated
    */
   var exports = function(id, name, domain, tokenRequestorId, agentType, isActive, createdAt, updatedAt) {
     var _this = this;
@@ -103,7 +103,7 @@
         obj['agentType'] = ApiClient.convertToType(data['agentType'], 'String');
       }
       if (data.hasOwnProperty('agentMetadata')) {
-        obj['agentMetadata'] = ApiClient.convertToType(data['agentMetadata'], {'String': 'String'});
+        obj['agentMetadata'] = ApiClient.convertToType(data['agentMetadata'], Object);
       }
       if (data.hasOwnProperty('isActive')) {
         obj['isActive'] = ApiClient.convertToType(data['isActive'], 'Boolean');
@@ -127,57 +127,57 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Agent name
+   * Display name for the agent
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Agent domain URL
+   * Fully-qualified HTTPS URL of the agent's home domain
    * @member {String} domain
    */
   exports.prototype['domain'] = undefined;
   /**
-   * Agent description
+   * Description of the agent's purpose or capabilities
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
   /**
-   * Contact email
+   * Contact email for the team or individual responsible for this agent
    * @member {String} contactEmail
    */
   exports.prototype['contactEmail'] = undefined;
   /**
-   * Unique token requestor identifier
+   * Token Requestor ID (TRID) assigned by Visa, shared with the parent trusted agent for OSAs
    * @member {String} tokenRequestorId
    */
   exports.prototype['tokenRequestorId'] = undefined;
   /**
-   * Agent classification: 'trusted' (commercially onboarded) or 'known' (open-source/unverified)  Possible values: - trusted - known
+   * Agent classification: 'trusted' (commercially onboarded via Visa) or 'known' (open-source/community agent, unverified)  Possible values: - trusted - known
    * @member {String} agentType
    */
   exports.prototype['agentType'] = undefined;
   /**
-   * Additional agent metadata
-   * @member {Object.<String, String>} agentMetadata
+   * Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
+   * @member {Object} agentMetadata
    */
   exports.prototype['agentMetadata'] = undefined;
   /**
-   * Whether the agent is active
+   * Whether the agent is currently active. Deactivated agents cannot add or activate keys.
    * @member {Boolean} isActive
    */
   exports.prototype['isActive'] = undefined;
   /**
-   * Creation timestamp
+   * ISO 8601 UTC timestamp when the agent was registered
    * @member {Date} createdAt
    */
   exports.prototype['createdAt'] = undefined;
   /**
-   * Last update timestamp
+   * ISO 8601 UTC timestamp when the agent was last updated
    * @member {Date} updatedAt
    */
   exports.prototype['updatedAt'] = undefined;
   /**
-   * List of keys associated with the agent
+   * List of public keys associated with the agent (both active and deactivated)
    * @member {Array.<module:model/AgentRegistrationResponse201Keys>} keys
    */
   exports.prototype['keys'] = undefined;

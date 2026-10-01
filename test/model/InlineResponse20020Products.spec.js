@@ -56,14 +56,20 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse20020Products);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property itemId (base name: "item_id")', function() {
+      // uncomment below and update the code to test the property itemId
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
 
-    it('should have the property itemId (base name: "item_id")', function() {
-      // uncomment below and update the code to test the property itemId
+    it('should have the property isEligibleSearch (base name: "is_eligible_search")', function() {
+      // uncomment below and update the code to test the property isEligibleSearch
+      //var instane = new CyberSource.InlineResponse20020Products();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isEligibleCheckout (base name: "is_eligible_checkout")', function() {
+      // uncomment below and update the code to test the property isEligibleCheckout
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
@@ -92,24 +98,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property additionalImageUrls (base name: "additional_image_urls")', function() {
-      // uncomment below and update the code to test the property additionalImageUrls
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property videoUrl (base name: "video_url")', function() {
-      // uncomment below and update the code to test the property videoUrl
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property model3dUrl (base name: "model_3d_url")', function() {
-      // uncomment below and update the code to test the property model3dUrl
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
     it('should have the property productCategory (base name: "product_category")', function() {
       // uncomment below and update the code to test the property productCategory
       //var instane = new CyberSource.InlineResponse20020Products();
@@ -118,24 +106,6 @@
 
     it('should have the property brand (base name: "brand")', function() {
       // uncomment below and update the code to test the property brand
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property gtin (base name: "gtin")', function() {
-      // uncomment below and update the code to test the property gtin
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property mpn (base name: "mpn")', function() {
-      // uncomment below and update the code to test the property mpn
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property condition (base name: "condition")', function() {
-      // uncomment below and update the code to test the property condition
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
@@ -152,44 +122,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property dimensions (base name: "dimensions")', function() {
-      // uncomment below and update the code to test the property dimensions
+    it('should have the property price (base name: "price")', function() {
+      // uncomment below and update the code to test the property price
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
 
-    it('should have the property length (base name: "length")', function() {
-      // uncomment below and update the code to test the property length
+    it('should have the property currency (base name: "currency")', function() {
+      // uncomment below and update the code to test the property currency
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
 
-    it('should have the property width (base name: "width")', function() {
-      // uncomment below and update the code to test the property width
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property height (base name: "height")', function() {
-      // uncomment below and update the code to test the property height
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property dimensionsUnit (base name: "dimensions_unit")', function() {
-      // uncomment below and update the code to test the property dimensionsUnit
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property itemWeightUnit (base name: "item_weight_unit")', function() {
-      // uncomment below and update the code to test the property itemWeightUnit
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ageGroup (base name: "age_group")', function() {
-      // uncomment below and update the code to test the property ageGroup
+    it('should have the property availability (base name: "availability")', function() {
+      // uncomment below and update the code to test the property availability
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
@@ -200,20 +146,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property size (base name: "size")', function() {
-      // uncomment below and update the code to test the property size
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sizeSystem (base name: "size_system")', function() {
-      // uncomment below and update the code to test the property sizeSystem
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
     it('should have the property gender (base name: "gender")', function() {
       // uncomment below and update the code to test the property gender
+      //var instane = new CyberSource.InlineResponse20020Products();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ageGroup (base name: "age_group")', function() {
+      // uncomment below and update the code to test the property ageGroup
+      //var instane = new CyberSource.InlineResponse20020Products();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shippingPrice (base name: "shipping_price")', function() {
+      // uncomment below and update the code to test the property shippingPrice
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
@@ -230,139 +176,7 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property itemGroupTitle (base name: "item_group_title")', function() {
-      // uncomment below and update the code to test the property itemGroupTitle
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property offerId (base name: "offer_id")', function() {
-      // uncomment below and update the code to test the property offerId
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property variantDict (base name: "variant_dict")', function() {
-      // uncomment below and update the code to test the property variantDict
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customVariant1Category (base name: "custom_variant1_category")', function() {
-      // uncomment below and update the code to test the property customVariant1Category
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customVariant1Option (base name: "custom_variant1_option")', function() {
-      // uncomment below and update the code to test the property customVariant1Option
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customVariant2Category (base name: "custom_variant2_category")', function() {
-      // uncomment below and update the code to test the property customVariant2Category
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customVariant2Option (base name: "custom_variant2_option")', function() {
-      // uncomment below and update the code to test the property customVariant2Option
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customVariant3Category (base name: "custom_variant3_category")', function() {
-      // uncomment below and update the code to test the property customVariant3Category
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customVariant3Option (base name: "custom_variant3_option")', function() {
-      // uncomment below and update the code to test the property customVariant3Option
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property price (base name: "price")', function() {
-      // uncomment below and update the code to test the property price
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property currency (base name: "currency")', function() {
-      // uncomment below and update the code to test the property currency
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property salePrice (base name: "sale_price")', function() {
-      // uncomment below and update the code to test the property salePrice
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property salePriceStartDate (base name: "sale_price_start_date")', function() {
-      // uncomment below and update the code to test the property salePriceStartDate
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property salePriceEndDate (base name: "sale_price_end_date")', function() {
-      // uncomment below and update the code to test the property salePriceEndDate
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property unitPricingMeasure (base name: "unit_pricing_measure")', function() {
-      // uncomment below and update the code to test the property unitPricingMeasure
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property baseMeasure (base name: "base_measure")', function() {
-      // uncomment below and update the code to test the property baseMeasure
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pricingTrend (base name: "pricing_trend")', function() {
-      // uncomment below and update the code to test the property pricingTrend
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property geoPrice (base name: "geo_price")', function() {
-      // uncomment below and update the code to test the property geoPrice
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property geoAvailability (base name: "geo_availability")', function() {
-      // uncomment below and update the code to test the property geoAvailability
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property availability (base name: "availability")', function() {
-      // uncomment below and update the code to test the property availability
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property availabilityDate (base name: "availability_date")', function() {
-      // uncomment below and update the code to test the property availabilityDate
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expirationDate (base name: "expiration_date")', function() {
-      // uncomment below and update the code to test the property expirationDate
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sellerName (base name: "seller_name")', function() {
+    it('should have the property sellerName (base name: "sellerName")', function() {
       // uncomment below and update the code to test the property sellerName
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
@@ -374,152 +188,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property marketplaceSeller (base name: "marketplace_seller")', function() {
-      // uncomment below and update the code to test the property marketplaceSeller
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sellerPrivacyPolicy (base name: "seller_privacy_policy")', function() {
-      // uncomment below and update the code to test the property sellerPrivacyPolicy
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sellerTos (base name: "seller_tos")', function() {
-      // uncomment below and update the code to test the property sellerTos
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property shippingPrice (base name: "shipping_price")', function() {
-      // uncomment below and update the code to test the property shippingPrice
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property deliveryEstimate (base name: "delivery_estimate")', function() {
-      // uncomment below and update the code to test the property deliveryEstimate
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pickupMethod (base name: "pickup_method")', function() {
-      // uncomment below and update the code to test the property pickupMethod
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pickupSla (base name: "pickup_sla")', function() {
-      // uncomment below and update the code to test the property pickupSla
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isDigital (base name: "is_digital")', function() {
-      // uncomment below and update the code to test the property isDigital
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
     it('should have the property returnPolicy (base name: "return_policy")', function() {
       // uncomment below and update the code to test the property returnPolicy
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property acceptsReturns (base name: "accepts_returns")', function() {
-      // uncomment below and update the code to test the property acceptsReturns
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property returnDeadlineInDays (base name: "return_deadline_in_days")', function() {
-      // uncomment below and update the code to test the property returnDeadlineInDays
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property acceptsExchanges (base name: "accepts_exchanges")', function() {
-      // uncomment below and update the code to test the property acceptsExchanges
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isEligibleSearch (base name: "is_eligible_search")', function() {
-      // uncomment below and update the code to test the property isEligibleSearch
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isEligibleCheckout (base name: "is_eligible_checkout")', function() {
-      // uncomment below and update the code to test the property isEligibleCheckout
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property popularityScore (base name: "popularity_score")', function() {
-      // uncomment below and update the code to test the property popularityScore
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property returnRate (base name: "return_rate")', function() {
-      // uncomment below and update the code to test the property returnRate
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property warning (base name: "warning")', function() {
-      // uncomment below and update the code to test the property warning
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property warningUrl (base name: "warning_url")', function() {
-      // uncomment below and update the code to test the property warningUrl
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ageRestriction (base name: "age_restriction")', function() {
-      // uncomment below and update the code to test the property ageRestriction
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reviewCount (base name: "review_count")', function() {
-      // uncomment below and update the code to test the property reviewCount
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property starRating (base name: "star_rating")', function() {
-      // uncomment below and update the code to test the property starRating
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property storeReviewCount (base name: "store_review_count")', function() {
-      // uncomment below and update the code to test the property storeReviewCount
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property storeStarRating (base name: "store_star_rating")', function() {
-      // uncomment below and update the code to test the property storeStarRating
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property relatedProductId (base name: "related_product_id")', function() {
-      // uncomment below and update the code to test the property relatedProductId
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property relationshipType (base name: "relationship_type")', function() {
-      // uncomment below and update the code to test the property relationshipType
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
@@ -536,31 +206,13 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property qAndA (base name: "q_and_a")', function() {
-      // uncomment below and update the code to test the property qAndA
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property qandA (base name: "qandA")', function() {
-      // uncomment below and update the code to test the property qandA
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reviews (base name: "reviews")', function() {
-      // uncomment below and update the code to test the property reviews
-      //var instane = new CyberSource.InlineResponse20020Products();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdAt (base name: "created_at")', function() {
+    it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
       // uncomment below and update the code to test the property updatedAt
       //var instane = new CyberSource.InlineResponse20020Products();
       //expect(instance).to.be();
