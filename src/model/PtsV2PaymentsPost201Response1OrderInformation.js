@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201Response1OrderInformationAmountDetails', 'model/PtsV2PaymentsPost201Response1OrderInformationBillTo', 'model/PtsV2PaymentsPost201Response1OrderInformationShipTo'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201Response1OrderInformationAmountDetails', 'model/PtsV2PaymentsPost201Response1OrderInformationBillTo', 'model/PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor', 'model/PtsV2PaymentsPost201Response1OrderInformationShipTo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201Response1OrderInformationAmountDetails'), require('./PtsV2PaymentsPost201Response1OrderInformationBillTo'), require('./PtsV2PaymentsPost201Response1OrderInformationShipTo'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201Response1OrderInformationAmountDetails'), require('./PtsV2PaymentsPost201Response1OrderInformationBillTo'), require('./PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor'), require('./PtsV2PaymentsPost201Response1OrderInformationShipTo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PtsV2PaymentsPost201Response1OrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationAmountDetails, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationBillTo, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationShipTo);
+    root.CyberSource.PtsV2PaymentsPost201Response1OrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationAmountDetails, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationBillTo, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor, root.CyberSource.PtsV2PaymentsPost201Response1OrderInformationShipTo);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201Response1OrderInformationAmountDetails, PtsV2PaymentsPost201Response1OrderInformationBillTo, PtsV2PaymentsPost201Response1OrderInformationShipTo) {
+}(this, function(ApiClient, PtsV2PaymentsPost201Response1OrderInformationAmountDetails, PtsV2PaymentsPost201Response1OrderInformationBillTo, PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor, PtsV2PaymentsPost201Response1OrderInformationShipTo) {
   'use strict';
 
 
@@ -50,6 +50,10 @@
 
 
 
+
+
+
+
   };
 
   /**
@@ -63,6 +67,18 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('referenceId')) {
+        obj['referenceId'] = ApiClient.convertToType(data['referenceId'], 'String');
+      }
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('customId')) {
+        obj['customId'] = ApiClient.convertToType(data['customId'], 'String');
+      }
+      if (data.hasOwnProperty('merchantDescriptor')) {
+        obj['merchantDescriptor'] = PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
+      }
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = PtsV2PaymentsPost201Response1OrderInformationBillTo.constructFromObject(data['billTo']);
       }
@@ -76,6 +92,25 @@
     return obj;
   }
 
+  /**
+   * Merchant-generated order reference or tracking number for the payment. 
+   * @member {String} referenceId
+   */
+  exports.prototype['referenceId'] = undefined;
+  /**
+   * Description of the order, as provided by the merchant in the original request. 
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
+  /**
+   * Merchant-defined custom identifier for the order. 
+   * @member {String} customId
+   */
+  exports.prototype['customId'] = undefined;
+  /**
+   * @member {module:model/PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor} merchantDescriptor
+   */
+  exports.prototype['merchantDescriptor'] = undefined;
   /**
    * @member {module:model/PtsV2PaymentsPost201Response1OrderInformationBillTo} billTo
    */

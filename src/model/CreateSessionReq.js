@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentreferencesAgreementInformation', 'model/Ptsv2paymentreferencesBuyerInformation', 'model/Ptsv2paymentreferencesDeviceInformation', 'model/Ptsv2paymentreferencesMerchantInformation', 'model/Ptsv2paymentreferencesOrderInformation', 'model/Ptsv2paymentreferencesPaymentInformation', 'model/Ptsv2paymentreferencesProcessingInformation', 'model/Ptsv2paymentreferencesTravelInformation', 'model/Ptsv2paymentreferencesUserInterface', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2refreshpaymentstatusidClientReferenceInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentreferencesAgreementInformation', 'model/Ptsv2paymentreferencesBuyerInformation', 'model/Ptsv2paymentreferencesDeviceInformation', 'model/Ptsv2paymentreferencesMerchantInformation', 'model/Ptsv2paymentreferencesOrderInformation', 'model/Ptsv2paymentreferencesPaymentInformation', 'model/Ptsv2paymentreferencesProcessingInformation', 'model/Ptsv2paymentreferencesTravelInformation', 'model/Ptsv2paymentreferencesUserInterface', 'model/Ptsv2paymentsMerchantDefinedInformation', 'model/Ptsv2paymentsOrderHistory', 'model/Ptsv2refreshpaymentstatusidClientReferenceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentreferencesAgreementInformation'), require('./Ptsv2paymentreferencesBuyerInformation'), require('./Ptsv2paymentreferencesDeviceInformation'), require('./Ptsv2paymentreferencesMerchantInformation'), require('./Ptsv2paymentreferencesOrderInformation'), require('./Ptsv2paymentreferencesPaymentInformation'), require('./Ptsv2paymentreferencesProcessingInformation'), require('./Ptsv2paymentreferencesTravelInformation'), require('./Ptsv2paymentreferencesUserInterface'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Ptsv2refreshpaymentstatusidClientReferenceInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentreferencesAgreementInformation'), require('./Ptsv2paymentreferencesBuyerInformation'), require('./Ptsv2paymentreferencesDeviceInformation'), require('./Ptsv2paymentreferencesMerchantInformation'), require('./Ptsv2paymentreferencesOrderInformation'), require('./Ptsv2paymentreferencesPaymentInformation'), require('./Ptsv2paymentreferencesProcessingInformation'), require('./Ptsv2paymentreferencesTravelInformation'), require('./Ptsv2paymentreferencesUserInterface'), require('./Ptsv2paymentsMerchantDefinedInformation'), require('./Ptsv2paymentsOrderHistory'), require('./Ptsv2refreshpaymentstatusidClientReferenceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateSessionReq = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentreferencesAgreementInformation, root.CyberSource.Ptsv2paymentreferencesBuyerInformation, root.CyberSource.Ptsv2paymentreferencesDeviceInformation, root.CyberSource.Ptsv2paymentreferencesMerchantInformation, root.CyberSource.Ptsv2paymentreferencesOrderInformation, root.CyberSource.Ptsv2paymentreferencesPaymentInformation, root.CyberSource.Ptsv2paymentreferencesProcessingInformation, root.CyberSource.Ptsv2paymentreferencesTravelInformation, root.CyberSource.Ptsv2paymentreferencesUserInterface, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Ptsv2refreshpaymentstatusidClientReferenceInformation);
+    root.CyberSource.CreateSessionReq = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentreferencesAgreementInformation, root.CyberSource.Ptsv2paymentreferencesBuyerInformation, root.CyberSource.Ptsv2paymentreferencesDeviceInformation, root.CyberSource.Ptsv2paymentreferencesMerchantInformation, root.CyberSource.Ptsv2paymentreferencesOrderInformation, root.CyberSource.Ptsv2paymentreferencesPaymentInformation, root.CyberSource.Ptsv2paymentreferencesProcessingInformation, root.CyberSource.Ptsv2paymentreferencesTravelInformation, root.CyberSource.Ptsv2paymentreferencesUserInterface, root.CyberSource.Ptsv2paymentsMerchantDefinedInformation, root.CyberSource.Ptsv2paymentsOrderHistory, root.CyberSource.Ptsv2refreshpaymentstatusidClientReferenceInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentreferencesAgreementInformation, Ptsv2paymentreferencesBuyerInformation, Ptsv2paymentreferencesDeviceInformation, Ptsv2paymentreferencesMerchantInformation, Ptsv2paymentreferencesOrderInformation, Ptsv2paymentreferencesPaymentInformation, Ptsv2paymentreferencesProcessingInformation, Ptsv2paymentreferencesTravelInformation, Ptsv2paymentreferencesUserInterface, Ptsv2paymentsMerchantDefinedInformation, Ptsv2refreshpaymentstatusidClientReferenceInformation) {
+}(this, function(ApiClient, Ptsv2paymentreferencesAgreementInformation, Ptsv2paymentreferencesBuyerInformation, Ptsv2paymentreferencesDeviceInformation, Ptsv2paymentreferencesMerchantInformation, Ptsv2paymentreferencesOrderInformation, Ptsv2paymentreferencesPaymentInformation, Ptsv2paymentreferencesProcessingInformation, Ptsv2paymentreferencesTravelInformation, Ptsv2paymentreferencesUserInterface, Ptsv2paymentsMerchantDefinedInformation, Ptsv2paymentsOrderHistory, Ptsv2refreshpaymentstatusidClientReferenceInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -82,6 +83,9 @@
       }
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Ptsv2paymentreferencesOrderInformation.constructFromObject(data['orderInformation']);
+      }
+      if (data.hasOwnProperty('orderHistory')) {
+        obj['orderHistory'] = ApiClient.convertToType(data['orderHistory'], [Ptsv2paymentsOrderHistory]);
       }
       if (data.hasOwnProperty('buyerInformation')) {
         obj['buyerInformation'] = Ptsv2paymentreferencesBuyerInformation.constructFromObject(data['buyerInformation']);
@@ -124,6 +128,11 @@
    * @member {module:model/Ptsv2paymentreferencesOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
+  /**
+   * Array of the buyer's previous orders. 
+   * @member {Array.<module:model/Ptsv2paymentsOrderHistory>} orderHistory
+   */
+  exports.prototype['orderHistory'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentreferencesBuyerInformation} buyerInformation
    */

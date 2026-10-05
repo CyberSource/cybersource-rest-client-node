@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Iccv1merchantsApiIntegrations', 'model/Iccv1merchantsProtocolInteractions', 'model/Iccv1merchantsWebIntegrations', 'model/MerchantRegistrationResponse201Keys'], factory);
+    define(['ApiClient', 'model/Iccv1merchantsProtocolInteractions', 'model/MerchantRegistrationResponse201ApiIntegrations', 'model/MerchantRegistrationResponse201Keys', 'model/MerchantRegistrationResponse201WebIntegrations'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Iccv1merchantsApiIntegrations'), require('./Iccv1merchantsProtocolInteractions'), require('./Iccv1merchantsWebIntegrations'), require('./MerchantRegistrationResponse201Keys'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1merchantsProtocolInteractions'), require('./MerchantRegistrationResponse201ApiIntegrations'), require('./MerchantRegistrationResponse201Keys'), require('./MerchantRegistrationResponse201WebIntegrations'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantRegistrationResponse201 = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1merchantsApiIntegrations, root.CyberSource.Iccv1merchantsProtocolInteractions, root.CyberSource.Iccv1merchantsWebIntegrations, root.CyberSource.MerchantRegistrationResponse201Keys);
+    root.CyberSource.MerchantRegistrationResponse201 = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1merchantsProtocolInteractions, root.CyberSource.MerchantRegistrationResponse201ApiIntegrations, root.CyberSource.MerchantRegistrationResponse201Keys, root.CyberSource.MerchantRegistrationResponse201WebIntegrations);
   }
-}(this, function(ApiClient, Iccv1merchantsApiIntegrations, Iccv1merchantsProtocolInteractions, Iccv1merchantsWebIntegrations, MerchantRegistrationResponse201Keys) {
+}(this, function(ApiClient, Iccv1merchantsProtocolInteractions, MerchantRegistrationResponse201ApiIntegrations, MerchantRegistrationResponse201Keys, MerchantRegistrationResponse201WebIntegrations) {
   'use strict';
 
 
@@ -46,8 +46,8 @@
    * @class
    * @param id {String} Unique merchant identifier (UUID)
    * @param merchantName {String} Doing business as (DBA) name
-   * @param merchantUrl {String} Base merchant URL
-   * @param indicator {String} Transaction processing type  Possible values: - TAP - ACG - BOTH
+   * @param merchantUrl {String} Fully-qualified HTTPS URL of the merchant's domain
+   * @param indicator {String} Transaction processing indicator: 'TAP' (Trusted Agent Protocol), 'ACG' (Agentic Checkout Gateway), or 'BOTH'  Possible values: - TAP - ACG - BOTH
    * @param isActive {Boolean} Whether the merchant is active
    * @param createdAt {Date} Creation timestamp
    * @param updatedAt {Date} Last update timestamp
@@ -115,10 +115,10 @@
         obj['protocolInteractions'] = ApiClient.convertToType(data['protocolInteractions'], [Iccv1merchantsProtocolInteractions]);
       }
       if (data.hasOwnProperty('webIntegrations')) {
-        obj['webIntegrations'] = Iccv1merchantsWebIntegrations.constructFromObject(data['webIntegrations']);
+        obj['webIntegrations'] = MerchantRegistrationResponse201WebIntegrations.constructFromObject(data['webIntegrations']);
       }
       if (data.hasOwnProperty('apiIntegrations')) {
-        obj['apiIntegrations'] = Iccv1merchantsApiIntegrations.constructFromObject(data['apiIntegrations']);
+        obj['apiIntegrations'] = MerchantRegistrationResponse201ApiIntegrations.constructFromObject(data['apiIntegrations']);
       }
       if (data.hasOwnProperty('isActive')) {
         obj['isActive'] = ApiClient.convertToType(data['isActive'], 'Boolean');
@@ -147,51 +147,51 @@
    */
   exports.prototype['merchantName'] = undefined;
   /**
-   * Base merchant URL
+   * Fully-qualified HTTPS URL of the merchant's domain
    * @member {String} merchantUrl
    */
   exports.prototype['merchantUrl'] = undefined;
   /**
-   * Visa Merchant ID
+   * Visa Merchant ID (VMID) — unique identifier assigned by Visa
    * @member {String} vmid
    */
   exports.prototype['vmid'] = undefined;
   /**
-   * Authentication cryptogram type  Possible values: - TAVV - DAVV
+   * Authentication cryptogram type used for payment credential generation: 'TAVV' (Token Authentication Verification Value) or 'DAVV' (Device Authentication Verification Value)  Possible values: - TAVV - DAVV
    * @member {String} cryptogramType
    */
   exports.prototype['cryptogramType'] = undefined;
   /**
-   * Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED
+   * Credential delivery format: 'ENCRYPTED' (JWE-wrapped, requires an active encryption key) or 'UNENCRYPTED'  Possible values: - ENCRYPTED - UNENCRYPTED
    * @member {String} paymentPayloadType
    */
   exports.prototype['paymentPayloadType'] = undefined;
   /**
-   * Transaction processing type  Possible values: - TAP - ACG - BOTH
+   * Transaction processing indicator: 'TAP' (Trusted Agent Protocol), 'ACG' (Agentic Checkout Gateway), or 'BOTH'  Possible values: - TAP - ACG - BOTH
    * @member {String} indicator
    */
   exports.prototype['indicator'] = undefined;
   /**
-   * Additional merchant metadata
+   * Free-form metadata object for additional merchant context
    * @member {Object} merchantMetadata
    */
   exports.prototype['merchantMetadata'] = undefined;
   /**
-   * List of acceptance network relationships
+   * List of payment network acceptance relationships (e.g., \"Visa\")
    * @member {Array.<String>} acceptanceRelationships
    */
   exports.prototype['acceptanceRelationships'] = undefined;
   /**
-   * List of protocol interaction configurations (ucp, acp, x402)
+   * List of protocol endpoint configurations defining how agents interact with this merchant (ucp, acp, x402)
    * @member {Array.<module:model/Iccv1merchantsProtocolInteractions>} protocolInteractions
    */
   exports.prototype['protocolInteractions'] = undefined;
   /**
-   * @member {module:model/Iccv1merchantsWebIntegrations} webIntegrations
+   * @member {module:model/MerchantRegistrationResponse201WebIntegrations} webIntegrations
    */
   exports.prototype['webIntegrations'] = undefined;
   /**
-   * @member {module:model/Iccv1merchantsApiIntegrations} apiIntegrations
+   * @member {module:model/MerchantRegistrationResponse201ApiIntegrations} apiIntegrations
    */
   exports.prototype['apiIntegrations'] = undefined;
   /**

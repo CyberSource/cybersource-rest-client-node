@@ -52,6 +52,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       if (data.hasOwnProperty('webhooks')) {
         obj['webhooks'] = PaymentsProductsTax.constructFromObject(data['webhooks']);
       }
+      if (data.hasOwnProperty('smarterRetry')) {
+        obj['smarterRetry'] = PaymentsProductsTax.constructFromObject(data['smarterRetry']);
+      }
     }
     return obj;
   }
@@ -104,6 +108,10 @@
    * @member {module:model/PaymentsProductsTax} webhooks
    */
   exports.prototype['webhooks'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} smarterRetry
+   */
+  exports.prototype['smarterRetry'] = undefined;
 
 
 

@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyName** | **String** | Unique identifier for the key | 
-**publicKey** | **String** | Base64-encoded public key. Supports PEM (PKCS#8, PKCS#1), JWK, DER, and OpenSSH formats. Max 10000 characters. | 
-**algorithm** | **String** | Signing algorithm. Must match the key type (e.g., an RSA key requires RSA-SHA256 or RSA-SHA512).  Possible values: - RSA-SHA256 - RSA-SHA512 - ECDSA-SHA256 - ECDSA-SHA512 - EdDSA | 
-**expirationDate** | **Date** | Key expiration date in UTC (defaults to 14 days from now if not provided) | [optional] 
+**keyName** | **String** | Unique name for this key within the agent. Must be unique per agent. | 
+**publicKey** | **String** | Base64-encoded public key. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK. | 
+**algorithm** | **String** | HTTP Signature signing algorithm (RFC 9421 §3.3 registry). Must match the key type and curve:  - ***rsa-pss-sha256*** — RSA-PSS with SHA-256  - ***rsa-pss-sha512*** — RSA-PSS with SHA-512  - ***ecdsa-p256-sha256*** — ECDSA on P-256 curve with SHA-256  - ***ecdsa-p384-sha384*** — ECDSA on P-384 curve with SHA-384  - ***ed25519*** — EdDSA on Curve25519   Possible values: - rsa-pss-sha256 - rsa-pss-sha512 - ecdsa-p256-sha256 - ecdsa-p384-sha384 - ed25519 | 
+**expirationDate** | **Date** | Key expiration date-time in UTC. Defaults to 14 days from registration if omitted. | [optional] 
 
 

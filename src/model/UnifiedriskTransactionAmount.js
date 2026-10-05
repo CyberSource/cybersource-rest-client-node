@@ -67,7 +67,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'Number');
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
@@ -76,13 +76,13 @@
         obj['baseCurrency'] = ApiClient.convertToType(data['baseCurrency'], 'String');
       }
       if (data.hasOwnProperty('baseValue')) {
-        obj['baseValue'] = ApiClient.convertToType(data['baseValue'], 'Number');
+        obj['baseValue'] = ApiClient.convertToType(data['baseValue'], 'String');
       }
       if (data.hasOwnProperty('merchantCurrency')) {
         obj['merchantCurrency'] = ApiClient.convertToType(data['merchantCurrency'], 'String');
       }
       if (data.hasOwnProperty('merchantValue')) {
-        obj['merchantValue'] = ApiClient.convertToType(data['merchantValue'], 'Number');
+        obj['merchantValue'] = ApiClient.convertToType(data['merchantValue'], 'String');
       }
     }
     return obj;
@@ -90,7 +90,7 @@
 
   /**
    * Transaction amount in the specified currency
-   * @member {Number} value
+   * @member {String} value
    */
   exports.prototype['value'] = undefined;
   /**
@@ -105,7 +105,7 @@
   exports.prototype['baseCurrency'] = undefined;
   /**
    * Amount in base currency
-   * @member {Number} baseValue
+   * @member {String} baseValue
    */
   exports.prototype['baseValue'] = undefined;
   /**
@@ -115,7 +115,7 @@
   exports.prototype['merchantCurrency'] = undefined;
   /**
    * Transaction amount expressed in the merchant's local currency, used for cross-currency comparison and risk threshold evaluation against merchant's baseline
-   * @member {Number} merchantValue
+   * @member {String} merchantValue
    */
   exports.prototype['merchantValue'] = undefined;
 

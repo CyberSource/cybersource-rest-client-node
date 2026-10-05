@@ -43,22 +43,33 @@
    * Constructs a new <code>InlineResponse20017</code>.
    * @alias module:model/InlineResponse20017
    * @class
+   * @param id {String} The checkout session identifier.
+   * @param status {String} Will always be `completed` on a successful response.  Possible values: - completed
+   * @param currency {String} ISO 4217 lowercase currency code.
+   * @param buyer {module:model/AcpCompleteCheckoutResponseBuyer} 
+   * @param lineItems {Array.<module:model/InlineResponse20112LineItems>} Final line items with confirmed pricing.
+   * @param fulfillmentOptions {Array.<module:model/InlineResponse20112FulfillmentOptions>} 
+   * @param fulfillmentOptionId {String} ID of the selected fulfillment option.
+   * @param totals {Array.<module:model/InlineResponse20112Totals>} Final order totals as typed total lines. All amounts in minor units (cents).
+   * @param order {module:model/InlineResponse20017Order} 
+   * @param messages {Array.<module:model/InlineResponse20112Messages>} Informational or error messages from the merchant backend.
+   * @param links {Array.<module:model/InlineResponse20112Links>} Related resource links from the merchant (e.g. terms of use, privacy policy).
    */
-  var exports = function() {
+  var exports = function(id, status, currency, buyer, lineItems, fulfillmentOptions, fulfillmentOptionId, totals, order, messages, links) {
     var _this = this;
 
+    _this['id'] = id;
+    _this['status'] = status;
+    _this['currency'] = currency;
+    _this['buyer'] = buyer;
+    _this['line_items'] = lineItems;
 
-
-
-
-
-
-
-
-
-
-
-
+    _this['fulfillment_options'] = fulfillmentOptions;
+    _this['fulfillment_option_id'] = fulfillmentOptionId;
+    _this['totals'] = totals;
+    _this['order'] = order;
+    _this['messages'] = messages;
+    _this['links'] = links;
   };
 
   /**

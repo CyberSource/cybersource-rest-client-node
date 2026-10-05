@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsidreversalsClientReferenceInformation', 'model/Ptsv2paymentsidvoidsAgreementInformation', 'model/Ptsv2paymentsidvoidsMerchantInformation', 'model/Ptsv2paymentsidvoidsOrderInformation', 'model/Ptsv2paymentsidvoidsPaymentInformation', 'model/Ptsv2paymentsidvoidsProcessingInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPointOfSaleInformation', 'model/Ptsv2paymentsidreversalsClientReferenceInformation', 'model/Ptsv2paymentsidvoidsAgreementInformation', 'model/Ptsv2paymentsidvoidsMerchantInformation', 'model/Ptsv2paymentsidvoidsOrderInformation', 'model/Ptsv2paymentsidvoidsPaymentInformation', 'model/Ptsv2paymentsidvoidsProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsClientReferenceInformation'), require('./Ptsv2paymentsidvoidsAgreementInformation'), require('./Ptsv2paymentsidvoidsMerchantInformation'), require('./Ptsv2paymentsidvoidsOrderInformation'), require('./Ptsv2paymentsidvoidsPaymentInformation'), require('./Ptsv2paymentsidvoidsProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPointOfSaleInformation'), require('./Ptsv2paymentsidreversalsClientReferenceInformation'), require('./Ptsv2paymentsidvoidsAgreementInformation'), require('./Ptsv2paymentsidvoidsMerchantInformation'), require('./Ptsv2paymentsidvoidsOrderInformation'), require('./Ptsv2paymentsidvoidsPaymentInformation'), require('./Ptsv2paymentsidvoidsProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.VoidCreditRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation, root.CyberSource.Ptsv2paymentsidvoidsAgreementInformation, root.CyberSource.Ptsv2paymentsidvoidsMerchantInformation, root.CyberSource.Ptsv2paymentsidvoidsOrderInformation, root.CyberSource.Ptsv2paymentsidvoidsPaymentInformation, root.CyberSource.Ptsv2paymentsidvoidsProcessingInformation);
+    root.CyberSource.VoidCreditRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsidreversalsClientReferenceInformation, root.CyberSource.Ptsv2paymentsidvoidsAgreementInformation, root.CyberSource.Ptsv2paymentsidvoidsMerchantInformation, root.CyberSource.Ptsv2paymentsidvoidsOrderInformation, root.CyberSource.Ptsv2paymentsidvoidsPaymentInformation, root.CyberSource.Ptsv2paymentsidvoidsProcessingInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsidreversalsClientReferenceInformation, Ptsv2paymentsidvoidsAgreementInformation, Ptsv2paymentsidvoidsMerchantInformation, Ptsv2paymentsidvoidsOrderInformation, Ptsv2paymentsidvoidsPaymentInformation, Ptsv2paymentsidvoidsProcessingInformation) {
+}(this, function(ApiClient, Ptsv2paymentsPointOfSaleInformation, Ptsv2paymentsidreversalsClientReferenceInformation, Ptsv2paymentsidvoidsAgreementInformation, Ptsv2paymentsidvoidsMerchantInformation, Ptsv2paymentsidvoidsOrderInformation, Ptsv2paymentsidvoidsPaymentInformation, Ptsv2paymentsidvoidsProcessingInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('processingInformation')) {
         obj['processingInformation'] = Ptsv2paymentsidvoidsProcessingInformation.constructFromObject(data['processingInformation']);
       }
+      if (data.hasOwnProperty('pointOfSaleInformation')) {
+        obj['pointOfSaleInformation'] = Ptsv2paymentsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+      }
     }
     return obj;
   }
@@ -112,6 +116,10 @@
    * @member {module:model/Ptsv2paymentsidvoidsProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPointOfSaleInformation} pointOfSaleInformation
+   */
+  exports.prototype['pointOfSaleInformation'] = undefined;
 
 
 

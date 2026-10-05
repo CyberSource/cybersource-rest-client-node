@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property createTimeUtc (base name: "createTimeUtc")', function() {
+      // uncomment below and update the code to test the property createTimeUtc
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new CyberSource.PtsV2PaymentsPost201Response();

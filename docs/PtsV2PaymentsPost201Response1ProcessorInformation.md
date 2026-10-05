@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **responseDetails** | **String** | This field might contain information about a decline.  | [optional] 
 **responseCode** | **String** | This field is set to the value of response code returned by the processor.  | [optional] 
 **sellerProtection** | [**ProcessorInformationSellerProtection**](ProcessorInformationSellerProtection.md) |  | [optional] 
+**paymentUrl** | **String** | Direct the customer to this URL to complete the payment. | [optional] 
 **avs** | [**PtsV2PaymentsPost201Response1ProcessorInformationAvs**](PtsV2PaymentsPost201Response1ProcessorInformationAvs.md) |  | [optional] 
 
 

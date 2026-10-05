@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **responseDetails** | **String** | This field might contain information about a decline.  | [optional] 
 **providerResponse** | **String** | Processor response to the API request.  | [optional] 
 **network** | [**Ptsv2paymentsProcessorInformationReversalNetwork**](Ptsv2paymentsProcessorInformationReversalNetwork.md) |  | [optional] 
+**transactionLinkIdentifier** | **String** | Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0).  | [optional] 
 
 

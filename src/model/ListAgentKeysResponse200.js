@@ -45,8 +45,8 @@
    * @alias module:model/ListAgentKeysResponse200
    * @class
    * @param agentId {String} Agent identifier (64-char SHA-256 hash)
-   * @param agentName {String} Agent name
-   * @param keys {Array.<module:model/AgentRegistrationResponse201Keys>} List of keys (without agentId/agentName/agentType since they are at parent level)
+   * @param agentName {String} Display name of the agent
+   * @param keys {Array.<module:model/AgentRegistrationResponse201Keys>} Paginated list of public keys belonging to this agent (agentId/agentName/agentType omitted — available at the parent level)
    * @param pagination {module:model/ListAgentKeysResponse200Pagination} 
    */
   var exports = function(agentId, agentName, keys, pagination) {
@@ -91,12 +91,12 @@
    */
   exports.prototype['agentId'] = undefined;
   /**
-   * Agent name
+   * Display name of the agent
    * @member {String} agentName
    */
   exports.prototype['agentName'] = undefined;
   /**
-   * List of keys (without agentId/agentName/agentType since they are at parent level)
+   * Paginated list of public keys belonging to this agent (agentId/agentName/agentType omitted — available at the parent level)
    * @member {Array.<module:model/AgentRegistrationResponse201Keys>} keys
    */
   exports.prototype['keys'] = undefined;

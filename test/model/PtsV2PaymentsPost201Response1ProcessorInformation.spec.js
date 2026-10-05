@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentUrl (base name: "paymentUrl")', function() {
+      // uncomment below and update the code to test the property paymentUrl
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property avs (base name: "avs")', function() {
       // uncomment below and update the code to test the property avs
       //var instane = new CyberSource.PtsV2PaymentsPost201Response1ProcessorInformation();

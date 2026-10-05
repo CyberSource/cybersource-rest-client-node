@@ -56,6 +56,30 @@
       //expect(instance).to.be.a(CyberSource.PtsV2PaymentsPost201Response1OrderInformation);
     });
 
+    it('should have the property referenceId (base name: "referenceId")', function() {
+      // uncomment below and update the code to test the property referenceId
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1OrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1OrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property customId (base name: "customId")', function() {
+      // uncomment below and update the code to test the property customId
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1OrderInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property merchantDescriptor (base name: "merchantDescriptor")', function() {
+      // uncomment below and update the code to test the property merchantDescriptor
+      //var instane = new CyberSource.PtsV2PaymentsPost201Response1OrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property billTo (base name: "billTo")', function() {
       // uncomment below and update the code to test the property billTo
       //var instane = new CyberSource.PtsV2PaymentsPost201Response1OrderInformation();

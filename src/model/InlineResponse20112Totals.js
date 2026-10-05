@@ -44,13 +44,16 @@
    * A typed total line in an ACP session response. Amount in minor units (cents).
    * @alias module:model/InlineResponse20112Totals
    * @class
+   * @param type {String} Total type: - `items_base_amount` — sum of all line item base amounts before adjustments - `subtotal` — total after discounts - `tax` — total tax - `fulfillment` — shipping or delivery cost - `total` — final amount charged   Possible values: - items_base_amount - subtotal - tax - fulfillment - total
+   * @param displayText {String} Human-readable label for display in checkout UI.
+   * @param amount {Number} Amount in minor units (cents). Example: 39998 = $399.98 USD.
    */
-  var exports = function() {
+  var exports = function(type, displayText, amount) {
     var _this = this;
 
-
-
-
+    _this['type'] = type;
+    _this['display_text'] = displayText;
+    _this['amount'] = amount;
   };
 
   /**

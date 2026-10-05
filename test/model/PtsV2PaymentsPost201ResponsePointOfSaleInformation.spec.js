@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property freeText (base name: "freeText")', function() {
+      // uncomment below and update the code to test the property freeText
+      //var instane = new CyberSource.PtsV2PaymentsPost201ResponsePointOfSaleInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

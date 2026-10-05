@@ -43,21 +43,29 @@
    * Constructs a new <code>InlineResponse20018</code>.
    * @alias module:model/InlineResponse20018
    * @class
+   * @param id {String} The checkout session identifier.
+   * @param status {String} Will always be `canceled` on a successful response.  Possible values: - canceled
+   * @param currency {String} ISO 4217 lowercase currency code.
+   * @param lineItems {Array.<module:model/InlineResponse20112LineItems>} Line items with merchant-confirmed pricing.
+   * @param fulfillmentOptions {Array.<module:model/InlineResponse20112FulfillmentOptions>} Available fulfillment methods with pricing.
+   * @param totals {Array.<module:model/InlineResponse20112Totals>} Order cost breakdown as typed total lines. All amounts in minor units (cents).
+   * @param messages {Array.<module:model/InlineResponse20112Messages>} Informational or error messages from the merchant backend.
+   * @param links {Array.<module:model/InlineResponse20112Links>} Related resource links from the merchant (e.g. terms of use, privacy policy).
    */
-  var exports = function() {
+  var exports = function(id, status, currency, lineItems, fulfillmentOptions, totals, messages, links) {
     var _this = this;
 
+    _this['id'] = id;
+    _this['status'] = status;
+    _this['currency'] = currency;
 
+    _this['line_items'] = lineItems;
 
+    _this['fulfillment_options'] = fulfillmentOptions;
 
-
-
-
-
-
-
-
-
+    _this['totals'] = totals;
+    _this['messages'] = messages;
+    _this['links'] = links;
   };
 
   /**

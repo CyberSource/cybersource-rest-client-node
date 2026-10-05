@@ -56,6 +56,60 @@
       //expect(instance).to.be.a(CyberSource.Ptsv2intentsOrderInformationBillTo);
     });
 
+    it('should have the property firstName (base name: "firstName")', function() {
+      // uncomment below and update the code to test the property firstName
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastName (base name: "lastName")', function() {
+      // uncomment below and update the code to test the property lastName
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property phoneNumber (base name: "phoneNumber")', function() {
+      // uncomment below and update the code to test the property phoneNumber
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property address1 (base name: "address1")', function() {
+      // uncomment below and update the code to test the property address1
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property address2 (base name: "address2")', function() {
+      // uncomment below and update the code to test the property address2
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property locality (base name: "locality")', function() {
+      // uncomment below and update the code to test the property locality
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property administrativeArea (base name: "administrativeArea")', function() {
+      // uncomment below and update the code to test the property administrativeArea
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postalCode (base name: "postalCode")', function() {
+      // uncomment below and update the code to test the property postalCode
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();
+      //expect(instance).to.be();
+    });
+
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
       //var instane = new CyberSource.Ptsv2intentsOrderInformationBillTo();

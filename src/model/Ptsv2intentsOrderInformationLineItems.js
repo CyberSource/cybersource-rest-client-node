@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -91,6 +92,9 @@
       }
       if (data.hasOwnProperty('taxAmount')) {
         obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'String');
+      }
+      if (data.hasOwnProperty('shippingPreference')) {
+        obj['shippingPreference'] = ApiClient.convertToType(data['shippingPreference'], 'String');
       }
     }
     return obj;
@@ -136,6 +140,11 @@
    * @member {String} taxAmount
    */
   exports.prototype['taxAmount'] = undefined;
+  /**
+   * Controls shipping behavior during checkout. Use `NO_SHIPPING` for digital goods, `SET_PROVIDED_ADDRESS` when `orderInformation.shipTo` is provided, and `GET_FROM_FILE` to use the buyer's saved address.   Possible values: - NO_SHIPPING - SET_PROVIDED_ADDRESS - GET_FROM_FILE
+   * @member {String} shippingPreference
+   */
+  exports.prototype['shippingPreference'] = undefined;
 
 
 

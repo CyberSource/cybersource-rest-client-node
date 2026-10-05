@@ -69,6 +69,7 @@
 
 
 
+
   };
 
   /**
@@ -141,6 +142,9 @@
       }
       if (data.hasOwnProperty('batchUpload')) {
         obj['batchUpload'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['batchUpload']);
+      }
+      if (data.hasOwnProperty('paymentEvents')) {
+        obj['paymentEvents'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['paymentEvents']);
       }
       if (data.hasOwnProperty('transactGuard')) {
         obj['transactGuard'] = PaymentsConfigurationSetupDigitalPayments.constructFromObject(data['transactGuard']);
@@ -232,6 +236,10 @@
    * @member {module:model/PaymentsConfigurationSetupDigitalPayments} batchUpload
    */
   exports.prototype['batchUpload'] = undefined;
+  /**
+   * @member {module:model/PaymentsConfigurationSetupDigitalPayments} paymentEvents
+   */
+  exports.prototype['paymentEvents'] = undefined;
   /**
    * @member {module:model/PaymentsConfigurationSetupDigitalPayments} transactGuard
    */

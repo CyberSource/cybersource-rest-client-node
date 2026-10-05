@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2intentsMerchantInformationMerchantDescriptor'], factory);
+    define(['ApiClient', 'model/Ptsv2intentsidMerchantInformationMerchantDescriptor'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsMerchantInformationMerchantDescriptor'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsidMerchantInformationMerchantDescriptor'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2intentsidMerchantInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsMerchantInformationMerchantDescriptor);
+    root.CyberSource.Ptsv2intentsidMerchantInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsidMerchantInformationMerchantDescriptor);
   }
-}(this, function(ApiClient, Ptsv2intentsMerchantInformationMerchantDescriptor) {
+}(this, function(ApiClient, Ptsv2intentsidMerchantInformationMerchantDescriptor) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('merchantDescriptor')) {
-        obj['merchantDescriptor'] = Ptsv2intentsMerchantInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
+        obj['merchantDescriptor'] = Ptsv2intentsidMerchantInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Ptsv2intentsMerchantInformationMerchantDescriptor} merchantDescriptor
+   * @member {module:model/Ptsv2intentsidMerchantInformationMerchantDescriptor} merchantDescriptor
    */
   exports.prototype['merchantDescriptor'] = undefined;
 

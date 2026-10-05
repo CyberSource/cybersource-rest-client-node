@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property vpri (base name: "vpri")', function() {
+      // uncomment below and update the code to test the property vpri
+      //var instane = new CyberSource.InlineResponse2016SetupsRisk();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

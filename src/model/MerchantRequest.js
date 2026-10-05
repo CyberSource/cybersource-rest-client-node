@@ -45,8 +45,8 @@
    * @alias module:model/MerchantRequest
    * @class
    * @param merchantName {String} Doing business as (DBA) name
-   * @param merchantUrl {String} Base merchant URL (must use HTTPS)
-   * @param indicator {String} Transaction processing type  Possible values: - TAP - ACG - BOTH
+   * @param merchantUrl {String} Base URL of the merchant's domain. Must use HTTPS and be unique across all registrations.
+   * @param indicator {String} Transaction processing indicator:  - ***TAP*** — Trusted Agent Protocol  - ***ACG*** — Agentic Checkout Gateway  - ***BOTH*** — supports both TAP and ACG   Possible values: - TAP - ACG - BOTH
    */
   var exports = function(merchantName, merchantUrl, indicator) {
     var _this = this;
@@ -118,27 +118,27 @@
    */
   exports.prototype['merchantName'] = undefined;
   /**
-   * Base merchant URL (must use HTTPS)
+   * Base URL of the merchant's domain. Must use HTTPS and be unique across all registrations.
    * @member {String} merchantUrl
    */
   exports.prototype['merchantUrl'] = undefined;
   /**
-   * Visa Merchant ID — unique identifier
+   * Visa Merchant ID (VMID). Must be unique — raises 409 if already in use.
    * @member {String} vmid
    */
   exports.prototype['vmid'] = undefined;
   /**
-   * Transaction processing type  Possible values: - TAP - ACG - BOTH
+   * Transaction processing indicator:  - ***TAP*** — Trusted Agent Protocol  - ***ACG*** — Agentic Checkout Gateway  - ***BOTH*** — supports both TAP and ACG   Possible values: - TAP - ACG - BOTH
    * @member {String} indicator
    */
   exports.prototype['indicator'] = undefined;
   /**
-   * Authentication cryptogram type (defaults to DAVV)  Possible values: - TAVV - DAVV
+   * Authentication cryptogram type used for payment credential generation. Defaults to ***DAVV*** if not provided.  Possible values: - TAVV - DAVV
    * @member {String} cryptogramType
    */
   exports.prototype['cryptogramType'] = undefined;
   /**
-   * Credential delivery format (defaults to UNENCRYPTED)  Possible values: - ENCRYPTED - UNENCRYPTED
+   * Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an `encryptionKey`. Defaults to ***UNENCRYPTED***.  Possible values: - ENCRYPTED - UNENCRYPTED
    * @member {String} paymentPayloadType
    */
   exports.prototype['paymentPayloadType'] = undefined;
@@ -147,12 +147,12 @@
    */
   exports.prototype['encryptionKey'] = undefined;
   /**
-   * List of acceptance network relationships
+   * List of payment network acceptance relationships (e.g., \"Visa\").
    * @member {Array.<String>} acceptanceRelationships
    */
   exports.prototype['acceptanceRelationships'] = undefined;
   /**
-   * List of protocol configurations (ucp, acp, x402) with HTTPS URLs
+   * List of protocol interaction configurations defining the merchant's endpoint for each supported protocol (ucp, acp, x402).
    * @member {Array.<module:model/Iccv1merchantsProtocolInteractions>} protocolInteractions
    */
   exports.prototype['protocolInteractions'] = undefined;

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2intentsClientReferenceInformation', 'model/Ptsv2intentsEventInformation', 'model/Ptsv2intentsMerchantInformation', 'model/Ptsv2intentsOrderInformation', 'model/Ptsv2intentsPaymentInformation', 'model/Ptsv2intentsProcessingInformation', 'model/Ptsv2intentsRecipientInformation', 'model/Ptsv2intentsSenderInformation', 'model/Ptsv2intentsTravelInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2intentsBuyerInformation', 'model/Ptsv2intentsClientReferenceInformation', 'model/Ptsv2intentsEventInformation', 'model/Ptsv2intentsMerchantInformation', 'model/Ptsv2intentsOrderInformation', 'model/Ptsv2intentsPaymentInformation', 'model/Ptsv2intentsProcessingInformation', 'model/Ptsv2intentsRecipientInformation', 'model/Ptsv2intentsSenderInformation', 'model/Ptsv2intentsTravelInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsClientReferenceInformation'), require('./Ptsv2intentsEventInformation'), require('./Ptsv2intentsMerchantInformation'), require('./Ptsv2intentsOrderInformation'), require('./Ptsv2intentsPaymentInformation'), require('./Ptsv2intentsProcessingInformation'), require('./Ptsv2intentsRecipientInformation'), require('./Ptsv2intentsSenderInformation'), require('./Ptsv2intentsTravelInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2intentsBuyerInformation'), require('./Ptsv2intentsClientReferenceInformation'), require('./Ptsv2intentsEventInformation'), require('./Ptsv2intentsMerchantInformation'), require('./Ptsv2intentsOrderInformation'), require('./Ptsv2intentsPaymentInformation'), require('./Ptsv2intentsProcessingInformation'), require('./Ptsv2intentsRecipientInformation'), require('./Ptsv2intentsSenderInformation'), require('./Ptsv2intentsTravelInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateOrderRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsClientReferenceInformation, root.CyberSource.Ptsv2intentsEventInformation, root.CyberSource.Ptsv2intentsMerchantInformation, root.CyberSource.Ptsv2intentsOrderInformation, root.CyberSource.Ptsv2intentsPaymentInformation, root.CyberSource.Ptsv2intentsProcessingInformation, root.CyberSource.Ptsv2intentsRecipientInformation, root.CyberSource.Ptsv2intentsSenderInformation, root.CyberSource.Ptsv2intentsTravelInformation);
+    root.CyberSource.CreateOrderRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2intentsBuyerInformation, root.CyberSource.Ptsv2intentsClientReferenceInformation, root.CyberSource.Ptsv2intentsEventInformation, root.CyberSource.Ptsv2intentsMerchantInformation, root.CyberSource.Ptsv2intentsOrderInformation, root.CyberSource.Ptsv2intentsPaymentInformation, root.CyberSource.Ptsv2intentsProcessingInformation, root.CyberSource.Ptsv2intentsRecipientInformation, root.CyberSource.Ptsv2intentsSenderInformation, root.CyberSource.Ptsv2intentsTravelInformation);
   }
-}(this, function(ApiClient, Ptsv2intentsClientReferenceInformation, Ptsv2intentsEventInformation, Ptsv2intentsMerchantInformation, Ptsv2intentsOrderInformation, Ptsv2intentsPaymentInformation, Ptsv2intentsProcessingInformation, Ptsv2intentsRecipientInformation, Ptsv2intentsSenderInformation, Ptsv2intentsTravelInformation) {
+}(this, function(ApiClient, Ptsv2intentsBuyerInformation, Ptsv2intentsClientReferenceInformation, Ptsv2intentsEventInformation, Ptsv2intentsMerchantInformation, Ptsv2intentsOrderInformation, Ptsv2intentsPaymentInformation, Ptsv2intentsProcessingInformation, Ptsv2intentsRecipientInformation, Ptsv2intentsSenderInformation, Ptsv2intentsTravelInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('orderInformation')) {
         obj['orderInformation'] = Ptsv2intentsOrderInformation.constructFromObject(data['orderInformation']);
       }
+      if (data.hasOwnProperty('buyerInformation')) {
+        obj['buyerInformation'] = Ptsv2intentsBuyerInformation.constructFromObject(data['buyerInformation']);
+      }
       if (data.hasOwnProperty('senderInformation')) {
         obj['senderInformation'] = Ptsv2intentsSenderInformation.constructFromObject(data['senderInformation']);
       }
@@ -120,6 +124,10 @@
    * @member {module:model/Ptsv2intentsOrderInformation} orderInformation
    */
   exports.prototype['orderInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2intentsBuyerInformation} buyerInformation
+   */
+  exports.prototype['buyerInformation'] = undefined;
   /**
    * @member {module:model/Ptsv2intentsSenderInformation} senderInformation
    */

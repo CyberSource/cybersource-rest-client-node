@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsidcapturesPointOfSaleInformationEmv'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsidrefundsPointOfSaleInformationEmv'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidcapturesPointOfSaleInformationEmv'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidrefundsPointOfSaleInformationEmv'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidcapturesPointOfSaleInformationEmv);
+    root.CyberSource.Ptsv2paymentsidrefundsPointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidrefundsPointOfSaleInformationEmv);
   }
-}(this, function(ApiClient, Ptsv2paymentsidcapturesPointOfSaleInformationEmv) {
+}(this, function(ApiClient, Ptsv2paymentsidrefundsPointOfSaleInformationEmv) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('emv')) {
-        obj['emv'] = Ptsv2paymentsidcapturesPointOfSaleInformationEmv.constructFromObject(data['emv']);
+        obj['emv'] = Ptsv2paymentsidrefundsPointOfSaleInformationEmv.constructFromObject(data['emv']);
       }
       if (data.hasOwnProperty('terminalCategory')) {
         obj['terminalCategory'] = ApiClient.convertToType(data['terminalCategory'], 'String');
@@ -73,7 +73,7 @@
   }
 
   /**
-   * @member {module:model/Ptsv2paymentsidcapturesPointOfSaleInformationEmv} emv
+   * @member {module:model/Ptsv2paymentsidrefundsPointOfSaleInformationEmv} emv
    */
   exports.prototype['emv'] = undefined;
   /**

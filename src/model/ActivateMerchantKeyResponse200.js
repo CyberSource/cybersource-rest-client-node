@@ -50,7 +50,7 @@
    * @param keyName {String} Unique name for the key
    * @param encryptionKey {String} Base64-encoded public key
    * @param algorithm {String} JWE key wrap algorithm  Possible values: - RSA-OAEP - RSA-OAEP-256 - RSA-OAEP-384 - RSA-OAEP-512
-   * @param encryptionType {String} JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC-HS512 - A128CBC-HS256 - A256CCM - A128CCM
+   * @param encryptionType {String} JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC_HS512 - A128CBC_HS256 - A256CCM - A128CCM
    * @param expirationDate {Date} Key expiration date in UTC
    * @param status {String} Key lifecycle status  Possible values: - active - deactivated - expired
    * @param createdAt {Date} Creation timestamp
@@ -151,7 +151,7 @@
    */
   exports.prototype['algorithm'] = undefined;
   /**
-   * JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC-HS512 - A128CBC-HS256 - A256CCM - A128CCM
+   * JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC_HS512 - A128CBC_HS256 - A256CCM - A128CCM
    * @member {String} encryptionType
    */
   exports.prototype['encryptionType'] = undefined;

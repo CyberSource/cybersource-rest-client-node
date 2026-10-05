@@ -44,20 +44,26 @@
    * An available fulfillment method returned in the session response.
    * @alias module:model/InlineResponse20112FulfillmentOptions
    * @class
+   * @param id {String} Unique fulfillment option ID. Pass as `fulfillment_option_id` to select it.
+   * @param type {String} Fulfillment method type.  Possible values: - shipping - digital
+   * @param title {String} Display name for this fulfillment option.
+   * @param subtotal {Number} Shipping cost before tax, in minor units.
+   * @param tax {Number} Tax on shipping cost, in minor units.
+   * @param total {Number} Total shipping cost including tax, in minor units.
    */
-  var exports = function() {
+  var exports = function(id, type, title, subtotal, tax, total) {
     var _this = this;
 
+    _this['id'] = id;
+    _this['type'] = type;
+    _this['title'] = title;
 
 
 
 
-
-
-
-
-
-
+    _this['subtotal'] = subtotal;
+    _this['tax'] = tax;
+    _this['total'] = total;
   };
 
   /**

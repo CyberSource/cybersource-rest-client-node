@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Iccv1merchantsApiIntegrations', 'model/Iccv1merchantsProtocolInteractions', 'model/Iccv1merchantsWebIntegrations'], factory);
+    define(['ApiClient', 'model/Iccv1merchantsProtocolInteractions', 'model/MerchantRegistrationResponse201ApiIntegrations', 'model/MerchantRegistrationResponse201WebIntegrations'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Iccv1merchantsApiIntegrations'), require('./Iccv1merchantsProtocolInteractions'), require('./Iccv1merchantsWebIntegrations'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1merchantsProtocolInteractions'), require('./MerchantRegistrationResponse201ApiIntegrations'), require('./MerchantRegistrationResponse201WebIntegrations'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantUpdate = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1merchantsApiIntegrations, root.CyberSource.Iccv1merchantsProtocolInteractions, root.CyberSource.Iccv1merchantsWebIntegrations);
+    root.CyberSource.MerchantUpdate = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1merchantsProtocolInteractions, root.CyberSource.MerchantRegistrationResponse201ApiIntegrations, root.CyberSource.MerchantRegistrationResponse201WebIntegrations);
   }
-}(this, function(ApiClient, Iccv1merchantsApiIntegrations, Iccv1merchantsProtocolInteractions, Iccv1merchantsWebIntegrations) {
+}(this, function(ApiClient, Iccv1merchantsProtocolInteractions, MerchantRegistrationResponse201ApiIntegrations, MerchantRegistrationResponse201WebIntegrations) {
   'use strict';
 
 
@@ -88,10 +88,10 @@
         obj['protocolInteractions'] = ApiClient.convertToType(data['protocolInteractions'], [Iccv1merchantsProtocolInteractions]);
       }
       if (data.hasOwnProperty('webIntegrations')) {
-        obj['webIntegrations'] = Iccv1merchantsWebIntegrations.constructFromObject(data['webIntegrations']);
+        obj['webIntegrations'] = MerchantRegistrationResponse201WebIntegrations.constructFromObject(data['webIntegrations']);
       }
       if (data.hasOwnProperty('apiIntegrations')) {
-        obj['apiIntegrations'] = Iccv1merchantsApiIntegrations.constructFromObject(data['apiIntegrations']);
+        obj['apiIntegrations'] = MerchantRegistrationResponse201ApiIntegrations.constructFromObject(data['apiIntegrations']);
       }
     }
     return obj;
@@ -103,36 +103,36 @@
    */
   exports.prototype['merchantName'] = undefined;
   /**
-   * Base merchant URL (must use HTTPS)
+   * Base URL of the merchant's domain. Must use HTTPS and be unique — raises 409 if already registered.
    * @member {String} merchantUrl
    */
   exports.prototype['merchantUrl'] = undefined;
   /**
-   * Authentication cryptogram type  Possible values: - TAVV - DAVV
+   * Authentication cryptogram type used for payment credential generation.  Possible values: - TAVV - DAVV
    * @member {String} cryptogramType
    */
   exports.prototype['cryptogramType'] = undefined;
   /**
-   * Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED
+   * Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an active encryption key. Returns 400 if no active key exists.  Possible values: - ENCRYPTED - UNENCRYPTED
    * @member {String} paymentPayloadType
    */
   exports.prototype['paymentPayloadType'] = undefined;
   /**
-   * List of acceptance network relationships
+   * List of payment network acceptance relationships (e.g., \"Visa\").
    * @member {Array.<String>} acceptanceRelationships
    */
   exports.prototype['acceptanceRelationships'] = undefined;
   /**
-   * List of protocol configurations
+   * List of protocol interaction configurations defining the merchant's endpoint for each supported protocol (ucp, acp, x402).
    * @member {Array.<module:model/Iccv1merchantsProtocolInteractions>} protocolInteractions
    */
   exports.prototype['protocolInteractions'] = undefined;
   /**
-   * @member {module:model/Iccv1merchantsWebIntegrations} webIntegrations
+   * @member {module:model/MerchantRegistrationResponse201WebIntegrations} webIntegrations
    */
   exports.prototype['webIntegrations'] = undefined;
   /**
-   * @member {module:model/Iccv1merchantsApiIntegrations} apiIntegrations
+   * @member {module:model/MerchantRegistrationResponse201ApiIntegrations} apiIntegrations
    */
   exports.prototype['apiIntegrations'] = undefined;
 

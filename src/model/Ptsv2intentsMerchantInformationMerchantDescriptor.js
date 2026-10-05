@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -65,6 +66,9 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
@@ -77,6 +81,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * Value of the merchant descriptor shown to the buyer for this order. 
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
   /**
    * Email address of the merchant.
    * @member {String} email

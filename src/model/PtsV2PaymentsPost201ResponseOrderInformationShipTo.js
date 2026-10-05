@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('country')) {
         obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
@@ -140,6 +144,11 @@
    * @member {String} country
    */
   exports.prototype['country'] = undefined;
+  /**
+   * Email address of the shipping recipient. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
   /**
    * Phone number of the recipient. 
    * @member {String} phoneNumber

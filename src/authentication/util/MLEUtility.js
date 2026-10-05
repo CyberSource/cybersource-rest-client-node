@@ -93,7 +93,15 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
     return JWEUtility.decryptJWEUsingPrivateKey(privateKey, responseBody.encryptedResponse)
       .then(decryptedData => {
         logger.debug(Constants.LOG_RESPONSE_AFTER_MLE + decryptedData);
-        return JSON.parse(decryptedData);
+
+        // Attempting to parse the decrypted data as JSON.
+        // If it fails, the `decryptedData` must be a simple `string` (JWS/JWE)
+        // and must be returned as is.
+        try {
+            return JSON.parse(decryptedData);
+        } catch (parseErorr) {
+            return decryptedData;
+        }
       })
       .catch(error => {
         let errorMsg;

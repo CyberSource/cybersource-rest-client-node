@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsidreversalsPointOfSaleInformationEmv'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsidreversalsPointOfSaleInformationEmv'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsidreversalsPointOfSaleInformationEmv);
+    root.CyberSource.TssV2TransactionsGet200ResponsePointOfSaleInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv);
   }
-}(this, function(ApiClient, Ptsv2paymentsidreversalsPointOfSaleInformationEmv) {
+}(this, function(ApiClient, PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv) {
   'use strict';
 
 
@@ -78,7 +78,7 @@
         obj['cardholderVerificationMethodUsed'] = ApiClient.convertToType(data['cardholderVerificationMethodUsed'], 'Number');
       }
       if (data.hasOwnProperty('emv')) {
-        obj['emv'] = Ptsv2paymentsidreversalsPointOfSaleInformationEmv.constructFromObject(data['emv']);
+        obj['emv'] = PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv.constructFromObject(data['emv']);
       }
     }
     return obj;
@@ -105,7 +105,7 @@
    */
   exports.prototype['cardholderVerificationMethodUsed'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsidreversalsPointOfSaleInformationEmv} emv
+   * @member {module:model/PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv} emv
    */
   exports.prototype['emv'] = undefined;
 

@@ -71,7 +71,7 @@
         obj['baseCurrency'] = ApiClient.convertToType(data['baseCurrency'], 'String');
       }
       if (data.hasOwnProperty('baseValue')) {
-        obj['baseValue'] = ApiClient.convertToType(data['baseValue'], 'Number');
+        obj['baseValue'] = ApiClient.convertToType(data['baseValue'], 'String');
       }
       if (data.hasOwnProperty('currency')) {
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
@@ -80,10 +80,10 @@
         obj['merchantCurrency'] = ApiClient.convertToType(data['merchantCurrency'], 'String');
       }
       if (data.hasOwnProperty('merchantValue')) {
-        obj['merchantValue'] = ApiClient.convertToType(data['merchantValue'], 'Number');
+        obj['merchantValue'] = ApiClient.convertToType(data['merchantValue'], 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'Number');
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
     }
     return obj;
@@ -96,7 +96,7 @@
   exports.prototype['baseCurrency'] = undefined;
   /**
    * The monetary value of the security deposit or holdback amount expressed in the base currency, typically in minor units (e.g., cents)
-   * @member {Number} baseValue
+   * @member {String} baseValue
    */
   exports.prototype['baseValue'] = undefined;
   /**
@@ -111,12 +111,12 @@
   exports.prototype['merchantCurrency'] = undefined;
   /**
    * The security deposit or holdback amount expressed in the merchant's local currency, in minor units
-   * @member {Number} merchantValue
+   * @member {String} merchantValue
    */
   exports.prototype['merchantValue'] = undefined;
   /**
    * The security deposit or holdback amount in the transaction currency, in minor units (e.g., cents)
-   * @member {Number} value
+   * @member {String} value
    */
   exports.prototype['value'] = undefined;
 

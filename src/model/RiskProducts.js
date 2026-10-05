@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsPayerAuthentication', 'model/RiskProductsDecisionManager', 'model/RiskProductsFraudManagementEssentials', 'model/RiskProductsPortfolioRiskControls'], factory);
+    define(['ApiClient', 'model/PaymentsProductsPayerAuthentication', 'model/PaymentsProductsTax', 'model/RiskProductsDecisionManager', 'model/RiskProductsFraudManagementEssentials', 'model/RiskProductsPortfolioRiskControls'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsPayerAuthentication'), require('./RiskProductsDecisionManager'), require('./RiskProductsFraudManagementEssentials'), require('./RiskProductsPortfolioRiskControls'));
+    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsPayerAuthentication'), require('./PaymentsProductsTax'), require('./RiskProductsDecisionManager'), require('./RiskProductsFraudManagementEssentials'), require('./RiskProductsPortfolioRiskControls'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.RiskProducts = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsPayerAuthentication, root.CyberSource.RiskProductsDecisionManager, root.CyberSource.RiskProductsFraudManagementEssentials, root.CyberSource.RiskProductsPortfolioRiskControls);
+    root.CyberSource.RiskProducts = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsPayerAuthentication, root.CyberSource.PaymentsProductsTax, root.CyberSource.RiskProductsDecisionManager, root.CyberSource.RiskProductsFraudManagementEssentials, root.CyberSource.RiskProductsPortfolioRiskControls);
   }
-}(this, function(ApiClient, PaymentsProductsPayerAuthentication, RiskProductsDecisionManager, RiskProductsFraudManagementEssentials, RiskProductsPortfolioRiskControls) {
+}(this, function(ApiClient, PaymentsProductsPayerAuthentication, PaymentsProductsTax, RiskProductsDecisionManager, RiskProductsFraudManagementEssentials, RiskProductsPortfolioRiskControls) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('enhancedAuthentication')) {
         obj['enhancedAuthentication'] = PaymentsProductsPayerAuthentication.constructFromObject(data['enhancedAuthentication']);
       }
+      if (data.hasOwnProperty('vpri')) {
+        obj['vpri'] = PaymentsProductsTax.constructFromObject(data['vpri']);
+      }
     }
     return obj;
   }
@@ -96,6 +100,10 @@
    * @member {module:model/PaymentsProductsPayerAuthentication} enhancedAuthentication
    */
   exports.prototype['enhancedAuthentication'] = undefined;
+  /**
+   * @member {module:model/PaymentsProductsTax} vpri
+   */
+  exports.prototype['vpri'] = undefined;
 
 
 

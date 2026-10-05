@@ -837,9 +837,13 @@ const agentPool = new Map();
 
     if (returnType === 'Blob') {
       axiosConfig.responseType = 'blob';
-    } else if (returnType === 'String') {
-      axiosConfig.responseType = 'string';
     }
+    // This has been commented out to default to `axios` handling API responses
+    // that are `string` when MLE is not enabled and
+    // that become `object` when MLE is enabled
+    // else if (returnType === 'String') {
+    //   axiosConfig.responseType = 'string';
+    // }
 
     // Attach previously saved cookies, if enabled
     if (this.enableCookies){

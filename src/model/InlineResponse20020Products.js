@@ -41,70 +41,12 @@
 
   /**
    * Constructs a new <code>InlineResponse20020Products</code>.
-   * Full product record as stored in the ACG catalog. Contains all ingest fields plus server-assigned metadata timestamps. 
+   * Product record as stored in the ACG catalog. Only the fields listed here are persisted — the full ingest payload (`ProductInput`) contains additional fields that are validated and forwarded to protocol backends but are not retained in the catalog store. 
    * @alias module:model/InlineResponse20020Products
    * @class
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -146,11 +88,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
       if (data.hasOwnProperty('item_id')) {
         obj['item_id'] = ApiClient.convertToType(data['item_id'], 'String');
+      }
+      if (data.hasOwnProperty('is_eligible_search')) {
+        obj['is_eligible_search'] = ApiClient.convertToType(data['is_eligible_search'], 'Boolean');
+      }
+      if (data.hasOwnProperty('is_eligible_checkout')) {
+        obj['is_eligible_checkout'] = ApiClient.convertToType(data['is_eligible_checkout'], 'Boolean');
       }
       if (data.hasOwnProperty('title')) {
         obj['title'] = ApiClient.convertToType(data['title'], 'String');
@@ -164,29 +109,11 @@
       if (data.hasOwnProperty('image_url')) {
         obj['image_url'] = ApiClient.convertToType(data['image_url'], 'String');
       }
-      if (data.hasOwnProperty('additional_image_urls')) {
-        obj['additional_image_urls'] = ApiClient.convertToType(data['additional_image_urls'], 'String');
-      }
-      if (data.hasOwnProperty('video_url')) {
-        obj['video_url'] = ApiClient.convertToType(data['video_url'], 'String');
-      }
-      if (data.hasOwnProperty('model_3d_url')) {
-        obj['model_3d_url'] = ApiClient.convertToType(data['model_3d_url'], 'String');
-      }
       if (data.hasOwnProperty('product_category')) {
         obj['product_category'] = ApiClient.convertToType(data['product_category'], 'String');
       }
       if (data.hasOwnProperty('brand')) {
         obj['brand'] = ApiClient.convertToType(data['brand'], 'String');
-      }
-      if (data.hasOwnProperty('gtin')) {
-        obj['gtin'] = ApiClient.convertToType(data['gtin'], 'String');
-      }
-      if (data.hasOwnProperty('mpn')) {
-        obj['mpn'] = ApiClient.convertToType(data['mpn'], 'String');
-      }
-      if (data.hasOwnProperty('condition')) {
-        obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
       }
       if (data.hasOwnProperty('material')) {
         obj['material'] = ApiClient.convertToType(data['material'], 'String');
@@ -194,38 +121,26 @@
       if (data.hasOwnProperty('weight')) {
         obj['weight'] = ApiClient.convertToType(data['weight'], 'String');
       }
-      if (data.hasOwnProperty('dimensions')) {
-        obj['dimensions'] = ApiClient.convertToType(data['dimensions'], 'String');
+      if (data.hasOwnProperty('price')) {
+        obj['price'] = ApiClient.convertToType(data['price'], 'Number');
       }
-      if (data.hasOwnProperty('length')) {
-        obj['length'] = ApiClient.convertToType(data['length'], 'String');
+      if (data.hasOwnProperty('currency')) {
+        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
-      if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'String');
-      }
-      if (data.hasOwnProperty('height')) {
-        obj['height'] = ApiClient.convertToType(data['height'], 'String');
-      }
-      if (data.hasOwnProperty('dimensions_unit')) {
-        obj['dimensions_unit'] = ApiClient.convertToType(data['dimensions_unit'], 'String');
-      }
-      if (data.hasOwnProperty('item_weight_unit')) {
-        obj['item_weight_unit'] = ApiClient.convertToType(data['item_weight_unit'], 'String');
-      }
-      if (data.hasOwnProperty('age_group')) {
-        obj['age_group'] = ApiClient.convertToType(data['age_group'], 'String');
+      if (data.hasOwnProperty('availability')) {
+        obj['availability'] = ApiClient.convertToType(data['availability'], 'String');
       }
       if (data.hasOwnProperty('color')) {
         obj['color'] = ApiClient.convertToType(data['color'], 'String');
       }
-      if (data.hasOwnProperty('size')) {
-        obj['size'] = ApiClient.convertToType(data['size'], 'String');
-      }
-      if (data.hasOwnProperty('size_system')) {
-        obj['size_system'] = ApiClient.convertToType(data['size_system'], 'String');
-      }
       if (data.hasOwnProperty('gender')) {
         obj['gender'] = ApiClient.convertToType(data['gender'], 'String');
+      }
+      if (data.hasOwnProperty('age_group')) {
+        obj['age_group'] = ApiClient.convertToType(data['age_group'], 'String');
+      }
+      if (data.hasOwnProperty('shipping_price')) {
+        obj['shipping_price'] = ApiClient.convertToType(data['shipping_price'], 'String');
       }
       if (data.hasOwnProperty('group_id')) {
         obj['group_id'] = ApiClient.convertToType(data['group_id'], 'String');
@@ -233,152 +148,14 @@
       if (data.hasOwnProperty('listing_has_variations')) {
         obj['listing_has_variations'] = ApiClient.convertToType(data['listing_has_variations'], 'Boolean');
       }
-      if (data.hasOwnProperty('item_group_title')) {
-        obj['item_group_title'] = ApiClient.convertToType(data['item_group_title'], 'String');
-      }
-      if (data.hasOwnProperty('offer_id')) {
-        obj['offer_id'] = ApiClient.convertToType(data['offer_id'], 'String');
-      }
-      if (data.hasOwnProperty('variant_dict')) {
-        obj['variant_dict'] = ApiClient.convertToType(data['variant_dict'], {'String': 'String'});
-      }
-      if (data.hasOwnProperty('custom_variant1_category')) {
-        obj['custom_variant1_category'] = ApiClient.convertToType(data['custom_variant1_category'], 'String');
-      }
-      if (data.hasOwnProperty('custom_variant1_option')) {
-        obj['custom_variant1_option'] = ApiClient.convertToType(data['custom_variant1_option'], 'String');
-      }
-      if (data.hasOwnProperty('custom_variant2_category')) {
-        obj['custom_variant2_category'] = ApiClient.convertToType(data['custom_variant2_category'], 'String');
-      }
-      if (data.hasOwnProperty('custom_variant2_option')) {
-        obj['custom_variant2_option'] = ApiClient.convertToType(data['custom_variant2_option'], 'String');
-      }
-      if (data.hasOwnProperty('custom_variant3_category')) {
-        obj['custom_variant3_category'] = ApiClient.convertToType(data['custom_variant3_category'], 'String');
-      }
-      if (data.hasOwnProperty('custom_variant3_option')) {
-        obj['custom_variant3_option'] = ApiClient.convertToType(data['custom_variant3_option'], 'String');
-      }
-      if (data.hasOwnProperty('price')) {
-        obj['price'] = ApiClient.convertToType(data['price'], 'Number');
-      }
-      if (data.hasOwnProperty('currency')) {
-        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
-      }
-      if (data.hasOwnProperty('sale_price')) {
-        obj['sale_price'] = ApiClient.convertToType(data['sale_price'], 'Number');
-      }
-      if (data.hasOwnProperty('sale_price_start_date')) {
-        obj['sale_price_start_date'] = ApiClient.convertToType(data['sale_price_start_date'], 'Date');
-      }
-      if (data.hasOwnProperty('sale_price_end_date')) {
-        obj['sale_price_end_date'] = ApiClient.convertToType(data['sale_price_end_date'], 'Date');
-      }
-      if (data.hasOwnProperty('unit_pricing_measure')) {
-        obj['unit_pricing_measure'] = ApiClient.convertToType(data['unit_pricing_measure'], 'String');
-      }
-      if (data.hasOwnProperty('base_measure')) {
-        obj['base_measure'] = ApiClient.convertToType(data['base_measure'], 'String');
-      }
-      if (data.hasOwnProperty('pricing_trend')) {
-        obj['pricing_trend'] = ApiClient.convertToType(data['pricing_trend'], 'String');
-      }
-      if (data.hasOwnProperty('geo_price')) {
-        obj['geo_price'] = ApiClient.convertToType(data['geo_price'], 'String');
-      }
-      if (data.hasOwnProperty('geo_availability')) {
-        obj['geo_availability'] = ApiClient.convertToType(data['geo_availability'], 'String');
-      }
-      if (data.hasOwnProperty('availability')) {
-        obj['availability'] = ApiClient.convertToType(data['availability'], 'String');
-      }
-      if (data.hasOwnProperty('availability_date')) {
-        obj['availability_date'] = ApiClient.convertToType(data['availability_date'], 'Date');
-      }
-      if (data.hasOwnProperty('expiration_date')) {
-        obj['expiration_date'] = ApiClient.convertToType(data['expiration_date'], 'Date');
-      }
-      if (data.hasOwnProperty('seller_name')) {
-        obj['seller_name'] = ApiClient.convertToType(data['seller_name'], 'String');
+      if (data.hasOwnProperty('sellerName')) {
+        obj['sellerName'] = ApiClient.convertToType(data['sellerName'], 'String');
       }
       if (data.hasOwnProperty('seller_url')) {
         obj['seller_url'] = ApiClient.convertToType(data['seller_url'], 'String');
       }
-      if (data.hasOwnProperty('marketplace_seller')) {
-        obj['marketplace_seller'] = ApiClient.convertToType(data['marketplace_seller'], 'String');
-      }
-      if (data.hasOwnProperty('seller_privacy_policy')) {
-        obj['seller_privacy_policy'] = ApiClient.convertToType(data['seller_privacy_policy'], 'String');
-      }
-      if (data.hasOwnProperty('seller_tos')) {
-        obj['seller_tos'] = ApiClient.convertToType(data['seller_tos'], 'String');
-      }
-      if (data.hasOwnProperty('shipping_price')) {
-        obj['shipping_price'] = ApiClient.convertToType(data['shipping_price'], 'String');
-      }
-      if (data.hasOwnProperty('delivery_estimate')) {
-        obj['delivery_estimate'] = ApiClient.convertToType(data['delivery_estimate'], 'Date');
-      }
-      if (data.hasOwnProperty('pickup_method')) {
-        obj['pickup_method'] = ApiClient.convertToType(data['pickup_method'], 'String');
-      }
-      if (data.hasOwnProperty('pickup_sla')) {
-        obj['pickup_sla'] = ApiClient.convertToType(data['pickup_sla'], 'String');
-      }
-      if (data.hasOwnProperty('is_digital')) {
-        obj['is_digital'] = ApiClient.convertToType(data['is_digital'], 'Boolean');
-      }
       if (data.hasOwnProperty('return_policy')) {
         obj['return_policy'] = ApiClient.convertToType(data['return_policy'], 'String');
-      }
-      if (data.hasOwnProperty('accepts_returns')) {
-        obj['accepts_returns'] = ApiClient.convertToType(data['accepts_returns'], 'Boolean');
-      }
-      if (data.hasOwnProperty('return_deadline_in_days')) {
-        obj['return_deadline_in_days'] = ApiClient.convertToType(data['return_deadline_in_days'], 'Number');
-      }
-      if (data.hasOwnProperty('accepts_exchanges')) {
-        obj['accepts_exchanges'] = ApiClient.convertToType(data['accepts_exchanges'], 'Boolean');
-      }
-      if (data.hasOwnProperty('is_eligible_search')) {
-        obj['is_eligible_search'] = ApiClient.convertToType(data['is_eligible_search'], 'Boolean');
-      }
-      if (data.hasOwnProperty('is_eligible_checkout')) {
-        obj['is_eligible_checkout'] = ApiClient.convertToType(data['is_eligible_checkout'], 'Boolean');
-      }
-      if (data.hasOwnProperty('popularity_score')) {
-        obj['popularity_score'] = ApiClient.convertToType(data['popularity_score'], 'Number');
-      }
-      if (data.hasOwnProperty('return_rate')) {
-        obj['return_rate'] = ApiClient.convertToType(data['return_rate'], 'String');
-      }
-      if (data.hasOwnProperty('warning')) {
-        obj['warning'] = ApiClient.convertToType(data['warning'], 'String');
-      }
-      if (data.hasOwnProperty('warning_url')) {
-        obj['warning_url'] = ApiClient.convertToType(data['warning_url'], 'String');
-      }
-      if (data.hasOwnProperty('age_restriction')) {
-        obj['age_restriction'] = ApiClient.convertToType(data['age_restriction'], 'Number');
-      }
-      if (data.hasOwnProperty('review_count')) {
-        obj['review_count'] = ApiClient.convertToType(data['review_count'], 'Number');
-      }
-      if (data.hasOwnProperty('star_rating')) {
-        obj['star_rating'] = ApiClient.convertToType(data['star_rating'], 'String');
-      }
-      if (data.hasOwnProperty('store_review_count')) {
-        obj['store_review_count'] = ApiClient.convertToType(data['store_review_count'], 'Number');
-      }
-      if (data.hasOwnProperty('store_star_rating')) {
-        obj['store_star_rating'] = ApiClient.convertToType(data['store_star_rating'], 'String');
-      }
-      if (data.hasOwnProperty('related_product_id')) {
-        obj['related_product_id'] = ApiClient.convertToType(data['related_product_id'], 'String');
-      }
-      if (data.hasOwnProperty('relationship_type')) {
-        obj['relationship_type'] = ApiClient.convertToType(data['relationship_type'], 'String');
       }
       if (data.hasOwnProperty('target_countries')) {
         obj['target_countries'] = ApiClient.convertToType(data['target_countries'], ['String']);
@@ -386,35 +163,31 @@
       if (data.hasOwnProperty('store_country')) {
         obj['store_country'] = ApiClient.convertToType(data['store_country'], 'String');
       }
-      if (data.hasOwnProperty('q_and_a')) {
-        obj['q_and_a'] = ApiClient.convertToType(data['q_and_a'], [{'String': Object}]);
+      if (data.hasOwnProperty('createdAt')) {
+        obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'Date');
       }
-      if (data.hasOwnProperty('qandA')) {
-        obj['qandA'] = ApiClient.convertToType(data['qandA'], [{'String': Object}]);
-      }
-      if (data.hasOwnProperty('reviews')) {
-        obj['reviews'] = ApiClient.convertToType(data['reviews'], [{'String': Object}]);
-      }
-      if (data.hasOwnProperty('created_at')) {
-        obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-      }
-      if (data.hasOwnProperty('updated_at')) {
-        obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+      if (data.hasOwnProperty('updatedAt')) {
+        obj['updatedAt'] = ApiClient.convertToType(data['updatedAt'], 'Date');
       }
     }
     return obj;
   }
 
   /**
-   * The merchant SKU / `item_id` as stored in the ACG catalog. Equivalent to the `item_id` field submitted during feed ingestion. 
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
    * Unique product identifier / SKU.
    * @member {String} item_id
    */
   exports.prototype['item_id'] = undefined;
+  /**
+   * When `true`, product appears in AI agent discovery results.
+   * @member {Boolean} is_eligible_search
+   */
+  exports.prototype['is_eligible_search'] = undefined;
+  /**
+   * When `true`, product can be added to a checkout session.
+   * @member {Boolean} is_eligible_checkout
+   */
+  exports.prototype['is_eligible_checkout'] = undefined;
   /**
    * Product display name.
    * @member {String} title
@@ -436,21 +209,6 @@
    */
   exports.prototype['image_url'] = undefined;
   /**
-   * Additional product image URLs.
-   * @member {String} additional_image_urls
-   */
-  exports.prototype['additional_image_urls'] = undefined;
-  /**
-   * URL to a product video.
-   * @member {String} video_url
-   */
-  exports.prototype['video_url'] = undefined;
-  /**
-   * URL to a 3D model asset.
-   * @member {String} model_3d_url
-   */
-  exports.prototype['model_3d_url'] = undefined;
-  /**
    * Product category hierarchy (e.g. `Electronics > Audio > Headphones`).
    * @member {String} product_category
    */
@@ -460,21 +218,6 @@
    * @member {String} brand
    */
   exports.prototype['brand'] = undefined;
-  /**
-   * Global Trade Item Number.
-   * @member {String} gtin
-   */
-  exports.prototype['gtin'] = undefined;
-  /**
-   * Manufacturer Part Number.
-   * @member {String} mpn
-   */
-  exports.prototype['mpn'] = undefined;
-  /**
-   * Product condition (e.g. new, used, refurbished).
-   * @member {String} condition
-   */
-  exports.prototype['condition'] = undefined;
   /**
    * Primary material (relevant for apparel, furniture, etc.).
    * @member {String} material
@@ -486,60 +229,40 @@
    */
   exports.prototype['weight'] = undefined;
   /**
-   * Combined dimension string (e.g. \"10x5x3 cm\").
-   * @member {String} dimensions
+   * Product price as a decimal number.
+   * @member {Number} price
    */
-  exports.prototype['dimensions'] = undefined;
+  exports.prototype['price'] = undefined;
   /**
-   * Product length. Pair with `dimensions_unit` for unit context.
-   * @member {String} length
+   * ISO 4217 currency code.
+   * @member {String} currency
    */
-  exports.prototype['length'] = undefined;
+  exports.prototype['currency'] = undefined;
   /**
-   * Product width. Pair with `dimensions_unit` for unit context.
-   * @member {String} width
+   * Current stock status.  Possible values: - in_stock - out_of_stock - preorder - pre_order - backorder - unknown
+   * @member {String} availability
    */
-  exports.prototype['width'] = undefined;
+  exports.prototype['availability'] = undefined;
   /**
-   * Product height. Pair with `dimensions_unit` for unit context.
-   * @member {String} height
+   * Primary product color.
+   * @member {String} color
    */
-  exports.prototype['height'] = undefined;
+  exports.prototype['color'] = undefined;
   /**
-   * Unit for dimension values (e.g. \"cm\", \"in\", \"mm\").
-   * @member {String} dimensions_unit
+   * Target gender (e.g. \"male\", \"female\", \"unisex\").
+   * @member {String} gender
    */
-  exports.prototype['dimensions_unit'] = undefined;
-  /**
-   * Unit for weight value (e.g. \"kg\", \"lb\", \"oz\").
-   * @member {String} item_weight_unit
-   */
-  exports.prototype['item_weight_unit'] = undefined;
+  exports.prototype['gender'] = undefined;
   /**
    * Target age group (e.g. \"adult\", \"kids\", \"infant\").
    * @member {String} age_group
    */
   exports.prototype['age_group'] = undefined;
   /**
-   * Primary product color. Used for variant filtering.
-   * @member {String} color
+   * Shipping cost string as provided by the merchant.
+   * @member {String} shipping_price
    */
-  exports.prototype['color'] = undefined;
-  /**
-   * Product size (e.g. \"M\", \"42\", \"XL\"). Used for variant filtering.
-   * @member {String} size
-   */
-  exports.prototype['size'] = undefined;
-  /**
-   * Size standard used (e.g. \"US\", \"EU\", \"UK\").
-   * @member {String} size_system
-   */
-  exports.prototype['size_system'] = undefined;
-  /**
-   * Target gender (e.g. \"male\", \"female\", \"unisex\").
-   * @member {String} gender
-   */
-  exports.prototype['gender'] = undefined;
+  exports.prototype['shipping_price'] = undefined;
   /**
    * Product variant group identifier.
    * @member {String} group_id
@@ -551,209 +274,20 @@
    */
   exports.prototype['listing_has_variations'] = undefined;
   /**
-   * Display title for the variant group.
-   * @member {String} item_group_title
+   * Merchant or seller display name.
+   * @member {String} sellerName
    */
-  exports.prototype['item_group_title'] = undefined;
+  exports.prototype['sellerName'] = undefined;
   /**
-   * Merchant-assigned offer identifier.
-   * @member {String} offer_id
-   */
-  exports.prototype['offer_id'] = undefined;
-  /**
-   * @member {Object.<String, String>} variant_dict
-   */
-  exports.prototype['variant_dict'] = undefined;
-  /**
-   * @member {String} custom_variant1_category
-   */
-  exports.prototype['custom_variant1_category'] = undefined;
-  /**
-   * @member {String} custom_variant1_option
-   */
-  exports.prototype['custom_variant1_option'] = undefined;
-  /**
-   * @member {String} custom_variant2_category
-   */
-  exports.prototype['custom_variant2_category'] = undefined;
-  /**
-   * @member {String} custom_variant2_option
-   */
-  exports.prototype['custom_variant2_option'] = undefined;
-  /**
-   * @member {String} custom_variant3_category
-   */
-  exports.prototype['custom_variant3_category'] = undefined;
-  /**
-   * @member {String} custom_variant3_option
-   */
-  exports.prototype['custom_variant3_option'] = undefined;
-  /**
-   * Product price as a decimal number.
-   * @member {Number} price
-   */
-  exports.prototype['price'] = undefined;
-  /**
-   * ISO 4217 currency code.
-   * @member {String} currency
-   */
-  exports.prototype['currency'] = undefined;
-  /**
-   * @member {Number} sale_price
-   */
-  exports.prototype['sale_price'] = undefined;
-  /**
-   * @member {Date} sale_price_start_date
-   */
-  exports.prototype['sale_price_start_date'] = undefined;
-  /**
-   * @member {Date} sale_price_end_date
-   */
-  exports.prototype['sale_price_end_date'] = undefined;
-  /**
-   * @member {String} unit_pricing_measure
-   */
-  exports.prototype['unit_pricing_measure'] = undefined;
-  /**
-   * @member {String} base_measure
-   */
-  exports.prototype['base_measure'] = undefined;
-  /**
-   * @member {String} pricing_trend
-   */
-  exports.prototype['pricing_trend'] = undefined;
-  /**
-   * @member {String} geo_price
-   */
-  exports.prototype['geo_price'] = undefined;
-  /**
-   * @member {String} geo_availability
-   */
-  exports.prototype['geo_availability'] = undefined;
-  /**
-   * Current stock status.  Possible values: - in_stock - out_of_stock - preorder - backorder
-   * @member {String} availability
-   */
-  exports.prototype['availability'] = undefined;
-  /**
-   * @member {Date} availability_date
-   */
-  exports.prototype['availability_date'] = undefined;
-  /**
-   * @member {Date} expiration_date
-   */
-  exports.prototype['expiration_date'] = undefined;
-  /**
-   * Merchant or seller display name. Max 70 characters. 
-   * @member {String} seller_name
-   */
-  exports.prototype['seller_name'] = undefined;
-  /**
+   * URL to the seller's storefront.
    * @member {String} seller_url
    */
   exports.prototype['seller_url'] = undefined;
   /**
-   * @member {String} marketplace_seller
-   */
-  exports.prototype['marketplace_seller'] = undefined;
-  /**
-   * @member {String} seller_privacy_policy
-   */
-  exports.prototype['seller_privacy_policy'] = undefined;
-  /**
-   * @member {String} seller_tos
-   */
-  exports.prototype['seller_tos'] = undefined;
-  /**
-   * @member {String} shipping_price
-   */
-  exports.prototype['shipping_price'] = undefined;
-  /**
-   * @member {Date} delivery_estimate
-   */
-  exports.prototype['delivery_estimate'] = undefined;
-  /**
-   * @member {String} pickup_method
-   */
-  exports.prototype['pickup_method'] = undefined;
-  /**
-   * @member {String} pickup_sla
-   */
-  exports.prototype['pickup_sla'] = undefined;
-  /**
-   * @member {Boolean} is_digital
-   */
-  exports.prototype['is_digital'] = undefined;
-  /**
+   * Merchant return policy text.
    * @member {String} return_policy
    */
   exports.prototype['return_policy'] = undefined;
-  /**
-   * @member {Boolean} accepts_returns
-   */
-  exports.prototype['accepts_returns'] = undefined;
-  /**
-   * @member {Number} return_deadline_in_days
-   */
-  exports.prototype['return_deadline_in_days'] = undefined;
-  /**
-   * @member {Boolean} accepts_exchanges
-   */
-  exports.prototype['accepts_exchanges'] = undefined;
-  /**
-   * When `true`, product appears in AI agent discovery results.
-   * @member {Boolean} is_eligible_search
-   */
-  exports.prototype['is_eligible_search'] = undefined;
-  /**
-   * When `true`, product can be added to a checkout session.
-   * @member {Boolean} is_eligible_checkout
-   */
-  exports.prototype['is_eligible_checkout'] = undefined;
-  /**
-   * @member {Number} popularity_score
-   */
-  exports.prototype['popularity_score'] = undefined;
-  /**
-   * @member {String} return_rate
-   */
-  exports.prototype['return_rate'] = undefined;
-  /**
-   * @member {String} warning
-   */
-  exports.prototype['warning'] = undefined;
-  /**
-   * @member {String} warning_url
-   */
-  exports.prototype['warning_url'] = undefined;
-  /**
-   * @member {Number} age_restriction
-   */
-  exports.prototype['age_restriction'] = undefined;
-  /**
-   * @member {Number} review_count
-   */
-  exports.prototype['review_count'] = undefined;
-  /**
-   * @member {String} star_rating
-   */
-  exports.prototype['star_rating'] = undefined;
-  /**
-   * @member {Number} store_review_count
-   */
-  exports.prototype['store_review_count'] = undefined;
-  /**
-   * @member {String} store_star_rating
-   */
-  exports.prototype['store_star_rating'] = undefined;
-  /**
-   * @member {String} related_product_id
-   */
-  exports.prototype['related_product_id'] = undefined;
-  /**
-   * @member {String} relationship_type
-   */
-  exports.prototype['relationship_type'] = undefined;
   /**
    * Country codes where this product is available.
    * @member {Array.<String>} target_countries
@@ -765,27 +299,15 @@
    */
   exports.prototype['store_country'] = undefined;
   /**
-   * @member {Array.<Object.<String, Object>>} q_and_a
-   */
-  exports.prototype['q_and_a'] = undefined;
-  /**
-   * @member {Array.<Object.<String, Object>>} qandA
-   */
-  exports.prototype['qandA'] = undefined;
-  /**
-   * @member {Array.<Object.<String, Object>>} reviews
-   */
-  exports.prototype['reviews'] = undefined;
-  /**
    * ISO 8601 timestamp when this product was first ingested.
-   * @member {Date} created_at
+   * @member {Date} createdAt
    */
-  exports.prototype['created_at'] = undefined;
+  exports.prototype['createdAt'] = undefined;
   /**
    * ISO 8601 timestamp of the most recent update.
-   * @member {Date} updated_at
+   * @member {Date} updatedAt
    */
-  exports.prototype['updated_at'] = undefined;
+  exports.prototype['updatedAt'] = undefined;
 
 
 

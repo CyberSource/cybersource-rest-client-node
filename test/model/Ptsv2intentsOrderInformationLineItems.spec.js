@@ -104,6 +104,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shippingPreference (base name: "shippingPreference")', function() {
+      // uncomment below and update the code to test the property shippingPreference
+      //var instane = new CyberSource.Ptsv2intentsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

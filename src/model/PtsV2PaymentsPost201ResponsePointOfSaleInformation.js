@@ -50,6 +50,7 @@
 
 
 
+
   };
 
   /**
@@ -72,6 +73,9 @@
       if (data.hasOwnProperty('terminalId')) {
         obj['terminalId'] = ApiClient.convertToType(data['terminalId'], 'String');
       }
+      if (data.hasOwnProperty('freeText')) {
+        obj['freeText'] = ApiClient.convertToType(data['freeText'], 'String');
+      }
     }
     return obj;
   }
@@ -90,6 +94,11 @@
    * @member {String} terminalId
    */
   exports.prototype['terminalId'] = undefined;
+  /**
+   * The issuers must use DE 123 (Receipt Free Text) to respond with free-text messages, if the transaction requires this message to be displayed on the POS device. The issuer must request their Customer Implementation Service agent to enable DE 123 for this use, as it is not enabled as a default feature. When enabled, consider the test case on DE 123 for this use (Issuer Mastercard and Debit Mastercard - MSR Product and Services - Receipt Free Text (Peru) - Authorization Requests). 
+   * @member {String} freeText
+   */
+  exports.prototype['freeText'] = undefined;
 
 
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **administrativeArea** | **String** | State or province of shipping address. This is a State, Province, and Territory Codes for the United States and Canada.  | [optional] 
 **postalCode** | **String** | Postal code of the shipping address. Consists of 5 to 9 digits.  | [optional] 
 **country** | **String** | Country of shipping address. This is a two-character ISO Standard Country Codes.  | [optional] 
+**email** | **String** | Email address of the shipping recipient.  | [optional] 
 **phoneNumber** | **String** | Phone number of the recipient.  | [optional] 
 
 

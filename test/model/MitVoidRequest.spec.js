@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pointOfSaleInformation (base name: "pointOfSaleInformation")', function() {
+      // uncomment below and update the code to test the property pointOfSaleInformation
+      //var instane = new CyberSource.MitVoidRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

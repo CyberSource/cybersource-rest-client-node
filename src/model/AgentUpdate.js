@@ -79,35 +79,35 @@
         obj['contactEmail'] = ApiClient.convertToType(data['contactEmail'], 'String');
       }
       if (data.hasOwnProperty('agentMetadata')) {
-        obj['agentMetadata'] = ApiClient.convertToType(data['agentMetadata'], {'String': 'String'});
+        obj['agentMetadata'] = ApiClient.convertToType(data['agentMetadata'], Object);
       }
     }
     return obj;
   }
 
   /**
-   * Agent name
+   * Display name for the agent
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * Agent domain URL
+   * Fully-qualified HTTPS URL of the agent's home domain. Must be unique — raises 409 if already registered.
    * @member {String} domain
    */
   exports.prototype['domain'] = undefined;
   /**
-   * Agent description
+   * Description of the agent's purpose or capabilities
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
   /**
-   * Contact email
+   * Contact email for the team or individual responsible for this agent
    * @member {String} contactEmail
    */
   exports.prototype['contactEmail'] = undefined;
   /**
-   * Optional metadata (e.g., framework, version)
-   * @member {Object.<String, String>} agentMetadata
+   * Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
+   * @member {Object} agentMetadata
    */
   exports.prototype['agentMetadata'] = undefined;
 

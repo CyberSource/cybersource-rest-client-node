@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property smarterRetry (base name: "smarterRetry")', function() {
+      // uncomment below and update the code to test the property smarterRetry
+      //var instane = new CyberSource.ValueAddedServicesProducts();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property orderHistory (base name: "orderHistory")', function() {
+      // uncomment below and update the code to test the property orderHistory
+      //var instane = new CyberSource.CreateSessionRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property buyerInformation (base name: "buyerInformation")', function() {
       // uncomment below and update the code to test the property buyerInformation
       //var instane = new CyberSource.CreateSessionRequest();

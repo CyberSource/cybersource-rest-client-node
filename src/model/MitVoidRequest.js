@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsidvoidsOrderInformation', 'model/Ptsv2paymentsidvoidsPaymentInformation', 'model/Ptsv2voidsProcessingInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsClientReferenceInformation', 'model/Ptsv2paymentsPointOfSaleInformation', 'model/Ptsv2paymentsidvoidsOrderInformation', 'model/Ptsv2paymentsidvoidsPaymentInformation', 'model/Ptsv2voidsProcessingInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsidvoidsOrderInformation'), require('./Ptsv2paymentsidvoidsPaymentInformation'), require('./Ptsv2voidsProcessingInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsClientReferenceInformation'), require('./Ptsv2paymentsPointOfSaleInformation'), require('./Ptsv2paymentsidvoidsOrderInformation'), require('./Ptsv2paymentsidvoidsPaymentInformation'), require('./Ptsv2voidsProcessingInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MitVoidRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsidvoidsOrderInformation, root.CyberSource.Ptsv2paymentsidvoidsPaymentInformation, root.CyberSource.Ptsv2voidsProcessingInformation);
+    root.CyberSource.MitVoidRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsClientReferenceInformation, root.CyberSource.Ptsv2paymentsPointOfSaleInformation, root.CyberSource.Ptsv2paymentsidvoidsOrderInformation, root.CyberSource.Ptsv2paymentsidvoidsPaymentInformation, root.CyberSource.Ptsv2voidsProcessingInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsidvoidsOrderInformation, Ptsv2paymentsidvoidsPaymentInformation, Ptsv2voidsProcessingInformation) {
+}(this, function(ApiClient, Ptsv2paymentsClientReferenceInformation, Ptsv2paymentsPointOfSaleInformation, Ptsv2paymentsidvoidsOrderInformation, Ptsv2paymentsidvoidsPaymentInformation, Ptsv2voidsProcessingInformation) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('processingInformation')) {
         obj['processingInformation'] = Ptsv2voidsProcessingInformation.constructFromObject(data['processingInformation']);
       }
+      if (data.hasOwnProperty('pointOfSaleInformation')) {
+        obj['pointOfSaleInformation'] = Ptsv2paymentsPointOfSaleInformation.constructFromObject(data['pointOfSaleInformation']);
+      }
     }
     return obj;
   }
@@ -96,6 +100,10 @@
    * @member {module:model/Ptsv2voidsProcessingInformation} processingInformation
    */
   exports.prototype['processingInformation'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsPointOfSaleInformation} pointOfSaleInformation
+   */
+  exports.prototype['pointOfSaleInformation'] = undefined;
 
 
 
