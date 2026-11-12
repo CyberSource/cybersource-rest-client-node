@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/GetAllPlansResponseLinks', 'model/PblPaymentLinksAllGet200ResponseLinks'], factory);
+    define(['ApiClient', 'model/GetAllPlansResponseLinks', 'model/PblPaymentLinksAllGet200ResponseSdkLinks'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./GetAllPlansResponseLinks'), require('./PblPaymentLinksAllGet200ResponseLinks'));
+    module.exports = factory(require('../ApiClient'), require('./GetAllPlansResponseLinks'), require('./PblPaymentLinksAllGet200ResponseSdkLinks'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PblPaymentLinksAllGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllPlansResponseLinks, root.CyberSource.PblPaymentLinksAllGet200ResponseLinks);
+    root.CyberSource.PblPaymentLinksAllGet200Response = factory(root.CyberSource.ApiClient, root.CyberSource.GetAllPlansResponseLinks, root.CyberSource.PblPaymentLinksAllGet200ResponseSdkLinks);
   }
-}(this, function(ApiClient, GetAllPlansResponseLinks, PblPaymentLinksAllGet200ResponseLinks) {
+}(this, function(ApiClient, GetAllPlansResponseLinks, PblPaymentLinksAllGet200ResponseSdkLinks) {
   'use strict';
 
 
@@ -74,7 +74,7 @@
         obj['totalLinks'] = ApiClient.convertToType(data['totalLinks'], 'Number');
       }
       if (data.hasOwnProperty('links')) {
-        obj['links'] = ApiClient.convertToType(data['links'], [PblPaymentLinksAllGet200ResponseLinks]);
+        obj['links'] = ApiClient.convertToType(data['links'], [PblPaymentLinksAllGet200ResponseSdkLinks]);
       }
     }
     return obj;
@@ -94,7 +94,7 @@
    */
   exports.prototype['totalLinks'] = undefined;
   /**
-   * @member {Array.<module:model/PblPaymentLinksAllGet200ResponseLinks>} links
+   * @member {Array.<module:model/PblPaymentLinksAllGet200ResponseSdkLinks>} links
    */
   exports.prototype['links'] = undefined;
 

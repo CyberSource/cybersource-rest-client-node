@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods'], factory);
+    define(['ApiClient', 'model/AlternativePaymentsPaymentMethodConfiguration'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods'));
+    module.exports = factory(require('../ApiClient'), require('./AlternativePaymentsPaymentMethodConfiguration'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AlternativePaymentsProcessorConfiguration = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods);
+    root.CyberSource.AlternativePaymentsProcessorConfiguration = factory(root.CyberSource.ApiClient, root.CyberSource.AlternativePaymentsPaymentMethodConfiguration);
   }
-}(this, function(ApiClient, PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods) {
+}(this, function(ApiClient, AlternativePaymentsPaymentMethodConfiguration) {
   'use strict';
 
 
@@ -63,7 +63,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentMethods')) {
-        obj['paymentMethods'] = ApiClient.convertToType(data['paymentMethods'], {'String': PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods});
+        obj['paymentMethods'] = ApiClient.convertToType(data['paymentMethods'], {'String': AlternativePaymentsPaymentMethodConfiguration});
       }
     }
     return obj;
@@ -71,7 +71,7 @@
 
   /**
    * Payment methods supported by the processor. The following values are supported: - klarna - CREDIT_CARD - DEBIT_CARD 
-   * @member {Object.<String, module:model/PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods>} paymentMethods
+   * @member {Object.<String, module:model/AlternativePaymentsPaymentMethodConfiguration>} paymentMethods
    */
   exports.prototype['paymentMethods'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse201', 'model/PtsV2RetrievePaymentTokenGet400Response', 'model/PtsV2RetrievePaymentTokenGet502Response', 'model/Request'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/PaymentTokenRequest', 'model/PtsV2RetrievePaymentTokenGet400Response', 'model/PtsV2RetrievePaymentTokenGet502Response', 'model/RetrieveOrDeletePaymentTokenResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse201'), require('../model/PtsV2RetrievePaymentTokenGet400Response'), require('../model/PtsV2RetrievePaymentTokenGet502Response'), require('../model/Request'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/PaymentTokenRequest'), require('../model/PtsV2RetrievePaymentTokenGet400Response'), require('../model/PtsV2RetrievePaymentTokenGet502Response'), require('../model/RetrieveOrDeletePaymentTokenResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentTokensApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse201, root.CyberSource.PtsV2RetrievePaymentTokenGet400Response, root.CyberSource.PtsV2RetrievePaymentTokenGet502Response, root.CyberSource.Request);
+    root.CyberSource.PaymentTokensApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.PaymentTokenRequest, root.CyberSource.PtsV2RetrievePaymentTokenGet400Response, root.CyberSource.PtsV2RetrievePaymentTokenGet502Response, root.CyberSource.RetrieveOrDeletePaymentTokenResponse);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse201, PtsV2RetrievePaymentTokenGet400Response, PtsV2RetrievePaymentTokenGet502Response, Request) {
+}(this, function(MLEUtility, ApiClient, PaymentTokenRequest, PtsV2RetrievePaymentTokenGet400Response, PtsV2RetrievePaymentTokenGet502Response, RetrieveOrDeletePaymentTokenResponse) {
   'use strict';
 
   /**
@@ -53,29 +53,29 @@
      * Callback function to receive the result of the retrieveOrDeletePaymentToken operation.
      * @callback module:api/PaymentTokensApi~retrieveOrDeletePaymentTokenCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse201} data The data returned by the service call.
+     * @param {module:model/RetrieveOrDeletePaymentTokenResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Retrieve or Delete Payment Token
      * This API can be used in two flavours - for retrieval or deletion of vault id. 
-     * @param {module:model/Request} request 
+     * @param {module:model/PaymentTokenRequest} paymentTokenRequest 
      * @param {module:api/PaymentTokensApi~retrieveOrDeletePaymentTokenCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse201}
+     * data is of type: {@link module:model/RetrieveOrDeletePaymentTokenResponse}
      */
-    this.retrieveOrDeletePaymentToken = function(request, callback) {
-      var postBody = request;
+    this.retrieveOrDeletePaymentToken = function(paymentTokenRequest, callback) {
+      var postBody = paymentTokenRequest;
 
-      // verify the required parameter 'request' is set
-      if (request === undefined || request === null) {
-        throw new Error("Missing the required parameter 'request' when calling retrieveOrDeletePaymentToken");
+      // verify the required parameter 'paymentTokenRequest' is set
+      if (paymentTokenRequest === undefined || paymentTokenRequest === null) {
+        throw new Error("Missing the required parameter 'paymentTokenRequest' when calling retrieveOrDeletePaymentToken");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Request', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PaymentTokenRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json', 'application/json; charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = InlineResponse201;
+      var returnType = RetrieveOrDeletePaymentTokenResponse;
 
       //check isMLE for an api method 'this.retrieveOrDeletePaymentToken'
       var inboundMLEStatus = 'optional';
@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['retrieveOrDeletePaymentToken']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payment-tokens', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

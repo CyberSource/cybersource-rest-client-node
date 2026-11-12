@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreatePaymentRequest', 'model/CreateSessionReq', 'model/CreateSessionRequest', 'model/IncrementAuthRequest', 'model/OrderPaymentRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsOrderPost201Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost201Response1', 'model/PtsV2PaymentsPost201Response2', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/RefreshPaymentStatusRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreatePaymentRequest', 'model/CreateSessionReq', 'model/CreateSessionRequest', 'model/CreateSessionResponse', 'model/IncrementAuthRequest', 'model/OrderPaymentRequest', 'model/PtsV2IncrementalAuthorizationPatch201Response', 'model/PtsV2IncrementalAuthorizationPatch400Response', 'model/PtsV2PaymentsOrderPost201Response', 'model/PtsV2PaymentsPost201Response', 'model/PtsV2PaymentsPost400Response', 'model/PtsV2PaymentsPost502Response', 'model/RefreshPaymentStatusRequest', 'model/RefreshPaymentStatusResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/CreateSessionReq'), require('../model/CreateSessionRequest'), require('../model/IncrementAuthRequest'), require('../model/OrderPaymentRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsOrderPost201Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost201Response1'), require('../model/PtsV2PaymentsPost201Response2'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RefreshPaymentStatusRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreatePaymentRequest'), require('../model/CreateSessionReq'), require('../model/CreateSessionRequest'), require('../model/CreateSessionResponse'), require('../model/IncrementAuthRequest'), require('../model/OrderPaymentRequest'), require('../model/PtsV2IncrementalAuthorizationPatch201Response'), require('../model/PtsV2IncrementalAuthorizationPatch400Response'), require('../model/PtsV2PaymentsOrderPost201Response'), require('../model/PtsV2PaymentsPost201Response'), require('../model/PtsV2PaymentsPost400Response'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RefreshPaymentStatusRequest'), require('../model/RefreshPaymentStatusResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.CreateSessionReq, root.CyberSource.CreateSessionRequest, root.CyberSource.IncrementAuthRequest, root.CyberSource.OrderPaymentRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsOrderPost201Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost201Response1, root.CyberSource.PtsV2PaymentsPost201Response2, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RefreshPaymentStatusRequest);
+    root.CyberSource.PaymentsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreatePaymentRequest, root.CyberSource.CreateSessionReq, root.CyberSource.CreateSessionRequest, root.CyberSource.CreateSessionResponse, root.CyberSource.IncrementAuthRequest, root.CyberSource.OrderPaymentRequest, root.CyberSource.PtsV2IncrementalAuthorizationPatch201Response, root.CyberSource.PtsV2IncrementalAuthorizationPatch400Response, root.CyberSource.PtsV2PaymentsOrderPost201Response, root.CyberSource.PtsV2PaymentsPost201Response, root.CyberSource.PtsV2PaymentsPost400Response, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RefreshPaymentStatusRequest, root.CyberSource.RefreshPaymentStatusResponse);
   }
-}(this, function(MLEUtility, ApiClient, CreatePaymentRequest, CreateSessionReq, CreateSessionRequest, IncrementAuthRequest, OrderPaymentRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsOrderPost201Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost201Response1, PtsV2PaymentsPost201Response2, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, RefreshPaymentStatusRequest) {
+}(this, function(MLEUtility, ApiClient, CreatePaymentRequest, CreateSessionReq, CreateSessionRequest, CreateSessionResponse, IncrementAuthRequest, OrderPaymentRequest, PtsV2IncrementalAuthorizationPatch201Response, PtsV2IncrementalAuthorizationPatch400Response, PtsV2PaymentsOrderPost201Response, PtsV2PaymentsPost201Response, PtsV2PaymentsPost400Response, PtsV2PaymentsPost502Response, RefreshPaymentStatusRequest, RefreshPaymentStatusResponse) {
   'use strict';
 
   /**
@@ -106,7 +106,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createOrderRequest']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payment-references/{id}/intents', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -172,7 +173,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createPayment']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payments', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -192,7 +194,7 @@
      * Callback function to receive the result of the createSessionRequest operation.
      * @callback module:api/PaymentsApi~createSessionRequestCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PtsV2PaymentsPost201Response2} data The data returned by the service call.
+     * @param {module:model/CreateSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -201,7 +203,7 @@
      * Create Alternative Payments Sessions Request
      * @param {module:model/CreateSessionReq} createSessionReq 
      * @param {module:api/PaymentsApi~createSessionRequestCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PtsV2PaymentsPost201Response2}
+     * data is of type: {@link module:model/CreateSessionResponse}
      */
     this.createSessionRequest = function(createSessionReq, callback) {
       var postBody = createSessionReq;
@@ -230,7 +232,7 @@
       var authNames = [];
       var contentTypes = ['application/json', 'application/json; charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = PtsV2PaymentsPost201Response2;
+      var returnType = CreateSessionResponse;
 
       //check isMLE for an api method 'this.createSessionRequest'
       var inboundMLEStatus = 'optional';
@@ -238,7 +240,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createSessionRequest']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payment-references', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -311,7 +314,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['incrementAuth']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payments/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -331,7 +335,7 @@
      * Callback function to receive the result of the refreshPaymentStatus operation.
      * @callback module:api/PaymentsApi~refreshPaymentStatusCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PtsV2PaymentsPost201Response1} data The data returned by the service call.
+     * @param {module:model/RefreshPaymentStatusResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -341,7 +345,7 @@
      * @param {String} id The payment id whose status needs to be checked and updated.
      * @param {module:model/RefreshPaymentStatusRequest} refreshPaymentStatusRequest 
      * @param {module:api/PaymentsApi~refreshPaymentStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PtsV2PaymentsPost201Response1}
+     * data is of type: {@link module:model/RefreshPaymentStatusResponse}
      */
     this.refreshPaymentStatus = function(id, refreshPaymentStatusRequest, callback) {
       var postBody = refreshPaymentStatusRequest;
@@ -376,7 +380,7 @@
       var authNames = [];
       var contentTypes = ['application/json', 'application/json; charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = PtsV2PaymentsPost201Response1;
+      var returnType = RefreshPaymentStatusResponse;
 
       //check isMLE for an api method 'this.refreshPaymentStatus'
       var inboundMLEStatus = 'optional';
@@ -384,7 +388,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['refreshPaymentStatus']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/refresh-payment-status/{id}', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -404,7 +409,7 @@
      * Callback function to receive the result of the updateSessionRequest operation.
      * @callback module:api/PaymentsApi~updateSessionRequestCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PtsV2PaymentsPost201Response2} data The data returned by the service call.
+     * @param {module:model/CreateSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -414,7 +419,7 @@
      * @param {module:model/CreateSessionRequest} createSessionRequest 
      * @param {String} id The payment ID. This ID is returned from a previous payment request.
      * @param {module:api/PaymentsApi~updateSessionRequestCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PtsV2PaymentsPost201Response2}
+     * data is of type: {@link module:model/CreateSessionResponse}
      */
     this.updateSessionRequest = function(createSessionRequest, id, callback) {
       var postBody = createSessionRequest;
@@ -449,7 +454,7 @@
       var authNames = [];
       var contentTypes = ['application/json', 'application/json; charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = PtsV2PaymentsPost201Response2;
+      var returnType = CreateSessionResponse;
 
       //check isMLE for an api method 'this.updateSessionRequest'
       var inboundMLEStatus = 'optional';
@@ -457,7 +462,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateSessionRequest']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payment-references/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,

@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **account** | [**Ptsv2paymentsSenderInformationAccount**](Ptsv2paymentsSenderInformationAccount.md) |  | [optional] 
 **postalCode** | **String** | Postal code of sender.  | [optional] 
 **taxIdNumber** | **Number** | CPF or CNPJ of the cash-in recipient. \"Cadastro de Pessoas Físicas\", which translates to the \"Natural Persons Register.\" It is the individual taxpayer registry identification number in Brazil, similar to a Social Security Number (SSN) in the United States or a National Insurance Number in the UK.  | [optional] 
+**email** | **String** | Sender's email address, including the full domain name.  | [optional] 
 
 

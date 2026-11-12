@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body1', 'model/InlineResponse2014', 'model/InlineResponse4004', 'model/InlineResponse4011', 'model/InlineResponse5023'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateQueryApiRequest', 'model/CreateQueryApiResponse', 'model/MmQueryApi400ErrorResponse', 'model/MmQueryApi401ErrorResponse', 'model/MmQueryApi502ErrorResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body1'), require('../model/InlineResponse2014'), require('../model/InlineResponse4004'), require('../model/InlineResponse4011'), require('../model/InlineResponse5023'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateQueryApiRequest'), require('../model/CreateQueryApiResponse'), require('../model/MmQueryApi400ErrorResponse'), require('../model/MmQueryApi401ErrorResponse'), require('../model/MmQueryApi502ErrorResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TransactionQueryApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body1, root.CyberSource.InlineResponse2014, root.CyberSource.InlineResponse4004, root.CyberSource.InlineResponse4011, root.CyberSource.InlineResponse5023);
+    root.CyberSource.TransactionQueryApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateQueryApiRequest, root.CyberSource.CreateQueryApiResponse, root.CyberSource.MmQueryApi400ErrorResponse, root.CyberSource.MmQueryApi401ErrorResponse, root.CyberSource.MmQueryApi502ErrorResponse);
   }
-}(this, function(MLEUtility, ApiClient, Body1, InlineResponse2014, InlineResponse4004, InlineResponse4011, InlineResponse5023) {
+}(this, function(MLEUtility, ApiClient, CreateQueryApiRequest, CreateQueryApiResponse, MmQueryApi400ErrorResponse, MmQueryApi401ErrorResponse, MmQueryApi502ErrorResponse) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the createQueryApi operation.
      * @callback module:api/TransactionQueryApi~createQueryApiCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2014} data The data returned by the service call.
+     * @param {module:model/CreateQueryApiResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -61,7 +61,7 @@
      * Query Transaction Details
      * Query the status and details of payouts transactions including Pull Funds, Push Funds, and Pull Funds Reversals 
      * @param {String} id This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried. 
-     * @param {module:model/Body1} body 
+     * @param {module:model/CreateQueryApiRequest} createQueryApiRequest 
      * @param {String} contentType 
      * @param {String} xRequestid 
      * @param {String} vCMerchantId 
@@ -72,20 +72,20 @@
      * @param {Number} opts.limit The maximum number of options to be retrieved from the processor and displayed to the consumer. 
      * @param {Number} opts.offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list. 
      * @param {module:api/TransactionQueryApi~createQueryApiCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2014}
+     * data is of type: {@link module:model/CreateQueryApiResponse}
      */
-    this.createQueryApi = function(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts, callback) {
+    this.createQueryApi = function(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts, callback) {
       opts = opts || {};
-      var postBody = body;
+      var postBody = createQueryApiRequest;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling createQueryApi");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createQueryApi");
+      // verify the required parameter 'createQueryApiRequest' is set
+      if (createQueryApiRequest === undefined || createQueryApiRequest === null) {
+        throw new Error("Missing the required parameter 'createQueryApiRequest' when calling createQueryApi");
       }
 
       // verify the required parameter 'contentType' is set
@@ -121,7 +121,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Body1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateQueryApiRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -146,7 +146,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2014;
+      var returnType = CreateQueryApiResponse;
 
       //check isMLE for an api method 'this.createQueryApi'
       var inboundMLEStatus = 'mandatory';
@@ -154,7 +154,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createQueryApi']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payouts/transaction-query/{id}', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

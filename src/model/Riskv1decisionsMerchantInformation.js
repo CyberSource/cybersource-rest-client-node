@@ -49,6 +49,7 @@
 
 
 
+
   };
 
   /**
@@ -62,6 +63,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('categoryCode')) {
+        obj['categoryCode'] = ApiClient.convertToType(data['categoryCode'], 'String');
+      }
       if (data.hasOwnProperty('merchantDescriptor')) {
         obj['merchantDescriptor'] = Riskv1decisionsMerchantInformationMerchantDescriptor.constructFromObject(data['merchantDescriptor']);
       }
@@ -72,6 +76,11 @@
     return obj;
   }
 
+  /**
+   * MCC code of the merchant or transaction
+   * @member {String} categoryCode
+   */
+  exports.prototype['categoryCode'] = undefined;
   /**
    * @member {module:model/Riskv1decisionsMerchantInformationMerchantDescriptor} merchantDescriptor
    */

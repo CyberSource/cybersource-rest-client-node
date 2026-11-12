@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService'], factory);
+    define(['ApiClient', 'model/CommonAncillaryInformationServiceItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService'));
+    module.exports = factory(require('../ApiClient'), require('./CommonAncillaryInformationServiceItem'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService);
+    root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation = factory(root.CyberSource.ApiClient, root.CyberSource.CommonAncillaryInformationServiceItem);
   }
-}(this, function(ApiClient, Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService) {
+}(this, function(ApiClient, CommonAncillaryInformationServiceItem) {
   'use strict';
 
 
@@ -46,7 +46,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
 
@@ -79,10 +78,7 @@
         obj['creditReasonIndicator'] = ApiClient.convertToType(data['creditReasonIndicator'], 'String');
       }
       if (data.hasOwnProperty('service')) {
-        obj['service'] = ApiClient.convertToType(data['service'], [Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService]);
-      }
-      if (data.hasOwnProperty('feeDescription')) {
-        obj['feeDescription'] = ApiClient.convertToType(data['feeDescription'], 'String');
+        obj['service'] = ApiClient.convertToType(data['service'], [CommonAncillaryInformationServiceItem]);
       }
     }
     return obj;
@@ -109,14 +105,9 @@
    */
   exports.prototype['creditReasonIndicator'] = undefined;
   /**
-   * @member {Array.<module:model/Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService>} service
+   * @member {Array.<module:model/CommonAncillaryInformationServiceItem>} service
    */
   exports.prototype['service'] = undefined;
-  /**
-   * This field contains the fee description for the airline ancillary service provided. Format: Alphanumeric, 100 characters maximum. Optional field for ancillary services. 
-   * @member {String} feeDescription
-   */
-  exports.prototype['feeDescription'] = undefined;
 
 
 

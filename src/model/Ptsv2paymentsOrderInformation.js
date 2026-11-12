@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetails', 'model/Ptsv2paymentsOrderInformationBillTo', 'model/Ptsv2paymentsOrderInformationDigitalCurrency', 'model/Ptsv2paymentsOrderInformationInvoiceDetails', 'model/Ptsv2paymentsOrderInformationLineItems', 'model/Ptsv2paymentsOrderInformationShipTo', 'model/Ptsv2paymentsOrderInformationShippingDetails'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsOrderInformationAmountDetails', 'model/Ptsv2paymentsOrderInformationBillTo', 'model/Ptsv2paymentsOrderInformationDigitalCurrency', 'model/Ptsv2paymentsOrderInformationInvoiceDetails', 'model/Ptsv2paymentsOrderInformationLineItemsExtended', 'model/Ptsv2paymentsOrderInformationShipTo', 'model/Ptsv2paymentsOrderInformationShippingDetails', 'model/Ptsv2paymentsOrderInformationVouchers'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetails'), require('./Ptsv2paymentsOrderInformationBillTo'), require('./Ptsv2paymentsOrderInformationDigitalCurrency'), require('./Ptsv2paymentsOrderInformationInvoiceDetails'), require('./Ptsv2paymentsOrderInformationLineItems'), require('./Ptsv2paymentsOrderInformationShipTo'), require('./Ptsv2paymentsOrderInformationShippingDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsOrderInformationAmountDetails'), require('./Ptsv2paymentsOrderInformationBillTo'), require('./Ptsv2paymentsOrderInformationDigitalCurrency'), require('./Ptsv2paymentsOrderInformationInvoiceDetails'), require('./Ptsv2paymentsOrderInformationLineItemsExtended'), require('./Ptsv2paymentsOrderInformationShipTo'), require('./Ptsv2paymentsOrderInformationShippingDetails'), require('./Ptsv2paymentsOrderInformationVouchers'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetails, root.CyberSource.Ptsv2paymentsOrderInformationBillTo, root.CyberSource.Ptsv2paymentsOrderInformationDigitalCurrency, root.CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails, root.CyberSource.Ptsv2paymentsOrderInformationLineItems, root.CyberSource.Ptsv2paymentsOrderInformationShipTo, root.CyberSource.Ptsv2paymentsOrderInformationShippingDetails);
+    root.CyberSource.Ptsv2paymentsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsOrderInformationAmountDetails, root.CyberSource.Ptsv2paymentsOrderInformationBillTo, root.CyberSource.Ptsv2paymentsOrderInformationDigitalCurrency, root.CyberSource.Ptsv2paymentsOrderInformationInvoiceDetails, root.CyberSource.Ptsv2paymentsOrderInformationLineItemsExtended, root.CyberSource.Ptsv2paymentsOrderInformationShipTo, root.CyberSource.Ptsv2paymentsOrderInformationShippingDetails, root.CyberSource.Ptsv2paymentsOrderInformationVouchers);
   }
-}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetails, Ptsv2paymentsOrderInformationBillTo, Ptsv2paymentsOrderInformationDigitalCurrency, Ptsv2paymentsOrderInformationInvoiceDetails, Ptsv2paymentsOrderInformationLineItems, Ptsv2paymentsOrderInformationShipTo, Ptsv2paymentsOrderInformationShippingDetails) {
+}(this, function(ApiClient, Ptsv2paymentsOrderInformationAmountDetails, Ptsv2paymentsOrderInformationBillTo, Ptsv2paymentsOrderInformationDigitalCurrency, Ptsv2paymentsOrderInformationInvoiceDetails, Ptsv2paymentsOrderInformationLineItemsExtended, Ptsv2paymentsOrderInformationShipTo, Ptsv2paymentsOrderInformationShippingDetails, Ptsv2paymentsOrderInformationVouchers) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -88,10 +89,13 @@
         obj['shipTo'] = Ptsv2paymentsOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('lineItems')) {
-        obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Ptsv2paymentsOrderInformationLineItems]);
+        obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [Ptsv2paymentsOrderInformationLineItemsExtended]);
       }
       if (data.hasOwnProperty('invoiceDetails')) {
         obj['invoiceDetails'] = Ptsv2paymentsOrderInformationInvoiceDetails.constructFromObject(data['invoiceDetails']);
+      }
+      if (data.hasOwnProperty('vouchers')) {
+        obj['vouchers'] = ApiClient.convertToType(data['vouchers'], [Ptsv2paymentsOrderInformationVouchers]);
       }
       if (data.hasOwnProperty('shippingDetails')) {
         obj['shippingDetails'] = Ptsv2paymentsOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
@@ -142,13 +146,17 @@
    */
   exports.prototype['shipTo'] = undefined;
   /**
-   * @member {Array.<module:model/Ptsv2paymentsOrderInformationLineItems>} lineItems
+   * @member {Array.<module:model/Ptsv2paymentsOrderInformationLineItemsExtended>} lineItems
    */
   exports.prototype['lineItems'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsOrderInformationInvoiceDetails} invoiceDetails
    */
   exports.prototype['invoiceDetails'] = undefined;
+  /**
+   * @member {Array.<module:model/Ptsv2paymentsOrderInformationVouchers>} vouchers
+   */
+  exports.prototype['vouchers'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsOrderInformationShippingDetails} shippingDetails
    */

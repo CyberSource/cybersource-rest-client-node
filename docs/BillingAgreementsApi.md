@@ -60,7 +60,7 @@ No authorization required
 
 <a name="billingAgreementsIntimation"></a>
 # **billingAgreementsIntimation**
-> PtsV2CreditsPost201Response1 billingAgreementsIntimation(intimateBillingAgreement, id)
+> IntimateBillingAgreementResponse billingAgreementsIntimation(intimateBillingAgreement, id)
 
 Standing Instruction intimation
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2CreditsPost201Response1**](PtsV2CreditsPost201Response1.md)
+[**IntimateBillingAgreementResponse**](IntimateBillingAgreementResponse.md)
 
 ### Authorization
 

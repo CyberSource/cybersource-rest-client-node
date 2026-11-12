@@ -50,7 +50,7 @@ No authorization required
 
 <a name="parseEmvTags"></a>
 # **parseEmvTags**
-> TssV2PostEmvTags200Response parseEmvTags(body)
+> TssV2PostEmvTags200Response parseEmvTags(parseEmvTagsRequest)
 
 Parse an EMV String
 
@@ -62,7 +62,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.EMVTagDetailsApi();
 
-var body = new CyberSource.Body2(); // Body2 | 
+var parseEmvTagsRequest = new CyberSource.ParseEmvTagsRequest(); // ParseEmvTagsRequest | 
 
 
 var callback = function(error, data, response) {
@@ -72,14 +72,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.parseEmvTags(body, callback);
+apiInstance.parseEmvTags(parseEmvTagsRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body2**](Body2.md)|  | 
+ **parseEmvTagsRequest** | [**ParseEmvTagsRequest**](ParseEmvTagsRequest.md)|  | 
 
 ### Return type
 

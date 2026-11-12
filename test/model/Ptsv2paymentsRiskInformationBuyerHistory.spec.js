@@ -110,6 +110,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property failedPaymentAttemptsCount (base name: "failedPaymentAttemptsCount")', function() {
+      // uncomment below and update the code to test the property failedPaymentAttemptsCount
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformationBuyerHistory();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

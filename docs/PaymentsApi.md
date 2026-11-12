@@ -109,7 +109,7 @@ No authorization required
 
 <a name="createSessionRequest"></a>
 # **createSessionRequest**
-> PtsV2PaymentsPost201Response2 createSessionRequest(createSessionReq)
+> CreateSessionResponse createSessionRequest(createSessionReq)
 
 Create Alternative Payments Sessions Request
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2PaymentsPost201Response2**](PtsV2PaymentsPost201Response2.md)
+[**CreateSessionResponse**](CreateSessionResponse.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ No authorization required
 
 <a name="refreshPaymentStatus"></a>
 # **refreshPaymentStatus**
-> PtsV2PaymentsPost201Response1 refreshPaymentStatus(id, refreshPaymentStatusRequest)
+> RefreshPaymentStatusResponse refreshPaymentStatus(id, refreshPaymentStatusRequest)
 
 Check a Payment Status
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2PaymentsPost201Response1**](PtsV2PaymentsPost201Response1.md)
+[**RefreshPaymentStatusResponse**](RefreshPaymentStatusResponse.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ No authorization required
 
 <a name="updateSessionRequest"></a>
 # **updateSessionRequest**
-> PtsV2PaymentsPost201Response2 updateSessionRequest(createSessionRequest, id)
+> CreateSessionResponse updateSessionRequest(createSessionRequest, id)
 
 Update Alternative Payments Sessions Request
 
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtsV2PaymentsPost201Response2**](PtsV2PaymentsPost201Response2.md)
+[**CreateSessionResponse**](CreateSessionResponse.md)
 
 ### Authorization
 

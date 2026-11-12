@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/AcpCompleteCheckoutRequest', 'model/AcpCreateCheckoutSessionRequest', 'model/AcpUpdateCheckoutSessionRequest', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse20112', 'model/InlineResponse40016'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AcpCompleteCheckoutRequest', 'model/AcpCreateCheckoutSessionRequest', 'model/AcpUpdateCheckoutSessionRequest', 'model/CancelCheckoutResponse', 'model/CheckoutSessionResponse', 'model/CompleteCheckoutResponse', 'model/InlineResponse4007'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AcpCompleteCheckoutRequest'), require('../model/AcpCreateCheckoutSessionRequest'), require('../model/AcpUpdateCheckoutSessionRequest'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponse20112'), require('../model/InlineResponse40016'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AcpCompleteCheckoutRequest'), require('../model/AcpCreateCheckoutSessionRequest'), require('../model/AcpUpdateCheckoutSessionRequest'), require('../model/CancelCheckoutResponse'), require('../model/CheckoutSessionResponse'), require('../model/CompleteCheckoutResponse'), require('../model/InlineResponse4007'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ACPCheckoutApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AcpCompleteCheckoutRequest, root.CyberSource.AcpCreateCheckoutSessionRequest, root.CyberSource.AcpUpdateCheckoutSessionRequest, root.CyberSource.InlineResponse20017, root.CyberSource.InlineResponse20018, root.CyberSource.InlineResponse20112, root.CyberSource.InlineResponse40016);
+    root.CyberSource.ACPCheckoutApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AcpCompleteCheckoutRequest, root.CyberSource.AcpCreateCheckoutSessionRequest, root.CyberSource.AcpUpdateCheckoutSessionRequest, root.CyberSource.CancelCheckoutResponse, root.CyberSource.CheckoutSessionResponse, root.CyberSource.CompleteCheckoutResponse, root.CyberSource.InlineResponse4007);
   }
-}(this, function(MLEUtility, ApiClient, AcpCompleteCheckoutRequest, AcpCreateCheckoutSessionRequest, AcpUpdateCheckoutSessionRequest, InlineResponse20017, InlineResponse20018, InlineResponse20112, InlineResponse40016) {
+}(this, function(MLEUtility, ApiClient, AcpCompleteCheckoutRequest, AcpCreateCheckoutSessionRequest, AcpUpdateCheckoutSessionRequest, CancelCheckoutResponse, CheckoutSessionResponse, CompleteCheckoutResponse, InlineResponse4007) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the cancelCheckout operation.
      * @callback module:api/ACPCheckoutApi~cancelCheckoutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20018} data The data returned by the service call.
+     * @param {module:model/CancelCheckoutResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -70,7 +70,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/ACPCheckoutApi~cancelCheckoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20018}
+     * data is of type: {@link module:model/CancelCheckoutResponse}
      */
     this.cancelCheckout = function(sessionId, opts, callback) {
       opts = opts || {};
@@ -107,7 +107,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20018;
+      var returnType = CancelCheckoutResponse;
 
       //check isMLE for an api method 'this.cancelCheckout'
       var inboundMLEStatus = 'mandatory';
@@ -115,7 +115,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['cancelCheckout']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout_sessions/{session_id}/cancel', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -135,7 +136,7 @@
      * Callback function to receive the result of the completeCheckout operation.
      * @callback module:api/ACPCheckoutApi~completeCheckoutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20017} data The data returned by the service call.
+     * @param {module:model/CompleteCheckoutResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -153,7 +154,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/ACPCheckoutApi~completeCheckoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20017}
+     * data is of type: {@link module:model/CompleteCheckoutResponse}
      */
     this.completeCheckout = function(sessionId, acpCompleteCheckoutRequest, opts, callback) {
       opts = opts || {};
@@ -196,7 +197,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20017;
+      var returnType = CompleteCheckoutResponse;
 
       //check isMLE for an api method 'this.completeCheckout'
       var inboundMLEStatus = 'mandatory';
@@ -204,7 +205,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['completeCheckout']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout_sessions/{session_id}/complete', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -224,7 +226,7 @@
      * Callback function to receive the result of the createCheckoutSession operation.
      * @callback module:api/ACPCheckoutApi~createCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20112} data The data returned by the service call.
+     * @param {module:model/CheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -241,7 +243,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/ACPCheckoutApi~createCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20112}
+     * data is of type: {@link module:model/CheckoutSessionResponse}
      */
     this.createCheckoutSession = function(acpCreateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -278,7 +280,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20112;
+      var returnType = CheckoutSessionResponse;
 
       //check isMLE for an api method 'this.createCheckoutSession'
       var inboundMLEStatus = 'mandatory';
@@ -286,7 +288,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createCheckoutSession']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout_sessions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -306,7 +309,7 @@
      * Callback function to receive the result of the getCheckoutSession operation.
      * @callback module:api/ACPCheckoutApi~getCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20112} data The data returned by the service call.
+     * @param {module:model/CheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -324,7 +327,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/ACPCheckoutApi~getCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20112}
+     * data is of type: {@link module:model/CheckoutSessionResponse}
      */
     this.getCheckoutSession = function(sessionId, acpGetCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -367,7 +370,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20112;
+      var returnType = CheckoutSessionResponse;
 
       //check isMLE for an api method 'this.getCheckoutSession'
       var inboundMLEStatus = 'false';
@@ -375,7 +378,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getCheckoutSession']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout_sessions/{session_id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -395,7 +399,7 @@
      * Callback function to receive the result of the updateCheckoutSession operation.
      * @callback module:api/ACPCheckoutApi~updateCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20112} data The data returned by the service call.
+     * @param {module:model/CheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -413,7 +417,7 @@
      * @param {String} opts.timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. 
      * @param {String} opts.aPIVersion ACP specification version the client is targeting (e.g. `2024-01-01`). When omitted, the latest supported version is assumed. 
      * @param {module:api/ACPCheckoutApi~updateCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20112}
+     * data is of type: {@link module:model/CheckoutSessionResponse}
      */
     this.updateCheckoutSession = function(sessionId, acpUpdateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -456,7 +460,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20112;
+      var returnType = CheckoutSessionResponse;
 
       //check isMLE for an api method 'this.updateCheckoutSession'
       var inboundMLEStatus = 'mandatory';
@@ -464,7 +468,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateCheckoutSession']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout_sessions/{session_id}', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

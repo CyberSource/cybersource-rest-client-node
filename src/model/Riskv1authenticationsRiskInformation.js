@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsRiskInformationBuyerHistory'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsRiskInformationBuyerHistory'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRiskInformationBuyerHistory'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsRiskInformationBuyerHistory'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1authenticationsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRiskInformationBuyerHistory);
+    root.CyberSource.Riskv1authenticationsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsRiskInformationBuyerHistory);
   }
-}(this, function(ApiClient, Ptsv2paymentsRiskInformationBuyerHistory) {
+}(this, function(ApiClient, Riskv1decisionsRiskInformationBuyerHistory) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('buyerHistory')) {
-        obj['buyerHistory'] = Ptsv2paymentsRiskInformationBuyerHistory.constructFromObject(data['buyerHistory']);
+        obj['buyerHistory'] = Riskv1decisionsRiskInformationBuyerHistory.constructFromObject(data['buyerHistory']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Ptsv2paymentsRiskInformationBuyerHistory} buyerHistory
+   * @member {module:model/Riskv1decisionsRiskInformationBuyerHistory} buyerHistory
    */
   exports.prototype['buyerHistory'] = undefined;
 

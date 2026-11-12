@@ -92,6 +92,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property vouchers (base name: "vouchers")', function() {
+      // uncomment below and update the code to test the property vouchers
+      //var instane = new CyberSource.Ptsv2paymentsOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property shippingDetails (base name: "shippingDetails")', function() {
       // uncomment below and update the code to test the property shippingDetails
       //var instane = new CyberSource.Ptsv2paymentsOrderInformation();

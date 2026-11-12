@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -64,6 +65,9 @@
       if (data.hasOwnProperty('autoCheckEnrollment')) {
         obj['autoCheckEnrollment'] = ApiClient.convertToType(data['autoCheckEnrollment'], 'Boolean');
       }
+      if (data.hasOwnProperty('allowedCardNetworks')) {
+        obj['allowedCardNetworks'] = ApiClient.convertToType(data['allowedCardNetworks'], ['String']);
+      }
     }
     return obj;
   }
@@ -73,6 +77,11 @@
    * @member {Boolean} autoCheckEnrollment
    */
   exports.prototype['autoCheckEnrollment'] = undefined;
+  /**
+   * allowedCardNetworks (optional): Specifies the card networks eligible for Click to Pay. When provided, only the listed networks invoke Click to Pay; when omitted, all Click to Pay–supported networks in the top-level allowedCardNetworks configuration are eligible.<br><br>  Optional field: This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request. 
+   * @member {Array.<String>} allowedCardNetworks
+   */
+  exports.prototype['allowedCardNetworks'] = undefined;
 
 
 

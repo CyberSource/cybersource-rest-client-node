@@ -87,7 +87,7 @@
    */
   exports.prototype['paymentFlowMode'] = undefined;
   /**
-   * Possible values are one or more of follows:   - `AP_SESSIONS`: Use this when Alternative Payment Sessions service is requested. 
+   * Possible values are one or more of follows:  - `AP_SESSIONS`: Use this when Alternative Payment Sessions service is requested. 
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;

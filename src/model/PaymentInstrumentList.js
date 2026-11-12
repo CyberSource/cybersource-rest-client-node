@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentInstrumentListEmbedded', 'model/PaymentInstrumentListLinks'], factory);
+    define(['ApiClient', 'model/InstrumentIdentifierPaymentInstrumentListEmbedded', 'model/InstrumentIdentifierPaymentInstrumentListLinks'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentInstrumentListEmbedded'), require('./PaymentInstrumentListLinks'));
+    module.exports = factory(require('../ApiClient'), require('./InstrumentIdentifierPaymentInstrumentListEmbedded'), require('./InstrumentIdentifierPaymentInstrumentListLinks'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentInstrumentList = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentInstrumentListEmbedded, root.CyberSource.PaymentInstrumentListLinks);
+    root.CyberSource.PaymentInstrumentList = factory(root.CyberSource.ApiClient, root.CyberSource.InstrumentIdentifierPaymentInstrumentListEmbedded, root.CyberSource.InstrumentIdentifierPaymentInstrumentListLinks);
   }
-}(this, function(ApiClient, PaymentInstrumentListEmbedded, PaymentInstrumentListLinks) {
+}(this, function(ApiClient, InstrumentIdentifierPaymentInstrumentListEmbedded, InstrumentIdentifierPaymentInstrumentListLinks) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('_links')) {
-        obj['_links'] = PaymentInstrumentListLinks.constructFromObject(data['_links']);
+        obj['_links'] = InstrumentIdentifierPaymentInstrumentListLinks.constructFromObject(data['_links']);
       }
       if (data.hasOwnProperty('offset')) {
         obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
@@ -82,14 +82,14 @@
         obj['total'] = ApiClient.convertToType(data['total'], 'Number');
       }
       if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = PaymentInstrumentListEmbedded.constructFromObject(data['_embedded']);
+        obj['_embedded'] = InstrumentIdentifierPaymentInstrumentListEmbedded.constructFromObject(data['_embedded']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PaymentInstrumentListLinks} _links
+   * @member {module:model/InstrumentIdentifierPaymentInstrumentListLinks} _links
    */
   exports.prototype['_links'] = undefined;
   /**
@@ -113,7 +113,7 @@
    */
   exports.prototype['total'] = undefined;
   /**
-   * @member {module:model/PaymentInstrumentListEmbedded} _embedded
+   * @member {module:model/InstrumentIdentifierPaymentInstrumentListEmbedded} _embedded
    */
   exports.prototype['_embedded'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse200', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PostTokenizeRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/PostTokenizeRequest', 'model/PostTokenizeResponse', 'model/Tms400ErrorResponse', 'model/Tms403ErrorResponse', 'model/Tms424ErrorResponse', 'model/Tms500ErrorResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse200'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PostTokenizeRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/PostTokenizeRequest'), require('../model/PostTokenizeResponse'), require('../model/Tms400ErrorResponse'), require('../model/Tms403ErrorResponse'), require('../model/Tms424ErrorResponse'), require('../model/Tms500ErrorResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.TokenizeApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse200, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PostTokenizeRequest);
+    root.CyberSource.TokenizeApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.PostTokenizeRequest, root.CyberSource.PostTokenizeResponse, root.CyberSource.Tms400ErrorResponse, root.CyberSource.Tms403ErrorResponse, root.CyberSource.Tms424ErrorResponse, root.CyberSource.Tms500ErrorResponse);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse200, InlineResponse400, InlineResponse403, InlineResponse424, InlineResponse500, PostTokenizeRequest) {
+}(this, function(MLEUtility, ApiClient, PostTokenizeRequest, PostTokenizeResponse, Tms400ErrorResponse, Tms403ErrorResponse, Tms424ErrorResponse, Tms500ErrorResponse) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the tokenize operation.
      * @callback module:api/TokenizeApi~tokenizeCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {module:model/PostTokenizeResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -64,7 +64,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/TokenizeApi~tokenizeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * data is of type: {@link module:model/PostTokenizeResponse}
      */
     this.tokenize = function(postTokenizeRequest, opts, callback) {
       opts = opts || {};
@@ -95,7 +95,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse200;
+      var returnType = PostTokenizeResponse;
 
       //check isMLE for an api method 'this.tokenize'
       var inboundMLEStatus = 'mandatory';
@@ -103,7 +103,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['tokenize']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/tokenize', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

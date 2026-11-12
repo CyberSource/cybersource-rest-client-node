@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20019', 'model/InlineResponse20020', 'model/InlineResponse20021', 'model/InlineResponse2021', 'model/InlineResponse40016', 'model/ProductFeedRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/FeedJobStatusResponse', 'model/InlineResponse4007', 'model/ProductAcceptedFeedResponse', 'model/ProductCatalogResponse', 'model/ProductDetailResponse', 'model/ProductFeedRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20019'), require('../model/InlineResponse20020'), require('../model/InlineResponse20021'), require('../model/InlineResponse2021'), require('../model/InlineResponse40016'), require('../model/ProductFeedRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/FeedJobStatusResponse'), require('../model/InlineResponse4007'), require('../model/ProductAcceptedFeedResponse'), require('../model/ProductCatalogResponse'), require('../model/ProductDetailResponse'), require('../model/ProductFeedRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ProductFeedApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20019, root.CyberSource.InlineResponse20020, root.CyberSource.InlineResponse20021, root.CyberSource.InlineResponse2021, root.CyberSource.InlineResponse40016, root.CyberSource.ProductFeedRequest);
+    root.CyberSource.ProductFeedApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.FeedJobStatusResponse, root.CyberSource.InlineResponse4007, root.CyberSource.ProductAcceptedFeedResponse, root.CyberSource.ProductCatalogResponse, root.CyberSource.ProductDetailResponse, root.CyberSource.ProductFeedRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20019, InlineResponse20020, InlineResponse20021, InlineResponse2021, InlineResponse40016, ProductFeedRequest) {
+}(this, function(MLEUtility, ApiClient, FeedJobStatusResponse, InlineResponse4007, ProductAcceptedFeedResponse, ProductCatalogResponse, ProductDetailResponse, ProductFeedRequest) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getAllProducts operation.
      * @callback module:api/ProductFeedApi~getAllProductsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20020} data The data returned by the service call.
+     * @param {module:model/ProductCatalogResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -65,7 +65,7 @@
      * @param {Number} opts.page Page number to retrieve (0-based). Defaults to 0. (default to 0)
      * @param {Number} opts.size Number of products per page. Defaults to 300. Server enforces a maximum of 1000; values above 1000 are capped.  (default to 300)
      * @param {module:api/ProductFeedApi~getAllProductsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20020}
+     * data is of type: {@link module:model/ProductCatalogResponse}
      */
     this.getAllProducts = function(getAllProductsRequest, opts, callback) {
       opts = opts || {};
@@ -97,7 +97,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20020;
+      var returnType = ProductCatalogResponse;
 
       //check isMLE for an api method 'this.getAllProducts'
       var inboundMLEStatus = 'false';
@@ -105,7 +105,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getAllProducts']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/products', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -125,7 +126,7 @@
      * Callback function to receive the result of the getFeedJobStatus operation.
      * @callback module:api/ProductFeedApi~getFeedJobStatusCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20019} data The data returned by the service call.
+     * @param {module:model/FeedJobStatusResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -135,7 +136,7 @@
      * @param {String} jobId Unique identifier of the feed submission job, returned by the Ingest Product Feed endpoint. 
      * @param {Object} getFeedJobStatusRequest Empty request body.
      * @param {module:api/ProductFeedApi~getFeedJobStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20019}
+     * data is of type: {@link module:model/FeedJobStatusResponse}
      */
     this.getFeedJobStatus = function(jobId, getFeedJobStatusRequest, callback) {
       var postBody = getFeedJobStatusRequest;
@@ -170,7 +171,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20019;
+      var returnType = FeedJobStatusResponse;
 
       //check isMLE for an api method 'this.getFeedJobStatus'
       var inboundMLEStatus = 'false';
@@ -178,7 +179,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getFeedJobStatus']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/products/feed/bulk/{jobId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -198,7 +200,7 @@
      * Callback function to receive the result of the getProduct operation.
      * @callback module:api/ProductFeedApi~getProductCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20021} data The data returned by the service call.
+     * @param {module:model/ProductDetailResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -208,7 +210,7 @@
      * @param {String} productId The unique product identifier (SKU) assigned by the merchant and provided during feed ingestion. Example: `SKU-1001`. 
      * @param {Object} getProductRequest Empty request body.
      * @param {module:api/ProductFeedApi~getProductCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20021}
+     * data is of type: {@link module:model/ProductDetailResponse}
      */
     this.getProduct = function(productId, getProductRequest, callback) {
       var postBody = getProductRequest;
@@ -243,7 +245,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20021;
+      var returnType = ProductDetailResponse;
 
       //check isMLE for an api method 'this.getProduct'
       var inboundMLEStatus = 'false';
@@ -251,7 +253,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getProduct']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/products/{product_id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -271,7 +274,7 @@
      * Callback function to receive the result of the submitProductFeedJson operation.
      * @callback module:api/ProductFeedApi~submitProductFeedJsonCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2021} data The data returned by the service call.
+     * @param {module:model/ProductAcceptedFeedResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -280,7 +283,7 @@
      * Submits a merchant product catalog to ACG for asynchronous processing and syndication to all configured protocol backends (e.g. Google Merchant Center).  **Processing pipeline:** 1. The request is accepted immediately and a `jobId` is returned — validation, ingestion,    and syndication all happen asynchronously in the background. 2. Each product is validated against UCP/ACP schema requirements (required fields, format rules) 3. Valid products are saved to the ACG catalog 4. An async syndication job is triggered to push the catalog to configured backends  **Supported content types:** `application/json` (this endpoint). CSV and JSONL uploads are also supported via file upload endpoints.  **Note:** This endpoint no longer returns per-product validation results or syndication outcomes synchronously — only the `jobId` acknowledgement shown below. Use that `jobId` to track processing and syndication status. 
      * @param {module:model/ProductFeedRequest} productFeedRequest Product feed payload. The `products` array is required and must contain at least one product. See `ProductInput` for the full list of required fields. 
      * @param {module:api/ProductFeedApi~submitProductFeedJsonCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2021}
+     * data is of type: {@link module:model/ProductAcceptedFeedResponse}
      */
     this.submitProductFeedJson = function(productFeedRequest, callback) {
       var postBody = productFeedRequest;
@@ -309,7 +312,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2021;
+      var returnType = ProductAcceptedFeedResponse;
 
       //check isMLE for an api method 'this.submitProductFeedJson'
       var inboundMLEStatus = 'mandatory';
@@ -317,7 +320,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['submitProductFeedJson']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/products/feed', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

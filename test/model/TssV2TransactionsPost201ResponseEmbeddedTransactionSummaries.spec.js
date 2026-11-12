@@ -170,6 +170,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property travelInformation (base name: "travelInformation")', function() {
+      // uncomment below and update the code to test the property travelInformation
+      //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries();
+      //expect(instance).to.be();
+    });
+
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new CyberSource.TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries();

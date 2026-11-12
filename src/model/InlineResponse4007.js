@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4007 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
+    root.CyberSource.InlineResponse4007 = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -41,6 +41,7 @@
 
   /**
    * Constructs a new <code>InlineResponse4007</code>.
+   * Standard error response returned for all 4xx and 5xx status codes.
    * @alias module:model/InlineResponse4007
    * @class
    */
@@ -65,49 +66,50 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      if (data.hasOwnProperty('error')) {
+        obj['error'] = ApiClient.convertToType(data['error'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'Number');
+      }
+      if (data.hasOwnProperty('timestamp')) {
+        obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Date');
+      }
+      if (data.hasOwnProperty('path')) {
+        obj['path'] = ApiClient.convertToType(data['path'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
-   * @member {String} submitTimeUtc
+   * Machine-readable error code (e.g. `BAD_REQUEST`, `NOT_FOUND`, `INTERNAL_ERROR`).
+   * @member {String} error
    */
-  exports.prototype['submitTimeUtc'] = undefined;
+  exports.prototype['error'] = undefined;
   /**
-   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_FOLLOW_ON_TRANSACTION_STATUS 
-   * @member {String} reason
-   */
-  exports.prototype['reason'] = undefined;
-  /**
-   * The detail message related to the status and reason listed above.
+   * Human-readable description of what went wrong and how to fix it.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
+   * HTTP status code.
+   * @member {Number} status
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['status'] = undefined;
+  /**
+   * ISO 8601 timestamp when the error occurred.
+   * @member {Date} timestamp
+   */
+  exports.prototype['timestamp'] = undefined;
+  /**
+   * The request path that produced this error.
+   * @member {String} path
+   */
+  exports.prototype['path'] = undefined;
 
 
 

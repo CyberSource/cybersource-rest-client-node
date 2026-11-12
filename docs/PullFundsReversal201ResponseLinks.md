@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**PullFundsReversal201ResponseLinksSelf**](PullFundsReversal201ResponseLinksSelf.md) |  | [optional] 
+**self** | [**PtsV2PaymentsPost201ResponseLinksSelf11**](PtsV2PaymentsPost201ResponseLinksSelf11.md) |  | [optional] 
 
 

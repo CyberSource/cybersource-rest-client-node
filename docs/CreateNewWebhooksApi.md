@@ -4,14 +4,61 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v2/webhooks | Create a New Webhook Subscription
 [**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v2/products/{organizationId} | Find Products You Can Subscribe To
-[**notificationSubscriptionsV2WebhooksPost**](CreateNewWebhooksApi.md#notificationSubscriptionsV2WebhooksPost) | **POST** /notification-subscriptions/v2/webhooks | Create a New Webhook Subscription
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
 
+<a name="createWebhookSubscription"></a>
+# **createWebhookSubscription**
+> CreateWebhookSubscriptionResponse createWebhookSubscription(opts)
+
+Create a New Webhook Subscription
+
+Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \"Create Webhook using oAuth with Client Credentials\" - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \"Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\" to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \"Create Webhook using oAuth with JWT\" 
+
+### Example
+```javascript
+var CyberSource = require('CyberSource');
+
+var apiInstance = new CyberSource.CreateNewWebhooksApi();
+
+var opts = { 
+  'createWebhook': new CyberSource.CreateWebhook() // CreateWebhook | The webhook payload
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createWebhookSubscription(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createWebhook** | [**CreateWebhook**](CreateWebhook.md)| The webhook payload | [optional] 
+
+### Return type
+
+[**CreateWebhookSubscriptionResponse**](CreateWebhookSubscriptionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
 <a name="findProductsToSubscribe"></a>
 # **findProductsToSubscribe**
-> [InlineResponse2006] findProductsToSubscribe(organizationId)
+> [ProductCatalogProduct] findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -44,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2006]**](InlineResponse2006.md)
+[**[ProductCatalogProduct]**](ProductCatalogProduct.md)
 
 ### Authorization
 
@@ -55,56 +102,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/hal+json;charset=utf-8
 
-<a name="notificationSubscriptionsV2WebhooksPost"></a>
-# **notificationSubscriptionsV2WebhooksPost**
-> InlineResponse2018 notificationSubscriptionsV2WebhooksPost(opts)
-
-Create a New Webhook Subscription
-
-Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \"Create Webhook using oAuth with Client Credentials\" - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \"Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\" to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \"Create Webhook using oAuth with JWT\" 
-
-### Example
-```javascript
-var CyberSource = require('CyberSource');
-
-var apiInstance = new CyberSource.CreateNewWebhooksApi();
-
-var opts = { 
-  'createWebhook': new CyberSource.CreateWebhook() // CreateWebhook | The webhook payload
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.notificationSubscriptionsV2WebhooksPost(opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createWebhook** | [**CreateWebhook**](CreateWebhook.md)| The webhook payload | [optional] 
-
-### Return type
-
-[**InlineResponse2018**](InlineResponse2018.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
-> InlineResponse2017 saveSymEgressKey(opts)
+> SaveSymEgressKeyResponse saveSymEgressKey(opts)
 
 Create Webhook Security Keys
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2017**](InlineResponse2017.md)
+[**SaveSymEgressKeyResponse**](SaveSymEgressKeyResponse.md)
 
 ### Authorization
 

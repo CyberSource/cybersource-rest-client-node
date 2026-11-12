@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.Riskv1decisionsMerchantInformation);
     });
 
+    it('should have the property categoryCode (base name: "categoryCode")', function() {
+      // uncomment below and update the code to test the property categoryCode
+      //var instane = new CyberSource.Riskv1decisionsMerchantInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property merchantDescriptor (base name: "merchantDescriptor")', function() {
       // uncomment below and update the code to test the property merchantDescriptor
       //var instane = new CyberSource.Riskv1decisionsMerchantInformation();

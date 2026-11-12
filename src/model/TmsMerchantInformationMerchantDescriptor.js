@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -61,18 +62,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('alternateName')) {
-        obj['alternateName'] = ApiClient.convertToType(data['alternateName'], 'String');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('url')) {
+        obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Alternate contact information for your business,such as an email address or URL. This value might be displayed on the cardholder's statement. When you do not include this value in your capture or credit request, the merchant URL from your CyberSource account is used. Important This value must consist of English characters 
-   * @member {String} alternateName
+   * Merchant's name
+   * @member {String} name
    */
-  exports.prototype['alternateName'] = undefined;
+  exports.prototype['name'] = undefined;
+  /**
+   * Address of company's website provided by merchant
+   * @member {String} url
+   */
+  exports.prototype['url'] = undefined;
 
 
 

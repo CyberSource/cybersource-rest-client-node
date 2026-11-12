@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="createMerchantDefinedFieldDefinition"></a>
 # **createMerchantDefinedFieldDefinition**
-> [InlineResponse2004] createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
+> [MerchantDefinedFieldWithIdResponse] createMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
 
 Create merchant defined field for a given reference type
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[MerchantDefinedFieldWithIdResponse]**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ No authorization required
 
 <a name="createPblMerchantDefinedFieldDefinition"></a>
 # **createPblMerchantDefinedFieldDefinition**
-> [InlineResponse2004] createPblMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest)
+> [MerchantDefinedFieldWithIdResponse] createPblMerchantDefinedFieldDefinition(referenceType, pblMerchantDefinedFieldDefinitionRequest)
 
 Create a PayByLink merchant defined field for a given reference type
 
@@ -77,7 +77,7 @@ var apiInstance = new CyberSource.MerchantDefinedFieldsApi();
 
 var referenceType = "referenceType_example"; // String | The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation
 
-var merchantDefinedFieldDefinitionRequest = new CyberSource.MerchantDefinedFieldDefinitionRequest1(); // MerchantDefinedFieldDefinitionRequest1 | 
+var pblMerchantDefinedFieldDefinitionRequest = new CyberSource.PblMerchantDefinedFieldDefinitionRequest(); // PblMerchantDefinedFieldDefinitionRequest | 
 
 
 var callback = function(error, data, response) {
@@ -87,7 +87,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createPblMerchantDefinedFieldDefinition(referenceType, merchantDefinedFieldDefinitionRequest, callback);
+apiInstance.createPblMerchantDefinedFieldDefinition(referenceType, pblMerchantDefinedFieldDefinitionRequest, callback);
 ```
 
 ### Parameters
@@ -95,11 +95,11 @@ apiInstance.createPblMerchantDefinedFieldDefinition(referenceType, merchantDefin
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **referenceType** | **String**| The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation | 
- **merchantDefinedFieldDefinitionRequest** | [**MerchantDefinedFieldDefinitionRequest1**](MerchantDefinedFieldDefinitionRequest1.md)|  | 
+ **pblMerchantDefinedFieldDefinitionRequest** | [**PblMerchantDefinedFieldDefinitionRequest**](PblMerchantDefinedFieldDefinitionRequest.md)|  | 
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[MerchantDefinedFieldWithIdResponse]**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ No authorization required
 
 <a name="getMerchantDefinedFieldsDefinitions"></a>
 # **getMerchantDefinedFieldsDefinitions**
-> [InlineResponse2004] getMerchantDefinedFieldsDefinitions(referenceType)
+> [MerchantDefinedFieldWithIdResponse] getMerchantDefinedFieldsDefinitions(referenceType)
 
 Get all merchant defined fields for a given reference type
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[MerchantDefinedFieldWithIdResponse]**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ No authorization required
 
 <a name="getPblMerchantDefinedFieldsDefinitions"></a>
 # **getPblMerchantDefinedFieldsDefinitions**
-> [InlineResponse2004] getPblMerchantDefinedFieldsDefinitions(referenceType)
+> [MerchantDefinedFieldWithIdResponse] getPblMerchantDefinedFieldsDefinitions(referenceType)
 
 Get all PayByLink merchant defined fields for a given reference type
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[MerchantDefinedFieldWithIdResponse]**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ No authorization required
 
 <a name="putMerchantDefinedFieldsDefinitions"></a>
 # **putMerchantDefinedFieldsDefinitions**
-> [InlineResponse2004] putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
+> [MerchantDefinedFieldWithIdResponse] putMerchantDefinedFieldsDefinitions(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest)
 
 Update a MerchantDefinedField by ID
 
@@ -308,7 +308,7 @@ var referenceType = "referenceType_example"; // String |
 
 var id = 789; // Number | 
 
-var merchantDefinedFieldCore = new CyberSource.MerchantDefinedFieldCore(); // MerchantDefinedFieldCore | 
+var updateMerchantDefinedFieldCoreByIdRequest = new CyberSource.UpdateMerchantDefinedFieldCoreByIdRequest(); // UpdateMerchantDefinedFieldCoreByIdRequest | 
 
 
 var callback = function(error, data, response) {
@@ -318,7 +318,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.putMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore, callback);
+apiInstance.putMerchantDefinedFieldsDefinitions(referenceType, id, updateMerchantDefinedFieldCoreByIdRequest, callback);
 ```
 
 ### Parameters
@@ -327,11 +327,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **referenceType** | **String**|  | 
  **id** | **Number**|  | 
- **merchantDefinedFieldCore** | [**MerchantDefinedFieldCore**](MerchantDefinedFieldCore.md)|  | 
+ **updateMerchantDefinedFieldCoreByIdRequest** | [**UpdateMerchantDefinedFieldCoreByIdRequest**](UpdateMerchantDefinedFieldCoreByIdRequest.md)|  | 
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[MerchantDefinedFieldWithIdResponse]**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 
@@ -344,7 +344,7 @@ No authorization required
 
 <a name="putPblMerchantDefinedFieldsDefinitions"></a>
 # **putPblMerchantDefinedFieldsDefinitions**
-> [InlineResponse2004] putPblMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore)
+> [MerchantDefinedFieldWithIdResponse] putPblMerchantDefinedFieldsDefinitions(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest)
 
 Update a PayByLink MerchantDefinedField by ID
 
@@ -358,7 +358,7 @@ var referenceType = "referenceType_example"; // String |
 
 var id = 789; // Number | 
 
-var merchantDefinedFieldCore = new CyberSource.MerchantDefinedFieldCore1(); // MerchantDefinedFieldCore1 | 
+var updatePblMerchantDefinedFieldCoreByIdRequest = new CyberSource.UpdatePblMerchantDefinedFieldCoreByIdRequest(); // UpdatePblMerchantDefinedFieldCoreByIdRequest | 
 
 
 var callback = function(error, data, response) {
@@ -368,7 +368,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.putPblMerchantDefinedFieldsDefinitions(referenceType, id, merchantDefinedFieldCore, callback);
+apiInstance.putPblMerchantDefinedFieldsDefinitions(referenceType, id, updatePblMerchantDefinedFieldCoreByIdRequest, callback);
 ```
 
 ### Parameters
@@ -377,11 +377,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **referenceType** | **String**|  | 
  **id** | **Number**|  | 
- **merchantDefinedFieldCore** | [**MerchantDefinedFieldCore1**](MerchantDefinedFieldCore1.md)|  | 
+ **updatePblMerchantDefinedFieldCoreByIdRequest** | [**UpdatePblMerchantDefinedFieldCoreByIdRequest**](UpdatePblMerchantDefinedFieldCoreByIdRequest.md)|  | 
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[MerchantDefinedFieldWithIdResponse]**](MerchantDefinedFieldWithIdResponse.md)
 
 ### Authorization
 

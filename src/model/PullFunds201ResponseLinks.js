@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PullFunds201ResponseLinksCustomer', 'model/PullFunds201ResponseLinksInstrumentIdentifier', 'model/PullFunds201ResponseLinksPaymentInstrument', 'model/PullFunds201ResponseLinksRefund', 'model/PullFunds201ResponseLinksReversal', 'model/PullFunds201ResponseLinksSelf'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseLinksSelf10', 'model/PtsV2PaymentsPost201ResponseLinksSelf5', 'model/PtsV2PaymentsPost201ResponseLinksSelf6', 'model/PtsV2PaymentsPost201ResponseLinksSelf7', 'model/PtsV2PaymentsPost201ResponseLinksSelf8', 'model/PtsV2PaymentsPost201ResponseLinksSelf9'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PullFunds201ResponseLinksCustomer'), require('./PullFunds201ResponseLinksInstrumentIdentifier'), require('./PullFunds201ResponseLinksPaymentInstrument'), require('./PullFunds201ResponseLinksRefund'), require('./PullFunds201ResponseLinksReversal'), require('./PullFunds201ResponseLinksSelf'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseLinksSelf10'), require('./PtsV2PaymentsPost201ResponseLinksSelf5'), require('./PtsV2PaymentsPost201ResponseLinksSelf6'), require('./PtsV2PaymentsPost201ResponseLinksSelf7'), require('./PtsV2PaymentsPost201ResponseLinksSelf8'), require('./PtsV2PaymentsPost201ResponseLinksSelf9'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PullFunds201ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.PullFunds201ResponseLinksCustomer, root.CyberSource.PullFunds201ResponseLinksInstrumentIdentifier, root.CyberSource.PullFunds201ResponseLinksPaymentInstrument, root.CyberSource.PullFunds201ResponseLinksRefund, root.CyberSource.PullFunds201ResponseLinksReversal, root.CyberSource.PullFunds201ResponseLinksSelf);
+    root.CyberSource.PullFunds201ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf10, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf5, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf6, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf7, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf8, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf9);
   }
-}(this, function(ApiClient, PullFunds201ResponseLinksCustomer, PullFunds201ResponseLinksInstrumentIdentifier, PullFunds201ResponseLinksPaymentInstrument, PullFunds201ResponseLinksRefund, PullFunds201ResponseLinksReversal, PullFunds201ResponseLinksSelf) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseLinksSelf10, PtsV2PaymentsPost201ResponseLinksSelf5, PtsV2PaymentsPost201ResponseLinksSelf6, PtsV2PaymentsPost201ResponseLinksSelf7, PtsV2PaymentsPost201ResponseLinksSelf8, PtsV2PaymentsPost201ResponseLinksSelf9) {
   'use strict';
 
 
@@ -67,49 +67,49 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('self')) {
-        obj['self'] = PullFunds201ResponseLinksSelf.constructFromObject(data['self']);
+        obj['self'] = PtsV2PaymentsPost201ResponseLinksSelf5.constructFromObject(data['self']);
       }
       if (data.hasOwnProperty('reversal')) {
-        obj['reversal'] = PullFunds201ResponseLinksReversal.constructFromObject(data['reversal']);
+        obj['reversal'] = PtsV2PaymentsPost201ResponseLinksSelf6.constructFromObject(data['reversal']);
       }
       if (data.hasOwnProperty('refund')) {
-        obj['refund'] = PullFunds201ResponseLinksRefund.constructFromObject(data['refund']);
+        obj['refund'] = PtsV2PaymentsPost201ResponseLinksSelf7.constructFromObject(data['refund']);
       }
       if (data.hasOwnProperty('customer')) {
-        obj['customer'] = PullFunds201ResponseLinksCustomer.constructFromObject(data['customer']);
+        obj['customer'] = PtsV2PaymentsPost201ResponseLinksSelf8.constructFromObject(data['customer']);
       }
       if (data.hasOwnProperty('paymentInstrument')) {
-        obj['paymentInstrument'] = PullFunds201ResponseLinksPaymentInstrument.constructFromObject(data['paymentInstrument']);
+        obj['paymentInstrument'] = PtsV2PaymentsPost201ResponseLinksSelf9.constructFromObject(data['paymentInstrument']);
       }
       if (data.hasOwnProperty('instrumentIdentifier')) {
-        obj['instrumentIdentifier'] = PullFunds201ResponseLinksInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
+        obj['instrumentIdentifier'] = PtsV2PaymentsPost201ResponseLinksSelf10.constructFromObject(data['instrumentIdentifier']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PullFunds201ResponseLinksSelf} self
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf5} self
    */
   exports.prototype['self'] = undefined;
   /**
-   * @member {module:model/PullFunds201ResponseLinksReversal} reversal
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf6} reversal
    */
   exports.prototype['reversal'] = undefined;
   /**
-   * @member {module:model/PullFunds201ResponseLinksRefund} refund
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf7} refund
    */
   exports.prototype['refund'] = undefined;
   /**
-   * @member {module:model/PullFunds201ResponseLinksCustomer} customer
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf8} customer
    */
   exports.prototype['customer'] = undefined;
   /**
-   * @member {module:model/PullFunds201ResponseLinksPaymentInstrument} paymentInstrument
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf9} paymentInstrument
    */
   exports.prototype['paymentInstrument'] = undefined;
   /**
-   * @member {module:model/PullFunds201ResponseLinksInstrumentIdentifier} instrumentIdentifier
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf10} instrumentIdentifier
    */
   exports.prototype['instrumentIdentifier'] = undefined;
 

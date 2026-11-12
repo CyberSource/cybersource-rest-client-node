@@ -77,7 +77,7 @@
    */
   exports.prototype['merchantDescriptor'] = undefined;
   /**
-   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  #### CyberSource through VisaNet For CtV processors, the maximum length is 20. 
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes. 
    * @member {String} vatRegistrationNumber
    */
   exports.prototype['vatRegistrationNumber'] = undefined;

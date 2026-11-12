@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="getCardArtAsset"></a>
 # **getCardArtAsset**
-> InlineResponse2002 getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType)
+> CardArtAssetResponse getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType)
 
 Retrieve Card Art
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**CardArtAssetResponse**](CardArtAssetResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ No authorization required
 
 <a name="getTokenizedCard"></a>
 # **getTokenizedCard**
-> InlineResponse2001 getTokenizedCard(tokenizedCardId, opts)
+> GetTokenizedCardResponse getTokenizedCard(tokenizedCardId, opts)
 
 Retrieve a Tokenized Card
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetTokenizedCardResponse**](GetTokenizedCardResponse.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ var apiInstance = new CyberSource.NetworkTokensApi();
 
 var tokenId = "tokenId_example"; // String | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
 
-var postPaymentCredentialsRequest = new CyberSource.PostPaymentCredentialsRequest1(); // PostPaymentCredentialsRequest1 | 
+var postPaymentCredentialsRequest = new CyberSource.PostPaymentCredentialsRequest(); // PostPaymentCredentialsRequest | 
 
 var opts = { 
   'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
@@ -204,7 +204,7 @@ apiInstance.postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **String**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. | 
- **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest1**](PostPaymentCredentialsRequest1.md)|  | 
+ **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest**](PostPaymentCredentialsRequest.md)|  | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
 
 ### Return type
@@ -222,7 +222,7 @@ No authorization required
 
 <a name="postTokenPaymentCredentialsV3"></a>
 # **postTokenPaymentCredentialsV3**
-> InlineResponse2011 postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsRequest, opts)
+> PostPaymentCredentialsResponse postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsV3Request, opts)
 
 Generate Payment Credentials Latest Version v3
 
@@ -236,7 +236,7 @@ var apiInstance = new CyberSource.NetworkTokensApi();
 
 var tokenId = "tokenId_example"; // String | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
 
-var postPaymentCredentialsRequest = new CyberSource.PostPaymentCredentialsRequest(); // PostPaymentCredentialsRequest | 
+var postPaymentCredentialsV3Request = new CyberSource.PostPaymentCredentialsV3Request(); // PostPaymentCredentialsV3Request | 
 
 var opts = { 
   'profileId': "profileId_example" // String | The Id of a profile containing user specific TMS configuration.
@@ -249,7 +249,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsRequest, opts, callback);
+apiInstance.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsV3Request, opts, callback);
 ```
 
 ### Parameters
@@ -257,12 +257,12 @@ apiInstance.postTokenPaymentCredentialsV3(tokenId, postPaymentCredentialsRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **String**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. | 
- **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest**](PostPaymentCredentialsRequest.md)|  | 
+ **postPaymentCredentialsV3Request** | [**PostPaymentCredentialsV3Request**](PostPaymentCredentialsV3Request.md)|  | 
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional] 
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**PostPaymentCredentialsResponse**](PostPaymentCredentialsResponse.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ No authorization required
 
 <a name="postTokenizedCard"></a>
 # **postTokenizedCard**
-> InlineResponse2001 postTokenizedCard(postTokenizedCardRequest, opts)
+> GetTokenizedCardResponse postTokenizedCard(postTokenizedCardRequest, opts)
 
 Create a Tokenized Card
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetTokenizedCardResponse**](GetTokenizedCardResponse.md)
 
 ### Authorization
 

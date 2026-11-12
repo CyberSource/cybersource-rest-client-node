@@ -65,7 +65,7 @@ No authorization required
 
 <a name="addMerchantKey"></a>
 # **addMerchantKey**
-> ActivateMerchantKeyResponse200 addMerchantKey(merchantId, keyRequest)
+> ActivateMerchantKeyResponse200 addMerchantKey(merchantId, addMerchantKeyRequest)
 
 Add a key to a merchant
 
@@ -79,7 +79,7 @@ var apiInstance = new CyberSource.MerchantRegistrationApi();
 
 var merchantId = "merchantId_example"; // String | Unique merchant identifier (UUID)
 
-var keyRequest = new CyberSource.KeyRequest1(); // KeyRequest1 | Key creation request
+var addMerchantKeyRequest = new CyberSource.AddMerchantKeyRequest(); // AddMerchantKeyRequest | Key creation request
 
 
 var callback = function(error, data, response) {
@@ -89,7 +89,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addMerchantKey(merchantId, keyRequest, callback);
+apiInstance.addMerchantKey(merchantId, addMerchantKeyRequest, callback);
 ```
 
 ### Parameters
@@ -97,7 +97,7 @@ apiInstance.addMerchantKey(merchantId, keyRequest, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchantId** | **String**| Unique merchant identifier (UUID) | 
- **keyRequest** | [**KeyRequest1**](KeyRequest1.md)| Key creation request | 
+ **addMerchantKeyRequest** | [**AddMerchantKeyRequest**](AddMerchantKeyRequest.md)| Key creation request | 
 
 ### Return type
 
@@ -354,7 +354,7 @@ No authorization required
 
 <a name="updateMerchantKey"></a>
 # **updateMerchantKey**
-> ActivateMerchantKeyResponse200 updateMerchantKey(merchantId, keyId, keyUpdate)
+> ActivateMerchantKeyResponse200 updateMerchantKey(merchantId, keyId, updateMerchantKeyRequest)
 
 Update a merchant key
 
@@ -370,7 +370,7 @@ var merchantId = "merchantId_example"; // String | Unique merchant identifier (U
 
 var keyId = "keyId_example"; // String | Unique key identifier (UUID)
 
-var keyUpdate = new CyberSource.KeyUpdate1(); // KeyUpdate1 | Key update request
+var updateMerchantKeyRequest = new CyberSource.UpdateMerchantKeyRequest(); // UpdateMerchantKeyRequest | Key update request
 
 
 var callback = function(error, data, response) {
@@ -380,7 +380,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateMerchantKey(merchantId, keyId, keyUpdate, callback);
+apiInstance.updateMerchantKey(merchantId, keyId, updateMerchantKeyRequest, callback);
 ```
 
 ### Parameters
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchantId** | **String**| Unique merchant identifier (UUID) | 
  **keyId** | **String**| Unique key identifier (UUID) | 
- **keyUpdate** | [**KeyUpdate1**](KeyUpdate1.md)| Key update request | 
+ **updateMerchantKeyRequest** | [**UpdateMerchantKeyRequest**](UpdateMerchantKeyRequest.md)| Key update request | 
 
 ### Return type
 

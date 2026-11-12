@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2013ErrorInformationDetails'], factory);
+    define(['ApiClient', 'model/InlineResponse4003Details'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2013ErrorInformationDetails'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse4003Details'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4003 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013ErrorInformationDetails);
+    root.CyberSource.InlineResponse4003 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4003Details);
   }
-}(this, function(ApiClient, InlineResponse2013ErrorInformationDetails) {
+}(this, function(ApiClient, InlineResponse4003Details) {
   'use strict';
 
 
@@ -52,7 +52,6 @@
 
 
 
-
   };
 
   /**
@@ -66,57 +65,50 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('submitTimeStampUtc')) {
-        obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
-      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
+      if (data.hasOwnProperty('code')) {
+        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+      }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse2013ErrorInformationDetails]);
+        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4003Details]);
+      }
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeStampUtc
-   */
-  exports.prototype['submitTimeStampUtc'] = undefined;
-  /**
-   * Possible values: - INVALID_REQUEST 
+   * The status of the submitted request.  Possible values: - BAD_REQUEST
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD 
-   * @member {String} reason
-   */
-  exports.prototype['reason'] = undefined;
-  /**
-   * The detail message related to the status and reason listed above. 
+   * The detail message related to the status and reason listed above.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2013ErrorInformationDetails>} details
+   * An optional short string which identifies the exact error.
+   * @member {String} code
+   */
+  exports.prototype['code'] = undefined;
+  /**
+   * An optional array which provides more details of the error.
+   * @member {Array.<module:model/InlineResponse4003Details>} details
    */
   exports.prototype['details'] = undefined;
+  /**
+   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {String} submitTimeUtc
+   */
+  exports.prototype['submitTimeUtc'] = undefined;
 
 
 

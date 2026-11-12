@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getBatchReport"></a>
 # **getBatchReport**
-> InlineResponse20014 getBatchReport(batchId)
+> BatchReportResponse getBatchReport(batchId)
 
 Retrieve a Batch Report
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**BatchReportResponse**](BatchReportResponse.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ No authorization required
 
 <a name="getBatchStatus"></a>
 # **getBatchStatus**
-> InlineResponse20013 getBatchStatus(batchId)
+> BatchStatusResponse getBatchStatus(batchId)
 
 Retrieve a Batch Status
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**BatchStatusResponse**](BatchStatusResponse.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 <a name="getBatchesList"></a>
 # **getBatchesList**
-> InlineResponse20012 getBatchesList(opts)
+> BatchesListResponse getBatchesList(opts)
 
 List Batches
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**BatchesListResponse**](BatchesListResponse.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ No authorization required
 
 <a name="postBatch"></a>
 # **postBatch**
-> InlineResponse202 postBatch(body)
+> BatchCreateResponse postBatch(postBatchRequest)
 
 Create a Batch
 
@@ -169,7 +169,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.BatchesApi();
 
-var body = new CyberSource.Body(); // Body | 
+var postBatchRequest = new CyberSource.PostBatchRequest(); // PostBatchRequest | 
 
 
 var callback = function(error, data, response) {
@@ -179,18 +179,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postBatch(body, callback);
+apiInstance.postBatch(postBatchRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)|  | 
+ **postBatchRequest** | [**PostBatchRequest**](PostBatchRequest.md)|  | 
 
 ### Return type
 
-[**InlineResponse202**](InlineResponse202.md)
+[**BatchCreateResponse**](BatchCreateResponse.md)
 
 ### Authorization
 

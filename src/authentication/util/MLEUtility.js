@@ -122,7 +122,7 @@ exports.checkAndDecryptEncryptedResponse = function (responseBody, merchantConfi
   }
 }
 
-exports.encryptRequestPayload = function(merchantConfig, requestBody) {
+exports.encryptRequestPayload = function(merchantConfig, requestBody, contentType) {
     if (requestBody == null) {
       return Promise.resolve(requestBody);
     }
@@ -158,10 +158,12 @@ exports.encryptRequestPayload = function(merchantConfig, requestBody) {
     const headers = {
         alg: "RSA-OAEP-256",
         enc: "A256GCM",
-        cty: "JWT",
         kid: serialNumber,
         ...customHeaders
     };
+    if (typeof contentType === "string" && contentType.trim() !== "") {
+        headers.cty = contentType;
+    }
     
     let requestBodyStr = requestBody;
     if (requestBody !== "{}") {

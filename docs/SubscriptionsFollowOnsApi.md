@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createFollowOnSubscription"></a>
 # **createFollowOnSubscription**
-> CreateSubscriptionResponse createFollowOnSubscription(requestId, createSubscriptionRequest)
+> CreateSubscriptionResponse createFollowOnSubscription(requestId, createFollowOnSubscriptionRequest)
 
 Create a Follow-On Subscription
 
@@ -24,7 +24,7 @@ var apiInstance = new CyberSource.SubscriptionsFollowOnsApi();
 
 var requestId = "requestId_example"; // String | Request Id of an existing successful Transaction
 
-var createSubscriptionRequest = new CyberSource.CreateSubscriptionRequest1(); // CreateSubscriptionRequest1 | 
+var createFollowOnSubscriptionRequest = new CyberSource.CreateFollowOnSubscriptionRequest(); // CreateFollowOnSubscriptionRequest | 
 
 
 var callback = function(error, data, response) {
@@ -34,7 +34,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createFollowOnSubscription(requestId, createSubscriptionRequest, callback);
+apiInstance.createFollowOnSubscription(requestId, createFollowOnSubscriptionRequest, callback);
 ```
 
 ### Parameters
@@ -42,7 +42,7 @@ apiInstance.createFollowOnSubscription(requestId, createSubscriptionRequest, cal
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestId** | **String**| Request Id of an existing successful Transaction | 
- **createSubscriptionRequest** | [**CreateSubscriptionRequest1**](CreateSubscriptionRequest1.md)|  | 
+ **createFollowOnSubscriptionRequest** | [**CreateFollowOnSubscriptionRequest**](CreateFollowOnSubscriptionRequest.md)|  | 
 
 ### Return type
 
@@ -59,7 +59,7 @@ No authorization required
 
 <a name="getFollowOnSubscription"></a>
 # **getFollowOnSubscription**
-> GetSubscriptionResponse1 getFollowOnSubscription(requestId)
+> GetFollowOnSubscriptionResponse getFollowOnSubscription(requestId)
 
 Get a Follow-On Subscription
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSubscriptionResponse1**](GetSubscriptionResponse1.md)
+[**GetFollowOnSubscriptionResponse**](GetFollowOnSubscriptionResponse.md)
 
 ### Authorization
 

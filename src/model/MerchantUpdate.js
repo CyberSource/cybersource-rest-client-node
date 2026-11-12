@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Iccv1merchantsProtocolInteractions', 'model/MerchantRegistrationResponse201ApiIntegrations', 'model/MerchantRegistrationResponse201WebIntegrations'], factory);
+    define(['ApiClient', 'model/Iccv1merchantsApiIntegrations', 'model/Iccv1merchantsProtocolInteractions', 'model/Iccv1merchantsWebIntegrations'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Iccv1merchantsProtocolInteractions'), require('./MerchantRegistrationResponse201ApiIntegrations'), require('./MerchantRegistrationResponse201WebIntegrations'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1merchantsApiIntegrations'), require('./Iccv1merchantsProtocolInteractions'), require('./Iccv1merchantsWebIntegrations'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantUpdate = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1merchantsProtocolInteractions, root.CyberSource.MerchantRegistrationResponse201ApiIntegrations, root.CyberSource.MerchantRegistrationResponse201WebIntegrations);
+    root.CyberSource.MerchantUpdate = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1merchantsApiIntegrations, root.CyberSource.Iccv1merchantsProtocolInteractions, root.CyberSource.Iccv1merchantsWebIntegrations);
   }
-}(this, function(ApiClient, Iccv1merchantsProtocolInteractions, MerchantRegistrationResponse201ApiIntegrations, MerchantRegistrationResponse201WebIntegrations) {
+}(this, function(ApiClient, Iccv1merchantsApiIntegrations, Iccv1merchantsProtocolInteractions, Iccv1merchantsWebIntegrations) {
   'use strict';
 
 
@@ -88,10 +88,10 @@
         obj['protocolInteractions'] = ApiClient.convertToType(data['protocolInteractions'], [Iccv1merchantsProtocolInteractions]);
       }
       if (data.hasOwnProperty('webIntegrations')) {
-        obj['webIntegrations'] = MerchantRegistrationResponse201WebIntegrations.constructFromObject(data['webIntegrations']);
+        obj['webIntegrations'] = Iccv1merchantsWebIntegrations.constructFromObject(data['webIntegrations']);
       }
       if (data.hasOwnProperty('apiIntegrations')) {
-        obj['apiIntegrations'] = MerchantRegistrationResponse201ApiIntegrations.constructFromObject(data['apiIntegrations']);
+        obj['apiIntegrations'] = Iccv1merchantsApiIntegrations.constructFromObject(data['apiIntegrations']);
       }
     }
     return obj;
@@ -128,11 +128,11 @@
    */
   exports.prototype['protocolInteractions'] = undefined;
   /**
-   * @member {module:model/MerchantRegistrationResponse201WebIntegrations} webIntegrations
+   * @member {module:model/Iccv1merchantsWebIntegrations} webIntegrations
    */
   exports.prototype['webIntegrations'] = undefined;
   /**
-   * @member {module:model/MerchantRegistrationResponse201ApiIntegrations} apiIntegrations
+   * @member {module:model/Iccv1merchantsApiIntegrations} apiIntegrations
    */
   exports.prototype['apiIntegrations'] = undefined;
 

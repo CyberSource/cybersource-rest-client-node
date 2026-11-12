@@ -116,6 +116,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property vouchers (base name: "vouchers")', function() {
+      // uncomment below and update the code to test the property vouchers
+      //var instane = new CyberSource.Riskv1decisionsOrderInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property totalOffersCount (base name: "totalOffersCount")', function() {
       // uncomment below and update the code to test the property totalOffersCount
       //var instane = new CyberSource.Riskv1decisionsOrderInformation();

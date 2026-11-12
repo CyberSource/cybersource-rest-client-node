@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PullFundsReversal201ResponseLinksSelf'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseLinksSelf11'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PullFundsReversal201ResponseLinksSelf'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseLinksSelf11'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PullFundsReversal201ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.PullFundsReversal201ResponseLinksSelf);
+    root.CyberSource.PullFundsReversal201ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf11);
   }
-}(this, function(ApiClient, PullFundsReversal201ResponseLinksSelf) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseLinksSelf11) {
   'use strict';
 
 
@@ -62,14 +62,14 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('self')) {
-        obj['self'] = PullFundsReversal201ResponseLinksSelf.constructFromObject(data['self']);
+        obj['self'] = PtsV2PaymentsPost201ResponseLinksSelf11.constructFromObject(data['self']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PullFundsReversal201ResponseLinksSelf} self
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf11} self
    */
   exports.prototype['self'] = undefined;
 

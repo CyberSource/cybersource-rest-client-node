@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/UnderwritingConfigurationBusinessDetails', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationAddress', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress'], factory);
+    define(['ApiClient', 'model/UnderwritingConfigurationBusinessDetails', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationAddress', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation', 'model/UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress', 'model/UnderwritingConfigurationOwnerInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./UnderwritingConfigurationBusinessDetails'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationAddress'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress'));
+    module.exports = factory(require('../ApiClient'), require('./UnderwritingConfigurationBusinessDetails'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationAddress'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation'), require('./UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress'), require('./UnderwritingConfigurationOwnerInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformation = factory(root.CyberSource.ApiClient, root.CyberSource.UnderwritingConfigurationBusinessDetails, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationAddress, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress);
+    root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformation = factory(root.CyberSource.ApiClient, root.CyberSource.UnderwritingConfigurationBusinessDetails, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationAddress, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation, root.CyberSource.UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress, root.CyberSource.UnderwritingConfigurationOwnerInformation);
   }
-}(this, function(ApiClient, UnderwritingConfigurationBusinessDetails, UnderwritingConfigurationOrganizationInformationBusinessInformationAddress, UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact, UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation, UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation, UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress) {
+}(this, function(ApiClient, UnderwritingConfigurationBusinessDetails, UnderwritingConfigurationOrganizationInformationBusinessInformationAddress, UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact, UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation, UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress, UnderwritingConfigurationOwnerInformation) {
   'use strict';
 
 
@@ -162,7 +162,7 @@
         obj['businessDetails'] = UnderwritingConfigurationBusinessDetails.constructFromObject(data['businessDetails']);
       }
       if (data.hasOwnProperty('ownerInformation')) {
-        obj['ownerInformation'] = ApiClient.convertToType(data['ownerInformation'], [UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation]);
+        obj['ownerInformation'] = ApiClient.convertToType(data['ownerInformation'], [UnderwritingConfigurationOwnerInformation]);
       }
       if (data.hasOwnProperty('directorInformation')) {
         obj['directorInformation'] = ApiClient.convertToType(data['directorInformation'], [UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation]);
@@ -277,7 +277,7 @@
    */
   exports.prototype['businessDetails'] = undefined;
   /**
-   * @member {Array.<module:model/UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation>} ownerInformation
+   * @member {Array.<module:model/UnderwritingConfigurationOwnerInformation>} ownerInformation
    */
   exports.prototype['ownerInformation'] = undefined;
   /**

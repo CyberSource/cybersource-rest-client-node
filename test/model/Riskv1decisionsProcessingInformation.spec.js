@@ -62,6 +62,36 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property businessApplicationId (base name: "businessApplicationId")', function() {
+      // uncomment below and update the code to test the property businessApplicationId
+      //var instane = new CyberSource.Riskv1decisionsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property purposeOfPayment (base name: "purposeOfPayment")', function() {
+      // uncomment below and update the code to test the property purposeOfPayment
+      //var instane = new CyberSource.Riskv1decisionsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preAuthStatus (base name: "preAuthStatus")', function() {
+      // uncomment below and update the code to test the property preAuthStatus
+      //var instane = new CyberSource.Riskv1decisionsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preAuthResponseCode (base name: "preAuthResponseCode")', function() {
+      // uncomment below and update the code to test the property preAuthResponseCode
+      //var instane = new CyberSource.Riskv1decisionsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authorizationOptions (base name: "authorizationOptions")', function() {
+      // uncomment below and update the code to test the property authorizationOptions
+      //var instane = new CyberSource.Riskv1decisionsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

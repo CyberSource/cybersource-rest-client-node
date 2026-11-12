@@ -1,0 +1,9 @@
+# CyberSource.Tms403ErrorResponseErrors
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**type** | **String** | The type of error.  Possible Values:   - forbidden   - declined  | [optional] 
+**message** | **String** | The detailed message related to the type. | [optional] 
+
+

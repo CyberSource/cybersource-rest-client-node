@@ -17,6 +17,8 @@ module.exports = {
     JWT_KEY_TYPE_P12                  :  "P12",
     JWT_KEY_TYPE_SHARED_SECRET        :  "SHARED_SECRET",
     V_C_MERCHANTID                    :  "v-c-merchant-id",
+    V_C_RESPONSE_MLE_ALGO             :  "v-c-response-mle-algo",
+    RSA_OAEP_256                      :  "RSA-OAEP-256",
     DATE                              :  "date",
     HOST                              :  "host",
     SIGNATURE                         :  "Signature",

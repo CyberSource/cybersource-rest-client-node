@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="retrieveOrDeletePaymentToken"></a>
 # **retrieveOrDeletePaymentToken**
-> InlineResponse201 retrieveOrDeletePaymentToken(request)
+> RetrieveOrDeletePaymentTokenResponse retrieveOrDeletePaymentToken(paymentTokenRequest)
 
 Retrieve or Delete Payment Token
 
@@ -21,7 +21,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.PaymentTokensApi();
 
-var request = new CyberSource.Request(); // Request | 
+var paymentTokenRequest = new CyberSource.PaymentTokenRequest(); // PaymentTokenRequest | 
 
 
 var callback = function(error, data, response) {
@@ -31,18 +31,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.retrieveOrDeletePaymentToken(request, callback);
+apiInstance.retrieveOrDeletePaymentToken(paymentTokenRequest, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**Request**](Request.md)|  | 
+ **paymentTokenRequest** | [**PaymentTokenRequest**](PaymentTokenRequest.md)|  | 
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**RetrieveOrDeletePaymentTokenResponse**](RetrieveOrDeletePaymentTokenResponse.md)
 
 ### Authorization
 

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createQueryApi"></a>
 # **createQueryApi**
-> InlineResponse2014 createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts)
+> CreateQueryApiResponse createQueryApi(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts)
 
 Query Transaction Details
 
@@ -23,7 +23,7 @@ var apiInstance = new CyberSource.TransactionQueryApi();
 
 var id = "id_example"; // String | This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried. 
 
-var body = new CyberSource.Body1(); // Body1 | 
+var createQueryApiRequest = new CyberSource.CreateQueryApiRequest(); // CreateQueryApiRequest | 
 
 var contentType = "contentType_example"; // String | 
 
@@ -49,7 +49,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts, callback);
+apiInstance.createQueryApi(id, createQueryApiRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, opts, callback);
 ```
 
 ### Parameters
@@ -57,7 +57,7 @@ apiInstance.createQueryApi(id, body, contentType, xRequestid, vCMerchantId, vCPe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried.  | 
- **body** | [**Body1**](Body1.md)|  | 
+ **createQueryApiRequest** | [**CreateQueryApiRequest**](CreateQueryApiRequest.md)|  | 
  **contentType** | **String**|  | 
  **xRequestid** | **String**|  | 
  **vCMerchantId** | **String**|  | 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**CreateQueryApiResponse**](CreateQueryApiResponse.md)
 
 ### Authorization
 

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="tokenize"></a>
 # **tokenize**
-> InlineResponse200 tokenize(postTokenizeRequest, opts)
+> PostTokenizeResponse tokenize(postTokenizeRequest, opts)
 
 Tokenize
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**PostTokenizeResponse**](PostTokenizeResponse.md)
 
 ### Authorization
 

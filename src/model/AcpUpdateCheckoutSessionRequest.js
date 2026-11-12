@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AcpUpdateCheckoutSessionBuyer', 'model/Iccv1checkoutSessionsItems', 'model/Iccv1checkoutSessionssessionIdFulfillmentAddress'], factory);
+    define(['ApiClient', 'model/AcpUpdateCheckoutSessionBuyer', 'model/Iccv1UpdateCheckoutSessionsFulfillmentAddress', 'model/Iccv1checkoutSessionsItems'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AcpUpdateCheckoutSessionBuyer'), require('./Iccv1checkoutSessionsItems'), require('./Iccv1checkoutSessionssessionIdFulfillmentAddress'));
+    module.exports = factory(require('../ApiClient'), require('./AcpUpdateCheckoutSessionBuyer'), require('./Iccv1UpdateCheckoutSessionsFulfillmentAddress'), require('./Iccv1checkoutSessionsItems'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AcpUpdateCheckoutSessionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.AcpUpdateCheckoutSessionBuyer, root.CyberSource.Iccv1checkoutSessionsItems, root.CyberSource.Iccv1checkoutSessionssessionIdFulfillmentAddress);
+    root.CyberSource.AcpUpdateCheckoutSessionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.AcpUpdateCheckoutSessionBuyer, root.CyberSource.Iccv1UpdateCheckoutSessionsFulfillmentAddress, root.CyberSource.Iccv1checkoutSessionsItems);
   }
-}(this, function(ApiClient, AcpUpdateCheckoutSessionBuyer, Iccv1checkoutSessionsItems, Iccv1checkoutSessionssessionIdFulfillmentAddress) {
+}(this, function(ApiClient, AcpUpdateCheckoutSessionBuyer, Iccv1UpdateCheckoutSessionsFulfillmentAddress, Iccv1checkoutSessionsItems) {
   'use strict';
 
 
@@ -72,7 +72,7 @@
         obj['buyer'] = AcpUpdateCheckoutSessionBuyer.constructFromObject(data['buyer']);
       }
       if (data.hasOwnProperty('fulfillment_address')) {
-        obj['fulfillment_address'] = Iccv1checkoutSessionssessionIdFulfillmentAddress.constructFromObject(data['fulfillment_address']);
+        obj['fulfillment_address'] = Iccv1UpdateCheckoutSessionsFulfillmentAddress.constructFromObject(data['fulfillment_address']);
       }
       if (data.hasOwnProperty('fulfillment_option_id')) {
         obj['fulfillment_option_id'] = ApiClient.convertToType(data['fulfillment_option_id'], 'String');
@@ -91,7 +91,7 @@
    */
   exports.prototype['buyer'] = undefined;
   /**
-   * @member {module:model/Iccv1checkoutSessionssessionIdFulfillmentAddress} fulfillment_address
+   * @member {module:model/Iccv1UpdateCheckoutSessionsFulfillmentAddress} fulfillment_address
    */
   exports.prototype['fulfillment_address'] = undefined;
   /**

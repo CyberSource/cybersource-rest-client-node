@@ -132,7 +132,7 @@
    */
   exports.prototype['insuranceAmount'] = undefined;
   /**
-   * Amount being charged as duty amount.             
+   * Amount being charged as duty amount. 
    * @member {String} dutyAmount
    */
   exports.prototype['dutyAmount'] = undefined;

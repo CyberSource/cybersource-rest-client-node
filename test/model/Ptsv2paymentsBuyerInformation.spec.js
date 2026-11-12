@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property loyalty (base name: "loyalty")', function() {
+      // uncomment below and update the code to test the property loyalty
+      //var instane = new CyberSource.Ptsv2paymentsBuyerInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

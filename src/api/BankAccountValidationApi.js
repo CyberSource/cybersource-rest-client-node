@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/AccountValidationsRequest', 'model/InlineResponse20015', 'model/InlineResponse40014', 'model/InlineResponse4033', 'model/InlineResponse4046', 'model/InlineResponse4222', 'model/InlineResponse5024'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AccountValidationsRequest', 'model/BankAccountValidationResponse', 'model/InlineResponse4005', 'model/InlineResponse4032', 'model/InlineResponse4045', 'model/InlineResponse4222', 'model/InlineResponse5021'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AccountValidationsRequest'), require('../model/InlineResponse20015'), require('../model/InlineResponse40014'), require('../model/InlineResponse4033'), require('../model/InlineResponse4046'), require('../model/InlineResponse4222'), require('../model/InlineResponse5024'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AccountValidationsRequest'), require('../model/BankAccountValidationResponse'), require('../model/InlineResponse4005'), require('../model/InlineResponse4032'), require('../model/InlineResponse4045'), require('../model/InlineResponse4222'), require('../model/InlineResponse5021'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BankAccountValidationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AccountValidationsRequest, root.CyberSource.InlineResponse20015, root.CyberSource.InlineResponse40014, root.CyberSource.InlineResponse4033, root.CyberSource.InlineResponse4046, root.CyberSource.InlineResponse4222, root.CyberSource.InlineResponse5024);
+    root.CyberSource.BankAccountValidationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AccountValidationsRequest, root.CyberSource.BankAccountValidationResponse, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse4222, root.CyberSource.InlineResponse5021);
   }
-}(this, function(MLEUtility, ApiClient, AccountValidationsRequest, InlineResponse20015, InlineResponse40014, InlineResponse4033, InlineResponse4046, InlineResponse4222, InlineResponse5024) {
+}(this, function(MLEUtility, ApiClient, AccountValidationsRequest, BankAccountValidationResponse, InlineResponse4005, InlineResponse4032, InlineResponse4045, InlineResponse4222, InlineResponse5021) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the bankAccountValidationRequest operation.
      * @callback module:api/BankAccountValidationApi~bankAccountValidationRequestCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20015} data The data returned by the service call.
+     * @param {module:model/BankAccountValidationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * The Visa Bank Account Validation Service is a new standalone product designed to validate customer's routing and bank account number combination for ACH transactions. Merchant's can use this standalone product to validate their customer's account prior to processing an ACH transaction against the customer's account to comply with Nacha's account validation mandate for Web-debit transactions. 
      * @param {module:model/AccountValidationsRequest} accountValidationsRequest 
      * @param {module:api/BankAccountValidationApi~bankAccountValidationRequestCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20015}
+     * data is of type: {@link module:model/BankAccountValidationResponse}
      */
     this.bankAccountValidationRequest = function(accountValidationsRequest, callback) {
       var postBody = accountValidationsRequest;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20015;
+      var returnType = BankAccountValidationResponse;
 
       //check isMLE for an api method 'this.bankAccountValidationRequest'
       var inboundMLEStatus = 'mandatory';
@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['bankAccountValidationRequest']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/bavs/v1/account-validations', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

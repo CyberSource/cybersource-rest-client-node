@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/AddAgentKeyResponse201', 'model/AgentRegistrationConflictResponse409', 'model/AgentRegistrationResponse201', 'model/AgentRegistrationValidationErrorResponse422', 'model/AgentRequest', 'model/AgentUpdate', 'model/KeyRequest', 'model/KeyUpdate', 'model/ListAgentKeysResponse200'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AddAgentKeyRequest', 'model/AddAgentKeyResponse201', 'model/AgentRegistrationConflictResponse409', 'model/AgentRegistrationResponse201', 'model/AgentRegistrationValidationErrorResponse422', 'model/AgentRequest', 'model/AgentUpdate', 'model/ListAgentKeysResponse200', 'model/UpdateAgentKeyRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AddAgentKeyResponse201'), require('../model/AgentRegistrationConflictResponse409'), require('../model/AgentRegistrationResponse201'), require('../model/AgentRegistrationValidationErrorResponse422'), require('../model/AgentRequest'), require('../model/AgentUpdate'), require('../model/KeyRequest'), require('../model/KeyUpdate'), require('../model/ListAgentKeysResponse200'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AddAgentKeyRequest'), require('../model/AddAgentKeyResponse201'), require('../model/AgentRegistrationConflictResponse409'), require('../model/AgentRegistrationResponse201'), require('../model/AgentRegistrationValidationErrorResponse422'), require('../model/AgentRequest'), require('../model/AgentUpdate'), require('../model/ListAgentKeysResponse200'), require('../model/UpdateAgentKeyRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgentRegistrationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AddAgentKeyResponse201, root.CyberSource.AgentRegistrationConflictResponse409, root.CyberSource.AgentRegistrationResponse201, root.CyberSource.AgentRegistrationValidationErrorResponse422, root.CyberSource.AgentRequest, root.CyberSource.AgentUpdate, root.CyberSource.KeyRequest, root.CyberSource.KeyUpdate, root.CyberSource.ListAgentKeysResponse200);
+    root.CyberSource.AgentRegistrationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AddAgentKeyRequest, root.CyberSource.AddAgentKeyResponse201, root.CyberSource.AgentRegistrationConflictResponse409, root.CyberSource.AgentRegistrationResponse201, root.CyberSource.AgentRegistrationValidationErrorResponse422, root.CyberSource.AgentRequest, root.CyberSource.AgentUpdate, root.CyberSource.ListAgentKeysResponse200, root.CyberSource.UpdateAgentKeyRequest);
   }
-}(this, function(MLEUtility, ApiClient, AddAgentKeyResponse201, AgentRegistrationConflictResponse409, AgentRegistrationResponse201, AgentRegistrationValidationErrorResponse422, AgentRequest, AgentUpdate, KeyRequest, KeyUpdate, ListAgentKeysResponse200) {
+}(this, function(MLEUtility, ApiClient, AddAgentKeyRequest, AddAgentKeyResponse201, AgentRegistrationConflictResponse409, AgentRegistrationResponse201, AgentRegistrationValidationErrorResponse422, AgentRequest, AgentUpdate, ListAgentKeysResponse200, UpdateAgentKeyRequest) {
   'use strict';
 
   /**
@@ -106,7 +106,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['activateAgentKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents/{agentId}/keys/{keyId}/activate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -134,27 +135,27 @@
      * Add a key to an agent
      * **Add a Key to an Agent**<br>Uploads a new public key for the specified agent. The key is created in ***deactivated*** state and must be explicitly activated via `POST /agents/{agentId}/keys/{keyId}/activate` before it can be used.<br><br> Returns **404** if the agent is not found, **403** if the agent is deactivated. 
      * @param {String} agentId Unique agent identifier
-     * @param {module:model/KeyRequest} keyRequest Key creation request
+     * @param {module:model/AddAgentKeyRequest} addAgentKeyRequest Key creation request
      * @param {module:api/AgentRegistrationApi~addAgentKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AddAgentKeyResponse201}
      */
-    this.addAgentKey = function(agentId, keyRequest, callback) {
-      var postBody = keyRequest;
+    this.addAgentKey = function(agentId, addAgentKeyRequest, callback) {
+      var postBody = addAgentKeyRequest;
 
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling addAgentKey");
       }
 
-      // verify the required parameter 'keyRequest' is set
-      if (keyRequest === undefined || keyRequest === null) {
-        throw new Error("Missing the required parameter 'keyRequest' when calling addAgentKey");
+      // verify the required parameter 'addAgentKeyRequest' is set
+      if (addAgentKeyRequest === undefined || addAgentKeyRequest === null) {
+        throw new Error("Missing the required parameter 'addAgentKeyRequest' when calling addAgentKey");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/KeyRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/AddAgentKeyRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -179,7 +180,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['addAgentKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents/{agentId}/keys', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -245,7 +247,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getAgent']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents/{agentId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -318,7 +321,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getAgentKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents/{agentId}/keys/{keyId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -390,7 +394,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['listAgentKeys']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents/{agentId}/keys', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -456,7 +461,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['registerAgent']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -529,7 +535,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateAgent']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents/{agentId}', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -558,12 +565,12 @@
      * **Update a Key**<br>Updates key information. The following fields can be modified: `keyName`, `publicKey`, `algorithm`, and `expirationDate`.<br><br> **Note:** `publicKey` and `algorithm` must always be updated together.<br> Returns **404** if the agent or key is not found, **403** if the agent or key is deactivated, **409** if the new `keyName` already exists. 
      * @param {String} agentId Unique agent identifier
      * @param {String} keyId Unique key identifier
-     * @param {module:model/KeyUpdate} keyUpdate Key update request
+     * @param {module:model/UpdateAgentKeyRequest} updateAgentKeyRequest Key update request
      * @param {module:api/AgentRegistrationApi~updateAgentKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AddAgentKeyResponse201}
      */
-    this.updateAgentKey = function(agentId, keyId, keyUpdate, callback) {
-      var postBody = keyUpdate;
+    this.updateAgentKey = function(agentId, keyId, updateAgentKeyRequest, callback) {
+      var postBody = updateAgentKeyRequest;
 
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
@@ -575,15 +582,15 @@
         throw new Error("Missing the required parameter 'keyId' when calling updateAgentKey");
       }
 
-      // verify the required parameter 'keyUpdate' is set
-      if (keyUpdate === undefined || keyUpdate === null) {
-        throw new Error("Missing the required parameter 'keyUpdate' when calling updateAgentKey");
+      // verify the required parameter 'updateAgentKeyRequest' is set
+      if (updateAgentKeyRequest === undefined || updateAgentKeyRequest === null) {
+        throw new Error("Missing the required parameter 'updateAgentKeyRequest' when calling updateAgentKey");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/KeyUpdate', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateAgentKeyRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -609,7 +616,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateAgentKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/agents/{agentId}/keys/{keyId}', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,

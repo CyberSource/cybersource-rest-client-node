@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('transactionCountYear')) {
         obj['transactionCountYear'] = ApiClient.convertToType(data['transactionCountYear'], 'Number');
+      }
+      if (data.hasOwnProperty('failedPaymentAttemptsCount')) {
+        obj['failedPaymentAttemptsCount'] = ApiClient.convertToType(data['failedPaymentAttemptsCount'], 'Number');
       }
     }
     return obj;
@@ -143,6 +147,11 @@
    * @member {Number} transactionCountYear
    */
   exports.prototype['transactionCountYear'] = undefined;
+  /**
+   * Number of failed payment attempts linked to order
+   * @member {Number} failedPaymentAttemptsCount
+   */
+  exports.prototype['failedPaymentAttemptsCount'] = undefined;
 
 
 

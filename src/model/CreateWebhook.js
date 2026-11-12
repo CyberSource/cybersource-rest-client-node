@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Notificationsubscriptionsv2webhooksProducts1', 'model/Notificationsubscriptionsv2webhooksRetryPolicy', 'model/Notificationsubscriptionsv2webhooksSecurityPolicy'], factory);
+    define(['ApiClient', 'model/CreateWebhookRequestProductItem', 'model/Notificationsubscriptionsv2webhooksRetryPolicy', 'model/Notificationsubscriptionsv2webhooksSecurityPolicy'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Notificationsubscriptionsv2webhooksProducts1'), require('./Notificationsubscriptionsv2webhooksRetryPolicy'), require('./Notificationsubscriptionsv2webhooksSecurityPolicy'));
+    module.exports = factory(require('../ApiClient'), require('./CreateWebhookRequestProductItem'), require('./Notificationsubscriptionsv2webhooksRetryPolicy'), require('./Notificationsubscriptionsv2webhooksSecurityPolicy'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateWebhook = factory(root.CyberSource.ApiClient, root.CyberSource.Notificationsubscriptionsv2webhooksProducts1, root.CyberSource.Notificationsubscriptionsv2webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicy);
+    root.CyberSource.CreateWebhook = factory(root.CyberSource.ApiClient, root.CyberSource.CreateWebhookRequestProductItem, root.CyberSource.Notificationsubscriptionsv2webhooksRetryPolicy, root.CyberSource.Notificationsubscriptionsv2webhooksSecurityPolicy);
   }
-}(this, function(ApiClient, Notificationsubscriptionsv2webhooksProducts1, Notificationsubscriptionsv2webhooksRetryPolicy, Notificationsubscriptionsv2webhooksSecurityPolicy) {
+}(this, function(ApiClient, CreateWebhookRequestProductItem, Notificationsubscriptionsv2webhooksRetryPolicy, Notificationsubscriptionsv2webhooksSecurityPolicy) {
   'use strict';
 
 
@@ -79,7 +79,7 @@
         obj['organizationId'] = ApiClient.convertToType(data['organizationId'], 'String');
       }
       if (data.hasOwnProperty('products')) {
-        obj['products'] = ApiClient.convertToType(data['products'], [Notificationsubscriptionsv2webhooksProducts1]);
+        obj['products'] = ApiClient.convertToType(data['products'], [CreateWebhookRequestProductItem]);
       }
       if (data.hasOwnProperty('webhookUrl')) {
         obj['webhookUrl'] = ApiClient.convertToType(data['webhookUrl'], 'String');
@@ -117,7 +117,7 @@
   exports.prototype['organizationId'] = undefined;
   /**
    * To see the valid productId and eventTypes, call the \"Create and Manage Webhooks - Retrieve a list of event types\" endpoint.
-   * @member {Array.<module:model/Notificationsubscriptionsv2webhooksProducts1>} products
+   * @member {Array.<module:model/CreateWebhookRequestProductItem>} products
    */
   exports.prototype['products'] = undefined;
   /**

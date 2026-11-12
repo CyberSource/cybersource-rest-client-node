@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property allowedCardNetworks (base name: "allowedCardNetworks")', function() {
+      // uncomment below and update the code to test the property allowedCardNetworks
+      //var instane = new CyberSource.Ucv1sessionsPaymentConfigurationsCLICKTOPAY();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

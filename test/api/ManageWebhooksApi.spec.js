@@ -80,26 +80,6 @@
         done();
       });
     });
-    describe('notificationSubscriptionsV1WebhooksWebhookIdPost', function() {
-      it('should call notificationSubscriptionsV1WebhooksWebhookIdPost successfully', function(done) {
-        //uncomment below and update the code to test notificationSubscriptionsV1WebhooksWebhookIdPost
-        //instance.notificationSubscriptionsV1WebhooksWebhookIdPost(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('notificationSubscriptionsV2WebhooksWebhookIdPatch', function() {
-      it('should call notificationSubscriptionsV2WebhooksWebhookIdPatch successfully', function(done) {
-        //uncomment below and update the code to test notificationSubscriptionsV2WebhooksWebhookIdPatch
-        //instance.notificationSubscriptionsV2WebhooksWebhookIdPatch(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('notificationSubscriptionsV2WebhooksWebhookIdStatusPut', function() {
       it('should call notificationSubscriptionsV2WebhooksWebhookIdStatusPut successfully', function(done) {
         //uncomment below and update the code to test notificationSubscriptionsV2WebhooksWebhookIdStatusPut
@@ -114,6 +94,26 @@
       it('should call saveAsymEgressKey successfully', function(done) {
         //uncomment below and update the code to test saveAsymEgressKey
         //instance.saveAsymEgressKey(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('testWebhookSubscription', function() {
+      it('should call testWebhookSubscription successfully', function(done) {
+        //uncomment below and update the code to test testWebhookSubscription
+        //instance.testWebhookSubscription(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateWebhookSubscription', function() {
+      it('should call updateWebhookSubscription successfully', function(done) {
+        //uncomment below and update the code to test updateWebhookSubscription
+        //instance.updateWebhookSubscription(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

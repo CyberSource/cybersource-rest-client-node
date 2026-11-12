@@ -56,6 +56,12 @@
       //expect(instance).to.be.a(CyberSource.InlineResponse4006);
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new CyberSource.InlineResponse4006();
+      //expect(instance).to.be();
+    });
+
     it('should have the property submitTimeUtc (base name: "submitTimeUtc")', function() {
       // uncomment below and update the code to test the property submitTimeUtc
       //var instane = new CyberSource.InlineResponse4006();

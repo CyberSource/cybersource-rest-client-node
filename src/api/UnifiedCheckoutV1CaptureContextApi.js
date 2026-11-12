@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/GenerateUnifiedCheckoutV1CaptureContextRequest', 'model/InlineResponse40013'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/GenerateUnifiedCheckoutV1CaptureContextRequest', 'model/InlineResponse4004'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/GenerateUnifiedCheckoutV1CaptureContextRequest'), require('../model/InlineResponse40013'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/GenerateUnifiedCheckoutV1CaptureContextRequest'), require('../model/InlineResponse4004'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UnifiedCheckoutV1CaptureContextApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutV1CaptureContextRequest, root.CyberSource.InlineResponse40013);
+    root.CyberSource.UnifiedCheckoutV1CaptureContextApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.GenerateUnifiedCheckoutV1CaptureContextRequest, root.CyberSource.InlineResponse4004);
   }
-}(this, function(MLEUtility, ApiClient, GenerateUnifiedCheckoutV1CaptureContextRequest, InlineResponse40013) {
+}(this, function(MLEUtility, ApiClient, GenerateUnifiedCheckoutV1CaptureContextRequest, InlineResponse4004) {
   'use strict';
 
   /**
@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['generateUnifiedCheckoutV1CaptureContext']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/uc/v1/sessions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body2', 'model/TssV2GetEmvTags200Response', 'model/TssV2PostEmvTags200Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ParseEmvTagsRequest', 'model/TssV2GetEmvTags200Response', 'model/TssV2PostEmvTags200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body2'), require('../model/TssV2GetEmvTags200Response'), require('../model/TssV2PostEmvTags200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ParseEmvTagsRequest'), require('../model/TssV2GetEmvTags200Response'), require('../model/TssV2PostEmvTags200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.EMVTagDetailsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body2, root.CyberSource.TssV2GetEmvTags200Response, root.CyberSource.TssV2PostEmvTags200Response);
+    root.CyberSource.EMVTagDetailsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ParseEmvTagsRequest, root.CyberSource.TssV2GetEmvTags200Response, root.CyberSource.TssV2PostEmvTags200Response);
   }
-}(this, function(MLEUtility, ApiClient, Body2, TssV2GetEmvTags200Response, TssV2PostEmvTags200Response) {
+}(this, function(MLEUtility, ApiClient, ParseEmvTagsRequest, TssV2GetEmvTags200Response, TssV2PostEmvTags200Response) {
   'use strict';
 
   /**
@@ -92,7 +92,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getEmvTags']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tss/v2/transactions/emvTagDetails', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -119,22 +120,22 @@
     /**
      * Parse an EMV String
      * Pass an EMV Tag-Length-Value (TLV) string for parsing.
-     * @param {module:model/Body2} body 
+     * @param {module:model/ParseEmvTagsRequest} parseEmvTagsRequest 
      * @param {module:api/EMVTagDetailsApi~parseEmvTagsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TssV2PostEmvTags200Response}
      */
-    this.parseEmvTags = function(body, callback) {
-      var postBody = body;
+    this.parseEmvTags = function(parseEmvTagsRequest, callback) {
+      var postBody = parseEmvTagsRequest;
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling parseEmvTags");
+      // verify the required parameter 'parseEmvTagsRequest' is set
+      if (parseEmvTagsRequest === undefined || parseEmvTagsRequest === null) {
+        throw new Error("Missing the required parameter 'parseEmvTagsRequest' when calling parseEmvTags");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Body2', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/ParseEmvTagsRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -158,7 +159,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['parseEmvTags']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tss/v2/transactions/emvTagDetails', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

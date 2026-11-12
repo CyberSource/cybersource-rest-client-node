@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20113', 'model/InlineResponse40016', 'model/UcpCompleteCheckoutRequest', 'model/UcpCreateCheckoutSessionRequest', 'model/UcpUpdateCheckoutSessionRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse4007', 'model/UcpCheckoutSessionResponse', 'model/UcpCompleteCheckoutRequest', 'model/UcpCreateCheckoutSessionRequest', 'model/UcpUpdateCheckoutSessionRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20113'), require('../model/InlineResponse40016'), require('../model/UcpCompleteCheckoutRequest'), require('../model/UcpCreateCheckoutSessionRequest'), require('../model/UcpUpdateCheckoutSessionRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse4007'), require('../model/UcpCheckoutSessionResponse'), require('../model/UcpCompleteCheckoutRequest'), require('../model/UcpCreateCheckoutSessionRequest'), require('../model/UcpUpdateCheckoutSessionRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UCPCheckoutApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20113, root.CyberSource.InlineResponse40016, root.CyberSource.UcpCompleteCheckoutRequest, root.CyberSource.UcpCreateCheckoutSessionRequest, root.CyberSource.UcpUpdateCheckoutSessionRequest);
+    root.CyberSource.UCPCheckoutApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse4007, root.CyberSource.UcpCheckoutSessionResponse, root.CyberSource.UcpCompleteCheckoutRequest, root.CyberSource.UcpCreateCheckoutSessionRequest, root.CyberSource.UcpUpdateCheckoutSessionRequest);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20113, InlineResponse40016, UcpCompleteCheckoutRequest, UcpCreateCheckoutSessionRequest, UcpUpdateCheckoutSessionRequest) {
+}(this, function(MLEUtility, ApiClient, InlineResponse4007, UcpCheckoutSessionResponse, UcpCompleteCheckoutRequest, UcpCreateCheckoutSessionRequest, UcpUpdateCheckoutSessionRequest) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the ucpCancelCheckout operation.
      * @callback module:api/UCPCheckoutApi~ucpCancelCheckoutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/UcpCheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * Cancels an active UCP checkout session. No charge is made.  This operation is idempotent — cancelling an already-cancelled session returns a successful response. Sessions also expire automatically after 30 minutes of inactivity. 
      * @param {String} sessionId The unique identifier of the UCP checkout session to cancel.
      * @param {module:api/UCPCheckoutApi~ucpCancelCheckoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/UcpCheckoutSessionResponse}
      */
     this.ucpCancelCheckout = function(sessionId, callback) {
       var postBody = null;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = UcpCheckoutSessionResponse;
 
       //check isMLE for an api method 'this.ucpCancelCheckout'
       var inboundMLEStatus = 'mandatory';
@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['ucpCancelCheckout']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout-sessions/{session_id}/cancel', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -119,7 +120,7 @@
      * Callback function to receive the result of the ucpCompleteCheckout operation.
      * @callback module:api/UCPCheckoutApi~ucpCompleteCheckoutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/UcpCheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -131,7 +132,7 @@
      * @param {String} opts.idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec. 
      * @param {module:model/UcpCompleteCheckoutRequest} opts.ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant. 
      * @param {module:api/UCPCheckoutApi~ucpCompleteCheckoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/UcpCheckoutSessionResponse}
      */
     this.ucpCompleteCheckout = function(sessionId, opts, callback) {
       opts = opts || {};
@@ -163,7 +164,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = UcpCheckoutSessionResponse;
 
       //check isMLE for an api method 'this.ucpCompleteCheckout'
       var inboundMLEStatus = 'mandatory';
@@ -171,7 +172,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['ucpCompleteCheckout']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout-sessions/{session_id}/complete', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -191,7 +193,7 @@
      * Callback function to receive the result of the ucpCreateCheckoutSession operation.
      * @callback module:api/UCPCheckoutApi~ucpCreateCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/UcpCheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -202,7 +204,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification. 
      * @param {module:api/UCPCheckoutApi~ucpCreateCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/UcpCheckoutSessionResponse}
      */
     this.ucpCreateCheckoutSession = function(ucpCreateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -233,7 +235,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = UcpCheckoutSessionResponse;
 
       //check isMLE for an api method 'this.ucpCreateCheckoutSession'
       var inboundMLEStatus = 'mandatory';
@@ -241,7 +243,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['ucpCreateCheckoutSession']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout-sessions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -261,7 +264,7 @@
      * Callback function to receive the result of the ucpGetCheckoutSession operation.
      * @callback module:api/UCPCheckoutApi~ucpGetCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/UcpCheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -271,7 +274,7 @@
      * @param {String} sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the `id` field in the Create Session response. 
      * @param {Object} ucpGetCheckoutSessionRequest Empty request body.
      * @param {module:api/UCPCheckoutApi~ucpGetCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/UcpCheckoutSessionResponse}
      */
     this.ucpGetCheckoutSession = function(sessionId, ucpGetCheckoutSessionRequest, callback) {
       var postBody = ucpGetCheckoutSessionRequest;
@@ -306,7 +309,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = UcpCheckoutSessionResponse;
 
       //check isMLE for an api method 'this.ucpGetCheckoutSession'
       var inboundMLEStatus = 'false';
@@ -314,7 +317,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['ucpGetCheckoutSession']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout-sessions/{session_id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -334,7 +338,7 @@
      * Callback function to receive the result of the ucpUpdateCheckoutSession operation.
      * @callback module:api/UCPCheckoutApi~ucpUpdateCheckoutSessionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20113} data The data returned by the service call.
+     * @param {module:model/UcpCheckoutSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -346,7 +350,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec.
      * @param {module:api/UCPCheckoutApi~ucpUpdateCheckoutSessionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20113}
+     * data is of type: {@link module:model/UcpCheckoutSessionResponse}
      */
     this.ucpUpdateCheckoutSession = function(sessionId, ucpUpdateCheckoutSessionRequest, opts, callback) {
       opts = opts || {};
@@ -383,7 +387,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse20113;
+      var returnType = UcpCheckoutSessionResponse;
 
       //check isMLE for an api method 'this.ucpUpdateCheckoutSession'
       var inboundMLEStatus = 'mandatory';
@@ -391,7 +395,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['ucpUpdateCheckoutSession']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/checkout-sessions/{session_id}', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,
