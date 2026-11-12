@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse404Errors'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse404Errors'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse404 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse404Errors);
+    root.CyberSource.InlineResponse404 = factory(root.CyberSource.ApiClient);
   }
-}(this, function(ApiClient, InlineResponse404Errors) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -48,6 +48,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -61,17 +62,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('errors')) {
-        obj['errors'] = ApiClient.convertToType(data['errors'], [InlineResponse404Errors]);
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/InlineResponse404Errors>} errors
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['errors'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
+  /**
+   * The status of the submitted transaction.  Possible values:  - NOT_FOUND 
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
 
 
 

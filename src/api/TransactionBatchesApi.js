@@ -99,12 +99,13 @@
       var returnType = null;
 
       //check isMLE for an api method 'this.getTransactionBatchDetails'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getTransactionBatchDetails');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getTransactionBatchDetails']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v1/transaction-batch-details/{id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -165,12 +166,13 @@
       var returnType = PtsV1TransactionBatchesIdGet200Response;
 
       //check isMLE for an api method 'this.getTransactionBatchId'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getTransactionBatchId');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getTransactionBatchId']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v1/transaction-batches/{id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -238,12 +240,13 @@
       var returnType = PtsV1TransactionBatchesGet200Response;
 
       //check isMLE for an api method 'this.getTransactionBatches'
-      var inboundMLEStatus = 'false';
+      var inboundMLEStatus = 'optional';
       var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'getTransactionBatches');
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getTransactionBatches']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v1/transaction-batches', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -321,7 +324,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['uploadTransactionBatch']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v1/transaction-batch-upload', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

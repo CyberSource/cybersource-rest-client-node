@@ -106,7 +106,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getNotificationOfChangeReport']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/reporting/v3/notification-of-changes', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,

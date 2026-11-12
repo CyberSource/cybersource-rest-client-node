@@ -72,6 +72,7 @@ function getPayloadClaimSet(merchantConfig, isResponseMLEForApi, logger) {
     try {
         if (isResponseMLEForApi) {
             payloadClaimSet["v-c-response-mle-kid"] = MLEUtility.validateAndAutoExtractResponseMleKid(merchantConfig, logger);
+            payloadClaimSet[Constants.V_C_RESPONSE_MLE_ALGO] = Constants.RSA_OAEP_256;
         }
     } catch (err) {
         logger.error('JWT signature generation failed due to MLE KID validation error');

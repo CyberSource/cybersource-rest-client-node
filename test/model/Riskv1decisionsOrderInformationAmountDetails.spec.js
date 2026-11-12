@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property discountAmount (base name: "discountAmount")', function() {
+      // uncomment below and update the code to test the property discountAmount
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationAmountDetails();
+      //expect(instance).to.be();
+    });
+
     it('should have the property totalAmount (base name: "totalAmount")', function() {
       // uncomment below and update the code to test the property totalAmount
       //var instane = new CyberSource.Riskv1decisionsOrderInformationAmountDetails();

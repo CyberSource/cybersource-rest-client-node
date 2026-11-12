@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PushFunds201ResponseLinksCustomer', 'model/PushFunds201ResponseLinksInstrumentIdentifier', 'model/PushFunds201ResponseLinksPaymentInstrument', 'model/PushFunds201ResponseLinksSelf'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseLinksSelf1', 'model/PtsV2PaymentsPost201ResponseLinksSelf2', 'model/PtsV2PaymentsPost201ResponseLinksSelf3', 'model/PtsV2PaymentsPost201ResponseLinksSelf4'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PushFunds201ResponseLinksCustomer'), require('./PushFunds201ResponseLinksInstrumentIdentifier'), require('./PushFunds201ResponseLinksPaymentInstrument'), require('./PushFunds201ResponseLinksSelf'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseLinksSelf1'), require('./PtsV2PaymentsPost201ResponseLinksSelf2'), require('./PtsV2PaymentsPost201ResponseLinksSelf3'), require('./PtsV2PaymentsPost201ResponseLinksSelf4'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PushFunds201ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.PushFunds201ResponseLinksCustomer, root.CyberSource.PushFunds201ResponseLinksInstrumentIdentifier, root.CyberSource.PushFunds201ResponseLinksPaymentInstrument, root.CyberSource.PushFunds201ResponseLinksSelf);
+    root.CyberSource.PushFunds201ResponseLinks = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf1, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf2, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf3, root.CyberSource.PtsV2PaymentsPost201ResponseLinksSelf4);
   }
-}(this, function(ApiClient, PushFunds201ResponseLinksCustomer, PushFunds201ResponseLinksInstrumentIdentifier, PushFunds201ResponseLinksPaymentInstrument, PushFunds201ResponseLinksSelf) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseLinksSelf1, PtsV2PaymentsPost201ResponseLinksSelf2, PtsV2PaymentsPost201ResponseLinksSelf3, PtsV2PaymentsPost201ResponseLinksSelf4) {
   'use strict';
 
 
@@ -65,35 +65,35 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('self')) {
-        obj['self'] = PushFunds201ResponseLinksSelf.constructFromObject(data['self']);
+        obj['self'] = PtsV2PaymentsPost201ResponseLinksSelf1.constructFromObject(data['self']);
       }
       if (data.hasOwnProperty('customer')) {
-        obj['customer'] = PushFunds201ResponseLinksCustomer.constructFromObject(data['customer']);
+        obj['customer'] = PtsV2PaymentsPost201ResponseLinksSelf2.constructFromObject(data['customer']);
       }
       if (data.hasOwnProperty('paymentInstrument')) {
-        obj['paymentInstrument'] = PushFunds201ResponseLinksPaymentInstrument.constructFromObject(data['paymentInstrument']);
+        obj['paymentInstrument'] = PtsV2PaymentsPost201ResponseLinksSelf3.constructFromObject(data['paymentInstrument']);
       }
       if (data.hasOwnProperty('instrumentIdentifier')) {
-        obj['instrumentIdentifier'] = PushFunds201ResponseLinksInstrumentIdentifier.constructFromObject(data['instrumentIdentifier']);
+        obj['instrumentIdentifier'] = PtsV2PaymentsPost201ResponseLinksSelf4.constructFromObject(data['instrumentIdentifier']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/PushFunds201ResponseLinksSelf} self
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf1} self
    */
   exports.prototype['self'] = undefined;
   /**
-   * @member {module:model/PushFunds201ResponseLinksCustomer} customer
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf2} customer
    */
   exports.prototype['customer'] = undefined;
   /**
-   * @member {module:model/PushFunds201ResponseLinksPaymentInstrument} paymentInstrument
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf3} paymentInstrument
    */
   exports.prototype['paymentInstrument'] = undefined;
   /**
-   * @member {module:model/PushFunds201ResponseLinksInstrumentIdentifier} instrumentIdentifier
+   * @member {module:model/PtsV2PaymentsPost201ResponseLinksSelf4} instrumentIdentifier
    */
   exports.prototype['instrumentIdentifier'] = undefined;
 

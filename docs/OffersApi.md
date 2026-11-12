@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createOffer"></a>
 # **createOffer**
-> InlineResponse20111 createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest)
+> CreateOfferResponse createOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, offerRequest)
 
 Create an Offer
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20111**](InlineResponse20111.md)
+[**CreateOfferResponse**](CreateOfferResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ No authorization required
 
 <a name="getOffer"></a>
 # **getOffer**
-> InlineResponse20016 getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id)
+> GetOfferResponse getOffer(contentType, xRequestid, vCMerchantId, vCCorrelationId, vCOrganizationId, id)
 
 Retrieve an Offer
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**GetOfferResponse**](GetOfferResponse.md)
 
 ### Authorization
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Iccv1checkoutsessionsLineItems', 'model/Iccv1checkoutsessionssessionIdDiscounts', 'model/Iccv1checkoutsessionssessionIdFulfillment', 'model/Iccv1checkoutsessionssessionIdPayment', 'model/UcpUpdateCheckoutSessionBuyer'], factory);
+    define(['ApiClient', 'model/Iccv1UpdateCheckoutSessionsDiscounts', 'model/Iccv1UpdateCheckoutSessionsFulfillment', 'model/Iccv1UpdateCheckoutsessionsPayment', 'model/Iccv1checkoutsessionsLineItems', 'model/UcpUpdateCheckoutSessionBuyer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Iccv1checkoutsessionsLineItems'), require('./Iccv1checkoutsessionssessionIdDiscounts'), require('./Iccv1checkoutsessionssessionIdFulfillment'), require('./Iccv1checkoutsessionssessionIdPayment'), require('./UcpUpdateCheckoutSessionBuyer'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1UpdateCheckoutSessionsDiscounts'), require('./Iccv1UpdateCheckoutSessionsFulfillment'), require('./Iccv1UpdateCheckoutsessionsPayment'), require('./Iccv1checkoutsessionsLineItems'), require('./UcpUpdateCheckoutSessionBuyer'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.UcpUpdateCheckoutSessionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1checkoutsessionsLineItems, root.CyberSource.Iccv1checkoutsessionssessionIdDiscounts, root.CyberSource.Iccv1checkoutsessionssessionIdFulfillment, root.CyberSource.Iccv1checkoutsessionssessionIdPayment, root.CyberSource.UcpUpdateCheckoutSessionBuyer);
+    root.CyberSource.UcpUpdateCheckoutSessionRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1UpdateCheckoutSessionsDiscounts, root.CyberSource.Iccv1UpdateCheckoutSessionsFulfillment, root.CyberSource.Iccv1UpdateCheckoutsessionsPayment, root.CyberSource.Iccv1checkoutsessionsLineItems, root.CyberSource.UcpUpdateCheckoutSessionBuyer);
   }
-}(this, function(ApiClient, Iccv1checkoutsessionsLineItems, Iccv1checkoutsessionssessionIdDiscounts, Iccv1checkoutsessionssessionIdFulfillment, Iccv1checkoutsessionssessionIdPayment, UcpUpdateCheckoutSessionBuyer) {
+}(this, function(ApiClient, Iccv1UpdateCheckoutSessionsDiscounts, Iccv1UpdateCheckoutSessionsFulfillment, Iccv1UpdateCheckoutsessionsPayment, Iccv1checkoutsessionsLineItems, UcpUpdateCheckoutSessionBuyer) {
   'use strict';
 
 
@@ -81,13 +81,13 @@
         obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
       }
       if (data.hasOwnProperty('payment')) {
-        obj['payment'] = Iccv1checkoutsessionssessionIdPayment.constructFromObject(data['payment']);
+        obj['payment'] = Iccv1UpdateCheckoutsessionsPayment.constructFromObject(data['payment']);
       }
       if (data.hasOwnProperty('fulfillment')) {
-        obj['fulfillment'] = Iccv1checkoutsessionssessionIdFulfillment.constructFromObject(data['fulfillment']);
+        obj['fulfillment'] = Iccv1UpdateCheckoutSessionsFulfillment.constructFromObject(data['fulfillment']);
       }
       if (data.hasOwnProperty('discounts')) {
-        obj['discounts'] = Iccv1checkoutsessionssessionIdDiscounts.constructFromObject(data['discounts']);
+        obj['discounts'] = Iccv1UpdateCheckoutSessionsDiscounts.constructFromObject(data['discounts']);
       }
     }
     return obj;
@@ -113,15 +113,15 @@
    */
   exports.prototype['currency'] = undefined;
   /**
-   * @member {module:model/Iccv1checkoutsessionssessionIdPayment} payment
+   * @member {module:model/Iccv1UpdateCheckoutsessionsPayment} payment
    */
   exports.prototype['payment'] = undefined;
   /**
-   * @member {module:model/Iccv1checkoutsessionssessionIdFulfillment} fulfillment
+   * @member {module:model/Iccv1UpdateCheckoutSessionsFulfillment} fulfillment
    */
   exports.prototype['fulfillment'] = undefined;
   /**
-   * @member {module:model/Iccv1checkoutsessionssessionIdDiscounts} discounts
+   * @member {module:model/Iccv1UpdateCheckoutSessionsDiscounts} discounts
    */
   exports.prototype['discounts'] = undefined;
 

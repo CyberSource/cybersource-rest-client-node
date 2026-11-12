@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsOrderInformationAmountDetails', 'model/Riskv1decisionsOrderInformationBillTo', 'model/Riskv1decisionsOrderInformationLineItems', 'model/Riskv1decisionsOrderInformationShipTo', 'model/Riskv1decisionsOrderInformationShippingDetails'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsBundledOrderInformationShipTo', 'model/Riskv1decisionsOrderInformationAmountDetails', 'model/Riskv1decisionsOrderInformationBillTo', 'model/Riskv1decisionsOrderInformationLineItems', 'model/Riskv1decisionsOrderInformationShippingDetails', 'model/Riskv1decisionsOrderInformationVouchers'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsOrderInformationAmountDetails'), require('./Riskv1decisionsOrderInformationBillTo'), require('./Riskv1decisionsOrderInformationLineItems'), require('./Riskv1decisionsOrderInformationShipTo'), require('./Riskv1decisionsOrderInformationShippingDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsBundledOrderInformationShipTo'), require('./Riskv1decisionsOrderInformationAmountDetails'), require('./Riskv1decisionsOrderInformationBillTo'), require('./Riskv1decisionsOrderInformationLineItems'), require('./Riskv1decisionsOrderInformationShippingDetails'), require('./Riskv1decisionsOrderInformationVouchers'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsOrderInformationAmountDetails, root.CyberSource.Riskv1decisionsOrderInformationBillTo, root.CyberSource.Riskv1decisionsOrderInformationLineItems, root.CyberSource.Riskv1decisionsOrderInformationShipTo, root.CyberSource.Riskv1decisionsOrderInformationShippingDetails);
+    root.CyberSource.Riskv1decisionsOrderInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsBundledOrderInformationShipTo, root.CyberSource.Riskv1decisionsOrderInformationAmountDetails, root.CyberSource.Riskv1decisionsOrderInformationBillTo, root.CyberSource.Riskv1decisionsOrderInformationLineItems, root.CyberSource.Riskv1decisionsOrderInformationShippingDetails, root.CyberSource.Riskv1decisionsOrderInformationVouchers);
   }
-}(this, function(ApiClient, Riskv1decisionsOrderInformationAmountDetails, Riskv1decisionsOrderInformationBillTo, Riskv1decisionsOrderInformationLineItems, Riskv1decisionsOrderInformationShipTo, Riskv1decisionsOrderInformationShippingDetails) {
+}(this, function(ApiClient, Riskv1decisionsBundledOrderInformationShipTo, Riskv1decisionsOrderInformationAmountDetails, Riskv1decisionsOrderInformationBillTo, Riskv1decisionsOrderInformationLineItems, Riskv1decisionsOrderInformationShippingDetails, Riskv1decisionsOrderInformationVouchers) {
   'use strict';
 
 
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -91,7 +92,7 @@
         obj['shippingDetails'] = Riskv1decisionsOrderInformationShippingDetails.constructFromObject(data['shippingDetails']);
       }
       if (data.hasOwnProperty('shipTo')) {
-        obj['shipTo'] = Riskv1decisionsOrderInformationShipTo.constructFromObject(data['shipTo']);
+        obj['shipTo'] = Riskv1decisionsBundledOrderInformationShipTo.constructFromObject(data['shipTo']);
       }
       if (data.hasOwnProperty('returnsAccepted')) {
         obj['returnsAccepted'] = ApiClient.convertToType(data['returnsAccepted'], 'Boolean');
@@ -101,6 +102,9 @@
       }
       if (data.hasOwnProperty('billTo')) {
         obj['billTo'] = Riskv1decisionsOrderInformationBillTo.constructFromObject(data['billTo']);
+      }
+      if (data.hasOwnProperty('vouchers')) {
+        obj['vouchers'] = ApiClient.convertToType(data['vouchers'], [Riskv1decisionsOrderInformationVouchers]);
       }
       if (data.hasOwnProperty('totalOffersCount')) {
         obj['totalOffersCount'] = ApiClient.convertToType(data['totalOffersCount'], 'String');
@@ -138,7 +142,7 @@
    */
   exports.prototype['shippingDetails'] = undefined;
   /**
-   * @member {module:model/Riskv1decisionsOrderInformationShipTo} shipTo
+   * @member {module:model/Riskv1decisionsBundledOrderInformationShipTo} shipTo
    */
   exports.prototype['shipTo'] = undefined;
   /**
@@ -155,6 +159,11 @@
    * @member {module:model/Riskv1decisionsOrderInformationBillTo} billTo
    */
   exports.prototype['billTo'] = undefined;
+  /**
+   * Array of voucher/coupon information used in the order
+   * @member {Array.<module:model/Riskv1decisionsOrderInformationVouchers>} vouchers
+   */
+  exports.prototype['vouchers'] = undefined;
   /**
    * Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99 
    * @member {String} totalOffersCount

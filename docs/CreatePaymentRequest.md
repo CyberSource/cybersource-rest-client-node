@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **merchantDefinedInformation** | [**[Ptsv2paymentsMerchantDefinedInformation]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines.  | [optional] 
 **merchantDefinedSecureInformation** | [**Ptsv2paymentsMerchantDefinedSecureInformation**](Ptsv2paymentsMerchantDefinedSecureInformation.md) |  | [optional] 
 **installmentInformation** | [**Ptsv2paymentsInstallmentInformation**](Ptsv2paymentsInstallmentInformation.md) |  | [optional] 
-**travelInformation** | [**Ptsv2paymentsTravelInformation**](Ptsv2paymentsTravelInformation.md) |  | [optional] 
+**travelInformation** | [**Ptsv2paymentsTravelInformationExtended**](Ptsv2paymentsTravelInformationExtended.md) |  | [optional] 
 **healthCareInformation** | [**Ptsv2paymentsHealthCareInformation**](Ptsv2paymentsHealthCareInformation.md) |  | [optional] 
 **promotionInformation** | [**Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
 **tokenInformation** | [**Ptsv2paymentsTokenInformation**](Ptsv2paymentsTokenInformation.md) |  | [optional] 

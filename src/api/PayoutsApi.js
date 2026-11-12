@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['octCreatePayment']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payouts', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

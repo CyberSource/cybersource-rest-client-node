@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentsProductsCardProcessingSubscriptionInformationFeatures'], factory);
+    define(['ApiClient', 'model/CardProessingFeatureSubscriptionItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PaymentsProductsCardProcessingSubscriptionInformationFeatures'));
+    module.exports = factory(require('../ApiClient'), require('./CardProessingFeatureSubscriptionItem'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentsProductsMicroformSubscriptionInformation = factory(root.CyberSource.ApiClient, root.CyberSource.PaymentsProductsCardProcessingSubscriptionInformationFeatures);
+    root.CyberSource.PaymentsProductsMicroformSubscriptionInformation = factory(root.CyberSource.ApiClient, root.CyberSource.CardProessingFeatureSubscriptionItem);
   }
-}(this, function(ApiClient, PaymentsProductsCardProcessingSubscriptionInformationFeatures) {
+}(this, function(ApiClient, CardProessingFeatureSubscriptionItem) {
   'use strict';
 
 
@@ -74,7 +74,7 @@
         obj['selfServiceability'] = ApiClient.convertToType(data['selfServiceability'], 'String');
       }
       if (data.hasOwnProperty('features')) {
-        obj['features'] = ApiClient.convertToType(data['features'], {'String': PaymentsProductsCardProcessingSubscriptionInformationFeatures});
+        obj['features'] = ApiClient.convertToType(data['features'], {'String': CardProessingFeatureSubscriptionItem});
       }
     }
     return obj;
@@ -97,7 +97,7 @@
    */
   exports.prototype['selfServiceability'] = 'NOT_SELF_SERVICEABLE';
   /**
-   * @member {Object.<String, module:model/PaymentsProductsCardProcessingSubscriptionInformationFeatures>} features
+   * @member {Object.<String, module:model/CardProessingFeatureSubscriptionItem>} features
    */
   exports.prototype['features'] = undefined;
 

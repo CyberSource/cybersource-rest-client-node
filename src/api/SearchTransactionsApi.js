@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createSearch']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tss/v2/searches', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -165,7 +166,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getSearch']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tss/v2/searches/{searchId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsRiskInformationAuxiliaryData', 'model/Ptsv2paymentsRiskInformationBuyerHistory', 'model/Ptsv2paymentsRiskInformationProfile'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsRiskInformationAuxiliaryData', 'model/Ptsv2paymentsRiskInformationBuyerHistory', 'model/Ptsv2paymentsRiskInformationExternalScore', 'model/Ptsv2paymentsRiskInformationProfile', 'model/Ptsv2paymentsRiskInformationStore'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRiskInformationAuxiliaryData'), require('./Ptsv2paymentsRiskInformationBuyerHistory'), require('./Ptsv2paymentsRiskInformationProfile'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRiskInformationAuxiliaryData'), require('./Ptsv2paymentsRiskInformationBuyerHistory'), require('./Ptsv2paymentsRiskInformationExternalScore'), require('./Ptsv2paymentsRiskInformationProfile'), require('./Ptsv2paymentsRiskInformationStore'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRiskInformationAuxiliaryData, root.CyberSource.Ptsv2paymentsRiskInformationBuyerHistory, root.CyberSource.Ptsv2paymentsRiskInformationProfile);
+    root.CyberSource.Riskv1decisionsRiskInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRiskInformationAuxiliaryData, root.CyberSource.Ptsv2paymentsRiskInformationBuyerHistory, root.CyberSource.Ptsv2paymentsRiskInformationExternalScore, root.CyberSource.Ptsv2paymentsRiskInformationProfile, root.CyberSource.Ptsv2paymentsRiskInformationStore);
   }
-}(this, function(ApiClient, Ptsv2paymentsRiskInformationAuxiliaryData, Ptsv2paymentsRiskInformationBuyerHistory, Ptsv2paymentsRiskInformationProfile) {
+}(this, function(ApiClient, Ptsv2paymentsRiskInformationAuxiliaryData, Ptsv2paymentsRiskInformationBuyerHistory, Ptsv2paymentsRiskInformationExternalScore, Ptsv2paymentsRiskInformationProfile, Ptsv2paymentsRiskInformationStore) {
   'use strict';
 
 
@@ -46,6 +46,10 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
 
 
 
@@ -76,6 +80,18 @@
       if (data.hasOwnProperty('auxiliaryData')) {
         obj['auxiliaryData'] = ApiClient.convertToType(data['auxiliaryData'], [Ptsv2paymentsRiskInformationAuxiliaryData]);
       }
+      if (data.hasOwnProperty('store')) {
+        obj['store'] = Ptsv2paymentsRiskInformationStore.constructFromObject(data['store']);
+      }
+      if (data.hasOwnProperty('authenticationType')) {
+        obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
+      }
+      if (data.hasOwnProperty('pickupDays')) {
+        obj['pickupDays'] = ApiClient.convertToType(data['pickupDays'], 'Number');
+      }
+      if (data.hasOwnProperty('externalScore')) {
+        obj['externalScore'] = Ptsv2paymentsRiskInformationExternalScore.constructFromObject(data['externalScore']);
+      }
     }
     return obj;
   }
@@ -97,6 +113,24 @@
    * @member {Array.<module:model/Ptsv2paymentsRiskInformationAuxiliaryData>} auxiliaryData
    */
   exports.prototype['auxiliaryData'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsRiskInformationStore} store
+   */
+  exports.prototype['store'] = undefined;
+  /**
+   * • 01 = Static Passcode • 02 = SMS OTP • 03 = Key fob or EMV card reader OTP • 04 = App OTP • 05 = OTP Other • 07 = OOB Biometrics • 08 = OOB Login • 09 = OOB Other • 10 = Other • 11 = Push Confirmation • 12 = Decoupled • 13 = WebAuthn • 14 = SPC • 15 = Behavioural biometrics 
+   * @member {String} authenticationType
+   */
+  exports.prototype['authenticationType'] = undefined;
+  /**
+   * Number of days between transaction date and rental pickup date 
+   * @member {Number} pickupDays
+   */
+  exports.prototype['pickupDays'] = undefined;
+  /**
+   * @member {module:model/Ptsv2paymentsRiskInformationExternalScore} externalScore
+   */
+  exports.prototype['externalScore'] = undefined;
 
 
 

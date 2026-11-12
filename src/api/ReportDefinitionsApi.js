@@ -107,7 +107,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getResourceInfoByReportDefinition']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/reporting/v3/report-definitions/{reportDefinitionName}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -172,7 +173,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getResourceV2Info']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/reporting/v3/report-definitions', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,

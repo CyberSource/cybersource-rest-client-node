@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse500Errors'], factory);
+    define(['ApiClient', 'model/PtsV2PaymentsPost201ResponseErrorInformationDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse500Errors'));
+    module.exports = factory(require('../ApiClient'), require('./PtsV2PaymentsPost201ResponseErrorInformationDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse502 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse500Errors);
+    root.CyberSource.InlineResponse502 = factory(root.CyberSource.ApiClient, root.CyberSource.PtsV2PaymentsPost201ResponseErrorInformationDetails);
   }
-}(this, function(ApiClient, InlineResponse500Errors) {
+}(this, function(ApiClient, PtsV2PaymentsPost201ResponseErrorInformationDetails) {
   'use strict';
 
 
@@ -48,6 +48,10 @@
     var _this = this;
 
 
+
+
+
+
   };
 
   /**
@@ -61,17 +65,49 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('errors')) {
-        obj['errors'] = ApiClient.convertToType(data['errors'], [InlineResponse500Errors]);
+      if (data.hasOwnProperty('submitTimeUtc')) {
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      }
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+      }
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], [PtsV2PaymentsPost201ResponseErrorInformationDetails]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/InlineResponse500Errors>} errors
+   * Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. 
+   * @member {String} submitTimeUtc
    */
-  exports.prototype['errors'] = undefined;
+  exports.prototype['submitTimeUtc'] = undefined;
+  /**
+   * The status of the submitted transaction. Possible values: - `SERVER_ERROR` 
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * The reason of the status. Possible Values: - `INTERNAL_SERVICE_ERROR` 
+   * @member {String} reason
+   */
+  exports.prototype['reason'] = undefined;
+  /**
+   * Application failed.
+   * @member {String} message
+   */
+  exports.prototype['message'] = undefined;
+  /**
+   * @member {Array.<module:model/PtsV2PaymentsPost201ResponseErrorInformationDetails>} details
+   */
+  exports.prototype['details'] = undefined;
 
 
 

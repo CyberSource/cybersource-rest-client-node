@@ -65,7 +65,7 @@ No authorization required
 
 <a name="addAgentKey"></a>
 # **addAgentKey**
-> AddAgentKeyResponse201 addAgentKey(agentId, keyRequest)
+> AddAgentKeyResponse201 addAgentKey(agentId, addAgentKeyRequest)
 
 Add a key to an agent
 
@@ -79,7 +79,7 @@ var apiInstance = new CyberSource.AgentRegistrationApi();
 
 var agentId = "agentId_example"; // String | Unique agent identifier
 
-var keyRequest = new CyberSource.KeyRequest(); // KeyRequest | Key creation request
+var addAgentKeyRequest = new CyberSource.AddAgentKeyRequest(); // AddAgentKeyRequest | Key creation request
 
 
 var callback = function(error, data, response) {
@@ -89,7 +89,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.addAgentKey(agentId, keyRequest, callback);
+apiInstance.addAgentKey(agentId, addAgentKeyRequest, callback);
 ```
 
 ### Parameters
@@ -97,7 +97,7 @@ apiInstance.addAgentKey(agentId, keyRequest, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **String**| Unique agent identifier | 
- **keyRequest** | [**KeyRequest**](KeyRequest.md)| Key creation request | 
+ **addAgentKeyRequest** | [**AddAgentKeyRequest**](AddAgentKeyRequest.md)| Key creation request | 
 
 ### Return type
 
@@ -356,7 +356,7 @@ No authorization required
 
 <a name="updateAgentKey"></a>
 # **updateAgentKey**
-> AddAgentKeyResponse201 updateAgentKey(agentId, keyId, keyUpdate)
+> AddAgentKeyResponse201 updateAgentKey(agentId, keyId, updateAgentKeyRequest)
 
 Update a key
 
@@ -372,7 +372,7 @@ var agentId = "agentId_example"; // String | Unique agent identifier
 
 var keyId = "keyId_example"; // String | Unique key identifier
 
-var keyUpdate = new CyberSource.KeyUpdate(); // KeyUpdate | Key update request
+var updateAgentKeyRequest = new CyberSource.UpdateAgentKeyRequest(); // UpdateAgentKeyRequest | Key update request
 
 
 var callback = function(error, data, response) {
@@ -382,7 +382,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateAgentKey(agentId, keyId, keyUpdate, callback);
+apiInstance.updateAgentKey(agentId, keyId, updateAgentKeyRequest, callback);
 ```
 
 ### Parameters
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **String**| Unique agent identifier | 
  **keyId** | **String**| Unique key identifier | 
- **keyUpdate** | [**KeyUpdate**](KeyUpdate.md)| Key update request | 
+ **updateAgentKeyRequest** | [**UpdateAgentKeyRequest**](UpdateAgentKeyRequest.md)| Key update request | 
 
 ### Return type
 

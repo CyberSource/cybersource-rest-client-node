@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsRecurringPaymentInformation', 'model/Ptsv2paymentsWatchlistScreeningInformation', 'model/Riskv1decisionsAcquirerInformation', 'model/Riskv1decisionsBuyerInformation', 'model/Riskv1decisionsClientReferenceInformation', 'model/Riskv1decisionsConsumerAuthenticationInformation', 'model/Riskv1decisionsDeviceInformation', 'model/Riskv1decisionsMerchantDefinedInformation', 'model/Riskv1decisionsMerchantInformation', 'model/Riskv1decisionsOrderInformation', 'model/Riskv1decisionsPaymentInformation', 'model/Riskv1decisionsProcessingInformation', 'model/Riskv1decisionsProcessorInformation', 'model/Riskv1decisionsRiskInformation', 'model/Riskv1decisionsTokenInformation', 'model/Riskv1decisionsTravelInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsRecurringPaymentInformation', 'model/Ptsv2paymentsWatchlistScreeningInformation', 'model/Riskv1decisionsAcquirerInformation', 'model/Riskv1decisionsAggregatorInformation', 'model/Riskv1decisionsBundledConsumerAuthenticationInformation', 'model/Riskv1decisionsBuyerInformation', 'model/Riskv1decisionsClientReferenceInformation', 'model/Riskv1decisionsDeviceInformation', 'model/Riskv1decisionsMerchantDefinedInformation', 'model/Riskv1decisionsMerchantInformation', 'model/Riskv1decisionsOrderInformation', 'model/Riskv1decisionsPaymentInformation', 'model/Riskv1decisionsProcessingInformation', 'model/Riskv1decisionsProcessorInformation', 'model/Riskv1decisionsRecipientInformation', 'model/Riskv1decisionsRiskInformation', 'model/Riskv1decisionsSenderInformation', 'model/Riskv1decisionsTokenInformation', 'model/Riskv1decisionsTravelInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRecurringPaymentInformation'), require('./Ptsv2paymentsWatchlistScreeningInformation'), require('./Riskv1decisionsAcquirerInformation'), require('./Riskv1decisionsBuyerInformation'), require('./Riskv1decisionsClientReferenceInformation'), require('./Riskv1decisionsConsumerAuthenticationInformation'), require('./Riskv1decisionsDeviceInformation'), require('./Riskv1decisionsMerchantDefinedInformation'), require('./Riskv1decisionsMerchantInformation'), require('./Riskv1decisionsOrderInformation'), require('./Riskv1decisionsPaymentInformation'), require('./Riskv1decisionsProcessingInformation'), require('./Riskv1decisionsProcessorInformation'), require('./Riskv1decisionsRiskInformation'), require('./Riskv1decisionsTokenInformation'), require('./Riskv1decisionsTravelInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsRecurringPaymentInformation'), require('./Ptsv2paymentsWatchlistScreeningInformation'), require('./Riskv1decisionsAcquirerInformation'), require('./Riskv1decisionsAggregatorInformation'), require('./Riskv1decisionsBundledConsumerAuthenticationInformation'), require('./Riskv1decisionsBuyerInformation'), require('./Riskv1decisionsClientReferenceInformation'), require('./Riskv1decisionsDeviceInformation'), require('./Riskv1decisionsMerchantDefinedInformation'), require('./Riskv1decisionsMerchantInformation'), require('./Riskv1decisionsOrderInformation'), require('./Riskv1decisionsPaymentInformation'), require('./Riskv1decisionsProcessingInformation'), require('./Riskv1decisionsProcessorInformation'), require('./Riskv1decisionsRecipientInformation'), require('./Riskv1decisionsRiskInformation'), require('./Riskv1decisionsSenderInformation'), require('./Riskv1decisionsTokenInformation'), require('./Riskv1decisionsTravelInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CreateBundledDecisionManagerCaseRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRecurringPaymentInformation, root.CyberSource.Ptsv2paymentsWatchlistScreeningInformation, root.CyberSource.Riskv1decisionsAcquirerInformation, root.CyberSource.Riskv1decisionsBuyerInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation, root.CyberSource.Riskv1decisionsConsumerAuthenticationInformation, root.CyberSource.Riskv1decisionsDeviceInformation, root.CyberSource.Riskv1decisionsMerchantDefinedInformation, root.CyberSource.Riskv1decisionsMerchantInformation, root.CyberSource.Riskv1decisionsOrderInformation, root.CyberSource.Riskv1decisionsPaymentInformation, root.CyberSource.Riskv1decisionsProcessingInformation, root.CyberSource.Riskv1decisionsProcessorInformation, root.CyberSource.Riskv1decisionsRiskInformation, root.CyberSource.Riskv1decisionsTokenInformation, root.CyberSource.Riskv1decisionsTravelInformation);
+    root.CyberSource.CreateBundledDecisionManagerCaseRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsRecurringPaymentInformation, root.CyberSource.Ptsv2paymentsWatchlistScreeningInformation, root.CyberSource.Riskv1decisionsAcquirerInformation, root.CyberSource.Riskv1decisionsAggregatorInformation, root.CyberSource.Riskv1decisionsBundledConsumerAuthenticationInformation, root.CyberSource.Riskv1decisionsBuyerInformation, root.CyberSource.Riskv1decisionsClientReferenceInformation, root.CyberSource.Riskv1decisionsDeviceInformation, root.CyberSource.Riskv1decisionsMerchantDefinedInformation, root.CyberSource.Riskv1decisionsMerchantInformation, root.CyberSource.Riskv1decisionsOrderInformation, root.CyberSource.Riskv1decisionsPaymentInformation, root.CyberSource.Riskv1decisionsProcessingInformation, root.CyberSource.Riskv1decisionsProcessorInformation, root.CyberSource.Riskv1decisionsRecipientInformation, root.CyberSource.Riskv1decisionsRiskInformation, root.CyberSource.Riskv1decisionsSenderInformation, root.CyberSource.Riskv1decisionsTokenInformation, root.CyberSource.Riskv1decisionsTravelInformation);
   }
-}(this, function(ApiClient, Ptsv2paymentsRecurringPaymentInformation, Ptsv2paymentsWatchlistScreeningInformation, Riskv1decisionsAcquirerInformation, Riskv1decisionsBuyerInformation, Riskv1decisionsClientReferenceInformation, Riskv1decisionsConsumerAuthenticationInformation, Riskv1decisionsDeviceInformation, Riskv1decisionsMerchantDefinedInformation, Riskv1decisionsMerchantInformation, Riskv1decisionsOrderInformation, Riskv1decisionsPaymentInformation, Riskv1decisionsProcessingInformation, Riskv1decisionsProcessorInformation, Riskv1decisionsRiskInformation, Riskv1decisionsTokenInformation, Riskv1decisionsTravelInformation) {
+}(this, function(ApiClient, Ptsv2paymentsRecurringPaymentInformation, Ptsv2paymentsWatchlistScreeningInformation, Riskv1decisionsAcquirerInformation, Riskv1decisionsAggregatorInformation, Riskv1decisionsBundledConsumerAuthenticationInformation, Riskv1decisionsBuyerInformation, Riskv1decisionsClientReferenceInformation, Riskv1decisionsDeviceInformation, Riskv1decisionsMerchantDefinedInformation, Riskv1decisionsMerchantInformation, Riskv1decisionsOrderInformation, Riskv1decisionsPaymentInformation, Riskv1decisionsProcessingInformation, Riskv1decisionsProcessorInformation, Riskv1decisionsRecipientInformation, Riskv1decisionsRiskInformation, Riskv1decisionsSenderInformation, Riskv1decisionsTokenInformation, Riskv1decisionsTravelInformation) {
   'use strict';
 
 
@@ -53,6 +53,9 @@
 
 
     _this['orderInformation'] = orderInformation;
+
+
+
 
 
 
@@ -104,6 +107,15 @@
       if (data.hasOwnProperty('travelInformation')) {
         obj['travelInformation'] = Riskv1decisionsTravelInformation.constructFromObject(data['travelInformation']);
       }
+      if (data.hasOwnProperty('recipientInformation')) {
+        obj['recipientInformation'] = Riskv1decisionsRecipientInformation.constructFromObject(data['recipientInformation']);
+      }
+      if (data.hasOwnProperty('senderInformation')) {
+        obj['senderInformation'] = Riskv1decisionsSenderInformation.constructFromObject(data['senderInformation']);
+      }
+      if (data.hasOwnProperty('aggregatorInformation')) {
+        obj['aggregatorInformation'] = Riskv1decisionsAggregatorInformation.constructFromObject(data['aggregatorInformation']);
+      }
       if (data.hasOwnProperty('merchantDefinedInformation')) {
         obj['merchantDefinedInformation'] = ApiClient.convertToType(data['merchantDefinedInformation'], [Riskv1decisionsMerchantDefinedInformation]);
       }
@@ -117,7 +129,7 @@
         obj['recurringPaymentInformation'] = Ptsv2paymentsRecurringPaymentInformation.constructFromObject(data['recurringPaymentInformation']);
       }
       if (data.hasOwnProperty('consumerAuthenticationInformation')) {
-        obj['consumerAuthenticationInformation'] = Riskv1decisionsConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
+        obj['consumerAuthenticationInformation'] = Riskv1decisionsBundledConsumerAuthenticationInformation.constructFromObject(data['consumerAuthenticationInformation']);
       }
       if (data.hasOwnProperty('watchlistScreeningInformation')) {
         obj['watchlistScreeningInformation'] = Ptsv2paymentsWatchlistScreeningInformation.constructFromObject(data['watchlistScreeningInformation']);
@@ -166,6 +178,18 @@
    */
   exports.prototype['travelInformation'] = undefined;
   /**
+   * @member {module:model/Riskv1decisionsRecipientInformation} recipientInformation
+   */
+  exports.prototype['recipientInformation'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsSenderInformation} senderInformation
+   */
+  exports.prototype['senderInformation'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsAggregatorInformation} aggregatorInformation
+   */
+  exports.prototype['aggregatorInformation'] = undefined;
+  /**
    * @member {Array.<module:model/Riskv1decisionsMerchantDefinedInformation>} merchantDefinedInformation
    */
   exports.prototype['merchantDefinedInformation'] = undefined;
@@ -182,7 +206,7 @@
    */
   exports.prototype['recurringPaymentInformation'] = undefined;
   /**
-   * @member {module:model/Riskv1decisionsConsumerAuthenticationInformation} consumerAuthenticationInformation
+   * @member {module:model/Riskv1decisionsBundledConsumerAuthenticationInformation} consumerAuthenticationInformation
    */
   exports.prototype['consumerAuthenticationInformation'] = undefined;
   /**

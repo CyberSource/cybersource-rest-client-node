@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse404', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse412', 'model/InlineResponse424', 'model/InlineResponse500', 'model/PatchPaymentInstrumentRequest', 'model/PostPaymentInstrumentRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/PatchPaymentInstrumentRequest', 'model/PostPaymentInstrumentRequest', 'model/Tms400ErrorResponse', 'model/Tms403ErrorResponse', 'model/Tms404ErrorResponse', 'model/Tms409ErrorResponse', 'model/Tms410ErrorResponse', 'model/Tms412ErrorResponse', 'model/Tms424ErrorResponse', 'model/Tms500ErrorResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse404'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse412'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/PatchPaymentInstrumentRequest'), require('../model/PostPaymentInstrumentRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/PatchPaymentInstrumentRequest'), require('../model/PostPaymentInstrumentRequest'), require('../model/Tms400ErrorResponse'), require('../model/Tms403ErrorResponse'), require('../model/Tms404ErrorResponse'), require('../model/Tms409ErrorResponse'), require('../model/Tms410ErrorResponse'), require('../model/Tms412ErrorResponse'), require('../model/Tms424ErrorResponse'), require('../model/Tms500ErrorResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PaymentInstrumentApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse404, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse412, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.PatchPaymentInstrumentRequest, root.CyberSource.PostPaymentInstrumentRequest);
+    root.CyberSource.PaymentInstrumentApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.PatchPaymentInstrumentRequest, root.CyberSource.PostPaymentInstrumentRequest, root.CyberSource.Tms400ErrorResponse, root.CyberSource.Tms403ErrorResponse, root.CyberSource.Tms404ErrorResponse, root.CyberSource.Tms409ErrorResponse, root.CyberSource.Tms410ErrorResponse, root.CyberSource.Tms412ErrorResponse, root.CyberSource.Tms424ErrorResponse, root.CyberSource.Tms500ErrorResponse);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse400, InlineResponse403, InlineResponse404, InlineResponse409, InlineResponse410, InlineResponse412, InlineResponse424, InlineResponse500, PatchPaymentInstrumentRequest, PostPaymentInstrumentRequest) {
+}(this, function(MLEUtility, ApiClient, PatchPaymentInstrumentRequest, PostPaymentInstrumentRequest, Tms400ErrorResponse, Tms403ErrorResponse, Tms404ErrorResponse, Tms409ErrorResponse, Tms410ErrorResponse, Tms412ErrorResponse, Tms424ErrorResponse, Tms500ErrorResponse) {
   'use strict';
 
   /**
@@ -102,7 +102,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deletePaymentInstrument']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v1/paymentinstruments/{paymentInstrumentId}', 'DELETE',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -174,7 +175,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getPaymentInstrument']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v1/paymentinstruments/{paymentInstrumentId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -255,7 +257,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['patchPaymentInstrument']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v1/paymentinstruments/{paymentInstrumentId}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -327,7 +330,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postPaymentInstrument']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v1/paymentinstruments', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

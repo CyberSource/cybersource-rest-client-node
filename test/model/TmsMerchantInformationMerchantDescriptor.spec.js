@@ -56,8 +56,14 @@
       //expect(instance).to.be.a(CyberSource.TmsMerchantInformationMerchantDescriptor);
     });
 
-    it('should have the property alternateName (base name: "alternateName")', function() {
-      // uncomment below and update the code to test the property alternateName
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new CyberSource.TmsMerchantInformationMerchantDescriptor();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
       //var instane = new CyberSource.TmsMerchantInformationMerchantDescriptor();
       //expect(instance).to.be();
     });

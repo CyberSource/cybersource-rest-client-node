@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/GetSubscriptionsPaymentsResponse', 'model/GetSubscriptionsPaymentsResponse1', 'model/InlineResponse4005', 'model/InlineResponse4006', 'model/InlineResponse4008', 'model/InlineResponse4009', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response', 'model/SuspendSubscriptionResponse', 'model/UpdatePayments', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateSubscriptionResponse', 'model/CancelSubscriptionResponse', 'model/CreateSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetAllSubscriptionsResponse', 'model/GetSubscriptionCodeResponse', 'model/GetSubscriptionResponse', 'model/GetSubscriptionsPaymentsResponse', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/RbsGetPayment400ErrorResponse', 'model/RbsPlan400ErrorResponse', 'model/RbsPutPayment400ErrorResponse', 'model/RbsSubscription400ErrorResponse', 'model/SuspendSubscriptionResponse', 'model/UpdatePayments', 'model/UpdateSubscription', 'model/UpdateSubscriptionResponse', 'model/UpdateSubscriptionsPaymentsResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/GetSubscriptionsPaymentsResponse'), require('../model/GetSubscriptionsPaymentsResponse1'), require('../model/InlineResponse4005'), require('../model/InlineResponse4006'), require('../model/InlineResponse4008'), require('../model/InlineResponse4009'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdatePayments'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateSubscriptionResponse'), require('../model/CancelSubscriptionResponse'), require('../model/CreateSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetAllSubscriptionsResponse'), require('../model/GetSubscriptionCodeResponse'), require('../model/GetSubscriptionResponse'), require('../model/GetSubscriptionsPaymentsResponse'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RbsGetPayment400ErrorResponse'), require('../model/RbsPlan400ErrorResponse'), require('../model/RbsPutPayment400ErrorResponse'), require('../model/RbsSubscription400ErrorResponse'), require('../model/SuspendSubscriptionResponse'), require('../model/UpdatePayments'), require('../model/UpdateSubscription'), require('../model/UpdateSubscriptionResponse'), require('../model/UpdateSubscriptionsPaymentsResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.GetSubscriptionsPaymentsResponse, root.CyberSource.GetSubscriptionsPaymentsResponse1, root.CyberSource.InlineResponse4005, root.CyberSource.InlineResponse4006, root.CyberSource.InlineResponse4008, root.CyberSource.InlineResponse4009, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdatePayments, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse);
+    root.CyberSource.SubscriptionsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateSubscriptionResponse, root.CyberSource.CancelSubscriptionResponse, root.CyberSource.CreateSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetAllSubscriptionsResponse, root.CyberSource.GetSubscriptionCodeResponse, root.CyberSource.GetSubscriptionResponse, root.CyberSource.GetSubscriptionsPaymentsResponse, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RbsGetPayment400ErrorResponse, root.CyberSource.RbsPlan400ErrorResponse, root.CyberSource.RbsPutPayment400ErrorResponse, root.CyberSource.RbsSubscription400ErrorResponse, root.CyberSource.SuspendSubscriptionResponse, root.CyberSource.UpdatePayments, root.CyberSource.UpdateSubscription, root.CyberSource.UpdateSubscriptionResponse, root.CyberSource.UpdateSubscriptionsPaymentsResponse);
   }
-}(this, function(MLEUtility, ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, GetSubscriptionsPaymentsResponse, GetSubscriptionsPaymentsResponse1, InlineResponse4005, InlineResponse4006, InlineResponse4008, InlineResponse4009, InlineResponse4041, PtsV2PaymentsPost502Response, SuspendSubscriptionResponse, UpdatePayments, UpdateSubscription, UpdateSubscriptionResponse) {
+}(this, function(MLEUtility, ApiClient, ActivateSubscriptionResponse, CancelSubscriptionResponse, CreateSubscriptionRequest, CreateSubscriptionResponse, GetAllSubscriptionsResponse, GetSubscriptionCodeResponse, GetSubscriptionResponse, GetSubscriptionsPaymentsResponse, InlineResponse404, PtsV2PaymentsPost502Response, RbsGetPayment400ErrorResponse, RbsPlan400ErrorResponse, RbsPutPayment400ErrorResponse, RbsSubscription400ErrorResponse, SuspendSubscriptionResponse, UpdatePayments, UpdateSubscription, UpdateSubscriptionResponse, UpdateSubscriptionsPaymentsResponse) {
   'use strict';
 
   /**
@@ -103,7 +103,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['activateSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/activate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -169,7 +170,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['cancelSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/cancel', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -235,7 +237,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -308,7 +311,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getAllSubscriptions']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -374,7 +378,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -433,7 +438,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getSubscriptionCode']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/code', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -507,7 +513,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['subscriptionsIdPaymentsGet']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/payments', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -527,7 +534,7 @@
      * Callback function to receive the result of the subscriptionsIdPaymentsPut operation.
      * @callback module:api/SubscriptionsApi~subscriptionsIdPaymentsPutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/GetSubscriptionsPaymentsResponse1} data The data returned by the service call.
+     * @param {module:model/UpdateSubscriptionsPaymentsResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -537,7 +544,7 @@
      * @param {String} id Subscription Id
      * @param {module:model/UpdatePayments} updatePayments Modify payments of a subscription
      * @param {module:api/SubscriptionsApi~subscriptionsIdPaymentsPutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetSubscriptionsPaymentsResponse1}
+     * data is of type: {@link module:model/UpdateSubscriptionsPaymentsResponse}
      */
     this.subscriptionsIdPaymentsPut = function(id, updatePayments, callback) {
       var postBody = updatePayments;
@@ -572,7 +579,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = GetSubscriptionsPaymentsResponse1;
+      var returnType = UpdateSubscriptionsPaymentsResponse;
 
       //check isMLE for an api method 'this.subscriptionsIdPaymentsPut'
       var inboundMLEStatus = 'optional';
@@ -580,7 +587,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['subscriptionsIdPaymentsPut']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/payments', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -646,7 +654,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['suspendSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}/suspend', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -719,7 +728,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,

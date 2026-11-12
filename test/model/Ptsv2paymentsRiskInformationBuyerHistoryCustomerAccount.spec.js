@@ -92,6 +92,42 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property previousLogin (base name: "previousLogin")', function() {
+      // uncomment below and update the code to test the property previousLogin
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property previousOrder (base name: "previousOrder")', function() {
+      // uncomment below and update the code to test the property previousOrder
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentMethodsCount (base name: "paymentMethodsCount")', function() {
+      // uncomment below and update the code to test the property paymentMethodsCount
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property totalOrdersCount (base name: "totalOrdersCount")', function() {
+      // uncomment below and update the code to test the property totalOrdersCount
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property proofOfIdReceived (base name: "proofOfIdReceived")', function() {
+      // uncomment below and update the code to test the property proofOfIdReceived
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property lastEmailChangeDate (base name: "lastEmailChangeDate")', function() {
+      // uncomment below and update the code to test the property lastEmailChangeDate
+      //var instane = new CyberSource.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

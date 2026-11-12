@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsTravelInformationTransitAirlineLegs', 'model/Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer', 'model/Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation', 'model/Ptsv2paymentsTravelInformationTransitAirlineLegs', 'model/Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTravelInformationTransitAirlineLegs'), require('./Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer'), require('./Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation'), require('./Ptsv2paymentsTravelInformationTransitAirlineLegs'), require('./Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Ptsv2paymentsidrefundsTravelInformationTransitAirline = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineLegs, root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer, root.CyberSource.Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation);
+    root.CyberSource.Ptsv2paymentsidrefundsTravelInformationTransitAirline = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation, root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineLegs, root.CyberSource.Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer);
   }
-}(this, function(ApiClient, Ptsv2paymentsTravelInformationTransitAirlineLegs, Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer, Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation) {
+}(this, function(ApiClient, Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation, Ptsv2paymentsTravelInformationTransitAirlineLegs, Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer) {
   'use strict';
 
 
@@ -220,7 +220,7 @@
         obj['legs'] = ApiClient.convertToType(data['legs'], [Ptsv2paymentsTravelInformationTransitAirlineLegs]);
       }
       if (data.hasOwnProperty('ancillaryInformation')) {
-        obj['ancillaryInformation'] = Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation.constructFromObject(data['ancillaryInformation']);
+        obj['ancillaryInformation'] = Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation.constructFromObject(data['ancillaryInformation']);
       }
       if (data.hasOwnProperty('flightType')) {
         obj['flightType'] = ApiClient.convertToType(data['flightType'], 'String');
@@ -433,7 +433,7 @@
    */
   exports.prototype['legs'] = undefined;
   /**
-   * @member {module:model/Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation} ancillaryInformation
+   * @member {module:model/Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation} ancillaryInformation
    */
   exports.prototype['ancillaryInformation'] = undefined;
   /**

@@ -66,6 +66,7 @@
 
 
 
+
   };
 
   /**
@@ -135,6 +136,9 @@
       }
       if (data.hasOwnProperty('method')) {
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
+      }
+      if (data.hasOwnProperty('carrierName')) {
+        obj['carrierName'] = ApiClient.convertToType(data['carrierName'], 'String');
       }
     }
     return obj;
@@ -235,6 +239,11 @@
    * @member {String} method
    */
   exports.prototype['method'] = undefined;
+  /**
+   * Name of carrier (UPS, FedEx, USPS, etc.) 
+   * @member {String} carrierName
+   */
+  exports.prototype['carrierName'] = undefined;
 
 
 

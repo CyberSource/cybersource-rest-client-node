@@ -1,6 +1,16 @@
 
 # Node.JS Client SDK for the CyberSource REST API
 
+## Important: Node.js security notice
+
+> ### Node.js released security updates on October 21, 2026, addressing CVE-2026-111497, a vulnerability in its bundled Brotli decoder. 
+>
+> ### Cybersource advises its customers to upgrade their Node.js deployments to 22.23.4, 24.22.1, or 26.12.1 — or a later patched release in the same supported branch.
+>
+> ### If your product bundles Brotli directly rather than relying on Node.js’s bundled decoder, update it to Brotli 1.2.1, 1.1.1, or 1.0.10, as appropriate for your branch.
+>
+> ### This advisory concerns the Node.js runtime or Brotli component in your environment, not this library. (Source: *[Wednesday, October 21, 2026 Security Releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases)*)
+
 ## Description
 
 The CyberSource Node client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your Node application.

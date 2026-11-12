@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lodging (base name: "lodging")', function() {
+      // uncomment below and update the code to test the property lodging
+      //var instane = new CyberSource.Riskv1decisionsTravelInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

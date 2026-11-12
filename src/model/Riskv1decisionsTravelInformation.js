@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Riskv1decisionsTravelInformationLegs', 'model/Riskv1decisionsTravelInformationPassengers'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsBundledTravelInformationLegs', 'model/Riskv1decisionsTravelInformationLodging', 'model/Riskv1decisionsTravelInformationPassengers'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsTravelInformationLegs'), require('./Riskv1decisionsTravelInformationPassengers'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsBundledTravelInformationLegs'), require('./Riskv1decisionsTravelInformationLodging'), require('./Riskv1decisionsTravelInformationPassengers'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsTravelInformationLegs, root.CyberSource.Riskv1decisionsTravelInformationPassengers);
+    root.CyberSource.Riskv1decisionsTravelInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsBundledTravelInformationLegs, root.CyberSource.Riskv1decisionsTravelInformationLodging, root.CyberSource.Riskv1decisionsTravelInformationPassengers);
   }
-}(this, function(ApiClient, Riskv1decisionsTravelInformationLegs, Riskv1decisionsTravelInformationPassengers) {
+}(this, function(ApiClient, Riskv1decisionsBundledTravelInformationLegs, Riskv1decisionsTravelInformationLodging, Riskv1decisionsTravelInformationPassengers) {
   'use strict';
 
 
@@ -46,6 +46,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -80,13 +81,16 @@
         obj['journeyType'] = ApiClient.convertToType(data['journeyType'], 'String');
       }
       if (data.hasOwnProperty('legs')) {
-        obj['legs'] = ApiClient.convertToType(data['legs'], [Riskv1decisionsTravelInformationLegs]);
+        obj['legs'] = ApiClient.convertToType(data['legs'], [Riskv1decisionsBundledTravelInformationLegs]);
       }
       if (data.hasOwnProperty('numberOfPassengers')) {
         obj['numberOfPassengers'] = ApiClient.convertToType(data['numberOfPassengers'], 'Number');
       }
       if (data.hasOwnProperty('passengers')) {
         obj['passengers'] = ApiClient.convertToType(data['passengers'], [Riskv1decisionsTravelInformationPassengers]);
+      }
+      if (data.hasOwnProperty('lodging')) {
+        obj['lodging'] = Riskv1decisionsTravelInformationLodging.constructFromObject(data['lodging']);
       }
     }
     return obj;
@@ -113,7 +117,7 @@
    */
   exports.prototype['journeyType'] = undefined;
   /**
-   * @member {Array.<module:model/Riskv1decisionsTravelInformationLegs>} legs
+   * @member {Array.<module:model/Riskv1decisionsBundledTravelInformationLegs>} legs
    */
   exports.prototype['legs'] = undefined;
   /**
@@ -125,6 +129,10 @@
    * @member {Array.<module:model/Riskv1decisionsTravelInformationPassengers>} passengers
    */
   exports.prototype['passengers'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsTravelInformationLodging} lodging
+   */
+  exports.prototype['lodging'] = undefined;
 
 
 

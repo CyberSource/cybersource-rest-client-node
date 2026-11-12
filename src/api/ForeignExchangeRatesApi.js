@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse2013', 'model/InlineResponse4003', 'model/InlineResponse401', 'model/InlineResponse5022'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateFxRatesRequest', 'model/CreateFxRatesResponse', 'model/MmFxRates400ErrorResponse', 'model/MmFxRates401ErrorResponse', 'model/MmFxRates502ErrorResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse2013'), require('../model/InlineResponse4003'), require('../model/InlineResponse401'), require('../model/InlineResponse5022'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateFxRatesRequest'), require('../model/CreateFxRatesResponse'), require('../model/MmFxRates400ErrorResponse'), require('../model/MmFxRates401ErrorResponse'), require('../model/MmFxRates502ErrorResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ForeignExchangeRatesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse2013, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse5022);
+    root.CyberSource.ForeignExchangeRatesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateFxRatesRequest, root.CyberSource.CreateFxRatesResponse, root.CyberSource.MmFxRates400ErrorResponse, root.CyberSource.MmFxRates401ErrorResponse, root.CyberSource.MmFxRates502ErrorResponse);
   }
-}(this, function(MLEUtility, ApiClient, Body, InlineResponse2013, InlineResponse4003, InlineResponse401, InlineResponse5022) {
+}(this, function(MLEUtility, ApiClient, CreateFxRatesRequest, CreateFxRatesResponse, MmFxRates400ErrorResponse, MmFxRates401ErrorResponse, MmFxRates502ErrorResponse) {
   'use strict';
 
   /**
@@ -53,14 +53,14 @@
      * Callback function to receive the result of the createFxRates operation.
      * @callback module:api/ForeignExchangeRatesApi~createFxRatesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2013} data The data returned by the service call.
+     * @param {module:model/CreateFxRatesResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Retrieve Foreign Exchange Rates
      * Retrieve current foreign exchange rates for cross-border payouts. 
-     * @param {module:model/Body} body 
+     * @param {module:model/CreateFxRatesRequest} createFxRatesRequest 
      * @param {String} contentType 
      * @param {String} xRequestid 
      * @param {String} vCMerchantId 
@@ -68,14 +68,14 @@
      * @param {String} vCCorrelationId 
      * @param {String} vCOrganizationId 
      * @param {module:api/ForeignExchangeRatesApi~createFxRatesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2013}
+     * data is of type: {@link module:model/CreateFxRatesResponse}
      */
-    this.createFxRates = function(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, callback) {
-      var postBody = body;
+    this.createFxRates = function(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, callback) {
+      var postBody = createFxRatesRequest;
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createFxRates");
+      // verify the required parameter 'createFxRatesRequest' is set
+      if (createFxRatesRequest === undefined || createFxRatesRequest === null) {
+        throw new Error("Missing the required parameter 'createFxRatesRequest' when calling createFxRates");
       }
 
       // verify the required parameter 'contentType' is set
@@ -111,7 +111,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Body', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateFxRatesRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -133,7 +133,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/hal+json;charset=utf-8'];
-      var returnType = InlineResponse2013;
+      var returnType = CreateFxRatesResponse;
 
       //check isMLE for an api method 'this.createFxRates'
       var inboundMLEStatus = 'mandatory';
@@ -141,7 +141,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createFxRates']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/payouts/fx-rates', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

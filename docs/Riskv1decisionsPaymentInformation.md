@@ -8,5 +8,7 @@ Name | Type | Description | Notes
 **customer** | [**Ptsv2paymentsPaymentInformationCustomer**](Ptsv2paymentsPaymentInformationCustomer.md) |  | [optional] 
 **bank** | [**Ptsv2paymentsPaymentInformationBank**](Ptsv2paymentsPaymentInformationBank.md) |  | [optional] 
 **method** | **String** | Method of payment used for the order. This field can contain one of the following values:   - `consumer` (default): Customer credit card   - `corporate`: Corporate credit card   - `debit`: Debit card, such as a Maestro (UK Domestic) card   - `cod`: Collect on delivery   - `check`: Electronic check   - `p2p`: Person-to-person payment   - `private1`: Private label credit card   - `other`: Other payment method  | [optional] 
+**paymentType** | [**Ptsv2refreshpaymentstatusidPaymentInformationPaymentType**](Ptsv2refreshpaymentstatusidPaymentInformationPaymentType.md) |  | [optional] 
+**paymentAccountReference** | [**Riskv1decisionsPaymentInformationPaymentAccountReference**](Riskv1decisionsPaymentInformationPaymentAccountReference.md) |  | [optional] 
 
 

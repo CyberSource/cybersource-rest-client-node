@@ -122,6 +122,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property productType (base name: "productType")', function() {
+      // uncomment below and update the code to test the property productType
+      //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();
+      //expect(instance).to.be();
+    });
+
     it('should have the property passenger (base name: "passenger")', function() {
       // uncomment below and update the code to test the property passenger
       //var instane = new CyberSource.Riskv1decisionsOrderInformationLineItems();

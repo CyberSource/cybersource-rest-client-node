@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Riskv1decisionsProcessingInformationAuthorizationOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Riskv1decisionsProcessingInformationAuthorizationOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsProcessingInformation = factory(root.CyberSource.ApiClient);
+    root.CyberSource.Riskv1decisionsProcessingInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Riskv1decisionsProcessingInformationAuthorizationOptions);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Riskv1decisionsProcessingInformationAuthorizationOptions) {
   'use strict';
 
 
@@ -49,6 +49,11 @@
     var _this = this;
 
 
+
+
+
+
+
   };
 
   /**
@@ -65,6 +70,21 @@
       if (data.hasOwnProperty('actionList')) {
         obj['actionList'] = ApiClient.convertToType(data['actionList'], ['String']);
       }
+      if (data.hasOwnProperty('businessApplicationId')) {
+        obj['businessApplicationId'] = ApiClient.convertToType(data['businessApplicationId'], 'String');
+      }
+      if (data.hasOwnProperty('purposeOfPayment')) {
+        obj['purposeOfPayment'] = ApiClient.convertToType(data['purposeOfPayment'], 'String');
+      }
+      if (data.hasOwnProperty('preAuthStatus')) {
+        obj['preAuthStatus'] = ApiClient.convertToType(data['preAuthStatus'], 'String');
+      }
+      if (data.hasOwnProperty('preAuthResponseCode')) {
+        obj['preAuthResponseCode'] = ApiClient.convertToType(data['preAuthResponseCode'], 'String');
+      }
+      if (data.hasOwnProperty('authorizationOptions')) {
+        obj['authorizationOptions'] = Riskv1decisionsProcessingInformationAuthorizationOptions.constructFromObject(data['authorizationOptions']);
+      }
     }
     return obj;
   }
@@ -74,6 +94,30 @@
    * @member {Array.<String>} actionList
    */
   exports.prototype['actionList'] = undefined;
+  /**
+   * Required for AFT and OCT transactions.  Given below is a list of all the BAI values available. However, the processors may support only few specific BAI values.  - AA : Account-to-account  - BB : Supplier Payments - BI : Bank-Initiated P2P Money Transfer - BP : Non-Card Bill Pay/Bill Pay - CD : Cash Deposit - CP : Credit card Bill Payment - FD : Funds disbursement  - FT : Funds transfer - GD : Government Disbursement - GP : Gambling payout (non-online gambling) - LO : Loyalty credits and rebates - MD : Merchant Settlement - OG : Online Gambling Payout - PD : Payroll and pension disbursement - PP : Person-to-Person or Peer-to-Peer - TU : Top up, prepaid load - WT : Digital wallet  
+   * @member {String} businessApplicationId
+   */
+  exports.prototype['businessApplicationId'] = undefined;
+  /**
+   * This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. 
+   * @member {String} purposeOfPayment
+   */
+  exports.prototype['purposeOfPayment'] = undefined;
+  /**
+   * Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation. Possible values: Approved, Rejected, Hold. 
+   * @member {String} preAuthStatus
+   */
+  exports.prototype['preAuthStatus'] = undefined;
+  /**
+   * Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction. 
+   * @member {String} preAuthResponseCode
+   */
+  exports.prototype['preAuthResponseCode'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsProcessingInformationAuthorizationOptions} authorizationOptions
+   */
+  exports.prototype['authorizationOptions'] = undefined;
 
 
 

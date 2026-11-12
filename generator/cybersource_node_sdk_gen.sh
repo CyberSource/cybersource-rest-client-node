@@ -89,3 +89,5 @@ git checkout ../test/model/UnauthorizedClientError.spec.js 2>/dev/null || echo "
 
 # Restore new test files
 git checkout ../test/authentication/LoggingUtilities.spec.js 2>/dev/null || echo "Warning: Could not restore LoggingUtilities.spec.js"
+git checkout ../test/authentication/JWTResponseMleAlg.spec.js 2>/dev/null || echo "Warning: Could not restore JWTResponseMleAlg.spec.js"
+git checkout ../test/authentication/MLERequestEncryption.spec.js 2>/dev/null || echo "Warning: Could not restore MLERequestEncryption.spec.js"

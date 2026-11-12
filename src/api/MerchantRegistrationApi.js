@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateMerchantKeyResponse200', 'model/AgentRegistrationConflictResponse409', 'model/KeyRequest1', 'model/KeyUpdate1', 'model/ListMerchantKeysResponse200', 'model/MerchantRegistrationResponse201', 'model/MerchantRegistrationValidationErrorResponse422', 'model/MerchantRequest', 'model/MerchantUpdate'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/ActivateMerchantKeyResponse200', 'model/AddMerchantKeyRequest', 'model/AgentRegistrationConflictResponse409', 'model/ListMerchantKeysResponse200', 'model/MerchantRegistrationResponse201', 'model/MerchantRegistrationValidationErrorResponse422', 'model/MerchantRequest', 'model/MerchantUpdate', 'model/UpdateMerchantKeyRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateMerchantKeyResponse200'), require('../model/AgentRegistrationConflictResponse409'), require('../model/KeyRequest1'), require('../model/KeyUpdate1'), require('../model/ListMerchantKeysResponse200'), require('../model/MerchantRegistrationResponse201'), require('../model/MerchantRegistrationValidationErrorResponse422'), require('../model/MerchantRequest'), require('../model/MerchantUpdate'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/ActivateMerchantKeyResponse200'), require('../model/AddMerchantKeyRequest'), require('../model/AgentRegistrationConflictResponse409'), require('../model/ListMerchantKeysResponse200'), require('../model/MerchantRegistrationResponse201'), require('../model/MerchantRegistrationValidationErrorResponse422'), require('../model/MerchantRequest'), require('../model/MerchantUpdate'), require('../model/UpdateMerchantKeyRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.MerchantRegistrationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateMerchantKeyResponse200, root.CyberSource.AgentRegistrationConflictResponse409, root.CyberSource.KeyRequest1, root.CyberSource.KeyUpdate1, root.CyberSource.ListMerchantKeysResponse200, root.CyberSource.MerchantRegistrationResponse201, root.CyberSource.MerchantRegistrationValidationErrorResponse422, root.CyberSource.MerchantRequest, root.CyberSource.MerchantUpdate);
+    root.CyberSource.MerchantRegistrationApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.ActivateMerchantKeyResponse200, root.CyberSource.AddMerchantKeyRequest, root.CyberSource.AgentRegistrationConflictResponse409, root.CyberSource.ListMerchantKeysResponse200, root.CyberSource.MerchantRegistrationResponse201, root.CyberSource.MerchantRegistrationValidationErrorResponse422, root.CyberSource.MerchantRequest, root.CyberSource.MerchantUpdate, root.CyberSource.UpdateMerchantKeyRequest);
   }
-}(this, function(MLEUtility, ApiClient, ActivateMerchantKeyResponse200, AgentRegistrationConflictResponse409, KeyRequest1, KeyUpdate1, ListMerchantKeysResponse200, MerchantRegistrationResponse201, MerchantRegistrationValidationErrorResponse422, MerchantRequest, MerchantUpdate) {
+}(this, function(MLEUtility, ApiClient, ActivateMerchantKeyResponse200, AddMerchantKeyRequest, AgentRegistrationConflictResponse409, ListMerchantKeysResponse200, MerchantRegistrationResponse201, MerchantRegistrationValidationErrorResponse422, MerchantRequest, MerchantUpdate, UpdateMerchantKeyRequest) {
   'use strict';
 
   /**
@@ -106,7 +106,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['activateMerchantKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants/{merchantId}/keys/{keyId}/activate', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -134,27 +135,27 @@
      * Add a key to a merchant
      * **Add a Key to a Merchant**<br>Adds a new encryption key for the specified merchant. The new key is created as ***active*** immediately.<br><br> **Note:** Adding a new key automatically deactivates all previously active keys for this merchant (single-active key invariant).<br> Returns **403** if the merchant is deactivated, **404** if the merchant is not found. 
      * @param {String} merchantId Unique merchant identifier (UUID)
-     * @param {module:model/KeyRequest1} keyRequest Key creation request
+     * @param {module:model/AddMerchantKeyRequest} addMerchantKeyRequest Key creation request
      * @param {module:api/MerchantRegistrationApi~addMerchantKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActivateMerchantKeyResponse200}
      */
-    this.addMerchantKey = function(merchantId, keyRequest, callback) {
-      var postBody = keyRequest;
+    this.addMerchantKey = function(merchantId, addMerchantKeyRequest, callback) {
+      var postBody = addMerchantKeyRequest;
 
       // verify the required parameter 'merchantId' is set
       if (merchantId === undefined || merchantId === null) {
         throw new Error("Missing the required parameter 'merchantId' when calling addMerchantKey");
       }
 
-      // verify the required parameter 'keyRequest' is set
-      if (keyRequest === undefined || keyRequest === null) {
-        throw new Error("Missing the required parameter 'keyRequest' when calling addMerchantKey");
+      // verify the required parameter 'addMerchantKeyRequest' is set
+      if (addMerchantKeyRequest === undefined || addMerchantKeyRequest === null) {
+        throw new Error("Missing the required parameter 'addMerchantKeyRequest' when calling addMerchantKey");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/KeyRequest1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/AddMerchantKeyRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -179,7 +180,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['addMerchantKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants/{merchantId}/keys', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -245,7 +247,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getMerchant']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants/{merchantId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -318,7 +321,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getMerchantKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants/{merchantId}/keys/{keyId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -388,7 +392,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['listMerchantKeys']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants/{merchantId}/keys', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -454,7 +459,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['registerMerchant']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -527,7 +533,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateMerchant']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants/{merchantId}', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -556,12 +563,12 @@
      * **Update a Merchant Key**<br>Updates encryption key information. The following fields can be modified: `keyName`, `encryptionKey`, `algorithm`, `encryptionType`, and `expirationDate`.<br><br> Returns **403** if the merchant is deactivated, key is deactivated, or key is expired, **404** if the merchant or key is not found, **409** if the new `keyName` already exists. 
      * @param {String} merchantId Unique merchant identifier (UUID)
      * @param {String} keyId Unique key identifier (UUID)
-     * @param {module:model/KeyUpdate1} keyUpdate Key update request
+     * @param {module:model/UpdateMerchantKeyRequest} updateMerchantKeyRequest Key update request
      * @param {module:api/MerchantRegistrationApi~updateMerchantKeyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ActivateMerchantKeyResponse200}
      */
-    this.updateMerchantKey = function(merchantId, keyId, keyUpdate, callback) {
-      var postBody = keyUpdate;
+    this.updateMerchantKey = function(merchantId, keyId, updateMerchantKeyRequest, callback) {
+      var postBody = updateMerchantKeyRequest;
 
       // verify the required parameter 'merchantId' is set
       if (merchantId === undefined || merchantId === null) {
@@ -573,15 +580,15 @@
         throw new Error("Missing the required parameter 'keyId' when calling updateMerchantKey");
       }
 
-      // verify the required parameter 'keyUpdate' is set
-      if (keyUpdate === undefined || keyUpdate === null) {
-        throw new Error("Missing the required parameter 'keyUpdate' when calling updateMerchantKey");
+      // verify the required parameter 'updateMerchantKeyRequest' is set
+      if (updateMerchantKeyRequest === undefined || updateMerchantKeyRequest === null) {
+        throw new Error("Missing the required parameter 'updateMerchantKeyRequest' when calling updateMerchantKey");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/KeyUpdate1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateMerchantKeyRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -607,7 +614,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateMerchantKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/icc/v1/merchants/{merchantId}/keys/{keyId}', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,

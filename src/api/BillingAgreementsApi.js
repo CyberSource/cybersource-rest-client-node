@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateBillingAgreement', 'model/IntimateBillingAgreement', 'model/ModifyBillingAgreement', 'model/PtsV2CreateBillingAgreementPost201Response', 'model/PtsV2CreateBillingAgreementPost400Response', 'model/PtsV2CreateBillingAgreementPost502Response', 'model/PtsV2CreditsPost201Response1', 'model/PtsV2ModifyBillingAgreementPost201Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateBillingAgreement', 'model/IntimateBillingAgreement', 'model/IntimateBillingAgreementResponse', 'model/ModifyBillingAgreement', 'model/PtsV2CreateBillingAgreementPost201Response', 'model/PtsV2CreateBillingAgreementPost400Response', 'model/PtsV2CreateBillingAgreementPost502Response', 'model/PtsV2ModifyBillingAgreementPost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateBillingAgreement'), require('../model/IntimateBillingAgreement'), require('../model/ModifyBillingAgreement'), require('../model/PtsV2CreateBillingAgreementPost201Response'), require('../model/PtsV2CreateBillingAgreementPost400Response'), require('../model/PtsV2CreateBillingAgreementPost502Response'), require('../model/PtsV2CreditsPost201Response1'), require('../model/PtsV2ModifyBillingAgreementPost201Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateBillingAgreement'), require('../model/IntimateBillingAgreement'), require('../model/IntimateBillingAgreementResponse'), require('../model/ModifyBillingAgreement'), require('../model/PtsV2CreateBillingAgreementPost201Response'), require('../model/PtsV2CreateBillingAgreementPost400Response'), require('../model/PtsV2CreateBillingAgreementPost502Response'), require('../model/PtsV2ModifyBillingAgreementPost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BillingAgreementsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateBillingAgreement, root.CyberSource.IntimateBillingAgreement, root.CyberSource.ModifyBillingAgreement, root.CyberSource.PtsV2CreateBillingAgreementPost201Response, root.CyberSource.PtsV2CreateBillingAgreementPost400Response, root.CyberSource.PtsV2CreateBillingAgreementPost502Response, root.CyberSource.PtsV2CreditsPost201Response1, root.CyberSource.PtsV2ModifyBillingAgreementPost201Response);
+    root.CyberSource.BillingAgreementsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateBillingAgreement, root.CyberSource.IntimateBillingAgreement, root.CyberSource.IntimateBillingAgreementResponse, root.CyberSource.ModifyBillingAgreement, root.CyberSource.PtsV2CreateBillingAgreementPost201Response, root.CyberSource.PtsV2CreateBillingAgreementPost400Response, root.CyberSource.PtsV2CreateBillingAgreementPost502Response, root.CyberSource.PtsV2ModifyBillingAgreementPost201Response);
   }
-}(this, function(MLEUtility, ApiClient, CreateBillingAgreement, IntimateBillingAgreement, ModifyBillingAgreement, PtsV2CreateBillingAgreementPost201Response, PtsV2CreateBillingAgreementPost400Response, PtsV2CreateBillingAgreementPost502Response, PtsV2CreditsPost201Response1, PtsV2ModifyBillingAgreementPost201Response) {
+}(this, function(MLEUtility, ApiClient, CreateBillingAgreement, IntimateBillingAgreement, IntimateBillingAgreementResponse, ModifyBillingAgreement, PtsV2CreateBillingAgreementPost201Response, PtsV2CreateBillingAgreementPost400Response, PtsV2CreateBillingAgreementPost502Response, PtsV2ModifyBillingAgreementPost201Response) {
   'use strict';
 
   /**
@@ -106,7 +106,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['billingAgreementsDeRegistration']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/billing-agreements/{id}', 'PATCH',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -126,7 +127,7 @@
      * Callback function to receive the result of the billingAgreementsIntimation operation.
      * @callback module:api/BillingAgreementsApi~billingAgreementsIntimationCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PtsV2CreditsPost201Response1} data The data returned by the service call.
+     * @param {module:model/IntimateBillingAgreementResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -136,7 +137,7 @@
      * @param {module:model/IntimateBillingAgreement} intimateBillingAgreement 
      * @param {String} id ID for intimation of Billing Agreement
      * @param {module:api/BillingAgreementsApi~billingAgreementsIntimationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PtsV2CreditsPost201Response1}
+     * data is of type: {@link module:model/IntimateBillingAgreementResponse}
      */
     this.billingAgreementsIntimation = function(intimateBillingAgreement, id, callback) {
       var postBody = intimateBillingAgreement;
@@ -171,7 +172,7 @@
       var authNames = [];
       var contentTypes = ['application/json', 'application/json; charset=utf-8'];
       var accepts = ['application/hal+json'];
-      var returnType = PtsV2CreditsPost201Response1;
+      var returnType = IntimateBillingAgreementResponse;
 
       //check isMLE for an api method 'this.billingAgreementsIntimation'
       var inboundMLEStatus = 'optional';
@@ -179,7 +180,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['billingAgreementsIntimation']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/billing-agreements/{id}/intimations', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -245,7 +247,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['billingAgreementsRegistration']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/pts/v2/billing-agreements', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

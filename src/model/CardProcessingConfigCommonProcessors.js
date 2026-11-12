@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CardProcessingConfigCommonAcquirer', 'model/CardProcessingConfigCommonAcquirers', 'model/CardProcessingConfigCommonCurrencies1', 'model/CardProcessingConfigCommonPaymentTypes'], factory);
+    define(['ApiClient', 'model/CardProcessingConfigCommonAcquirer', 'model/CardProcessingConfigCommonAcquirers', 'model/CardProcessingConfigCommonPaymentTypes', 'model/CurrencyUpdatedConfiguration'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonAcquirer'), require('./CardProcessingConfigCommonAcquirers'), require('./CardProcessingConfigCommonCurrencies1'), require('./CardProcessingConfigCommonPaymentTypes'));
+    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonAcquirer'), require('./CardProcessingConfigCommonAcquirers'), require('./CardProcessingConfigCommonPaymentTypes'), require('./CurrencyUpdatedConfiguration'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CardProcessingConfigCommonProcessors = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonAcquirer, root.CyberSource.CardProcessingConfigCommonAcquirers, root.CyberSource.CardProcessingConfigCommonCurrencies1, root.CyberSource.CardProcessingConfigCommonPaymentTypes);
+    root.CyberSource.CardProcessingConfigCommonProcessors = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonAcquirer, root.CyberSource.CardProcessingConfigCommonAcquirers, root.CyberSource.CardProcessingConfigCommonPaymentTypes, root.CyberSource.CurrencyUpdatedConfiguration);
   }
-}(this, function(ApiClient, CardProcessingConfigCommonAcquirer, CardProcessingConfigCommonAcquirers, CardProcessingConfigCommonCurrencies1, CardProcessingConfigCommonPaymentTypes) {
+}(this, function(ApiClient, CardProcessingConfigCommonAcquirer, CardProcessingConfigCommonAcquirers, CardProcessingConfigCommonPaymentTypes, CurrencyUpdatedConfiguration) {
   'use strict';
 
 
@@ -141,7 +141,7 @@
         obj['paymentTypes'] = ApiClient.convertToType(data['paymentTypes'], {'String': CardProcessingConfigCommonPaymentTypes});
       }
       if (data.hasOwnProperty('currencies')) {
-        obj['currencies'] = ApiClient.convertToType(data['currencies'], {'String': CardProcessingConfigCommonCurrencies1});
+        obj['currencies'] = ApiClient.convertToType(data['currencies'], {'String': CurrencyUpdatedConfiguration});
       }
       if (data.hasOwnProperty('visaAggregatorId')) {
         obj['visaAggregatorId'] = ApiClient.convertToType(data['visaAggregatorId'], 'String');
@@ -319,7 +319,7 @@
   exports.prototype['paymentTypes'] = undefined;
   /**
    * Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)
-   * @member {Object.<String, module:model/CardProcessingConfigCommonCurrencies1>} currencies
+   * @member {Object.<String, module:model/CurrencyUpdatedConfiguration>} currencies
    */
   exports.prototype['currencies'] = undefined;
   /**

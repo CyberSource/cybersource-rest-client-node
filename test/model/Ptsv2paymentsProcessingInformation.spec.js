@@ -350,6 +350,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property preAuthStatus (base name: "preAuthStatus")', function() {
+      // uncomment below and update the code to test the property preAuthStatus
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property preAuthResponseCode (base name: "preAuthResponseCode")', function() {
+      // uncomment below and update the code to test the property preAuthResponseCode
+      //var instane = new CyberSource.Ptsv2paymentsProcessingInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

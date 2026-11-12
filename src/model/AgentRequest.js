@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Iccv1agentsKeys'], factory);
+    define(['ApiClient', 'model/AddAgentKeyRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Iccv1agentsKeys'));
+    module.exports = factory(require('../ApiClient'), require('./AddAgentKeyRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.AgentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1agentsKeys);
+    root.CyberSource.AgentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.AddAgentKeyRequest);
   }
-}(this, function(ApiClient, Iccv1agentsKeys) {
+}(this, function(ApiClient, AddAgentKeyRequest) {
   'use strict';
 
 
@@ -92,7 +92,7 @@
         obj['agentMetadata'] = ApiClient.convertToType(data['agentMetadata'], Object);
       }
       if (data.hasOwnProperty('keys')) {
-        obj['keys'] = ApiClient.convertToType(data['keys'], [Iccv1agentsKeys]);
+        obj['keys'] = ApiClient.convertToType(data['keys'], [AddAgentKeyRequest]);
       }
     }
     return obj;
@@ -130,7 +130,7 @@
   exports.prototype['agentMetadata'] = undefined;
   /**
    * Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate. 
-   * @member {Array.<module:model/Iccv1agentsKeys>} keys
+   * @member {Array.<module:model/AddAgentKeyRequest>} keys
    */
   exports.prototype['keys'] = undefined;
 

@@ -56,7 +56,7 @@ No authorization required
 
 <a name="postDeAssociateV3Terminal"></a>
 # **postDeAssociateV3Terminal**
-> [InlineResponse20010] postDeAssociateV3Terminal(deviceDeAssociateV3Request)
+> [DeviceDeAssociateV3Response] postDeAssociateV3Terminal(deviceDeAssociateV3Request)
 
 De-associate a device from merchant to account or reseller and from account to reseller
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse20010]**](InlineResponse20010.md)
+[**[DeviceDeAssociateV3Response]**](DeviceDeAssociateV3Response.md)
 
 ### Authorization
 

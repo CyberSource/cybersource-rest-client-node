@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2013ErrorInformationDetails'], factory);
+    define(['ApiClient', 'model/Flex400ErrorResponseDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2013ErrorInformationDetails'));
+    module.exports = factory(require('../ApiClient'), require('./Flex400ErrorResponseDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4004 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse2013ErrorInformationDetails);
+    root.CyberSource.InlineResponse4004 = factory(root.CyberSource.ApiClient, root.CyberSource.Flex400ErrorResponseDetails);
   }
-}(this, function(ApiClient, InlineResponse2013ErrorInformationDetails) {
+}(this, function(ApiClient, Flex400ErrorResponseDetails) {
   'use strict';
 
 
@@ -43,17 +43,17 @@
    * Constructs a new <code>InlineResponse4004</code>.
    * @alias module:model/InlineResponse4004
    * @class
-   * @param status {String} Possible values: - INVALID_REQUEST 
+   * @param message {String} 
+   * @param reason {String} Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
    */
-  var exports = function(status) {
+  var exports = function(message, reason) {
     var _this = this;
 
 
 
-    _this['status'] = status;
 
-
-
+    _this['message'] = message;
+    _this['reason'] = reason;
   };
 
   /**
@@ -67,57 +67,46 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('correlationId')) {
+        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
       }
-      if (data.hasOwnProperty('submitTimeStampUtc')) {
-        obj['submitTimeStampUtc'] = ApiClient.convertToType(data['submitTimeStampUtc'], 'String');
+      if (data.hasOwnProperty('details')) {
+        obj['details'] = ApiClient.convertToType(data['details'], [Flex400ErrorResponseDetails]);
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      if (data.hasOwnProperty('informationLink')) {
+        obj['informationLink'] = ApiClient.convertToType(data['informationLink'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse2013ErrorInformationDetails]);
+      if (data.hasOwnProperty('reason')) {
+        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource. 
-   * @member {String} id
+   * @member {String} correlationId
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['correlationId'] = undefined;
   /**
-   * Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @member {String} submitTimeStampUtc
+   * @member {Array.<module:model/Flex400ErrorResponseDetails>} details
    */
-  exports.prototype['submitTimeStampUtc'] = undefined;
+  exports.prototype['details'] = undefined;
   /**
-   * Possible values: - INVALID_REQUEST 
-   * @member {String} status
+   * @member {String} informationLink
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['informationLink'] = undefined;
   /**
-   * The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD 
-   * @member {String} reason
-   */
-  exports.prototype['reason'] = undefined;
-  /**
-   * The detail message related to the status and reason listed above. 
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2013ErrorInformationDetails>} details
+   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
+   * @member {String} reason
    */
-  exports.prototype['details'] = undefined;
+  exports.prototype['reason'] = undefined;
 
 
 

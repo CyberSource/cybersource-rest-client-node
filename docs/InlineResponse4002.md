@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | **String** | Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.  | [optional] 
-**status** | **String** | The status of the submitted transaction. Possible values: - `INVALID_REQUEST`  | [optional] 
-**reason** | **String** | The reason of the status. Possible Values: - `INVALID_DATA`  | [optional] 
-**message** | **String** | Input request error. | [optional] 
-**details** | [**[PtsV2PaymentsPost201ResponseErrorInformationDetails]**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  | [optional] 
+**submitTimeUtc** | **Date** | Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.  | [optional] 
+**status** | **String** | The http status description of the submitted request. | [optional] 
+**reason** | **String** | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND'  | [optional] 
+**message** | **String** | Descriptive message for the error. | [optional] 
+**details** | [**[InlineResponse4002Details]**](InlineResponse4002Details.md) |  | [optional] 
 
 

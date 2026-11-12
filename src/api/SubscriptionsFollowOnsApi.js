@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateSubscriptionRequest1', 'model/CreateSubscriptionResponse', 'model/GetSubscriptionResponse1', 'model/InlineResponse4007', 'model/InlineResponse4041', 'model/PtsV2PaymentsPost502Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateFollowOnSubscriptionRequest', 'model/CreateSubscriptionResponse', 'model/GetFollowOnSubscriptionResponse', 'model/InlineResponse404', 'model/PtsV2PaymentsPost502Response', 'model/RbsFollowOnSubscription400ErrorResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateSubscriptionRequest1'), require('../model/CreateSubscriptionResponse'), require('../model/GetSubscriptionResponse1'), require('../model/InlineResponse4007'), require('../model/InlineResponse4041'), require('../model/PtsV2PaymentsPost502Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateFollowOnSubscriptionRequest'), require('../model/CreateSubscriptionResponse'), require('../model/GetFollowOnSubscriptionResponse'), require('../model/InlineResponse404'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RbsFollowOnSubscription400ErrorResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SubscriptionsFollowOnsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateSubscriptionRequest1, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetSubscriptionResponse1, root.CyberSource.InlineResponse4007, root.CyberSource.InlineResponse4041, root.CyberSource.PtsV2PaymentsPost502Response);
+    root.CyberSource.SubscriptionsFollowOnsApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateFollowOnSubscriptionRequest, root.CyberSource.CreateSubscriptionResponse, root.CyberSource.GetFollowOnSubscriptionResponse, root.CyberSource.InlineResponse404, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RbsFollowOnSubscription400ErrorResponse);
   }
-}(this, function(MLEUtility, ApiClient, CreateSubscriptionRequest1, CreateSubscriptionResponse, GetSubscriptionResponse1, InlineResponse4007, InlineResponse4041, PtsV2PaymentsPost502Response) {
+}(this, function(MLEUtility, ApiClient, CreateFollowOnSubscriptionRequest, CreateSubscriptionResponse, GetFollowOnSubscriptionResponse, InlineResponse404, PtsV2PaymentsPost502Response, RbsFollowOnSubscription400ErrorResponse) {
   'use strict';
 
   /**
@@ -61,27 +61,27 @@
      * Create a Follow-On Subscription
      * Create a new Subscription based on the Request Id of an existing successful Transaction.
      * @param {String} requestId Request Id of an existing successful Transaction
-     * @param {module:model/CreateSubscriptionRequest1} createSubscriptionRequest 
+     * @param {module:model/CreateFollowOnSubscriptionRequest} createFollowOnSubscriptionRequest 
      * @param {module:api/SubscriptionsFollowOnsApi~createFollowOnSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreateSubscriptionResponse}
      */
-    this.createFollowOnSubscription = function(requestId, createSubscriptionRequest, callback) {
-      var postBody = createSubscriptionRequest;
+    this.createFollowOnSubscription = function(requestId, createFollowOnSubscriptionRequest, callback) {
+      var postBody = createFollowOnSubscriptionRequest;
 
       // verify the required parameter 'requestId' is set
       if (requestId === undefined || requestId === null) {
         throw new Error("Missing the required parameter 'requestId' when calling createFollowOnSubscription");
       }
 
-      // verify the required parameter 'createSubscriptionRequest' is set
-      if (createSubscriptionRequest === undefined || createSubscriptionRequest === null) {
-        throw new Error("Missing the required parameter 'createSubscriptionRequest' when calling createFollowOnSubscription");
+      // verify the required parameter 'createFollowOnSubscriptionRequest' is set
+      if (createFollowOnSubscriptionRequest === undefined || createFollowOnSubscriptionRequest === null) {
+        throw new Error("Missing the required parameter 'createFollowOnSubscriptionRequest' when calling createFollowOnSubscription");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateSubscriptionRequest1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/CreateFollowOnSubscriptionRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -106,7 +106,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createFollowOnSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/follow-ons/{requestId}', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -126,7 +127,7 @@
      * Callback function to receive the result of the getFollowOnSubscription operation.
      * @callback module:api/SubscriptionsFollowOnsApi~getFollowOnSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/GetSubscriptionResponse1} data The data returned by the service call.
+     * @param {module:model/GetFollowOnSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -135,7 +136,7 @@
      * Get details of the Subscription being created based on the Request Id of an existing successful Transaction. 
      * @param {String} requestId Request Id of an existing successful Transaction
      * @param {module:api/SubscriptionsFollowOnsApi~getFollowOnSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetSubscriptionResponse1}
+     * data is of type: {@link module:model/GetFollowOnSubscriptionResponse}
      */
     this.getFollowOnSubscription = function(requestId, callback) {
       var postBody = null;
@@ -164,7 +165,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8'];
-      var returnType = GetSubscriptionResponse1;
+      var returnType = GetFollowOnSubscriptionResponse;
 
       //check isMLE for an api method 'this.getFollowOnSubscription'
       var inboundMLEStatus = 'false';
@@ -172,7 +173,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getFollowOnSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/rbs/v1/subscriptions/follow-ons/{requestId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,

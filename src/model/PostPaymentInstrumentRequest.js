@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DefaultPaymentInstrumentBankAccount', 'model/DefaultPaymentInstrumentBillTo', 'model/DefaultPaymentInstrumentBuyerInformation', 'model/DefaultPaymentInstrumentCard', 'model/DefaultPaymentInstrumentInstrumentIdentifier', 'model/DefaultPaymentInstrumentLinks', 'model/DefaultPaymentInstrumentMetadata', 'model/TmsMerchantInformation', 'model/TmsPaymentInstrumentProcessingInfo', 'model/Tmsv1paymentinstrumentsEmbedded'], factory);
+    define(['ApiClient', 'model/DefaultPaymentInstrumentBankAccount', 'model/DefaultPaymentInstrumentBillTo', 'model/DefaultPaymentInstrumentBuyerInformation', 'model/DefaultPaymentInstrumentCard', 'model/DefaultPaymentInstrumentInstrumentIdentifier', 'model/DefaultPaymentInstrumentLinks', 'model/DefaultPaymentInstrumentMetadata', 'model/PaymentInstrumentEmbedded2', 'model/TmsMerchantInformation', 'model/TmsPaymentInstrumentProcessingInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DefaultPaymentInstrumentBankAccount'), require('./DefaultPaymentInstrumentBillTo'), require('./DefaultPaymentInstrumentBuyerInformation'), require('./DefaultPaymentInstrumentCard'), require('./DefaultPaymentInstrumentInstrumentIdentifier'), require('./DefaultPaymentInstrumentLinks'), require('./DefaultPaymentInstrumentMetadata'), require('./TmsMerchantInformation'), require('./TmsPaymentInstrumentProcessingInfo'), require('./Tmsv1paymentinstrumentsEmbedded'));
+    module.exports = factory(require('../ApiClient'), require('./DefaultPaymentInstrumentBankAccount'), require('./DefaultPaymentInstrumentBillTo'), require('./DefaultPaymentInstrumentBuyerInformation'), require('./DefaultPaymentInstrumentCard'), require('./DefaultPaymentInstrumentInstrumentIdentifier'), require('./DefaultPaymentInstrumentLinks'), require('./DefaultPaymentInstrumentMetadata'), require('./PaymentInstrumentEmbedded2'), require('./TmsMerchantInformation'), require('./TmsPaymentInstrumentProcessingInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.PostPaymentInstrumentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.DefaultPaymentInstrumentBankAccount, root.CyberSource.DefaultPaymentInstrumentBillTo, root.CyberSource.DefaultPaymentInstrumentBuyerInformation, root.CyberSource.DefaultPaymentInstrumentCard, root.CyberSource.DefaultPaymentInstrumentInstrumentIdentifier, root.CyberSource.DefaultPaymentInstrumentLinks, root.CyberSource.DefaultPaymentInstrumentMetadata, root.CyberSource.TmsMerchantInformation, root.CyberSource.TmsPaymentInstrumentProcessingInfo, root.CyberSource.Tmsv1paymentinstrumentsEmbedded);
+    root.CyberSource.PostPaymentInstrumentRequest = factory(root.CyberSource.ApiClient, root.CyberSource.DefaultPaymentInstrumentBankAccount, root.CyberSource.DefaultPaymentInstrumentBillTo, root.CyberSource.DefaultPaymentInstrumentBuyerInformation, root.CyberSource.DefaultPaymentInstrumentCard, root.CyberSource.DefaultPaymentInstrumentInstrumentIdentifier, root.CyberSource.DefaultPaymentInstrumentLinks, root.CyberSource.DefaultPaymentInstrumentMetadata, root.CyberSource.PaymentInstrumentEmbedded2, root.CyberSource.TmsMerchantInformation, root.CyberSource.TmsPaymentInstrumentProcessingInfo);
   }
-}(this, function(ApiClient, DefaultPaymentInstrumentBankAccount, DefaultPaymentInstrumentBillTo, DefaultPaymentInstrumentBuyerInformation, DefaultPaymentInstrumentCard, DefaultPaymentInstrumentInstrumentIdentifier, DefaultPaymentInstrumentLinks, DefaultPaymentInstrumentMetadata, TmsMerchantInformation, TmsPaymentInstrumentProcessingInfo, Tmsv1paymentinstrumentsEmbedded) {
+}(this, function(ApiClient, DefaultPaymentInstrumentBankAccount, DefaultPaymentInstrumentBillTo, DefaultPaymentInstrumentBuyerInformation, DefaultPaymentInstrumentCard, DefaultPaymentInstrumentInstrumentIdentifier, DefaultPaymentInstrumentLinks, DefaultPaymentInstrumentMetadata, PaymentInstrumentEmbedded2, TmsMerchantInformation, TmsPaymentInstrumentProcessingInfo) {
   'use strict';
 
 
@@ -118,7 +118,7 @@
         obj['metadata'] = DefaultPaymentInstrumentMetadata.constructFromObject(data['metadata']);
       }
       if (data.hasOwnProperty('_embedded')) {
-        obj['_embedded'] = Tmsv1paymentinstrumentsEmbedded.constructFromObject(data['_embedded']);
+        obj['_embedded'] = PaymentInstrumentEmbedded2.constructFromObject(data['_embedded']);
       }
     }
     return obj;
@@ -186,7 +186,7 @@
    */
   exports.prototype['metadata'] = undefined;
   /**
-   * @member {module:model/Tmsv1paymentinstrumentsEmbedded} _embedded
+   * @member {module:model/PaymentInstrumentEmbedded2} _embedded
    */
   exports.prototype['_embedded'] = undefined;
 

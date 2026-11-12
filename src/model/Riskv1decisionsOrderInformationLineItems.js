@@ -63,6 +63,7 @@
 
 
 
+
   };
 
   /**
@@ -108,6 +109,9 @@
       }
       if (data.hasOwnProperty('distributorProductSku')) {
         obj['distributorProductSku'] = ApiClient.convertToType(data['distributorProductSku'], 'String');
+      }
+      if (data.hasOwnProperty('productType')) {
+        obj['productType'] = ApiClient.convertToType(data['productType'], 'String');
       }
       if (data.hasOwnProperty('passenger')) {
         obj['passenger'] = Ptsv2paymentsOrderInformationPassenger.constructFromObject(data['passenger']);
@@ -183,6 +187,11 @@
    * @member {String} distributorProductSku
    */
   exports.prototype['distributorProductSku'] = undefined;
+  /**
+   * Type of product (e.g., Prepaid, Postpaid, Electronic Devices, Flight, Hotel).
+   * @member {String} productType
+   */
+  exports.prototype['productType'] = undefined;
   /**
    * @member {module:model/Ptsv2paymentsOrderInformationPassenger} passenger
    */

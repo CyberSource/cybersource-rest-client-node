@@ -152,6 +152,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property travelInformation (base name: "travelInformation")', function() {
+      // uncomment below and update the code to test the property travelInformation
+      //var instane = new CyberSource.TssV2TransactionsGet200Response();
+      //expect(instance).to.be();
+    });
+
     it('should have the property merchantDefinedInformation (base name: "merchantDefinedInformation")', function() {
       // uncomment below and update the code to test the property merchantDefinedInformation
       //var instane = new CyberSource.TssV2TransactionsGet200Response();

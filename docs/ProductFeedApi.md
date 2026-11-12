@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getAllProducts"></a>
 # **getAllProducts**
-> InlineResponse20020 getAllProducts(getAllProductsRequest, opts)
+> ProductCatalogResponse getAllProducts(getAllProductsRequest, opts)
 
 Get All Products
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ProductCatalogResponse**](ProductCatalogResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 
 <a name="getFeedJobStatus"></a>
 # **getFeedJobStatus**
-> InlineResponse20019 getFeedJobStatus(jobId, getFeedJobStatusRequest)
+> FeedJobStatusResponse getFeedJobStatus(jobId, getFeedJobStatusRequest)
 
 Get Feed Job Status
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**FeedJobStatusResponse**](FeedJobStatusResponse.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ No authorization required
 
 <a name="getProduct"></a>
 # **getProduct**
-> InlineResponse20021 getProduct(productId, getProductRequest)
+> ProductDetailResponse getProduct(productId, getProductRequest)
 
 Get Product by ID
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ProductDetailResponse**](ProductDetailResponse.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ No authorization required
 
 <a name="submitProductFeedJson"></a>
 # **submitProductFeedJson**
-> InlineResponse2021 submitProductFeedJson(productFeedRequest)
+> ProductAcceptedFeedResponse submitProductFeedJson(productFeedRequest)
 
 Ingest Product Feed
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2021**](InlineResponse2021.md)
+[**ProductAcceptedFeedResponse**](ProductAcceptedFeedResponse.md)
 
 ### Authorization
 

@@ -80,6 +80,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property store (base name: "store")', function() {
+      // uncomment below and update the code to test the property store
+      //var instane = new CyberSource.Riskv1decisionsRiskInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property authenticationType (base name: "authenticationType")', function() {
+      // uncomment below and update the code to test the property authenticationType
+      //var instane = new CyberSource.Riskv1decisionsRiskInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pickupDays (base name: "pickupDays")', function() {
+      // uncomment below and update the code to test the property pickupDays
+      //var instane = new CyberSource.Riskv1decisionsRiskInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property externalScore (base name: "externalScore")', function() {
+      // uncomment below and update the code to test the property externalScore
+      //var instane = new CyberSource.Riskv1decisionsRiskInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

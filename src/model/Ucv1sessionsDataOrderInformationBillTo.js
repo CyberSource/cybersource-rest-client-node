@@ -230,7 +230,7 @@
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
-   * Customer's phone number type.  #### For Payouts: This field may be sent only for FDC Compass.  Possible Values: * day * home * night * work 
+   * Customer's phone number type.  Possible Values: * day * home * night * work 
    * @member {String} phoneType
    */
   exports.prototype['phoneType'] = undefined;

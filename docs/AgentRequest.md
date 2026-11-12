@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **contactEmail** | **String** | Contact email for the team or individual responsible for this agent | 
 **tokenRequestorId** | **String** | Token Requestor ID (TRID) assigned by Visa | 
 **agentMetadata** | **Object** | Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB. | [optional] 
-**keys** | [**[Iccv1agentsKeys]**](Iccv1agentsKeys.md) | Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate.  | [optional] 
+**keys** | [**[AddAgentKeyRequest]**](AddAgentKeyRequest.md) | Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate.  | [optional] 
 
 

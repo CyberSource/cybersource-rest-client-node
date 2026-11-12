@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property transactionId (base name: "transactionId")', function() {
+      // uncomment below and update the code to test the property transactionId
+      //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property partner (base name: "partner")', function() {
       // uncomment below and update the code to test the property partner
       //var instane = new CyberSource.TssV2TransactionsGet200ResponseClientReferenceInformation();

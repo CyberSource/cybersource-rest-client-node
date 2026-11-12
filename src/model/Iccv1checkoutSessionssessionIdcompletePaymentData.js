@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress'], factory);
+    define(['ApiClient', 'model/Iccv1checkoutSessionsPaymentDataBillingAddress'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress'));
+    module.exports = factory(require('../ApiClient'), require('./Iccv1checkoutSessionsPaymentDataBillingAddress'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Iccv1checkoutSessionssessionIdcompletePaymentData = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress);
+    root.CyberSource.Iccv1checkoutSessionssessionIdcompletePaymentData = factory(root.CyberSource.ApiClient, root.CyberSource.Iccv1checkoutSessionsPaymentDataBillingAddress);
   }
-}(this, function(ApiClient, Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress) {
+}(this, function(ApiClient, Iccv1checkoutSessionsPaymentDataBillingAddress) {
   'use strict';
 
 
@@ -73,7 +73,7 @@
         obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
       }
       if (data.hasOwnProperty('billing_address')) {
-        obj['billing_address'] = Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress.constructFromObject(data['billing_address']);
+        obj['billing_address'] = Iccv1checkoutSessionsPaymentDataBillingAddress.constructFromObject(data['billing_address']);
       }
     }
     return obj;
@@ -90,7 +90,7 @@
    */
   exports.prototype['provider'] = undefined;
   /**
-   * @member {module:model/Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress} billing_address
+   * @member {module:model/Iccv1checkoutSessionsPaymentDataBillingAddress} billing_address
    */
   exports.prototype['billing_address'] = undefined;
 

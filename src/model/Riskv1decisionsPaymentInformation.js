@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Riskv1decisionsPaymentInformationCard', 'model/Riskv1decisionsPaymentInformationTokenizedCard'], factory);
+    define(['ApiClient', 'model/Ptsv2paymentsPaymentInformationBank', 'model/Ptsv2paymentsPaymentInformationCustomer', 'model/Ptsv2refreshpaymentstatusidPaymentInformationPaymentType', 'model/Riskv1decisionsPaymentInformationCard', 'model/Riskv1decisionsPaymentInformationPaymentAccountReference', 'model/Riskv1decisionsPaymentInformationTokenizedCard'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Riskv1decisionsPaymentInformationCard'), require('./Riskv1decisionsPaymentInformationTokenizedCard'));
+    module.exports = factory(require('../ApiClient'), require('./Ptsv2paymentsPaymentInformationBank'), require('./Ptsv2paymentsPaymentInformationCustomer'), require('./Ptsv2refreshpaymentstatusidPaymentInformationPaymentType'), require('./Riskv1decisionsPaymentInformationCard'), require('./Riskv1decisionsPaymentInformationPaymentAccountReference'), require('./Riskv1decisionsPaymentInformationTokenizedCard'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.Riskv1decisionsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Riskv1decisionsPaymentInformationCard, root.CyberSource.Riskv1decisionsPaymentInformationTokenizedCard);
+    root.CyberSource.Riskv1decisionsPaymentInformation = factory(root.CyberSource.ApiClient, root.CyberSource.Ptsv2paymentsPaymentInformationBank, root.CyberSource.Ptsv2paymentsPaymentInformationCustomer, root.CyberSource.Ptsv2refreshpaymentstatusidPaymentInformationPaymentType, root.CyberSource.Riskv1decisionsPaymentInformationCard, root.CyberSource.Riskv1decisionsPaymentInformationPaymentAccountReference, root.CyberSource.Riskv1decisionsPaymentInformationTokenizedCard);
   }
-}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Riskv1decisionsPaymentInformationCard, Riskv1decisionsPaymentInformationTokenizedCard) {
+}(this, function(ApiClient, Ptsv2paymentsPaymentInformationBank, Ptsv2paymentsPaymentInformationCustomer, Ptsv2refreshpaymentstatusidPaymentInformationPaymentType, Riskv1decisionsPaymentInformationCard, Riskv1decisionsPaymentInformationPaymentAccountReference, Riskv1decisionsPaymentInformationTokenizedCard) {
   'use strict';
 
 
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -81,6 +83,12 @@
       if (data.hasOwnProperty('method')) {
         obj['method'] = ApiClient.convertToType(data['method'], 'String');
       }
+      if (data.hasOwnProperty('paymentType')) {
+        obj['paymentType'] = Ptsv2refreshpaymentstatusidPaymentInformationPaymentType.constructFromObject(data['paymentType']);
+      }
+      if (data.hasOwnProperty('paymentAccountReference')) {
+        obj['paymentAccountReference'] = Riskv1decisionsPaymentInformationPaymentAccountReference.constructFromObject(data['paymentAccountReference']);
+      }
     }
     return obj;
   }
@@ -106,6 +114,14 @@
    * @member {String} method
    */
   exports.prototype['method'] = undefined;
+  /**
+   * @member {module:model/Ptsv2refreshpaymentstatusidPaymentInformationPaymentType} paymentType
+   */
+  exports.prototype['paymentType'] = undefined;
+  /**
+   * @member {module:model/Riskv1decisionsPaymentInformationPaymentAccountReference} paymentAccountReference
+   */
+  exports.prototype['paymentAccountReference'] = undefined;
 
 
 

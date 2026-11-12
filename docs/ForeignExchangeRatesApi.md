@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createFxRates"></a>
 # **createFxRates**
-> InlineResponse2013 createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId)
+> CreateFxRatesResponse createFxRates(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId)
 
 Retrieve Foreign Exchange Rates
 
@@ -21,7 +21,7 @@ var CyberSource = require('CyberSource');
 
 var apiInstance = new CyberSource.ForeignExchangeRatesApi();
 
-var body = new CyberSource.Body(); // Body | 
+var createFxRatesRequest = new CyberSource.CreateFxRatesRequest(); // CreateFxRatesRequest | 
 
 var contentType = "contentType_example"; // String | 
 
@@ -43,14 +43,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createFxRates(body, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, callback);
+apiInstance.createFxRates(createFxRatesRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)|  | 
+ **createFxRatesRequest** | [**CreateFxRatesRequest**](CreateFxRatesRequest.md)|  | 
  **contentType** | **String**|  | 
  **xRequestid** | **String**|  | 
  **vCMerchantId** | **String**|  | 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**CreateFxRatesResponse**](CreateFxRatesResponse.md)
 
 ### Authorization
 

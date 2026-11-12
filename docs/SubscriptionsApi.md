@@ -357,7 +357,7 @@ No authorization required
 
 <a name="subscriptionsIdPaymentsPut"></a>
 # **subscriptionsIdPaymentsPut**
-> GetSubscriptionsPaymentsResponse1 subscriptionsIdPaymentsPut(id, updatePayments)
+> UpdateSubscriptionsPaymentsResponse subscriptionsIdPaymentsPut(id, updatePayments)
 
 Update Payments for a subscription
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSubscriptionsPaymentsResponse1**](GetSubscriptionsPaymentsResponse1.md)
+[**UpdateSubscriptionsPaymentsResponse**](UpdateSubscriptionsPaymentsResponse.md)
 
 ### Authorization
 

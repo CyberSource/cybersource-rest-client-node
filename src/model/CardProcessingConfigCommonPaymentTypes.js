@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CardProcessingConfigCommonCurrencies'], factory);
+    define(['ApiClient', 'model/CurrencyConfiguration'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonCurrencies'));
+    module.exports = factory(require('../ApiClient'), require('./CurrencyConfiguration'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CardProcessingConfigCommonPaymentTypes = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonCurrencies);
+    root.CyberSource.CardProcessingConfigCommonPaymentTypes = factory(root.CyberSource.ApiClient, root.CyberSource.CurrencyConfiguration);
   }
-}(this, function(ApiClient, CardProcessingConfigCommonCurrencies) {
+}(this, function(ApiClient, CurrencyConfiguration) {
   'use strict';
 
 
@@ -66,7 +66,7 @@
         obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
       }
       if (data.hasOwnProperty('currencies')) {
-        obj['currencies'] = ApiClient.convertToType(data['currencies'], {'String': CardProcessingConfigCommonCurrencies});
+        obj['currencies'] = ApiClient.convertToType(data['currencies'], {'String': CurrencyConfiguration});
       }
     }
     return obj;
@@ -78,7 +78,7 @@
   exports.prototype['enabled'] = undefined;
   /**
    * Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)
-   * @member {Object.<String, module:model/CardProcessingConfigCommonCurrencies>} currencies
+   * @member {Object.<String, module:model/CurrencyConfiguration>} currencies
    */
   exports.prototype['currencies'] = undefined;
 

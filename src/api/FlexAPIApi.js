@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/GenerateFlexAPICaptureContextRequest', 'model/InlineResponse4001'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/Flex400ErrorResponse', 'model/GenerateFlexAPICaptureContextRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/GenerateFlexAPICaptureContextRequest'), require('../model/InlineResponse4001'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Flex400ErrorResponse'), require('../model/GenerateFlexAPICaptureContextRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.FlexAPIApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.GenerateFlexAPICaptureContextRequest, root.CyberSource.InlineResponse4001);
+    root.CyberSource.FlexAPIApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Flex400ErrorResponse, root.CyberSource.GenerateFlexAPICaptureContextRequest);
   }
-}(this, function(MLEUtility, ApiClient, GenerateFlexAPICaptureContextRequest, InlineResponse4001) {
+}(this, function(MLEUtility, ApiClient, Flex400ErrorResponse, GenerateFlexAPICaptureContextRequest) {
   'use strict';
 
   /**
@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['generateFlexAPICaptureContext']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/flex/v2/sessions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

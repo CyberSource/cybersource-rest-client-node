@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **hashedPassword** | **String** | The merchant's password that CyberSource hashes and stores as a hashed password.  | [optional] 
 **dateOfBirth** | **String** | Recipient's date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  | [optional] 
 **personalIdentification** | [**[Ptsv2paymentsBuyerInformationPersonalIdentification]**](Ptsv2paymentsBuyerInformationPersonalIdentification.md) |  | [optional] 
+**loyalty** | [**Riskv1decisionsBuyerInformationLoyalty**](Riskv1decisionsBuyerInformationLoyalty.md) |  | [optional] 
 
 

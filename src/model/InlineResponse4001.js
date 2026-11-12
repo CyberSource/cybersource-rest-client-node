@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4001Details'], factory);
+    define(['ApiClient', 'model/InlineResponse4001Fields'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4001Details'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse4001Fields'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001Details);
+    root.CyberSource.InlineResponse4001 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001Fields);
   }
-}(this, function(ApiClient, InlineResponse4001Details) {
+}(this, function(ApiClient, InlineResponse4001Fields) {
   'use strict';
 
 
@@ -41,19 +41,21 @@
 
   /**
    * Constructs a new <code>InlineResponse4001</code>.
+   * Error Bean
    * @alias module:model/InlineResponse4001
    * @class
-   * @param message {String} 
-   * @param reason {String} Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
+   * @param code {String} Error code
+   * @param message {String} Error message
    */
-  var exports = function(message, reason) {
+  var exports = function(code, message) {
     var _this = this;
 
-
-
-
+    _this['code'] = code;
     _this['message'] = message;
-    _this['reason'] = reason;
+
+
+
+
   };
 
   /**
@@ -67,46 +69,58 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('correlationId')) {
-        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
-      }
-      if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4001Details]);
-      }
-      if (data.hasOwnProperty('informationLink')) {
-        obj['informationLink'] = ApiClient.convertToType(data['informationLink'], 'String');
+      if (data.hasOwnProperty('code')) {
+        obj['code'] = ApiClient.convertToType(data['code'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
-      if (data.hasOwnProperty('reason')) {
-        obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+      if (data.hasOwnProperty('localizationKey')) {
+        obj['localizationKey'] = ApiClient.convertToType(data['localizationKey'], 'String');
+      }
+      if (data.hasOwnProperty('correlationId')) {
+        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
+      }
+      if (data.hasOwnProperty('detail')) {
+        obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
+      }
+      if (data.hasOwnProperty('fields')) {
+        obj['fields'] = ApiClient.convertToType(data['fields'], [InlineResponse4001Fields]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} correlationId
+   * Error code
+   * @member {String} code
    */
-  exports.prototype['correlationId'] = undefined;
+  exports.prototype['code'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse4001Details>} details
-   */
-  exports.prototype['details'] = undefined;
-  /**
-   * @member {String} informationLink
-   */
-  exports.prototype['informationLink'] = undefined;
-  /**
+   * Error message
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
-   * @member {String} reason
+   * Localization Key Name
+   * @member {String} localizationKey
    */
-  exports.prototype['reason'] = undefined;
+  exports.prototype['localizationKey'] = undefined;
+  /**
+   * Correlation Id
+   * @member {String} correlationId
+   */
+  exports.prototype['correlationId'] = undefined;
+  /**
+   * Error Detail
+   * @member {String} detail
+   */
+  exports.prototype['detail'] = undefined;
+  /**
+   * Error fields List
+   * @member {Array.<module:model/InlineResponse4001Fields>} fields
+   */
+  exports.prototype['fields'] = undefined;
 
 
 

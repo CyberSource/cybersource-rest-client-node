@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/AddNegativeListRequest', 'model/CaseManagementActionsRequest', 'model/CaseManagementCommentsRequest', 'model/CreateBundledDecisionManagerCaseRequest', 'model/FraudMarkingActionRequest', 'model/InlineResponse2003', 'model/InlineResponse2012', 'model/InlineResponse4002', 'model/InlineResponse4031', 'model/InlineResponse422', 'model/InlineResponse5001', 'model/InlineResponse5021', 'model/InlineResponse503', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1DecisionsPost400Response1', 'model/RiskV1UpdatePost201Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/AddNegativeListRequest', 'model/CaseManagementActionsRequest', 'model/CaseManagementActionsResponse', 'model/CaseManagementCommentsRequest', 'model/CommentDecisionManagerCaseResponse', 'model/CreateBundledDecisionManagerCaseRequest', 'model/FraudMarkingActionRequest', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse422', 'model/InlineResponse500', 'model/InlineResponse502', 'model/InlineResponse503', 'model/PtsV2PaymentsPost502Response', 'model/RiskV1DecisionsPost201Response', 'model/RiskV1DecisionsPost400Response', 'model/RiskV1DecisionsPost400Response1', 'model/RiskV1UpdatePost201Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AddNegativeListRequest'), require('../model/CaseManagementActionsRequest'), require('../model/CaseManagementCommentsRequest'), require('../model/CreateBundledDecisionManagerCaseRequest'), require('../model/FraudMarkingActionRequest'), require('../model/InlineResponse2003'), require('../model/InlineResponse2012'), require('../model/InlineResponse4002'), require('../model/InlineResponse4031'), require('../model/InlineResponse422'), require('../model/InlineResponse5001'), require('../model/InlineResponse5021'), require('../model/InlineResponse503'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1DecisionsPost400Response1'), require('../model/RiskV1UpdatePost201Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/AddNegativeListRequest'), require('../model/CaseManagementActionsRequest'), require('../model/CaseManagementActionsResponse'), require('../model/CaseManagementCommentsRequest'), require('../model/CommentDecisionManagerCaseResponse'), require('../model/CreateBundledDecisionManagerCaseRequest'), require('../model/FraudMarkingActionRequest'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse422'), require('../model/InlineResponse500'), require('../model/InlineResponse502'), require('../model/InlineResponse503'), require('../model/PtsV2PaymentsPost502Response'), require('../model/RiskV1DecisionsPost201Response'), require('../model/RiskV1DecisionsPost400Response'), require('../model/RiskV1DecisionsPost400Response1'), require('../model/RiskV1UpdatePost201Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DecisionManagerApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AddNegativeListRequest, root.CyberSource.CaseManagementActionsRequest, root.CyberSource.CaseManagementCommentsRequest, root.CyberSource.CreateBundledDecisionManagerCaseRequest, root.CyberSource.FraudMarkingActionRequest, root.CyberSource.InlineResponse2003, root.CyberSource.InlineResponse2012, root.CyberSource.InlineResponse4002, root.CyberSource.InlineResponse4031, root.CyberSource.InlineResponse422, root.CyberSource.InlineResponse5001, root.CyberSource.InlineResponse5021, root.CyberSource.InlineResponse503, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1DecisionsPost400Response1, root.CyberSource.RiskV1UpdatePost201Response);
+    root.CyberSource.DecisionManagerApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.AddNegativeListRequest, root.CyberSource.CaseManagementActionsRequest, root.CyberSource.CaseManagementActionsResponse, root.CyberSource.CaseManagementCommentsRequest, root.CyberSource.CommentDecisionManagerCaseResponse, root.CyberSource.CreateBundledDecisionManagerCaseRequest, root.CyberSource.FraudMarkingActionRequest, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse422, root.CyberSource.InlineResponse500, root.CyberSource.InlineResponse502, root.CyberSource.InlineResponse503, root.CyberSource.PtsV2PaymentsPost502Response, root.CyberSource.RiskV1DecisionsPost201Response, root.CyberSource.RiskV1DecisionsPost400Response, root.CyberSource.RiskV1DecisionsPost400Response1, root.CyberSource.RiskV1UpdatePost201Response);
   }
-}(this, function(MLEUtility, ApiClient, AddNegativeListRequest, CaseManagementActionsRequest, CaseManagementCommentsRequest, CreateBundledDecisionManagerCaseRequest, FraudMarkingActionRequest, InlineResponse2003, InlineResponse2012, InlineResponse4002, InlineResponse4031, InlineResponse422, InlineResponse5001, InlineResponse5021, InlineResponse503, PtsV2PaymentsPost502Response, RiskV1DecisionsPost201Response, RiskV1DecisionsPost400Response, RiskV1DecisionsPost400Response1, RiskV1UpdatePost201Response) {
+}(this, function(MLEUtility, ApiClient, AddNegativeListRequest, CaseManagementActionsRequest, CaseManagementActionsResponse, CaseManagementCommentsRequest, CommentDecisionManagerCaseResponse, CreateBundledDecisionManagerCaseRequest, FraudMarkingActionRequest, InlineResponse400, InlineResponse403, InlineResponse422, InlineResponse500, InlineResponse502, InlineResponse503, PtsV2PaymentsPost502Response, RiskV1DecisionsPost201Response, RiskV1DecisionsPost400Response, RiskV1DecisionsPost400Response1, RiskV1UpdatePost201Response) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the actionDecisionManagerCase operation.
      * @callback module:api/DecisionManagerApi~actionDecisionManagerCaseCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
+     * @param {module:model/CaseManagementActionsResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {String} id An unique identification number generated by Cybersource to identify the submitted request.
      * @param {module:model/CaseManagementActionsRequest} caseManagementActionsRequest 
      * @param {module:api/DecisionManagerApi~actionDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * data is of type: {@link module:model/CaseManagementActionsResponse}
      */
     this.actionDecisionManagerCase = function(id, caseManagementActionsRequest, callback) {
       var postBody = caseManagementActionsRequest;
@@ -98,7 +98,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2003;
+      var returnType = CaseManagementActionsResponse;
 
       //check isMLE for an api method 'this.actionDecisionManagerCase'
       var inboundMLEStatus = 'false';
@@ -106,7 +106,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['actionDecisionManagerCase']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions/{id}/actions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -179,7 +180,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['addNegative']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/lists/{type}/entries', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -199,7 +201,7 @@
      * Callback function to receive the result of the commentDecisionManagerCase operation.
      * @callback module:api/DecisionManagerApi~commentDecisionManagerCaseCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2012} data The data returned by the service call.
+     * @param {module:model/CommentDecisionManagerCaseResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -209,7 +211,7 @@
      * @param {String} id An unique identification number generated by Cybersource to identify the submitted request.
      * @param {module:model/CaseManagementCommentsRequest} caseManagementCommentsRequest 
      * @param {module:api/DecisionManagerApi~commentDecisionManagerCaseCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2012}
+     * data is of type: {@link module:model/CommentDecisionManagerCaseResponse}
      */
     this.commentDecisionManagerCase = function(id, caseManagementCommentsRequest, callback) {
       var postBody = caseManagementCommentsRequest;
@@ -244,7 +246,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2012;
+      var returnType = CommentDecisionManagerCaseResponse;
 
       //check isMLE for an api method 'this.commentDecisionManagerCase'
       var inboundMLEStatus = 'false';
@@ -252,7 +254,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['commentDecisionManagerCase']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions/{id}/comments', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -318,7 +321,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['createBundledDecisionManagerCase']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -391,7 +395,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['fraudUpdate']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/risk/v1/decisions/{id}/marking', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

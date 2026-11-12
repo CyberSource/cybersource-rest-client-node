@@ -86,6 +86,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property paymentType (base name: "paymentType")', function() {
+      // uncomment below and update the code to test the property paymentType
+      //var instane = new CyberSource.Riskv1decisionsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property paymentAccountReference (base name: "paymentAccountReference")', function() {
+      // uncomment below and update the code to test the property paymentAccountReference
+      //var instane = new CyberSource.Riskv1decisionsPaymentInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

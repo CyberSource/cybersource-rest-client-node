@@ -96,6 +96,8 @@
 
 
 
+
+
   };
 
   /**
@@ -255,6 +257,12 @@
       }
       if (data.hasOwnProperty('inquiryType')) {
         obj['inquiryType'] = ApiClient.convertToType(data['inquiryType'], 'String');
+      }
+      if (data.hasOwnProperty('preAuthStatus')) {
+        obj['preAuthStatus'] = ApiClient.convertToType(data['preAuthStatus'], 'String');
+      }
+      if (data.hasOwnProperty('preAuthResponseCode')) {
+        obj['preAuthResponseCode'] = ApiClient.convertToType(data['preAuthResponseCode'], 'String');
       }
     }
     return obj;
@@ -496,6 +504,16 @@
    * @member {String} inquiryType
    */
   exports.prototype['inquiryType'] = undefined;
+  /**
+   * Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation.  Possible values: Approved, Rejected, Hold. 
+   * @member {String} preAuthStatus
+   */
+  exports.prototype['preAuthStatus'] = undefined;
+  /**
+   * Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction. 
+   * @member {String} preAuthResponseCode
+   */
+  exports.prototype['preAuthResponseCode'] = undefined;
 
 
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getRegistration"></a>
 # **getRegistration**
-> InlineResponse2005 getRegistration(registrationId)
+> BoardingRegistrationGetResponse getRegistration(registrationId)
 
 Gets all the information on a boarding registration
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**BoardingRegistrationGetResponse**](BoardingRegistrationGetResponse.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 
 <a name="patchRegistration"></a>
 # **patchRegistration**
-> InlineResponse2005 patchRegistration(registrationId, patchRegistrationBody, opts)
+> BoardingRegistrationGetResponse patchRegistration(registrationId, patchRegistrationBody, opts)
 
 Updates the information on a boarding registration
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**BoardingRegistrationGetResponse**](BoardingRegistrationGetResponse.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ No authorization required
 
 <a name="postRegistration"></a>
 # **postRegistration**
-> InlineResponse2016 postRegistration(postRegistrationBody, opts)
+> BoardingRegistrationCreateResponse postRegistration(postRegistrationBody, opts)
 
 Create a boarding registration
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**BoardingRegistrationCreateResponse**](BoardingRegistrationCreateResponse.md)
 
 ### Authorization
 

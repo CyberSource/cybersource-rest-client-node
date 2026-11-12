@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse40010', 'model/V1FileDetailsGet200Response'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse4001', 'model/V1FileDetailsGet200Response'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse40010'), require('../model/V1FileDetailsGet200Response'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse4001'), require('../model/V1FileDetailsGet200Response'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.SecureFileShareApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse40010, root.CyberSource.V1FileDetailsGet200Response);
+    root.CyberSource.SecureFileShareApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse4001, root.CyberSource.V1FileDetailsGet200Response);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse40010, V1FileDetailsGet200Response) {
+}(this, function(MLEUtility, ApiClient, InlineResponse4001, V1FileDetailsGet200Response) {
   'use strict';
 
   /**
@@ -102,7 +102,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getFile']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/sfs/v1/files/{fileId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -181,7 +182,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getFileDetail']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/sfs/v1/file-details', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,

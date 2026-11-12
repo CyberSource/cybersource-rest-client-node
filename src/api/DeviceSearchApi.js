@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse20011', 'model/InlineResponse2009', 'model/InlineResponse40012', 'model/InlineResponse4012', 'model/InlineResponse4032', 'model/InlineResponse4045', 'model/InlineResponse5003', 'model/PostDeviceSearchRequest', 'model/PostDeviceSearchRequestV3'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/DeviceSearchResponse', 'model/DeviceSearchV3Response', 'model/InlineResponse4003', 'model/InlineResponse401', 'model/InlineResponse4031', 'model/InlineResponse4044', 'model/InlineResponse5002', 'model/PostDeviceSearchRequest', 'model/PostDeviceSearchRequestV3'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse20011'), require('../model/InlineResponse2009'), require('../model/InlineResponse40012'), require('../model/InlineResponse4012'), require('../model/InlineResponse4032'), require('../model/InlineResponse4045'), require('../model/InlineResponse5003'), require('../model/PostDeviceSearchRequest'), require('../model/PostDeviceSearchRequestV3'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/DeviceSearchResponse'), require('../model/DeviceSearchV3Response'), require('../model/InlineResponse4003'), require('../model/InlineResponse401'), require('../model/InlineResponse4031'), require('../model/InlineResponse4044'), require('../model/InlineResponse5002'), require('../model/PostDeviceSearchRequest'), require('../model/PostDeviceSearchRequestV3'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.DeviceSearchApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse20011, root.CyberSource.InlineResponse2009, root.CyberSource.InlineResponse40012, root.CyberSource.InlineResponse4012, root.CyberSource.InlineResponse4032, root.CyberSource.InlineResponse4045, root.CyberSource.InlineResponse5003, root.CyberSource.PostDeviceSearchRequest, root.CyberSource.PostDeviceSearchRequestV3);
+    root.CyberSource.DeviceSearchApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.DeviceSearchResponse, root.CyberSource.DeviceSearchV3Response, root.CyberSource.InlineResponse4003, root.CyberSource.InlineResponse401, root.CyberSource.InlineResponse4031, root.CyberSource.InlineResponse4044, root.CyberSource.InlineResponse5002, root.CyberSource.PostDeviceSearchRequest, root.CyberSource.PostDeviceSearchRequestV3);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse20011, InlineResponse2009, InlineResponse40012, InlineResponse4012, InlineResponse4032, InlineResponse4045, InlineResponse5003, PostDeviceSearchRequest, PostDeviceSearchRequestV3) {
+}(this, function(MLEUtility, ApiClient, DeviceSearchResponse, DeviceSearchV3Response, InlineResponse4003, InlineResponse401, InlineResponse4031, InlineResponse4044, InlineResponse5002, PostDeviceSearchRequest, PostDeviceSearchRequestV3) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the postSearchQuery operation.
      * @callback module:api/DeviceSearchApi~postSearchQueryCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2009} data The data returned by the service call.
+     * @param {module:model/DeviceSearchResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * Retrieves list of terminals in paginated format.
      * @param {module:model/PostDeviceSearchRequest} postDeviceSearchRequest 
      * @param {module:api/DeviceSearchApi~postSearchQueryCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2009}
+     * data is of type: {@link module:model/DeviceSearchResponse}
      */
     this.postSearchQuery = function(postDeviceSearchRequest, callback) {
       var postBody = postDeviceSearchRequest;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=UTF-8'];
       var accepts = ['application/json;charset=UTF-8'];
-      var returnType = InlineResponse2009;
+      var returnType = DeviceSearchResponse;
 
       //check isMLE for an api method 'this.postSearchQuery'
       var inboundMLEStatus = 'false';
@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postSearchQuery']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/dms/v2/devices/search', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -119,7 +120,7 @@
      * Callback function to receive the result of the postSearchQueryV3 operation.
      * @callback module:api/DeviceSearchApi~postSearchQueryV3Callback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20011} data The data returned by the service call.
+     * @param {module:model/DeviceSearchV3Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -128,7 +129,7 @@
      * Search for devices matching a given search query.  The search query supports serialNumber, readerId, terminalId, status, statusChangeReason or organizationId  Matching results are paginated. 
      * @param {module:model/PostDeviceSearchRequestV3} postDeviceSearchRequestV3 
      * @param {module:api/DeviceSearchApi~postSearchQueryV3Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20011}
+     * data is of type: {@link module:model/DeviceSearchV3Response}
      */
     this.postSearchQueryV3 = function(postDeviceSearchRequestV3, callback) {
       var postBody = postDeviceSearchRequestV3;
@@ -157,7 +158,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=UTF-8'];
       var accepts = ['application/json;charset=UTF-8'];
-      var returnType = InlineResponse20011;
+      var returnType = DeviceSearchV3Response;
 
       //check isMLE for an api method 'this.postSearchQueryV3'
       var inboundMLEStatus = 'false';
@@ -165,7 +166,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postSearchQueryV3']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/dms/v3/devices/search', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

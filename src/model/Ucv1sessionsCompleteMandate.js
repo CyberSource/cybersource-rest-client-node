@@ -105,7 +105,7 @@
    */
   exports.prototype['consumerAuthentication'] = undefined;
   /**
-   * Controls whether the Complete Mandate experience or related processing is suppressed. 
+   * Controls whether the Complete Mandate experience or related processing is suppressed.  Possible values:  - True  - False<br><br>  Optional field: This field can be configured through the Merchant Experience screens in the Business Center. The configured value may be overridden on a per‑transaction basis in the uc/v1/sessions API request. 
    * @member {Boolean} suppress
    */
   exports.prototype['suppress'] = undefined;

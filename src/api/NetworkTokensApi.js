@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2011', 'model/InlineResponse400', 'model/InlineResponse403', 'model/InlineResponse404', 'model/InlineResponse409', 'model/InlineResponse410', 'model/InlineResponse424', 'model/InlineResponse500', 'model/InlineResponse502', 'model/PostIssuerLifeCycleSimulationRequest', 'model/PostPaymentCredentialsRequest', 'model/PostPaymentCredentialsRequest1', 'model/PostTokenizedCardDeleteRequest', 'model/PostTokenizedCardRequest'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CardArtAssetResponse', 'model/GetTokenizedCardResponse', 'model/PostIssuerLifeCycleSimulationRequest', 'model/PostPaymentCredentialsRequest', 'model/PostPaymentCredentialsResponse', 'model/PostPaymentCredentialsV3Request', 'model/PostTokenizedCardDeleteRequest', 'model/PostTokenizedCardRequest', 'model/Tms400ErrorResponse', 'model/Tms403ErrorResponse', 'model/Tms404ErrorResponse', 'model/Tms409ErrorResponse', 'model/Tms410ErrorResponse', 'model/Tms424ErrorResponse', 'model/Tms500ErrorResponse', 'model/Tms502ErrorResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2001'), require('../model/InlineResponse2002'), require('../model/InlineResponse2011'), require('../model/InlineResponse400'), require('../model/InlineResponse403'), require('../model/InlineResponse404'), require('../model/InlineResponse409'), require('../model/InlineResponse410'), require('../model/InlineResponse424'), require('../model/InlineResponse500'), require('../model/InlineResponse502'), require('../model/PostIssuerLifeCycleSimulationRequest'), require('../model/PostPaymentCredentialsRequest'), require('../model/PostPaymentCredentialsRequest1'), require('../model/PostTokenizedCardDeleteRequest'), require('../model/PostTokenizedCardRequest'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CardArtAssetResponse'), require('../model/GetTokenizedCardResponse'), require('../model/PostIssuerLifeCycleSimulationRequest'), require('../model/PostPaymentCredentialsRequest'), require('../model/PostPaymentCredentialsResponse'), require('../model/PostPaymentCredentialsV3Request'), require('../model/PostTokenizedCardDeleteRequest'), require('../model/PostTokenizedCardRequest'), require('../model/Tms400ErrorResponse'), require('../model/Tms403ErrorResponse'), require('../model/Tms404ErrorResponse'), require('../model/Tms409ErrorResponse'), require('../model/Tms410ErrorResponse'), require('../model/Tms424ErrorResponse'), require('../model/Tms500ErrorResponse'), require('../model/Tms502ErrorResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.NetworkTokensApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2001, root.CyberSource.InlineResponse2002, root.CyberSource.InlineResponse2011, root.CyberSource.InlineResponse400, root.CyberSource.InlineResponse403, root.CyberSource.InlineResponse404, root.CyberSource.InlineResponse409, root.CyberSource.InlineResponse410, root.CyberSource.InlineResponse424, root.CyberSource.InlineResponse500, root.CyberSource.InlineResponse502, root.CyberSource.PostIssuerLifeCycleSimulationRequest, root.CyberSource.PostPaymentCredentialsRequest, root.CyberSource.PostPaymentCredentialsRequest1, root.CyberSource.PostTokenizedCardDeleteRequest, root.CyberSource.PostTokenizedCardRequest);
+    root.CyberSource.NetworkTokensApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CardArtAssetResponse, root.CyberSource.GetTokenizedCardResponse, root.CyberSource.PostIssuerLifeCycleSimulationRequest, root.CyberSource.PostPaymentCredentialsRequest, root.CyberSource.PostPaymentCredentialsResponse, root.CyberSource.PostPaymentCredentialsV3Request, root.CyberSource.PostTokenizedCardDeleteRequest, root.CyberSource.PostTokenizedCardRequest, root.CyberSource.Tms400ErrorResponse, root.CyberSource.Tms403ErrorResponse, root.CyberSource.Tms404ErrorResponse, root.CyberSource.Tms409ErrorResponse, root.CyberSource.Tms410ErrorResponse, root.CyberSource.Tms424ErrorResponse, root.CyberSource.Tms500ErrorResponse, root.CyberSource.Tms502ErrorResponse);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2001, InlineResponse2002, InlineResponse2011, InlineResponse400, InlineResponse403, InlineResponse404, InlineResponse409, InlineResponse410, InlineResponse424, InlineResponse500, InlineResponse502, PostIssuerLifeCycleSimulationRequest, PostPaymentCredentialsRequest, PostPaymentCredentialsRequest1, PostTokenizedCardDeleteRequest, PostTokenizedCardRequest) {
+}(this, function(MLEUtility, ApiClient, CardArtAssetResponse, GetTokenizedCardResponse, PostIssuerLifeCycleSimulationRequest, PostPaymentCredentialsRequest, PostPaymentCredentialsResponse, PostPaymentCredentialsV3Request, PostTokenizedCardDeleteRequest, PostTokenizedCardRequest, Tms400ErrorResponse, Tms403ErrorResponse, Tms404ErrorResponse, Tms409ErrorResponse, Tms410ErrorResponse, Tms424ErrorResponse, Tms500ErrorResponse, Tms502ErrorResponse) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getCardArtAsset operation.
      * @callback module:api/NetworkTokensApi~getCardArtAssetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/CardArtAssetResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -64,7 +64,7 @@
      * @param {module:model/String} tokenProvider The token provider.
      * @param {module:model/String} assetType The type of asset.
      * @param {module:api/NetworkTokensApi~getCardArtAssetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/CardArtAssetResponse}
      */
     this.getCardArtAsset = function(instrumentIdentifierId, tokenProvider, assetType, callback) {
       var postBody = null;
@@ -105,7 +105,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2002;
+      var returnType = CardArtAssetResponse;
 
       //check isMLE for an api method 'this.getCardArtAsset'
       var inboundMLEStatus = 'false';
@@ -113,7 +113,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getCardArtAsset']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -133,7 +134,7 @@
      * Callback function to receive the result of the getTokenizedCard operation.
      * @callback module:api/NetworkTokensApi~getTokenizedCardCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/GetTokenizedCardResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -144,7 +145,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/NetworkTokensApi~getTokenizedCardCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/GetTokenizedCardResponse}
      */
     this.getTokenizedCard = function(tokenizedCardId, opts, callback) {
       opts = opts || {};
@@ -175,7 +176,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2001;
+      var returnType = GetTokenizedCardResponse;
 
       //check isMLE for an api method 'this.getTokenizedCard'
       var inboundMLEStatus = 'false';
@@ -183,7 +184,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getTokenizedCard']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/tokenized-cards/{tokenizedCardId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -262,7 +264,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postIssuerLifeCycleSimulation']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/tokenized-cards/{tokenizedCardId}/issuer-life-cycle-event-simulations', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -290,7 +293,7 @@
      * Generate Payment Credentials v2
      * **Note**: This resource will be replace by [payment credentials version 3](#/paths/~1tms~1v3~1tokens~1{tokenId}~1payment-credentials/post). The SDK will remain available for now; however, it will no longer be documented or maintain in the Developer Centre.<br> **Token**<br>A Token can represent your tokenized Customer, Payment Instrument, Instrument Identifier or Tokenized Card information.<br> **Payment Credentials**<br>Contains payment information such as the network token, generated cryptogram for Visa & MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.<br>Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.<br>Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param {String} tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
-     * @param {module:model/PostPaymentCredentialsRequest1} postPaymentCredentialsRequest 
+     * @param {module:model/PostPaymentCredentialsRequest} postPaymentCredentialsRequest 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/NetworkTokensApi~postTokenPaymentCredentialsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -313,7 +316,7 @@
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest1', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -339,7 +342,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postTokenPaymentCredentials']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/tokens/{tokenId}/payment-credentials', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -359,7 +363,7 @@
      * Callback function to receive the result of the postTokenPaymentCredentialsV3 operation.
      * @callback module:api/NetworkTokensApi~postTokenPaymentCredentialsV3Callback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2011} data The data returned by the service call.
+     * @param {module:model/PostPaymentCredentialsResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -367,30 +371,30 @@
      * Generate Payment Credentials Latest Version v3
      * **Payment Credentials**<br>Contains payment information such as the network token, generated TAVV cryptogram for Visa & MasterCard, dynamic CVV for Amex, or DTVV cryptogram for VISA. This latest version (v3) returns the Primary Account Number details, if the network token is not present. The response is provided in JSON Web Encryption (JWE) format. <br>Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument, Instrument Identifier or Tokenized Card.<br>Optionally, **authenticated identities** information from Passkey authentication can be provided to potentially achieve liability shift, which may result in the return of an e-commerce indicator of 5 if successful. 
      * @param {String} tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
-     * @param {module:model/PostPaymentCredentialsRequest} postPaymentCredentialsRequest 
+     * @param {module:model/PostPaymentCredentialsV3Request} postPaymentCredentialsV3Request 
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/NetworkTokensApi~postTokenPaymentCredentialsV3Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2011}
+     * data is of type: {@link module:model/PostPaymentCredentialsResponse}
      */
-    this.postTokenPaymentCredentialsV3 = function(tokenId, postPaymentCredentialsRequest, opts, callback) {
+    this.postTokenPaymentCredentialsV3 = function(tokenId, postPaymentCredentialsV3Request, opts, callback) {
       opts = opts || {};
-      var postBody = postPaymentCredentialsRequest;
+      var postBody = postPaymentCredentialsV3Request;
 
       // verify the required parameter 'tokenId' is set
       if (tokenId === undefined || tokenId === null) {
         throw new Error("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentialsV3");
       }
 
-      // verify the required parameter 'postPaymentCredentialsRequest' is set
-      if (postPaymentCredentialsRequest === undefined || postPaymentCredentialsRequest === null) {
-        throw new Error("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentialsV3");
+      // verify the required parameter 'postPaymentCredentialsV3Request' is set
+      if (postPaymentCredentialsV3Request === undefined || postPaymentCredentialsV3Request === null) {
+        throw new Error("Missing the required parameter 'postPaymentCredentialsV3Request' when calling postTokenPaymentCredentialsV3");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostPaymentCredentialsV3Request', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -408,7 +412,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/jose;charset=utf-8'];
-      var returnType = InlineResponse2011;
+      var returnType = PostPaymentCredentialsResponse;
 
       //check isMLE for an api method 'this.postTokenPaymentCredentialsV3'
       var inboundMLEStatus = 'optional';
@@ -416,7 +420,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postTokenPaymentCredentialsV3']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v3/tokens/{tokenId}/payment-credentials', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -436,7 +441,7 @@
      * Callback function to receive the result of the postTokenizedCard operation.
      * @callback module:api/NetworkTokensApi~postTokenizedCardCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/GetTokenizedCardResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -447,7 +452,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.profileId The Id of a profile containing user specific TMS configuration.
      * @param {module:api/NetworkTokensApi~postTokenizedCardCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/GetTokenizedCardResponse}
      */
     this.postTokenizedCard = function(postTokenizedCardRequest, opts, callback) {
       opts = opts || {};
@@ -478,7 +483,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2001;
+      var returnType = GetTokenizedCardResponse;
 
       //check isMLE for an api method 'this.postTokenizedCard'
       var inboundMLEStatus = 'optional';
@@ -486,7 +491,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postTokenizedCard']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/tokenized-cards', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -557,7 +563,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postTokenizedCardDelete']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/tms/v2/tokenized-cards/{tokenizedCardId}/delete', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,

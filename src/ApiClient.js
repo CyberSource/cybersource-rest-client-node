@@ -817,9 +817,17 @@ const agentPool = new Map();
         axiosConfig.responseType = 'stream';
         axiosConfig.url = requestTarget;
         axiosConfig.cancelToken = source.token;
+
         axios.request(axiosConfig).then(function(response) {
           response.data.pipe(stream);
-        }).catch(function(error,response) {
+          // Body is streamed to the file; blank it so the shared translator yields the same response
+          // shape as every other API without JSON.stringify'ing the stream.
+          response.data = '';
+          if (callback) {
+            callback(null, null, _this.translateResponse(response));
+          }
+        }).catch(function(error, response) {
+          stream.destroy();
           var userError = {};
           if (error.code && error.code == "ECONNREFUSED") {
             userError = _this.translateProxyIssue(error);
@@ -832,8 +840,13 @@ const agentPool = new Map();
             userError = _this.translateError(error);
             response = userError.response;
           }
+          if (callback) {
+            callback(userError, null, response);
+          }
         });
 
+        // Download handled above; return so the bottom request is not issued a second time.
+        return;
       }
     }
 

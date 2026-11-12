@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse20110', 'model/InlineResponse2018', 'model/InlineResponse2019', 'model/InlineResponse4044', 'model/SaveAsymEgressKey', 'model/UpdateStatus', 'model/UpdateWebhook'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/CreateWebhookSubscriptionResponse', 'model/InlineResponse4043', 'model/SaveAsymEgressKey', 'model/SaveAsymEgressKeyResponse', 'model/TestWebhookSubscriptionResponse', 'model/UpdateStatus', 'model/UpdateWebhook', 'model/UpdateWebhookSubscriptionResponse', 'model/WebhookSubscription'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse20110'), require('../model/InlineResponse2018'), require('../model/InlineResponse2019'), require('../model/InlineResponse4044'), require('../model/SaveAsymEgressKey'), require('../model/UpdateStatus'), require('../model/UpdateWebhook'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/CreateWebhookSubscriptionResponse'), require('../model/InlineResponse4043'), require('../model/SaveAsymEgressKey'), require('../model/SaveAsymEgressKeyResponse'), require('../model/TestWebhookSubscriptionResponse'), require('../model/UpdateStatus'), require('../model/UpdateWebhook'), require('../model/UpdateWebhookSubscriptionResponse'), require('../model/WebhookSubscription'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.InlineResponse2007, root.CyberSource.InlineResponse2008, root.CyberSource.InlineResponse20110, root.CyberSource.InlineResponse2018, root.CyberSource.InlineResponse2019, root.CyberSource.InlineResponse4044, root.CyberSource.SaveAsymEgressKey, root.CyberSource.UpdateStatus, root.CyberSource.UpdateWebhook);
+    root.CyberSource.ManageWebhooksApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.CreateWebhookSubscriptionResponse, root.CyberSource.InlineResponse4043, root.CyberSource.SaveAsymEgressKey, root.CyberSource.SaveAsymEgressKeyResponse, root.CyberSource.TestWebhookSubscriptionResponse, root.CyberSource.UpdateStatus, root.CyberSource.UpdateWebhook, root.CyberSource.UpdateWebhookSubscriptionResponse, root.CyberSource.WebhookSubscription);
   }
-}(this, function(MLEUtility, ApiClient, InlineResponse2007, InlineResponse2008, InlineResponse20110, InlineResponse2018, InlineResponse2019, InlineResponse4044, SaveAsymEgressKey, UpdateStatus, UpdateWebhook) {
+}(this, function(MLEUtility, ApiClient, CreateWebhookSubscriptionResponse, InlineResponse4043, SaveAsymEgressKey, SaveAsymEgressKeyResponse, TestWebhookSubscriptionResponse, UpdateStatus, UpdateWebhook, UpdateWebhookSubscriptionResponse, WebhookSubscription) {
   'use strict';
 
   /**
@@ -98,7 +98,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['deleteWebhookSubscription']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks/{webhookId}', 'DELETE',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -118,7 +119,7 @@
      * Callback function to receive the result of the getWebhookSubscriptionById operation.
      * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2018} data The data returned by the service call.
+     * @param {module:model/CreateWebhookSubscriptionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -127,7 +128,7 @@
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
      * @param {String} webhookId The webhook Identifier
      * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionByIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2018}
+     * data is of type: {@link module:model/CreateWebhookSubscriptionResponse}
      */
     this.getWebhookSubscriptionById = function(webhookId, callback) {
       var postBody = null;
@@ -156,7 +157,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2018;
+      var returnType = CreateWebhookSubscriptionResponse;
 
       //check isMLE for an api method 'this.getWebhookSubscriptionById'
       var inboundMLEStatus = 'false';
@@ -164,7 +165,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getWebhookSubscriptionById']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks/{webhookId}', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -184,7 +186,7 @@
      * Callback function to receive the result of the getWebhookSubscriptionsByOrg operation.
      * @callback module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2007>} data The data returned by the service call.
+     * @param {Array.<module:model/WebhookSubscription>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -196,7 +198,7 @@
      * @param {String} opts.productId The Product Identifier.
      * @param {String} opts.eventType The Event Type.
      * @param {module:api/ManageWebhooksApi~getWebhookSubscriptionsByOrgCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2007>}
+     * data is of type: {@link Array.<module:model/WebhookSubscription>}
      */
     this.getWebhookSubscriptionsByOrg = function(organizationId, opts, callback) {
       opts = opts || {};
@@ -228,7 +230,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = [InlineResponse2007];
+      var returnType = [WebhookSubscription];
 
       //check isMLE for an api method 'this.getWebhookSubscriptionsByOrg'
       var inboundMLEStatus = 'false';
@@ -236,7 +238,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getWebhookSubscriptionsByOrg']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -246,142 +249,6 @@
       } else {
         return this.apiClient.callApi(
           '/notification-subscriptions/v2/webhooks', 'GET',
-          pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
-        );
-      }
-    }
-
-    /**
-     * Callback function to receive the result of the notificationSubscriptionsV1WebhooksWebhookIdPost operation.
-     * @callback module:api/ManageWebhooksApi~notificationSubscriptionsV1WebhooksWebhookIdPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2019} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Test a Webhook Configuration
-     * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
-     * @param {String} webhookId The Webhook Identifier.
-     * @param {module:api/ManageWebhooksApi~notificationSubscriptionsV1WebhooksWebhookIdPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2019}
-     */
-    this.notificationSubscriptionsV1WebhooksWebhookIdPost = function(webhookId, callback) {
-      var postBody = null;
-      if ('POST' == 'POST') {
-        postBody = '{}';
-      }
-
-      // verify the required parameter 'webhookId' is set
-      if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling notificationSubscriptionsV1WebhooksWebhookIdPost");
-      }
-
-
-
-      var pathParams = {
-        'webhookId': webhookId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2019;
-
-      //check isMLE for an api method 'this.notificationSubscriptionsV1WebhooksWebhookIdPost'
-      var inboundMLEStatus = 'false';
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV1WebhooksWebhookIdPost');
-      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['notificationSubscriptionsV1WebhooksWebhookIdPost']);
-
-      if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
-          return this.apiClient.callApi(
-            '/notification-subscriptions/v1/webhooks/{webhookId}', 'POST',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
-          );
-        });
-      } else {
-        return this.apiClient.callApi(
-          '/notification-subscriptions/v1/webhooks/{webhookId}', 'POST',
-          pathParams, queryParams, headerParams, formParams, postBody,
-          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
-        );
-      }
-    }
-
-    /**
-     * Callback function to receive the result of the notificationSubscriptionsV2WebhooksWebhookIdPatch operation.
-     * @callback module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdPatchCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2008} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Update a Webhook Subscription
-     * Update a Webhook Subscription.
-     * @param {String} webhookId The Webhook Identifier.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UpdateWebhook} opts.updateWebhook The webhook payload or changes to apply.
-     * @param {module:api/ManageWebhooksApi~notificationSubscriptionsV2WebhooksWebhookIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2008}
-     */
-    this.notificationSubscriptionsV2WebhooksWebhookIdPatch = function(webhookId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['updateWebhook'];
-
-      // verify the required parameter 'webhookId' is set
-      if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling notificationSubscriptionsV2WebhooksWebhookIdPatch");
-      }
-
-      var SdkTracker = require('../utilities/tracking/SdkTracker');
-
-      var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateWebhook', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
-
-
-      var pathParams = {
-        'webhookId': webhookId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-
-      var authNames = [];
-      var contentTypes = ['application/json;charset=utf-8'];
-      var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse2008;
-
-      //check isMLE for an api method 'this.notificationSubscriptionsV2WebhooksWebhookIdPatch'
-      var inboundMLEStatus = 'false';
-      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'notificationSubscriptionsV2WebhooksWebhookIdPatch');
-      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['notificationSubscriptionsV2WebhooksWebhookIdPatch']);
-
-      if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
-          return this.apiClient.callApi(
-            '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
-            pathParams, queryParams, headerParams, formParams, postBody,
-            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
-          );
-        });
-      } else {
-        return this.apiClient.callApi(
-          '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );
@@ -441,7 +308,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['notificationSubscriptionsV2WebhooksWebhookIdStatusPut']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/notification-subscriptions/v2/webhooks/{webhookId}/status', 'PUT',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -461,7 +329,7 @@
      * Callback function to receive the result of the saveAsymEgressKey operation.
      * @callback module:api/ManageWebhooksApi~saveAsymEgressKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20110} data The data returned by the service call.
+     * @param {module:model/SaveAsymEgressKeyResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -474,7 +342,7 @@
      * @param {String} opts.vCSenderOrganizationId Sender organization id
      * @param {String} opts.vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding
      * @param {module:api/ManageWebhooksApi~saveAsymEgressKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20110}
+     * data is of type: {@link module:model/SaveAsymEgressKeyResponse}
      */
     this.saveAsymEgressKey = function(saveAsymEgressKey, opts, callback) {
       opts = opts || {};
@@ -507,7 +375,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20110;
+      var returnType = SaveAsymEgressKeyResponse;
 
       //check isMLE for an api method 'this.saveAsymEgressKey'
       var inboundMLEStatus = 'false';
@@ -515,7 +383,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['saveAsymEgressKey']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/kms/egress/v2/keys-asym', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -525,6 +394,144 @@
       } else {
         return this.apiClient.callApi(
           '/kms/egress/v2/keys-asym', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the testWebhookSubscription operation.
+     * @callback module:api/ManageWebhooksApi~testWebhookSubscriptionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TestWebhookSubscriptionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Test a Webhook Configuration
+     * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
+     * @param {String} webhookId The Webhook Identifier.
+     * @param {module:api/ManageWebhooksApi~testWebhookSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TestWebhookSubscriptionResponse}
+     */
+    this.testWebhookSubscription = function(webhookId, callback) {
+      var postBody = null;
+      if ('POST' == 'POST') {
+        postBody = '{}';
+      }
+
+      // verify the required parameter 'webhookId' is set
+      if (webhookId === undefined || webhookId === null) {
+        throw new Error("Missing the required parameter 'webhookId' when calling testWebhookSubscription");
+      }
+
+
+
+      var pathParams = {
+        'webhookId': webhookId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = TestWebhookSubscriptionResponse;
+
+      //check isMLE for an api method 'this.testWebhookSubscription'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'testWebhookSubscription');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['testWebhookSubscription']);
+
+      if (isMLEForApi === true) {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v1/webhooks/{webhookId}', 'POST',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v1/webhooks/{webhookId}', 'POST',
+          pathParams, queryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+        );
+      }
+    }
+
+    /**
+     * Callback function to receive the result of the updateWebhookSubscription operation.
+     * @callback module:api/ManageWebhooksApi~updateWebhookSubscriptionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UpdateWebhookSubscriptionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a Webhook Subscription
+     * Update a Webhook Subscription.
+     * @param {String} webhookId The Webhook Identifier.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/UpdateWebhook} opts.updateWebhook The webhook payload or changes to apply.
+     * @param {module:api/ManageWebhooksApi~updateWebhookSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UpdateWebhookSubscriptionResponse}
+     */
+    this.updateWebhookSubscription = function(webhookId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['updateWebhook'];
+
+      // verify the required parameter 'webhookId' is set
+      if (webhookId === undefined || webhookId === null) {
+        throw new Error("Missing the required parameter 'webhookId' when calling updateWebhookSubscription");
+      }
+
+      var SdkTracker = require('../utilities/tracking/SdkTracker');
+
+      var sdkTracker = new SdkTracker();
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/UpdateWebhook', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+
+
+      var pathParams = {
+        'webhookId': webhookId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+
+      var authNames = [];
+      var contentTypes = ['application/json;charset=utf-8'];
+      var accepts = ['application/json;charset=utf-8'];
+      var returnType = UpdateWebhookSubscriptionResponse;
+
+      //check isMLE for an api method 'this.updateWebhookSubscription'
+      var inboundMLEStatus = 'false';
+      var isMLEForApi = MLEUtility.checkIsMLEForAPI(this.apiClient.merchantConfig, inboundMLEStatus, 'updateWebhookSubscription');
+      const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['updateWebhookSubscription']);
+
+      if (isMLEForApi === true) {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
+          return this.apiClient.callApi(
+            '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
+            pathParams, queryParams, headerParams, formParams, postBody,
+            authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
+          );
+        });
+      } else {
+        return this.apiClient.callApi(
+          '/notification-subscriptions/v2/webhooks/{webhookId}', 'PATCH',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType, isResponseMLEForApi, callback
         );

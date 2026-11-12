@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cancelCheckout"></a>
 # **cancelCheckout**
-> InlineResponse20018 cancelCheckout(sessionId, opts)
+> CancelCheckoutResponse cancelCheckout(sessionId, opts)
 
 Cancel Checkout ACP
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**CancelCheckoutResponse**](CancelCheckoutResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 
 <a name="completeCheckout"></a>
 # **completeCheckout**
-> InlineResponse20017 completeCheckout(sessionId, acpCompleteCheckoutRequest, opts)
+> CompleteCheckoutResponse completeCheckout(sessionId, acpCompleteCheckoutRequest, opts)
 
 Complete Checkout ACP
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**CompleteCheckoutResponse**](CompleteCheckoutResponse.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ No authorization required
 
 <a name="createCheckoutSession"></a>
 # **createCheckoutSession**
-> InlineResponse20112 createCheckoutSession(acpCreateCheckoutSessionRequest, opts)
+> CheckoutSessionResponse createCheckoutSession(acpCreateCheckoutSessionRequest, opts)
 
 Create Checkout Session ACP
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20112**](InlineResponse20112.md)
+[**CheckoutSessionResponse**](CheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ No authorization required
 
 <a name="getCheckoutSession"></a>
 # **getCheckoutSession**
-> InlineResponse20112 getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, opts)
+> CheckoutSessionResponse getCheckoutSession(sessionId, acpGetCheckoutSessionRequest, opts)
 
 Get Checkout Session ACP
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20112**](InlineResponse20112.md)
+[**CheckoutSessionResponse**](CheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ No authorization required
 
 <a name="updateCheckoutSession"></a>
 # **updateCheckoutSession**
-> InlineResponse20112 updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, opts)
+> CheckoutSessionResponse updateCheckoutSession(sessionId, acpUpdateCheckoutSessionRequest, opts)
 
 Update Checkout Session ACP
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20112**](InlineResponse20112.md)
+[**CheckoutSessionResponse**](CheckoutSessionResponse.md)
 
 ### Authorization
 

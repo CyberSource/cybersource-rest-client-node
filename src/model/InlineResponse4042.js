@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse4042Details'], factory);
+    define(['ApiClient', 'model/InlineResponse4002Details'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse4042Details'));
+    module.exports = factory(require('../ApiClient'), require('./InlineResponse4002Details'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.InlineResponse4042 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4042Details);
+    root.CyberSource.InlineResponse4042 = factory(root.CyberSource.ApiClient, root.CyberSource.InlineResponse4002Details);
   }
-}(this, function(ApiClient, InlineResponse4042Details) {
+}(this, function(ApiClient, InlineResponse4002Details) {
   'use strict';
 
 
@@ -66,10 +66,10 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('submitTimeUtc')) {
-        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'String');
+        obj['submitTimeUtc'] = ApiClient.convertToType(data['submitTimeUtc'], 'Date');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'Number');
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('reason')) {
         obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
@@ -78,35 +78,34 @@
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('details')) {
-        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4042Details]);
+        obj['details'] = ApiClient.convertToType(data['details'], [InlineResponse4002Details]);
       }
     }
     return obj;
   }
 
   /**
-   * The time the response was submitted
-   * @member {String} submitTimeUtc
+   * Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @member {Date} submitTimeUtc
    */
   exports.prototype['submitTimeUtc'] = undefined;
   /**
-   * The status code of the response
-   * @member {Number} status
+   * The http status description of the submitted request.
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * The reason for the response
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'RESOURCE_NOT_FOUND' 
    * @member {String} reason
    */
   exports.prototype['reason'] = undefined;
   /**
-   * The message of the response
+   * Descriptive message for the error.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
   /**
-   * The details of the validation error
-   * @member {Array.<module:model/InlineResponse4042Details>} details
+   * @member {Array.<module:model/InlineResponse4002Details>} details
    */
   exports.prototype['details'] = undefined;
 

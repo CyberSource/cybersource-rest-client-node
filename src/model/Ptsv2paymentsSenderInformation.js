@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -107,6 +108,9 @@
       }
       if (data.hasOwnProperty('taxIdNumber')) {
         obj['taxIdNumber'] = ApiClient.convertToType(data['taxIdNumber'], 'Number');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
     }
     return obj;
@@ -171,6 +175,11 @@
    * @member {Number} taxIdNumber
    */
   exports.prototype['taxIdNumber'] = undefined;
+  /**
+   * Sender's email address, including the full domain name. 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
 
 
 

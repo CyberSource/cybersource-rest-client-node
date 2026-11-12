@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CardProcessingConfigCommonCurrencies', 'model/CardProcessingConfigCommonPaymentTypes'], factory);
+    define(['ApiClient', 'model/CardProcessingConfigCommonPaymentTypes', 'model/CurrencyConfiguration'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonCurrencies'), require('./CardProcessingConfigCommonPaymentTypes'));
+    module.exports = factory(require('../ApiClient'), require('./CardProcessingConfigCommonPaymentTypes'), require('./CurrencyConfiguration'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.CardProcessingConfigCommonAcquirers = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonCurrencies, root.CyberSource.CardProcessingConfigCommonPaymentTypes);
+    root.CyberSource.CardProcessingConfigCommonAcquirers = factory(root.CyberSource.ApiClient, root.CyberSource.CardProcessingConfigCommonPaymentTypes, root.CyberSource.CurrencyConfiguration);
   }
-}(this, function(ApiClient, CardProcessingConfigCommonCurrencies, CardProcessingConfigCommonPaymentTypes) {
+}(this, function(ApiClient, CardProcessingConfigCommonPaymentTypes, CurrencyConfiguration) {
   'use strict';
 
 
@@ -106,7 +106,7 @@
         obj['paymentTypes'] = ApiClient.convertToType(data['paymentTypes'], {'String': CardProcessingConfigCommonPaymentTypes});
       }
       if (data.hasOwnProperty('currencies')) {
-        obj['currencies'] = ApiClient.convertToType(data['currencies'], {'String': CardProcessingConfigCommonCurrencies});
+        obj['currencies'] = ApiClient.convertToType(data['currencies'], {'String': CurrencyConfiguration});
       }
     }
     return obj;
@@ -169,7 +169,7 @@
   exports.prototype['paymentTypes'] = undefined;
   /**
    * Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)
-   * @member {Object.<String, module:model/CardProcessingConfigCommonCurrencies>} currencies
+   * @member {Object.<String, module:model/CurrencyConfiguration>} currencies
    */
   exports.prototype['currencies'] = undefined;
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Authentication/MLEUtility', 'ApiClient', 'model/Body', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse202', 'model/InlineResponse4013'], factory);
+    define(['Authentication/MLEUtility', 'ApiClient', 'model/BatchCreateResponse', 'model/BatchReportResponse', 'model/BatchStatusResponse', 'model/BatchesListResponse', 'model/InlineResponse4011', 'model/PostBatchRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/Body'), require('../model/InlineResponse20012'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponse202'), require('../model/InlineResponse4013'));
+    module.exports = factory(require('../authentication/util/MLEUtility'), require('../ApiClient'), require('../model/BatchCreateResponse'), require('../model/BatchReportResponse'), require('../model/BatchStatusResponse'), require('../model/BatchesListResponse'), require('../model/InlineResponse4011'), require('../model/PostBatchRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.CyberSource) {
       root.CyberSource = {};
     }
-    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.Body, root.CyberSource.InlineResponse20012, root.CyberSource.InlineResponse20013, root.CyberSource.InlineResponse20014, root.CyberSource.InlineResponse202, root.CyberSource.InlineResponse4013);
+    root.CyberSource.BatchesApi = factory(root.Authentication.MLEUtility, root.CyberSource.ApiClient, root.CyberSource.BatchCreateResponse, root.CyberSource.BatchReportResponse, root.CyberSource.BatchStatusResponse, root.CyberSource.BatchesListResponse, root.CyberSource.InlineResponse4011, root.CyberSource.PostBatchRequest);
   }
-}(this, function(MLEUtility, ApiClient, Body, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse202, InlineResponse4013) {
+}(this, function(MLEUtility, ApiClient, BatchCreateResponse, BatchReportResponse, BatchStatusResponse, BatchesListResponse, InlineResponse4011, PostBatchRequest) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
      * Callback function to receive the result of the getBatchReport operation.
      * @callback module:api/BatchesApi~getBatchReportCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20014} data The data returned by the service call.
+     * @param {module:model/BatchReportResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@
      * **Get Batch Report**<br>This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates & card type. - Response record information including response code, reason, token ids, masked card number, expiration dates & card type. 
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchReportCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20014}
+     * data is of type: {@link module:model/BatchReportResponse}
      */
     this.getBatchReport = function(batchId, callback) {
       var postBody = null;
@@ -91,7 +91,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20014;
+      var returnType = BatchReportResponse;
 
       //check isMLE for an api method 'this.getBatchReport'
       var inboundMLEStatus = 'false';
@@ -99,7 +99,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getBatchReport']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/accountupdater/v1/batches/{batchId}/report', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -119,7 +120,7 @@
      * Callback function to receive the result of the getBatchStatus operation.
      * @callback module:api/BatchesApi~getBatchStatusCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20013} data The data returned by the service call.
+     * @param {module:model/BatchStatusResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -128,7 +129,7 @@
      * **Get Batch Status**<br>This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      * @param {String} batchId Unique identification number assigned to the submitted request.
      * @param {module:api/BatchesApi~getBatchStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20013}
+     * data is of type: {@link module:model/BatchStatusResponse}
      */
     this.getBatchStatus = function(batchId, callback) {
       var postBody = null;
@@ -157,7 +158,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse20013;
+      var returnType = BatchStatusResponse;
 
       //check isMLE for an api method 'this.getBatchStatus'
       var inboundMLEStatus = 'false';
@@ -165,7 +166,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getBatchStatus']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/accountupdater/v1/batches/{batchId}/status', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -185,7 +187,7 @@
      * Callback function to receive the result of the getBatchesList operation.
      * @callback module:api/BatchesApi~getBatchesListCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse20012} data The data returned by the service call.
+     * @param {module:model/BatchesListResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -198,7 +200,7 @@
      * @param {String} opts.fromDate ISO-8601 format: yyyyMMddTHHmmssZ
      * @param {String} opts.toDate ISO-8601 format: yyyyMMddTHHmmssZ
      * @param {module:api/BatchesApi~getBatchesListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse20012}
+     * data is of type: {@link module:model/BatchesListResponse}
      */
     this.getBatchesList = function(opts, callback) {
       opts = opts || {};
@@ -226,7 +228,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json', 'application/json;charset=utf-8'];
-      var returnType = InlineResponse20012;
+      var returnType = BatchesListResponse;
 
       //check isMLE for an api method 'this.getBatchesList'
       var inboundMLEStatus = 'false';
@@ -234,7 +236,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['getBatchesList']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/accountupdater/v1/batches', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
@@ -254,29 +257,29 @@
      * Callback function to receive the result of the postBatch operation.
      * @callback module:api/BatchesApi~postBatchCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse202} data The data returned by the service call.
+     * @param {module:model/BatchCreateResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Create a Batch
      * **Create a Batch**<br>This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. <br> The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.<br>The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
-     * @param {module:model/Body} body 
+     * @param {module:model/PostBatchRequest} postBatchRequest 
      * @param {module:api/BatchesApi~postBatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse202}
+     * data is of type: {@link module:model/BatchCreateResponse}
      */
-    this.postBatch = function(body, callback) {
-      var postBody = body;
+    this.postBatch = function(postBatchRequest, callback) {
+      var postBody = postBatchRequest;
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postBatch");
+      // verify the required parameter 'postBatchRequest' is set
+      if (postBatchRequest === undefined || postBatchRequest === null) {
+        throw new Error("Missing the required parameter 'postBatchRequest' when calling postBatch");
       }
 
       var SdkTracker = require('../utilities/tracking/SdkTracker');
 
       var sdkTracker = new SdkTracker();
-      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/Body', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
+      postBody = sdkTracker.insertDeveloperIdTracker(postBody, 'module:model/PostBatchRequest', this.apiClient.merchantConfig.runEnvironment, this.apiClient.merchantConfig.defaultDeveloperId);
 
 
       var pathParams = {
@@ -292,7 +295,7 @@
       var authNames = [];
       var contentTypes = ['application/json;charset=utf-8'];
       var accepts = ['application/json;charset=utf-8'];
-      var returnType = InlineResponse202;
+      var returnType = BatchCreateResponse;
 
       //check isMLE for an api method 'this.postBatch'
       var inboundMLEStatus = 'false';
@@ -300,7 +303,8 @@
       const isResponseMLEForApi = MLEUtility.checkIsResponseMLEForAPI(this.apiClient.merchantConfig, ['postBatch']);
 
       if (isMLEForApi === true) {
-        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody).then(postBody => {
+        var mleContentType = this.apiClient.jsonPreferredMime(contentTypes);
+        MLEUtility.encryptRequestPayload(this.apiClient.merchantConfig, postBody, mleContentType).then(postBody => {
           return this.apiClient.callApi(
             '/accountupdater/v1/batches', 'POST',
             pathParams, queryParams, headerParams, formParams, postBody,
